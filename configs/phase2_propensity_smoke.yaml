@@ -1,0 +1,55 @@
+stage: phase2
+slice: teacher_forced_propensity_smoke
+seed: 1729
+
+wandb:
+  enabled: true
+  project: slop-stage1
+  group: phase2-propensity
+  api_key_env: WANDB_API_KEY
+  log_raw_text: false
+  tags:
+    - stage2
+    - phase2
+    - teacher_forced
+    - smoke
+
+inputs:
+  primary_reference: artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl
+  smoke_sample_size: 8
+  smoke_max_opportunities: 128
+  smoke_features:
+    - contrastive_negation
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+
+models:
+  smoke_model: sshleifer/tiny-gpt2
+  primary_ladder:
+    - allenai/OLMo-3-7B-Base
+    - allenai/OLMo-3-7B-SFT
+    - allenai/OLMo-3-7B-DPO
+    - allenai/OLMo-3-7B-Instruct
+
+teacher_forced:
+  probability_mass: first_initiating_token_set
+  max_prefix_tokens: 1024
+  max_token_start_opportunities: 128
+  torch_compile_default: true
+  full_sequence_mass_status: future_refinement
+  notes:
+    - The first smoke measures first-token initiation mass only.
+    - Full Phase 2 should extend this to 1-3 token initiating continuations.
+    - Keep Biber-lite as register covariates, not propensity targets.
+
+go_no_go:
+  promote_to_olmo_tiny_shard_if:
+    - smoke_cli_runs_on_cuda
+    - wandb_logs_no_raw_text
+    - opportunity_counts_are_nonzero
+    - torch_compile_does_not_fail
+  no_go_if:
+    - tokenizer_empty_prefix_has_no_bos_eos_or_pad_fallback
+    - peak_gpu_memory_exceeds_available_headroom
+    - opportunities_per_sec_too_low_for_projected_full_grid

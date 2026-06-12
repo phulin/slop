@@ -332,3 +332,12 @@
   IDs, wrote 100 feature-rate rows, and emitted 250,000 pair-feature delta rows
   to
   `artifacts/stage1/census/olmo3_dolci_dpo_10k_retained_revised_biber_lite_pair_deltas.csv`.
+- Phase 2 teacher-forced smoke scaffold started. Added opportunity extraction
+  and a compiled causal-LM smoke CLI. Successful W&B run:
+  `stage2-phase2-tiny-gpt2-compile-propensity-smoke-v2`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/w7b161sw`. It ran
+  `sshleifer/tiny-gpt2` on the A100 with `torch.compile`, processed 2 retained
+  Dolci SFT rows and 64 opportunities, and wrote local ignored smoke artifacts
+  under `artifacts/phase2/propensity/`. The first compile attempt exposed an
+  empty-`LD_LIBRARY_PATH` Triton lookup issue for `libcuda.so.1`; the CLI now
+  adds `/usr/lib/x86_64-linux-gnu` when that library exists.

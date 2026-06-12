@@ -1,0 +1,362 @@
+from __future__ import annotations
+
+import argparse
+import csv
+import os
+import resource
+import time
+from collections import defaultdict
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+from tqdm import tqdm
+
+from slop_sftdiv.cli.census import _id_fields_with_pair_id, _measurement_texts, _source_from_input
+from slop_sftdiv.propensity import PHASE2_OPPORTUNITY_SPECS, iter_feature_opportunities
+from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
+
+
+OUTPUT_COLUMNS = [
+    "source",
+    "record_id",
+    "role",
+    "feature",
+    "opportunity_kind",
+    "char_offset",
+    "prefix_tokens",
+    "reference_initiates",
+    "matched_subtype",
+    "prob_mass",
+]
+
+
+@dataclass
+class FeatureAccumulator:
+    opportunities: int = 0
+    reference_initiations: int = 0
+    prob_mass_sum: float = 0.0
+
+    @property
+    def reference_rate(self) -> float:
+        return self.reference_initiations / self.opportunities if self.opportunities else 0.0
+
+    @property
+    def mean_prob_mass(self) -> float:
+        return self.prob_mass_sum / self.opportunities if self.opportunities else 0.0
+
+    @property
+    def amplification_factor(self) -> float:
+        if self.reference_rate <= 0.0:
+            return 0.0
+        return self.mean_prob_mass / self.reference_rate
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Run Phase 2 teacher-forced propensity smoke.")
+    parser.add_argument("--model", required=True, help="Hugging Face causal LM ID or local path.")
+    parser.add_argument("--input", action="append", required=True, help="Local JSONL file or HF dataset id.")
+    parser.add_argument("--split", default="train")
+    parser.add_argument("--hf-config", default=None)
+    parser.add_argument("--text-field", default=None)
+    parser.add_argument("--sample-size", type=int, default=128)
+    parser.add_argument("--max-scan", type=int, default=None)
+    parser.add_argument("--seed", type=int, default=1729)
+    parser.add_argument("--feature", action="append", default=[])
+    parser.add_argument("--max-opportunities", type=int, default=512)
+    parser.add_argument("--max-token-start-opportunities", type=int, default=128)
+    parser.add_argument("--max-prefix-tokens", type=int, default=1024)
+    parser.add_argument("--dtype", default="auto", choices=["auto", "float16", "bfloat16", "float32"])
+    parser.add_argument("--device", default="auto")
+    parser.add_argument("--torch-compile", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--summary-output", type=Path, default=None)
+    parser.add_argument("--wandb-project", default="slop-stage1")
+    parser.add_argument("--wandb-entity", default=None)
+    parser.add_argument("--wandb-run-name", default=None)
+    parser.add_argument("--wandb-group", default="phase2-propensity")
+    parser.add_argument("--wandb-job-type", default="teacher-forced-smoke")
+    parser.add_argument("--wandb-tag", action="append", default=[])
+    parser.add_argument("--wandb-mode", default=None, choices=[None, "online", "offline", "disabled"])
+    return parser
+
+
+def _load_corpus_components():
+    from slop_sftdiv.data import SamplingConfig, iter_corpus_records
+    from slop_sftdiv.data.corpora import DEFAULT_ID_FIELDS
+
+    return SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS
+
+
+def _load_model(*, model_name: str, dtype_name: str, device_name: str, compile_model: bool):
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    dtype = _dtype(dtype_name, torch)
+    device = _device(device_name, torch)
+    if device.type == "cuda":
+        _ensure_cuda_library_path()
+        torch.set_float32_matmul_precision("high")
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model_kwargs: dict[str, Any] = {}
+    if dtype is not None:
+        model_kwargs["torch_dtype"] = dtype
+    model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
+    model.to(device)
+    model.eval()
+    if compile_model:
+        model = torch.compile(model)
+    return tokenizer, model, device
+
+
+def _ensure_cuda_library_path() -> None:
+    candidates = (
+        "/usr/lib/x86_64-linux-gnu",
+        "/usr/local/cuda/lib64",
+        "/usr/local/cuda/targets/x86_64-linux/lib",
+    )
+    existing = [item for item in os.environ.get("LD_LIBRARY_PATH", "").split(":") if item]
+    additions = [
+        item
+        for item in candidates
+        if Path(item, "libcuda.so.1").exists() and item not in existing
+    ]
+    if additions:
+        os.environ["LD_LIBRARY_PATH"] = ":".join([*additions, *existing])
+
+
+def _dtype(dtype_name: str, torch_module: Any):
+    if dtype_name == "auto":
+        return None
+    return {
+        "float16": torch_module.float16,
+        "bfloat16": torch_module.bfloat16,
+        "float32": torch_module.float32,
+    }[dtype_name]
+
+
+def _device(device_name: str, torch_module: Any):
+    if device_name != "auto":
+        return torch_module.device(device_name)
+    return torch_module.device("cuda" if torch_module.cuda.is_available() else "cpu")
+
+
+def _peak_rss_mb() -> float:
+    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+
+
+def _initiator_token_ids(tokenizer: Any, feature: str) -> set[int]:
+    spec = PHASE2_OPPORTUNITY_SPECS[feature]
+    token_ids: set[int] = set()
+    for phrase in spec.initiators:
+        for variant in (phrase, " " + phrase):
+            ids = tokenizer.encode(variant, add_special_tokens=False)
+            if ids:
+                token_ids.add(int(ids[0]))
+    return token_ids
+
+
+def _prefix_input_ids(
+    tokenizer: Any,
+    text: str,
+    char_offset: int,
+    *,
+    max_prefix_tokens: int,
+    device: Any,
+):
+    import torch
+
+    prefix = text[:char_offset]
+    ids = tokenizer.encode(prefix, add_special_tokens=False)
+    if ids:
+        ids = ids[-max_prefix_tokens:]
+    else:
+        fallback_id = tokenizer.bos_token_id
+        if fallback_id is None:
+            fallback_id = tokenizer.eos_token_id
+        if fallback_id is None:
+            fallback_id = tokenizer.pad_token_id
+        if fallback_id is None:
+            raise ValueError("tokenizer has no BOS/EOS/PAD token for empty-prefix probability")
+        ids = [fallback_id]
+    return torch.tensor([ids], dtype=torch.long, device=device)
+
+
+def _prob_mass(model: Any, input_ids: Any, initiator_ids: set[int]) -> float:
+    import torch
+
+    if not initiator_ids:
+        return 0.0
+    with torch.inference_mode():
+        logits = model(input_ids=input_ids).logits[0, -1]
+        probabilities = torch.softmax(logits, dim=-1)
+        index = torch.tensor(sorted(initiator_ids), dtype=torch.long, device=probabilities.device)
+        return float(probabilities.index_select(0, index).sum().item())
+
+
+def _summary_rows(accumulators: dict[str, FeatureAccumulator]) -> list[dict[str, Any]]:
+    rows = []
+    for feature, accumulator in sorted(accumulators.items()):
+        rows.append(
+            {
+                "feature": feature,
+                "opportunities": accumulator.opportunities,
+                "reference_initiations": accumulator.reference_initiations,
+                "reference_rate": accumulator.reference_rate,
+                "mean_prob_mass": accumulator.mean_prob_mass,
+                "amplification_factor": accumulator.amplification_factor,
+            }
+        )
+    return rows
+
+
+def _write_csv(path: Path, rows: list[dict[str, Any]], columns: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, Any]]:
+    SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS = _load_corpus_components()
+    tokenizer, model, device = _load_model(
+        model_name=args.model,
+        dtype_name=args.dtype,
+        device_name=args.device,
+        compile_model=args.torch_compile,
+    )
+    selected_features = list(dict.fromkeys(args.feature or ["contrastive_negation"]))
+    initiator_ids = {
+        feature: _initiator_token_ids(tokenizer, feature)
+        for feature in selected_features
+        if feature in PHASE2_OPPORTUNITY_SPECS
+    }
+    text_fields = [args.text_field] if args.text_field else None
+    sampling = SamplingConfig(cap=args.sample_size, seed=args.seed, max_scan=args.max_scan)
+    id_fields = _id_fields_with_pair_id(DEFAULT_ID_FIELDS)
+
+    rows: list[dict[str, Any]] = []
+    accumulators: dict[str, FeatureAccumulator] = defaultdict(FeatureAccumulator)
+    doc_count = 0
+    measurement_rows = 0
+    started_at = time.perf_counter()
+
+    run = init_wandb(
+        project=args.wandb_project,
+        entity=args.wandb_entity,
+        run_name=args.wandb_run_name,
+        group=args.wandb_group,
+        job_type=args.wandb_job_type,
+        mode=args.wandb_mode,
+        tags=["stage2", "phase2", "teacher-forced", "smoke", *args.wandb_tag],
+        config={
+            "model": args.model,
+            "inputs": args.input,
+            "split": args.split,
+            "hf_config": args.hf_config,
+            "sample_size": args.sample_size,
+            "max_scan": args.max_scan,
+            "features": selected_features,
+            "max_opportunities": args.max_opportunities,
+            "max_token_start_opportunities": args.max_token_start_opportunities,
+            "max_prefix_tokens": args.max_prefix_tokens,
+            "dtype": args.dtype,
+            "device": str(device),
+            "torch_compile": args.torch_compile,
+            "output": str(args.output),
+        },
+    )
+
+    try:
+        for raw_source in args.input:
+            source = _source_from_input(raw_source, split=args.split, hf_config=args.hf_config)
+            records_kwargs = {"sampling": sampling, "id_fields": id_fields}
+            if text_fields:
+                records_kwargs["text_fields"] = text_fields
+            for record in tqdm(
+                iter_corpus_records(source, **records_kwargs),
+                desc=f"teacher-forced:{source.name}",
+                unit="doc",
+            ):
+                doc_count += 1
+                for role, text, _pair_id in _measurement_texts(record):
+                    measurement_rows += 1
+                    opportunities = iter_feature_opportunities(
+                        text,
+                        features=selected_features,
+                        max_token_start_opportunities=args.max_token_start_opportunities,
+                    )[: args.max_opportunities]
+                    for opportunity in opportunities:
+                        ids = initiator_ids.get(opportunity.feature, set())
+                        input_ids = _prefix_input_ids(
+                            tokenizer,
+                            text,
+                            opportunity.char_offset,
+                            max_prefix_tokens=args.max_prefix_tokens,
+                            device=device,
+                        )
+                        prob_mass = _prob_mass(model, input_ids, ids)
+                        prefix_tokens = int(input_ids.shape[-1])
+                        accumulator = accumulators[opportunity.feature]
+                        accumulator.opportunities += 1
+                        accumulator.reference_initiations += int(opportunity.reference_initiates)
+                        accumulator.prob_mass_sum += prob_mass
+                        rows.append(
+                            {
+                                "source": record.source,
+                                "record_id": record.record_id,
+                                "role": role,
+                                "feature": opportunity.feature,
+                                "opportunity_kind": opportunity.opportunity_kind,
+                                "char_offset": opportunity.char_offset,
+                                "prefix_tokens": prefix_tokens,
+                                "reference_initiates": int(opportunity.reference_initiates),
+                                "matched_subtype": opportunity.matched_subtype or "",
+                                "prob_mass": prob_mass,
+                            }
+                        )
+
+        _write_csv(args.output, rows, OUTPUT_COLUMNS)
+        summary_rows = _summary_rows(accumulators)
+        if args.summary_output is not None:
+            _write_csv(
+                args.summary_output,
+                summary_rows,
+                [
+                    "feature",
+                    "opportunities",
+                    "reference_initiations",
+                    "reference_rate",
+                    "mean_prob_mass",
+                    "amplification_factor",
+                ],
+            )
+
+        wall_seconds = time.perf_counter() - started_at
+        run.log(
+            {
+                "propensity/docs": doc_count,
+                "propensity/measurement_rows": measurement_rows,
+                "propensity/opportunities": len(rows),
+                "propensity/opportunities_per_sec": len(rows) / wall_seconds
+                if wall_seconds > 0
+                else 0.0,
+                "propensity/wall_seconds": wall_seconds,
+                "propensity/peak_rss_mb": _peak_rss_mb(),
+            }
+        )
+        log_summary_table(run, "propensity_summary", summary_rows)
+        return summary_rows
+    finally:
+        run.finish()
+
+
+def main() -> None:
+    args = build_parser().parse_args()
+    summary_rows = run_teacher_forced_propensity(args)
+    print(f"Wrote {len(summary_rows)} feature summaries to {args.summary_output or args.output}")
+
+
+if __name__ == "__main__":
+    main()
