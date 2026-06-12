@@ -420,3 +420,9 @@
   The first 4 rows at a 128 token-start cap have 902 total opportunities with
   2 `slop_lexicon`, 2 `neutral_controls`, and 1 `stock_openers` reference
   positives.
+- The first positive/control OLMo scoring attempt
+  `stage2-phase2-olmo3-sft-positive-control4-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/mgsyvegv`) was stopped before
+  completion because exact sequence scoring remained too slow. The sequence
+  mass loop no longer synchronizes once per initiator probability; it now keeps
+  probability accumulation on the GPU and performs a single final scalar sync.

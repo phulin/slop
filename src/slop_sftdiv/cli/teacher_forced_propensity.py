@@ -243,35 +243,54 @@ def _sequence_prob_mass(
     if not sequences:
         return 0.0
     max_length = max(len(sequence) for sequence in sequences)
-    sequence_probabilities = [1.0 for _sequence in sequences]
     with torch.inference_mode():
-        for depth in range(max_length):
-            active_indexes = [
-                index for index, sequence in enumerate(sequences) if depth < len(sequence)
-            ]
+        logits = model(
+            input_ids=model_inputs["input_ids"],
+            attention_mask=model_inputs["attention_mask"],
+        ).logits[0, -1]
+        probabilities = torch.softmax(logits, dim=-1)
+        first_token_ids = torch.tensor(
+            [sequence[0] for sequence in sequences],
+            dtype=torch.long,
+            device=probabilities.device,
+        )
+        sequence_probabilities = probabilities.index_select(0, first_token_ids)
+
+        for depth in range(1, max_length):
+            active_indexes = [index for index, sequence in enumerate(sequences) if depth < len(sequence)]
             if not active_indexes:
                 continue
-            input_ids = model_inputs["input_ids"].repeat(len(active_indexes), 1)
-            attention_mask = model_inputs["attention_mask"].repeat(len(active_indexes), 1)
-            if depth > 0:
-                prefix_tokens = torch.tensor(
-                    [sequences[index][:depth] for index in active_indexes],
-                    dtype=torch.long,
-                    device=input_ids.device,
-                )
-                input_ids = torch.cat([input_ids, prefix_tokens], dim=-1)
-                attention_mask = torch.cat([attention_mask, torch.ones_like(prefix_tokens)], dim=-1)
+            branch_prefixes = sorted({sequences[index][:depth] for index in active_indexes})
+            branch_index = {branch: index for index, branch in enumerate(branch_prefixes)}
+            input_ids = model_inputs["input_ids"].repeat(len(branch_prefixes), 1)
+            attention_mask = model_inputs["attention_mask"].repeat(len(branch_prefixes), 1)
+            prefix_tokens = torch.tensor(
+                branch_prefixes,
+                dtype=torch.long,
+                device=input_ids.device,
+            )
+            input_ids = torch.cat([input_ids, prefix_tokens], dim=-1)
+            attention_mask = torch.cat([attention_mask, torch.ones_like(prefix_tokens)], dim=-1)
             logits = model(input_ids=input_ids, attention_mask=attention_mask).logits[:, -1]
             probabilities = torch.softmax(logits, dim=-1)
+            active_tensor = torch.tensor(
+                active_indexes,
+                dtype=torch.long,
+                device=sequence_probabilities.device,
+            )
+            branch_rows = torch.tensor(
+                [branch_index[sequences[index][:depth]] for index in active_indexes],
+                dtype=torch.long,
+                device=probabilities.device,
+            )
             target_ids = torch.tensor(
                 [sequences[index][depth] for index in active_indexes],
                 dtype=torch.long,
                 device=probabilities.device,
             )
-            token_probabilities = probabilities.gather(1, target_ids[:, None]).squeeze(1)
-            for batch_index, sequence_index in enumerate(active_indexes):
-                sequence_probabilities[sequence_index] *= float(token_probabilities[batch_index].item())
-    return sum(sequence_probabilities)
+            token_probabilities = probabilities[branch_rows, target_ids]
+            sequence_probabilities[active_tensor] *= token_probabilities
+        return float(sequence_probabilities.sum().item())
 
 
 def _summary_rows(accumulators: dict[str, FeatureAccumulator]) -> list[dict[str, Any]]:

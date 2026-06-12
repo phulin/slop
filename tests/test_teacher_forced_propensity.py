@@ -126,3 +126,30 @@ def test_sequence_prob_mass_batches_by_depth():
 
     assert mass == pytest.approx(0.24)
     assert model.calls == 2
+
+
+def test_sequence_prob_mass_batches_shared_continuation_prefixes():
+    class UniformModel:
+        def __init__(self):
+            self.calls = 0
+            self.batch_sizes = []
+
+        def __call__(self, *, input_ids, attention_mask):
+            del attention_mask
+            self.calls += 1
+            self.batch_sizes.append(input_ids.shape[0])
+            return type("Output", (), {"logits": torch.zeros((*input_ids.shape, 6))})()
+
+    model = UniformModel()
+    mass = _sequence_prob_mass(
+        model,
+        {
+            "input_ids": torch.tensor([[0, 1]], dtype=torch.long),
+            "attention_mask": torch.tensor([[1, 1]], dtype=torch.long),
+        },
+        ((1, 2), (1, 3), (4, 2)),
+    )
+
+    assert mass == pytest.approx(3 * (1 / 6) * (1 / 6))
+    assert model.calls == 2
+    assert model.batch_sizes == [1, 2]
