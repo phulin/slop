@@ -21,7 +21,7 @@ Primary ladder — **OLMo 3 7B, Instruct path** (fully open data at every stage;
 
 | Stage | Checkpoint | Paired training data |
 |---|---|---|
-| Base | `allenai/Olmo-3-7B` | Dolma 3 (sampled, stratified) |
+| Base | `allenai/Olmo-3-1025-7B` | Dolma 3 (sampled, stratified) |
 | SFT | `allenai/Olmo-3-7B-Instruct-SFT` | `allenai/Dolci-Instruct-SFT-7B` |
 | DPO | `allenai/Olmo-3-7B-Instruct-DPO` | `allenai/Dolci-Instruct-DPO-7B` (chosen/rejected pairs) |
 | Final (RLVR) | `allenai/Olmo-3-7B-Instruct` | `allenai/Dolci-Instruct-RL-7B` |

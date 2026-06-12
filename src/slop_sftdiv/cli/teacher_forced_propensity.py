@@ -28,6 +28,7 @@ OUTPUT_COLUMNS = [
     "reference_initiates",
     "matched_subtype",
     "prob_mass",
+    "initiator_sequences",
 ]
 
 
@@ -66,6 +67,18 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-opportunities", type=int, default=512)
     parser.add_argument("--max-token-start-opportunities", type=int, default=128)
     parser.add_argument("--max-prefix-tokens", type=int, default=1024)
+    parser.add_argument(
+        "--mass-mode",
+        default="sequence",
+        choices=["sequence", "first_token"],
+        help="Use exact multi-token continuation mass or smoke-only first-token mass.",
+    )
+    parser.add_argument(
+        "--fixed-prefix-tokens",
+        type=int,
+        default=256,
+        help="Left-pad prefixes to this length for stable compiled shapes; set 0 for dynamic.",
+    )
     parser.add_argument("--dtype", default="auto", choices=["auto", "float16", "bfloat16", "float32"])
     parser.add_argument("--device", default="auto")
     parser.add_argument("--torch-compile", action=argparse.BooleanOptionalAction, default=True)
@@ -145,15 +158,19 @@ def _peak_rss_mb() -> float:
     return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
 
 
-def _initiator_token_ids(tokenizer: Any, feature: str) -> set[int]:
+def _initiator_token_sequences(tokenizer: Any, feature: str) -> tuple[tuple[int, ...], ...]:
     spec = PHASE2_OPPORTUNITY_SPECS[feature]
-    token_ids: set[int] = set()
+    sequences: set[tuple[int, ...]] = set()
     for phrase in spec.initiators:
         for variant in (phrase, " " + phrase):
             ids = tokenizer.encode(variant, add_special_tokens=False)
             if ids:
-                token_ids.add(int(ids[0]))
-    return token_ids
+                sequences.add(tuple(int(item) for item in ids[:3]))
+    return tuple(sorted(sequences))
+
+
+def _first_token_ids(sequences: tuple[tuple[int, ...], ...]) -> set[int]:
+    return {sequence[0] for sequence in sequences if sequence}
 
 
 def _prefix_input_ids(
@@ -162,8 +179,9 @@ def _prefix_input_ids(
     char_offset: int,
     *,
     max_prefix_tokens: int,
+    fixed_prefix_tokens: int,
     device: Any,
-):
+) -> dict[str, Any]:
     import torch
 
     prefix = text[:char_offset]
@@ -179,19 +197,67 @@ def _prefix_input_ids(
         if fallback_id is None:
             raise ValueError("tokenizer has no BOS/EOS/PAD token for empty-prefix probability")
         ids = [fallback_id]
-    return torch.tensor([ids], dtype=torch.long, device=device)
+    attention_mask = [1] * len(ids)
+    if fixed_prefix_tokens > 0:
+        pad_id = tokenizer.pad_token_id
+        if pad_id is None:
+            pad_id = tokenizer.eos_token_id
+        if pad_id is None:
+            pad_id = tokenizer.bos_token_id
+        if pad_id is None:
+            raise ValueError("tokenizer has no PAD/EOS/BOS token for fixed-prefix padding")
+        ids = ids[-fixed_prefix_tokens:]
+        attention_mask = attention_mask[-fixed_prefix_tokens:]
+        pad_count = max(0, fixed_prefix_tokens - len(ids))
+        ids = [pad_id] * pad_count + ids
+        attention_mask = [0] * pad_count + attention_mask
+    return {
+        "input_ids": torch.tensor([ids], dtype=torch.long, device=device),
+        "attention_mask": torch.tensor([attention_mask], dtype=torch.long, device=device),
+        "prefix_tokens": sum(attention_mask),
+    }
 
 
-def _prob_mass(model: Any, input_ids: Any, initiator_ids: set[int]) -> float:
+def _first_token_prob_mass(model: Any, model_inputs: dict[str, Any], initiator_ids: set[int]) -> float:
     import torch
 
     if not initiator_ids:
         return 0.0
     with torch.inference_mode():
-        logits = model(input_ids=input_ids).logits[0, -1]
+        logits = model(
+            input_ids=model_inputs["input_ids"],
+            attention_mask=model_inputs["attention_mask"],
+        ).logits[0, -1]
         probabilities = torch.softmax(logits, dim=-1)
         index = torch.tensor(sorted(initiator_ids), dtype=torch.long, device=probabilities.device)
         return float(probabilities.index_select(0, index).sum().item())
+
+
+def _sequence_prob_mass(
+    model: Any,
+    model_inputs: dict[str, Any],
+    sequences: tuple[tuple[int, ...], ...],
+) -> float:
+    import torch
+
+    if not sequences:
+        return 0.0
+    total = 0.0
+    with torch.inference_mode():
+        for sequence in sequences:
+            input_ids = model_inputs["input_ids"]
+            attention_mask = model_inputs["attention_mask"]
+            sequence_probability = 1.0
+            for token_id in sequence:
+                logits = model(input_ids=input_ids, attention_mask=attention_mask).logits[0, -1]
+                probability = torch.softmax(logits, dim=-1)[int(token_id)]
+                sequence_probability *= float(probability.item())
+                next_id = torch.tensor([[int(token_id)]], dtype=torch.long, device=input_ids.device)
+                next_mask = torch.ones_like(next_id)
+                input_ids = torch.cat([input_ids, next_id], dim=-1)
+                attention_mask = torch.cat([attention_mask, next_mask], dim=-1)
+            total += sequence_probability
+    return total
 
 
 def _summary_rows(accumulators: dict[str, FeatureAccumulator]) -> list[dict[str, Any]]:
@@ -227,8 +293,8 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
         compile_model=args.torch_compile,
     )
     selected_features = list(dict.fromkeys(args.feature or ["contrastive_negation"]))
-    initiator_ids = {
-        feature: _initiator_token_ids(tokenizer, feature)
+    initiator_sequences = {
+        feature: _initiator_token_sequences(tokenizer, feature)
         for feature in selected_features
         if feature in PHASE2_OPPORTUNITY_SPECS
     }
@@ -261,6 +327,8 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
             "max_opportunities": args.max_opportunities,
             "max_token_start_opportunities": args.max_token_start_opportunities,
             "max_prefix_tokens": args.max_prefix_tokens,
+            "mass_mode": args.mass_mode,
+            "fixed_prefix_tokens": args.fixed_prefix_tokens,
             "dtype": args.dtype,
             "device": str(device),
             "torch_compile": args.torch_compile,
@@ -288,16 +356,24 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
                         max_token_start_opportunities=args.max_token_start_opportunities,
                     )[: args.max_opportunities]
                     for opportunity in opportunities:
-                        ids = initiator_ids.get(opportunity.feature, set())
-                        input_ids = _prefix_input_ids(
+                        sequences = initiator_sequences.get(opportunity.feature, ())
+                        model_inputs = _prefix_input_ids(
                             tokenizer,
                             text,
                             opportunity.char_offset,
                             max_prefix_tokens=args.max_prefix_tokens,
+                            fixed_prefix_tokens=args.fixed_prefix_tokens,
                             device=device,
                         )
-                        prob_mass = _prob_mass(model, input_ids, ids)
-                        prefix_tokens = int(input_ids.shape[-1])
+                        if args.mass_mode == "first_token":
+                            prob_mass = _first_token_prob_mass(
+                                model,
+                                model_inputs,
+                                _first_token_ids(sequences),
+                            )
+                        else:
+                            prob_mass = _sequence_prob_mass(model, model_inputs, sequences)
+                        prefix_tokens = int(model_inputs["prefix_tokens"])
                         accumulator = accumulators[opportunity.feature]
                         accumulator.opportunities += 1
                         accumulator.reference_initiations += int(opportunity.reference_initiates)
@@ -314,6 +390,7 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
                                 "reference_initiates": int(opportunity.reference_initiates),
                                 "matched_subtype": opportunity.matched_subtype or "",
                                 "prob_mass": prob_mass,
+                                "initiator_sequences": len(sequences),
                             }
                         )
 

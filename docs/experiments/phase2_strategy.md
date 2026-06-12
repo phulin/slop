@@ -11,8 +11,10 @@ emission rates.
 The first implementation slice is a smoke harness, not the full OLMo grid:
 
 - Extract deterministic opportunity positions for revised core features.
-- Compute first-token initiation probability mass at each opportunity using a
-  causal LM.
+- Compute exact initiation sequence probability mass at each opportunity using
+  a causal LM. The first-token estimator remains a debug fallback.
+- Run free-running emissions on held-out prompts so realized rates can be
+  compared against teacher-forced propensity.
 - Log aggregate AF-style summaries to W&B without raw text.
 - Run on a tiny model and a tiny retained Dolci SFT shard before promoting to
   OLMo checkpoints.
@@ -29,6 +31,7 @@ uv run slop-teacher-forced-propensity \
   --feature stock_openers \
   --feature stock_closers \
   --max-opportunities 128 \
+  --mass-mode sequence \
   --output artifacts/phase2/propensity/tiny_gpt2_smoke_opportunities.csv \
   --summary-output artifacts/phase2/propensity/tiny_gpt2_smoke_summary.csv \
   --wandb-mode online
@@ -55,12 +58,30 @@ Held back from the first smoke:
   opportunity contract before using it for AF claims.
 - Biber-lite features: keep as register covariates, not propensity targets.
 
+Free-running smoke CLI:
+
+```bash
+uv run slop-free-running-emission \
+  --model sshleifer/tiny-gpt2 \
+  --input artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl \
+  --sample-size 1 \
+  --feature slop_lexicon \
+  --feature stock_openers \
+  --temperature 0.0 \
+  --max-new-tokens 16 \
+  --fallback-text-as-prompt \
+  --generations-output artifacts/phase2/generations/tiny_gpt2_free_run_smoke.jsonl \
+  --summary-output artifacts/phase2/generations/tiny_gpt2_free_run_smoke_summary.csv \
+  --wandb-mode online
+```
+
 ## Measurement Caveat
 
-The first smoke computes probability mass over the first token of each
-initiating phrase. Full Phase 2 should extend this to exact 1-3 token
-initiating continuations with a tokenizer trie. The smoke is meant to validate
-plumbing, W&B logging, CUDA/compile behavior, and opportunity counts.
+The current exact-sequence estimator sums up to the first three tokenizer
+tokens of each initiating phrase variant. This is enough to avoid the inflated
+first-token smoke estimator, but it is still deliberately small-shard code.
+Before full Phase 2, improve throughput with batching, a tokenizer trie, or
+prefix-cache reuse, and keep neutral controls in the promotion gate.
 
 ## Promotion Criteria
 
@@ -74,7 +95,6 @@ Promote from tiny-model smoke to OLMo tiny shard only if:
 
 Promote from OLMo tiny shard to full Phase 2 only after:
 
-- Exact multi-token continuation mass is implemented.
 - Held-out prompt splitting and near-duplicate filtering are in place.
 - Neutral controls show AF near 1 on an SFT checkpoint.
 - Positive controls reproduce expected amplification direction.
@@ -97,3 +117,22 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   `libcuda.so.1` while `LD_LIBRARY_PATH` was empty. The CLI now adds
   `/usr/lib/x86_64-linux-gnu` when `libcuda.so.1` exists there before invoking
   `torch.compile`.
+- `stage2-phase2-tiny-gpt2-sequence-propensity-smoke`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/45ozhmum`) completed exact
+  sequence-mass scoring on 1 retained Dolci SFT row, 16 `slop_lexicon`
+  opportunities, with `torch.compile` enabled.
+- `stage2-phase2-olmo3-7b-instruct-sft-sequence-tiny`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/pp0x4f2y`) completed the
+  first real OLMo SFT exact-sequence tiny shard. It measured 8
+  `slop_lexicon` opportunities, zero reference initiations, mean probability
+  mass `1.103147e-06`, 85.1 wall seconds, and 0.094 opportunities/sec. This is
+  a plumbing and throughput datapoint, not an amplification result.
+- `stage2-phase2-tiny-gpt2-free-running-smoke-v2`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/4dt5kc3h`) completed the
+  first free-running emission smoke with `torch.compile` enabled. It used one
+  retained sample text as a prompt for plumbing validation, generated 16
+  tokens, logged redacted W&B sample rows, and found zero `slop_lexicon` or
+  `stock_openers` matches. The preceding free-running attempt
+  (`rhfcryb6`) failed because this GPT-2 generation path rejected the
+  `generator` kwarg; the CLI now seeds with `torch.manual_seed`/
+  `torch.cuda.manual_seed_all` instead.

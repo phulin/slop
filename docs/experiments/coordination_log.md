@@ -341,3 +341,35 @@
   under `artifacts/phase2/propensity/`. The first compile attempt exposed an
   empty-`LD_LIBRARY_PATH` Triton lookup issue for `libcuda.so.1`; the CLI now
   adds `/usr/lib/x86_64-linux-gnu` when that library exists.
+- Phase 1 handoff conclusions were recorded in
+  `docs/experiments/phase2_handoff_conclusions.md`. Phase 1 is closed as a
+  sampled OLMo Dolci measurement package with caveats; full SmolLM remains
+  future work, and punctuation plus list/header features are outside the core
+  claims.
+- Phase 2 exact-sequence teacher-forced propensity is now the default
+  estimator. First-token propensity remains available as a smoke/debug fallback.
+  Tiny GPT-2 exact-sequence W&B run:
+  `stage2-phase2-tiny-gpt2-sequence-propensity-smoke`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/45ozhmum`.
+- First real OLMo SFT tiny shard completed:
+  `stage2-phase2-olmo3-7b-instruct-sft-sequence-tiny`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/pp0x4f2y`. It used
+  `allenai/Olmo-3-7B-Instruct-SFT`, measured 8 `slop_lexicon` opportunities,
+  found zero reference initiations, mean probability mass `1.103147e-06`,
+  85.1 wall seconds, and 0.094 opportunities/sec. This validates model loading,
+  CUDA, W&B logging, and exact-sequence plumbing only; it is not an
+  amplification result.
+- OLMo checkpoint IDs were corrected for Phase 2: base
+  `allenai/Olmo-3-1025-7B`, SFT `allenai/Olmo-3-7B-Instruct-SFT`, DPO
+  `allenai/Olmo-3-7B-Instruct-DPO`, and final
+  `allenai/Olmo-3-7B-Instruct`.
+- Phase 2 free-running emission CLI smoke completed:
+  `stage2-phase2-tiny-gpt2-free-running-smoke-v2`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/4dt5kc3h`. It generated 16
+  tokens from one retained-sample prompt with `torch.compile` enabled, logged
+  redacted W&B sample rows, and wrote local ignored artifacts under
+  `artifacts/phase2/generations/`. Summary rates were zero for `slop_lexicon`
+  and `stock_openers`. The prior free-running attempt
+  `https://wandb.ai/phulin-self/slop-stage1/runs/rhfcryb6` failed because this
+  GPT-2 generation path rejected the `generator` kwarg; the CLI now uses
+  `torch.manual_seed` and `torch.cuda.manual_seed_all` instead.

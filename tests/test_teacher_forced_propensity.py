@@ -14,10 +14,6 @@ class FakeTokenizer:
         return [max(1, ord(char) % 97) for char in text[:3]]
 
 
-class FakeInputIds:
-    shape = (1, 3)
-
-
 def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, monkeypatch):
     input_path = tmp_path / "input.jsonl"
     output_path = tmp_path / "opportunities.csv"
@@ -53,10 +49,10 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
     )
     monkeypatch.setattr(
         "slop_sftdiv.cli.teacher_forced_propensity._prefix_input_ids",
-        lambda *_args, **_kwargs: FakeInputIds(),
+        lambda *_args, **_kwargs: {"input_ids": object(), "attention_mask": object(), "prefix_tokens": 3},
     )
     monkeypatch.setattr(
-        "slop_sftdiv.cli.teacher_forced_propensity._prob_mass",
+        "slop_sftdiv.cli.teacher_forced_propensity._sequence_prob_mass",
         lambda *_args, **_kwargs: 0.25,
     )
     monkeypatch.setattr("slop_sftdiv.cli.teacher_forced_propensity.init_wandb", fake_init)
@@ -96,6 +92,7 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
         rows = list(csv.DictReader(handle))
     assert rows
     assert {row["feature"] for row in rows} == {"contrastive_negation", "stock_openers"}
+    assert all(int(row["initiator_sequences"]) > 0 for row in rows)
     assert "text" not in rows[0]
     assert "Great question" not in json.dumps(logged_tables)
     assert summary == logged_tables["propensity_summary"]

@@ -27,21 +27,48 @@ inputs:
 models:
   smoke_model: sshleifer/tiny-gpt2
   primary_ladder:
-    - allenai/OLMo-3-7B-Base
-    - allenai/OLMo-3-7B-SFT
-    - allenai/OLMo-3-7B-DPO
-    - allenai/OLMo-3-7B-Instruct
+    - allenai/Olmo-3-1025-7B
+    - allenai/Olmo-3-7B-Instruct-SFT
+    - allenai/Olmo-3-7B-Instruct-DPO
+    - allenai/Olmo-3-7B-Instruct
 
 teacher_forced:
-  probability_mass: first_initiating_token_set
+  probability_mass: exact_sequence_first_1_to_3_tokens
   max_prefix_tokens: 1024
+  fixed_prefix_tokens: 256
   max_token_start_opportunities: 128
   torch_compile_default: true
-  full_sequence_mass_status: future_refinement
+  first_token_mass_status: debug_fallback
   notes:
-    - The first smoke measures first-token initiation mass only.
-    - Full Phase 2 should extend this to 1-3 token initiating continuations.
+    - Exact sequence mass is the default Phase 2 propensity estimator.
+    - First-token mass remains available only as a debugging fallback.
     - Keep Biber-lite as register covariates, not propensity targets.
+
+first_real_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl
+  sample_size: 1
+  feature: slop_lexicon
+  max_opportunities: 8
+  max_token_start_opportunities: 8
+  fixed_prefix_tokens: 64
+  max_prefix_tokens: 64
+  dtype: bfloat16
+  wandb_run_id: pp0x4f2y
+  caveat: tiny shard with zero reference initiations; validates plumbing only
+
+free_running_smoke:
+  model: sshleifer/tiny-gpt2
+  input: artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl
+  fallback_text_as_prompt: true
+  sample_size: 1
+  features:
+    - slop_lexicon
+    - stock_openers
+  temperature: 0.0
+  max_new_tokens: 16
+  wandb_run_id: 4dt5kc3h
+  caveat: uses retained text as prompt only for plumbing validation
 
 go_no_go:
   promote_to_olmo_tiny_shard_if:

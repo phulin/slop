@@ -31,7 +31,6 @@ PHASE2_OPPORTUNITY_SPECS: dict[str, OpportunitySpec] = {
         feature="contrastive_negation",
         opportunity_kind="clause_boundary",
         initiators=(
-            "not",
             "not just",
             "not only",
             "it is not",
