@@ -42,6 +42,7 @@ slop-probe-hf-sources = "slop_sftdiv.cli.probe_hf_sources:main"
 slop-assemble-phase1 = "slop_sftdiv.cli.assemble_phase1:main"
 slop-teacher-forced-propensity = "slop_sftdiv.cli.teacher_forced_propensity:main"
 slop-free-running-emission = "slop_sftdiv.cli.free_running_emission:main"
+slop-prepare-phase2-prompts = "slop_sftdiv.cli.prepare_phase2_prompts:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

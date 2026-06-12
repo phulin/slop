@@ -16,6 +16,8 @@ wandb:
 
 inputs:
   primary_reference: artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8.jsonl
+  prompt_package_manifest: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8_manifest.csv
   smoke_sample_size: 8
   smoke_max_opportunities: 128
   smoke_features:
@@ -43,6 +45,23 @@ teacher_forced:
     - Exact sequence mass is the default Phase 2 propensity estimator.
     - First-token mass remains available only as a debugging fallback.
     - Keep Biber-lite as register covariates, not propensity targets.
+
+prompt_package:
+  source: allenai/Dolci-Instruct-SFT-7B
+  split: train
+  sample_size: 8
+  max_scan: 128
+  sampling_strategy: hash_reservoir
+  near_duplicate_threshold: 0.85
+  minhash_size: 64
+  minhash_shingle_tokens: 5
+  minhash_band_size: 4
+  wandb_run_id: 7xkqxesu
+  result:
+    scanned_rows: 128
+    eligible_prompts: 125
+    near_duplicate_prompt: 3
+    selected_prompts: 8
 
 first_real_run:
   model: allenai/Olmo-3-7B-Instruct-SFT

@@ -242,22 +242,36 @@ def _sequence_prob_mass(
 
     if not sequences:
         return 0.0
-    total = 0.0
+    max_length = max(len(sequence) for sequence in sequences)
+    sequence_probabilities = [1.0 for _sequence in sequences]
     with torch.inference_mode():
-        for sequence in sequences:
-            input_ids = model_inputs["input_ids"]
-            attention_mask = model_inputs["attention_mask"]
-            sequence_probability = 1.0
-            for token_id in sequence:
-                logits = model(input_ids=input_ids, attention_mask=attention_mask).logits[0, -1]
-                probability = torch.softmax(logits, dim=-1)[int(token_id)]
-                sequence_probability *= float(probability.item())
-                next_id = torch.tensor([[int(token_id)]], dtype=torch.long, device=input_ids.device)
-                next_mask = torch.ones_like(next_id)
-                input_ids = torch.cat([input_ids, next_id], dim=-1)
-                attention_mask = torch.cat([attention_mask, next_mask], dim=-1)
-            total += sequence_probability
-    return total
+        for depth in range(max_length):
+            active_indexes = [
+                index for index, sequence in enumerate(sequences) if depth < len(sequence)
+            ]
+            if not active_indexes:
+                continue
+            input_ids = model_inputs["input_ids"].repeat(len(active_indexes), 1)
+            attention_mask = model_inputs["attention_mask"].repeat(len(active_indexes), 1)
+            if depth > 0:
+                prefix_tokens = torch.tensor(
+                    [sequences[index][:depth] for index in active_indexes],
+                    dtype=torch.long,
+                    device=input_ids.device,
+                )
+                input_ids = torch.cat([input_ids, prefix_tokens], dim=-1)
+                attention_mask = torch.cat([attention_mask, torch.ones_like(prefix_tokens)], dim=-1)
+            logits = model(input_ids=input_ids, attention_mask=attention_mask).logits[:, -1]
+            probabilities = torch.softmax(logits, dim=-1)
+            target_ids = torch.tensor(
+                [sequences[index][depth] for index in active_indexes],
+                dtype=torch.long,
+                device=probabilities.device,
+            )
+            token_probabilities = probabilities.gather(1, target_ids[:, None]).squeeze(1)
+            for batch_index, sequence_index in enumerate(active_indexes):
+                sequence_probabilities[sequence_index] *= float(token_probabilities[batch_index].item())
+    return sum(sequence_probabilities)
 
 
 def _summary_rows(accumulators: dict[str, FeatureAccumulator]) -> list[dict[str, Any]]:

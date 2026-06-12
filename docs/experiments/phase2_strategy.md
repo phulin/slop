@@ -22,9 +22,23 @@ The first implementation slice is a smoke harness, not the full OLMo grid:
 Current CLI:
 
 ```bash
+uv run slop-prepare-phase2-prompts \
+  --input allenai/Dolci-Instruct-SFT-7B \
+  --split train \
+  --sample-size 8 \
+  --max-scan 128 \
+  --sampling-strategy hash_reservoir \
+  --near-duplicate-threshold 0.85 \
+  --output artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8.jsonl \
+  --manifest-output artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8_manifest.csv \
+  --summary-output artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8_summary.json \
+  --wandb-mode online
+```
+
+```bash
 uv run slop-teacher-forced-propensity \
   --model sshleifer/tiny-gpt2 \
-  --input artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl \
+  --input artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8.jsonl \
   --sample-size 8 \
   --feature contrastive_negation \
   --feature slop_lexicon \
@@ -136,3 +150,10 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   (`rhfcryb6`) failed because this GPT-2 generation path rejected the
   `generator` kwarg; the CLI now seeds with `torch.manual_seed`/
   `torch.cuda.manual_seed_all` instead.
+- `stage2-phase2-dolci-sft-prompt-package-8`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/7xkqxesu`) prepared the first
+  prompt-bearing Phase 2 package from `allenai/Dolci-Instruct-SFT-7B`. It
+  scanned 128 rows, found 125 eligible prompt/target rows, filtered 3
+  near-duplicate prompts with MinHash, selected 8 prompts, and logged only the
+  redacted manifest to W&B. Local ignored artifacts are under
+  `artifacts/phase2/prompts/`.

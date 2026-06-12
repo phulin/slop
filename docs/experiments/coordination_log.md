@@ -373,3 +373,15 @@
   `https://wandb.ai/phulin-self/slop-stage1/runs/rhfcryb6` failed because this
   GPT-2 generation path rejected the `generator` kwarg; the CLI now uses
   `torch.manual_seed` and `torch.cuda.manual_seed_all` instead.
+- Phase 2 held-out prompt packaging started. Added a dependency-free MinHash
+  utility and `slop-prepare-phase2-prompts`, which writes local prompt/target
+  JSONL plus a redacted manifest for W&B. First Dolci SFT prompt package run:
+  `stage2-phase2-dolci-sft-prompt-package-8`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/7xkqxesu`. It scanned 128
+  `allenai/Dolci-Instruct-SFT-7B` rows, found 125 eligible prompt/target rows,
+  filtered 3 near-duplicate prompts, selected 8 prompts, and wrote local ignored
+  artifacts under `artifacts/phase2/prompts/`.
+- Teacher-forced exact-sequence mass was batched by continuation depth. For
+  the current 1-3 token initiator sequences this reduces scoring from one model
+  forward per sequence token to at most three forwards per opportunity, before
+  any later trie/prefix-cache optimization.

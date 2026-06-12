@@ -1,7 +1,11 @@
 import csv
 import json
 
+import pytest
+import torch
+
 from slop_sftdiv.cli.teacher_forced_propensity import build_parser, run_teacher_forced_propensity
+from slop_sftdiv.cli.teacher_forced_propensity import _sequence_prob_mass
 
 
 class FakeTokenizer:
@@ -98,3 +102,27 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
     assert summary == logged_tables["propensity_summary"]
     assert logged_payloads[-1]["propensity/opportunities"] == len(rows)
     assert init_kwargs["tags"][:4] == ["stage2", "phase2", "teacher-forced", "smoke"]
+
+
+def test_sequence_prob_mass_batches_by_depth():
+    class UniformModel:
+        def __init__(self):
+            self.calls = 0
+
+        def __call__(self, *, input_ids, attention_mask):
+            del attention_mask
+            self.calls += 1
+            return type("Output", (), {"logits": torch.zeros((*input_ids.shape, 5))})()
+
+    model = UniformModel()
+    mass = _sequence_prob_mass(
+        model,
+        {
+            "input_ids": torch.tensor([[0, 1]], dtype=torch.long),
+            "attention_mask": torch.tensor([[1, 1]], dtype=torch.long),
+        },
+        ((1,), (2, 3)),
+    )
+
+    assert mass == pytest.approx(0.24)
+    assert model.calls == 2
