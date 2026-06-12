@@ -82,3 +82,9 @@
   job type `throughput`, and tags `throughput`, `olmo3`, `dolci_sft`, `tiny`,
   `dry_run`. W&B run: `stage1-dolci-sft-throughput-tiny-dry_run`,
   `https://wandb.ai/phulin-self/slop-stage1/runs/mgvgwscs`.
+- Precision hit-sampling smoke completed with
+  `slop-sample-hits --input allenai/Dolci-Instruct-SFT --sample-size 1 --max-scan 1`.
+  W&B run: `stage1-dolci-sft-hit-sampling-tiny-dry_run`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/awlqhf7r`.
+  The run found 26 candidate hits and wrote 10 sampled hit rows locally for
+  labeling; W&B logged aggregate precision sampling counts only.

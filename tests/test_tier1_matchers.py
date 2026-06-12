@@ -1,4 +1,4 @@
-from slop_sftdiv.features import extract_tier1_features
+from slop_sftdiv.features import extract_tier1_features, iter_tier1_hits
 from slop_sftdiv.features.tier1_matchers import count_tokens
 
 
@@ -54,3 +54,24 @@ def test_empty_text_has_stable_zero_counts_and_denominators():
     assert features.helpers["paragraph_count"] == 0
     assert all(count == 0 for count in features.counts.values())
     assert all(rate == 0.0 for rate in features.rates_per_1k_tokens.values())
+
+
+def test_iter_tier1_hits_returns_spans_and_context():
+    text = "Great question. It is not just fast but reliable. Delve deeper."
+
+    hits = iter_tier1_hits(text, context_chars=8)
+
+    features = {hit.feature for hit in hits}
+    assert {"stock_openers", "contrastive_negation", "slop_lexicon"} <= features
+    delve = next(hit for hit in hits if hit.subtype == "delve")
+    assert delve.text == "Delve"
+    assert text[delve.start : delve.end] == "Delve"
+    assert delve.context.startswith("...")
+
+
+def test_iter_tier1_hits_expands_structure_hits_to_full_line():
+    text = "- Robust tests\nNext line"
+
+    [hit] = [hit for hit in iter_tier1_hits(text) if hit.feature == "list_header_bold_lead_in"]
+
+    assert hit.text == "- Robust tests"

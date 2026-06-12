@@ -122,6 +122,18 @@ class Tier1Features:
     helpers: dict[str, float | int | list[int]]
 
 
+@dataclass(frozen=True)
+class FeatureHit:
+    """One regex-level feature hit for validation sampling."""
+
+    feature: str
+    subtype: str
+    start: int
+    end: int
+    text: str
+    context: str
+
+
 def extract_tier1_features(text: str) -> Tier1Features:
     """Extract Tier-1 feature counts from one text.
 
@@ -195,8 +207,59 @@ def count_tokens(text: str) -> int:
     return len(TOKEN_RE.findall(text))
 
 
+def iter_tier1_hits(text: str, *, context_chars: int = 120) -> list[FeatureHit]:
+    """Return regex-level Tier-1 hits with bounded context for human validation."""
+
+    hits: list[FeatureHit] = []
+    for feature, patterns in _validation_patterns().items():
+        for subtype, pattern in patterns.items():
+            for match in pattern.finditer(text):
+                start, end = match.span()
+                if feature == "list_header_bold_lead_in":
+                    start, end = _line_span(text, start=start, end=end)
+                hits.append(
+                    FeatureHit(
+                        feature=feature,
+                        subtype=subtype,
+                        start=start,
+                        end=end,
+                        text=text[start:end],
+                        context=_context_window(text, start=start, end=end, context_chars=context_chars),
+                    )
+                )
+    return sorted(hits, key=lambda hit: (hit.start, hit.end, hit.feature, hit.subtype))
+
+
 def _count_patterns(text: str, patterns: Mapping[str, re.Pattern[str]]) -> dict[str, int]:
     return {name: len(pattern.findall(text)) for name, pattern in patterns.items()}
+
+
+def _validation_patterns() -> dict[str, Mapping[str, re.Pattern[str]]]:
+    return {
+        "contrastive_negation": CONTRASTIVE_NEGATION_PATTERNS,
+        "slop_lexicon": SLOP_LEXICON,
+        "list_header_bold_lead_in": STRUCTURE_PATTERNS,
+        "stock_openers": STOCK_OPENERS,
+        "stock_closers": STOCK_CLOSERS,
+        "punctuation_rhythm": PUNCTUATION_PATTERNS,
+        "rule_of_three_approx": {"approx_triple": RULE_OF_THREE_PATTERN},
+    }
+
+
+def _context_window(text: str, *, start: int, end: int, context_chars: int) -> str:
+    left = max(0, start - context_chars)
+    right = min(len(text), end + context_chars)
+    prefix = "..." if left > 0 else ""
+    suffix = "..." if right < len(text) else ""
+    return prefix + text[left:right] + suffix
+
+
+def _line_span(text: str, *, start: int, end: int) -> tuple[int, int]:
+    line_start = text.rfind("\n", 0, start) + 1
+    line_end = text.find("\n", end)
+    if line_end == -1:
+        line_end = len(text)
+    return line_start, line_end
 
 
 def _paragraph_token_counts(text: str) -> list[int]:
