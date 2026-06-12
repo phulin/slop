@@ -44,6 +44,9 @@ teacher_forced:
   probability_mass: exact_sequence_first_1_to_3_tokens
   max_prefix_tokens: 1024
   fixed_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
   max_token_start_opportunities: 128
   torch_compile_default: true
   first_token_mass_status: debug_fallback

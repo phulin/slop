@@ -98,8 +98,10 @@ uv run slop-free-running-emission \
 The current exact-sequence estimator sums up to the first three tokenizer
 tokens of each initiating phrase variant. This is enough to avoid the inflated
 first-token smoke estimator, but it is still deliberately small-shard code.
-Before full Phase 2, improve throughput with batching, a tokenizer trie, or
-prefix-cache reuse, and keep neutral controls in the promotion gate.
+Current runs should use batched opportunity scoring with KV-cache continuation
+reuse and a bounded `--cache-branch-batch-size` to avoid branch-fanout OOMs.
+Before full Phase 2, keep benchmarking stable shapes, consider tokenizer-trie
+deduplication, and keep neutral controls in the promotion gate.
 
 ## Promotion Criteria
 

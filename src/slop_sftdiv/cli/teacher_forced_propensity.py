@@ -92,6 +92,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=True,
         help="Use KV-cache continuations for exact sequence mass.",
     )
+    parser.add_argument(
+        "--cache-branch-batch-size",
+        type=int,
+        default=4,
+        help="Maximum unique continuation branches per cached forward; lower to reduce VRAM.",
+    )
     parser.add_argument("--dtype", default="auto", choices=["auto", "float16", "bfloat16", "float32"])
     parser.add_argument("--device", default="auto")
     parser.add_argument("--torch-compile", action=argparse.BooleanOptionalAction, default=True)
@@ -455,10 +461,14 @@ def _sequence_prob_mass_batch_cached(
     model: Any,
     model_inputs: dict[str, Any],
     sequences: tuple[tuple[int, ...], ...],
+    *,
+    cache_branch_batch_size: int,
 ) -> list[float]:
     import torch
 
     batch_size = int(model_inputs["input_ids"].shape[0])
+    if cache_branch_batch_size < 1:
+        raise ValueError("cache_branch_batch_size must be positive")
     if not sequences:
         return [0.0 for _row in range(batch_size)]
     max_length = max(len(sequence) for sequence in sequences)
@@ -484,45 +494,50 @@ def _sequence_prob_mass_batch_cached(
             if not active_sequence_indexes:
                 continue
             branch_prefixes = sorted({sequences[index][:depth] for index in active_sequence_indexes})
-            branch_index = {branch: index for index, branch in enumerate(branch_prefixes)}
-            branch_count = len(branch_prefixes)
-            branch_cache = copy.deepcopy(past_key_values)
-            branch_cache.batch_repeat_interleave(branch_count)
-            branch_tokens = torch.tensor(
-                branch_prefixes,
-                dtype=torch.long,
-                device=model_inputs["input_ids"].device,
-            ).repeat(batch_size, 1)
-            branch_attention = torch.cat(
-                [
-                    model_inputs["attention_mask"].repeat_interleave(branch_count, dim=0),
-                    torch.ones_like(branch_tokens),
-                ],
-                dim=-1,
-            )
-            logits = model(
-                input_ids=branch_tokens,
-                attention_mask=branch_attention,
-                past_key_values=branch_cache,
-                use_cache=True,
-            ).logits[:, -1]
-            probabilities = torch.softmax(logits, dim=-1).reshape(batch_size, branch_count, -1)
-            active_tensor = torch.tensor(
-                active_sequence_indexes,
-                dtype=torch.long,
-                device=sequence_probabilities.device,
-            )
-            branch_rows = torch.tensor(
-                [branch_index[sequences[index][:depth]] for index in active_sequence_indexes],
-                dtype=torch.long,
-                device=probabilities.device,
-            )
-            target_ids = torch.tensor(
-                [sequences[index][depth] for index in active_sequence_indexes],
-                dtype=torch.long,
-                device=probabilities.device,
-            )
-            sequence_probabilities[:, active_tensor] *= probabilities[:, branch_rows, target_ids]
+            for branch_start in range(0, len(branch_prefixes), cache_branch_batch_size):
+                branch_chunk = branch_prefixes[branch_start : branch_start + cache_branch_batch_size]
+                branch_index = {branch: index for index, branch in enumerate(branch_chunk)}
+                chunk_active_indexes = [
+                    index for index in active_sequence_indexes if sequences[index][:depth] in branch_index
+                ]
+                branch_count = len(branch_chunk)
+                branch_cache = copy.deepcopy(past_key_values)
+                branch_cache.batch_repeat_interleave(branch_count)
+                branch_tokens = torch.tensor(
+                    branch_chunk,
+                    dtype=torch.long,
+                    device=model_inputs["input_ids"].device,
+                ).repeat(batch_size, 1)
+                branch_attention = torch.cat(
+                    [
+                        model_inputs["attention_mask"].repeat_interleave(branch_count, dim=0),
+                        torch.ones_like(branch_tokens),
+                    ],
+                    dim=-1,
+                )
+                logits = model(
+                    input_ids=branch_tokens,
+                    attention_mask=branch_attention,
+                    past_key_values=branch_cache,
+                    use_cache=True,
+                ).logits[:, -1]
+                probabilities = torch.softmax(logits, dim=-1).reshape(batch_size, branch_count, -1)
+                active_tensor = torch.tensor(
+                    chunk_active_indexes,
+                    dtype=torch.long,
+                    device=sequence_probabilities.device,
+                )
+                branch_rows = torch.tensor(
+                    [branch_index[sequences[index][:depth]] for index in chunk_active_indexes],
+                    dtype=torch.long,
+                    device=probabilities.device,
+                )
+                target_ids = torch.tensor(
+                    [sequences[index][depth] for index in chunk_active_indexes],
+                    dtype=torch.long,
+                    device=probabilities.device,
+                )
+                sequence_probabilities[:, active_tensor] *= probabilities[:, branch_rows, target_ids]
         return [float(item) for item in sequence_probabilities.sum(dim=1).detach().cpu()]
 
 
@@ -539,6 +554,7 @@ def _score_opportunities(
     fixed_prefix_tokens: int,
     opportunity_batch_size: int,
     sequence_cache: bool,
+    cache_branch_batch_size: int,
 ) -> tuple[list[float], list[int]]:
     prob_masses = [0.0 for _opportunity in opportunities]
     prefix_token_counts = [0 for _opportunity in opportunities]
@@ -560,7 +576,12 @@ def _score_opportunities(
                     _first_token_ids(sequences),
                 )
             elif sequence_cache:
-                prob_masses[index] = _sequence_prob_mass_batch_cached(model, model_inputs, sequences)[0]
+                prob_masses[index] = _sequence_prob_mass_batch_cached(
+                    model,
+                    model_inputs,
+                    sequences,
+                    cache_branch_batch_size=cache_branch_batch_size,
+                )[0]
             else:
                 prob_masses[index] = _sequence_prob_mass(model, model_inputs, sequences)
             prefix_token_counts[index] = int(model_inputs["prefix_tokens"])
@@ -589,7 +610,12 @@ def _score_opportunities(
                     _first_token_ids(sequences),
                 )
             elif sequence_cache:
-                chunk_masses = _sequence_prob_mass_batch_cached(model, model_inputs, sequences)
+                chunk_masses = _sequence_prob_mass_batch_cached(
+                    model,
+                    model_inputs,
+                    sequences,
+                    cache_branch_batch_size=cache_branch_batch_size,
+                )
             else:
                 chunk_masses = _sequence_prob_mass_batch(model, model_inputs, sequences)
             for index, prob_mass, prefix_tokens in zip(
@@ -629,6 +655,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]], columns: list[str]) -> No
 def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, Any]]:
     if args.opportunity_batch_size < 1:
         raise ValueError("opportunity_batch_size must be positive")
+    if args.cache_branch_batch_size < 1:
+        raise ValueError("cache_branch_batch_size must be positive")
     SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS = _load_corpus_components()
     tokenizer, model, device = _load_model(
         model_name=args.model,
@@ -675,6 +703,7 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
             "fixed_prefix_tokens": args.fixed_prefix_tokens,
             "opportunity_batch_size": args.opportunity_batch_size,
             "sequence_cache": args.sequence_cache,
+            "cache_branch_batch_size": args.cache_branch_batch_size,
             "dtype": args.dtype,
             "device": str(device),
             "torch_compile": args.torch_compile,
@@ -713,6 +742,7 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
                         fixed_prefix_tokens=args.fixed_prefix_tokens,
                         opportunity_batch_size=args.opportunity_batch_size,
                         sequence_cache=args.sequence_cache,
+                        cache_branch_batch_size=args.cache_branch_batch_size,
                     )
                     for opportunity, prob_mass, prefix_tokens in zip(
                         opportunities,

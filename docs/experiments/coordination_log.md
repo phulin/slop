@@ -442,3 +442,21 @@
   `2.75e-04` versus scalar. Torch Dynamo hit the recompile limit during the
   mixed-mode benchmark, so full runs should keep scorer mode and shapes as
   stable as possible.
+- A one-document cached OLMo integration attempt with unchunked branches
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/dhss4z9n`) OOMed under
+  `torch.compile`; continuation branch fanout can still materialize too much
+  attention state even when prefix KV cache is used.
+- Added `--cache-branch-batch-size` to split cached continuation branches. OLMo
+  SFT benchmark with branch chunk size 2:
+  `stage2-phase2-olmo3-sft-propensity-scorer-cache-branch2-benchmark`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/6j4g3p0v`. At batch 16,
+  scalar replay measured 2.73 opportunities/sec, batched replay 3.17, and
+  branch-chunked KV-cache 25.35 with max absolute difference `2.44e-04`.
+- Branch-chunked cached OLMo integration smoke succeeded:
+  `stage2-phase2-olmo3-sft-positive-control1-cached-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/mbdegkow`. It scored one
+  target document, 131 opportunities, and three feature summaries without OOM.
+  End-to-end throughput including compile overhead was 1.23 opportunities/sec.
+  The row had one pooled `neutral_controls` reference initiation and no
+  `slop_lexicon` or `stock_openers` reference initiations, so this validates the
+  optimized scorer path but is not an AF result.

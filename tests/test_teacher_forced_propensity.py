@@ -215,7 +215,12 @@ def test_sequence_prob_mass_cached_batch_matches_scalar_path():
     }
     sequences = ((1,), (2, 3), (4, 5, 6))
 
-    cached = _sequence_prob_mass_batch_cached(model, batch_inputs, sequences)
+    cached = _sequence_prob_mass_batch_cached(
+        model,
+        batch_inputs,
+        sequences,
+        cache_branch_batch_size=2,
+    )
     scalar = [
         _sequence_prob_mass(
             model,

@@ -23,6 +23,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--feature", default="slop_lexicon")
     parser.add_argument("--batch-size", action="append", type=int, default=[])
     parser.add_argument("--prefix-tokens", type=int, default=64)
+    parser.add_argument("--cache-branch-batch-size", type=int, default=4)
     parser.add_argument("--repeats", type=int, default=3)
     parser.add_argument("--warmup", type=int, default=1)
     parser.add_argument("--seed", type=int, default=1729)
@@ -120,6 +121,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
             "feature": args.feature,
             "batch_sizes": batch_sizes,
             "prefix_tokens": args.prefix_tokens,
+            "cache_branch_batch_size": args.cache_branch_batch_size,
             "repeats": args.repeats,
             "warmup": args.warmup,
             "dtype": args.dtype,
@@ -156,7 +158,12 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                 return _sequence_prob_mass_batch(model, model_inputs, sequences)
 
             def cached_call() -> list[float]:
-                return _sequence_prob_mass_batch_cached(model, model_inputs, sequences)
+                return _sequence_prob_mass_batch_cached(
+                    model,
+                    model_inputs,
+                    sequences,
+                    cache_branch_batch_size=args.cache_branch_batch_size,
+                )
 
             scalar_seconds, scalar_result = _time_call(
                 scalar_call,
