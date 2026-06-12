@@ -8,10 +8,14 @@ are interpreted.
 
 - [ ] Generate reproducible hit samples for each Tier-1 feature.
 - [ ] Hand-label sampled hits with the shared label schema.
-- [ ] Compute per-feature precision and ambiguous rate.
-- [ ] Demote features that miss the precision or reviewability gates.
-- [ ] Log validation metrics and artifacts to W&B.
-- [ ] Apply go/no-go rules before making Phase 1 claims.
+- [ ] Compute per-feature precision and ambiguous rate. Ready: scoring inputs,
+  formulas, report fields, and W&B metric/table names are specified below.
+- [ ] Demote features that miss the precision or reviewability gates. Planned:
+  scoring report emits core-feature gate status and demotion reason fields.
+- [ ] Log validation metrics and artifacts to W&B. Planned: scoring step logs
+  aggregate metrics, per-feature metrics, and labeled-hit/report tables.
+- [ ] Apply go/no-go rules before making Phase 1 claims. Planned: use the
+  scoring report's core gate summary before interpreting Phase 1 rates.
 
 ## Hit Samples
 
@@ -51,6 +55,70 @@ Precision is `exact / total_labeled`. `partial`, `false_positive`, and
 `ambiguous` all count against the Stage 1 precision gate unless a feature spec
 explicitly declares a narrower valid-use calculation.
 
+## Label Scoring Step
+
+Run the scoring step after label CSVs are complete and before any Phase 1 claim
+language is drafted. Command shape:
+
+```bash
+uv run slop-score-labels \
+  --input artifacts/stage1/validation/hit_samples/labeled_hits.csv \
+  --output artifacts/stage1/validation/precision_report.csv \
+  --wandb-project slop-stage1 \
+  --wandb-group precision-validation \
+  --wandb-job-type score-labels
+```
+
+The scorer accepts an input label CSV, an output report CSV, threshold options,
+and optional W&B project/group/job-type arguments.
+
+Required input label fields:
+
+- `feature`
+- `sample_id` or stable row key
+- `label`
+- `labeler`
+- source/corpus fields from `slop-sample-hits`
+- `role` and `pair_id` when the source data is preference-paired
+- `notes` for ambiguous labels or systematic false-positive patterns
+
+Allowed `label` values are exactly `exact`, `partial`, `false_positive`, and
+`ambiguous`. Rows with missing labels or unknown label values fail scoring
+unless `--allow-incomplete` is supplied for in-progress labeling audits.
+
+For each feature:
+
+- `total_labeled = exact + partial + false_positive + ambiguous`
+- `precision = exact / total_labeled`
+- `ambiguous_rate = ambiguous / total_labeled`
+- `false_positive_rate = false_positive / total_labeled`
+- `partial_rate = partial / total_labeled`
+
+If `total_labeled` is zero, precision and rates are undefined and the feature
+fails the reportability gate. Core Tier-1 features pass only when precision is
+`>= 0.90`, ambiguous rate is `<= 0.10`, label counts are auditable, and the
+feature has a stated denominator/opportunity context. Non-core failures should
+be marked exploratory rather than blocking the core Phase 1 go/no-go decision.
+
+The precision report should include one row per feature with:
+
+- `feature`
+- `is_core`
+- `status` (`pass` or `demote`)
+- `labeled`
+- `exact`
+- `partial`
+- `false_positive`
+- `ambiguous`
+- `precision`
+- `ambiguous_rate`
+- `target_precision`
+- `max_ambiguous_rate`
+- `min_labeled`
+- `precision_pass`
+- `ambiguity_pass`
+- `sample_size_pass`
+
 ## Precision Target
 
 The target precision is `>= 0.90` for every feature used in Phase 1 claims.
@@ -76,12 +144,14 @@ must not support Phase 1 headline claims or go/no-go language.
 ## W&B Logging
 
 Use project `slop-stage1`, group `precision-validation`, and job type
-`validate`. Log aggregate metrics only:
+`score-labels`. Log aggregate metrics and tables only:
 
-- `matcher/hits`
-- `matcher/precision`
-- `matcher/ambiguous_rate`
-- per-feature counts for each label
+- `matcher/features_scored`
+- `matcher/features_demoted`
+- `matcher/core_features_scored`
+- `matcher/core_features_demoted`
+- W&B table `precision_report` with one row per feature and the report fields
+  listed in the scoring section
 - artifact references for hit samples, label CSVs, and the precision report
 
 Artifacts should include matcher version, sample seed, source dataset IDs,

@@ -88,3 +88,8 @@
   `https://wandb.ai/phulin-self/slop-stage1/runs/awlqhf7r`.
   The run found 26 candidate hits and wrote 10 sampled hit rows locally for
   labeling; W&B logged aggregate precision sampling counts only.
+- Precision label scoring smoke completed with `slop-score-labels` on a tiny
+  synthetic labeled CSV. W&B run: `stage1-score-labels-tiny-dry_run`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/ssqrchea`.
+  The run scored 2 features, demoted 1 below the configured precision target,
+  and logged a `precision_report` table.

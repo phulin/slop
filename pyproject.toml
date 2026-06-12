@@ -33,6 +33,7 @@ dev = [
 [project.scripts]
 slop-census = "slop_sftdiv.cli.census:main"
 slop-sample-hits = "slop_sftdiv.cli.sample_hits:main"
+slop-score-labels = "slop_sftdiv.cli.score_labels:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
