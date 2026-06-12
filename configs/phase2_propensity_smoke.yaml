@@ -65,16 +65,26 @@ prompt_package:
 
 first_real_run:
   model: allenai/Olmo-3-7B-Instruct-SFT
-  input: artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl
-  sample_size: 1
-  feature: slop_lexicon
-  max_opportunities: 8
-  max_token_start_opportunities: 8
-  fixed_prefix_tokens: 64
-  max_prefix_tokens: 64
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8.jsonl
+  sample_size: 8
+  features:
+    - contrastive_negation
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+  max_opportunities: 48
+  max_token_start_opportunities: 16
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
   dtype: bfloat16
-  wandb_run_id: pp0x4f2y
-  caveat: tiny shard with zero reference initiations; validates plumbing only
+  wandb_run_id: mbsjovsf
+  result:
+    docs: 8
+    opportunities: 227
+    wall_seconds: 376.79138
+    opportunities_per_sec: 0.60246
+    reference_initiations: 0
+  caveat: prompt-package-backed shard with zero reference initiations; validates plumbing and throughput only
 
 free_running_smoke:
   model: sshleifer/tiny-gpt2

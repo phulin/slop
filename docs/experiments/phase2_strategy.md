@@ -157,3 +157,11 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   near-duplicate prompts with MinHash, selected 8 prompts, and logged only the
   redacted manifest to W&B. Local ignored artifacts are under
   `artifacts/phase2/prompts/`.
+- `stage2-phase2-olmo3-sft-promptpkg8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/mbsjovsf`) completed the
+  first prompt-package-backed OLMo SFT teacher-forced run. It scored 8 docs,
+  227 opportunities, and 4 feature summaries in 376.8 seconds, for 0.602
+  opportunities/sec. The package had zero reference initiations for these
+  features, so this validates the held-out prompt package, OLMo loading,
+  compiled exact-sequence scoring, and W&B plumbing; it is not an amplification
+  result.

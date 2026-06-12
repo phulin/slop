@@ -385,3 +385,14 @@
   the current 1-3 token initiator sequences this reduces scoring from one model
   forward per sequence token to at most three forwards per opportunity, before
   any later trie/prefix-cache optimization.
+- First prompt-package-backed OLMo SFT teacher-forced run completed:
+  `stage2-phase2-olmo3-sft-promptpkg8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/mbsjovsf`. It used
+  `allenai/Olmo-3-7B-Instruct-SFT`, the 8-row Dolci SFT prompt package, exact
+  sequence mass, `torch.compile`, and the A100. It scored 8 docs, 227
+  opportunities, and 4 feature summaries in 376.8 seconds, for 0.602
+  opportunities/sec. Mean probability masses were `1.47e-05` for
+  `contrastive_negation`, `1.62e-04` for `slop_lexicon`, `3.32e-04` for
+  `stock_closers`, and `8.79e-05` for `stock_openers`. There were zero
+  reference initiations, so this is a plumbing and throughput run, not an AF
+  result.
