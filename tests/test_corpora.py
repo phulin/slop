@@ -132,3 +132,59 @@ def test_preference_chat_lists_extract_assistant_responses(tmp_path):
     assert record.text == "Great question. Use assertions."
     assert record.chosen == "Great question. Use assertions."
     assert record.rejected == "No."
+
+
+def test_row_metadata_promotes_common_corpus_fields_and_json_metadata(tmp_path):
+    path = tmp_path / "dolma.jsonl"
+    _write_jsonl(
+        path,
+        [
+            {
+                "id": "doc-1",
+                "text": "Document text.",
+                "source": "common_crawl",
+                "version": "v1",
+                "metadata": json.dumps({"domain": "web", "quality": 0.8, "nested": {"skip": True}}),
+                "attributes": {"language": "en", "score": 0.9},
+            }
+        ],
+    )
+
+    [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="dolma")))
+
+    assert record.metadata["source"] == "common_crawl"
+    assert record.metadata["version"] == "v1"
+    assert record.metadata["inferred_stratum"] == "web_cc"
+    assert record.metadata["metadata.domain"] == "web"
+    assert record.metadata["metadata.quality"] == 0.8
+    assert "metadata.nested" not in record.metadata
+    assert record.metadata["attributes.language"] == "en"
+    assert record.metadata["attributes.score"] == 0.9
+
+
+def test_source_metadata_overrides_promoted_row_metadata(tmp_path):
+    path = tmp_path / "rows.jsonl"
+    _write_jsonl(path, [{"id": "row-1", "text": "Text.", "domain": "row-domain"}])
+
+    [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="rows", domain="source-domain")))
+
+    assert record.metadata["domain"] == "source-domain"
+
+
+def test_row_metadata_infers_scientific_stratum(tmp_path):
+    path = tmp_path / "science.jsonl"
+    _write_jsonl(
+        path,
+        [
+            {
+                "id": "doc-1",
+                "text": "Scientific PDF text.",
+                "source": "olmocr_science_pdfs",
+                "metadata": json.dumps({"collection": "arxiv"}),
+            }
+        ],
+    )
+
+    [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="dolma")))
+
+    assert record.metadata["inferred_stratum"] == "scientific"

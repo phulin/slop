@@ -149,3 +149,36 @@ def test_run_census_does_not_log_raw_preference_text_to_wandb(tmp_path, monkeypa
     assert "Sensitive prompt" not in payload
     assert "Sensitive chosen" not in payload
     assert "Sensitive rejected" not in payload
+
+
+def test_run_census_groups_by_promoted_source_metadata(tmp_path, monkeypatch):
+    monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
+    input_path = tmp_path / "rows.jsonl"
+    output_path = tmp_path / "summary.csv"
+    input_path.write_text(
+        "\n".join(
+            json.dumps(row)
+            for row in [
+                {"id": "a", "text": "Delve into tests.", "source": "web_cc"},
+                {"id": "b", "text": "Great question.", "source": "forums_qa"},
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "2",
+            "--output",
+            str(output_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    frame = run_census(args)
+
+    assert set(frame["subset"]) == {"web_cc", "forums_qa"}

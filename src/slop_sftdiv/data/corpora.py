@@ -29,6 +29,22 @@ DEFAULT_PROMPT_FIELDS = ("prompt", "instruction", "question", "input", "query", 
 DEFAULT_CHOSEN_FIELDS = ("chosen", "accepted", "preferred", "winner")
 DEFAULT_REJECTED_FIELDS = ("rejected", "discarded", "non_preferred", "loser")
 DEFAULT_ID_FIELDS = ("id", "uid", "uuid", "doc_id", "document_id", "source_id")
+PROMOTED_METADATA_FIELDS = (
+    "source",
+    "source_dataset",
+    "domain",
+    "dataset",
+    "dataset_source",
+    "data_source",
+    "original_dataset",
+    "preference_type",
+    "chosen_model",
+    "rejected_model",
+    "version",
+    "created",
+    "added",
+)
+JSON_METADATA_FIELDS = ("metadata", "doc", "attributes")
 
 
 @dataclass(frozen=True)
@@ -284,6 +300,7 @@ def extract_record(
         "hf_config": source.hf_config,
         "streaming": source.streaming if source.kind == "hf" else None,
     }
+    metadata.update(_row_metadata(row))
     metadata.update(source.metadata)
 
     return ExtractedRecord(
@@ -398,6 +415,69 @@ def _coerce_text(value: Any, *, preferred_roles: Sequence[str] = ()) -> str | No
             if text:
                 return text
     return None
+
+
+def _row_metadata(row: Mapping[str, Any]) -> dict[str, Any]:
+    metadata: dict[str, Any] = {}
+    for field_name in PROMOTED_METADATA_FIELDS:
+        value = _lookup_path(row, field_name)
+        if _is_metadata_scalar(value):
+            metadata[field_name] = value
+
+    for field_name in JSON_METADATA_FIELDS:
+        value = _lookup_path(row, field_name)
+        parsed = _coerce_metadata_mapping(value)
+        if parsed is None:
+            continue
+        for key, item in parsed.items():
+            if _is_metadata_scalar(item):
+                metadata[f"{field_name}.{key}"] = item
+    metadata["inferred_stratum"] = _infer_stratum(metadata)
+    return metadata
+
+
+def _coerce_metadata_mapping(value: Any) -> Mapping[str, Any] | None:
+    if isinstance(value, Mapping):
+        return value
+    if isinstance(value, str):
+        stripped = value.strip()
+        if not stripped.startswith("{"):
+            return None
+        try:
+            parsed = json.loads(stripped)
+        except json.JSONDecodeError:
+            return None
+        if isinstance(parsed, Mapping):
+            return parsed
+    return None
+
+
+def _is_metadata_scalar(value: Any) -> bool:
+    return isinstance(value, (str, int, float, bool)) or value is None
+
+
+def _infer_stratum(metadata: Mapping[str, Any]) -> str:
+    haystack = " ".join(
+        str(value).lower()
+        for value in metadata.values()
+        if isinstance(value, (str, int, float, bool)) and value not in ("", None)
+    )
+    if not haystack:
+        return "unknown"
+    if any(marker in haystack for marker in ("stack_edu", "cranecode", "code", "github")):
+        return "code"
+    if any(marker in haystack for marker in ("olmocr", "science", "scientific", "paper", "arxiv")):
+        return "scientific"
+    if any(marker in haystack for marker in ("wiki", "wikipedia")):
+        return "wiki"
+    if any(marker in haystack for marker in ("forum", "reddit", "stackexchange", "stack_exchange", "qa", "q&a")):
+        return "forums_qa"
+    if any(
+        marker in haystack
+        for marker in ("common_crawl", "cc-main", "dclm", "c4", "web", "crawl")
+    ):
+        return "web_cc"
+    return "unknown"
 
 
 def _record_id(

@@ -91,6 +91,25 @@ def _metadata_without_raw_text(row: dict[str, Any]) -> dict[str, Any]:
     return {key: value for key, value in row.items() if key not in raw_text_keys}
 
 
+def _subset_for_record(metadata: dict[str, Any] | Any, split: str | None) -> str:
+    for field_name in (
+        "stratum",
+        "provenance",
+        "inferred_stratum",
+        "source_dataset",
+        "domain",
+        "source",
+        "dataset",
+        "data_source",
+        "metadata.source",
+        "metadata.domain",
+    ):
+        value = metadata.get(field_name)
+        if value:
+            return str(value)
+    return split or "default"
+
+
 def _rate_per_1k(count: int, tokens: int) -> float:
     return 1000.0 * count / max(tokens, 1)
 
@@ -172,12 +191,7 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
                 records_kwargs["text_fields"] = text_fields
             records = iter_corpus_records(source, **records_kwargs)
             for record in tqdm(records, desc=f"census:{source.name}", unit="doc"):
-                subset = str(
-                    record.metadata.get("stratum")
-                    or record.metadata.get("provenance")
-                    or record.split
-                    or "default"
-                )
+                subset = _subset_for_record(record.metadata, record.split)
                 pair_analyses: dict[str, tuple[Counter[str], int]] = {}
                 for role, text, pair_id in _measurement_texts(record):
                     analysis = extract_tier1_features(text)

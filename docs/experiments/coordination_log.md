@@ -59,3 +59,15 @@
 - Pair-delta smoke output shape: 16 aggregate feature-rate rows and 16
   per-pair delta rows for 2 preference pairs; W&B logged
   `preference_pair_deltas/rows = 16`.
+- Live Dolci SFT metadata smoke completed with
+  `slop-census --input allenai/Dolci-Instruct-SFT --sample-size 2 --max-scan 2`.
+  W&B run: `stage1-dolci-sft-metadata-smoke`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/ojo0qa87`.
+- Live Dolma 3 tiny census completed with
+  `slop-census --input allenai/dolma3_mix-6T-1025-7B --sample-size 2 --max-scan 2`.
+  W&B run: `stage1-dolma3-tiny-smoke`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/f6ozyjv3`.
+  The run produced 8 aggregate rows grouped under inferred stratum `web_cc`.
+  HF had one read-timeout retry and took about 51 seconds for two docs, so
+  larger Dolma samples need an authenticated/cache-aware throughput calibration
+  before spending more time on remote streaming.
