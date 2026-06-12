@@ -9,11 +9,11 @@ Scope: Phase 1 completion gaps only, based on `EXPERIMENTS.md` sections 1, 2, 3,
 Phase 1 is scaffolded and now has a retained 10k-row Dolci SFT+DPO sample, but
 it is not complete for publishable frequency-census claims. The current state
 supports CLI/schema confidence, W&B logging, retained Dolci SFT/DPO census
-tables, retained pair-delta output, length-aware Result A diagnostics, and a
+tables, retained pair-delta output, metadata-aware Result A diagnostics, and a
 1,400-row manual labeling queue. The main gaps are manifest-backed corpus
 samples, manual precision labels/scoring, exact source identification for
-replication data, Dolma stratification, and dataset-card/source verification
-needed to interpret chosen/rejected roles.
+replication data, Dolma stratification, and final dataset-card/source
+verification needed to make chosen/rejected interpretation claims.
 
 ## Completed
 
@@ -54,6 +54,19 @@ needed to interpret chosen/rejected roles.
   (`https://wandb.ai/phulin-self/slop-stage1/runs/xieewrhy`). It verifies
   retained-prefix SFT source/domain counts and DPO preference-type/model
   counts.
+- Retained 10k-row Dolci DPO metadata-aware Result A analysis completed and
+  logged to W&B:
+  `stage1-olmo3-dolci-dpo-10k-metadata-pair-analysis-retained_sample`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/sgszvu4u`). Input:
+  `artifacts/stage1/census/olmo3_dolci_dpo_10k_metadata_pair_deltas.csv`.
+  Output:
+  `artifacts/stage1/census/olmo3_dolci_dpo_10k_metadata_pair_analysis.csv`.
+  It grouped 79,960 pair-delta rows by
+  `source/subset/preference_type/chosen_model/rejected_model/feature`,
+  producing 3,352 grouped feature rows and 72 BH-FDR-significant rows before
+  manual precision validation. Grouped row counts by `preference_type` were
+  `llm_judged` 3,312, `multiturn_self_talk` 16,
+  `multiturn_synthetic_context` 16, and `delta_learning` 8.
 
 ## Dry-Run Only
 
@@ -190,9 +203,18 @@ Required manual artifact:
 - Dolci DPO construction and chosen/rejected role interpretation remain unresolved for final Result A claims. `EXPERIMENTS.md` says to verify whether `Dolci-Instruct-DPO-7B` uses Delta-Learning strong-vs-weak model responses before locking interpretation.
 - The dataset-card and retained-prefix probe now verify that Dolci DPO is a
   mixed construction with Delta Learning, LLM-judged, and multiturn subsets.
-  The blocker is narrowed: aggregate Result A interpretation must stratify or
-  qualify by `preference_type` and model pair rather than treating the table as
-  pure human/RM preference.
+  The retained metadata-aware pair analysis further narrows the blocker by
+  stratifying Result A rows by `preference_type`, `chosen_model`, and
+  `rejected_model`, but it does not close the blocker for final Phase 1 claims:
+  manual precision validation, Dolma 3 retained stratified sampling, the formal
+  corpus package, and SmolLM3/Tulu replication-source work remain.
+- Top metadata-aware significant examples include `delta_learning`
+  `qwen3-no_reasoning-32b` vs `qwen3-no_reasoning-0.6b` for `stock_closers`
+  (`n=4,730`, `mean_delta=0.169827...`, `p=2.628e-15`, `q=8.809e-12`,
+  `chosen_gt_rejected`) and `punctuation_rhythm` (`n=4,730`,
+  `mean_delta=4.271586...`, `p=5.253e-11`, `q=8.804e-08`), plus
+  `llm_judged` `gpt-120b` vs `olmo2-1b` `punctuation_rhythm` (`n=64`,
+  `mean_delta=95.202...`, `p=7.672e-10`, `q=8.572e-07`).
 - `corpus_samples.yaml` explicitly blocks final Result A interpretation if
   chosen/rejected role mapping is ambiguous. Current schema evidence supports
   response extraction and pair identity, but construction-aware interpretation
@@ -234,8 +256,10 @@ Exit criteria still unmet:
 - Retained Dolci SFT/DPO census and pair-analysis CSVs now exist for a 10k
   sample and are logged to W&B, but the formal named parquet/manifest/summary
   artifacts are still missing.
-- Pair IDs and chosen/rejected alignment have retained-run evidence for Dolci
-  DPO, but chosen/rejected construction semantics are still not verified.
+- Pair IDs, chosen/rejected alignment, and metadata-aware grouping have
+  retained-run evidence for Dolci DPO, but chosen/rejected construction
+  semantics are still not sufficient for final Phase 1 claims without the
+  remaining validation/package work.
 - W&B now has retained Dolci SFT/DPO Stage 1 records, but retained Dolma,
   SmolLM3/Tulu, precision-scoring, and manifest-backed corpus artifacts are
   still needed.

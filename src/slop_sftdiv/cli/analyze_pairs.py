@@ -14,6 +14,9 @@ from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 REPORT_COLUMNS = [
     "source",
     "subset",
+    "preference_type",
+    "chosen_model",
+    "rejected_model",
     "feature",
     "pairs",
     "positive_pairs",
@@ -98,7 +101,7 @@ def _binomial_two_sided_p(successes: int, trials: int) -> float:
     return min(1.0, 2.0 * tail_probability)
 
 
-GroupKey = tuple[str, str, str]
+GroupKey = tuple[str, str, str, str, str, str]
 
 
 def _benjamini_hochberg(p_values: dict[GroupKey, float]) -> dict[GroupKey, float]:
@@ -259,13 +262,27 @@ def _empty_logit_result() -> dict[str, Any]:
 def analyze_rows(rows: list[dict[str, Any]], *, alpha: float) -> list[dict[str, Any]]:
     by_group: dict[GroupKey, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
-        by_group[(str(row.get("source", "")), str(row.get("subset", "")), str(row["feature"]))].append(
-            row
-        )
+        by_group[
+            (
+                str(row.get("source", "")),
+                str(row.get("subset", "")),
+                str(row.get("preference_type", "")),
+                str(row.get("chosen_model", "")),
+                str(row.get("rejected_model", "")),
+                str(row["feature"]),
+            )
+        ].append(row)
 
     reports: list[dict[str, Any]] = []
     p_values: dict[GroupKey, float] = {}
-    for (source, subset, feature), feature_rows in sorted(by_group.items()):
+    for (
+        source,
+        subset,
+        preference_type,
+        chosen_model,
+        rejected_model,
+        feature,
+    ), feature_rows in sorted(by_group.items()):
         deltas = [_float(row, "chosen_minus_rejected") for row in feature_rows]
         chosen_rates = [_float(row, "chosen_rate_per_1k_tokens") for row in feature_rows]
         rejected_rates = [_float(row, "rejected_rate_per_1k_tokens") for row in feature_rows]
@@ -284,7 +301,7 @@ def analyze_rows(rows: list[dict[str, Any]], *, alpha: float) -> list[dict[str, 
         sign_trials = positive + negative
         sign_successes = max(positive, negative)
         p_value = _binomial_two_sided_p(sign_successes, sign_trials)
-        p_values[(source, subset, feature)] = p_value
+        p_values[(source, subset, preference_type, chosen_model, rejected_model, feature)] = p_value
         direction = "chosen_gt_rejected" if positive > negative else "rejected_gt_chosen"
         if positive == negative:
             direction = "tie"
@@ -293,6 +310,9 @@ def analyze_rows(rows: list[dict[str, Any]], *, alpha: float) -> list[dict[str, 
                 "feature": feature,
                 "source": source,
                 "subset": subset,
+                "preference_type": preference_type,
+                "chosen_model": chosen_model,
+                "rejected_model": rejected_model,
                 "pairs": len(feature_rows),
                 "positive_pairs": positive,
                 "negative_pairs": negative,
@@ -315,7 +335,14 @@ def analyze_rows(rows: list[dict[str, Any]], *, alpha: float) -> list[dict[str, 
     q_values = _benjamini_hochberg(p_values)
     for report in reports:
         q_value = q_values[
-            (str(report["source"]), str(report["subset"]), str(report["feature"]))
+            (
+                str(report["source"]),
+                str(report["subset"]),
+                str(report["preference_type"]),
+                str(report["chosen_model"]),
+                str(report["rejected_model"]),
+                str(report["feature"]),
+            )
         ]
         report["bh_q"] = q_value
         report["fdr_significant"] = q_value <= alpha

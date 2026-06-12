@@ -161,3 +161,33 @@
   and `qwen3-no_reasoning-0.6b` (5,669), reinforcing that Dolci DPO Result A
   should be interpreted as mixed preference-construction signal, not a pure
   human-preference signal.
+- Retained 10k-row Dolci DPO metadata-aware Result A analysis completed:
+  `stage1-olmo3-dolci-dpo-10k-metadata-pair-analysis-retained_sample`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/sgszvu4u`.
+  Input:
+  `artifacts/stage1/census/olmo3_dolci_dpo_10k_metadata_pair_deltas.csv`.
+  Output:
+  `artifacts/stage1/census/olmo3_dolci_dpo_10k_metadata_pair_analysis.csv`.
+  It grouped 79,960 pair-delta rows by
+  `source/subset/preference_type/chosen_model/rejected_model/feature`,
+  producing 3,352 grouped feature rows and 72 BH-FDR-significant rows before
+  manual precision validation. Group counts by `preference_type` were
+  `llm_judged` 3,312 rows, `multiturn_self_talk` 16 rows,
+  `multiturn_synthetic_context` 16 rows, and `delta_learning` 8 rows. Top
+  significant examples include `delta_learning`
+  `qwen3-no_reasoning-32b` vs `qwen3-no_reasoning-0.6b` for `stock_closers`
+  (`n=4,730`, `mean_delta=0.169827...`, `p=2.628e-15`, `q=8.809e-12`,
+  `chosen_gt_rejected`) and `punctuation_rhythm` (`n=4,730`,
+  `mean_delta=4.271586...`, `p=5.253e-11`, `q=8.804e-08`), plus
+  `llm_judged` `gpt-120b` vs `olmo2-1b` `punctuation_rhythm` (`n=64`,
+  `mean_delta=95.202...`, `p=7.672e-10`, `q=8.572e-07`). This narrows the
+  DPO interpretation blocker by separating preference construction and model
+  pair, but it does not close Phase 1 because manual precision validation,
+  Dolma 3 retained stratified sampling, the formal corpus package, and
+  SmolLM3/Tulu work remain.
+- Retained 10k-row Dolci DPO metadata-aware artifact manifest completed:
+  `stage1-olmo3-dolci-dpo-10k-metadata-artifact-manifest`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/e7cc238x`. It records the
+  metadata feature-rate, pair-delta, and pair-analysis CSVs as 3 artifacts,
+  16,219,490 bytes, and 83,360 CSV records. Local generated manifests are under
+  `artifacts/stage1/corpora/olmo3_dolci_10k_metadata_retained_manifest.*`.

@@ -9,6 +9,9 @@ FIELDNAMES = [
     "source",
     "subset",
     "pair_id",
+    "preference_type",
+    "chosen_model",
+    "rejected_model",
     "feature",
     "chosen_count",
     "rejected_count",
@@ -27,6 +30,9 @@ def _row(pair_id, feature, delta, chosen_tokens=100, rejected_tokens=80, subset=
         "source": "prefs",
         "subset": subset,
         "pair_id": pair_id,
+        "preference_type": "",
+        "chosen_model": "",
+        "rejected_model": "",
         "feature": feature,
         "chosen_count": "0",
         "rejected_count": "0",
@@ -125,6 +131,28 @@ def test_analyze_rows_keeps_source_subset_groups_separate():
 
     assert len(report) == 2
     assert {row["subset"] for row in report} == {"a", "b"}
+
+
+def test_analyze_rows_keeps_preference_metadata_groups_separate():
+    rows = [
+        {
+            **_row("p1", "slop_lexicon", 1.0),
+            "preference_type": "delta_learning",
+            "chosen_model": "strong",
+            "rejected_model": "weak",
+        },
+        {
+            **_row("p2", "slop_lexicon", -1.0),
+            "preference_type": "llm_judged",
+            "chosen_model": "judge_chosen",
+            "rejected_model": "judge_rejected",
+        },
+    ]
+
+    report = analyze_rows(rows, alpha=0.05)
+
+    assert len(report) == 2
+    assert {row["preference_type"] for row in report} == {"delta_learning", "llm_judged"}
 
 
 def test_analyze_rows_logit_controls_for_length_direction():

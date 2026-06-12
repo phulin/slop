@@ -79,15 +79,40 @@ Local retained-prefix probe:
 - Top chosen model was `qwen3-no_reasoning-32b` with 5,168 rows.
 - Top rejected model was `qwen3-no_reasoning-0.6b` with 5,669 rows.
 
+Local retained metadata-aware pair analysis:
+
+- W&B run:
+  `https://wandb.ai/phulin-self/slop-stage1/runs/sgszvu4u`.
+- Input pair-delta file:
+  `artifacts/stage1/census/olmo3_dolci_dpo_10k_metadata_pair_deltas.csv`.
+- Output analysis file:
+  `artifacts/stage1/census/olmo3_dolci_dpo_10k_metadata_pair_analysis.csv`.
+- The analysis grouped 79,960 pair-delta rows by
+  `source/subset/preference_type/chosen_model/rejected_model/feature`.
+- It produced 3,352 grouped feature rows and 72 BH-FDR-significant rows before
+  manual precision validation.
+- Grouped row counts by `preference_type` were `llm_judged` 3,312,
+  `multiturn_self_talk` 16, `multiturn_synthetic_context` 16, and
+  `delta_learning` 8.
+- Top significant examples include `delta_learning`
+  `qwen3-no_reasoning-32b` vs `qwen3-no_reasoning-0.6b` for `stock_closers`
+  (`n=4,730`, `mean_delta=0.169827...`, `p=2.628e-15`, `q=8.809e-12`,
+  `chosen_gt_rejected`) and `punctuation_rhythm` (`n=4,730`,
+  `mean_delta=4.271586...`, `p=5.253e-11`, `q=8.804e-08`), plus
+  `llm_judged` `gpt-120b` vs `olmo2-1b` `punctuation_rhythm` (`n=64`,
+  `mean_delta=95.202...`, `p=7.672e-10`, `q=8.572e-07`).
+
 Current interpretation:
 
 - Result A on Dolci DPO should not be described as a pure human-preference
   effect. In this dataset it measures the stylistic signal induced by a mixed
   preference construction: Delta Learning heuristic pairs, LLM-judged pairs,
   and multiturn pairs.
-- The retained 10k pair analysis should be stratified by `preference_type` and
-  model pair before final claims. The current aggregate is useful for harness
-  development, but it pools semantically different preference regimes.
+- The retained 10k metadata-aware pair analysis now stratifies by
+  `preference_type` and model pair, narrowing the DPO interpretation blocker.
+  It still does not close Phase 1 because manual precision validation, Dolma 3
+  retained stratified sampling, the formal corpus package, and SmolLM3/Tulu
+  work remain.
 - The current normalizer correctly extracts assistant-only chosen/rejected
   responses and preserves stable pair identity through `prompt_id` when that
   field is selected by the caller.
@@ -125,8 +150,9 @@ Current interpretation:
 
 - Add a retained Dolma 3 stratification probe over a bounded sample and log
   `source` counts to W&B.
-- Add DPO pair-analysis grouping by `preference_type`, `chosen_model`, and
-  `rejected_model` before making final Result A claims.
+- Use DPO pair-analysis grouping by `preference_type`, `chosen_model`, and
+  `rejected_model` in any Result A writeup, and keep aggregate Dolci DPO
+  interpretations explicitly qualified as mixed-construction signal.
 - Map Dolci SFT `source_dataset` and `domain` fields to a defensible
   human/synthetic/mixed provenance taxonomy, or avoid human-vs-synthetic
   claims in Phase 1.
