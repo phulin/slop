@@ -426,3 +426,19 @@
   completion because exact sequence scoring remained too slow. The sequence
   mass loop no longer synchronizes once per initiator probability; it now keeps
   probability accumulation on the GPU and performs a single final scalar sync.
+- Added `slop-benchmark-propensity-scorer` to compare scalar replay, batched
+  replay, and batched KV-cache continuation scoring without running a full
+  corpus job. Tiny GPT-2 benchmark:
+  `stage2-phase2-tiny-gpt2-propensity-scorer-cache-benchmark`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/c0hgm5lm`. At batch 16,
+  scalar replay measured 239.6 opportunities/sec, batched replay 1954.0, and
+  batched KV-cache 2932.9, with max absolute difference
+  `5.82e-11` versus scalar.
+- OLMo SFT scorer microbenchmark:
+  `stage2-phase2-olmo3-sft-propensity-scorer-cache-benchmark`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/fqeur4ct`. At 256 prefix
+  tokens and batch 16, scalar replay measured 2.73 opportunities/sec, batched
+  replay 3.10, and batched KV-cache 29.07, with max absolute difference
+  `2.75e-04` versus scalar. Torch Dynamo hit the recompile limit during the
+  mixed-mode benchmark, so full runs should keep scorer mode and shapes as
+  stable as possible.

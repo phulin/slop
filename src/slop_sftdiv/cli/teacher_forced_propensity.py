@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import os
 import resource
@@ -78,6 +79,18 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=256,
         help="Left-pad prefixes to this length for stable compiled shapes; set 0 for dynamic.",
+    )
+    parser.add_argument(
+        "--opportunity-batch-size",
+        type=int,
+        default=16,
+        help="Number of same-feature opportunities to score per batched model call; set 1 for scalar.",
+    )
+    parser.add_argument(
+        "--sequence-cache",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Use KV-cache continuations for exact sequence mass.",
     )
     parser.add_argument("--dtype", default="auto", choices=["auto", "float16", "bfloat16", "float32"])
     parser.add_argument("--device", default="auto")
@@ -184,6 +197,28 @@ def _prefix_input_ids(
 ) -> dict[str, Any]:
     import torch
 
+    ids, attention_mask, prefix_tokens = _prefix_ids_and_mask(
+        tokenizer,
+        text,
+        char_offset,
+        max_prefix_tokens=max_prefix_tokens,
+        fixed_prefix_tokens=fixed_prefix_tokens,
+    )
+    return {
+        "input_ids": torch.tensor([ids], dtype=torch.long, device=device),
+        "attention_mask": torch.tensor([attention_mask], dtype=torch.long, device=device),
+        "prefix_tokens": prefix_tokens,
+    }
+
+
+def _prefix_ids_and_mask(
+    tokenizer: Any,
+    text: str,
+    char_offset: int,
+    *,
+    max_prefix_tokens: int,
+    fixed_prefix_tokens: int,
+) -> tuple[list[int], list[int], int]:
     prefix = text[:char_offset]
     ids = tokenizer.encode(prefix, add_special_tokens=False)
     if ids:
@@ -211,10 +246,50 @@ def _prefix_input_ids(
         pad_count = max(0, fixed_prefix_tokens - len(ids))
         ids = [pad_id] * pad_count + ids
         attention_mask = [0] * pad_count + attention_mask
+    return ids, attention_mask, sum(attention_mask)
+
+
+def _prefix_input_batch(
+    tokenizer: Any,
+    text: str,
+    opportunities: list[Any],
+    *,
+    max_prefix_tokens: int,
+    fixed_prefix_tokens: int,
+    device: Any,
+) -> dict[str, Any]:
+    import torch
+
+    items = [
+        _prefix_ids_and_mask(
+            tokenizer,
+            text,
+            opportunity.char_offset,
+            max_prefix_tokens=max_prefix_tokens,
+            fixed_prefix_tokens=fixed_prefix_tokens,
+        )
+        for opportunity in opportunities
+    ]
+    max_length = max(len(ids) for ids, _mask, _prefix_tokens in items)
+    pad_id = tokenizer.pad_token_id
+    if pad_id is None:
+        pad_id = tokenizer.eos_token_id
+    if pad_id is None:
+        pad_id = tokenizer.bos_token_id
+    if pad_id is None:
+        raise ValueError("tokenizer has no PAD/EOS/BOS token for batch padding")
+    input_rows = []
+    mask_rows = []
+    prefix_tokens = []
+    for ids, attention_mask, prefix_token_count in items:
+        pad_count = max_length - len(ids)
+        input_rows.append([pad_id] * pad_count + ids)
+        mask_rows.append([0] * pad_count + attention_mask)
+        prefix_tokens.append(prefix_token_count)
     return {
-        "input_ids": torch.tensor([ids], dtype=torch.long, device=device),
-        "attention_mask": torch.tensor([attention_mask], dtype=torch.long, device=device),
-        "prefix_tokens": sum(attention_mask),
+        "input_ids": torch.tensor(input_rows, dtype=torch.long, device=device),
+        "attention_mask": torch.tensor(mask_rows, dtype=torch.long, device=device),
+        "prefix_tokens": prefix_tokens,
     }
 
 
@@ -231,6 +306,25 @@ def _first_token_prob_mass(model: Any, model_inputs: dict[str, Any], initiator_i
         probabilities = torch.softmax(logits, dim=-1)
         index = torch.tensor(sorted(initiator_ids), dtype=torch.long, device=probabilities.device)
         return float(probabilities.index_select(0, index).sum().item())
+
+
+def _first_token_prob_mass_batch(
+    model: Any,
+    model_inputs: dict[str, Any],
+    initiator_ids: set[int],
+) -> list[float]:
+    import torch
+
+    if not initiator_ids:
+        return [0.0 for _row in range(int(model_inputs["input_ids"].shape[0]))]
+    with torch.inference_mode():
+        logits = model(
+            input_ids=model_inputs["input_ids"],
+            attention_mask=model_inputs["attention_mask"],
+        ).logits[:, -1]
+        probabilities = torch.softmax(logits, dim=-1)
+        index = torch.tensor(sorted(initiator_ids), dtype=torch.long, device=probabilities.device)
+        return [float(item) for item in probabilities.index_select(1, index).sum(dim=1).detach().cpu()]
 
 
 def _sequence_prob_mass(
@@ -293,6 +387,221 @@ def _sequence_prob_mass(
         return float(sequence_probabilities.sum().item())
 
 
+def _sequence_prob_mass_batch(
+    model: Any,
+    model_inputs: dict[str, Any],
+    sequences: tuple[tuple[int, ...], ...],
+) -> list[float]:
+    import torch
+
+    batch_size = int(model_inputs["input_ids"].shape[0])
+    if not sequences:
+        return [0.0 for _row in range(batch_size)]
+    max_length = max(len(sequence) for sequence in sequences)
+    with torch.inference_mode():
+        logits = model(
+            input_ids=model_inputs["input_ids"],
+            attention_mask=model_inputs["attention_mask"],
+        ).logits[:, -1]
+        probabilities = torch.softmax(logits, dim=-1)
+        first_token_ids = torch.tensor(
+            [sequence[0] for sequence in sequences],
+            dtype=torch.long,
+            device=probabilities.device,
+        )
+        sequence_probabilities = probabilities.index_select(1, first_token_ids)
+
+        for depth in range(1, max_length):
+            active_sequence_indexes = [
+                index for index, sequence in enumerate(sequences) if depth < len(sequence)
+            ]
+            if not active_sequence_indexes:
+                continue
+            branch_prefixes = sorted({sequences[index][:depth] for index in active_sequence_indexes})
+            branch_index = {branch: index for index, branch in enumerate(branch_prefixes)}
+            branch_count = len(branch_prefixes)
+            input_ids = model_inputs["input_ids"].repeat_interleave(branch_count, dim=0)
+            attention_mask = model_inputs["attention_mask"].repeat_interleave(branch_count, dim=0)
+            prefix_tokens = torch.tensor(
+                branch_prefixes,
+                dtype=torch.long,
+                device=input_ids.device,
+            ).repeat(batch_size, 1)
+            input_ids = torch.cat([input_ids, prefix_tokens], dim=-1)
+            attention_mask = torch.cat([attention_mask, torch.ones_like(prefix_tokens)], dim=-1)
+            logits = model(input_ids=input_ids, attention_mask=attention_mask).logits[:, -1]
+            probabilities = torch.softmax(logits, dim=-1).reshape(batch_size, branch_count, -1)
+            active_tensor = torch.tensor(
+                active_sequence_indexes,
+                dtype=torch.long,
+                device=sequence_probabilities.device,
+            )
+            branch_rows = torch.tensor(
+                [branch_index[sequences[index][:depth]] for index in active_sequence_indexes],
+                dtype=torch.long,
+                device=probabilities.device,
+            )
+            target_ids = torch.tensor(
+                [sequences[index][depth] for index in active_sequence_indexes],
+                dtype=torch.long,
+                device=probabilities.device,
+            )
+            token_probabilities = probabilities[:, branch_rows, target_ids]
+            sequence_probabilities[:, active_tensor] *= token_probabilities
+        return [float(item) for item in sequence_probabilities.sum(dim=1).detach().cpu()]
+
+
+def _sequence_prob_mass_batch_cached(
+    model: Any,
+    model_inputs: dict[str, Any],
+    sequences: tuple[tuple[int, ...], ...],
+) -> list[float]:
+    import torch
+
+    batch_size = int(model_inputs["input_ids"].shape[0])
+    if not sequences:
+        return [0.0 for _row in range(batch_size)]
+    max_length = max(len(sequence) for sequence in sequences)
+    with torch.inference_mode():
+        outputs = model(
+            input_ids=model_inputs["input_ids"],
+            attention_mask=model_inputs["attention_mask"],
+            use_cache=True,
+        )
+        probabilities = torch.softmax(outputs.logits[:, -1], dim=-1)
+        first_token_ids = torch.tensor(
+            [sequence[0] for sequence in sequences],
+            dtype=torch.long,
+            device=probabilities.device,
+        )
+        sequence_probabilities = probabilities.index_select(1, first_token_ids)
+        past_key_values = outputs.past_key_values
+
+        for depth in range(1, max_length):
+            active_sequence_indexes = [
+                index for index, sequence in enumerate(sequences) if depth < len(sequence)
+            ]
+            if not active_sequence_indexes:
+                continue
+            branch_prefixes = sorted({sequences[index][:depth] for index in active_sequence_indexes})
+            branch_index = {branch: index for index, branch in enumerate(branch_prefixes)}
+            branch_count = len(branch_prefixes)
+            branch_cache = copy.deepcopy(past_key_values)
+            branch_cache.batch_repeat_interleave(branch_count)
+            branch_tokens = torch.tensor(
+                branch_prefixes,
+                dtype=torch.long,
+                device=model_inputs["input_ids"].device,
+            ).repeat(batch_size, 1)
+            branch_attention = torch.cat(
+                [
+                    model_inputs["attention_mask"].repeat_interleave(branch_count, dim=0),
+                    torch.ones_like(branch_tokens),
+                ],
+                dim=-1,
+            )
+            logits = model(
+                input_ids=branch_tokens,
+                attention_mask=branch_attention,
+                past_key_values=branch_cache,
+                use_cache=True,
+            ).logits[:, -1]
+            probabilities = torch.softmax(logits, dim=-1).reshape(batch_size, branch_count, -1)
+            active_tensor = torch.tensor(
+                active_sequence_indexes,
+                dtype=torch.long,
+                device=sequence_probabilities.device,
+            )
+            branch_rows = torch.tensor(
+                [branch_index[sequences[index][:depth]] for index in active_sequence_indexes],
+                dtype=torch.long,
+                device=probabilities.device,
+            )
+            target_ids = torch.tensor(
+                [sequences[index][depth] for index in active_sequence_indexes],
+                dtype=torch.long,
+                device=probabilities.device,
+            )
+            sequence_probabilities[:, active_tensor] *= probabilities[:, branch_rows, target_ids]
+        return [float(item) for item in sequence_probabilities.sum(dim=1).detach().cpu()]
+
+
+def _score_opportunities(
+    *,
+    tokenizer: Any,
+    model: Any,
+    device: Any,
+    text: str,
+    opportunities: list[Any],
+    initiator_sequences: dict[str, tuple[tuple[int, ...], ...]],
+    mass_mode: str,
+    max_prefix_tokens: int,
+    fixed_prefix_tokens: int,
+    opportunity_batch_size: int,
+    sequence_cache: bool,
+) -> tuple[list[float], list[int]]:
+    prob_masses = [0.0 for _opportunity in opportunities]
+    prefix_token_counts = [0 for _opportunity in opportunities]
+    if opportunity_batch_size == 1:
+        for index, opportunity in enumerate(opportunities):
+            sequences = initiator_sequences.get(opportunity.feature, ())
+            model_inputs = _prefix_input_ids(
+                tokenizer,
+                text,
+                opportunity.char_offset,
+                max_prefix_tokens=max_prefix_tokens,
+                fixed_prefix_tokens=fixed_prefix_tokens,
+                device=device,
+            )
+            if mass_mode == "first_token":
+                prob_masses[index] = _first_token_prob_mass(
+                    model,
+                    model_inputs,
+                    _first_token_ids(sequences),
+                )
+            elif sequence_cache:
+                prob_masses[index] = _sequence_prob_mass_batch_cached(model, model_inputs, sequences)[0]
+            else:
+                prob_masses[index] = _sequence_prob_mass(model, model_inputs, sequences)
+            prefix_token_counts[index] = int(model_inputs["prefix_tokens"])
+        return prob_masses, prefix_token_counts
+
+    indexes_by_feature: dict[str, list[int]] = defaultdict(list)
+    for index, opportunity in enumerate(opportunities):
+        indexes_by_feature[opportunity.feature].append(index)
+    for feature, feature_indexes in indexes_by_feature.items():
+        sequences = initiator_sequences.get(feature, ())
+        for start in range(0, len(feature_indexes), opportunity_batch_size):
+            chunk_indexes = feature_indexes[start : start + opportunity_batch_size]
+            chunk_opportunities = [opportunities[index] for index in chunk_indexes]
+            model_inputs = _prefix_input_batch(
+                tokenizer,
+                text,
+                chunk_opportunities,
+                max_prefix_tokens=max_prefix_tokens,
+                fixed_prefix_tokens=fixed_prefix_tokens,
+                device=device,
+            )
+            if mass_mode == "first_token":
+                chunk_masses = _first_token_prob_mass_batch(
+                    model,
+                    model_inputs,
+                    _first_token_ids(sequences),
+                )
+            elif sequence_cache:
+                chunk_masses = _sequence_prob_mass_batch_cached(model, model_inputs, sequences)
+            else:
+                chunk_masses = _sequence_prob_mass_batch(model, model_inputs, sequences)
+            for index, prob_mass, prefix_tokens in zip(
+                chunk_indexes,
+                chunk_masses,
+                model_inputs["prefix_tokens"],
+            ):
+                prob_masses[index] = prob_mass
+                prefix_token_counts[index] = int(prefix_tokens)
+    return prob_masses, prefix_token_counts
+
+
 def _summary_rows(accumulators: dict[str, FeatureAccumulator]) -> list[dict[str, Any]]:
     rows = []
     for feature, accumulator in sorted(accumulators.items()):
@@ -318,6 +627,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]], columns: list[str]) -> No
 
 
 def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, Any]]:
+    if args.opportunity_batch_size < 1:
+        raise ValueError("opportunity_batch_size must be positive")
     SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS = _load_corpus_components()
     tokenizer, model, device = _load_model(
         model_name=args.model,
@@ -362,6 +673,8 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
             "max_prefix_tokens": args.max_prefix_tokens,
             "mass_mode": args.mass_mode,
             "fixed_prefix_tokens": args.fixed_prefix_tokens,
+            "opportunity_batch_size": args.opportunity_batch_size,
+            "sequence_cache": args.sequence_cache,
             "dtype": args.dtype,
             "device": str(device),
             "torch_compile": args.torch_compile,
@@ -388,25 +701,24 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
                         features=selected_features,
                         max_token_start_opportunities=args.max_token_start_opportunities,
                     )[: args.max_opportunities]
-                    for opportunity in opportunities:
-                        sequences = initiator_sequences.get(opportunity.feature, ())
-                        model_inputs = _prefix_input_ids(
-                            tokenizer,
-                            text,
-                            opportunity.char_offset,
-                            max_prefix_tokens=args.max_prefix_tokens,
-                            fixed_prefix_tokens=args.fixed_prefix_tokens,
-                            device=device,
-                        )
-                        if args.mass_mode == "first_token":
-                            prob_mass = _first_token_prob_mass(
-                                model,
-                                model_inputs,
-                                _first_token_ids(sequences),
-                            )
-                        else:
-                            prob_mass = _sequence_prob_mass(model, model_inputs, sequences)
-                        prefix_tokens = int(model_inputs["prefix_tokens"])
+                    prob_masses, prefix_token_counts = _score_opportunities(
+                        tokenizer=tokenizer,
+                        model=model,
+                        device=device,
+                        text=text,
+                        opportunities=opportunities,
+                        initiator_sequences=initiator_sequences,
+                        mass_mode=args.mass_mode,
+                        max_prefix_tokens=args.max_prefix_tokens,
+                        fixed_prefix_tokens=args.fixed_prefix_tokens,
+                        opportunity_batch_size=args.opportunity_batch_size,
+                        sequence_cache=args.sequence_cache,
+                    )
+                    for opportunity, prob_mass, prefix_tokens in zip(
+                        opportunities,
+                        prob_masses,
+                        prefix_token_counts,
+                    ):
                         accumulator = accumulators[opportunity.feature]
                         accumulator.opportunities += 1
                         accumulator.reference_initiations += int(opportunity.reference_initiates)
@@ -423,7 +735,9 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
                                 "reference_initiates": int(opportunity.reference_initiates),
                                 "matched_subtype": opportunity.matched_subtype or "",
                                 "prob_mass": prob_mass,
-                                "initiator_sequences": len(sequences),
+                                "initiator_sequences": len(
+                                    initiator_sequences.get(opportunity.feature, ())
+                                ),
                             }
                         )
 

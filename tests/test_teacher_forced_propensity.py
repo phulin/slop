@@ -5,7 +5,11 @@ import pytest
 import torch
 
 from slop_sftdiv.cli.teacher_forced_propensity import build_parser, run_teacher_forced_propensity
-from slop_sftdiv.cli.teacher_forced_propensity import _sequence_prob_mass
+from slop_sftdiv.cli.teacher_forced_propensity import (
+    _sequence_prob_mass,
+    _sequence_prob_mass_batch,
+    _sequence_prob_mass_batch_cached,
+)
 
 
 class FakeTokenizer:
@@ -79,6 +83,9 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
             "stock_openers",
             "--max-opportunities",
             "8",
+            "--opportunity-batch-size",
+            "1",
+            "--no-sequence-cache",
             "--output",
             str(output_path),
             "--summary-output",
@@ -153,3 +160,72 @@ def test_sequence_prob_mass_batches_shared_continuation_prefixes():
     assert mass == pytest.approx(3 * (1 / 6) * (1 / 6))
     assert model.calls == 2
     assert model.batch_sizes == [1, 2]
+
+
+def test_sequence_prob_mass_batch_matches_scalar_path():
+    class UniformModel:
+        def __call__(self, *, input_ids, attention_mask):
+            del attention_mask
+            return type("Output", (), {"logits": torch.zeros((*input_ids.shape, 7))})()
+
+    model = UniformModel()
+    batch_inputs = {
+        "input_ids": torch.tensor([[0, 1], [0, 2]], dtype=torch.long),
+        "attention_mask": torch.tensor([[1, 1], [1, 1]], dtype=torch.long),
+    }
+    sequences = ((1,), (2, 3), (4, 5, 6))
+
+    batch = _sequence_prob_mass_batch(model, batch_inputs, sequences)
+    scalar = [
+        _sequence_prob_mass(
+            model,
+            {
+                "input_ids": batch_inputs["input_ids"][index : index + 1],
+                "attention_mask": batch_inputs["attention_mask"][index : index + 1],
+            },
+            sequences,
+        )
+        for index in range(2)
+    ]
+
+    assert batch == pytest.approx(scalar)
+
+
+def test_sequence_prob_mass_cached_batch_matches_scalar_path():
+    class FakeCache:
+        def batch_repeat_interleave(self, _repeats):
+            pass
+
+    class UniformModel:
+        def __call__(self, *, input_ids, attention_mask, **_kwargs):
+            del attention_mask
+            return type(
+                "Output",
+                (),
+                {
+                    "logits": torch.zeros((*input_ids.shape, 7)),
+                    "past_key_values": FakeCache(),
+                },
+            )()
+
+    model = UniformModel()
+    batch_inputs = {
+        "input_ids": torch.tensor([[0, 1], [0, 2]], dtype=torch.long),
+        "attention_mask": torch.tensor([[1, 1], [1, 1]], dtype=torch.long),
+    }
+    sequences = ((1,), (2, 3), (4, 5, 6))
+
+    cached = _sequence_prob_mass_batch_cached(model, batch_inputs, sequences)
+    scalar = [
+        _sequence_prob_mass(
+            model,
+            {
+                "input_ids": batch_inputs["input_ids"][index : index + 1],
+                "attention_mask": batch_inputs["attention_mask"][index : index + 1],
+            },
+            sequences,
+        )
+        for index in range(2)
+    ]
+
+    assert cached == pytest.approx(scalar)
