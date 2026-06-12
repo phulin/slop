@@ -171,6 +171,28 @@ def test_source_metadata_overrides_promoted_row_metadata(tmp_path):
     assert record.metadata["domain"] == "source-domain"
 
 
+def test_row_metadata_promotes_retained_sample_fields(tmp_path):
+    path = tmp_path / "retained.jsonl"
+    _write_jsonl(
+        path,
+        [
+            {
+                "doc_id": "doc-1",
+                "text": "Text.",
+                "stratum": "forums_qa",
+                "provenance": "forum_source",
+                "text_role": "pretrain_document",
+            }
+        ],
+    )
+
+    [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="retained")))
+
+    assert record.metadata["stratum"] == "forums_qa"
+    assert record.metadata["provenance"] == "forum_source"
+    assert record.metadata["text_role"] == "pretrain_document"
+
+
 def test_row_metadata_infers_scientific_stratum(tmp_path):
     path = tmp_path / "science.jsonl"
     _write_jsonl(
@@ -188,3 +210,12 @@ def test_row_metadata_infers_scientific_stratum(tmp_path):
     [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="dolma")))
 
     assert record.metadata["inferred_stratum"] == "scientific"
+
+
+def test_row_metadata_infers_full_cc_as_web_cc(tmp_path):
+    path = tmp_path / "full_cc.jsonl"
+    _write_jsonl(path, [{"id": "doc-1", "text": "Web text.", "source": "full_CC"}])
+
+    [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="dolma")))
+
+    assert record.metadata["inferred_stratum"] == "web_cc"

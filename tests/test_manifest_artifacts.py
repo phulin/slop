@@ -1,4 +1,7 @@
 import csv
+import json
+
+import pandas as pd
 
 from slop_sftdiv.cli.manifest_artifacts import build_parser, manifest_path, run_manifest
 
@@ -14,6 +17,19 @@ def test_manifest_path_hashes_and_counts_csv_records(tmp_path):
     assert row.records == 2
     assert len(row.sha256) == 64
     assert row.bytes == csv_path.stat().st_size
+
+
+def test_manifest_path_counts_jsonl_and_parquet_records(tmp_path):
+    jsonl_path = tmp_path / "sample.jsonl"
+    parquet_path = tmp_path / "sample.parquet"
+    jsonl_path.write_text(
+        "\n".join(json.dumps({"id": str(index)}) for index in range(3)) + "\n",
+        encoding="utf-8",
+    )
+    pd.DataFrame([{"id": "a"}, {"id": "b"}]).to_parquet(parquet_path, index=False)
+
+    assert manifest_path(jsonl_path).records == 3
+    assert manifest_path(parquet_path).records == 2
 
 
 def test_run_manifest_writes_outputs_and_logs_wandb(tmp_path, monkeypatch):

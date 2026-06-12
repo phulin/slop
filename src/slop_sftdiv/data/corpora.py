@@ -32,6 +32,9 @@ DEFAULT_ID_FIELDS = ("id", "uid", "uuid", "doc_id", "document_id", "source_id")
 PROMOTED_METADATA_FIELDS = (
     "source",
     "source_dataset",
+    "stratum",
+    "provenance",
+    "text_role",
     "domain",
     "dataset",
     "dataset_source",
@@ -474,7 +477,7 @@ def _infer_stratum(metadata: Mapping[str, Any]) -> str:
         return "forums_qa"
     if any(
         marker in haystack
-        for marker in ("common_crawl", "cc-main", "dclm", "c4", "web", "crawl")
+        for marker in ("common_crawl", "cc-main", "full_cc", "dclm", "c4", "web", "crawl")
     ):
         return "web_cc"
     return "unknown"

@@ -46,9 +46,7 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def _csv_records(path: Path) -> int | None:
-    if path.suffix.lower() != ".csv":
-        return None
+def _csv_records(path: Path) -> int:
     with path.open(encoding="utf-8", newline="") as handle:
         reader = csv.reader(handle)
         try:
@@ -56,6 +54,28 @@ def _csv_records(path: Path) -> int | None:
         except StopIteration:
             return 0
         return sum(1 for _ in reader)
+
+
+def _jsonl_records(path: Path) -> int:
+    with path.open(encoding="utf-8") as handle:
+        return sum(1 for line in handle if line.strip())
+
+
+def _parquet_records(path: Path) -> int:
+    import pandas as pd
+
+    return int(pd.read_parquet(path).shape[0])
+
+
+def _record_count(path: Path) -> int | None:
+    suffix = path.suffix.lower()
+    if suffix == ".csv":
+        return _csv_records(path)
+    if suffix in {".jsonl", ".ndjson"}:
+        return _jsonl_records(path)
+    if suffix == ".parquet":
+        return _parquet_records(path)
+    return None
 
 
 def _format_for_path(path: Path) -> str:
@@ -73,7 +93,7 @@ def manifest_path(path: Path) -> ArtifactManifestRow:
         sha256=_sha256(path),
         modified_utc=datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc).isoformat(),
         format=_format_for_path(path),
-        records=_csv_records(path),
+        records=_record_count(path),
     )
 
 

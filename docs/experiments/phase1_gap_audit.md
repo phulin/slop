@@ -6,14 +6,15 @@ Scope: Phase 1 completion gaps only, based on `EXPERIMENTS.md` sections 1, 2, 3,
 
 ## Summary
 
-Phase 1 is scaffolded and now has a retained 10k-row Dolci SFT+DPO sample, but
-it is not complete for publishable frequency-census claims. The current state
-supports CLI/schema confidence, W&B logging, retained Dolci SFT/DPO census
-tables, retained pair-delta output, metadata-aware Result A diagnostics, and a
-1,400-row manual labeling queue. The main gaps are manifest-backed corpus
-samples, manual precision labels/scoring, exact source identification for
-replication data, Dolma stratification, and final dataset-card/source
-verification needed to make chosen/rejected interpretation claims.
+Phase 1 is scaffolded and now has retained Dolci SFT/DPO and Dolma 3 sampled
+artifacts, but it is not complete for publishable frequency-census claims. The
+current state supports CLI/schema confidence, W&B logging, retained Dolci
+SFT/DPO census tables, retained pair-delta output, metadata-aware Result A
+diagnostics, a retained Dolma 3 pretrain sample/census, and a 1,400-row manual
+labeling queue. The main gaps are manual precision labels/scoring, exact source
+identification for replication data, formal package summaries, and final
+dataset-card/source verification needed to make chosen/rejected interpretation
+claims.
 
 ## Completed
 
@@ -67,6 +68,23 @@ verification needed to make chosen/rejected interpretation claims.
   manual precision validation. Grouped row counts by `preference_type` were
   `llm_judged` 3,312, `multiturn_self_talk` 16,
   `multiturn_synthetic_context` 16, and `delta_learning` 8.
+- Retained Dolma 3 20k-scan pretrain sample completed and logged to W&B:
+  `stage1-olmo3-dolma3-20k-scan-retained-sample`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/l0ms0k7t`). It streamed
+  20,000 rows from `allenai/dolma3_mix-6T-1025-7B`, retained 1,401 normalized
+  rows with seed `1729`, excluded code, and populated four non-code strata:
+  `web_cc`, `forums_qa`, `wiki`, and `scientific`. Local retained outputs
+  include `artifacts/stage1/corpora/olmo3_dolma3_20k_scan_retained_sample.jsonl`
+  and `artifacts/stage1/corpora/sample_manifest.parquet`.
+- Retained Dolma 3 stratum census completed and logged to W&B:
+  `stage1-olmo3-dolma3-20k-scan-stratum-census-retained_sample`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/3my331x7`). It processed
+  2,129,938 simple tokens and wrote 32 feature-rate rows to
+  `artifacts/stage1/census/olmo3_dolma3_20k_scan_feature_rates.csv`.
+- Retained Dolma 3 artifact manifest completed and logged to W&B:
+  `stage1-olmo3-dolma3-20k-scan-artifact-manifest`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/75vyt0mb`). It records 4
+  retained artifacts, 16,446,028 total bytes, and 4,235 counted records.
 
 ## Dry-Run Only
 
@@ -120,10 +138,13 @@ verification needed to make chosen/rejected interpretation claims.
 
 ## Retained-Sample Needed
 
-- The Phase 1 corpus artifacts named by `stage1_strategy.md` and `corpus_samples.yaml` still need retained, manifest-backed outputs:
+- The Phase 1 corpus artifacts named by `stage1_strategy.md` and `corpus_samples.yaml` are partially retained:
   - `artifacts/stage1/corpora/*.jsonl`
   - `artifacts/stage1/corpora/sample_manifest.parquet`
   - `artifacts/stage1/corpora/source_card_notes.md`
+  Dolma 3 now has a retained JSONL sample and the formal
+  `sample_manifest.parquet`; Dolci and replication-ladder corpus packaging
+  remain incomplete.
 - The Phase 1 matcher artifacts named by `tier1_matchers.yaml` still need retained outputs, unless produced elsewhere outside the audited evidence:
   - `artifacts/stage1/matchers/feature_specs.json`
   - `artifacts/stage1/matchers/matcher_version.txt`
@@ -143,7 +164,9 @@ verification needed to make chosen/rejected interpretation claims.
   artifact manifest exists locally and in W&B for the current CSV outputs.
 - Primary OLMo retained samples still need enough rows and metadata coverage to
   satisfy the Stage 1 go/no-go:
-  - Dolma 3 with at least three populated non-code strata
+  - Dolma 3 now has a bounded 20k-scan sample with four populated non-code
+    strata, but rare strata are prefix-skewed and underfilled relative to the
+    1,000-row cap
   - Dolci SFT target responses with verified provenance fields
   - Dolci DPO chosen/rejected rows with verified role semantics
   - Dolci RL if kept for final-stage data-rate context
@@ -220,7 +243,10 @@ Required manual artifact:
   response extraction and pair identity, but construction-aware interpretation
   remains required.
 - The coordination log still lists open go/no-go questions about whether Dolci SFT/DPO/RL datasets expose stable response and pair fields, and whether DPO chosen/rejected roles can be verified well enough to interpret Result A.
-- Dolma 3 tiny-stream schema remains unverified according to the coordination log. The tiny census inferred `web_cc`, but this does not satisfy the required stratified Dolma 3 sample across at least three populated strata.
+- Dolma 3 tiny-stream schema and retained stratified sampling now have local
+  evidence. The 20k-scan sample satisfies the at-least-three-strata Stage 1
+  sample condition, while preserving a note that rare strata are underfilled in
+  the streamed prefix.
 - SmolLM3 pretraining source identification is incomplete:
   - Config status: `identify_exact_public_sources`
   - Needed for equivalent strata: `web_cc`, `forums_qa`, `wiki`, `scientific`, with code excluded
@@ -250,7 +276,10 @@ Current status: not ready to exit Stage 1 / Phase 1.
 
 Exit criteria still unmet:
 
-- Primary OLMo corpora are not yet retained, sampled, and manifest-backed.
+- Primary OLMo corpora are only partially retained, sampled, and
+  manifest-backed. Dolma 3 now has retained sample/census/manifest artifacts;
+  Dolci SFT/DPO have retained census artifacts but not the formal corpus
+  package; Dolci RL remains unresolved if kept in scope.
 - SmolLM3 replication sources are not sampled and still have source-identification blockers.
 - Core Tier-1 matchers do not yet have real 200-hit precision validation.
 - Retained Dolci SFT/DPO census and pair-analysis CSVs now exist for a 10k
@@ -260,9 +289,9 @@ Exit criteria still unmet:
   retained-run evidence for Dolci DPO, but chosen/rejected construction
   semantics are still not sufficient for final Phase 1 claims without the
   remaining validation/package work.
-- W&B now has retained Dolci SFT/DPO Stage 1 records, but retained Dolma,
-  SmolLM3/Tulu, precision-scoring, and manifest-backed corpus artifacts are
-  still needed.
+- W&B now has retained Dolci SFT/DPO and Dolma Stage 1 records, but
+  SmolLM3/Tulu, precision-scoring, and formal package summaries are still
+  needed.
 
 Do not proceed to statistical claims until:
 

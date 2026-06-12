@@ -19,7 +19,8 @@
 - Per-pair preference deltas: produce the Result A artifact with feature-level
   `chosen_minus_rejected` rows, not only aggregate role rates.
 - Type/lint baseline: keep `ty`, `ruff`, and pytest passing through `uv`.
-- Dataset schema follow-up: Dolma 3 tiny-stream schema remains unverified.
+- Dataset schema follow-up: SmolLM3/Tulu replication source identification
+  remains open.
 
 ### Coordination Decisions
 
@@ -191,3 +192,27 @@
   metadata feature-rate, pair-delta, and pair-analysis CSVs as 3 artifacts,
   16,219,490 bytes, and 83,360 CSV records. Local generated manifests are under
   `artifacts/stage1/corpora/olmo3_dolci_10k_metadata_retained_manifest.*`.
+- Retained Dolma 3 20k-scan pretrain sample completed:
+  `stage1-olmo3-dolma3-20k-scan-retained-sample`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/l0ms0k7t`. It streamed
+  20,000 rows from `allenai/dolma3_mix-6T-1025-7B`, retained 1,401 normalized
+  rows with seed `1729`, excluded code, and populated four non-code strata:
+  `web_cc` 1,000 docs / 1,702,321 tokens, `forums_qa` 279 / 236,029, `wiki`
+  77 / 155,497, and `scientific` 45 / 36,091. The run logged about 44,741
+  tokens/sec including streaming setup and peaked at 1,209 MB RSS. Local
+  retained outputs include
+  `artifacts/stage1/corpora/olmo3_dolma3_20k_scan_retained_sample.jsonl` and
+  the formal per-record `artifacts/stage1/corpora/sample_manifest.parquet`.
+- Retained Dolma 3 stratum census completed:
+  `stage1-olmo3-dolma3-20k-scan-stratum-census-retained_sample`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/3my331x7`. It measured the
+  1,401 retained rows, processed 2,129,938 simple tokens in 16.61 seconds,
+  logged about 128,199 tokens/sec, and wrote 32 feature-rate rows to
+  `artifacts/stage1/census/olmo3_dolma3_20k_scan_feature_rates.csv`.
+- Retained Dolma 3 artifact manifest completed:
+  `stage1-olmo3-dolma3-20k-scan-artifact-manifest`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/75vyt0mb`. It records 4
+  retained artifacts, 16,446,028 total bytes, and 4,235 counted records:
+  retained JSONL, Parquet sample manifest, CSV sample manifest, and stratum
+  census CSV. Local generated manifests are under
+  `artifacts/stage1/corpora/olmo3_dolma3_20k_scan_artifact_manifest.*`.
