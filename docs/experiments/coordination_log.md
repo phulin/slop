@@ -143,3 +143,10 @@
   punctuation/rhythm, rule-of-three, slop lexicon, stock closers, and stock
   openers. The CSV contains multiline context fields, so line counts exceed
   record counts.
+- Retained 10k-row Dolci artifact manifest completed:
+  `stage1-olmo3-dolci-10k-retained-artifact-manifest`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/t9mjtmbo`.
+  It logged 4 local artifact records, 11,810,749 total bytes, and 81,448 CSV
+  records: 72 feature-rate rows, 79,960 DPO pair-delta rows, 16 pair-analysis
+  rows, and 1,400 precision-labeling rows. Local generated manifests are under
+  `artifacts/stage1/corpora/olmo3_dolci_10k_retained_manifest.*`.

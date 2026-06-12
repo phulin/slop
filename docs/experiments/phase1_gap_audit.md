@@ -43,6 +43,12 @@ needed to interpret chosen/rejected roles.
   (`https://wandb.ai/phulin-self/slop-stage1/runs/t6wdmyj2`). It produced 200
   sampled rows for each of 7 features, 1,400 CSV records total, for manual
   precision labeling.
+- Retained 10k-row Dolci artifact manifest completed and logged to W&B:
+  `stage1-olmo3-dolci-10k-retained-artifact-manifest`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/t9mjtmbo`). It hashes and
+  counts the 10k feature-rate, pair-delta, pair-analysis, and hit-sample CSVs.
+  The manifest records 4 local artifacts, 11,810,749 total bytes, and 81,448
+  CSV records.
 
 ## Dry-Run Only
 
@@ -115,7 +121,8 @@ needed to interpret chosen/rejected roles.
   - `artifacts/stage1/census/census_summary.md`
   The retained 10k Dolci run currently writes CSVs under
   `artifacts/stage1/census/olmo3_dolci_*_10k_*.csv`; the named parquet/summary
-  artifacts are still needed for the formal Phase 1 package.
+  artifacts are still needed for the formal Phase 1 package. A retained
+  artifact manifest exists locally and in W&B for the current CSV outputs.
 - Primary OLMo retained samples still need enough rows and metadata coverage to
   satisfy the Stage 1 go/no-go:
   - Dolma 3 with at least three populated non-code strata
