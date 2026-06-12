@@ -396,3 +396,8 @@
   `stock_closers`, and `8.79e-05` for `stock_openers`. There were zero
   reference initiations, so this is a plumbing and throughput run, not an AF
   result.
+- Neutral controls were added to the Phase 2 propensity spec:
+  `neutral_for_example`, `neutral_such_as`, `neutral_in_particular`,
+  `neutral_as_a_result`, and pooled `neutral_controls`. These share the
+  token-start opportunity contract and are calibration targets for SFT AF near
+  1, not slop features.

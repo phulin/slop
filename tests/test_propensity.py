@@ -43,6 +43,30 @@ def test_iter_feature_opportunities_can_cap_token_start_opportunities():
     assert [item.char_offset for item in opportunities] == [0, 6]
 
 
+def test_iter_feature_opportunities_marks_neutral_controls():
+    text = "For example, tests check behavior. Such as edge cases. As a result, bugs surface."
+
+    opportunities = iter_feature_opportunities(
+        text,
+        features=[
+            "neutral_for_example",
+            "neutral_such_as",
+            "neutral_as_a_result",
+            "neutral_controls",
+        ],
+        max_token_start_opportunities=16,
+    )
+
+    by_feature = {}
+    for opportunity in opportunities:
+        by_feature.setdefault(opportunity.feature, []).append(opportunity)
+
+    assert any(item.reference_initiates for item in by_feature["neutral_for_example"])
+    assert any(item.reference_initiates for item in by_feature["neutral_such_as"])
+    assert any(item.reference_initiates for item in by_feature["neutral_as_a_result"])
+    assert sum(item.reference_initiates for item in by_feature["neutral_controls"]) == 3
+
+
 def test_iter_feature_opportunities_excludes_unknown_or_deferred_features():
     text = "- Robust tests\nThis is not a shortcut, it is signal."
 

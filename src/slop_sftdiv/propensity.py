@@ -8,6 +8,18 @@ from slop_sftdiv.features.tier1_matchers import TOKEN_RE, iter_tier1_hits
 
 
 BOUNDARY_RE = re.compile(r"(?:^|[.!?;:\n]\s+)")
+NEUTRAL_CONTROL_PATTERNS: dict[str, re.Pattern[str]] = {
+    "neutral_for_example": re.compile(r"\bfor\s+example\b", re.IGNORECASE | re.UNICODE),
+    "neutral_such_as": re.compile(r"\bsuch\s+as\b", re.IGNORECASE | re.UNICODE),
+    "neutral_in_particular": re.compile(r"\bin\s+particular\b", re.IGNORECASE | re.UNICODE),
+    "neutral_as_a_result": re.compile(r"\bas\s+a\s+result\b", re.IGNORECASE | re.UNICODE),
+}
+NEUTRAL_CONTROL_INITIATORS: dict[str, tuple[str, ...]] = {
+    "neutral_for_example": ("for example",),
+    "neutral_such_as": ("such as",),
+    "neutral_in_particular": ("in particular",),
+    "neutral_as_a_result": ("as a result",),
+}
 
 
 @dataclass(frozen=True)
@@ -94,6 +106,35 @@ PHASE2_OPPORTUNITY_SPECS: dict[str, OpportunitySpec] = {
             "let",
         ),
     ),
+    "neutral_for_example": OpportunitySpec(
+        feature="neutral_for_example",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_CONTROL_INITIATORS["neutral_for_example"],
+    ),
+    "neutral_such_as": OpportunitySpec(
+        feature="neutral_such_as",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_CONTROL_INITIATORS["neutral_such_as"],
+    ),
+    "neutral_in_particular": OpportunitySpec(
+        feature="neutral_in_particular",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_CONTROL_INITIATORS["neutral_in_particular"],
+    ),
+    "neutral_as_a_result": OpportunitySpec(
+        feature="neutral_as_a_result",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_CONTROL_INITIATORS["neutral_as_a_result"],
+    ),
+    "neutral_controls": OpportunitySpec(
+        feature="neutral_controls",
+        opportunity_kind="token_start",
+        initiators=tuple(
+            phrase
+            for phrases in NEUTRAL_CONTROL_INITIATORS.values()
+            for phrase in phrases
+        ),
+    ),
 }
 
 
@@ -135,6 +176,10 @@ def _hit_starts_by_feature(text: str) -> dict[str, dict[int, str]]:
         starts.setdefault(hit.feature, {})[hit.start] = hit.subtype
         if hit.feature in {"stock_openers", "stock_closers"}:
             starts.setdefault("stock_openers_closers", {})[hit.start] = hit.subtype
+    for feature, pattern in NEUTRAL_CONTROL_PATTERNS.items():
+        for match in pattern.finditer(text):
+            starts.setdefault(feature, {})[match.start()] = feature.removeprefix("neutral_")
+            starts.setdefault("neutral_controls", {})[match.start()] = feature.removeprefix("neutral_")
     return starts
 
 

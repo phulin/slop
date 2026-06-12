@@ -64,6 +64,10 @@ Implemented smoke targets:
 - `stock_closers`: final-clause-boundary opportunities.
 - `stock_openers_closers`: pooled document-start plus final-boundary
   opportunities.
+- Neutral controls: `neutral_for_example`, `neutral_such_as`,
+  `neutral_in_particular`, `neutral_as_a_result`, and pooled
+  `neutral_controls`; these use token-start opportunities and are calibration
+  targets, not slop claims.
 
 Held back from the first smoke:
 
@@ -110,7 +114,8 @@ Promote from tiny-model smoke to OLMo tiny shard only if:
 Promote from OLMo tiny shard to full Phase 2 only after:
 
 - Held-out prompt splitting and near-duplicate filtering are in place.
-- Neutral controls show AF near 1 on an SFT checkpoint.
+- Neutral controls show AF near 1 on an SFT checkpoint using the
+  `neutral_controls` basket and individual control phrases.
 - Positive controls reproduce expected amplification direction.
 
 ## Smoke Run Log

@@ -25,6 +25,12 @@ inputs:
     - slop_lexicon
     - stock_openers
     - stock_closers
+  neutral_control_features:
+    - neutral_for_example
+    - neutral_such_as
+    - neutral_in_particular
+    - neutral_as_a_result
+    - neutral_controls
 
 models:
   smoke_model: sshleifer/tiny-gpt2
@@ -45,6 +51,7 @@ teacher_forced:
     - Exact sequence mass is the default Phase 2 propensity estimator.
     - First-token mass remains available only as a debugging fallback.
     - Keep Biber-lite as register covariates, not propensity targets.
+    - Neutral controls are calibration targets, not slop features.
 
 prompt_package:
   source: allenai/Dolci-Instruct-SFT-7B
