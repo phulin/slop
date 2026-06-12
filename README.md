@@ -16,3 +16,11 @@ Secrets stay local. Put `WANDB_API_KEY` in `.env`; the file is ignored by Git.
 uv sync --extra dev
 uv run slop-census --help
 ```
+
+## Checks
+
+```bash
+uv run ty check src tests
+uv run ruff check src tests
+uv run pytest -q
+```

@@ -60,7 +60,7 @@ def _measurement_texts(record: Any) -> list[tuple[str, str, str | None]]:
 
 
 def _id_fields_with_pair_id(default_id_fields: tuple[str, ...]) -> tuple[str, ...]:
-    fields = ("pair_id", "pair.id", "preference_pair_id", *default_id_fields)
+    fields = ("pair_id", "pair.id", "preference_pair_id", "prompt_id", *default_id_fields)
     return tuple(dict.fromkeys(fields))
 
 

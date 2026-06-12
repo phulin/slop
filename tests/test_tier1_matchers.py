@@ -31,7 +31,9 @@ I hope this helps."""
     assert features.counts["stock_openers_closers"] == 2
     assert features.rates_per_1k_tokens["slop_lexicon"] > 0
     assert features.helpers["paragraph_count"] == 3
-    assert features.helpers["paragraph_rhythm_uniformity"] > 0
+    rhythm_uniformity = features.helpers["paragraph_rhythm_uniformity"]
+    assert isinstance(rhythm_uniformity, float)
+    assert rhythm_uniformity > 0
 
 
 def test_contrastive_negation_distinguishes_not_only_from_plain_not_but():

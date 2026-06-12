@@ -82,3 +82,53 @@ def test_hash_reservoir_sampling_is_deterministic_and_seeded(tmp_path):
     assert [record.record_id for record in first] != [record.record_id for record in different_seed]
     assert len(first) == 5
     assert all(len(record.metadata["sample_key"]) == 16 for record in first)
+
+
+def test_chat_messages_extract_prompt_and_assistant_target(tmp_path):
+    path = tmp_path / "sft.jsonl"
+    _write_jsonl(
+        path,
+        [
+            {
+                "id": "sft-1",
+                "messages": [
+                    {"role": "system", "content": "Be concise."},
+                    {"role": "user", "content": "Explain tests."},
+                    {"role": "assistant", "content": "Tests check behavior."},
+                ],
+            }
+        ],
+    )
+
+    [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="sft")))
+
+    assert record.prompt == "Be concise.\nExplain tests."
+    assert record.text == "Tests check behavior."
+    assert record.fields["prompt"] == "messages"
+    assert record.fields["text"] == "messages"
+
+
+def test_preference_chat_lists_extract_assistant_responses(tmp_path):
+    path = tmp_path / "dpo.jsonl"
+    _write_jsonl(
+        path,
+        [
+            {
+                "prompt_id": "pair-1",
+                "chosen": [
+                    {"role": "user", "content": "Explain tests."},
+                    {"role": "assistant", "content": "Great question. Use assertions."},
+                ],
+                "rejected": [
+                    {"role": "user", "content": "Explain tests."},
+                    {"role": "assistant", "content": "No."},
+                ],
+            }
+        ],
+    )
+
+    [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="dpo")))
+
+    assert record.text == "Great question. Use assertions."
+    assert record.chosen == "Great question. Use assertions."
+    assert record.rejected == "No."

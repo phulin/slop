@@ -16,13 +16,16 @@ from typing import Any, Iterable, Iterator, Mapping, Sequence
 
 DEFAULT_TEXT_FIELDS = (
     "text",
+    "messages",
     "response",
     "completion",
     "answer",
     "content",
     "output",
+    "solution",
+    "outputs",
 )
-DEFAULT_PROMPT_FIELDS = ("prompt", "instruction", "question", "input", "query")
+DEFAULT_PROMPT_FIELDS = ("prompt", "instruction", "question", "input", "query", "messages", "source_prompt")
 DEFAULT_CHOSEN_FIELDS = ("chosen", "accepted", "preferred", "winner")
 DEFAULT_REJECTED_FIELDS = ("rejected", "discarded", "non_preferred", "loser")
 DEFAULT_ID_FIELDS = ("id", "uid", "uuid", "doc_id", "document_id", "source_id")
@@ -115,7 +118,7 @@ class ExtractedRecord:
     raw: Mapping[str, Any] | None = None
 
     def wandb_row(self, *, include_raw: bool = False) -> dict[str, Any]:
-        row = {
+        row: dict[str, Any] = {
             "source": self.source,
             "source_kind": self.source_kind,
             "split": self.split,
@@ -257,10 +260,10 @@ def extract_record(
 ) -> ExtractedRecord | None:
     """Extract text/prompt/preference fields from common corpus row shapes."""
 
-    prompt, prompt_field = _first_text(row, prompt_fields)
-    chosen, chosen_field = _first_text(row, chosen_fields)
-    rejected, rejected_field = _first_text(row, rejected_fields)
-    text, text_field = _first_text(row, text_fields)
+    prompt, prompt_field = _first_text(row, prompt_fields, preferred_roles=("user", "system"))
+    chosen, chosen_field = _first_text(row, chosen_fields, preferred_roles=("assistant",))
+    rejected, rejected_field = _first_text(row, rejected_fields, preferred_roles=("assistant",))
+    text, text_field = _first_text(row, text_fields, preferred_roles=("assistant",))
 
     if text is None:
         text = chosen or rejected or prompt
@@ -323,27 +326,39 @@ def _sample_rows(
             yield row_index, row
         return
 
-    heap: list[tuple[int, int, Mapping[str, Any]]] = []
+    heap: list[tuple[int, int]] = []
+    heap_rows: dict[tuple[int, int], Mapping[str, Any]] = {}
     for row_index, row in enumerate(rows):
         if sampling.max_scan is not None and row_index >= sampling.max_scan:
             break
         key = _sampling_key(row, source=source, row_index=row_index, id_fields=id_fields, seed=sampling.seed)
-        item = (-key, row_index, row)
+        item = (-key, row_index)
         if sampling.cap is None:
             heapq.heappush(heap, item)
+            heap_rows[item] = row
         elif len(heap) < sampling.cap:
             heapq.heappush(heap, item)
+            heap_rows[item] = row
         elif item > heap[0]:
-            heapq.heapreplace(heap, item)
+            removed = heapq.heapreplace(heap, item)
+            heap_rows.pop(removed, None)
+            heap_rows[item] = row
 
-    for _, row_index, row in sorted(heap, key=lambda item: (-item[0], item[1])):
+    for item in sorted(heap, key=lambda item: (-item[0], item[1])):
+        _, row_index = item
+        row = heap_rows[item]
         yield row_index, row
 
 
-def _first_text(row: Mapping[str, Any], fields: Sequence[str]) -> tuple[str | None, str | None]:
+def _first_text(
+    row: Mapping[str, Any],
+    fields: Sequence[str],
+    *,
+    preferred_roles: Sequence[str] = (),
+) -> tuple[str | None, str | None]:
     for field_name in fields:
         value = _lookup_path(row, field_name)
-        text = _coerce_text(value)
+        text = _coerce_text(value, preferred_roles=preferred_roles)
         if text:
             return text, field_name
     return None, None
@@ -358,19 +373,28 @@ def _lookup_path(row: Mapping[str, Any], field_name: str) -> Any:
     return current
 
 
-def _coerce_text(value: Any) -> str | None:
+def _coerce_text(value: Any, *, preferred_roles: Sequence[str] = ()) -> str | None:
     if value is None:
         return None
     if isinstance(value, str):
         text = value.strip()
         return text or None
     if isinstance(value, Sequence) and not isinstance(value, (bytes, bytearray, str)):
-        parts = [_coerce_text(item) for item in value]
+        role_parts = [
+            _coerce_text(item, preferred_roles=())
+            for item in value
+            if isinstance(item, Mapping)
+            and str(item.get("role", "")).lower() in {role.lower() for role in preferred_roles}
+        ]
+        if role_parts:
+            text = "\n".join(part for part in role_parts if part)
+            return text or None
+        parts = [_coerce_text(item, preferred_roles=preferred_roles) for item in value]
         text = "\n".join(part for part in parts if part)
         return text or None
     if isinstance(value, Mapping):
         for key in ("content", "text", "value"):
-            text = _coerce_text(value.get(key))
+            text = _coerce_text(value.get(key), preferred_roles=preferred_roles)
             if text:
                 return text
     return None

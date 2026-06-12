@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 from collections.abc import Mapping
-from typing import Any
+from typing import Any, Literal
 
 from dotenv import load_dotenv
 
@@ -14,7 +14,7 @@ def init_wandb(
     run_name: str | None = None,
     config: Mapping[str, Any] | None = None,
     tags: list[str] | None = None,
-    mode: str | None = None,
+    mode: Literal["online", "offline", "disabled", "shared"] | None = None,
 ):
     """Initialize W&B after loading `.env`, without requiring callers to handle secrets."""
     load_dotenv()

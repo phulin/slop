@@ -7,15 +7,16 @@ Live check date: 2026-06-12.
 - [x] Probe Hugging Face dataset availability for primary OLMo first-stage sources.
 - [x] Record canonical dataset IDs, configs, splits, and visible schema fields.
 - [x] Avoid large downloads; use repository metadata and dataset-card metadata only.
-- [ ] Re-run with `uv run python` plus `datasets`/`huggingface_hub` once available locally.
-- [ ] Confirm row-level normalization on tiny streamed samples before Stage 1 census runs.
+- [x] Re-run with `.venv/bin/uv run python` plus `datasets` once available locally.
+- [x] Confirm row-level normalization on tiny streamed samples before Stage 1 census runs.
+- [x] Add mock schema tests for representative SFT, DPO, and RL row shapes.
+- [x] Confirm current DPO extraction uses assistant-only chosen/rejected text, not full chat transcripts.
 
 ## Environment Notes
 
-- `uv` was not installed in this workspace PATH.
-- `python` was not installed; `python3` was available at `/usr/bin/python3`.
-- `datasets`, `huggingface_hub`, and `requests` were not installed for `python3`.
-- Metadata was collected with Python standard-library HTTPS calls to Hugging Face API and raw README endpoints. No data shards were downloaded.
+- Prior metadata was collected with Python standard-library HTTPS calls to Hugging Face API and raw README endpoints. No data shards were downloaded.
+- On 2026-06-12, `.venv/bin/uv run python` was available with `datasets` installed.
+- Live streaming command used `datasets.load_dataset(..., split="train", streaming=True)` and consumed at most 2 rows from each Dolci dataset. No full dataset download was requested.
 
 ## OLMo SFT/Preference/RL Data
 
@@ -31,6 +32,8 @@ Live check date: 2026-06-12.
   - `source_dataset: string`
   - `domain: string`
 - Notes: good SFT target candidate; row text normalization should read chat `messages` rather than a flat `text` field.
+- Live sample: each streamed row had `id`, `messages`, `source_dataset`, and `domain`; `messages` was a 2-message user/assistant chat.
+- Current normalizer: default `iter_corpus_records` reads `messages`; `text` uses assistant-role content, `prompt` uses user/system-role content, and `id` is preserved as `record_id`.
 
 ### `allenai/Dolci-Instruct-DPO-7B`
 
@@ -47,6 +50,9 @@ Live check date: 2026-06-12.
   - `preference_type: string`
 - Visible message fields include `content`, `role`, `language`, `country`, `hashed_ip`, `header.accept-language`, `header.user-agent`, `redacted`, `state`, `toxic`, and `turn_identifier`, plus several nullable OpenAI/chat metadata fields.
 - Notes: good preference-pair candidate. `prompt_id` appears to be the stable pair key to preserve for chosen-vs-rejected deltas.
+- Live sample: `preference_type` was `delta_learning`; `chosen_model` was `qwen3-no_reasoning-32b`; `rejected_model` was `qwen3-no_reasoning-0.6b`; `prompt_id` was present and stable-looking.
+- Current normalizer: default `chosen`/`rejected` extraction selects assistant-role content from each chat transcript, excluding the shared user prompt. With `id_fields=("prompt_id",)`, `record_id` becomes the pair key. `text` defaults to the assistant-only `chosen` response when no flat `text` field exists.
+- Implication: current normalization is suitable for response-only chosen-vs-rejected feature rates if callers pass `id_fields=("prompt_id",)`.
 
 ### `allenai/Dolci-Instruct-RL-7B`
 
@@ -61,6 +67,8 @@ Live check date: 2026-06-12.
   - Difficulty/rollout metadata: `difficulty`, `difficulty_explanation`, `total_rollouts`, `total_correct_rollouts`, `passrate`
   - Structured fields: `reward_model.{ground_truth, style}`, `extra_info.index`
 - Notes: this is not a chosen/rejected pair table. For Stage 1 census, use `prompt`, `source_prompt`, `solution`, or `outputs` deliberately depending on the measurement question.
+- Live sample: first rows had code tasks with `prompt`, `solution`, `ground_truth`, `dataset`, `dataset_source`, `input_ids_prompt`, and many nullable rollout/metadata fields.
+- Current normalizer: default extraction selects `solution` as `text` before falling back to prompt-like fields; `prompt` remains available separately. If measuring generated `outputs`, callers must pass an explicit field selection or downstream expansion policy.
 
 ## Dolma 3 Discovery
 
@@ -73,7 +81,6 @@ Hugging Face search for AllenAI Dolma 3 returned an active family. Obvious first
 
 ## Blockers / Follow-Up
 
-- Could not use `uv run python` because `uv` is absent.
-- Could not call `datasets.get_dataset_config_names`, `get_dataset_split_names`, or `get_dataset_infos` because the `datasets` package is absent.
+- No source bug found in current Dolci chat normalization. The current helper extracts assistant-only response text for SFT and DPO chat rows.
 - Dolma 3 pool card metadata exposes configs but not feature schemas; schema should be verified with `datasets` streaming or a tiny remote shard sample before implementing final normalizers.
 - Do not assume the user-facing `-7B` Dolci names are the canonical Hugging Face IDs; API canonicalizes them to IDs without `-7B`.
