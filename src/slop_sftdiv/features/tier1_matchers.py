@@ -36,6 +36,12 @@ CONTRASTIVE_NEGATION_PATTERNS: Mapping[str, re.Pattern[str]] = {
         r"[^.!?\n;:]{1,140}?\s*(?:--|—|-|;|,)?\s*"
         r"(?:it'?s|it is|this is|that is)\s+[^.!?\n]{1,160}"
     ),
+    "not_x_its_y": _compile(
+        r"\b(?:it'?s|it is|this is|that is|they are|we are|you are)\s+"
+        r"not\s+(?!only\b|just\b|merely\b|simply\b)"
+        r"[^.!?\n;:]{1,140}?\s*(?:--|—|-|;|,)\s*"
+        r"(?:it'?s|it is|this is|that is|they are|we are|you are)\s+[^.!?\n]{1,160}"
+    ),
 }
 
 

@@ -17,7 +17,8 @@ The API returns:
 ## Implemented Matcher Families
 
 - Contrastive negation: regex approximations for `not X but Y`,
-  `not just/only/merely X but Y`, and `isn't just X, it's Y`.
+  `not just/only/merely X but Y`, `isn't just X, it's Y`, and
+  `it's not X, it's Y`.
 - Slop lexicon: seed lexical and phrase items from the experiment plan,
   including `delve`, `tapestry`, `testament to`, `important to note`,
   `worth noting`, `nuanced`, `multifaceted`, `seamless`, `landscape`,

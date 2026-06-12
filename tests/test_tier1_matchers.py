@@ -43,7 +43,20 @@ def test_contrastive_negation_distinguishes_not_only_from_plain_not_but():
 
     assert features.item_counts["contrastive_negation"]["not_just_but"] == 1
     assert features.item_counts["contrastive_negation"]["not_x_but_y"] == 1
+    assert features.item_counts["contrastive_negation"]["not_x_its_y"] == 0
     assert features.counts["contrastive_negation"] == 2
+
+
+def test_contrastive_negation_counts_not_x_its_y_frame():
+    text = "It is not a shortcut, it is a discipline. It's not noise; it's signal."
+
+    features = extract_tier1_features(text)
+    hits = [hit for hit in iter_tier1_hits(text) if hit.feature == "contrastive_negation"]
+
+    assert features.item_counts["contrastive_negation"]["not_x_its_y"] == 2
+    assert features.item_counts["contrastive_negation"]["not_x_but_y"] == 0
+    assert features.item_counts["contrastive_negation"]["not_just_but"] == 0
+    assert {hit.subtype for hit in hits} == {"not_x_its_y"}
 
 
 def test_empty_text_has_stable_zero_counts_and_denominators():
