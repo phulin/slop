@@ -55,6 +55,36 @@ Precision is `exact / total_labeled`. `partial`, `false_positive`, and
 `ambiguous` all count against the Stage 1 precision gate unless a feature spec
 explicitly declares a narrower valid-use calculation.
 
+## Fast Labeling TUI
+
+Use the terminal UI for fast single-keystroke labeling. It saves after every
+label and resumes from the labeled output file if it already exists:
+
+```bash
+uv run slop-label-hits \
+  --input artifacts/stage1/validation/hit_samples/olmo3_dolci_sft_dpo_10k_hits_for_labeling.csv \
+  --output artifacts/stage1/validation/labels/olmo3_dolci_sft_dpo_10k_labels.csv \
+  --labeler <initials>
+```
+
+Keys:
+
+- `e`: exact
+- `p`: partial
+- `f`: false positive
+- `a`: ambiguous
+- `n`: edit note for current row
+- `u`: clear current label
+- `j`/down: next unlabeled row
+- `k`/up: previous unlabeled row
+- space/right: next row
+- `b`/left: previous row
+- `q`: save and quit
+
+To focus one feature at a time, pass `--feature <feature>`; repeat the option
+to include multiple features. The TUI preserves the scorer-compatible CSV
+schema, including `label`, `labeler`, and `notes`.
+
 ## Label Scoring Step
 
 Run the scoring step after label CSVs are complete and before any Phase 1 claim
