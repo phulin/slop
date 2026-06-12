@@ -1,0 +1,67 @@
+stage: stage1
+slice: later-model-job-efficiency
+purpose: Defaults for Week 3-7 teacher-forced and generation jobs; no model jobs are required in Stage 1.
+
+wandb:
+  enabled: true
+  project: slop-stage1
+  group: model-efficiency-calibration
+  api_key_env: WANDB_API_KEY
+  log_raw_text: false
+  tags:
+    - stage1
+    - efficiency
+    - model_jobs_later
+
+teacher_forced_harness:
+  calibration_shard_prompts: 1000
+  heldout_tokens_target: 30000000
+  cache_tokenized_batches: true
+  cache_logits_summary_only: true
+  compare_exactness_before_optimization: true
+  compile_policy:
+    default: disabled_until_validated
+    option: torch.compile
+    benchmark_required: true
+    benchmark_metrics:
+      - compile_warmup_seconds
+      - tokens_per_sec
+      - peak_gpu_memory_gb
+      - max_abs_logit_delta
+      - mean_abs_logit_delta
+    acceptance:
+      max_abs_logit_delta: document_model_specific_tolerance
+      tokens_per_sec_improvement_min: 1.10
+
+generation_harness:
+  backend_preference: vllm
+  prompts_per_checkpoint: 5000
+  completions_per_prompt: 8
+  temperatures:
+    - 0.0
+    - 0.7
+    - 1.0
+  top_p: 0.95
+  max_tokens: 1024
+  cache_generations: true
+
+sampled_measurements:
+  required_before_full_run: true
+  calibration_prompts: 200
+  metrics:
+    - prompts_per_sec
+    - generated_tokens_per_sec
+    - peak_gpu_memory_gb
+    - cache_hit_rate
+    - output_size_gb_estimate
+
+go_no_go:
+  compile_go_if:
+    - eager_outputs_validated
+    - torch_compile_benchmark_completed_on_fixed_shard
+    - speedup_exceeds_threshold_after_warmup
+    - logit_delta_within_tolerance
+  compile_no_go_if:
+    - numerical_drift_exceeds_tolerance
+    - compile_warmup_erases_full_run_savings
+    - memory_growth_reduces_batch_size

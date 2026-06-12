@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slop-sftdiv"
+version = "0.1.0"
+description = "SFT divergence experiment harness for slop feature census and propensity measurements."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=2.19",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "python-dotenv>=1.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.66",
+    "wandb>=0.17",
+]
+
+[project.optional-dependencies]
+models = [
+    "accelerate>=0.31",
+    "torch>=2.3",
+    "transformers>=4.43",
+    "vllm>=0.5",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+slop-census = "slop_sftdiv.cli.census:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+

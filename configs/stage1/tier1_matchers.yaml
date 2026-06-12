@@ -1,0 +1,170 @@
+stage: stage1
+slice: matcher-port
+seed: 1729
+
+wandb:
+  enabled: true
+  project: slop-stage1
+  group: matcher-port
+  api_key_env: WANDB_API_KEY
+  log_raw_text: false
+  tags:
+    - stage1
+    - tier1
+    - matchers
+
+output:
+  root: artifacts/stage1/matchers
+  feature_specs_path: artifacts/stage1/matchers/feature_specs.json
+  matcher_version_path: artifacts/stage1/matchers/matcher_version.txt
+  smoke_results_path: artifacts/stage1/matchers/unit_smoke_results.json
+
+normalization_units:
+  per_1k_tokens: token_count / 1000
+  per_sentence: sentence_count
+  per_opportunity: opportunity_count
+  document_scalar: one_value_per_document
+
+validation_defaults:
+  target_precision: 0.90
+  hand_checked_hits: 200
+  ambiguous_counts_as_positive: false
+
+features:
+  - id: contrastive_negation
+    tier: 1
+    matcher_type: regex_pos
+    examples:
+      - not X, but Y
+      - not just X, but Y
+      - it is not simply X; it is Y
+    normalization:
+      - per_1k_tokens
+      - per_sentence
+      - per_opportunity
+    opportunity_context: post_clause_boundary_or_sentence_initial_position
+    go_no_go_role: core
+
+  - id: slop_lexicon
+    tier: 1
+    matcher_type: lexicon_and_ngram
+    examples:
+      - delve
+      - tapestry
+      - testament to
+      - it is important to note
+    normalization:
+      - per_1k_tokens
+      - per_opportunity
+    opportunity_context: all_non_code_token_positions_with_item_specific_prefix_checks
+    report_items_individually: true
+    report_pooled_index: true
+    go_no_go_role: core
+
+  - id: rule_of_three
+    tier: 1
+    matcher_type: pos_chunk_pattern
+    subtypes:
+      - noun_phrase_triple
+      - verb_phrase_triple
+      - clause_triple
+    normalization:
+      - per_1k_tokens
+      - per_sentence
+      - per_opportunity
+    opportunity_context: coordinated_phrase_or_clause_boundary
+    go_no_go_role: standard
+
+  - id: list_header_onset
+    tier: 1
+    matcher_type: markdown_regex
+    subtypes:
+      - bullet_list_onset
+      - numbered_list_onset
+      - markdown_header_onset
+      - bold_lead_in_definition
+    normalization:
+      - per_1k_tokens
+      - document_scalar
+      - per_opportunity
+    opportunity_context: response_start_post_newline_or_post_colon_position
+    go_no_go_role: core
+
+  - id: generic_hedging
+    tier: 1
+    matcher_type: regex_pos
+    examples:
+      - often
+      - typically
+      - usually
+      - generally
+      - may
+    normalization:
+      - per_1k_tokens
+      - per_sentence
+      - per_opportunity
+    opportunity_context: generic_subject_before_simple_present_clause
+    precision_note: Validate manually because generic-claim detection is error-prone.
+    go_no_go_role: standard
+
+  - id: stock_openers_closers
+    tier: 1
+    matcher_type: anchored_phrase_list
+    examples:
+      - Great question
+      - I hope this helps
+      - In conclusion
+      - Overall
+    normalization:
+      - per_1k_tokens
+      - document_scalar
+      - per_opportunity
+    opportunity_context: response_initial_sentence_or_final_paragraph_boundary
+    go_no_go_role: core
+
+  - id: punctuation_density
+    tier: 1
+    matcher_type: character_and_token_counter
+    subtypes:
+      - em_dash_density
+      - colon_density
+    normalization:
+      - per_1k_tokens
+    opportunity_context: all_character_positions
+    go_no_go_role: core
+
+  - id: paragraph_rhythm
+    tier: 1
+    matcher_type: document_statistic
+    subtypes:
+      - paragraph_token_count_stddev_inverse
+    normalization:
+      - document_scalar
+    opportunity_context: document_with_at_least_three_paragraphs
+    go_no_go_role: exploratory
+
+neutral_controls:
+  - id: neutral_for_example
+    phrase: for example
+    opportunity_context: all_non_code_token_positions
+  - id: neutral_such_as
+    phrase: such as
+    opportunity_context: all_non_code_token_positions
+  - id: neutral_in_particular
+    phrase: in particular
+    opportunity_context: all_non_code_token_positions
+  - id: neutral_as_a_result
+    phrase: as a result
+    opportunity_context: all_non_code_token_positions
+
+go_no_go:
+  required_core_features:
+    - contrastive_negation
+    - slop_lexicon
+    - list_header_onset
+    - stock_openers_closers
+    - punctuation_density
+  demote_if:
+    - precision_below_target_after_refinement
+    - opportunity_context_not_freezable
+    - denominator_not_reproducible

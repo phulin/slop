@@ -1,0 +1,155 @@
+stage: stage1
+slice: corpus-sampling
+seed: 1729
+
+wandb:
+  enabled: true
+  project: slop-stage1
+  group: corpus-sampling
+  api_key_env: WANDB_API_KEY
+  log_raw_text: false
+  tags:
+    - stage1
+    - corpus
+
+output:
+  root: artifacts/stage1/corpora
+  manifest_path: artifacts/stage1/corpora/sample_manifest.parquet
+  source_notes_path: artifacts/stage1/corpora/source_card_notes.md
+
+schema:
+  required_fields:
+    - corpus
+    - ladder
+    - source_dataset
+    - split
+    - stratum
+    - provenance
+    - prompt_id
+    - doc_id
+    - pair_id
+    - text_role
+    - text
+    - token_count
+    - sentence_count
+    - paragraph_count
+    - content_hash
+
+sampling_defaults:
+  dry_run_rows_per_slice: 1000
+  max_rows_per_shard: 50000
+  text_hash: sha256
+  token_counter: stage1_default
+  sentence_counter: spacy_or_regex_fallback
+  streaming: true
+
+sampled_corpus_measurements:
+  required: true
+  calibration_rows: 5000
+  metrics:
+    - rows_per_sec
+    - tokens_per_sec
+    - mb_per_sec
+    - peak_rss_gb
+    - output_size_mb
+
+corpora:
+  - name: dolma3_pretrain_sample
+    ladder: olmo3
+    source_dataset: allenai/dolma3
+    status: verify_dataset_card
+    target_rows_per_stratum: 50000
+    strata:
+      - web_cc
+      - forums_qa
+      - wiki
+      - scientific_olmocr
+    exclude_strata:
+      - code
+    notes:
+      - Report all rates per stratum to control register confounds.
+      - Forums/Q&A is the assistant-register pretrain baseline.
+
+  - name: dolci_instruct_sft
+    ladder: olmo3
+    source_dataset: allenai/Dolci-Instruct-SFT-7B
+    status: verify_dataset_card
+    split: train
+    target_rows: 100000
+    provenance_field: dataset_metadata_or_mixture_name
+    provenance_values:
+      - synthetic_llm_generated
+      - human_written
+      - mixed
+      - unknown
+    text_role: target_response
+
+  - name: dolci_instruct_dpo
+    ladder: olmo3
+    source_dataset: allenai/Dolci-Instruct-DPO-7B
+    status: verify_dataset_card
+    split: train
+    target_pairs: 100000
+    pair_fields:
+      prompt: prompt
+      chosen: chosen
+      rejected: rejected
+      pair_id: generated_stable_hash_if_absent
+    text_roles:
+      - chosen
+      - rejected
+    notes:
+      - Verify whether pairs are Delta-Learning strong-vs-weak model responses before interpreting chosen-vs-rejected as preference complicity.
+      - Preserve prompt-level pair identity for paired tests.
+
+  - name: dolci_instruct_rl
+    ladder: olmo3
+    source_dataset: allenai/Dolci-Instruct-RL-7B
+    status: verify_dataset_card
+    split: train
+    target_rows: 50000
+    text_role: target_response
+    notes:
+      - Included for final-stage data-rate context if schema is usable in Stage 1.
+
+  - name: smollm3_pretrain_sample
+    ladder: smollm3
+    source_dataset: HuggingFaceTB/SmolLM3-3B pretraining mixture
+    status: identify_exact_public_sources
+    target_rows_per_stratum: 25000
+    strata:
+      - web_cc
+      - forums_qa
+      - wiki
+      - scientific
+    exclude_strata:
+      - code
+
+  - name: smoltalk2_sft
+    ladder: smollm3
+    source_dataset: HuggingFaceTB/SmolTalk2
+    status: verify_dataset_card
+    split: train
+    target_rows: 75000
+    text_role: target_response
+
+  - name: tulu3_preference_subset
+    ladder: smollm3
+    source_dataset: allenai/tulu-3 preference data or exact SmolLM3 APO preference source
+    status: identify_exact_source
+    target_pairs: 75000
+    text_roles:
+      - chosen
+      - rejected
+    notes:
+      - Keep RM/human-ranked preference pairs separate from synthetic Qwen3-32B/0.6B pairs.
+
+go_no_go:
+  required_for_primary_go:
+    - dolma3_pretrain_sample has at least three populated strata
+    - dolci_instruct_sft loads with target responses
+    - dolci_instruct_dpo loads with stable chosen/rejected pair IDs
+    - sampled corpus measurements logged before full sampling
+  block_result_a_interpretation_if:
+    - dolci_instruct_dpo construction is not verified
+    - chosen/rejected role mapping is ambiguous

@@ -1,0 +1,106 @@
+stage: stage1
+slice: phase1-census
+seed: 1729
+
+wandb:
+  enabled: true
+  project: slop-stage1
+  group: phase1-census
+  api_key_env: WANDB_API_KEY
+  log_raw_text: false
+  tags:
+    - stage1
+    - phase1
+    - census
+
+inputs:
+  corpus_manifest: artifacts/stage1/corpora/sample_manifest.parquet
+  feature_specs: artifacts/stage1/matchers/feature_specs.json
+  matcher_version: artifacts/stage1/matchers/matcher_version.txt
+
+outputs:
+  root: artifacts/stage1/census
+  feature_rates_by_corpus: artifacts/stage1/census/feature_rates_by_corpus.parquet
+  feature_rates_by_stratum: artifacts/stage1/census/feature_rates_by_stratum.parquet
+  preference_pair_deltas: artifacts/stage1/census/preference_pair_deltas.parquet
+  summary: artifacts/stage1/census/census_summary.md
+
+execution:
+  dry_run_rows_per_corpus: 1000
+  batch_size_documents: 2048
+  write_spans: true
+  write_denominators: true
+  fail_on_missing_core_feature: true
+  fail_on_pair_misalignment: true
+
+sampled_corpus_measurements:
+  required_before_full_run: true
+  log_to_wandb: true
+  metrics:
+    - rows_per_sec
+    - tokens_per_sec
+    - peak_rss_gb
+    - output_size_mb
+
+rate_tables:
+  group_bys:
+    - corpus
+    - ladder
+    - source_dataset
+    - split
+    - stratum
+    - provenance
+    - text_role
+    - feature_id
+    - feature_subtype
+  denominators:
+    - token_count
+    - sentence_count
+    - opportunity_count
+    - document_count
+  rates:
+    - rate_per_1k_tokens
+    - rate_per_sentence
+    - rate_per_opportunity
+    - document_prevalence
+
+preference_pair_deltas:
+  enabled: true
+  pair_roles:
+    chosen: chosen
+    rejected: rejected
+  required_fields:
+    - pair_id
+    - prompt_id
+    - ladder
+    - corpus
+    - chosen_token_count
+    - rejected_token_count
+    - feature_id
+    - chosen_rate_per_1k_tokens
+    - rejected_rate_per_1k_tokens
+    - chosen_minus_rejected
+  covariates:
+    - chosen_token_count
+    - rejected_token_count
+    - token_count_delta
+    - prompt_length_tokens
+
+validation:
+  precision_report: artifacts/stage1/validation/precision_report.md
+  require_precision_for_core_features: 0.90
+  allow_exploratory_features_in_tables: true
+  exploratory_feature_flag: true
+
+go_no_go:
+  go_if:
+    - core_features_precision_at_least_0_90
+    - corpus_manifest_content_hashes_present
+    - chosen_rejected_pairs_align_one_to_one
+    - all_rate_denominators_nonnegative
+    - sampled_corpus_measurements_logged
+  block_statistical_claims_if:
+    - pair_alignment_broken
+    - chosen_rejected_role_mapping_ambiguous
+    - no_feature_or_length_difference_detected_in_any_preference_sample
+    - precision_report_missing_for_core_features
