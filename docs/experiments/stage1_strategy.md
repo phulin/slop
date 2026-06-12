@@ -17,7 +17,7 @@ This document translates `EXPERIMENTS.md` Week 1-2 into executable slices owned 
 Config: `configs/stage1/corpus_samples.yaml`
 
 Tasks:
-- Verify dataset cards and splits for OLMo 3 data: Dolma 3 sample source, `allenai/Dolci-Instruct-SFT-7B`, `allenai/Dolci-Instruct-DPO-7B`, and `allenai/Dolci-Instruct-RL-7B`.
+- Verify dataset cards and splits for OLMo 3 data: Dolma 3 sample source, `allenai/Dolci-Instruct-SFT`, `allenai/Dolci-Instruct-DPO`, and `allenai/Dolci-Instruct-RL`.
 - Verify SmolLM3 replication data sources: public pretraining mixture equivalent, SmolTalk2 SFT data, and Tulu-3 preference subset plus synthetic Qwen3-32B/0.6B pairs where available.
 - Build deterministic samples using `seed: 1729`.
 - Tag every row with `corpus`, `source_dataset`, `split`, `stratum`, `provenance`, `prompt_id`, `doc_id`, and token-count fields.

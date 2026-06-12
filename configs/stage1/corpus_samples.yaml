@@ -72,7 +72,7 @@ corpora:
 
   - name: dolci_instruct_sft
     ladder: olmo3
-    source_dataset: allenai/Dolci-Instruct-SFT-7B
+    source_dataset: allenai/Dolci-Instruct-SFT
     status: verify_dataset_card
     split: train
     target_rows: 100000
@@ -86,7 +86,7 @@ corpora:
 
   - name: dolci_instruct_dpo
     ladder: olmo3
-    source_dataset: allenai/Dolci-Instruct-DPO-7B
+    source_dataset: allenai/Dolci-Instruct-DPO
     status: verify_dataset_card
     split: train
     target_pairs: 100000
@@ -104,7 +104,7 @@ corpora:
 
   - name: dolci_instruct_rl
     ladder: olmo3
-    source_dataset: allenai/Dolci-Instruct-RL-7B
+    source_dataset: allenai/Dolci-Instruct-RL
     status: verify_dataset_card
     split: train
     target_rows: 50000

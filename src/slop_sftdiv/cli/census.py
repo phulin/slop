@@ -38,26 +38,45 @@ def build_parser() -> argparse.ArgumentParser:
 def _load_components():
     # Imported lazily so `--help` works before optional dependencies are installed.
     from slop_sftdiv.data import CorpusSource, SamplingConfig, iter_corpus_records
+    from slop_sftdiv.data.corpora import DEFAULT_ID_FIELDS
     from slop_sftdiv.features import extract_tier1_features
 
-    return CorpusSource, SamplingConfig, iter_corpus_records, extract_tier1_features
+    return CorpusSource, SamplingConfig, iter_corpus_records, extract_tier1_features, DEFAULT_ID_FIELDS
 
 
 def _source_from_input(raw_input: str, *, split: str, hf_config: str | None):
-    CorpusSource, _, _, _ = _load_components()
+    CorpusSource, _, _, _, _ = _load_components()
     path = Path(raw_input)
     if path.exists():
         return CorpusSource.jsonl(path)
     return CorpusSource.hf(raw_input, split=split, hf_config=hf_config, streaming=True)
 
 
+def _measurement_texts(record: Any) -> list[tuple[str, str, str | None]]:
+    if record.chosen and record.rejected:
+        pair_id = record.record_id
+        return [("chosen", record.chosen, pair_id), ("rejected", record.rejected, pair_id)]
+    return [("text", record.text, None)]
+
+
+def _id_fields_with_pair_id(default_id_fields: tuple[str, ...]) -> tuple[str, ...]:
+    fields = ("pair_id", "pair.id", "preference_pair_id", *default_id_fields)
+    return tuple(dict.fromkeys(fields))
+
+
+def _metadata_without_raw_text(row: dict[str, Any]) -> dict[str, Any]:
+    raw_text_keys = {"text", "prompt", "chosen", "rejected", "raw"}
+    return {key: value for key, value in row.items() if key not in raw_text_keys}
+
+
 def run_census(args: argparse.Namespace) -> pd.DataFrame:
-    _, SamplingConfig, iter_corpus_records, extract_tier1_features = _load_components()
-    feature_counts: dict[tuple[str, str], Counter[str]] = defaultdict(Counter)
-    token_counts: Counter[tuple[str, str]] = Counter()
-    doc_counts: Counter[tuple[str, str]] = Counter()
+    _, SamplingConfig, iter_corpus_records, extract_tier1_features, DEFAULT_ID_FIELDS = _load_components()
+    feature_counts: dict[tuple[str, str, str], Counter[str]] = defaultdict(Counter)
+    token_counts: Counter[tuple[str, str, str]] = Counter()
+    doc_counts: Counter[tuple[str, str, str]] = Counter()
     sample_rows: list[dict[str, Any]] = []
     text_fields = [args.text_field] if args.text_field else None
+    id_fields = _id_fields_with_pair_id(DEFAULT_ID_FIELDS)
     sampling = SamplingConfig(
         cap=args.sample_size,
         seed=args.seed,
@@ -86,42 +105,45 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
     try:
         for raw_source in args.input:
             source = _source_from_input(raw_source, split=args.split, hf_config=args.hf_config)
-            records_kwargs = {"sampling": sampling}
+            records_kwargs = {"sampling": sampling, "id_fields": id_fields}
             if text_fields:
                 records_kwargs["text_fields"] = text_fields
             records = iter_corpus_records(source, **records_kwargs)
             for record in tqdm(records, desc=f"census:{source.name}", unit="doc"):
-                analysis = extract_tier1_features(record.text)
-                token_count = int(analysis.helpers["token_count"])
                 subset = str(
                     record.metadata.get("stratum")
                     or record.metadata.get("provenance")
                     or record.split
                     or "default"
                 )
-                key = (record.source, subset)
-                feature_counts[key].update(analysis.counts)
-                token_counts[key] += token_count
-                doc_counts[key] += 1
-                if len(sample_rows) < 200:
-                    row = record.wandb_row(include_raw=False)
-                    sample_rows.append(
-                        {
-                            "source": record.source,
-                            "subset": subset,
-                            "record_id": record.record_id,
-                            "token_count": token_count,
-                            "metadata": json.dumps(
-                                {k: v for k, v in row.items() if k != "text"},
-                                sort_keys=True,
-                                default=str,
-                            ),
-                        }
-                    )
+                for role, text, pair_id in _measurement_texts(record):
+                    analysis = extract_tier1_features(text)
+                    token_count = int(analysis.helpers["token_count"])
+                    key = (record.source, subset, role)
+                    feature_counts[key].update(analysis.counts)
+                    token_counts[key] += token_count
+                    doc_counts[key] += 1
+                    if len(sample_rows) < 200:
+                        row = record.wandb_row(include_raw=False)
+                        sample_rows.append(
+                            {
+                                "source": record.source,
+                                "subset": subset,
+                                "role": role,
+                                "record_id": record.record_id,
+                                "pair_id": pair_id,
+                                "token_count": token_count,
+                                "metadata": json.dumps(
+                                    _metadata_without_raw_text(row),
+                                    sort_keys=True,
+                                    default=str,
+                                ),
+                            }
+                        )
 
         rows: list[dict[str, Any]] = []
         for key, counts in sorted(feature_counts.items()):
-            source, subset = key
+            source, subset, role = key
             tokens = max(token_counts[key], 1)
             docs = max(doc_counts[key], 1)
             for feature, count in sorted(counts.items()):
@@ -129,6 +151,7 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
                     {
                         "source": source,
                         "subset": subset,
+                        "role": role,
                         "feature": feature,
                         "count": count,
                         "docs": docs,
