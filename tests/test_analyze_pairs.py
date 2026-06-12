@@ -140,3 +140,15 @@ def test_analyze_rows_logit_controls_for_length_direction():
     assert report["logit_iterations"] > 0
     assert report["logit_feature_coef"] > 0
     assert abs(report["logit_length_coef"]) < report["logit_feature_coef"]
+
+
+def test_analyze_rows_sign_test_handles_large_samples():
+    rows = [
+        *[_row(f"p{i}", "slop_lexicon", 1.0) for i in range(6000)],
+        *[_row(f"n{i}", "slop_lexicon", -1.0) for i in range(4000)],
+    ]
+
+    [report] = analyze_rows(rows, alpha=0.05)
+
+    assert 0.0 <= report["sign_test_p"] <= 1.0
+    assert report["sign_test_p"] < 1e-80

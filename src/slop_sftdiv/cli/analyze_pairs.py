@@ -83,10 +83,19 @@ def _float(row: dict[str, Any], key: str) -> float:
 def _binomial_two_sided_p(successes: int, trials: int) -> float:
     if trials == 0:
         return 1.0
-    lower_tail = sum(math.comb(trials, k) for k in range(0, successes + 1))
-    upper_tail = sum(math.comb(trials, k) for k in range(successes, trials + 1))
-    total = 2**trials
-    return min(1.0, 2.0 * min(lower_tail, upper_tail) / total)
+    tail_successes = min(successes, trials - successes)
+    log_terms = [
+        math.lgamma(trials + 1)
+        - math.lgamma(k + 1)
+        - math.lgamma(trials - k + 1)
+        - trials * math.log(2.0)
+        for k in range(tail_successes + 1)
+    ]
+    max_log = max(log_terms)
+    tail_probability = math.exp(max_log) * math.fsum(
+        math.exp(term - max_log) for term in log_terms
+    )
+    return min(1.0, 2.0 * tail_probability)
 
 
 GroupKey = tuple[str, str, str]

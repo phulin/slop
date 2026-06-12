@@ -119,3 +119,27 @@
   It reused the 256-row pair-delta CSV, summarized 16 feature rows, and logged
   response-side ridge logistic diagnostics for feature rate and response
   length. No Tier-1 feature was BH-FDR significant at this dry-run size.
+- Retained 10k-row Dolci SFT+DPO Phase 1 census completed:
+  `stage1-olmo3-dolci-sft-dpo-10k-census-retained_sample`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/jnhxeiy2`.
+  It scanned 10,000 SFT rows and 10,000 DPO rows, measured 29,995 response
+  rows, processed 8,443,044 simple tokens in 73.15 seconds, logged about
+  115,423 tokens/sec, peaked at 1,270.8 MB RSS, wrote 72 feature-rate rows, and
+  emitted 79,960 DPO pair-delta rows. One Hugging Face read timeout recovered
+  on retry.
+- Retained 10k-row Dolci DPO Result A analysis completed:
+  `stage1-olmo3-dolci-dpo-10k-pair-analysis-retained_sample`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/njkg77h9`.
+  It summarized 79,960 pair-delta rows into 16 source/subset/feature rows and
+  found 9 BH-FDR-significant rows before manual precision validation. In the
+  main `unknown` subset, chosen responses averaged about 34.1 more simple
+  tokens than rejected responses; length remains a required covariate.
+- Retained 10k-row Dolci SFT+DPO hit sampling completed:
+  `stage1-olmo3-dolci-sft-dpo-10k-hit-sampling-retained_sample`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/t6wdmyj2`.
+  It found 750,738 candidate matcher hits across 20,000 docs and 29,995
+  response rows, then wrote the configured cap of 1,400 sampled rows for manual
+  labeling: 200 each for contrastive negation, list/header/bold lead-in,
+  punctuation/rhythm, rule-of-three, slop lexicon, stock closers, and stock
+  openers. The CSV contains multiline context fields, so line counts exceed
+  record counts.
