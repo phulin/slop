@@ -21,6 +21,7 @@ from slop_sftdiv.minhash import (
     normalize_for_minhash,
     signature_bands,
 )
+from slop_sftdiv.propensity import iter_feature_opportunities
 from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
 
@@ -42,6 +43,7 @@ class PrepStats:
     missing_prompt: int = 0
     missing_text: int = 0
     duplicate_prompt_id: int = 0
+    reference_feature_filtered: int = 0
     near_duplicate_prompt: int = 0
     eligible: int = 0
     selected: int = 0
@@ -70,6 +72,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--minhash-size", type=int, default=64)
     parser.add_argument("--minhash-shingle-tokens", type=int, default=5)
     parser.add_argument("--minhash-band-size", type=int, default=4)
+    parser.add_argument(
+        "--require-reference-feature",
+        action="append",
+        default=[],
+        help="Retain only rows whose target text initiates this feature; repeat for OR filtering.",
+    )
+    parser.add_argument("--reference-feature-max-token-start-opportunities", type=int, default=256)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--manifest-output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, default=None)
@@ -217,6 +226,17 @@ def _candidate_from_record(record: Any, *, source_name: str, order: int) -> Prom
     )
 
 
+def _passes_reference_feature_filter(record: Any, args: argparse.Namespace) -> bool:
+    if not args.require_reference_feature:
+        return True
+    opportunities = iter_feature_opportunities(
+        record.text,
+        features=args.require_reference_feature,
+        max_token_start_opportunities=args.reference_feature_max_token_start_opportunities,
+    )
+    return any(opportunity.reference_initiates for opportunity in opportunities)
+
+
 def _prepare_candidates(args: argparse.Namespace) -> tuple[list[PromptCandidate], PrepStats]:
     SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS = _load_components()
     text_fields = [args.text_field] if args.text_field else None
@@ -250,6 +270,9 @@ def _prepare_candidates(args: argparse.Namespace) -> tuple[list[PromptCandidate]
                 stats.duplicate_prompt_id += 1
                 continue
             seen_prompt_ids.add(record.record_id)
+            if not _passes_reference_feature_filter(record, args):
+                stats.reference_feature_filtered += 1
+                continue
             candidate = _candidate_from_record(record, source_name=source.name, order=order)
             if not candidate.normalized_prompt:
                 stats.missing_prompt += 1
@@ -326,6 +349,10 @@ def run_prepare_phase2_prompts(args: argparse.Namespace) -> list[dict[str, Any]]
             "minhash_size": args.minhash_size,
             "minhash_shingle_tokens": args.minhash_shingle_tokens,
             "minhash_band_size": args.minhash_band_size,
+            "require_reference_feature": args.require_reference_feature,
+            "reference_feature_max_token_start_opportunities": (
+                args.reference_feature_max_token_start_opportunities
+            ),
             "output": str(args.output),
             "manifest_output": str(args.manifest_output),
         },
@@ -347,6 +374,7 @@ def run_prepare_phase2_prompts(args: argparse.Namespace) -> list[dict[str, Any]]
             "missing_prompt": stats.missing_prompt,
             "missing_text": stats.missing_text,
             "duplicate_prompt_id": stats.duplicate_prompt_id,
+            "reference_feature_filtered": stats.reference_feature_filtered,
             "near_duplicate_prompt": stats.near_duplicate_prompt,
             "eligible_prompts": stats.eligible,
             "selected_prompts": stats.selected,
@@ -367,6 +395,7 @@ def run_prepare_phase2_prompts(args: argparse.Namespace) -> list[dict[str, Any]]
                 "phase2_prompts/missing_prompt": stats.missing_prompt,
                 "phase2_prompts/missing_text": stats.missing_text,
                 "phase2_prompts/duplicate_prompt_id": stats.duplicate_prompt_id,
+                "phase2_prompts/reference_feature_filtered": stats.reference_feature_filtered,
                 "phase2_prompts/near_duplicate_prompt": stats.near_duplicate_prompt,
                 "phase2_prompts/eligible_prompts": stats.eligible,
                 "phase2_prompts/selected_prompts": stats.selected,

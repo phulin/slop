@@ -170,3 +170,17 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   features, so this validates the held-out prompt package, OLMo loading,
   compiled exact-sequence scoring, and W&B plumbing; it is not an amplification
   result.
+- `stage2-phase2-dolci-sft-prompt-package-128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/dwqj49uk`) prepared a larger
+  prompt package from a 2,048-row scan. It produced 128 prompts after filtering
+  74 near duplicates. Local reference measurement found usable denominators for
+  `slop_lexicon`, `stock_openers`, and pooled `neutral_controls`, but still
+  zero positives for `contrastive_negation` and `stock_closers`.
+- `stage2-phase2-dolci-sft-positive-control-package-32`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/wl0o62kn`) prepared a
+  reference-positive package by retaining rows that initiate `slop_lexicon` or
+  pooled `neutral_controls`. It scanned 4,096 rows, found 347 eligible
+  reference-positive prompts, selected 32 prompts, and provides a compact
+  positive/control shard. The first 4 rows at a 128 token-start cap contain 902
+  total opportunities with 2 `slop_lexicon`, 2 `neutral_controls`, and 1
+  `stock_openers` reference positives.

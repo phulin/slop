@@ -153,3 +153,51 @@ def test_prepare_phase2_prompts_hash_selection_is_deterministic(tmp_path, monkey
         return [row["phase2_prompt_id"] for row in run_prepare_phase2_prompts(args)]
 
     assert run_once("a") == run_once("b")
+
+
+def test_prepare_phase2_prompts_can_require_reference_feature(tmp_path, monkeypatch):
+    input_path = tmp_path / "sft.jsonl"
+    output_path = tmp_path / "phase2_positive_prompts.jsonl"
+    manifest_path = tmp_path / "phase2_positive_prompts_manifest.csv"
+    _write_jsonl(
+        input_path,
+        [
+            {"id": "plain", "prompt": "Explain tests.", "text": "Tests check behavior."},
+            {"id": "slop", "prompt": "Explain APIs.", "text": "A robust API can unlock value."},
+            {"id": "neutral", "prompt": "Explain examples.", "text": "For example, use a fixture."},
+        ],
+    )
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    monkeypatch.setattr("slop_sftdiv.cli.prepare_phase2_prompts.init_wandb", lambda **_kwargs: FakeRun())
+    monkeypatch.setattr("slop_sftdiv.cli.prepare_phase2_prompts.log_summary_table", lambda *_args: None)
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "4",
+            "--sampling-strategy",
+            "first",
+            "--require-reference-feature",
+            "slop_lexicon",
+            "--output",
+            str(output_path),
+            "--manifest-output",
+            str(manifest_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    manifest_rows = run_prepare_phase2_prompts(args)
+    package_rows = [json.loads(line) for line in output_path.read_text(encoding="utf-8").splitlines()]
+
+    assert [row["phase2_prompt_id"] for row in package_rows] == ["slop"]
+    assert [row["phase2_prompt_id"] for row in manifest_rows] == ["slop"]

@@ -70,6 +70,29 @@ prompt_package:
     near_duplicate_prompt: 3
     selected_prompts: 8
 
+positive_control_package:
+  source: allenai/Dolci-Instruct-SFT-7B
+  split: train
+  sample_size: 32
+  max_scan: 4096
+  require_reference_feature:
+    - slop_lexicon
+    - neutral_controls
+  reference_feature_max_token_start_opportunities: 256
+  sampling_strategy: hash_reservoir
+  near_duplicate_threshold: 0.85
+  wandb_run_id: wl0o62kn
+  result:
+    scanned_rows: 4096
+    eligible_prompts: 347
+    near_duplicate_prompt: 0
+    selected_prompts: 32
+    first_4_rows_opportunities_cap128: 902
+    first_4_rows_reference_positives:
+      slop_lexicon: 2
+      neutral_controls: 2
+      stock_openers: 1
+
 first_real_run:
   model: allenai/Olmo-3-7B-Instruct-SFT
   input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8.jsonl

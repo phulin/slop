@@ -401,3 +401,22 @@
   `neutral_as_a_result`, and pooled `neutral_controls`. These share the
   token-start opportunity contract and are calibration targets for SFT AF near
   1, not slop features.
+- Prompt packaging now supports `--require-reference-feature`, which builds
+  targeted smoke/control shards whose target text actually initiates selected
+  features. This is for calibration and positive-control plumbing, not final
+  unbiased AF estimates.
+- Larger Dolci SFT package run:
+  `stage2-phase2-dolci-sft-prompt-package-128`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/dwqj49uk`. It scanned 2,048
+  rows, found 1,974 eligible prompt/target rows, filtered 74 near duplicates,
+  and selected 128 prompts. Local reference counts at a 128 token-start cap:
+  10 `slop_lexicon`, 4 `stock_openers`, and 5 pooled `neutral_controls`
+  positives; still zero `contrastive_negation` and `stock_closers`.
+- Positive/control Dolci SFT package run:
+  `stage2-phase2-dolci-sft-positive-control-package-32`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/wl0o62kn`. It scanned 4,096
+  rows, found 347 rows that initiate `slop_lexicon` or pooled
+  `neutral_controls`, selected 32 prompts, and gives a compact next GPU shard.
+  The first 4 rows at a 128 token-start cap have 902 total opportunities with
+  2 `slop_lexicon`, 2 `neutral_controls`, and 1 `stock_openers` reference
+  positives.
