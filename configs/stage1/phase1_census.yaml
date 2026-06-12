@@ -32,6 +32,21 @@ execution:
   write_denominators: true
   fail_on_missing_core_feature: true
   fail_on_pair_misalignment: true
+  include_biber_lite: true
+  revised_phase1_features:
+    - contrastive_negation
+    - rule_of_three_approx
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+    - stock_openers_closers
+  excluded_from_revised_phase1:
+    - list_header_bold_lead_in
+    - punctuation_rhythm
+  biber_note: >-
+    Full pybiber extraction is deferred on this CPython 3.14 environment because
+    pybiber's spaCy dependency has no compatible wheel. Phase 1 records
+    Biber-lite surface proxies with explicit caveats.
 
 sampled_corpus_measurements:
   required_before_full_run: true
@@ -87,8 +102,15 @@ preference_pair_deltas:
     - prompt_length_tokens
 
 validation:
-  precision_report: artifacts/stage1/validation/precision_report.md
+  precision_report: artifacts/stage1/validation/precision_report.csv
   require_precision_for_core_features: 0.90
+  revised_core_features:
+    - contrastive_negation
+    - rule_of_three_approx
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+    - stock_openers_closers
   allow_exploratory_features_in_tables: true
   exploratory_feature_flag: true
 

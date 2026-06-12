@@ -47,7 +47,7 @@ PROMOTED_METADATA_FIELDS = (
     "created",
     "added",
 )
-JSON_METADATA_FIELDS = ("metadata", "doc", "attributes")
+JSON_METADATA_FIELDS = ("metadata", "doc", "attributes", "chat_template_kwargs")
 
 
 @dataclass(frozen=True)

@@ -13,11 +13,10 @@ VALID_LABELS = {"exact", "partial", "false_positive", "ambiguous"}
 CORE_FEATURES = {
     "contrastive_negation",
     "slop_lexicon",
-    "list_header_bold_lead_in",
     "stock_openers",
     "stock_closers",
     "stock_openers_closers",
-    "punctuation_rhythm",
+    "rule_of_three_approx",
 }
 
 
@@ -185,4 +184,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

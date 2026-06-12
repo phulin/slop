@@ -311,3 +311,24 @@
   config/split-aware bounded probing works, but Phase 1 remains open pending
   broader split/source count census, target response extraction/normalization,
   Tulu construction semantics, and pretraining recipe weights.
+- Revised Phase 1 scoped Biber-lite census runs completed. The required core
+  scope is contrastive negation, rule-of-three approximation, slop lexicon, and
+  stock openers/closers; punctuation/rhythm, list/header/bold lead-ins, and
+  generic hedging are historical/exploratory only.
+- Revised Dolci SFT retained run:
+  `stage1-olmo3-dolci-sft-10k-revised-biber-lite-census`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/05zob6cx`. It measured
+  10,000 retained `target_response` rows, 1,806,697 simple tokens, and wrote
+  `artifacts/stage1/census/olmo3_dolci_sft_10k_revised_biber_lite_feature_rates.csv`.
+- Revised Dolma 3 retained sample run:
+  `stage1-olmo3-dolma3-20k-scan-revised-biber-lite-census`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/zrpkl0t7`. It measured 1,401
+  retained pretrain rows, 2,129,938 simple tokens, and wrote
+  `artifacts/stage1/census/olmo3_dolma3_20k_scan_revised_biber_lite_feature_rates.csv`.
+- Revised Dolci DPO retained package run:
+  `stage1-olmo3-dolci-dpo-10k-retained-revised-biber-lite-census`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/tmgvdy4t`. It measured
+  20,000 retained rows, 6,637,271 simple tokens, 10,000 unique package pair
+  IDs, wrote 100 feature-rate rows, and emitted 250,000 pair-feature delta rows
+  to
+  `artifacts/stage1/census/olmo3_dolci_dpo_10k_retained_revised_biber_lite_pair_deltas.csv`.

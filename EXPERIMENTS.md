@@ -44,17 +44,16 @@ Reference corpora:
 
 ## 2. Feature set
 
-**Tier 1 — seed slop patterns (regex/POS matchers, exist already):**
+**Tier 1 — revised Phase 1 seed slop patterns (regex/POS matchers):**
 
 1. Contrastive negation "not X, but Y" / "it's not just X — it's Y" (port the EQ-Bench two-stage regex+POS matcher).
 2. Slop lexicon (EQ-Bench over-represented word and trigram lists: "delve", "tapestry", "testament to", "it's important to note", …) — track as per-1k-token rates per item and as a pooled index.
-3. Rule-of-three: coordinated triple constituents (POS-chunk pattern: X, Y(,) and Z at phrase level), tracked separately for NP, VP, and clause triples.
-4. List-as-response: markdown bullet/numbered-list onset; header onset; bold-lead-in ("**Term**: definition") pattern.
-5. Epistemic hedging tokens in generic-claim contexts: "often/typically/usually/generally/may" heading a present-tense generic clause (matcher: hedge adverb + generic subject + simple present; precision-validated by hand on 200 hits).
-6. Sycophantic/stock openers and closers ("Great question", "I hope this helps", "In conclusion", "Overall,").
-7. Em-dash and colon density; uniform paragraph-length rhythm (std. dev. of paragraph token counts, inverted).
+3. Rule-of-three approximation: coordinated triple spans of the form X, Y(,) and Z. Phase 1 reports the current regex approximation with caveats rather than a full NP/VP/clause POS-chunk split.
+4. Sycophantic/stock openers and closers ("Great question", "I hope this helps", "In conclusion", "Overall,").
 
-**Tier 2 — Biber/linguistic features:** the 66-category Biber tagset via the `pybiber` extractor (Reinhart/Brown group tooling), giving nominalizations, agentless passives, hedging phrases, clausal coordination, lexical-complexity indices, etc.
+Deferred from Phase 1 core claims: list/header/bold lead-in, punctuation/rhythm, and generic hedging. These remain useful exploratory or future features but should not block the revised Phase 1 close-out.
+
+**Tier 2 — Biber/linguistic features:** Phase 1 adds sampled Biber-style surface proxies (`biber_lite`) for pronouns, modals, hedges, amplifiers, verb classes, nominalizations, complements, subordination, wh-questions, and passive-voice approximations. Full 66-category `pybiber` extraction remains the target, but is deferred here because the current CPython 3.14 environment cannot install pybiber's spaCy dependency.
 
 **Tier 3 — discovered features (from Phase 4):** clusters extracted from detector attribution; added to the pipeline with hand-written or classifier-based matchers.
 
@@ -62,7 +61,7 @@ Every feature gets: (i) a span matcher, (ii) a defined *opportunity context* (wh
 
 ## 3. Phase 1 — Frequency census (grounding)
 
-**What:** run all Tier-1/Tier-2 matchers over: pretrain strata, SFT targets (split by provenance), DPO-chosen, DPO-rejected, and generations from each checkpoint.
+**What:** run the revised Tier-1 matchers and Biber-lite sampled register features over: pretrain strata, SFT targets (split by available provenance/source metadata), DPO-chosen, DPO-rejected, and later generations from each checkpoint.
 
 **Normalization:** per-1k-tokens (default), per-sentence (for clause-level constructions), and per-opportunity (see §4). Report all three for Tier-1.
 

@@ -40,6 +40,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--text-field", default=None)
     parser.add_argument("--sample-size", type=int, default=10_000, help="Maximum records per input.")
     parser.add_argument("--hits-per-feature", type=int, default=200)
+    parser.add_argument(
+        "--feature",
+        action="append",
+        default=[],
+        help="Feature ID to sample; repeat to include multiple features. Defaults to all Tier-1 hits.",
+    )
     parser.add_argument("--seed", type=int, default=1729)
     parser.add_argument("--max-scan", type=int, default=None)
     parser.add_argument("--context-chars", type=int, default=120)
@@ -137,6 +143,7 @@ def run_sample_hits(args: argparse.Namespace) -> list[dict[str, Any]]:
     sampling = SamplingConfig(cap=args.sample_size, seed=args.seed, max_scan=args.max_scan)
     buckets: dict[str, list[dict[str, Any]]] = defaultdict(list)
     candidate_counts: Counter[str] = Counter()
+    selected_features = set(args.feature)
     doc_count = 0
     measurement_count = 0
 
@@ -154,6 +161,7 @@ def run_sample_hits(args: argparse.Namespace) -> list[dict[str, Any]]:
             "hf_config": args.hf_config,
             "sample_size": args.sample_size,
             "hits_per_feature": args.hits_per_feature,
+            "features": args.feature,
             "seed": args.seed,
             "max_scan": args.max_scan,
             "context_chars": args.context_chars,
@@ -174,6 +182,8 @@ def run_sample_hits(args: argparse.Namespace) -> list[dict[str, Any]]:
                 for role, text, pair_id in _measurement_texts(record):
                     measurement_count += 1
                     for hit in iter_tier1_hits(text, context_chars=args.context_chars):
+                        if selected_features and hit.feature not in selected_features:
+                            continue
                         candidate_counts[hit.feature] += 1
                         row = _candidate_row(
                             source=record.source,

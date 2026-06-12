@@ -33,7 +33,7 @@ validation_defaults:
 features:
   - id: contrastive_negation
     tier: 1
-    matcher_type: regex_pos
+    matcher_type: regex
     examples:
       - not X, but Y
       - not just X, but Y
@@ -62,21 +62,20 @@ features:
     report_pooled_index: true
     go_no_go_role: core
 
-  - id: rule_of_three
+  - id: rule_of_three_approx
     tier: 1
-    matcher_type: pos_chunk_pattern
+    matcher_type: regex
     subtypes:
-      - noun_phrase_triple
-      - verb_phrase_triple
-      - clause_triple
+      - coordinated_triple_surface
     normalization:
       - per_1k_tokens
       - per_sentence
       - per_opportunity
-    opportunity_context: coordinated_phrase_or_clause_boundary
-    go_no_go_role: standard
+    opportunity_context: comma_or_conjunction_delimited_triple_span
+    precision_note: Reports a surface approximation, not a full NP/VP/clause chunk analysis.
+    go_no_go_role: core
 
-  - id: list_header_onset
+  - id: list_header_bold_lead_in
     tier: 1
     matcher_type: markdown_regex
     subtypes:
@@ -89,7 +88,7 @@ features:
       - document_scalar
       - per_opportunity
     opportunity_context: response_start_post_newline_or_post_colon_position
-    go_no_go_role: core
+    go_no_go_role: future_exploratory
 
   - id: generic_hedging
     tier: 1
@@ -106,7 +105,7 @@ features:
       - per_opportunity
     opportunity_context: generic_subject_before_simple_present_clause
     precision_note: Validate manually because generic-claim detection is error-prone.
-    go_no_go_role: standard
+    go_no_go_role: future_exploratory
 
   - id: stock_openers_closers
     tier: 1
@@ -123,7 +122,7 @@ features:
     opportunity_context: response_initial_sentence_or_final_paragraph_boundary
     go_no_go_role: core
 
-  - id: punctuation_density
+  - id: punctuation_rhythm
     tier: 1
     matcher_type: character_and_token_counter
     subtypes:
@@ -132,7 +131,7 @@ features:
     normalization:
       - per_1k_tokens
     opportunity_context: all_character_positions
-    go_no_go_role: core
+    go_no_go_role: future_exploratory
 
   - id: paragraph_rhythm
     tier: 1
@@ -161,10 +160,35 @@ neutral_controls:
 go_no_go:
   required_core_features:
     - contrastive_negation
+    - rule_of_three_approx
     - slop_lexicon
-    - list_header_onset
+    - stock_openers
+    - stock_closers
     - stock_openers_closers
-    - punctuation_density
+  excluded_by_revised_phase1_scope:
+    - list_header_bold_lead_in
+    - punctuation_rhythm
+    - generic_hedging
+  biber_lite_sampled_features:
+    - biber_lite_first_person_pronouns
+    - biber_lite_second_person_pronouns
+    - biber_lite_third_person_pronouns
+    - biber_lite_demonstratives
+    - biber_lite_possibility_modals
+    - biber_lite_necessity_modals
+    - biber_lite_prediction_modals
+    - biber_lite_hedges
+    - biber_lite_amplifiers
+    - biber_lite_private_verbs
+    - biber_lite_public_verbs
+    - biber_lite_suasive_verbs
+    - biber_lite_nominalizations
+    - biber_lite_that_complements
+    - biber_lite_infinitives
+    - biber_lite_causal_subordinators
+    - biber_lite_conditional_subordinators
+    - biber_lite_wh_questions
+    - biber_lite_passive_voice_approx
   demote_if:
     - precision_below_target_after_refinement
     - opportunity_context_not_freezable

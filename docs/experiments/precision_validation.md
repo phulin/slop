@@ -24,6 +24,23 @@ frozen matcher version and `seed: 1729`. Stratify by corpus, source dataset, and
 chosen/rejected side where possible. If a feature has fewer than 200 hits, label
 all hits and record the observed sample size.
 
+For the revised Phase 1 scope, generate focused queues with repeated
+`--feature` filters so old exploratory matchers do not consume labeling time:
+
+```bash
+uv run slop-sample-hits \
+  --input artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl \
+  --input artifacts/stage1/corpora/olmo3_dolci_dpo_10k_retained_sample.jsonl \
+  --feature contrastive_negation \
+  --feature rule_of_three_approx \
+  --feature slop_lexicon \
+  --feature stock_openers \
+  --feature stock_closers \
+  --hits-per-feature 200 \
+  --output artifacts/stage1/validation/hit_samples/revised_phase1_core_hits.csv \
+  --wandb-mode online
+```
+
 Each sampled row should include:
 
 - `feature_id`
@@ -153,8 +170,9 @@ The precision report should include one row per feature with:
 
 The target precision is `>= 0.90` for every feature used in Phase 1 claims.
 Core Tier-1 features must meet the target before census results are interpreted:
-contrastive negation, pooled slop lexicon, list/header onset, stock
-openers/closers, and punctuation density.
+contrastive negation, rule-of-three approximation, pooled slop lexicon, and
+stock openers/closers. List/header onset and punctuation/rhythm are excluded
+from the revised Phase 1 core scope and should not block close-out claims.
 
 ## Demotion Rules
 

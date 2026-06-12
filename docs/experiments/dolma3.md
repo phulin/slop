@@ -190,7 +190,7 @@ Command shape:
   underfilled relative to the 1,000-row cap and should be reported as prefix
   skew, not as evidence of source prevalence in the full Dolma 3 mix.
 
-## Retained 20k-Scan Census
+## Historical Retained 20k-Scan All-Feature Census
 
 - W&B census run:
   `stage1-olmo3-dolma3-20k-scan-stratum-census-retained_sample`,
@@ -200,7 +200,9 @@ Command shape:
 - Shape: 32 feature-rate rows, grouped by retained stratum and text role.
 - Throughput: 1,401 docs, 2,129,938 simple tokens, 16.61 seconds, about
   128,199 tokens/sec, 161 MB peak RSS.
-- Highest per-1k-token rates by stratum:
+- Highest per-1k-token rates by stratum in the historical all-feature census.
+  `punctuation_rhythm` and `list_header_bold_lead_in` are excluded from the
+  revised Phase 1 core scope:
   - `web_cc`: `punctuation_rhythm` 13.53, `rule_of_three_approx` 3.85,
     `list_header_bold_lead_in` 0.65
   - `forums_qa`: `punctuation_rhythm` 18.29, `rule_of_three_approx` 3.55,

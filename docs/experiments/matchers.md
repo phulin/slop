@@ -68,9 +68,10 @@ W&B validation runs should use project `slop-stage1`, group
 references. Do not log unredacted full text or secrets.
 
 Before Phase 1 claims, core matchers must pass precision gates: contrastive
-negation, pooled slop lexicon, list/header onset, stock openers/closers, and
-punctuation density. If any core feature fails, block claims until it is fixed
-or explicitly removed from the claim set.
+negation, rule-of-three approximation, pooled slop lexicon, and stock
+openers/closers. List/header onset and punctuation/rhythm are implemented but
+excluded from the revised Phase 1 core claim set. If any revised core feature
+fails, block claims until it is fixed or explicitly removed from the claim set.
 
 ## Limitations
 
@@ -81,3 +82,8 @@ favor recall over syntactic precision. The rule-of-three matcher does not yet
 split NP, VP, and clause triples. Paragraph rhythm is only meaningful for texts
 with paragraph breaks, and single-paragraph responses receive zero standard
 deviation by construction.
+
+The Biber layer in this Phase 1 close-out is `biber_lite`: deterministic
+surface proxies for selected Biber-style categories. Full pybiber extraction is
+deferred because the current CPython 3.14 environment cannot install pybiber's
+spaCy dependency.

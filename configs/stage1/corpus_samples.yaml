@@ -128,21 +128,32 @@ corpora:
   - name: smoltalk2_sft
     ladder: smollm3
     source_dataset: HuggingFaceTB/SmolTalk2
-    status: verify_dataset_card
-    split: train
+    status: config_specific_probe_passed
+    hf_config: SFT
+    sampled_splits:
+      - smoltalk_smollm3_everyday_conversations_no_think
+      - OpenThoughts3_1.2M_think
     target_rows: 75000
     text_role: target_response
+    notes:
+      - Exact retained sampling must keep think and no_think splits separate.
+      - `chat_template_kwargs.enable_thinking` is promoted into manifest metadata for mode checks.
 
   - name: tulu3_preference_subset
     ladder: smollm3
-    source_dataset: allenai/tulu-3 preference data or exact SmolLM3 APO preference source
-    status: identify_exact_source
+    source_dataset: HuggingFaceTB/SmolTalk2
+    status: config_specific_probe_passed
+    hf_config: Preference
+    sampled_splits:
+      - llama_3.1_tulu_3_8b_preference_mixture_no_think
+      - tulu_3_8b_pref_mix_Qwen3_32B_Qwen3_0.6B_think
     target_pairs: 75000
     text_roles:
       - chosen
       - rejected
     notes:
       - Keep RM/human-ranked preference pairs separate from synthetic Qwen3-32B/0.6B pairs.
+      - Expand chosen and rejected into separate retained rows while preserving pair_id.
 
 go_no_go:
   required_for_primary_go:

@@ -109,6 +109,65 @@ def test_run_census_writes_pair_output_for_preference_records(tmp_path, monkeypa
     )
 
 
+def test_run_census_writes_pair_output_for_retained_expanded_rows(tmp_path, monkeypatch):
+    monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
+    input_path = tmp_path / "expanded_pairs.jsonl"
+    output_path = tmp_path / "summary.csv"
+    pair_output_path = tmp_path / "pairs.csv"
+    input_path.write_text(
+        "\n".join(
+            json.dumps(row)
+            for row in [
+                {
+                    "pair_id": "pair-1",
+                    "doc_id": "pair-1:chosen",
+                    "text_role": "chosen",
+                    "text": "Certainly, delve into this robust plan.",
+                    "preference_type": "delta_learning",
+                    "chosen_model": "strong",
+                    "rejected_model": "weak",
+                },
+                {
+                    "pair_id": "pair-1",
+                    "doc_id": "pair-1:rejected",
+                    "text_role": "rejected",
+                    "text": "Plain answer.",
+                    "preference_type": "delta_learning",
+                    "chosen_model": "strong",
+                    "rejected_model": "weak",
+                },
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "2",
+            "--output",
+            str(output_path),
+            "--pair-output",
+            str(pair_output_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    run_census(args)
+
+    pair_rows = pytest.importorskip("pandas").read_csv(pair_output_path)
+    slop_row = pair_rows.loc[pair_rows["feature"] == "slop_lexicon"].iloc[0]
+    assert slop_row["pair_id"] == "pair-1"
+    assert slop_row["preference_type"] == "delta_learning"
+    assert slop_row["chosen_model"] == "strong"
+    assert slop_row["rejected_model"] == "weak"
+    assert slop_row["chosen_count"] == 2
+    assert slop_row["rejected_count"] == 0
+
+
 def test_run_census_does_not_log_raw_preference_text_to_wandb(tmp_path, monkeypatch):
     monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
     input_path = tmp_path / "pairs.jsonl"
@@ -185,6 +244,98 @@ def test_run_census_groups_by_promoted_source_metadata(tmp_path, monkeypatch):
     frame = run_census(args)
 
     assert set(frame["subset"]) == {"web_cc", "forums_qa"}
+
+
+def test_run_census_uses_retained_text_role_for_non_pair_rows(tmp_path, monkeypatch):
+    monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
+    input_path = tmp_path / "retained.jsonl"
+    output_path = tmp_path / "summary.csv"
+    input_path.write_text(
+        json.dumps(
+            {
+                "doc_id": "pair-1:chosen",
+                "pair_id": "pair-1",
+                "text": "Certainly, delve into this robust response.",
+                "text_role": "chosen",
+                "source": "dolci",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "1",
+            "--output",
+            str(output_path),
+            "--feature",
+            "slop_lexicon",
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    frame = run_census(args)
+
+    assert set(frame["role"]) == {"chosen"}
+    assert frame.loc[frame["feature"] == "slop_lexicon", "count"].sum() == 2
+
+
+def test_run_census_can_filter_revised_phase1_features_and_include_biber_lite(tmp_path, monkeypatch):
+    monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
+    input_path = tmp_path / "input.jsonl"
+    output_path = tmp_path / "summary.csv"
+    input_path.write_text(
+        json.dumps(
+            {
+                "id": "a",
+                "text": (
+                    "Certainly, I think you should delve into tests. "
+                    "It is not noise, it is signal."
+                ),
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "1",
+            "--output",
+            str(output_path),
+            "--include-biber-lite",
+            "--feature",
+            "contrastive_negation",
+            "--feature",
+            "slop_lexicon",
+            "--feature",
+            "stock_openers_closers",
+            "--feature",
+            "biber_lite_private_verbs",
+            "--feature",
+            "biber_lite_second_person_pronouns",
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    frame = run_census(args)
+
+    assert set(frame["feature"]) == {
+        "biber_lite_private_verbs",
+        "biber_lite_second_person_pronouns",
+        "contrastive_negation",
+        "slop_lexicon",
+        "stock_openers_closers",
+    }
+    assert frame.loc[frame["feature"] == "biber_lite_private_verbs", "count"].sum() == 1
+    assert frame.loc[frame["feature"] == "biber_lite_second_person_pronouns", "count"].sum() == 1
 
 
 def test_run_census_logs_throughput_metrics(tmp_path, monkeypatch):

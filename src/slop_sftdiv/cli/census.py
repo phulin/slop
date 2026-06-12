@@ -84,6 +84,17 @@ def build_parser() -> argparse.ArgumentParser:
         help="Deterministic row-selection strategy.",
     )
     parser.add_argument("--max-scan", type=int, default=None, help="Maximum source rows to scan.")
+    parser.add_argument(
+        "--feature",
+        action="append",
+        default=[],
+        help="Feature ID to keep in outputs; repeat to include multiple features.",
+    )
+    parser.add_argument(
+        "--include-biber-lite",
+        action="store_true",
+        help="Add sampled Biber-style surface feature counts to census outputs.",
+    )
     parser.add_argument("--output", type=Path, default=Path("runs/stage1_census/summary.csv"))
     parser.add_argument(
         "--pair-output",
@@ -105,13 +116,20 @@ def _load_components():
     # Imported lazily so `--help` works before optional dependencies are installed.
     from slop_sftdiv.data import CorpusSource, SamplingConfig, iter_corpus_records
     from slop_sftdiv.data.corpora import DEFAULT_ID_FIELDS
-    from slop_sftdiv.features import extract_tier1_features
+    from slop_sftdiv.features import extract_biber_lite_features, extract_tier1_features
 
-    return CorpusSource, SamplingConfig, iter_corpus_records, extract_tier1_features, DEFAULT_ID_FIELDS
+    return (
+        CorpusSource,
+        SamplingConfig,
+        iter_corpus_records,
+        extract_tier1_features,
+        extract_biber_lite_features,
+        DEFAULT_ID_FIELDS,
+    )
 
 
 def _source_from_input(raw_input: str, *, split: str, hf_config: str | None):
-    CorpusSource, _, _, _, _ = _load_components()
+    CorpusSource, _, _, _, _, _ = _load_components()
     path = Path(raw_input)
     if path.exists():
         return CorpusSource.jsonl(path)
@@ -122,7 +140,9 @@ def _measurement_texts(record: Any) -> list[tuple[str, str, str | None]]:
     if record.chosen and record.rejected:
         pair_id = record.record_id
         return [("chosen", record.chosen, pair_id), ("rejected", record.rejected, pair_id)]
-    return [("text", record.text, None)]
+    role = str(record.metadata.get("text_role") or "text")
+    pair_id = record.record_id if role in {"chosen", "rejected"} else None
+    return [(role, record.text, pair_id)]
 
 
 def _id_fields_with_pair_id(default_id_fields: tuple[str, ...]) -> tuple[str, ...]:
@@ -156,6 +176,12 @@ def _subset_for_record(metadata: dict[str, Any] | Any, split: str | None) -> str
 
 def _rate_per_1k(count: int, tokens: int) -> float:
     return 1000.0 * count / max(tokens, 1)
+
+
+def _filtered_counts(counts: Counter[str], selected_features: set[str]) -> Counter[str]:
+    if not selected_features:
+        return counts
+    return Counter({feature: count for feature, count in counts.items() if feature in selected_features})
 
 
 def _peak_rss_mb() -> float:
@@ -202,12 +228,22 @@ def _pair_rows(
 
 
 def run_census(args: argparse.Namespace) -> pd.DataFrame:
-    _, SamplingConfig, iter_corpus_records, extract_tier1_features, DEFAULT_ID_FIELDS = _load_components()
+    (
+        _,
+        SamplingConfig,
+        iter_corpus_records,
+        extract_tier1_features,
+        extract_biber_lite_features,
+        DEFAULT_ID_FIELDS,
+    ) = _load_components()
     feature_counts: dict[tuple[str, str, str], Counter[str]] = defaultdict(Counter)
     token_counts: Counter[tuple[str, str, str]] = Counter()
     doc_counts: Counter[tuple[str, str, str]] = Counter()
     sample_rows: list[dict[str, Any]] = []
     pair_rows: list[dict[str, Any]] = []
+    pending_pair_analyses: dict[
+        tuple[str, str, str], dict[str, tuple[Counter[str], int, dict[str, Any] | Any]]
+    ] = {}
     source_metrics: list[SourceMetrics] = []
     total_started_at = time.perf_counter()
     text_fields = [args.text_field] if args.text_field else None
@@ -218,6 +254,7 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
         strategy=args.sampling_strategy,
         max_scan=args.max_scan,
     )
+    selected_features = set(args.feature)
 
     run = init_wandb(
         project=args.wandb_project,
@@ -236,6 +273,8 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
             "text_field": args.text_field,
             "sampling_strategy": args.sampling_strategy,
             "max_scan": args.max_scan,
+            "features": args.feature,
+            "include_biber_lite": args.include_biber_lite,
             "pair_output": str(args.pair_output) if args.pair_output is not None else None,
             "wandb_group": args.wandb_group,
             "wandb_job_type": args.wandb_job_type,
@@ -256,17 +295,23 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
                 metrics.docs += 1
                 subset = _subset_for_record(record.metadata, record.split)
                 pair_analyses: dict[str, tuple[Counter[str], int]] = {}
+                record_pair_id: str | None = None
                 for role, text, pair_id in _measurement_texts(record):
                     analysis = extract_tier1_features(text)
+                    counts = Counter(analysis.counts)
+                    if args.include_biber_lite:
+                        counts.update(extract_biber_lite_features(text).counts)
+                    counts = _filtered_counts(counts, selected_features)
                     token_count = int(analysis.helpers["token_count"])
                     metrics.measurement_rows += 1
                     metrics.tokens += token_count
                     key = (record.source, subset, role)
-                    feature_counts[key].update(analysis.counts)
+                    feature_counts[key].update(counts)
                     token_counts[key] += token_count
                     doc_counts[key] += 1
                     if pair_id is not None and role in {"chosen", "rejected"}:
-                        pair_analyses[role] = (Counter(analysis.counts), token_count)
+                        record_pair_id = pair_id
+                        pair_analyses[role] = (counts, token_count)
                     if len(sample_rows) < 200:
                         row = record.wandb_row(include_raw=False)
                         sample_rows.append(
@@ -284,14 +329,18 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
                                 ),
                             }
                         )
-                if "chosen" in pair_analyses and "rejected" in pair_analyses:
+                if (
+                    record_pair_id is not None
+                    and "chosen" in pair_analyses
+                    and "rejected" in pair_analyses
+                ):
                     chosen_counts, chosen_tokens = pair_analyses["chosen"]
                     rejected_counts, rejected_tokens = pair_analyses["rejected"]
                     pair_rows.extend(
                         new_pair_rows := _pair_rows(
                             source=record.source,
                             subset=subset,
-                            pair_id=record.record_id,
+                            pair_id=record_pair_id,
                             metadata=record.metadata,
                             chosen_counts=chosen_counts,
                             rejected_counts=rejected_counts,
@@ -300,6 +349,28 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
                         )
                     )
                     metrics.pair_rows += len(new_pair_rows)
+                elif record_pair_id is not None and pair_analyses:
+                    pending_key = (record.source, subset, record_pair_id)
+                    pending = pending_pair_analyses.setdefault(pending_key, {})
+                    for role, (counts, token_count) in pair_analyses.items():
+                        pending[role] = (counts, token_count, record.metadata)
+                    if "chosen" in pending and "rejected" in pending:
+                        chosen_counts, chosen_tokens, metadata = pending["chosen"]
+                        rejected_counts, rejected_tokens, _ = pending["rejected"]
+                        pair_rows.extend(
+                            new_pair_rows := _pair_rows(
+                                source=record.source,
+                                subset=subset,
+                                pair_id=record_pair_id,
+                                metadata=metadata,
+                                chosen_counts=chosen_counts,
+                                rejected_counts=rejected_counts,
+                                chosen_tokens=chosen_tokens,
+                                rejected_tokens=rejected_tokens,
+                            )
+                        )
+                        metrics.pair_rows += len(new_pair_rows)
+                        del pending_pair_analyses[pending_key]
             metrics.wall_seconds = time.perf_counter() - source_started_at
             source_metrics.append(metrics)
 

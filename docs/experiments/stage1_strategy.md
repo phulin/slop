@@ -5,7 +5,7 @@ This document translates `EXPERIMENTS.md` Week 1-2 into executable slices owned 
 ## Objectives
 
 1. Build sampled, stratified corpora for the OLMo 3 primary ladder and SmolLM3 replication ladder.
-2. Port Tier-1 feature matchers with frozen feature specs: span matcher, opportunity context, and normalization rules.
+2. Port the revised Tier-1 feature scope with frozen feature specs: span matcher, opportunity context, and normalization rules.
 3. Precision-validate each Tier-1 matcher on 200 sampled hits, with documented demotion criteria.
 4. Run Phase 1 frequency census over data corpora: pretrain strata, SFT targets, preference chosen, and preference rejected.
 5. Emit auditable artifacts for Week 3 chosen-vs-rejected analysis and later teacher-forced propensity harness work.
@@ -37,7 +37,14 @@ Go/no-go:
 Config: `configs/stage1/tier1_matchers.yaml`
 
 Tasks:
-- Implement matchers for contrastive negation, slop lexicon, rule-of-three, list/header onset, generic hedging, stock openers/closers, punctuation density, and paragraph rhythm.
+- Implement matchers for the revised Phase 1 core set: contrastive negation,
+  slop lexicon, rule-of-three approximation, and stock openers/closers.
+- Keep list/header onset and punctuation/rhythm implemented but out of the
+  Phase 1 core claims. They can be reported only as future/exploratory context.
+- Add sampled Biber-style register measurements. Full `pybiber` extraction is
+  deferred on this CPython 3.14 machine because its spaCy dependency currently
+  lacks a compatible wheel; Phase 1 uses explicitly caveated Biber-lite surface
+  proxies.
 - For each feature, freeze the default normalization unit: per 1k tokens, per sentence, per opportunity, or document-level scalar.
 - For each feature, define `opportunity_context` even if Stage 1 only uses corpus frequencies. These definitions become the contract for Week 3-5 teacher-forced propensity.
 - Add a neutral-control basket for later AF calibration: `for example`, `such as`, `in particular`, and `as a result`.
@@ -48,8 +55,10 @@ Expected artifacts:
 - `artifacts/stage1/matchers/unit_smoke_results.json`
 
 Go/no-go:
-- Go if every Tier-1 feature has a deterministic matcher, opportunity definition, and smoke-test fixture.
-- Demote individual features to exploratory if the opportunity context cannot be defined clearly before measurement.
+- Go if every revised core feature has a deterministic matcher, opportunity
+  definition, and smoke-test fixture.
+- Keep excluded or historical Tier-1 features exploratory unless they are
+  promoted in a later plan revision with validation.
 
 ### Slice 3: Precision Validation
 
@@ -62,20 +71,24 @@ Tasks:
 - Record known systematic false positives so downstream analysis can explain exclusions.
 
 Expected artifacts:
-- `artifacts/stage1/validation/hit_samples/*.jsonl`
+- `artifacts/stage1/validation/hit_samples/*.csv`
 - `artifacts/stage1/validation/labels/*.csv`
-- `artifacts/stage1/validation/precision_report.md`
+- `artifacts/stage1/validation/precision_report.csv`
 
 Go/no-go:
-- Go if core features have precision >= 0.90: contrastive negation, slop lexicon pooled index, list/header onset, stock openers/closers, and punctuation density.
-- No-go for Phase 1 publication if more than two core features fail precision. Continue with passing features only.
+- Go if revised core features have precision >= 0.90: contrastive negation,
+  slop lexicon pooled index, rule-of-three approximation, and stock
+  openers/closers.
+- No-go for Phase 1 publication if any revised core feature fails precision
+  and cannot be demoted with clear caveats. Continue with passing features only.
 
 ### Slice 4: Phase 1 Data-Corpus Census
 
 Config: `configs/stage1/phase1_census.yaml`
 
 Tasks:
-- Run validated Tier-1 matchers over sampled data corpora.
+- Run validated revised Tier-1 matchers plus Biber-lite sampled register
+  features over sampled data corpora.
 - Report per-1k-token rates for all features where meaningful.
 - Report per-sentence rates for clause-level features.
 - Report per-opportunity rates wherever Stage 1 opportunity extraction is implemented.
@@ -90,7 +103,9 @@ Expected artifacts:
 
 Go/no-go:
 - Go if chosen/rejected rows align 1:1 by pair ID and length distributions match dataset-card expectations.
-- Bug-suspect no-go if no feature, including length and markdown/list markers, differs between chosen and rejected on either ladder.
+- Bug-suspect no-go if no revised core feature, Biber-lite proxy, or length
+  measure differs between chosen and rejected on either ladder. Markdown/list
+  markers are exploratory diagnostics only in the revised scope.
 
 ## Component Task Notes
 
@@ -170,7 +185,9 @@ Stage 1:
 - Use streaming dataset reads and bounded writer buffers for Dolma-scale sources.
 - Cache normalized text, token counts, sentence counts, paragraph counts, matcher spans, and denominator tables separately.
 - Prefer a two-pass plan: small smoke sample, then calibrated full Stage 1 sample.
-- Keep Biber/Tier-2 extraction out of the default critical path unless Tier-1 throughput has enough headroom.
+- Keep full pybiber/Tier-2 extraction out of the default critical path until a
+  compatible Python/spaCy environment is available. Use Biber-lite sampled
+  proxies for this Phase 1 close-out.
 
 Later model jobs:
 - Use vLLM for generation grids when possible.
@@ -184,10 +201,11 @@ Later model jobs:
 Go to Week 3 if:
 - Primary OLMo Stage 1 corpora are sampled and manifest-backed.
 - SmolLM3 replication sources are either sampled or have a documented blocker and fallback.
-- Core Tier-1 matchers pass precision gates.
+- Revised core Tier-1 matchers pass precision gates, or failing features are
+  explicitly demoted before Phase 1 claims.
 - Phase 1 census tables exist with stable row counts, denominators, and pair IDs.
 - W&B contains aggregate metrics and artifact references for all non-dry-run Stage 1 jobs.
-- Known limitations are recorded in `census_summary.md` and `precision_report.md`.
+- Known limitations are recorded in `census_summary.md` and `precision_report.csv`.
 
 Do not proceed to statistical claims if:
 - Pair alignment is broken.

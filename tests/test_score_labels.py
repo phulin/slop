@@ -62,7 +62,7 @@ def test_score_labels_writes_precision_report_and_logs_wandb(tmp_path, monkeypat
     assert by_feature["slop_lexicon"]["precision"] == pytest.approx(2 / 3)
     assert by_feature["slop_lexicon"]["status"] == "demote"
     assert by_feature["rule_of_three_approx"]["ambiguous_rate"] == 1.0
-    assert by_feature["rule_of_three_approx"]["sample_size_pass"] is True
+    assert by_feature["rule_of_three_approx"]["sample_size_pass"] is False
     assert metric_payloads[-1]["matcher/features_scored"] == 2
     assert metric_payloads[-1]["matcher/features_demoted"] == 2
     assert table_rows["precision_report"] == scored
@@ -120,4 +120,3 @@ def test_score_labels_can_ignore_incomplete_rows(tmp_path):
 
     assert scored[0]["labeled"] == 1
     assert scored[0]["exact"] == 1
-

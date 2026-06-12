@@ -66,6 +66,73 @@ def test_dolci_dpo_chosen_rejected_chat_transcripts_are_preserved(tmp_path):
     assert records[0].raw == row
 
 
+def test_smoltalk2_sft_schema_extracts_assistant_target_and_mode_metadata(tmp_path):
+    row = {
+        "messages": [
+            {"role": "system", "content": "You are concise."},
+            {"role": "user", "content": "Give one snack idea."},
+            {"role": "assistant", "content": "Try apple slices with peanut butter."},
+        ],
+        "chat_template_kwargs": {
+            "custom_instructions": None,
+            "enable_thinking": False,
+            "python_tools": False,
+            "xml_tools": False,
+        },
+        "source": "smoltalk-smollm3_everyday-conversations",
+    }
+    path = tmp_path / "smoltalk2_sft.jsonl"
+    path.write_text(f"{json.dumps(row)}\n", encoding="utf-8")
+    source = CorpusSource.jsonl(path, name="HuggingFaceTB/smoltalk2", hf_config="SFT")
+
+    records = list(iter_corpus_records(source, SamplingConfig(cap=None), keep_raw=True))
+
+    assert len(records) == 1
+    assert records[0].text == "Try apple slices with peanut butter."
+    assert records[0].prompt == "You are concise.\nGive one snack idea."
+    assert records[0].fields["text"] == "messages"
+    assert records[0].metadata["source"] == "smoltalk-smollm3_everyday-conversations"
+    assert records[0].metadata["chat_template_kwargs.enable_thinking"] is False
+    assert records[0].metadata["chat_template_kwargs.python_tools"] is False
+
+
+def test_smoltalk2_preference_schema_extracts_pair_roles_and_mode_metadata(tmp_path):
+    row = {
+        "prompt": "Rewrite this sentence.",
+        "chosen": [
+            {"role": "user", "content": "Rewrite this sentence."},
+            {"role": "assistant", "content": "This is the stronger rewrite."},
+        ],
+        "rejected": [
+            {"role": "user", "content": "Rewrite this sentence."},
+            {"role": "assistant", "content": "This rewrite is weaker."},
+        ],
+        "chat_template_kwargs": {
+            "custom_instructions": None,
+            "enable_thinking": True,
+            "python_tools": False,
+            "xml_tools": False,
+        },
+        "source": "tulu_3_8b_pref_mix_Qwen3_32B_Qwen3_0.6B_think",
+    }
+    path = tmp_path / "smoltalk2_preference.jsonl"
+    path.write_text(f"{json.dumps(row)}\n", encoding="utf-8")
+    source = CorpusSource.jsonl(path, name="HuggingFaceTB/smoltalk2", hf_config="Preference")
+
+    records = list(iter_corpus_records(source, SamplingConfig(cap=None), keep_raw=True))
+
+    assert len(records) == 1
+    assert records[0].prompt == "Rewrite this sentence."
+    assert records[0].chosen == "This is the stronger rewrite."
+    assert records[0].rejected == "This rewrite is weaker."
+    assert records[0].text == records[0].chosen
+    assert records[0].fields["chosen"] == "chosen"
+    assert records[0].fields["rejected"] == "rejected"
+    assert records[0].metadata["source"] == "tulu_3_8b_pref_mix_Qwen3_32B_Qwen3_0.6B_think"
+    assert records[0].metadata["chat_template_kwargs.enable_thinking"] is True
+    assert records[0].raw == row
+
+
 def test_dolci_rl_prompt_is_default_text_and_solution_can_be_selected(tmp_path):
     row = {
         "id": "43743c43fab0835ee6cc7ab1af9d745535a4d424be0b611e6f3e23abdaabaa9e",

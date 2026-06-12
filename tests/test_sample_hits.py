@@ -71,3 +71,54 @@ def test_sample_hits_writes_label_template_and_logs_counts(tmp_path, monkeypatch
     assert metric_payloads[-1]["precision/sampled_hits"] == len(rows)
     assert table_rows["precision_feature_counts"]
 
+
+def test_sample_hits_can_filter_features(tmp_path, monkeypatch):
+    input_path = tmp_path / "input.jsonl"
+    output_path = tmp_path / "hits.csv"
+    input_path.write_text(
+        json.dumps(
+            {
+                "id": "a",
+                "text": "Great question. It is not just fast but reliable. Delve deeper.",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    monkeypatch.setattr("slop_sftdiv.cli.sample_hits.init_wandb", lambda **_kwargs: FakeRun())
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.sample_hits.log_summary_table",
+        lambda _run, _table_name, _rows: None,
+    )
+
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "1",
+            "--hits-per-feature",
+            "5",
+            "--feature",
+            "contrastive_negation",
+            "--feature",
+            "slop_lexicon",
+            "--output",
+            str(output_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    rows = run_sample_hits(args)
+
+    assert rows
+    assert {row["feature"] for row in rows} <= {"contrastive_negation", "slop_lexicon"}
