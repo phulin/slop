@@ -104,6 +104,30 @@ claims.
   (`https://wandb.ai/phulin-self/slop-stage1/runs/dzrfn409`). It records 10
   local artifacts, 186,303,114 total bytes, and 90,000 counted
   JSONL/Parquet/CSV records.
+- SmolLM3/Tulu source-identification probe completed and logged to W&B:
+  `stage1-smollm3-tulu-source-identification-probe`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/wiedc2oj`). Local artifact:
+  `artifacts/stage1/corpora/smollm3_tulu_source_probe.json`. It recorded 5
+  dataset probes, 2 model probes, 3 dataset searches, 1 model search, 7 sample
+  rows, and 80 search-result rows. This narrows the replication-source search
+  space, but does not close source verification or authorize retained
+  SmolLM3/Tulu sampling.
+- SmolTalk2 config-specific source probe completed and logged to W&B:
+  `stage1-smollm3-smoltalk2-config-source-probe`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/wo6496wj`). Local artifact:
+  `artifacts/stage1/corpora/smollm3_tulu_config_source_probe.json`. It probed
+  five exact dataset specs and model `HuggingFaceTB/SmolLM3-3B`. Each dataset
+  spec loaded successfully with 2 shape-only sample rows:
+  `HuggingFaceTB/smoltalk2::Preference::llama_3.1_tulu_3_8b_preference_mixture_no_think`,
+  `HuggingFaceTB/smoltalk2::Preference::tulu_3_8b_pref_mix_Qwen3_32B_Qwen3_0.6B_think`,
+  `HuggingFaceTB/smoltalk2::SFT::smoltalk_smollm3_everyday_conversations_no_think`,
+  `HuggingFaceTB/smoltalk2::SFT::OpenThoughts3_1.2M_think`, and
+  `HuggingFaceTB/smoltalk2::Mid::OpenThoughts3_1.2M`.
+- The config-specific SmolTalk2 probe closes the generic-config loader issue
+  and proves config/split-aware bounded probing works. It does not finish Phase
+  1: remaining SmolLM3/Tulu gaps are broader split/source count census, target
+  response extraction/normalization, Tulu construction semantics, and
+  pretraining recipe weights.
 
 ## Dry-Run Only
 
@@ -164,7 +188,9 @@ claims.
   Dolma 3 now has a retained JSONL sample and the formal
   `sample_manifest.parquet`; Dolci SFT/DPO now have retained corpus-package
   JSONL and per-corpus manifests; replication-ladder corpus packaging remains
-  incomplete.
+  incomplete. SmolTalk2 config-specific probing works, but retained
+  replication samples still need source-count census and response extraction
+  rules.
 - The Phase 1 matcher artifacts named by `tier1_matchers.yaml` still need retained outputs, unless produced elsewhere outside the audited evidence:
   - `artifacts/stage1/matchers/feature_specs.json`
   - `artifacts/stage1/matchers/matcher_version.txt`
@@ -195,8 +221,8 @@ claims.
   - Dolci RL if kept for final-stage data-rate context
 - The 10k Dolci SFT+DPO retained sample is large enough for a useful Result A
   development artifact, but it is not enough by itself to close Phase 1 because
-  it lacks manual precision validation, SmolLM3/Tulu replication sources, and
-  chosen/rejected construction verification.
+  it lacks manual precision validation, retained SmolLM3/Tulu replication
+  samples, and final chosen/rejected construction verification.
 
 ## Dolci Retained Corpus Packaging Pass
 
@@ -301,13 +327,66 @@ Required manual artifact:
 - SmolLM3 pretraining source identification is incomplete:
   - Config status: `identify_exact_public_sources`
   - Needed for equivalent strata: `web_cc`, `forums_qa`, `wiki`, `scientific`, with code excluded
+- Primary Hugging Face metadata now identifies candidate SmolLM3 pretraining
+  sources via the `HuggingFaceTB/smollm3-pretraining-datasets` collection, but
+  this is not yet enough to sample. The exact source IDs, stage assignment, and
+  mixture weights must be confirmed from the linked `huggingface/smollm`
+  training recipe before Phase 1 replication sampling.
+- The SmolLM3/Tulu source-identification probe adds two useful metadata
+  sources but does not resolve pretraining weights:
+  `HuggingFaceTB/smollm3-configs` is useful metadata/config-card evidence but
+  not loadable as dataset files, and `HuggingFaceTB/smollm3-blueprint` is
+  documentation/PDF-oriented with sample loading currently blocked on
+  `pdfplumber`.
+- Candidate SmolLM3 pretraining source families to verify are web/CC
+  (`fineweb-edu`, `dclm-baseline-1.0`, `FineWeb2-HQ`, `fineweb-2`,
+  `smollm-corpus`, `dolmino-mix-1124`), Q&A/forum-like sources
+  (`stackexchange_2025_md`, `stack-edu`), math/reasoning sources
+  (`finemath`, `MegaMath`, `OpenMathReasoning`, `natural_reasoning`), and code
+  sources for exclusion or an audit bucket (`the-stack-v2`,
+  `issues-kaggle-notebooks`, `OpenCodeReasoning`).
+- SmolTalk2 SFT source identification is incomplete:
+  - Dataset candidate: `HuggingFaceTB/smoltalk2`, config/subset `SFT`
+  - Primary card facts: 25 SFT datasets, split into `think` and `no_think`
+    variants, with chat-style `messages` and `chat_template_kwargs`
+  - Needed before sampling: exact config names, split names, assistant-response
+    extraction schema, reasoning-trace tagging, source/provenance fields, and
+    row-count reconciliation against the card
+- The live probe confirms `HuggingFaceTB/smoltalk2` configs `Mid`,
+  `Preference`, and `SFT`. Generic SmolTalk2 sample loading without a config
+  fails, so the next implementation step is config/split-aware bounded probing
+  rather than retained sampling.
+- SmolTalk2 SFT splits are source-labeled and include many `think` and
+  `no_think` splits, including `OpenThoughts3_1.2M_think`,
+  `smoltalk_smollm3_everyday_conversations_no_think`,
+  `smoltalk_smollm3_smol_magpie_ultra_no_think`, and
+  `tulu_3_sft_personas_instruction_following_no_think`. Remaining work is to
+  probe those splits' schemas and response extraction consistently.
 - SmolLM3 preference source identification is incomplete:
   - Config status: `identify_exact_source`
-  - The exact Tulu-3/APO preference source must separate RM/human-ranked pairs from synthetic Qwen3-32B/0.6B pairs.
+  - Candidate dataset: `HuggingFaceTB/smoltalk2`, config/subset `Preference`
+  - The exact Tulu-3/APO preference source must separate the no-think
+    `llama_3.1_tulu_3_8b_preference_mixture_no_think` source from the synthetic
+    `tulu_3_8b_pref_mix_Qwen3_32B_Qwen3_0.6B_think` source.
+  - The Qwen source must be interpreted as synthetic strong-vs-weak pair data:
+    chosen generated by Qwen3-32B and rejected generated by Qwen3-0.6B, pending
+    bounded schema confirmation. Do not pool it with the candidate human/RM
+    Tulu preference source for Result A.
+- The probe also confirms that
+  `allenai/llama-3.1-tulu-3-8b-preference-mixture` and
+  `allenai/llama-3.1-tulu-3-70b-preference-mixture` load with default `train`
+  rows shaped as `id`, `source`, `prompt`, `chosen`, and `rejected`; `chosen`
+  and `rejected` are message lists. This supports bounded Tulu schema work but
+  still does not close source construction semantics.
+- All SmolLM3 live probes must be bounded and W&B-logged before retained
+  sampling: fixed scan caps, deterministic seed, no raw-text W&B logging,
+  source/card URLs in config, schema fields, split/config names, source counts,
+  pair-role counts, and failure modes. Use primary Hugging Face dataset/model
+  cards and linked training recipes as the authority for source semantics.
 - Dolci SFT provenance split remains to be verified from mixture metadata. Phase 1 requires rates by provenance, and the SFT human-written subset is important for the target-distribution baseline.
 - `docs/experiments/source_card_notes.md` now records primary-source card facts
-  and retained-prefix metadata probe results for Dolci SFT, Dolci DPO, and
-  Dolma 3.
+  and retained-prefix metadata probe results for Dolci SFT, Dolci DPO, Dolma
+  3, and the in-progress SmolLM3 replication-source plan.
 
 Recommended next artifacts, not run:
 
@@ -318,8 +397,8 @@ Recommended next artifacts, not run:
   - Dolci DPO construction semantics for Delta-Learning versus human/RM preference interpretation
   - Dolci RL schema and whether it remains in Stage 1
   - SmolLM3 exact pretraining mixture sources
-  - SmolTalk2 SFT target-response fields
-  - Exact SmolLM3 APO/Tulu-3 preference source and synthetic-pair separation
+  - SmolTalk2 SFT config/schema and target-response fields
+  - Exact SmolLM3 APO/Tulu-3 preference source and synthetic Qwen-pair separation
 
 ## Phase 1 Exit Status
 
@@ -339,9 +418,10 @@ Exit criteria still unmet:
   retained-run evidence for Dolci DPO, but chosen/rejected construction
   semantics are still not sufficient for final Phase 1 claims without the
   remaining validation/package work.
-- W&B now has retained Dolci SFT/DPO and Dolma Stage 1 records, but
-  SmolLM3/Tulu, precision-scoring, and formal package summaries are still
-  needed.
+- W&B now has retained Dolci SFT/DPO and Dolma Stage 1 records plus a
+  SmolLM3/Tulu source-identification probe, but SmolLM3/Tulu config-specific
+  schema probes, retained sampling, precision scoring, and formal package
+  summaries are still needed.
 
 Do not proceed to statistical claims until:
 

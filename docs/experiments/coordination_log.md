@@ -21,6 +21,10 @@
 - Type/lint baseline: keep `ty`, `ruff`, and pytest passing through `uv`.
 - Dataset schema follow-up: SmolLM3/Tulu replication source identification
   remains open.
+- SmolLM3 replication-source identification: in-progress doc-only pass has
+  primary Hugging Face candidates for pretraining, SmolTalk2 SFT, and APO
+  preference sources; retained sampling stays blocked until bounded schema and
+  source-weight probes are W&B-logged.
 
 ### Coordination Decisions
 
@@ -32,8 +36,33 @@
   from `.env`. Local smoke checks should use `--wandb-mode disabled`.
 - Corpus measurements can use deterministic samples. Record sample caps, seeds,
   and scan limits in W&B config and output tables.
+- SmolLM3/Tulu live probes must be bounded metadata/schema probes before any
+  retained sampling. Use primary Hugging Face model/dataset cards and linked
+  training recipes; log source URLs, config/split names, schema fields,
+  source-count summaries, pair-role counts, scan caps, and failure modes to
+  W&B without raw full text.
 - The local verification bar is `uv run ty check src tests`,
   `uv run ruff check src tests`, and `uv run pytest -q`.
+
+### 2026-06-12 SmolLM3/Tulu Source-ID Planning
+
+- No experiment or dataset-load commands were run for this pass.
+- Primary metadata inspected for planning: `HuggingFaceTB/SmolLM3-3B`,
+  `HuggingFaceTB/smollm3-pretraining-datasets`, and
+  `HuggingFaceTB/smoltalk2`.
+- Pretraining source status: candidate public sources are identified from the
+  SmolLM3 pretraining collection, but exact stage weights and source-to-stratum
+  mapping still need the `huggingface/smollm` training recipe and bounded
+  W&B-logged metadata probes.
+- SFT status: `HuggingFaceTB/smoltalk2` `SFT` is the candidate source. The
+  card reports 25 datasets split into `think` and `no_think` variants with
+  chat-style messages and `chat_template_kwargs`; exact schema/config names and
+  assistant-response extraction still need bounded probing.
+- Preference status: `HuggingFaceTB/smoltalk2` `Preference` is the candidate
+  APO substrate. Keep `llama_3.1_tulu_3_8b_preference_mixture_no_think`
+  separate from `tulu_3_8b_pref_mix_Qwen3_32B_Qwen3_0.6B_think`; the latter is
+  synthetic Qwen strong-vs-weak data and should not be pooled with the
+  candidate human/RM-ranked Tulu preference source.
 
 ### Next Go/No-Go Questions
 
@@ -236,3 +265,49 @@
   local artifacts, 186,303,114 bytes, and 90,000 counted JSONL/Parquet/CSV
   records. Local generated manifests are under
   `artifacts/stage1/corpora/olmo3_dolci_sft_dpo_10k_corpus_package_manifest.*`.
+- SmolLM3/Tulu source-identification probe completed:
+  `stage1-smollm3-tulu-source-identification-probe`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/wiedc2oj`. Local artifact:
+  `artifacts/stage1/corpora/smollm3_tulu_source_probe.json`. The probe covered
+  5 dataset probes, 2 model probes, 3 dataset searches, 1 model search, 7
+  sample rows, and 80 search-result rows.
+- SmolTalk2 status from the probe: `HuggingFaceTB/smoltalk2` exposes `Mid`,
+  `Preference`, and `SFT` configs. `Preference` splits include
+  `llama_3.1_tulu_3_8b_preference_mixture_no_think` and
+  `tulu_3_8b_pref_mix_Qwen3_32B_Qwen3_0.6B_think`; `SFT` exposes many
+  source-labeled `think` and `no_think` splits, including
+  `OpenThoughts3_1.2M_think`,
+  `smoltalk_smollm3_everyday_conversations_no_think`,
+  `smoltalk_smollm3_smol_magpie_ultra_no_think`, and
+  `tulu_3_sft_personas_instruction_following_no_think`.
+- Tulu preference-mixture status from the probe:
+  `allenai/llama-3.1-tulu-3-8b-preference-mixture` and
+  `allenai/llama-3.1-tulu-3-70b-preference-mixture` both load with default
+  `train` rows shaped as `id`, `source`, `prompt`, `chosen`, and `rejected`;
+  `chosen` and `rejected` are message lists.
+- SmolLM3 metadata-source status from the probe:
+  `HuggingFaceTB/smollm3-configs` is useful metadata/config-card evidence but
+  not loadable as dataset files, and `HuggingFaceTB/smollm3-blueprint` is
+  documentation/PDF-oriented with sample loading blocked on `pdfplumber`.
+  Generic SmolTalk2 loading without a config fails, so the next implementation
+  step is config/split-aware bounded probing.
+- SmolTalk2 config-specific source probe completed:
+  `stage1-smollm3-smoltalk2-config-source-probe`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/wo6496wj`. Local artifact:
+  `artifacts/stage1/corpora/smollm3_tulu_config_source_probe.json`.
+- Probe inputs were five exact dataset specs plus one model probe:
+  `HuggingFaceTB/smoltalk2::Preference::llama_3.1_tulu_3_8b_preference_mixture_no_think`,
+  `HuggingFaceTB/smoltalk2::Preference::tulu_3_8b_pref_mix_Qwen3_32B_Qwen3_0.6B_think`,
+  `HuggingFaceTB/smoltalk2::SFT::smoltalk_smollm3_everyday_conversations_no_think`,
+  `HuggingFaceTB/smoltalk2::SFT::OpenThoughts3_1.2M_think`,
+  `HuggingFaceTB/smoltalk2::Mid::OpenThoughts3_1.2M`, and model
+  `HuggingFaceTB/SmolLM3-3B`.
+- Each dataset spec loaded successfully with 2 shape-only sample rows.
+  Preference rows expose `chosen`, `rejected`, `prompt`,
+  `chat_template_kwargs`, and `source`; SFT rows expose `messages`,
+  `chat_template_kwargs`, and `source`; Mid `OpenThoughts3_1.2M` rows expose
+  `messages` and `source`.
+- The config-specific probe closes the generic-config loader issue and proves
+  config/split-aware bounded probing works, but Phase 1 remains open pending
+  broader split/source count census, target response extraction/normalization,
+  Tulu construction semantics, and pretraining recipe weights.

@@ -37,6 +37,7 @@ slop-sample-hits = "slop_sftdiv.cli.sample_hits:main"
 slop-score-labels = "slop_sftdiv.cli.score_labels:main"
 slop-manifest-artifacts = "slop_sftdiv.cli.manifest_artifacts:main"
 slop-sample-corpus = "slop_sftdiv.cli.sample_corpus:main"
+slop-probe-hf-sources = "slop_sftdiv.cli.probe_hf_sources:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
