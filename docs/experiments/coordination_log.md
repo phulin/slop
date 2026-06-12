@@ -99,3 +99,17 @@
   `https://wandb.ai/phulin-self/slop-stage1/runs/v6ffzun5`.
   The run summarized 16 pair-delta rows into 8 feature rows with sign-test
   p-values and BH-FDR q-values.
+- Small Dolci DPO dry-run census completed with 32 preference pairs:
+  `stage1-dolci-dpo-32pair-census-dry_run`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/g6ukhu9g`.
+  Throughput: 32 docs, 64 response rows, 24,014 simple tokens, 4.89 seconds,
+  about 4,913 tokens/sec, and 396 MB peak RSS. Output: 32 aggregate census rows
+  and 256 pair-delta rows.
+- Small Dolci DPO first-pass Result A analysis completed:
+  `stage1-dolci-dpo-32pair-analysis-dry_run`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/8zs1n52y`.
+  It summarized 256 pair-delta rows into 16 source/subset/feature rows. No
+  Tier-1 feature was BH-FDR significant at this dry-run size. The main
+  diagnostic issue is length imbalance in the primary `unknown` subset: chosen
+  responses averaged about 156 more simple tokens than rejected responses,
+  reinforcing the need for length covariates in the full Result A model.
