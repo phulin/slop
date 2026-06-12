@@ -9,15 +9,17 @@
 - `5978a62` adds the Stage 1 scaffold: `uv` project setup, Tier-1 matchers,
   corpus streaming/sampling helpers, sampled census CLI, W&B helper, Stage 1
   configs, and component notes.
+- `590eeae` adds role-aware census behavior, canonical Dolci dataset notes,
+  and initial tests.
+- `3c33c76` validates Dolci chat-schema normalization, adds `ty` to the
+  `uv` toolchain, and records the first live W&B census smoke run.
 
 ### Active Components
 
-- Preference-pair census expansion: measure `chosen` and `rejected` responses
-  separately while retaining plain-text corpus behavior.
-- Tests: cover corpus IO, matcher extraction, and disabled-W&B smoke paths.
-- Dataset schema notes: verify live availability and lightweight schemas for
-  first-stage OLMo data sources without downloading large corpora.
+- Per-pair preference deltas: produce the Result A artifact with feature-level
+  `chosen_minus_rejected` rows, not only aggregate role rates.
 - Type/lint baseline: keep `ty`, `ruff`, and pytest passing through `uv`.
+- Dataset schema follow-up: Dolma 3 tiny-stream schema remains unverified.
 
 ### Coordination Decisions
 
@@ -51,3 +53,9 @@
 - Verification after schema/normalizer updates:
   `uv run ty check src tests`, `uv run ruff check src tests`, and
   `uv run pytest -q` all pass.
+- Live Dolci DPO pair-delta smoke completed with `--pair-output`.
+  W&B run: `stage1-dolci-dpo-pair-smoke`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/yff0l3a2`.
+- Pair-delta smoke output shape: 16 aggregate feature-rate rows and 16
+  per-pair delta rows for 2 preference pairs; W&B logged
+  `preference_pair_deltas/rows = 16`.
