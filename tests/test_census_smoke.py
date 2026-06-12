@@ -182,3 +182,69 @@ def test_run_census_groups_by_promoted_source_metadata(tmp_path, monkeypatch):
     frame = run_census(args)
 
     assert set(frame["subset"]) == {"web_cc", "forums_qa"}
+
+
+def test_run_census_logs_throughput_metrics(tmp_path, monkeypatch):
+    monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
+    input_path = tmp_path / "input.jsonl"
+    output_path = tmp_path / "summary.csv"
+    input_path.write_text(
+        json.dumps({"id": "a", "text": "Great question. Delve into tests."}) + "\n",
+        encoding="utf-8",
+    )
+    table_rows = {}
+    metric_payloads = []
+    init_kwargs = {}
+
+    class FakeRun:
+        def log(self, payload):
+            metric_payloads.append(payload)
+
+        def finish(self):
+            pass
+
+    def capture_init(**kwargs):
+        init_kwargs.update(kwargs)
+        return FakeRun()
+
+    monkeypatch.setattr("slop_sftdiv.cli.census.init_wandb", capture_init)
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.census.log_summary_table",
+        lambda _run, table_name, rows: table_rows.setdefault(table_name, rows),
+    )
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "1",
+            "--output",
+            str(output_path),
+            "--wandb-mode",
+            "disabled",
+            "--wandb-group",
+            "corpus-sampling",
+            "--wandb-job-type",
+            "throughput",
+            "--wandb-tag",
+            "tiny",
+            "--wandb-tag",
+            "dry_run",
+        ]
+    )
+
+    run_census(args)
+
+    metrics = metric_payloads[-1]
+    assert metrics["corpus/docs"] == 1
+    assert metrics["corpus/measurement_rows"] == 1
+    assert metrics["corpus/tokens"] > 0
+    assert metrics["corpus/wall_seconds"] > 0
+    assert metrics["corpus/tokens_per_sec"] > 0
+    assert metrics["corpus/peak_rss_mb"] > 0
+    assert init_kwargs["group"] == "corpus-sampling"
+    assert init_kwargs["job_type"] == "throughput"
+    assert "tiny" in init_kwargs["tags"]
+    assert "dry_run" in init_kwargs["tags"]
+    assert table_rows["source_metrics"][0]["docs"] == 1
+    assert table_rows["source_metrics"][0]["tokens"] == metrics["corpus/tokens"]

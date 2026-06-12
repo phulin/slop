@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import resource
+import time
 from collections import Counter, defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -26,6 +29,41 @@ PAIR_OUTPUT_COLUMNS = [
     "chosen_minus_rejected",
 ]
 MAX_WANDB_PAIR_ROWS = 1000
+
+
+@dataclass
+class SourceMetrics:
+    source: str
+    docs: int = 0
+    measurement_rows: int = 0
+    tokens: int = 0
+    pair_rows: int = 0
+    wall_seconds: float = 0.0
+
+    @property
+    def docs_per_sec(self) -> float:
+        return self.docs / self.wall_seconds if self.wall_seconds > 0 else 0.0
+
+    @property
+    def measurement_rows_per_sec(self) -> float:
+        return self.measurement_rows / self.wall_seconds if self.wall_seconds > 0 else 0.0
+
+    @property
+    def tokens_per_sec(self) -> float:
+        return self.tokens / self.wall_seconds if self.wall_seconds > 0 else 0.0
+
+    def row(self) -> dict[str, Any]:
+        return {
+            "source": self.source,
+            "docs": self.docs,
+            "measurement_rows": self.measurement_rows,
+            "tokens": self.tokens,
+            "pair_rows": self.pair_rows,
+            "wall_seconds": self.wall_seconds,
+            "docs_per_sec": self.docs_per_sec,
+            "measurement_rows_per_sec": self.measurement_rows_per_sec,
+            "tokens_per_sec": self.tokens_per_sec,
+        }
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -53,6 +91,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--wandb-project", default="slop-stage1")
     parser.add_argument("--wandb-entity", default=None)
     parser.add_argument("--wandb-run-name", default=None)
+    parser.add_argument("--wandb-group", default="phase1-census")
+    parser.add_argument("--wandb-job-type", default="census")
+    parser.add_argument("--wandb-tag", action="append", default=[], help="Additional W&B tag.")
     parser.add_argument("--wandb-mode", default=None, choices=[None, "online", "offline", "disabled"])
     return parser
 
@@ -114,6 +155,11 @@ def _rate_per_1k(count: int, tokens: int) -> float:
     return 1000.0 * count / max(tokens, 1)
 
 
+def _peak_rss_mb() -> float:
+    # Linux reports ru_maxrss in KiB; macOS reports bytes. This workspace is Linux.
+    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+
+
 def _pair_rows(
     *,
     source: str,
@@ -155,6 +201,8 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
     doc_counts: Counter[tuple[str, str, str]] = Counter()
     sample_rows: list[dict[str, Any]] = []
     pair_rows: list[dict[str, Any]] = []
+    source_metrics: list[SourceMetrics] = []
+    total_started_at = time.perf_counter()
     text_fields = [args.text_field] if args.text_field else None
     id_fields = _id_fields_with_pair_id(DEFAULT_ID_FIELDS)
     sampling = SamplingConfig(
@@ -169,7 +217,9 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
         entity=args.wandb_entity,
         run_name=args.wandb_run_name,
         mode=args.wandb_mode,
-        tags=["stage1", "phase1", "census"],
+        group=args.wandb_group,
+        job_type=args.wandb_job_type,
+        tags=["stage1", "phase1", "census", *args.wandb_tag],
         config={
             "inputs": args.input,
             "split": args.split,
@@ -180,22 +230,30 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
             "sampling_strategy": args.sampling_strategy,
             "max_scan": args.max_scan,
             "pair_output": str(args.pair_output) if args.pair_output is not None else None,
+            "wandb_group": args.wandb_group,
+            "wandb_job_type": args.wandb_job_type,
+            "wandb_tags": args.wandb_tag,
         },
     )
 
     try:
         for raw_source in args.input:
             source = _source_from_input(raw_source, split=args.split, hf_config=args.hf_config)
+            metrics = SourceMetrics(source=source.name)
+            source_started_at = time.perf_counter()
             records_kwargs = {"sampling": sampling, "id_fields": id_fields}
             if text_fields:
                 records_kwargs["text_fields"] = text_fields
             records = iter_corpus_records(source, **records_kwargs)
             for record in tqdm(records, desc=f"census:{source.name}", unit="doc"):
+                metrics.docs += 1
                 subset = _subset_for_record(record.metadata, record.split)
                 pair_analyses: dict[str, tuple[Counter[str], int]] = {}
                 for role, text, pair_id in _measurement_texts(record):
                     analysis = extract_tier1_features(text)
                     token_count = int(analysis.helpers["token_count"])
+                    metrics.measurement_rows += 1
+                    metrics.tokens += token_count
                     key = (record.source, subset, role)
                     feature_counts[key].update(analysis.counts)
                     token_counts[key] += token_count
@@ -223,7 +281,7 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
                     chosen_counts, chosen_tokens = pair_analyses["chosen"]
                     rejected_counts, rejected_tokens = pair_analyses["rejected"]
                     pair_rows.extend(
-                        _pair_rows(
+                        new_pair_rows := _pair_rows(
                             source=record.source,
                             subset=subset,
                             pair_id=record.record_id,
@@ -233,6 +291,9 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
                             rejected_tokens=rejected_tokens,
                         )
                     )
+                    metrics.pair_rows += len(new_pair_rows)
+            metrics.wall_seconds = time.perf_counter() - source_started_at
+            source_metrics.append(metrics)
 
         rows: list[dict[str, Any]] = []
         for key, counts in sorted(feature_counts.items()):
@@ -261,17 +322,36 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
             pair_frame = pd.DataFrame(pair_rows, columns=PAIR_OUTPUT_COLUMNS)
             args.pair_output.parent.mkdir(parents=True, exist_ok=True)
             pair_frame.to_csv(args.pair_output, index=False)
+        total_wall_seconds = time.perf_counter() - total_started_at
+        total_docs = sum(metric.docs for metric in source_metrics)
+        total_measurement_rows = sum(metric.measurement_rows for metric in source_metrics)
+        total_tokens = sum(metric.tokens for metric in source_metrics)
         run.log(
             {
                 "summary_rows": len(frame),
                 "pair_rows": len(pair_rows),
                 "pair_rows_logged": min(len(pair_rows), MAX_WANDB_PAIR_ROWS),
+                "corpus/docs": total_docs,
+                "corpus/measurement_rows": total_measurement_rows,
+                "corpus/tokens": total_tokens,
+                "corpus/wall_seconds": total_wall_seconds,
+                "corpus/docs_per_sec": total_docs / total_wall_seconds
+                if total_wall_seconds > 0
+                else 0.0,
+                "corpus/measurement_rows_per_sec": total_measurement_rows / total_wall_seconds
+                if total_wall_seconds > 0
+                else 0.0,
+                "corpus/tokens_per_sec": total_tokens / total_wall_seconds
+                if total_wall_seconds > 0
+                else 0.0,
+                "corpus/peak_rss_mb": _peak_rss_mb(),
             }
         )
         if rows:
             log_summary_table(run, "feature_rates", rows)
         if pair_rows:
             log_summary_table(run, "preference_pair_deltas", pair_rows[:MAX_WANDB_PAIR_ROWS])
+        log_summary_table(run, "source_metrics", [metric.row() for metric in source_metrics])
         log_summary_table(run, "sampled_records", sample_rows)
         return frame
     finally:

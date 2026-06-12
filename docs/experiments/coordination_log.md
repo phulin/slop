@@ -71,3 +71,14 @@
   HF had one read-timeout retry and took about 51 seconds for two docs, so
   larger Dolma samples need an authenticated/cache-aware throughput calibration
   before spending more time on remote streaming.
+- Throughput metrics smoke completed with
+  `slop-census --input allenai/Dolci-Instruct-SFT --sample-size 1 --max-scan 1`.
+  W&B run: `stage1-throughput-metrics-smoke`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/ytwl9j2g`.
+  The run logged `corpus/docs`, `corpus/measurement_rows`,
+  `corpus/tokens_per_sec`, `corpus/wall_seconds`, `corpus/peak_rss_mb`, and
+  a `source_metrics` W&B table.
+- Tagged throughput calibration smoke completed with group `corpus-sampling`,
+  job type `throughput`, and tags `throughput`, `olmo3`, `dolci_sft`, `tiny`,
+  `dry_run`. W&B run: `stage1-dolci-sft-throughput-tiny-dry_run`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/mgvgwscs`.

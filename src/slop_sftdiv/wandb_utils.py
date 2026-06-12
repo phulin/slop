@@ -14,6 +14,8 @@ def init_wandb(
     run_name: str | None = None,
     config: Mapping[str, Any] | None = None,
     tags: list[str] | None = None,
+    group: str | None = None,
+    job_type: str | None = None,
     mode: Literal["online", "offline", "disabled", "shared"] | None = None,
 ):
     """Initialize W&B after loading `.env`, without requiring callers to handle secrets."""
@@ -28,6 +30,8 @@ def init_wandb(
             name=run_name,
             config=dict(config or {}),
             tags=tags,
+            group=group,
+            job_type=job_type,
             mode=mode,
         )
 
@@ -41,6 +45,8 @@ def init_wandb(
         name=run_name,
         config=dict(config or {}),
         tags=tags,
+        group=group,
+        job_type=job_type,
         mode=mode,
     )
 
