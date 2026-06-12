@@ -93,3 +93,9 @@
   `https://wandb.ai/phulin-self/slop-stage1/runs/ssqrchea`.
   The run scored 2 features, demoted 1 below the configured precision target,
   and logged a `precision_report` table.
+- Result A pair-analysis smoke completed with `slop-analyze-pairs` on a
+  2-pair Dolci DPO pair-delta sample. W&B run:
+  `stage1-dolci-dpo-pair-analysis-tiny-dry_run`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/v6ffzun5`.
+  The run summarized 16 pair-delta rows into 8 feature rows with sign-test
+  p-values and BH-FDR q-values.
