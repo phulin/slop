@@ -119,6 +119,38 @@ first_real_run:
     reference_initiations: 0
   caveat: prompt-package-backed shard with zero reference initiations; validates plumbing and throughput only
 
+first_bounded_af_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_positive_control_package_32.jsonl
+  sample_size: 4
+  features:
+    - slop_lexicon
+    - neutral_controls
+    - stock_openers
+  max_opportunities: 512
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  dtype: bfloat16
+  wandb_run_id: bigtxtoj
+  result:
+    docs: 4
+    opportunities: 902
+    wall_seconds: 92.26881
+    opportunities_per_sec: 9.77578
+    reference_initiations:
+      neutral_controls: 2
+      slop_lexicon: 2
+      stock_openers: 1
+    amplification_factor:
+      neutral_controls: 0.2960318154197239
+      slop_lexicon: 0.43403744228180585
+      stock_openers: 0.0003604888916015625
+  caveat: targeted reference-positive shard for plumbing and calibration; not an unbiased corpus AF estimate
+
 free_running_smoke:
   model: sshleifer/tiny-gpt2
   input: artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl

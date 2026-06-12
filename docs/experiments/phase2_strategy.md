@@ -186,3 +186,13 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   positive/control shard. The first 4 rows at a 128 token-start cap contain 902
   total opportunities with 2 `slop_lexicon`, 2 `neutral_controls`, and 1
   `stock_openers` reference positives.
+- `stage2-phase2-olmo3-sft-positive-control4-cached-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/bigtxtoj`) completed the
+  first bounded AF-style OLMo SFT run with nonzero denominators. It scored the
+  first 4 rows of the targeted positive/control package, 902 opportunities, and
+  3 feature summaries in 92.3 seconds, for 9.78 opportunities/sec end to end.
+  Reference initiations were 2 for `slop_lexicon`, 2 for pooled
+  `neutral_controls`, and 1 for `stock_openers`; measured AFs were 0.434,
+  0.296, and 0.00036 respectively. Because the package is intentionally
+  reference-positive, this is a calibration/plumbing shard, not an unbiased
+  corpus AF estimate.

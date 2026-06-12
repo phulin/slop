@@ -460,3 +460,16 @@
   The row had one pooled `neutral_controls` reference initiation and no
   `slop_lexicon` or `stock_openers` reference initiations, so this validates the
   optimized scorer path but is not an AF result.
+- First bounded AF-style OLMo SFT run completed:
+  `stage2-phase2-olmo3-sft-positive-control4-cached-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/bigtxtoj`. It used the
+  optimized exact sequence scorer with opportunity batch size 16, KV-cache
+  continuations, branch chunk size 2, and `torch.compile`. It scored 4 docs,
+  902 opportunities, and 3 feature summaries in 92.3 seconds, for 9.78
+  opportunities/sec end to end. Reference initiations were 2 for
+  `slop_lexicon`, 2 for pooled `neutral_controls`, and 1 for `stock_openers`.
+  AFs were 0.434 for `slop_lexicon`, 0.296 for pooled `neutral_controls`, and
+  0.00036 for `stock_openers`. This is the first nonzero-denominator
+  Phase 2 model measurement, but because the package was targeted to contain
+  reference positives it is a bounded calibration/plumbing shard, not an
+  unbiased corpus AF estimate.
