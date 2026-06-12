@@ -113,3 +113,9 @@
   diagnostic issue is length imbalance in the primary `unknown` subset: chosen
   responses averaged about 156 more simple tokens than rejected responses,
   reinforcing the need for length covariates in the full Result A model.
+- Small Dolci DPO length-aware Result A diagnostic completed:
+  `stage1-dolci-dpo-32pair-length-analysis-dry_run`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/mttll9ms`.
+  It reused the 256-row pair-delta CSV, summarized 16 feature rows, and logged
+  response-side ridge logistic diagnostics for feature rate and response
+  length. No Tier-1 feature was BH-FDR significant at this dry-run size.

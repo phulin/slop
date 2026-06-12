@@ -30,6 +30,13 @@ REPORT_COLUMNS = [
     "bh_q",
     "direction",
     "fdr_significant",
+    "logit_feature_coef",
+    "logit_feature_se",
+    "logit_feature_z",
+    "logit_feature_odds_ratio",
+    "logit_length_coef",
+    "logit_iterations",
+    "logit_converged",
 ]
 
 
@@ -104,6 +111,142 @@ def _mean(values: list[float]) -> float:
     return sum(values) / len(values) if values else 0.0
 
 
+def _sigmoid(value: float) -> float:
+    if value >= 0:
+        z = math.exp(-value)
+        return 1.0 / (1.0 + z)
+    z = math.exp(value)
+    return z / (1.0 + z)
+
+
+def _solve_3x3(matrix: list[list[float]], vector: list[float]) -> list[float] | None:
+    augmented = [row[:] + [value] for row, value in zip(matrix, vector)]
+    n = 3
+    for column in range(n):
+        pivot = max(range(column, n), key=lambda row: abs(augmented[row][column]))
+        if abs(augmented[pivot][column]) < 1e-12:
+            return None
+        augmented[column], augmented[pivot] = augmented[pivot], augmented[column]
+        pivot_value = augmented[column][column]
+        for item in range(column, n + 1):
+            augmented[column][item] /= pivot_value
+        for row in range(n):
+            if row == column:
+                continue
+            factor = augmented[row][column]
+            for item in range(column, n + 1):
+                augmented[row][item] -= factor * augmented[column][item]
+    return [augmented[row][n] for row in range(n)]
+
+
+def _invert_3x3(matrix: list[list[float]]) -> list[list[float]] | None:
+    columns = []
+    for index in range(3):
+        unit = [0.0, 0.0, 0.0]
+        unit[index] = 1.0
+        solved = _solve_3x3(matrix, unit)
+        if solved is None:
+            return None
+        columns.append(solved)
+    return [[columns[column][row] for column in range(3)] for row in range(3)]
+
+
+def _standardize(values: list[float]) -> list[float]:
+    if not values:
+        return []
+    mean = _mean(values)
+    variance = _mean([(value - mean) ** 2 for value in values])
+    scale = math.sqrt(variance)
+    if scale <= 1e-12:
+        return [0.0 for _ in values]
+    return [(value - mean) / scale for value in values]
+
+
+def _length_adjusted_logit(
+    *,
+    chosen_rates: list[float],
+    rejected_rates: list[float],
+    chosen_tokens: list[float],
+    rejected_tokens: list[float],
+    ridge: float = 0.1,
+    max_iterations: int = 50,
+    tolerance: float = 1e-7,
+) -> dict[str, Any]:
+    if not chosen_rates:
+        return _empty_logit_result()
+    observations = [
+        (1.0, feature_rate, tokens)
+        for feature_rate, tokens in zip(chosen_rates, chosen_tokens)
+    ] + [
+        (0.0, feature_rate, tokens)
+        for feature_rate, tokens in zip(rejected_rates, rejected_tokens)
+    ]
+    xs_feature = _standardize([feature_rate for _, feature_rate, _ in observations])
+    xs_length = _standardize([tokens for _, _, tokens in observations])
+    beta = [0.0, 0.0, 0.0]
+    converged = False
+    iterations = 0
+    for iteration in range(1, max_iterations + 1):
+        gradient = [0.0, -ridge * beta[1], -ridge * beta[2]]
+        hessian = [
+            [0.0, 0.0, 0.0],
+            [0.0, -ridge, 0.0],
+            [0.0, 0.0, -ridge],
+        ]
+        for (y, _, _), feature_x, length_x in zip(observations, xs_feature, xs_length):
+            x = [1.0, feature_x, length_x]
+            p = _sigmoid(sum(coef * item for coef, item in zip(beta, x)))
+            residual = y - p
+            weight = p * (1.0 - p)
+            for i in range(3):
+                gradient[i] += residual * x[i]
+                for j in range(3):
+                    hessian[i][j] -= weight * x[i] * x[j]
+        neg_hessian = [[-value for value in row] for row in hessian]
+        step = _solve_3x3(neg_hessian, gradient)
+        if step is None:
+            break
+        beta = [coef + delta for coef, delta in zip(beta, step)]
+        iterations = iteration
+        if max(abs(delta) for delta in step) < tolerance:
+            converged = True
+            break
+
+    neg_hessian = [[ridge if i == j and i > 0 else 0.0 for j in range(3)] for i in range(3)]
+    for feature_x, length_x in zip(xs_feature, xs_length):
+        x = [1.0, feature_x, length_x]
+        p = _sigmoid(sum(coef * item for coef, item in zip(beta, x)))
+        weight = p * (1.0 - p)
+        for i in range(3):
+            for j in range(3):
+                neg_hessian[i][j] += weight * x[i] * x[j]
+    covariance = _invert_3x3(neg_hessian)
+    feature_se = math.sqrt(covariance[1][1]) if covariance is not None else 0.0
+    feature_z = beta[1] / feature_se if feature_se > 0 else 0.0
+    odds_ratio = math.exp(max(min(beta[1], 50.0), -50.0))
+    return {
+        "logit_feature_coef": beta[1],
+        "logit_feature_se": feature_se,
+        "logit_feature_z": feature_z,
+        "logit_feature_odds_ratio": odds_ratio,
+        "logit_length_coef": beta[2],
+        "logit_iterations": iterations,
+        "logit_converged": converged,
+    }
+
+
+def _empty_logit_result() -> dict[str, Any]:
+    return {
+        "logit_feature_coef": 0.0,
+        "logit_feature_se": 0.0,
+        "logit_feature_z": 0.0,
+        "logit_feature_odds_ratio": 1.0,
+        "logit_length_coef": 0.0,
+        "logit_iterations": 0,
+        "logit_converged": False,
+    }
+
+
 def analyze_rows(rows: list[dict[str, Any]], *, alpha: float) -> list[dict[str, Any]]:
     by_group: dict[GroupKey, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
@@ -119,6 +262,13 @@ def analyze_rows(rows: list[dict[str, Any]], *, alpha: float) -> list[dict[str, 
         rejected_rates = [_float(row, "rejected_rate_per_1k_tokens") for row in feature_rows]
         chosen_tokens = [_float(row, "chosen_tokens") for row in feature_rows]
         rejected_tokens = [_float(row, "rejected_tokens") for row in feature_rows]
+        token_deltas = [chosen - rejected for chosen, rejected in zip(chosen_tokens, rejected_tokens)]
+        logit = _length_adjusted_logit(
+            chosen_rates=chosen_rates,
+            rejected_rates=rejected_rates,
+            chosen_tokens=chosen_tokens,
+            rejected_tokens=rejected_tokens,
+        )
         positive = sum(delta > 0 for delta in deltas)
         negative = sum(delta < 0 for delta in deltas)
         zero = sum(delta == 0 for delta in deltas)
@@ -144,13 +294,12 @@ def analyze_rows(rows: list[dict[str, Any]], *, alpha: float) -> list[dict[str, 
                 "mean_rejected_rate": _mean(rejected_rates),
                 "mean_chosen_tokens": _mean(chosen_tokens),
                 "mean_rejected_tokens": _mean(rejected_tokens),
-                "mean_token_delta": _mean(
-                    [chosen - rejected for chosen, rejected in zip(chosen_tokens, rejected_tokens)]
-                ),
+                "mean_token_delta": _mean(token_deltas),
                 "sign_test_p": p_value,
                 "bh_q": 1.0,
                 "direction": direction,
                 "fdr_significant": False,
+                **logit,
             }
         )
 

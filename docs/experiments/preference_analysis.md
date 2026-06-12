@@ -84,7 +84,33 @@ This sign-test screen is deliberately conservative about magnitude: it tests
 whether the paired direction is consistent, not whether large deltas are
 concentrated in a small number of pairs.
 
-## Length Covariates For Later Logistic Modeling
+## Length-Aware First-Pass Logistic Model
+
+As a supplemental first-pass check, fit a response-side ridge logistic
+diagnostic from the same pair-delta CSV. This is still an early diagnostic, not
+the full Result A logistic analysis.
+
+For each `source`, `subset`, and `feature`, expand every preference pair into
+two response-side observations:
+
+- chosen response: `chosen_label = 1`, `feature_rate =
+  chosen_rate_per_1k_tokens`, `tokens = chosen_tokens`
+- rejected response: `chosen_label = 0`, `feature_rate =
+  rejected_rate_per_1k_tokens`, `tokens = rejected_tokens`
+
+Fit a logistic model with an intercept, standardized response-side feature
+rate, and standardized response token length. Apply a small ridge penalty to
+the feature and length coefficients to keep rare or directional features from
+dominating the smoke-run diagnostic. The current first-pass report records the
+feature coefficient, feature standard error, feature z score, feature odds
+ratio, length coefficient, iteration count, and convergence flag.
+
+Feature coefficients describe whether higher response-side feature rates are
+associated with the chosen label after accounting for response length in this
+diagnostic. Positive coefficients mean the feature is enriched on chosen
+responses; negative coefficients mean it is enriched on rejected responses.
+Length coefficients should be interpreted as residual length imbalance checks,
+not as evidence that length caused the preference label.
 
 Preserve length diagnostics with the same grouping keys so the full model can
 control for residual length effects:
@@ -110,6 +136,11 @@ long form, with one row for each response side, a binary chosen label, feature
 counts/rates, length covariates, and pair-level clustering or fixed effects as
 appropriate.
 
+For small samples, rare features, or perfectly directional features, expect
+separation and unstable coefficients. Report non-convergence, large standard
+errors, and any regularization used instead of treating these coefficients as
+final evidence.
+
 ## W&B Logging Expectations
 
 Do not log raw prompt or response text. Log aggregate metrics, compact tables,
@@ -122,10 +153,11 @@ Expected W&B contents for a first-pass Result A run:
 - metrics: `preference/features`, `preference/significant_features`, and
   `preference/pair_delta_rows`
 - table: `preference_feature_analysis`, one row per source/subset/feature with
-  the summary and sign-test/BH-FDR fields above
+  the summary and sign-test/BH-FDR fields above, plus the first-pass ridge
+  logistic diagnostic columns when available
 - length diagnostics are included in `preference_feature_analysis` as
   `mean_chosen_tokens`, `mean_rejected_tokens`, and `mean_token_delta`; the
-  richer pair-level length table remains a follow-up for the logistic model
+  richer pair-level diagnostics can be logged as `preference_length_diagnostics`
 - artifact: local first-pass report CSV/Parquet plus the original
   `--pair-output` CSV reference or content hash
 
@@ -147,6 +179,9 @@ This first pass is not the final Result A statistical analysis from
   features co-occur. The planned logistic model is needed to estimate each
   feature's association with the chosen label while controlling for length and
   other covariates.
+- The length-aware first-pass logistic model is a diagnostic bridge only; small
+  samples and separation can dominate coefficients, so it does not replace the
+  planned Wilcoxon/logistic Result A analysis.
 - Per-1k token deltas can be noisy for very short responses or rare features;
   raw counts, token denominators, and sparse-feature flags must accompany any
   interpretation.

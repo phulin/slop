@@ -61,6 +61,8 @@ def test_analyze_rows_computes_sign_test_and_bh_q_values():
     assert by_feature["slop_lexicon"]["negative_pairs"] == 1
     assert by_feature["slop_lexicon"]["sign_test_p"] == pytest.approx(0.21875)
     assert by_feature["slop_lexicon"]["direction"] == "chosen_gt_rejected"
+    assert by_feature["slop_lexicon"]["logit_feature_coef"] > 0
+    assert by_feature["slop_lexicon"]["logit_feature_odds_ratio"] > 1
     assert by_feature["stock_openers"]["zero_pairs"] == 2
     assert by_feature["stock_openers"]["sign_test_p"] == 1.0
     assert by_feature["stock_openers"]["direction"] == "tie"
@@ -110,6 +112,7 @@ def test_run_analyze_pairs_writes_report_and_logs_wandb(tmp_path, monkeypatch):
     assert metric_payloads[-1]["preference/features"] == 2
     assert metric_payloads[-1]["preference/pair_delta_rows"] == 3
     assert table_rows["preference_feature_analysis"] == rows
+    assert "logit_feature_coef" in rows[0]
 
 
 def test_analyze_rows_keeps_source_subset_groups_separate():
@@ -122,3 +125,18 @@ def test_analyze_rows_keeps_source_subset_groups_separate():
 
     assert len(report) == 2
     assert {row["subset"] for row in report} == {"a", "b"}
+
+
+def test_analyze_rows_logit_controls_for_length_direction():
+    rows = [
+        _row("p1", "slop_lexicon", 2.0, chosen_tokens=120, rejected_tokens=80),
+        _row("p2", "slop_lexicon", 2.0, chosen_tokens=80, rejected_tokens=120),
+        _row("p3", "slop_lexicon", 2.0, chosen_tokens=90, rejected_tokens=110),
+        _row("p4", "slop_lexicon", -1.0, chosen_tokens=110, rejected_tokens=90),
+    ]
+
+    [report] = analyze_rows(rows, alpha=0.05)
+
+    assert report["logit_iterations"] > 0
+    assert report["logit_feature_coef"] > 0
+    assert abs(report["logit_length_coef"]) < report["logit_feature_coef"]
