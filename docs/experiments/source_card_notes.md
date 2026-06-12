@@ -110,9 +110,8 @@ Current interpretation:
   and multiturn pairs.
 - The retained 10k metadata-aware pair analysis now stratifies by
   `preference_type` and model pair, narrowing the DPO interpretation blocker.
-  It still does not close Phase 1 because manual precision validation, Dolma 3
-  retained stratified sampling, the formal corpus package, and SmolLM3/Tulu
-  work remain.
+  It still does not close Phase 1 because manual precision validation, final
+  chosen/rejected construction semantics, and SmolLM3/Tulu work remain.
 - The current normalizer correctly extracts assistant-only chosen/rejected
   responses and preserves stable pair identity through `prompt_id` when that
   field is selected by the caller.

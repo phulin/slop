@@ -184,8 +184,7 @@
   `mean_delta=95.202...`, `p=7.672e-10`, `q=8.572e-07`). This narrows the
   DPO interpretation blocker by separating preference construction and model
   pair, but it does not close Phase 1 because manual precision validation,
-  Dolma 3 retained stratified sampling, the formal corpus package, and
-  SmolLM3/Tulu work remain.
+  final chosen/rejected construction semantics, and SmolLM3/Tulu work remain.
 - Retained 10k-row Dolci DPO metadata-aware artifact manifest completed:
   `stage1-olmo3-dolci-dpo-10k-metadata-artifact-manifest`,
   `https://wandb.ai/phulin-self/slop-stage1/runs/e7cc238x`. It records the
@@ -216,3 +215,24 @@
   retained JSONL, Parquet sample manifest, CSV sample manifest, and stratum
   census CSV. Local generated manifests are under
   `artifacts/stage1/corpora/olmo3_dolma3_20k_scan_artifact_manifest.*`.
+- Dolci SFT retained corpus package completed:
+  `stage1-olmo3-dolci-sft-10k-retained-corpus-package-schema-fix`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/t5l79cla`. It streamed
+  10,000 rows from `allenai/Dolci-Instruct-SFT`, retained 10,000 normalized
+  `target_response` rows, measured 1,806,697 simple tokens, and wrote
+  `artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl` plus
+  Parquet/CSV/JSON/Markdown per-record manifests.
+- Dolci DPO retained corpus package completed:
+  `stage1-olmo3-dolci-dpo-10k-complete-pair-corpus-package-schema-fix`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/bucn0h4p`. It scanned 10,006
+  rows from `allenai/Dolci-Instruct-DPO` to retain 10,000 complete preference
+  pairs, wrote 20,000 normalized text rows split exactly into 10,000 `chosen`
+  and 10,000 `rejected`, and measured 6,637,271 simple tokens. Original
+  `prompt_id` is preserved separately from a unique row-index-qualified
+  `pair_id`; validation found 10,000 pair IDs and zero bad role pairs.
+- Dolci SFT/DPO retained corpus package manifest completed:
+  `stage1-olmo3-dolci-sft-dpo-10k-corpus-package-manifest`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/dzrfn409`. It records 10
+  local artifacts, 186,303,114 bytes, and 90,000 counted JSONL/Parquet/CSV
+  records. Local generated manifests are under
+  `artifacts/stage1/corpora/olmo3_dolci_sft_dpo_10k_corpus_package_manifest.*`.

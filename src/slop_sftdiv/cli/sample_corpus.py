@@ -57,12 +57,17 @@ def build_parser() -> argparse.ArgumentParser:
         choices=["first", "hash_reservoir"],
         help="Deterministic row-selection strategy within each stratum.",
     )
-    parser.add_argument("--target-rows", type=int, default=None, help="Maximum retained rows overall.")
+    parser.add_argument(
+        "--target-rows",
+        type=int,
+        default=None,
+        help="Maximum retained source records or preference pairs overall.",
+    )
     parser.add_argument(
         "--target-rows-per-stratum",
         type=int,
         default=None,
-        help="Maximum retained rows for each requested stratum.",
+        help="Maximum retained source records or preference pairs for each requested stratum.",
     )
     parser.add_argument("--max-scan", type=int, default=None, help="Maximum source rows to scan.")
     parser.add_argument(
@@ -82,6 +87,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--source-dataset", default=None, help="Canonical source dataset id.")
     parser.add_argument("--provenance", default=None, help="Fallback provenance label.")
     parser.add_argument("--text-role", default="text", help="Text role label for output rows.")
+    parser.add_argument(
+        "--expand-preference-roles",
+        action="store_true",
+        help="Write one retained row each for chosen and rejected preference texts.",
+    )
     parser.add_argument("--output", type=Path, required=True, help="Retained normalized JSONL output.")
     parser.add_argument(
         "--manifest-output",
@@ -104,13 +114,14 @@ def build_parser() -> argparse.ArgumentParser:
 
 def _load_components():
     from slop_sftdiv.data import CorpusSource, SamplingConfig, iter_corpus_records
+    from slop_sftdiv.data.corpora import DEFAULT_ID_FIELDS
     from slop_sftdiv.features.tier1_matchers import SENTENCE_RE, count_tokens
 
-    return CorpusSource, SamplingConfig, iter_corpus_records, SENTENCE_RE, count_tokens
+    return CorpusSource, SamplingConfig, iter_corpus_records, SENTENCE_RE, count_tokens, DEFAULT_ID_FIELDS
 
 
 def _source_from_input(raw_input: str, *, split: str, hf_config: str | None, source_dataset: str):
-    CorpusSource, _, _, _, _ = _load_components()
+    CorpusSource, _, _, _, _, _ = _load_components()
     path = Path(raw_input)
     if path.exists():
         return CorpusSource.jsonl(path, name=source_dataset)
@@ -169,6 +180,7 @@ def _json_safe_metadata(metadata: Any) -> dict[str, Any]:
 def _output_row(
     record: Any,
     *,
+    text: str,
     corpus: str,
     ladder: str,
     source_dataset: str,
@@ -177,11 +189,14 @@ def _output_row(
     sentence_re: Any,
     count_tokens: Any,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
-    token_count = int(count_tokens(record.text))
-    sentence_count = _sentence_count(record.text, sentence_re)
-    paragraph_count = _paragraph_count(record.text)
-    content_hash = _content_hash(record.text)
+    token_count = int(count_tokens(text))
+    sentence_count = _sentence_count(text, sentence_re)
+    paragraph_count = _paragraph_count(text)
+    content_hash = _content_hash(text)
     stratum = _record_stratum(record)
+    is_preference_pair = bool(record.chosen and record.rejected)
+    pair_id = _unique_record_id(record) if is_preference_pair else None
+    doc_id = f"{pair_id}:{text_role}" if pair_id is not None else record.record_id
     row = {
         "corpus": corpus,
         "ladder": ladder,
@@ -189,11 +204,12 @@ def _output_row(
         "split": record.split,
         "stratum": stratum,
         "provenance": _record_provenance(record, provenance),
-        "prompt_id": record.record_id if record.prompt else None,
-        "doc_id": record.record_id,
-        "pair_id": record.record_id if record.chosen and record.rejected else None,
+        "prompt_id": record.record_id if record.prompt or is_preference_pair else None,
+        "doc_id": doc_id,
+        "pair_id": pair_id,
+        "source_record_id": record.record_id,
         "text_role": text_role,
-        "text": record.text,
+        "text": text,
         "token_count": token_count,
         "sentence_count": sentence_count,
         "paragraph_count": paragraph_count,
@@ -208,8 +224,25 @@ def _output_row(
     for key, value in metadata.items():
         row[f"metadata.{key}"] = value
     manifest_row = {key: value for key, value in row.items() if key != "text"}
-    manifest_row["text_chars"] = len(record.text)
+    manifest_row["text_chars"] = len(text)
     return row, manifest_row
+
+
+def _record_text_roles(record: Any, default_text_role: str, expand_preference_roles: bool) -> list[tuple[str, str]]:
+    if expand_preference_roles and record.chosen and record.rejected:
+        return [("chosen", record.chosen), ("rejected", record.rejected)]
+    if expand_preference_roles:
+        return []
+    return [(default_text_role, record.text)]
+
+
+def _unique_record_id(record: Any) -> str:
+    return f"{record.record_id}#row{record.row_index}"
+
+
+def _id_fields_with_pair_id(default_id_fields: tuple[str, ...]) -> tuple[str, ...]:
+    fields = ("pair_id", "pair.id", "preference_pair_id", "prompt_id", *default_id_fields)
+    return tuple(dict.fromkeys(fields))
 
 
 def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> int:
@@ -269,19 +302,22 @@ def _write_summary(path: Path, summary: dict[str, Any], stratum_counts: dict[str
 
 
 def _select_records(args: argparse.Namespace) -> tuple[list[dict[str, Any]], list[dict[str, Any]], SampleStats]:
-    _, SamplingConfig, iter_corpus_records, sentence_re, count_tokens = _load_components()
+    _, SamplingConfig, iter_corpus_records, sentence_re, count_tokens, default_id_fields = _load_components()
     source_dataset = args.source_dataset or args.input
     source = _source_from_input(args.input, split=args.split, hf_config=args.hf_config, source_dataset=source_dataset)
     text_fields = [args.text_field] if args.text_field else None
     sampling = SamplingConfig(cap=None, seed=args.seed, strategy="first", max_scan=args.max_scan)
-    records_kwargs: dict[str, Any] = {"sampling": sampling}
+    records_kwargs: dict[str, Any] = {
+        "sampling": sampling,
+        "id_fields": _id_fields_with_pair_id(default_id_fields),
+    }
     if text_fields:
         records_kwargs["text_fields"] = text_fields
     included = set(args.stratum)
     excluded = set(args.exclude_stratum)
     per_stratum_target = args.target_rows_per_stratum
     total_target = args.target_rows
-    heaps: dict[str, list[tuple[tuple[int, int], dict[str, Any], dict[str, Any]]]] = {}
+    heaps: dict[str, list[tuple[tuple[int, int], list[tuple[dict[str, Any], dict[str, Any]]]]]] = {}
     sequence = 0
     stats = SampleStats()
     started_at = time.perf_counter()
@@ -293,16 +329,26 @@ def _select_records(args: argparse.Namespace) -> tuple[list[dict[str, Any]], lis
             continue
         if stratum in excluded:
             continue
-        row, manifest_row = _output_row(
-            record,
-            corpus=args.corpus,
-            ladder=args.ladder,
-            source_dataset=source_dataset,
-            provenance=args.provenance,
-            text_role=args.text_role,
-            sentence_re=sentence_re,
-            count_tokens=count_tokens,
-        )
+        role_rows = [
+            _output_row(
+                record,
+                text=text,
+                corpus=args.corpus,
+                ladder=args.ladder,
+                source_dataset=source_dataset,
+                provenance=args.provenance,
+                text_role=text_role,
+                sentence_re=sentence_re,
+                count_tokens=count_tokens,
+            )
+            for text_role, text in _record_text_roles(
+                record,
+                default_text_role=args.text_role,
+                expand_preference_roles=args.expand_preference_roles,
+            )
+        ]
+        if not role_rows:
+            continue
         sequence += 1
         if args.sampling_strategy == "first":
             heap = heaps.setdefault(stratum, [])
@@ -310,11 +356,11 @@ def _select_records(args: argparse.Namespace) -> tuple[list[dict[str, Any]], lis
                 continue
             if total_target is not None and sum(len(items) for items in heaps.values()) >= total_target:
                 break
-            heap.append(((sequence, sequence), row, manifest_row))
+            heap.append(((sequence, sequence), role_rows))
             continue
 
         key = _sample_key(record)
-        item = ((-key, sequence), row, manifest_row)
+        item = ((-key, sequence), role_rows)
         if per_stratum_target is None:
             heap = heaps.setdefault("all", [])
             target = total_target
@@ -331,10 +377,9 @@ def _select_records(args: argparse.Namespace) -> tuple[list[dict[str, Any]], lis
     selected: list[tuple[int, dict[str, Any], dict[str, Any]]] = []
     for heap in heaps.values():
         for item in heap:
-            selected.append((item[0][1], item[1], item[2]))
+            for row, manifest_row in item[1]:
+                selected.append((item[0][1], row, manifest_row))
     selected.sort(key=lambda item: item[0])
-    if total_target is not None and per_stratum_target is None:
-        selected = selected[:total_target]
     rows = [item[1] for item in selected]
     manifest_rows = [item[2] for item in selected]
     stats.kept = len(rows)
@@ -367,6 +412,7 @@ def run_sample(args: argparse.Namespace) -> list[dict[str, Any]]:
             "ladder": args.ladder,
             "source_dataset": args.source_dataset,
             "text_role": args.text_role,
+            "expand_preference_roles": args.expand_preference_roles,
             "output": str(args.output),
             "manifest_output": str(args.manifest_output),
         },

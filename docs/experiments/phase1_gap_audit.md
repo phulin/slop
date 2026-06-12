@@ -85,6 +85,25 @@ claims.
   `stage1-olmo3-dolma3-20k-scan-artifact-manifest`
   (`https://wandb.ai/phulin-self/slop-stage1/runs/75vyt0mb`). It records 4
   retained artifacts, 16,446,028 total bytes, and 4,235 counted records.
+- Retained Dolci SFT corpus package completed and logged to W&B:
+  `stage1-olmo3-dolci-sft-10k-retained-corpus-package-schema-fix`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/t5l79cla`). It retained
+  10,000 normalized `target_response` rows from
+  `allenai/Dolci-Instruct-SFT`, measured 1,806,697 simple tokens, and wrote
+  `artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl` plus
+  Parquet/CSV/JSON/Markdown per-record manifests.
+- Retained Dolci DPO corpus package completed and logged to W&B:
+  `stage1-olmo3-dolci-dpo-10k-complete-pair-corpus-package-schema-fix`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/bucn0h4p`). It scanned
+  10,006 source rows to retain 10,000 complete preference pairs and wrote
+  20,000 normalized text rows: 10,000 `chosen` and 10,000 `rejected`. Original
+  `prompt_id` is preserved separately from a unique row-index-qualified
+  `pair_id`; validation found 10,000 pair IDs and zero bad role pairs.
+- Retained Dolci SFT/DPO corpus package manifest completed and logged to W&B:
+  `stage1-olmo3-dolci-sft-dpo-10k-corpus-package-manifest`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/dzrfn409`). It records 10
+  local artifacts, 186,303,114 total bytes, and 90,000 counted
+  JSONL/Parquet/CSV records.
 
 ## Dry-Run Only
 
@@ -143,8 +162,9 @@ claims.
   - `artifacts/stage1/corpora/sample_manifest.parquet`
   - `artifacts/stage1/corpora/source_card_notes.md`
   Dolma 3 now has a retained JSONL sample and the formal
-  `sample_manifest.parquet`; Dolci and replication-ladder corpus packaging
-  remain incomplete.
+  `sample_manifest.parquet`; Dolci SFT/DPO now have retained corpus-package
+  JSONL and per-corpus manifests; replication-ladder corpus packaging remains
+  incomplete.
 - The Phase 1 matcher artifacts named by `tier1_matchers.yaml` still need retained outputs, unless produced elsewhere outside the audited evidence:
   - `artifacts/stage1/matchers/feature_specs.json`
   - `artifacts/stage1/matchers/matcher_version.txt`
@@ -167,14 +187,43 @@ claims.
   - Dolma 3 now has a bounded 20k-scan sample with four populated non-code
     strata, but rare strata are prefix-skewed and underfilled relative to the
     1,000-row cap
-  - Dolci SFT target responses with verified provenance fields
-  - Dolci DPO chosen/rejected rows with verified role semantics
+  - Dolci SFT target responses now have retained package artifacts, with
+    source/domain metadata suitable for retained-prefix provenance analysis
+  - Dolci DPO chosen/rejected rows now have retained package artifacts with
+    exactly two roles per unique package `pair_id`, but final construction
+    semantics still require careful qualification
   - Dolci RL if kept for final-stage data-rate context
 - The 10k Dolci SFT+DPO retained sample is large enough for a useful Result A
   development artifact, but it is not enough by itself to close Phase 1 because
-  it lacks manual precision validation, manifest-backed corpus packaging,
-  Dolma strata, SmolLM3/Tulu replication sources, and chosen/rejected
-  construction verification.
+  it lacks manual precision validation, SmolLM3/Tulu replication sources, and
+  chosen/rejected construction verification.
+
+## Dolci Retained Corpus Packaging Pass
+
+Status: completed for retained 10k SFT rows and 10k complete DPO pairs.
+
+- SFT package paths:
+  - `artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl`
+  - `artifacts/stage1/corpora/olmo3_dolci_sft_10k_sample_manifest.parquet`
+  - `artifacts/stage1/corpora/olmo3_dolci_sft_10k_sample_manifest.csv`
+  - `artifacts/stage1/corpora/olmo3_dolci_sft_10k_sample_manifest.json`
+  - `artifacts/stage1/corpora/olmo3_dolci_sft_10k_sample_manifest.md`
+- DPO package paths:
+  - `artifacts/stage1/corpora/olmo3_dolci_dpo_10k_retained_sample.jsonl`
+  - `artifacts/stage1/corpora/olmo3_dolci_dpo_10k_sample_manifest.parquet`
+  - `artifacts/stage1/corpora/olmo3_dolci_dpo_10k_sample_manifest.csv`
+  - `artifacts/stage1/corpora/olmo3_dolci_dpo_10k_sample_manifest.json`
+  - `artifacts/stage1/corpora/olmo3_dolci_dpo_10k_sample_manifest.md`
+- Package-level manifest:
+  `artifacts/stage1/corpora/olmo3_dolci_sft_dpo_10k_corpus_package_manifest.*`.
+- Acceptance checks passed locally:
+  - SFT rows have only `target_response` measured text.
+  - DPO rows align as two rows per unique package `pair_id`, one `chosen` and
+    one `rejected`.
+  - Original DPO `prompt_id` is preserved separately from unique `pair_id`,
+    because 37 sampled prompt IDs appeared more than once.
+  - Manifest counts match JSONL row counts and W&B artifact metadata.
+  - Package is retained/non-dry-run and logged under `corpus-sampling`.
 
 Recommended next commands/artifacts, not run:
 
@@ -229,8 +278,8 @@ Required manual artifact:
   The retained metadata-aware pair analysis further narrows the blocker by
   stratifying Result A rows by `preference_type`, `chosen_model`, and
   `rejected_model`, but it does not close the blocker for final Phase 1 claims:
-  manual precision validation, Dolma 3 retained stratified sampling, the formal
-  corpus package, and SmolLM3/Tulu replication-source work remain.
+  manual precision validation, final chosen/rejected construction semantics,
+  and SmolLM3/Tulu replication-source work remain.
 - Top metadata-aware significant examples include `delta_learning`
   `qwen3-no_reasoning-32b` vs `qwen3-no_reasoning-0.6b` for `stock_closers`
   (`n=4,730`, `mean_delta=0.169827...`, `p=2.628e-15`, `q=8.809e-12`,
@@ -242,7 +291,9 @@ Required manual artifact:
   chosen/rejected role mapping is ambiguous. Current schema evidence supports
   response extraction and pair identity, but construction-aware interpretation
   remains required.
-- The coordination log still lists open go/no-go questions about whether Dolci SFT/DPO/RL datasets expose stable response and pair fields, and whether DPO chosen/rejected roles can be verified well enough to interpret Result A.
+- The coordination log still lists open go/no-go questions about whether Dolci
+  RL remains in scope and whether DPO chosen/rejected construction semantics
+  can be verified well enough to interpret Result A without overclaiming.
 - Dolma 3 tiny-stream schema and retained stratified sampling now have local
   evidence. The 20k-scan sample satisfies the at-least-three-strata Stage 1
   sample condition, while preserving a note that rare strata are underfilled in
@@ -276,15 +327,14 @@ Current status: not ready to exit Stage 1 / Phase 1.
 
 Exit criteria still unmet:
 
-- Primary OLMo corpora are only partially retained, sampled, and
-  manifest-backed. Dolma 3 now has retained sample/census/manifest artifacts;
-  Dolci SFT/DPO have retained census artifacts but not the formal corpus
-  package; Dolci RL remains unresolved if kept in scope.
+- Primary OLMo corpora are partly retained, sampled, and manifest-backed.
+  Dolma 3 and Dolci SFT/DPO now have retained sample/census or package
+  artifacts; Dolci RL remains unresolved if kept in scope.
 - SmolLM3 replication sources are not sampled and still have source-identification blockers.
 - Core Tier-1 matchers do not yet have real 200-hit precision validation.
-- Retained Dolci SFT/DPO census and pair-analysis CSVs now exist for a 10k
-  sample and are logged to W&B, but the formal named parquet/manifest/summary
-  artifacts are still missing.
+- Retained Dolci SFT/DPO census, pair-analysis, JSONL package, and per-record
+  Parquet/CSV/JSON/Markdown manifest artifacts now exist for a 10k sample and
+  are logged to W&B. Formal combined census-summary files are still missing.
 - Pair IDs, chosen/rejected alignment, and metadata-aware grouping have
   retained-run evidence for Dolci DPO, but chosen/rejected construction
   semantics are still not sufficient for final Phase 1 claims without the
