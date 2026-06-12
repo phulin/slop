@@ -150,3 +150,14 @@
   records: 72 feature-rate rows, 79,960 DPO pair-delta rows, 16 pair-analysis
   rows, and 1,400 precision-labeling rows. Local generated manifests are under
   `artifacts/stage1/corpora/olmo3_dolci_10k_retained_manifest.*`.
+- Retained 10k-row Dolci metadata probe completed:
+  `stage1-olmo3-dolci-10k-source-metadata-probe`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/xieewrhy`.
+  The first 10,000 SFT rows exposed 18 `source_dataset` values and 8 domains.
+  The first 10,000 DPO rows exposed four `preference_type` values:
+  `llm_judged` (4,856), `delta_learning` (4,730),
+  `multiturn_self_talk` (240), and `multiturn_synthetic_context` (174).
+  The top chosen/rejected model fields were `qwen3-no_reasoning-32b` (5,168)
+  and `qwen3-no_reasoning-0.6b` (5,669), reinforcing that Dolci DPO Result A
+  should be interpreted as mixed preference-construction signal, not a pure
+  human-preference signal.

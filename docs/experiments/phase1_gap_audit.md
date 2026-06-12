@@ -49,6 +49,11 @@ needed to interpret chosen/rejected roles.
   counts the 10k feature-rate, pair-delta, pair-analysis, and hit-sample CSVs.
   The manifest records 4 local artifacts, 11,810,749 total bytes, and 81,448
   CSV records.
+- Retained 10k-row Dolci source metadata probe completed and logged to W&B:
+  `stage1-olmo3-dolci-10k-source-metadata-probe`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/xieewrhy`). It verifies
+  retained-prefix SFT source/domain counts and DPO preference-type/model
+  counts.
 
 ## Dry-Run Only
 
@@ -183,7 +188,15 @@ Required manual artifact:
 ## Blocked By Missing Source Identification
 
 - Dolci DPO construction and chosen/rejected role interpretation remain unresolved for final Result A claims. `EXPERIMENTS.md` says to verify whether `Dolci-Instruct-DPO-7B` uses Delta-Learning strong-vs-weak model responses before locking interpretation.
-- `corpus_samples.yaml` explicitly blocks Result A interpretation if Dolci DPO construction is not verified or chosen/rejected role mapping is ambiguous.
+- The dataset-card and retained-prefix probe now verify that Dolci DPO is a
+  mixed construction with Delta Learning, LLM-judged, and multiturn subsets.
+  The blocker is narrowed: aggregate Result A interpretation must stratify or
+  qualify by `preference_type` and model pair rather than treating the table as
+  pure human/RM preference.
+- `corpus_samples.yaml` explicitly blocks final Result A interpretation if
+  chosen/rejected role mapping is ambiguous. Current schema evidence supports
+  response extraction and pair identity, but construction-aware interpretation
+  remains required.
 - The coordination log still lists open go/no-go questions about whether Dolci SFT/DPO/RL datasets expose stable response and pair fields, and whether DPO chosen/rejected roles can be verified well enough to interpret Result A.
 - Dolma 3 tiny-stream schema remains unverified according to the coordination log. The tiny census inferred `web_cc`, but this does not satisfy the required stratified Dolma 3 sample across at least three populated strata.
 - SmolLM3 pretraining source identification is incomplete:
@@ -193,6 +206,9 @@ Required manual artifact:
   - Config status: `identify_exact_source`
   - The exact Tulu-3/APO preference source must separate RM/human-ranked pairs from synthetic Qwen3-32B/0.6B pairs.
 - Dolci SFT provenance split remains to be verified from mixture metadata. Phase 1 requires rates by provenance, and the SFT human-written subset is important for the target-distribution baseline.
+- `docs/experiments/source_card_notes.md` now records primary-source card facts
+  and retained-prefix metadata probe results for Dolci SFT, Dolci DPO, and
+  Dolma 3.
 
 Recommended next artifacts, not run:
 
