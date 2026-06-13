@@ -464,14 +464,44 @@ def _sequence_prob_mass_batch_cached(
     *,
     cache_branch_batch_size: int,
 ) -> list[float]:
+    return _sequence_prob_mass_batch_cached_multi(
+        model,
+        model_inputs,
+        {"_feature": sequences},
+        cache_branch_batch_size=cache_branch_batch_size,
+    )["_feature"]
+
+
+def _sequence_prob_mass_batch_cached_multi(
+    model: Any,
+    model_inputs: dict[str, Any],
+    sequences_by_feature: dict[str, tuple[tuple[int, ...], ...]],
+    *,
+    cache_branch_batch_size: int,
+) -> dict[str, list[float]]:
     import torch
 
     batch_size = int(model_inputs["input_ids"].shape[0])
     if cache_branch_batch_size < 1:
         raise ValueError("cache_branch_batch_size must be positive")
-    if not sequences:
-        return [0.0 for _row in range(batch_size)]
-    max_length = max(len(sequence) for sequence in sequences)
+    feature_names = sorted(sequences_by_feature)
+    feature_sequence_indexes: dict[str, list[int]] = {}
+    all_sequences = sorted(
+        {
+            sequence
+            for sequences in sequences_by_feature.values()
+            for sequence in sequences
+            if sequence
+        }
+    )
+    sequence_index = {sequence: index for index, sequence in enumerate(all_sequences)}
+    for feature, sequences in sequences_by_feature.items():
+        feature_sequence_indexes[feature] = [
+            sequence_index[sequence] for sequence in sequences if sequence in sequence_index
+        ]
+    if not all_sequences:
+        return {feature: [0.0 for _row in range(batch_size)] for feature in feature_names}
+    max_length = max(len(sequence) for sequence in all_sequences)
     with torch.inference_mode():
         outputs = model(
             input_ids=model_inputs["input_ids"],
@@ -480,7 +510,7 @@ def _sequence_prob_mass_batch_cached(
         )
         probabilities = torch.softmax(outputs.logits[:, -1], dim=-1)
         first_token_ids = torch.tensor(
-            [sequence[0] for sequence in sequences],
+            [sequence[0] for sequence in all_sequences],
             dtype=torch.long,
             device=probabilities.device,
         )
@@ -489,16 +519,20 @@ def _sequence_prob_mass_batch_cached(
 
         for depth in range(1, max_length):
             active_sequence_indexes = [
-                index for index, sequence in enumerate(sequences) if depth < len(sequence)
+                index for index, sequence in enumerate(all_sequences) if depth < len(sequence)
             ]
             if not active_sequence_indexes:
                 continue
-            branch_prefixes = sorted({sequences[index][:depth] for index in active_sequence_indexes})
+            branch_prefixes = sorted(
+                {all_sequences[index][:depth] for index in active_sequence_indexes}
+            )
             for branch_start in range(0, len(branch_prefixes), cache_branch_batch_size):
                 branch_chunk = branch_prefixes[branch_start : branch_start + cache_branch_batch_size]
                 branch_index = {branch: index for index, branch in enumerate(branch_chunk)}
                 chunk_active_indexes = [
-                    index for index in active_sequence_indexes if sequences[index][:depth] in branch_index
+                    index
+                    for index in active_sequence_indexes
+                    if all_sequences[index][:depth] in branch_index
                 ]
                 branch_count = len(branch_chunk)
                 branch_cache = copy.deepcopy(past_key_values)
@@ -528,17 +562,84 @@ def _sequence_prob_mass_batch_cached(
                     device=sequence_probabilities.device,
                 )
                 branch_rows = torch.tensor(
-                    [branch_index[sequences[index][:depth]] for index in chunk_active_indexes],
+                    [branch_index[all_sequences[index][:depth]] for index in chunk_active_indexes],
                     dtype=torch.long,
                     device=probabilities.device,
                 )
                 target_ids = torch.tensor(
-                    [sequences[index][depth] for index in chunk_active_indexes],
+                    [all_sequences[index][depth] for index in chunk_active_indexes],
                     dtype=torch.long,
                     device=probabilities.device,
                 )
                 sequence_probabilities[:, active_tensor] *= probabilities[:, branch_rows, target_ids]
-        return [float(item) for item in sequence_probabilities.sum(dim=1).detach().cpu()]
+        masses_by_feature: dict[str, list[float]] = {}
+        for feature in feature_names:
+            indexes = feature_sequence_indexes[feature]
+            if indexes:
+                index_tensor = torch.tensor(
+                    indexes,
+                    dtype=torch.long,
+                    device=sequence_probabilities.device,
+                )
+                masses = sequence_probabilities.index_select(1, index_tensor).sum(dim=1)
+                masses_by_feature[feature] = [float(item) for item in masses.detach().cpu()]
+            else:
+                masses_by_feature[feature] = [0.0 for _row in range(batch_size)]
+        return masses_by_feature
+
+
+def _score_opportunities_cached_multi(
+    *,
+    tokenizer: Any,
+    model: Any,
+    device: Any,
+    text: str,
+    opportunities: list[Any],
+    initiator_sequences: dict[str, tuple[tuple[int, ...], ...]],
+    max_prefix_tokens: int,
+    fixed_prefix_tokens: int,
+    opportunity_batch_size: int,
+    cache_branch_batch_size: int,
+) -> tuple[list[float], list[int]]:
+    prob_masses = [0.0 for _opportunity in opportunities]
+    prefix_token_counts = [0 for _opportunity in opportunities]
+    indexes_by_offset: dict[int, list[int]] = defaultdict(list)
+    for index, opportunity in enumerate(opportunities):
+        indexes_by_offset[opportunity.char_offset].append(index)
+
+    offsets = sorted(indexes_by_offset)
+    for start in range(0, len(offsets), opportunity_batch_size):
+        chunk_offsets = offsets[start : start + opportunity_batch_size]
+        representative_opportunities = [
+            opportunities[indexes_by_offset[offset][0]] for offset in chunk_offsets
+        ]
+        model_inputs = _prefix_input_batch(
+            tokenizer,
+            text,
+            representative_opportunities,
+            max_prefix_tokens=max_prefix_tokens,
+            fixed_prefix_tokens=fixed_prefix_tokens,
+            device=device,
+        )
+        features = sorted(
+            {
+                opportunities[index].feature
+                for offset in chunk_offsets
+                for index in indexes_by_offset[offset]
+            }
+        )
+        masses_by_feature = _sequence_prob_mass_batch_cached_multi(
+            model,
+            model_inputs,
+            {feature: initiator_sequences.get(feature, ()) for feature in features},
+            cache_branch_batch_size=cache_branch_batch_size,
+        )
+        for row_index, offset in enumerate(chunk_offsets):
+            for opportunity_index in indexes_by_offset[offset]:
+                feature = opportunities[opportunity_index].feature
+                prob_masses[opportunity_index] = masses_by_feature[feature][row_index]
+                prefix_token_counts[opportunity_index] = int(model_inputs["prefix_tokens"][row_index])
+    return prob_masses, prefix_token_counts
 
 
 def _score_opportunities(
@@ -556,6 +657,20 @@ def _score_opportunities(
     sequence_cache: bool,
     cache_branch_batch_size: int,
 ) -> tuple[list[float], list[int]]:
+    if mass_mode == "sequence" and sequence_cache:
+        return _score_opportunities_cached_multi(
+            tokenizer=tokenizer,
+            model=model,
+            device=device,
+            text=text,
+            opportunities=opportunities,
+            initiator_sequences=initiator_sequences,
+            max_prefix_tokens=max_prefix_tokens,
+            fixed_prefix_tokens=fixed_prefix_tokens,
+            opportunity_batch_size=opportunity_batch_size,
+            cache_branch_batch_size=cache_branch_batch_size,
+        )
+
     prob_masses = [0.0 for _opportunity in opportunities]
     prefix_token_counts = [0 for _opportunity in opportunities]
     if opportunity_batch_size == 1:

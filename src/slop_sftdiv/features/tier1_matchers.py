@@ -9,6 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import math
 import re
+from collections.abc import Iterable
 from typing import Mapping
 
 
@@ -213,11 +214,19 @@ def count_tokens(text: str) -> int:
     return len(TOKEN_RE.findall(text))
 
 
-def iter_tier1_hits(text: str, *, context_chars: int = 120) -> list[FeatureHit]:
+def iter_tier1_hits(
+    text: str,
+    *,
+    context_chars: int = 120,
+    features: Iterable[str] | None = None,
+) -> list[FeatureHit]:
     """Return regex-level Tier-1 hits with bounded context for human validation."""
 
+    selected = set(features) if features is not None else None
     hits: list[FeatureHit] = []
     for feature, patterns in _validation_patterns().items():
+        if selected is not None and feature not in selected:
+            continue
         for subtype, pattern in patterns.items():
             for match in pattern.finditer(text):
                 start, end = match.span()

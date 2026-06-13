@@ -473,3 +473,19 @@
   Phase 2 model measurement, but because the package was targeted to contain
   reference positives it is a bounded calibration/plumbing shard, not an
   unbiased corpus AF estimate.
+- CPU-side opportunity extraction benchmark completed:
+  `stage2-phase2-positive-control32-opportunity-extraction-benchmark`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/4gy3euvz`. On the 32-row
+  positive/control package, full extraction measured up to 142.8k
+  opportunities/sec and offsets-only enumeration measured up to 1.04M
+  opportunities/sec. This rules out CPU opportunity extraction as the next
+  full-run bottleneck. Opportunity extraction is now selected-feature aware, so
+  neutral-only or narrow-feature runs skip irrelevant Tier-1 matcher families.
+- Shared-prefix cached scorer benchmark completed:
+  `stage2-phase2-olmo3-sft-propensity-scorer-multifeature-branch2-benchmark-v2`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/a2lcsbg9`. At batch 16 and
+  256 fixed prefix tokens, single-feature cached OLMo scoring measured 24.9
+  opportunities/sec; shared multi-feature cached scoring measured 53.2
+  feature-opportunities/sec across three features with max absolute difference
+  `1.83e-04` versus scalar on the reference feature. Use shared-prefix cached
+  scoring for the next multi-feature OLMo shard.

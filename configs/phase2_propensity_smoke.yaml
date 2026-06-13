@@ -47,6 +47,7 @@ teacher_forced:
   opportunity_batch_size: 16
   sequence_cache: true
   cache_branch_batch_size: 2
+  shared_prefix_multi_feature_cache: true
   max_token_start_opportunities: 128
   torch_compile_default: true
   first_token_mass_status: debug_fallback
@@ -55,6 +56,7 @@ teacher_forced:
     - First-token mass remains available only as a debugging fallback.
     - Keep Biber-lite as register covariates, not propensity targets.
     - Neutral controls are calibration targets, not slop features.
+    - Score multiple features sharing the same prefix in one cached prefix pass.
 
 prompt_package:
   source: allenai/Dolci-Instruct-SFT-7B
@@ -150,6 +152,33 @@ first_bounded_af_run:
       slop_lexicon: 0.43403744228180585
       stock_openers: 0.0003604888916015625
   caveat: targeted reference-positive shard for plumbing and calibration; not an unbiased corpus AF estimate
+
+optimization_benchmarks:
+  cpu_opportunity_extraction:
+    input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_positive_control_package_32.jsonl
+    wandb_run_id: 4gy3euvz
+    measurement_rows: 32
+    opportunities: 8774
+    fastest_full_opportunities_per_sec: 142813.55331
+    fastest_offsets_only_opportunities_per_sec: 1043325.22763
+    conclusion: cpu_extraction_not_bottleneck
+  olmo3_sft_shared_prefix_cache:
+    model: allenai/Olmo-3-7B-Instruct-SFT
+    wandb_run_id: a2lcsbg9
+    prefix_tokens: 256
+    batch_size: 16
+    cache_branch_batch_size: 2
+    features_scored:
+      - slop_lexicon
+      - neutral_controls
+      - stock_openers
+    scalar_opportunities_per_sec: 2.72520
+    batched_replay_opportunities_per_sec: 3.16253
+    single_feature_cached_opportunities_per_sec: 24.88784
+    shared_multi_feature_cached_feature_opportunities_per_sec: 53.23785
+    shared_multi_feature_cached_prefixes_per_sec: 17.74595
+    max_abs_diff_vs_scalar: 0.00018310546875
+    conclusion: use_shared_prefix_cache_for_multi_feature_shards
 
 free_running_smoke:
   model: sshleifer/tiny-gpt2

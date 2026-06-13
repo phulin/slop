@@ -196,3 +196,23 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   0.296, and 0.00036 respectively. Because the package is intentionally
   reference-positive, this is a calibration/plumbing shard, not an unbiased
   corpus AF estimate.
+- `stage2-phase2-positive-control32-opportunity-extraction-benchmark`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/4gy3euvz`) measured
+  CPU-side opportunity extraction on the 32-row positive/control package. Full
+  extraction over 8,774 opportunities peaked at 142.8k opportunities/sec, while
+  raw offset enumeration was about 1.04M opportunities/sec. This confirms CPU
+  extraction is not the bottleneck for the next OLMo shard; the matcher pass is
+  the dominant CPU-side cost and now skips irrelevant Tier-1 regex families for
+  narrow feature selections.
+- `stage2-phase2-olmo3-sft-propensity-scorer-multifeature-branch2-benchmark-v2`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/a2lcsbg9`) measured the
+  corrected shared-prefix cached scorer on the A100. At 256 prefix tokens,
+  batch 16, and branch chunk size 2, scalar replay scored 2.73 opportunities/sec,
+  single-feature cached scoring scored 24.9 opportunities/sec, and shared
+  multi-feature cached scoring scored 53.2 feature-opportunities/sec across
+  `slop_lexicon`, `neutral_controls`, and `stock_openers`. Max absolute
+  difference versus scalar for the reference feature was `1.83e-04`, within the
+  bfloat16 tolerance seen in previous cache benchmarks. Multi-feature Phase 2
+  shards should keep exact sequence mass, fixed 256-token prefixes,
+  opportunity batch size 16, KV-cache continuations, branch chunk size 2, and
+  shared-prefix scoring enabled.

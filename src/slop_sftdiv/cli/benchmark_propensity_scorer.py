@@ -13,6 +13,7 @@ from slop_sftdiv.cli.teacher_forced_propensity import (
     _sequence_prob_mass,
     _sequence_prob_mass_batch,
     _sequence_prob_mass_batch_cached,
+    _sequence_prob_mass_batch_cached_multi,
 )
 from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
@@ -21,6 +22,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Benchmark Phase 2 propensity scoring kernels.")
     parser.add_argument("--model", default="sshleifer/tiny-gpt2")
     parser.add_argument("--feature", default="slop_lexicon")
+    parser.add_argument(
+        "--multi-feature",
+        action="append",
+        default=[],
+        help="Additional features to score from the same cached prefix batch.",
+    )
     parser.add_argument("--batch-size", action="append", type=int, default=[])
     parser.add_argument("--prefix-tokens", type=int, default=64)
     parser.add_argument("--cache-branch-batch-size", type=int, default=4)
@@ -107,6 +114,10 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
         compile_model=args.torch_compile,
     )
     sequences = _initiator_token_sequences(tokenizer, args.feature)
+    multi_features = list(dict.fromkeys([args.feature, *args.multi_feature]))
+    multi_sequences = {
+        feature: _initiator_token_sequences(tokenizer, feature) for feature in multi_features
+    }
     rows: list[dict[str, Any]] = []
     run = init_wandb(
         project=args.wandb_project,
@@ -119,6 +130,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
         config={
             "model": args.model,
             "feature": args.feature,
+            "multi_features": multi_features,
             "batch_sizes": batch_sizes,
             "prefix_tokens": args.prefix_tokens,
             "cache_branch_batch_size": args.cache_branch_batch_size,
@@ -128,6 +140,10 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
             "device": str(device),
             "torch_compile": args.torch_compile,
             "initiator_sequences": len(sequences),
+            "multi_initiator_sequences": {
+                feature: len(feature_sequences)
+                for feature, feature_sequences in multi_sequences.items()
+            },
         },
     )
     try:
@@ -165,6 +181,14 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                     cache_branch_batch_size=args.cache_branch_batch_size,
                 )
 
+            def cached_multi_call() -> dict[str, list[float]]:
+                return _sequence_prob_mass_batch_cached_multi(
+                    model,
+                    model_inputs,
+                    multi_sequences,
+                    cache_branch_batch_size=args.cache_branch_batch_size,
+                )
+
             scalar_seconds, scalar_result = _time_call(
                 scalar_call,
                 repeats=args.repeats,
@@ -183,17 +207,28 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                 warmup=args.warmup,
                 device=device,
             )
+            cached_multi_seconds, cached_multi_result = _time_call(
+                cached_multi_call,
+                repeats=args.repeats,
+                warmup=args.warmup,
+                device=device,
+            )
             max_abs_diff = max(
                 abs(left - right) for left, right in zip(scalar_result, batched_result)
             )
             cached_max_abs_diff = max(
                 abs(left - right) for left, right in zip(scalar_result, cached_result)
             )
+            cached_multi_max_abs_diff = max(
+                abs(left - right)
+                for left, right in zip(scalar_result, cached_multi_result[args.feature])
+            )
             rows.extend(
                 [
                     {
                         "batch_size": batch_size,
                         "mode": "scalar",
+                        "features_scored": 1,
                         "seconds_per_repeat": scalar_seconds,
                         "opportunities_per_sec": batch_size / scalar_seconds
                         if scalar_seconds > 0
@@ -203,6 +238,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                     {
                         "batch_size": batch_size,
                         "mode": "batched",
+                        "features_scored": 1,
                         "seconds_per_repeat": batched_seconds,
                         "opportunities_per_sec": batch_size / batched_seconds
                         if batched_seconds > 0
@@ -212,11 +248,26 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                     {
                         "batch_size": batch_size,
                         "mode": "batched_cached",
+                        "features_scored": 1,
                         "seconds_per_repeat": cached_seconds,
                         "opportunities_per_sec": batch_size / cached_seconds
                         if cached_seconds > 0
                         else 0.0,
                         "max_abs_diff_vs_scalar": cached_max_abs_diff,
+                    },
+                    {
+                        "batch_size": batch_size,
+                        "mode": "batched_cached_multi_feature",
+                        "features_scored": len(multi_features),
+                        "seconds_per_repeat": cached_multi_seconds,
+                        "opportunities_per_sec": (batch_size * len(multi_features))
+                        / cached_multi_seconds
+                        if cached_multi_seconds > 0
+                        else 0.0,
+                        "prefixes_per_sec": batch_size / cached_multi_seconds
+                        if cached_multi_seconds > 0
+                        else 0.0,
+                        "max_abs_diff_vs_scalar": cached_multi_max_abs_diff,
                     },
                 ]
             )

@@ -9,6 +9,7 @@ from slop_sftdiv.cli.teacher_forced_propensity import (
     _sequence_prob_mass,
     _sequence_prob_mass_batch,
     _sequence_prob_mass_batch_cached,
+    _sequence_prob_mass_batch_cached_multi,
 )
 
 
@@ -234,3 +235,45 @@ def test_sequence_prob_mass_cached_batch_matches_scalar_path():
     ]
 
     assert cached == pytest.approx(scalar)
+
+
+def test_sequence_prob_mass_cached_multi_shares_prefix_forward():
+    class FakeCache:
+        def batch_repeat_interleave(self, _repeats):
+            pass
+
+    class UniformModel:
+        def __init__(self):
+            self.calls = 0
+
+        def __call__(self, *, input_ids, attention_mask, **_kwargs):
+            del attention_mask
+            self.calls += 1
+            return type(
+                "Output",
+                (),
+                {
+                    "logits": torch.zeros((*input_ids.shape, 7)),
+                    "past_key_values": FakeCache(),
+                },
+            )()
+
+    model = UniformModel()
+    batch_inputs = {
+        "input_ids": torch.tensor([[0, 1], [0, 2]], dtype=torch.long),
+        "attention_mask": torch.tensor([[1, 1], [1, 1]], dtype=torch.long),
+    }
+
+    masses = _sequence_prob_mass_batch_cached_multi(
+        model,
+        batch_inputs,
+        {
+            "short": ((1,), (2, 3)),
+            "long": ((1, 4), (5, 6)),
+        },
+        cache_branch_batch_size=4,
+    )
+
+    assert masses["short"] == pytest.approx([1 / 7 + 1 / 49, 1 / 7 + 1 / 49])
+    assert masses["long"] == pytest.approx([2 / 49, 2 / 49])
+    assert model.calls == 2

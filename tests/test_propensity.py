@@ -76,3 +76,18 @@ def test_iter_feature_opportunities_excludes_unknown_or_deferred_features():
     )
 
     assert {item.feature for item in opportunities} == {"contrastive_negation"}
+
+
+def test_iter_feature_opportunities_skips_tier1_hits_for_neutral_only(monkeypatch):
+    def fail_iter_tier1_hits(*_args, **_kwargs):
+        raise AssertionError("tier1 hits should not be needed for neutral-only extraction")
+
+    monkeypatch.setattr("slop_sftdiv.propensity.iter_tier1_hits", fail_iter_tier1_hits)
+
+    opportunities = iter_feature_opportunities(
+        "For example, tests check behavior.",
+        features=["neutral_controls"],
+        max_token_start_opportunities=8,
+    )
+
+    assert any(item.reference_initiates for item in opportunities)

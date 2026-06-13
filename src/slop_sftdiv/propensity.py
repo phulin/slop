@@ -145,7 +145,7 @@ def iter_feature_opportunities(
     max_token_start_opportunities: int | None = None,
 ) -> list[FeatureOpportunity]:
     selected = set(features or PHASE2_OPPORTUNITY_SPECS)
-    hits_by_feature = _hit_starts_by_feature(text)
+    hits_by_feature = _hit_starts_by_feature(text, selected)
     opportunities: list[FeatureOpportunity] = []
     for feature in sorted(selected):
         spec = PHASE2_OPPORTUNITY_SPECS.get(feature)
@@ -170,13 +170,30 @@ def iter_feature_opportunities(
     return sorted(opportunities, key=lambda item: (item.char_offset, item.feature))
 
 
-def _hit_starts_by_feature(text: str) -> dict[str, dict[int, str]]:
+def _hit_starts_by_feature(text: str, selected: set[str]) -> dict[str, dict[int, str]]:
     starts: dict[str, dict[int, str]] = {}
-    for hit in iter_tier1_hits(text):
-        starts.setdefault(hit.feature, {})[hit.start] = hit.subtype
-        if hit.feature in {"stock_openers", "stock_closers"}:
-            starts.setdefault("stock_openers_closers", {})[hit.start] = hit.subtype
+    tier1_features = {
+        feature
+        for feature in selected
+        if feature
+        in {
+            "contrastive_negation",
+            "slop_lexicon",
+            "stock_openers",
+            "stock_closers",
+            "rule_of_three_approx",
+        }
+    }
+    if "stock_openers_closers" in selected:
+        tier1_features.update({"stock_openers", "stock_closers"})
+    if tier1_features:
+        for hit in iter_tier1_hits(text, features=tier1_features):
+            starts.setdefault(hit.feature, {})[hit.start] = hit.subtype
+            if hit.feature in {"stock_openers", "stock_closers"}:
+                starts.setdefault("stock_openers_closers", {})[hit.start] = hit.subtype
     for feature, pattern in NEUTRAL_CONTROL_PATTERNS.items():
+        if feature not in selected and "neutral_controls" not in selected:
+            continue
         for match in pattern.finditer(text):
             starts.setdefault(feature, {})[match.start()] = feature.removeprefix("neutral_")
             starts.setdefault("neutral_controls", {})[match.start()] = feature.removeprefix("neutral_")
