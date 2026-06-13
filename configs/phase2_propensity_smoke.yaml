@@ -611,6 +611,44 @@ optimization_benchmarks:
     shared_multi_feature_cached_prefixes_per_sec: 17.74595
     max_abs_diff_vs_scalar: 0.00018310546875
     conclusion: use_shared_prefix_cache_for_multi_feature_shards
+  olmo3_sft_slop_neutral_common_cached_multi_branch_sweep:
+    model: allenai/Olmo-3-7B-Instruct-SFT
+    features:
+      - slop_lexicon
+      - neutral_common_controls
+    batch_size: 16
+    prefix_tokens: 256
+    dtype: bfloat16
+    torch_compile: true
+    benchmark_modes:
+      - batched_cached_multi_feature
+    failed_all_mode_probe:
+      wandb_run_id: cqfl09k7
+      cache_branch_batch_size: 4
+      failure: non_cached_batched_path_oom_before_cached_measurement
+    results:
+      branch2:
+        wandb_run_id: 6g5evlht
+        output: artifacts/phase2/benchmarks/olmo3_sft_slop_neutral_common_cached_multi_branch2.csv
+        summary_output: artifacts/phase2/benchmarks/olmo3_sft_slop_neutral_common_cached_multi_branch2.json
+        feature_opportunities_per_sec: 20.486151920388238
+        prefixes_per_sec: 10.243075960194119
+      branch4:
+        wandb_run_id: ytzn1c3b
+        output: artifacts/phase2/benchmarks/olmo3_sft_slop_neutral_common_cached_multi_branch4.csv
+        summary_output: artifacts/phase2/benchmarks/olmo3_sft_slop_neutral_common_cached_multi_branch4.json
+        feature_opportunities_per_sec: 25.3775760018924
+        prefixes_per_sec: 12.6887880009462
+      branch8:
+        wandb_run_id: nwtcj61b
+        output: artifacts/phase2/benchmarks/olmo3_sft_slop_neutral_common_cached_multi_branch8.csv
+        summary_output: artifacts/phase2/benchmarks/olmo3_sft_slop_neutral_common_cached_multi_branch8.json
+        feature_opportunities_per_sec: 28.43458797149837
+        prefixes_per_sec: 14.217293985749185
+      branch16:
+        wandb_run_id: vstbnjwn
+        status: oom
+    recommendation: use cache_branch_batch_size 8 for the next slop/common-control normalized shard; fall back to 2 on checkpoint-specific OOM
 
 free_running_smoke:
   model: sshleifer/tiny-gpt2

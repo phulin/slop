@@ -33,6 +33,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--cache-branch-batch-size", type=int, default=4)
     parser.add_argument("--repeats", type=int, default=3)
     parser.add_argument("--warmup", type=int, default=1)
+    parser.add_argument(
+        "--mode",
+        action="append",
+        choices=("scalar", "batched", "batched_cached", "batched_cached_multi_feature"),
+        default=[],
+        help="Benchmark only selected modes. Defaults to all modes.",
+    )
     parser.add_argument("--seed", type=int, default=1729)
     parser.add_argument("--dtype", default="auto", choices=["auto", "float16", "bfloat16", "float32"])
     parser.add_argument("--device", default="auto")
@@ -107,6 +114,12 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
     batch_sizes = args.batch_size or [1, 4, 16]
     if any(batch_size <= 0 for batch_size in batch_sizes):
         raise ValueError("batch_size values must be positive")
+    modes = list(dict.fromkeys(args.mode)) or [
+        "scalar",
+        "batched",
+        "batched_cached",
+        "batched_cached_multi_feature",
+    ]
     tokenizer, model, device = _load_model(
         model_name=args.model,
         dtype_name=args.dtype,
@@ -132,6 +145,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
             "feature": args.feature,
             "multi_features": multi_features,
             "batch_sizes": batch_sizes,
+            "modes": modes,
             "prefix_tokens": args.prefix_tokens,
             "cache_branch_batch_size": args.cache_branch_batch_size,
             "repeats": args.repeats,
@@ -189,42 +203,16 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                     cache_branch_batch_size=args.cache_branch_batch_size,
                 )
 
-            scalar_seconds, scalar_result = _time_call(
-                scalar_call,
-                repeats=args.repeats,
-                warmup=args.warmup,
-                device=device,
-            )
-            batched_seconds, batched_result = _time_call(
-                batched_call,
-                repeats=args.repeats,
-                warmup=args.warmup,
-                device=device,
-            )
-            cached_seconds, cached_result = _time_call(
-                cached_call,
-                repeats=args.repeats,
-                warmup=args.warmup,
-                device=device,
-            )
-            cached_multi_seconds, cached_multi_result = _time_call(
-                cached_multi_call,
-                repeats=args.repeats,
-                warmup=args.warmup,
-                device=device,
-            )
-            max_abs_diff = max(
-                abs(left - right) for left, right in zip(scalar_result, batched_result)
-            )
-            cached_max_abs_diff = max(
-                abs(left - right) for left, right in zip(scalar_result, cached_result)
-            )
-            cached_multi_max_abs_diff = max(
-                abs(left - right)
-                for left, right in zip(scalar_result, cached_multi_result[args.feature])
-            )
-            rows.extend(
-                [
+            scalar_result: list[float] | None = None
+            cached_result: list[float] | None = None
+            if "scalar" in modes:
+                scalar_seconds, scalar_result = _time_call(
+                    scalar_call,
+                    repeats=args.repeats,
+                    warmup=args.warmup,
+                    device=device,
+                )
+                rows.append(
                     {
                         "batch_size": batch_size,
                         "mode": "scalar",
@@ -234,7 +222,21 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                         if scalar_seconds > 0
                         else 0.0,
                         "max_abs_diff_vs_scalar": 0.0,
-                    },
+                    }
+                )
+            if "batched" in modes:
+                batched_seconds, batched_result = _time_call(
+                    batched_call,
+                    repeats=args.repeats,
+                    warmup=args.warmup,
+                    device=device,
+                )
+                max_abs_diff = (
+                    max(abs(left - right) for left, right in zip(scalar_result, batched_result))
+                    if scalar_result is not None
+                    else None
+                )
+                rows.append(
                     {
                         "batch_size": batch_size,
                         "mode": "batched",
@@ -244,7 +246,21 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                         if batched_seconds > 0
                         else 0.0,
                         "max_abs_diff_vs_scalar": max_abs_diff,
-                    },
+                    }
+                )
+            if "batched_cached" in modes:
+                cached_seconds, cached_result = _time_call(
+                    cached_call,
+                    repeats=args.repeats,
+                    warmup=args.warmup,
+                    device=device,
+                )
+                cached_max_abs_diff = (
+                    max(abs(left - right) for left, right in zip(scalar_result, cached_result))
+                    if scalar_result is not None
+                    else None
+                )
+                rows.append(
                     {
                         "batch_size": batch_size,
                         "mode": "batched_cached",
@@ -254,7 +270,28 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                         if cached_seconds > 0
                         else 0.0,
                         "max_abs_diff_vs_scalar": cached_max_abs_diff,
-                    },
+                    }
+                )
+            if "batched_cached_multi_feature" in modes:
+                cached_multi_seconds, cached_multi_result = _time_call(
+                    cached_multi_call,
+                    repeats=args.repeats,
+                    warmup=args.warmup,
+                    device=device,
+                )
+                reference_result = scalar_result if scalar_result is not None else cached_result
+                cached_multi_max_abs_diff = (
+                    max(
+                        abs(left - right)
+                        for left, right in zip(
+                            reference_result,
+                            cached_multi_result[args.feature],
+                        )
+                    )
+                    if reference_result is not None
+                    else None
+                )
+                rows.append(
                     {
                         "batch_size": batch_size,
                         "mode": "batched_cached_multi_feature",
@@ -268,9 +305,8 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                         if cached_multi_seconds > 0
                         else 0.0,
                         "max_abs_diff_vs_scalar": cached_multi_max_abs_diff,
-                    },
-                ]
-            )
+                    }
+                )
         _write_csv(args.output, rows)
         if args.summary_output is not None:
             args.summary_output.parent.mkdir(parents=True, exist_ok=True)

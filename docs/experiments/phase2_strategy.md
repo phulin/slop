@@ -100,8 +100,11 @@ tokens of each initiating phrase variant. This is enough to avoid the inflated
 first-token smoke estimator, but it is still deliberately small-shard code.
 Current runs should use batched opportunity scoring with KV-cache continuation
 reuse and a bounded `--cache-branch-batch-size` to avoid branch-fanout OOMs.
-Before full Phase 2, keep benchmarking stable shapes, consider tokenizer-trie
-deduplication, and keep neutral controls in the promotion gate.
+For `slop_lexicon` plus `neutral_common_controls` on OLMo 3 SFT, branch size
+8 is the best tested setting on the A100; branch size 16 OOMed, and branch
+size 4 was slower. Before broader Phase 2, keep benchmarking stable shapes,
+consider tokenizer-trie deduplication, and keep neutral-normalized controls in
+the promotion gate.
 
 For the exact teacher-forced AF scorer, keep the current `torch`/Transformers
 path unless a serving backend is explicitly benchmarked against our required
@@ -355,3 +358,14 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   but the slop denominator is only 5 references on this sample, so this is a
   directional shard and performance datapoint rather than a stable full-grid
   result.
+- Cached-only scorer microbenchmarks for the same OLMo SFT
+  `slop_lexicon` plus `neutral_common_controls` shape showed that the previous
+  branch cap of 2 is conservative. Branch 2
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/6g5evlht`) reached 20.5
+  feature-opportunities/sec, branch 4
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/ytzn1c3b`) reached 25.4,
+  and branch 8 (`https://wandb.ai/phulin-self/slop-stage1/runs/nwtcj61b`)
+  reached 28.4 at batch size 16 and 256 prefix tokens. Branch 16
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/vstbnjwn`) OOMed on the
+  cached path, so branch 8 is the next setting to use for the narrow
+  normalized stage-localization shards.

@@ -616,3 +616,19 @@
   was 2.656 with CI 0.000-9.620. This is directionally positive for the
   slop positive control after normalization, but the sample has only five
   `slop_lexicon` reference initiations, so it is not a stable grid result.
+- The scorer benchmark CLI now supports `--mode`, allowing cached-only
+  benchmarks without first running obsolete non-cached modes. This matters for
+  slop/common-control shapes because the all-mode branch-4 benchmark
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/cqfl09k7`) OOMed in the
+  non-cached batched path before reaching the production cached path.
+- Cached-only OLMo SFT scorer microbenchmarks for `slop_lexicon` plus
+  `neutral_common_controls` found branch size 8 to be the best tested setting:
+  branch 2 (`https://wandb.ai/phulin-self/slop-stage1/runs/6g5evlht`) scored
+  20.5 feature-opportunities/sec, branch 4
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/ytzn1c3b`) scored 25.4,
+  branch 8 (`https://wandb.ai/phulin-self/slop-stage1/runs/nwtcj61b`) scored
+  28.4, and branch 16
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/vstbnjwn`) OOMed on the
+  cached path. Use `--cache-branch-batch-size 8` for the next narrow
+  normalized stage-localization shard, while retaining branch 2 as the
+  fallback if a different checkpoint has less memory headroom.
