@@ -103,6 +103,15 @@ reuse and a bounded `--cache-branch-batch-size` to avoid branch-fanout OOMs.
 Before full Phase 2, keep benchmarking stable shapes, consider tokenizer-trie
 deduplication, and keep neutral controls in the promotion gate.
 
+For the exact teacher-forced AF scorer, keep the current `torch`/Transformers
+path unless a serving backend is explicitly benchmarked against our required
+query shape. The scorer needs probability mass for a fixed set of candidate
+continuation token sequences at many internal corpus offsets, with document
+reference alignment and bootstrap summaries. vLLM or SGLang may be worthwhile
+for the later free-running generation workload, but they should not replace the
+teacher-forced scorer until they can return equivalent arbitrary continuation
+mass without changing the estimator.
+
 ## Promotion Criteria
 
 Promote from tiny-model smoke to OLMo tiny shard only if:
@@ -254,3 +263,14 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   pooled neutral-control opportunity/initiator definition fails the SFT
   calibration gate. Do not promote to the full checkpoint grid until that
   neutral-control mismatch is diagnosed.
+- `stage2-phase2-olmo3-sft-promptpkg512-neutral-breakdown-cached-shared-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/gkj0vlvc`) reran the 512-row
+  held-out SFT package with individual neutral controls plus the pooled basket.
+  It scored 226,310 feature-opportunities in 1,320.4 seconds, for 171.4
+  feature-opportunities/sec. The observed neutral reference initiations were
+  concentrated in `neutral_such_as` (16 references, AF 0.424, CI
+  `[0.296, 0.713]`) and `neutral_for_example` (6 references, AF 0.103, CI
+  `[0.051, 0.337]`). `neutral_in_particular` and `neutral_as_a_result` had
+  zero reference initiations in this sample. The pooled neutral AF remains
+  0.357 with CI `[0.258, 0.531]`, so the calibration failure is not just an
+  artifact of mixing in unobserved controls.

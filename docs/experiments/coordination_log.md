@@ -531,3 +531,21 @@
   tight SFT shard, but it fails the neutral-control calibration gate: under
   the current pooled neutral-control opportunity/initiator definition, the SFT
   checkpoint underpredicts reference initiations.
+- Neutral-control breakdown completed:
+  `stage2-phase2-olmo3-sft-promptpkg512-neutral-breakdown-cached-shared-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/gkj0vlvc`. It scored the same
+  512 prompt-held-out SFT targets with individual neutral features plus the
+  pooled basket, measuring 226,310 feature-opportunities in 1,320.4 seconds
+  for 171.4 feature-opportunities/sec. `neutral_such_as` had 16 reference
+  initiations with AF 0.424 and 95% CI 0.296-0.713; `neutral_for_example` had
+  6 reference initiations with AF 0.103 and CI 0.051-0.337.
+  `neutral_in_particular` and `neutral_as_a_result` had zero observed
+  reference initiations in this sample. The pooled neutral basket remains
+  underpredicted with AF 0.357 and CI 0.258-0.531, so full-grid promotion
+  remains blocked by the neutral calibration gate.
+- Inference runtime decision: keep `torch`/Transformers for the current exact
+  teacher-forced AF scorer. It needs arbitrary candidate continuation
+  probability mass at fixed corpus offsets, not just generated tokens or
+  top-k request logprobs. Evaluate vLLM or SGLang for the later free-running
+  generation jobs, and only revisit teacher-forced serving backends after an
+  isolated benchmark proves estimator-equivalent continuation mass.

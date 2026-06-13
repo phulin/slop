@@ -295,6 +295,67 @@ heldout_prompt512_shared_prefix_run:
       slop_lexicon: [0.36077889262902635, 1.1394375668268566]
   caveat: neutral-control calibration gate fails under current pooled neutral-control definition
 
+heldout_prompt512_neutral_breakdown_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  sample_size: 512
+  features:
+    - neutral_for_example
+    - neutral_such_as
+    - neutral_in_particular
+    - neutral_as_a_result
+    - neutral_controls
+  max_opportunities: 640
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  shared_prefix_multi_feature_cache: true
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  dtype: bfloat16
+  wandb_run_id: gkj0vlvc
+  output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_neutral_breakdown_cached_shared_branch2_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_neutral_breakdown_cached_shared_branch2_sequence_summary.csv
+  result:
+    docs: 512
+    opportunities: 226310
+    wall_seconds: 1320.42004
+    opportunities_per_sec: 171.39243
+    reference_initiations:
+      neutral_as_a_result: 0
+      neutral_controls: 22
+      neutral_for_example: 6
+      neutral_in_particular: 0
+      neutral_such_as: 16
+    amplification_factor:
+      neutral_as_a_result: 0.0
+      neutral_controls: 0.3567705322831056
+      neutral_for_example: 0.10292231342612568
+      neutral_in_particular: 0.0
+      neutral_such_as: 0.42360533113377247
+    amplification_factor_ci95:
+      neutral_as_a_result: [0.0, 0.0]
+      neutral_controls: [0.2582453521985957, 0.5314536168153935]
+      neutral_for_example: [0.051061165907567, 0.33653949053355825]
+      neutral_in_particular: [0.0, 0.0]
+      neutral_such_as: [0.29633048581119004, 0.7134413913572569]
+  caveat: pooled neutral-control calibration still fails; full-grid promotion remains blocked
+
+runtime_backends:
+  teacher_forced_propensity:
+    current_backend: torch_transformers
+    status: keep
+    reason: exact AF scorer needs arbitrary candidate continuation mass at fixed corpus offsets
+  free_running_generation:
+    candidate_backends:
+      - vllm
+      - sglang
+    status: benchmark_before_full_free_running_grid
+    reason: serving backends are better aligned with batched autoregressive generation than with the current exact teacher-forced estimator
+
 optimization_benchmarks:
   cpu_opportunity_extraction:
     input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_positive_control_package_32.jsonl
