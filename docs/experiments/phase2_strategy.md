@@ -704,6 +704,17 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   and is uploaded to W&B as `phase2_compounding_realized_af_plot`. The plotted
   maximum realized AF is DPO at temperature 1.0 (`1.733`), with final
   temperature 1.0 close behind (`1.731`) and SFT temperature 1.0 at `1.554`.
+- `stage2-phase2-olmo3-generation-compounding-512prompt-tf1024`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/6miductd`) rejoined the same
+  512-prompt generation caches to the newer 1024-prompt teacher-forced
+  slop/neutral grid. This is the current best bounded Result B artifact because
+  it uses the larger teacher-forced stage grid. Observed `slop_lexicon`
+  opportunity rates still exceed teacher-forced expectation in every
+  stage/temperature cell. The max realized AF remains DPO at temperature 1.0
+  (`1.506`), with final temperature 1.0 effectively tied (`1.504`); the max
+  absolute excess remains SFT at temperature 1.0 (`0.454` per 1k
+  opportunities). The direct prior/no-prior signal remains positive but sparse,
+  with the largest conditional delta at base temperature 1.0.
 - Stock opener/closer teacher-forced propensity now has a matching 512-prompt
   four-stage OLMo grid. W&B runs: base
   (`https://wandb.ai/phulin-self/slop-stage1/runs/mj3zhxsv`), SFT

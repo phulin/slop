@@ -1797,6 +1797,51 @@ olmo3_generation_compounding_512prompt:
       realized_af: 1.733
   conclusion: observed rates exceed teacher-forced expectation in all slop-lexicon cells, but the 512-prompt excess estimates are less extreme than the 128-prompt slice
 
+olmo3_generation_compounding_512prompt_tf1024:
+  wandb_run_id: 6miductd
+  purpose: rejoin the completed 512-prompt generation caches against the newer 1024-prompt teacher-forced slop/neutral grid
+  generation_caches:
+    base: artifacts/phase2/generations/olmo3_base_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
+    sft: artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
+    dpo: artifacts/phase2/generations/olmo3_dpo_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
+    final: artifacts/phase2/generations/olmo3_final_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
+  propensity_grid: artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid.csv
+  output: artifacts/phase2/analysis/olmo3_generation_compounding_512prompt_tf1024.csv
+  summary_output: artifacts/phase2/analysis/olmo3_generation_compounding_512prompt_tf1024_summary.md
+  realized_af_plot_output: artifacts/phase2/analysis/olmo3_generation_compounding_512prompt_tf1024_realized_af.svg
+  wandb_plot_artifact: phase2_compounding_realized_af_plot
+  features:
+    - contrastive_negation
+    - rule_of_three_approx
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+  window_tokens: 32
+  slop_lexicon_result_b:
+    max_excess:
+      stage: sft
+      temperature: 1.0
+      observed_per_1k_opportunities: 0.790
+      expected_per_1k_opportunities: 0.336
+      excess_per_1k_opportunities: 0.454
+      observed_over_expected: 2.35
+      realized_af: 1.350
+    high_temperature_excess:
+      dpo_temperature_1_0_excess_per_1k_opportunities: 0.442
+      final_temperature_1_0_excess_per_1k_opportunities: 0.435
+    max_conditional_window_delta:
+      stage: base
+      temperature: 1.0
+      p_hit_after_prior: 0.172
+      p_hit_without_prior: 0.011
+      repeat_generations: 5
+    max_realized_af:
+      stage: dpo
+      temperature: 1.0
+      realized_af: 1.506
+    final_temperature_1_0_realized_af: 1.504
+  conclusion: rejoining the 512-prompt generation caches to the 1024 teacher-forced grid preserves the bounded Result B signal; DPO remains the max realized-AF stage at temperature 1.0, final is effectively tied, and SFT temperature 1.0 remains the max absolute excess cell
+
 olmo3_dpo_generation_64prompt_8comp_1024_benchmark:
   wandb_run_id: kji583m6
   model: allenai/Olmo-3-7B-Instruct-DPO

@@ -834,3 +834,14 @@
   lift. Treat the 1024 grid as inherited/base slop propensity with a modest
   DPO-stage point-estimate peak; do not spend the estimated full-5k
   slop/neutral compute unless there is a narrower confirmatory reason.
+- Rejoined the completed 512-prompt free-running generation caches to the newer
+  1024-prompt teacher-forced grid:
+  `stage2-phase2-olmo3-generation-compounding-512prompt-tf1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/6miductd`. This supersedes
+  the earlier 512-grid compounding join for current Result B interpretation.
+  Observed `slop_lexicon` opportunity rates exceed teacher-forced expectation
+  in every stage/temperature cell. Max realized AF is DPO at temperature 1.0
+  (`1.506`), with final temperature 1.0 effectively tied (`1.504`); max
+  absolute excess is SFT temperature 1.0 (`0.454` per 1k opportunities). This
+  keeps the bounded compounding signal positive while reducing the older
+  realized-AF magnitudes after the larger teacher-forced denominator update.

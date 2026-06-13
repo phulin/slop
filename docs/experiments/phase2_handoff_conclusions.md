@@ -1,22 +1,31 @@
 # Phase 2 Handoff Conclusions
 
-Date: 2026-06-12
+Date: 2026-06-13
 
-## Task Plan
+## Current Scope
 
-1. Treat Phase 1 as closed for the sampled OLMo Dolci SFT measurement package,
-   with the caveats below carried forward into Phase 2 interpretation.
-2. Use the retained Phase 1 feature scope as the first Phase 2 propensity and
-   emission target set.
-3. Run Phase 2 first on OLMo 3 Instruct-path checkpoints, starting with the SFT
-   checkpoint for calibration and then extending across the full ladder.
-4. Add free-running emission measurement alongside teacher-forced propensity so
-   Phase 2 can support the compounding comparison.
+Phase 2 is implemented and exercised for the OLMo 3 Instruct ladder as a
+bounded measurement package, not as the full EXPERIMENTS.md production-scale
+run. The implemented components are:
 
-## Phase 1 Closure
+- Held-out Dolci SFT prompt packaging with near-duplicate prompt filtering.
+- Exact sequence teacher-forced propensity with shared-prefix KV caching,
+  branch batching, bfloat16, `torch.compile`, bootstrap CIs, W&B logging, and
+  grid assembly.
+- Free-running emission generation with batched Transformers generation,
+  `torch.compile`, W&B logging, generation-grid assembly, and compounding
+  analysis.
+- Result B compounding analysis joining free-running generations to
+  teacher-forced propensity grids, including realized-AF temperature plots.
 
-Phase 1 is closed as a sampled OLMo Dolci SFT measurement, not as an exhaustive
-corpus census. The retained core feature set is:
+The scorer of record for exact teacher-forced propensity remains
+torch/Transformers. SGLang or vLLM should only be revisited for free-running
+generation throughput, or after a separate exactness benchmark reproduces the
+torch fixed-branch probability-mass summaries.
+
+## Retained Features
+
+The Phase 2 core feature set inherited from the revised Phase 1 close-out is:
 
 - `contrastive_negation`
 - `rule_of_three_approx`
@@ -24,57 +33,116 @@ corpus census. The retained core feature set is:
 - `stock_openers`
 - `stock_closers`
 
-Biber-lite features remain useful as register covariates. They should not be
-treated as primary slop propensity targets until a stronger opportunity contract
-exists.
+Teacher-forced stage-localization claims are currently strongest for
+`slop_lexicon` normalized by `neutral_common_controls`. `rule_of_three_approx`
+remains free-running-only until a teacher-forced opportunity contract is frozen.
 
-Removed or demoted features:
+## Teacher-Forced Read
 
-- punctuation/rhythm
-- list/header formatting
+The completed 1,024-prompt `slop_lexicon` vs `neutral_common_controls` grid
+uses the 5,000-prompt held-out Dolci SFT package with `sample_size=1024`. All
+four stages have matching denominators: 88,903 opportunities per feature, 52
+slop references, and 6,694 neutral references.
 
-Full SmolLM replication remains future work.
+W&B runs:
 
-## Phase 2 Components
+- Base: `4mn6ycwv`
+- SFT: `hoggmwz5`
+- DPO: `tu89kg31`
+- Final/RLVR: `5v7x3180`
+- Assembly: `1cuuzoax`
 
-Phase 2 now has exact sequence teacher-forced propensity as the immediate model
-measurement component. The next required component is free-running emission, so
-teacher-forced propensity can be compared against realized generation rates and
-self-conditioning effects.
+Neutral-normalized `slop_lexicon` AF:
 
-Known Phase 2 W&B runs:
+| Stage | Normalized AF | 95% CI |
+|---|---:|---:|
+| Base | 1.467 | 1.114-2.046 |
+| SFT | 1.695 | 1.315-2.289 |
+| DPO | 1.999 | 1.446-2.837 |
+| Final/RLVR | 1.659 | 1.189-2.351 |
 
-- Tiny GPT-2 exact-sequence smoke: `45ozhmum`.
-- OLMo SFT tiny exact-sequence run: `pp0x4f2y`.
-  - 8 opportunities.
-  - Mean `slop_lexicon` mass approximately `1.103147e-06`.
-  - Zero reference initiations.
-  - Throughput approximately `0.094` opportunities/sec.
-- Tiny GPT-2 free-running emission smoke: `4dt5kc3h`.
-  - 1 prompt.
-  - 16 generated tokens.
-  - Zero `slop_lexicon` and `stock_openers` matches.
-  - Uses retained text as a prompt for plumbing validation only.
+Interpretation: DPO is the maximum point-estimate stage, but the confidence
+intervals overlap and final/RLVR attenuates near SFT. Treat this as inherited
+or base slop propensity with a modest DPO-stage peak, not as a clean
+preference-only effect.
 
-## OLMo 3 Model IDs
+The full 5,000-prompt teacher-forced slop/neutral run remains a confirmatory
+compute spend, not the automatic next step.
 
-Use these OLMo 3 Instruct-path checkpoint IDs:
+## Free-Running Read
 
-- Base: `allenai/Olmo-3-1025-7B`
-- SFT: `allenai/Olmo-3-7B-Instruct-SFT`
-- DPO: `allenai/Olmo-3-7B-Instruct-DPO`
-- Final: `allenai/Olmo-3-7B-Instruct`
+The largest current free-running grid uses the full 512-row held-out prompt
+package, temperatures `0.0`, `0.7`, and `1.0`, top-p `0.95`, one completion per
+prompt, and 128 generated tokens per completion.
+
+W&B runs:
+
+- Base: `8rovnqs9`
+- SFT: `aevb3cbt`
+- DPO: `6o6cpvm0`
+- Final/RLVR: `8q42t9h3`
+- Assembly: `o135ar2v`
+- Compounding analysis joined to the 1024 teacher-forced grid: `6miductd`
+  (supersedes the earlier 512-grid joins `fwj8byv8` and `y43cw1k9` for current
+  Result B interpretation)
+
+`slop_lexicon` rates per 1k generated tokens:
+
+| Temperature | Base | SFT | DPO | Final/RLVR |
+|---:|---:|---:|---:|---:|
+| 0.0 | 0.214 | 0.320 | 0.412 | 0.366 |
+| 0.7 | 0.244 | 0.259 | 0.427 | 0.305 |
+| 1.0 | 0.320 | 0.366 | 0.458 | 0.443 |
+
+Interpretation: DPO is the maximum free-running stage at all three
+temperatures in the 512-prompt grid, aligning better with the teacher-forced
+DPO point-estimate peak than the earlier 128-prompt generation slice did.
+Final/RLVR remains close to DPO at temperature 1.0.
+
+## Compounding Read
+
+The current 512-prompt compounding analysis joins cached generations to the
+newer 1,024-prompt teacher-forced stage grid. Observed `slop_lexicon`
+opportunity rates exceed the teacher-forced expectation in every
+stage/temperature cell.
+
+Current headline cells:
+
+- Max excess: SFT at temperature 1.0, observed `0.790` vs expected `0.336` per
+  1k opportunities, excess `0.454`, observed/expected `2.35`, realized AF
+  `1.35`.
+- Max realized AF: DPO at temperature 1.0, realized AF `1.506`; final
+  temperature 1.0 is effectively tied at `1.504`.
+- Direct prior/no-prior window signal is positive in all `slop_lexicon` cells,
+  but repeat counts are still sparse.
+
+Interpretation: Result B has a bounded positive signal, but the conditional
+window estimates are not yet stable enough for the final paper-scale claim.
+
+## Current Compute Posture
+
+Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid
+blindly. The target-shape DPO benchmark (`kji583m6`) validates the heavy shape
+on 64 prompts, but the full OLMo four-stage target remains expensive. The next
+GPU work should be selected by the question it answers:
+
+- For a stronger Result B estimate, scale the free-running generation shard
+  before spending on more teacher-forced slop/neutral rows.
+- For stage-localization confirmation, a narrower DPO/final generation shard at
+  the target 8-completion, 1,024-token shape is more informative than rerunning
+  all stages immediately.
+- For teacher-forced precision, full 5k slop/neutral is confirmatory and should
+  wait until a specific analysis requires tighter CIs.
 
 ## Open Caveats
 
-- Phase 1 closure is sampled and OLMo Dolci focused; it does not close full
-  SmolLM replication.
-- Retained feature claims should stay limited to the revised core features and
-  Biber-lite covariates listed above.
+- Phase 1 and Phase 2 are OLMo/Dolci-first. SmolLM3 replication remains future
+  work.
+- Biber-lite is available as register context, not as a primary Phase 2
+  opportunity-normalized propensity target.
 - Removed punctuation and list/header features should not be used for core
-  Phase 2 claims without renewed validation.
-- The OLMo SFT tiny run validates exact-sequence plumbing on a small shard but
-  has zero reference initiations, so it is not yet an amplification result.
-- Free-running emission now has a smoke-tested CLI, but held-out prompt
-  packaging remains required before Phase 2 can support the compounding
-  decomposition.
+  claims without renewed validation.
+- `contrastive_negation` is measurable but sparse in the 5k denominator audit.
+- `rule_of_three_approx` lacks a frozen teacher-forced opportunity contract.
+- Raw artifacts under `artifacts/` are local and gitignored; durable result
+  records live in config/docs and W&B artifacts.
