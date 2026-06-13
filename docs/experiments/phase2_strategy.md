@@ -147,8 +147,10 @@ Promote from tiny-model smoke to OLMo tiny shard only if:
 Promote from OLMo tiny shard to full Phase 2 only after:
 
 - Held-out prompt splitting and near-duplicate filtering are in place.
-- Neutral controls show AF near 1 on an SFT checkpoint using the
-  `neutral_controls` basket and individual control phrases.
+- The SFT checkpoint is reported with raw AF plus neutral-normalized AF against
+  `neutral_common_controls`, or the opportunity contract is revised. The old
+  raw-AF-near-1 neutral gate failed for both discourse controls and common
+  function-word controls under broad token-start opportunities.
 - Positive controls reproduce expected amplification direction.
 
 ## Smoke Run Log
@@ -336,3 +338,20 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   The next implementation step should report raw AF plus a neutral-normalized
   AF or revise the opportunity definition before scaling to the full
   checkpoint grid.
+- `stage2-phase2-olmo3-sft-promptpkg512-slop-vs-neutral-common-normalized-cached-shared-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/hdwg40tc`) was started as a
+  full 512-row normalized `slop_lexicon` versus `neutral_common_controls`
+  shard, then stopped early because slop-lexicon branch fanout made throughput
+  too low for an efficient full run under the current implementation.
+- `stage2-phase2-olmo3-sft-promptpkg512-sample128-slop-vs-neutral-common-normalized-cached-shared-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/wgsqtjcq`) completed the
+  same normalized comparison on a 128-document sample from the 512-row prompt
+  package. It scored 20,916 opportunities in 1,128.8 seconds, for 18.5
+  opportunities/sec. `neutral_common_controls` had raw AF 0.331 with CI
+  `[0.290, 0.380]`; `slop_lexicon` had raw AF 0.880 with CI `[0.000, 3.218]`.
+  Normalized against the common-control basket, `slop_lexicon` had normalized
+  AF 2.656 with CI `[0.000, 9.620]`. Interpretation: the point estimate is in
+  the expected positive-control direction after common-control normalization,
+  but the slop denominator is only 5 references on this sample, so this is a
+  directional shard and performance datapoint rather than a stable full-grid
+  result.

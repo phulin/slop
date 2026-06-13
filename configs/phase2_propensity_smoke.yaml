@@ -505,6 +505,74 @@ neutral_common_controls_sft_calibration_run:
       neutral_common_controls: [0.318868587777177, 0.3604392417534599]
   conclusion: raw AF near 1 fails even for common function-word controls; add neutral-normalized reporting or revise opportunities before full grid
 
+olmo3_sft_slop_vs_neutral_common_normalized_full_attempt:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  features:
+    - slop_lexicon
+    - neutral_common_controls
+  normalization_feature: neutral_common_controls
+  sample_size: 512
+  max_opportunities: 384
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  mass_mode: sequence
+  dtype: bfloat16
+  torch_compile: true
+  wandb_run_id: hdwg40tc
+  status: stopped_early
+  conclusion: full normalized run was too slow under current slop-lexicon branch fanout; use bounded samples or further scorer optimization before retrying the full shard
+
+olmo3_sft_slop_vs_neutral_common_normalized_sample128:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_sample128_slop_vs_neutral_common_normalized_cached_shared_branch2_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_sample128_slop_vs_neutral_common_normalized_cached_shared_branch2_sequence_summary.csv
+  features:
+    - slop_lexicon
+    - neutral_common_controls
+  normalization_feature: neutral_common_controls
+  sample_size: 128
+  max_opportunities: 384
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  mass_mode: sequence
+  dtype: bfloat16
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  torch_compile: true
+  wandb_run_id: wgsqtjcq
+  result:
+    measurement_rows: 128
+    opportunities: 20916
+    wall_seconds: 1128.81778
+    opportunities_per_sec: 18.52912
+    peak_rss_mb: 5749.26953
+    reference_initiations:
+      neutral_common_controls: 704
+      slop_lexicon: 5
+    amplification_factor:
+      neutral_common_controls: 0.33143437762363553
+      slop_lexicon: 0.8801674694491877
+    amplification_factor_ci95:
+      neutral_common_controls: [0.29040551175101004, 0.379881106081314]
+      slop_lexicon: [0.0, 3.218313648240863]
+    normalized_amplification_factor:
+      neutral_common_controls: 1.0
+      slop_lexicon: 2.655631186360133
+    normalized_amplification_factor_ci95:
+      neutral_common_controls: [1.0, 1.0]
+      slop_lexicon: [0.0, 9.620171684953654]
+  conclusion: slop lexicon is directionally amplified relative to common controls, but the slop denominator is sparse and current throughput is too low for an immediate full-grid run
+
 runtime_backends:
   teacher_forced_propensity:
     current_backend: torch_transformers

@@ -602,3 +602,17 @@
   preserves raw AF while allowing Phase 2 shards to report ratios against the
   high-support `neutral_common_controls` baseline under the current
   opportunity contract.
+- Full normalized `slop_lexicon` versus `neutral_common_controls` run
+  `stage2-phase2-olmo3-sft-promptpkg512-slop-vs-neutral-common-normalized-cached-shared-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/hdwg40tc`, was stopped early
+  because branch fanout made the full 512-row run inefficient under the current
+  scorer.
+- A bounded 128-document normalized shard completed:
+  `stage2-phase2-olmo3-sft-promptpkg512-sample128-slop-vs-neutral-common-normalized-cached-shared-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/wgsqtjcq`. It scored 20,916
+  opportunities in 1,128.8 seconds (18.5 opportunities/sec). Raw AF was 0.331
+  for `neutral_common_controls` with CI 0.290-0.380 and 0.880 for
+  `slop_lexicon` with CI 0.000-3.218. Neutral-normalized `slop_lexicon` AF
+  was 2.656 with CI 0.000-9.620. This is directionally positive for the
+  slop positive control after normalization, but the sample has only five
+  `slop_lexicon` reference initiations, so it is not a stable grid result.
