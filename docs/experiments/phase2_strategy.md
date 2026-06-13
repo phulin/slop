@@ -753,3 +753,13 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   teacher-forced denominator table because it still lacks a frozen Phase 2
   opportunity spec; keep it as a free-running measurement until that contract is
   defined.
+- `stage2-phase2-olmo3-dpo-promptpkg5000-stock-openers-closers-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/5c9cut6v`) completed the
+  first 5,000-prompt teacher-forced OLMo run after the denominator audit. It
+  scored 45,404 `stock_openers_closers` opportunities on
+  `allenai/Olmo-3-7B-Instruct-DPO` in 1,245.8 seconds, or 36.45
+  opportunities/sec, with bfloat16, `torch.compile`, shared prefix caching, and
+  branch batch size 8. Raw AF is 7.115 with 95% bootstrap CI 6.140-8.362
+  against 186 reference initiations. This supersedes the 512-prompt DPO stock
+  point estimate for single-checkpoint support, but the full 5k stock stage grid
+  still requires base, SFT, and final runs.

@@ -716,3 +716,17 @@
   `not_x_but_y` and `not_x_its_y` subtypes. `rule_of_three_approx` was
   intentionally omitted from teacher-forced denominator support because it has
   no frozen Phase 2 opportunity spec yet.
+- Started a DPO `contrastive_negation` teacher-forced diagnostic
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/1kz76tru`) and stopped it
+  before meaningful GPU spend after the sidecar strategy audit flagged that 7
+  references over the 5k package would make it a weak next run. Switched to
+  `stock_openers_closers`, which had 186 references over 45,404 opportunities.
+- Completed the first 5k teacher-forced OLMo run:
+  `stage2-phase2-olmo3-dpo-promptpkg5000-stock-openers-closers-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/5c9cut6v`. It scored
+  45,404 DPO opportunities in 1,245.8 seconds, 36.45 opportunities/sec, using
+  bfloat16, `torch.compile`, shared prefix caching, and branch batch size 8.
+  Result: raw AF `7.115`, CI `6.140-8.362`, against 186 reference
+  initiations. This gives a well-supported single-checkpoint stock
+  opener/closer result; base, SFT, and final remain to complete the 5k stock
+  stage grid.

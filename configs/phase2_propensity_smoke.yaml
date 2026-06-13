@@ -942,6 +942,42 @@ olmo3_promptpkg5000_denominator_support:
         reference_rate: 0.07265255773051067
   conclusion: the 5k held-out package has strong support for slop lexicon, stock openers/closers, and neutral common controls; contrastive negation is measurable but sparse; rule_of_three_approx remains free-running-only until a teacher-forced opportunity contract is frozen
 
+olmo3_dpo_promptpkg5000_stock_openers_closers:
+  primary_feature: stock_openers_closers
+  checkpoint_stage: dpo
+  checkpoint: allenai/Olmo-3-7B-Instruct-DPO
+  wandb_run_id: 5c9cut6v
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  output: artifacts/phase2/propensity/olmo3_dpo_promptpkg5000_stock_openers_closers_cached_shared_branch8_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_dpo_promptpkg5000_stock_openers_closers_cached_shared_branch8_sequence_summary.csv
+  settings:
+    sample_size: 5000
+    max_opportunities: 1000000
+    max_token_start_opportunities: 1000000
+    max_prefix_tokens: 1024
+    fixed_prefix_tokens: 256
+    opportunity_batch_size: 16
+    sequence_cache: true
+    cache_branch_batch_size: 8
+    mass_mode: sequence
+    dtype: bfloat16
+    device: cuda
+    torch_compile: true
+    bootstrap_samples: 1000
+  result:
+    measurement_rows: 5000
+    opportunities: 45404
+    reference_initiations: 186
+    reference_rate: 0.004096555369570963
+    reference_rate_ci95: [0.003544685187646772, 0.004685289957567185]
+    mean_prob_mass: 0.029147178136627493
+    mean_prob_mass_ci95: [0.027806285155684823, 0.030534107006295858]
+    raw_amplification_factor: 7.1150455705130895
+    raw_amplification_factor_ci95: [6.139971339245674, 8.362200062313864]
+    wall_seconds: 1245.81016
+    opportunities_per_sec: 36.44536
+  conclusion: the 5k DPO stock opener/closer run confirms high raw amplification with much tighter support than the earlier 512-prompt grid; run base, SFT, and final on the same package before drawing stage-localization conclusions
+
 runtime_backends:
   teacher_forced_propensity:
     current_backend: torch_transformers
