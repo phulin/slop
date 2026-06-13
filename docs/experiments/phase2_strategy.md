@@ -804,3 +804,14 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   `neutral_common_controls` references. This gives a compute-efficient
   intermediate validation point between the completed 512 stage grid and the
   estimated 18-20 A100-hour full 5k DPO slop/neutral run.
+- `stage2-phase2-olmo3-dpo-promptpkg1024-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/tu89kg31`) completed the
+  bounded DPO validation on the same 1,024-prompt slice. It scored 177,806
+  opportunities in 6,404.6 seconds, or 27.76 opportunities/sec. The
+  `slop_lexicon` neutral-normalized AF is 1.999 with 95% bootstrap CI
+  1.446-2.837; raw slop AF is 0.751, and neutral raw AF is 0.376. This keeps
+  the positive-control slop excess alive, but weakens the 512-prompt DPO point
+  estimate of 2.605 and moves the estimate toward the SFT-sized roughly 2x
+  effect. Treat the full 5k DPO slop/neutral cell as a high-power confirmation
+  run, not as the next automatic step; first benchmark the pushed planned
+  cached scorer path on the target OLMo shape.

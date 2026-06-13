@@ -770,3 +770,15 @@
   estimated it at roughly 18-20 A100-hours. Started a bounded 1,024-prompt DPO
   validation first to test whether the 512-prompt DPO slop lift survives a
   larger sample before spending overnight-scale compute.
+- Completed that bounded 1,024-prompt DPO validation:
+  `stage2-phase2-olmo3-dpo-promptpkg1024-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/tu89kg31`. It scored 177,806
+  opportunities in 6,404.6 seconds, 27.76 opportunities/sec, on
+  `allenai/Olmo-3-7B-Instruct-DPO`. Result: `slop_lexicon`
+  neutral-normalized AF `1.999`, CI `1.446-2.837`; raw slop AF `0.751`, CI
+  `0.546-1.058`; neutral raw AF `0.376`, CI `0.357-0.394`. This preserves a
+  slop-vs-common-control excess but pulls the point estimate down from the
+  earlier 512-prompt DPO normalized AF `2.605` toward the SFT-sized roughly
+  2x effect. Before spending the estimated 18-20 A100-hours on the full 5k DPO
+  slop/neutral cell, run the pushed planned-scorer benchmark/optimization path
+  on the target model shape.
