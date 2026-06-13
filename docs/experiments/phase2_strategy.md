@@ -93,6 +93,19 @@ uv run slop-free-running-emission \
   --wandb-mode online
 ```
 
+Free-running assembly CLI:
+
+```bash
+uv run slop-assemble-phase2-generation-grid \
+  --generation-summary sft=artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_32prompt_t0_t07_t1_batched128_summary.csv \
+  --checkpoint-label sft=allenai/Olmo-3-7B-Instruct-SFT \
+  --primary-feature slop_lexicon \
+  --output artifacts/phase2/analysis/olmo3_sft_generation_stage_grid_32prompt.csv \
+  --comparison-output artifacts/phase2/analysis/olmo3_sft_generation_stage_comparison_32prompt.csv \
+  --summary-output artifacts/phase2/analysis/olmo3_sft_generation_stage_grid_32prompt_summary.md \
+  --wandb-mode online
+```
+
 ## Measurement Caveat
 
 The current exact-sequence estimator sums up to the first three tokenizer
@@ -460,3 +473,12 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   Local ignored artifacts are
   `artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_32prompt_t0_t07_t1_batched128.jsonl`
   and the matching `_summary.csv`.
+- `stage2-phase2-olmo3-sft-generation-grid-32prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/nrxd4ash`) assembled the
+  32-prompt free-running shard into the new generation stage-grid schema. It
+  wrote 15 feature-by-temperature rows and a 3-row `slop_lexicon` primary
+  comparison under `artifacts/phase2/analysis/`, and logged aggregate tables to
+  W&B without raw generations. The comparison preserves the compounding inputs
+  (`repeated_count`, `repeat_per_generation`, and repeat-generation shares) so
+  the same artifact family can support Result B once multi-stage/free-running
+  shards are available.
