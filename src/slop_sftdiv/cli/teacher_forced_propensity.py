@@ -4,6 +4,7 @@ import argparse
 import copy
 import csv
 import os
+import random
 import resource
 import time
 from collections import defaultdict
@@ -30,6 +31,21 @@ OUTPUT_COLUMNS = [
     "matched_subtype",
     "prob_mass",
     "initiator_sequences",
+]
+
+SUMMARY_COLUMNS = [
+    "feature",
+    "opportunities",
+    "reference_initiations",
+    "reference_rate",
+    "reference_rate_ci_low",
+    "reference_rate_ci_high",
+    "mean_prob_mass",
+    "mean_prob_mass_ci_low",
+    "mean_prob_mass_ci_high",
+    "amplification_factor",
+    "amplification_factor_ci_low",
+    "amplification_factor_ci_high",
 ]
 
 
@@ -101,6 +117,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--dtype", default="auto", choices=["auto", "float16", "bfloat16", "float32"])
     parser.add_argument("--device", default="auto")
     parser.add_argument("--torch-compile", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument(
+        "--bootstrap-samples",
+        type=int,
+        default=1000,
+        help="Document-cluster bootstrap samples for summary CIs; set 0 to disable.",
+    )
+    parser.add_argument("--bootstrap-seed", type=int, default=1729)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, default=None)
     parser.add_argument("--wandb-project", default="slop-stage1")
@@ -743,17 +766,127 @@ def _score_opportunities(
     return prob_masses, prefix_token_counts
 
 
-def _summary_rows(accumulators: dict[str, FeatureAccumulator]) -> list[dict[str, Any]]:
+def _rates_from_totals(
+    *,
+    opportunities: int,
+    reference_initiations: int,
+    prob_mass_sum: float,
+) -> tuple[float, float, float]:
+    if opportunities <= 0:
+        return 0.0, 0.0, 0.0
+    reference_rate = reference_initiations / opportunities
+    mean_prob_mass = prob_mass_sum / opportunities
+    amplification_factor = mean_prob_mass / reference_rate if reference_rate > 0.0 else 0.0
+    return reference_rate, mean_prob_mass, amplification_factor
+
+
+def _quantile(values: list[float], quantile: float) -> float:
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    index = min(len(ordered) - 1, max(0, round((len(ordered) - 1) * quantile)))
+    return ordered[index]
+
+
+def _bootstrap_intervals(
+    rows: list[dict[str, Any]],
+    *,
+    samples: int,
+    seed: int,
+) -> dict[str, dict[str, float]]:
+    if samples <= 0 or not rows:
+        return {}
+
+    by_doc: dict[tuple[str, str, str], dict[str, FeatureAccumulator]] = defaultdict(
+        lambda: defaultdict(FeatureAccumulator)
+    )
+    features: set[str] = set()
+    for row in rows:
+        feature = str(row["feature"])
+        features.add(feature)
+        doc_key = (str(row["source"]), str(row["record_id"]), str(row["role"]))
+        accumulator = by_doc[doc_key][feature]
+        accumulator.opportunities += 1
+        accumulator.reference_initiations += int(row["reference_initiates"])
+        accumulator.prob_mass_sum += float(row["prob_mass"])
+
+    doc_keys = sorted(by_doc)
+    rng = random.Random(seed)
+    draws: dict[str, dict[str, list[float]]] = {
+        feature: {
+            "reference_rate": [],
+            "mean_prob_mass": [],
+            "amplification_factor": [],
+        }
+        for feature in features
+    }
+
+    for _sample_index in range(samples):
+        sampled_keys = [rng.choice(doc_keys) for _doc_index in doc_keys]
+        for feature in features:
+            opportunities = 0
+            reference_initiations = 0
+            prob_mass_sum = 0.0
+            for doc_key in sampled_keys:
+                accumulator = by_doc[doc_key].get(feature)
+                if accumulator is None:
+                    continue
+                opportunities += accumulator.opportunities
+                reference_initiations += accumulator.reference_initiations
+                prob_mass_sum += accumulator.prob_mass_sum
+            reference_rate, mean_prob_mass, amplification_factor = _rates_from_totals(
+                opportunities=opportunities,
+                reference_initiations=reference_initiations,
+                prob_mass_sum=prob_mass_sum,
+            )
+            draws[feature]["reference_rate"].append(reference_rate)
+            draws[feature]["mean_prob_mass"].append(mean_prob_mass)
+            draws[feature]["amplification_factor"].append(amplification_factor)
+
+    intervals: dict[str, dict[str, float]] = {}
+    for feature, metrics in draws.items():
+        intervals[feature] = {}
+        for metric, values in metrics.items():
+            intervals[feature][f"{metric}_ci_low"] = _quantile(values, 0.025)
+            intervals[feature][f"{metric}_ci_high"] = _quantile(values, 0.975)
+    return intervals
+
+
+def _summary_rows(
+    accumulators: dict[str, FeatureAccumulator],
+    *,
+    rows: list[dict[str, Any]] | None = None,
+    bootstrap_samples: int = 0,
+    bootstrap_seed: int = 1729,
+) -> list[dict[str, Any]]:
+    intervals = _bootstrap_intervals(
+        rows or [],
+        samples=bootstrap_samples,
+        seed=bootstrap_seed,
+    )
     rows = []
     for feature, accumulator in sorted(accumulators.items()):
+        interval = intervals.get(feature, {})
         rows.append(
             {
                 "feature": feature,
                 "opportunities": accumulator.opportunities,
                 "reference_initiations": accumulator.reference_initiations,
                 "reference_rate": accumulator.reference_rate,
+                "reference_rate_ci_low": interval.get("reference_rate_ci_low", 0.0),
+                "reference_rate_ci_high": interval.get("reference_rate_ci_high", 0.0),
                 "mean_prob_mass": accumulator.mean_prob_mass,
+                "mean_prob_mass_ci_low": interval.get("mean_prob_mass_ci_low", 0.0),
+                "mean_prob_mass_ci_high": interval.get("mean_prob_mass_ci_high", 0.0),
                 "amplification_factor": accumulator.amplification_factor,
+                "amplification_factor_ci_low": interval.get(
+                    "amplification_factor_ci_low",
+                    0.0,
+                ),
+                "amplification_factor_ci_high": interval.get(
+                    "amplification_factor_ci_high",
+                    0.0,
+                ),
             }
         )
     return rows
@@ -772,6 +905,8 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
         raise ValueError("opportunity_batch_size must be positive")
     if args.cache_branch_batch_size < 1:
         raise ValueError("cache_branch_batch_size must be positive")
+    if args.bootstrap_samples < 0:
+        raise ValueError("bootstrap_samples must be non-negative")
     SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS = _load_corpus_components()
     tokenizer, model, device = _load_model(
         model_name=args.model,
@@ -822,6 +957,8 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
             "dtype": args.dtype,
             "device": str(device),
             "torch_compile": args.torch_compile,
+            "bootstrap_samples": args.bootstrap_samples,
+            "bootstrap_seed": args.bootstrap_seed,
             "output": str(args.output),
         },
     )
@@ -887,20 +1024,14 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
                         )
 
         _write_csv(args.output, rows, OUTPUT_COLUMNS)
-        summary_rows = _summary_rows(accumulators)
+        summary_rows = _summary_rows(
+            accumulators,
+            rows=rows,
+            bootstrap_samples=args.bootstrap_samples,
+            bootstrap_seed=args.bootstrap_seed,
+        )
         if args.summary_output is not None:
-            _write_csv(
-                args.summary_output,
-                summary_rows,
-                [
-                    "feature",
-                    "opportunities",
-                    "reference_initiations",
-                    "reference_rate",
-                    "mean_prob_mass",
-                    "amplification_factor",
-                ],
-            )
+            _write_csv(args.summary_output, summary_rows, SUMMARY_COLUMNS)
 
         wall_seconds = time.perf_counter() - started_at
         run.log(

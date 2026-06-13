@@ -102,14 +102,19 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
     assert summary_path.exists()
     with output_path.open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
+    with summary_path.open(encoding="utf-8", newline="") as handle:
+        summary_rows = list(csv.DictReader(handle))
     assert rows
     assert {row["feature"] for row in rows} == {"contrastive_negation", "stock_openers"}
     assert all(int(row["initiator_sequences"]) > 0 for row in rows)
+    assert "amplification_factor_ci_low" in summary_rows[0]
+    assert "amplification_factor_ci_high" in summary_rows[0]
     assert "text" not in rows[0]
     assert "Great question" not in json.dumps(logged_tables)
     assert summary == logged_tables["propensity_summary"]
     assert logged_payloads[-1]["propensity/opportunities"] == len(rows)
     assert init_kwargs["tags"][:4] == ["stage2", "phase2", "teacher-forced", "smoke"]
+    assert init_kwargs["config"]["bootstrap_samples"] == 1000
 
 
 def test_sequence_prob_mass_batches_by_depth():
