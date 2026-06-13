@@ -106,6 +106,22 @@ uv run slop-assemble-phase2-generation-grid \
   --wandb-mode online
 ```
 
+Compounding decomposition CLI:
+
+```bash
+uv run slop-analyze-phase2-compounding \
+  --generation-cache base=artifacts/phase2/generations/olmo3_base_promptpkg512_free_run_128prompt_t0_t07_t1_batched128.jsonl \
+  --generation-cache sft=artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_128prompt_t0_t07_t1_batched128.jsonl \
+  --generation-cache dpo=artifacts/phase2/generations/olmo3_dpo_promptpkg512_free_run_128prompt_t0_t07_t1_batched128.jsonl \
+  --generation-cache final=artifacts/phase2/generations/olmo3_final_promptpkg512_free_run_128prompt_t0_t07_t1_batched128.jsonl \
+  --propensity-grid artifacts/phase2/analysis/olmo3_slop_neutral_common_normalized_stage_grid.csv \
+  --feature slop_lexicon \
+  --window-tokens 32 \
+  --output artifacts/phase2/analysis/olmo3_generation_compounding_128prompt.csv \
+  --summary-output artifacts/phase2/analysis/olmo3_generation_compounding_128prompt_summary.md \
+  --wandb-mode online
+```
+
 ## Measurement Caveat
 
 The current exact-sequence estimator sums up to the first three tokenizer
@@ -627,3 +643,20 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   repeat columns for SFT, DPO, and final, so the next compounding work should
   use this artifact family or a larger prompt sample rather than rely on the
   sparse 32-prompt shard.
+- `stage2-phase2-olmo3-generation-compounding-128prompt-v2`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/wouelim1`) ran the first
+  Result B compounding decomposition over the completed 128-prompt generation
+  caches, joined to the teacher-forced
+  `olmo3_slop_neutral_common_normalized_stage_grid.csv`. For `slop_lexicon`,
+  observed free-running rates exceed the teacher-forced expected opportunity
+  rate at most non-base-greedy cells. The largest excess is SFT greedy:
+  observed `1.313` per 1k generation opportunities versus expected `0.342`,
+  excess `0.971`, observed/expected `3.84`, realized AF `2.58`. At
+  temperature 1.0, DPO and final also show large excesses (`0.717` and
+  `0.740` per 1k opportunities) and realized AFs around `2.39` and `2.44`.
+  The direct prior/no-prior window test is still sparse but nonzero: final
+  greedy has the largest conditional delta (`0.375` vs. `0.013`
+  hit-window probability, 3 repeat generations), followed by SFT greedy and
+  DPO temperature 1.0. Treat this as the first bounded Result B artifact, not
+  the final compounding estimate; larger generation shards are needed for
+  stable conditional rates.
