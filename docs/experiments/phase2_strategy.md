@@ -416,3 +416,31 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   (`https://wandb.ai/phulin-self/slop-stage1/runs/vstbnjwn`) OOMed on the
   cached path, so branch 8 is the next setting to use for the narrow
   normalized stage-localization shards.
+- `stage2-phase2-olmo3-sft-promptpkg512-vllm-free-running-16prompt-t0-t07`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/r962btj8`) tested the
+  current vLLM release path in an isolated `/tmp/slop-vllm-bench` environment
+  created with `uv`. `vllm==0.22.1 --torch-backend=auto` resolved to
+  `torch==2.11.0+cu129`; the project `.venv` was not modified. Import required
+  adding the sidecar CUDA library paths because the wheel stack needed
+  `libcudart.so.13`. Model load reached OLMo SFT initialization, then failed
+  when FlashInfer sampling tried to JIT without a CUDA toolkit/nvcc at
+  `/usr/local/cuda`. This run logged as a failed W&B backend attempt and did
+  not emit generation artifacts.
+- `stage2-phase2-olmo3-sft-promptpkg512-vllm-free-running-16prompt-t0-t07-pytorch-sampler`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/c6i9dqr9`) retried the same
+  `vllm==0.22.1` environment with `VLLM_USE_FLASHINFER_SAMPLER=0`. This passed
+  the previous sampler-JIT failure but then failed during CUDA graph profiling
+  with `CUDA driver version is insufficient for CUDA runtime version`. Treat
+  current vLLM/cu129 wheels as incompatible with this host's 570.124.06 driver
+  unless the driver is upgraded or a compatibility-container path is validated.
+- A safer sidecar install candidate exists for this host:
+  `uv venv --python 3.12 /tmp/slop-vllm-cu128-bench` followed by
+  `uv pip install --python /tmp/slop-vllm-cu128-bench/bin/python -e .
+  'vllm==0.11.1' --torch-backend=cu128`. Import smoke passed with
+  `vllm==0.11.1`, `torch==2.9.0+cu128`, CUDA runtime 12.8, and the A100
+  visible. The first OLMo load attempt
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/6h1s5tq4`) was stopped after
+  the parent process sat idle with no GPU work while an engine subprocess
+  remained alive. Do not promote vLLM for free-running Phase 2 until this
+  cu128 path completes a small generation benchmark, or use the existing
+  Torch/Transformers CLI for the next generation shard.

@@ -23,7 +23,6 @@ models = [
     "accelerate>=0.31",
     "torch>=2.3",
     "transformers>=4.43",
-    "vllm>=0.5",
 ]
 dev = [
     "pytest>=8.0",
