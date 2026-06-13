@@ -793,3 +793,13 @@
   compute estimate; use it for correctness/cleanliness, not as a reason to
   launch the overnight-scale DPO cell before matching the 1,024-prompt SFT
   comparison.
+- Completed the matching 1,024-prompt SFT slop/neutral run:
+  `stage2-phase2-olmo3-sft-promptpkg1024-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/hoggmwz5`. It scored the
+  same 177,806 opportunities in 6,110.7 seconds, 29.10 opportunities/sec, on
+  `allenai/Olmo-3-7B-Instruct-SFT`. Result: `slop_lexicon`
+  neutral-normalized AF `1.695`, CI `1.315-2.289`; raw slop AF `0.575`, CI
+  `0.445-0.776`; neutral raw AF `0.339`, CI `0.322-0.357`. DPO remains higher
+  by point estimate (`1.999`, ratio `1.18x`), but the CIs overlap heavily and
+  the ratio is below the practical `1.25x` threshold for jumping straight to
+  final or full 5k DPO. Next stage-localization cell: base 1,024.

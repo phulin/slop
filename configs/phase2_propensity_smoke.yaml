@@ -1031,6 +1031,63 @@ olmo3_dpo_promptpkg1024_slop_vs_neutral_common_normalized:
     interpretation: the larger DPO slice still supports slop amplification relative to common controls, but its point estimate falls from the 512-row DPO value toward the SFT-sized roughly 2x effect
   conclusion: bounded 1024-prompt DPO validation supports a real slop-vs-common-control excess, but it weakens the 512-row impression of a large DPO-specific jump; run the optimized scorer microbenchmark before spending 18-20 A100-hours on the full 5k DPO slop/neutral cell
 
+olmo3_sft_promptpkg1024_slop_vs_neutral_common_normalized:
+  primary_feature: slop_lexicon
+  normalization_feature: neutral_common_controls
+  checkpoint_stage: sft
+  checkpoint: allenai/Olmo-3-7B-Instruct-SFT
+  wandb_run_id: hoggmwz5
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  output: artifacts/phase2/propensity/olmo3_sft_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+  settings:
+    sample_size: 1024
+    max_opportunities: 384
+    max_token_start_opportunities: 128
+    max_prefix_tokens: 256
+    fixed_prefix_tokens: 256
+    opportunity_batch_size: 16
+    sequence_cache: true
+    cache_branch_batch_size: 8
+    mass_mode: sequence
+    dtype: bfloat16
+    device: cuda
+    torch_compile: true
+    bootstrap_samples: 1000
+  result:
+    measurement_rows: 1024
+    opportunities: 177806
+    opportunities_per_feature: 88903
+    wall_seconds: 6110.71998
+    opportunities_per_sec: 29.09739
+    peak_rss_mb: 5748.34375
+    feature_results:
+      neutral_common_controls:
+        reference_initiations: 6694
+        reference_rate: 0.07529554683194042
+        reference_rate_ci95: [0.07180728316541904, 0.07862201967559376]
+        mean_prob_mass: 0.02552572786723816
+        mean_prob_mass_ci95: [0.023975844953480735, 0.027152170996924664]
+        raw_amplification_factor: 0.33900713841964064
+        raw_amplification_factor_ci95: [0.32230560396881863, 0.35698183245061466]
+        normalized_amplification_factor: 1.0
+        normalized_amplification_factor_ci95: [1.0, 1.0]
+      slop_lexicon:
+        reference_initiations: 52
+        reference_rate: 0.000584907145990574
+        reference_rate_ci95: [0.0004071569137505938, 0.0007911755263037197]
+        mean_prob_mass: 0.0003360518297851986
+        mean_prob_mass_ci95: [0.0002655045756793165, 0.00042127390636627414]
+        raw_amplification_factor: 0.5745387658344906
+        raw_amplification_factor_ci95: [0.44509755011295227, 0.7759443597934096]
+        normalized_amplification_factor: 1.694768931748265
+        normalized_amplification_factor_ci95: [1.3150739222223913, 2.2888649047860907]
+  comparison:
+    dpo_1024_normalized_af: 1.998950438357903
+    dpo_to_sft_normalized_af_ratio: 1.1794844159246075
+    interpretation: DPO remains higher than SFT by point estimate, but the SFT and DPO confidence intervals overlap heavily and the ratio is below the 1.25 practical threshold used for promoting directly to final or full 5k DPO
+  conclusion: matching 1024-prompt SFT comparison weakens a strong DPO-specific story; run base 1024 next to test how much of the roughly 1.7-2.0x slop-vs-common-control excess is inherited before spending full-5k compute
+
 olmo3_dpo_promptpkg5000_stock_openers_closers:
   primary_feature: stock_openers_closers
   checkpoint_stage: dpo

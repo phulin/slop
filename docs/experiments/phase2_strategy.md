@@ -823,3 +823,12 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   scorer remains model-forward dominated; the next compute-efficient
   stage-localization step is a matching 1,024-prompt SFT slop/neutral run, not
   the full 5k DPO cell.
+- `stage2-phase2-olmo3-sft-promptpkg1024-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/hoggmwz5`) completed that
+  matching SFT run. It scored the same 177,806 opportunities in 6,110.7
+  seconds, or 29.10 opportunities/sec. The `slop_lexicon`
+  neutral-normalized AF is 1.695 with 95% bootstrap CI 1.315-2.289; raw slop
+  AF is 0.575, and neutral raw AF is 0.339. Compared with DPO's 1.999
+  normalized AF, this is a modest `1.18x` point-estimate lift with heavy CI
+  overlap. The next compute-efficient stage-localization cell is base 1,024,
+  not full 5k DPO.
