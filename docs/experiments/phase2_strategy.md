@@ -444,3 +444,19 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   remained alive. Do not promote vLLM for free-running Phase 2 until this
   cu128 path completes a small generation benchmark, or use the existing
   Torch/Transformers CLI for the next generation shard.
+- `stage2-phase2-olmo3-sft-promptpkg512-free-running-32prompt-t0-t07-t1-batched128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/0dqgmeez`) completed the
+  next Torch/Transformers free-running shard after the vLLM backend attempts.
+  It used the 512-row held-out prompt package, 32 prompts, temperatures
+  `0.0`, `0.7`, and `1.0`, top-p 0.95, max 128 new tokens, batch size 8,
+  bfloat16, and `torch.compile`. It produced 96 generations and 12,288
+  generated tokens in 231.3 seconds, or 53.1 tokens/sec including model load
+  and compile. Feature rates remained sparse: contrastive-negation appeared
+  once at each temperature (0.244 per 1k tokens), rule-of-three appeared 4
+  times at temperature 0.0 and twice at 0.7/1.0, `slop_lexicon` appeared once
+  at temperature 0.0 only, `stock_openers` appeared once at temperature 1.0
+  only, and `stock_closers` had zero hits. No feature had repeated hits within
+  a generation, so this shard does not yet show self-conditioning compounding.
+  Local ignored artifacts are
+  `artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_32prompt_t0_t07_t1_batched128.jsonl`
+  and the matching `_summary.csv`.
