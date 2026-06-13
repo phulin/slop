@@ -803,3 +803,16 @@
   by point estimate (`1.999`, ratio `1.18x`), but the CIs overlap heavily and
   the ratio is below the practical `1.25x` threshold for jumping straight to
   final or full 5k DPO. Next stage-localization cell: base 1,024.
+- Completed the matching 1,024-prompt base slop/neutral run:
+  `stage2-phase2-olmo3-base-promptpkg1024-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/4mn6ycwv`. It scored the same
+  177,806 opportunities in 6,109.4 seconds, 29.10 opportunities/sec, on
+  `allenai/Olmo-3-1025-7B`. Result: `slop_lexicon` neutral-normalized AF
+  `1.467`, CI `1.114-2.046`; raw slop AF `0.396`, CI `0.302-0.552`; neutral
+  raw AF `0.270`, CI `0.254-0.288`. The 1,024-point stage ordering is now DPO
+  `1.999` > SFT `1.695` > base `1.467`, but all three intervals overlap. The
+  conservative conclusion is inherited/base slop propensity plus modest
+  post-training amplification, not a clean DPO-only effect. Keep the
+  torch/Transformers scorer as the exact teacher-forced scorer of record;
+  defer SGLang/vLLM to free-generation throughput work or a separate exactness
+  benchmark that reproduces fixed-branch probability-mass summaries.

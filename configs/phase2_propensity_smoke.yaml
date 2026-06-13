@@ -1088,6 +1088,68 @@ olmo3_sft_promptpkg1024_slop_vs_neutral_common_normalized:
     interpretation: DPO remains higher than SFT by point estimate, but the SFT and DPO confidence intervals overlap heavily and the ratio is below the 1.25 practical threshold used for promoting directly to final or full 5k DPO
   conclusion: matching 1024-prompt SFT comparison weakens a strong DPO-specific story; run base 1024 next to test how much of the roughly 1.7-2.0x slop-vs-common-control excess is inherited before spending full-5k compute
 
+olmo3_base_promptpkg1024_slop_vs_neutral_common_normalized:
+  primary_feature: slop_lexicon
+  normalization_feature: neutral_common_controls
+  checkpoint_stage: base
+  checkpoint: allenai/Olmo-3-1025-7B
+  wandb_run_id: 4mn6ycwv
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  output: artifacts/phase2/propensity/olmo3_base_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_base_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+  settings:
+    sample_size: 1024
+    max_opportunities: 384
+    max_token_start_opportunities: 128
+    max_prefix_tokens: 256
+    fixed_prefix_tokens: 256
+    opportunity_batch_size: 16
+    sequence_cache: true
+    cache_branch_batch_size: 8
+    mass_mode: sequence
+    dtype: bfloat16
+    device: cuda
+    torch_compile: true
+    bootstrap_samples: 1000
+  result:
+    measurement_rows: 1024
+    opportunities: 177806
+    opportunities_per_feature: 88903
+    wall_seconds: 6109.35157
+    opportunities_per_sec: 29.10391
+    peak_rss_mb: 5749.73047
+    feature_results:
+      neutral_common_controls:
+        reference_initiations: 6694
+        reference_rate: 0.07529554683194042
+        reference_rate_ci95: [0.07180728316541904, 0.07862201967559376]
+        mean_prob_mass: 0.02033328267713532
+        mean_prob_mass_ci95: [0.018985700369103103, 0.02175151639528755]
+        raw_amplification_factor: 0.2700462847094953
+        raw_amplification_factor_ci95: [0.25357227251174275, 0.28831856406548034]
+        normalized_amplification_factor: 1.0
+        normalized_amplification_factor_ci95: [1.0, 1.0]
+      slop_lexicon:
+        reference_initiations: 52
+        reference_rate: 0.000584907145990574
+        reference_rate_ci95: [0.0004071569137505938, 0.0007911755263037197]
+        mean_prob_mass: 0.00023177997275093229
+        mean_prob_mass_ci95: [0.00018022675485802596, 0.00029433243265337267]
+        raw_amplification_factor: 0.39626797918223333
+        raw_amplification_factor_ci95: [0.3018287176621015, 0.5523597329118508]
+        normalized_amplification_factor: 1.4674076320232368
+        normalized_amplification_factor_ci95: [1.1141493703769974, 2.046084324145279]
+  comparison:
+    sft_1024_normalized_af: 1.694768931748265
+    dpo_1024_normalized_af: 1.998950438357903
+    sft_to_base_normalized_af_ratio: 1.1549468785743725
+    dpo_to_base_normalized_af_ratio: 1.3622339875399743
+    interpretation: base already shows a positive slop-vs-common-control excess, while SFT and DPO are higher by point estimate with overlapping confidence intervals
+  backend_decision:
+    scorer_of_record: torch_transformers
+    rationale: the teacher-forced propensity loop needs exact fixed-branch probability mass, shared-prefix accounting, and feature/control auditability; SGLang or vLLM should be evaluated separately for free-generation throughput or after an exactness benchmark reproduces these branch-mass summaries
+  conclusion: the 1024 stage-localization slice supports inherited/base slop propensity plus modest post-training amplification, not a clean DPO-only effect; defer full 5k slop/neutral scoring until a final 1024 cell or stronger stage-localization criterion justifies the compute
+
 olmo3_dpo_promptpkg5000_stock_openers_closers:
   primary_feature: stock_openers_closers
   checkpoint_stage: dpo

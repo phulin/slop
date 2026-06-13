@@ -832,3 +832,17 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   normalized AF, this is a modest `1.18x` point-estimate lift with heavy CI
   overlap. The next compute-efficient stage-localization cell is base 1,024,
   not full 5k DPO.
+- `stage2-phase2-olmo3-base-promptpkg1024-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/4mn6ycwv`) completed the
+  matching base run. It scored the same 177,806 opportunities in 6,109.4
+  seconds, or 29.10 opportunities/sec. The `slop_lexicon`
+  neutral-normalized AF is 1.467 with 95% bootstrap CI 1.114-2.046; raw slop
+  AF is 0.396, and neutral raw AF is 0.270. The 1,024-point ordering is DPO
+  1.999 > SFT 1.695 > base 1.467, but the confidence intervals overlap. Treat
+  this as evidence for inherited/base slop propensity with modest
+  post-training amplification rather than a clean preference-stage-only effect.
+  For exact teacher-forced propensity, keep the torch/Transformers scorer as
+  the scorer of record because it directly audits fixed-branch probability
+  mass, shared-prefix accounting, and feature/control normalization. SGLang or
+  vLLM should be considered for free-generation throughput, or only after a
+  separate exactness benchmark reproduces the torch branch-mass summaries.
