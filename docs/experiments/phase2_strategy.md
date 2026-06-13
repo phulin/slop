@@ -128,6 +128,16 @@ for the later free-running generation workload, but they should not replace the
 teacher-forced scorer until they can return equivalent arbitrary continuation
 mass without changing the estimator.
 
+For the current free-running Phase 2 shards, keep the optimized
+Torch/Transformers path as the default backend. After batched generation,
+`torch.compile`, and fixed generation shapes, the 128-prompt OLMo shards run at
+about 285-286 generated tokens/sec on the A100 including load and compile. That
+is fast enough for the present sparse-grid measurements, while the isolated
+vLLM attempts are not yet stable on this host and SGLang has not been
+benchmarked against the same prompt package. Treat SGLang as a sidecar
+benchmark candidate for larger free-running sweeps, not as a dependency for
+finishing the current Phase 2 slice.
+
 Teacher-forced initiator sequence enumeration now includes sentence-case
 surface variants in addition to lowercase forms. This is required because the
 reference regexes are case-insensitive; the first 512-row neutral breakdown
@@ -596,3 +606,24 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   temperature-dependent picture from the 32-prompt grid: post-DPO/final
   checkpoints show the clearest free-running lift at higher temperature, while
   greedy decoding does not mirror the teacher-forced DPO peak.
+- `stage2-phase2-olmo3-base-promptpkg512-free-running-128prompt-t0-t07-t1-batched128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/c1n1qi9u`) completed the
+  matching 128-prompt base-checkpoint free-running shard with the same prompt
+  package and generation settings. It produced 384 generations and 49,152
+  generated tokens in 171.9 seconds, or 285.9 tokens/sec including load and
+  compile. Base `slop_lexicon` counts were 1 at temperature 0.0, 6 at 0.7, and
+  5 at 1.0, corresponding to 0.061, 0.366, and 0.305 per 1k generated tokens.
+  Repeated `slop_lexicon` hits appeared once at temperature 0.7.
+- `stage2-phase2-olmo3-generation-grid-128prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/oidwhky5`) assembled the
+  full base, SFT, DPO, and final 128-prompt free-running grid. The primary
+  `slop_lexicon` comparison is: at temperature 0.0, SFT is highest (`0.610`
+  per 1k), final is next (`0.427`), DPO is lower (`0.305`), and base is lowest
+  (`0.061`); at temperature 0.7, base and SFT tie at `0.366`, while DPO/final
+  are `0.305`; at temperature 1.0, DPO and final tie at `0.610`, while
+  base/SFT are `0.305`. This completed 128-prompt grid confirms that
+  free-running slop-lexicon rates are temperature-dependent and do not form a
+  simple monotonic training-stage ladder. It does, however, provide nonzero
+  repeat columns for SFT, DPO, and final, so the next compounding work should
+  use this artifact family or a larger prompt sample rather than rely on the
+  sparse 32-prompt shard.
