@@ -502,3 +502,22 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   `0.000`). This is still a sparse 32-prompt shard; treat it as a stage-grid
   plumbing and directional signal rather than a stable free-running rate
   estimate.
+- `stage2-phase2-olmo3-final-promptpkg512-free-running-32prompt-t0-t07-t1-batched128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/7o64hjk4`) completed the
+  matching final/RLVR free-running shard with the same 32-prompt package and
+  generation settings. It produced 96 generations and 12,288 generated tokens
+  in 74.2 seconds, or 165.7 tokens/sec including load and compile. Final had
+  zero `slop_lexicon` hits at temperature 0.0, one at 0.7, and two at 1.0,
+  matching DPO on that primary feature in this sparse shard. Rule-of-three
+  counts were 4, 5, and 3 across the three temperatures, with repeated
+  rule-of-three hits in one temperature-0.7 generation and one temperature-1.0
+  generation.
+- `stage2-phase2-olmo3-sft-dpo-final-generation-grid-32prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/i6lltomx`) assembled the SFT,
+  DPO, and final free-running shards into a three-stage generation grid. The
+  `slop_lexicon` primary comparison is: at temperature 0.0, SFT `0.244` per 1k
+  generated tokens while DPO/final are zero; at temperature 0.7, DPO and final
+  are both `0.244` while SFT is zero; at temperature 1.0, DPO and final are
+  both `0.488` while SFT is zero. This is the first free-running stage-grid
+  artifact with post-DPO and final checkpoints, but it remains too sparse for a
+  stable rate claim or compounding estimate.
