@@ -559,3 +559,21 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   primary comparison identifies temperature 1.0 as the maximum DPO
   `slop_lexicon` rate in this shard (`0.610` per 1k generated tokens), with
   repeat columns preserved for the Result B compounding analysis.
+- `stage2-phase2-olmo3-sft-promptpkg512-free-running-128prompt-t0-t07-t1-batched128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/z4fbaqmg`) completed the
+  matching 128-prompt SFT free-running shard with the same prompt package and
+  generation settings as DPO-128. It produced 384 generations and 49,152
+  generated tokens in 171.8 seconds, or 286.0 tokens/sec including load and
+  compile. SFT `slop_lexicon` counts were 10 at temperature 0.0, 6 at 0.7, and
+  5 at 1.0, corresponding to 0.610, 0.366, and 0.305 per 1k generated tokens.
+  Repeated `slop_lexicon` hits appeared in two greedy generations, giving a
+  direct repeat/compounding signal at temperature 0.0.
+- `stage2-phase2-olmo3-sft-dpo-generation-grid-128prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/ktjei0eo`) assembled the
+  matching 128-prompt SFT and DPO free-running shards. At temperature 0.0, SFT
+  is higher than DPO for `slop_lexicon` (`0.610` vs. `0.305` per 1k generated
+  tokens); at temperature 0.7, SFT is slightly higher (`0.366` vs. `0.305`);
+  at temperature 1.0, DPO is higher (`0.610` vs. `0.305`). Both stages now
+  have nonzero repeat columns in the 128-prompt slice, but the temperature
+  interaction means the free-running result is not a simple monotonic DPO lift
+  at this sample size.
