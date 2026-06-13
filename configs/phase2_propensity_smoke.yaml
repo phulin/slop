@@ -872,6 +872,76 @@ olmo3_stock_openers_closers_stage_grid:
   conclusion: pooled stock opener/closer AF is high but does not show a post-training lift in this held-out package; base is the point-estimate maximum and final is close to base
   caveat: stock_closers alone has only two reference initiations, so use the pooled stock_openers_closers row for current stage comparisons
 
+olmo3_promptpkg5000_denominator_support:
+  wandb_run_id: lq4yiy27
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  output: artifacts/phase2/analysis/olmo3_promptpkg5000_denominator_support.csv
+  summary_output: artifacts/phase2/analysis/olmo3_promptpkg5000_denominator_support_summary.json
+  settings:
+    sample_size: 5000
+    max_token_start_opportunities: 1024
+    requested_features:
+      - contrastive_negation
+      - rule_of_three_approx
+      - slop_lexicon
+      - stock_openers
+      - stock_closers
+      - stock_openers_closers
+      - neutral_common_controls
+    measured_features:
+      - contrastive_negation
+      - slop_lexicon
+      - stock_openers
+      - stock_closers
+      - stock_openers_closers
+      - neutral_common_controls
+    omitted_features:
+      - rule_of_three_approx
+  result:
+    measurement_rows: 5000
+    feature_measurement_rows: 30000
+    opportunities: 2038591
+    reference_initiations: 67556
+    features_with_references: 6
+    peak_rss_mb: 90.00390625
+    wall_seconds: 12.250470537997899
+    feature_support:
+      contrastive_negation:
+        opportunities: 111662
+        reference_initiations: 7
+        documents_with_reference: 7
+        reference_rate: 0.00006268918701080045
+        matched_subtypes:
+          not_just_but: 3
+          not_x_but_y: 3
+          not_x_its_y: 1
+      slop_lexicon:
+        opportunities: 917669
+        reference_initiations: 506
+        documents_with_reference: 308
+        reference_rate: 0.0005513970723648723
+      stock_openers:
+        opportunities: 5000
+        reference_initiations: 168
+        documents_with_reference: 168
+        reference_rate: 0.0336
+      stock_closers:
+        opportunities: 41187
+        reference_initiations: 18
+        documents_with_reference: 18
+        reference_rate: 0.0004370311020467623
+      stock_openers_closers:
+        opportunities: 45404
+        reference_initiations: 186
+        documents_with_reference: 185
+        reference_rate: 0.004096555369570963
+      neutral_common_controls:
+        opportunities: 917669
+        reference_initiations: 66671
+        documents_with_reference: 3590
+        reference_rate: 0.07265255773051067
+  conclusion: the 5k held-out package has strong support for slop lexicon, stock openers/closers, and neutral common controls; contrastive negation is measurable but sparse; rule_of_three_approx remains free-running-only until a teacher-forced opportunity contract is frozen
+
 runtime_backends:
   teacher_forced_propensity:
     current_backend: torch_transformers

@@ -704,3 +704,15 @@
   including load and compile. Batch size 8 completed but was memory-tight on
   the 80GB A100. Feature rates per 1k generated tokens: rule-of-three 0.771,
   slop lexicon 0.269, contrastive negation 0.143, stock openers/closers 0.130.
+- Added and ran the 5,000-prompt Phase 2 denominator-support measurement:
+  `stage2-phase2-olmo3-promptpkg5000-denominator-support-v2`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/lq4yiy27`. The corrected
+  summary distinguishes 5,000 unique measurement texts from 30,000
+  feature-expanded measurement rows. Results: `slop_lexicon` has 917,669
+  opportunities and 506 references; pooled `stock_openers_closers` has 45,404
+  opportunities and 186 references; `neutral_common_controls` has 917,669
+  opportunities and 66,671 references. `contrastive_negation` is nonzero but
+  sparse with 111,662 opportunities and 7 references, including
+  `not_x_but_y` and `not_x_its_y` subtypes. `rule_of_three_approx` was
+  intentionally omitted from teacher-forced denominator support because it has
+  no frozen Phase 2 opportunity spec yet.

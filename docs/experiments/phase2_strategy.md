@@ -741,3 +741,15 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   `stock_openers_closers` 0.130, `stock_openers` 0.084, and `stock_closers`
   0.046. This is a benchmark and sparse feature read, not the full
   free-running grid.
+- `stage2-phase2-olmo3-promptpkg5000-denominator-support-v2`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/lq4yiy27`) measured Phase 2
+  denominator/reference support over the full 5,000-prompt held-out package
+  without logging raw text. The package has strong support for
+  `slop_lexicon` (917,669 opportunities, 506 references),
+  `stock_openers_closers` (45,404 opportunities, 186 references), and
+  `neutral_common_controls` (917,669 opportunities, 66,671 references).
+  `contrastive_negation` is now nonzero but sparse with 111,662 opportunities
+  and 7 references. `rule_of_three_approx` was requested but omitted from the
+  teacher-forced denominator table because it still lacks a frozen Phase 2
+  opportunity spec; keep it as a free-running measurement until that contract is
+  defined.
