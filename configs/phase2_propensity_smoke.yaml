@@ -978,6 +978,42 @@ olmo3_dpo_promptpkg5000_stock_openers_closers:
     opportunities_per_sec: 36.44536
   conclusion: the 5k DPO stock opener/closer run confirms high raw amplification with much tighter support than the earlier 512-prompt grid; run base, SFT, and final on the same package before drawing stage-localization conclusions
 
+olmo3_base_promptpkg5000_stock_openers_closers:
+  primary_feature: stock_openers_closers
+  checkpoint_stage: base
+  checkpoint: allenai/Olmo-3-1025-7B
+  wandb_run_id: tn7nd70e
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  output: artifacts/phase2/propensity/olmo3_base_promptpkg5000_stock_openers_closers_cached_shared_branch8_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_base_promptpkg5000_stock_openers_closers_cached_shared_branch8_sequence_summary.csv
+  settings:
+    sample_size: 5000
+    max_opportunities: 1000000
+    max_token_start_opportunities: 1000000
+    max_prefix_tokens: 1024
+    fixed_prefix_tokens: 256
+    opportunity_batch_size: 16
+    sequence_cache: true
+    cache_branch_batch_size: 8
+    mass_mode: sequence
+    dtype: bfloat16
+    device: cuda
+    torch_compile: true
+    bootstrap_samples: 1000
+  result:
+    measurement_rows: 5000
+    opportunities: 45404
+    reference_initiations: 186
+    reference_rate: 0.004096555369570963
+    reference_rate_ci95: [0.003544685187646772, 0.004685289957567185]
+    mean_prob_mass: 0.032759185424571444
+    mean_prob_mass_ci95: [0.0313972912771365, 0.034229600397952295]
+    raw_amplification_factor: 7.996763736651837
+    raw_amplification_factor_ci95: [6.95163146240602, 9.39121429593106]
+    wall_seconds: 1190.26056
+    opportunities_per_sec: 38.14627
+  conclusion: the 5k base stock opener/closer run is also strongly amplified and exceeds the DPO point estimate on raw AF, so SFT and final are needed before attributing this feature to later alignment stages
+
 runtime_backends:
   teacher_forced_propensity:
     current_backend: torch_transformers

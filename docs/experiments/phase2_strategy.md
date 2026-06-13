@@ -763,3 +763,12 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   against 186 reference initiations. This supersedes the 512-prompt DPO stock
   point estimate for single-checkpoint support, but the full 5k stock stage grid
   still requires base, SFT, and final runs.
+- `stage2-phase2-olmo3-base-promptpkg5000-stock-openers-closers-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/tn7nd70e`) completed the
+  matching 5,000-prompt base checkpoint run. It scored the same 45,404
+  `stock_openers_closers` opportunities on `allenai/Olmo-3-1025-7B` in
+  1,190.3 seconds, or 38.15 opportunities/sec. Raw AF is 7.997 with 95%
+  bootstrap CI 6.952-9.391. The base point estimate is higher than the DPO
+  point estimate, so this 5k stock feature currently looks like a broad model
+  propensity rather than DPO-specific evidence; SFT and final remain required
+  for the stage grid.

@@ -730,3 +730,11 @@
   initiations. This gives a well-supported single-checkpoint stock
   opener/closer result; base, SFT, and final remain to complete the 5k stock
   stage grid.
+- Completed the matching 5k base checkpoint run:
+  `stage2-phase2-olmo3-base-promptpkg5000-stock-openers-closers-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/tn7nd70e`. It scored the same
+  45,404 opportunities in 1,190.3 seconds, 38.15 opportunities/sec. Result:
+  raw AF `7.997`, CI `6.952-9.391`, against the same 186 reference
+  initiations. The base point estimate is above DPO for this feature, so the
+  5k stock grid should be treated as a calibration/control feature until SFT
+  and final are measured.
