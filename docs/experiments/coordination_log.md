@@ -678,3 +678,13 @@
   and
   `artifacts/phase2/analysis/olmo3_slop_neutral_common_normalized_stage_grid_summary.md`.
   The primary comparison confirms DPO as the max normalized-AF stage.
+- Completed the 512-prompt OLMo teacher-forced stock opener/closer grid. Runs:
+  base `mj3zhxsv`, SFT `209dxyh6`, DPO `tomad94n`, final `cxtn5mdi`, assembly
+  `f1vcmj2k` (`zhryxp9m` was superseded by the caveat-cleanup assembly). The
+  pooled `stock_openers_closers` comparison uses raw AF because no stock
+  neutral baseline was run: base `6.078`, SFT `5.214`, DPO `5.469`, final
+  `5.929`. This is high raw amplification but not a post-training lift; base
+  is the point-estimate max and final is close to base. The same denominator
+  audit found zero `contrastive_negation` references in the 512 prompt package,
+  so contrastive remains a measurement gap for this package rather than an AF
+  result.

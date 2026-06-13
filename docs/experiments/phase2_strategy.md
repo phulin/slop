@@ -704,3 +704,19 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   and is uploaded to W&B as `phase2_compounding_realized_af_plot`. The plotted
   maximum realized AF is DPO at temperature 1.0 (`1.733`), with final
   temperature 1.0 close behind (`1.731`) and SFT temperature 1.0 at `1.554`.
+- Stock opener/closer teacher-forced propensity now has a matching 512-prompt
+  four-stage OLMo grid. W&B runs: base
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/mj3zhxsv`), SFT
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/209dxyh6`), DPO
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/tomad94n`), final
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/cxtn5mdi`), and assembly
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/f1vcmj2k`). The pooled
+  `stock_openers_closers` raw AFs are base `6.078`, SFT `5.214`, DPO `5.469`,
+  and final `5.929`, so this feature family is highly amplified relative to
+  model sequence mass but does not show the slop-lexicon DPO-stage lift in the
+  current held-out package. `stock_closers` alone has only two reference
+  initiations; use the pooled opener/closer row for current stage comparisons.
+- The same 512-prompt denominator check found zero `contrastive_negation`
+  reference initiations despite 10,978 opportunities. Contrastive negation
+  therefore remains a Phase 2 measurement gap for this prompt package rather
+  than a meaningful AF grid result.

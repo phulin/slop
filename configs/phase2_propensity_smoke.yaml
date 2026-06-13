@@ -780,6 +780,73 @@ olmo3_slop_neutral_common_normalized_stage_grid_assembly:
       final: 2.1562886799032426
   conclusion: assembled narrow OLMo teacher-forced stage grid; DPO is the max normalized-AF stage
 
+olmo3_stock_openers_closers_stage_grid:
+  primary_feature: stock_openers_closers
+  comparison_metric: raw_af
+  normalization_feature: none
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  generation_note: teacher-forced propensity, not free-running generation
+  runs:
+    base: mj3zhxsv
+    sft: 209dxyh6
+    dpo: tomad94n
+    final: cxtn5mdi
+    assembly: f1vcmj2k
+    superseded_assembly: zhryxp9m
+  inputs:
+    base: artifacts/phase2/propensity/olmo3_base_promptpkg512_stock_openers_closers_cached_shared_branch8_sequence_summary.csv
+    sft: artifacts/phase2/propensity/olmo3_sft_promptpkg512_stock_openers_closers_cached_shared_branch8_sequence_summary.csv
+    dpo: artifacts/phase2/propensity/olmo3_dpo_promptpkg512_stock_openers_closers_cached_shared_branch8_sequence_summary.csv
+    final: artifacts/phase2/propensity/olmo3_final_promptpkg512_stock_openers_closers_cached_shared_branch8_sequence_summary.csv
+  output: artifacts/phase2/analysis/olmo3_stock_openers_closers_stage_grid.csv
+  comparison_output: artifacts/phase2/analysis/olmo3_stock_openers_closers_stage_comparison.csv
+  summary_output: artifacts/phase2/analysis/olmo3_stock_openers_closers_stage_grid_summary.md
+  settings:
+    sample_size: 512
+    max_opportunities: 8192
+    max_token_start_opportunities: 1024
+    fixed_prefix_tokens: 256
+    opportunity_batch_size: 16
+    sequence_cache: true
+    cache_branch_batch_size: 8
+    mass_mode: sequence
+    dtype: bfloat16
+    torch_compile: true
+  denominator_check:
+    stock_openers:
+      opportunities: 512
+      reference_initiations: 22
+    stock_closers:
+      opportunities: 4015
+      reference_initiations: 2
+    stock_openers_closers:
+      opportunities: 4452
+      reference_initiations: 24
+    contrastive_negation:
+      opportunities: 10978
+      reference_initiations: 0
+  result:
+    grid_rows: 12
+    comparison_rows: 4
+    max_raw_af_stage: base
+    raw_amplification_factor:
+      base: 6.077956524151279
+      sft: 5.214446247177269
+      dpo: 5.468670499525189
+      final: 5.9287624506452605
+    raw_amplification_factor_ci95:
+      base: [4.236549700721122, 9.83891238641445]
+      sft: [3.6861895139498464, 8.426608012640774]
+      dpo: [3.793330430833561, 8.906261108393513]
+      final: [4.121276876512932, 9.606651284460783]
+    opportunities_per_sec:
+      base: 49.21
+      sft: 38.31
+      dpo: 49.06
+      final: 48.73
+  conclusion: pooled stock opener/closer AF is high but does not show a post-training lift in this held-out package; base is the point-estimate maximum and final is close to base
+  caveat: stock_closers alone has only two reference initiations, so use the pooled stock_openers_closers row for current stage comparisons
+
 runtime_backends:
   teacher_forced_propensity:
     current_backend: torch_transformers

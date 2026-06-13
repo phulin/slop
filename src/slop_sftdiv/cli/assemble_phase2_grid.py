@@ -29,6 +29,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--primary-feature", default="slop_lexicon")
     parser.add_argument("--normalization-feature", default="neutral_common_controls")
     parser.add_argument(
+        "--comparison-metric",
+        default="auto",
+        choices=["auto", "normalized_af", "raw_af"],
+        help=(
+            "Metric used for primary-feature stage comparison. Auto uses normalized AF "
+            "when the primary rows have a normalization feature, otherwise raw AF."
+        ),
+    )
+    parser.add_argument(
         "--output",
         type=Path,
         default=Path("artifacts/phase2/analysis/phase2_propensity_stage_grid.csv"),
@@ -137,6 +146,7 @@ def _primary_feature_comparison(
     rows: list[dict[str, Any]],
     *,
     primary_feature: str,
+    comparison_metric: str = "auto",
 ) -> list[dict[str, Any]]:
     primary_rows = [
         row for row in rows if row["feature"] == primary_feature
@@ -144,24 +154,56 @@ def _primary_feature_comparison(
     primary_rows.sort(key=lambda row: (row["stage_order"], row["stage"]))
     if not primary_rows:
         raise ValueError(f"primary feature not found in summaries: {primary_feature}")
-    base_af = primary_rows[0]["normalized_amplification_factor"]
-    previous_af: float | None = None
+    metric_key, metric_label = _resolve_comparison_metric(
+        primary_rows,
+        comparison_metric=comparison_metric,
+    )
+    metric_ci_low_key = (
+        "normalized_amplification_factor_ci_low"
+        if metric_key == "normalized_amplification_factor"
+        else "amplification_factor_ci_low"
+    )
+    metric_ci_high_key = (
+        "normalized_amplification_factor_ci_high"
+        if metric_key == "normalized_amplification_factor"
+        else "amplification_factor_ci_high"
+    )
+    base_value = primary_rows[0][metric_key]
+    previous_value: float | None = None
+    base_normalized_af = primary_rows[0]["normalized_amplification_factor"]
+    previous_normalized_af: float | None = None
     comparison_rows: list[dict[str, Any]] = []
     for row in primary_rows:
         normalized_af = row["normalized_amplification_factor"]
+        comparison_value = row[metric_key]
         delta_vs_base = (
-            normalized_af - base_af
-            if normalized_af is not None and base_af is not None
+            comparison_value - base_value
+            if comparison_value is not None and base_value is not None
             else None
         )
         delta_vs_previous = (
-            normalized_af - previous_af
-            if normalized_af is not None and previous_af is not None
+            comparison_value - previous_value
+            if comparison_value is not None and previous_value is not None
             else None
         )
         ratio_vs_base = (
-            normalized_af / base_af
-            if normalized_af is not None and base_af not in (None, 0.0)
+            comparison_value / base_value
+            if comparison_value is not None and base_value not in (None, 0.0)
+            else None
+        )
+        delta_normalized_vs_base = (
+            normalized_af - base_normalized_af
+            if normalized_af is not None and base_normalized_af is not None
+            else None
+        )
+        delta_normalized_vs_previous = (
+            normalized_af - previous_normalized_af
+            if normalized_af is not None and previous_normalized_af is not None
+            else None
+        )
+        ratio_normalized_vs_base = (
+            normalized_af / base_normalized_af
+            if normalized_af is not None and base_normalized_af not in (None, 0.0)
             else None
         )
         comparison_rows.append(
@@ -181,13 +223,37 @@ def _primary_feature_comparison(
                 "normalized_amplification_factor_ci_high": row[
                     "normalized_amplification_factor_ci_high"
                 ],
-                "delta_normalized_af_vs_base": delta_vs_base,
-                "delta_normalized_af_vs_previous": delta_vs_previous,
-                "ratio_normalized_af_vs_base": ratio_vs_base,
+                "comparison_metric": metric_label,
+                "comparison_value": comparison_value,
+                "comparison_value_ci_low": row[metric_ci_low_key],
+                "comparison_value_ci_high": row[metric_ci_high_key],
+                "delta_comparison_value_vs_base": delta_vs_base,
+                "delta_comparison_value_vs_previous": delta_vs_previous,
+                "ratio_comparison_value_vs_base": ratio_vs_base,
+                "delta_normalized_af_vs_base": delta_normalized_vs_base,
+                "delta_normalized_af_vs_previous": delta_normalized_vs_previous,
+                "ratio_normalized_af_vs_base": ratio_normalized_vs_base,
             }
         )
-        previous_af = normalized_af
+        previous_value = comparison_value
+        previous_normalized_af = normalized_af
     return comparison_rows
+
+
+def _resolve_comparison_metric(
+    primary_rows: list[dict[str, Any]],
+    *,
+    comparison_metric: str,
+) -> tuple[str, str]:
+    if comparison_metric == "raw_af":
+        return "amplification_factor", "raw_af"
+    if comparison_metric == "normalized_af":
+        return "normalized_amplification_factor", "normalized_af"
+    if comparison_metric != "auto":
+        raise ValueError(f"unknown comparison metric: {comparison_metric}")
+    if any(row["normalization_feature"] for row in primary_rows):
+        return "normalized_amplification_factor", "normalized_af"
+    return "amplification_factor", "raw_af"
 
 
 def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -215,6 +281,10 @@ def _write_summary(
     primary_feature: str,
     normalization_feature: str,
 ) -> None:
+    comparison_metric = (
+        comparison_rows[0]["comparison_metric"] if comparison_rows else "unknown"
+    )
+    comparison_label = "Normalized AF" if comparison_metric == "normalized_af" else "Raw AF"
     lines = [
         "# Phase 2 Propensity Stage Grid",
         "",
@@ -222,10 +292,11 @@ def _write_summary(
         "",
         f"Primary feature: `{primary_feature}`",
         f"Normalization feature: `{normalization_feature}`",
+        f"Comparison metric: `{comparison_metric}`",
         "",
         "## Primary Feature Comparison",
         "",
-        "| Stage | Raw AF | Raw AF CI | Normalized AF | Normalized AF CI | Delta vs Base |",
+        f"| Stage | Raw AF | Raw AF CI | Normalized AF | Normalized AF CI | {comparison_label} Delta vs Base |",
         "|---|---:|---:|---:|---:|---:|",
     ]
     for row in comparison_rows:
@@ -241,7 +312,7 @@ def _write_summary(
                         f"{_fmt(row['normalized_amplification_factor_ci_low'])}-"
                         f"{_fmt(row['normalized_amplification_factor_ci_high'])}"
                     ),
-                    _fmt(row["delta_normalized_af_vs_base"]),
+                    _fmt(row["delta_comparison_value_vs_base"]),
                 ]
             )
             + " |"
@@ -262,8 +333,8 @@ def _write_summary(
             "## Caveats",
             "",
             "- This assembles existing teacher-forced summary CSVs; it does not rerun model scoring.",
-            "- Normalized AF depends on the current `neutral_common_controls` opportunity contract.",
-            "- The narrow grid currently covers the slop-lexicon positive control, not the full Phase 2 feature set.",
+            "- Normalized AF depends on the selected normalization opportunity contract.",
+            "- Interpret the comparison metric shown above; raw-AF grids are not neutral-normalized.",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -285,6 +356,7 @@ def run_assemble_phase2_grid(args: argparse.Namespace) -> dict[str, Any]:
     comparison_rows = _primary_feature_comparison(
         grid_rows,
         primary_feature=args.primary_feature,
+        comparison_metric=args.comparison_metric,
     )
     _write_csv(args.output, grid_rows)
     _write_csv(args.comparison_output, comparison_rows)
@@ -298,8 +370,13 @@ def run_assemble_phase2_grid(args: argparse.Namespace) -> dict[str, Any]:
 
     best_row = max(
         comparison_rows,
+        key=lambda row: row["comparison_value"] or float("-inf"),
+    )
+    best_normalized_row = max(
+        comparison_rows,
         key=lambda row: row["normalized_amplification_factor"] or float("-inf"),
     )
+    comparison_metric = best_row["comparison_metric"]
     summary = {
         "grid_rows": len(grid_rows),
         "comparison_rows": len(comparison_rows),
@@ -307,8 +384,11 @@ def run_assemble_phase2_grid(args: argparse.Namespace) -> dict[str, Any]:
         "features": len({row["feature"] for row in grid_rows}),
         "primary_feature": args.primary_feature,
         "normalization_feature": args.normalization_feature,
-        "max_normalized_af_stage": best_row["stage"],
-        "max_normalized_af": best_row["normalized_amplification_factor"],
+        "comparison_metric": comparison_metric,
+        "max_comparison_value_stage": best_row["stage"],
+        "max_comparison_value": best_row["comparison_value"],
+        "max_normalized_af_stage": best_normalized_row["stage"],
+        "max_normalized_af": best_normalized_row["normalized_amplification_factor"],
         "output": str(args.output),
         "comparison_output": str(args.comparison_output),
         "summary_output": str(args.summary_output),
@@ -327,6 +407,7 @@ def run_assemble_phase2_grid(args: argparse.Namespace) -> dict[str, Any]:
             "checkpoint_labels": checkpoint_labels,
             "primary_feature": args.primary_feature,
             "normalization_feature": args.normalization_feature,
+            "comparison_metric": args.comparison_metric,
             "output": str(args.output),
             "comparison_output": str(args.comparison_output),
             "summary_output": str(args.summary_output),
