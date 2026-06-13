@@ -398,6 +398,13 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   base 1.782, SFT 1.982, DPO 2.605, final 2.156. This suggests the largest
   slop-lexicon lift occurs by DPO, with the final checkpoint remaining above
   base/SFT but below the DPO point estimate.
+- `stage2-phase2-olmo3-slop-neutral-common-normalized-stage-grid-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/bjpt4jy3`) assembled the
+  four summary CSVs into a stage-grid table and primary-feature comparison
+  under `artifacts/phase2/analysis/`. The assembled primary comparison
+  identifies DPO as the maximum normalized-AF stage: base 1.782, SFT 1.982,
+  DPO 2.605, final 2.156. This run logs aggregate tables only and does not
+  rerun model scoring.
 - Cached-only scorer microbenchmarks for the same OLMo SFT
   `slop_lexicon` plus `neutral_common_controls` shape showed that the previous
   branch cap of 2 is conservative. Branch 2

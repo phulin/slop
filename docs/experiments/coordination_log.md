@@ -669,3 +669,12 @@
   1.782, SFT 1.982, DPO 2.605, final 2.156. This supports a DPO-stage lift,
   with the final checkpoint still above base/SFT but below the DPO point
   estimate.
+- Added `slop-assemble-phase2-grid` and ran the OLMo slop/common-control
+  normalized grid assembly:
+  `stage2-phase2-olmo3-slop-neutral-common-normalized-stage-grid-assembly`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/bjpt4jy3`. It wrote
+  `artifacts/phase2/analysis/olmo3_slop_neutral_common_normalized_stage_grid.csv`,
+  `artifacts/phase2/analysis/olmo3_slop_neutral_common_normalized_stage_comparison.csv`,
+  and
+  `artifacts/phase2/analysis/olmo3_slop_neutral_common_normalized_stage_grid_summary.md`.
+  The primary comparison confirms DPO as the max normalized-AF stage.
