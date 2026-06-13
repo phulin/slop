@@ -482,3 +482,23 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   (`repeated_count`, `repeat_per_generation`, and repeat-generation shares) so
   the same artifact family can support Result B once multi-stage/free-running
   shards are available.
+- `stage2-phase2-olmo3-dpo-promptpkg512-free-running-32prompt-t0-t07-t1-batched128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/5d1aa3zi`) completed the
+  matching DPO free-running shard with the same 32-prompt package, temperatures
+  `0.0`, `0.7`, and `1.0`, top-p 0.95, max 128 new tokens, batch size 8,
+  bfloat16, and `torch.compile`. It produced 96 generations and 12,288
+  generated tokens in 74.6 seconds, or 164.8 tokens/sec including load and
+  compile. DPO had zero `slop_lexicon` hits at temperature 0.0, one at 0.7,
+  and two at 1.0; it had rule-of-three counts 6, 8, and 6 across the three
+  temperatures, including repeated rule-of-three hits in two temperature-1.0
+  generations. Contrastive negation and stock closers had zero hits; stock
+  openers appeared once at temperature 1.0.
+- `stage2-phase2-olmo3-sft-dpo-generation-grid-32prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/lgxd92cg`) assembled the SFT
+  and DPO free-running shards into the first two-stage generation grid. The
+  primary `slop_lexicon` comparison has DPO above SFT at temperature 0.7
+  (`0.244` vs. `0.000` per 1k generated tokens) and temperature 1.0 (`0.488`
+  vs. `0.000`), while SFT has the only greedy temperature-0.0 hit (`0.244` vs.
+  `0.000`). This is still a sparse 32-prompt shard; treat it as a stage-grid
+  plumbing and directional signal rather than a stable free-running rate
+  estimate.
