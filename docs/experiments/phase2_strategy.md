@@ -815,3 +815,11 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   effect. Treat the full 5k DPO slop/neutral cell as a high-power confirmation
   run, not as the next automatic step; first benchmark the pushed planned
   cached scorer path on the target OLMo shape.
+- `stage2-phase2-olmo3-dpo-scorer-planned-vs-dynamic-branch8-prefix256`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/wv1v44ku`) benchmarked that
+  planned cached path on the DPO target shape. Dynamic cached scoring reached
+  29.55 feature-opportunities/sec and the prebuilt-plan path reached 29.72 at
+  batch size 16, prefix 256, branch size 8. This 1.006x speedup means the
+  scorer remains model-forward dominated; the next compute-efficient
+  stage-localization step is a matching 1,024-prompt SFT slop/neutral run, not
+  the full 5k DPO cell.

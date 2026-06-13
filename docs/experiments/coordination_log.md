@@ -782,3 +782,14 @@
   2x effect. Before spending the estimated 18-20 A100-hours on the full 5k DPO
   slop/neutral cell, run the pushed planned-scorer benchmark/optimization path
   on the target model shape.
+- Target-shape planned-scorer benchmark completed:
+  `stage2-phase2-olmo3-dpo-scorer-planned-vs-dynamic-branch8-prefix256`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/wv1v44ku`. On
+  `allenai/Olmo-3-7B-Instruct-DPO` with `slop_lexicon` plus
+  `neutral_common_controls`, batch size 16, prefix 256, branch size 8, and
+  bf16/compile, dynamic cached scoring reached 29.55 feature-opportunities/sec
+  and the prebuilt-plan path reached 29.72. The 1.006x speedup confirms this
+  patch reduces metadata churn but does not materially change the full 5k
+  compute estimate; use it for correctness/cleanliness, not as a reason to
+  launch the overnight-scale DPO cell before matching the 1,024-prompt SFT
+  comparison.

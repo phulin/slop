@@ -1308,6 +1308,30 @@ optimization_benchmarks:
         wandb_run_id: vstbnjwn
         status: oom
     recommendation: use cache_branch_batch_size 8 for the next slop/common-control normalized shard; fall back to 2 on checkpoint-specific OOM
+  olmo3_dpo_planned_vs_dynamic_cached_branch8:
+    model: allenai/Olmo-3-7B-Instruct-DPO
+    wandb_run_id: wv1v44ku
+    output: artifacts/phase2/benchmarks/olmo3_dpo_slop_neutral_common_planned_vs_dynamic_branch8_prefix256.csv
+    summary_output: artifacts/phase2/benchmarks/olmo3_dpo_slop_neutral_common_planned_vs_dynamic_branch8_prefix256.json
+    features:
+      - slop_lexicon
+      - neutral_common_controls
+    batch_size: 16
+    prefix_tokens: 256
+    cache_branch_batch_size: 8
+    dtype: bfloat16
+    torch_compile: true
+    results:
+      dynamic_plan_per_call:
+        feature_opportunities_per_sec: 29.54724983606621
+        prefixes_per_sec: 14.773624918033105
+        seconds_per_repeat: 1.0830111153336475
+      prebuilt_plan:
+        feature_opportunities_per_sec: 29.719587077311232
+        prefixes_per_sec: 14.859793538655616
+        seconds_per_repeat: 1.0767309759976342
+    speedup_ratio: 1.0058325947879264
+    conclusion: prebuilt scorer plans are correct and modestly cleaner but target-shape throughput is still dominated by model forwards, so they do not materially change the 5k slop/neutral compute estimate
 
 free_running_smoke:
   model: sshleifer/tiny-gpt2
