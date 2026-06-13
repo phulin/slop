@@ -15,8 +15,8 @@ Date: 2026-06-13
 
 Do not replace the Torch/Transformers free-running CLI yet. Current vLLM is a
 plausible generation backend, but it needs a CUDA-12.8-compatible sidecar stack
-on this host. SGLang remains a second backend to test only if vLLM stays blocked
-or underperforms after a successful cu128 smoke.
+on this host. The cu128 vLLM OLMo smoke still stalls before generation, so
+SGLang is the next serving backend to test in an isolated sidecar environment.
 
 Teacher-forced AF scoring should stay on the existing Torch/Transformers path.
 The scorer needs arbitrary continuation probability mass at internal corpus
@@ -81,12 +81,24 @@ subprocess remained alive. No generation artifact was produced. Before trying a
 larger generation run, rerun a smaller smoke with one prompt, `max_new_tokens`
 8, `VLLM_USE_FLASHINFER_SAMPLER=0`, and a short external timeout.
 
+The rerun after tightening the benchmark script contract was
+`stage2-phase2-olmo3-dpo-vllm0111-cu128-1prompt-smoke`
+(`https://wandb.ai/phulin-self/slop-stage1/runs/dibzdwyd`). It again reached
+OLMo engine initialization and then made no generation progress before the
+external 300-second timeout. Exit code was `124`, no JSONL/CSV artifact was
+written, and no vLLM/GPU process remained afterward. Treat vLLM 0.11.1 cu128 as
+blocked on this host for OLMo-3 offline generation until a container, backend
+flag change, or version change is validated.
+
 ## Repeatable Benchmark Script
 
-The repo now includes `scripts/benchmark_vllm_generation.py`. It reads Phase 2
+The repo includes `scripts/benchmark_vllm_generation.py`. It reads Phase 2
 prompt-package JSONL, runs vLLM offline generation, writes local JSONL/CSV
 artifacts, logs aggregate feature-rate tables to W&B, and redacts generation
-text from W&B sample rows.
+text from W&B sample rows. It now mirrors the Torch free-running contract more
+closely by using the revised six-feature default set, adding `source` to
+summary rows, recording prompt token counts, and truncating prompts to
+`--max-prompt-tokens` token IDs before sending them to vLLM.
 
 Use the cu128 sidecar env first:
 
@@ -111,3 +123,6 @@ VLLM_USE_FLASHINFER_SAMPLER=0 \
 If this smoke does not complete promptly, keep the next Phase 2 free-running
 shard on `slop-free-running-emission` and revisit vLLM through a container or a
 driver upgrade.
+
+Current status: this smoke did not complete. Do not launch a larger vLLM shard
+from this environment.

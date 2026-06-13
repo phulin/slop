@@ -21,6 +21,7 @@ DEFAULT_FEATURES = {
     "slop_lexicon",
     "stock_openers",
     "stock_closers",
+    "stock_openers_closers",
 }
 
 
@@ -37,6 +38,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--top-p", action="append", type=float, default=[])
     parser.add_argument("--max-new-tokens", type=int, default=128)
     parser.add_argument("--completions-per-prompt", type=int, default=1)
+    parser.add_argument("--max-prompt-tokens", type=int, default=1024)
     parser.add_argument("--max-model-len", type=int, default=2048)
     parser.add_argument("--dtype", default="bfloat16")
     parser.add_argument("--tensor-parallel-size", type=int, default=1)
@@ -74,6 +76,27 @@ def _read_prompts(path: Path, *, sample_size: int, seed: int) -> list[dict[str, 
     return rng.sample(rows, sample_size)
 
 
+def _source_name(path: Path) -> str:
+    return path.stem
+
+
+def _fallback_prompt_token_id(tokenizer: Any) -> int:
+    for attr in ("bos_token_id", "eos_token_id", "pad_token_id"):
+        token_id = getattr(tokenizer, attr, None)
+        if token_id is not None:
+            return int(token_id)
+    raise ValueError("tokenizer has no BOS/EOS/PAD token for empty prompt generation")
+
+
+def _prompt_token_ids(tokenizer: Any, prompt: str, *, max_prompt_tokens: int) -> list[int]:
+    ids = tokenizer.encode(prompt, add_special_tokens=False)
+    if max_prompt_tokens > 0:
+        ids = ids[-max_prompt_tokens:]
+    if ids:
+        return [int(token_id) for token_id in ids]
+    return [_fallback_prompt_token_id(tokenizer)]
+
+
 def _feature_counts(text: str, selected_features: set[str]) -> dict[str, int]:
     counts = extract_tier1_features(text).counts
     return {feature: counts.get(feature, 0) for feature in sorted(selected_features)}
@@ -96,14 +119,22 @@ def _write_csv(path: Path, rows: list[dict[str, Any]], columns: list[str]) -> No
 
 def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
     from vllm import LLM, SamplingParams
+    from transformers import AutoTokenizer
 
     selected_features = set(args.feature or sorted(DEFAULT_FEATURES))
     temperatures = args.temperature or [0.0, 0.7]
     top_ps = args.top_p or [0.95]
+    source_name = _source_name(args.input)
     prompt_rows = _read_prompts(args.input, sample_size=args.sample_size, seed=args.seed)
-    prompts = [row["prompt"] for row in prompt_rows]
-    if not prompts:
+    raw_prompts = [row["prompt"] for row in prompt_rows]
+    if not raw_prompts:
         raise ValueError(f"No prompt rows found in {args.input}")
+    tokenizer = AutoTokenizer.from_pretrained(args.model)
+    prompt_token_ids = [
+        _prompt_token_ids(tokenizer, prompt, max_prompt_tokens=args.max_prompt_tokens)
+        for prompt in raw_prompts
+    ]
+    prompts = [{"prompt_token_ids": ids} for ids in prompt_token_ids]
 
     run = init_wandb(
         project=args.wandb_project,
@@ -116,6 +147,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
         config={
             "model": args.model,
             "input": str(args.input),
+            "source": source_name,
             "sample_size": args.sample_size,
             "seed": args.seed,
             "features": sorted(selected_features),
@@ -123,6 +155,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
             "top_ps": top_ps,
             "max_new_tokens": args.max_new_tokens,
             "completions_per_prompt": args.completions_per_prompt,
+            "max_prompt_tokens": args.max_prompt_tokens,
             "max_model_len": args.max_model_len,
             "dtype": args.dtype,
             "tensor_parallel_size": args.tensor_parallel_size,
@@ -168,9 +201,14 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                     seed=args.seed,
                 )
                 outputs = llm.generate(prompts, sampling_params)
-                for prompt_row, output in zip(prompt_rows, outputs, strict=True):
+                for prompt_row, input_token_ids, output in zip(
+                    prompt_rows, prompt_token_ids, outputs, strict=True
+                ):
                     for completion_index, completion in enumerate(output.outputs):
                         generation = completion.text
+                        output_prompt_token_ids = (
+                            getattr(output, "prompt_token_ids", None) or input_token_ids
+                        )
                         token_ids = getattr(completion, "token_ids", None) or []
                         generated_tokens = len(token_ids)
                         counts = _feature_counts(generation, selected_features)
@@ -189,7 +227,9 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                         summary_generations[key] += 1
                         generation_rows.append(
                             {
-                                "source": prompt_row.get("source"),
+                                "backend": "vllm",
+                                "model": args.model,
+                                "source": source_name,
                                 "prompt_id": prompt_row.get("phase2_prompt_id")
                                 or prompt_row.get("prompt_id")
                                 or prompt_row.get("doc_id"),
@@ -198,6 +238,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                                 "temperature": temperature,
                                 "top_p": top_p,
                                 "seed": args.seed,
+                                "prompt_tokens": len(output_prompt_token_ids),
                                 "generated_tokens": generated_tokens,
                                 "generation_chars": len(generation),
                                 "features_json": json.dumps(counts, sort_keys=True),
@@ -229,6 +270,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                     {
                         "backend": "vllm",
                         "model": args.model,
+                        "source": source_name,
                         "temperature": temperature,
                         "top_p": top_p,
                         "feature": feature,
@@ -262,6 +304,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
             [
                 "backend",
                 "model",
+                "source",
                 "temperature",
                 "top_p",
                 "feature",
@@ -290,6 +333,8 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
         run.log(
             {
                 "generation/prompts": len(prompts),
+                "generation/prompts_seen": len(prompt_rows),
+                "generation/prompts_skipped": 0,
                 "generation/generations": len(generation_rows),
                 "generation/generated_tokens": total_tokens,
                 "generation/load_seconds": load_seconds,

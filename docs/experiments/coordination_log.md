@@ -858,3 +858,13 @@
   performance; the next optimization question is whether a serving-generation
   backend such as SGLang or vLLM can materially improve free-running generation
   throughput while preserving the same JSONL and feature-summary contracts.
+- Hardened the vLLM sidecar benchmark script to better match the Torch
+  free-running contract: revised six-feature defaults, prompt-token truncation,
+  source-tagged summary rows, prompt token counts, and a unit test with a fake
+  vLLM module. Retried the one-prompt OLMo DPO vLLM 0.11.1 cu128 smoke:
+  `stage2-phase2-olmo3-dpo-vllm0111-cu128-1prompt-smoke`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/dibzdwyd`. It reached engine
+  initialization and then made no generation progress before the 300-second
+  timeout. No artifact was written and no GPU process remained. Treat vLLM as
+  blocked on this host for OLMo-3 generation until a container, backend flag, or
+  version change is validated; SGLang is now the next serving-backend candidate.

@@ -1932,6 +1932,33 @@ olmo3_dpo_generation_512prompt_8comp_1024_shard:
   backend_decision: keep torch/Transformers as the exact teacher-forced scorer of record; benchmark SGLang or vLLM only for free-running generation by reproducing this JSONL/summary shape in an isolated environment
   conclusion: the 512-prompt target-shape DPO shard scales linearly from the 64-prompt benchmark with nearly identical throughput; it is a good baseline for a serving-backend generation benchmark before launching larger free-running shards
 
+vllm_0111_cu128_olmo3_dpo_1prompt_smoke:
+  wandb_run_id: dibzdwyd
+  sidecar_python: /tmp/slop-vllm-cu128-bench/bin/python
+  package_versions:
+    vllm: 0.11.1
+    torch: 2.9.0+cu128
+    transformers: 4.57.6
+  model: allenai/Olmo-3-7B-Instruct-DPO
+  input_prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  generation_settings:
+    sample_size: 1
+    temperature: 1.0
+    top_p: 0.95
+    max_new_tokens: 8
+    completions_per_prompt: 1
+    max_prompt_tokens: 1024
+    max_model_len: 2048
+    dtype: bfloat16
+    gpu_memory_utilization: 0.85
+    env_vllm_use_flashinfer_sampler: "0"
+  result:
+    exit_code: 124
+    timeout_seconds: 300
+    artifacts_written: false
+    leftover_gpu_processes: false
+  conclusion: vLLM 0.11.1 cu128 reaches OLMo engine initialization but stalls before generation on this host; do not launch larger vLLM shards without a new container, backend flag, or version
+
 go_no_go:
   promote_to_olmo_tiny_shard_if:
     - smoke_cli_runs_on_cuda
