@@ -388,6 +388,16 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   positive-control grid: base 1.782 -> SFT 1.982 -> DPO 2.605, consistent
   with additional preference-stage amplification on top of an inherited base
   signal.
+- `stage2-phase2-olmo3-final-promptpkg512-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/zc5lbdzo`) completed the
+  matching final/RLVR shard. It scored 90,524 opportunities in 3,274.3
+  seconds, for 27.6 opportunities/sec. `neutral_common_controls` had raw AF
+  0.455 with CI `[0.429, 0.481]`; `slop_lexicon` had raw AF 0.981 with CI
+  `[0.605, 1.669]`. Neutral-normalized `slop_lexicon` AF was 2.156 with CI
+  `[1.327, 3.717]`. The completed narrow OLMo stage-localization slice is:
+  base 1.782, SFT 1.982, DPO 2.605, final 2.156. This suggests the largest
+  slop-lexicon lift occurs by DPO, with the final checkpoint remaining above
+  base/SFT but below the DPO point estimate.
 - Cached-only scorer microbenchmarks for the same OLMo SFT
   `slop_lexicon` plus `neutral_common_controls` shape showed that the previous
   branch cap of 2 is conservative. Branch 2
