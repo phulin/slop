@@ -521,3 +521,23 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   both `0.488` while SFT is zero. This is the first free-running stage-grid
   artifact with post-DPO and final checkpoints, but it remains too sparse for a
   stable rate claim or compounding estimate.
+- `stage2-phase2-olmo3-base-promptpkg512-free-running-32prompt-t0-t07-t1-batched128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/8hde64zv`) completed the
+  matching base-checkpoint free-running shard with the same 32-prompt package
+  and generation settings. It produced 96 generations and 12,288 generated
+  tokens in 74.3 seconds, or 165.3 tokens/sec including load and compile. Base
+  had one `slop_lexicon` hit at temperature 0.0, two at 0.7, and zero at 1.0.
+  Rule-of-three counts were 3, 6, and 6 across the three temperatures, with one
+  repeated rule-of-three hit at temperature 1.0.
+- `stage2-phase2-olmo3-generation-grid-32prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/g3eprlp9`) assembled the
+  first full four-stage free-running grid for the OLMo Instruct ladder. The
+  primary `slop_lexicon` comparison is sparse but now stage-complete for the
+  32-prompt slice: at temperature 0.0, base and SFT are both `0.244` per 1k
+  generated tokens while DPO/final are zero; at temperature 0.7, base is
+  highest at `0.488`, DPO/final are `0.244`, and SFT is zero; at temperature
+  1.0, DPO/final are highest at `0.488`, while base/SFT are zero. No
+  `slop_lexicon` repeats occurred in any 32-prompt stage shard, so this slice
+  still does not support a `slop_lexicon` self-conditioning estimate. The
+  observed temperature dependence and sparse denominators argue for expanding
+  the sample size before making free-running rate claims.
