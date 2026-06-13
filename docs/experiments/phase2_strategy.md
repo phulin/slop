@@ -781,3 +781,18 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   three strongly amplified. This weakens any preference-stage interpretation
   for pooled stock openers/closers and makes the final checkpoint the remaining
   calibration point for this feature.
+- `stage2-phase2-olmo3-final-promptpkg5000-stock-openers-closers-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/238ph0bt`) completed the
+  matching 5,000-prompt final/RLVR checkpoint run. It scored the same 45,404
+  opportunities on `allenai/Olmo-3-7B-Instruct` in 1,187.4 seconds, or 38.24
+  opportunities/sec. Raw AF is 7.715 with 95% bootstrap CI 6.644-9.056. The
+  completed 5k stock opener/closer ordering is base > final > DPO > SFT by
+  point estimate, with all checkpoints strongly amplified. Treat this pooled
+  feature as a high-support calibration/control result rather than evidence
+  for preference-stage-specific amplification.
+- `stage2-phase2-olmo3-promptpkg5000-stock-openers-closers-stage-grid-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/xl4b7ss5`) assembled the 5k
+  stock opener/closer teacher-forced stage grid using raw AF. The comparison
+  artifact is written under `artifacts/phase2/analysis/` and confirms base as
+  the maximum raw-AF stage: base 7.997, SFT 6.738, DPO 7.115, final 7.715. Raw
+  AF deltas versus base are SFT -1.259, DPO -0.882, and final -0.282.

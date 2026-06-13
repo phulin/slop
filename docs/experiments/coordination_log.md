@@ -745,3 +745,18 @@
   raw AF `6.738`, CI `5.837-7.857`, against the same 186 reference
   initiations. The 5k stock point-estimate order is now base > DPO > SFT, with
   all three strongly amplified; final remains to complete the stock stage grid.
+- Completed the matching 5k final/RLVR checkpoint run:
+  `stage2-phase2-olmo3-final-promptpkg5000-stock-openers-closers-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/238ph0bt`. It scored the same
+  45,404 opportunities in 1,187.4 seconds, 38.24 opportunities/sec. Result:
+  raw AF `7.715`, CI `6.644-9.056`, against the same 186 reference
+  initiations. The completed 5k stock point-estimate order is base > final >
+  DPO > SFT, with all four checkpoints strongly amplified; treat this as a
+  high-support calibration/control feature, not as preference-stage-specific
+  amplification evidence.
+- Assembled the 5k stock opener/closer stage grid:
+  `stage2-phase2-olmo3-promptpkg5000-stock-openers-closers-stage-grid-assembly`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/xl4b7ss5`. The raw-AF
+  comparison artifacts are under `artifacts/phase2/analysis/` and confirm base
+  as the maximum stage: base `7.997`, SFT `6.738`, DPO `7.115`, final `7.715`.
+  Deltas versus base are SFT `-1.259`, DPO `-0.882`, and final `-0.282`.
