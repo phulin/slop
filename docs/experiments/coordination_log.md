@@ -760,3 +760,13 @@
   comparison artifacts are under `artifacts/phase2/analysis/` and confirm base
   as the maximum stage: base `7.997`, SFT `6.738`, DPO `7.115`, final `7.715`.
   Deltas versus base are SFT `-1.259`, DPO `-0.882`, and final `-0.282`.
+- Measured a 1,024-prompt denominator slice for the primary
+  `slop_lexicon`/`neutral_common_controls` teacher-forced shape:
+  `stage2-phase2-olmo3-promptpkg1024-slop-neutral-denominator-support`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/gloz8jdd`. With
+  `max_token_start_opportunities=128`, the slice has 88,903 opportunities per
+  feature, 52 slop references, and 6,694 neutral references. A sidecar strategy
+  audit recommended the full 5k DPO run as the eventual high-power check, but
+  estimated it at roughly 18-20 A100-hours. Started a bounded 1,024-prompt DPO
+  validation first to test whether the 512-prompt DPO slop lift survives a
+  larger sample before spending overnight-scale compute.

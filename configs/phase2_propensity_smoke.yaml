@@ -942,6 +942,38 @@ olmo3_promptpkg5000_denominator_support:
         reference_rate: 0.07265255773051067
   conclusion: the 5k held-out package has strong support for slop lexicon, stock openers/closers, and neutral common controls; contrastive negation is measurable but sparse; rule_of_three_approx remains free-running-only until a teacher-forced opportunity contract is frozen
 
+olmo3_promptpkg1024_slop_neutral_denominator_support:
+  wandb_run_id: gloz8jdd
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  output: artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_denominator_support.csv
+  summary_output: artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_denominator_support_summary.json
+  settings:
+    sample_size: 1024
+    max_token_start_opportunities: 128
+    requested_features:
+      - slop_lexicon
+      - neutral_common_controls
+  result:
+    measurement_rows: 1024
+    feature_measurement_rows: 2048
+    opportunities: 177806
+    reference_initiations: 6746
+    features_with_references: 2
+    peak_rss_mb: 89.08203125
+    wall_seconds: 3.9297598150005797
+    feature_support:
+      slop_lexicon:
+        opportunities: 88903
+        reference_initiations: 52
+        documents_with_reference: 37
+        reference_rate: 0.000584907145990574
+      neutral_common_controls:
+        opportunities: 88903
+        reference_initiations: 6694
+        documents_with_reference: 723
+        reference_rate: 0.07529554683194042
+  conclusion: the 1024-prompt slice roughly doubles the 512-row slop support at the same opportunity cap while keeping the expected DPO scorer runtime under two A100-hours
+
 olmo3_dpo_promptpkg5000_stock_openers_closers:
   primary_feature: stock_openers_closers
   checkpoint_stage: dpo

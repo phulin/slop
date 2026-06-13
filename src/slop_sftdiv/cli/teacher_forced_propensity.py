@@ -74,6 +74,23 @@ class FeatureAccumulator:
         return self.mean_prob_mass / self.reference_rate
 
 
+@dataclass(frozen=True)
+class SequenceBranchPlan:
+    branch_tokens: Any
+    active_tensor: Any
+    branch_rows: Any
+    target_ids: Any
+
+
+@dataclass(frozen=True)
+class SequenceScoringPlan:
+    feature_names: list[str]
+    first_token_ids: Any
+    branch_plans: list[SequenceBranchPlan]
+    feature_index_tensors: dict[str, Any]
+    sequence_count: int
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run Phase 2 teacher-forced propensity smoke.")
     parser.add_argument("--model", required=True, help="Hugging Face causal LM ID or local path.")
@@ -514,20 +531,17 @@ def _sequence_prob_mass_batch_cached(
     )["_feature"]
 
 
-def _sequence_prob_mass_batch_cached_multi(
-    model: Any,
-    model_inputs: dict[str, Any],
+def _build_sequence_scoring_plan(
     sequences_by_feature: dict[str, tuple[tuple[int, ...], ...]],
     *,
     cache_branch_batch_size: int,
-) -> dict[str, list[float]]:
+    device: Any,
+) -> SequenceScoringPlan:
     import torch
 
-    batch_size = int(model_inputs["input_ids"].shape[0])
     if cache_branch_batch_size < 1:
         raise ValueError("cache_branch_batch_size must be positive")
     feature_names = sorted(sequences_by_feature)
-    feature_sequence_indexes: dict[str, list[int]] = {}
     all_sequences = sorted(
         {
             sequence
@@ -537,93 +551,151 @@ def _sequence_prob_mass_batch_cached_multi(
         }
     )
     sequence_index = {sequence: index for index, sequence in enumerate(all_sequences)}
-    for feature, sequences in sequences_by_feature.items():
-        feature_sequence_indexes[feature] = [
-            sequence_index[sequence] for sequence in sequences if sequence in sequence_index
-        ]
+    feature_index_tensors = {
+        feature: torch.tensor(
+            [
+                sequence_index[sequence]
+                for sequence in sequences
+                if sequence in sequence_index
+            ],
+            dtype=torch.long,
+            device=device,
+        )
+        for feature, sequences in sequences_by_feature.items()
+    }
     if not all_sequences:
-        return {feature: [0.0 for _row in range(batch_size)] for feature in feature_names}
+        return SequenceScoringPlan(
+            feature_names=feature_names,
+            first_token_ids=torch.empty(0, dtype=torch.long, device=device),
+            branch_plans=[],
+            feature_index_tensors=feature_index_tensors,
+            sequence_count=0,
+        )
+
     max_length = max(len(sequence) for sequence in all_sequences)
+    branch_plans: list[SequenceBranchPlan] = []
+    for depth in range(1, max_length):
+        active_sequence_indexes = [
+            index for index, sequence in enumerate(all_sequences) if depth < len(sequence)
+        ]
+        if not active_sequence_indexes:
+            continue
+        branch_prefixes = sorted({all_sequences[index][:depth] for index in active_sequence_indexes})
+        for branch_start in range(0, len(branch_prefixes), cache_branch_batch_size):
+            branch_chunk = branch_prefixes[branch_start : branch_start + cache_branch_batch_size]
+            branch_index = {branch: index for index, branch in enumerate(branch_chunk)}
+            chunk_active_indexes = [
+                index
+                for index in active_sequence_indexes
+                if all_sequences[index][:depth] in branch_index
+            ]
+            branch_plans.append(
+                SequenceBranchPlan(
+                    branch_tokens=torch.tensor(branch_chunk, dtype=torch.long, device=device),
+                    active_tensor=torch.tensor(
+                        chunk_active_indexes,
+                        dtype=torch.long,
+                        device=device,
+                    ),
+                    branch_rows=torch.tensor(
+                        [
+                            branch_index[all_sequences[index][:depth]]
+                            for index in chunk_active_indexes
+                        ],
+                        dtype=torch.long,
+                        device=device,
+                    ),
+                    target_ids=torch.tensor(
+                        [all_sequences[index][depth] for index in chunk_active_indexes],
+                        dtype=torch.long,
+                        device=device,
+                    ),
+                )
+            )
+
+    return SequenceScoringPlan(
+        feature_names=feature_names,
+        first_token_ids=torch.tensor(
+            [sequence[0] for sequence in all_sequences],
+            dtype=torch.long,
+            device=device,
+        ),
+        branch_plans=branch_plans,
+        feature_index_tensors=feature_index_tensors,
+        sequence_count=len(all_sequences),
+    )
+
+
+def _sequence_prob_mass_batch_cached_multi(
+    model: Any,
+    model_inputs: dict[str, Any],
+    sequences_by_feature: dict[str, tuple[tuple[int, ...], ...]],
+    *,
+    cache_branch_batch_size: int,
+    plan: SequenceScoringPlan | None = None,
+) -> dict[str, list[float]]:
+    import torch
+
+    batch_size = int(model_inputs["input_ids"].shape[0])
+    if plan is None:
+        plan = _build_sequence_scoring_plan(
+            sequences_by_feature,
+            cache_branch_batch_size=cache_branch_batch_size,
+            device=model_inputs["input_ids"].device,
+        )
+    if plan.sequence_count == 0:
+        return {feature: [0.0 for _row in range(batch_size)] for feature in plan.feature_names}
     with torch.inference_mode():
         outputs = model(
             input_ids=model_inputs["input_ids"],
             attention_mask=model_inputs["attention_mask"],
             use_cache=True,
         )
-        probabilities = torch.softmax(outputs.logits[:, -1], dim=-1)
-        first_token_ids = torch.tensor(
-            [sequence[0] for sequence in all_sequences],
-            dtype=torch.long,
-            device=probabilities.device,
+        logits = outputs.logits[:, -1]
+        sequence_log_probabilities = logits.index_select(1, plan.first_token_ids) - logits.logsumexp(
+            dim=-1,
+            keepdim=True,
         )
-        sequence_probabilities = probabilities.index_select(1, first_token_ids)
         past_key_values = outputs.past_key_values
 
-        for depth in range(1, max_length):
-            active_sequence_indexes = [
-                index for index, sequence in enumerate(all_sequences) if depth < len(sequence)
-            ]
-            if not active_sequence_indexes:
-                continue
-            branch_prefixes = sorted(
-                {all_sequences[index][:depth] for index in active_sequence_indexes}
+        for branch_plan in plan.branch_plans:
+            branch_count = int(branch_plan.branch_tokens.shape[0])
+            branch_cache = copy.deepcopy(past_key_values)
+            branch_cache.batch_repeat_interleave(branch_count)
+            branch_tokens = branch_plan.branch_tokens.repeat(batch_size, 1)
+            branch_attention = torch.cat(
+                [
+                    model_inputs["attention_mask"].repeat_interleave(branch_count, dim=0),
+                    torch.ones_like(branch_tokens),
+                ],
+                dim=-1,
             )
-            for branch_start in range(0, len(branch_prefixes), cache_branch_batch_size):
-                branch_chunk = branch_prefixes[branch_start : branch_start + cache_branch_batch_size]
-                branch_index = {branch: index for index, branch in enumerate(branch_chunk)}
-                chunk_active_indexes = [
-                    index
-                    for index in active_sequence_indexes
-                    if all_sequences[index][:depth] in branch_index
-                ]
-                branch_count = len(branch_chunk)
-                branch_cache = copy.deepcopy(past_key_values)
-                branch_cache.batch_repeat_interleave(branch_count)
-                branch_tokens = torch.tensor(
-                    branch_chunk,
-                    dtype=torch.long,
-                    device=model_inputs["input_ids"].device,
-                ).repeat(batch_size, 1)
-                branch_attention = torch.cat(
-                    [
-                        model_inputs["attention_mask"].repeat_interleave(branch_count, dim=0),
-                        torch.ones_like(branch_tokens),
-                    ],
-                    dim=-1,
-                )
-                logits = model(
-                    input_ids=branch_tokens,
-                    attention_mask=branch_attention,
-                    past_key_values=branch_cache,
-                    use_cache=True,
-                ).logits[:, -1]
-                probabilities = torch.softmax(logits, dim=-1).reshape(batch_size, branch_count, -1)
-                active_tensor = torch.tensor(
-                    chunk_active_indexes,
-                    dtype=torch.long,
-                    device=sequence_probabilities.device,
-                )
-                branch_rows = torch.tensor(
-                    [branch_index[all_sequences[index][:depth]] for index in chunk_active_indexes],
-                    dtype=torch.long,
-                    device=probabilities.device,
-                )
-                target_ids = torch.tensor(
-                    [all_sequences[index][depth] for index in chunk_active_indexes],
-                    dtype=torch.long,
-                    device=probabilities.device,
-                )
-                sequence_probabilities[:, active_tensor] *= probabilities[:, branch_rows, target_ids]
+            branch_logits = model(
+                input_ids=branch_tokens,
+                attention_mask=branch_attention,
+                past_key_values=branch_cache,
+                use_cache=True,
+            ).logits[:, -1].reshape(batch_size, branch_count, -1)
+            branch_log_denominators = branch_logits.logsumexp(dim=-1)
+            target_logits = branch_logits[
+                :,
+                branch_plan.branch_rows,
+                branch_plan.target_ids,
+            ]
+            target_log_probabilities = (
+                target_logits - branch_log_denominators[:, branch_plan.branch_rows]
+            )
+            sequence_log_probabilities[:, branch_plan.active_tensor] += target_log_probabilities
         masses_by_feature: dict[str, list[float]] = {}
-        for feature in feature_names:
-            indexes = feature_sequence_indexes[feature]
-            if indexes:
-                index_tensor = torch.tensor(
-                    indexes,
-                    dtype=torch.long,
-                    device=sequence_probabilities.device,
+        for feature in plan.feature_names:
+            index_tensor = plan.feature_index_tensors[feature]
+            if int(index_tensor.numel()) > 0:
+                masses = torch.exp(
+                    torch.logsumexp(
+                        sequence_log_probabilities.index_select(1, index_tensor),
+                        dim=1,
+                    )
                 )
-                masses = sequence_probabilities.index_select(1, index_tensor).sum(dim=1)
                 masses_by_feature[feature] = [float(item) for item in masses.detach().cpu()]
             else:
                 masses_by_feature[feature] = [0.0 for _row in range(batch_size)]
@@ -650,6 +722,7 @@ def _score_opportunities_cached_multi(
         indexes_by_offset[opportunity.char_offset].append(index)
 
     offsets = sorted(indexes_by_offset)
+    plans_by_features: dict[tuple[str, ...], SequenceScoringPlan] = {}
     for start in range(0, len(offsets), opportunity_batch_size):
         chunk_offsets = offsets[start : start + opportunity_batch_size]
         representative_opportunities = [
@@ -670,11 +743,21 @@ def _score_opportunities_cached_multi(
                 for index in indexes_by_offset[offset]
             }
         )
+        feature_key = tuple(features)
+        plan = plans_by_features.get(feature_key)
+        if plan is None:
+            plan = _build_sequence_scoring_plan(
+                {feature: initiator_sequences.get(feature, ()) for feature in features},
+                cache_branch_batch_size=cache_branch_batch_size,
+                device=model_inputs["input_ids"].device,
+            )
+            plans_by_features[feature_key] = plan
         masses_by_feature = _sequence_prob_mass_batch_cached_multi(
             model,
             model_inputs,
             {feature: initiator_sequences.get(feature, ()) for feature in features},
             cache_branch_batch_size=cache_branch_batch_size,
+            plan=plan,
         )
         for row_index, offset in enumerate(chunk_offsets):
             for opportunity_index in indexes_by_offset[offset]:

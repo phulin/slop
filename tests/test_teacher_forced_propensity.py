@@ -317,3 +317,55 @@ def test_sequence_prob_mass_cached_multi_shares_prefix_forward():
     assert masses["short"] == pytest.approx([1 / 7 + 1 / 49, 1 / 7 + 1 / 49])
     assert masses["long"] == pytest.approx([2 / 49, 2 / 49])
     assert model.calls == 2
+
+
+def test_sequence_prob_mass_cached_multi_matches_scalar_with_nonuniform_logits():
+    class FakeCache:
+        def batch_repeat_interleave(self, _repeats):
+            pass
+
+    class NonuniformModel:
+        def __call__(self, *, input_ids, attention_mask, **_kwargs):
+            del attention_mask
+            vocab = 9
+            base_logits = torch.arange(vocab, dtype=torch.float32, device=input_ids.device)
+            token_offsets = input_ids.to(torch.float32).unsqueeze(-1) * 0.03
+            logits = base_logits.reshape(1, 1, vocab) + token_offsets
+            return type(
+                "Output",
+                (),
+                {
+                    "logits": logits,
+                    "past_key_values": FakeCache(),
+                },
+            )()
+
+    model = NonuniformModel()
+    batch_inputs = {
+        "input_ids": torch.tensor([[0, 1], [0, 4]], dtype=torch.long),
+        "attention_mask": torch.tensor([[1, 1], [1, 1]], dtype=torch.long),
+    }
+    feature_sequences = {
+        "short": ((1,), (2, 3)),
+        "long": ((1, 4), (5, 6), (7, 8)),
+    }
+
+    cached = _sequence_prob_mass_batch_cached_multi(
+        model,
+        batch_inputs,
+        feature_sequences,
+        cache_branch_batch_size=2,
+    )
+    for feature, sequences in feature_sequences.items():
+        scalar = [
+            _sequence_prob_mass(
+                model,
+                {
+                    "input_ids": batch_inputs["input_ids"][index : index + 1],
+                    "attention_mask": batch_inputs["attention_mask"][index : index + 1],
+                },
+                sequences,
+            )
+            for index in range(2)
+        ]
+        assert cached[feature] == pytest.approx(scalar)

@@ -796,3 +796,11 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   artifact is written under `artifacts/phase2/analysis/` and confirms base as
   the maximum raw-AF stage: base 7.997, SFT 6.738, DPO 7.115, final 7.715. Raw
   AF deltas versus base are SFT -1.259, DPO -0.882, and final -0.282.
+- `stage2-phase2-olmo3-promptpkg1024-slop-neutral-denominator-support`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/gloz8jdd`) measured the
+  bounded primary slop/neutral shape before launching more GPU work. At
+  `max_token_start_opportunities=128`, the 1,024-prompt slice has 88,903
+  opportunities per feature, 52 `slop_lexicon` references, and 6,694
+  `neutral_common_controls` references. This gives a compute-efficient
+  intermediate validation point between the completed 512 stage grid and the
+  estimated 18-20 A100-hour full 5k DPO slop/neutral run.
