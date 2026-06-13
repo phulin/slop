@@ -67,6 +67,38 @@ def test_iter_feature_opportunities_marks_neutral_controls():
     assert sum(item.reference_initiates for item in by_feature["neutral_controls"]) == 3
 
 
+def test_iter_feature_opportunities_marks_common_neutral_controls_separately():
+    text = "The number of cases in the suite is a subset of the total."
+
+    opportunities = iter_feature_opportunities(
+        text,
+        features=[
+            "neutral_common_number_of",
+            "neutral_common_in_the",
+            "neutral_common_is_a",
+            "neutral_common_of_the",
+            "neutral_common_the",
+            "neutral_common_a",
+            "neutral_common_controls",
+            "neutral_controls",
+        ],
+        max_token_start_opportunities=16,
+    )
+
+    by_feature = {}
+    for opportunity in opportunities:
+        by_feature.setdefault(opportunity.feature, []).append(opportunity)
+
+    assert any(item.reference_initiates for item in by_feature["neutral_common_number_of"])
+    assert any(item.reference_initiates for item in by_feature["neutral_common_in_the"])
+    assert any(item.reference_initiates for item in by_feature["neutral_common_is_a"])
+    assert any(item.reference_initiates for item in by_feature["neutral_common_of_the"])
+    assert any(item.reference_initiates for item in by_feature["neutral_common_the"])
+    assert any(item.reference_initiates for item in by_feature["neutral_common_a"])
+    assert sum(item.reference_initiates for item in by_feature["neutral_common_controls"]) == 8
+    assert not any(item.reference_initiates for item in by_feature["neutral_controls"])
+
+
 def test_iter_feature_opportunities_excludes_unknown_or_deferred_features():
     text = "- Robust tests\nThis is not a shortcut, it is signal."
 

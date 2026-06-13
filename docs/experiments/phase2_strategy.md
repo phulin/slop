@@ -119,6 +119,14 @@ under-counted model mass for capitalized `For example` references. Rerun the
 neutral calibration after this fix before treating the current neutral-control
 failure as final.
 
+The original `neutral_controls` basket is now treated as a failed
+discourse-marker calibration basket, not as the only neutral gate. A separate
+`neutral_common_controls` basket is defined for high-support functional
+starts observed in the held-out SFT targets: `the`, `a`, `of the`,
+`number of`, `in the`, `to the`, and `is a`. These are measured separately so
+the old neutral runs remain comparable while the calibration gate can test a
+lower-style, higher-denominator control set.
+
 ## Promotion Criteria
 
 Promote from tiny-model smoke to OLMo tiny shard only if:

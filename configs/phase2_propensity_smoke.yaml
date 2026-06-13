@@ -31,6 +31,15 @@ inputs:
     - neutral_in_particular
     - neutral_as_a_result
     - neutral_controls
+  neutral_common_control_features:
+    - neutral_common_the
+    - neutral_common_a
+    - neutral_common_of_the
+    - neutral_common_number_of
+    - neutral_common_in_the
+    - neutral_common_to_the
+    - neutral_common_is_a
+    - neutral_common_controls
 
 models:
   smoke_model: sshleifer/tiny-gpt2
@@ -59,6 +68,8 @@ teacher_forced:
     - Score multiple features sharing the same prefix in one cached prefix pass.
     - Initiator sequence enumeration includes sentence-case variants because
       reference matchers are case-insensitive.
+    - The common neutral basket is separate from the discourse-marker neutral
+      basket and has higher reference support in the 512-row prompt package.
 
 prompt_package:
   source: allenai/Dolci-Instruct-SFT-7B
@@ -395,6 +406,39 @@ heldout_prompt512_neutral_breakdown_case_variants_run:
       neutral_in_particular: [0.0, 0.0]
       neutral_such_as: [0.30044722543182306, 0.722079653279511]
   conclusion: casing fix helped, but pooled neutral-control gate still fails because such_as remains underpredicted
+
+neutral_common_controls_denominator_check:
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  sample_size: 512
+  max_token_start_opportunities: 128
+  features:
+    - neutral_common_of_the
+    - neutral_common_number_of
+    - neutral_common_in_the
+    - neutral_common_to_the
+    - neutral_common_is_a
+    - neutral_common_controls
+  result:
+    opportunities_per_feature: 45262
+    reference_initiations:
+      neutral_common_the: 2120
+      neutral_common_a: 806
+      neutral_common_of_the: 181
+      neutral_common_number_of: 100
+      neutral_common_in_the: 89
+      neutral_common_to_the: 70
+      neutral_common_is_a: 59
+      neutral_common_controls: 3425
+    documents_with_reference:
+      neutral_common_the: 349
+      neutral_common_a: 271
+      neutral_common_of_the: 117
+      neutral_common_number_of: 44
+      neutral_common_in_the: 71
+      neutral_common_to_the: 59
+      neutral_common_is_a: 50
+      neutral_common_controls: 365
+  conclusion: high-support common-control basket is ready for SFT calibration
 
 runtime_backends:
   teacher_forced_propensity:

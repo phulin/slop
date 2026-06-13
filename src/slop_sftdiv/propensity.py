@@ -14,11 +14,29 @@ NEUTRAL_CONTROL_PATTERNS: dict[str, re.Pattern[str]] = {
     "neutral_in_particular": re.compile(r"\bin\s+particular\b", re.IGNORECASE | re.UNICODE),
     "neutral_as_a_result": re.compile(r"\bas\s+a\s+result\b", re.IGNORECASE | re.UNICODE),
 }
+NEUTRAL_COMMON_PATTERNS: dict[str, re.Pattern[str]] = {
+    "neutral_common_the": re.compile(r"\bthe\b", re.IGNORECASE | re.UNICODE),
+    "neutral_common_a": re.compile(r"\ba\b", re.IGNORECASE | re.UNICODE),
+    "neutral_common_of_the": re.compile(r"\bof\s+the\b", re.IGNORECASE | re.UNICODE),
+    "neutral_common_number_of": re.compile(r"\bnumber\s+of\b", re.IGNORECASE | re.UNICODE),
+    "neutral_common_in_the": re.compile(r"\bin\s+the\b", re.IGNORECASE | re.UNICODE),
+    "neutral_common_to_the": re.compile(r"\bto\s+the\b", re.IGNORECASE | re.UNICODE),
+    "neutral_common_is_a": re.compile(r"\bis\s+a\b", re.IGNORECASE | re.UNICODE),
+}
 NEUTRAL_CONTROL_INITIATORS: dict[str, tuple[str, ...]] = {
     "neutral_for_example": ("for example",),
     "neutral_such_as": ("such as",),
     "neutral_in_particular": ("in particular",),
     "neutral_as_a_result": ("as a result",),
+}
+NEUTRAL_COMMON_INITIATORS: dict[str, tuple[str, ...]] = {
+    "neutral_common_the": ("the",),
+    "neutral_common_a": ("a",),
+    "neutral_common_of_the": ("of the",),
+    "neutral_common_number_of": ("number of",),
+    "neutral_common_in_the": ("in the",),
+    "neutral_common_to_the": ("to the",),
+    "neutral_common_is_a": ("is a",),
 }
 
 
@@ -135,6 +153,50 @@ PHASE2_OPPORTUNITY_SPECS: dict[str, OpportunitySpec] = {
             for phrase in phrases
         ),
     ),
+    "neutral_common_the": OpportunitySpec(
+        feature="neutral_common_the",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_COMMON_INITIATORS["neutral_common_the"],
+    ),
+    "neutral_common_a": OpportunitySpec(
+        feature="neutral_common_a",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_COMMON_INITIATORS["neutral_common_a"],
+    ),
+    "neutral_common_of_the": OpportunitySpec(
+        feature="neutral_common_of_the",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_COMMON_INITIATORS["neutral_common_of_the"],
+    ),
+    "neutral_common_number_of": OpportunitySpec(
+        feature="neutral_common_number_of",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_COMMON_INITIATORS["neutral_common_number_of"],
+    ),
+    "neutral_common_in_the": OpportunitySpec(
+        feature="neutral_common_in_the",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_COMMON_INITIATORS["neutral_common_in_the"],
+    ),
+    "neutral_common_to_the": OpportunitySpec(
+        feature="neutral_common_to_the",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_COMMON_INITIATORS["neutral_common_to_the"],
+    ),
+    "neutral_common_is_a": OpportunitySpec(
+        feature="neutral_common_is_a",
+        opportunity_kind="token_start",
+        initiators=NEUTRAL_COMMON_INITIATORS["neutral_common_is_a"],
+    ),
+    "neutral_common_controls": OpportunitySpec(
+        feature="neutral_common_controls",
+        opportunity_kind="token_start",
+        initiators=tuple(
+            phrase
+            for phrases in NEUTRAL_COMMON_INITIATORS.values()
+            for phrase in phrases
+        ),
+    ),
 }
 
 
@@ -197,6 +259,13 @@ def _hit_starts_by_feature(text: str, selected: set[str]) -> dict[str, dict[int,
         for match in pattern.finditer(text):
             starts.setdefault(feature, {})[match.start()] = feature.removeprefix("neutral_")
             starts.setdefault("neutral_controls", {})[match.start()] = feature.removeprefix("neutral_")
+    for feature, pattern in NEUTRAL_COMMON_PATTERNS.items():
+        if feature not in selected and "neutral_common_controls" not in selected:
+            continue
+        for match in pattern.finditer(text):
+            subtype = feature.removeprefix("neutral_common_")
+            starts.setdefault(feature, {})[match.start()] = subtype
+            starts.setdefault("neutral_common_controls", {})[match.start()] = subtype
     return starts
 
 
