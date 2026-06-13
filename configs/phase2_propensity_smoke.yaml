@@ -347,6 +347,55 @@ heldout_prompt512_neutral_breakdown_run:
   caveat: pooled neutral-control calibration still fails; full-grid promotion remains blocked
   follow_up: rerun after sentence-case initiator coverage fix before finalizing the neutral-control gate
 
+heldout_prompt512_neutral_breakdown_case_variants_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  sample_size: 512
+  features:
+    - neutral_for_example
+    - neutral_such_as
+    - neutral_in_particular
+    - neutral_as_a_result
+    - neutral_controls
+  max_opportunities: 640
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  shared_prefix_multi_feature_cache: true
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  dtype: bfloat16
+  wandb_run_id: 0rz3idjo
+  output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_neutral_breakdown_case_variants_cached_shared_branch2_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_neutral_breakdown_case_variants_cached_shared_branch2_sequence_summary.csv
+  result:
+    docs: 512
+    opportunities: 226310
+    wall_seconds: 1875.13117
+    opportunities_per_sec: 120.69022
+    reference_initiations:
+      neutral_as_a_result: 0
+      neutral_controls: 22
+      neutral_for_example: 6
+      neutral_in_particular: 0
+      neutral_such_as: 16
+    amplification_factor:
+      neutral_as_a_result: 0.0
+      neutral_controls: 0.5447382701709571
+      neutral_for_example: 0.7110911633467707
+      neutral_in_particular: 0.0
+      neutral_such_as: 0.4294686041164093
+    amplification_factor_ci95:
+      neutral_as_a_result: [0.0, 0.0]
+      neutral_controls: [0.4079505104125421, 0.80012719143807]
+      neutral_for_example: [0.40742559551755436, 2.0760352015705794]
+      neutral_in_particular: [0.0, 0.0]
+      neutral_such_as: [0.30044722543182306, 0.722079653279511]
+  conclusion: casing fix helped, but pooled neutral-control gate still fails because such_as remains underpredicted
+
 runtime_backends:
   teacher_forced_propensity:
     current_backend: torch_transformers

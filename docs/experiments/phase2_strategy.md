@@ -296,3 +296,15 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   observed feature counts were 1 contrastive-negation and 2 rule-of-three hits
   at temperature 0.0, 1 rule-of-three hit at temperature 0.7, and zero
   `slop_lexicon`, `stock_openers`, or `stock_closers` hits.
+- `stage2-phase2-olmo3-sft-promptpkg512-neutral-breakdown-case-variants-cached-shared-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/0rz3idjo`) reran the neutral
+  breakdown after adding sentence-case initiator variants. It scored the same
+  226,310 feature-opportunities in 1,875.1 seconds, for 120.7
+  feature-opportunities/sec. The casing fix substantially changed
+  `neutral_for_example`: AF moved from 0.103 to 0.711 with CI
+  `[0.407, 2.076]`. The pooled neutral basket improved from 0.357 to 0.545,
+  but its CI `[0.408, 0.800]` still excludes 1, and `neutral_such_as` stayed
+  low at 0.429 with CI `[0.300, 0.722]`. Conclusion: casing was a real
+  measurement bug, but the current pooled neutral basket still fails
+  calibration because `such as` is underpredicted under this opportunity
+  definition.

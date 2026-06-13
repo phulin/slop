@@ -572,3 +572,16 @@
   closes the gap from tiny free-running smoke to a bounded real OLMo
   free-running Phase 2 run; the full generation grid still needs a serving
   backend or a larger batching benchmark before scaling.
+- Neutral case-variant rerun completed:
+  `stage2-phase2-olmo3-sft-promptpkg512-neutral-breakdown-case-variants-cached-shared-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/0rz3idjo`. It used the same
+  512 prompt-held-out documents, same opportunity cap, and same neutral
+  features as `gkj0vlvc`, changing only initiator surface coverage to include
+  sentence case. It scored 226,310 feature-opportunities in 1,875.1 seconds
+  for 120.7 feature-opportunities/sec. `neutral_for_example` improved to AF
+  0.711 with CI 0.407-2.076, confirming the casing bug. The pooled basket
+  improved to AF 0.545 but still has CI 0.408-0.800, and `neutral_such_as`
+  remains low at AF 0.429 with CI 0.300-0.722. Do not promote the full
+  teacher-forced grid on the current neutral gate; either revise the neutral
+  controls to higher-support low-style items or treat `such as` as a discourse
+  feature rather than a neutral sanity check.
