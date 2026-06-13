@@ -119,6 +119,31 @@ prompt_package_512:
     denominator_check_reference_initiations:
       slop_lexicon_and_neutral_controls: 45
 
+prompt_package_5000:
+  source: allenai/Dolci-Instruct-SFT-7B
+  split: train
+  sample_size: 5000
+  max_scan: 65536
+  sampling_strategy: hash_reservoir
+  near_duplicate_threshold: 0.85
+  minhash_size: 64
+  minhash_shingle_tokens: 5
+  minhash_band_size: 4
+  wandb_run_id: 77rz02r7
+  output: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  manifest_output: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000_manifest.csv
+  summary_output: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000_summary.json
+  result:
+    scanned_rows: 65536
+    eligible_prompts: 60011
+    near_duplicate_prompt: 5524
+    selected_prompts: 5000
+    prompt_tokens: 664230
+    target_tokens: 923210
+    wall_seconds: 668.99946
+    prompts_per_sec: 7.47385
+    output_size_mb: 13.8646
+
 positive_control_package:
   source: allenai/Dolci-Instruct-SFT-7B
   split: train
@@ -1168,6 +1193,47 @@ olmo3_generation_compounding_512prompt:
       temperature: 1.0
       realized_af: 1.733
   conclusion: observed rates exceed teacher-forced expectation in all slop-lexicon cells, but the 512-prompt excess estimates are less extreme than the 128-prompt slice
+
+olmo3_dpo_generation_64prompt_8comp_1024_benchmark:
+  wandb_run_id: kji583m6
+  model: allenai/Olmo-3-7B-Instruct-DPO
+  input_prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  generations_output: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_64prompt_8comp_t1_batched1024.jsonl
+  summary_output: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_64prompt_8comp_t1_batched1024_summary.csv
+  purpose: target-shape memory and throughput benchmark before any 5k-prompt generation sweep
+  generation_settings:
+    sample_size: 64
+    temperature: 1.0
+    top_p: 0.95
+    max_new_tokens: 1024
+    completions_per_prompt: 8
+    generation_batch_size: 8
+    max_prompt_tokens: 1024
+    dtype: bfloat16
+    torch_compile: true
+  result:
+    prompts_seen: 64
+    prompts_skipped: 0
+    generations: 512
+    generated_tokens: 524288
+    wall_seconds: 1473.05935
+    tokens_per_sec_including_load_compile: 355.91777
+    observed_gpu_memory_note: initial and late batches approached the 80GB A100 limit; batch size 8 completed but has little headroom
+    per_1k_tokens:
+      contrastive_negation: 0.1430511474609375
+      rule_of_three_approx: 0.77056884765625
+      slop_lexicon: 0.2689361572265625
+      stock_closers: 0.0457763671875
+      stock_openers: 0.08392333984375
+      stock_openers_closers: 0.12969970703125
+    repeat_generations:
+      contrastive_negation: 12
+      rule_of_three_approx: 91
+      slop_lexicon: 33
+      stock_closers: 2
+      stock_openers: 0
+      stock_openers_closers: 8
+  conclusion: the near-final 1024-token generation shape is feasible on the A100 with the Torch/Transformers backend and batch size 8, but memory headroom is tight; use this benchmark before launching larger shards
 
 go_no_go:
   promote_to_olmo_tiny_shard_if:

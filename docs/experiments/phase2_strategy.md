@@ -720,3 +720,24 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   reference initiations despite 10,978 opportunities. Contrastive negation
   therefore remains a Phase 2 measurement gap for this prompt package rather
   than a meaningful AF grid result.
+- `stage2-phase2-dolci-sft-prompt-package-5000`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/77rz02r7`) prepared the
+  full-size held-out prompt package for the EXPERIMENTS.md free-running target.
+  It scanned 65,536 Dolci SFT rows, found 60,011 eligible prompt/target rows,
+  filtered 5,524 near-duplicate prompts with the same MinHash settings as the
+  512-prompt package, and selected 5,000 prompts. The package contains 664,230
+  prompt tokens and 923,210 target tokens.
+- `stage2-phase2-olmo3-dpo-promptpkg5000-free-running-64prompt-8comp-t1-bench1024`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/kji583m6`) completed the
+  first near-target-shape DPO generation benchmark: 64 prompts, 8 completions
+  per prompt, temperature 1.0, top-p 0.95, max 1,024 new tokens, batch size 8,
+  bfloat16, and `torch.compile`. It generated 512 completions and 524,288
+  tokens in 1,473.1 seconds, or 355.9 generated tokens/sec including load and
+  compile. Batch size 8 completed on the A100 but approached the memory limit
+  during some batches, so larger sweeps should either keep this as the upper
+  batch-size bound or add an automatic fallback to batch size 4. Feature rates
+  per 1k generated tokens were: `rule_of_three_approx` 0.771,
+  `slop_lexicon` 0.269, `contrastive_negation` 0.143,
+  `stock_openers_closers` 0.130, `stock_openers` 0.084, and `stock_closers`
+  0.046. This is a benchmark and sparse feature read, not the full
+  free-running grid.

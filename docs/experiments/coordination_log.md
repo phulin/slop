@@ -688,3 +688,19 @@
   audit found zero `contrastive_negation` references in the 512 prompt package,
   so contrastive remains a measurement gap for this package rather than an AF
   result.
+- Prepared the 5,000-prompt held-out package for scaling Phase 2:
+  `stage2-phase2-dolci-sft-prompt-package-5000`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/77rz02r7`. It scanned 65,536
+  Dolci SFT rows, retained 60,011 eligible prompt/target rows, filtered 5,524
+  near-duplicate prompts, and selected 5,000 prompts. Local artifacts are
+  `artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl`,
+  its manifest CSV, and its summary JSON.
+- Ran the first target-shape DPO free-running benchmark on that package:
+  `stage2-phase2-olmo3-dpo-promptpkg5000-free-running-64prompt-8comp-t1-bench1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/kji583m6`. Shape: 64 prompts,
+  8 completions per prompt, temperature 1.0, top-p 0.95, max 1,024 new tokens,
+  batch size 8, bfloat16, `torch.compile`. It completed 512 generations and
+  524,288 generated tokens in 1,473.1 seconds, 355.9 generated tokens/sec
+  including load and compile. Batch size 8 completed but was memory-tight on
+  the 80GB A100. Feature rates per 1k generated tokens: rule-of-three 0.771,
+  slop lexicon 0.269, contrastive negation 0.143, stock openers/closers 0.130.
