@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from slop_sftdiv.cli.teacher_forced_propensity import (
+    _build_sequence_scoring_plan,
     _initiator_token_sequences,
     _load_model,
     _sequence_prob_mass,
@@ -36,7 +37,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--mode",
         action="append",
-        choices=("scalar", "batched", "batched_cached", "batched_cached_multi_feature"),
+        choices=(
+            "scalar",
+            "batched",
+            "batched_cached",
+            "batched_cached_multi_feature",
+            "batched_cached_multi_feature_planned",
+        ),
         default=[],
         help="Benchmark only selected modes. Defaults to all modes.",
     )
@@ -119,6 +126,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
         "batched",
         "batched_cached",
         "batched_cached_multi_feature",
+        "batched_cached_multi_feature_planned",
     ]
     tokenizer, model, device = _load_model(
         model_name=args.model,
@@ -201,6 +209,21 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                     model_inputs,
                     multi_sequences,
                     cache_branch_batch_size=args.cache_branch_batch_size,
+                )
+
+            cached_multi_plan = _build_sequence_scoring_plan(
+                multi_sequences,
+                cache_branch_batch_size=args.cache_branch_batch_size,
+                device=device,
+            )
+
+            def planned_cached_multi_call() -> dict[str, list[float]]:
+                return _sequence_prob_mass_batch_cached_multi(
+                    model,
+                    model_inputs,
+                    multi_sequences,
+                    cache_branch_batch_size=args.cache_branch_batch_size,
+                    plan=cached_multi_plan,
                 )
 
             scalar_result: list[float] | None = None
@@ -305,6 +328,41 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                         if cached_multi_seconds > 0
                         else 0.0,
                         "max_abs_diff_vs_scalar": cached_multi_max_abs_diff,
+                    }
+                )
+            if "batched_cached_multi_feature_planned" in modes:
+                planned_multi_seconds, planned_multi_result = _time_call(
+                    planned_cached_multi_call,
+                    repeats=args.repeats,
+                    warmup=args.warmup,
+                    device=device,
+                )
+                reference_result = scalar_result if scalar_result is not None else cached_result
+                planned_multi_max_abs_diff = (
+                    max(
+                        abs(left - right)
+                        for left, right in zip(
+                            reference_result,
+                            planned_multi_result[args.feature],
+                        )
+                    )
+                    if reference_result is not None
+                    else None
+                )
+                rows.append(
+                    {
+                        "batch_size": batch_size,
+                        "mode": "batched_cached_multi_feature_planned",
+                        "features_scored": len(multi_features),
+                        "seconds_per_repeat": planned_multi_seconds,
+                        "opportunities_per_sec": (batch_size * len(multi_features))
+                        / planned_multi_seconds
+                        if planned_multi_seconds > 0
+                        else 0.0,
+                        "prefixes_per_sec": batch_size / planned_multi_seconds
+                        if planned_multi_seconds > 0
+                        else 0.0,
+                        "max_abs_diff_vs_scalar": planned_multi_max_abs_diff,
                     }
                 )
         _write_csv(args.output, rows)
