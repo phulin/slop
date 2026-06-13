@@ -772,3 +772,12 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   point estimate, so this 5k stock feature currently looks like a broad model
   propensity rather than DPO-specific evidence; SFT and final remain required
   for the stage grid.
+- `stage2-phase2-olmo3-sft-promptpkg5000-stock-openers-closers-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/7mk7lu7k`) completed the
+  matching 5,000-prompt SFT checkpoint run. It scored the same 45,404
+  opportunities on `allenai/Olmo-3-7B-Instruct-SFT` in 1,191.3 seconds, or
+  38.11 opportunities/sec. Raw AF is 6.738 with 95% bootstrap CI 5.837-7.857.
+  The current 5k stock ordering is base > DPO > SFT by point estimate, with all
+  three strongly amplified. This weakens any preference-stage interpretation
+  for pooled stock openers/closers and makes the final checkpoint the remaining
+  calibration point for this feature.

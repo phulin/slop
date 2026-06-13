@@ -738,3 +738,10 @@
   initiations. The base point estimate is above DPO for this feature, so the
   5k stock grid should be treated as a calibration/control feature until SFT
   and final are measured.
+- Completed the matching 5k SFT checkpoint run:
+  `stage2-phase2-olmo3-sft-promptpkg5000-stock-openers-closers-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/7mk7lu7k`. It scored the same
+  45,404 opportunities in 1,191.3 seconds, 38.11 opportunities/sec. Result:
+  raw AF `6.738`, CI `5.837-7.857`, against the same 186 reference
+  initiations. The 5k stock point-estimate order is now base > DPO > SFT, with
+  all three strongly amplified; final remains to complete the stock stage grid.
