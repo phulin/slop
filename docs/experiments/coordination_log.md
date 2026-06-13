@@ -650,3 +650,12 @@
   1.005-3.519. Initial stage-localization read: slop-lexicon amplification
   relative to common controls is already present at base, with the SFT point
   estimate only modestly higher.
+- Full 512-document DPO normalized shard completed:
+  `stage2-phase2-olmo3-dpo-promptpkg512-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/bo2i2g1l`. It scored 90,524
+  opportunities in 3,293.9 seconds, for 27.5 opportunities/sec. The common
+  controls had raw AF 0.376 with CI 0.355-0.400. `slop_lexicon` had raw AF
+  0.980 with CI 0.605-1.669, and neutral-normalized AF 2.605 with CI
+  1.595-4.485. The current narrow stage grid is now base 1.782, SFT 1.982,
+  DPO 2.605, supporting a preference-stage increase layered on top of inherited
+  base propensity.

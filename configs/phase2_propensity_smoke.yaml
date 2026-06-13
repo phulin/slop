@@ -665,6 +665,52 @@ olmo3_base_slop_vs_neutral_common_normalized_full_branch8:
       slop_lexicon: [1.004600939019756, 3.518952515907819]
   conclusion: slop-lexicon amplification relative to common controls is already present at the base checkpoint; compare against SFT 1.98 normalized AF before attributing the effect to post-training
 
+olmo3_dpo_slop_vs_neutral_common_normalized_full_branch8:
+  model: allenai/Olmo-3-7B-Instruct-DPO
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  output: artifacts/phase2/propensity/olmo3_dpo_promptpkg512_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_dpo_promptpkg512_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+  features:
+    - slop_lexicon
+    - neutral_common_controls
+  normalization_feature: neutral_common_controls
+  sample_size: 512
+  max_opportunities: 384
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 8
+  mass_mode: sequence
+  dtype: bfloat16
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  torch_compile: true
+  wandb_run_id: bo2i2g1l
+  result:
+    measurement_rows: 512
+    opportunities: 90524
+    wall_seconds: 3293.93195
+    opportunities_per_sec: 27.48205
+    peak_rss_mb: 7113.54688
+    reference_initiations:
+      neutral_common_controls: 3425
+      slop_lexicon: 23
+    amplification_factor:
+      neutral_common_controls: 0.3762894396612483
+      slop_lexicon: 0.980161964065594
+    amplification_factor_ci95:
+      neutral_common_controls: [0.3545764201525287, 0.4000323848168758]
+      slop_lexicon: [0.6045359622511489, 1.6692160097574]
+    normalized_amplification_factor:
+      neutral_common_controls: 1.0
+      slop_lexicon: 2.6048085881654752
+    normalized_amplification_factor_ci95:
+      neutral_common_controls: [1.0, 1.0]
+      slop_lexicon: [1.5953302037327952, 4.4849268421507436]
+  conclusion: DPO increases the slop-lexicon normalized AF above base and SFT in the narrow positive-control grid
+
 runtime_backends:
   teacher_forced_propensity:
     current_backend: torch_transformers
