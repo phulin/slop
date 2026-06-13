@@ -75,6 +75,33 @@ prompt_package:
     near_duplicate_prompt: 3
     selected_prompts: 8
 
+prompt_package_512:
+  source: allenai/Dolci-Instruct-SFT-7B
+  split: train
+  sample_size: 512
+  max_scan: 8192
+  sampling_strategy: hash_reservoir
+  near_duplicate_threshold: 0.85
+  minhash_size: 64
+  minhash_shingle_tokens: 5
+  minhash_band_size: 4
+  wandb_run_id: i6sh0rcv
+  output: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  manifest_output: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512_manifest.csv
+  summary_output: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512_summary.json
+  result:
+    scanned_rows: 8192
+    eligible_prompts: 7753
+    near_duplicate_prompt: 439
+    selected_prompts: 512
+    prompt_tokens: 68715
+    target_tokens: 94715
+    denominator_check_wandb_run_id: ukrfj8ud
+    denominator_check_opportunities:
+      slop_lexicon_and_neutral_controls: 90524
+    denominator_check_reference_initiations:
+      slop_lexicon_and_neutral_controls: 45
+
 positive_control_package:
   source: allenai/Dolci-Instruct-SFT-7B
   split: train
@@ -230,6 +257,43 @@ heldout_prompt128_shared_prefix_run:
       neutral_controls: [0.314774268505401, 2.0278714317366004]
       slop_lexicon: [0.2963736516305141, 2.32307889028748]
   caveat: prompt-held-out SFT shard; denominators remain too small for full-grid promotion
+
+heldout_prompt512_shared_prefix_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  sample_size: 512
+  features:
+    - slop_lexicon
+    - neutral_controls
+  max_opportunities: 384
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  shared_prefix_multi_feature_cache: true
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  dtype: bfloat16
+  wandb_run_id: 35b1isae
+  output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_cached_shared_branch2_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_cached_shared_branch2_sequence_summary.csv
+  result:
+    docs: 512
+    opportunities: 90524
+    wall_seconds: 2422.87315
+    opportunities_per_sec: 37.36225
+    reference_initiations:
+      neutral_controls: 22
+      slop_lexicon: 23
+    amplification_factor:
+      neutral_controls: 0.3567721519800778
+      slop_lexicon: 0.6082965629114504
+    amplification_factor_ci95:
+      neutral_controls: [0.2582525861934205, 0.5314365131158479]
+      slop_lexicon: [0.36077889262902635, 1.1394375668268566]
+  caveat: neutral-control calibration gate fails under current pooled neutral-control definition
 
 optimization_benchmarks:
   cpu_opportunity_extraction:

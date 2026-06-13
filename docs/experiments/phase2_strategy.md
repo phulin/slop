@@ -235,3 +235,22 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   still small (5 neutral-control and 10 slop-lexicon reference initiations), so
   this starts the meaningful Phase 2 SFT measurement but is not sufficient to
   promote to the full checkpoint grid.
+- `stage2-phase2-dolci-sft-prompt-package-512`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/i6sh0rcv`) prepared a
+  larger prompt-held-out Dolci SFT package by scanning 8,192 rows. It found
+  7,753 eligible prompts, filtered 439 near-duplicate prompts, and selected
+  512 prompts. A CPU denominator check
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/ukrfj8ud`) found 90,524
+  total opportunities and 45 combined reference initiations for
+  `slop_lexicon` plus `neutral_controls`.
+- `stage2-phase2-olmo3-sft-promptpkg512-cached-shared-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/35b1isae`) completed the
+  512-row held-out SFT scorer run with exact sequence mass, shared-prefix KV
+  cache, branch chunk size 2, `torch.compile`, and document-bootstrap CIs. It
+  scored 90,524 opportunities in 2,422.9 seconds, for 37.4 opportunities/sec
+  end to end. Point AF was 0.357 for `neutral_controls` with CI
+  `[0.258, 0.531]`, and 0.608 for `slop_lexicon` with CI `[0.361, 1.139]`.
+  The tighter neutral-control interval no longer includes 1, so the current
+  pooled neutral-control opportunity/initiator definition fails the SFT
+  calibration gate. Do not promote to the full checkpoint grid until that
+  neutral-control mismatch is diagnosed.

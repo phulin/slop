@@ -512,3 +512,22 @@
   `slop_lexicon`: 0.296-2.323). Reference denominators are still too small for
   a calibration gate: only 5 neutral-control initiations and 10 slop-lexicon
   initiations.
+- Larger held-out prompt package prepared:
+  `stage2-phase2-dolci-sft-prompt-package-512`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/i6sh0rcv`. It scanned 8,192
+  Dolci SFT rows, found 7,753 eligible prompt/target rows, filtered 439
+  near-duplicate prompts, and selected 512 prompts. CPU denominator check
+  `stage2-phase2-promptpkg512-opportunity-extraction`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/ukrfj8ud`) found 90,524
+  opportunities and 45 combined reference initiations across `slop_lexicon`
+  and pooled `neutral_controls`, enough to run a tighter calibration shard.
+- Held-out prompt-package-512 OLMo SFT shard completed:
+  `stage2-phase2-olmo3-sft-promptpkg512-cached-shared-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/35b1isae`. It scored 512
+  prompt-held-out SFT targets and 90,524 opportunities in 2,422.9 seconds, for
+  37.4 opportunities/sec end to end. Point AF was 0.357 for pooled
+  `neutral_controls` with 95% bootstrap interval 0.258-0.531, and 0.608 for
+  `slop_lexicon` with interval 0.361-1.139. This gives the first reasonably
+  tight SFT shard, but it fails the neutral-control calibration gate: under
+  the current pooled neutral-control opportunity/initiator definition, the SFT
+  checkpoint underpredicts reference initiations.
