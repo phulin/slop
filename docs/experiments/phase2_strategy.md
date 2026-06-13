@@ -577,3 +577,22 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   have nonzero repeat columns in the 128-prompt slice, but the temperature
   interaction means the free-running result is not a simple monotonic DPO lift
   at this sample size.
+- `stage2-phase2-olmo3-final-promptpkg512-free-running-128prompt-t0-t07-t1-batched128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/fmvqwb44`) completed the
+  matching 128-prompt final/RLVR free-running shard with the same prompt
+  package and generation settings. It produced 384 generations and 49,152
+  generated tokens in 172.4 seconds, or 285.1 tokens/sec including load and
+  compile. Final `slop_lexicon` counts were 7 at temperature 0.0, 5 at 0.7,
+  and 10 at 1.0, corresponding to 0.427, 0.305, and 0.610 per 1k generated
+  tokens. Repeated `slop_lexicon` hits appeared in three greedy generations and
+  two temperature-1.0 generations.
+- `stage2-phase2-olmo3-sft-dpo-final-generation-grid-128prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/oly88f3w`) assembled the
+  128-prompt SFT, DPO, and final free-running shards. At temperature 0.0, final
+  sits between SFT and DPO for `slop_lexicon` (`0.427` vs. SFT `0.610` and DPO
+  `0.305` per 1k generated tokens). At temperature 0.7, final matches DPO
+  (`0.305`) and is slightly below SFT (`0.366`). At temperature 1.0, final
+  matches DPO (`0.610`) and is above SFT (`0.305`). This strengthens the
+  temperature-dependent picture from the 32-prompt grid: post-DPO/final
+  checkpoints show the clearest free-running lift at higher temperature, while
+  greedy decoding does not mirror the teacher-forced DPO peak.
