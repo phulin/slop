@@ -816,3 +816,21 @@
   torch/Transformers scorer as the exact teacher-forced scorer of record;
   defer SGLang/vLLM to free-generation throughput work or a separate exactness
   benchmark that reproduces fixed-branch probability-mass summaries.
+- Completed the matching 1,024-prompt final/RLVR slop/neutral run:
+  `stage2-phase2-olmo3-final-promptpkg1024-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/5v7x3180`. It scored the
+  same 177,806 opportunities in 6,109.9 seconds, 29.10 opportunities/sec, on
+  `allenai/Olmo-3-7B-Instruct`. Result: `slop_lexicon`
+  neutral-normalized AF `1.659`, CI `1.189-2.351`; raw slop AF `0.760`, CI
+  `0.547-1.077`; neutral raw AF `0.458`, CI `0.439-0.478`. The denominators
+  match base/SFT/DPO exactly: 88,903 opportunities per feature, 52 slop
+  references, and 6,694 neutral references.
+- Assembled the 1,024-prompt slop/neutral teacher-forced stage grid:
+  `stage2-phase2-olmo3-promptpkg1024-slop-neutral-common-normalized-stage-grid-assembly`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/1cuuzoax`. The normalized-AF
+  ordering is DPO `1.999` > SFT `1.695` > final `1.659` > base `1.467`, with
+  all confidence intervals overlapping. DPO is the maximum point-estimate
+  stage, but final/RLVR attenuates near SFT rather than preserving a large DPO
+  lift. Treat the 1024 grid as inherited/base slop propensity with a modest
+  DPO-stage point-estimate peak; do not spend the estimated full-5k
+  slop/neutral compute unless there is a narrower confirmatory reason.

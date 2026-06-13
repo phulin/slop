@@ -1148,7 +1148,107 @@ olmo3_base_promptpkg1024_slop_vs_neutral_common_normalized:
   backend_decision:
     scorer_of_record: torch_transformers
     rationale: the teacher-forced propensity loop needs exact fixed-branch probability mass, shared-prefix accounting, and feature/control auditability; SGLang or vLLM should be evaluated separately for free-generation throughput or after an exactness benchmark reproduces these branch-mass summaries
-  conclusion: the 1024 stage-localization slice supports inherited/base slop propensity plus modest post-training amplification, not a clean DPO-only effect; defer full 5k slop/neutral scoring until a final 1024 cell or stronger stage-localization criterion justifies the compute
+  conclusion: the base 1024 cell supports inherited/base slop propensity plus modest post-training amplification; use the completed 1024 final cell and assembled grid below for the current stage-localization decision
+
+olmo3_final_promptpkg1024_slop_vs_neutral_common_normalized:
+  primary_feature: slop_lexicon
+  normalization_feature: neutral_common_controls
+  checkpoint_stage: final
+  checkpoint: allenai/Olmo-3-7B-Instruct
+  wandb_run_id: 5v7x3180
+  prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  output: artifacts/phase2/propensity/olmo3_final_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_final_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+  settings:
+    sample_size: 1024
+    max_opportunities: 384
+    max_token_start_opportunities: 128
+    max_prefix_tokens: 256
+    fixed_prefix_tokens: 256
+    opportunity_batch_size: 16
+    sequence_cache: true
+    cache_branch_batch_size: 8
+    mass_mode: sequence
+    dtype: bfloat16
+    device: cuda
+    torch_compile: true
+    bootstrap_samples: 1000
+  result:
+    measurement_rows: 1024
+    opportunities: 177806
+    opportunities_per_feature: 88903
+    wall_seconds: 6109.86686
+    opportunities_per_sec: 29.10145
+    peak_rss_mb: 5751.91016
+    feature_results:
+      neutral_common_controls:
+        reference_initiations: 6694
+        reference_rate: 0.07529554683194042
+        reference_rate_ci95: [0.07180728316541904, 0.07862201967559376]
+        mean_prob_mass: 0.034490046415541875
+        mean_prob_mass_ci95: [0.0324388671581143, 0.0365027075960541]
+        raw_amplification_factor: 0.4580622343114609
+        raw_amplification_factor_ci95: [0.4385547235312104, 0.4783230577376947]
+        normalized_amplification_factor: 1.0
+        normalized_amplification_factor_ci95: [1.0, 1.0]
+      slop_lexicon:
+        reference_initiations: 52
+        reference_rate: 0.000584907145990574
+        reference_rate_ci95: [0.0004071569137505938, 0.0007911755263037197]
+        mean_prob_mass: 0.000444541211703566
+        mean_prob_mass_ci95: [0.000325574271069114, 0.0005753819644257224]
+        raw_amplification_factor: 0.7600201412323486
+        raw_amplification_factor_ci95: [0.5471723458074337, 1.0768893383088038]
+        normalized_amplification_factor: 1.6592071651023088
+        normalized_amplification_factor_ci95: [1.188945368018903, 2.3510003110929536]
+  comparison:
+    base_1024_normalized_af: 1.4674076320232368
+    sft_1024_normalized_af: 1.694768931748265
+    dpo_1024_normalized_af: 1.998950438357903
+    final_to_base_normalized_af_ratio: 1.1307063755792397
+    final_minus_dpo_normalized_af_delta: -0.3397432732555943
+    interpretation: final/RLVR remains above base by point estimate but attenuates below DPO and near SFT, with overlapping confidence intervals
+  conclusion: the 1024 final cell does not preserve the 512-row impression of a large final-stage slop lift; it supports a bounded DPO peak with attenuation at final/RLVR and substantial inherited/base contribution
+
+olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid:
+  primary_feature: slop_lexicon
+  normalization_feature: neutral_common_controls
+  comparison_metric: normalized_af
+  wandb_run_id: 1cuuzoax
+  output: artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid.csv
+  comparison_output: artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_common_normalized_stage_comparison.csv
+  summary_output: artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid_summary.md
+  inputs:
+    base: artifacts/phase2/propensity/olmo3_base_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+    sft: artifacts/phase2/propensity/olmo3_sft_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+    dpo: artifacts/phase2/propensity/olmo3_dpo_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+    final: artifacts/phase2/propensity/olmo3_final_promptpkg1024_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+  result:
+    grid_rows: 8
+    comparison_rows: 4
+    max_normalized_af_stage: dpo
+    stage_results:
+      base:
+        normalized_amplification_factor: 1.4674076320232368
+        normalized_amplification_factor_ci95: [1.1141493703769974, 2.046084324145279]
+        raw_amplification_factor: 0.39626797918223333
+        raw_amplification_factor_ci95: [0.3018287176621015, 0.5523597329118508]
+      sft:
+        normalized_amplification_factor: 1.694768931748265
+        normalized_amplification_factor_ci95: [1.3150739222223913, 2.2888649047860907]
+        raw_amplification_factor: 0.5745387658344906
+        raw_amplification_factor_ci95: [0.44509755011295227, 0.7759443597934096]
+      dpo:
+        normalized_amplification_factor: 1.998950438357903
+        normalized_amplification_factor_ci95: [1.445752747925936, 2.8368430357231045]
+        raw_amplification_factor: 0.7506872488652125
+        raw_amplification_factor_ci95: [0.546305968638593, 1.057864031957107]
+      final:
+        normalized_amplification_factor: 1.6592071651023088
+        normalized_amplification_factor_ci95: [1.188945368018903, 2.3510003110929536]
+        raw_amplification_factor: 0.7600201412323486
+        raw_amplification_factor_ci95: [0.5471723458074337, 1.0768893383088038]
+  conclusion: DPO is the maximum 1024-point normalized-AF stage, but the CIs overlap and final/RLVR attenuates near SFT; treat this as evidence for inherited/base slop propensity with a modest DPO-stage point-estimate peak, not enough to justify an immediate full-5k slop/neutral run without a narrower confirmatory reason
 
 olmo3_dpo_promptpkg5000_stock_openers_closers:
   primary_feature: stock_openers_closers

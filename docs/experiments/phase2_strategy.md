@@ -846,3 +846,18 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   mass, shared-prefix accounting, and feature/control normalization. SGLang or
   vLLM should be considered for free-generation throughput, or only after a
   separate exactness benchmark reproduces the torch branch-mass summaries.
+- `stage2-phase2-olmo3-final-promptpkg1024-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/5v7x3180`) completed the
+  matching final/RLVR run. It scored the same 177,806 opportunities in 6,109.9
+  seconds, or 29.10 opportunities/sec. The `slop_lexicon`
+  neutral-normalized AF is 1.659 with 95% bootstrap CI 1.189-2.351; raw slop
+  AF is 0.760, and neutral raw AF is 0.458. Denominators match all other 1024
+  cells exactly.
+- `stage2-phase2-olmo3-promptpkg1024-slop-neutral-common-normalized-stage-grid-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/1cuuzoax`) assembled the
+  completed 1024 teacher-forced stage grid. The normalized-AF ordering is DPO
+  1.999 > SFT 1.695 > final 1.659 > base 1.467, with overlapping confidence
+  intervals. This supports inherited/base slop propensity plus a modest DPO
+  point-estimate peak that attenuates at final/RLVR. The next compute-efficient
+  Phase 2 step should be generation/compounding work or a narrower
+  confirmatory teacher-forced cell, not an automatic full-5k slop/neutral run.
