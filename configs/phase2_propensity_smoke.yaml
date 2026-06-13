@@ -153,6 +153,84 @@ first_bounded_af_run:
       stock_openers: 0.0003604888916015625
   caveat: targeted reference-positive shard for plumbing and calibration; not an unbiased corpus AF estimate
 
+positive_control32_shared_prefix_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_positive_control_package_32.jsonl
+  sample_size: 32
+  features:
+    - slop_lexicon
+    - neutral_controls
+    - stock_openers
+  max_opportunities: 512
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  shared_prefix_multi_feature_cache: true
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  dtype: bfloat16
+  wandb_run_id: ce8i6wd9
+  output: artifacts/phase2/propensity/olmo3_sft_positive_control32_cached_shared_branch2_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_positive_control32_cached_shared_branch2_sequence_summary.csv
+  result:
+    docs: 32
+    opportunities: 7862
+    wall_seconds: 268.51689
+    opportunities_per_sec: 29.27935
+    reference_initiations:
+      neutral_controls: 11
+      slop_lexicon: 14
+      stock_openers: 2
+    amplification_factor:
+      neutral_controls: 0.2893172188454197
+      slop_lexicon: 0.29823626388603736
+      stock_openers: 0.0014190673828125
+    amplification_factor_ci95:
+      neutral_controls: [0.17791658812581987, 0.49766160418085154]
+      slop_lexicon: [0.14970615124827685, 0.5756268423377946]
+      stock_openers: [0.0, 0.002838134765625]
+  caveat: targeted reference-positive shard for calibration; not an unbiased corpus AF estimate
+
+heldout_prompt128_shared_prefix_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_128.jsonl
+  sample_size: 128
+  features:
+    - slop_lexicon
+    - neutral_controls
+  max_opportunities: 384
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  shared_prefix_multi_feature_cache: true
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  dtype: bfloat16
+  wandb_run_id: n8zueel5
+  output: artifacts/phase2/propensity/olmo3_sft_promptpkg128_cached_shared_branch2_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_promptpkg128_cached_shared_branch2_sequence_summary.csv
+  result:
+    docs: 128
+    opportunities: 23656
+    wall_seconds: 680.46046
+    opportunities_per_sec: 34.76469
+    reference_initiations:
+      neutral_controls: 5
+      slop_lexicon: 10
+    amplification_factor:
+      neutral_controls: 0.6294624400952754
+      slop_lexicon: 0.7456991666555743
+    amplification_factor_ci95:
+      neutral_controls: [0.314774268505401, 2.0278714317366004]
+      slop_lexicon: [0.2963736516305141, 2.32307889028748]
+  caveat: prompt-held-out SFT shard; denominators remain too small for full-grid promotion
+
 optimization_benchmarks:
   cpu_opportunity_extraction:
     input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_positive_control_package_32.jsonl

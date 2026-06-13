@@ -216,3 +216,22 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   shards should keep exact sequence mass, fixed 256-token prefixes,
   opportunity batch size 16, KV-cache continuations, branch chunk size 2, and
   shared-prefix scoring enabled.
+- `stage2-phase2-olmo3-sft-positive-control32-cached-shared-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/ce8i6wd9`) completed the
+  32-row targeted positive/control shard with shared-prefix cached scoring and
+  document-cluster bootstrap CIs. It scored 7,862 opportunities in 268.5
+  seconds, for 29.3 opportunities/sec end to end. Point AFs were 0.289
+  (`neutral_controls`), 0.298 (`slop_lexicon`), and 0.0014 (`stock_openers`).
+  The targeted package is useful as a nonzero-denominator calibration shard but
+  should not be read as an unbiased corpus estimate.
+- `stage2-phase2-olmo3-sft-promptpkg128-cached-shared-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/n8zueel5`) completed the
+  first broader held-out SFT prompt-package shard with the optimized exact
+  sequence scorer. It scored 128 prompt-held-out documents and 23,656
+  opportunities in 680.5 seconds, for 34.8 opportunities/sec end to end.
+  Point AF was 0.629 for `neutral_controls` with bootstrap CI
+  `[0.315, 2.028]`, and 0.746 for `slop_lexicon` with bootstrap CI
+  `[0.296, 2.323]`. The neutral-control CI now spans 1, but denominators are
+  still small (5 neutral-control and 10 slop-lexicon reference initiations), so
+  this starts the meaningful Phase 2 SFT measurement but is not sufficient to
+  promote to the full checkpoint grid.

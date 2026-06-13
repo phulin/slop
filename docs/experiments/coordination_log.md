@@ -489,3 +489,26 @@
   feature-opportunities/sec across three features with max absolute difference
   `1.83e-04` versus scalar on the reference feature. Use shared-prefix cached
   scoring for the next multi-feature OLMo shard.
+- Document-cluster bootstrap CIs were added to
+  `slop-teacher-forced-propensity` summaries. The summary CSV and W&B table now
+  include point estimates plus 95% bootstrap intervals for reference rate,
+  mean model probability mass, and AF. The bootstrap resamples measurement
+  documents, not individual opportunities.
+- Positive/control-32 OLMo SFT shard completed:
+  `stage2-phase2-olmo3-sft-positive-control32-cached-shared-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/ce8i6wd9`. It scored 32
+  targeted documents and 7,862 opportunities in 268.5 seconds, for 29.3
+  opportunities/sec end to end. Point AFs were 0.289 for pooled
+  `neutral_controls`, 0.298 for `slop_lexicon`, and 0.0014 for
+  `stock_openers`. Because the package is reference-positive by construction,
+  this remains a calibration/plumbing shard rather than an unbiased AF estimate.
+- Held-out prompt-package-128 OLMo SFT shard completed:
+  `stage2-phase2-olmo3-sft-promptpkg128-cached-shared-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/n8zueel5`. It scored 128
+  prompt-held-out SFT targets and 23,656 opportunities in 680.5 seconds, for
+  34.8 opportunities/sec end to end. Point AFs were 0.629 for
+  `neutral_controls` and 0.746 for `slop_lexicon`; the bootstrap intervals
+  were wide and included 1 (`neutral_controls`: 0.315-2.028,
+  `slop_lexicon`: 0.296-2.323). Reference denominators are still too small for
+  a calibration gate: only 5 neutral-control initiations and 10 slop-lexicon
+  initiations.
