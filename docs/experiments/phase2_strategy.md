@@ -112,6 +112,13 @@ for the later free-running generation workload, but they should not replace the
 teacher-forced scorer until they can return equivalent arbitrary continuation
 mass without changing the estimator.
 
+Teacher-forced initiator sequence enumeration now includes sentence-case
+surface variants in addition to lowercase forms. This is required because the
+reference regexes are case-insensitive; the first 512-row neutral breakdown
+under-counted model mass for capitalized `For example` references. Rerun the
+neutral calibration after this fix before treating the current neutral-control
+failure as final.
+
 ## Promotion Criteria
 
 Promote from tiny-model smoke to OLMo tiny shard only if:
@@ -274,3 +281,18 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   zero reference initiations in this sample. The pooled neutral AF remains
   0.357 with CI `[0.258, 0.531]`, so the calibration failure is not just an
   artifact of mixing in unobserved controls.
+- `stage2-phase2-tiny-gpt2-batched-free-running-smoke`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/pnjtz101`) validated the
+  batched free-running CLI on the 8-row prompt package. It generated 8
+  completions across 2 prompts, 2 completions per prompt, and temperatures
+  0.0/0.7, logging redacted generation rows to W&B.
+- `stage2-phase2-olmo3-sft-promptpkg512-free-running-16prompt-t0-t07-batched`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/2co91og0`) completed the
+  first W&B-logged OLMo SFT free-running shard on the 512-row held-out prompt
+  package. It generated 32 completions from 16 prompts at temperatures 0.0 and
+  0.7, top-p 0.95, max 64 new tokens, batch size 4, bfloat16, and
+  `torch.compile`. Throughput was 2,048 generated tokens in 207.7 seconds
+  (9.86 tokens/sec including model load and compile). At this tiny sample,
+  observed feature counts were 1 contrastive-negation and 2 rule-of-three hits
+  at temperature 0.0, 1 rule-of-three hit at temperature 0.7, and zero
+  `slop_lexicon`, `stock_openers`, or `stock_closers` hits.

@@ -57,6 +57,8 @@ teacher_forced:
     - Keep Biber-lite as register covariates, not propensity targets.
     - Neutral controls are calibration targets, not slop features.
     - Score multiple features sharing the same prefix in one cached prefix pass.
+    - Initiator sequence enumeration includes sentence-case variants because
+      reference matchers are case-insensitive.
 
 prompt_package:
   source: allenai/Dolci-Instruct-SFT-7B
@@ -343,6 +345,7 @@ heldout_prompt512_neutral_breakdown_run:
       neutral_in_particular: [0.0, 0.0]
       neutral_such_as: [0.29633048581119004, 0.7134413913572569]
   caveat: pooled neutral-control calibration still fails; full-grid promotion remains blocked
+  follow_up: rerun after sentence-case initiator coverage fix before finalizing the neutral-control gate
 
 runtime_backends:
   teacher_forced_propensity:
@@ -395,6 +398,70 @@ free_running_smoke:
   max_new_tokens: 16
   wandb_run_id: 4dt5kc3h
   caveat: uses retained text as prompt only for plumbing validation
+
+batched_free_running_smoke:
+  model: sshleifer/tiny-gpt2
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_8.jsonl
+  sample_size: 2
+  features:
+    - slop_lexicon
+    - stock_openers
+  temperatures: [0.0, 0.7]
+  top_ps: [0.95]
+  max_new_tokens: 12
+  completions_per_prompt: 2
+  generation_batch_size: 2
+  max_prompt_tokens: 128
+  wandb_run_id: pnjtz101
+  result:
+    prompts_seen: 2
+    generations: 8
+    generated_tokens: 96
+    wall_seconds: 15.04249
+    tokens_per_sec: 6.38192
+    summary_rows: 4
+
+olmo3_sft_free_running_16prompt_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  sample_size: 16
+  features:
+    - contrastive_negation
+    - rule_of_three_approx
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+  temperatures: [0.0, 0.7]
+  top_ps: [0.95]
+  max_new_tokens: 64
+  completions_per_prompt: 1
+  generation_batch_size: 4
+  max_prompt_tokens: 512
+  dtype: bfloat16
+  torch_compile: true
+  wandb_run_id: 2co91og0
+  generations_output: artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_16prompt_t0_t07_batched.jsonl
+  summary_output: artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_16prompt_t0_t07_batched_summary.csv
+  result:
+    prompts_seen: 16
+    generations: 32
+    generated_tokens: 2048
+    wall_seconds: 207.65413
+    tokens_per_sec: 9.86255
+    feature_counts:
+      temperature_0_0:
+        contrastive_negation: 1
+        rule_of_three_approx: 2
+        slop_lexicon: 0
+        stock_closers: 0
+        stock_openers: 0
+      temperature_0_7:
+        contrastive_negation: 0
+        rule_of_three_approx: 1
+        slop_lexicon: 0
+        stock_closers: 0
+        stock_openers: 0
+  caveat: bounded first real free-running shard; not the full generation grid
 
 go_no_go:
   promote_to_olmo_tiny_shard_if:

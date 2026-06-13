@@ -204,11 +204,21 @@ def _initiator_token_sequences(tokenizer: Any, feature: str) -> tuple[tuple[int,
     spec = PHASE2_OPPORTUNITY_SPECS[feature]
     sequences: set[tuple[int, ...]] = set()
     for phrase in spec.initiators:
-        for variant in (phrase, " " + phrase):
-            ids = tokenizer.encode(variant, add_special_tokens=False)
-            if ids:
-                sequences.add(tuple(int(item) for item in ids[:3]))
+        for surface in _initiator_surface_variants(phrase):
+            for variant in (surface, " " + surface):
+                ids = tokenizer.encode(variant, add_special_tokens=False)
+                if ids:
+                    sequences.add(tuple(int(item) for item in ids[:3]))
     return tuple(sorted(sequences))
+
+
+def _initiator_surface_variants(phrase: str) -> tuple[str, ...]:
+    variants = {phrase}
+    stripped = phrase.lstrip()
+    leading = phrase[: len(phrase) - len(stripped)]
+    if stripped:
+        variants.add(leading + stripped[0].upper() + stripped[1:])
+    return tuple(sorted(variants))
 
 
 def _first_token_ids(sequences: tuple[tuple[int, ...], ...]) -> set[int]:

@@ -549,3 +549,26 @@
   top-k request logprobs. Evaluate vLLM or SGLang for the later free-running
   generation jobs, and only revisit teacher-forced serving backends after an
   isolated benchmark proves estimator-equivalent continuation mass.
+- Neutral calibration follow-up: the neutral breakdown exposed a measurement
+  bug in initiator coverage. Neutral reference matching is case-insensitive,
+  but exact sequence initiators were lowercase-only; all 6 observed
+  `neutral_for_example` references in the 512-row run were capitalized
+  `For example`. Initiator enumeration now includes sentence-case variants for
+  every phrase. Rerun the neutral calibration after this fix before promoting
+  or permanently demoting the neutral basket.
+- Batched free-running smoke completed:
+  `stage2-phase2-tiny-gpt2-batched-free-running-smoke`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/pnjtz101`. It generated 8
+  tiny GPT-2 completions on the Phase 2 prompt package with temperatures 0.0
+  and 0.7, validating batched generation, top-p recording, repeat metrics, and
+  redacted W&B logging.
+- First W&B-logged OLMo SFT free-running shard completed:
+  `stage2-phase2-olmo3-sft-promptpkg512-free-running-16prompt-t0-t07-batched`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/2co91og0`. It used the
+  512-row held-out prompt package, 16 prompts, temperatures 0.0 and 0.7,
+  top-p 0.95, max 64 new tokens, one completion per prompt, batch size 4,
+  bfloat16, and `torch.compile`. It produced 32 generations and 2,048
+  generated tokens in 207.7 seconds, with no raw text logged to W&B. This
+  closes the gap from tiny free-running smoke to a bounded real OLMo
+  free-running Phase 2 run; the full generation grid still needs a serving
+  backend or a larger batching benchmark before scaling.

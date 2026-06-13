@@ -6,6 +6,7 @@ import torch
 
 from slop_sftdiv.cli.teacher_forced_propensity import build_parser, run_teacher_forced_propensity
 from slop_sftdiv.cli.teacher_forced_propensity import (
+    _initiator_token_sequences,
     _sequence_prob_mass,
     _sequence_prob_mass_batch,
     _sequence_prob_mass_batch_cached,
@@ -115,6 +116,13 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
     assert logged_payloads[-1]["propensity/opportunities"] == len(rows)
     assert init_kwargs["tags"][:4] == ["stage2", "phase2", "teacher-forced", "smoke"]
     assert init_kwargs["config"]["bootstrap_samples"] == 1000
+
+
+def test_initiator_token_sequences_include_sentence_case_variants():
+    sequences = _initiator_token_sequences(FakeTokenizer(), "neutral_for_example")
+
+    assert tuple(FakeTokenizer().encode("for example", add_special_tokens=False)) in sequences
+    assert tuple(FakeTokenizer().encode("For example", add_special_tokens=False)) in sequences
 
 
 def test_sequence_prob_mass_batches_by_depth():
