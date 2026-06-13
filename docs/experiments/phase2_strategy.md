@@ -872,3 +872,19 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   point-estimate peak that attenuates at final/RLVR. The next compute-efficient
   Phase 2 step should be generation/compounding work or a narrower
   confirmatory teacher-forced cell, not an automatic full-5k slop/neutral run.
+- `stage2-phase2-olmo3-dpo-promptpkg5000-free-running-512prompt-8comp-t1-bench1024`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/8rud2kxl`) completed the
+  bounded target-shape DPO generation shard on the 5,000-prompt package:
+  512 prompts, 8 completions per prompt, temperature 1.0, top-p 0.95, and
+  1,024 generated tokens per completion. It produced 4,096 generations and
+  4,194,304 generated tokens in 11,758.0 seconds, or 356.7 generated
+  tokens/sec including model load and compile. The feature rates per 1k
+  generated tokens were `rule_of_three_approx` 0.861, `slop_lexicon` 0.229,
+  `contrastive_negation` 0.141, `stock_openers_closers` 0.108,
+  `stock_openers` 0.064, and `stock_closers` 0.043. This throughput matches
+  the 64-prompt benchmark almost exactly, so the Torch/Transformers generation
+  path scales linearly over prompts but remains slow enough that the next
+  generation optimization should be an isolated SGLang or vLLM microbenchmark
+  against this same JSONL/summary contract. Do not move the exact
+  teacher-forced scorer off torch/Transformers unless a separate exactness
+  benchmark reproduces the fixed-branch probability-mass summaries.

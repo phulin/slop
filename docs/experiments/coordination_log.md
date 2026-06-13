@@ -845,3 +845,16 @@
   absolute excess is SFT temperature 1.0 (`0.454` per 1k opportunities). This
   keeps the bounded compounding signal positive while reducing the older
   realized-AF magnitudes after the larger teacher-forced denominator update.
+- Completed the bounded target-shape DPO generation shard:
+  `stage2-phase2-olmo3-dpo-promptpkg5000-free-running-512prompt-8comp-t1-bench1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/8rud2kxl`. It generated 512
+  prompts x 8 completions x 1,024 tokens, for 4,096 generations and 4,194,304
+  generated tokens, in 11,758.0 seconds (`356.7` generated tokens/sec including
+  load and compile). Feature rates per 1k generated tokens were
+  `rule_of_three_approx` `0.861`, `slop_lexicon` `0.229`,
+  `contrastive_negation` `0.141`, `stock_openers_closers` `0.108`,
+  `stock_openers` `0.064`, and `stock_closers` `0.043`. Throughput matches the
+  earlier 64-prompt target-shape benchmark, so scaling prompts did not degrade
+  performance; the next optimization question is whether a serving-generation
+  backend such as SGLang or vLLM can materially improve free-running generation
+  throughput while preserving the same JSONL and feature-summary contracts.

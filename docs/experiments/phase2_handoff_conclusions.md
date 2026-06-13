@@ -119,12 +119,40 @@ Current headline cells:
 Interpretation: Result B has a bounded positive signal, but the conditional
 window estimates are not yet stable enough for the final paper-scale claim.
 
+## Target-Shape Generation Shard
+
+The first larger DPO target-shape generation shard is complete on the
+5,000-prompt package:
+
+- W&B: `8rud2kxl`
+- Shape: 512 prompts, 8 completions per prompt, temperature `1.0`, top-p
+  `0.95`, 1,024 generated tokens per completion.
+- Output: 4,096 generations and 4,194,304 generated tokens.
+- Throughput: 11,758.0 wall seconds, `356.7` generated tokens/sec including
+  load and compile.
+
+Feature rates per 1k generated tokens:
+
+| Feature | Rate |
+|---|---:|
+| `rule_of_three_approx` | 0.861 |
+| `slop_lexicon` | 0.229 |
+| `contrastive_negation` | 0.141 |
+| `stock_openers_closers` | 0.108 |
+| `stock_openers` | 0.064 |
+| `stock_closers` | 0.043 |
+
+Throughput is essentially unchanged from the 64-prompt target-shape benchmark
+(`355.9` generated tokens/sec), so the current Torch/Transformers backend scales
+linearly across prompts but remains slow in absolute terms for long generation.
+
 ## Current Compute Posture
 
 Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid
-blindly. The target-shape DPO benchmark (`kji583m6`) validates the heavy shape
-on 64 prompts, but the full OLMo four-stage target remains expensive. The next
-GPU work should be selected by the question it answers:
+blindly. The target-shape DPO benchmark (`kji583m6`) and the 512-prompt DPO
+shard (`8rud2kxl`) validate the heavy shape on the A100, but the full OLMo
+four-stage target remains expensive. The next GPU work should be selected by
+the question it answers:
 
 - For a stronger Result B estimate, scale the free-running generation shard
   before spending on more teacher-forced slop/neutral rows.
@@ -133,6 +161,10 @@ GPU work should be selected by the question it answers:
   all stages immediately.
 - For teacher-forced precision, full 5k slop/neutral is confirmatory and should
   wait until a specific analysis requires tighter CIs.
+- For generation throughput, benchmark SGLang or vLLM in an isolated
+  environment against the 512-prompt DPO shard contract. Keep
+  torch/Transformers as the exact teacher-forced scorer unless an exactness
+  benchmark reproduces the fixed-branch probability-mass summaries.
 
 ## Open Caveats
 
