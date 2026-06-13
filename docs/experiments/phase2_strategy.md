@@ -369,6 +369,15 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   result under the current normalized contract: relative to the common-control
   calibration baseline, OLMo 3 SFT assigns about 2x the target-distribution
   initiation mass to the slop lexicon.
+- `stage2-phase2-olmo3-base-promptpkg512-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/4bp5090m`) completed the
+  matching 512-document base-checkpoint shard. It scored 90,524 opportunities
+  in 3,273.0 seconds, for 27.7 opportunities/sec. `neutral_common_controls`
+  had raw AF 0.272 with CI `[0.252, 0.293]`; `slop_lexicon` had raw AF 0.484
+  with CI `[0.274, 0.957]`. Neutral-normalized `slop_lexicon` AF was 1.782
+  with CI `[1.005, 3.519]`. First stage-localization read: the slop-lexicon
+  signal is already present at the base checkpoint and is not introduced by
+  SFT, though the SFT point estimate is modestly higher (1.982).
 - Cached-only scorer microbenchmarks for the same OLMo SFT
   `slop_lexicon` plus `neutral_common_controls` shape showed that the previous
   branch cap of 2 is conservative. Branch 2

@@ -641,3 +641,12 @@
   1.226-3.663. This gives a stable SFT positive-control result under the
   neutral-normalized Phase 2 contract and is the baseline to compare against
   base, DPO, and final OLMo checkpoints.
+- Full 512-document base-checkpoint normalized shard completed:
+  `stage2-phase2-olmo3-base-promptpkg512-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/4bp5090m`. It scored 90,524
+  opportunities in 3,273.0 seconds, for 27.7 opportunities/sec. The common
+  controls had raw AF 0.272 with CI 0.252-0.293. `slop_lexicon` had raw AF
+  0.484 with CI 0.274-0.957, and neutral-normalized AF 1.782 with CI
+  1.005-3.519. Initial stage-localization read: slop-lexicon amplification
+  relative to common controls is already present at base, with the SFT point
+  estimate only modestly higher.
