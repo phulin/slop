@@ -6,11 +6,13 @@ import torch
 
 from slop_sftdiv.cli.teacher_forced_propensity import build_parser, run_teacher_forced_propensity
 from slop_sftdiv.cli.teacher_forced_propensity import (
+    FeatureAccumulator,
     _initiator_token_sequences,
     _sequence_prob_mass,
     _sequence_prob_mass_batch,
     _sequence_prob_mass_batch_cached,
     _sequence_prob_mass_batch_cached_multi,
+    _summary_rows,
 )
 
 
@@ -116,6 +118,31 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
     assert logged_payloads[-1]["propensity/opportunities"] == len(rows)
     assert init_kwargs["tags"][:4] == ["stage2", "phase2", "teacher-forced", "smoke"]
     assert init_kwargs["config"]["bootstrap_samples"] == 1000
+
+
+def test_summary_rows_can_report_neutral_normalized_af():
+    accumulators = {
+        "slop_lexicon": FeatureAccumulator(
+            opportunities=10,
+            reference_initiations=1,
+            prob_mass_sum=0.2,
+        ),
+        "neutral_common_controls": FeatureAccumulator(
+            opportunities=10,
+            reference_initiations=1,
+            prob_mass_sum=0.1,
+        ),
+    }
+
+    rows = _summary_rows(
+        accumulators,
+        normalization_feature="neutral_common_controls",
+    )
+    by_feature = {row["feature"]: row for row in rows}
+
+    assert by_feature["neutral_common_controls"]["normalized_amplification_factor"] == 1.0
+    assert by_feature["slop_lexicon"]["normalized_amplification_factor"] == 2.0
+    assert by_feature["slop_lexicon"]["normalization_feature"] == "neutral_common_controls"
 
 
 def test_initiator_token_sequences_include_sentence_case_variants():

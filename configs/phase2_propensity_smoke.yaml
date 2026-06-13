@@ -57,6 +57,7 @@ teacher_forced:
   sequence_cache: true
   cache_branch_batch_size: 2
   shared_prefix_multi_feature_cache: true
+  normalization_feature_for_current_contract: neutral_common_controls
   max_token_start_opportunities: 128
   torch_compile_default: true
   first_token_mass_status: debug_fallback
@@ -70,6 +71,9 @@ teacher_forced:
       reference matchers are case-insensitive.
     - The common neutral basket is separate from the discourse-marker neutral
       basket and has higher reference support in the 512-row prompt package.
+    - Use --normalization-feature neutral_common_controls for current
+      token-start Phase 2 shards so raw AF and neutral-normalized AF are both
+      reported.
 
 prompt_package:
   source: allenai/Dolci-Instruct-SFT-7B
@@ -439,6 +443,67 @@ neutral_common_controls_denominator_check:
       neutral_common_is_a: 50
       neutral_common_controls: 365
   conclusion: high-support common-control basket is ready for SFT calibration
+
+neutral_common_controls_sft_calibration_run:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  sample_size: 512
+  features:
+    - neutral_common_the
+    - neutral_common_a
+    - neutral_common_of_the
+    - neutral_common_number_of
+    - neutral_common_in_the
+    - neutral_common_to_the
+    - neutral_common_is_a
+    - neutral_common_controls
+  max_opportunities: 1024
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 2
+  shared_prefix_multi_feature_cache: true
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  dtype: bfloat16
+  wandb_run_id: xw8ihrej
+  output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_neutral_common_controls_cached_shared_branch2_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_neutral_common_controls_cached_shared_branch2_sequence_summary.csv
+  result:
+    docs: 512
+    opportunities: 362096
+    wall_seconds: 1857.46997
+    opportunities_per_sec: 194.94043
+    reference_initiations:
+      neutral_common_the: 2120
+      neutral_common_a: 806
+      neutral_common_of_the: 181
+      neutral_common_number_of: 100
+      neutral_common_in_the: 89
+      neutral_common_to_the: 70
+      neutral_common_is_a: 59
+      neutral_common_controls: 3425
+    amplification_factor:
+      neutral_common_the: 0.2839017430233682
+      neutral_common_a: 0.40847794493776046
+      neutral_common_of_the: 0.3641738710982506
+      neutral_common_number_of: 0.2952385630183433
+      neutral_common_in_the: 0.7383288566922697
+      neutral_common_to_the: 0.5832241719603617
+      neutral_common_is_a: 0.49941122102735963
+      neutral_common_controls: 0.3394700051292465
+    amplification_factor_ci95:
+      neutral_common_the: [0.26466494343036073, 0.30400131520245804]
+      neutral_common_a: [0.3671748983720753, 0.45777042352536507]
+      neutral_common_of_the: [0.3092459774916312, 0.42637658574532644]
+      neutral_common_number_of: [0.2268791575297418, 0.3641842547550689]
+      neutral_common_in_the: [0.6150026289070748, 0.8844587054836344]
+      neutral_common_to_the: [0.4893027299937903, 0.7061451304428872]
+      neutral_common_is_a: [0.3918448573287985, 0.6452981597366568]
+      neutral_common_controls: [0.318868587777177, 0.3604392417534599]
+  conclusion: raw AF near 1 fails even for common function-word controls; add neutral-normalized reporting or revise opportunities before full grid
 
 runtime_backends:
   teacher_forced_propensity:

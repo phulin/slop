@@ -46,6 +46,10 @@ SUMMARY_COLUMNS = [
     "amplification_factor",
     "amplification_factor_ci_low",
     "amplification_factor_ci_high",
+    "normalization_feature",
+    "normalized_amplification_factor",
+    "normalized_amplification_factor_ci_low",
+    "normalized_amplification_factor_ci_high",
 ]
 
 
@@ -124,6 +128,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Document-cluster bootstrap samples for summary CIs; set 0 to disable.",
     )
     parser.add_argument("--bootstrap-seed", type=int, default=1729)
+    parser.add_argument(
+        "--normalization-feature",
+        default=None,
+        help="Optional feature whose AF is used to report neutral-normalized AF ratios.",
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, default=None)
     parser.add_argument("--wandb-project", default="slop-stage1")
@@ -803,6 +812,7 @@ def _bootstrap_intervals(
     *,
     samples: int,
     seed: int,
+    normalization_feature: str | None = None,
 ) -> dict[str, dict[str, float]]:
     if samples <= 0 or not rows:
         return {}
@@ -827,12 +837,14 @@ def _bootstrap_intervals(
             "reference_rate": [],
             "mean_prob_mass": [],
             "amplification_factor": [],
+            "normalized_amplification_factor": [],
         }
         for feature in features
     }
 
     for _sample_index in range(samples):
         sampled_keys = [rng.choice(doc_keys) for _doc_index in doc_keys]
+        sample_af_by_feature: dict[str, float] = {}
         for feature in features:
             opportunities = 0
             reference_initiations = 0
@@ -852,6 +864,15 @@ def _bootstrap_intervals(
             draws[feature]["reference_rate"].append(reference_rate)
             draws[feature]["mean_prob_mass"].append(mean_prob_mass)
             draws[feature]["amplification_factor"].append(amplification_factor)
+            sample_af_by_feature[feature] = amplification_factor
+        baseline_af = sample_af_by_feature.get(normalization_feature or "", 0.0)
+        for feature in features:
+            normalized_af = (
+                sample_af_by_feature.get(feature, 0.0) / baseline_af
+                if baseline_af > 0.0
+                else 0.0
+            )
+            draws[feature]["normalized_amplification_factor"].append(normalized_af)
 
     intervals: dict[str, dict[str, float]] = {}
     for feature, metrics in draws.items():
@@ -868,15 +889,25 @@ def _summary_rows(
     rows: list[dict[str, Any]] | None = None,
     bootstrap_samples: int = 0,
     bootstrap_seed: int = 1729,
+    normalization_feature: str | None = None,
 ) -> list[dict[str, Any]]:
     intervals = _bootstrap_intervals(
         rows or [],
         samples=bootstrap_samples,
         seed=bootstrap_seed,
+        normalization_feature=normalization_feature,
     )
     rows = []
+    baseline_af = (
+        accumulators[normalization_feature].amplification_factor
+        if normalization_feature in accumulators
+        else 0.0
+    )
     for feature, accumulator in sorted(accumulators.items()):
         interval = intervals.get(feature, {})
+        normalized_af = (
+            accumulator.amplification_factor / baseline_af if baseline_af > 0.0 else 0.0
+        )
         rows.append(
             {
                 "feature": feature,
@@ -895,6 +926,16 @@ def _summary_rows(
                 ),
                 "amplification_factor_ci_high": interval.get(
                     "amplification_factor_ci_high",
+                    0.0,
+                ),
+                "normalization_feature": normalization_feature or "",
+                "normalized_amplification_factor": normalized_af,
+                "normalized_amplification_factor_ci_low": interval.get(
+                    "normalized_amplification_factor_ci_low",
+                    0.0,
+                ),
+                "normalized_amplification_factor_ci_high": interval.get(
+                    "normalized_amplification_factor_ci_high",
                     0.0,
                 ),
             }
@@ -969,6 +1010,7 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
             "torch_compile": args.torch_compile,
             "bootstrap_samples": args.bootstrap_samples,
             "bootstrap_seed": args.bootstrap_seed,
+            "normalization_feature": args.normalization_feature,
             "output": str(args.output),
         },
     )
@@ -1039,6 +1081,7 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
             rows=rows,
             bootstrap_samples=args.bootstrap_samples,
             bootstrap_seed=args.bootstrap_seed,
+            normalization_feature=args.normalization_feature,
         )
         if args.summary_output is not None:
             _write_csv(args.summary_output, summary_rows, SUMMARY_COLUMNS)

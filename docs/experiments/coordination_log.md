@@ -585,3 +585,20 @@
   teacher-forced grid on the current neutral gate; either revise the neutral
   controls to higher-support low-style items or treat `such as` as a discourse
   feature rather than a neutral sanity check.
+- Common neutral-control calibration completed:
+  `stage2-phase2-olmo3-sft-promptpkg512-neutral-common-controls-cached-shared-branch2-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/xw8ihrej`. This tested
+  `the`, `a`, `of the`, `number of`, `in the`, `to the`, `is a`, and pooled
+  `neutral_common_controls` on the same 512 prompt-held-out SFT targets. The
+  pooled basket had strong support (3,425 references), but AF was 0.339 with
+  CI 0.319-0.360. `in the` was closest at 0.738; every individual common
+  control was below 1. This shows the raw neutral AF≈1 gate is not valid under
+  broad token-start opportunities, even with high-support function-word
+  controls. The next Phase 2 implementation step is to add neutral-normalized
+  reporting or change the opportunity contract before promoting to the full
+  model grid.
+- Teacher-forced summaries now support `--normalization-feature`, which adds
+  neutral-normalized AF columns and bootstrap intervals for the ratio. This
+  preserves raw AF while allowing Phase 2 shards to report ratios against the
+  high-support `neutral_common_controls` baseline under the current
+  opportunity contract.

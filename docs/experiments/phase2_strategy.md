@@ -127,6 +127,13 @@ starts observed in the held-out SFT targets: `the`, `a`, `of the`,
 the old neutral runs remain comparable while the calibration gate can test a
 lower-style, higher-denominator control set.
 
+Because both discourse and common neutral controls are below raw AF 1 under
+broad token-start opportunities, the teacher-forced CLI now supports
+`--normalization-feature`. This adds neutral-normalized AF columns while
+preserving raw AF and CIs. Use `neutral_common_controls` as the first
+normalization baseline when comparing slop targets under the current
+opportunity contract.
+
 ## Promotion Criteria
 
 Promote from tiny-model smoke to OLMo tiny shard only if:
@@ -316,3 +323,16 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   measurement bug, but the current pooled neutral basket still fails
   calibration because `such as` is underpredicted under this opportunity
   definition.
+- `stage2-phase2-olmo3-sft-promptpkg512-neutral-common-controls-cached-shared-branch2-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/xw8ihrej`) tested the
+  high-support common-control basket on the same 512-row held-out prompt
+  package. It scored 362,096 feature-opportunities in 1,857.5 seconds, for
+  194.9 feature-opportunities/sec. The pooled common-control basket had 3,425
+  reference initiations, but raw AF was 0.339 with CI `[0.319, 0.360]`.
+  Individual controls were also below 1: `the` 0.284, `a` 0.408,
+  `of the` 0.364, `number of` 0.295, `in the` 0.738, `to the` 0.583, and
+  `is a` 0.499. Conclusion: the raw AF≈1 neutral sanity gate fails even for
+  high-support function-word controls under broad token-start opportunities.
+  The next implementation step should report raw AF plus a neutral-normalized
+  AF or revise the opportunity definition before scaling to the full
+  checkpoint grid.
