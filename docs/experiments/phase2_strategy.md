@@ -119,6 +119,7 @@ uv run slop-analyze-phase2-compounding \
   --window-tokens 32 \
   --output artifacts/phase2/analysis/olmo3_generation_compounding_128prompt.csv \
   --summary-output artifacts/phase2/analysis/olmo3_generation_compounding_128prompt_summary.md \
+  --plot-output artifacts/phase2/analysis/olmo3_generation_compounding_128prompt_realized_af.svg \
   --wandb-mode online
 ```
 
@@ -695,3 +696,11 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   temperature 1.0 (`0.172` vs. `0.011`, 5 repeat generations). Treat the
   512-prompt artifact as the current best bounded Result B read; the full
   EXPERIMENTS.md target remains 5k prompts x 8 completions x 1024 tokens.
+- `stage2-phase2-olmo3-generation-compounding-512prompt-realized-af-plot`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/fwj8byv8`) regenerated the
+  512-prompt compounding artifact with the required realized-AF temperature
+  plot. The SVG artifact is
+  `artifacts/phase2/analysis/olmo3_generation_compounding_512prompt_realized_af.svg`
+  and is uploaded to W&B as `phase2_compounding_realized_af_plot`. The plotted
+  maximum realized AF is DPO at temperature 1.0 (`1.733`), with final
+  temperature 1.0 close behind (`1.731`) and SFT temperature 1.0 at `1.554`.

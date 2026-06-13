@@ -16,6 +16,7 @@ def test_analyze_phase2_compounding_writes_conditional_rates(tmp_path, monkeypat
     propensity_path = tmp_path / "propensity.csv"
     output_path = tmp_path / "compounding.csv"
     summary_path = tmp_path / "compounding.md"
+    plot_path = tmp_path / "realized_af.svg"
     generation_path.write_text(
         "\n".join(
             [
@@ -102,6 +103,8 @@ def test_analyze_phase2_compounding_writes_conditional_rates(tmp_path, monkeypat
             str(output_path),
             "--summary-output",
             str(summary_path),
+            "--plot-output",
+            str(plot_path),
             "--wandb-mode",
             "disabled",
         ]
@@ -133,7 +136,11 @@ def test_analyze_phase2_compounding_writes_conditional_rates(tmp_path, monkeypat
         output_rows = list(csv.DictReader(handle))
     assert output_rows[0]["feature"] == "slop_lexicon"
     assert "Phase 2 Compounding Analysis" in summary_path.read_text(encoding="utf-8")
+    plot_text = plot_path.read_text(encoding="utf-8")
+    assert "<svg" in plot_text
+    assert "Realized AF vs. temperature" in plot_text
     assert logged_payloads[-1]["phase2_compounding/rows"] == 1
+    assert logged_payloads[-1]["phase2_compounding/plot_output"] == str(plot_path)
     assert logged_tables["phase2_compounding"] == rows
 
 

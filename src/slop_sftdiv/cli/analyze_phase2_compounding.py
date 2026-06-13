@@ -54,6 +54,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, required=True)
+    parser.add_argument(
+        "--plot-output",
+        type=Path,
+        default=None,
+        help="Optional SVG plot of realized AF temperature dependence.",
+    )
+    parser.add_argument("--primary-feature", default="slop_lexicon")
     parser.add_argument("--wandb-project", default="slop-stage1")
     parser.add_argument("--wandb-entity", default=None)
     parser.add_argument("--wandb-run-name", default=None)
@@ -340,6 +347,148 @@ def _format_float(value: Any) -> str:
     return f"{float(value):.4f}"
 
 
+def _svg_escape(value: Any) -> str:
+    return (
+        str(value)
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
+def _stage_sort_key(stage: str) -> tuple[int, str]:
+    order = {"base": 0, "sft": 1, "dpo": 2, "final": 3}
+    return (order.get(stage, len(order)), stage)
+
+
+def _write_realized_af_plot(
+    *,
+    path: Path,
+    rows: list[dict[str, Any]],
+    primary_feature: str,
+) -> None:
+    plot_rows = [
+        row
+        for row in rows
+        if row["feature"] == primary_feature and row.get("realized_af") is not None
+    ]
+    if not plot_rows:
+        raise ValueError(f"no realized AF rows to plot for feature {primary_feature!r}")
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    width = 820
+    height = 500
+    left = 80
+    right = 230
+    top = 55
+    bottom = 80
+    plot_width = width - left - right
+    plot_height = height - top - bottom
+    temperatures = sorted({float(row["temperature"]) for row in plot_rows})
+    max_af = max(float(row["realized_af"]) for row in plot_rows)
+    y_max = max(1.0, math.ceil(max_af * 10.0) / 10.0)
+    if len(temperatures) == 1:
+        temp_min = temperatures[0] - 0.5
+        temp_max = temperatures[0] + 0.5
+    else:
+        temp_min = min(temperatures)
+        temp_max = max(temperatures)
+
+    def x_for(temperature: float) -> float:
+        return left + (temperature - temp_min) / (temp_max - temp_min) * plot_width
+
+    def y_for(value: float) -> float:
+        return top + (1.0 - value / y_max) * plot_height
+
+    by_stage: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in plot_rows:
+        by_stage[str(row["stage"])].append(row)
+    palette = {
+        "base": "#4c78a8",
+        "sft": "#f58518",
+        "dpo": "#54a24b",
+        "final": "#b279a2",
+    }
+    fallback_colors = ["#e45756", "#72b7b2", "#ff9da6", "#9d755d"]
+    fallback_index = 0
+
+    lines = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
+        f"<title id=\"title\">Realized AF Temperature Dependence: {_svg_escape(primary_feature)}</title>",
+        "<desc id=\"desc\">Line chart of realized amplification factor by temperature and model stage.</desc>",
+        '<rect width="100%" height="100%" fill="#ffffff"/>',
+        f'<text x="{left}" y="28" font-family="sans-serif" font-size="18" font-weight="700">Realized AF vs. temperature</text>',
+        f'<text x="{left}" y="48" font-family="sans-serif" font-size="12" fill="#555">Feature: {_svg_escape(primary_feature)}</text>',
+        f'<line x1="{left}" y1="{top + plot_height}" x2="{left + plot_width}" y2="{top + plot_height}" stroke="#333" stroke-width="1"/>',
+        f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_height}" stroke="#333" stroke-width="1"/>',
+    ]
+
+    y_ticks = 5
+    for tick in range(y_ticks + 1):
+        value = y_max * tick / y_ticks
+        y = y_for(value)
+        lines.extend(
+            [
+                f'<line x1="{left - 5}" y1="{y:.1f}" x2="{left + plot_width}" y2="{y:.1f}" stroke="#e5e5e5" stroke-width="1"/>',
+                f'<text x="{left - 10}" y="{y + 4:.1f}" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">{value:.1f}</text>',
+            ]
+        )
+    for temperature in temperatures:
+        x = x_for(temperature)
+        lines.extend(
+            [
+                f'<line x1="{x:.1f}" y1="{top + plot_height}" x2="{x:.1f}" y2="{top + plot_height + 5}" stroke="#333" stroke-width="1"/>',
+                f'<text x="{x:.1f}" y="{top + plot_height + 24}" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#555">{temperature:g}</text>',
+            ]
+        )
+    lines.extend(
+        [
+            f'<text x="{left + plot_width / 2:.1f}" y="{height - 22}" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">temperature</text>',
+            f'<text transform="translate(22 {top + plot_height / 2:.1f}) rotate(-90)" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">realized AF</text>',
+        ]
+    )
+
+    legend_y = top
+    for stage in sorted(by_stage, key=_stage_sort_key):
+        stage_rows = sorted(by_stage[stage], key=lambda row: float(row["temperature"]))
+        color = palette.get(stage)
+        if color is None:
+            color = fallback_colors[fallback_index % len(fallback_colors)]
+            fallback_index += 1
+        points = [
+            (x_for(float(row["temperature"])), y_for(float(row["realized_af"])))
+            for row in stage_rows
+        ]
+        point_attr = " ".join(f"{x:.1f},{y:.1f}" for x, y in points)
+        lines.append(
+            f'<polyline points="{point_attr}" fill="none" stroke="{color}" stroke-width="2.5"/>'
+        )
+        for (x, y), row in zip(points, stage_rows, strict=True):
+            lines.append(
+                f'<circle cx="{x:.1f}" cy="{y:.1f}" r="4" fill="{color}"><title>{_svg_escape(stage)} t={float(row["temperature"]):g}: AF={float(row["realized_af"]):.3f}</title></circle>'
+            )
+        lines.extend(
+            [
+                f'<line x1="{left + plot_width + 35}" y1="{legend_y}" x2="{left + plot_width + 58}" y2="{legend_y}" stroke="{color}" stroke-width="2.5"/>',
+                f'<text x="{left + plot_width + 66}" y="{legend_y + 4}" font-family="sans-serif" font-size="12" fill="#333">{_svg_escape(stage)}</text>',
+            ]
+        )
+        legend_y += 24
+    lines.append("</svg>")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _log_plot_artifact(run: Any, path: Path) -> None:
+    if not hasattr(run, "log_artifact"):
+        return
+    import wandb
+
+    artifact = wandb.Artifact("phase2_compounding_realized_af_plot", type="phase2_plot")
+    artifact.add_file(str(path))
+    run.log_artifact(artifact)
+
+
 def _write_markdown_summary(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     primary_rows = [row for row in rows if row["feature"] == "slop_lexicon"]
@@ -410,6 +559,7 @@ def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, A
             "generation_caches": {spec.stage: str(spec.path) for spec in specs},
             "propensity_grid": str(args.propensity_grid) if args.propensity_grid else None,
             "features": selected_features,
+            "primary_feature": args.primary_feature,
             "window_tokens": args.window_tokens,
         },
     )
@@ -431,7 +581,15 @@ def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, A
         )
         _write_csv(args.output, rows)
         _write_markdown_summary(args.summary_output, rows)
+        if args.plot_output is not None:
+            _write_realized_af_plot(
+                path=args.plot_output,
+                rows=rows,
+                primary_feature=args.primary_feature,
+            )
+            _log_plot_artifact(run, args.plot_output)
 
+        primary_rows = [row for row in rows if row["feature"] == args.primary_feature]
         slop_rows = [row for row in rows if row["feature"] == "slop_lexicon"]
         max_diff_row = max(slop_rows, key=lambda row: row["risk_diff_after_prior"], default=None)
         max_excess_row = max(
@@ -439,14 +597,22 @@ def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, A
             key=lambda row: row["excess_rate"],
             default=None,
         )
+        max_realized_af_row = max(
+            (row for row in primary_rows if row["realized_af"] is not None),
+            key=lambda row: row["realized_af"],
+            default=None,
+        )
         payload: dict[str, Any] = {
             "phase2_compounding/rows": len(rows),
             "phase2_compounding/stages": len(specs),
             "phase2_compounding/features": len(selected_features),
+            "phase2_compounding/primary_feature": args.primary_feature,
             "phase2_compounding/window_tokens": args.window_tokens,
             "phase2_compounding/output": str(args.output),
             "phase2_compounding/summary_output": str(args.summary_output),
         }
+        if args.plot_output is not None:
+            payload["phase2_compounding/plot_output"] = str(args.plot_output)
         if max_diff_row is not None:
             payload.update(
                 {
@@ -465,6 +631,20 @@ def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, A
                     ],
                     "phase2_compounding/max_slop_excess_stage": max_excess_row["stage"],
                     "phase2_compounding/max_slop_excess_temperature": max_excess_row[
+                        "temperature"
+                    ],
+                }
+            )
+        if max_realized_af_row is not None:
+            payload.update(
+                {
+                    "phase2_compounding/max_primary_realized_af": max_realized_af_row[
+                        "realized_af"
+                    ],
+                    "phase2_compounding/max_primary_realized_af_stage": max_realized_af_row[
+                        "stage"
+                    ],
+                    "phase2_compounding/max_primary_realized_af_temperature": max_realized_af_row[
                         "temperature"
                     ],
                 }

@@ -1059,7 +1059,8 @@ olmo3_generation_512prompt_grid:
   conclusion: DPO is the max free-running slop-lexicon stage at all three temperatures in the 512-prompt grid
 
 olmo3_generation_compounding_512prompt:
-  wandb_run_id: y43cw1k9
+  wandb_run_id: fwj8byv8
+  supersedes_wandb_run_id: y43cw1k9
   generation_caches:
     base: artifacts/phase2/generations/olmo3_base_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
     sft: artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
@@ -1068,6 +1069,8 @@ olmo3_generation_compounding_512prompt:
   propensity_grid: artifacts/phase2/analysis/olmo3_slop_neutral_common_normalized_stage_grid.csv
   output: artifacts/phase2/analysis/olmo3_generation_compounding_512prompt.csv
   summary_output: artifacts/phase2/analysis/olmo3_generation_compounding_512prompt_summary.md
+  realized_af_plot_output: artifacts/phase2/analysis/olmo3_generation_compounding_512prompt_realized_af.svg
+  wandb_plot_artifact: phase2_compounding_realized_af_plot
   features:
     - contrastive_negation
     - rule_of_three_approx
@@ -1093,6 +1096,10 @@ olmo3_generation_compounding_512prompt:
       p_hit_after_prior: 0.172
       p_hit_without_prior: 0.011
       repeat_generations: 5
+    max_realized_af:
+      stage: dpo
+      temperature: 1.0
+      realized_af: 1.733
   conclusion: observed rates exceed teacher-forced expectation in all slop-lexicon cells, but the 512-prompt excess estimates are less extreme than the 128-prompt slice
 
 go_no_go:
