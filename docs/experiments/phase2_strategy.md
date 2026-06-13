@@ -660,3 +660,38 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   DPO temperature 1.0. Treat this as the first bounded Result B artifact, not
   the final compounding estimate; larger generation shards are needed for
   stable conditional rates.
+- Full 512-prompt free-running generation shards completed for the OLMo
+  Instruct ladder with the same prompt package, temperatures `0.0`, `0.7`,
+  and `1.0`, top-p 0.95, max 128 new tokens, batch size 8, bfloat16, and
+  `torch.compile`. W&B runs: base
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/8rovnqs9`), SFT
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/aevb3cbt`), DPO
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/6o6cpvm0`), and final
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/8q42t9h3`). Each run
+  generated 1,536 completions and 196,608 tokens at about 362-363 generated
+  tokens/sec including load and compile. This is the largest free-running
+  cache so far and uses the full 512-row held-out prompt package.
+- `stage2-phase2-olmo3-generation-grid-512prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/o135ar2v`) assembled the
+  full 512-prompt four-stage generation grid. The `slop_lexicon` comparison is
+  now cleaner than the 128-prompt slice: DPO is the maximum stage at all three
+  temperatures. Rates per 1k generated tokens are base/SFT/DPO/final =
+  `0.214/0.320/0.412/0.366` at temperature 0.0,
+  `0.244/0.259/0.427/0.305` at temperature 0.7, and
+  `0.320/0.366/0.458/0.443` at temperature 1.0. This aligns the
+  free-running stage ordering more closely with the teacher-forced normalized
+  AF peak at DPO, while final remains close to DPO at high temperature.
+- `stage2-phase2-olmo3-generation-compounding-512prompt`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/y43cw1k9`) reran Result B
+  on the 512-prompt caches joined to the teacher-forced stage grid. Observed
+  `slop_lexicon` opportunity rates exceed teacher-forced expectation in every
+  stage/temperature cell, but the larger sample reduces the most extreme
+  128-prompt estimate. The largest excess is now SFT at temperature 1.0:
+  observed `0.790` per 1k generation opportunities versus expected `0.342`,
+  excess `0.448`, observed/expected `2.31`, realized AF `1.55`. DPO and final
+  at temperature 1.0 are similar but below that excess (`0.383` and `0.381`
+  per 1k opportunities). The direct window-level prior/no-prior signal remains
+  positive in all `slop_lexicon` cells; the largest conditional delta is base
+  temperature 1.0 (`0.172` vs. `0.011`, 5 repeat generations). Treat the
+  512-prompt artifact as the current best bounded Result B read; the full
+  EXPERIMENTS.md target remains 5k prompts x 8 completions x 1024 tokens.

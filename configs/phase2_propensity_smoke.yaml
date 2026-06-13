@@ -1010,6 +1010,91 @@ olmo3_generation_compounding_128prompt:
       repeat_generations: 3
   conclusion: first bounded Result B artifact; larger generation shards are needed for stable conditional rates
 
+olmo3_generation_512prompt_grid:
+  wandb_run_id: o135ar2v
+  input_prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  generation_runs:
+    base: 8rovnqs9
+    sft: aevb3cbt
+    dpo: 6o6cpvm0
+    final: 8q42t9h3
+  generation_summaries:
+    base: artifacts/phase2/generations/olmo3_base_promptpkg512_free_run_512prompt_t0_t07_t1_batched128_summary.csv
+    sft: artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_512prompt_t0_t07_t1_batched128_summary.csv
+    dpo: artifacts/phase2/generations/olmo3_dpo_promptpkg512_free_run_512prompt_t0_t07_t1_batched128_summary.csv
+    final: artifacts/phase2/generations/olmo3_final_promptpkg512_free_run_512prompt_t0_t07_t1_batched128_summary.csv
+  output: artifacts/phase2/analysis/olmo3_generation_stage_grid_512prompt.csv
+  comparison_output: artifacts/phase2/analysis/olmo3_generation_stage_comparison_512prompt.csv
+  summary_output: artifacts/phase2/analysis/olmo3_generation_stage_grid_512prompt_summary.md
+  primary_feature: slop_lexicon
+  generation_settings:
+    sample_size: 512
+    temperatures: [0.0, 0.7, 1.0]
+    top_p: 0.95
+    max_new_tokens: 128
+    completions_per_prompt: 1
+    generation_batch_size: 8
+    dtype: bfloat16
+    torch_compile: true
+  per_run_shape:
+    generations: 1536
+    generated_tokens: 196608
+    tokens_per_sec_including_load_compile: 362_to_363
+  slop_lexicon_per_1k_tokens:
+    temperature_0_0:
+      base: 0.214
+      sft: 0.320
+      dpo: 0.412
+      final: 0.366
+    temperature_0_7:
+      base: 0.244
+      sft: 0.259
+      dpo: 0.427
+      final: 0.305
+    temperature_1_0:
+      base: 0.320
+      sft: 0.366
+      dpo: 0.458
+      final: 0.443
+  conclusion: DPO is the max free-running slop-lexicon stage at all three temperatures in the 512-prompt grid
+
+olmo3_generation_compounding_512prompt:
+  wandb_run_id: y43cw1k9
+  generation_caches:
+    base: artifacts/phase2/generations/olmo3_base_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
+    sft: artifacts/phase2/generations/olmo3_sft_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
+    dpo: artifacts/phase2/generations/olmo3_dpo_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
+    final: artifacts/phase2/generations/olmo3_final_promptpkg512_free_run_512prompt_t0_t07_t1_batched128.jsonl
+  propensity_grid: artifacts/phase2/analysis/olmo3_slop_neutral_common_normalized_stage_grid.csv
+  output: artifacts/phase2/analysis/olmo3_generation_compounding_512prompt.csv
+  summary_output: artifacts/phase2/analysis/olmo3_generation_compounding_512prompt_summary.md
+  features:
+    - contrastive_negation
+    - rule_of_three_approx
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+  window_tokens: 32
+  slop_lexicon_result_b:
+    max_excess:
+      stage: sft
+      temperature: 1.0
+      observed_per_1k_opportunities: 0.790
+      expected_per_1k_opportunities: 0.342
+      excess_per_1k_opportunities: 0.448
+      observed_over_expected: 2.31
+      realized_af: 1.55
+    high_temperature_excess:
+      dpo_temperature_1_0_excess_per_1k_opportunities: 0.383
+      final_temperature_1_0_excess_per_1k_opportunities: 0.381
+    max_conditional_window_delta:
+      stage: base
+      temperature: 1.0
+      p_hit_after_prior: 0.172
+      p_hit_without_prior: 0.011
+      repeat_generations: 5
+  conclusion: observed rates exceed teacher-forced expectation in all slop-lexicon cells, but the 512-prompt excess estimates are less extreme than the 128-prompt slice
+
 go_no_go:
   promote_to_olmo_tiny_shard_if:
     - smoke_cli_runs_on_cuda
