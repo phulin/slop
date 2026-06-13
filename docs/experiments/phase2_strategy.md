@@ -358,6 +358,17 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   but the slop denominator is only 5 references on this sample, so this is a
   directional shard and performance datapoint rather than a stable full-grid
   result.
+- `stage2-phase2-olmo3-sft-promptpkg512-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/pgxems2i`) completed the
+  full 512-document normalized SFT shard with the branch cap raised to 8. It
+  scored 90,524 opportunities in 3,269.9 seconds, for 27.7 opportunities/sec.
+  `neutral_common_controls` reproduced the common-control raw AF failure with
+  AF 0.339 and CI `[0.319, 0.360]`. `slop_lexicon` had raw AF 0.673 with CI
+  `[0.414, 1.225]`, and neutral-normalized AF 1.982 with CI
+  `[1.226, 3.663]`. This is the first stable Phase 2 SFT positive-control
+  result under the current normalized contract: relative to the common-control
+  calibration baseline, OLMo 3 SFT assigns about 2x the target-distribution
+  initiation mass to the slop lexicon.
 - Cached-only scorer microbenchmarks for the same OLMo SFT
   `slop_lexicon` plus `neutral_common_controls` shape showed that the previous
   branch cap of 2 is conservative. Branch 2

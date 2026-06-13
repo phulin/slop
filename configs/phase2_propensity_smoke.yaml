@@ -573,6 +573,52 @@ olmo3_sft_slop_vs_neutral_common_normalized_sample128:
       slop_lexicon: [0.0, 9.620171684953654]
   conclusion: slop lexicon is directionally amplified relative to common controls, but the slop denominator is sparse and current throughput is too low for an immediate full-grid run
 
+olmo3_sft_slop_vs_neutral_common_normalized_full_branch8:
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_512.jsonl
+  output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_opportunities.csv
+  summary_output: artifacts/phase2/propensity/olmo3_sft_promptpkg512_slop_vs_neutral_common_normalized_cached_shared_branch8_sequence_summary.csv
+  features:
+    - slop_lexicon
+    - neutral_common_controls
+  normalization_feature: neutral_common_controls
+  sample_size: 512
+  max_opportunities: 384
+  max_token_start_opportunities: 128
+  fixed_prefix_tokens: 256
+  max_prefix_tokens: 256
+  opportunity_batch_size: 16
+  sequence_cache: true
+  cache_branch_batch_size: 8
+  mass_mode: sequence
+  dtype: bfloat16
+  bootstrap_samples: 1000
+  bootstrap_seed: 1729
+  torch_compile: true
+  wandb_run_id: pgxems2i
+  result:
+    measurement_rows: 512
+    opportunities: 90524
+    wall_seconds: 3269.86999
+    opportunities_per_sec: 27.68428
+    peak_rss_mb: 5749.44922
+    reference_initiations:
+      neutral_common_controls: 3425
+      slop_lexicon: 23
+    amplification_factor:
+      neutral_common_controls: 0.33948827044412844
+      slop_lexicon: 0.6728618555342245
+    amplification_factor_ci95:
+      neutral_common_controls: [0.31892386656653166, 0.3604716472878833]
+      slop_lexicon: [0.414401321597771, 1.2252450870367437]
+    normalized_amplification_factor:
+      neutral_common_controls: 1.0
+      slop_lexicon: 1.98198852247227
+    normalized_amplification_factor_ci95:
+      neutral_common_controls: [1.0, 1.0]
+      slop_lexicon: [1.2255920989453883, 3.6628907575812266]
+  conclusion: stable SFT positive-control result; slop lexicon is about 2x amplified relative to common controls under the current normalized contract
+
 runtime_backends:
   teacher_forced_propensity:
     current_backend: torch_transformers

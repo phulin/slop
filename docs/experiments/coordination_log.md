@@ -632,3 +632,12 @@
   cached path. Use `--cache-branch-batch-size 8` for the next narrow
   normalized stage-localization shard, while retaining branch 2 as the
   fallback if a different checkpoint has less memory headroom.
+- Full 512-document SFT normalized shard completed with branch size 8:
+  `stage2-phase2-olmo3-sft-promptpkg512-slop-vs-neutral-common-normalized-cached-shared-branch8-sequence`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/pgxems2i`. It scored 90,524
+  opportunities in 3,269.9 seconds, for 27.7 opportunities/sec. The common
+  controls again had raw AF 0.339 with CI 0.319-0.360. `slop_lexicon` had raw
+  AF 0.673 with CI 0.414-1.225, and neutral-normalized AF 1.982 with CI
+  1.226-3.663. This gives a stable SFT positive-control result under the
+  neutral-normalized Phase 2 contract and is the baseline to compare against
+  base, DPO, and final OLMo checkpoints.
