@@ -541,3 +541,21 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   still does not support a `slop_lexicon` self-conditioning estimate. The
   observed temperature dependence and sparse denominators argue for expanding
   the sample size before making free-running rate claims.
+- `stage2-phase2-olmo3-dpo-promptpkg512-free-running-128prompt-t0-t07-t1-batched128`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/pel3icre`) expanded the DPO
+  free-running shard to 128 prompts while keeping the same prompt package,
+  temperatures, top-p 0.95, max 128 new tokens, batch size 8, bfloat16, and
+  `torch.compile`. It produced 384 generations and 49,152 generated tokens in
+  171.8 seconds, or 286.0 tokens/sec including load and compile. The larger
+  shard gives nonzero primary-feature rates at every temperature:
+  `slop_lexicon` counts were 5 at temperature 0.0, 5 at 0.7, and 10 at 1.0,
+  corresponding to 0.305, 0.305, and 0.610 per 1k generated tokens. Repeated
+  `slop_lexicon` hits appeared in two greedy generations and two
+  temperature-1.0 generations, giving a first direct compounding signal for
+  DPO, though this is still a single-stage 128-prompt shard.
+- `stage2-phase2-olmo3-dpo-generation-grid-128prompt-assembly`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/5ky7wb2q`) assembled the
+  128-prompt DPO free-running shard into the generation-grid schema. The
+  primary comparison identifies temperature 1.0 as the maximum DPO
+  `slop_lexicon` rate in this shard (`0.610` per 1k generated tokens), with
+  repeat columns preserved for the Result B compounding analysis.
