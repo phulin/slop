@@ -13,7 +13,8 @@ from slop_sftdiv.cli.assemble_phase2_generation_grid import (
 from slop_sftdiv.cli.analyze_phase2_compounding import run_analyze_phase2_compounding
 from slop_sftdiv.cli.phase2_generation_status import (
     _command_option_int,
-    _latest_log_prompt_count,
+    _format_hms,
+    _latest_log_progress,
 )
 
 
@@ -146,11 +147,24 @@ def _selection_status(selection_path: Path) -> dict[str, Any]:
     log_output = Path(log_output_raw) if log_output_raw else None
     expected_generations = int(selection["expected_generations"])
     existing_generations = _jsonl_records(generations_output)
-    latest_log_prompts = _latest_log_prompt_count(log_output)
+    latest_log_progress = _latest_log_progress(log_output)
+    latest_log_prompts = latest_log_progress["prompts"]
     completions_per_prompt = _command_option_int(selection.get("command"), "--completions-per-prompt")
     latest_log_generations_estimate = (
         latest_log_prompts * completions_per_prompt
         if latest_log_prompts is not None and completions_per_prompt is not None
+        else None
+    )
+    expected_prompts = (
+        expected_generations / completions_per_prompt
+        if completions_per_prompt not in (None, 0)
+        else None
+    )
+    eta_seconds = (
+        max(0.0, (expected_prompts - latest_log_prompts) * latest_log_progress["seconds_per_prompt"])
+        if expected_prompts is not None
+        and latest_log_prompts is not None
+        and latest_log_progress["seconds_per_prompt"] is not None
         else None
     )
     completed = summary_output.exists() and existing_generations >= expected_generations
@@ -164,6 +178,10 @@ def _selection_status(selection_path: Path) -> dict[str, Any]:
         "existing_generations": existing_generations,
         "latest_log_prompts": latest_log_prompts,
         "latest_log_generations_estimate": latest_log_generations_estimate,
+        "latest_log_elapsed_seconds": latest_log_progress["elapsed_seconds"],
+        "latest_log_seconds_per_prompt": latest_log_progress["seconds_per_prompt"],
+        "eta_seconds": eta_seconds,
+        "eta_hms": _format_hms(eta_seconds),
         "completed": completed,
     }
 
@@ -198,7 +216,8 @@ def _wait_for_completion(args: argparse.Namespace) -> dict[str, Any]:
             "waiting for shard completion: "
             f"{status['existing_generations']}/{status['expected_generations']} rows; "
             f"log_prompts={status['latest_log_prompts'] or 'n/a'}; "
-            f"log_generation_estimate={status['latest_log_generations_estimate'] or 'n/a'}",
+            f"log_generation_estimate={status['latest_log_generations_estimate'] or 'n/a'}; "
+            f"eta={status['eta_hms'] or 'n/a'}",
             flush=True,
         )
         time.sleep(args.poll_seconds)
@@ -260,6 +279,10 @@ def run_phase2_post_shard_analysis(args: argparse.Namespace) -> dict[str, Any]:
         "expected_generations": status["expected_generations"],
         "latest_log_prompts": status["latest_log_prompts"],
         "latest_log_generations_estimate": status["latest_log_generations_estimate"],
+        "latest_log_elapsed_seconds": status["latest_log_elapsed_seconds"],
+        "latest_log_seconds_per_prompt": status["latest_log_seconds_per_prompt"],
+        "eta_seconds": status["eta_seconds"],
+        "eta_hms": status["eta_hms"],
         "generations_output": str(status["generations_output"]),
         "summary_output": str(status["summary_output"]),
         "scale_grid_output": str(args.scale_grid_output),

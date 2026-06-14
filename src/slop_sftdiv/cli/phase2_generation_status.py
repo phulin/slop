@@ -21,12 +21,20 @@ OUTPUT_COLUMNS = [
     "expected_generations",
     "latest_log_prompts",
     "latest_log_generations_estimate",
+    "latest_log_elapsed_seconds",
+    "latest_log_seconds_per_prompt",
+    "eta_seconds",
+    "eta_hms",
     "generations_output",
     "summary_output",
     "log_output",
 ]
 
 PROMPT_PROGRESS_RE = re.compile(r":\s+(\d+)prompt\b")
+PROMPT_PROGRESS_DETAIL_RE = re.compile(
+    r":\s+(?P<prompts>\d+)prompt\s+\[(?P<elapsed>[^,\]]+),\s+"
+    r"(?P<seconds_per_prompt>[\d.]+)s/prompt\]"
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -77,14 +85,54 @@ def _command_option_int(command: str | None, option: str) -> int | None:
     return None
 
 
-def _latest_log_prompt_count(path: Path | None) -> int | None:
+def _duration_seconds(text: str) -> int | None:
+    parts = text.strip().split(":")
+    if not parts or not all(part.isdigit() for part in parts):
+        return None
+    if len(parts) == 2:
+        minutes, seconds = parts
+        return int(minutes) * 60 + int(seconds)
+    if len(parts) == 3:
+        hours, minutes, seconds = parts
+        return int(hours) * 3600 + int(minutes) * 60 + int(seconds)
+    return None
+
+
+def _format_hms(seconds: float | int | None) -> str:
+    if seconds is None:
+        return ""
+    total = max(0, int(round(float(seconds))))
+    hours, remainder = divmod(total, 3600)
+    minutes, seconds_int = divmod(remainder, 60)
+    return f"{hours:d}:{minutes:02d}:{seconds_int:02d}"
+
+
+def _latest_log_progress(path: Path | None) -> dict[str, Any]:
     if path is None or not path.exists():
-        return None
-    text = path.read_text(encoding="utf-8", errors="replace")
-    matches = PROMPT_PROGRESS_RE.findall(text.replace("\r", "\n"))
-    if not matches:
-        return None
-    return int(matches[-1])
+        return {
+            "prompts": None,
+            "elapsed_seconds": None,
+            "seconds_per_prompt": None,
+        }
+    text = path.read_text(encoding="utf-8", errors="replace").replace("\r", "\n")
+    detail_matches = list(PROMPT_PROGRESS_DETAIL_RE.finditer(text))
+    if detail_matches:
+        match = detail_matches[-1]
+        return {
+            "prompts": int(match.group("prompts")),
+            "elapsed_seconds": _duration_seconds(match.group("elapsed")),
+            "seconds_per_prompt": float(match.group("seconds_per_prompt")),
+        }
+    matches = PROMPT_PROGRESS_RE.findall(text)
+    return {
+        "prompts": int(matches[-1]) if matches else None,
+        "elapsed_seconds": None,
+        "seconds_per_prompt": None,
+    }
+
+
+def _latest_log_prompt_count(path: Path | None) -> int | None:
+    return _latest_log_progress(path)["prompts"]
 
 
 def _load_selection(path: Path) -> dict[str, Any]:
@@ -101,11 +149,24 @@ def _status_row(path: Path) -> dict[str, Any]:
     log_output = Path(log_output_raw) if log_output_raw else None
     existing_generations = _jsonl_records(generations_output)
     expected_generations = int(payload["expected_generations"])
-    latest_log_prompts = _latest_log_prompt_count(log_output)
+    latest_log_progress = _latest_log_progress(log_output)
+    latest_log_prompts = latest_log_progress["prompts"]
     completions_per_prompt = _command_option_int(payload.get("command"), "--completions-per-prompt")
     latest_log_generations_estimate = (
         latest_log_prompts * completions_per_prompt
         if latest_log_prompts is not None and completions_per_prompt is not None
+        else None
+    )
+    expected_prompts = (
+        expected_generations / completions_per_prompt
+        if completions_per_prompt not in (None, 0)
+        else None
+    )
+    eta_seconds = (
+        max(0.0, (expected_prompts - latest_log_prompts) * latest_log_progress["seconds_per_prompt"])
+        if expected_prompts is not None
+        and latest_log_prompts is not None
+        and latest_log_progress["seconds_per_prompt"] is not None
         else None
     )
     completed = summary_output.exists() and existing_generations >= expected_generations
@@ -122,6 +183,18 @@ def _status_row(path: Path) -> dict[str, Any]:
         "latest_log_generations_estimate": (
             latest_log_generations_estimate if latest_log_generations_estimate is not None else ""
         ),
+        "latest_log_elapsed_seconds": (
+            latest_log_progress["elapsed_seconds"]
+            if latest_log_progress["elapsed_seconds"] is not None
+            else ""
+        ),
+        "latest_log_seconds_per_prompt": (
+            latest_log_progress["seconds_per_prompt"]
+            if latest_log_progress["seconds_per_prompt"] is not None
+            else ""
+        ),
+        "eta_seconds": eta_seconds if eta_seconds is not None else "",
+        "eta_hms": _format_hms(eta_seconds),
         "generations_output": str(generations_output),
         "summary_output": str(summary_output),
         "log_output": log_output_raw,
@@ -143,7 +216,7 @@ def run_phase2_generation_status(args: argparse.Namespace) -> list[dict[str, Any
     for row in rows:
         print(
             "{stage} t={temperature}: alive={alive} completed={completed} "
-            "generations={existing}/{expected} log_prompts={log_prompts}".format(
+            "generations={existing}/{expected} log_prompts={log_prompts} eta={eta}".format(
                 stage=row["stage"],
                 temperature=row["temperature"],
                 alive=row["process_alive"],
@@ -151,6 +224,7 @@ def run_phase2_generation_status(args: argparse.Namespace) -> list[dict[str, Any
                 existing=row["existing_generations"],
                 expected=row["expected_generations"],
                 log_prompts=row["latest_log_prompts"] or "n/a",
+                eta=row["eta_hms"] or "n/a",
             )
         )
     return rows
