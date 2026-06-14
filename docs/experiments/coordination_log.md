@@ -919,3 +919,16 @@
   point across all tracked features. This completes the bounded
   base/SFT/DPO/final target-shape grid and weakens any simple monotonic
   post-training generation-amplification story.
+- Ran the target-shape compounding join:
+  `stage2-phase2-olmo3-generation-compounding-target-shape-512prompt-8comp-t1-tf1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/0klmyip9`. It joins the
+  completed 512-prompt x 8-completion x 1,024-token generation caches against
+  the 1,024-prompt teacher-forced slop/neutral grid. Observed `slop_lexicon`
+  opportunity rates exceed teacher-forced expectation in all four stages:
+  base `0.615` observed vs. `0.232` expected per 1k opportunities, SFT
+  `0.697` vs. `0.336`, DPO `0.638` vs. `0.439`, and final/RLVR `0.582` vs.
+  `0.445`. Max absolute excess is base (`0.383` per 1k opportunities); max
+  realized AF is SFT (`1.192`); final/RLVR is near the teacher-forced
+  reference-rate baseline (`0.994`). Repeat counts are now much denser than
+  the 128-token temperature sweep: base `192`, SFT `145`, DPO `199`, final
+  `180` repeat generations for `slop_lexicon`.

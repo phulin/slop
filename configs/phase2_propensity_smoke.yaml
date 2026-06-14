@@ -1842,6 +1842,80 @@ olmo3_generation_compounding_512prompt_tf1024:
     final_temperature_1_0_realized_af: 1.504
   conclusion: rejoining the 512-prompt generation caches to the 1024 teacher-forced grid preserves the bounded Result B signal; DPO remains the max realized-AF stage at temperature 1.0, final is effectively tied, and SFT temperature 1.0 remains the max absolute excess cell
 
+olmo3_generation_compounding_target_shape_512prompt_8comp_t1_tf1024:
+  wandb_run_id: 0klmyip9
+  purpose: join the completed target-shape 512-prompt x 8-completion x 1024-token generation caches against the 1024-prompt teacher-forced slop/neutral grid
+  generation_caches:
+    base: artifacts/phase2/generations/olmo3_base_promptpkg5000_free_run_512prompt_8comp_t1_batched1024.jsonl
+    sft: artifacts/phase2/generations/olmo3_sft_promptpkg5000_free_run_512prompt_8comp_t1_batched1024.jsonl
+    dpo: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t1_batched1024.jsonl
+    final: artifacts/phase2/generations/olmo3_final_promptpkg5000_free_run_512prompt_8comp_t1_batched1024.jsonl
+  propensity_grid: artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid.csv
+  output: artifacts/phase2/analysis/olmo3_generation_compounding_target_shape_512prompt_8comp_t1_1024_tf1024.csv
+  summary_output: artifacts/phase2/analysis/olmo3_generation_compounding_target_shape_512prompt_8comp_t1_1024_tf1024_summary.md
+  realized_af_plot_output: artifacts/phase2/analysis/olmo3_generation_compounding_target_shape_512prompt_8comp_t1_1024_tf1024_realized_af.svg
+  wandb_plot_artifact: phase2_compounding_realized_af_plot
+  features:
+    - contrastive_negation
+    - rule_of_three_approx
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+    - stock_openers_closers
+  window_tokens: 32
+  slop_lexicon_result_b:
+    base:
+      observed_per_1k_opportunities: 0.615
+      expected_per_1k_opportunities: 0.232
+      excess_per_1k_opportunities: 0.383
+      observed_over_expected: 2.653
+      realized_af: 1.051
+      p_hit_after_prior: 0.081
+      p_hit_without_prior: 0.011
+      repeat_generations: 192
+    sft:
+      observed_per_1k_opportunities: 0.697
+      expected_per_1k_opportunities: 0.336
+      excess_per_1k_opportunities: 0.361
+      observed_over_expected: 2.075
+      realized_af: 1.192
+      p_hit_after_prior: 0.105
+      p_hit_without_prior: 0.011
+      repeat_generations: 145
+    dpo:
+      observed_per_1k_opportunities: 0.638
+      expected_per_1k_opportunities: 0.439
+      excess_per_1k_opportunities: 0.199
+      observed_over_expected: 1.453
+      realized_af: 1.091
+      p_hit_after_prior: 0.071
+      p_hit_without_prior: 0.011
+      repeat_generations: 199
+    final:
+      observed_per_1k_opportunities: 0.582
+      expected_per_1k_opportunities: 0.445
+      excess_per_1k_opportunities: 0.137
+      observed_over_expected: 1.308
+      realized_af: 0.994
+      p_hit_after_prior: 0.069
+      p_hit_without_prior: 0.011
+      repeat_generations: 180
+    max_excess:
+      stage: base
+      temperature: 1.0
+      excess_per_1k_opportunities: 0.383
+    max_realized_af:
+      stage: sft
+      temperature: 1.0
+      realized_af: 1.192
+    max_conditional_window_delta:
+      stage: sft
+      temperature: 1.0
+      p_hit_after_prior: 0.105
+      p_hit_without_prior: 0.011
+      repeat_generations: 145
+  conclusion: target-shape Result B remains positive for slop_lexicon in all four stages, but realized AF is much lower than the shorter 128-token generation join; base has the largest absolute excess, SFT has the highest realized AF and strongest prior-window risk difference, and final/RLVR is near the teacher-forced reference-rate baseline
+
 olmo3_dpo_generation_64prompt_8comp_1024_benchmark:
   wandb_run_id: kji583m6
   model: allenai/Olmo-3-7B-Instruct-DPO

@@ -937,3 +937,14 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   interpretation from a DPO generation peak to inherited/base free-running
   style plus feature-specific post-training reshaping; SFT remains the
   low-emission checkpoint and final/RLVR generally attenuates from DPO.
+- `stage2-phase2-olmo3-generation-compounding-target-shape-512prompt-8comp-t1-tf1024`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/0klmyip9`) joined the
+  target-shape generation caches to the 1,024-prompt teacher-forced
+  slop/neutral grid. Observed `slop_lexicon` opportunity rates exceed expected
+  rates in every stage at temperature 1.0: base excess `0.383` per 1k
+  opportunities, SFT `0.361`, DPO `0.199`, and final/RLVR `0.137`. Max
+  realized AF is SFT (`1.192`), not DPO; base has the largest absolute excess;
+  final/RLVR is near the teacher-forced reference-rate baseline (`0.994`
+  realized AF). Compared with the shorter temperature sweep, the target-shape
+  join has much denser repeat counts and a more conservative compounding
+  magnitude.

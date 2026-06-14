@@ -101,12 +101,12 @@ Final/RLVR remains close to DPO at temperature 1.0.
 
 ## Compounding Read
 
-The current 512-prompt compounding analysis joins cached generations to the
-newer 1,024-prompt teacher-forced stage grid. Observed `slop_lexicon`
-opportunity rates exceed the teacher-forced expectation in every
-stage/temperature cell.
+There are now two bounded compounding analyses joined to the 1,024-prompt
+teacher-forced stage grid.
 
-Current headline cells:
+The temperature-sweep join uses the 512-prompt, one-completion, 128-token
+generation grid. Observed `slop_lexicon` opportunity rates exceed the
+teacher-forced expectation in every stage/temperature cell. Its headline cells:
 
 - Max excess: SFT at temperature 1.0, observed `0.790` vs expected `0.336` per
   1k opportunities, excess `0.454`, observed/expected `2.35`, realized AF
@@ -116,8 +116,22 @@ Current headline cells:
 - Direct prior/no-prior window signal is positive in all `slop_lexicon` cells,
   but repeat counts are still sparse.
 
-Interpretation: Result B has a bounded positive signal, but the conditional
-window estimates are not yet stable enough for the final paper-scale claim.
+The target-shape join uses the newer 512-prompt x 8-completion x 1,024-token
+generation caches at temperature 1.0. Observed `slop_lexicon` opportunity rates
+again exceed teacher-forced expectation in all four stages:
+
+| Stage | Observed/1k Opp | Expected/1k Opp | Excess/1k | Realized AF | Repeat Gens |
+|---|---:|---:|---:|---:|---:|
+| Base | 0.615 | 0.232 | 0.383 | 1.051 | 192 |
+| SFT | 0.697 | 0.336 | 0.361 | 1.192 | 145 |
+| DPO | 0.638 | 0.439 | 0.199 | 1.091 | 199 |
+| Final/RLVR | 0.582 | 0.445 | 0.137 | 0.994 | 180 |
+
+Interpretation: Result B has a bounded positive signal, and the target-shape
+join gives much denser repeat counts than the shorter temperature sweep. The
+effect is still not a clean DPO peak: base has the largest absolute excess, SFT
+has the highest realized AF and strongest prior-window risk difference, and
+final/RLVR is near the teacher-forced reference-rate baseline.
 
 ## Target-Shape Generation Shards
 
