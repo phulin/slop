@@ -932,3 +932,13 @@
   reference-rate baseline (`0.994`). Repeat counts are now much denser than
   the 128-token temperature sweep: base `192`, SFT `145`, DPO `199`, final
   `180` repeat generations for `slop_lexicon`.
+- Started the bounded target-shape temperature-dependence expansion with DPO
+  at temperature 0.7:
+  `stage2-phase2-olmo3-dpo-promptpkg5000-free-running-512prompt-8comp-t07-bench1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/8no9vqyf`. It generated 512
+  prompts x 8 completions, 4,096 generations, and 4,188,320 generated tokens
+  in 11,702.7 seconds (`357.9` generated tokens/sec including load and
+  compile). Compared with the matching DPO temperature 1.0 shard, `slop_lexicon`
+  is nearly unchanged (`0.223` vs. `0.229` per 1k generated tokens) and pooled
+  stock openers/closers are effectively tied (`0.107` vs. `0.108`), while
+  `rule_of_three_approx` is slightly higher at 0.7 (`0.888` vs. `0.861`).

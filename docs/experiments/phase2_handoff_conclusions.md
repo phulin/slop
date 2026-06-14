@@ -173,6 +173,12 @@ low-emission point across all tracked features. Treat this as inherited/base
 free-running style plus feature-specific post-training reshaping, not as a
 clean DPO-stage generation peak.
 
+The bounded target-shape temperature expansion has started with DPO at
+temperature `0.7` (`8no9vqyf`). Its `slop_lexicon` and pooled stock
+opener/closer rates are nearly unchanged from DPO temperature `1.0`, while
+`rule_of_three_approx` is slightly higher at `0.7`. The full target-shape
+temperature sweep remains incomplete.
+
 ## Current Compute Posture
 
 Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid

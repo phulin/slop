@@ -948,3 +948,12 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   realized AF). Compared with the shorter temperature sweep, the target-shape
   join has much denser repeat counts and a more conservative compounding
   magnitude.
+- `stage2-phase2-olmo3-dpo-promptpkg5000-free-running-512prompt-8comp-t07-bench1024`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/8no9vqyf`) started the
+  bounded target-shape temperature-dependence expansion by adding DPO at
+  temperature 0.7. It produced 4,096 generations and 4,188,320 generated
+  tokens in 11,702.7 seconds, or 357.9 generated tokens/sec including model
+  load and compile. DPO temp 0.7 is close to the matching temp 1.0 shard for
+  `slop_lexicon` (`0.223` vs. `0.229` per 1k generated tokens) and pooled stock
+  openers/closers (`0.107` vs. `0.108`), while `rule_of_three_approx` is
+  slightly higher at 0.7 (`0.888` vs. `0.861`).
