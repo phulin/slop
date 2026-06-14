@@ -1314,3 +1314,10 @@
   DPO cell and run the matching DPO compounding join against the existing
   1,024-prompt teacher-forced `slop_lexicon` grid before launching matched
   base/SFT/final 1,024-prompt shards.
+- Added `docs/experiments/phase2_post_shard_analysis.md` with the exact
+  post-completion runbook for the active DPO 1,024-prompt shard: completion
+  checks, a DPO 512-vs-1024 target-shape generation scale comparison using
+  `slop-assemble-phase2-generation-grid`, a DPO-only 1,024-prompt compounding
+  join using `slop-analyze-phase2-compounding` against
+  `olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid.csv`, and the
+  decision rule to analyze before launching matched base/SFT/final shards.
