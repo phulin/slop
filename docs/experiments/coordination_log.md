@@ -1365,3 +1365,10 @@
   First flushed wait line:
   `waiting for shard completion: 0/8192 rows; log_prompts=176;
   log_generation_estimate=1408`.
+- Restarted the CPU-side post-shard watcher with `--poll-seconds 60` so the
+  analysis begins within about one minute of generation completion instead of
+  waiting up to five minutes. New watcher Python PID: `15117`; PID file:
+  `artifacts/phase2/analysis/olmo3_dpo_post_shard_analysis_watcher.pid`.
+  First wait line after restart:
+  `waiting for shard completion: 0/8192 rows; log_prompts=192;
+  log_generation_estimate=1536`.
