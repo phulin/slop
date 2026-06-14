@@ -883,3 +883,19 @@
   negation is effectively tied and slightly higher (`0.142` vs. `0.141`).
   This mirrors the teacher-forced read: DPO is the bounded peak and final/RLVR
   attenuates rather than amplifying further.
+- Completed the matching SFT target-shape generation shard:
+  `stage2-phase2-olmo3-sft-promptpkg5000-free-running-512prompt-8comp-t1-bench1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/il07fjn1`. It generated 512
+  prompts x 8 completions, 4,096 generations, and 3,845,808 generated tokens
+  in 10,701.3 seconds (`359.4` generated tokens/sec including load and
+  compile). Feature rates per 1k generated tokens were
+  `rule_of_three_approx` `0.488`, `slop_lexicon` `0.171`,
+  `contrastive_negation` `0.041`, `stock_openers_closers` `0.072`,
+  `stock_openers` `0.052`, and `stock_closers` `0.020`. Compared with DPO,
+  SFT is lower on every tracked feature; DPO/SFT ratios are `1.77` for
+  rule-of-three, `1.34` for slop lexicon, `3.45` for contrastive negation,
+  and `1.50` for pooled stock openers/closers. Compared with final/RLVR, SFT
+  is also lower on every tracked feature. This sharpens the bounded
+  target-shape story: SFT is the low generation-emission point, DPO is the
+  slop-lexicon peak, and final/RLVR attenuates from DPO while remaining above
+  SFT for most generation features.

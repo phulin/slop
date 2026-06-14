@@ -1932,6 +1932,80 @@ olmo3_dpo_generation_512prompt_8comp_1024_shard:
   backend_decision: keep torch/Transformers as the exact teacher-forced scorer of record; benchmark SGLang or vLLM only for free-running generation by reproducing this JSONL/summary shape in an isolated environment
   conclusion: the 512-prompt target-shape DPO shard scales linearly from the 64-prompt benchmark with nearly identical throughput; it is a good baseline for a serving-backend generation benchmark before launching larger free-running shards
 
+olmo3_sft_generation_512prompt_8comp_1024_shard:
+  wandb_run_id: il07fjn1
+  model: allenai/Olmo-3-7B-Instruct-SFT
+  input_prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  generations_output: artifacts/phase2/generations/olmo3_sft_promptpkg5000_free_run_512prompt_8comp_t1_batched1024.jsonl
+  summary_output: artifacts/phase2/generations/olmo3_sft_promptpkg5000_free_run_512prompt_8comp_t1_batched1024_summary.csv
+  purpose: matching SFT target-shape generation shard for comparison against DPO and final/RLVR target-shape Result B signal
+  generation_settings:
+    sample_size: 512
+    temperature: 1.0
+    top_p: 0.95
+    max_new_tokens: 1024
+    completions_per_prompt: 8
+    generation_batch_size: 8
+    max_prompt_tokens: 1024
+    dtype: bfloat16
+    torch_compile: true
+  result:
+    prompts_seen: 512
+    prompts_skipped: 0
+    generations: 4096
+    generated_tokens: 3845808
+    wall_seconds: 10701.31581
+    tokens_per_sec_including_load_compile: 359.37711
+    peak_rss_mb: 5748.50391
+    per_1k_tokens:
+      contrastive_negation: 0.040823670864484136
+      rule_of_three_approx: 0.4875438399420876
+      slop_lexicon: 0.1713554082783124
+      stock_closers: 0.020021800360288396
+      stock_openers: 0.052004676260489345
+      stock_openers_closers: 0.07202647662077774
+    generations_with_feature:
+      contrastive_negation: 133
+      rule_of_three_approx: 808
+      slop_lexicon: 328
+      stock_closers: 63
+      stock_openers: 177
+      stock_openers_closers: 236
+    repeat_generations:
+      contrastive_negation: 14
+      rule_of_three_approx: 365
+      slop_lexicon: 145
+      stock_closers: 11
+      stock_openers: 16
+      stock_openers_closers: 30
+    comparison_to_dpo_per_1k:
+      contrastive_negation_delta: -0.1000817093845393
+      contrastive_negation_ratio: 0.2897240033867839
+      rule_of_three_approx_delta: -0.373147230614553
+      rule_of_three_approx_ratio: 0.566456254305944
+      slop_lexicon_delta: -0.05776484623828915
+      slop_lexicon_ratio: 0.7478841564655138
+      stock_closers_delta: -0.02337038103619598
+      stock_closers_ratio: 0.46141493043054427
+      stock_openers_delta: -0.012368340096932534
+      stock_openers_ratio: 0.8078645246595388
+      stock_openers_closers_delta: -0.03573872113312851
+      stock_openers_closers_ratio: 0.6683649092841473
+    comparison_to_final_per_1k:
+      contrastive_negation_delta: -0.10151706036564546
+      contrastive_negation_ratio: 0.2868024529007259
+      rule_of_three_approx_delta: -0.31443632024377686
+      rule_of_three_approx_ratio: 0.607925063668777
+      slop_lexicon_delta: -0.02185541649547091
+      slop_lexicon_ratio: 0.8868830640257352
+      stock_closers_delta: -0.012219808223717477
+      stock_closers_ratio: 0.6209926005435297
+      stock_openers_delta: -0.006507872651225009
+      stock_openers_ratio: 0.8887781719944503
+      stock_openers_closers_delta: -0.01872768087494249
+      stock_openers_closers_ratio: 0.7936438242421495
+  conclusion: SFT target-shape generation is lower than DPO and final/RLVR on every tracked free-running feature at this shape; DPO remains the highest slop_lexicon point estimate, while final/RLVR is closer to DPO than SFT on most generation features
+
 olmo3_final_generation_512prompt_8comp_1024_shard:
   wandb_run_id: b8xo8axn
   model: allenai/Olmo-3-7B-Instruct

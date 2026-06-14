@@ -902,3 +902,18 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   supports the same stage-localization story as the 1024 teacher-forced grid:
   DPO is the point-estimate peak for core slop-lexicon and stock-phrase
   features, and final/RLVR attenuates rather than amplifying further.
+- `stage2-phase2-olmo3-sft-promptpkg5000-free-running-512prompt-8comp-t1-bench1024`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/il07fjn1`) completed the
+  matching SFT target-shape generation shard: 512 prompts, 8 completions per
+  prompt, temperature 1.0, top-p 0.95, and 1,024 generated tokens per
+  completion. It produced 4,096 generations and 3,845,808 generated tokens in
+  10,701.3 seconds, or 359.4 generated tokens/sec including model load and
+  compile. SFT is lower than DPO on every tracked feature: `slop_lexicon`
+  (`0.171` vs. `0.229` per 1k generated tokens, DPO/SFT ratio `1.34`),
+  `rule_of_three_approx` (`0.488` vs. `0.861`, ratio `1.77`),
+  `contrastive_negation` (`0.041` vs. `0.141`, ratio `3.45`), and
+  `stock_openers_closers` (`0.072` vs. `0.108`, ratio `1.50`). SFT is also
+  lower than final/RLVR on every tracked feature. The bounded target-shape
+  comparison is now SFT/DPO/final rather than only DPO/final: DPO remains the
+  slop-lexicon peak, final/RLVR attenuates from DPO but mostly remains above
+  SFT, and SFT is the low-emission baseline for long free-running samples.
