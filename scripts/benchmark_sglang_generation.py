@@ -221,7 +221,12 @@ def _normalize_completion(response: dict[str, Any]) -> list[dict[str, Any]]:
     return completions
 
 
-def _normalize_responses(responses: Any, *, prompt_count: int) -> list[list[dict[str, Any]]]:
+def _normalize_responses(
+    responses: Any,
+    *,
+    prompt_count: int,
+    completions_per_prompt: int,
+) -> list[list[dict[str, Any]]]:
     if isinstance(responses, dict):
         if prompt_count == 1:
             return [_normalize_completion(responses)]
@@ -240,6 +245,17 @@ def _normalize_responses(responses: Any, *, prompt_count: int) -> list[list[dict
                 for index, text in enumerate(texts)
             ]
     response_list = _as_list(responses)
+    if (
+        completions_per_prompt > 1
+        and len(response_list) == prompt_count * completions_per_prompt
+    ):
+        grouped = []
+        for start in range(0, len(response_list), completions_per_prompt):
+            completions = []
+            for response in response_list[start : start + completions_per_prompt]:
+                completions.extend(_normalize_completion(response))
+            grouped.append(completions)
+        return grouped
     if len(response_list) != prompt_count:
         raise ValueError(
             f"SGLang returned {len(response_list)} prompt responses for {prompt_count} prompts"
@@ -346,6 +362,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                 normalized_responses = _normalize_responses(
                     responses,
                     prompt_count=len(prompt_rows),
+                    completions_per_prompt=args.completions_per_prompt,
                 )
                 for prompt_row, input_token_ids, completions in zip(
                     prompt_rows, prompt_token_ids, normalized_responses, strict=True
