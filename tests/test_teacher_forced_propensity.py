@@ -120,6 +120,109 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
     assert init_kwargs["config"]["bootstrap_samples"] == 1000
 
 
+def test_teacher_forced_propensity_writes_reference_subset_summary(tmp_path, monkeypatch):
+    input_path = tmp_path / "input.jsonl"
+    output_path = tmp_path / "opportunities.csv"
+    summary_path = tmp_path / "summary.csv"
+    subset_summary_path = tmp_path / "subset_summary.csv"
+    input_path.write_text(
+        "\n".join(
+            [
+                json.dumps(
+                    {
+                        "id": "human",
+                        "text": "Great question. It is not noise, it is signal.",
+                        "provenance": "Human",
+                    }
+                ),
+                json.dumps(
+                    {
+                        "id": "synthetic",
+                        "text": "Great question. It is not noise, it is signal.",
+                        "provenance": "Synthetic",
+                    }
+                ),
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    logged_tables = {}
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.teacher_forced_propensity._load_model",
+        lambda **_kwargs: (FakeTokenizer(), object(), "cpu"),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.teacher_forced_propensity._prefix_input_ids",
+        lambda *_args, **_kwargs: {"input_ids": object(), "attention_mask": object(), "prefix_tokens": 3},
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.teacher_forced_propensity._sequence_prob_mass",
+        lambda *_args, **_kwargs: 0.5,
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.teacher_forced_propensity.init_wandb",
+        lambda **_kwargs: FakeRun(),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.teacher_forced_propensity.log_summary_table",
+        lambda _run, table_name, rows: logged_tables.setdefault(table_name, rows),
+    )
+
+    args = build_parser().parse_args(
+        [
+            "--model",
+            "fake-model",
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "2",
+            "--feature",
+            "stock_openers",
+            "--max-opportunities",
+            "4",
+            "--opportunity-batch-size",
+            "1",
+            "--no-sequence-cache",
+            "--reference-subset",
+            "human:provenance=Human",
+            "--reference-subset",
+            "nonhuman:provenance!=Human",
+            "--output",
+            str(output_path),
+            "--summary-output",
+            str(summary_path),
+            "--reference-subset-summary-output",
+            str(subset_summary_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    run_teacher_forced_propensity(args)
+
+    with subset_summary_path.open(encoding="utf-8", newline="") as handle:
+        subset_rows = list(csv.DictReader(handle))
+    by_subset = {row["reference_subset"]: row for row in subset_rows}
+
+    assert set(by_subset) == {"human", "nonhuman"}
+    assert by_subset["human"]["reference_subset_filter"] == "provenance=Human"
+    assert by_subset["nonhuman"]["reference_subset_filter"] == "provenance!=Human"
+    assert by_subset["human"]["opportunities"] == "1"
+    assert by_subset["nonhuman"]["opportunities"] == "1"
+    assert by_subset["human"]["reference_initiations"] == "1"
+    assert "propensity_reference_subset_summary" in logged_tables
+    assert "Great question" not in json.dumps(logged_tables)
+
+
 def test_summary_rows_can_report_neutral_normalized_af():
     accumulators = {
         "slop_lexicon": FeatureAccumulator(

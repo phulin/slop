@@ -373,5 +373,11 @@ question it answers:
 - `stock_openers` and `stock_closers` now have separate 5,000-prompt
   teacher-forced grids. The `stock_closers` magnitude is noisy because there
   are only 18 references in the current held-out package.
+- The teacher-forced scorer now has a `--reference-subset NAME:FIELD=VALUE`
+  sidecar summary path for all-SFT vs metadata-subset AF reporting. The
+  current Dolci prompt package has usable `provenance`, `source_dataset`, and
+  `stratum` metadata, but not a clean `human_written` flag, so human-written-SFT
+  conclusions still require a provenance mapping or regenerated package with
+  explicit labels.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.

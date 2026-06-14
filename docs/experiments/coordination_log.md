@@ -1160,3 +1160,18 @@
   `artifacts/phase2/analysis/olmo3_phase2_headline_artifact_manifest.csv`,
   `artifacts/phase2/analysis/olmo3_phase2_headline_artifact_manifest.json`, and
   `artifacts/phase2/analysis/olmo3_phase2_headline_artifact_manifest.md`.
+- Implemented reference-subset summaries in `slop-teacher-forced-propensity`.
+  The new `--reference-subset NAME:FIELD=VALUE` / `FIELD!=VALUE` option and
+  `--reference-subset-summary-output` sidecar write additional AF summaries for
+  named metadata subsets while preserving the existing all-reference summary
+  schema and opportunity CSV. W&B logs the sidecar as
+  `propensity_reference_subset_summary` without raw text. Focused verification:
+  `uv run pytest -q tests/test_teacher_forced_propensity.py` (`11 passed`),
+  `uv run pytest -q tests/test_teacher_forced_propensity.py
+  tests/test_assemble_phase2_grid.py tests/test_imports.py` (`15 passed`), and
+  `uv run ruff check src/slop_sftdiv/cli/teacher_forced_propensity.py
+  tests/test_teacher_forced_propensity.py` (`All checks passed`). The current
+  5,000-row Dolci prompt package exposes `provenance`, `source_dataset`, and
+  `stratum`, but not an explicit `human_written` flag, so the implementation
+  closes the scorer gap while the human-written-SFT science claim still depends
+  on a provenance mapping or regenerated package.

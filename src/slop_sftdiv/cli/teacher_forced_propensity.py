@@ -52,6 +52,12 @@ SUMMARY_COLUMNS = [
     "normalized_amplification_factor_ci_high",
 ]
 
+SUBSET_SUMMARY_COLUMNS = [
+    "reference_subset",
+    "reference_subset_filter",
+    *SUMMARY_COLUMNS,
+]
+
 
 @dataclass
 class FeatureAccumulator:
@@ -89,6 +95,19 @@ class SequenceScoringPlan:
     branch_plans: list[SequenceBranchPlan]
     feature_index_tensors: dict[str, Any]
     sequence_count: int
+
+
+@dataclass(frozen=True)
+class ReferenceSubsetSpec:
+    name: str
+    field: str
+    value: str
+    negate: bool = False
+
+    @property
+    def display_filter(self) -> str:
+        operator = "!=" if self.negate else "="
+        return f"{self.field}{operator}{self.value}"
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -150,8 +169,25 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Optional feature whose AF is used to report neutral-normalized AF ratios.",
     )
+    parser.add_argument(
+        "--reference-subset",
+        action="append",
+        default=[],
+        metavar="NAME:FIELD=VALUE",
+        help=(
+            "Named metadata subset for an additional AF summary, e.g. "
+            "'human:provenance=HumanEval'. Use FIELD!=VALUE for complement subsets. "
+            "The main summary remains the all-reference summary."
+        ),
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, default=None)
+    parser.add_argument(
+        "--reference-subset-summary-output",
+        type=Path,
+        default=None,
+        help="Optional CSV for summaries restricted to --reference-subset filters.",
+    )
     parser.add_argument("--wandb-project", default="slop-stage1")
     parser.add_argument("--wandb-entity", default=None)
     parser.add_argument("--wandb-run-name", default=None)
@@ -224,6 +260,91 @@ def _device(device_name: str, torch_module: Any):
 
 def _peak_rss_mb() -> float:
     return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+
+
+def _parse_reference_subset(raw_spec: str) -> ReferenceSubsetSpec:
+    if ":" not in raw_spec:
+        raise ValueError(
+            f"invalid --reference-subset {raw_spec!r}; expected NAME:FIELD=VALUE"
+        )
+    name, predicate = raw_spec.split(":", 1)
+    name = name.strip()
+    if not name:
+        raise ValueError(
+            f"invalid --reference-subset {raw_spec!r}; subset name must be non-empty"
+        )
+    if "!=" in predicate:
+        field, value = predicate.split("!=", 1)
+        negate = True
+    elif "=" in predicate:
+        field, value = predicate.split("=", 1)
+        negate = False
+    else:
+        raise ValueError(
+            f"invalid --reference-subset {raw_spec!r}; expected FIELD=VALUE or FIELD!=VALUE"
+        )
+    field = field.strip()
+    value = value.strip()
+    if not field or value == "":
+        raise ValueError(
+            f"invalid --reference-subset {raw_spec!r}; field and value must be non-empty"
+        )
+    return ReferenceSubsetSpec(name=name, field=field, value=value, negate=negate)
+
+
+def _parse_reference_subsets(raw_specs: list[str]) -> list[ReferenceSubsetSpec]:
+    specs = [_parse_reference_subset(raw_spec) for raw_spec in raw_specs]
+    names = [spec.name for spec in specs]
+    duplicates = sorted({name for name in names if names.count(name) > 1})
+    if duplicates:
+        duplicate_display = ", ".join(duplicates)
+        raise ValueError(f"duplicate --reference-subset names: {duplicate_display}")
+    return specs
+
+
+def _record_metadata_value(record: Any, field: str) -> Any:
+    metadata = getattr(record, "metadata", {}) or {}
+    if field in metadata:
+        return metadata[field]
+    if hasattr(record, field):
+        return getattr(record, field)
+    return None
+
+
+def _record_matches_reference_subset(record: Any, spec: ReferenceSubsetSpec) -> bool:
+    value = _record_metadata_value(record, spec.field)
+    matched = str(value) == spec.value if value is not None else False
+    return not matched if spec.negate else matched
+
+
+def _subset_summary_rows(
+    subset_accumulators: dict[str, dict[str, FeatureAccumulator]],
+    subset_rows: dict[str, list[dict[str, Any]]],
+    subset_specs: list[ReferenceSubsetSpec],
+    *,
+    bootstrap_samples: int,
+    bootstrap_seed: int,
+    normalization_feature: str | None,
+) -> list[dict[str, Any]]:
+    output_rows: list[dict[str, Any]] = []
+    spec_by_name = {spec.name: spec for spec in subset_specs}
+    for subset_name in sorted(subset_accumulators):
+        spec = spec_by_name[subset_name]
+        for row in _summary_rows(
+            subset_accumulators[subset_name],
+            rows=subset_rows.get(subset_name, []),
+            bootstrap_samples=bootstrap_samples,
+            bootstrap_seed=bootstrap_seed,
+            normalization_feature=normalization_feature,
+        ):
+            output_rows.append(
+                {
+                    "reference_subset": subset_name,
+                    "reference_subset_filter": spec.display_filter,
+                    **row,
+                }
+            )
+    return output_rows
 
 
 def _initiator_token_sequences(tokenizer: Any, feature: str) -> tuple[tuple[int, ...], ...]:
@@ -1041,6 +1162,7 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
         raise ValueError("cache_branch_batch_size must be positive")
     if args.bootstrap_samples < 0:
         raise ValueError("bootstrap_samples must be non-negative")
+    reference_subset_specs = _parse_reference_subsets(args.reference_subset)
     SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS = _load_corpus_components()
     tokenizer, model, device = _load_model(
         model_name=args.model,
@@ -1060,6 +1182,10 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
 
     rows: list[dict[str, Any]] = []
     accumulators: dict[str, FeatureAccumulator] = defaultdict(FeatureAccumulator)
+    subset_rows: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    subset_accumulators: dict[str, dict[str, FeatureAccumulator]] = defaultdict(
+        lambda: defaultdict(FeatureAccumulator)
+    )
     doc_count = 0
     measurement_rows = 0
     started_at = time.perf_counter()
@@ -1094,7 +1220,19 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
             "bootstrap_samples": args.bootstrap_samples,
             "bootstrap_seed": args.bootstrap_seed,
             "normalization_feature": args.normalization_feature,
+            "reference_subsets": [
+                {
+                    "name": spec.name,
+                    "field": spec.field,
+                    "value": spec.value,
+                    "negate": spec.negate,
+                }
+                for spec in reference_subset_specs
+            ],
             "output": str(args.output),
+            "reference_subset_summary_output": str(args.reference_subset_summary_output)
+            if args.reference_subset_summary_output is not None
+            else None,
         },
     )
 
@@ -1110,6 +1248,11 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
                 unit="doc",
             ):
                 doc_count += 1
+                matched_subset_names = [
+                    spec.name
+                    for spec in reference_subset_specs
+                    if _record_matches_reference_subset(record, spec)
+                ]
                 for role, text, _pair_id in _measurement_texts(record):
                     measurement_rows += 1
                     opportunities = iter_feature_opportunities(
@@ -1140,23 +1283,30 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
                         accumulator.opportunities += 1
                         accumulator.reference_initiations += int(opportunity.reference_initiates)
                         accumulator.prob_mass_sum += prob_mass
-                        rows.append(
-                            {
-                                "source": record.source,
-                                "record_id": record.record_id,
-                                "role": role,
-                                "feature": opportunity.feature,
-                                "opportunity_kind": opportunity.opportunity_kind,
-                                "char_offset": opportunity.char_offset,
-                                "prefix_tokens": prefix_tokens,
-                                "reference_initiates": int(opportunity.reference_initiates),
-                                "matched_subtype": opportunity.matched_subtype or "",
-                                "prob_mass": prob_mass,
-                                "initiator_sequences": len(
-                                    initiator_sequences.get(opportunity.feature, ())
-                                ),
-                            }
-                        )
+                        row = {
+                            "source": record.source,
+                            "record_id": record.record_id,
+                            "role": role,
+                            "feature": opportunity.feature,
+                            "opportunity_kind": opportunity.opportunity_kind,
+                            "char_offset": opportunity.char_offset,
+                            "prefix_tokens": prefix_tokens,
+                            "reference_initiates": int(opportunity.reference_initiates),
+                            "matched_subtype": opportunity.matched_subtype or "",
+                            "prob_mass": prob_mass,
+                            "initiator_sequences": len(
+                                initiator_sequences.get(opportunity.feature, ())
+                            ),
+                        }
+                        rows.append(row)
+                        for subset_name in matched_subset_names:
+                            subset_accumulator = subset_accumulators[subset_name][opportunity.feature]
+                            subset_accumulator.opportunities += 1
+                            subset_accumulator.reference_initiations += int(
+                                opportunity.reference_initiates
+                            )
+                            subset_accumulator.prob_mass_sum += prob_mass
+                            subset_rows[subset_name].append(row)
 
         _write_csv(args.output, rows, OUTPUT_COLUMNS)
         summary_rows = _summary_rows(
@@ -1168,6 +1318,20 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
         )
         if args.summary_output is not None:
             _write_csv(args.summary_output, summary_rows, SUMMARY_COLUMNS)
+        subset_summary_rows = _subset_summary_rows(
+            subset_accumulators,
+            subset_rows,
+            reference_subset_specs,
+            bootstrap_samples=args.bootstrap_samples,
+            bootstrap_seed=args.bootstrap_seed,
+            normalization_feature=args.normalization_feature,
+        )
+        if args.reference_subset_summary_output is not None:
+            _write_csv(
+                args.reference_subset_summary_output,
+                subset_summary_rows,
+                SUBSET_SUMMARY_COLUMNS,
+            )
 
         wall_seconds = time.perf_counter() - started_at
         run.log(
@@ -1183,6 +1347,8 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
             }
         )
         log_summary_table(run, "propensity_summary", summary_rows)
+        if subset_summary_rows:
+            log_summary_table(run, "propensity_reference_subset_summary", subset_summary_rows)
         return summary_rows
     finally:
         run.finish()

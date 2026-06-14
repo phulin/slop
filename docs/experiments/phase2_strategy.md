@@ -195,6 +195,21 @@ preserving raw AF and CIs. Use `neutral_common_controls` as the first
 normalization baseline when comparing slop targets under the current
 opportunity contract.
 
+The teacher-forced CLI also supports reference-subset summaries via
+`--reference-subset NAME:FIELD=VALUE` and `--reference-subset-summary-output`.
+The main summary remains the all-reference AF table, while the sidecar summary
+reuses the same scored opportunities for named metadata subsets and logs a
+redacted `propensity_reference_subset_summary` table to W&B. This is the
+implementation hook for the EXPERIMENTS.md requirement to report AF against
+both all-SFT and human-written-SFT references. The current 5,000-row Dolci
+prompt package exposes `provenance`, `source_dataset`, `stratum`, and related
+source metadata, but it does not yet contain a reliable `human_written` boolean;
+use provenance/source-dataset filters now, and prefer a regenerated package
+with explicit human/synthetic labels before making a human-written-SFT claim.
+Subset filters are exact string matches with one predicate per named subset; if
+the intended reference bucket spans multiple mixture names, materialize a
+normalized field such as `reference_subset=human_reference` before scoring.
+
 ## Promotion Criteria
 
 Promote from tiny-model smoke to OLMo tiny shard only if:
