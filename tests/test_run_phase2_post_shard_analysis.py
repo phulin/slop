@@ -12,19 +12,23 @@ from slop_sftdiv.cli.run_phase2_post_shard_analysis import (
 def _write_selection(tmp_path, *, expected=2, rows=2, summary=True):
     generations_path = tmp_path / "generations.jsonl"
     summary_path = tmp_path / "summary.csv"
+    log_path = tmp_path / "launch.log"
     selection_path = tmp_path / "selection.json"
     generations_path.write_text("{}\n" * rows, encoding="utf-8")
     if summary:
         summary_path.write_text("feature,count\nslop_lexicon,1\n", encoding="utf-8")
+    log_path.write_text("free-run:pkg: 16prompt [05:44, 21.56s/prompt]\n", encoding="utf-8")
     selection_path.write_text(
         json.dumps(
             {
                 "stage": "dpo",
                 "temperature": 1.0,
                 "pid": "",
+                "command": "uv run slop-free-running-emission --completions-per-prompt 8",
                 "expected_generations": expected,
                 "generations_output": str(generations_path),
                 "summary_output": str(summary_path),
+                "log_output": str(log_path),
             }
         )
         + "\n",
@@ -57,6 +61,8 @@ def test_post_shard_analysis_dry_run_reports_planned_outputs(tmp_path, capsys):
     assert payload["completed"] is True
     assert payload["generations_output"] == str(generations_path)
     assert payload["summary_output"] == str(summary_path)
+    assert payload["latest_log_prompts"] == 16
+    assert payload["latest_log_generations_estimate"] == 128
     assert "rerun with --execute" in capsys.readouterr().out
 
 

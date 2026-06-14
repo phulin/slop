@@ -11,6 +11,10 @@ from slop_sftdiv.cli.assemble_phase2_generation_grid import (
     run_assemble_phase2_generation_grid,
 )
 from slop_sftdiv.cli.analyze_phase2_compounding import run_analyze_phase2_compounding
+from slop_sftdiv.cli.phase2_generation_status import (
+    _command_option_int,
+    _latest_log_prompt_count,
+)
 
 
 DEFAULT_FEATURES = [
@@ -138,8 +142,17 @@ def _selection_status(selection_path: Path) -> dict[str, Any]:
     pid_int = int(pid) if pid not in (None, "") else None
     generations_output = Path(selection["generations_output"])
     summary_output = Path(selection["summary_output"])
+    log_output_raw = selection.get("log_output", "")
+    log_output = Path(log_output_raw) if log_output_raw else None
     expected_generations = int(selection["expected_generations"])
     existing_generations = _jsonl_records(generations_output)
+    latest_log_prompts = _latest_log_prompt_count(log_output)
+    completions_per_prompt = _command_option_int(selection.get("command"), "--completions-per-prompt")
+    latest_log_generations_estimate = (
+        latest_log_prompts * completions_per_prompt
+        if latest_log_prompts is not None and completions_per_prompt is not None
+        else None
+    )
     completed = summary_output.exists() and existing_generations >= expected_generations
     return {
         "selection": selection,
@@ -149,6 +162,8 @@ def _selection_status(selection_path: Path) -> dict[str, Any]:
         "summary_output": summary_output,
         "expected_generations": expected_generations,
         "existing_generations": existing_generations,
+        "latest_log_prompts": latest_log_prompts,
+        "latest_log_generations_estimate": latest_log_generations_estimate,
         "completed": completed,
     }
 
@@ -181,7 +196,9 @@ def _wait_for_completion(args: argparse.Namespace) -> dict[str, Any]:
             )
         print(
             "waiting for shard completion: "
-            f"{status['existing_generations']}/{status['expected_generations']} rows",
+            f"{status['existing_generations']}/{status['expected_generations']} rows; "
+            f"log_prompts={status['latest_log_prompts'] or 'n/a'}; "
+            f"log_generation_estimate={status['latest_log_generations_estimate'] or 'n/a'}",
             flush=True,
         )
         time.sleep(args.poll_seconds)
@@ -241,6 +258,8 @@ def run_phase2_post_shard_analysis(args: argparse.Namespace) -> dict[str, Any]:
         "completed": status["completed"],
         "existing_generations": status["existing_generations"],
         "expected_generations": status["expected_generations"],
+        "latest_log_prompts": status["latest_log_prompts"],
+        "latest_log_generations_estimate": status["latest_log_generations_estimate"],
         "generations_output": str(status["generations_output"]),
         "summary_output": str(status["summary_output"]),
         "scale_grid_output": str(args.scale_grid_output),
