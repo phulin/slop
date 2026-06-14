@@ -181,7 +181,8 @@ def _wait_for_completion(args: argparse.Namespace) -> dict[str, Any]:
             )
         print(
             "waiting for shard completion: "
-            f"{status['existing_generations']}/{status['expected_generations']} rows"
+            f"{status['existing_generations']}/{status['expected_generations']} rows",
+            flush=True,
         )
         time.sleep(args.poll_seconds)
 
