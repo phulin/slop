@@ -162,3 +162,68 @@ def test_analyze_phase2_compounding_rejects_duplicate_stage(tmp_path):
 
     with pytest.raises(ValueError, match="duplicate stage"):
         run_analyze_phase2_compounding(args)
+
+
+def test_analyze_phase2_compounding_rejects_missing_propensity_stage(tmp_path):
+    generation_path = tmp_path / "generations.jsonl"
+    generation_path.write_text(
+        json.dumps(
+            {
+                "source": "prompt_package",
+                "temperature": 0.0,
+                "top_p": 0.95,
+                "generation": "delve",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    propensity_path = tmp_path / "propensity.csv"
+    with propensity_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=[
+                "stage",
+                "feature",
+                "opportunities",
+                "reference_initiations",
+                "reference_rate",
+                "mean_prob_mass",
+                "amplification_factor",
+                "normalized_amplification_factor",
+                "normalization_feature",
+            ],
+        )
+        writer.writeheader()
+        writer.writerow(
+            {
+                "stage": "dpo",
+                "feature": "slop_lexicon",
+                "opportunities": 100,
+                "reference_initiations": 1,
+                "reference_rate": 0.01,
+                "mean_prob_mass": 0.1,
+                "amplification_factor": 10.0,
+                "normalized_amplification_factor": 2.0,
+                "normalization_feature": "neutral_common_controls",
+            }
+        )
+    args = build_parser().parse_args(
+        [
+            "--generation-cache",
+            f"dpo_t0={generation_path}",
+            "--feature",
+            "slop_lexicon",
+            "--propensity-grid",
+            str(propensity_path),
+            "--output",
+            str(tmp_path / "out.csv"),
+            "--summary-output",
+            str(tmp_path / "out.md"),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    with pytest.raises(ValueError, match="available stages.*dpo"):
+        run_analyze_phase2_compounding(args)

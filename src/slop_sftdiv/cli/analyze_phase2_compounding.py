@@ -244,6 +244,28 @@ def _load_propensity_grid(path: Path | None) -> dict[tuple[str, str], dict[str, 
     return rows
 
 
+def _validate_propensity_coverage(
+    *,
+    specs: list[GenerationSpec],
+    propensity_grid: dict[tuple[str, str], dict[str, Any]],
+    primary_feature: str,
+) -> None:
+    if not propensity_grid:
+        return
+    missing = [
+        spec.stage for spec in specs if (spec.stage, primary_feature) not in propensity_grid
+    ]
+    if missing:
+        available_stages = sorted(
+            {stage for stage, feature in propensity_grid if feature == primary_feature}
+        )
+        raise ValueError(
+            "propensity grid has no primary-feature rows for generation stage(s) "
+            f"{', '.join(missing)}; available stages for {primary_feature!r}: "
+            f"{', '.join(available_stages) or 'none'}"
+        )
+
+
 def _summarize_counts(
     counts: dict[tuple[str, str, float, float, str], Counter[str]],
     *,
@@ -545,6 +567,11 @@ def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, A
     specs = _parse_generation_specs(args.generation_cache)
     selected_features = _selected_features(args.feature)
     propensity_grid = _load_propensity_grid(args.propensity_grid)
+    _validate_propensity_coverage(
+        specs=specs,
+        propensity_grid=propensity_grid,
+        primary_feature=args.primary_feature,
+    )
     counts: dict[tuple[str, str, float, float, str], Counter[str]] = defaultdict(_empty_counter)
 
     run = init_wandb(
