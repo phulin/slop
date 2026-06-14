@@ -1396,3 +1396,10 @@
   status after sourcing `scripts/phase2_cuda_env.sh`: generation shard alive,
   `0/8192` JSONL rows written, `288` log prompts (`~2304` generation
   completions), latest tqdm rate `15.93` seconds/prompt, ETA `3:15:24`.
+- Restarted only the CPU-side post-shard watcher so the live redirected log
+  uses the new ETA-aware wait message. Generation worker PID `5950` was left
+  untouched. New watcher Python PID: `21450`; PID file:
+  `artifacts/phase2/analysis/olmo3_dpo_post_shard_analysis_watcher.pid`.
+  First ETA-aware wait line:
+  `waiting for shard completion: 0/8192 rows; log_prompts=288;
+  log_generation_estimate=2304; eta=3:15:24`.
