@@ -378,6 +378,8 @@ question it answers:
   current Dolci prompt package has usable `provenance`, `source_dataset`, and
   `stratum` metadata, but not a clean `human_written` flag, so human-written-SFT
   conclusions still require a provenance mapping or regenerated package with
-  explicit labels.
+  explicit labels. Prompt packaging can now materialize normalized fields with
+  `--metadata-bucket-map`; use that path to add `reference_subset` before
+  running subset AF summaries.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.

@@ -53,6 +53,15 @@ class PrepStats:
     bytes_written: int = 0
 
 
+@dataclass(frozen=True)
+class MetadataBucketMap:
+    path: Path
+    output_field: str
+    source_fields: tuple[str, ...]
+    values: dict[str, str]
+    default: str
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Prepare held-out Phase 2 prompt/target packages.")
     parser.add_argument("--input", action="append", required=True, help="Local JSONL file or HF dataset id.")
@@ -79,6 +88,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="Retain only rows whose target text initiates this feature; repeat for OR filtering.",
     )
     parser.add_argument("--reference-feature-max-token-start-opportunities", type=int, default=256)
+    parser.add_argument(
+        "--metadata-bucket-map",
+        action="append",
+        type=Path,
+        default=[],
+        help=(
+            "JSON mapping that materializes a normalized metadata field in the prompt package. "
+            "Schema: output_field, source_field/source_fields, values, default."
+        ),
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--manifest-output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, default=None)
@@ -118,6 +137,77 @@ def _metadata_value(record: Any, *keys: str, default: str | None = None) -> str 
         if value:
             return str(value)
     return default
+
+
+def _record_metadata_value(record: Any, field: str) -> str | None:
+    value = record.metadata.get(field)
+    if value is not None and value != "":
+        return str(value)
+    if hasattr(record, field):
+        value = getattr(record, field)
+        if value is not None and value != "":
+            return str(value)
+    return None
+
+
+def _load_metadata_bucket_map(path: Path) -> MetadataBucketMap:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"invalid metadata bucket map JSON at {path}: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise ValueError(f"metadata bucket map at {path} must be a JSON object")
+    output_field = str(payload.get("output_field") or "").strip()
+    if not output_field:
+        raise ValueError(f"metadata bucket map at {path} requires output_field")
+    if output_field in {"prompt", "text"}:
+        raise ValueError(f"metadata bucket map at {path} cannot write raw text field {output_field!r}")
+    source_fields_raw = payload.get("source_fields")
+    if source_fields_raw is None:
+        source_field = str(payload.get("source_field") or "").strip()
+        source_fields = (source_field,) if source_field else ()
+    elif isinstance(source_fields_raw, list):
+        source_fields = tuple(str(field).strip() for field in source_fields_raw if str(field).strip())
+    else:
+        raise ValueError(f"metadata bucket map at {path} source_fields must be a list")
+    if not source_fields:
+        raise ValueError(f"metadata bucket map at {path} requires source_field or source_fields")
+    values_raw = payload.get("values")
+    if not isinstance(values_raw, dict):
+        raise ValueError(f"metadata bucket map at {path} requires object field values")
+    values = {str(key): str(value) for key, value in values_raw.items()}
+    default = str(payload.get("default", "unknown"))
+    return MetadataBucketMap(
+        path=path,
+        output_field=output_field,
+        source_fields=source_fields,
+        values=values,
+        default=default,
+    )
+
+
+def _load_metadata_bucket_maps(paths: list[Path]) -> list[MetadataBucketMap]:
+    maps = [_load_metadata_bucket_map(path) for path in paths]
+    output_fields = [item.output_field for item in maps]
+    duplicates = sorted({field for field in output_fields if output_fields.count(field) > 1})
+    if duplicates:
+        duplicate_display = ", ".join(duplicates)
+        raise ValueError(f"duplicate metadata bucket output fields: {duplicate_display}")
+    return maps
+
+
+def _metadata_buckets(record: Any, maps: list[MetadataBucketMap]) -> dict[str, str]:
+    buckets: dict[str, str] = {}
+    for bucket_map in maps:
+        bucket = bucket_map.default
+        for source_field in bucket_map.source_fields:
+            value = _record_metadata_value(record, source_field)
+            if value is None:
+                continue
+            bucket = bucket_map.values.get(value, bucket_map.default)
+            break
+        buckets[bucket_map.output_field] = bucket
+    return buckets
 
 
 def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> int:
@@ -174,7 +264,13 @@ def _nearest_duplicate(
     return None, best_similarity
 
 
-def _candidate_from_record(record: Any, *, source_name: str, order: int) -> PromptCandidate:
+def _candidate_from_record(
+    record: Any,
+    *,
+    source_name: str,
+    order: int,
+    metadata_bucket_maps: list[MetadataBucketMap],
+) -> PromptCandidate:
     prompt = str(record.prompt or "")
     target_text = str(record.text or "")
     phase2_prompt_id = str(record.record_id)
@@ -182,6 +278,7 @@ def _candidate_from_record(record: Any, *, source_name: str, order: int) -> Prom
     target_hash = _content_hash(target_text)
     prompt_tokens = int(count_tokens(prompt))
     target_tokens = int(count_tokens(target_text))
+    metadata_buckets = _metadata_buckets(record, metadata_bucket_maps)
     row = {
         "phase2_prompt_id": phase2_prompt_id,
         "source": source_name,
@@ -212,6 +309,7 @@ def _candidate_from_record(record: Any, *, source_name: str, order: int) -> Prom
         "target_tokens": target_tokens,
         "source_row_index": record.row_index,
         "source_sample_key": record.metadata.get("sample_key"),
+        **metadata_buckets,
     }
     manifest_row = {key: value for key, value in row.items() if key not in {"prompt", "text"}}
     manifest_row["prompt_chars"] = len(prompt)
@@ -237,7 +335,11 @@ def _passes_reference_feature_filter(record: Any, args: argparse.Namespace) -> b
     return any(opportunity.reference_initiates for opportunity in opportunities)
 
 
-def _prepare_candidates(args: argparse.Namespace) -> tuple[list[PromptCandidate], PrepStats]:
+def _prepare_candidates(
+    args: argparse.Namespace,
+    *,
+    metadata_bucket_maps: list[MetadataBucketMap],
+) -> tuple[list[PromptCandidate], PrepStats]:
     SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS = _load_components()
     text_fields = [args.text_field] if args.text_field else None
     sampling = SamplingConfig(cap=None, seed=args.seed, strategy="first", max_scan=args.max_scan)
@@ -273,7 +375,12 @@ def _prepare_candidates(args: argparse.Namespace) -> tuple[list[PromptCandidate]
             if not _passes_reference_feature_filter(record, args):
                 stats.reference_feature_filtered += 1
                 continue
-            candidate = _candidate_from_record(record, source_name=source.name, order=order)
+            candidate = _candidate_from_record(
+                record,
+                source_name=source.name,
+                order=order,
+                metadata_bucket_maps=metadata_bucket_maps,
+            )
             if not candidate.normalized_prompt:
                 stats.missing_prompt += 1
                 continue
@@ -328,6 +435,7 @@ def run_prepare_phase2_prompts(args: argparse.Namespace) -> list[dict[str, Any]]
         raise ValueError("sample_size must be non-negative")
     if not 0.0 <= args.near_duplicate_threshold <= 1.0:
         raise ValueError("near_duplicate_threshold must be between 0 and 1")
+    metadata_bucket_maps = _load_metadata_bucket_maps(args.metadata_bucket_map)
     started_at = time.perf_counter()
     run = init_wandb(
         project=args.wandb_project,
@@ -353,12 +461,21 @@ def run_prepare_phase2_prompts(args: argparse.Namespace) -> list[dict[str, Any]]
             "reference_feature_max_token_start_opportunities": (
                 args.reference_feature_max_token_start_opportunities
             ),
+            "metadata_bucket_maps": [
+                {
+                    "path": str(item.path),
+                    "output_field": item.output_field,
+                    "source_fields": item.source_fields,
+                    "default": item.default,
+                }
+                for item in metadata_bucket_maps
+            ],
             "output": str(args.output),
             "manifest_output": str(args.manifest_output),
         },
     )
     try:
-        candidates, stats = _prepare_candidates(args)
+        candidates, stats = _prepare_candidates(args, metadata_bucket_maps=metadata_bucket_maps)
         selected = _select_candidates(candidates, args)
         rows = [candidate.row for candidate in selected]
         manifest_rows = [candidate.manifest_row for candidate in selected]

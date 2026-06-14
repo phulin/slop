@@ -155,6 +155,91 @@ def test_prepare_phase2_prompts_hash_selection_is_deterministic(tmp_path, monkey
     assert run_once("a") == run_once("b")
 
 
+def test_prepare_phase2_prompts_materializes_metadata_bucket(tmp_path, monkeypatch):
+    input_path = tmp_path / "sft.jsonl"
+    output_path = tmp_path / "phase2_prompts.jsonl"
+    manifest_path = tmp_path / "phase2_prompts_manifest.csv"
+    bucket_map_path = tmp_path / "reference_subset_map.json"
+    _write_jsonl(
+        input_path,
+        [
+            {
+                "id": "aya",
+                "prompt": "Explain one thing.",
+                "text": "One answer.",
+                "source_dataset": "Aya",
+            },
+            {
+                "id": "code",
+                "prompt": "Write code.",
+                "text": "Use a function.",
+                "source_dataset": "Evol CodeAlpaca",
+            },
+        ],
+    )
+    bucket_map_path.write_text(
+        json.dumps(
+            {
+                "output_field": "reference_subset",
+                "source_field": "source_dataset",
+                "default": "unknown",
+                "values": {
+                    "Aya": "human_reference",
+                    "Evol CodeAlpaca": "code",
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    logged_tables = {}
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    monkeypatch.setattr("slop_sftdiv.cli.prepare_phase2_prompts.init_wandb", lambda **_kwargs: FakeRun())
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.prepare_phase2_prompts.log_summary_table",
+        lambda _run, table_name, rows: logged_tables.setdefault(table_name, rows),
+    )
+
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "2",
+            "--sampling-strategy",
+            "first",
+            "--metadata-bucket-map",
+            str(bucket_map_path),
+            "--output",
+            str(output_path),
+            "--manifest-output",
+            str(manifest_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    manifest_rows = run_prepare_phase2_prompts(args)
+    package_rows = [json.loads(line) for line in output_path.read_text(encoding="utf-8").splitlines()]
+    by_id = {row["phase2_prompt_id"]: row for row in package_rows}
+
+    assert by_id["aya"]["reference_subset"] == "human_reference"
+    assert by_id["code"]["reference_subset"] == "code"
+    assert {row["reference_subset"] for row in manifest_rows} == {"human_reference", "code"}
+    with manifest_path.open(encoding="utf-8", newline="") as handle:
+        manifest_csv_rows = list(csv.DictReader(handle))
+    assert {row["reference_subset"] for row in manifest_csv_rows} == {"human_reference", "code"}
+    logged = json.dumps(logged_tables["phase2_prompt_manifest"])
+    assert "Explain one thing" not in logged
+    assert "One answer" not in logged
+
+
 def test_prepare_phase2_prompts_can_require_reference_feature(tmp_path, monkeypatch):
     input_path = tmp_path / "sft.jsonl"
     output_path = tmp_path / "phase2_positive_prompts.jsonl"

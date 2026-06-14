@@ -209,6 +209,15 @@ with explicit human/synthetic labels before making a human-written-SFT claim.
 Subset filters are exact string matches with one predicate per named subset; if
 the intended reference bucket spans multiple mixture names, materialize a
 normalized field such as `reference_subset=human_reference` before scoring.
+Prompt packaging now supports this materialization through
+`--metadata-bucket-map PATH`; maps use JSON fields `output_field`,
+`source_field` or `source_fields`, `values`, and `default`. The checked-in
+`configs/phase2_dolci_reference_subset_seed_map.json` is a conservative seed
+map with `code`, `synthetic_llm`, and `unknown` buckets. It deliberately has no
+`human_reference` bucket: local Dolci metadata identifies prompt/source-mixture
+labels, not target-response authorship. Do not publish a human-written-SFT AF
+claim until a regenerated package or upstream audit supplies explicit
+human/synthetic labels.
 
 ## Promotion Criteria
 

@@ -1175,3 +1175,22 @@
   `stratum`, but not an explicit `human_written` flag, so the implementation
   closes the scorer gap while the human-written-SFT science claim still depends
   on a provenance mapping or regenerated package.
+- Added prompt-package metadata bucket materialization via
+  `slop-prepare-phase2-prompts --metadata-bucket-map PATH`. The JSON map schema
+  is `output_field`, `source_field` or `source_fields`, `values`, and
+  `default`; mapped fields are written into both the prompt JSONL and manifest
+  CSV. Checked in `configs/phase2_dolci_reference_subset_seed_map.json` as a
+  conservative seed map for `reference_subset` buckets (`code`,
+  `synthetic_llm`, `unknown`). A sidecar provenance audit found that the
+  current Dolci package's `source_dataset` and `provenance` fields are identical
+  source-mixture labels, not independent target-response authorship evidence.
+  The seed map therefore assigns only code-domain labels plus `WildGuardMix`
+  (`synthetic_llm`); it intentionally does not assign a `human_reference`
+  bucket. Smoke verification on the existing 128-row Phase 2 package wrote a
+  16-row gitignored package with bucket counts `code=4`, `unknown=12`.
+  Focused verification: `uv run pytest -q tests/test_prepare_phase2_prompts.py
+  tests/test_teacher_forced_propensity.py tests/test_imports.py` (`16 passed`)
+  and `uv run ruff check src/slop_sftdiv/cli/prepare_phase2_prompts.py
+  tests/test_prepare_phase2_prompts.py
+  src/slop_sftdiv/cli/teacher_forced_propensity.py
+  tests/test_teacher_forced_propensity.py` (`All checks passed`).

@@ -1,0 +1,11 @@
+{
+  "output_field": "reference_subset",
+  "source_field": "source_dataset",
+  "default": "unknown",
+  "values": {
+    "Evol CodeAlpaca": "code",
+    "Dolci Instruct Python Algorithms": "code",
+    "Tulu 3 Persona Python": "code",
+    "WildGuardMix": "synthetic_llm"
+  }
+}
