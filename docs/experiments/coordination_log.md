@@ -899,3 +899,23 @@
   target-shape story: SFT is the low generation-emission point, DPO is the
   slop-lexicon peak, and final/RLVR attenuates from DPO while remaining above
   SFT for most generation features.
+- Completed the matching base target-shape generation shard:
+  `stage2-phase2-olmo3-base-promptpkg5000-free-running-512prompt-8comp-t1-bench1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/nw6yoj5u`. It generated 512
+  prompts x 8 completions, 4,096 generations, and 4,174,328 generated tokens
+  in 11,677.3 seconds (`357.5` generated tokens/sec including load and
+  compile). Feature rates per 1k generated tokens were
+  `rule_of_three_approx` `1.019`, `slop_lexicon` `0.233`,
+  `contrastive_negation` `0.136`, `stock_openers_closers` `0.092`,
+  `stock_openers` `0.064`, and `stock_closers` `0.028`.
+- Assembled the four-stage target-shape generation grid:
+  `stage2-phase2-olmo3-generation-target-shape-512prompt-8comp-t1-stage-grid`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/bojfccyx`. The assembled
+  primary-feature comparison shows `slop_lexicon` rates of base `0.233`, SFT
+  `0.171`, DPO `0.229`, and final/RLVR `0.193` per 1k generated tokens. Base
+  is narrowly the slop-lexicon maximum and is clearly highest for
+  `rule_of_three_approx`; DPO is highest for stock opener/closer features;
+  final/RLVR attenuates from DPO on most features; SFT is the low-emission
+  point across all tracked features. This completes the bounded
+  base/SFT/DPO/final target-shape grid and weakens any simple monotonic
+  post-training generation-amplification story.

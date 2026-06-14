@@ -121,52 +121,58 @@ window estimates are not yet stable enough for the final paper-scale claim.
 
 ## Target-Shape Generation Shards
 
-The first larger SFT, DPO, and final/RLVR target-shape generation shards are
-complete on the 5,000-prompt package:
+The first larger base, SFT, DPO, and final/RLVR target-shape generation shards
+are complete on the 5,000-prompt package:
 
 - Shape: 512 prompts, 8 completions per prompt, temperature `1.0`, top-p
   `0.95`, 1,024 generated tokens per completion.
+- Base W&B: `nw6yoj5u`; 4,096 generations, 4,174,328 generated tokens,
+  `357.5` generated tokens/sec.
 - SFT W&B: `il07fjn1`; 4,096 generations, 3,845,808 generated tokens,
   `359.4` generated tokens/sec.
 - DPO W&B: `8rud2kxl`; 4,096 generations, 4,194,304 generated tokens,
   `356.7` generated tokens/sec.
 - Final/RLVR W&B: `b8xo8axn`; 4,096 generations, 4,187,136 generated tokens,
   `356.1` generated tokens/sec.
+- Assembly W&B: `bojfccyx`.
 
 Feature rates per 1k generated tokens:
 
-| Feature | SFT | DPO | Final/RLVR | DPO/SFT | Final/DPO |
-|---|---:|---:|---:|---:|---:|
-| `rule_of_three_approx` | 0.488 | 0.861 | 0.802 | 1.77 | 0.93 |
-| `slop_lexicon` | 0.171 | 0.229 | 0.193 | 1.34 | 0.84 |
-| `contrastive_negation` | 0.041 | 0.141 | 0.142 | 3.45 | 1.01 |
-| `stock_openers_closers` | 0.072 | 0.108 | 0.091 | 1.50 | 0.84 |
-| `stock_openers` | 0.052 | 0.064 | 0.059 | 1.24 | 0.91 |
-| `stock_closers` | 0.020 | 0.043 | 0.032 | 2.17 | 0.74 |
+| Feature | Base | SFT | DPO | Final/RLVR | Max Stage |
+|---|---:|---:|---:|---:|---|
+| `rule_of_three_approx` | 1.019 | 0.488 | 0.861 | 0.802 | Base |
+| `slop_lexicon` | 0.233 | 0.171 | 0.229 | 0.193 | Base |
+| `contrastive_negation` | 0.136 | 0.041 | 0.141 | 0.142 | Final/RLVR |
+| `stock_openers_closers` | 0.092 | 0.072 | 0.108 | 0.091 | DPO |
+| `stock_openers` | 0.064 | 0.052 | 0.064 | 0.059 | DPO |
+| `stock_closers` | 0.028 | 0.020 | 0.043 | 0.032 | DPO |
 
 Throughput is essentially unchanged from the 64-prompt target-shape benchmark
 (`355.9` generated tokens/sec), so the current Torch/Transformers backend scales
 linearly across prompts but remains slow in absolute terms for long generation.
-The science read is aligned with the 1,024-prompt teacher-forced grid for
-`slop_lexicon`: DPO is the bounded peak and final/RLVR attenuates. The SFT
-generation shard is lower than both DPO and final/RLVR on every tracked
-free-running feature at this shape, so generation-stage effects are stronger
-than the SFT-to-DPO teacher-forced difference for these long sampled outputs.
+The science read is more mixed than the 1,024-prompt teacher-forced grid:
+base is narrowly above DPO for `slop_lexicon` (`0.233` vs. `0.229` per 1k
+tokens) and clearly above all post-training checkpoints for
+`rule_of_three_approx`. DPO remains the maximum for stock opener/closer
+features, final/RLVR attenuates from DPO on most features, and SFT is the
+low-emission point across all tracked features. Treat this as inherited/base
+free-running style plus feature-specific post-training reshaping, not as a
+clean DPO-stage generation peak.
 
 ## Current Compute Posture
 
 Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid
-blindly. The target-shape DPO benchmark (`kji583m6`) plus the 512-prompt SFT,
-DPO, and final/RLVR shards (`il07fjn1`, `8rud2kxl`, `b8xo8axn`) validate the
-heavy shape on the A100, but the full OLMo four-stage target remains expensive.
-The next GPU work should be selected by the question it answers:
+blindly. The target-shape DPO benchmark (`kji583m6`) plus the 512-prompt
+base/SFT/DPO/final shards (`nw6yoj5u`, `il07fjn1`, `8rud2kxl`, `b8xo8axn`)
+validate the heavy shape on the A100, but the full 5,000-prompt x 3-temperature
+OLMo target remains expensive. The next GPU work should be selected by the
+question it answers:
 
 - For a stronger Result B estimate, scale the free-running generation shard
   before spending on more teacher-forced slop/neutral rows.
-- For stage-localization confirmation, the bounded SFT/DPO/final target-shape
-  comparison is now complete; additional free-running work should either add
-  base at the same shape or scale the strongest comparison, not repeat the same
-  cells.
+- For stage-localization confirmation, the bounded four-stage target-shape
+  comparison is now complete; additional free-running work should scale a
+  specific comparison or temperature, not repeat the same cells.
 - For teacher-forced precision, full 5k slop/neutral is confirmatory and should
   wait until a specific analysis requires tighter CIs.
 - For generation throughput, benchmark SGLang or vLLM in an isolated

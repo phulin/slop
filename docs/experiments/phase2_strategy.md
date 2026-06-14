@@ -917,3 +917,23 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   comparison is now SFT/DPO/final rather than only DPO/final: DPO remains the
   slop-lexicon peak, final/RLVR attenuates from DPO but mostly remains above
   SFT, and SFT is the low-emission baseline for long free-running samples.
+- `stage2-phase2-olmo3-base-promptpkg5000-free-running-512prompt-8comp-t1-bench1024`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/nw6yoj5u`) completed the
+  matching base target-shape generation shard: 512 prompts, 8 completions per
+  prompt, temperature 1.0, top-p 0.95, and 1,024 generated tokens per
+  completion. It produced 4,096 generations and 4,174,328 generated tokens in
+  11,677.3 seconds, or 357.5 generated tokens/sec including model load and
+  compile. The base feature rates per 1k generated tokens were
+  `rule_of_three_approx` 1.019, `slop_lexicon` 0.233,
+  `contrastive_negation` 0.136, `stock_openers_closers` 0.092,
+  `stock_openers` 0.064, and `stock_closers` 0.028.
+- `stage2-phase2-olmo3-generation-target-shape-512prompt-8comp-t1-stage-grid`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/bojfccyx`) assembled the
+  completed four-stage target-shape generation grid. The `slop_lexicon`
+  ordering is base 0.233 > DPO 0.229 > final/RLVR 0.193 > SFT 0.171 per 1k
+  generated tokens. Base is also the clear maximum for `rule_of_three_approx`
+  (1.019 vs. DPO 0.861, final/RLVR 0.802, SFT 0.488), while DPO is the maximum
+  for stock opener/closer features. This changes the bounded target-shape
+  interpretation from a DPO generation peak to inherited/base free-running
+  style plus feature-specific post-training reshaping; SFT remains the
+  low-emission checkpoint and final/RLVR generally attenuates from DPO.

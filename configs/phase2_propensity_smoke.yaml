@@ -1883,6 +1883,75 @@ olmo3_dpo_generation_64prompt_8comp_1024_benchmark:
       stock_openers_closers: 8
   conclusion: the near-final 1024-token generation shape is feasible on the A100 with the Torch/Transformers backend and batch size 8, but memory headroom is tight; use this benchmark before launching larger shards
 
+olmo3_base_generation_512prompt_8comp_1024_shard:
+  wandb_run_id: nw6yoj5u
+  model: allenai/Olmo-3-1025-7B
+  input_prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  generations_output: artifacts/phase2/generations/olmo3_base_promptpkg5000_free_run_512prompt_8comp_t1_batched1024.jsonl
+  summary_output: artifacts/phase2/generations/olmo3_base_promptpkg5000_free_run_512prompt_8comp_t1_batched1024_summary.csv
+  purpose: matching base target-shape generation shard for four-stage OLMo target-shape generation comparison
+  generation_settings:
+    sample_size: 512
+    temperature: 1.0
+    top_p: 0.95
+    max_new_tokens: 1024
+    completions_per_prompt: 8
+    generation_batch_size: 8
+    max_prompt_tokens: 1024
+    dtype: bfloat16
+    torch_compile: true
+  result:
+    prompts_seen: 512
+    prompts_skipped: 0
+    generations: 4096
+    generated_tokens: 4174328
+    wall_seconds: 11677.30612
+    tokens_per_sec_including_load_compile: 357.47354
+    peak_rss_mb: 5751.59375
+    per_1k_tokens:
+      contrastive_negation: 0.13606980572681399
+      rule_of_three_approx: 1.0190861858483569
+      slop_lexicon: 0.23333096967943104
+      stock_closers: 0.02754934446933734
+      stock_openers: 0.06396239107228756
+      stock_openers_closers: 0.09151173554162491
+    generations_with_feature:
+      contrastive_negation: 419
+      rule_of_three_approx: 1484
+      slop_lexicon: 493
+      stock_closers: 94
+      stock_openers: 246
+      stock_openers_closers: 336
+    repeat_generations:
+      contrastive_negation: 108
+      rule_of_three_approx: 928
+      slop_lexicon: 192
+      stock_closers: 15
+      stock_openers: 21
+      stock_openers_closers: 38
+    comparison_to_dpo_per_1k:
+      contrastive_negation_ratio: 0.9656821424308901
+      rule_of_three_approx_ratio: 1.1840321254131034
+      slop_lexicon_ratio: 1.0183777533511808
+      stock_closers_ratio: 0.6348918912452451
+      stock_openers_ratio: 0.9936211455322325
+      stock_openers_closers_ratio: 0.8483619168337693
+    comparison_to_sft_per_1k:
+      contrastive_negation_ratio: 3.333110528420664
+      rule_of_three_approx_ratio: 2.089199722887905
+      slop_lexicon_ratio: 1.3616788095364608
+      stock_closers_ratio: 1.3759668906847735
+      stock_openers_ratio: 1.2309352949010724
+      stock_openers_closers_ratio: 1.2705291347531427
+    comparison_to_final_per_1k:
+      contrastive_negation_ratio: 0.9559434795735718
+      rule_of_three_approx_ratio: 1.2707124220145458
+      slop_lexicon_ratio: 1.2076460149245665
+      stock_closers_ratio: 0.8544810488194508
+      stock_openers_ratio: 1.0931396958477804
+      stock_openers_closers_ratio: 1.008347584058419
+  conclusion: base target-shape generation is the maximum point-estimate stage for rule_of_three_approx and is narrowly above DPO for slop_lexicon; SFT remains the low-emission point, while DPO remains strongest for pooled stock openers/closers
+
 olmo3_dpo_generation_512prompt_8comp_1024_shard:
   wandb_run_id: 8rud2kxl
   model: allenai/Olmo-3-7B-Instruct-DPO
@@ -2066,6 +2135,42 @@ olmo3_final_generation_512prompt_8comp_1024_shard:
       stock_openers_closers_delta: -0.01701104025718602
       stock_openers_closers_ratio: 0.8421490604818942
   conclusion: final/RLVR target-shape generation is lower than DPO for slop_lexicon, rule_of_three_approx, and stock opener/closer rates, with nearly identical throughput; this supports DPO peak attenuation at final under the bounded 512-prompt target shape
+
+olmo3_generation_target_shape_512prompt_8comp_t1_grid:
+  wandb_run_id: bojfccyx
+  purpose: assembled four-stage OLMo target-shape free-running generation grid
+  generation_summaries:
+    base: artifacts/phase2/generations/olmo3_base_promptpkg5000_free_run_512prompt_8comp_t1_batched1024_summary.csv
+    sft: artifacts/phase2/generations/olmo3_sft_promptpkg5000_free_run_512prompt_8comp_t1_batched1024_summary.csv
+    dpo: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t1_batched1024_summary.csv
+    final: artifacts/phase2/generations/olmo3_final_promptpkg5000_free_run_512prompt_8comp_t1_batched1024_summary.csv
+  output: artifacts/phase2/analysis/olmo3_generation_stage_grid_target_shape_512prompt_8comp_t1_1024.csv
+  comparison_output: artifacts/phase2/analysis/olmo3_generation_stage_comparison_target_shape_512prompt_8comp_t1_1024.csv
+  summary_output: artifacts/phase2/analysis/olmo3_generation_stage_grid_target_shape_512prompt_8comp_t1_1024_summary.md
+  generation_settings:
+    sample_size: 512
+    temperature: 1.0
+    top_p: 0.95
+    max_new_tokens: 1024
+    completions_per_prompt: 8
+  result:
+    stages: 4
+    features: 6
+    rows: 24
+    primary_feature: slop_lexicon
+    primary_feature_per_1k_tokens:
+      base: 0.23333096967943104
+      sft: 0.1713554082783124
+      dpo: 0.22912025451660156
+      final: 0.19321082477378332
+    feature_max_stage:
+      contrastive_negation: final
+      rule_of_three_approx: base
+      slop_lexicon: base
+      stock_closers: dpo
+      stock_openers: dpo
+      stock_openers_closers: dpo
+  conclusion: the completed bounded target-shape generation grid does not show a clean monotonic post-training increase; base is narrowly highest on slop_lexicon and clearly highest on rule_of_three_approx, DPO is highest on stock opener/closer features, final/RLVR attenuates from DPO on most features, and SFT is the low-emission point across all tracked features
 
 vllm_0111_cu128_olmo3_dpo_1prompt_smoke:
   wandb_run_id: dibzdwyd
