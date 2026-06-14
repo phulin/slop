@@ -198,11 +198,24 @@ W&B runs:
   the full 8,192 tokens. Decode throughput was `1,969.4` generated tokens/sec;
   wall throughput including model load and CUDA graph capture was `257.9`
   generated tokens/sec.
+- `pqctgupb`: first-64 prompt contract run with `--ignore-eos`. It generated
+  the full 8,192 tokens on the same first-64 prompt IDs used by the paired
+  Torch run. Decode throughput was `1,921.3` generated tokens/sec; wall
+  throughput was `271.9` generated tokens/sec.
+- `b0zz1hzo`: paired Torch/Transformers first-64 prompt contract run. It also
+  generated the full 8,192 tokens with the same prompt IDs and order. Wall
+  throughput was `58.8` generated tokens/sec on this compile-heavy small run.
 
 The current Torch/Transformers target-shape OLMo shards run at about
 `356-359` generated tokens/sec including load/compile for much larger
 512-prompt x 8-completion x 1,024-token shards. SGLang's decode path is much
-faster once loaded, but the 64-prompt wall-clock comparison is not yet better
-because model load and graph capture dominate the small benchmark. For larger
-fixed-length generation shards, SGLang is likely worth a controlled pilot,
-provided the stop-token contract is accepted.
+faster once loaded, and the paired first-64 run is also faster wall-clock than
+Torch despite load and graph capture. Feature counts are not bit-identical
+because the backends do not share an identical sampling RNG path, so SGLang
+should be piloted as a throughput backend and judged by aggregate feature
+stability rather than exact generation equality.
+
+Next backend step: run a controlled SGLang pilot at the existing target shape
+on one checkpoint/temp cell, using `--sampling-strategy first --ignore-eos`,
+then compare aggregate rates against the existing Torch DPO temperature 1.0
+cache before replacing broader free-running shards.

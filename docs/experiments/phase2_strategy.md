@@ -159,10 +159,13 @@ default stop behavior, SGLang stops on OLMo's additional chat stop token
 `<|im_end|>` (`100265`), producing only 1,117 generated tokens on a
 64-prompt x 128-token DPO benchmark. With `--ignore-eos`, it produces the full
 8,192 tokens and reaches 1,969 decode tokens/sec, but that explicitly changes
-the stop-token contract. Before launching a larger SGLang shard, run a paired
-Torch/SGLang contract check on the same prompts and record whether the Phase 2
-fixed-length generation measurements should ignore additional chat stop tokens.
-vLLM remains blocked for OLMo-3 offline generation on this host.
+the stop-token contract. A paired first-64 check now confirms that
+Torch/Transformers and SGLang with `--ignore-eos` use the same prompt IDs/order
+and both generate the full 8,192-token fixed-length shape. The generated text
+and feature counts are not bit-identical because backend sampling RNG differs,
+so the next step is a controlled SGLang target-shape pilot and aggregate-rate
+comparison, not an immediate full backend replacement. vLLM remains blocked for
+OLMo-3 offline generation on this host.
 
 Teacher-forced initiator sequence enumeration now includes sentence-case
 surface variants in addition to lowercase forms. This is required because the
@@ -1004,3 +1007,13 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   4.16 decode seconds, 1,969 decode tokens/sec, and 31.77 wall seconds
   including load and graph capture. Use this as a backend-throughput candidate
   datapoint, not as a science result until the stop-token contract is settled.
+- `stage2-phase2-olmo3-dpo-sglang052-cu128-first64-t1-128tok-ignoreeos-contract`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/pqctgupb`) and
+  `stage2-phase2-olmo3-dpo-torch-first64-t1-128tok-contract`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/b0zz1hzo`) ran the paired
+  first-64 stop-token contract check. Both backends used the same prompt IDs
+  in the same order and generated the full 8,192 tokens. SGLang wall throughput
+  was about 271.9 tokens/sec on this small run, compared with Torch at 58.8
+  tokens/sec; SGLang decode-only throughput was 1,921 tokens/sec. Feature
+  counts differed because backend sampling RNG is not bit-identical, so use a
+  larger aggregate pilot before relying on SGLang for science shards.

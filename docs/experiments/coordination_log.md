@@ -988,3 +988,12 @@
   Treat SGLang as a promising fixed-length generation backend candidate, but
   settle the stop-token contract against Torch before using it for science
   shards.
+- Ran the paired first-64 stop-token contract check. SGLang with
+  `--sampling-strategy first --ignore-eos` logged W&B run `pqctgupb`; the
+  matching Torch/Transformers CLI run logged `b0zz1hzo`. The prompt IDs and
+  order matched exactly, and both backends generated 8,192 tokens. SGLang was
+  much faster on this small wall-clock check (`271.9` tokens/sec vs. Torch
+  `58.8` tokens/sec), with decode-only throughput `1,921` tokens/sec. Feature
+  counts are not exact-match comparable because backend sampling RNG differs,
+  so the next step is a controlled target-shape SGLang pilot and aggregate-rate
+  comparison against the existing Torch DPO temp-1 cache.

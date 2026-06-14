@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import csv
+import hashlib
 import json
 import random
 import resource
@@ -34,6 +35,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--input", type=Path, required=True, help="Prompt-package JSONL.")
     parser.add_argument("--sample-size", type=int, default=64)
     parser.add_argument("--seed", type=int, default=1729)
+    parser.add_argument(
+        "--sampling-strategy",
+        default="random",
+        choices=["random", "first", "hash_reservoir"],
+        help="Prompt sampling strategy; use first for paired Torch/SGLang contract checks.",
+    )
     parser.add_argument("--feature", action="append", default=[])
     parser.add_argument("--temperature", action="append", type=float, default=[])
     parser.add_argument("--top-p", action="append", type=float, default=[])
@@ -68,17 +75,53 @@ def _peak_rss_mb() -> float:
     return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
 
 
-def _read_prompts(path: Path, *, sample_size: int, seed: int) -> list[dict[str, Any]]:
+def _prompt_record_id(row: dict[str, Any], *, row_index: int) -> str:
+    for key in ("phase2_prompt_id", "prompt_id", "doc_id", "id"):
+        value = row.get(key)
+        if value is not None:
+            return str(value)
+    return str(row_index)
+
+
+def _sample_key(row: dict[str, Any], *, row_index: int, source_name: str, seed: int) -> int:
+    record_id = _prompt_record_id(row, row_index=row_index)
+    payload = f"{seed}\0{source_name}\0{record_id}".encode("utf-8")
+    return int(hashlib.blake2b(payload, digest_size=8).hexdigest(), 16)
+
+
+def _read_prompts(
+    path: Path,
+    *,
+    sample_size: int,
+    seed: int,
+    sampling_strategy: str,
+) -> list[dict[str, Any]]:
     rows = []
     with path.open(encoding="utf-8") as handle:
-        for line in handle:
+        for row_index, line in enumerate(handle):
             if not line.strip():
                 continue
             row = json.loads(line)
             if row.get("prompt"):
+                row.setdefault("_sglang_source_row_index", row_index)
                 rows.append(row)
     if sample_size <= 0 or sample_size >= len(rows):
         return rows
+    if sampling_strategy == "first":
+        return rows[:sample_size]
+    if sampling_strategy == "hash_reservoir":
+        source_name = _source_name(path)
+        return sorted(
+            rows,
+            key=lambda row: _sample_key(
+                row,
+                row_index=int(row.get("_sglang_source_row_index", 0)),
+                source_name=source_name,
+                seed=seed,
+            ),
+        )[:sample_size]
+    if sampling_strategy != "random":
+        raise ValueError(f"unsupported sampling strategy: {sampling_strategy}")
     rng = random.Random(seed)
     return rng.sample(rows, sample_size)
 
@@ -212,7 +255,12 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
     temperatures = args.temperature or [0.0, 0.7]
     top_ps = args.top_p or [0.95]
     source_name = _source_name(args.input)
-    prompt_rows = _read_prompts(args.input, sample_size=args.sample_size, seed=args.seed)
+    prompt_rows = _read_prompts(
+        args.input,
+        sample_size=args.sample_size,
+        seed=args.seed,
+        sampling_strategy=args.sampling_strategy,
+    )
     raw_prompts = [row["prompt"] for row in prompt_rows]
     if not raw_prompts:
         raise ValueError(f"No prompt rows found in {args.input}")
@@ -236,6 +284,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
             "source": source_name,
             "sample_size": args.sample_size,
             "seed": args.seed,
+            "sampling_strategy": args.sampling_strategy,
             "features": sorted(selected_features),
             "temperatures": temperatures,
             "top_ps": top_ps,
@@ -326,7 +375,9 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                                 "prompt_id": prompt_row.get("phase2_prompt_id")
                                 or prompt_row.get("prompt_id")
                                 or prompt_row.get("doc_id"),
-                                "source_row_index": prompt_row.get("source_row_index"),
+                                "source_row_index": prompt_row.get("source_row_index")
+                                if prompt_row.get("source_row_index") is not None
+                                else prompt_row.get("_sglang_source_row_index"),
                                 "completion_index": completion_index,
                                 "temperature": temperature,
                                 "top_p": top_p,
