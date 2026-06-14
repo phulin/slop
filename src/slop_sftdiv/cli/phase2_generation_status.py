@@ -22,9 +22,12 @@ OUTPUT_COLUMNS = [
     "latest_log_prompts",
     "latest_log_generations_estimate",
     "latest_log_elapsed_seconds",
+    "latest_log_avg_seconds_per_prompt",
     "latest_log_seconds_per_prompt",
     "eta_seconds",
     "eta_hms",
+    "eta_avg_seconds",
+    "eta_avg_hms",
     "generations_output",
     "summary_output",
     "log_output",
@@ -107,6 +110,17 @@ def _format_hms(seconds: float | int | None) -> str:
     return f"{hours:d}:{minutes:02d}:{seconds_int:02d}"
 
 
+def _remaining_seconds(
+    *,
+    expected_prompts: float | None,
+    latest_log_prompts: int | None,
+    seconds_per_prompt: float | None,
+) -> float | None:
+    if expected_prompts is None or latest_log_prompts is None or seconds_per_prompt is None:
+        return None
+    return max(0.0, (expected_prompts - latest_log_prompts) * seconds_per_prompt)
+
+
 def _latest_log_progress(path: Path | None) -> dict[str, Any]:
     if path is None or not path.exists():
         return {
@@ -151,6 +165,12 @@ def _status_row(path: Path) -> dict[str, Any]:
     expected_generations = int(payload["expected_generations"])
     latest_log_progress = _latest_log_progress(log_output)
     latest_log_prompts = latest_log_progress["prompts"]
+    latest_log_elapsed_seconds = latest_log_progress["elapsed_seconds"]
+    avg_seconds_per_prompt = (
+        latest_log_elapsed_seconds / latest_log_prompts
+        if latest_log_elapsed_seconds is not None and latest_log_prompts
+        else None
+    )
     completions_per_prompt = _command_option_int(payload.get("command"), "--completions-per-prompt")
     latest_log_generations_estimate = (
         latest_log_prompts * completions_per_prompt
@@ -162,12 +182,15 @@ def _status_row(path: Path) -> dict[str, Any]:
         if completions_per_prompt not in (None, 0)
         else None
     )
-    eta_seconds = (
-        max(0.0, (expected_prompts - latest_log_prompts) * latest_log_progress["seconds_per_prompt"])
-        if expected_prompts is not None
-        and latest_log_prompts is not None
-        and latest_log_progress["seconds_per_prompt"] is not None
-        else None
+    eta_seconds = _remaining_seconds(
+        expected_prompts=expected_prompts,
+        latest_log_prompts=latest_log_prompts,
+        seconds_per_prompt=latest_log_progress["seconds_per_prompt"],
+    )
+    eta_avg_seconds = _remaining_seconds(
+        expected_prompts=expected_prompts,
+        latest_log_prompts=latest_log_prompts,
+        seconds_per_prompt=avg_seconds_per_prompt,
     )
     completed = summary_output.exists() and existing_generations >= expected_generations
     return {
@@ -184,9 +207,10 @@ def _status_row(path: Path) -> dict[str, Any]:
             latest_log_generations_estimate if latest_log_generations_estimate is not None else ""
         ),
         "latest_log_elapsed_seconds": (
-            latest_log_progress["elapsed_seconds"]
-            if latest_log_progress["elapsed_seconds"] is not None
-            else ""
+            latest_log_elapsed_seconds if latest_log_elapsed_seconds is not None else ""
+        ),
+        "latest_log_avg_seconds_per_prompt": (
+            avg_seconds_per_prompt if avg_seconds_per_prompt is not None else ""
         ),
         "latest_log_seconds_per_prompt": (
             latest_log_progress["seconds_per_prompt"]
@@ -195,6 +219,8 @@ def _status_row(path: Path) -> dict[str, Any]:
         ),
         "eta_seconds": eta_seconds if eta_seconds is not None else "",
         "eta_hms": _format_hms(eta_seconds),
+        "eta_avg_seconds": eta_avg_seconds if eta_avg_seconds is not None else "",
+        "eta_avg_hms": _format_hms(eta_avg_seconds),
         "generations_output": str(generations_output),
         "summary_output": str(summary_output),
         "log_output": log_output_raw,
@@ -216,7 +242,8 @@ def run_phase2_generation_status(args: argparse.Namespace) -> list[dict[str, Any
     for row in rows:
         print(
             "{stage} t={temperature}: alive={alive} completed={completed} "
-            "generations={existing}/{expected} log_prompts={log_prompts} eta={eta}".format(
+            "generations={existing}/{expected} log_prompts={log_prompts} "
+            "eta={eta} eta_avg={eta_avg}".format(
                 stage=row["stage"],
                 temperature=row["temperature"],
                 alive=row["process_alive"],
@@ -225,6 +252,7 @@ def run_phase2_generation_status(args: argparse.Namespace) -> list[dict[str, Any
                 expected=row["expected_generations"],
                 log_prompts=row["latest_log_prompts"] or "n/a",
                 eta=row["eta_hms"] or "n/a",
+                eta_avg=row["eta_avg_hms"] or "n/a",
             )
         )
     return rows

@@ -15,6 +15,7 @@ from slop_sftdiv.cli.phase2_generation_status import (
     _command_option_int,
     _format_hms,
     _latest_log_progress,
+    _remaining_seconds,
 )
 
 
@@ -149,6 +150,12 @@ def _selection_status(selection_path: Path) -> dict[str, Any]:
     existing_generations = _jsonl_records(generations_output)
     latest_log_progress = _latest_log_progress(log_output)
     latest_log_prompts = latest_log_progress["prompts"]
+    latest_log_elapsed_seconds = latest_log_progress["elapsed_seconds"]
+    avg_seconds_per_prompt = (
+        latest_log_elapsed_seconds / latest_log_prompts
+        if latest_log_elapsed_seconds is not None and latest_log_prompts
+        else None
+    )
     completions_per_prompt = _command_option_int(selection.get("command"), "--completions-per-prompt")
     latest_log_generations_estimate = (
         latest_log_prompts * completions_per_prompt
@@ -160,12 +167,15 @@ def _selection_status(selection_path: Path) -> dict[str, Any]:
         if completions_per_prompt not in (None, 0)
         else None
     )
-    eta_seconds = (
-        max(0.0, (expected_prompts - latest_log_prompts) * latest_log_progress["seconds_per_prompt"])
-        if expected_prompts is not None
-        and latest_log_prompts is not None
-        and latest_log_progress["seconds_per_prompt"] is not None
-        else None
+    eta_seconds = _remaining_seconds(
+        expected_prompts=expected_prompts,
+        latest_log_prompts=latest_log_prompts,
+        seconds_per_prompt=latest_log_progress["seconds_per_prompt"],
+    )
+    eta_avg_seconds = _remaining_seconds(
+        expected_prompts=expected_prompts,
+        latest_log_prompts=latest_log_prompts,
+        seconds_per_prompt=avg_seconds_per_prompt,
     )
     completed = summary_output.exists() and existing_generations >= expected_generations
     return {
@@ -178,10 +188,13 @@ def _selection_status(selection_path: Path) -> dict[str, Any]:
         "existing_generations": existing_generations,
         "latest_log_prompts": latest_log_prompts,
         "latest_log_generations_estimate": latest_log_generations_estimate,
-        "latest_log_elapsed_seconds": latest_log_progress["elapsed_seconds"],
+        "latest_log_elapsed_seconds": latest_log_elapsed_seconds,
+        "latest_log_avg_seconds_per_prompt": avg_seconds_per_prompt,
         "latest_log_seconds_per_prompt": latest_log_progress["seconds_per_prompt"],
         "eta_seconds": eta_seconds,
         "eta_hms": _format_hms(eta_seconds),
+        "eta_avg_seconds": eta_avg_seconds,
+        "eta_avg_hms": _format_hms(eta_avg_seconds),
         "completed": completed,
     }
 
@@ -217,7 +230,8 @@ def _wait_for_completion(args: argparse.Namespace) -> dict[str, Any]:
             f"{status['existing_generations']}/{status['expected_generations']} rows; "
             f"log_prompts={status['latest_log_prompts'] or 'n/a'}; "
             f"log_generation_estimate={status['latest_log_generations_estimate'] or 'n/a'}; "
-            f"eta={status['eta_hms'] or 'n/a'}",
+            f"eta={status['eta_hms'] or 'n/a'}; "
+            f"eta_avg={status['eta_avg_hms'] or 'n/a'}",
             flush=True,
         )
         time.sleep(args.poll_seconds)
@@ -280,9 +294,12 @@ def run_phase2_post_shard_analysis(args: argparse.Namespace) -> dict[str, Any]:
         "latest_log_prompts": status["latest_log_prompts"],
         "latest_log_generations_estimate": status["latest_log_generations_estimate"],
         "latest_log_elapsed_seconds": status["latest_log_elapsed_seconds"],
+        "latest_log_avg_seconds_per_prompt": status["latest_log_avg_seconds_per_prompt"],
         "latest_log_seconds_per_prompt": status["latest_log_seconds_per_prompt"],
         "eta_seconds": status["eta_seconds"],
         "eta_hms": status["eta_hms"],
+        "eta_avg_seconds": status["eta_avg_seconds"],
+        "eta_avg_hms": status["eta_avg_hms"],
         "generations_output": str(status["generations_output"]),
         "summary_output": str(status["summary_output"]),
         "scale_grid_output": str(args.scale_grid_output),

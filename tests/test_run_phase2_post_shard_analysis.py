@@ -64,8 +64,10 @@ def test_post_shard_analysis_dry_run_reports_planned_outputs(tmp_path, capsys):
     assert payload["latest_log_prompts"] == 16
     assert payload["latest_log_generations_estimate"] == 128
     assert payload["latest_log_elapsed_seconds"] == 344
+    assert payload["latest_log_avg_seconds_per_prompt"] == 21.5
     assert payload["latest_log_seconds_per_prompt"] == 21.56
     assert payload["eta_hms"] == "0:00:00"
+    assert payload["eta_avg_hms"] == "0:00:00"
     assert "rerun with --execute" in capsys.readouterr().out
 
 

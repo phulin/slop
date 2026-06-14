@@ -86,15 +86,20 @@ def test_phase2_generation_status_reports_tqdm_log_progress(tmp_path, capsys):
     assert rows[0]["latest_log_prompts"] == 32
     assert rows[0]["latest_log_generations_estimate"] == 256
     assert rows[0]["latest_log_elapsed_seconds"] == 692
+    assert rows[0]["latest_log_avg_seconds_per_prompt"] == 21.625
     assert rows[0]["latest_log_seconds_per_prompt"] == 21.66
     assert rows[0]["eta_hms"] == "5:58:07"
+    assert rows[0]["eta_avg_hms"] == "5:57:32"
     output = capsys.readouterr().out
     assert "log_prompts=32" in output
     assert "eta=5:58:07" in output
+    assert "eta_avg=5:57:32" in output
     with output_path.open(encoding="utf-8", newline="") as handle:
         csv_rows = list(csv.DictReader(handle))
     assert csv_rows[0]["latest_log_prompts"] == "32"
     assert csv_rows[0]["latest_log_generations_estimate"] == "256"
     assert csv_rows[0]["latest_log_elapsed_seconds"] == "692"
+    assert csv_rows[0]["latest_log_avg_seconds_per_prompt"] == "21.625"
     assert csv_rows[0]["latest_log_seconds_per_prompt"] == "21.66"
     assert csv_rows[0]["eta_hms"] == "5:58:07"
+    assert csv_rows[0]["eta_avg_hms"] == "5:57:32"
