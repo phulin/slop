@@ -1286,3 +1286,14 @@
   written yet, Python worker PID `5950`, and A100 utilization `96%` at about
   39.8 GiB. The process inherited the explicit CUDA wheel `LD_LIBRARY_PATH`;
   output rows are expected only after the first batch flush.
+- Fixed the free-running generation cache writer for future long shards:
+  completed generation batches are now appended to the JSONL cache immediately
+  instead of waiting until the entire run finishes. This lets
+  `slop-phase2-generation-status` observe partial progress and preserves
+  completed batches if a later batch crashes. Focused verification:
+  `uv run pytest -q tests/test_free_running_emission.py
+  tests/test_phase2_generation_status.py` (`4 passed`) and
+  `uv run ruff check src/slop_sftdiv/cli/free_running_emission.py
+  tests/test_free_running_emission.py` (`All checks passed`). This code change
+  does not affect the already-running `p4v56vda` process, which was launched
+  before the patch.
