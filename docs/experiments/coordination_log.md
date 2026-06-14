@@ -1257,3 +1257,9 @@
   cap because it is estimated at `31.96` A100-hours, while the completed
   512-prompt DPO t=1.0 shard was selectable with `--allow-completed` and printed
   the matching generation command.
+- Extended the launcher with explicit `--detach` support and added
+  `slop-phase2-generation-status`. Detached launches write a selection JSON
+  containing PID, log path, expected outputs, and command; the status command
+  checks PID liveness and output completion. Validation on the completed
+  bounded DPO t=1.0 selection reported `alive=False`, `completed=True`, and
+  `4096/4096` generations.

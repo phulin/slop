@@ -119,3 +119,41 @@ def test_launch_phase2_generation_shard_execute_is_explicit_and_mocked(tmp_path,
 
     assert payload["executed"] is True
     assert calls == [(["uv", "run", "echo", "dpo"], True)]
+
+
+def test_launch_phase2_generation_shard_detaches_and_writes_pid(tmp_path, monkeypatch):
+    plan_path = tmp_path / "plan.csv"
+    selection_path = tmp_path / "selection.json"
+    log_path = tmp_path / "selection.log"
+    _write_plan(plan_path)
+    popen_calls = []
+
+    class FakeProcess:
+        pid = 12345
+
+    def fake_popen(command, *, stdout, stderr, start_new_session):
+        popen_calls.append((command, stdout.name, stderr, start_new_session))
+        return FakeProcess()
+
+    monkeypatch.setattr("slop_sftdiv.cli.launch_phase2_generation_shard.subprocess.Popen", fake_popen)
+    args = build_parser().parse_args(
+        [
+            "--plan",
+            str(plan_path),
+            "--stage",
+            "dpo",
+            "--execute",
+            "--detach",
+            "--selection-output",
+            str(selection_path),
+            "--log-output",
+            str(log_path),
+        ]
+    )
+
+    payload = run_launch_phase2_generation_shard(args)
+
+    assert payload["detached"] is True
+    assert payload["pid"] == 12345
+    assert json.loads(selection_path.read_text(encoding="utf-8"))["pid"] == 12345
+    assert popen_calls == [(["uv", "run", "echo", "dpo"], str(log_path), subprocess.STDOUT, True)]

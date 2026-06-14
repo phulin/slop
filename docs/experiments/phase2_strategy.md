@@ -1129,3 +1129,9 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   refused the launch at `31.96` estimated A100-hours under the default 8-hour
   cap; a dry-run against the completed 512-prompt DPO t=1.0 shard printed the
   matching `slop-free-running-emission` command.
+- Detached execution is explicit: add `--execute --detach --selection-output
+  artifacts/phase2/analysis/<selection>.json` to launch in the background and
+  write the PID/log path. `slop-phase2-generation-status` reads those selection
+  records and checks PID liveness plus expected output files. A status check on
+  the completed bounded DPO t=1.0 selection reported `completed=True` with
+  `4096/4096` generations.

@@ -365,7 +365,9 @@ question it answers:
   throughput.
 - Use `slop-launch-phase2-generation-shard` to execute one planned shard at a
   time. It is dry-run by default, requires `--execute` to launch, and refuses
-  shards above the configured A100-hour cap unless `--force` is passed.
+  shards above the configured A100-hour cap unless `--force` is passed. For
+  long shards, use `--detach --selection-output ...` and monitor with
+  `slop-phase2-generation-status`.
 
 ## Open Caveats
 
