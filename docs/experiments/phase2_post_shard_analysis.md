@@ -43,6 +43,23 @@ Run this first. It checks whether the larger DPO cell materially changes the
 free-running feature-rate read before spending more A100 time on matched
 1,024-prompt base/SFT/final shards.
 
+The combined runner can perform the scale comparison and compounding join after
+the shard completes:
+
+```bash
+env UV_CACHE_DIR=/home/user/slop/.uv-cache \
+  LD_LIBRARY_PATH=/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cublas/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cuda_cupti/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cuda_nvrtc/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cuda_runtime/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cudnn/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cufft/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cufile/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/curand/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cusolver/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cusparse/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cusparselt/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/nccl/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/nvjitlink/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/nvshmem/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/nvtx/lib \
+  uv run slop-run-phase2-post-shard-analysis \
+    --selection artifacts/phase2/analysis/olmo3_generation_launch_selection_dpo_1024prompt_8comp_t1_batched16.json \
+    --wait \
+    --poll-seconds 300 \
+    --timeout-seconds 43200 \
+    --execute \
+    --wandb-mode online
+```
+
+The lower-level commands are kept below for transparency and manual reruns.
+
 ```bash
 env UV_CACHE_DIR=/home/user/slop/.uv-cache \
   LD_LIBRARY_PATH=/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cublas/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cuda_cupti/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cuda_nvrtc/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cuda_runtime/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cudnn/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cufft/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cufile/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/curand/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cusolver/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cusparse/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/cusparselt/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/nccl/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/nvjitlink/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/nvshmem/lib:/home/user/slop/.venv/lib/python3.14/site-packages/nvidia/nvtx/lib \

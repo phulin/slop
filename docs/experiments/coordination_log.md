@@ -1321,3 +1321,14 @@
   join using `slop-analyze-phase2-compounding` against
   `olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid.csv`, and the
   decision rule to analyze before launching matched base/SFT/final shards.
+- Added `slop-run-phase2-post-shard-analysis`, a CPU-side post-shard runner
+  that waits for a detached generation selection to reach completion, then
+  calls the existing generation-grid assembler and compounding analyzer with
+  the DPO 512-vs-1024 and 1,024-prompt DPO Result B paths documented in the
+  runbook. The command is explicit: without `--execute` it only checks
+  readiness and prints planned outputs. Focused verification:
+  `uv run pytest -q tests/test_run_phase2_post_shard_analysis.py
+  tests/test_phase2_generation_status.py` (`5 passed`) and
+  `uv run ruff check src/slop_sftdiv/cli/run_phase2_post_shard_analysis.py
+  tests/test_run_phase2_post_shard_analysis.py pyproject.toml` (`All checks
+  passed`).
