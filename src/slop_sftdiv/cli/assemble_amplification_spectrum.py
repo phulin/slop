@@ -36,10 +36,10 @@ def build_parser() -> argparse.ArgumentParser:
         description="Assemble existing Phase 1/2 artifacts into an amplification-spectrum table."
     )
     parser.add_argument("--feature-rate", action="append", default=[])
-    parser.add_argument("--propensity-grid", type=Path, default=None)
+    parser.add_argument("--propensity-grid", action="append", type=Path, default=[])
     parser.add_argument("--generation-grid", type=Path, default=None)
     parser.add_argument("--compounding", type=Path, default=None)
-    parser.add_argument("--denominator-support", type=Path, default=None)
+    parser.add_argument("--denominator-support", action="append", type=Path, default=[])
     parser.add_argument("--feature", action="append", default=[])
     parser.add_argument(
         "--output",
@@ -98,32 +98,35 @@ def _data_rates(paths: list[str]) -> dict[str, dict[str, float]]:
     return rates
 
 
-def _propensity(path: Path | None) -> dict[tuple[str, str], dict[str, Any]]:
-    if path is None:
-        return {}
+def _propensity(paths: list[Path]) -> dict[tuple[str, str], dict[str, Any]]:
     out = {}
-    for row in _read_rows(path):
-        out[(str(row["feature"]), str(row["stage"]))] = {
-            "teacher_forced_opportunities": _int_or_none(row.get("opportunities")),
-            "teacher_forced_reference_initiations": _int_or_none(
-                row.get("reference_initiations")
-            ),
-            "teacher_forced_reference_rate": _float_or_none(row.get("reference_rate")),
-            "teacher_forced_mean_prob_mass": _float_or_none(row.get("mean_prob_mass")),
-            "teacher_forced_af": _float_or_none(row.get("amplification_factor")),
-            "teacher_forced_af_ci_low": _float_or_none(row.get("amplification_factor_ci_low")),
-            "teacher_forced_af_ci_high": _float_or_none(row.get("amplification_factor_ci_high")),
-            "normalization_feature": row.get("normalization_feature") or "",
-            "teacher_forced_normalized_af": _float_or_none(
-                row.get("normalized_amplification_factor")
-            ),
-            "teacher_forced_normalized_af_ci_low": _float_or_none(
-                row.get("normalized_amplification_factor_ci_low")
-            ),
-            "teacher_forced_normalized_af_ci_high": _float_or_none(
-                row.get("normalized_amplification_factor_ci_high")
-            ),
-        }
+    for path in paths:
+        for row in _read_rows(path):
+            out[(str(row["feature"]), str(row["stage"]))] = {
+                "teacher_forced_opportunities": _int_or_none(row.get("opportunities")),
+                "teacher_forced_reference_initiations": _int_or_none(
+                    row.get("reference_initiations")
+                ),
+                "teacher_forced_reference_rate": _float_or_none(row.get("reference_rate")),
+                "teacher_forced_mean_prob_mass": _float_or_none(row.get("mean_prob_mass")),
+                "teacher_forced_af": _float_or_none(row.get("amplification_factor")),
+                "teacher_forced_af_ci_low": _float_or_none(
+                    row.get("amplification_factor_ci_low")
+                ),
+                "teacher_forced_af_ci_high": _float_or_none(
+                    row.get("amplification_factor_ci_high")
+                ),
+                "normalization_feature": row.get("normalization_feature") or "",
+                "teacher_forced_normalized_af": _float_or_none(
+                    row.get("normalized_amplification_factor")
+                ),
+                "teacher_forced_normalized_af_ci_low": _float_or_none(
+                    row.get("normalized_amplification_factor_ci_low")
+                ),
+                "teacher_forced_normalized_af_ci_high": _float_or_none(
+                    row.get("normalized_amplification_factor_ci_high")
+                ),
+            }
     return out
 
 
@@ -175,21 +178,20 @@ def _compounding(path: Path | None) -> dict[tuple[str, str], dict[str, Any]]:
     return out
 
 
-def _denominators(path: Path | None) -> dict[str, dict[str, Any]]:
-    if path is None:
-        return {}
+def _denominators(paths: list[Path]) -> dict[str, dict[str, Any]]:
     out = {}
-    for row in _read_rows(path):
-        out[str(row["feature"])] = {
-            "denominator_opportunities_5k": _int_or_none(row.get("opportunities")),
-            "denominator_reference_initiations_5k": _int_or_none(
-                row.get("reference_initiations")
-            ),
-            "denominator_reference_rate_5k": _float_or_none(row.get("reference_rate")),
-            "denominator_documents_with_reference_5k": _int_or_none(
-                row.get("documents_with_reference")
-            ),
-        }
+    for path in paths:
+        for row in _read_rows(path):
+            out[str(row["feature"])] = {
+                "denominator_opportunities_5k": _int_or_none(row.get("opportunities")),
+                "denominator_reference_initiations_5k": _int_or_none(
+                    row.get("reference_initiations")
+                ),
+                "denominator_reference_rate_5k": _float_or_none(row.get("reference_rate")),
+                "denominator_documents_with_reference_5k": _int_or_none(
+                    row.get("documents_with_reference")
+                ),
+            }
     return out
 
 
@@ -199,6 +201,8 @@ def _coverage_note(row: dict[str, Any]) -> str:
         notes.append("teacher-forced omitted: initiation contract not frozen")
     elif row.get("teacher_forced_af") is None:
         notes.append("teacher-forced missing")
+    elif row["feature"] == "rule_of_three_approx":
+        notes.append("teacher-forced proxy: comma-pair extension")
     refs = row.get("denominator_reference_initiations_5k")
     if row["feature"] == "contrastive_negation" and refs is not None and refs < 20:
         notes.append(f"sparse held-out references: {refs} in 5k prompts")
@@ -306,7 +310,7 @@ def _write_summary(path: Path, rows: list[dict[str, Any]]) -> None:
             "",
             "## Caveats",
             "",
-            "- `rule_of_three_approx` is free-running-only in Phase 2 until a teacher-forced initiation contract is frozen.",
+            "- `rule_of_three_approx` teacher-forced values, when present, use the comma-pair extension proxy rather than open-vocabulary construction initiation.",
             "- `contrastive_negation` has sparse held-out target support in the 5k prompt package.",
             "- SGLang target-shape generations are not used here because the current `--ignore-eos` contract changes aggregate rates relative to Torch.",
         ]
@@ -328,12 +332,10 @@ def run(args: argparse.Namespace) -> list[dict[str, Any]]:
         tags=["stage2", "phase2", "amplification-spectrum", *args.wandb_tag],
         config={
             "feature_rates": args.feature_rate,
-            "propensity_grid": str(args.propensity_grid) if args.propensity_grid else None,
+            "propensity_grid": [str(path) for path in args.propensity_grid],
             "generation_grid": str(args.generation_grid) if args.generation_grid else None,
             "compounding": str(args.compounding) if args.compounding else None,
-            "denominator_support": str(args.denominator_support)
-            if args.denominator_support
-            else None,
+            "denominator_support": [str(path) for path in args.denominator_support],
             "features": list(args.feature or DEFAULT_FEATURES),
             "output": str(args.output),
             "summary_output": str(args.summary_output),

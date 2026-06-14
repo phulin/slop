@@ -1059,3 +1059,20 @@
   opportunities, and 155 references. The pilot proxy does not show
   DPO-stage amplification; SFT has the highest point estimate, and all stages
   are below the reference extension rate.
+- Assembled the rule-of-three completion teacher-forced mini-grid as a first
+  class Phase 2 grid:
+  `stage2-phase2-olmo3-rule-of-three-completion-stage-grid`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/bi1jm0qf`. Outputs:
+  `artifacts/phase2/analysis/olmo3_promptpkg512_rule_of_three_completion_stage_grid.csv`,
+  `artifacts/phase2/analysis/olmo3_promptpkg512_rule_of_three_completion_stage_comparison.csv`,
+  and
+  `artifacts/phase2/analysis/olmo3_promptpkg512_rule_of_three_completion_stage_grid_summary.md`.
+- Rebuilt the bounded amplification spectrum with both teacher-forced grids:
+  the 1,024-prompt `slop_lexicon`/`neutral_common_controls` grid and the
+  512-prompt `rule_of_three_approx` comma-pair extension proxy grid. W&B run:
+  `stage2-phase2-olmo3-amplification-spectrum-bounded-v2`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/jkie1xy6`. It still has 24
+  feature-stage rows, but teacher-forced coverage increases from 4 cells to 8
+  cells. Outputs:
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v2.csv` and
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v2_summary.md`.

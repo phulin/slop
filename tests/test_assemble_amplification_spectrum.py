@@ -14,9 +14,11 @@ def _write_csv(path, rows):
 def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, monkeypatch):
     feature_rates = tmp_path / "feature_rates.csv"
     propensity = tmp_path / "propensity.csv"
+    rule_propensity = tmp_path / "rule_propensity.csv"
     generation = tmp_path / "generation.csv"
     compounding = tmp_path / "compounding.csv"
     denominators = tmp_path / "denominators.csv"
+    rule_denominators = tmp_path / "rule_denominators.csv"
     output = tmp_path / "spectrum.csv"
     summary = tmp_path / "spectrum.md"
 
@@ -60,6 +62,26 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
                 "normalized_amplification_factor": "1.5",
                 "normalized_amplification_factor_ci_low": "1.1",
                 "normalized_amplification_factor_ci_high": "2.0",
+            }
+        ],
+    )
+    _write_csv(
+        rule_propensity,
+        [
+            {
+                "stage": "base",
+                "feature": "rule_of_three_approx",
+                "opportunities": "20",
+                "reference_initiations": "8",
+                "reference_rate": "0.4",
+                "mean_prob_mass": "0.3",
+                "amplification_factor": "0.75",
+                "amplification_factor_ci_low": "0.6",
+                "amplification_factor_ci_high": "0.9",
+                "normalization_feature": "",
+                "normalized_amplification_factor": "",
+                "normalized_amplification_factor_ci_low": "",
+                "normalized_amplification_factor_ci_high": "",
             }
         ],
     )
@@ -114,6 +136,18 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
             },
         ],
     )
+    _write_csv(
+        rule_denominators,
+        [
+            {
+                "feature": "rule_of_three_approx",
+                "opportunities": "200",
+                "reference_initiations": "80",
+                "reference_rate": "0.4",
+                "documents_with_reference": "50",
+            },
+        ],
+    )
 
     class FakeRun:
         def log(self, _payload):
@@ -138,16 +172,22 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
             str(feature_rates),
             "--propensity-grid",
             str(propensity),
+            "--propensity-grid",
+            str(rule_propensity),
             "--generation-grid",
             str(generation),
             "--compounding",
             str(compounding),
             "--denominator-support",
             str(denominators),
+            "--denominator-support",
+            str(rule_denominators),
             "--feature",
             "slop_lexicon",
             "--feature",
             "contrastive_negation",
+            "--feature",
+            "rule_of_three_approx",
             "--output",
             str(output),
             "--summary-output",
@@ -166,6 +206,10 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
     assert dpo_slop["teacher_forced_normalized_af"] == 1.5
     assert dpo_slop["free_run_per_1k_tokens"] == 8.0
     assert dpo_slop["compounding_excess_per_1k_opportunities"] == 2.0
+    rule_base = by_key[("rule_of_three_approx", "base")]
+    assert rule_base["teacher_forced_af"] == 0.75
+    assert rule_base["denominator_reference_initiations_5k"] == 80
+    assert "teacher-forced proxy: comma-pair extension" in rule_base["coverage_note"]
     assert by_key[("contrastive_negation", "base")]["coverage_note"].startswith(
         "teacher-forced missing"
     )
@@ -173,5 +217,7 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
         ("contrastive_negation", "base")
     ]["coverage_note"]
     assert output.exists()
-    assert "SGLang target-shape generations are not used here" in summary.read_text()
+    summary_text = summary.read_text()
+    assert "SGLang target-shape generations are not used here" in summary_text
+    assert "comma-pair extension proxy" in summary_text
     assert "amplification_spectrum" in logged_tables

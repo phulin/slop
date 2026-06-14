@@ -217,16 +217,18 @@ expectation even under deterministic decoding.
 ## Bounded Amplification Spectrum
 
 The current bounded headline table is assembled by
-`slop-assemble-amplification-spectrum` and logged as W&B run `v31wiggh`
-(`stage2-phase2-olmo3-amplification-spectrum-bounded`). Local outputs:
+`slop-assemble-amplification-spectrum` and logged as W&B run `jkie1xy6`
+(`stage2-phase2-olmo3-amplification-spectrum-bounded-v2`). Local outputs:
 
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded.csv`
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_summary.md`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v2.csv`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v2_summary.md`
 
 It contains 24 rows: six retained feature views across base, SFT, DPO, and
 final/RLVR. Each row joins Phase 1 corpus rates, available teacher-forced AF,
 target-shape free-running rates, compounding summaries, and denominator-support
-notes. Blank cells mean missing measurements, not zero effects.
+notes. The v2 table includes the `rule_of_three_approx` comma-pair extension
+teacher-forced proxy, increasing teacher-forced coverage from 4 cells to 8
+cells. Blank cells mean missing measurements, not zero effects.
 
 Current spectrum read:
 
