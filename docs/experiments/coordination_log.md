@@ -1383,3 +1383,16 @@
   Status at 2026-06-14 23:16 UTC: generation shard alive, A100 utilization
   about 95%, `0/8192` JSONL rows written, and latest log-derived progress
   `272` prompts (`~2176` generation completions at 8 completions per prompt).
+- Extended `slop-phase2-generation-status` and
+  `slop-run-phase2-post-shard-analysis` wait logs to parse tqdm elapsed time
+  and seconds-per-prompt, then report ETA fields (`latest_log_elapsed_seconds`,
+  `latest_log_seconds_per_prompt`, `eta_seconds`, `eta_hms`). Focused
+  verification: `uv run pytest -q tests/test_phase2_generation_status.py
+  tests/test_run_phase2_post_shard_analysis.py` (`5 passed`) and
+  `uv run ruff check src/slop_sftdiv/cli/phase2_generation_status.py
+  src/slop_sftdiv/cli/run_phase2_post_shard_analysis.py
+  tests/test_phase2_generation_status.py
+  tests/test_run_phase2_post_shard_analysis.py` (`All checks passed`). Live
+  status after sourcing `scripts/phase2_cuda_env.sh`: generation shard alive,
+  `0/8192` JSONL rows written, `288` log prompts (`~2304` generation
+  completions), latest tqdm rate `15.93` seconds/prompt, ETA `3:15:24`.
