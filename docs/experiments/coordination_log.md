@@ -1403,3 +1403,18 @@
   First ETA-aware wait line:
   `waiting for shard completion: 0/8192 rows; log_prompts=288;
   log_generation_estimate=2304; eta=3:15:24`.
+- Added average-rate ETA fields to the Phase 2 status and watcher code:
+  `latest_log_avg_seconds_per_prompt`, `eta_avg_seconds`, and `eta_avg_hms`.
+  The original `eta_hms` remains based on tqdm's latest reported
+  seconds-per-prompt, while `eta_avg_hms` uses elapsed time divided by completed
+  prompts for a steadier estimate. Focused verification:
+  `uv run pytest -q tests/test_phase2_generation_status.py
+  tests/test_run_phase2_post_shard_analysis.py` (`5 passed`) and
+  `uv run ruff check src/slop_sftdiv/cli/phase2_generation_status.py
+  src/slop_sftdiv/cli/run_phase2_post_shard_analysis.py
+  tests/test_phase2_generation_status.py
+  tests/test_run_phase2_post_shard_analysis.py` (`All checks passed`).
+  Restarted only the CPU-side post-shard watcher; generation worker PID `5950`
+  was left untouched. New watcher process PID: `22125`. First wait line:
+  `waiting for shard completion: 0/8192 rows; log_prompts=304;
+  log_generation_estimate=2432; eta=3:15:22; eta_avg=3:22:51`.
