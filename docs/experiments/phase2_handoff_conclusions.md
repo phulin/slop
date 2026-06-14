@@ -384,5 +384,9 @@ question it answers:
   `slop-annotate-phase2-prompts` to preserve row identity. The current 5,000-row
   annotated package is logged as W&B run `ew7x38n8` with counts
   `code=1371`, `synthetic_llm=225`, and `unknown=3404`.
+- `slop-summarize-propensity-subsets` can reuse existing opportunity CSVs for
+  subset AF tables without a model rerun. The first slop/neutral subset summary
+  is W&B run `316hbxbl`; it shows DPO highest for `synthetic_llm` and `unknown`
+  subsets, while the `code` subset is denominator-sparse for slop references.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.

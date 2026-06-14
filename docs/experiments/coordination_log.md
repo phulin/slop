@@ -1205,3 +1205,20 @@
   `_manifest.csv`, and `_summary.json`. The annotated package preserves all
   5,000 rows and has bucket counts `code=1371`, `synthetic_llm=225`, and
   `unknown=3404`.
+- Added `slop-summarize-propensity-subsets`, an offline summarizer that joins
+  existing `slop-teacher-forced-propensity` opportunity CSVs to annotated prompt
+  metadata and emits subset AF tables with bootstrap CIs. This lets Phase 2
+  subgroup checks reuse already-scored logits rather than rerunning the model.
+  Ran it on the four-stage 1,024-prompt `slop_lexicon` /
+  `neutral_common_controls` opportunity grid using the annotated 5,000-row
+  package. W&B run:
+  `stage2-phase2-olmo3-slop-neutral-reference-subset-summary`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/316hbxbl`. It joined 711,224
+  opportunity rows with zero missing metadata and wrote 24 subset-stage-feature
+  rows to gitignored outputs:
+  `artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_reference_subset_summary.csv`
+  and `_summary.md`. `slop_lexicon` neutral-normalized AF by subset/stage:
+  `code` base/SFT/DPO/final `1.643`/`2.078`/`1.699`/`1.301`,
+  `synthetic_llm` `1.189`/`1.518`/`2.033`/`1.612`, and
+  `unknown` `1.636`/`1.867`/`2.326`/`1.895`. The `code` subset has only 5 slop
+  references in this denominator and should be treated as diagnostic.

@@ -47,6 +47,7 @@ slop-teacher-forced-propensity = "slop_sftdiv.cli.teacher_forced_propensity:main
 slop-free-running-emission = "slop_sftdiv.cli.free_running_emission:main"
 slop-prepare-phase2-prompts = "slop_sftdiv.cli.prepare_phase2_prompts:main"
 slop-annotate-phase2-prompts = "slop_sftdiv.cli.annotate_phase2_prompts:main"
+slop-summarize-propensity-subsets = "slop_sftdiv.cli.summarize_propensity_subsets:main"
 slop-measure-phase2-denominators = "slop_sftdiv.cli.measure_phase2_denominators:main"
 slop-benchmark-propensity-scorer = "slop_sftdiv.cli.benchmark_propensity_scorer:main"
 slop-benchmark-opportunity-extraction = "slop_sftdiv.cli.benchmark_opportunity_extraction:main"

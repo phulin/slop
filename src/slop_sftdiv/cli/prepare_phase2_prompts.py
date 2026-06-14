@@ -144,6 +144,7 @@ def _record_metadata_value(record: Any, field: str) -> str | None:
         value = record.get(field)
         if value is not None and value != "":
             return str(value)
+        return None
     value = record.metadata.get(field)
     if value is not None and value != "":
         return str(value)

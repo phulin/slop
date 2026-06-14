@@ -226,6 +226,23 @@ logged as W&B run `ew7x38n8` and wrote:
 `artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000_reference_subset.jsonl`.
 Bucket counts are `code=1371`, `synthetic_llm=225`, and `unknown=3404`.
 
+Existing scored teacher-forced opportunity CSVs can be re-summarized by these
+metadata buckets with `slop-summarize-propensity-subsets`, avoiding a GPU rerun.
+The current 1,024-prompt `slop_lexicon` / `neutral_common_controls` four-stage
+grid was summarized as W&B run `316hbxbl`. For `slop_lexicon`, neutral-normalized
+AF is:
+
+| Subset | Base | SFT | DPO | Final/RLVR |
+|---|---:|---:|---:|---:|
+| `code` | 1.643 | 2.078 | 1.699 | 1.301 |
+| `synthetic_llm` | 1.189 | 1.518 | 2.033 | 1.612 |
+| `unknown` | 1.636 | 1.867 | 2.326 | 1.895 |
+
+Interpretation caveat: this is a metadata-source split, not human-written vs.
+synthetic SFT. The `code` subset has only 5 slop references in the 1,024-prompt
+denominator, so use it as a diagnostic rather than a stable stage-localization
+claim.
+
 ## Promotion Criteria
 
 Promote from tiny-model smoke to OLMo tiny shard only if:
