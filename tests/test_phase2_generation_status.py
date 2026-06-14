@@ -43,3 +43,50 @@ def test_phase2_generation_status_reports_completion(tmp_path, capsys):
     with output_path.open(encoding="utf-8", newline="") as handle:
         csv_rows = list(csv.DictReader(handle))
     assert csv_rows[0]["completed"] == "True"
+
+
+def test_phase2_generation_status_reports_tqdm_log_progress(tmp_path, capsys):
+    generations_path = tmp_path / "generations.jsonl"
+    summary_path = tmp_path / "summary.csv"
+    log_path = tmp_path / "launch.log"
+    selection_path = tmp_path / "selection.json"
+    output_path = tmp_path / "status.csv"
+    log_path.write_text(
+        "free-run:pkg: 16prompt [05:44, 21.56s/prompt]\r"
+        "free-run:pkg: 32prompt [11:32, 21.66s/prompt]\n",
+        encoding="utf-8",
+    )
+    selection_path.write_text(
+        json.dumps(
+            {
+                "stage": "dpo",
+                "temperature": 1.0,
+                "pid": "",
+                "command": "uv run slop-free-running-emission --completions-per-prompt 8",
+                "expected_generations": 8192,
+                "generations_output": str(generations_path),
+                "summary_output": str(summary_path),
+                "log_output": str(log_path),
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    args = build_parser().parse_args(
+        [
+            "--selection",
+            str(selection_path),
+            "--output",
+            str(output_path),
+        ]
+    )
+
+    rows = run_phase2_generation_status(args)
+
+    assert rows[0]["latest_log_prompts"] == 32
+    assert rows[0]["latest_log_generations_estimate"] == 256
+    assert "log_prompts=32" in capsys.readouterr().out
+    with output_path.open(encoding="utf-8", newline="") as handle:
+        csv_rows = list(csv.DictReader(handle))
+    assert csv_rows[0]["latest_log_prompts"] == "32"
+    assert csv_rows[0]["latest_log_generations_estimate"] == "256"

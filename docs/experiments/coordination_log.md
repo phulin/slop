@@ -1297,3 +1297,20 @@
   tests/test_free_running_emission.py` (`All checks passed`). This code change
   does not affect the already-running `p4v56vda` process, which was launched
   before the patch.
+- Improved `slop-phase2-generation-status` for inherited pre-streaming detached
+  runs by parsing tqdm prompt progress from the launch log and estimating
+  completed generations from the recorded `--completions-per-prompt` command
+  argument. This makes the already-running DPO 1,024-prompt shard monitorable
+  even though its JSONL cache will not flush until process completion. Focused
+  verification: `uv run pytest -q tests/test_phase2_generation_status.py`
+  (`2 passed`) and `uv run ruff check
+  src/slop_sftdiv/cli/phase2_generation_status.py
+  tests/test_phase2_generation_status.py` (`All checks passed`). Status at
+  2026-06-14 22:37 UTC: W&B run `p4v56vda` alive, A100 utilization about 96%,
+  worker PID `5950`, `0/8192` JSONL rows written, and latest log-derived
+  progress `128` prompts (`~1024` generation completions at 8 completions per
+  prompt). The next Phase 2 step after this shard completes is analysis first:
+  compare its DPO feature rates against the existing 512-prompt target-shape
+  DPO cell and run the matching DPO compounding join against the existing
+  1,024-prompt teacher-forced `slop_lexicon` grid before launching matched
+  base/SFT/final 1,024-prompt shards.

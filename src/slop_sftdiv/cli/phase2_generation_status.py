@@ -4,6 +4,8 @@ import argparse
 import csv
 import json
 import os
+import re
+import shlex
 from pathlib import Path
 from typing import Any
 
@@ -17,10 +19,14 @@ OUTPUT_COLUMNS = [
     "completed",
     "existing_generations",
     "expected_generations",
+    "latest_log_prompts",
+    "latest_log_generations_estimate",
     "generations_output",
     "summary_output",
     "log_output",
 ]
+
+PROMPT_PROGRESS_RE = re.compile(r":\s+(\d+)prompt\b")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -49,6 +55,38 @@ def _process_alive(pid: int | None) -> bool:
     return True
 
 
+def _command_option_int(command: str | None, option: str) -> int | None:
+    if not command:
+        return None
+    try:
+        parts = shlex.split(command)
+    except ValueError:
+        return None
+    for index, part in enumerate(parts):
+        if part == option and index + 1 < len(parts):
+            try:
+                return int(parts[index + 1])
+            except ValueError:
+                return None
+        prefix = option + "="
+        if part.startswith(prefix):
+            try:
+                return int(part[len(prefix) :])
+            except ValueError:
+                return None
+    return None
+
+
+def _latest_log_prompt_count(path: Path | None) -> int | None:
+    if path is None or not path.exists():
+        return None
+    text = path.read_text(encoding="utf-8", errors="replace")
+    matches = PROMPT_PROGRESS_RE.findall(text.replace("\r", "\n"))
+    if not matches:
+        return None
+    return int(matches[-1])
+
+
 def _load_selection(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -59,8 +97,17 @@ def _status_row(path: Path) -> dict[str, Any]:
     pid_int = int(pid) if pid not in (None, "") else None
     generations_output = Path(payload["generations_output"])
     summary_output = Path(payload["summary_output"])
+    log_output_raw = payload.get("log_output", "")
+    log_output = Path(log_output_raw) if log_output_raw else None
     existing_generations = _jsonl_records(generations_output)
     expected_generations = int(payload["expected_generations"])
+    latest_log_prompts = _latest_log_prompt_count(log_output)
+    completions_per_prompt = _command_option_int(payload.get("command"), "--completions-per-prompt")
+    latest_log_generations_estimate = (
+        latest_log_prompts * completions_per_prompt
+        if latest_log_prompts is not None and completions_per_prompt is not None
+        else None
+    )
     completed = summary_output.exists() and existing_generations >= expected_generations
     return {
         "selection_path": str(path),
@@ -71,9 +118,13 @@ def _status_row(path: Path) -> dict[str, Any]:
         "completed": completed,
         "existing_generations": existing_generations,
         "expected_generations": expected_generations,
+        "latest_log_prompts": latest_log_prompts if latest_log_prompts is not None else "",
+        "latest_log_generations_estimate": (
+            latest_log_generations_estimate if latest_log_generations_estimate is not None else ""
+        ),
         "generations_output": str(generations_output),
         "summary_output": str(summary_output),
-        "log_output": payload.get("log_output", ""),
+        "log_output": log_output_raw,
     }
 
 
@@ -92,13 +143,14 @@ def run_phase2_generation_status(args: argparse.Namespace) -> list[dict[str, Any
     for row in rows:
         print(
             "{stage} t={temperature}: alive={alive} completed={completed} "
-            "generations={existing}/{expected}".format(
+            "generations={existing}/{expected} log_prompts={log_prompts}".format(
                 stage=row["stage"],
                 temperature=row["temperature"],
                 alive=row["process_alive"],
                 completed=row["completed"],
                 existing=row["existing_generations"],
                 expected=row["expected_generations"],
+                log_prompts=row["latest_log_prompts"] or "n/a",
             )
         )
     return rows
