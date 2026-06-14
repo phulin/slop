@@ -1932,6 +1932,67 @@ olmo3_dpo_generation_512prompt_8comp_1024_shard:
   backend_decision: keep torch/Transformers as the exact teacher-forced scorer of record; benchmark SGLang or vLLM only for free-running generation by reproducing this JSONL/summary shape in an isolated environment
   conclusion: the 512-prompt target-shape DPO shard scales linearly from the 64-prompt benchmark with nearly identical throughput; it is a good baseline for a serving-backend generation benchmark before launching larger free-running shards
 
+olmo3_final_generation_512prompt_8comp_1024_shard:
+  wandb_run_id: b8xo8axn
+  model: allenai/Olmo-3-7B-Instruct
+  input_prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  generations_output: artifacts/phase2/generations/olmo3_final_promptpkg5000_free_run_512prompt_8comp_t1_batched1024.jsonl
+  summary_output: artifacts/phase2/generations/olmo3_final_promptpkg5000_free_run_512prompt_8comp_t1_batched1024_summary.csv
+  purpose: matching final/RLVR target-shape generation shard for comparison against DPO target-shape Result B signal
+  generation_settings:
+    sample_size: 512
+    temperature: 1.0
+    top_p: 0.95
+    max_new_tokens: 1024
+    completions_per_prompt: 8
+    generation_batch_size: 8
+    max_prompt_tokens: 1024
+    dtype: bfloat16
+    torch_compile: true
+  result:
+    prompts_seen: 512
+    prompts_skipped: 0
+    generations: 4096
+    generated_tokens: 4187136
+    wall_seconds: 11758.73542
+    tokens_per_sec_including_load_compile: 356.08727
+    peak_rss_mb: 5750.10156
+    per_1k_tokens:
+      contrastive_negation: 0.1423407312301296
+      rule_of_three_approx: 0.8019801601858645
+      slop_lexicon: 0.19321082477378332
+      stock_closers: 0.03224160858400587
+      stock_openers: 0.058512548911714354
+      stock_openers_closers: 0.09075415749572023
+    generations_with_feature:
+      contrastive_negation: 447
+      rule_of_three_approx: 1105
+      slop_lexicon: 439
+      stock_closers: 120
+      stock_openers: 241
+      stock_openers_closers: 333
+    repeat_generations:
+      contrastive_negation: 103
+      rule_of_three_approx: 609
+      slop_lexicon: 180
+      stock_closers: 11
+      stock_openers: 4
+      stock_openers_closers: 39
+    comparison_to_dpo_per_1k:
+      contrastive_negation_delta: 0.00143535098110616
+      contrastive_negation_ratio: 1.010186630623969
+      rule_of_three_approx_delta: -0.05871091037077612
+      rule_of_three_approx_ratio: 0.9317863188208514
+      slop_lexicon_delta: -0.03590942974281824
+      slop_lexicon_ratio: 0.843275197252897
+      stock_closers_delta: -0.011150572812478507
+      stock_closers_ratio: 0.7430361692033811
+      stock_openers_delta: -0.005860467446301522
+      stock_openers_ratio: 0.9089616145826849
+      stock_openers_closers_delta: -0.01701104025718602
+      stock_openers_closers_ratio: 0.8421490604818942
+  conclusion: final/RLVR target-shape generation is lower than DPO for slop_lexicon, rule_of_three_approx, and stock opener/closer rates, with nearly identical throughput; this supports DPO peak attenuation at final under the bounded 512-prompt target shape
+
 vllm_0111_cu128_olmo3_dpo_1prompt_smoke:
   wandb_run_id: dibzdwyd
   sidecar_python: /tmp/slop-vllm-cu128-bench/bin/python

@@ -868,3 +868,18 @@
   timeout. No artifact was written and no GPU process remained. Treat vLLM as
   blocked on this host for OLMo-3 generation until a container, backend flag, or
   version change is validated; SGLang is now the next serving-backend candidate.
+- Completed the matching final/RLVR target-shape generation shard:
+  `stage2-phase2-olmo3-final-promptpkg5000-free-running-512prompt-8comp-t1-bench1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/b8xo8axn`. It generated 512
+  prompts x 8 completions, 4,096 generations, and 4,187,136 generated tokens in
+  11,758.7 seconds (`356.1` generated tokens/sec including load and compile).
+  Feature rates per 1k generated tokens were `rule_of_three_approx` `0.802`,
+  `slop_lexicon` `0.193`, `contrastive_negation` `0.142`,
+  `stock_openers_closers` `0.091`, `stock_openers` `0.059`, and
+  `stock_closers` `0.032`. Compared with the matching DPO target-shape shard,
+  final/RLVR is lower on slop lexicon (`0.193` vs. `0.229`, ratio `0.84`),
+  rule-of-three (`0.802` vs. `0.861`, ratio `0.93`), and pooled stock
+  openers/closers (`0.091` vs. `0.108`, ratio `0.84`), while contrastive
+  negation is effectively tied and slightly higher (`0.142` vs. `0.141`).
+  This mirrors the teacher-forced read: DPO is the bounded peak and final/RLVR
+  attenuates rather than amplifying further.

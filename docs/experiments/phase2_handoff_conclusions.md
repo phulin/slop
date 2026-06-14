@@ -119,46 +119,50 @@ Current headline cells:
 Interpretation: Result B has a bounded positive signal, but the conditional
 window estimates are not yet stable enough for the final paper-scale claim.
 
-## Target-Shape Generation Shard
+## Target-Shape Generation Shards
 
-The first larger DPO target-shape generation shard is complete on the
-5,000-prompt package:
+The first larger DPO and final/RLVR target-shape generation shards are complete
+on the 5,000-prompt package:
 
-- W&B: `8rud2kxl`
 - Shape: 512 prompts, 8 completions per prompt, temperature `1.0`, top-p
   `0.95`, 1,024 generated tokens per completion.
-- Output: 4,096 generations and 4,194,304 generated tokens.
-- Throughput: 11,758.0 wall seconds, `356.7` generated tokens/sec including
-  load and compile.
+- DPO W&B: `8rud2kxl`; 4,096 generations, 4,194,304 generated tokens,
+  `356.7` generated tokens/sec.
+- Final/RLVR W&B: `b8xo8axn`; 4,096 generations, 4,187,136 generated tokens,
+  `356.1` generated tokens/sec.
 
 Feature rates per 1k generated tokens:
 
-| Feature | Rate |
-|---|---:|
-| `rule_of_three_approx` | 0.861 |
-| `slop_lexicon` | 0.229 |
-| `contrastive_negation` | 0.141 |
-| `stock_openers_closers` | 0.108 |
-| `stock_openers` | 0.064 |
-| `stock_closers` | 0.043 |
+| Feature | DPO | Final/RLVR | Final/DPO |
+|---|---:|---:|---:|
+| `rule_of_three_approx` | 0.861 | 0.802 | 0.93 |
+| `slop_lexicon` | 0.229 | 0.193 | 0.84 |
+| `contrastive_negation` | 0.141 | 0.142 | 1.01 |
+| `stock_openers_closers` | 0.108 | 0.091 | 0.84 |
+| `stock_openers` | 0.064 | 0.059 | 0.91 |
+| `stock_closers` | 0.043 | 0.032 | 0.74 |
 
 Throughput is essentially unchanged from the 64-prompt target-shape benchmark
 (`355.9` generated tokens/sec), so the current Torch/Transformers backend scales
 linearly across prompts but remains slow in absolute terms for long generation.
+The science read is aligned with the 1,024-prompt teacher-forced grid: DPO is
+the bounded peak for the slop lexicon and stock opener/closer features, while
+final/RLVR attenuates rather than amplifying further.
 
 ## Current Compute Posture
 
 Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid
-blindly. The target-shape DPO benchmark (`kji583m6`) and the 512-prompt DPO
-shard (`8rud2kxl`) validate the heavy shape on the A100, but the full OLMo
-four-stage target remains expensive. The next GPU work should be selected by
-the question it answers:
+blindly. The target-shape DPO benchmark (`kji583m6`) plus the 512-prompt DPO
+and final/RLVR shards (`8rud2kxl`, `b8xo8axn`) validate the heavy shape on the
+A100, but the full OLMo four-stage target remains expensive. The next GPU work
+should be selected by the question it answers:
 
 - For a stronger Result B estimate, scale the free-running generation shard
   before spending on more teacher-forced slop/neutral rows.
-- For stage-localization confirmation, a narrower DPO/final generation shard at
-  the target 8-completion, 1,024-token shape is more informative than rerunning
-  all stages immediately.
+- For stage-localization confirmation, the bounded DPO/final target-shape
+  comparison is now complete; additional free-running work should either add
+  base/SFT at the same shape or scale the two-stage comparison, not repeat the
+  same DPO/final cell.
 - For teacher-forced precision, full 5k slop/neutral is confirmatory and should
   wait until a specific analysis requires tighter CIs.
 - For generation throughput, benchmark SGLang or vLLM in an isolated

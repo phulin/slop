@@ -888,3 +888,17 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   against this same JSONL/summary contract. Do not move the exact
   teacher-forced scorer off torch/Transformers unless a separate exactness
   benchmark reproduces the fixed-branch probability-mass summaries.
+- `stage2-phase2-olmo3-final-promptpkg5000-free-running-512prompt-8comp-t1-bench1024`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/b8xo8axn`) completed the
+  matching final/RLVR target-shape generation shard: 512 prompts, 8 completions
+  per prompt, temperature 1.0, top-p 0.95, and 1,024 generated tokens per
+  completion. It produced 4,096 generations and 4,187,136 generated tokens in
+  11,758.7 seconds, or 356.1 generated tokens/sec including model load and
+  compile. Final/RLVR is lower than DPO on `slop_lexicon` (`0.193` vs. `0.229`
+  per 1k generated tokens, ratio `0.84`), `rule_of_three_approx` (`0.802` vs.
+  `0.861`, ratio `0.93`), and `stock_openers_closers` (`0.091` vs. `0.108`,
+  ratio `0.84`). `contrastive_negation` is effectively tied and slightly
+  higher at final (`0.142` vs. `0.141`). This bounded target-shape comparison
+  supports the same stage-localization story as the 1024 teacher-forced grid:
+  DPO is the point-estimate peak for core slop-lexicon and stock-phrase
+  features, and final/RLVR attenuates rather than amplifying further.
