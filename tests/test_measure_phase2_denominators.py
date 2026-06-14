@@ -26,7 +26,7 @@ def test_measure_phase2_denominators_reports_feature_support(tmp_path, monkeypat
             },
             {
                 "phase2_prompt_id": "b",
-                "text": "Great question. Use a fixture.",
+                "text": "Great question. Use fixtures, mocks, and snapshots.",
             },
         ],
     )
@@ -79,16 +79,17 @@ def test_measure_phase2_denominators_reports_feature_support(tmp_path, monkeypat
     assert int(rows["slop_lexicon"]["reference_initiations"]) == 1
     assert int(rows["stock_openers_closers"]["reference_initiations"]) == 2
     assert int(rows["stock_openers_closers"]["documents_with_reference"]) == 2
-    assert "rule_of_three_approx" not in rows
+    assert int(rows["rule_of_three_approx"]["reference_initiations"]) == 1
+    assert int(rows["rule_of_three_approx"]["documents_with_reference"]) == 1
     assert summary["requested_features"] == 4
-    assert summary["features"] == 3
-    assert summary["omitted_features"] == 1
-    assert summary["omitted_feature_ids"] == ("rule_of_three_approx",)
+    assert summary["features"] == 4
+    assert summary["omitted_features"] == 0
+    assert summary["omitted_feature_ids"] == ()
     assert summary["measurement_rows"] == 2
-    assert summary["feature_measurement_rows"] == 6
-    assert summary["features_with_references"] == 3
-    assert json.loads(summary_path.read_text(encoding="utf-8"))["reference_initiations"] == 4
-    assert logged_payloads[-1]["phase2_denominators/features_with_references"] == 3
+    assert summary["feature_measurement_rows"] == 8
+    assert summary["features_with_references"] == 4
+    assert json.loads(summary_path.read_text(encoding="utf-8"))["reference_initiations"] == 5
+    assert logged_payloads[-1]["phase2_denominators/features_with_references"] == 4
     logged_table = json.dumps(logged_tables["phase2_denominator_support"])
     assert "Great question" not in logged_table
     assert "robust tests" not in logged_table

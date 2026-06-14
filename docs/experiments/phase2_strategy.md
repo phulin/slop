@@ -64,6 +64,13 @@ Implemented smoke targets:
 - `stock_closers`: final-clause-boundary opportunities.
 - `stock_openers_closers`: pooled document-start plus final-boundary
   opportunities.
+- `rule_of_three_approx`: comma-pair extension opportunities. The model is
+  scored at the slot after a two-item comma-separated list (`X, Y <slot>`) for
+  finite third-item extension initiators `, and`, `, or`, `and`, and `or`.
+  Reference positives are aligned to the coordinator inside an existing
+  `RULE_OF_THREE_PATTERN` hit. This is a teacher-forced proxy for extending an
+  established two-item list into a three-item coordination, not a claim that
+  the open-vocabulary first item can be scored as a closed initiator set.
 - Neutral controls: `neutral_for_example`, `neutral_such_as`,
   `neutral_in_particular`, `neutral_as_a_result`, and pooled
   `neutral_controls`; these use token-start opportunities and are calibration
@@ -71,9 +78,6 @@ Implemented smoke targets:
 
 Held back from the first smoke:
 
-- `rule_of_three_approx`: the Phase 1 regex is useful for rates, but a
-  teacher-forced initiation event is not well-defined yet. Freeze a better
-  opportunity contract before using it for AF claims.
 - Biber-lite features: keep as register covariates, not propensity targets.
 
 Free-running smoke CLI:

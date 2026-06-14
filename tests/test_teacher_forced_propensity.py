@@ -152,6 +152,15 @@ def test_initiator_token_sequences_include_sentence_case_variants():
     assert tuple(FakeTokenizer().encode("For example", add_special_tokens=False)) in sequences
 
 
+def test_initiator_token_sequences_support_rule_of_three_extension():
+    sequences = _initiator_token_sequences(FakeTokenizer(), "rule_of_three_approx")
+
+    assert tuple(FakeTokenizer().encode(", and", add_special_tokens=False)) in sequences
+    assert tuple(FakeTokenizer().encode(", or", add_special_tokens=False)) in sequences
+    assert tuple(FakeTokenizer().encode("and", add_special_tokens=False)) in sequences
+    assert tuple(FakeTokenizer().encode("or", add_special_tokens=False)) in sequences
+
+
 def test_sequence_prob_mass_batches_by_depth():
     class UniformModel:
         def __init__(self):

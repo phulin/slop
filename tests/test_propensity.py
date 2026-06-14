@@ -43,6 +43,24 @@ def test_iter_feature_opportunities_can_cap_token_start_opportunities():
     assert [item.char_offset for item in opportunities] == [0, 6]
 
 
+def test_iter_feature_opportunities_marks_rule_of_three_completion():
+    text = (
+        "The answer needs clarity, rigor, and care. "
+        "The baseline has speed, cost."
+    )
+
+    opportunities = iter_feature_opportunities(
+        text,
+        features=["rule_of_three_approx"],
+    )
+
+    assert len(opportunities) == 2
+    positives = [item for item in opportunities if item.reference_initiates]
+    assert len(positives) == 1
+    assert text[positives[0].char_offset : positives[0].char_offset + 5] == ", and"
+    assert positives[0].matched_subtype == "approx_triple"
+
+
 def test_iter_feature_opportunities_marks_neutral_controls():
     text = "For example, tests check behavior. Such as edge cases. As a result, bugs surface."
 

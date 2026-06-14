@@ -236,8 +236,8 @@ Current spectrum read:
   just above DPO (`0.229`).
 - `rule_of_three_approx` is the clearest target-shape free-running feature but
   currently peaks at base (`1.019` per 1k generated tokens), so it weakens a
-  simple monotonic post-training story until a teacher-forced contract is
-  available.
+  simple monotonic post-training story until the new comma-pair extension
+  teacher-forced proxy is scored.
 - Stock openers/closers are small but DPO-peaked in target-shape generation.
 - `contrastive_negation` remains too sparse in the 5k denominator audit for a
   strong bounded conclusion.
@@ -275,6 +275,8 @@ question it answers:
 - Removed punctuation and list/header features should not be used for core
   claims without renewed validation.
 - `contrastive_negation` is measurable but sparse in the 5k denominator audit.
-- `rule_of_three_approx` lacks a frozen teacher-forced opportunity contract.
+- `rule_of_three_approx` now has a pilot comma-pair extension contract with
+  nonzero 5k denominator support, but it is a proxy for third-item extension
+  and still needs precision sampling before strong AF claims.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.

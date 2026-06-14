@@ -1024,3 +1024,19 @@
   frozen, `contrastive_negation` is sparse in the 5k denominator package, and
   SGLang generations are excluded from science results until the stop-token
   contract matches Torch.
+- Froze a pilot teacher-forced contract for `rule_of_three_approx` as a
+  comma-pair extension proxy. Opportunities are the slot after a candidate
+  two-item comma-separated list (`X, Y <slot>`); the scorer sums exact sequence
+  mass over `, and`, `, or`, `and`, and `or`; reference positives align to the
+  coordinator inside the existing `RULE_OF_THREE_PATTERN` span. This measures
+  whether the model extends an established two-item list into a third
+  coordinated item, not open-vocabulary first-item initiation.
+- Ran CPU denominator-support pilots for the new `rule_of_three_approx`
+  contract on the 5,000-prompt Dolci SFT Phase 2 package. The initial unfiltered
+  pilot logged W&B run `9879iqjj` with 4,424 opportunities, 1,832 references,
+  and reference rate `0.414`. After adding a conservative code/data-line filter,
+  pilot v2 logged W&B run `99kvrho6` with 3,281 opportunities, 1,473 references,
+  and reference rate `0.449`. The filtered support is large enough to justify a
+  small GPU teacher-forced pilot, but sampled negatives still include some
+  bibliography/list-heading cases, so treat this as a proxy contract until
+  precision is sampled.

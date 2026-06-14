@@ -8,6 +8,19 @@ from slop_sftdiv.features.tier1_matchers import TOKEN_RE, iter_tier1_hits
 
 
 BOUNDARY_RE = re.compile(r"(?:^|[.!?;:\n]\s+)")
+RULE_OF_THREE_ITEM = (
+    r"(?!and\b|or\b)(?:[a-z][\w'-]*)"
+    r"(?:\s+(?:of|the|a|an|to|for|with|in|on|and|or|[a-z][\w'-]*)){0,3}"
+)
+RULE_OF_THREE_COMPLETION_RE = re.compile(
+    rf"\b{RULE_OF_THREE_ITEM}\s*,\s*{RULE_OF_THREE_ITEM}"
+    r"(?P<connector>\s*,?\s+(?:and|or)\s+|(?=[.!?;:\n]|$))",
+    re.IGNORECASE | re.UNICODE,
+)
+RULE_OF_THREE_CONNECTOR_RE = re.compile(
+    r"\s*,?\s+(?:and|or)\s+",
+    re.IGNORECASE | re.UNICODE,
+)
 NEUTRAL_CONTROL_PATTERNS: dict[str, re.Pattern[str]] = {
     "neutral_for_example": re.compile(r"\bfor\s+example\b", re.IGNORECASE | re.UNICODE),
     "neutral_such_as": re.compile(r"\bsuch\s+as\b", re.IGNORECASE | re.UNICODE),
@@ -123,6 +136,11 @@ PHASE2_OPPORTUNITY_SPECS: dict[str, OpportunitySpec] = {
             "to",
             "let",
         ),
+    ),
+    "rule_of_three_approx": OpportunitySpec(
+        feature="rule_of_three_approx",
+        opportunity_kind="rule_of_three_completion",
+        initiators=(", and", ", or", "and", "or"),
     ),
     "neutral_for_example": OpportunitySpec(
         feature="neutral_for_example",
@@ -250,6 +268,12 @@ def _hit_starts_by_feature(text: str, selected: set[str]) -> dict[str, dict[int,
         tier1_features.update({"stock_openers", "stock_closers"})
     if tier1_features:
         for hit in iter_tier1_hits(text, features=tier1_features):
+            if hit.feature == "rule_of_three_approx":
+                connector_offset = _rule_of_three_hit_connector_offset(hit.text)
+                if connector_offset is None:
+                    continue
+                starts.setdefault(hit.feature, {})[hit.start + connector_offset] = hit.subtype
+                continue
             starts.setdefault(hit.feature, {})[hit.start] = hit.subtype
             if hit.feature in {"stock_openers", "stock_closers"}:
                 starts.setdefault("stock_openers_closers", {})[hit.start] = hit.subtype
@@ -295,6 +319,8 @@ def _opportunity_offsets(
             "final_clause_boundary",
             max_token_start_opportunities=max_token_start_opportunities,
         )})
+    if opportunity_kind == "rule_of_three_completion":
+        return _rule_of_three_completion_offsets(text)
     raise ValueError(f"unsupported opportunity kind: {opportunity_kind}")
 
 
@@ -305,3 +331,37 @@ def _boundary_offsets(text: str) -> list[int]:
     for match in BOUNDARY_RE.finditer(text):
         offsets.add(match.end())
     return sorted(offset for offset in offsets if offset < len(text))
+
+
+def _rule_of_three_completion_offsets(text: str) -> list[int]:
+    offsets = {
+        match.start("connector")
+        for match in RULE_OF_THREE_COMPLETION_RE.finditer(text)
+        if match.start("connector") < len(text)
+        and not _is_code_or_data_line(text, match.start("connector"))
+    }
+    return sorted(offsets)
+
+
+def _rule_of_three_hit_connector_offset(hit_text: str) -> int | None:
+    matches = list(RULE_OF_THREE_CONNECTOR_RE.finditer(hit_text))
+    if not matches:
+        return None
+    return matches[-1].start()
+
+
+def _is_code_or_data_line(text: str, offset: int) -> bool:
+    line_start = text.rfind("\n", 0, offset) + 1
+    line_end = text.find("\n", offset)
+    if line_end == -1:
+        line_end = len(text)
+    line = text[line_start:line_end].strip()
+    if not line:
+        return False
+    if re.search(r"\b(?:def|class|import|from|return|lambda|const|let|var)\b", line):
+        return True
+    if any(char in line for char in "{}[]`"):
+        return True
+    if "=" in line and re.search(r"\b[a-zA-Z_][\w.]*\s*=", line):
+        return True
+    return False
