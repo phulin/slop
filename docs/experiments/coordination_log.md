@@ -1263,3 +1263,26 @@
   checks PID liveness and output completion. Validation on the completed
   bounded DPO t=1.0 selection reported `alive=False`, `completed=True`, and
   `4096/4096` generations.
+- Started the first scaled post-planner target-shape Phase 2 generation shard:
+  DPO, 1,024 prompts from the annotated 5,000-row Dolci SFT package, 8
+  completions per prompt, temperature `1.0`, top-p `0.95`, and 1,024 max new
+  tokens. The guarded planner estimated `6.55` A100-hours for 8,192 expected
+  generations, under the 8-hour cap, but that estimate assumed the previously
+  benchmarked throughput and did not capture compile-time memory cliffs after
+  the host reset. The first detached attempt reached W&B run `xbd6yk7j` but
+  exited at `0/8192` generations without writing generation outputs. A reset
+  diagnostic with explicit CUDA wheel `LD_LIBRARY_PATH` completed successfully
+  as W&B run `zacdzzwn`, producing 1 generation and 6 feature-rate rows.
+  Relaunches with explicit `LD_LIBRARY_PATH` and batch sizes `1024`, `512`,
+  `256`, and `64` each reached W&B but failed at `0/8192` generations with
+  CUDA OOM during compiled generation. The successful live launch candidate is
+  batch size `16`, planned as W&B run `eahhgpae` and launched as W&B run
+  `p4v56vda`:
+  `https://wandb.ai/phulin-self/slop-stage1/runs/p4v56vda`. Selection:
+  `artifacts/phase2/analysis/olmo3_generation_launch_selection_dpo_1024prompt_8comp_t1_batched16.json`.
+  Log:
+  `artifacts/phase2/analysis/olmo3_generation_launch_selection_dpo_1024prompt_8comp_t1_batched16.log`.
+  Status at 2026-06-14 22:03 UTC: alive, not complete, `0/8192` generations
+  written yet, Python worker PID `5950`, and A100 utilization `96%` at about
+  39.8 GiB. The process inherited the explicit CUDA wheel `LD_LIBRARY_PATH`;
+  output rows are expected only after the first batch flush.
