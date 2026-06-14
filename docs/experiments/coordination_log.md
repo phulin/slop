@@ -1040,3 +1040,13 @@
   small GPU teacher-forced pilot, but sampled negatives still include some
   bibliography/list-heading cases, so treat this as a proxy contract until
   precision is sampled.
+- Ran the first GPU teacher-forced pilot for the new rule-of-three completion
+  contract on `allenai/Olmo-3-7B-Instruct-SFT`:
+  `stage2-phase2-olmo3-sft-rule-of-three-completion-promptpkg512`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/yi498mc3`. It used 512 prompts
+  from the 5,000-prompt package, bfloat16, `torch.compile`, fixed prefix 256,
+  exact sequence mass, and branch batch size 4. The run scored 360
+  opportunities in 76.9 seconds (`4.68` opportunities/sec after load/compile),
+  with 155 references, reference rate `0.431`, mean model probability mass
+  `0.348`, and raw AF `0.808` with bootstrap CI `0.745`-`0.865`. This is a
+  useful SFT pilot but not yet a stage-localization grid.

@@ -245,6 +245,14 @@ Current spectrum read:
 Treat this as the current bounded amplification spectrum, not the full
 production-scale EXPERIMENTS.md table.
 
+The new `rule_of_three_approx` comma-pair extension proxy has one SFT
+teacher-forced pilot, logged as W&B run `yi498mc3`. On 512 prompts it scored
+360 opportunities, 155 references, reference rate `0.431`, mean probability
+mass `0.348`, and raw AF `0.808` with CI `0.745`-`0.865`. This establishes that
+the proxy is scoreable with the existing exact-sequence harness, but it is only
+one SFT datapoint and should not be merged into the stage-localization story
+until base/DPO/final are run on the same contract.
+
 ## Current Compute Posture
 
 Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid
