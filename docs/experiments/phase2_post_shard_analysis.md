@@ -70,6 +70,12 @@ env UV_CACHE_DIR=/home/user/slop/.uv-cache \
   uv run slop-analyze-phase2-compounding \
     --generation-cache dpo=artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_1024prompt_8comp_t1_batched16.jsonl \
     --propensity-grid artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid.csv \
+    --feature contrastive_negation \
+    --feature rule_of_three_approx \
+    --feature slop_lexicon \
+    --feature stock_openers \
+    --feature stock_closers \
+    --feature stock_openers_closers \
     --window-tokens 32 \
     --primary-feature slop_lexicon \
     --output artifacts/phase2/analysis/olmo3_dpo_generation_compounding_target_shape_1024prompt_8comp_t1_1024_tf1024.csv \
