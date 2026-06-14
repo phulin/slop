@@ -261,6 +261,15 @@ def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
 
 
+def _append_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
+    if not rows:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+
+
 def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
     if args.generation_batch_size <= 0:
         raise ValueError("--generation-batch-size must be positive")
@@ -290,6 +299,8 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
     prompts_seen = 0
     prompts_skipped = 0
     started_at = time.perf_counter()
+    args.generations_output.parent.mkdir(parents=True, exist_ok=True)
+    args.generations_output.write_text("", encoding="utf-8")
 
     run = init_wandb(
         project=args.wandb_project,
@@ -382,6 +393,7 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
                             "generation": generation,
                         }
                     )
+                _append_jsonl(args.generations_output, generation_rows[-len(batch) :])
                 batch.clear()
 
             for record in tqdm(records, desc=f"free-run:{source.name}", unit="prompt"):
@@ -400,7 +412,6 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
             for batch_key in list(pending):
                 flush_batch(batch_key)
 
-        _write_jsonl(args.generations_output, generation_rows)
         summary_rows = []
         for (temperature, top_p, source), counts in sorted(summary_counts.items()):
             summary_key = (temperature, top_p, source)

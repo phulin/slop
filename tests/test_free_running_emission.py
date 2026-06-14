@@ -196,3 +196,85 @@ def test_free_running_emission_batches_generation_and_tracks_repeats(tmp_path, m
         assert row["generations_with_feature"] == 3
         assert row["repeat_generations"] == 3
         assert row["repeat_share_after_first"] == 0.5
+
+
+def test_free_running_emission_streams_completed_batches_before_failure(tmp_path, monkeypatch):
+    input_path = tmp_path / "prompts.jsonl"
+    generations_path = tmp_path / "generations.jsonl"
+    summary_path = tmp_path / "summary.csv"
+    input_path.write_text(
+        "\n".join(
+            [
+                json.dumps({"id": "p1", "prompt": "One", "text": "Reference."}),
+                json.dumps({"id": "p2", "prompt": "Two", "text": "Reference."}),
+                json.dumps({"id": "p3", "prompt": "Three", "text": "Reference."}),
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    calls = 0
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    def fake_generate_batch(prompts, **_kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == 2:
+            raise RuntimeError("simulated generation failure")
+        return [("delve", 3, 1) for _prompt in prompts]
+
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission._load_model",
+        lambda **_kwargs: (FakeTokenizer(), object(), "cpu"),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission._generate_batch",
+        fake_generate_batch,
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission.init_wandb",
+        lambda **_kwargs: FakeRun(),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission.log_summary_table",
+        lambda *_args: None,
+    )
+    args = build_parser().parse_args(
+        [
+            "--model",
+            "fake",
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "3",
+            "--feature",
+            "slop_lexicon",
+            "--temperature",
+            "0.0",
+            "--generation-batch-size",
+            "2",
+            "--generations-output",
+            str(generations_path),
+            "--summary-output",
+            str(summary_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    try:
+        run_free_running_emission(args)
+    except RuntimeError as exc:
+        assert str(exc) == "simulated generation failure"
+    else:
+        raise AssertionError("expected simulated generation failure")
+
+    rows = [json.loads(line) for line in generations_path.read_text().splitlines()]
+    assert len(rows) == 2
+    assert {row["record_id"] for row in rows} == {"p1", "p2"}
