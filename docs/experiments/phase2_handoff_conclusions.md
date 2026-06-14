@@ -214,6 +214,37 @@ temperatures at this target shape. Temperature moves the magnitude slightly,
 but the larger result is that observed generation rates exceed teacher-forced
 expectation even under deterministic decoding.
 
+## Bounded Amplification Spectrum
+
+The current bounded headline table is assembled by
+`slop-assemble-amplification-spectrum` and logged as W&B run `v31wiggh`
+(`stage2-phase2-olmo3-amplification-spectrum-bounded`). Local outputs:
+
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded.csv`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_summary.md`
+
+It contains 24 rows: six retained feature views across base, SFT, DPO, and
+final/RLVR. Each row joins Phase 1 corpus rates, available teacher-forced AF,
+target-shape free-running rates, compounding summaries, and denominator-support
+notes. Blank cells mean missing measurements, not zero effects.
+
+Current spectrum read:
+
+- `slop_lexicon` has the strongest teacher-forced evidence: neutral-normalized
+  AF peaks at DPO (`1.999`) and falls at final/RLVR (`1.659`), while
+  target-shape free-running rates put base (`0.233` per 1k generated tokens)
+  just above DPO (`0.229`).
+- `rule_of_three_approx` is the clearest target-shape free-running feature but
+  currently peaks at base (`1.019` per 1k generated tokens), so it weakens a
+  simple monotonic post-training story until a teacher-forced contract is
+  available.
+- Stock openers/closers are small but DPO-peaked in target-shape generation.
+- `contrastive_negation` remains too sparse in the 5k denominator audit for a
+  strong bounded conclusion.
+
+Treat this as the current bounded amplification spectrum, not the full
+production-scale EXPERIMENTS.md table.
+
 ## Current Compute Posture
 
 Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid

@@ -1010,3 +1010,17 @@
   openers/closers (`0.440` vs. `0.108`). Keep Torch as the Phase 2 science
   backend unless SGLang can be configured to match the Torch stop-token
   contract without `ignore_eos` changing the distribution.
+- Added the bounded amplification-spectrum assembler and ran it over the
+  current OLMo/Dolci Phase 1 and Phase 2 artifacts:
+  `stage2-phase2-olmo3-amplification-spectrum-bounded`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/v31wiggh`. It writes
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded.csv` and
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_summary.md`,
+  with 24 feature-stage rows covering retained feature data rates, the
+  four-stage `slop_lexicon` teacher-forced grid, target-shape free-running
+  rates, target-shape compounding, and denominator-support notes. The assembled
+  spectrum records the current caveats explicitly: `rule_of_three_approx`
+  remains free-running-only until its teacher-forced initiation contract is
+  frozen, `contrastive_negation` is sparse in the 5k denominator package, and
+  SGLang generations are excluded from science results until the stop-token
+  contract matches Torch.
