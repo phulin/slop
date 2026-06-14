@@ -1344,3 +1344,12 @@
   Status at 2026-06-14 22:47 UTC: generation shard alive, A100 utilization
   about 94-95%, `0/8192` JSONL rows written, and latest log-derived progress
   `160` prompts (`~1280` generation completions at 8 completions per prompt).
+- Patched `slop-run-phase2-post-shard-analysis` to flush wait-progress lines
+  so redirected watcher logs are useful, verified
+  `tests/test_run_phase2_post_shard_analysis.py` (`3 passed`) and ruff, then
+  restarted only the CPU-side watcher. New watcher Python PID: `14233`; PID
+  file still `artifacts/phase2/analysis/olmo3_dpo_post_shard_analysis_watcher.pid`.
+  The watcher log now shows `waiting for shard completion: 0/8192 rows`.
+  Status at 2026-06-14 22:50 UTC: generation shard alive, A100 utilization
+  about 97%, `0/8192` JSONL rows written, and latest log-derived progress
+  `176` prompts (`~1408` generation completions at 8 completions per prompt).
