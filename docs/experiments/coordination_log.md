@@ -1050,3 +1050,12 @@
   with 155 references, reference rate `0.431`, mean model probability mass
   `0.348`, and raw AF `0.808` with bootstrap CI `0.745`-`0.865`. This is a
   useful SFT pilot but not yet a stage-localization grid.
+- Completed the matching 512-prompt rule-of-three completion teacher-forced
+  mini-grid. Base W&B run `8mggip2w` scored raw AF `0.775`
+  (`0.710`-`0.829`); SFT run `yi498mc3` scored `0.808`
+  (`0.745`-`0.865`); DPO run `e72tp5np` scored `0.761`
+  (`0.687`-`0.821`); final/RLVR run `7n60plb0` scored `0.768`
+  (`0.693`-`0.831`). All four runs used the same 512-prompt sample, 360
+  opportunities, and 155 references. The pilot proxy does not show
+  DPO-stage amplification; SFT has the highest point estimate, and all stages
+  are below the reference extension rate.

@@ -235,9 +235,8 @@ Current spectrum read:
   target-shape free-running rates put base (`0.233` per 1k generated tokens)
   just above DPO (`0.229`).
 - `rule_of_three_approx` is the clearest target-shape free-running feature but
-  currently peaks at base (`1.019` per 1k generated tokens), so it weakens a
-  simple monotonic post-training story until the new comma-pair extension
-  teacher-forced proxy is scored.
+  currently peaks at base (`1.019` per 1k generated tokens). The new
+  comma-pair extension teacher-forced proxy also does not show a DPO peak.
 - Stock openers/closers are small but DPO-peaked in target-shape generation.
 - `contrastive_negation` remains too sparse in the 5k denominator audit for a
   strong bounded conclusion.
@@ -245,13 +244,23 @@ Current spectrum read:
 Treat this as the current bounded amplification spectrum, not the full
 production-scale EXPERIMENTS.md table.
 
-The new `rule_of_three_approx` comma-pair extension proxy has one SFT
-teacher-forced pilot, logged as W&B run `yi498mc3`. On 512 prompts it scored
-360 opportunities, 155 references, reference rate `0.431`, mean probability
-mass `0.348`, and raw AF `0.808` with CI `0.745`-`0.865`. This establishes that
-the proxy is scoreable with the existing exact-sequence harness, but it is only
-one SFT datapoint and should not be merged into the stage-localization story
-until base/DPO/final are run on the same contract.
+The new `rule_of_three_approx` comma-pair extension proxy has a 512-prompt
+teacher-forced mini-grid. All stages use the same 360 opportunities and 155
+references, with reference rate `0.431`.
+
+| Stage | W&B | Mean Mass | Raw AF | 95% CI |
+|---|---|---:|---:|---:|
+| Base | `8mggip2w` | 0.334 | 0.775 | 0.710-0.829 |
+| SFT | `yi498mc3` | 0.348 | 0.808 | 0.745-0.865 |
+| DPO | `e72tp5np` | 0.328 | 0.761 | 0.687-0.821 |
+| Final/RLVR | `7n60plb0` | 0.331 | 0.768 | 0.693-0.831 |
+
+Interpretation: the proxy is scoreable with the existing exact-sequence
+harness, but it does not support DPO-stage amplification. SFT has the highest
+point estimate, DPO is lowest, and every stage is below the reference extension
+rate. Keep this separate from full `rule_of_three_approx` free-running rates
+because it measures third-item extension after a candidate two-item list, not
+open-vocabulary initiation of the whole construction.
 
 ## Current Compute Posture
 
