@@ -173,11 +173,31 @@ low-emission point across all tracked features. Treat this as inherited/base
 free-running style plus feature-specific post-training reshaping, not as a
 clean DPO-stage generation peak.
 
-The bounded target-shape temperature expansion has started with DPO at
-temperature `0.7` (`8no9vqyf`). Its `slop_lexicon` and pooled stock
-opener/closer rates are nearly unchanged from DPO temperature `1.0`, while
-`rule_of_three_approx` is slightly higher at `0.7`. The full target-shape
-temperature sweep remains incomplete.
+The bounded target-shape DPO temperature expansion is complete for
+temperatures `0.0`, `0.7`, and `1.0`:
+
+- `t=0.0` W&B: `8s6spxu5`; 4,096 generations, 4,194,176 generated tokens,
+  `0.206` `slop_lexicon` hits per 1k generated tokens.
+- `t=0.7` W&B: `8no9vqyf`; 4,096 generations, 4,188,320 generated tokens,
+  `0.223` `slop_lexicon` hits per 1k generated tokens.
+- `t=1.0` W&B: `8rud2kxl`; 4,096 generations, 4,194,304 generated tokens,
+  `0.229` `slop_lexicon` hits per 1k generated tokens.
+- Assembly W&B: `5azmz6pq`.
+
+Feature rates per 1k generated tokens:
+
+| Feature | t=0.0 | t=0.7 | t=1.0 | Max Temp |
+|---|---:|---:|---:|---|
+| `slop_lexicon` | 0.206 | 0.223 | 0.229 | 1.0 |
+| `stock_openers_closers` | 0.101 | 0.107 | 0.108 | 1.0 |
+| `rule_of_three_approx` | 0.864 | 0.888 | 0.861 | 0.7 |
+| `contrastive_negation` | 0.168 | 0.127 | 0.141 | 0.0 |
+
+Interpretation: DPO target-shape temperature dependence is modest across this
+range. Warmer decoding mildly increases `slop_lexicon` and pooled stock
+opener/closer rates, but the effect is not large enough to explain the main
+stage-localization results. Deterministic decoding does not remove these
+features and is highest for `contrastive_negation`.
 
 ## Current Compute Posture
 

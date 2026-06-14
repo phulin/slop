@@ -2307,6 +2307,91 @@ olmo3_generation_target_shape_512prompt_8comp_t1_grid:
       stock_openers_closers: dpo
   conclusion: the completed bounded target-shape generation grid does not show a clean monotonic post-training increase; base is narrowly highest on slop_lexicon and clearly highest on rule_of_three_approx, DPO is highest on stock opener/closer features, final/RLVR attenuates from DPO on most features, and SFT is the low-emission point across all tracked features
 
+olmo3_dpo_generation_512prompt_8comp_1024_temp0_shard:
+  wandb_run_id: 8s6spxu5
+  model: allenai/Olmo-3-7B-Instruct-DPO
+  input_prompt_package: artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000.jsonl
+  generations_output: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t0_batched1024.jsonl
+  summary_output: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t0_batched1024_summary.csv
+  purpose: complete bounded target-shape temperature-dependence sweep for the DPO checkpoint
+  generation_settings:
+    sample_size: 512
+    temperature: 0.0
+    top_p: 0.95
+    max_new_tokens: 1024
+    completions_per_prompt: 8
+    generation_batch_size: 8
+    max_prompt_tokens: 1024
+    dtype: bfloat16
+    torch_compile: true
+  result:
+    prompts_seen: 512
+    prompts_skipped: 0
+    generations: 4096
+    generated_tokens: 4194176
+    progress_wall_seconds: 11288
+    tokens_per_sec_progress_window: 371.5605953224663
+    per_1k_tokens:
+      contrastive_negation: 0.16785180211798456
+      rule_of_three_approx: 0.8640552995391705
+      slop_lexicon: 0.20599993896298105
+      stock_closers: 0.043870357371745966
+      stock_openers: 0.05722220526749473
+      stock_openers_closers: 0.1010925626392407
+    generations_with_feature:
+      contrastive_negation: 408
+      rule_of_three_approx: 1056
+      slop_lexicon: 424
+      stock_closers: 176
+      stock_openers: 240
+      stock_openers_closers: 384
+    repeat_generations:
+      contrastive_negation: 96
+      rule_of_three_approx: 616
+      slop_lexicon: 160
+      stock_closers: 8
+      stock_openers: 0
+      stock_openers_closers: 40
+  conclusion: DPO temperature 0.0 lowers slop_lexicon relative to temperatures 0.7 and 1.0, but keeps rule_of_three_approx near the warmer shards and increases contrastive_negation and stock_closers point estimates
+
+olmo3_dpo_generation_target_shape_temperature_grid:
+  wandb_run_id: 5azmz6pq
+  purpose: assembled DPO target-shape free-running generation temperature comparison
+  generation_summaries:
+    dpo_t0: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t0_batched1024_summary.csv
+    dpo_t07: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t07_batched1024_summary.csv
+    dpo_t1: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t1_batched1024_summary.csv
+  output: artifacts/phase2/analysis/olmo3_dpo_generation_temperature_grid_target_shape_512prompt_8comp_1024.csv
+  comparison_output: artifacts/phase2/analysis/olmo3_dpo_generation_temperature_comparison_target_shape_512prompt_8comp_1024.csv
+  summary_output: artifacts/phase2/analysis/olmo3_dpo_generation_temperature_grid_target_shape_512prompt_8comp_1024_summary.md
+  generation_settings:
+    sample_size: 512
+    temperatures: [0.0, 0.7, 1.0]
+    top_p: 0.95
+    max_new_tokens: 1024
+    completions_per_prompt: 8
+  result:
+    rows: 18
+    temperatures: 3
+    primary_feature: slop_lexicon
+    slop_lexicon_per_1k_tokens:
+      temperature_0_0: 0.20599993896298105
+      temperature_0_7: 0.22276234862665698
+      temperature_1_0: 0.22912025451660156
+    stock_openers_closers_per_1k_tokens:
+      temperature_0_0: 0.1010925626392407
+      temperature_0_7: 0.10744164724758376
+      temperature_1_0: 0.10776519775390625
+    rule_of_three_approx_per_1k_tokens:
+      temperature_0_0: 0.8640552995391705
+      temperature_0_7: 0.8879455246972533
+      temperature_1_0: 0.8606910705566406
+    contrastive_negation_per_1k_tokens:
+      temperature_0_0: 0.16785180211798456
+      temperature_0_7: 0.12701990296825458
+      temperature_1_0: 0.14090538024902344
+  conclusion: DPO target-shape temperature dependence is modest across 0.0, 0.7, and 1.0; slop_lexicon and pooled stock opener/closer rates increase mildly with temperature, rule_of_three_approx is nearly flat with a small 0.7 peak, and contrastive_negation is highest at deterministic decoding
+
 vllm_0111_cu128_olmo3_dpo_1prompt_smoke:
   wandb_run_id: dibzdwyd
   sidecar_python: /tmp/slop-vllm-cu128-bench/bin/python

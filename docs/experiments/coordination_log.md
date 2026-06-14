@@ -942,3 +942,22 @@
   is nearly unchanged (`0.223` vs. `0.229` per 1k generated tokens) and pooled
   stock openers/closers are effectively tied (`0.107` vs. `0.108`), while
   `rule_of_three_approx` is slightly higher at 0.7 (`0.888` vs. `0.861`).
+- Completed the matching DPO target-shape temperature 0.0 shard:
+  `stage2-phase2-olmo3-dpo-promptpkg5000-free-running-512prompt-8comp-t0-bench1024`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/8s6spxu5`. It generated 512
+  prompts x 8 completions, 4,096 generations, and 4,194,176 generated tokens.
+  Feature rates per 1k generated tokens were `contrastive_negation` `0.168`,
+  `rule_of_three_approx` `0.864`, `slop_lexicon` `0.206`,
+  `stock_closers` `0.044`, `stock_openers` `0.057`, and
+  `stock_openers_closers` `0.101`.
+- Assembled the DPO target-shape temperature grid:
+  `stage2-phase2-olmo3-dpo-generation-target-shape-temperature-grid`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/5azmz6pq`. Across
+  temperatures 0.0/0.7/1.0, `slop_lexicon` is `0.206`/`0.223`/`0.229` per
+  1k generated tokens, pooled stock openers/closers are
+  `0.101`/`0.107`/`0.108`, `rule_of_three_approx` is
+  `0.864`/`0.888`/`0.861`, and `contrastive_negation` is
+  `0.168`/`0.127`/`0.141`. The temperature dependence is modest: warmer
+  decoding mildly increases slop lexicon and pooled stock phrase rates, but
+  deterministic decoding does not remove the features and is highest for
+  contrastive negation.
