@@ -246,20 +246,21 @@ expectation even under deterministic decoding.
 ## Bounded Amplification Spectrum
 
 The current bounded headline table is assembled by
-`slop-assemble-amplification-spectrum` and logged as W&B run `rg4mattp`
-(`stage2-phase2-olmo3-amplification-spectrum-bounded-v4`). Local outputs:
+`slop-assemble-amplification-spectrum` and logged as W&B run `87y3gz6m`
+(`stage2-phase2-olmo3-amplification-spectrum-bounded-v5`). Local outputs:
 
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v4.csv`
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v4_summary.md`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v5.csv`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v5_summary.md`
 
 It contains 24 rows: six retained feature views across base, SFT, DPO, and
 final/RLVR. Each row joins Phase 1 corpus rates, available teacher-forced AF,
 target-shape free-running rates, compounding summaries, and denominator-support
-notes. The v4 table includes the 5,000-prompt `rule_of_three_approx`
+notes. The v5 table includes the 5,000-prompt `rule_of_three_approx`
 comma-pair extension teacher-forced proxy and the 5,000-prompt pooled
-`stock_openers_closers` teacher-forced grid, plus a separate 5,000-prompt
-`stock_openers` teacher-forced grid. Teacher-forced coverage is now 16 cells.
-Blank cells mean missing measurements, not zero effects.
+`stock_openers_closers` teacher-forced grid, plus separate 5,000-prompt
+`stock_openers` and `stock_closers` teacher-forced grids. Teacher-forced
+coverage is now 20 cells. Blank cells mean missing measurements, not zero
+effects.
 
 Current spectrum read:
 
@@ -271,12 +272,13 @@ Current spectrum read:
   currently peaks at base (`1.019` per 1k generated tokens). The 5,000-prompt
   comma-pair extension teacher-forced proxy peaks at SFT (`0.767` raw AF) and
   does not show a DPO peak.
-- Pooled stock openers/closers have high teacher-forced raw AF in every stage
-  and peak at base (`7.997`), while target-shape free-running stock phrase
-  rates are small and DPO-peaked. The separate `stock_openers` teacher-forced
-  grid goes the opposite direction: raw AF is far below 1 and declines from
-  base (`0.067`) to DPO/final (`0.035`), so the pooled teacher-forced signal is
-  not coming from document-start openers.
+- Pooled stock openers/closers have high teacher-forced raw AF in every stage,
+  while target-shape free-running stock phrase rates are small and DPO-peaked.
+  The split grids explain the pooled teacher-forced signal: `stock_openers`
+  raw AF is far below 1 and declines from base (`0.067`) to DPO/final
+  (`0.035`), while `stock_closers` raw AF is very high in every stage
+  (`65.076`-`74.032`) because the model assigns roughly 3% mass to closer
+  phrases against only 18 references in 41,187 opportunities.
 - `contrastive_negation` remains too sparse in the 5k denominator audit for a
   strong bounded conclusion.
 
@@ -316,10 +318,24 @@ opportunities and 168 references, with reference rate `0.0336`.
 Interpretation: the model ladder assigns much less probability to the retained
 stock opener starts than the held-out references actually use. This makes the
 pooled `stock_openers_closers` teacher-forced AF suspect as a combined view:
-the high pooled AF is not an opener effect. A separate `stock_closers` run is
-the next diagnostic if this feature family remains important, but the 5,000
-prompt denominator has only 18 closer references, so it should be treated as
-sparse.
+the high pooled AF is not an opener effect.
+
+The separate `stock_closers` teacher-forced grid uses the full 5,000-prompt
+package and final-clause opportunity contract. All stages use 41,187
+opportunities and 18 references, with reference rate `0.000437`.
+
+| Stage | W&B | Mean Mass | Raw AF | 95% CI |
+|---|---|---:|---:|---:|
+| Base | `nlpxvpof` | 0.03204 | 73.304 | 47.983-132.664 |
+| SFT | `jcp2nar5` | 0.02844 | 65.076 | 42.501-117.634 |
+| DPO | `dcml121g` | 0.02999 | 68.634 | 45.192-123.947 |
+| Final/RLVR | `y06wdbfa` | 0.03235 | 74.032 | 48.951-133.005 |
+
+Interpretation: the high pooled stock opener/closer teacher-forced AF is a
+closer-side effect. The magnitude should be read cautiously because the held
+out reference denominator has only 18 positives, but the qualitative direction
+is clear: stock closer phrases remain relatively cheap local continuations for
+the model, with final/RLVR roughly back at base mass after the SFT dip.
 
 ## Current Compute Posture
 
@@ -354,8 +370,8 @@ question it answers:
 - `rule_of_three_approx` now has a full 5,000-prompt comma-pair extension proxy
   grid, but it is still a proxy for third-item extension and should not be read
   as open-vocabulary initiation of the complete construction.
-- `stock_openers` now has a separate 5,000-prompt teacher-forced grid. The
-  matching `stock_closers` split remains open and is expected to be noisy
-  because there are only 18 references in the current held-out package.
+- `stock_openers` and `stock_closers` now have separate 5,000-prompt
+  teacher-forced grids. The `stock_closers` magnitude is noisy because there
+  are only 18 references in the current held-out package.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.

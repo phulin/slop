@@ -1126,3 +1126,28 @@
   feature-stage rows and now has 16 teacher-forced cells. Outputs:
   `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v4.csv` and
   `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v4_summary.md`.
+- Ran the matching 5,000-prompt `stock_closers` teacher-forced grid to resolve
+  the pooled stock opener/closer signal. W&B runs: base `nlpxvpof`, SFT
+  `jcp2nar5`, DPO `dcml121g`, final/RLVR `y06wdbfa`. All four stages scored
+  the same 41,187 final-clause opportunities and 18 references. Raw AFs were
+  base `73.304` (`47.983`-`132.664`), SFT `65.076`
+  (`42.501`-`117.634`), DPO `68.634` (`45.192`-`123.947`), and final/RLVR
+  `74.032` (`48.951`-`133.005`). Mean probability mass stayed near 3% across
+  stages (`0.0284`-`0.0324`) despite a reference rate of only `0.000437`.
+  This confirms that the high pooled stock AF is coming from the closer side,
+  not from document-start openers, but the absolute AF magnitude is
+  denominator-sensitive because the reference count is sparse.
+- Assembled the `stock_closers` stage grid:
+  `stage2-phase2-olmo3-stock-closers-promptpkg5000-stage-grid`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/5j8q9u59`. Outputs:
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_stock_closers_stage_grid.csv`,
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_stock_closers_stage_comparison.csv`,
+  and
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_stock_closers_stage_grid_summary.md`.
+- Rebuilt the bounded amplification spectrum as v5 with the separate
+  `stock_closers` teacher-forced grid. W&B run:
+  `stage2-phase2-olmo3-amplification-spectrum-bounded-v5`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/87y3gz6m`. It still has 24
+  feature-stage rows and now has 20 teacher-forced cells. Outputs:
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v5.csv` and
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v5_summary.md`.
