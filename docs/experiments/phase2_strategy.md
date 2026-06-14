@@ -1121,3 +1121,11 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   356 generated tokens/sec. This makes the next compute decision explicit:
   either narrow the scientific question or improve the generation backend before
   launching the full grid.
+- `slop-launch-phase2-generation-shard` now provides the guarded launch path for
+  a single planned shard. It prints the selected command by default, only runs
+  with `--execute`, skips completed shards unless `--allow-completed` is set,
+  and refuses shards above `--max-estimated-a100-hours` unless `--force` is
+  passed. A dry-run against the full 5,000-prompt DPO t=1.0 shard correctly
+  refused the launch at `31.96` estimated A100-hours under the default 8-hour
+  cap; a dry-run against the completed 512-prompt DPO t=1.0 shard printed the
+  matching `slop-free-running-emission` command.

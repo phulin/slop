@@ -1249,3 +1249,11 @@
   per shard, and `383.52` estimated A100-hours at 356 generated tokens/sec.
   This argues against launching the full grid blindly on the current Torch
   backend.
+- Added `slop-launch-phase2-generation-shard`, a guarded launcher for one row
+  from a generation plan. It prints by default, requires `--execute` to launch,
+  skips completed shards unless `--allow-completed` is set, and refuses shards
+  over `--max-estimated-a100-hours` unless `--force` is passed. Validation:
+  the full 5,000-prompt DPO t=1.0 shard was refused under the default 8-hour
+  cap because it is estimated at `31.96` A100-hours, while the completed
+  512-prompt DPO t=1.0 shard was selectable with `--allow-completed` and printed
+  the matching generation command.

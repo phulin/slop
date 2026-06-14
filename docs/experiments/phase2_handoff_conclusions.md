@@ -363,6 +363,9 @@ question it answers:
   estimates the full EXPERIMENTS.md OLMo generation grid at 12 shards,
   40,000 generations per shard, and about 383.5 A100-hours at current Torch
   throughput.
+- Use `slop-launch-phase2-generation-shard` to execute one planned shard at a
+  time. It is dry-run by default, requires `--execute` to launch, and refuses
+  shards above the configured A100-hour cap unless `--force` is passed.
 
 ## Open Caveats
 
