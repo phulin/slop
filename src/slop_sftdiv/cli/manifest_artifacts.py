@@ -28,6 +28,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output", type=Path, required=True, help="Manifest CSV path.")
     parser.add_argument("--json-output", type=Path, default=None, help="Optional JSON manifest path.")
     parser.add_argument("--summary-output", type=Path, default=None, help="Optional Markdown summary.")
+    parser.add_argument(
+        "--stage-tag",
+        default="stage1",
+        help="Experiment stage tag to attach to W&B logs, e.g. stage1 or stage2.",
+    )
     parser.add_argument("--wandb-project", default="slop-stage1")
     parser.add_argument("--wandb-entity", default=None)
     parser.add_argument("--wandb-run-name", default=None)
@@ -150,12 +155,13 @@ def run_manifest(args: argparse.Namespace) -> list[dict[str, Any]]:
         group=args.wandb_group,
         job_type=args.wandb_job_type,
         mode=args.wandb_mode,
-        tags=["stage1", "manifest", *args.wandb_tag],
+        tags=[args.stage_tag, "manifest", *args.wandb_tag],
         config={
             "inputs": [str(path) for path in args.input],
             "output": str(args.output),
             "json_output": str(args.json_output) if args.json_output is not None else None,
             "summary_output": str(args.summary_output) if args.summary_output is not None else None,
+            "stage_tag": args.stage_tag,
         },
     )
     try:

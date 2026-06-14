@@ -39,6 +39,7 @@ def test_run_manifest_writes_outputs_and_logs_wandb(tmp_path, monkeypatch):
     summary_path = tmp_path / "manifest.md"
     input_path.write_text("a\n1\n", encoding="utf-8")
     logged = []
+    init_kwargs = {}
     tables = {}
 
     class FakeRun:
@@ -48,7 +49,11 @@ def test_run_manifest_writes_outputs_and_logs_wandb(tmp_path, monkeypatch):
         def finish(self):
             pass
 
-    monkeypatch.setattr("slop_sftdiv.cli.manifest_artifacts.init_wandb", lambda **_kwargs: FakeRun())
+    def fake_init(**kwargs):
+        init_kwargs.update(kwargs)
+        return FakeRun()
+
+    monkeypatch.setattr("slop_sftdiv.cli.manifest_artifacts.init_wandb", fake_init)
     monkeypatch.setattr(
         "slop_sftdiv.cli.manifest_artifacts.log_summary_table",
         lambda _run, table_name, rows: tables.setdefault(table_name, rows),
@@ -63,6 +68,8 @@ def test_run_manifest_writes_outputs_and_logs_wandb(tmp_path, monkeypatch):
             str(json_path),
             "--summary-output",
             str(summary_path),
+            "--stage-tag",
+            "stage2",
             "--wandb-mode",
             "disabled",
         ]
@@ -71,6 +78,8 @@ def test_run_manifest_writes_outputs_and_logs_wandb(tmp_path, monkeypatch):
     rows = run_manifest(args)
 
     assert rows[0]["records"] == 1
+    assert init_kwargs["tags"][:2] == ["stage2", "manifest"]
+    assert init_kwargs["config"]["stage_tag"] == "stage2"
     assert logged[-1]["manifest/artifacts"] == 1
     assert tables["artifact_manifest"] == rows
     assert json_path.exists()

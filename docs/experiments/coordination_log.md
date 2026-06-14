@@ -1151,3 +1151,12 @@
   feature-stage rows and now has 20 teacher-forced cells. Outputs:
   `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v5.csv` and
   `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v5_summary.md`.
+- Made the artifact-manifest CLI stage-aware via `--stage-tag` so Phase 2
+  manifests no longer log with a hard-coded `stage1` tag. Logged the current
+  OLMo Phase 2 headline artifact manifest as
+  `stage2-phase2-olmo3-headline-artifact-manifest`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/c7pc9mz2`. The local
+  gitignored manifest files are:
+  `artifacts/phase2/analysis/olmo3_phase2_headline_artifact_manifest.csv`,
+  `artifacts/phase2/analysis/olmo3_phase2_headline_artifact_manifest.json`, and
+  `artifacts/phase2/analysis/olmo3_phase2_headline_artifact_manifest.md`.
