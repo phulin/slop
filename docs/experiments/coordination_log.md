@@ -1353,3 +1353,15 @@
   Status at 2026-06-14 22:50 UTC: generation shard alive, A100 utilization
   about 97%, `0/8192` JSONL rows written, and latest log-derived progress
   `176` prompts (`~1408` generation completions at 8 completions per prompt).
+- Extended the post-shard watcher to parse the generation launch log just like
+  `slop-phase2-generation-status`, so wait-progress lines now include
+  `log_prompts` and estimated generation completions even for this
+  pre-streaming run. Focused verification:
+  `uv run pytest -q tests/test_run_phase2_post_shard_analysis.py
+  tests/test_phase2_generation_status.py` (`5 passed`) and
+  `uv run ruff check src/slop_sftdiv/cli/run_phase2_post_shard_analysis.py
+  tests/test_run_phase2_post_shard_analysis.py` (`All checks passed`).
+  Restarted only the CPU-side watcher. New watcher Python PID: `14748`.
+  First flushed wait line:
+  `waiting for shard completion: 0/8192 rows; log_prompts=176;
+  log_generation_estimate=1408`.
