@@ -246,20 +246,20 @@ expectation even under deterministic decoding.
 ## Bounded Amplification Spectrum
 
 The current bounded headline table is assembled by
-`slop-assemble-amplification-spectrum` and logged as W&B run `4agew61j`
-(`stage2-phase2-olmo3-amplification-spectrum-bounded-v3`). Local outputs:
+`slop-assemble-amplification-spectrum` and logged as W&B run `rg4mattp`
+(`stage2-phase2-olmo3-amplification-spectrum-bounded-v4`). Local outputs:
 
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v3.csv`
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v3_summary.md`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v4.csv`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v4_summary.md`
 
 It contains 24 rows: six retained feature views across base, SFT, DPO, and
 final/RLVR. Each row joins Phase 1 corpus rates, available teacher-forced AF,
 target-shape free-running rates, compounding summaries, and denominator-support
-notes. The v3 table includes the 5,000-prompt `rule_of_three_approx`
+notes. The v4 table includes the 5,000-prompt `rule_of_three_approx`
 comma-pair extension teacher-forced proxy and the 5,000-prompt pooled
-`stock_openers_closers` teacher-forced grid, increasing teacher-forced coverage
-from 8 cells to 12 cells. Blank cells mean missing measurements, not zero
-effects.
+`stock_openers_closers` teacher-forced grid, plus a separate 5,000-prompt
+`stock_openers` teacher-forced grid. Teacher-forced coverage is now 16 cells.
+Blank cells mean missing measurements, not zero effects.
 
 Current spectrum read:
 
@@ -273,7 +273,10 @@ Current spectrum read:
   does not show a DPO peak.
 - Pooled stock openers/closers have high teacher-forced raw AF in every stage
   and peak at base (`7.997`), while target-shape free-running stock phrase
-  rates are small and DPO-peaked.
+  rates are small and DPO-peaked. The separate `stock_openers` teacher-forced
+  grid goes the opposite direction: raw AF is far below 1 and declines from
+  base (`0.067`) to DPO/final (`0.035`), so the pooled teacher-forced signal is
+  not coming from document-start openers.
 - `contrastive_negation` remains too sparse in the 5k denominator audit for a
   strong bounded conclusion.
 
@@ -298,6 +301,25 @@ point estimate, DPO is lowest, and every stage is below the reference extension
 rate. Keep this separate from full `rule_of_three_approx` free-running rates
 because it measures third-item extension after a candidate two-item list, not
 open-vocabulary initiation of the whole construction.
+
+The separate `stock_openers` teacher-forced grid uses the full 5,000-prompt
+package and the document-start opportunity contract. All stages use 5,000
+opportunities and 168 references, with reference rate `0.0336`.
+
+| Stage | W&B | Mean Mass | Raw AF | 95% CI |
+|---|---|---:|---:|---:|
+| Base | `ul26mrrc` | 0.00226 | 0.067 | 0.059-0.078 |
+| SFT | `140fbygd` | 0.00160 | 0.048 | 0.042-0.056 |
+| DPO | `47jq4d4v` | 0.00117 | 0.035 | 0.030-0.041 |
+| Final/RLVR | `8j59fpx5` | 0.00117 | 0.035 | 0.030-0.041 |
+
+Interpretation: the model ladder assigns much less probability to the retained
+stock opener starts than the held-out references actually use. This makes the
+pooled `stock_openers_closers` teacher-forced AF suspect as a combined view:
+the high pooled AF is not an opener effect. A separate `stock_closers` run is
+the next diagnostic if this feature family remains important, but the 5,000
+prompt denominator has only 18 closer references, so it should be treated as
+sparse.
 
 ## Current Compute Posture
 
@@ -332,5 +354,8 @@ question it answers:
 - `rule_of_three_approx` now has a full 5,000-prompt comma-pair extension proxy
   grid, but it is still a proxy for third-item extension and should not be read
   as open-vocabulary initiation of the complete construction.
+- `stock_openers` now has a separate 5,000-prompt teacher-forced grid. The
+  matching `stock_closers` split remains open and is expected to be noisy
+  because there are only 18 references in the current held-out package.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.

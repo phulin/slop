@@ -1103,3 +1103,26 @@
   feature-stage rows and now has 12 teacher-forced cells. Outputs:
   `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v3.csv` and
   `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v3_summary.md`.
+- Ran a separate 5,000-prompt `stock_openers` teacher-forced grid to split the
+  pooled stock opener/closer signal. W&B runs: base `ul26mrrc`, SFT
+  `140fbygd`, DPO `47jq4d4v`, final/RLVR `8j59fpx5`. All four stages scored
+  the same 5,000 document-start opportunities and 168 references. Raw AFs were
+  base `0.067` (`0.059`-`0.078`), SFT `0.048` (`0.042`-`0.056`), DPO `0.035`
+  (`0.030`-`0.041`), and final/RLVR `0.035` (`0.030`-`0.041`). This shows that
+  document-start stock openers are not responsible for the high pooled
+  `stock_openers_closers` teacher-forced AF; the remaining candidate is the
+  sparse closer side or the pooled denominator interaction.
+- Assembled the `stock_openers` stage grid:
+  `stage2-phase2-olmo3-stock-openers-promptpkg5000-stage-grid`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/echjq5b8`. Outputs:
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_stock_openers_stage_grid.csv`,
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_stock_openers_stage_comparison.csv`,
+  and
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_stock_openers_stage_grid_summary.md`.
+- Rebuilt the bounded amplification spectrum as v4 with the separate
+  `stock_openers` teacher-forced grid. W&B run:
+  `stage2-phase2-olmo3-amplification-spectrum-bounded-v4`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/rg4mattp`. It still has 24
+  feature-stage rows and now has 16 teacher-forced cells. Outputs:
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v4.csv` and
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v4_summary.md`.
