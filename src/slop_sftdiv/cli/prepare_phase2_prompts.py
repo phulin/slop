@@ -140,6 +140,10 @@ def _metadata_value(record: Any, *keys: str, default: str | None = None) -> str 
 
 
 def _record_metadata_value(record: Any, field: str) -> str | None:
+    if isinstance(record, dict):
+        value = record.get(field)
+        if value is not None and value != "":
+            return str(value)
     value = record.metadata.get(field)
     if value is not None and value != "":
         return str(value)

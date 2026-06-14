@@ -1194,3 +1194,14 @@
   tests/test_prepare_phase2_prompts.py
   src/slop_sftdiv/cli/teacher_forced_propensity.py
   tests/test_teacher_forced_propensity.py` (`All checks passed`).
+- Added `slop-annotate-phase2-prompts` for row-preserving annotation of
+  existing prompt packages with the same metadata bucket-map schema. This avoids
+  accidental resampling or duplicate-ID filtering when adding fields to already
+  frozen Phase 2 packages. Ran the full 5,000-row annotation with W&B online as
+  `stage2-phase2-olmo3-dolci-sft-promptpkg5000-reference-subset`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/ew7x38n8`. Outputs are
+  gitignored under `artifacts/phase2/prompts/`:
+  `olmo3_dolci_sft_phase2_prompt_package_5000_reference_subset.jsonl`,
+  `_manifest.csv`, and `_summary.json`. The annotated package preserves all
+  5,000 rows and has bucket counts `code=1371`, `synthetic_llm=225`, and
+  `unknown=3404`.

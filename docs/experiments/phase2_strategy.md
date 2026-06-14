@@ -219,6 +219,13 @@ labels, not target-response authorship. Do not publish a human-written-SFT AF
 claim until a regenerated package or upstream audit supplies explicit
 human/synthetic labels.
 
+For already-generated prompt packages, use `slop-annotate-phase2-prompts`
+instead of re-running `slop-prepare-phase2-prompts`; it preserves existing rows
+and only adds mapped metadata. The current 5,000-row annotated package was
+logged as W&B run `ew7x38n8` and wrote:
+`artifacts/phase2/prompts/olmo3_dolci_sft_phase2_prompt_package_5000_reference_subset.jsonl`.
+Bucket counts are `code=1371`, `synthetic_llm=225`, and `unknown=3404`.
+
 ## Promotion Criteria
 
 Promote from tiny-model smoke to OLMo tiny shard only if:

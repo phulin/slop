@@ -380,6 +380,9 @@ question it answers:
   conclusions still require a provenance mapping or regenerated package with
   explicit labels. Prompt packaging can now materialize normalized fields with
   `--metadata-bucket-map`; use that path to add `reference_subset` before
-  running subset AF summaries.
+  running subset AF summaries. For existing packages, use
+  `slop-annotate-phase2-prompts` to preserve row identity. The current 5,000-row
+  annotated package is logged as W&B run `ew7x38n8` with counts
+  `code=1371`, `synthetic_llm=225`, and `unknown=3404`.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.
