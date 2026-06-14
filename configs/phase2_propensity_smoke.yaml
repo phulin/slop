@@ -2392,6 +2392,53 @@ olmo3_dpo_generation_target_shape_temperature_grid:
       temperature_1_0: 0.14090538024902344
   conclusion: DPO target-shape temperature dependence is modest across 0.0, 0.7, and 1.0; slop_lexicon and pooled stock opener/closer rates increase mildly with temperature, rule_of_three_approx is nearly flat with a small 0.7 peak, and contrastive_negation is highest at deterministic decoding
 
+olmo3_dpo_generation_compounding_temperature_target_shape_tf1024:
+  wandb_run_id: k6gcu75b
+  purpose: join the completed DPO target-shape temperature sweep against the 1024-prompt teacher-forced slop/neutral grid
+  generation_cache: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t0_t07_t1_batched1024.jsonl
+  source_generation_caches:
+    temperature_0_0: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t0_batched1024.jsonl
+    temperature_0_7: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t07_batched1024.jsonl
+    temperature_1_0: artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_512prompt_8comp_t1_batched1024.jsonl
+  propensity_grid: artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid.csv
+  output: artifacts/phase2/analysis/olmo3_dpo_generation_compounding_temperature_target_shape_512prompt_8comp_1024_tf1024.csv
+  summary_output: artifacts/phase2/analysis/olmo3_dpo_generation_compounding_temperature_target_shape_512prompt_8comp_1024_tf1024_summary.md
+  realized_af_plot_output: artifacts/phase2/analysis/olmo3_dpo_generation_compounding_temperature_target_shape_512prompt_8comp_1024_tf1024_realized_af.svg
+  features:
+    - contrastive_negation
+    - rule_of_three_approx
+    - slop_lexicon
+    - stock_openers
+    - stock_closers
+    - stock_openers_closers
+  window_tokens: 32
+  slop_lexicon_result_b:
+    temperature_0_0:
+      observed_per_1k_opportunities: 0.6145756867029721
+      expected_per_1k_opportunities: 0.43908233626526716
+      excess_per_1k_opportunities: 0.17549335043770498
+      realized_af: 1.0507235052875834
+      p_hit_after_prior: 0.07528641571194762
+      p_hit_without_prior: 0.01029126213592233
+      repeat_generations: 160
+    temperature_0_7:
+      observed_per_1k_opportunities: 0.6370209540976219
+      expected_per_1k_opportunities: 0.43908233626526716
+      excess_per_1k_opportunities: 0.19793861783235475
+      realized_af: 1.0890975746565554
+      p_hit_after_prior: 0.07737308926212492
+      p_hit_without_prior: 0.010838963963963964
+      repeat_generations: 204
+    temperature_1_0:
+      observed_per_1k_opportunities: 0.6379879678523108
+      expected_per_1k_opportunities: 0.43908233626526716
+      excess_per_1k_opportunities: 0.1989056315870436
+      realized_af: 1.0907508520379614
+      p_hit_after_prior: 0.07117181883537024
+      p_hit_without_prior: 0.011261984494701591
+      repeat_generations: 199
+  conclusion: DPO target-shape Result B is positive at all three temperatures, but temperature dependence is small; realized AF rises from 1.051 at deterministic decoding to 1.091 at temperature 1.0, and the direct prior-window effect remains large at every temperature
+
 vllm_0111_cu128_olmo3_dpo_1prompt_smoke:
   wandb_run_id: dibzdwyd
   sidecar_python: /tmp/slop-vllm-cu128-bench/bin/python

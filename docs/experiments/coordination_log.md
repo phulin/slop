@@ -961,3 +961,14 @@
   decoding mildly increases slop lexicon and pooled stock phrase rates, but
   deterministic decoding does not remove the features and is highest for
   contrastive negation.
+- Ran the matching DPO target-shape compounding temperature join:
+  `stage2-phase2-olmo3-dpo-generation-compounding-target-shape-temperature-tf1024-v2`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/k6gcu75b`. It joins the three
+  DPO target-shape generation caches against the 1,024-prompt teacher-forced
+  slop/neutral grid. `slop_lexicon` observed rates exceed teacher-forced
+  expectation at all temperatures: t=0.0 observed `0.615` vs expected `0.439`
+  per 1k opportunities, realized AF `1.051`; t=0.7 observed `0.637` vs
+  expected `0.439`, realized AF `1.089`; t=1.0 observed `0.638` vs expected
+  `0.439`, realized AF `1.091`. The direct prior-window effect remains large
+  at every temperature, with repeat generations t=0.0 `160`, t=0.7 `204`, and
+  t=1.0 `199`.

@@ -199,6 +199,21 @@ opener/closer rates, but the effect is not large enough to explain the main
 stage-localization results. Deterministic decoding does not remove these
 features and is highest for `contrastive_negation`.
 
+The matching DPO target-shape compounding join against the 1,024-prompt
+teacher-forced grid is logged as W&B run `k6gcu75b`. `slop_lexicon` Result B is
+positive at all three temperatures:
+
+| Temp | Observed /1k Opp | Expected /1k Opp | Excess /1k | Realized AF | Repeat Gens |
+|---:|---:|---:|---:|---:|---:|
+| 0.0 | 0.615 | 0.439 | 0.175 | 1.051 | 160 |
+| 0.7 | 0.637 | 0.439 | 0.198 | 1.089 | 204 |
+| 1.0 | 0.638 | 0.439 | 0.199 | 1.091 | 199 |
+
+Interpretation: the self-conditioning/compounding signal is stable across DPO
+temperatures at this target shape. Temperature moves the magnitude slightly,
+but the larger result is that observed generation rates exceed teacher-forced
+expectation even under deterministic decoding.
+
 ## Current Compute Posture
 
 Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid

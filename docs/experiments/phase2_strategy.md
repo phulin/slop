@@ -970,3 +970,11 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   pooled stock opener/closer rates are 0.0 `0.101`, 0.7 `0.107`, and 1.0
   `0.108`. Treat temperature as a modest modulator at this target shape, not
   the primary explanation for the stage differences.
+- `stage2-phase2-olmo3-dpo-generation-compounding-target-shape-temperature-tf1024-v2`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/k6gcu75b`) joined the DPO
+  target-shape temperature sweep to the 1,024-prompt teacher-forced
+  slop/neutral grid. `slop_lexicon` Result B is positive at all three
+  temperatures: observed/expected per 1k opportunities are 0.615/0.439 at
+  temperature 0.0, 0.637/0.439 at 0.7, and 0.638/0.439 at 1.0. Realized AF is
+  correspondingly 1.051, 1.089, and 1.091, so temperature has a small effect
+  on compounding magnitude but is not the main driver.
