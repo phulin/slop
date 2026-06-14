@@ -1109,3 +1109,15 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   `1.588` vs. `0.861`, and pooled stock openers/closers `0.440` vs. `0.108`.
   Do not treat current SGLang `--ignore-eos` generations as a drop-in
   replacement for the Torch Phase 2 science cache.
+- `stage2-phase2-olmo3-generation-plan-512prompt-t1`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/eu65803t`) ran
+  `slop-plan-phase2-generation` over the bounded target-shape t=1.0 grid and
+  found all four expected 512-prompt x 8-completion x 1,024-token Torch shards
+  complete locally.
+- `stage2-phase2-olmo3-generation-plan-full-5000prompt-8comp-3temp`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/3d8g6at4`) generated the full
+  EXPERIMENTS.md OLMo free-running plan: 12 shards, 40,000 generations per
+  shard, and `383.52` missing A100-hours at the current Torch estimate of
+  356 generated tokens/sec. This makes the next compute decision explicit:
+  either narrow the scientific question or improve the generation backend before
+  launching the full grid.

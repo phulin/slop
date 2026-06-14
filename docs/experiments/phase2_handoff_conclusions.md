@@ -357,6 +357,12 @@ question it answers:
   environment against the 512-prompt DPO shard contract. Keep
   torch/Transformers as the exact teacher-forced scorer unless an exactness
   benchmark reproduces the fixed-branch probability-mass summaries.
+- Use `slop-plan-phase2-generation` before launching more A100 generation
+  shards. W&B run `eu65803t` confirms the existing 512-prompt x 8-completion
+  x 1,024-token t=1.0 four-stage grid is complete locally. W&B run `3d8g6at4`
+  estimates the full EXPERIMENTS.md OLMo generation grid at 12 shards,
+  40,000 generations per shard, and about 383.5 A100-hours at current Torch
+  throughput.
 
 ## Open Caveats
 

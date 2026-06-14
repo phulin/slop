@@ -1237,3 +1237,15 @@
   dominated with raw AF base/SFT/DPO/final
   `18.862`/`15.407`/`17.060`/`18.507`, while `code` is much lower
   (`2.228`/`2.065`/`1.735`/`1.867`) because opener references dominate.
+- Added `slop-plan-phase2-generation`, a row/checklist planner that emits
+  resumable `slop-free-running-emission` commands, expected generation/token
+  counts, local completion status, and A100-hour estimates. W&B run
+  `stage2-phase2-olmo3-generation-plan-512prompt-t1`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/eu65803t`) verified the
+  existing 512-prompt t=1.0 target-shape grid as 4/4 complete. W&B run
+  `stage2-phase2-olmo3-generation-plan-full-5000prompt-8comp-3temp`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/3d8g6at4`) planned the full
+  EXPERIMENTS.md OLMo generation grid as 12 missing shards, 40,000 generations
+  per shard, and `383.52` estimated A100-hours at 356 generated tokens/sec.
+  This argues against launching the full grid blindly on the current Torch
+  backend.
