@@ -1415,6 +1415,6 @@
   tests/test_phase2_generation_status.py
   tests/test_run_phase2_post_shard_analysis.py` (`All checks passed`).
   Restarted only the CPU-side post-shard watcher; generation worker PID `5950`
-  was left untouched. New watcher process PID: `22125`. First wait line:
+  was left untouched. New watcher Python PID: `22144`. First wait line:
   `waiting for shard completion: 0/8192 rows; log_prompts=304;
   log_generation_estimate=2432; eta=3:15:22; eta_avg=3:22:51`.
