@@ -1076,3 +1076,30 @@
   cells. Outputs:
   `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v2.csv` and
   `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v2_summary.md`.
+- Scaled the `rule_of_three_approx` comma-pair extension teacher-forced proxy
+  to the full 5,000-prompt held-out package. The four OLMo stages all scored
+  3,281 opportunities and 1,473 references with the same filtered denominator
+  support. W&B runs: base `hd0k5hfn`, SFT `ctpb9eu6`, DPO `l8indgao`,
+  final/RLVR `9b60jls5`. Raw AFs were base `0.721` (`0.698`-`0.742`), SFT
+  `0.767` (`0.743`-`0.787`), DPO `0.716` (`0.691`-`0.738`), and final/RLVR
+  `0.723` (`0.698`-`0.746`). Throughput for the full runs was about 24
+  opportunities/sec after model load and compile. This full proxy preserves the
+  512-prompt read: SFT has the highest point estimate, DPO is slightly below
+  base, and the proxy does not support a DPO-stage rule-of-three amplification
+  claim.
+- Assembled the full 5,000-prompt rule-of-three completion grid:
+  `stage2-phase2-olmo3-rule-of-three-completion-promptpkg5000-stage-grid`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/sod6yjyj`. Outputs:
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_rule_of_three_completion_stage_grid.csv`,
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_rule_of_three_completion_stage_comparison.csv`,
+  and
+  `artifacts/phase2/analysis/olmo3_promptpkg5000_rule_of_three_completion_stage_grid_summary.md`.
+- Rebuilt the bounded amplification spectrum as v3 with the 1,024-prompt
+  slop/neutral grid, the full 5,000-prompt rule-of-three proxy grid, the
+  5,000-prompt pooled stock opener/closer grid, target-shape generation rates,
+  compounding, and denominator support. W&B run:
+  `stage2-phase2-olmo3-amplification-spectrum-bounded-v3`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/4agew61j`. It still has 24
+  feature-stage rows and now has 12 teacher-forced cells. Outputs:
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v3.csv` and
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v3_summary.md`.

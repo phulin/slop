@@ -1,6 +1,6 @@
 # Phase 2 Handoff Conclusions
 
-Date: 2026-06-13
+Date: 2026-06-14
 
 ## Current Scope
 
@@ -35,7 +35,9 @@ The Phase 2 core feature set inherited from the revised Phase 1 close-out is:
 
 Teacher-forced stage-localization claims are currently strongest for
 `slop_lexicon` normalized by `neutral_common_controls`. `rule_of_three_approx`
-remains free-running-only until a teacher-forced opportunity contract is frozen.
+now has a bounded comma-pair extension proxy, but that proxy measures
+third-item continuation after a candidate two-item list rather than
+open-vocabulary initiation of the whole construction.
 
 ## Teacher-Forced Read
 
@@ -68,6 +70,33 @@ preference-only effect.
 
 The full 5,000-prompt teacher-forced slop/neutral run remains a confirmatory
 compute spend, not the automatic next step.
+
+The completed 5,000-prompt `rule_of_three_approx` teacher-forced proxy grid
+uses the comma-pair extension contract over the full held-out prompt package.
+All four stages share 3,281 opportunities, 1,473 references, and reference rate
+`0.449`.
+
+W&B runs:
+
+- Base: `hd0k5hfn`
+- SFT: `ctpb9eu6`
+- DPO: `l8indgao`
+- Final/RLVR: `9b60jls5`
+- Assembly: `sod6yjyj`
+
+Raw AF:
+
+| Stage | Raw AF | 95% CI |
+|---|---:|---:|
+| Base | 0.721 | 0.698-0.742 |
+| SFT | 0.767 | 0.743-0.787 |
+| DPO | 0.716 | 0.691-0.738 |
+| Final/RLVR | 0.723 | 0.698-0.746 |
+
+Interpretation: this proxy does not support a DPO-stage rule-of-three
+amplification claim. SFT is the maximum point-estimate stage, DPO is slightly
+below base, and all stages put less probability mass on extension than the
+reference continuation rate.
 
 ## Free-Running Read
 
@@ -217,18 +246,20 @@ expectation even under deterministic decoding.
 ## Bounded Amplification Spectrum
 
 The current bounded headline table is assembled by
-`slop-assemble-amplification-spectrum` and logged as W&B run `jkie1xy6`
-(`stage2-phase2-olmo3-amplification-spectrum-bounded-v2`). Local outputs:
+`slop-assemble-amplification-spectrum` and logged as W&B run `4agew61j`
+(`stage2-phase2-olmo3-amplification-spectrum-bounded-v3`). Local outputs:
 
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v2.csv`
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v2_summary.md`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v3.csv`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v3_summary.md`
 
 It contains 24 rows: six retained feature views across base, SFT, DPO, and
 final/RLVR. Each row joins Phase 1 corpus rates, available teacher-forced AF,
 target-shape free-running rates, compounding summaries, and denominator-support
-notes. The v2 table includes the `rule_of_three_approx` comma-pair extension
-teacher-forced proxy, increasing teacher-forced coverage from 4 cells to 8
-cells. Blank cells mean missing measurements, not zero effects.
+notes. The v3 table includes the 5,000-prompt `rule_of_three_approx`
+comma-pair extension teacher-forced proxy and the 5,000-prompt pooled
+`stock_openers_closers` teacher-forced grid, increasing teacher-forced coverage
+from 8 cells to 12 cells. Blank cells mean missing measurements, not zero
+effects.
 
 Current spectrum read:
 
@@ -237,25 +268,29 @@ Current spectrum read:
   target-shape free-running rates put base (`0.233` per 1k generated tokens)
   just above DPO (`0.229`).
 - `rule_of_three_approx` is the clearest target-shape free-running feature but
-  currently peaks at base (`1.019` per 1k generated tokens). The new
-  comma-pair extension teacher-forced proxy also does not show a DPO peak.
-- Stock openers/closers are small but DPO-peaked in target-shape generation.
+  currently peaks at base (`1.019` per 1k generated tokens). The 5,000-prompt
+  comma-pair extension teacher-forced proxy peaks at SFT (`0.767` raw AF) and
+  does not show a DPO peak.
+- Pooled stock openers/closers have high teacher-forced raw AF in every stage
+  and peak at base (`7.997`), while target-shape free-running stock phrase
+  rates are small and DPO-peaked.
 - `contrastive_negation` remains too sparse in the 5k denominator audit for a
   strong bounded conclusion.
 
 Treat this as the current bounded amplification spectrum, not the full
 production-scale EXPERIMENTS.md table.
 
-The new `rule_of_three_approx` comma-pair extension proxy has a 512-prompt
-teacher-forced mini-grid. All stages use the same 360 opportunities and 155
-references, with reference rate `0.431`.
+The `rule_of_three_approx` comma-pair extension proxy supersedes the earlier
+512-prompt mini-grid with a full 5,000-prompt teacher-forced grid. All stages
+use the same 3,281 opportunities and 1,473 references, with reference rate
+`0.449`.
 
 | Stage | W&B | Mean Mass | Raw AF | 95% CI |
 |---|---|---:|---:|---:|
-| Base | `8mggip2w` | 0.334 | 0.775 | 0.710-0.829 |
-| SFT | `yi498mc3` | 0.348 | 0.808 | 0.745-0.865 |
-| DPO | `e72tp5np` | 0.328 | 0.761 | 0.687-0.821 |
-| Final/RLVR | `7n60plb0` | 0.331 | 0.768 | 0.693-0.831 |
+| Base | `hd0k5hfn` | 0.324 | 0.721 | 0.698-0.742 |
+| SFT | `ctpb9eu6` | 0.344 | 0.767 | 0.743-0.787 |
+| DPO | `l8indgao` | 0.321 | 0.716 | 0.691-0.738 |
+| Final/RLVR | `9b60jls5` | 0.325 | 0.723 | 0.698-0.746 |
 
 Interpretation: the proxy is scoreable with the existing exact-sequence
 harness, but it does not support DPO-stage amplification. SFT has the highest
@@ -294,8 +329,8 @@ question it answers:
 - Removed punctuation and list/header features should not be used for core
   claims without renewed validation.
 - `contrastive_negation` is measurable but sparse in the 5k denominator audit.
-- `rule_of_three_approx` now has a pilot comma-pair extension contract with
-  nonzero 5k denominator support, but it is a proxy for third-item extension
-  and still needs precision sampling before strong AF claims.
+- `rule_of_three_approx` now has a full 5,000-prompt comma-pair extension proxy
+  grid, but it is still a proxy for third-item extension and should not be read
+  as open-vocabulary initiation of the complete construction.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.
