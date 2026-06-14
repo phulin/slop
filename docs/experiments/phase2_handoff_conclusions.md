@@ -388,5 +388,10 @@ question it answers:
   subset AF tables without a model rerun. The first slop/neutral subset summary
   is W&B run `316hbxbl`; it shows DPO highest for `synthetic_llm` and `unknown`
   subsets, while the `code` subset is denominator-sparse for slop references.
+  Full 5,000-prompt subset summaries are also logged for rule-of-three
+  (`0nklcliy`), stock openers (`jju0y0n5`), stock closers (`zxu196ge`), and
+  pooled stock openers/closers (`ssa70ap1`). These preserve the all-reference
+  read: rule-of-three does not show DPO amplification, stock openers are
+  suppressed, and stock closers are the noisy closer-side stock effect.
 - Raw artifacts under `artifacts/` are local and gitignored; durable result
   records live in config/docs and W&B artifacts.

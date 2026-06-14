@@ -243,6 +243,34 @@ synthetic SFT. The `code` subset has only 5 slop references in the 1,024-prompt
 denominator, so use it as a diagnostic rather than a stable stage-localization
 claim.
 
+The same offline summarizer has also been run for the full 5,000-prompt
+teacher-forced grids:
+
+| Feature grid | W&B run |
+|---|---|
+| `rule_of_three_approx` completion proxy | `0nklcliy` |
+| `stock_openers` | `jju0y0n5` |
+| `stock_closers` | `zxu196ge` |
+| `stock_openers_closers` | `ssa70ap1` |
+
+Subset interpretation:
+
+- `rule_of_three_approx` remains SFT-high and DPO-low in every subset. Raw AF
+  for code/base/SFT/DPO/final is `0.600`/`0.627`/`0.596`/`0.599`; for
+  `synthetic_llm`, `0.733`/`0.772`/`0.723`/`0.729`; for `unknown`,
+  `0.752`/`0.804`/`0.747`/`0.755`.
+- `stock_openers` are below reference rate in every subset and decline after
+  base. Raw AF is highest in the `unknown` subset but still only
+  base/SFT/DPO/final `0.157`/`0.111`/`0.081`/`0.081`.
+- `stock_closers` remain the source of the large pooled stock AF, but subset
+  denominators are sparse: `code` has 2 closer references, `synthetic_llm` has
+  0, and `unknown` has 16. Use mean probability mass and the split opener grid
+  to interpret this, not the absolute AF alone.
+- Pooled `stock_openers_closers` mostly reflects the closer side for `unknown`
+  (raw AF `18.862`/`15.407`/`17.060`/`18.507`) while `code` is much lower
+  (`2.228`/`2.065`/`1.735`/`1.867`) because opener references dominate that
+  subset's denominator.
+
 ## Promotion Criteria
 
 Promote from tiny-model smoke to OLMo tiny shard only if:

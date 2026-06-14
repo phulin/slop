@@ -1222,3 +1222,18 @@
   `synthetic_llm` `1.189`/`1.518`/`2.033`/`1.612`, and
   `unknown` `1.636`/`1.867`/`2.326`/`1.895`. The `code` subset has only 5 slop
   references in this denominator and should be treated as diagnostic.
+- Ran the same reference-subset summarizer over the remaining full 5,000-prompt
+  teacher-forced grids:
+  `rule_of_three_approx` W&B `0nklcliy`,
+  `stock_openers` W&B `jju0y0n5`,
+  `stock_closers` W&B `zxu196ge`, and
+  pooled `stock_openers_closers` W&B `ssa70ap1`. All runs joined with zero
+  missing metadata. The subset read preserves the all-reference conclusions:
+  rule-of-three completion is SFT-high and DPO-low across `code`,
+  `synthetic_llm`, and `unknown`; stock openers are below reference rate in
+  every subset and decline after base; stock closers drive the large pooled
+  stock AF but have sparse subset references (`code=2`, `synthetic_llm=0`,
+  `unknown=16`). Pooled `stock_openers_closers` in `unknown` remains closer-side
+  dominated with raw AF base/SFT/DPO/final
+  `18.862`/`15.407`/`17.060`/`18.507`, while `code` is much lower
+  (`2.228`/`2.065`/`1.735`/`1.867`) because opener references dominate.
