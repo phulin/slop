@@ -205,6 +205,12 @@ W&B runs:
 - `b0zz1hzo`: paired Torch/Transformers first-64 prompt contract run. It also
   generated the full 8,192 tokens with the same prompt IDs and order. Wall
   throughput was `58.8` generated tokens/sec on this compile-heavy small run.
+- `v69n4twp`: target-shape SGLang DPO pilot, first 512 prompts x 8
+  completions x 1,024 tokens, temperature 1.0, `--ignore-eos`,
+  `--context-length 4096`. It generated the full 4,194,304 tokens in
+  1,654.8 wall seconds, with `2,584.2` decode tokens/sec and `2,534.6` wall
+  tokens/sec. This is about 7.1x the matching Torch target-shape shard
+  throughput (`356.7` tokens/sec).
 
 The current Torch/Transformers target-shape OLMo shards run at about
 `356-359` generated tokens/sec including load/compile for much larger
@@ -215,7 +221,17 @@ because the backends do not share an identical sampling RNG path, so SGLang
 should be piloted as a throughput backend and judged by aggregate feature
 stability rather than exact generation equality.
 
-Next backend step: run a controlled SGLang pilot at the existing target shape
-on one checkpoint/temp cell, using `--sampling-strategy first --ignore-eos`,
-then compare aggregate rates against the existing Torch DPO temperature 1.0
-cache before replacing broader free-running shards.
+The target-shape pilot is not science-equivalent to the Torch cache. Relative
+to the matching Torch DPO temperature 1.0 target-shape cache, SGLang
+`--ignore-eos` feature rates per 1k generated tokens are higher for
+`contrastive_negation` (`1.36x`), `rule_of_three_approx` (`1.84x`),
+`slop_lexicon` (`1.76x`), `stock_openers` (`6.24x`), and pooled
+`stock_openers_closers` (`4.08x`); `stock_closers` is slightly lower
+(`0.89x`). This is too large to treat as sampling noise. The likely issue is
+that `ignore_eos` also continues through OLMo chat stop tokens, changing the
+generation distribution and inflating opener-like phrases.
+
+Current backend decision: keep Torch/Transformers as the science backend for
+Phase 2 generation results. SGLang is validated as a high-throughput backend,
+but it needs a stop-token contract that matches Torch, or an explicit new
+measurement definition, before replacing existing free-running shards.

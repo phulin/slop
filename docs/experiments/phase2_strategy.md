@@ -163,9 +163,11 @@ the stop-token contract. A paired first-64 check now confirms that
 Torch/Transformers and SGLang with `--ignore-eos` use the same prompt IDs/order
 and both generate the full 8,192-token fixed-length shape. The generated text
 and feature counts are not bit-identical because backend sampling RNG differs,
-so the next step is a controlled SGLang target-shape pilot and aggregate-rate
-comparison, not an immediate full backend replacement. vLLM remains blocked for
-OLMo-3 offline generation on this host.
+and the controlled target-shape SGLang pilot shows that the aggregate
+differences are too large to ignore. Keep Torch/Transformers as the science
+backend for Phase 2 generation until SGLang can match Torch's stop-token
+contract, or until a separate SGLang-specific measurement definition is
+approved. vLLM remains blocked for OLMo-3 offline generation on this host.
 
 Teacher-forced initiator sequence enumeration now includes sentence-case
 surface variants in addition to lowercase forms. This is required because the
@@ -1017,3 +1019,13 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   tokens/sec; SGLang decode-only throughput was 1,921 tokens/sec. Feature
   counts differed because backend sampling RNG is not bit-identical, so use a
   larger aggregate pilot before relying on SGLang for science shards.
+- `stage2-phase2-olmo3-dpo-sglang052-cu128-512prompt-8comp-t1-ignoreeos-ctx4096-pilot-v2`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/v69n4twp`) completed the
+  target-shape SGLang pilot: 512 prompts x 8 completions x 1,024 tokens,
+  4,096 generations, 4,194,304 generated tokens, 1,654.8 wall seconds, and
+  2,584 decode tokens/sec. It is about 7.1x faster than the matching Torch DPO
+  target-shape shard, but feature rates diverge materially: `slop_lexicon`
+  `0.402` vs. Torch `0.229` per 1k generated tokens, `rule_of_three_approx`
+  `1.588` vs. `0.861`, and pooled stock openers/closers `0.440` vs. `0.108`.
+  Do not treat current SGLang `--ignore-eos` generations as a drop-in
+  replacement for the Torch Phase 2 science cache.

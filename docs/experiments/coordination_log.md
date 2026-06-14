@@ -997,3 +997,16 @@
   counts are not exact-match comparable because backend sampling RNG differs,
   so the next step is a controlled target-shape SGLang pilot and aggregate-rate
   comparison against the existing Torch DPO temp-1 cache.
+- Completed the controlled target-shape SGLang DPO pilot after fixing the
+  harness to handle flattened multi-completion SGLang responses:
+  `stage2-phase2-olmo3-dpo-sglang052-cu128-512prompt-8comp-t1-ignoreeos-ctx4096-pilot-v2`,
+  `https://wandb.ai/phulin-self/slop-stage1/runs/v69n4twp`. It generated the
+  full 512 prompts x 8 completions x 1,024 tokens: 4,096 generations and
+  4,194,304 tokens. Throughput was excellent (`2,584` decode tokens/sec,
+  `2,535` wall tokens/sec), about 7.1x the matching Torch target-shape DPO
+  shard. The science contract fails, though: SGLang `--ignore-eos` rates are
+  materially higher than Torch for `slop_lexicon` (`0.402` vs. `0.229` per
+  1k tokens), `rule_of_three_approx` (`1.588` vs. `0.861`), and pooled stock
+  openers/closers (`0.440` vs. `0.108`). Keep Torch as the Phase 2 science
+  backend unless SGLang can be configured to match the Torch stop-token
+  contract without `ignore_eos` changing the distribution.
