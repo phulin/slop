@@ -13,10 +13,16 @@ Date: 2026-06-13
 
 ## Current Decision
 
-Do not replace the Torch/Transformers free-running CLI yet. Current vLLM is a
-plausible generation backend, but it needs a CUDA-12.8-compatible sidecar stack
-on this host. The cu128 vLLM OLMo smoke still stalls before generation, so
-SGLang is the next serving backend to test in an isolated sidecar environment.
+Do not replace the Torch/Transformers free-running CLI yet. vLLM remains
+blocked for OLMo-3 offline generation on this host. SGLang is now viable as a
+high-throughput fixed-length generation candidate in an isolated CUDA 12.8
+sidecar, but only when `ignore_eos` is enabled. Without `ignore_eos`, SGLang
+stops on OLMo's additional chat stop token (`<|im_end|>`, token id `100265`),
+which does not match the current Torch free-running measurement contract.
+
+Before using SGLang for science shards, run a contract check on the same prompt
+sample against the Torch CLI and decide explicitly whether the fixed-length
+Phase 2 generation contract should ignore additional chat stop tokens.
 
 Teacher-forced AF scoring should stay on the existing Torch/Transformers path.
 The scorer needs arbitrary continuation probability mass at internal corpus
@@ -126,3 +132,77 @@ driver upgrade.
 
 Current status: this smoke did not complete. Do not launch a larger vLLM shard
 from this environment.
+
+## SGLang CUDA 12.8 Candidate
+
+Sidecar setup:
+
+```bash
+uv venv --python 3.12 /tmp/slop-sglang-bench
+uv pip install --python /tmp/slop-sglang-bench/bin/python -e .
+uv pip install --python /tmp/slop-sglang-bench/bin/python \
+  'torch==2.8.0+cu128' 'torchvision==0.23.0+cu128' 'torchaudio==2.8.0+cu128' \
+  --index-url https://download.pytorch.org/whl/cu128
+uv pip install --python /tmp/slop-sglang-bench/bin/python \
+  'sglang[srt]==0.5.2' 'transformers==4.57.6' \
+  --extra-index-url https://download.pytorch.org/whl/cu128 \
+  --index-strategy unsafe-best-match
+sudo apt-get install -y libnuma1 cuda-nvcc-12-8 ninja-build gcc-14 g++-14
+```
+
+Runtime environment:
+
+```bash
+CC=/usr/bin/gcc-14
+CXX=/usr/bin/g++-14
+CUDAHOSTCXX=/usr/bin/g++-14
+CUDA_HOME=/usr/local/cuda-12.8
+PATH=/usr/local/cuda-12.8/bin:$PATH
+TORCH_CUDA_ARCH_LIST=8.0
+CUDA_VISIBLE_DEVICES=0
+```
+
+Resolved stack:
+
+- `sglang==0.5.2`
+- `torch==2.8.0+cu128`
+- `transformers==4.57.6`
+- CUDA toolkit/nvcc 12.8
+- GCC/G++ 14 as the CUDA host compiler
+
+Early setup blockers resolved:
+
+- The first install pulled CUDA 13 Torch wheels; reinstalling explicit cu128
+  Torch fixed the driver/runtime mismatch.
+- `sglang` needed the `[srt]` extras for `uvloop` and runtime dependencies.
+- `transformers==4.56.1` did not recognize `model_type=olmo3`; 4.57.6 does.
+- `libnuma1`, nvcc 12.8, `ninja-build`, and GCC/G++ 14 were required for
+  FlashInfer/Triton first-run JIT on this host. CUDA 12.8 rejects the default
+  GCC 15.
+
+The repo now includes `scripts/benchmark_sglang_generation.py`. It mirrors the
+vLLM benchmark contract: prompt-package JSONL input, prompt-token truncation,
+local JSONL/CSV artifacts, W&B aggregate tables, redacted W&B sample rows, and
+the revised Phase 2 feature set. It also creates an asyncio event loop before
+calling `engine.generate`, which is required under this SGLang/uvloop stack.
+
+W&B runs:
+
+- `29i0m563`: one-prompt smoke, clean W&B sync. It generated one token because
+  the sampled prompt immediately hit a stop token.
+- `hkdjxvmm`: 64 prompts x 128 max tokens, default stop behavior. It generated
+  only 1,117 tokens total because 61/64 prompts stopped on `<|im_end|>`.
+  Decode throughput was `46.5` generated tokens/sec, dominated by early stops
+  and not comparable to fixed-length Torch shards.
+- `qija648z`: 64 prompts x 128 max tokens with `--ignore-eos`. It generated
+  the full 8,192 tokens. Decode throughput was `1,969.4` generated tokens/sec;
+  wall throughput including model load and CUDA graph capture was `257.9`
+  generated tokens/sec.
+
+The current Torch/Transformers target-shape OLMo shards run at about
+`356-359` generated tokens/sec including load/compile for much larger
+512-prompt x 8-completion x 1,024-token shards. SGLang's decode path is much
+faster once loaded, but the 64-prompt wall-clock comparison is not yet better
+because model load and graph capture dominate the small benchmark. For larger
+fixed-length generation shards, SGLang is likely worth a controlled pilot,
+provided the stop-token contract is accepted.

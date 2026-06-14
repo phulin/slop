@@ -149,11 +149,20 @@ For the current free-running Phase 2 shards, keep the optimized
 Torch/Transformers path as the default backend. After batched generation,
 `torch.compile`, and fixed generation shapes, the 128-prompt OLMo shards run at
 about 285-286 generated tokens/sec on the A100 including load and compile. That
-is fast enough for the present sparse-grid measurements, while the isolated
-vLLM attempts are not yet stable on this host and SGLang has not been
-benchmarked against the same prompt package. Treat SGLang as a sidecar
-benchmark candidate for larger free-running sweeps, not as a dependency for
-finishing the current Phase 2 slice.
+is fast enough for the present sparse-grid measurements. The later
+512-prompt x 8-completion x 1,024-token target-shape shards run at about
+356-359 generated tokens/sec including load/compile.
+
+SGLang has now been benchmarked in a CUDA 12.8 sidecar. It should still be
+treated as a candidate backend rather than the default science path. With
+default stop behavior, SGLang stops on OLMo's additional chat stop token
+`<|im_end|>` (`100265`), producing only 1,117 generated tokens on a
+64-prompt x 128-token DPO benchmark. With `--ignore-eos`, it produces the full
+8,192 tokens and reaches 1,969 decode tokens/sec, but that explicitly changes
+the stop-token contract. Before launching a larger SGLang shard, run a paired
+Torch/SGLang contract check on the same prompts and record whether the Phase 2
+fixed-length generation measurements should ignore additional chat stop tokens.
+vLLM remains blocked for OLMo-3 offline generation on this host.
 
 Teacher-forced initiator sequence enumeration now includes sentence-case
 surface variants in addition to lowercase forms. This is required because the
@@ -978,3 +987,20 @@ Promote from OLMo tiny shard to full Phase 2 only after:
   temperature 0.0, 0.637/0.439 at 0.7, and 0.638/0.439 at 1.0. Realized AF is
   correspondingly 1.051, 1.089, and 1.091, so temperature has a small effect
   on compounding magnitude but is not the main driver.
+- `stage2-phase2-olmo3-dpo-sglang052-cu128-1prompt-smoke-clean-finish`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/29i0m563`) validated that
+  SGLang 0.5.2 can load OLMo-3 DPO on this host with CUDA 12.8, Torch
+  2.8.0+cu128, Transformers 4.57.6, nvcc 12.8, and GCC/G++ 14. The run
+  synced W&B artifacts, but the single sampled prompt stopped after one token,
+  so it is only a plumbing smoke.
+- `stage2-phase2-olmo3-dpo-sglang052-cu128-64prompt-t1-128tok-bench`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/hkdjxvmm`) showed that
+  SGLang default stop behavior is not contract-compatible with the current
+  Torch generation cache: 61/64 prompts stopped on `<|im_end|>` and only
+  1,117 tokens were generated.
+- `stage2-phase2-olmo3-dpo-sglang052-cu128-64prompt-t1-128tok-ignoreeos-bench`
+  (`https://wandb.ai/phulin-self/slop-stage1/runs/qija648z`) generated the
+  full 64 x 128 fixed-length benchmark with `--ignore-eos`: 8,192 tokens,
+  4.16 decode seconds, 1,969 decode tokens/sec, and 31.77 wall seconds
+  including load and graph capture. Use this as a backend-throughput candidate
+  datapoint, not as a science result until the stop-token contract is settled.

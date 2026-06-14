@@ -972,3 +972,19 @@
   `0.439`, realized AF `1.091`. The direct prior-window effect remains large
   at every temperature, with repeat generations t=0.0 `160`, t=0.7 `204`, and
   t=1.0 `199`.
+- Implemented and tested the SGLang free-running benchmark harness
+  (`scripts/benchmark_sglang_generation.py`) in an isolated `uv` sidecar. The
+  working host stack is SGLang 0.5.2, Torch 2.8.0+cu128, Transformers 4.57.6,
+  CUDA toolkit/nvcc 12.8, `libnuma1`, `ninja-build`, and GCC/G++ 14 pinned via
+  `CC`, `CXX`, and `CUDAHOSTCXX`. The initial setup failures were CUDA 13
+  wheels, missing `[srt]` dependencies, old Transformers without OLMo-3,
+  missing `libnuma`, missing nvcc, and CUDA 12.8 rejecting default GCC 15.
+- Completed SGLang OLMo-3 DPO W&B benchmarks. The clean one-prompt smoke
+  `29i0m563` proved load/generate/W&B artifact sync. The 64-prompt default
+  stop benchmark `hkdjxvmm` generated only 1,117 tokens because SGLang stops
+  on `<|im_end|>` (`100265`) by default. The 64-prompt `--ignore-eos`
+  benchmark `qija648z` generated the full 8,192 tokens and reached 1,969
+  decode tokens/sec, or 257.9 wall tokens/sec including load and graph capture.
+  Treat SGLang as a promising fixed-length generation backend candidate, but
+  settle the stop-token contract against Torch before using it for science
+  shards.
