@@ -1332,3 +1332,15 @@
   `uv run ruff check src/slop_sftdiv/cli/run_phase2_post_shard_analysis.py
   tests/test_run_phase2_post_shard_analysis.py pyproject.toml` (`All checks
   passed`).
+- Launched the post-shard runner as a detached CPU-side watcher with
+  `setsid -f` after the plain `nohup ... &` attempt did not survive the shell
+  session. Watcher command:
+  `uv run slop-run-phase2-post-shard-analysis --selection
+  artifacts/phase2/analysis/olmo3_generation_launch_selection_dpo_1024prompt_8comp_t1_batched16.json
+  --wait --poll-seconds 300 --timeout-seconds 43200 --execute --wandb-mode
+  online`. Watcher Python PID: `13708`; PID file:
+  `artifacts/phase2/analysis/olmo3_dpo_post_shard_analysis_watcher.pid`; log:
+  `artifacts/phase2/analysis/olmo3_dpo_post_shard_analysis_watcher.log`.
+  Status at 2026-06-14 22:47 UTC: generation shard alive, A100 utilization
+  about 94-95%, `0/8192` JSONL rows written, and latest log-derived progress
+  `160` prompts (`~1280` generation completions at 8 completions per prompt).
