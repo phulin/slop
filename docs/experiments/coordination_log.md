@@ -1372,3 +1372,14 @@
   First wait line after restart:
   `waiting for shard completion: 0/8192 rows; log_prompts=192;
   log_generation_estimate=1536`.
+- Added `scripts/phase2_cuda_env.sh` as a sourceable recovery helper for shell
+  or host resets. It reconstructs `LD_LIBRARY_PATH` from the installed NVIDIA
+  CUDA 12.8 wheel libraries in `.venv`, sets `UV_CACHE_DIR` to `.uv-cache` if
+  unset, and preserves `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`.
+  Updated `docs/experiments/phase2_post_shard_analysis.md` to use the helper
+  instead of static machine-specific `LD_LIBRARY_PATH` examples. Verified with
+  `bash -n scripts/phase2_cuda_env.sh` and a live
+  `uv run slop-phase2-generation-status` invocation after sourcing the helper.
+  Status at 2026-06-14 23:16 UTC: generation shard alive, A100 utilization
+  about 95%, `0/8192` JSONL rows written, and latest log-derived progress
+  `272` prompts (`~2176` generation completions at 8 completions per prompt).
