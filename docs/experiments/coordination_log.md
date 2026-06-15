@@ -1590,3 +1590,20 @@
 - Logged a retained Phase 3 bounded artifact manifest as
   `stage3-phase3-olmo3-bounded-artifact-manifest-v3` (`nlh83sd9`), covering
   the classification CSV and summary markdown.
+
+## 2026-06-15 - Phase 3 cross-ladder comparison tooling
+
+- Added `slop-compare-phase3-ladders`, which aligns two amplification-spectrum
+  CSVs by feature-stage pair and reports AF Spearman/Pearson correlations
+  overall and by stage. It uses normalized AF when available and raw AF
+  otherwise.
+- Ran an OLMo-vs-OLMo self-check with W&B disabled:
+  `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_aligned.csv`,
+  `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_correlations.csv`,
+  and
+  `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_summary.md`.
+  The self-check aligned 24 feature-stage rows, 20 non-missing AF values, and
+  produced overall Spearman AF `1.000`.
+- This completes the reusable cross-ladder correlation tooling for Phase 3,
+  but the actual OLMo-vs-SmolLM3 result still requires the SmolLM3 no_think
+  Phase 1/2 artifacts and assembled spectrum.

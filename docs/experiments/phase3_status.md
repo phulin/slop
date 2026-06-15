@@ -27,6 +27,7 @@ present.
 Added CLI:
 
 - `slop-classify-amplification-spectrum`
+- `slop-compare-phase3-ladders`
 
 Inputs:
 
@@ -40,6 +41,9 @@ Outputs:
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_artifact_manifest.csv`
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_artifact_manifest.json`
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_artifact_manifest.md`
+- `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_aligned.csv`
+- `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_correlations.csv`
+- `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_summary.md`
 
 W&B:
 
@@ -60,6 +64,13 @@ The classifier emits one row per feature with:
 - paired Result A sign-test p-values and BH-FDR q-values where available.
 - explicit AF-stage FDR caveat via
   `fdr_status=preference_pair_fdr_available_af_fdr_missing`.
+
+The cross-ladder comparator aligns two amplification-spectrum CSVs by
+feature-stage pair and reports AF Spearman/Pearson correlations overall and by
+stage. It uses normalized AF where present, otherwise raw AF. The current
+OLMo-vs-OLMo self-check aligned 24 feature-stage rows and returned overall
+Spearman AF `1.000`, which verifies the command path but is not a substitute
+for the missing SmolLM3 no_think spectrum.
 
 ## Classification Rules
 
@@ -111,7 +122,7 @@ Class counts:
 | Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is now joined into Phase 3 from `olmo3_dolci_dpo_10k_pair_analysis.csv`; AF-stage p-values are still absent. | Partial |
 | Paired designs wherever corpora share prompts | The preference-complicity cross-reference now uses paired sign-test BH-FDR from Phase 1. AF/free-running stage tests are not yet paired/FDR-corrected in Phase 3. | Partial |
 | Replicate full spectrum on SmolLM3-3B no_think ladder | No SmolLM3 Phase 2 artifacts present. | Missing |
-| Report cross-ladder AF rank correlation | Requires SmolLM3 spectrum. | Missing |
+| Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` now implements the statistic and passes an OLMo self-check; real OLMo-vs-SmolLM3 correlation still requires a SmolLM3 spectrum. | Tooling done, data missing |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
 
 ## Current Interpretation
@@ -143,5 +154,5 @@ The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
    shape or launch the original full production shape.
 3. Build or run the SmolLM3 no_think Phase 1/2 ladder artifacts.
 4. Assemble the SmolLM3 amplification spectrum with the same schema.
-5. Add cross-ladder feature-level AF rank correlation and summarize DPO-vs-APO
-   variation.
+5. Run `slop-compare-phase3-ladders` on OLMo vs. SmolLM3 and summarize
+   DPO-vs-APO variation.
