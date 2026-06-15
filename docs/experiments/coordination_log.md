@@ -1418,3 +1418,22 @@
   was left untouched. New watcher Python PID: `22144`. First wait line:
   `waiting for shard completion: 0/8192 rows; log_prompts=304;
   log_generation_estimate=2432; eta=3:15:22; eta_avg=3:22:51`.
+- Post-reset audit at 2026-06-15 00:11 UTC: sourced
+  `scripts/phase2_cuda_env.sh`, confirming `LD_LIBRARY_PATH` is rebuilt from
+  the CUDA 12.8 wheel libraries. The active DPO 1,024-prompt target-shape
+  generation worker is still alive as Python PID `5950`, using the A100 at
+  about 96% GPU utilization and 48.9 GiB VRAM. The CPU-side post-shard watcher
+  remains alive as Python PID `22144`. The active generation log has advanced
+  to `464` prompts (`~3712` generation completions at 8 completions per
+  prompt), while JSONL and summary outputs remain absent because this shard was
+  launched before the streaming-writer fix. Re-ran
+  `uv run pytest -q tests/test_phase2_generation_status.py
+  tests/test_run_phase2_post_shard_analysis.py` (`5 passed`). Post-shard
+  analysis should still run automatically when the shard writes `8192` JSONL
+  rows. Caveat for interpreting that analysis: the default compounding
+  propensity grid,
+  `artifacts/phase2/analysis/olmo3_promptpkg1024_slop_neutral_common_normalized_stage_grid.csv`,
+  contains exact teacher-forced AF for `slop_lexicon` and
+  `neutral_common_controls`; other retained Tier-1 features in the compounding
+  invocation provide generation-side/support context rather than fully
+  AF-backed estimates.
