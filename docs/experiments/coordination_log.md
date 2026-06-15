@@ -2364,3 +2364,33 @@
   on code-text hydration. The next directly sampleable recipe sources are
   FineWeb2 Portuguese (`0.931%`), `infiwebmath` (`0.903%`),
   `finemath-4plus` (`0.606%`), and smaller FineWeb2 language shards.
+
+## 2026-06-15 - FineWeb2 Portuguese pretraining feature-rate coverage
+
+- Verified `HuggingFaceFW/fineweb-2` exposes the Portuguese config as
+  `por_Latn`.
+- Sampled the next directly measurable SmolLM3 recipe source:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_por_2k.jsonl`, with
+  manifests and summary. Source: `HuggingFaceFW/fineweb-2`, config
+  `por_Latn`, split `train`, 20,000 scanned rows, 2,000 retained rows,
+  1,344,559 simple tokens, `hash_reservoir` seed `1729`. The sample was a
+  single `unknown` stratum because FineWeb2 rows expose language metadata but
+  no local source-domain stratum.
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_fw2_por_2k_tier1_feature_rates.csv`.
+  Source-aggregated FineWeb2 Portuguese rates per 1k tokens are
+  `slop_lexicon` `0.027`, `rule_of_three_approx` `0.162`,
+  `contrastive_negation` `0.013`, `stock_closers` `0.000`,
+  `stock_openers` `0.000`, and pooled stock phrases `0.000`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with source map `smollm3_pretrain_fw2_por_2k=fw2-por`. Current
+  retained Tier-1 coverage is now `79.886%` of the extracted SmolLM3 recipe,
+  with missing share `20.114%`. Covered-only weighted rates per 1k tokens are
+  `slop_lexicon` `0.390`, `rule_of_three_approx` `4.256`,
+  `contrastive_negation` `0.377`, `stock_closers` `0.035`, `stock_openers`
+  `0.028`, and pooled stock phrases `0.063`.
+- `stack-edu-Python` (`1.811%`) and `stack-edu-Cpp` (`1.304%`) remain blocked
+  on code-text hydration. The next directly sampleable recipe sources are
+  `infiwebmath` (`0.903%`), `finemath-4plus` (`0.606%`), and smaller
+  FineWeb2 language shards.
