@@ -171,3 +171,100 @@ def test_classify_amplification_spectrum_rules(tmp_path, monkeypatch):
     assert output.exists()
     assert "Phase 3 Bounded Amplification-Spectrum Classification" in summary.read_text()
     assert "phase3_feature_classification" in logged_tables
+
+
+def test_classify_amplification_spectrum_joins_stage_effect_fdr(tmp_path, monkeypatch):
+    spectrum = tmp_path / "spectrum.csv"
+    preference = tmp_path / "preference.csv"
+    teacher = tmp_path / "teacher.csv"
+    free_run = tmp_path / "free.csv"
+    output = tmp_path / "phase3.csv"
+    summary = tmp_path / "phase3.md"
+    _write_csv(
+        spectrum,
+        _stage_rows(
+            "pref_signal",
+            sft_rate=0.8,
+            chosen=1.4,
+            rejected=0.9,
+            afs={"base": 1.0, "sft": 1.1, "dpo": 1.7, "final": 1.5},
+        ),
+    )
+    _write_csv(
+        preference,
+        [
+            {
+                "feature": "pref_signal",
+                "pairs": "100",
+                "mean_delta": "0.5",
+                "sign_test_p": "0.001",
+                "bh_q": "0.01",
+                "direction": "chosen_gt_rejected",
+                "fdr_significant": "True",
+            }
+        ],
+    )
+    for path, sft_q in [(teacher, "0.02"), (free_run, "0.03")]:
+        _write_csv(
+            path,
+            [
+                {
+                    "comparison": "sft_vs_dpo",
+                    "feature": "pref_signal",
+                    "bh_q": sft_q,
+                    "fdr_significant": "True",
+                    "direction": "right_gt_left",
+                },
+                {
+                    "comparison": "dpo_vs_final",
+                    "feature": "pref_signal",
+                    "bh_q": "0.9",
+                    "fdr_significant": "False",
+                    "direction": "left_gt_right",
+                },
+            ],
+        )
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.classify_amplification_spectrum.init_wandb",
+        lambda **_kwargs: FakeRun(),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.classify_amplification_spectrum.log_summary_table",
+        lambda *_args: None,
+    )
+    args = build_parser().parse_args(
+        [
+            "--spectrum",
+            str(spectrum),
+            "--preference-analysis",
+            str(preference),
+            "--teacher-forced-stage-effects",
+            str(teacher),
+            "--free-run-stage-effects",
+            str(free_run),
+            "--output",
+            str(output),
+            "--summary-output",
+            str(summary),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    row = run(args)[0]
+
+    assert row["teacher_forced_sft_vs_dpo_bh_q"] == 0.02
+    assert row["teacher_forced_sft_vs_dpo_fdr_significant"] is True
+    assert row["free_run_sft_vs_dpo_bh_q"] == 0.03
+    assert row["free_run_dpo_vs_final_fdr_significant"] is False
+    assert row["fdr_status"] == (
+        "preference_pair_teacher_forced_stage_free_run_stage_fdr_available"
+    )

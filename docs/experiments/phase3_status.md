@@ -30,6 +30,7 @@ Added CLI:
 - `slop-compare-phase3-ladders`
 - `slop-plan-phase2-propensity`
 - `slop-analyze-phase3-free-run-effects`
+- `slop-analyze-phase3-teacher-forced-effects`
 
 Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
 
@@ -52,6 +53,8 @@ Outputs:
 
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_feature_classification_t1.csv`
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_feature_classification_t1_summary.md`
+- `artifacts/phase3/analysis/olmo3_phase3_teacher_forced_stage_effects_t1.csv`
+- `artifacts/phase3/analysis/olmo3_phase3_teacher_forced_stage_effects_t1_summary.md`
 - `artifacts/phase3/analysis/olmo3_phase3_free_run_stage_effects_t1.csv`
 - `artifacts/phase3/analysis/olmo3_phase3_free_run_stage_effects_t1_summary.md`
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_artifact_manifest.csv`
@@ -105,6 +108,24 @@ Key free-running FDR reads:
   `contrastive_negation` are not significant under this sign-test/BH-FDR
   family.
 
+The teacher-forced stage-effect analyzer runs paired sign tests over shared
+teacher-forced opportunity rows and applies BH-FDR across the retained
+feature/comparison family. On the retained OLMo teacher-forced opportunity
+grids it produced 18 feature-comparison rows and 17 BH-FDR-significant rows.
+The regenerated classifier joins both teacher-forced and free-running
+stage-effect q-values into the feature-level Phase 3 table.
+
+Key teacher-forced FDR reads:
+
+- SFT -> DPO has BH-FDR-significant teacher-forced probability-mass changes for
+  all retained measured feature views, including `slop_lexicon`.
+- DPO -> final/RLVR has BH-FDR-significant teacher-forced changes for every
+  measured feature view except `stock_openers`, although the sign-test
+  direction can differ from the mean AF-delta direction when many small pairs
+  move one way and fewer larger pairs move the other way.
+- `contrastive_negation` remains absent from teacher-forced stage-effect rows
+  because its retained Phase 2 teacher-forced support is missing.
+
 ## Classification Rules
 
 Default rule settings:
@@ -152,8 +173,8 @@ Class counts:
 | Cross-reference preference-amplified features with chosen-vs-rejected complicity | Classifier uses paired Result A sign-test BH-FDR to label `slop_lexicon` dynamics-driven. | Bounded OLMo done |
 | Compounding-dominant classification | Rule implemented; no current retained feature qualifies under default thresholds. | Implemented, no positive class |
 | Cluster bootstrap CIs | Existing Phase 2 AF table includes bootstrap CIs where teacher-forced measurements exist. | Partially done from Phase 2 |
-| Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is joined from `olmo3_dolci_dpo_10k_pair_analysis.csv`; target-shape OLMo free-running stage effects now have paired sign-test BH-FDR in `olmo3_phase3_free_run_stage_effects_t1.csv`; AF-stage p-values are still absent. | Partial |
-| Paired designs wherever corpora share prompts | Preference-complicity uses paired Phase 1 sign-test BH-FDR. Free-running stage effects now use paired shared-prompt/completion sign tests. AF-stage tests are not yet paired/FDR-corrected in Phase 3. | Partial |
+| Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is joined from `olmo3_dolci_dpo_10k_pair_analysis.csv`; target-shape OLMo free-running stage effects have paired sign-test BH-FDR in `olmo3_phase3_free_run_stage_effects_t1.csv`; retained OLMo teacher-forced stage effects have paired opportunity-level sign-test BH-FDR in `olmo3_phase3_teacher_forced_stage_effects_t1.csv`; both stage-effect families are joined into the regenerated classifier table. | Bounded OLMo done |
+| Paired designs wherever corpora share prompts | Preference-complicity uses paired Phase 1 sign-test BH-FDR. Free-running stage effects use paired shared-prompt/completion sign tests. Teacher-forced stage effects use paired shared-opportunity sign tests. | Bounded OLMo done |
 | Replicate full spectrum on SmolLM3-3B no_think ladder | No SmolLM3 Phase 2 artifacts present. | Missing |
 | Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` now implements the statistic and passes an OLMo self-check; real OLMo-vs-SmolLM3 correlation still requires a SmolLM3 spectrum. | Tooling done, data missing |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
@@ -227,11 +248,9 @@ already high, output-only, or unsupported by the teacher-forced proxy.
 
 The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
 
-1. Add p-value production for AF-stage effects, then compute
-   Benjamini-Hochberg q-values in the Phase 3 classifier for that family.
-2. Decide whether full Phase 3 completion should use the bounded OLMo artifact
+1. Decide whether full Phase 3 completion should use the bounded OLMo artifact
    shape or launch the original full production shape.
-3. Build or run the SmolLM3 no_think Phase 1/2 ladder artifacts.
-4. Assemble the SmolLM3 amplification spectrum with the same schema.
-5. Run `slop-compare-phase3-ladders` on OLMo vs. SmolLM3 and summarize
+2. Build or run the SmolLM3 no_think Phase 1/2 ladder artifacts.
+3. Assemble the SmolLM3 amplification spectrum with the same schema.
+4. Run `slop-compare-phase3-ladders` on OLMo vs. SmolLM3 and summarize
    DPO-vs-APO variation.

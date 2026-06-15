@@ -50,6 +50,7 @@ slop-assemble-amplification-spectrum = "slop_sftdiv.cli.assemble_amplification_s
 slop-classify-amplification-spectrum = "slop_sftdiv.cli.classify_amplification_spectrum:main"
 slop-compare-phase3-ladders = "slop_sftdiv.cli.compare_phase3_ladders:main"
 slop-analyze-phase3-free-run-effects = "slop_sftdiv.cli.analyze_phase3_free_run_effects:main"
+slop-analyze-phase3-teacher-forced-effects = "slop_sftdiv.cli.analyze_phase3_teacher_forced_effects:main"
 slop-analyze-phase2-compounding = "slop_sftdiv.cli.analyze_phase2_compounding:main"
 slop-compare-phase2-biber = "slop_sftdiv.cli.compare_phase2_biber:main"
 slop-build-style-signature = "slop_sftdiv.cli.build_style_signature:main"

@@ -1663,3 +1663,35 @@
 - This closes the paired/FDR layer for retained OLMo target-shape free-running
   stage effects, but AF-stage p-values/FDR and SmolLM3 replication remain
   incomplete Phase 3 requirements.
+
+## 2026-06-15 - Phase 3 paired teacher-forced stage-effect FDR
+
+- Added `slop-analyze-phase3-teacher-forced-effects`, which loads one or more
+  stage-tagged `slop-teacher-forced-propensity` opportunity CSVs per stage,
+  aligns rows by source/record/role/feature/opportunity kind/character offset,
+  computes paired probability-mass and reference-rate-derived AF deltas, runs
+  two-sided sign tests, and applies Benjamini-Hochberg FDR across
+  feature/comparison rows.
+- Ran it over the retained OLMo teacher-forced opportunity grids:
+  1,024-prompt `slop_lexicon`/`neutral_common_controls`, 5,000-prompt
+  `rule_of_three_approx` comma-pair extension, and 5,000-prompt stock
+  opener/closer grids. Local outputs:
+  `artifacts/phase3/analysis/olmo3_phase3_teacher_forced_stage_effects_t1.csv`
+  and
+  `artifacts/phase3/analysis/olmo3_phase3_teacher_forced_stage_effects_t1_summary.md`.
+- Result: 18 feature-comparison rows; 17 are BH-FDR significant at alpha
+  `0.05`. SFT -> DPO has significant teacher-forced stage changes for every
+  retained measured feature view, including `slop_lexicon`. DPO -> final/RLVR
+  is significant for every measured feature view except `stock_openers`.
+  `contrastive_negation` remains absent from teacher-forced effect rows
+  because its retained Phase 2 teacher-forced support is missing.
+- Regenerated
+  `artifacts/phase3/analysis/olmo3_phase3_bounded_feature_classification_t1.*`
+  with preference, teacher-forced stage, and free-running stage q-values joined
+  into the feature-level classifier table. Local run name:
+  `stage3-phase3-olmo3-bounded-feature-classification-t1-v5-stage-fdr`
+  with W&B disabled during regeneration.
+- This closes the retained OLMo bounded paired/FDR requirements for both
+  teacher-forced and free-running stage effects. SmolLM3 no_think replication,
+  assembled SmolLM3 spectrum, and real cross-ladder AF rank correlation remain
+  incomplete.

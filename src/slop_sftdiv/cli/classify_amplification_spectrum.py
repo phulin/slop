@@ -23,6 +23,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--spectrum", type=Path, required=True)
     parser.add_argument("--preference-analysis", action="append", type=Path, default=[])
+    parser.add_argument("--teacher-forced-stage-effects", action="append", type=Path, default=[])
+    parser.add_argument("--free-run-stage-effects", action="append", type=Path, default=[])
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, required=True)
     parser.add_argument("--high-sft-rate-min", type=float, default=0.25)
@@ -132,6 +134,21 @@ def _preference_analysis(paths: list[Path]) -> dict[str, dict[str, Any]]:
     return best_by_feature
 
 
+def _stage_effects(paths: list[Path]) -> dict[str, dict[str, dict[str, Any]]]:
+    by_feature: dict[str, dict[str, dict[str, Any]]] = {}
+    for path in paths:
+        for row in _read_csv(path):
+            feature = str(row.get("feature", ""))
+            comparison = str(row.get("comparison", ""))
+            if not feature or not comparison:
+                continue
+            by_feature.setdefault(feature, {})[comparison] = {
+                **row,
+                "stage_effects_path": str(path),
+            }
+    return by_feature
+
+
 def _max(values: list[float | None]) -> float | None:
     numeric = [value for value in values if value is not None]
     return max(numeric) if numeric else None
@@ -178,6 +195,8 @@ def _classify_feature(
     feature: str,
     rows: dict[str, dict[str, Any]],
     preference_row: dict[str, Any] | None,
+    teacher_forced_effects: dict[str, dict[str, Any]],
+    free_run_effects: dict[str, dict[str, Any]],
     args: argparse.Namespace,
 ) -> dict[str, Any]:
     first_row = next(iter(rows.values()))
@@ -278,6 +297,15 @@ def _classify_feature(
         )
         preference_evidence = "aggregate_data_rate_delta"
         fdr_status = "not_computed_missing_p_values"
+    if teacher_forced_effects or free_run_effects:
+        available = []
+        if preference_row:
+            available.append("preference_pair")
+        if teacher_forced_effects:
+            available.append("teacher_forced_stage")
+        if free_run_effects:
+            available.append("free_run_stage")
+        fdr_status = "_".join(available) + "_fdr_available"
     if preference_amplified:
         preference_cause = "signal-driven" if preference_data_complicit else "dynamics-driven"
     else:
@@ -333,6 +361,42 @@ def _classify_feature(
         "preference_bh_q": preference_bh_q,
         "preference_fdr_significant": preference_fdr_significant,
         "preference_direction": preference_direction,
+        "teacher_forced_sft_vs_dpo_bh_q": _float_or_none(
+            teacher_forced_effects.get("sft_vs_dpo", {}).get("bh_q")
+        ),
+        "teacher_forced_sft_vs_dpo_fdr_significant": _bool_or_false(
+            teacher_forced_effects.get("sft_vs_dpo", {}).get("fdr_significant")
+        ),
+        "teacher_forced_sft_vs_dpo_direction": teacher_forced_effects.get(
+            "sft_vs_dpo", {}
+        ).get("direction"),
+        "teacher_forced_dpo_vs_final_bh_q": _float_or_none(
+            teacher_forced_effects.get("dpo_vs_final", {}).get("bh_q")
+        ),
+        "teacher_forced_dpo_vs_final_fdr_significant": _bool_or_false(
+            teacher_forced_effects.get("dpo_vs_final", {}).get("fdr_significant")
+        ),
+        "teacher_forced_dpo_vs_final_direction": teacher_forced_effects.get(
+            "dpo_vs_final", {}
+        ).get("direction"),
+        "free_run_sft_vs_dpo_bh_q": _float_or_none(
+            free_run_effects.get("sft_vs_dpo", {}).get("bh_q")
+        ),
+        "free_run_sft_vs_dpo_fdr_significant": _bool_or_false(
+            free_run_effects.get("sft_vs_dpo", {}).get("fdr_significant")
+        ),
+        "free_run_sft_vs_dpo_direction": free_run_effects.get("sft_vs_dpo", {}).get(
+            "direction"
+        ),
+        "free_run_dpo_vs_final_bh_q": _float_or_none(
+            free_run_effects.get("dpo_vs_final", {}).get("bh_q")
+        ),
+        "free_run_dpo_vs_final_fdr_significant": _bool_or_false(
+            free_run_effects.get("dpo_vs_final", {}).get("fdr_significant")
+        ),
+        "free_run_dpo_vs_final_direction": free_run_effects.get("dpo_vs_final", {}).get(
+            "direction"
+        ),
         "pretrain_per_1k_tokens": pretrain_rate,
         "sft_target_per_1k_tokens": sft_rate,
         "dpo_chosen_per_1k_tokens": chosen_rate,
@@ -372,8 +436,17 @@ def classify_spectrum(args: argparse.Namespace) -> list[dict[str, Any]]:
     for row in _read_csv(args.spectrum):
         rows_by_feature.setdefault(str(row["feature"]), {})[str(row["stage"])] = row
     preference_by_feature = _preference_analysis(args.preference_analysis)
+    teacher_forced_effects_by_feature = _stage_effects(args.teacher_forced_stage_effects)
+    free_run_effects_by_feature = _stage_effects(args.free_run_stage_effects)
     return [
-        _classify_feature(feature, rows_by_stage, preference_by_feature.get(feature), args)
+        _classify_feature(
+            feature,
+            rows_by_stage,
+            preference_by_feature.get(feature),
+            teacher_forced_effects_by_feature.get(feature, {}),
+            free_run_effects_by_feature.get(feature, {}),
+            args,
+        )
         for feature, rows_by_stage in sorted(rows_by_feature.items())
     ]
 
@@ -394,6 +467,18 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "preference_bh_q",
         "preference_fdr_significant",
         "preference_direction",
+        "teacher_forced_sft_vs_dpo_bh_q",
+        "teacher_forced_sft_vs_dpo_fdr_significant",
+        "teacher_forced_sft_vs_dpo_direction",
+        "teacher_forced_dpo_vs_final_bh_q",
+        "teacher_forced_dpo_vs_final_fdr_significant",
+        "teacher_forced_dpo_vs_final_direction",
+        "free_run_sft_vs_dpo_bh_q",
+        "free_run_sft_vs_dpo_fdr_significant",
+        "free_run_sft_vs_dpo_direction",
+        "free_run_dpo_vs_final_bh_q",
+        "free_run_dpo_vs_final_fdr_significant",
+        "free_run_dpo_vs_final_direction",
         "sft_target_per_1k_tokens",
         "dpo_chosen_per_1k_tokens",
         "dpo_rejected_per_1k_tokens",
@@ -491,7 +576,26 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], args: argparse.Namesp
             "## Phase 3 Completion Caveats",
             "",
             "- When `--preference-analysis` is supplied, signal-driven preference complicity uses paired sign-test BH-FDR from Result A.",
-            "- AF-stage FDR is still unavailable because the retained spectrum artifacts do not contain per-feature AF p-values.",
+        ]
+    )
+    if args.teacher_forced_stage_effects:
+        lines.append(
+            "- Teacher-forced stage-effect BH-FDR is joined from supplied paired opportunity-level sign-test artifacts."
+        )
+    else:
+        lines.append(
+            "- Teacher-forced stage-effect FDR is unavailable because no stage-effect artifact was supplied."
+        )
+    if args.free_run_stage_effects:
+        lines.append(
+            "- Free-running stage-effect BH-FDR is joined from supplied paired generation-level sign-test artifacts."
+        )
+    else:
+        lines.append(
+            "- Free-running stage-effect FDR is unavailable because no stage-effect artifact was supplied."
+        )
+    lines.extend(
+        [
             "- SmolLM3 replication and cross-ladder AF rank correlation are not present in this bounded OLMo-only table.",
             "- Classifications are rule-based labels over measured artifacts; feature-level notes should be read alongside the Phase 2 denominator and coverage caveats.",
         ]
@@ -514,6 +618,10 @@ def run(args: argparse.Namespace) -> list[dict[str, Any]]:
         config={
             "spectrum": str(args.spectrum),
             "preference_analysis": [str(path) for path in args.preference_analysis],
+            "teacher_forced_stage_effects": [
+                str(path) for path in args.teacher_forced_stage_effects
+            ],
+            "free_run_stage_effects": [str(path) for path in args.free_run_stage_effects],
             "output": str(args.output),
             "summary_output": str(args.summary_output),
             "high_sft_rate_min": args.high_sft_rate_min,
