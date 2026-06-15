@@ -2183,3 +2183,32 @@
 - FineWeb2 German and Spanish are much lower on the retained English-oriented
   Tier-1 markers than DCLM or FineWeb-Edu, so adding them improves coverage
   while lowering the covered-only weighted baseline rates.
+
+## 2026-06-15 - PES2O pretraining feature-rate coverage
+
+- Probed `HuggingFaceTB/stack-edu` config `Python`, the largest remaining
+  SmolLM3 recipe source by weight (`1.811%`). The dataset exposes blob
+  metadata fields (`blob_id`, `language`, `repo_name`, `path`, score/license
+  fields) but no source text field, so it cannot be measured by the current
+  `slop-sample-corpus` text sampler without a blob-hydration path or another
+  text-bearing mirror.
+- Sampled the next directly measurable source:
+  `artifacts/stage1/corpora/smollm3_pretrain_pes2o_2k.jsonl`, with manifests
+  and summary. Source: `allenai/dolmino-mix-1124`, config `pes2o`, split
+  `train`, 20,000 scanned rows, 2,000 retained rows, 399,454 simple tokens,
+  `hash_reservoir` seed `1729`. Strata were `unknown` 1,267, `scientific`
+  455, `web_cc` 210, `code` 57, `forums_qa` 9, and `wiki` 2.
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_pes2o_2k_tier1_feature_rates.csv`.
+  Source-aggregated PES2O rates per 1k tokens are `slop_lexicon` `0.716`,
+  `rule_of_three_approx` `5.520`, `contrastive_negation` `0.238`,
+  `stock_closers` `0.060`, `stock_openers` `0.000`, and pooled stock phrases
+  `0.060`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with source map `smollm3_pretrain_pes2o_2k=pes2o`. Current
+  retained Tier-1 coverage is now `72.895%` of the extracted SmolLM3 recipe,
+  with missing share `27.105%`. Covered-only weighted rates per 1k tokens are
+  `slop_lexicon` `0.422`, `rule_of_three_approx` `4.621`,
+  `contrastive_negation` `0.410`, `stock_closers` `0.037`, `stock_openers`
+  `0.029`, and pooled stock phrases `0.067`.
