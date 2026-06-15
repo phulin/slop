@@ -10,6 +10,7 @@ from slop_sftdiv.cli.free_running_emission import (
 
 
 class FakeTokenizer:
+    chat_template = "fake-template"
     pad_token_id = 0
     eos_token_id = 0
     pad_token = "<pad>"
@@ -40,6 +41,10 @@ class MappingChatTemplateTokenizer(FakeTokenizer):
         del messages, tokenize, kwargs
         assert add_generation_prompt is True
         return {"input_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9], "attention_mask": [1] * 9}
+
+
+class NoChatTemplateTokenizer(FakeTokenizer):
+    chat_template = None
 
 
 def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_path, monkeypatch):
@@ -156,6 +161,7 @@ def test_prompt_ids_can_apply_chat_template_with_kwargs():
         max_prompt_tokens=8,
         apply_chat_template=True,
         chat_template_kwargs=kwargs,
+        missing_chat_template="error",
     )
 
     assert ids
@@ -169,6 +175,7 @@ def test_prompt_ids_handles_string_chat_template_result():
         max_prompt_tokens=8,
         apply_chat_template=True,
         chat_template_kwargs={},
+        missing_chat_template="error",
     )
 
     assert ids
@@ -183,9 +190,24 @@ def test_prompt_ids_handles_mapping_chat_template_result():
         max_prompt_tokens=8,
         apply_chat_template=True,
         chat_template_kwargs={},
+        missing_chat_template="error",
     )
 
     assert ids == [2, 3, 4, 5, 6, 7, 8, 9]
+
+
+def test_prompt_ids_can_fallback_to_plain_when_chat_template_missing():
+    ids = _prompt_ids(
+        NoChatTemplateTokenizer(),
+        "Answer the user.",
+        max_prompt_tokens=8,
+        apply_chat_template=True,
+        chat_template_kwargs={},
+        missing_chat_template="plain",
+    )
+
+    assert ids
+    assert len(ids) <= 8
 
 
 def test_free_running_emission_batches_generation_and_tracks_repeats(tmp_path, monkeypatch):

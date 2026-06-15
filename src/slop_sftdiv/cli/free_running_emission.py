@@ -70,6 +70,15 @@ def build_parser() -> argparse.ArgumentParser:
             "'{\"enable_thinking\": false}' for SmolLM3 no_think generation."
         ),
     )
+    parser.add_argument(
+        "--missing-chat-template",
+        default="error",
+        choices=["error", "plain"],
+        help=(
+            "Behavior when --apply-chat-template is set but tokenizer.chat_template is missing. "
+            "Use 'plain' for base checkpoints without chat templates."
+        ),
+    )
     parser.add_argument("--dtype", default="auto", choices=["auto", "float16", "bfloat16", "float32"])
     parser.add_argument("--device", default="auto")
     parser.add_argument("--torch-compile", action=argparse.BooleanOptionalAction, default=True)
@@ -229,8 +238,10 @@ def _prompt_ids(
     max_prompt_tokens: int,
     apply_chat_template: bool,
     chat_template_kwargs: dict[str, Any],
+    missing_chat_template: str,
 ) -> list[int]:
-    if apply_chat_template:
+    has_chat_template = bool(getattr(tokenizer, "chat_template", None))
+    if apply_chat_template and has_chat_template:
         if not hasattr(tokenizer, "apply_chat_template"):
             raise ValueError("tokenizer does not support apply_chat_template")
         rendered = tokenizer.apply_chat_template(
@@ -249,6 +260,8 @@ def _prompt_ids(
             ids = list(rendered)
         if ids and isinstance(ids[0], list):
             ids = ids[0]
+    elif apply_chat_template and missing_chat_template == "error":
+        raise ValueError("tokenizer.chat_template is missing")
     else:
         ids = tokenizer.encode(prompt, add_special_tokens=False)
     ids = ids[-max_prompt_tokens:]
@@ -270,6 +283,7 @@ def _generate_batch(
     seed: int,
     apply_chat_template: bool,
     chat_template_kwargs: dict[str, Any],
+    missing_chat_template: str,
 ) -> list[tuple[str, int, int]]:
     import torch
 
@@ -282,6 +296,7 @@ def _generate_batch(
             max_prompt_tokens=max_prompt_tokens,
             apply_chat_template=apply_chat_template,
             chat_template_kwargs=chat_template_kwargs,
+            missing_chat_template=missing_chat_template,
         )
         for prompt in prompts
     ]
@@ -408,6 +423,7 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
             "fallback_text_as_prompt": args.fallback_text_as_prompt,
             "apply_chat_template": args.apply_chat_template,
             "chat_template_kwargs": chat_template_kwargs,
+            "missing_chat_template": args.missing_chat_template,
             "dtype": args.dtype,
             "device": str(device),
             "torch_compile": args.torch_compile,
@@ -438,6 +454,7 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
                     seed=args.seed + completion_index,
                     apply_chat_template=args.apply_chat_template,
                     chat_template_kwargs=chat_template_kwargs,
+                    missing_chat_template=args.missing_chat_template,
                 )
                 for (record, _prompt), (generation, prompt_tokens, generated_tokens) in zip(
                     batch, generated, strict=True

@@ -1,5 +1,4 @@
 import csv
-import json
 
 from slop_sftdiv.cli.assemble_amplification_spectrum import build_parser, run
 

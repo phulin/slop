@@ -17,10 +17,10 @@ It also asks for statistics across the full feature set and SmolLM3
 replication with cross-ladder AF rank correlation.
 
 This status file records the first bounded Phase 3 implementation over the
-retained OLMo 3/Dolci single-temperature Phase 2 artifacts. It is real Phase 3
-progress, but it is not the full EXPERIMENTS.md Phase 3 completion because the
-SmolLM3 ladder, AF-stage p-value/FDR layer, and full production grid are not
-present.
+retained OLMo 3/Dolci single-temperature Phase 2 artifacts, plus the first
+SmolLM3 no_think calibration ladder. It is real Phase 3 progress, but it is
+not the full EXPERIMENTS.md Phase 3 completion because the full 512-prompt
+SmolLM3 ladder and full production grid are not present.
 
 ## Implemented Phase 3 Layer
 
@@ -49,6 +49,13 @@ Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
   `{"enable_thinking": false}`.
 - `slop-plan-phase2-generation` passes those chat-template options through to
   planned generation commands.
+- `slop-free-running-emission` and `slop-plan-phase2-generation` also accept
+  `--missing-chat-template {error,plain}`. The canonical SmolLM3 generation
+  plan uses `plain` fallback so the base checkpoint, which lacks a chat
+  template, can remain in the same launch grid while SFT/APO/final use their
+  chat templates.
+- `slop-assemble-amplification-spectrum` now writes a model-neutral summary
+  title because the same assembler is used for OLMo and SmolLM3 spectra.
 
 Inputs:
 
@@ -85,6 +92,33 @@ Outputs:
 - `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_opportunities.csv`
 - `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_summary.csv`
 - `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_reference_subset_summary.csv`
+- `artifacts/phase2/generations/smollm3_base_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration.jsonl`
+- `artifacts/phase2/generations/smollm3_base_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`
+- `artifacts/phase2/generations/smollm3_sft_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration.jsonl`
+- `artifacts/phase2/generations/smollm3_sft_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`
+- `artifacts/phase2/generations/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration.jsonl`
+- `artifacts/phase2/generations/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration.jsonl`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`
+- `artifacts/phase2/propensity/smollm3_base_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_base_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`
+- `artifacts/phase2/propensity/smollm3_sft_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_sft_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`
+- `artifacts/phase2/propensity/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_4prompt_1comp_t1_64tok_chat_calibration.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_4prompt_1comp_t1_64tok_chat_calibration_summary.md`
+- `artifacts/phase3/analysis/smollm3_no_think_propensity_stage_grid_4prompt_slop_neutral_calibration.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_propensity_stage_grid_4prompt_slop_neutral_calibration_summary.md`
+- `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_4prompt_calibration.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_4prompt_calibration_summary.md`
+- `artifacts/phase3/analysis/smollm3_no_think_feature_classification_4prompt_calibration.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_feature_classification_4prompt_calibration_summary.md`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_aligned.csv`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_correlations.csv`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_summary.md`
 
 W&B:
 
@@ -110,8 +144,11 @@ The cross-ladder comparator aligns two amplification-spectrum CSVs by
 feature-stage pair and reports AF Spearman/Pearson correlations overall and by
 stage. It uses normalized AF where present, otherwise raw AF. The current
 OLMo-vs-OLMo self-check aligned 24 feature-stage rows and returned overall
-Spearman AF `1.000`, which verifies the command path but is not a substitute
-for the missing SmolLM3 no_think spectrum.
+Spearman AF `1.000`, which verifies the command path. The first
+OLMo-vs-SmolLM3 calibration comparison aligned 24 rows but had only four
+shared AF values, all constant on the SmolLM3 side, so Spearman/Pearson AF are
+blank. That verifies the real cross-ladder command path but is not a
+statistically interpretable replication result.
 
 The free-running stage-effect analyzer runs paired sign tests over shared
 `(record_id, completion_index, temperature, top_p)` generation units and
@@ -197,8 +234,8 @@ Class counts:
 | Cluster bootstrap CIs | Existing Phase 2 AF table includes bootstrap CIs where teacher-forced measurements exist. | Partially done from Phase 2 |
 | Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is joined from `olmo3_dolci_dpo_10k_pair_analysis.csv`; target-shape OLMo free-running stage effects have paired sign-test BH-FDR in `olmo3_phase3_free_run_stage_effects_t1.csv`; retained OLMo teacher-forced stage effects have paired opportunity-level sign-test BH-FDR in `olmo3_phase3_teacher_forced_stage_effects_t1.csv`; both stage-effect families are joined into the regenerated classifier table. | Bounded OLMo done |
 | Paired designs wherever corpora share prompts | Preference-complicity uses paired Phase 1 sign-test BH-FDR. Free-running stage effects use paired shared-prompt/completion sign tests. Teacher-forced stage effects use paired shared-opportunity sign tests. | Bounded OLMo done |
-| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, generation plan, propensity plan, and final-checkpoint 2-prompt generation smoke now exist. Full four-stage SmolLM3 teacher-forced/free-running summaries and assembled spectrum are still missing. | Started, data mostly missing |
-| Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` now implements the statistic and passes an OLMo self-check; real OLMo-vs-SmolLM3 correlation still requires a SmolLM3 spectrum. | Tooling done, data missing |
+| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, canonical chat-template generation plan, propensity plan, all-stage 4-prompt generation calibration, all-stage 4-prompt slop/neutral propensity calibration, and a schema-compatible 4-prompt SmolLM3 calibration spectrum now exist. Full 512-prompt four-stage SmolLM3 teacher-forced/free-running summaries and an interpretable spectrum are still missing. | Calibration ladder done; full data missing |
+| Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` now implements the statistic, passes an OLMo self-check, and aligns OLMo vs. the SmolLM3 4-prompt calibration spectrum. The calibration correlation is blank because the SmolLM3 teacher-forced AF values are constant zero after zero reference initiations. | Command path done; interpretable data missing |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
 
 ## SmolLM3 Replication Readiness
@@ -231,9 +268,10 @@ Example generation-plan stage specs now supported:
 --stage final=HuggingFaceTB/SmolLM3-3B
 ```
 
-This removes a harness blocker for SmolLM3 Phase 2/3 replication. It does not
-create the missing SmolLM3 prompt package, teacher-forced summaries,
-free-running summaries, or assembled amplification spectrum.
+This removes a harness blocker for SmolLM3 Phase 2/3 replication. The prompt
+package and tiny calibration ladder now exist, but the full 512-prompt
+teacher-forced summaries, free-running summaries, and interpretable assembled
+amplification spectrum are still missing.
 
 Local W&B-disabled planner smoke outputs:
 
@@ -376,6 +414,97 @@ reference initiations in the 2-prompt smoke sample, so this verifies model
 loading, exact sequence-mass scoring, CUDA execution, and output schema only;
 it is not an interpretable AF result.
 
+## SmolLM3 Four-Stage Calibration Ladder
+
+The first all-stage SmolLM3 no_think calibration ladder now exists locally.
+This is still a plumbing/calibration shard, not a Phase 3 replication result:
+it uses only 4 prompts, 1 completion per prompt, and 64 generated tokens per
+completion. It is useful because it verifies all four model stages, the
+chat-template no_think path, the base-checkpoint plain fallback, the Phase 2
+summary schema, the Phase 3 spectrum assembler, the classifier, and the real
+OLMo-vs-SmolLM3 comparator path.
+
+Generation calibration shape:
+
+- stages: base, SFT, APO-soup, final
+- prompts per stage: 4
+- completions per prompt: 1
+- max new tokens: 64
+- temperature: 1.0
+- top-p: 0.95
+- chat-template handling:
+  `--apply-chat-template --chat-template-kwargs-json '{"enable_thinking": false}' --missing-chat-template plain`
+
+Generation outputs:
+
+- `artifacts/phase2/generations/smollm3_base_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration.jsonl`
+- `artifacts/phase2/generations/smollm3_base_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`
+- `artifacts/phase2/generations/smollm3_sft_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration.jsonl`
+- `artifacts/phase2/generations/smollm3_sft_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`
+- `artifacts/phase2/generations/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration.jsonl`
+- `artifacts/phase2/generations/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration.jsonl`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`
+
+Free-running feature rates per 1k generated tokens in the calibration shard:
+
+| Feature | Base | SFT | APO | Final |
+|---|---:|---:|---:|---:|
+| `rule_of_three_approx` | 0.000 | 7.812 | 11.719 | 15.625 |
+| `slop_lexicon` | 3.906 | 0.000 | 0.000 | 0.000 |
+| `contrastive_negation` | 0.000 | 0.000 | 0.000 | 0.000 |
+| `stock_openers` | 0.000 | 0.000 | 0.000 | 0.000 |
+| `stock_closers` | 0.000 | 0.000 | 0.000 | 0.000 |
+| `stock_openers_closers` | 0.000 | 0.000 | 0.000 | 0.000 |
+
+Teacher-forced calibration shape:
+
+- stages: base, SFT, APO-soup, final
+- prompts per stage: 4
+- features: `slop_lexicon`, `neutral_common_controls`
+- max opportunities per feature: 32
+- max token-start opportunities: 32
+- mass mode: sequence
+- normalization feature: `neutral_common_controls`
+
+Teacher-forced outputs:
+
+- `artifacts/phase2/propensity/smollm3_base_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_base_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`
+- `artifacts/phase2/propensity/smollm3_sft_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_sft_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`
+- `artifacts/phase2/propensity/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`
+
+All four teacher-forced calibration summaries have zero reference initiations
+for both `slop_lexicon` and `neutral_common_controls`. The summaries still
+verify that mean probability mass is produced for every stage, but raw AF and
+normalized AF are `0.0` because the denominator is zero. Therefore this shard
+must not be interpreted as a SmolLM3 propensity result.
+
+Assembled Phase 3 calibration outputs:
+
+- `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_4prompt_1comp_t1_64tok_chat_calibration.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_4prompt_1comp_t1_64tok_chat_calibration_summary.md`
+- `artifacts/phase3/analysis/smollm3_no_think_propensity_stage_grid_4prompt_slop_neutral_calibration.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_propensity_stage_grid_4prompt_slop_neutral_calibration_summary.md`
+- `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_4prompt_calibration.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_4prompt_calibration_summary.md`
+- `artifacts/phase3/analysis/smollm3_no_think_feature_classification_4prompt_calibration.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_feature_classification_4prompt_calibration_summary.md`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_aligned.csv`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_correlations.csv`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_summary.md`
+
+The OLMo-vs-SmolLM3 calibration comparison aligned 24 feature-stage rows. It
+had 4 shared AF values, all from `slop_lexicon` stage rows, but Spearman and
+Pearson AF were blank because the SmolLM3 AF vector is constant zero. This is
+expected from the zero-reference calibration shard and confirms that a larger
+teacher-forced run is required before reporting a cross-ladder AF rank
+correlation.
+
 ## Current Interpretation
 
 The bounded Phase 3 classification strengthens the final Phase 2 conclusion:
@@ -401,8 +530,10 @@ The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
 1. Decide whether full Phase 3 completion should use the bounded OLMo artifact
    shape or launch the original full production shape.
 2. Run the SmolLM3 no_think Phase 2 ladder artifacts from the generated
-   512-prompt plans, or intentionally scale the prompt package beyond the
-   current `smoltalk_smollm3_everyday_conversations_no_think` split.
-3. Assemble the SmolLM3 amplification spectrum with the same schema.
-4. Run `slop-compare-phase3-ladders` on OLMo vs. SmolLM3 and summarize
-   DPO-vs-APO variation.
+   512-prompt plans. The current 4-prompt calibration proves the launch and
+   assembly path, but its zero reference initiations make AF and cross-ladder
+   correlation uninterpretable.
+3. Assemble the full SmolLM3 amplification spectrum with the same schema used
+   by the OLMo bounded spectrum.
+4. Run `slop-compare-phase3-ladders` on OLMo vs. the full SmolLM3 spectrum and
+   summarize DPO-vs-APO variation.

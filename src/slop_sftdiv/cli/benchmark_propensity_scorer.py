@@ -22,6 +22,7 @@ from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Benchmark Phase 2 propensity scoring kernels.")
     parser.add_argument("--model", default="sshleifer/tiny-gpt2")
+    parser.add_argument("--model-revision", default=None)
     parser.add_argument("--feature", default="slop_lexicon")
     parser.add_argument(
         "--multi-feature",
@@ -130,6 +131,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
     ]
     tokenizer, model, device = _load_model(
         model_name=args.model,
+        model_revision=args.model_revision,
         dtype_name=args.dtype,
         device_name=args.device,
         compile_model=args.torch_compile,
@@ -150,6 +152,7 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
         tags=["stage2", "phase2", "benchmark", *args.wandb_tag],
         config={
             "model": args.model,
+            "model_revision": args.model_revision,
             "feature": args.feature,
             "multi_features": multi_features,
             "batch_sizes": batch_sizes,

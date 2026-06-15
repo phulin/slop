@@ -1770,3 +1770,60 @@
   `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_chat_smoke_summary.csv`.
   The generated text is assistant-style, writes valid feature-count JSON, and
   has no obvious generated reasoning markup.
+
+## 2026-06-15 - SmolLM3 all-stage calibration spectrum
+
+- Added `--missing-chat-template {error,plain}` support to
+  `slop-free-running-emission` and `slop-plan-phase2-generation`. The
+  canonical SmolLM3 no_think generation plan now uses
+  `--apply-chat-template --chat-template-kwargs-json '{"enable_thinking":
+  false}' --missing-chat-template plain`, which keeps the base checkpoint in
+  the same grid despite its missing chat template while preserving
+  chat-template rendering for SFT/APO/final.
+- Updated `slop-assemble-amplification-spectrum` to use a model-neutral
+  summary title because the same assembler now produces both OLMo and SmolLM3
+  spectra.
+- Ran a W&B-disabled all-stage SmolLM3 no_think generation calibration:
+  base/SFT/APO/final, `4` prompts, `1` completion per prompt, `64` max new
+  tokens, `t=1.0`, `top_p=0.95`, bfloat16, no compile. Local summaries:
+  `artifacts/phase2/generations/smollm3_base_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`,
+  `artifacts/phase2/generations/smollm3_sft_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`,
+  `artifacts/phase2/generations/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`,
+  and
+  `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_4prompt_1comp_t1_64tok_chat_calibration_summary.csv`.
+  The calibration produced 256 generated tokens per stage. `rule_of_three`
+  rates were 0.000/base, 7.812/SFT, 11.719/APO, and 15.625/final per 1k
+  generated tokens; `slop_lexicon` appeared once in base only
+  (3.906/1k). These are calibration counts, not stable estimates.
+- Ran a matching W&B-disabled all-stage SmolLM3 teacher-forced slop/neutral
+  calibration: base/SFT/APO/final, `4` prompts, `slop_lexicon` plus
+  `neutral_common_controls`, `32` opportunities per feature, exact sequence
+  mass, bfloat16, no compile. Local summaries:
+  `artifacts/phase2/propensity/smollm3_base_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`,
+  `artifacts/phase2/propensity/smollm3_sft_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`,
+  `artifacts/phase2/propensity/smollm3_dpo_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`,
+  and
+  `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_4prompt_slop_neutral_calibration_summary.csv`.
+  All four summaries had zero reference initiations for both features, so raw
+  AF and normalized AF are `0.0`. This verifies scoring and schema only; it is
+  not an interpretable propensity result.
+- Assembled the SmolLM3 calibration generation grid, propensity grid,
+  amplification spectrum, and feature classifications:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_4prompt_1comp_t1_64tok_chat_calibration.csv`,
+  `artifacts/phase3/analysis/smollm3_no_think_propensity_stage_grid_4prompt_slop_neutral_calibration.csv`,
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_4prompt_calibration.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_4prompt_calibration.csv`.
+- Ran the real OLMo-vs-SmolLM3 comparator path:
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_aligned.csv`,
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_correlations.csv`,
+  and
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_4prompt_calibration_summary.md`.
+  It aligned 24 feature-stage rows, but Spearman/Pearson AF are blank because
+  the SmolLM3 AF vector is constant zero. Full Phase 3 still requires the
+  512-prompt SmolLM3 no_think teacher-forced and free-running ladder before an
+  interpretable cross-ladder AF rank correlation can be reported.
+- Verification after this pass:
+  `uv run ty check src tests`, `uv run ruff check src tests`,
+  `uv run pytest -q tests/test_free_running_emission.py tests/test_plan_phase2_generation.py tests/test_assemble_amplification_spectrum.py tests/test_compare_phase3_ladders.py tests/test_classify_amplification_spectrum.py tests/test_teacher_forced_propensity.py`,
+  and `git diff --check` all pass.

@@ -462,7 +462,7 @@ def test_sequence_prob_mass_cached_multi_matches_scalar_with_nonuniform_logits()
         "input_ids": torch.tensor([[0, 1], [0, 4]], dtype=torch.long),
         "attention_mask": torch.tensor([[1, 1], [1, 1]], dtype=torch.long),
     }
-    feature_sequences = {
+    feature_sequences: dict[str, tuple[tuple[int, ...], ...]] = {
         "short": ((1,), (2, 3)),
         "long": ((1, 4), (5, 6), (7, 8)),
     }

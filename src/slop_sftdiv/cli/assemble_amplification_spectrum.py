@@ -283,7 +283,7 @@ def _fmt(value: Any) -> str:
 def _write_summary(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
-        "# OLMo Phase 2 Amplification Spectrum",
+        "# Phase 2 Amplification Spectrum",
         "",
         "This table assembles existing bounded Phase 1/2 artifacts. Blank cells are missing",
         "measurements, not zero effects.",
