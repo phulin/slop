@@ -2050,3 +2050,16 @@
 - Caveat: this closes the bounded pretrain/Mid baseline gap but not the full
   production baseline. The pretrain aggregate is token-weighted over two
   selected source samples, not the exact weighted SmolLM3 11T pretraining mix.
+
+## 2026-06-15 - Phase 2 report readability pass
+
+- Expanded `docs/experiments/phase2_final_conclusion_report.md` for readers
+  new to the project. The report now opens with a plain-language project
+  context, explains why Phase 2 separates corpus rates, local propensity,
+  sampled output, and compounding, and adds an evidence-strength table for the
+  strongest and weakest Phase 2 claim areas.
+- Added a "What We Were Looking For" bridge section that maps the original
+  Phase 2 plan onto the four causal stories the measurements were designed to
+  distinguish: inherited/base-heavy features, SFT amplification, preference
+  amplification, and generation compounding. No numeric measurements or
+  artifact references changed in this pass.

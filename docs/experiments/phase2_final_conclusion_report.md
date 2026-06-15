@@ -44,6 +44,38 @@ The report intentionally separates four things that are easy to conflate:
 Those four views do not always agree. That disagreement is one of the main
 findings.
 
+## Project Context In Plain Language
+
+The project starts from a practical observation: modern instruction-tuned
+models often share recognizable surface habits. Some are lexical, such as a
+small set of recurring words and phrases. Some are structural, such as
+three-part lists or formulaic openings and closings. Some are broader register
+choices, such as higher use of pronouns, modal verbs, hedges, or subordinate
+clauses.
+
+The experiment does not assume those habits all have one cause. In a
+post-training pipeline, a feature can enter or grow in several different ways:
+
+1. It can already be present in pretraining text or in the base model.
+2. It can be inherited from SFT target responses.
+3. It can be favored by preference data, if chosen responses contain more of
+   the feature than rejected responses.
+4. It can be amplified by optimization even when the paired preference data do
+   not show a clean chosen-over-rejected advantage.
+5. It can compound during generation because the model conditions on its own
+   earlier wording.
+
+Phase 1 handled the first part of the problem by counting features in data.
+Phase 2 handled the second part by measuring models directly. This report is
+therefore about the OLMo 3 model ladder, not about whether a feature is common
+in every possible training source.
+
+The key idea is that a generated answer is a final product of several forces.
+A high feature rate in final output does not automatically mean DPO caused it.
+A low final rate does not mean the model lacks the local tendency. That is why
+this report keeps data rates, teacher-forced probability, sampled output, and
+compounding separate until the conclusion.
+
 ## Executive Summary
 
 This project studies where recognizable "LLM-ish" output style enters a
@@ -89,6 +121,24 @@ The strongest negative result is equally important:
 
 The practical conclusion is that "slop" should be analyzed feature by feature.
 There is no single global slop score that accurately describes the pipeline.
+
+For a new reader, the best one-sentence takeaway is:
+
+> Phase 2 found a feature-specific style progression: Base already carries a
+> lot of assistant-like surface form, SFT often suppresses visible markers,
+> DPO selectively rebounds, and Final/RLVR remains DPO-like without becoming a
+> uniformly stronger slop amplifier.
+
+The strongest and weakest claim areas are:
+
+| Claim area | Confidence | Why |
+|---|---|---|
+| `slop_lexicon` DPO local-propensity peak | High for the bounded OLMo slice | It has Phase 1 data rates, teacher-forced AF, free-running rates, compounding, and prior/no-prior tests. |
+| `slop_lexicon` self-conditioning | High for the bounded OLMo slice | Prior-hit windows have much higher later-hit risk at every checkpoint. |
+| DPO as universal slop source | Low / not supported | Several features peak at Base or SFT, and Final/RLVR attenuates several DPO rates. |
+| `rule_of_three_approx` DPO amplification | Low / not supported | Base has the highest free-running rate and SFT has the highest retained teacher-forced proxy. |
+| `contrastive_negation` model-side amplification | Underdetermined | It is visible in output, but retained teacher-forced support is sparse. |
+| Full linguistic-register conclusion | Moderate descriptive confidence | Biber-lite is consistent and useful, but it is regex proxy measurement rather than full pybiber. |
 
 ## What Phase 2 Actually Measured
 
@@ -160,6 +210,37 @@ slice:
 The consequence is that this report is suitable as a final bounded Phase 2
 conclusion, but it should not be described as the full production-scale
 experiment originally scoped.
+
+## What We Were Looking For
+
+The original plan was not just to count words in generated answers. It was to
+distinguish several possible stories that can produce the same surface
+symptom.
+
+If a feature were mostly **inherited**, we would expect it to appear in the
+data and in the base model, with no clean late-stage jump. A high Base
+free-running rate or a high pretraining/SFT corpus rate would support that
+story.
+
+If a feature were **SFT-amplified**, we would expect a rise at the SFT
+checkpoint or high SFT-target prevalence. The feature could then persist into
+later checkpoints without DPO being the original source.
+
+If a feature were **preference-amplified**, we would expect a DPO-stage jump
+in model propensity or generated output. If DPO chosen responses also had more
+of the feature than DPO rejected responses, that would point to preference
+data complicity. If the model jumped without a chosen-over-rejected data
+advantage, that would point more toward optimization dynamics or an indirect
+interaction.
+
+If a feature were **generation-compounded**, we would expect free-running
+output to exceed what the local teacher-forced probabilities predict, and we
+would expect later windows to become more likely after an earlier hit in the
+same answer.
+
+The delivered Phase 2 result contains all four patterns somewhere in the
+ladder. That is why the conclusion is an amplification spectrum rather than a
+single yes/no answer about whether DPO "causes slop."
 
 ## Feature Definitions
 
