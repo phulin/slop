@@ -63,6 +63,15 @@ Outputs:
 - `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_aligned.csv`
 - `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_correlations.csv`
 - `artifacts/phase3/analysis/olmo3_phase3_cross_ladder_selfcheck_summary.md`
+- `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512.jsonl`
+- `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512_manifest.csv`
+- `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512_summary.json`
+- `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1.md`
+- `artifacts/phase3/analysis/smollm3_no_think_propensity_plan_512_slop_neutral.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_propensity_plan_512_slop_neutral.md`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke.jsonl`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke_summary.csv`
 
 W&B:
 
@@ -175,7 +184,7 @@ Class counts:
 | Cluster bootstrap CIs | Existing Phase 2 AF table includes bootstrap CIs where teacher-forced measurements exist. | Partially done from Phase 2 |
 | Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is joined from `olmo3_dolci_dpo_10k_pair_analysis.csv`; target-shape OLMo free-running stage effects have paired sign-test BH-FDR in `olmo3_phase3_free_run_stage_effects_t1.csv`; retained OLMo teacher-forced stage effects have paired opportunity-level sign-test BH-FDR in `olmo3_phase3_teacher_forced_stage_effects_t1.csv`; both stage-effect families are joined into the regenerated classifier table. | Bounded OLMo done |
 | Paired designs wherever corpora share prompts | Preference-complicity uses paired Phase 1 sign-test BH-FDR. Free-running stage effects use paired shared-prompt/completion sign tests. Teacher-forced stage effects use paired shared-opportunity sign tests. | Bounded OLMo done |
-| Replicate full spectrum on SmolLM3-3B no_think ladder | No SmolLM3 Phase 2 artifacts present. | Missing |
+| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, generation plan, propensity plan, and final-checkpoint 2-prompt generation smoke now exist. Full four-stage SmolLM3 teacher-forced/free-running summaries and assembled spectrum are still missing. | Started, data mostly missing |
 | Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` now implements the statistic and passes an OLMo self-check; real OLMo-vs-SmolLM3 correlation still requires a SmolLM3 spectrum. | Tooling done, data missing |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
 
@@ -226,6 +235,64 @@ SFT/APO rows emit `--model-revision it-SFT` and
 commands. They are planner contract checks only; they do not run model
 generation or propensity scoring.
 
+## SmolLM3 Replication Inputs Started
+
+The first real SmolLM3 no_think Phase 2 input artifact now exists locally:
+
+- Prompt package:
+  `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512.jsonl`
+- Manifest:
+  `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512_manifest.csv`
+- Summary:
+  `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512_summary.json`
+
+It was streamed from `HuggingFaceTB/smoltalk2`, config `SFT`, split
+`smoltalk_smollm3_everyday_conversations_no_think`, with
+`sample_size=512`, `max_scan=5000`, `sampling_strategy=hash_reservoir`, and
+seed `1729`. The split yielded 2,260 scanned rows before exhaustion, 2,258
+eligible prompts after near-duplicate filtering, and 512 selected prompts. The
+selected package contains 20,081 prompt tokens and 43,390 target tokens.
+
+Two launch plans were generated against this prompt package:
+
+- `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1.csv`
+  and `.md`: base/SFT/APO/final, `512` prompts, `8` completions, `t=1.0`,
+  `top_p=0.95`, `max_new_tokens=1024`. Estimated missing A100-hours:
+  `13.09`.
+- `artifacts/phase3/analysis/smollm3_no_think_propensity_plan_512_slop_neutral.csv`
+  and `.md`: base/SFT/APO/final teacher-forced `slop_lexicon` plus
+  `neutral_common_controls`, sequence mass, neutral normalization. Estimated
+  missing A100-hours: `23.30`.
+
+A tiny final-checkpoint generation smoke also completed on the A100:
+
+```bash
+uv run slop-free-running-emission \
+  --model HuggingFaceTB/SmolLM3-3B \
+  --input artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512.jsonl \
+  --sample-size 2 \
+  --temperature 1.0 \
+  --top-p 0.95 \
+  --max-new-tokens 64 \
+  --completions-per-prompt 1 \
+  --generation-batch-size 2 \
+  --dtype bfloat16 \
+  --wandb-mode disabled \
+  --no-torch-compile
+```
+
+Outputs:
+
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke.jsonl`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke_summary.csv`
+
+The smoke produced two 64-token final-checkpoint generations with valid
+feature-count JSON and no obvious `<think>`/`</think>`/`reasoning` markup in
+the sampled generations. This verifies model loading, CUDA execution, the new
+prompt package, and the generation output schema. It is not a Phase 3
+replication result because it covers only two prompts from the final
+checkpoint.
+
 ## Current Interpretation
 
 The bounded Phase 3 classification strengthens the final Phase 2 conclusion:
@@ -250,7 +317,9 @@ The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
 
 1. Decide whether full Phase 3 completion should use the bounded OLMo artifact
    shape or launch the original full production shape.
-2. Build or run the SmolLM3 no_think Phase 1/2 ladder artifacts.
+2. Run the SmolLM3 no_think Phase 2 ladder artifacts from the generated
+   512-prompt plans, or intentionally scale the prompt package beyond the
+   current `smoltalk_smollm3_everyday_conversations_no_think` split.
 3. Assemble the SmolLM3 amplification spectrum with the same schema.
 4. Run `slop-compare-phase3-ladders` on OLMo vs. SmolLM3 and summarize
    DPO-vs-APO variation.

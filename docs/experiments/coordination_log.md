@@ -1695,3 +1695,38 @@
   teacher-forced and free-running stage effects. SmolLM3 no_think replication,
   assembled SmolLM3 spectrum, and real cross-ladder AF rank correlation remain
   incomplete.
+
+## 2026-06-15 - SmolLM3 no_think prompt package and launch plans
+
+- Prepared the first real SmolLM3 no_think Phase 2 prompt package from
+  `HuggingFaceTB/smoltalk2`, config `SFT`, split
+  `smoltalk_smollm3_everyday_conversations_no_think`, using
+  `sample_size=512`, `max_scan=5000`, `sampling_strategy=hash_reservoir`, and
+  seed `1729`. The split yielded 2,260 scanned rows before exhaustion, 2,258
+  eligible prompts after near-duplicate filtering, and 512 selected prompts
+  with 20,081 prompt tokens and 43,390 target tokens. Outputs:
+  `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512.jsonl`,
+  `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512_manifest.csv`,
+  and
+  `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512_summary.json`.
+- Generated full 512-prompt SmolLM3 no_think launch plans for the base, SFT,
+  APO-soup, and final stages. Generation plan outputs:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1.csv`
+  and `.md`, estimating 13.09 missing A100-hours for `512` prompts x `8`
+  completions at `t=1.0`, `top_p=0.95`, `max_new_tokens=1024`. Teacher-forced
+  slop/neutral propensity plan outputs:
+  `artifacts/phase3/analysis/smollm3_no_think_propensity_plan_512_slop_neutral.csv`
+  and `.md`, estimating 23.30 missing A100-hours.
+- Verified a tiny final-checkpoint SmolLM3 generation smoke on the free A100:
+  `2` prompts, `1` completion, `64` max new tokens, `t=1.0`, `top_p=0.95`,
+  `dtype=bfloat16`, W&B disabled, no compile. Outputs:
+  `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke.jsonl`
+  and
+  `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke_summary.csv`.
+  The smoke wrote valid feature-count JSON and the sampled generations had no
+  obvious `<think>`/`</think>`/`reasoning` markup.
+- Updated `docs/experiments/phase3_status.md` so the SmolLM3 replication row is
+  now "started, data mostly missing" rather than fully missing. Full Phase 3
+  still needs the four-stage SmolLM3 free-running and teacher-forced summaries,
+  SmolLM3 amplification-spectrum assembly, and the real OLMo-vs-SmolLM3 AF
+  rank-correlation result.
