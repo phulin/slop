@@ -9,6 +9,17 @@ the motivation, the measurement design, the model checkpoints, the resulting
 feature-level evidence, the limits of the current run, and the conclusions
 that should carry forward into Phase 3.
 
+How to use this report:
+
+- Read the executive summary first if you only need the conclusion.
+- Read "How To Read The Metrics" before comparing tables. The same feature can
+  move differently under teacher forcing, free-running generation, and
+  compounding.
+- Treat the feature-by-feature conclusions as the actual handoff to Phase 3.
+  Phase 2 did not produce one global "slop score"; it produced a set of
+  stage-localized feature stories.
+- Use the artifact list at the end when checking or reproducing a number.
+
 ## Executive Summary
 
 This project studies where recognizable "LLM-ish" output style enters a
@@ -26,6 +37,15 @@ Phase 2 measured the model side. It asked how the OLMo 3 Instruct checkpoint
 ladder behaves when the same features are scored locally under teacher
 forcing, counted in sampled generations, and tested for self-conditioning
 during generation.
+
+In plainer terms, Phase 2 asked three questions:
+
+1. If the prompt context is fixed, which checkpoint is most likely to start a
+   measured style pattern?
+2. When the checkpoints generate full answers, which patterns actually appear
+   in the visible output?
+3. Once a pattern appears in an answer, does the model become more likely to
+   repeat that style later in the same answer?
 
 The main result is:
 
@@ -61,6 +81,12 @@ or Base-heavy, some are suppressed by SFT, some rebound at DPO, some compound
 during generation, and broader register shifts do not always map onto the
 hand-built Tier-1 feature set.
 
+The one-sentence handoff is:
+
+> Phase 2 found a selective DPO-stage `slop_lexicon` propensity peak and a
+> strong `slop_lexicon` self-conditioning signal, but it did not find broad
+> monotonic slop growth from Base to SFT to DPO to Final/RLVR.
+
 ## What This Project Is Asking
 
 The motivating question is narrower than "are model answers good?" A useful
@@ -84,6 +110,21 @@ A generated answer is the result of several forces:
 Phase 2 is about items 1, 2, 4, and 5 on the model side. It does not by itself
 settle whether DPO preference data are complicit; that requires joining Phase
 2 model behavior back to Phase 1 chosen/rejected corpus rates in Phase 3.
+
+## Glossary For New Readers
+
+| Term | Meaning in this report |
+|---|---|
+| Slop | A shorthand label for detector-defined surface style markers. It is not a claim that an answer is wrong or low quality. |
+| Feature | One measurable style marker, such as `slop_lexicon` or `rule_of_three_approx`. |
+| Corpus rate | How often a feature appears in a dataset sample, measured per 1,000 simple tokens. |
+| Teacher forcing | Scoring model probabilities on fixed held-out reference text instead of sampling new text. |
+| Opportunity | A context location where a feature could begin under the feature's scoring contract. |
+| Amplification factor, AF | Model feature probability divided by reference feature rate. Values above 1 mean the model locally assigns more probability than the reference rate would suggest. |
+| Neutral-normalized AF | A slop AF divided by a neutral-control AF, used to reduce general calibration effects. |
+| Free-running generation | Normal sampled model output, here 8 completions per prompt at temperature `1.0`. |
+| Compounding | A generated-text effect where an earlier feature hit makes later hits more likely in the same answer. |
+| Biber-lite | Regex-based proxies for broader register categories, not full pybiber extraction. |
 
 ## Phase 2 Scope
 
@@ -126,6 +167,13 @@ in `EXPERIMENTS.md`. The original production plan called for 5,000 prompts,
 extraction. Phase 2 closed on a smaller but internally consistent OLMo 3 /
 Dolci slice.
 
+The bounded scope is still useful because the retained measurements line up
+on the same prompt family and the same four-stage OLMo checkpoint ladder. The
+main limitation is generality, not internal consistency: this report is strong
+as an OLMo/Dolci close-out, but it should not be quoted as a universal claim
+about all preference-trained models until the Phase 3 replication work is
+complete.
+
 ## Original Plan vs. Delivered Evidence
 
 The original Phase 2 plan had two main measurements:
@@ -152,6 +200,15 @@ slice:
 | Result B compounding | Delivered | Expected-vs-observed and prior/no-prior window tests are included. |
 | Biber/full register style layer | Partial | Biber-lite regex proxies were measured; full pybiber was not run. |
 | Cross-ladder replication | Not Phase 2 | SmolLM3 replication belongs to Phase 3. |
+
+The main deviation from the original plan is scale. The original design was a
+production grid: thousands of prompts, three temperatures, multiple ladders,
+and richer linguistic features. The delivered Phase 2 package is a bounded
+scientific close-out: one primary OLMo ladder, one headline generation
+temperature, retained teacher-forced contracts, and a measured final-output
+style signature. That changes how strong the claims can be. It is enough to
+localize several OLMo-stage effects, but not enough to claim cross-model
+universality.
 
 ## Feature Set
 
@@ -194,6 +251,13 @@ main findings. A checkpoint can locally prefer a feature while sampled output
 does not peak there, or sampled output can contain a feature because the base
 model already emits it often.
 
+The most common interpretation mistake would be to read the free-running rate
+table as the whole result. It is the most user-visible table, but it is not the
+most causal one. Teacher forcing is better for local model preference;
+free-running generation is better for visible product behavior; compounding is
+better for path dependence. Phase 2 needs all three because "style" is created
+by both model probabilities and the model's own previous words.
+
 ## Phase 1 Data Context
 
 Phase 2 should be read against the Phase 1 data baselines. Rates below are per
@@ -221,6 +285,12 @@ That last point matters. If DPO model propensity for `slop_lexicon` rises, the
 simplest explanation cannot be "the chosen DPO responses just had more
 `slop_lexicon` than rejected responses." Phase 3 should treat that as a
 candidate dynamics-driven or mixed effect.
+
+This is why Phase 2 is not merely a generation-counting exercise. The Phase 1
+data side says which features are available in the training and preference
+corpora. Phase 2 says how the released checkpoints behave after training. When
+those two disagree, the disagreement is exactly where Phase 3 should look for
+optimization or decoding dynamics.
 
 ## Evidence Map
 

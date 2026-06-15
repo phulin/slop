@@ -2324,3 +2324,15 @@
   on code-text hydration. The next directly sampleable recipe sources are
   FineWeb2 Russian (`0.991%`), FineWeb2 Portuguese (`0.931%`), `infiwebmath`
   (`0.903%`), and `finemath-4plus` (`0.606%`).
+
+## 2026-06-15 - Phase 2 conclusion report newcomer pass
+
+- Expanded `docs/experiments/phase2_final_conclusion_report.md` with a reader
+  map, plain-language Phase 2 questions, a glossary, a clearer bounded-scope
+  explanation, and stronger bridges between Phase 1 corpus rates, Phase 2
+  teacher-forced propensity, free-running generation, compounding, and
+  Biber-lite register evidence.
+- The report conclusions did not change: the retained OLMo/Dolci Phase 2
+  package supports a selective DPO-stage `slop_lexicon` propensity peak and a
+  strong `slop_lexicon` self-conditioning signal, but not broad monotonic slop
+  growth from Base to SFT to DPO to Final/RLVR.
