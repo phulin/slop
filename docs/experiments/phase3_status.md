@@ -21,11 +21,12 @@ retained OLMo 3/Dolci single-temperature Phase 2 artifacts, the first SmolLM3
 no_think calibration ladder, and a 512-prompt SmolLM3 no_think measured slice
 with teacher-forced `slop_lexicon`, `neutral_common_controls`,
 `rule_of_three_approx`, four-stage free-running generation, compounding, and
-an OLMo-vs-SmolLM3 cross-ladder comparison. It is real Phase 3 progress, but
-it is not the full EXPERIMENTS.md Phase 3 completion because the original
-5,000-prompt x 8-completion x 3-temperature production grid, SmolLM3
-corpus/preference-rate layer, broader teacher-forced feature coverage, and
-stretch Instruct/Think/RL Zero comparison are not present.
+an OLMo-vs-SmolLM3 cross-ladder comparison. The SmolLM3 slice now also has a
+bounded SmolTalk2 no_think SFT/preference data-rate layer. It is real Phase 3
+progress, but it is not the full EXPERIMENTS.md Phase 3 completion because the
+original 5,000-prompt x 8-completion x 3-temperature production grid, SmolLM3
+pretraining/mid-training corpus baseline, broader teacher-forced feature
+coverage, and stretch Instruct/Think/RL Zero comparison are not present.
 
 ## Implemented Phase 3 Layer
 
@@ -182,6 +183,20 @@ Outputs:
 - `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_tf_generation_compounding_slop_neutral_rule3_aligned.csv`
 - `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_tf_generation_compounding_slop_neutral_rule3_correlations.csv`
 - `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_tf_generation_compounding_slop_neutral_rule3_summary.md`
+- `artifacts/stage1/corpora/smollm3_smoltalk2_sft_everyday_no_think_2260.jsonl`
+- `artifacts/stage1/corpora/smollm3_smoltalk2_sft_everyday_no_think_2260_summary.md`
+- `artifacts/stage1/corpora/smollm3_smoltalk2_preference_tulu_no_think_10k_pairs.jsonl`
+- `artifacts/stage1/corpora/smollm3_smoltalk2_preference_tulu_no_think_10k_pairs_summary.md`
+- `artifacts/stage1/census/smollm3_smoltalk2_sft2260_pref10k_tier1_feature_rates.csv`
+- `artifacts/stage1/census/smollm3_smoltalk2_pref10k_tier1_pair_deltas.csv`
+- `artifacts/stage1/census/smollm3_smoltalk2_pref10k_tier1_pair_analysis.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3_summary.md`
+- `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3_summary.md`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_data_rates_tf_generation_compounding_slop_neutral_rule3_aligned.csv`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_data_rates_tf_generation_compounding_slop_neutral_rule3_correlations.csv`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_data_rates_tf_generation_compounding_slop_neutral_rule3_summary.md`
 
 W&B:
 
@@ -216,9 +231,12 @@ statistically interpretable replication result. The generation-inclusive
 shared measured feature set, with 8 shared AF values from `slop_lexicon` and
 the `rule_of_three_approx` comma-pair proxy. It reports overall Spearman AF
 `0.762` and Pearson AF `0.978`. This is interpretable for the bounded
-teacher-forced/free-running/compounding slice, but it is still not the full
-production cross-ladder comparison because SmolLM3 corpus/preference rates and
-broader teacher-forced feature support are missing.
+teacher-forced/free-running/compounding slice. The current data-rate version
+uses the same shared AF support and adds SmolTalk2 SFT/preference rates for
+SmolLM3 classification, but it is still not the full production cross-ladder
+comparison because the original production grid, SmolLM3 pretraining or
+mid-training corpus baseline, and broader teacher-forced feature support are
+missing.
 
 The free-running stage-effect analyzer runs paired sign tests over shared
 `(record_id, completion_index, temperature, top_p)` generation units and
@@ -304,8 +322,8 @@ Class counts:
 | Cluster bootstrap CIs | Existing Phase 2 AF table includes bootstrap CIs where teacher-forced measurements exist. | Partially done from Phase 2 |
 | Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is joined from `olmo3_dolci_dpo_10k_pair_analysis.csv`; target-shape OLMo free-running stage effects have paired sign-test BH-FDR in `olmo3_phase3_free_run_stage_effects_t1.csv`; retained OLMo teacher-forced stage effects have paired opportunity-level sign-test BH-FDR in `olmo3_phase3_teacher_forced_stage_effects_t1.csv`; both stage-effect families are joined into the regenerated classifier table. | Bounded OLMo done |
 | Paired designs wherever corpora share prompts | Preference-complicity uses paired Phase 1 sign-test BH-FDR. Free-running stage effects use paired shared-prompt/completion sign tests. Teacher-forced stage effects use paired shared-opportunity sign tests. | Bounded OLMo done |
-| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, canonical chat-template generation plan, propensity plan, all-stage 4-prompt calibration, full 512-prompt four-stage SmolLM3 teacher-forced spectrum for `slop_lexicon`, `neutral_common_controls`, and `rule_of_three_approx`, full 512-prompt x 8-completion free-running caches at `t=1.0`, paired free-running FDR, compounding, and a generation-inclusive SmolLM3 spectrum/classification now exist. Missing pieces are the original 5,000-prompt x 8 x 3-temperature production grid, SmolLM3 corpus/preference rates, and broader teacher-forced support for sparse features. | Bounded generation-inclusive SmolLM3 slice done; full production spectrum incomplete |
-| Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` implements the statistic, passes an OLMo self-check, aligns OLMo vs. the SmolLM3 4-prompt calibration spectrum, reports a 512-prompt teacher-forced slop-lexicon-only comparison with Spearman AF `0.400`, reports a two-feature teacher-forced comparison with Spearman AF `0.762`, and reports the generation-inclusive bounded comparison with 24 aligned rows and 8 shared AF values, Spearman AF `0.762`, Pearson AF `0.978`. Full production correlation remains missing until the shared feature scope includes corpus/preference rates and broader teacher-forced coverage where support allows. | Bounded generation-inclusive comparison done; full production correlation incomplete |
+| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, canonical chat-template generation plan, propensity plan, all-stage 4-prompt calibration, full 512-prompt four-stage SmolLM3 teacher-forced spectrum for `slop_lexicon`, `neutral_common_controls`, and `rule_of_three_approx`, full 512-prompt x 8-completion free-running caches at `t=1.0`, paired free-running FDR, compounding, SmolTalk2 SFT/preference data rates, and a generation-inclusive SmolLM3 spectrum/classification now exist. Missing pieces are the original 5,000-prompt x 8 x 3-temperature production grid, SmolLM3 pretraining/mid-training baseline, and broader teacher-forced support for sparse features. | Bounded generation-inclusive SmolLM3 slice with SFT/preference rates done; full production spectrum incomplete |
+| Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` implements the statistic, passes an OLMo self-check, aligns OLMo vs. the SmolLM3 4-prompt calibration spectrum, reports a 512-prompt teacher-forced slop-lexicon-only comparison with Spearman AF `0.400`, reports a two-feature teacher-forced comparison with Spearman AF `0.762`, and reports the generation-inclusive bounded comparison with 24 aligned rows and 8 shared AF values, Spearman AF `0.762`, Pearson AF `0.978`. The data-rate comparison is the current best bounded comparison, but full production correlation remains missing until the shared feature scope has broader teacher-forced coverage where support allows and the intended production prompt/temperature grid is complete. | Bounded generation-inclusive data-rate comparison done; full production correlation incomplete |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
 
 ## SmolLM3 Replication Readiness
@@ -341,8 +359,9 @@ Example generation-plan stage specs now supported:
 This removed the first harness blocker for SmolLM3 Phase 2/3 replication. The
 prompt package, calibration ladder, 512-prompt teacher-forced slop/rule
 summaries, 512-prompt x 8 free-running ladder, compounding layer, and
-generation-inclusive assembled spectrum now exist. Remaining gaps are the
-original production-scale grid, SmolLM3 corpus/preference rates, and broader
+generation-inclusive assembled spectrum now exist. The bounded SmolTalk2
+SFT/preference data-rate layer also exists. Remaining gaps are the original
+production-scale grid, SmolLM3 pretraining/mid-training baseline, and broader
 teacher-forced feature coverage where denominator support allows it.
 
 Local W&B-disabled planner smoke outputs:
@@ -779,9 +798,77 @@ The generation-inclusive OLMo-vs-SmolLM3 comparison outputs are:
 It aligns 24 feature-stage rows and has 8 shared AF values from
 `slop_lexicon` and the `rule_of_three_approx` teacher-forced proxy. Overall
 Spearman AF is `0.762`; Pearson AF is `0.978`. Per-stage correlations are
-`1.000` because each stage has only two shared AF values. This is the current
-best bounded cross-ladder result, but it is not a full production Phase 3
-completion.
+`1.000` because each stage has only two shared AF values. This was the best
+bounded cross-ladder result before adding SmolLM3 data rates; the data-rate
+version below is now the preferred bounded comparison. Neither is a full
+production Phase 3 completion.
+
+## SmolLM3 SFT/Preference Data-Rate Layer
+
+The bounded SmolLM3 no_think spectrum now has SmolTalk2 SFT/preference data
+rates. This closes the earlier bounded-data-rate gap for SFT targets and the
+candidate no_think Tulu preference substrate, but it does not provide a
+pretraining or mid-training corpus baseline.
+
+Sampled inputs:
+
+| Sample | Rows | Tokens | Notes |
+|---|---:|---:|---|
+| SmolTalk2 SFT everyday no_think | 2,260 | 188,621 | Full retained split scan for `smoltalk_smollm3_everyday_conversations_no_think`. |
+| SmolTalk2 Preference Tulu no_think | 20,000 | 4,469,915 | 10,000 chosen/rejected pairs from `llama_3.1_tulu_3_8b_preference_mixture_no_think`. |
+
+Data-rate and preference artifacts:
+
+- `artifacts/stage1/corpora/smollm3_smoltalk2_sft_everyday_no_think_2260.jsonl`
+- `artifacts/stage1/corpora/smollm3_smoltalk2_sft_everyday_no_think_2260_summary.md`
+- `artifacts/stage1/corpora/smollm3_smoltalk2_preference_tulu_no_think_10k_pairs.jsonl`
+- `artifacts/stage1/corpora/smollm3_smoltalk2_preference_tulu_no_think_10k_pairs_summary.md`
+- `artifacts/stage1/census/smollm3_smoltalk2_sft2260_pref10k_tier1_feature_rates.csv`
+- `artifacts/stage1/census/smollm3_smoltalk2_pref10k_tier1_pair_deltas.csv`
+- `artifacts/stage1/census/smollm3_smoltalk2_pref10k_tier1_pair_analysis.csv`
+
+Tier-1 rates, per 1,000 simple tokens:
+
+| Feature | SFT target | Chosen | Rejected | Chosen - Rejected | Pair BH q | FDR? |
+|---|---:|---:|---:|---:|---:|---|
+| `contrastive_negation` | 0.095 | 0.379 | 0.352 | +0.027 | 0.039 | yes |
+| `rule_of_three_approx` | 17.045 | 5.443 | 4.877 | +0.566 | 9.437e-13 | yes |
+| `slop_lexicon` | 0.419 | 1.609 | 1.293 | +0.316 | 3.367e-15 | yes |
+| `stock_closers` | 0.270 | 0.217 | 0.167 | +0.050 | 3.016e-04 | yes |
+| `stock_openers` | 0.106 | 0.571 | 0.334 | +0.237 | 0.161 | no |
+| `stock_openers_closers` | 0.376 | 0.788 | 0.502 | +0.287 | 0.003 | yes |
+
+Reassembled data-rate spectrum outputs:
+
+- `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3_summary.md`
+- `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3_summary.md`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_data_rates_tf_generation_compounding_slop_neutral_rule3_aligned.csv`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_data_rates_tf_generation_compounding_slop_neutral_rule3_correlations.csv`
+- `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_data_rates_tf_generation_compounding_slop_neutral_rule3_summary.md`
+
+The data-rate classifier still labels `slop_lexicon` as `sft-amplified`, not
+preference-amplified. The no_think Tulu preference data are complicit for
+`slop_lexicon` under paired BH-FDR (`chosen > rejected`, `q=3.367e-15`), but
+the model-side AF is already far above the amplified threshold at SFT and the
+APO/final relative increase over SFT is modest under the current rule. This is
+the main contrast with the bounded OLMo result, where `slop_lexicon` is
+classified as preference-amplified and dynamics-driven.
+
+`rule_of_three_approx` is also chosen-greater-rejected in the SmolTalk2
+preference sample, but the retained teacher-forced comma-pair proxy remains
+below 1 at every SmolLM3 stage. Stock phrases and `contrastive_negation` have
+data-rate and free-running evidence, but their SmolLM3 teacher-forced
+opportunity support is currently missing or zero-reference in the 512-prompt
+denominator audit, so they remain `observed-output-only`.
+
+Caveat: the normalized SmolTalk2 sample carries the no_think split/source
+identity, but per-row `preference_type`, `chosen_model`, and `rejected_model`
+fields are not exposed by this sample path and appear as `None` in the paired
+analysis table. The source split identifies the candidate Tulu no_think
+preference mixture, but the current SmolLM3 paired analysis is not yet
+stratified by per-row preference-construction metadata.
 
 ## Current Interpretation
 
@@ -811,6 +898,18 @@ than in base. The shared AF ordering across the two measured features is
 similar enough to yield a bounded OLMo-vs-SmolLM3 Spearman AF of `0.762`, but
 the support is still only two teacher-forced feature views.
 
+With the SmolTalk2 no_think data-rate layer added, SmolLM3 `slop_lexicon`
+looks unlike the bounded OLMo `slop_lexicon` preference story. In OLMo/Dolci,
+paired DPO data do not show chosen-greater-rejected `slop_lexicon`, so the
+preference-stage model peak is labeled dynamics-driven. In SmolLM3/SmolTalk2,
+the no_think Tulu preference sample does show chosen-greater-rejected
+`slop_lexicon` (`q=3.367e-15`), but the model-side classification remains
+`sft-amplified` because SFT already has very high normalized AF and APO/final
+only add a modest relative increase. The bounded cross-ladder conclusion is
+therefore not "preference tuning always creates the same slop path"; it is
+that comparable surface markers can enter through different measured
+stage/data combinations across ladders.
+
 ## Next Work Toward Full Phase 3
 
 The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
@@ -823,10 +922,10 @@ The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
    contracts or prompt subsets provide denominator support; the current
    512-prompt denominator audit has zero references for stock phrases and
    contrastive negation.
-3. Add the SmolLM3 corpus/preference-rate layer from SmolTalk2 and the
-   relevant APO/Tulu preference data so SmolLM3 classifications can distinguish
-   signal-driven from dynamics-driven causes instead of using blank aggregate
-   preference evidence.
+3. Add a SmolLM3 pretraining and/or mid-training corpus baseline so the
+   SmolLM3 spectrum can distinguish inherited/base-data rates from SFT and
+   preference rates. The bounded SmolTalk2 SFT/preference layer is present,
+   but pretraining/mid-training rates are still missing.
 4. If production completion is required, run the original 5,000-prompt x
    8-completion x 3-temperature generation grids for the retained ladders and
    rebuild the compounding and cross-ladder artifacts at that scope.

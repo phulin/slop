@@ -1949,7 +1949,59 @@
   `_correlations.csv`, and `_summary.md`. It aligns 24 feature-stage rows and
   has 8 shared AF values from `slop_lexicon` and the
   `rule_of_three_approx` teacher-forced proxy. Overall Spearman AF is `0.762`;
-  Pearson AF is `0.978`. This is the current best bounded cross-ladder result,
-  but not full Phase 3 completion because the original production grid,
-  SmolLM3 corpus/preference rates, broader teacher-forced support, and stretch
-  Think/RL Zero comparison remain missing.
+  Pearson AF is `0.978`. This was the best bounded cross-ladder result before
+  adding the SmolLM3 data-rate layer below, but not full Phase 3 completion
+  because the original production grid, SmolLM3 data-rate baselines, broader
+  teacher-forced support, and stretch Think/RL Zero comparison remained
+  missing.
+
+## 2026-06-15 - SmolLM3 SFT/preference data-rate layer
+
+- Sampled the SmolTalk2 no_think SFT split for the bounded SmolLM3 Phase 3
+  data-rate layer:
+  `artifacts/stage1/corpora/smollm3_smoltalk2_sft_everyday_no_think_2260.jsonl`
+  and `_summary.md`. The retained sample has 2,260 target responses and
+  188,621 simple tokens from
+  `smoltalk_smollm3_everyday_conversations_no_think`.
+- Sampled 10,000 SmolTalk2 no_think Tulu preference pairs, expanded into
+  chosen/rejected response rows:
+  `artifacts/stage1/corpora/smollm3_smoltalk2_preference_tulu_no_think_10k_pairs.jsonl`
+  and `_summary.md`. The retained sample has 20,000 response rows and
+  4,469,915 simple tokens from
+  `llama_3.1_tulu_3_8b_preference_mixture_no_think`.
+- Ran Tier-1 census and paired preference analysis:
+  `artifacts/stage1/census/smollm3_smoltalk2_sft2260_pref10k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_smoltalk2_pref10k_tier1_pair_deltas.csv`,
+  and
+  `artifacts/stage1/census/smollm3_smoltalk2_pref10k_tier1_pair_analysis.csv`.
+  Key SFT/Chosen/Rejected rates per 1k tokens:
+  `slop_lexicon` `0.419`/`1.609`/`1.293`,
+  `rule_of_three_approx` `17.045`/`5.443`/`4.877`,
+  `contrastive_negation` `0.095`/`0.379`/`0.352`, and pooled stock phrases
+  `0.376`/`0.788`/`0.502`.
+- Paired preference evidence is chosen-greater-rejected and BH-FDR-significant
+  for `slop_lexicon` (`q=3.367e-15`), `rule_of_three_approx`
+  (`q=9.437e-13`), `contrastive_negation` (`q=0.039`), `stock_closers`
+  (`q=3.016e-04`), and pooled stock phrases (`q=0.003`). `stock_openers` is
+  chosen-greater-rejected in mean rate but not BH-FDR-significant (`q=0.161`).
+- Reassembled the SmolLM3 no_think data-rate spectrum and classifier:
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3.csv`
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_data_rates_slop_neutral_rule3.csv`.
+  The classifier still labels `slop_lexicon` as `sft-amplified`, not
+  preference-amplified: the no_think Tulu preference data are complicit, but
+  SmolLM3 SFT already has high normalized AF and APO/final only add a modest
+  relative increase under the current rule.
+- Re-ran the OLMo-vs-SmolLM3 bounded comparison on the data-rate spectrum:
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_data_rates_tf_generation_compounding_slop_neutral_rule3_aligned.csv`,
+  `_correlations.csv`, and `_summary.md`. It keeps the same 24 aligned
+  feature-stage rows and 8 shared AF values as the generation-inclusive
+  comparison, with overall Spearman AF `0.762` and Pearson AF `0.978`; the new
+  value is in the SmolLM3 SFT/preference data-rate fields and classifier
+  interpretation.
+- Caveat: the normalized SmolTalk2 preference rows preserve split/source
+  identity but do not expose per-row `preference_type`, `chosen_model`, or
+  `rejected_model`; those columns are `None` in the paired analysis. Full
+  Phase 3 still needs the original production grid, a SmolLM3
+  pretraining/mid-training baseline, broader teacher-forced support where
+  denominator support permits it, and the stretch Think/RL Zero comparison.
