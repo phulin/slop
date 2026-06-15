@@ -72,6 +72,9 @@ Outputs:
 - `artifacts/phase3/analysis/smollm3_no_think_propensity_plan_512_slop_neutral.md`
 - `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke.jsonl`
 - `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke_summary.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_summary.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_reference_subset_summary.csv`
 
 W&B:
 
@@ -292,6 +295,37 @@ the sampled generations. This verifies model loading, CUDA execution, the new
 prompt package, and the generation output schema. It is not a Phase 3
 replication result because it covers only two prompts from the final
 checkpoint.
+
+A matching tiny final-checkpoint teacher-forced smoke also completed:
+
+```bash
+uv run slop-teacher-forced-propensity \
+  --model HuggingFaceTB/SmolLM3-3B \
+  --input artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512.jsonl \
+  --sample-size 2 \
+  --feature slop_lexicon \
+  --feature neutral_common_controls \
+  --normalization-feature neutral_common_controls \
+  --max-opportunities 32 \
+  --max-token-start-opportunities 32 \
+  --mass-mode sequence \
+  --dtype bfloat16 \
+  --wandb-mode disabled \
+  --sequence-cache \
+  --no-torch-compile
+```
+
+Outputs:
+
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_opportunities.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_summary.csv`
+- `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_reference_subset_summary.csv`
+
+The smoke wrote 64 opportunity rows and two feature summaries
+(`slop_lexicon` and `neutral_common_controls`). Both features had zero
+reference initiations in the 2-prompt smoke sample, so this verifies model
+loading, exact sequence-mass scoring, CUDA execution, and output schema only;
+it is not an interpretable AF result.
 
 ## Current Interpretation
 

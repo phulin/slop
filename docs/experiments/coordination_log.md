@@ -1725,6 +1725,17 @@
   `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke_summary.csv`.
   The smoke wrote valid feature-count JSON and the sampled generations had no
   obvious `<think>`/`</think>`/`reasoning` markup.
+- Verified a matching tiny final-checkpoint SmolLM3 teacher-forced smoke on
+  the same prompt package: `2` prompts, `slop_lexicon` plus
+  `neutral_common_controls`, `max_opportunities=32`, exact sequence mass,
+  `dtype=bfloat16`, W&B disabled, no compile. Outputs:
+  `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_opportunities.csv`,
+  `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_summary.csv`,
+  and
+  `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_reference_subset_summary.csv`.
+  It wrote 64 opportunity rows and two feature summaries. Both features had
+  zero reference initiations in the 2-prompt smoke sample, so this is a
+  harness/schema check only, not an interpretable AF result.
 - Updated `docs/experiments/phase3_status.md` so the SmolLM3 replication row is
   now "started, data mostly missing" rather than fully missing. Full Phase 3
   still needs the four-stage SmolLM3 free-running and teacher-forced summaries,
