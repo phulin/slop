@@ -252,8 +252,9 @@ Live config-specific SmolTalk2 probe:
 Live bounded SmolLM3 baseline samples:
 
 - The pretraining collection URL is a Hugging Face collection, not a loadable
-  dataset ID. Exact production pretraining rates still need source weights from
-  the training recipe.
+  dataset ID. Exact production pretraining feature rates therefore need
+  per-source sampling plus recipe weighting rather than one direct dataset
+  load.
 - Bounded source-stratified proxy samples now exist:
   `artifacts/stage1/corpora/smollm3_pretrain_fineweb_edu_2k.jsonl`
   from `HuggingFaceFW/fineweb-edu`,
@@ -268,13 +269,38 @@ Live bounded SmolLM3 baseline samples:
   These rows are suitable as bounded baseline context in Phase 3, but they are
   not the exact weighted SmolLM3 11T pretraining mix.
 
+Live SmolLM3 recipe-weight extraction:
+
+- Added and ran `slop-extract-smollm3-config-weights` against the published
+  `HuggingFaceTB/smollm3-configs` YAMLs:
+  `stage3_9T_11T.yaml`, `long_context_4k_to_32k.yaml`, and
+  `long_context_32k_to_64.yaml`.
+- The extractor treats `stage3_9T_11T.yaml` as the cumulative 4k pretraining
+  recipe, derives stage spans from `start_training_step`, computes tokens per
+  step from the config batch geometry, and normalizes each segment's
+  `dataset_weights`.
+- Outputs:
+  `artifacts/phase3/analysis/smollm3_config_source_weights_detail.csv`,
+  `artifacts/phase3/analysis/smollm3_config_source_weights_aggregate.csv`,
+  `artifacts/phase3/analysis/smollm3_config_source_weights_groups.csv`, and
+  `artifacts/phase3/analysis/smollm3_config_source_weights_summary.md`.
+- The extracted config-implied total is `11.234968T` tokens when the two
+  long-context extension configs are included. Top aggregate sources are
+  `dclm` (`35.486%`), `fineweb-edu` (`31.140%`), `fw2-deu` (`2.209%`),
+  `fw2-spa` (`2.003%`), `stack-edu-Python` (`1.811%`), and `pes2o`
+  (`1.724%`).
+- The current bounded pretraining feature-rate samples cover `fineweb-edu`
+  (`31.140%` exact config share) and `stackexchange` (`0.333%`). The remaining
+  production baseline blocker is feature-rate coverage for the other recipe
+  sources, not source-weight discovery.
+
 In-progress source-identification plan:
 
-1. Resolve exact SmolLM3 pretraining source IDs and stage weights from primary
-   Hugging Face metadata and the `huggingface/smollm` training recipe. Map each
-   usable source to Phase 1 strata: web/CC, forums/Q&A, wiki/science,
-   math/reasoning, and code-excluded audit bucket. Do not treat the collection
-   listing alone as final mixture weights.
+1. Use the extracted SmolLM3 recipe weights to decide the next source-sampling
+   strata for a production weighted feature-rate baseline. Map each usable
+   source to Phase 1 strata: web/CC, forums/Q&A, wiki/science, math/reasoning,
+   and code-excluded audit bucket. Do not treat the collection listing alone
+   as final mixture weights.
 2. Run only bounded metadata probes before sampling: no full dataset downloads,
    fixed scan caps, streaming reads where available, and W&B logging of source
    counts, schema fields, split/config names, scan caps, seed, and failures.
@@ -296,14 +322,15 @@ In-progress source-identification plan:
 
 Current interpretation:
 
-- SmolLM3 exact production source identification remains incomplete. Bounded
-  source-stratified proxy samples now exist for Phase 3 context, but exact
-  pretraining-mixture claims should wait for training-recipe weight
-  confirmation.
+- SmolLM3 exact recipe source weights are now extracted from the published
+  configs. Bounded source-stratified proxy samples exist for Phase 3 context,
+  but production pretraining-mixture feature-rate claims should wait for
+  feature-rate coverage across the relevant weighted sources.
 - The live probes narrow SmolTalk2/Tulu source identification to specific
   configs and splits and verify config/split-aware loading. Remaining blockers
   are broader split/source count census, target response extraction and
-  normalization, Tulu construction semantics, and pretraining recipe weights.
+  normalization, Tulu construction semantics, and weighted pretraining
+  feature-rate coverage.
 - SmolTalk2 provides the likely SFT and APO preference substrate for the
   replication ladder, but its SFT and Preference configs must be handled as
   multiple source/config strata rather than one homogeneous dataset.
@@ -322,7 +349,7 @@ Current interpretation:
 - Map Dolci SFT `source_dataset` and `domain` fields to a defensible
   human/synthetic/mixed provenance taxonomy, or avoid human-vs-synthetic
   claims in Phase 1.
-- Complete bounded, W&B-logged SmolLM3 probes for exact pretraining source
-  weights, SmolTalk2 SFT schema/configs, and Tulu/APO preference construction.
+- Complete bounded, W&B-logged SmolLM3 probes for weighted pretraining
+  feature-rate coverage, SmolTalk2 SFT schema/configs, and Tulu/APO preference construction.
   Use primary Hugging Face metadata, dataset cards, and linked training recipes;
   avoid secondary summaries for source semantics.

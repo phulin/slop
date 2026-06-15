@@ -25,9 +25,12 @@ an OLMo-vs-SmolLM3 cross-ladder comparison. The SmolLM3 slice now also has a
 bounded SmolTalk2 no_think SFT/preference data-rate layer plus a bounded
 source-stratified pretraining/Mid baseline. It is real Phase 3 progress, but
 it is not the full EXPERIMENTS.md Phase 3 completion because the original
-5,000-prompt x 8-completion x 3-temperature production grid, the exact
-weighted SmolLM3 pretraining mix, broader teacher-forced feature coverage, and
-stretch Instruct/Think/RL Zero comparison are not present.
+5,000-prompt x 8-completion x 3-temperature production grid, a production
+weighted SmolLM3 pretraining feature-rate baseline, broader teacher-forced
+feature coverage, and stretch Instruct/Think/RL Zero comparison are not
+present. The exact SmolLM3 recipe source weights have now been extracted from
+the published configs, but most weighted sources do not yet have local feature
+rate samples.
 
 ## Implemented Phase 3 Layer
 
@@ -38,6 +41,7 @@ Added CLI:
 - `slop-plan-phase2-propensity`
 - `slop-analyze-phase3-free-run-effects`
 - `slop-analyze-phase3-teacher-forced-effects`
+- `slop-extract-smollm3-config-weights`
 
 Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
 
@@ -836,6 +840,39 @@ Sampled inputs:
 | SmolTalk2 SFT everyday no_think | 2,260 | 188,621 | Full retained split scan for `smoltalk_smollm3_everyday_conversations_no_think`. |
 | SmolTalk2 Preference Tulu no_think | 20,000 | 4,469,915 | 10,000 chosen/rejected pairs from `llama_3.1_tulu_3_8b_preference_mixture_no_think`. |
 
+Published config source weights:
+
+- Added `slop-extract-smollm3-config-weights`, which parses published
+  SmolLM3 Nanotron YAML configs, derives segment spans from
+  `start_training_step`, computes tokens per step from the config batch
+  geometry, normalizes each segment's `dataset_weights`, and writes detailed
+  source rows plus aggregate source/group weights.
+- Ran it on `HuggingFaceTB/smollm3-configs` files `stage3_9T_11T.yaml`,
+  `long_context_4k_to_32k.yaml`, and `long_context_32k_to_64.yaml`.
+  The output contains 256 detail rows, 115 aggregate source rows, 8 heuristic
+  source-group rows, and `11.234968T` config-implied tokens including the
+  two long-context extension stages. The 4k pretraining portion comes from
+  `stage3_9T_11T.yaml` and accounts for `11.135877T` tokens; the two
+  long-context stages add about `99.091B`.
+- Top aggregate recipe sources are `dclm` (`35.486%`), `fineweb-edu`
+  (`31.140%`), `fw2-deu` (`2.209%`), `fw2-spa` (`2.003%`),
+  `stack-edu-Python` (`1.811%`), and `pes2o` (`1.724%`). Heuristic group
+  shares are web `78.607%`, code `14.046%`, math `4.935%`,
+  academic/synthetic web `1.770%`, Q&A/forum `0.333%`, wiki `0.200%`,
+  reasoning `0.105%`, and other `0.004%`.
+- The currently sampled Phase 3 pretraining sources cover `fineweb-edu`
+  (`31.140%` exact recipe share) and `stackexchange` (`0.333%`). This is now
+  enough to quantify the coverage of the bounded proxy, but not enough to
+  compute a production weighted feature-rate baseline across all recipe
+  sources.
+
+Config-weight artifacts:
+
+- `artifacts/phase3/analysis/smollm3_config_source_weights_detail.csv`
+- `artifacts/phase3/analysis/smollm3_config_source_weights_aggregate.csv`
+- `artifacts/phase3/analysis/smollm3_config_source_weights_groups.csv`
+- `artifacts/phase3/analysis/smollm3_config_source_weights_summary.md`
+
 Data-rate and preference artifacts:
 
 - `artifacts/stage1/corpora/smollm3_pretrain_fineweb_edu_2k.jsonl`
@@ -903,11 +940,12 @@ analysis table. The source split identifies the candidate Tulu no_think
 preference mixture, but the current SmolLM3 paired analysis is not yet
 stratified by per-row preference-construction metadata.
 
-Second caveat: the pretrain aggregate is token-weighted over the two bounded
-source samples above. It is useful as a pretraining-source baseline for Phase 3
-classification, but it is not the exact SmolLM3 pretraining mixture. The
-training recipe still needs to be resolved before reporting a production
-weighted pretraining baseline.
+Second caveat: the current SmolLM3 feature-rate pretrain aggregate is
+token-weighted over the two bounded source samples above. It is useful as a
+pretraining-source baseline for Phase 3 classification, but it is not the
+full SmolLM3 pretraining mixture. The exact published recipe weights are now
+resolved, so the remaining baseline gap is feature-rate coverage for the
+additional recipe sources, not source-weight discovery.
 
 ## Current Interpretation
 
@@ -961,10 +999,10 @@ The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
    contracts or prompt subsets provide denominator support; the current
    512-prompt denominator audit has zero references for stock phrases and
    contrastive negation.
-3. Replace the bounded two-source SmolLM3 pretraining baseline with an exact
-   production weighted baseline once the SmolLM3 training recipe/source weights
-   are resolved. The current FineWeb-Edu plus StackExchange aggregate is a
-   bounded source-stratified proxy, not the full 11T mix.
+3. Replace the bounded two-source SmolLM3 pretraining feature-rate baseline
+   with a production weighted baseline using the extracted recipe weights. The
+   current FineWeb-Edu plus StackExchange aggregate is a bounded
+   source-stratified proxy, not the full 11T+ mix.
 4. If production completion is required, run the original 5,000-prompt x
    8-completion x 3-temperature generation grids for the retained ladders and
    rebuild the compounding and cross-ladder artifacts at that scope.

@@ -2063,3 +2063,31 @@
   distinguish: inherited/base-heavy features, SFT amplification, preference
   amplification, and generation compounding. No numeric measurements or
   artifact references changed in this pass.
+
+## 2026-06-15 - SmolLM3 recipe-weight extraction
+
+- Added `slop-extract-smollm3-config-weights`, a reproducible parser for the
+  published SmolLM3 Nanotron YAML configs. It derives data-stage spans from
+  `start_training_step`, computes tokens per step from config batch geometry,
+  normalizes aligned `dataset_weights`, and writes detailed source rows,
+  aggregate source weights, heuristic source-group weights, and a Markdown
+  summary.
+- Ran the extractor on `HuggingFaceTB/smollm3-configs` files
+  `stage3_9T_11T.yaml`, `long_context_4k_to_32k.yaml`, and
+  `long_context_32k_to_64.yaml`. Outputs:
+  `artifacts/phase3/analysis/smollm3_config_source_weights_detail.csv`,
+  `artifacts/phase3/analysis/smollm3_config_source_weights_aggregate.csv`,
+  `artifacts/phase3/analysis/smollm3_config_source_weights_groups.csv`, and
+  `artifacts/phase3/analysis/smollm3_config_source_weights_summary.md`.
+- The extraction reports 256 detail rows, 115 aggregate sources, and
+  `11.234968T` config-implied tokens when including the two long-context
+  extension stages. Top aggregate sources are `dclm` (`35.486%`),
+  `fineweb-edu` (`31.140%`), `fw2-deu` (`2.209%`), `fw2-spa` (`2.003%`),
+  `stack-edu-Python` (`1.811%`), and `pes2o` (`1.724%`). Current sampled
+  pretraining feature-rate coverage is now quantifiable: `fineweb-edu`
+  covers `31.140%` of the extracted recipe and `stackexchange` covers
+  `0.333%`.
+- Updated `docs/experiments/phase3_status.md` and
+  `docs/experiments/source_card_notes.md` to distinguish the now-resolved
+  recipe-weight discovery step from the still-missing production weighted
+  feature-rate baseline across the remaining SmolLM3 sources.
