@@ -1437,3 +1437,38 @@
   `neutral_common_controls`; other retained Tier-1 features in the compounding
   invocation provide generation-side/support context rather than fully
   AF-backed estimates.
+- Completed the scaled DPO 1,024-prompt target-shape generation shard on
+  2026-06-15. Generation W&B run:
+  `stage2-phase2-olmo3-dpo-promptpkg5000-free-running-1024prompt-8comp-t1-bench1024`
+  (`p4v56vda`). Output:
+  `artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_1024prompt_8comp_t1_batched16.jsonl`
+  with `8192/8192` rows and summary
+  `artifacts/phase2/generations/olmo3_dpo_promptpkg5000_free_run_1024prompt_8comp_t1_batched16_summary.csv`.
+  The run produced 8,388,608 generated tokens. The DPO 512-vs-1024 scale
+  comparison W&B run is `dezwh1xv`; the corrected DPO 1024 compounding W&B run
+  is `nd1lnfjy`.
+- The scaled DPO result stabilizes the t=1.0 target-shape `slop_lexicon` rate:
+  512 prompts `0.229` vs. 1,024 prompts `0.226` hits per 1k generated tokens
+  (`0.235` vs. `0.231` per generation). Other 1,024-prompt DPO rates per 1k
+  generated tokens are `rule_of_three_approx=0.784`,
+  `contrastive_negation=0.134`, `stock_openers_closers=0.090`,
+  `stock_openers=0.058`, and `stock_closers=0.032`.
+- The 1,024-prompt DPO compounding join reports `slop_lexicon` observed
+  `0.662` vs. expected `0.439` per 1k opportunities, excess `0.223`, realized
+  AF `1.133`, and 383 repeat generations. The empirical window test remains
+  strongly positive: `P(hit after prior)=0.0695` vs.
+  `P(hit no prior)=0.0119` (risk ratio `5.83`). This supports a bounded
+  positive Result B signal at the larger DPO generation scale without changing
+  the earlier caveat that the 512-prompt four-stage target-shape grid is not a
+  clean DPO-stage generation peak.
+- Fixed `slop-analyze-phase2-compounding` pooled-hit accounting for
+  `stock_openers_closers`. The compounding analyzer already counted separate
+  `stock_openers` and `stock_closers` hits, but did not emit pooled hit starts
+  for the direct prior/no-prior test. Added a regression test and reran the
+  post-shard analysis. Corrected pooled row now matches the generation summary:
+  755 pooled hits, 70 repeat generations, observed `0.822` per 1k pooled
+  opportunities, and risk ratio `1.15`. Focused verification:
+  `uv run pytest -q tests/test_analyze_phase2_compounding.py
+  tests/test_run_phase2_post_shard_analysis.py` (`7 passed`) and
+  `uv run ruff check src/slop_sftdiv/cli/analyze_phase2_compounding.py
+  tests/test_analyze_phase2_compounding.py` (`All checks passed`).

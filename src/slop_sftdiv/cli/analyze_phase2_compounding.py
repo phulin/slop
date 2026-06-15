@@ -120,8 +120,15 @@ def _token_windows(text: str, *, window_tokens: int) -> list[tuple[int, int]]:
 
 def _hits_by_feature(text: str, selected_features: list[str]) -> dict[str, list[int]]:
     starts: dict[str, list[int]] = {feature: [] for feature in selected_features}
-    for hit in iter_tier1_hits(text, features=selected_features):
-        starts.setdefault(hit.feature, []).append(hit.start)
+    query_features = set(selected_features)
+    include_stock_pool = "stock_openers_closers" in query_features
+    if include_stock_pool:
+        query_features.update({"stock_openers", "stock_closers"})
+    for hit in iter_tier1_hits(text, features=query_features):
+        if hit.feature in starts:
+            starts[hit.feature].append(hit.start)
+        if include_stock_pool and hit.feature in {"stock_openers", "stock_closers"}:
+            starts["stock_openers_closers"].append(hit.start)
     return {feature: sorted(feature_starts) for feature, feature_starts in starts.items()}
 
 

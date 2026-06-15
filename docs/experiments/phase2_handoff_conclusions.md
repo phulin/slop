@@ -202,6 +202,24 @@ low-emission point across all tracked features. Treat this as inherited/base
 free-running style plus feature-specific post-training reshaping, not as a
 clean DPO-stage generation peak.
 
+The first scaled DPO target-shape shard is also complete:
+
+- Shape: 1,024 prompts, 8 completions per prompt, temperature `1.0`, top-p
+  `0.95`, 1,024 generated tokens per completion.
+- Generation W&B: `p4v56vda`; 8,192 generations and 8,388,608 generated
+  tokens.
+- Scale-comparison W&B: `dezwh1xv`; corrected compounding W&B: `nd1lnfjy`.
+- `slop_lexicon` is stable against the 512-prompt DPO shard:
+  `0.226` vs. `0.229` hits per 1k generated tokens.
+- The 1,024-prompt DPO compounding join reports observed `slop_lexicon`
+  `0.662` vs. expected `0.439` per 1k opportunities, excess `0.223`,
+  realized AF `1.133`, and 383 repeat generations. The direct window test is
+  still strongly positive: `P(hit after prior)=0.0695` vs.
+  `P(hit no prior)=0.0119`.
+- The pooled `stock_openers_closers` compounding row is generation-side
+  support only for this join; after the pooled-hit counting fix it has 755
+  hits and 70 repeat generations.
+
 The bounded target-shape DPO temperature expansion is complete for
 temperatures `0.0`, `0.7`, and `1.0`:
 
@@ -346,8 +364,9 @@ validate the heavy shape on the A100, but the full 5,000-prompt x 3-temperature
 OLMo target remains expensive. The next GPU work should be selected by the
 question it answers:
 
-- For a stronger Result B estimate, scale the free-running generation shard
-  before spending on more teacher-forced slop/neutral rows.
+- For a stronger Result B estimate, the scaled 1,024-prompt DPO shard now
+  stabilizes the DPO t=1.0 rate. Matched 1,024-prompt base/SFT/final shards are
+  only needed if the next question is larger-sample stage localization.
 - For stage-localization confirmation, the bounded four-stage target-shape
   comparison is now complete; additional free-running work should scale a
   specific comparison or temperature, not repeat the same cells.

@@ -144,6 +144,51 @@ def test_analyze_phase2_compounding_writes_conditional_rates(tmp_path, monkeypat
     assert logged_tables["phase2_compounding"] == rows
 
 
+def test_analyze_phase2_compounding_counts_pooled_stock_openers_closers(tmp_path):
+    generation_path = tmp_path / "generations.jsonl"
+    output_path = tmp_path / "compounding.csv"
+    summary_path = tmp_path / "compounding.md"
+    generation_path.write_text(
+        json.dumps(
+            {
+                "source": "prompt_package",
+                "temperature": 1.0,
+                "top_p": 0.95,
+                "generation": "Certainly, here is a direct answer. I hope this helps.",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    args = build_parser().parse_args(
+        [
+            "--generation-cache",
+            f"dpo={generation_path}",
+            "--feature",
+            "stock_openers_closers",
+            "--window-tokens",
+            "4",
+            "--output",
+            str(output_path),
+            "--summary-output",
+            str(summary_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    rows = run_analyze_phase2_compounding(args)
+
+    assert len(rows) == 1
+    row = rows[0]
+    assert row["feature"] == "stock_openers_closers"
+    assert row["feature_hits"] == 2
+    assert row["repeated_hits"] == 1
+    assert row["generations_with_feature"] == 1
+    assert row["repeat_generations"] == 1
+    assert row["observed_initiations"] == 2
+
+
 def test_analyze_phase2_compounding_rejects_duplicate_stage(tmp_path):
     generation_path = tmp_path / "generations.jsonl"
     generation_path.write_text("", encoding="utf-8")
