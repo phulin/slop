@@ -1554,3 +1554,35 @@
   aligned with the retained artifacts: DPO is the clearest `slop_lexicon`
   propensity peak, final/RLVR is closest to DPO in aggregate generated-output
   style, and final/RLVR does not broadly amplify slop beyond DPO.
+
+## 2026-06-15 - Phase 3 bounded OLMo classification layer
+
+- Added `slop-classify-amplification-spectrum`, which reads an assembled
+  amplification-spectrum table and emits feature-level Phase 3 classifications
+  (`inherited`, `sft-amplified`, `preference-amplified`,
+  `compounding-dominant`, or coverage-limited fallback classes). The classifier
+  records chosen-vs-rejected preference-data complicity, AF jumps, free-running
+  maxima, compounding summary fields, and explicit
+  `fdr_status=not_computed_missing_p_values`.
+- Ran the classifier over
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_single_temp_t1_v6.csv`.
+  W&B run:
+  `stage3-phase3-olmo3-bounded-feature-classification-t1-v2` (`3ptb39c2`).
+  Outputs:
+  `artifacts/phase3/analysis/olmo3_phase3_bounded_feature_classification_t1.csv`
+  and
+  `artifacts/phase3/analysis/olmo3_phase3_bounded_feature_classification_t1_summary.md`.
+- Bounded classification read: `slop_lexicon` is the only
+  preference-amplified retained feature view, labeled dynamics-driven because
+  DPO chosen data is slightly lower than rejected for the feature.
+  `stock_closers` and pooled `stock_openers_closers` are SFT-amplified/high-AF
+  rather than preference-jump features; `rule_of_three_approx` and
+  `stock_openers` remain measured but unclassified under Phase 3 rules; and
+  `contrastive_negation` is output-only due missing teacher-forced support.
+- Added `docs/experiments/phase3_status.md` with the bounded result, current
+  requirement audit, and remaining work for full EXPERIMENTS.md Phase 3:
+  p-value/FDR layer, SmolLM3 no_think replication, and cross-ladder AF rank
+  correlation.
+- Logged a retained Phase 3 bounded artifact manifest as
+  `stage3-phase3-olmo3-bounded-artifact-manifest` (`tqxvi3g1`), covering the
+  classification CSV and summary markdown.
