@@ -258,6 +258,8 @@ Live bounded SmolLM3 baseline samples:
 - Bounded source-stratified proxy samples now exist:
   `artifacts/stage1/corpora/smollm3_pretrain_fineweb_edu_2k.jsonl`
   from `HuggingFaceFW/fineweb-edu`,
+  `artifacts/stage1/corpora/smollm3_pretrain_dclm_2k.jsonl`
+  from `mlfoundations/dclm-baseline-1.0` config `default`,
   `artifacts/stage1/corpora/smollm3_pretrain_stackexchange_apple_2k.jsonl`
   from `HuggingFaceTB/stackexchange_2025_md` config
   `apple.stackexchange.com`, and
@@ -299,9 +301,15 @@ Live SmolLM3 recipe-weight extraction:
   `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
   and
   `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy_summary.md`.
-  The current proxy covers `31.473%` of the extracted recipe and leaves
-  `68.527%` unsampled, so its covered-only rates are diagnostics rather than
-  full-mixture estimates.
+- Added a bounded `dclm` source sample from
+  `mlfoundations/dclm-baseline-1.0`, config `default`, split `train`:
+  `artifacts/stage1/corpora/smollm3_pretrain_dclm_2k.jsonl` and
+  `artifacts/stage1/census/smollm3_pretrain_dclm_2k_tier1_feature_rates.csv`.
+  The sample retained 2,000 rows and 1,780,498 simple tokens from a 20,000-row
+  hash-reservoir scan.
+- With DCLM included, the current proxy covers `66.959%` of the extracted
+  recipe and leaves `33.041%` unsampled, so its covered-only rates are
+  majority-coverage diagnostics rather than full-mixture estimates.
 
 In-progress source-identification plan:
 
@@ -335,8 +343,9 @@ Current interpretation:
   configs. Bounded source-stratified proxy samples exist for Phase 3 context,
   but production pretraining-mixture feature-rate claims should wait for
   feature-rate coverage across the relevant weighted sources. The coverage
-  proxy quantifies the current gap; sampling `dclm` would add the largest
-  remaining share (`35.486%`).
+  proxy quantifies the current gap; DCLM is now sampled, and the largest
+  remaining recipe sources are `fw2-deu` (`2.209%`), `fw2-spa` (`2.003%`),
+  and `stack-edu-Python` (`1.811%`).
 - The live probes narrow SmolTalk2/Tulu source identification to specific
   configs and splits and verify config/split-aware loading. Remaining blockers
   are broader split/source count census, target response extraction and

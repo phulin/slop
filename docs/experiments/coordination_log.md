@@ -2116,3 +2116,31 @@
   diagnostics, not full-mixture estimates. Updated Phase 3 docs to identify
   `dclm` (`35.486%`) as the next highest-impact source for pretraining
   feature-rate sampling.
+
+## 2026-06-15 - DCLM pretraining feature-rate coverage
+
+- Fixed `slop-sample-corpus` retained-row metadata so the final outer sampling
+  strategy is stamped onto JSONL and manifest rows. This matters for bounded
+  samples where the command scans with `first` internally and then applies its
+  own `hash_reservoir` selection. Added test coverage in
+  `tests/test_sample_corpus.py`.
+- Sampled DCLM for the SmolLM3 pretraining baseline:
+  `artifacts/stage1/corpora/smollm3_pretrain_dclm_2k.jsonl`, with manifests
+  and summary. Source: `mlfoundations/dclm-baseline-1.0`, config `default`,
+  split `train`, 20,000 scanned rows, 2,000 retained rows, 1,780,498 simple
+  tokens, `hash_reservoir` seed `1729`. Strata were `unknown` 1,123,
+  `web_cc` 482, `forums_qa` 272, `wiki` 76, `scientific` 32, and `code` 15.
+- Ran Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_dclm_2k_tier1_feature_rates.csv`.
+  Source-aggregated DCLM rates per 1k tokens are `slop_lexicon` `0.354`,
+  `rule_of_three_approx` `3.746`, `contrastive_negation` `0.487`,
+  `stock_closers` `0.037`, `stock_openers` `0.037`, and pooled stock phrases
+  `0.074`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with the DCLM source map. Current coverage is now `66.959%` of
+  the extracted SmolLM3 recipe, with missing share `33.041%`. Covered-only
+  weighted rates per 1k tokens are `slop_lexicon` `0.439`,
+  `rule_of_three_approx` `4.882`, `contrastive_negation` `0.440`,
+  `stock_closers` `0.039`, `stock_openers` `0.032`, and pooled stock phrases
+  `0.071`.

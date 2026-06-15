@@ -152,7 +152,10 @@ def test_run_sample_hash_reservoir_is_deterministic_within_stratum(tmp_path, mon
                 "disabled",
             ]
         )
-        return [row["doc_id"] for row in run_sample(args)]
+        rows = run_sample(args)
+        assert {row["sampling_strategy"] for row in rows} == {"hash_reservoir"}
+        assert {row["metadata.sampling_strategy"] for row in rows} == {"hash_reservoir"}
+        return [row["doc_id"] for row in rows]
 
     assert run_once("a") == run_once("b")
 

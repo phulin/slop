@@ -382,6 +382,20 @@ def _select_records(args: argparse.Namespace) -> tuple[list[dict[str, Any]], lis
     selected.sort(key=lambda item: item[0])
     rows = [item[1] for item in selected]
     manifest_rows = [item[2] for item in selected]
+    for row in rows:
+        row["sampling_strategy"] = args.sampling_strategy
+        row["sampling_seed"] = args.seed
+        row["sampling_max_scan"] = args.max_scan
+        row["metadata.sampling_strategy"] = args.sampling_strategy
+        row["metadata.sampling_seed"] = args.seed
+        row["metadata.sampling_max_scan"] = args.max_scan
+    for row in manifest_rows:
+        row["sampling_strategy"] = args.sampling_strategy
+        row["sampling_seed"] = args.seed
+        row["sampling_max_scan"] = args.max_scan
+        row["metadata.sampling_strategy"] = args.sampling_strategy
+        row["metadata.sampling_seed"] = args.seed
+        row["metadata.sampling_max_scan"] = args.max_scan
     stats.kept = len(rows)
     stats.tokens = sum(int(row["token_count"]) for row in rows)
     stats.wall_seconds = time.perf_counter() - started_at
