@@ -1522,3 +1522,27 @@
   comparison. W&B run:
   `stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest-v2`
   (`p3ehymfc`). The manifest now covers 14 retained artifacts and 192 records.
+- Added `slop-build-style-signature` to combine Tier-1 slop emission,
+  empirical compounding metrics, and Biber-lite register rates into a final
+  generated-output style signature. Ran it on the single-temperature `t=1.0`
+  Phase 2 close-out artifacts. W&B run:
+  `stage2-phase2-olmo3-style-signature-t1` (`bt0zelup`). Outputs:
+  `artifacts/phase2/analysis/olmo3_style_signature_t1.csv`,
+  `artifacts/phase2/analysis/olmo3_style_signature_t1_stage_distances.csv`,
+  and `artifacts/phase2/analysis/olmo3_style_signature_t1_summary.md`. The
+  signature has 172 rows over 25 feature names and four stages; the distance
+  matrix has 16 rows.
+- Style-signature read: on raw metric scales, final/RLVR is closest to DPO
+  (`30.567` Euclidean distance), then SFT (`35.564`), then base (`85.139`).
+  Final vs. base mainly lowers demonstratives, infinitives, first-person
+  pronouns, necessity/prediction/possibility modals, and stock opener
+  opportunities, while increasing rule-of-three observed compounding
+  opportunities and nominalizations. Final vs. DPO lowers rule-of-three
+  observed compounding opportunities and stock opener observed opportunities,
+  but raises stock-closer prior risk ratio and several Biber register proxies
+  including first-person pronouns, causal subordinators, hedges, infinitives,
+  passive-voice approximation, public verbs, and possibility modals.
+- Regenerated the final retained artifact manifest to include the style
+  signature. W&B run:
+  `stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest-v3`
+  (`5qonr7io`). The manifest now covers 17 artifacts and 380 records.

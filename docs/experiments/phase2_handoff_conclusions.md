@@ -439,6 +439,68 @@ all generation stages are well above the pretrain sample for nominalizations.
 Treat these as register/context shifts alongside the Tier-1 slop results, not
 as claims about opportunity-normalized amplification.
 
+## Final Output Style Signature
+
+The final style-signature artifact joins three generated-output views:
+
+- Tier-1 slop emission rates from the `t=1.0` target-shape generation grid.
+- Empirical compounding metrics from the corrected target-shape compounding
+  table.
+- Biber-lite register rates from the generation-vs-corpus comparison.
+
+W&B run:
+
+- `stage2-phase2-olmo3-style-signature-t1` (`bt0zelup`)
+
+Local outputs:
+
+- `artifacts/phase2/analysis/olmo3_style_signature_t1.csv`
+- `artifacts/phase2/analysis/olmo3_style_signature_t1_stage_distances.csv`
+- `artifacts/phase2/analysis/olmo3_style_signature_t1_summary.md`
+
+The signature has 172 rows over 25 feature names and four stages. The distance
+matrix uses raw metric scales, so high-rate Biber and compounding metrics
+dominate; use it as an orientation aid, not a formal inferential statistic.
+Under that raw-vector read, final/RLVR is closest to DPO, then SFT, then base:
+
+| Comparison | Shared Features | Euclidean | Cosine Distance |
+|---|---:|---:|---:|
+| final vs DPO | 43 | 30.567 | 0.000075 |
+| final vs SFT | 43 | 35.564 | 0.000287 |
+| final vs base | 43 | 85.139 | 0.001272 |
+
+Largest final-vs-base movements:
+
+- `rule_of_three_approx` observed compounding opportunities increase
+  (`428.106` vs. `344.007` per 1k opportunities), despite the Tier-1
+  free-running rate peaking at base.
+- `stock_openers` observed opportunities drop sharply (`1.477` vs. `8.592`
+  per 1k opportunities).
+- Biber-lite demonstratives, infinitives, first-person pronouns, necessity
+  modals, prediction modals, and possibility modals all decline from base to
+  final.
+- Biber-lite nominalizations rise modestly from base to final.
+
+Largest final-vs-DPO movements:
+
+- `rule_of_three_approx` observed compounding opportunities are lower in final
+  than DPO (`428.106` vs. `458.417` per 1k opportunities).
+- `stock_closers` prior-window risk ratio is higher in final than DPO
+  (`9.399` vs. `6.198`), though stock closer absolute rates remain sparse.
+- Final is slightly higher than DPO on first-person pronouns, causal
+  subordinators, hedges, infinitives, passive-voice approximation, public
+  verbs, and possibility modals.
+- Final is slightly lower than DPO on conditional subordinators,
+  contrastive-negation prior risk ratio, and stock opener observed
+  opportunities.
+
+Interpretation: final/RLVR is more DPO-like than base-like in the combined
+generated-output signature, but it is not a pure copy of DPO. It attenuates
+some DPO/base-heavy slop-register dimensions, preserves or raises selected
+register markers, and leaves the headline `slop_lexicon` story unchanged:
+modest DPO teacher-forced peak, positive compounding, no clean DPO-only
+free-running generation peak.
+
 ## Current Compute Posture
 
 Phase 2 is closed out at temperature `1.0`. Do not launch a full

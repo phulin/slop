@@ -48,6 +48,7 @@ slop-run-phase2-post-shard-analysis = "slop_sftdiv.cli.run_phase2_post_shard_ana
 slop-assemble-amplification-spectrum = "slop_sftdiv.cli.assemble_amplification_spectrum:main"
 slop-analyze-phase2-compounding = "slop_sftdiv.cli.analyze_phase2_compounding:main"
 slop-compare-phase2-biber = "slop_sftdiv.cli.compare_phase2_biber:main"
+slop-build-style-signature = "slop_sftdiv.cli.build_style_signature:main"
 slop-teacher-forced-propensity = "slop_sftdiv.cli.teacher_forced_propensity:main"
 slop-free-running-emission = "slop_sftdiv.cli.free_running_emission:main"
 slop-prepare-phase2-prompts = "slop_sftdiv.cli.prepare_phase2_prompts:main"
