@@ -2264,3 +2264,33 @@
   only. The next directly sampleable source by recipe weight is FineWeb2
   Italian (`1.062%`); `stack-edu-Cpp` (`1.304%`) carries the same hydration
   caveat as Python.
+
+## 2026-06-15 - FineWeb2 Italian pretraining feature-rate coverage
+
+- Verified `HuggingFaceFW/fineweb-2` exposes the Italian config as
+  `ita_Latn`.
+- Sampled the next directly measurable SmolLM3 recipe source:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_ita_2k.jsonl`, with
+  manifests and summary. Source: `HuggingFaceFW/fineweb-2`, config
+  `ita_Latn`, split `train`, 20,000 scanned rows, 2,000 retained rows,
+  1,053,366 simple tokens, `hash_reservoir` seed `1729`. The sample was a
+  single `unknown` stratum because FineWeb2 rows expose language metadata but
+  no local source-domain stratum.
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_fw2_ita_2k_tier1_feature_rates.csv`.
+  Source-aggregated FineWeb2 Italian rates per 1k tokens are `slop_lexicon`
+  `0.036`, `rule_of_three_approx` `0.066`, `contrastive_negation` `0.003`,
+  `stock_closers` `0.000`, `stock_openers` `0.000`, and pooled stock phrases
+  `0.000`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with source map `smollm3_pretrain_fw2_ita_2k=fw2-ita`. Current
+  retained Tier-1 coverage is now `76.974%` of the extracted SmolLM3 recipe,
+  with missing share `23.026%`. Covered-only weighted rates per 1k tokens are
+  `slop_lexicon` `0.404`, `rule_of_three_approx` `4.413`,
+  `contrastive_negation` `0.391`, `stock_closers` `0.036`, `stock_openers`
+  `0.029`, and pooled stock phrases `0.065`.
+- `stack-edu-Python` (`1.811%`) and `stack-edu-Cpp` (`1.304%`) remain blocked
+  on code-text hydration. The next directly sampleable recipe sources are
+  other FineWeb2 language shards, `infiwebmath` (`0.903%`), and
+  `finemath-4plus` (`0.606%`).

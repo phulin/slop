@@ -266,6 +266,8 @@ Live bounded SmolLM3 baseline samples:
   from `HuggingFaceFW/fineweb-2` config `spa_Latn`,
   `artifacts/stage1/corpora/smollm3_pretrain_fw2_fra_2k.jsonl`
   from `HuggingFaceFW/fineweb-2` config `fra_Latn`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_ita_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `ita_Latn`,
   `artifacts/stage1/corpora/smollm3_pretrain_finemath_2k.jsonl`
   from `HuggingFaceTB/finemath` config `finemath-3plus`,
   `artifacts/stage1/corpora/smollm3_pretrain_pes2o_2k.jsonl`
@@ -304,9 +306,10 @@ Live SmolLM3 recipe-weight extraction:
 - The current bounded pretraining feature-rate samples cover `dclm`
   (`35.486%` exact config share), `fineweb-edu` (`31.140%`), `fw2-deu`
   (`2.209%`), `fw2-spa` (`2.003%`), `pes2o` (`1.724%`), `fw2-fra`
-  (`1.607%`), `finemath` (`1.410%`), and `stackexchange` (`0.333%`). The
-  remaining production baseline blocker is feature-rate coverage for the
-  other recipe sources, not source-weight discovery.
+  (`1.607%`), `finemath` (`1.410%`), `fw2-ita` (`1.062%`), and
+  `stackexchange` (`0.333%`). The remaining production baseline blocker is
+  feature-rate coverage for the other recipe sources, not source-weight
+  discovery.
 - Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
   sampled pretraining feature rates to the extracted recipe weights with
   explicit source maps. Outputs:
@@ -349,10 +352,17 @@ Live SmolLM3 recipe-weight extraction:
   `artifacts/stage1/census/smollm3_pretrain_finemath_2k_tier1_feature_rates.csv`.
   The sample retained 2,000 rows and 2,302,447 simple tokens from a
   20,000-row hash-reservoir scan.
-- With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineMath,
-  and PES2O included, the current retained Tier-1 proxy covers `75.912%` of
-  the extracted recipe and leaves `24.088%` unsampled, so its covered-only
-  rates are majority-coverage diagnostics rather than full-mixture estimates.
+- Added a bounded `fw2-ita` source sample from `HuggingFaceFW/fineweb-2`,
+  config `ita_Latn`, split `train`:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_ita_2k.jsonl` and
+  `artifacts/stage1/census/smollm3_pretrain_fw2_ita_2k_tier1_feature_rates.csv`.
+  The sample retained 2,000 rows and 1,053,366 simple tokens from a
+  20,000-row hash-reservoir scan.
+- With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineWeb2
+  Italian, FineMath, and PES2O included, the current retained Tier-1 proxy
+  covers `76.974%` of the extracted recipe and leaves `23.026%` unsampled, so
+  its covered-only rates are majority-coverage diagnostics rather than
+  full-mixture estimates.
 
 In-progress source-identification plan:
 
@@ -387,11 +397,13 @@ Current interpretation:
   but production pretraining-mixture feature-rate claims should wait for
   feature-rate coverage across the relevant weighted sources. The coverage
   proxy quantifies the current gap; DCLM, FineWeb2 German, FineWeb2 Spanish,
-  FineWeb2 French, FineMath, and PES2O are now sampled. `stack-edu-Python`
-  (`1.811%`) is the largest unresolved source, but `HuggingFaceTB/stack-edu`
-  config `Python` exposes blob metadata rather than code text, so measuring it
-  needs a blob-hydration path or another text-bearing mirror. The next directly
-  sampleable high-impact source is FineWeb2 Italian (`1.062%`).
+  FineWeb2 French, FineWeb2 Italian, FineMath, and PES2O are now sampled.
+  `stack-edu-Python` (`1.811%`) is the largest unresolved source, but
+  `HuggingFaceTB/stack-edu` config `Python` exposes blob metadata rather than
+  code text, so measuring it needs a blob-hydration path or another
+  text-bearing mirror. `stack-edu-Cpp` (`1.304%`) carries the same caveat; the
+  next directly sampleable sources are other FineWeb2 language shards,
+  `infiwebmath` (`0.903%`), and `finemath-4plus` (`0.606%`).
 - The live probes narrow SmolTalk2/Tulu source identification to specific
   configs and splits and verify config/split-aware loading. Remaining blockers
   are broader split/source count census, target response extraction and
