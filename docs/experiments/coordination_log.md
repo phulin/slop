@@ -1860,5 +1860,39 @@
 - Made the amplification-spectrum assembler and classifier summaries
   model-neutral so SmolLM3 summaries no longer claim to be OLMo/Dolci tables.
   Full Phase 3 still needs the SmolLM3 512-prompt free-running ladder,
-  compounding, and either broader SmolLM3 teacher-forced feature coverage or an
-  explicit decision to report the replication as slop/neutral-only.
+  compounding, and broader SmolLM3 teacher-forced feature coverage where
+  denominator support permits it.
+
+## 2026-06-15 - SmolLM3 512-prompt rule-of-three teacher-forced proxy
+
+- Added a full 512-prompt SmolLM3 no_think teacher-forced run for
+  `rule_of_three_approx` using the same comma-pair extension proxy as the OLMo
+  bounded Phase 2 spectrum. Denominator support is good for this proxy on the
+  SmolTalk2 no_think prompt package: 754 opportunities and 628 references.
+  W&B runs: base `xud6jfor`, SFT `9alxeeh7`, APO `6j3vuu0e`, final
+  `jdruuqay`.
+- SmolLM3 `rule_of_three_approx` raw AFs are base `0.673`, SFT `0.741`, APO
+  `0.755`, and final `0.755`. The proxy remains below reference rate at every
+  stage and does not create a strong APO/final preference-stage jump.
+- Assembled the rule-of-three grid and the broader TF-only SmolLM3 spectrum:
+  `artifacts/phase3/analysis/smollm3_no_think_propensity_stage_grid_512prompt_rule_of_three.csv`,
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_slop_neutral_rule3.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_slop_neutral_rule3.csv`.
+  The classifier labels `slop_lexicon` as `sft-amplified`,
+  `rule_of_three_approx` as `measured-no-phase3-class`, and
+  `neutral_common_controls` as `measured-no-phase3-class`.
+- Ran paired SmolLM3 teacher-forced stage-effect tests over the combined
+  slop/neutral/rule3 opportunity rows:
+  `artifacts/phase3/analysis/smollm3_no_think_teacher_forced_stage_effects_512prompt_tf_slop_neutral_rule3.csv`.
+  It produced 9 adjacent comparison rows, 8 BH-FDR-significant at alpha
+  `0.05`. Note the existing caveat: sign-test direction can differ from mean
+  AF delta when many small probability changes oppose fewer larger changes.
+- Re-ran OLMo-vs-SmolLM3 comparison on the two-feature teacher-forced slice:
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_tf_slop_neutral_rule3_aligned.csv`,
+  `_correlations.csv`, and `_summary.md`. It aligns 8 feature-stage AF rows
+  across `slop_lexicon` and `rule_of_three_approx`, with overall Spearman AF
+  `0.762` and Pearson AF `0.978`; per-stage correlations are `1.000` because
+  each stage has only two shared feature values. This is an interpretable
+  bounded teacher-forced cross-ladder read, not the full production
+  free-running/compounding replication.
