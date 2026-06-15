@@ -2336,3 +2336,31 @@
   package supports a selective DPO-stage `slop_lexicon` propensity peak and a
   strong `slop_lexicon` self-conditioning signal, but not broad monotonic slop
   growth from Base to SFT to DPO to Final/RLVR.
+
+## 2026-06-15 - FineWeb2 Russian pretraining feature-rate coverage
+
+- Sampled the next directly measurable SmolLM3 recipe source:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_rus_2k.jsonl`, with
+  manifests and summary. Source: `HuggingFaceFW/fineweb-2`, config
+  `rus_Cyrl`, split `train`, 20,000 scanned rows, 2,000 retained rows,
+  1,587,847 simple tokens, `hash_reservoir` seed `1729`. The sample was a
+  single `unknown` stratum because FineWeb2 rows expose language metadata but
+  no local source-domain stratum.
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_fw2_rus_2k_tier1_feature_rates.csv`.
+  Source-aggregated FineWeb2 Russian rates per 1k tokens are `slop_lexicon`
+  `0.005`, `rule_of_three_approx` `0.052`, `contrastive_negation` `0.003`,
+  `stock_closers` `0.000`, `stock_openers` `0.000`, and pooled stock phrases
+  `0.000`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with source map `smollm3_pretrain_fw2_rus_2k=fw2-rus`. Current
+  retained Tier-1 coverage is now `78.955%` of the extracted SmolLM3 recipe,
+  with missing share `21.045%`. Covered-only weighted rates per 1k tokens are
+  `slop_lexicon` `0.395`, `rule_of_three_approx` `4.304`,
+  `contrastive_negation` `0.382`, `stock_closers` `0.035`, `stock_openers`
+  `0.028`, and pooled stock phrases `0.064`.
+- `stack-edu-Python` (`1.811%`) and `stack-edu-Cpp` (`1.304%`) remain blocked
+  on code-text hydration. The next directly sampleable recipe sources are
+  FineWeb2 Portuguese (`0.931%`), `infiwebmath` (`0.903%`),
+  `finemath-4plus` (`0.606%`), and smaller FineWeb2 language shards.
