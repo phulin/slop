@@ -28,6 +28,7 @@ Added CLI:
 
 - `slop-classify-amplification-spectrum`
 - `slop-compare-phase3-ladders`
+- `slop-plan-phase2-propensity`
 
 Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
 
@@ -38,6 +39,8 @@ Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
 - `slop-plan-phase2-generation` now accepts stage specs in
   `STAGE=MODEL@REVISION` form and writes a separate `model_revision` column in
   the plan CSV.
+- `slop-plan-phase2-propensity` now emits the matching revision-aware
+  teacher-forced AF shard checklist for the same stage spec format.
 
 Inputs:
 
@@ -173,11 +176,14 @@ Local W&B-disabled planner smoke outputs:
 
 - `artifacts/phase3/analysis/smollm3_revision_generation_plan_smoke.csv`
 - `artifacts/phase3/analysis/smollm3_revision_generation_plan_smoke.md`
+- `artifacts/phase3/analysis/smollm3_revision_propensity_plan_smoke.csv`
+- `artifacts/phase3/analysis/smollm3_revision_propensity_plan_smoke.md`
 
-The smoke plan uses the existing no_think SmolTalk2 smoke file and verifies
-that SFT/APO rows emit `--model-revision it-SFT` and
-`--model-revision it-soup-APO` in the planned free-running commands. It is a
-planner contract check only; it does not run model generation.
+The smoke plans use the existing no_think SmolTalk2 smoke file and verify that
+SFT/APO rows emit `--model-revision it-SFT` and
+`--model-revision it-soup-APO` in both planned free-running and teacher-forced
+commands. They are planner contract checks only; they do not run model
+generation or propensity scoring.
 
 ## Current Interpretation
 

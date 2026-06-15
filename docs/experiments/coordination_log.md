@@ -1620,6 +1620,12 @@
   stage specs, emit a separate `model_revision` column, and include
   `--model-revision` in planned commands. Existing `STAGE=MODEL` specs remain
   backward compatible.
+- Added `slop-plan-phase2-propensity`, a matching teacher-forced AF planner
+  that accepts the same `STAGE=MODEL@REVISION` format, writes
+  `model_revision`, estimates rough opportunity throughput, tracks existing
+  opportunity/summary outputs, and emits `slop-teacher-forced-propensity`
+  commands with the requested features, normalization feature, reference
+  subsets, cache settings, bootstrap settings, and revision flags.
 - Re-verified current SmolLM3 branch refs from Hugging Face on 2026-06-15:
   base `HuggingFaceTB/SmolLM3-3B-Base` main
   `d78a42f79198603e614095753484a04c10c2b940`, checkpoint repo branches
@@ -1630,7 +1636,8 @@
   `HuggingFaceTB/SmolLM3-3B` main
   `a07cc9a04f16550a088caea529712d1d335b0ac1`.
 - Updated `docs/experiments/phase3_status.md` with the SmolLM3 checkpoint
-  table and example generation-plan stage specs. This removes a harness
-  blocker for SmolLM3 no_think replication, but the SmolLM3 prompt package,
+  table, example generation-plan stage specs, and W&B-disabled generation and
+  teacher-forced planner smoke artifacts. This removes a harness blocker for
+  SmolLM3 no_think replication, but the SmolLM3 prompt package,
   teacher-forced summaries, free-running summaries, assembled spectrum, and
   OLMo-vs-SmolLM3 AF rank correlation are still missing.
