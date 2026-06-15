@@ -268,6 +268,8 @@ Live bounded SmolLM3 baseline samples:
   from `HuggingFaceFW/fineweb-2` config `fra_Latn`,
   `artifacts/stage1/corpora/smollm3_pretrain_fw2_ita_2k.jsonl`
   from `HuggingFaceFW/fineweb-2` config `ita_Latn`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_cmn_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `cmn_Hani`,
   `artifacts/stage1/corpora/smollm3_pretrain_finemath_2k.jsonl`
   from `HuggingFaceTB/finemath` config `finemath-3plus`,
   `artifacts/stage1/corpora/smollm3_pretrain_pes2o_2k.jsonl`
@@ -307,9 +309,9 @@ Live SmolLM3 recipe-weight extraction:
   (`35.486%` exact config share), `fineweb-edu` (`31.140%`), `fw2-deu`
   (`2.209%`), `fw2-spa` (`2.003%`), `pes2o` (`1.724%`), `fw2-fra`
   (`1.607%`), `finemath` (`1.410%`), `fw2-ita` (`1.062%`), and
-  `stackexchange` (`0.333%`). The remaining production baseline blocker is
-  feature-rate coverage for the other recipe sources, not source-weight
-  discovery.
+  `fw2-cmn` (`0.991%`), and `stackexchange` (`0.333%`). The remaining
+  production baseline blocker is feature-rate coverage for the other recipe
+  sources, not source-weight discovery.
 - Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
   sampled pretraining feature rates to the extracted recipe weights with
   explicit source maps. Outputs:
@@ -358,11 +360,17 @@ Live SmolLM3 recipe-weight extraction:
   `artifacts/stage1/census/smollm3_pretrain_fw2_ita_2k_tier1_feature_rates.csv`.
   The sample retained 2,000 rows and 1,053,366 simple tokens from a
   20,000-row hash-reservoir scan.
+- Added a bounded `fw2-cmn` source sample from `HuggingFaceFW/fineweb-2`,
+  config `cmn_Hani`, split `train`:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_cmn_2k.jsonl` and
+  `artifacts/stage1/census/smollm3_pretrain_fw2_cmn_2k_tier1_feature_rates.csv`.
+  The sample retained 2,000 rows and 269,299 simple tokens from a 20,000-row
+  hash-reservoir scan.
 - With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineWeb2
-  Italian, FineMath, and PES2O included, the current retained Tier-1 proxy
-  covers `76.974%` of the extracted recipe and leaves `23.026%` unsampled, so
-  its covered-only rates are majority-coverage diagnostics rather than
-  full-mixture estimates.
+  Italian, FineWeb2 Chinese, FineMath, and PES2O included, the current
+  retained Tier-1 proxy covers `77.964%` of the extracted recipe and leaves
+  `22.036%` unsampled, so its covered-only rates are majority-coverage
+  diagnostics rather than full-mixture estimates.
 
 In-progress source-identification plan:
 
@@ -397,13 +405,14 @@ Current interpretation:
   but production pretraining-mixture feature-rate claims should wait for
   feature-rate coverage across the relevant weighted sources. The coverage
   proxy quantifies the current gap; DCLM, FineWeb2 German, FineWeb2 Spanish,
-  FineWeb2 French, FineWeb2 Italian, FineMath, and PES2O are now sampled.
-  `stack-edu-Python` (`1.811%`) is the largest unresolved source, but
-  `HuggingFaceTB/stack-edu` config `Python` exposes blob metadata rather than
-  code text, so measuring it needs a blob-hydration path or another
-  text-bearing mirror. `stack-edu-Cpp` (`1.304%`) carries the same caveat; the
-  next directly sampleable sources are other FineWeb2 language shards,
-  `infiwebmath` (`0.903%`), and `finemath-4plus` (`0.606%`).
+  FineWeb2 French, FineWeb2 Italian, FineWeb2 Chinese, FineMath, and PES2O
+  are now sampled. `stack-edu-Python` (`1.811%`) is the largest unresolved
+  source, but `HuggingFaceTB/stack-edu` config `Python` exposes blob metadata
+  rather than code text, so measuring it needs a blob-hydration path or
+  another text-bearing mirror. `stack-edu-Cpp` (`1.304%`) carries the same
+  caveat; the next directly sampleable sources are FineWeb2 Russian
+  (`0.991%`), FineWeb2 Portuguese (`0.931%`), `infiwebmath` (`0.903%`), and
+  `finemath-4plus` (`0.606%`).
 - The live probes narrow SmolTalk2/Tulu source identification to specific
   configs and splits and verify config/split-aware loading. Remaining blockers
   are broader split/source count census, target response extraction and
