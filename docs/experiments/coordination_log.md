@@ -1896,3 +1896,60 @@
   each stage has only two shared feature values. This is an interpretable
   bounded teacher-forced cross-ladder read, not the full production
   free-running/compounding replication.
+
+## 2026-06-15 - SmolLM3 512-prompt free-running and compounding ladder
+
+- Completed the bounded SmolLM3 no_think free-running ladder on the same
+  512-prompt SmolTalk2 prompt package: base, SFT, APO-soup, and final;
+  `8` completions per prompt; `t=1.0`; `top_p=0.95`; `max_new_tokens=1024`;
+  bfloat16; `torch.compile`; chat-template rendering with
+  `{"enable_thinking": false}` and plain fallback for the base checkpoint.
+  Retained generation W&B runs: base `stcaaobk`, SFT `prb8bw1b`, APO
+  `mewe19y4`, final `4oxiq1xr`.
+- Added an inference-cache safeguard to `slop-free-running-emission`: when the
+  loaded model exposes `config.use_cache` or `generation_config.use_cache`,
+  the harness sets it to `True`. The SmolLM3 SFT/APO branch configs advertise
+  `use_cache=False`, which made full APO generation impractically slow before
+  this override. A focused unit test now covers the cache override.
+- Assembled the SmolLM3 no_think generation stage grid:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_512prompt_8comp_t1_chat.csv`
+  and `_summary.md`. Free-running rates per 1k generated tokens:
+  `slop_lexicon` base `0.118`, SFT `0.269`, APO `0.376`, final `0.391`;
+  `rule_of_three_approx` base `1.248`, SFT `4.081`, APO `5.516`, final
+  `5.513`; `contrastive_negation` base `0.092`, SFT `0.094`, APO `0.096`,
+  final `0.105`; pooled stock phrases base `0.193`, SFT `0.174`, APO
+  `0.284`, final `0.271`.
+- Ran paired SmolLM3 free-running stage-effect tests:
+  `artifacts/phase3/analysis/smollm3_no_think_free_run_stage_effects_512prompt_8comp_t1_chat.csv`.
+  It produced 18 rows and 8 BH-FDR-significant rows. Strongest reads:
+  base -> SFT increases `rule_of_three_approx` and `slop_lexicon`; SFT -> APO
+  increases `rule_of_three_approx`, `stock_openers`, pooled stock phrases, and
+  `slop_lexicon`; APO -> final changes are not significant for the retained
+  feature family.
+- Ran the generation-inclusive compounding join:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_compounding_512prompt_8comp_t1_chat_tf_slop_neutral_rule3.csv`
+  and `_summary.md`. For `slop_lexicon`, direct prior/no-prior windows remain
+  positive in every stage, but observed-vs-expected excess is positive only at
+  base (`+0.090` per 1k opportunities); SFT/APO/final have negative
+  observed-vs-expected excess but realized AF around `2.05` to `2.27`.
+  `rule_of_three_approx` has negative base excess (`-229.840`) and positive
+  SFT/APO/final excess (`+187.735`, `+149.541`, `+151.376`) under the
+  comma-pair extension proxy.
+- Assembled the generation-inclusive SmolLM3 amplification spectrum and
+  classifier:
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_slop_neutral_rule3.csv`
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_slop_neutral_rule3.csv`.
+  The classifier labels `slop_lexicon` as `sft-amplified`,
+  `rule_of_three_approx` and `neutral_common_controls` as
+  `measured-no-phase3-class`, and the remaining retained features as
+  `observed-output-only` because teacher-forced support is missing or sparse.
+- Re-ran OLMo-vs-SmolLM3 on the generation-inclusive SmolLM3 spectrum:
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_tf_generation_compounding_slop_neutral_rule3_aligned.csv`,
+  `_correlations.csv`, and `_summary.md`. It aligns 24 feature-stage rows and
+  has 8 shared AF values from `slop_lexicon` and the
+  `rule_of_three_approx` teacher-forced proxy. Overall Spearman AF is `0.762`;
+  Pearson AF is `0.978`. This is the current best bounded cross-ladder result,
+  but not full Phase 3 completion because the original production grid,
+  SmolLM3 corpus/preference rates, broader teacher-forced support, and stretch
+  Think/RL Zero comparison remain missing.

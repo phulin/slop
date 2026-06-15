@@ -146,6 +146,10 @@ def _load_model(
     if dtype is not None:
         model_kwargs["torch_dtype"] = dtype
     model = AutoModelForCausalLM.from_pretrained(model_name, **revision_kwargs, **model_kwargs)
+    if hasattr(model, "config") and hasattr(model.config, "use_cache"):
+        model.config.use_cache = True
+    if hasattr(model, "generation_config") and hasattr(model.generation_config, "use_cache"):
+        model.generation_config.use_cache = True
     model.to(device)
     model.eval()
     if compile_model:

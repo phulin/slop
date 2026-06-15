@@ -1,8 +1,11 @@
 import csv
 import json
+import sys
+from types import SimpleNamespace
 
 from slop_sftdiv.cli.free_running_emission import (
     _chat_template_kwargs,
+    _load_model,
     _prompt_ids,
     build_parser,
     run_free_running_emission,
@@ -208,6 +211,70 @@ def test_prompt_ids_can_fallback_to_plain_when_chat_template_missing():
 
     assert ids
     assert len(ids) <= 8
+
+
+def test_load_model_enables_generation_cache(monkeypatch):
+    class FakeDevice:
+        type = "cpu"
+
+        def __str__(self):
+            return "cpu"
+
+    class FakeCuda:
+        @staticmethod
+        def is_available():
+            return False
+
+    class FakeTorch:
+        cuda = FakeCuda()
+        bfloat16 = object()
+        float16 = object()
+        float32 = object()
+
+        @staticmethod
+        def device(_device_name):
+            return FakeDevice()
+
+    class FakeModel:
+        def __init__(self):
+            self.config = SimpleNamespace(use_cache=False)
+            self.generation_config = SimpleNamespace(use_cache=False)
+
+        def to(self, _device):
+            return self
+
+        def eval(self):
+            return self
+
+    fake_model = FakeModel()
+
+    class FakeAutoTokenizer:
+        @staticmethod
+        def from_pretrained(_model_name, **_kwargs):
+            return FakeTokenizer()
+
+    class FakeAutoModelForCausalLM:
+        @staticmethod
+        def from_pretrained(_model_name, **_kwargs):
+            return fake_model
+
+    fake_transformers = SimpleNamespace(
+        AutoModelForCausalLM=FakeAutoModelForCausalLM,
+        AutoTokenizer=FakeAutoTokenizer,
+    )
+    monkeypatch.setitem(sys.modules, "torch", FakeTorch)
+    monkeypatch.setitem(sys.modules, "transformers", fake_transformers)
+
+    _tokenizer, model, _device = _load_model(
+        model_name="fake",
+        model_revision="it-soup-APO",
+        dtype_name="bfloat16",
+        device_name="auto",
+        compile_model=False,
+    )
+
+    assert model.config.use_cache is True
+    assert model.generation_config.use_cache is True
 
 
 def test_free_running_emission_batches_generation_and_tracks_repeats(tmp_path, monkeypatch):
