@@ -19,7 +19,8 @@ replication with cross-ladder AF rank correlation.
 This status file records the first bounded Phase 3 implementation over the
 retained OLMo 3/Dolci single-temperature Phase 2 artifacts. It is real Phase 3
 progress, but it is not the full EXPERIMENTS.md Phase 3 completion because the
-SmolLM3 ladder, p-value/FDR layer, and full production grid are not present.
+SmolLM3 ladder, AF-stage p-value/FDR layer, and full production grid are not
+present.
 
 ## Implemented Phase 3 Layer
 
@@ -30,6 +31,7 @@ Added CLI:
 Inputs:
 
 - `artifacts/phase2/analysis/olmo3_amplification_spectrum_single_temp_t1_v6.csv`
+- `artifacts/stage1/census/olmo3_dolci_dpo_10k_pair_analysis.csv`
 
 Outputs:
 
@@ -41,8 +43,9 @@ Outputs:
 
 W&B:
 
-- `stage3-phase3-olmo3-bounded-feature-classification-t1-v2` (`3ptb39c2`)
-- `stage3-phase3-olmo3-bounded-artifact-manifest` (`tqxvi3g1`)
+- `stage3-phase3-olmo3-bounded-feature-classification-t1-v4-pref-fdr`
+  (`4oabv7j8`)
+- `stage3-phase3-olmo3-bounded-artifact-manifest-v3` (`nlh83sd9`)
 
 The classifier emits one row per feature with:
 
@@ -54,7 +57,9 @@ The classifier emits one row per feature with:
 - AF stage jumps.
 - free-running stage rates.
 - compounding summary fields where available.
-- explicit `fdr_status=not_computed_missing_p_values`.
+- paired Result A sign-test p-values and BH-FDR q-values where available.
+- explicit AF-stage FDR caveat via
+  `fdr_status=preference_pair_fdr_available_af_fdr_missing`.
 
 ## Classification Rules
 
@@ -78,7 +83,7 @@ preference-stage jump.
 
 | Feature | Class | Cause | Key read |
 |---|---|---|---|
-| `slop_lexicon` | preference-amplified | dynamics-driven | DPO AF rises from SFT (`1.695`) to DPO (`1.999`), but DPO chosen data is slightly lower than rejected (`-0.032` per 1k), so the bounded label is dynamics-driven rather than signal-driven. |
+| `slop_lexicon` | preference-amplified | dynamics-driven | DPO AF rises from SFT (`1.695`) to DPO (`1.999`), but paired Result A evidence is nonsignificant and rejected-greater-chosen (`BH q=0.963`), so the bounded label is dynamics-driven rather than signal-driven. |
 | `stock_closers` | SFT-amplified | not preference-amplified | AF is already very high at base/SFT and does not clear the relative preference-jump rule. |
 | `stock_openers_closers` | SFT-amplified | not preference-amplified | Pooled AF is high from the start; this remains mostly a closer-side effect from Phase 2. |
 | `rule_of_three_approx` | measured-no-phase3-class | not preference-amplified | Teacher-forced comma-pair extension proxy is below 1 across stages and peaks at SFT, not DPO. |
@@ -100,11 +105,11 @@ Class counts:
 |---|---|---|
 | Assemble features x data rates x AF/free-running rates | `olmo3_amplification_spectrum_single_temp_t1_v6.csv` has 24 feature-stage rows over six retained feature views and four OLMo stages. | Bounded OLMo done |
 | Classify each feature as inherited/SFT/preference/compounding | `olmo3_phase3_bounded_feature_classification_t1.csv` classifies six retained feature views. | Bounded OLMo done |
-| Cross-reference preference-amplified features with chosen-vs-rejected complicity | Classifier uses DPO chosen - rejected per-1k data-rate delta to label `slop_lexicon` dynamics-driven. | Bounded OLMo done |
+| Cross-reference preference-amplified features with chosen-vs-rejected complicity | Classifier uses paired Result A sign-test BH-FDR to label `slop_lexicon` dynamics-driven. | Bounded OLMo done |
 | Compounding-dominant classification | Rule implemented; no current retained feature qualifies under default thresholds. | Implemented, no positive class |
 | Cluster bootstrap CIs | Existing Phase 2 AF table includes bootstrap CIs where teacher-forced measurements exist. | Partially done from Phase 2 |
-| Benjamini-Hochberg FDR across full feature set | Current retained spectrum does not include p-values, so classifier records `not_computed_missing_p_values`. | Missing |
-| Paired designs wherever corpora share prompts | Phase 1 preference analysis exists separately; not folded into Phase 3 p-value/FDR output. | Partial |
+| Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is now joined into Phase 3 from `olmo3_dolci_dpo_10k_pair_analysis.csv`; AF-stage p-values are still absent. | Partial |
+| Paired designs wherever corpora share prompts | The preference-complicity cross-reference now uses paired sign-test BH-FDR from Phase 1. AF/free-running stage tests are not yet paired/FDR-corrected in Phase 3. | Partial |
 | Replicate full spectrum on SmolLM3-3B no_think ladder | No SmolLM3 Phase 2 artifacts present. | Missing |
 | Report cross-ladder AF rank correlation | Requires SmolLM3 spectrum. | Missing |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
@@ -116,8 +121,8 @@ The bounded Phase 3 classification strengthens the final Phase 2 conclusion:
 - The only retained feature view classified as preference-amplified is
   `slop_lexicon`.
 - That preference-stage amplification is labeled dynamics-driven under the
-  current rule because DPO chosen data is not higher than rejected for the
-  feature.
+  current rule because paired Result A evidence for `slop_lexicon` is
+  nonsignificant and rejected-greater-chosen.
 - Pooled stock phrase behavior and stock closers are better described as
   already-amplified/high-AF features than as preference-stage jumps.
 - `rule_of_three_approx` still does not support a DPO amplification claim.
@@ -131,8 +136,9 @@ already high, output-only, or unsupported by the teacher-forced proxy.
 
 The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
 
-1. Add p-value production to the relevant Phase 1/2 analysis outputs, then
-   compute Benjamini-Hochberg q-values in the Phase 3 classifier.
+1. Add p-value production for AF-stage and free-running stage effects, then
+   compute Benjamini-Hochberg q-values in the Phase 3 classifier for those
+   families.
 2. Decide whether full Phase 3 completion should use the bounded OLMo artifact
    shape or launch the original full production shape.
 3. Build or run the SmolLM3 no_think Phase 1/2 ladder artifacts.

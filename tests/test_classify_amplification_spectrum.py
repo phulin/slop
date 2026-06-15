@@ -43,6 +43,7 @@ def _stage_rows(feature, *, sft_rate, chosen, rejected, afs, free=None, compound
 
 def test_classify_amplification_spectrum_rules(tmp_path, monkeypatch):
     spectrum = tmp_path / "spectrum.csv"
+    preference = tmp_path / "preference.csv"
     output = tmp_path / "phase3.csv"
     summary = tmp_path / "phase3.md"
     rows = [
@@ -85,6 +86,38 @@ def test_classify_amplification_spectrum_rules(tmp_path, monkeypatch):
         ),
     ]
     _write_csv(spectrum, rows)
+    _write_csv(
+        preference,
+        [
+            {
+                "feature": "pref_signal",
+                "pairs": "100",
+                "mean_delta": "0.5",
+                "sign_test_p": "0.001",
+                "bh_q": "0.01",
+                "direction": "chosen_gt_rejected",
+                "fdr_significant": "True",
+            },
+            {
+                "feature": "pref_dynamics",
+                "pairs": "100",
+                "mean_delta": "0.5",
+                "sign_test_p": "0.001",
+                "bh_q": "0.01",
+                "direction": "chosen_gt_rejected",
+                "fdr_significant": "False",
+            },
+            {
+                "feature": "pref_dynamics",
+                "pairs": "10",
+                "mean_delta": "5.0",
+                "sign_test_p": "0.001",
+                "bh_q": "0.01",
+                "direction": "chosen_gt_rejected",
+                "fdr_significant": "True",
+            },
+        ],
+    )
 
     class FakeRun:
         def log(self, _payload):
@@ -107,6 +140,8 @@ def test_classify_amplification_spectrum_rules(tmp_path, monkeypatch):
         [
             "--spectrum",
             str(spectrum),
+            "--preference-analysis",
+            str(preference),
             "--output",
             str(output),
             "--summary-output",
@@ -120,15 +155,19 @@ def test_classify_amplification_spectrum_rules(tmp_path, monkeypatch):
     by_feature = {row["feature"]: row for row in classified}
     assert by_feature["pref_signal"]["primary_class"] == "preference-amplified"
     assert by_feature["pref_signal"]["preference_cause"] == "signal-driven"
+    assert by_feature["pref_signal"]["preference_evidence"] == "paired_sign_test_bh_fdr"
+    assert by_feature["pref_signal"]["preference_bh_q"] == 0.01
     assert by_feature["pref_signal"]["preference_data_complicit"] is True
     assert by_feature["pref_dynamics"]["primary_class"] == "preference-amplified"
     assert by_feature["pref_dynamics"]["preference_cause"] == "dynamics-driven"
+    assert by_feature["pref_dynamics"]["preference_pairs"] == 100
     assert "without chosen>rejected" in by_feature["pref_dynamics"]["notes"]
     assert by_feature["inherited_feature"]["primary_class"] == "inherited"
     assert by_feature["compounding_feature"]["primary_class"] == "compounding-dominant"
     assert by_feature["high_af_tiny_relative_jump"]["primary_class"] == "sft-amplified"
     assert by_feature["high_af_tiny_relative_jump"]["preference_amplified"] is False
-    assert all(row["fdr_status"] == "not_computed_missing_p_values" for row in classified)
+    assert by_feature["pref_signal"]["fdr_status"] == "preference_pair_fdr_available_af_fdr_missing"
+    assert by_feature["inherited_feature"]["fdr_status"] == "not_computed_missing_p_values"
     assert output.exists()
     assert "Phase 3 Bounded Amplification-Spectrum Classification" in summary.read_text()
     assert "phase3_feature_classification" in logged_tables

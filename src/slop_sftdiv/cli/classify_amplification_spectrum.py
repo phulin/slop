@@ -22,6 +22,7 @@ def build_parser() -> argparse.ArgumentParser:
         description="Classify features in an amplification-spectrum table for Phase 3."
     )
     parser.add_argument("--spectrum", type=Path, required=True)
+    parser.add_argument("--preference-analysis", action="append", type=Path, default=[])
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, required=True)
     parser.add_argument("--high-sft-rate-min", type=float, default=0.25)
@@ -54,12 +55,29 @@ def _float_or_none(value: Any) -> float | None:
     return float(value)
 
 
+def _bool_or_false(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if value in (None, ""):
+        return False
+    return str(value).strip().lower() in {"1", "true", "yes"}
+
+
 def _fmt(value: Any) -> str:
     if value in (None, ""):
         return ""
     if isinstance(value, float):
         return f"{value:.3f}"
     return str(value)
+
+
+def _fmt_p(value: Any) -> str:
+    if value in (None, ""):
+        return ""
+    number = float(value)
+    if number != 0.0 and abs(number) < 0.001:
+        return f"{number:.3e}"
+    return f"{number:.3f}"
 
 
 def _bool_text(value: bool) -> str:
@@ -97,6 +115,21 @@ def _ratio(numerator: float | None, denominator: float | None) -> float | None:
     if numerator is None or denominator is None or denominator == 0.0:
         return None
     return numerator / denominator
+
+
+def _preference_analysis(paths: list[Path]) -> dict[str, dict[str, Any]]:
+    best_by_feature: dict[str, dict[str, Any]] = {}
+    for path in paths:
+        for row in _read_csv(path):
+            feature = str(row.get("feature", ""))
+            if not feature:
+                continue
+            current = best_by_feature.get(feature)
+            current_pairs = int(float(current.get("pairs", 0))) if current else -1
+            row_pairs = int(float(row.get("pairs", 0) or 0))
+            if current is None or row_pairs > current_pairs:
+                best_by_feature[feature] = {**row, "preference_analysis_path": str(path)}
+    return best_by_feature
 
 
 def _max(values: list[float | None]) -> float | None:
@@ -144,6 +177,7 @@ def _primary_class(
 def _classify_feature(
     feature: str,
     rows: dict[str, dict[str, Any]],
+    preference_row: dict[str, Any] | None,
     args: argparse.Namespace,
 ) -> dict[str, Any]:
     first_row = next(iter(rows.values()))
@@ -217,10 +251,33 @@ def _classify_feature(
         and preference_af_relative_jump is not None
         and preference_af_relative_jump >= args.preference_af_relative_jump_min
     )
-    preference_data_complicit = (
-        chosen_minus_rejected is not None
-        and chosen_minus_rejected > args.chosen_rejected_delta_min
+    preference_sign_test_p = (
+        _float_or_none(preference_row.get("sign_test_p")) if preference_row else None
     )
+    preference_bh_q = _float_or_none(preference_row.get("bh_q")) if preference_row else None
+    preference_fdr_significant = (
+        _bool_or_false(preference_row.get("fdr_significant")) if preference_row else False
+    )
+    preference_direction = str(preference_row.get("direction", "")) if preference_row else ""
+    preference_mean_delta = (
+        _float_or_none(preference_row.get("mean_delta")) if preference_row else None
+    )
+    preference_pairs = (
+        int(float(preference_row.get("pairs", 0))) if preference_row and preference_row.get("pairs") else None
+    )
+    if preference_row:
+        preference_data_complicit = (
+            preference_fdr_significant and preference_direction == "chosen_gt_rejected"
+        )
+        preference_evidence = "paired_sign_test_bh_fdr"
+        fdr_status = "preference_pair_fdr_available_af_fdr_missing"
+    else:
+        preference_data_complicit = (
+            chosen_minus_rejected is not None
+            and chosen_minus_rejected > args.chosen_rejected_delta_min
+        )
+        preference_evidence = "aggregate_data_rate_delta"
+        fdr_status = "not_computed_missing_p_values"
     if preference_amplified:
         preference_cause = "signal-driven" if preference_data_complicit else "dynamics-driven"
     else:
@@ -263,9 +320,19 @@ def _classify_feature(
         "sft_amplified": sft_amplified,
         "preference_amplified": preference_amplified,
         "preference_data_complicit": preference_data_complicit,
+        "preference_evidence": preference_evidence,
         "preference_cause": preference_cause,
         "compounding_dominant": compounding_dominant,
-        "fdr_status": "not_computed_missing_p_values",
+        "fdr_status": fdr_status,
+        "preference_analysis_path": (
+            str(preference_row.get("preference_analysis_path")) if preference_row else None
+        ),
+        "preference_pairs": preference_pairs,
+        "preference_mean_delta": preference_mean_delta,
+        "preference_sign_test_p": preference_sign_test_p,
+        "preference_bh_q": preference_bh_q,
+        "preference_fdr_significant": preference_fdr_significant,
+        "preference_direction": preference_direction,
         "pretrain_per_1k_tokens": pretrain_rate,
         "sft_target_per_1k_tokens": sft_rate,
         "dpo_chosen_per_1k_tokens": chosen_rate,
@@ -304,8 +371,9 @@ def classify_spectrum(args: argparse.Namespace) -> list[dict[str, Any]]:
     rows_by_feature: dict[str, dict[str, dict[str, Any]]] = {}
     for row in _read_csv(args.spectrum):
         rows_by_feature.setdefault(str(row["feature"]), {})[str(row["stage"])] = row
+    preference_by_feature = _preference_analysis(args.preference_analysis)
     return [
-        _classify_feature(feature, rows_by_stage, args)
+        _classify_feature(feature, rows_by_stage, preference_by_feature.get(feature), args)
         for feature, rows_by_stage in sorted(rows_by_feature.items())
     ]
 
@@ -317,8 +385,15 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "feature",
         "primary_class",
         "preference_cause",
+        "preference_evidence",
         "af_source",
         "fdr_status",
+        "preference_pairs",
+        "preference_mean_delta",
+        "preference_sign_test_p",
+        "preference_bh_q",
+        "preference_fdr_significant",
+        "preference_direction",
         "sft_target_per_1k_tokens",
         "dpo_chosen_per_1k_tokens",
         "dpo_rejected_per_1k_tokens",
@@ -376,16 +451,18 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], args: argparse.Namesp
             "",
             "## Feature Classifications",
             "",
-            "| Feature | Class | Cause | SFT Data /1k | Chosen - Rejected /1k | Base AF | SFT AF | DPO AF | Final AF | Free-run max | Max compounding excess | Notes |",
-            "|---|---|---|---:|---:|---:|---:|---:|---:|---|---:|---|",
+        "| Feature | Class | Cause | Preference evidence | q | SFT Data /1k | Chosen - Rejected /1k | Base AF | SFT AF | DPO AF | Final AF | Free-run max | Max compounding excess | Notes |",
+        "|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|---:|---|",
         ]
     )
     for row in rows:
         lines.append(
-            "| {feature} | {klass} | {cause} | {sft_rate} | {chosen_delta} | {base_af} | {sft_af} | {dpo_af} | {final_af} | {free_stage} | {excess} | {notes} |".format(
+            "| {feature} | {klass} | {cause} | {evidence} | {q} | {sft_rate} | {chosen_delta} | {base_af} | {sft_af} | {dpo_af} | {final_af} | {free_stage} | {excess} | {notes} |".format(
                 feature=row["feature"],
                 klass=row["primary_class"],
                 cause=row["preference_cause"],
+                evidence=row["preference_evidence"],
+                q=_fmt_p(row.get("preference_bh_q")),
                 sft_rate=_fmt(row.get("sft_target_per_1k_tokens")),
                 chosen_delta=_fmt(row.get("chosen_minus_rejected_per_1k")),
                 base_af=_fmt(row.get("base_af")),
@@ -413,7 +490,8 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], args: argparse.Namesp
             "",
             "## Phase 3 Completion Caveats",
             "",
-            "- This classifier records `fdr_status=not_computed_missing_p_values` because the retained spectrum artifacts do not contain per-feature p-values for Benjamini-Hochberg correction.",
+            "- When `--preference-analysis` is supplied, signal-driven preference complicity uses paired sign-test BH-FDR from Result A.",
+            "- AF-stage FDR is still unavailable because the retained spectrum artifacts do not contain per-feature AF p-values.",
             "- SmolLM3 replication and cross-ladder AF rank correlation are not present in this bounded OLMo-only table.",
             "- Classifications are rule-based labels over measured artifacts; feature-level notes should be read alongside the Phase 2 denominator and coverage caveats.",
         ]
@@ -435,6 +513,7 @@ def run(args: argparse.Namespace) -> list[dict[str, Any]]:
         tags=["stage3", "phase3", "amplification-spectrum-classification", *args.wandb_tag],
         config={
             "spectrum": str(args.spectrum),
+            "preference_analysis": [str(path) for path in args.preference_analysis],
             "output": str(args.output),
             "summary_output": str(args.summary_output),
             "high_sft_rate_min": args.high_sft_rate_min,
