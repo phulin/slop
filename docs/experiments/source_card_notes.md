@@ -264,6 +264,8 @@ Live bounded SmolLM3 baseline samples:
   from `HuggingFaceFW/fineweb-2` config `deu_Latn`,
   `artifacts/stage1/corpora/smollm3_pretrain_fw2_spa_2k.jsonl`
   from `HuggingFaceFW/fineweb-2` config `spa_Latn`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_fra_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `fra_Latn`,
   `artifacts/stage1/corpora/smollm3_pretrain_pes2o_2k.jsonl`
   from `allenai/dolmino-mix-1124` config `pes2o`,
   `artifacts/stage1/corpora/smollm3_pretrain_stackexchange_apple_2k.jsonl`
@@ -299,9 +301,10 @@ Live SmolLM3 recipe-weight extraction:
   (`1.724%`).
 - The current bounded pretraining feature-rate samples cover `dclm`
   (`35.486%` exact config share), `fineweb-edu` (`31.140%`), `fw2-deu`
-  (`2.209%`), `fw2-spa` (`2.003%`), `pes2o` (`1.724%`), and `stackexchange`
-  (`0.333%`). The remaining production baseline blocker is feature-rate
-  coverage for the other recipe sources, not source-weight discovery.
+  (`2.209%`), `fw2-spa` (`2.003%`), `pes2o` (`1.724%`), `fw2-fra`
+  (`1.607%`), and `stackexchange` (`0.333%`). The remaining production
+  baseline blocker is feature-rate coverage for the other recipe sources, not
+  source-weight discovery.
 - Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
   sampled pretraining feature rates to the extracted recipe weights with
   explicit source maps. Outputs:
@@ -332,10 +335,16 @@ Live SmolLM3 recipe-weight extraction:
   `artifacts/stage1/census/smollm3_pretrain_pes2o_2k_tier1_feature_rates.csv`.
   The sample retained 2,000 rows and 399,454 simple tokens from a 20,000-row
   hash-reservoir scan.
-- With DCLM, FineWeb2 German, FineWeb2 Spanish, and PES2O included, the
-  current retained Tier-1 proxy covers `72.895%` of the extracted recipe and
-  leaves `27.105%` unsampled, so its covered-only rates are majority-coverage
-  diagnostics rather than full-mixture estimates.
+- Added a bounded `fw2-fra` source sample from `HuggingFaceFW/fineweb-2`,
+  config `fra_Latn`, split `train`:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_fra_2k.jsonl` and
+  `artifacts/stage1/census/smollm3_pretrain_fw2_fra_2k_tier1_feature_rates.csv`.
+  The sample retained 2,000 rows and 1,152,313 simple tokens from a 20,000-row
+  hash-reservoir scan.
+- With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, and PES2O
+  included, the current retained Tier-1 proxy covers `74.502%` of the
+  extracted recipe and leaves `25.498%` unsampled, so its covered-only rates
+  are majority-coverage diagnostics rather than full-mixture estimates.
 
 In-progress source-identification plan:
 
@@ -370,11 +379,11 @@ Current interpretation:
   but production pretraining-mixture feature-rate claims should wait for
   feature-rate coverage across the relevant weighted sources. The coverage
   proxy quantifies the current gap; DCLM, FineWeb2 German, FineWeb2 Spanish,
-  and PES2O are now sampled. `stack-edu-Python` (`1.811%`) is the largest
-  unresolved source, but `HuggingFaceTB/stack-edu` config `Python` exposes
-  blob metadata rather than code text, so measuring it needs a blob-hydration
-  path or another text-bearing mirror. The next directly sampleable high-impact
-  source is `fw2-fra` (`1.607%`).
+  FineWeb2 French, and PES2O are now sampled. `stack-edu-Python` (`1.811%`) is
+  the largest unresolved source, but `HuggingFaceTB/stack-edu` config `Python`
+  exposes blob metadata rather than code text, so measuring it needs a
+  blob-hydration path or another text-bearing mirror. The next directly
+  sampleable high-impact source is `finemath` (`1.410%`).
 - The live probes narrow SmolTalk2/Tulu source identification to specific
   configs and splits and verify config/split-aware loading. Remaining blockers
   are broader split/source count census, target response extraction and
