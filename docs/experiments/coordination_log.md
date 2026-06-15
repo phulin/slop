@@ -1827,3 +1827,38 @@
   `uv run ty check src tests`, `uv run ruff check src tests`,
   `uv run pytest -q tests/test_free_running_emission.py tests/test_plan_phase2_generation.py tests/test_assemble_amplification_spectrum.py tests/test_compare_phase3_ladders.py tests/test_classify_amplification_spectrum.py tests/test_teacher_forced_propensity.py`,
   and `git diff --check` all pass.
+
+## 2026-06-15 - SmolLM3 512-prompt teacher-forced slop/neutral ladder
+
+- Completed the full 512-prompt SmolLM3 no_think teacher-forced slop/neutral
+  ladder over the SmolTalk2 no_think prompt package. Stages and W&B runs:
+  base `q7xrq9x6`, SFT `rmwh8p2z`, APO `e4xukin8`, final `cy8si8df`.
+  Each stage scored 43,294 opportunities for `slop_lexicon` and 43,294 for
+  `neutral_common_controls`; the prompt package has 19 slop reference
+  initiations and 2,915 neutral-control reference initiations.
+- Assembled the 512-prompt SmolLM3 teacher-forced stage grid:
+  `artifacts/phase3/analysis/smollm3_no_think_propensity_stage_grid_512prompt_slop_neutral.csv`
+  and `.md`, plus the stage-comparison CSV. Neutral-normalized
+  `slop_lexicon` AF rises from base `6.902` to SFT `7.647`, APO `8.141`, and
+  final `8.345`.
+- Assembled a TF-only SmolLM3 amplification spectrum and feature
+  classification:
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_slop_neutral.csv`
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_slop_neutral.csv`.
+  The classifier labels `slop_lexicon` as `sft-amplified` under the current
+  rules because AF is already high at SFT and the APO/final relative increase
+  over SFT is modest. This is provisional because SmolLM3 corpus,
+  free-running, and compounding layers are not yet present.
+- Ran the first interpretable OLMo-vs-SmolLM3 teacher-forced cross-ladder
+  comparison:
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_tf_slop_neutral_aligned.csv`,
+  `_correlations.csv`, and `_summary.md`. It aligns four `slop_lexicon` stage
+  rows and reports overall Spearman AF `0.400` and Pearson AF `0.685`.
+  This satisfies the command path and provides a narrow slop-lexicon TF
+  comparison, but not the full Phase 3 cross-feature rank-correlation result.
+- Made the amplification-spectrum assembler and classifier summaries
+  model-neutral so SmolLM3 summaries no longer claim to be OLMo/Dolci tables.
+  Full Phase 3 still needs the SmolLM3 512-prompt free-running ladder,
+  compounding, and either broader SmolLM3 teacher-forced feature coverage or an
+  explicit decision to report the replication as slop/neutral-only.

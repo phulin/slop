@@ -517,8 +517,8 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], args: argparse.Namesp
         "# Phase 3 Bounded Amplification-Spectrum Classification",
         "",
         "This report classifies features from an assembled amplification-spectrum table.",
-        "It is a bounded OLMo 3/Dolci Phase 3 layer over the retained Phase 2 artifacts,",
-        "not the full EXPERIMENTS.md two-ladder production grid.",
+        "It is bounded by the measurement layers present in the supplied spectrum,",
+        "so missing corpus, generation, compounding, or cross-ladder evidence remains blank.",
         "",
         f"Input spectrum: `{args.spectrum}`",
         f"Rows: {len(rows)} feature classifications",
@@ -596,7 +596,7 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], args: argparse.Namesp
         )
     lines.extend(
         [
-            "- SmolLM3 replication and cross-ladder AF rank correlation are not present in this bounded OLMo-only table.",
+            "- Cross-ladder AF rank correlation is reported by `slop-compare-phase3-ladders`, not by this classifier.",
             "- Classifications are rule-based labels over measured artifacts; feature-level notes should be read alongside the Phase 2 denominator and coverage caveats.",
         ]
     )

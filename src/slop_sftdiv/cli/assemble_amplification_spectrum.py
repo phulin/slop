@@ -205,12 +205,12 @@ def _coverage_note(row: dict[str, Any]) -> str:
         notes.append("teacher-forced proxy: comma-pair extension")
     refs = row.get("denominator_reference_initiations_5k")
     if row["feature"] == "contrastive_negation" and refs is not None and refs < 20:
-        notes.append(f"sparse held-out references: {refs} in 5k prompts")
+        notes.append(f"sparse held-out references: {refs}")
     if row.get("free_run_per_1k_tokens") is None:
         notes.append("free-running missing")
     if row.get("compounding_excess_per_1k_opportunities") is None:
         notes.append("compounding missing or not opportunity-defined")
-    return "; ".join(notes) if notes else "covered in bounded OLMo slice"
+    return "; ".join(notes) if notes else "measured in supplied artifacts"
 
 
 def assemble_spectrum(args: argparse.Namespace) -> list[dict[str, Any]]:
@@ -283,9 +283,9 @@ def _fmt(value: Any) -> str:
 def _write_summary(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
-        "# Phase 2 Amplification Spectrum",
+        "# Amplification Spectrum",
         "",
-        "This table assembles existing bounded Phase 1/2 artifacts. Blank cells are missing",
+        "This table assembles existing bounded measurement artifacts. Blank cells are missing",
         "measurements, not zero effects.",
         "",
         "| Feature | Stage | SFT data /1k | DPO chosen /1k | DPO rejected /1k | TF norm AF | Free-run /1k | Compounding excess /1k opp | Note |",
@@ -311,8 +311,8 @@ def _write_summary(path: Path, rows: list[dict[str, Any]]) -> None:
             "## Caveats",
             "",
             "- `rule_of_three_approx` teacher-forced values, when present, use the comma-pair extension proxy rather than open-vocabulary construction initiation.",
-            "- `contrastive_negation` has sparse held-out target support in the 5k prompt package.",
-            "- SGLang target-shape generations are not used here because the current `--ignore-eos` contract changes aggregate rates relative to Torch.",
+            "- Sparse held-out target support should be treated as a coverage caveat, not as evidence of zero effect.",
+            "- Free-running and compounding columns are blank when the supplied inputs do not include those measurement layers.",
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

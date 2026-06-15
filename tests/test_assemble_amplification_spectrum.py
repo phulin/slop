@@ -217,6 +217,6 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
     ]["coverage_note"]
     assert output.exists()
     summary_text = summary.read_text()
-    assert "SGLang target-shape generations are not used here" in summary_text
+    assert "Free-running and compounding columns are blank" in summary_text
     assert "comma-pair extension proxy" in summary_text
     assert "amplification_spectrum" in logged_tables
