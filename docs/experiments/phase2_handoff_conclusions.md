@@ -2,6 +2,10 @@
 
 Date: 2026-06-14
 
+For a reader-facing final report with project framing, measurement definitions,
+checkpoint progression, caveats, and the final conclusion, see
+`docs/experiments/phase2_final_conclusion_report.md`.
+
 ## Current Scope
 
 Phase 2 is implemented and exercised for the OLMo 3 Instruct ladder as a

@@ -1546,3 +1546,11 @@
   signature. W&B run:
   `stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest-v3`
   (`5qonr7io`). The manifest now covers 17 artifacts and 380 records.
+- Added `docs/experiments/phase2_final_conclusion_report.md` as a standalone
+  reader-facing Phase 2 conclusion report. It explains the Phase 2 question,
+  OLMo 3 checkpoint ladder, measurement views, retained feature set, main
+  results, checkpoint progression, caveats, final conclusion, and primary
+  artifacts for readers new to the project. The report keeps the final read
+  aligned with the retained artifacts: DPO is the clearest `slop_lexicon`
+  propensity peak, final/RLVR is closest to DPO in aggregate generated-output
+  style, and final/RLVR does not broadly amplify slop beyond DPO.
