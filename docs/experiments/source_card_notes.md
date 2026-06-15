@@ -293,6 +293,15 @@ Live SmolLM3 recipe-weight extraction:
   (`31.140%` exact config share) and `stackexchange` (`0.333%`). The remaining
   production baseline blocker is feature-rate coverage for the other recipe
   sources, not source-weight discovery.
+- Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
+  sampled pretraining feature rates to the extracted recipe weights with
+  explicit source maps. Outputs:
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy_summary.md`.
+  The current proxy covers `31.473%` of the extracted recipe and leaves
+  `68.527%` unsampled, so its covered-only rates are diagnostics rather than
+  full-mixture estimates.
 
 In-progress source-identification plan:
 
@@ -325,7 +334,9 @@ Current interpretation:
 - SmolLM3 exact recipe source weights are now extracted from the published
   configs. Bounded source-stratified proxy samples exist for Phase 3 context,
   but production pretraining-mixture feature-rate claims should wait for
-  feature-rate coverage across the relevant weighted sources.
+  feature-rate coverage across the relevant weighted sources. The coverage
+  proxy quantifies the current gap; sampling `dclm` would add the largest
+  remaining share (`35.486%`).
 - The live probes narrow SmolTalk2/Tulu source identification to specific
   configs and splits and verify config/split-aware loading. Remaining blockers
   are broader split/source count census, target response extraction and

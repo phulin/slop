@@ -254,7 +254,8 @@ teacher-forced/free-running/compounding slice. The current data-rate version
 uses the same shared AF support and adds SmolTalk2 SFT/preference rates for
 SmolLM3 classification, but it is still not the full production cross-ladder
 comparison because the original production grid, exact weighted SmolLM3
-pretraining mix, and broader teacher-forced feature support are missing.
+recipe-weighted pretraining feature rates, and broader teacher-forced feature
+support are missing.
 
 The free-running stage-effect analyzer runs paired sign tests over shared
 `(record_id, completion_index, temperature, top_p)` generation units and
@@ -340,7 +341,7 @@ Class counts:
 | Cluster bootstrap CIs | Existing Phase 2 AF table includes bootstrap CIs where teacher-forced measurements exist. | Partially done from Phase 2 |
 | Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is joined from `olmo3_dolci_dpo_10k_pair_analysis.csv`; target-shape OLMo free-running stage effects have paired sign-test BH-FDR in `olmo3_phase3_free_run_stage_effects_t1.csv`; retained OLMo teacher-forced stage effects have paired opportunity-level sign-test BH-FDR in `olmo3_phase3_teacher_forced_stage_effects_t1.csv`; both stage-effect families are joined into the regenerated classifier table. | Bounded OLMo done |
 | Paired designs wherever corpora share prompts | Preference-complicity uses paired Phase 1 sign-test BH-FDR. Free-running stage effects use paired shared-prompt/completion sign tests. Teacher-forced stage effects use paired shared-opportunity sign tests. | Bounded OLMo done |
-| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, canonical chat-template generation plan, propensity plan, all-stage 4-prompt calibration, full 512-prompt four-stage SmolLM3 teacher-forced spectrum for `slop_lexicon`, `neutral_common_controls`, and `rule_of_three_approx`, full 512-prompt x 8-completion free-running caches at `t=1.0`, paired free-running FDR, compounding, SmolTalk2 SFT/preference data rates, bounded FineWeb-Edu/StackExchange pretraining-source baselines, bounded SmolTalk2 Mid rates, and a generation-inclusive SmolLM3 spectrum/classification now exist. Missing pieces are the original 5,000-prompt x 8 x 3-temperature production grid, the exact weighted SmolLM3 pretraining mix, and broader teacher-forced support for sparse features. | Bounded generation-inclusive SmolLM3 slice with baseline data rates done; full production spectrum incomplete |
+| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, canonical chat-template generation plan, propensity plan, all-stage 4-prompt calibration, full 512-prompt four-stage SmolLM3 teacher-forced spectrum for `slop_lexicon`, `neutral_common_controls`, and `rule_of_three_approx`, full 512-prompt x 8-completion free-running caches at `t=1.0`, paired free-running FDR, compounding, SmolTalk2 SFT/preference data rates, bounded FineWeb-Edu/StackExchange pretraining-source baselines, bounded SmolTalk2 Mid rates, extracted SmolLM3 recipe weights, a coverage-aware weighted pretrain baseline proxy, and a generation-inclusive SmolLM3 spectrum/classification now exist. Missing pieces are the original 5,000-prompt x 8 x 3-temperature production grid, production weighted pretraining feature-rate coverage beyond the current 31.473% recipe share, and broader teacher-forced support for sparse features. | Bounded generation-inclusive SmolLM3 slice with baseline data rates done; full production spectrum incomplete |
 | Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` implements the statistic, passes an OLMo self-check, aligns OLMo vs. the SmolLM3 4-prompt calibration spectrum, reports a 512-prompt teacher-forced slop-lexicon-only comparison with Spearman AF `0.400`, reports a two-feature teacher-forced comparison with Spearman AF `0.762`, and reports the generation-inclusive bounded comparison with 24 aligned rows and 8 shared AF values, Spearman AF `0.762`, Pearson AF `0.978`. The data-rate comparison is the current best bounded comparison, but full production correlation remains missing until the shared feature scope has broader teacher-forced coverage where support allows and the intended production prompt/temperature grid is complete. | Bounded generation-inclusive data-rate comparison done; full production correlation incomplete |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
 
@@ -379,9 +380,9 @@ prompt package, calibration ladder, 512-prompt teacher-forced slop/rule
 summaries, 512-prompt x 8 free-running ladder, compounding layer, and
 generation-inclusive assembled spectrum now exist. The bounded SmolTalk2
 SFT/preference data-rate layer and bounded pretraining/Mid baseline also
-exist. Remaining gaps are the original production-scale grid, the exact
-weighted SmolLM3 pretraining mix, and broader teacher-forced feature coverage
-where denominator support allows it.
+exist. Remaining gaps are the original production-scale grid, production
+recipe-weighted SmolLM3 pretraining feature rates, and broader teacher-forced
+feature coverage where denominator support allows it.
 
 Local W&B-disabled planner smoke outputs:
 
@@ -866,6 +867,27 @@ Published config source weights:
   compute a production weighted feature-rate baseline across all recipe
   sources.
 
+Coverage-aware weighted baseline proxy:
+
+- Added `slop-assemble-weighted-pretrain-baseline`, which joins sampled
+  feature rates to exact recipe source weights through explicit source maps
+  and reports both a covered-only weighted rate and a missing-as-zero
+  lower-bound diagnostic.
+- Ran it with source maps
+  `smollm3_pretrain_fineweb_edu_2k=fineweb-edu` and
+  `smollm3_pretrain_stackexchange_apple_2k=stackexchange`. The current proxy
+  covers `31.473%` of the extracted recipe and leaves `68.527%` unsampled.
+- Covered-only weighted rates per 1k tokens are: `slop_lexicon` `0.534`,
+  `rule_of_three_approx` `6.162`, `contrastive_negation` `0.386`,
+  `stock_closers` `0.041`, `stock_openers` `0.027`, and pooled stock phrases
+  `0.069`. These are coverage-normalized diagnostics, not full-mixture
+  estimates, because the missing recipe share is still large.
+
+Coverage proxy artifacts:
+
+- `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+- `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy_summary.md`
+
 Config-weight artifacts:
 
 - `artifacts/phase3/analysis/smollm3_config_source_weights_detail.csv`
@@ -999,10 +1021,10 @@ The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
    contracts or prompt subsets provide denominator support; the current
    512-prompt denominator audit has zero references for stock phrases and
    contrastive negation.
-3. Replace the bounded two-source SmolLM3 pretraining feature-rate baseline
-   with a production weighted baseline using the extracted recipe weights. The
-   current FineWeb-Edu plus StackExchange aggregate is a bounded
-   source-stratified proxy, not the full 11T+ mix.
+3. Expand SmolLM3 pretraining feature-rate coverage beyond the current
+   `31.473%` recipe share covered by FineWeb-Edu plus StackExchange. The next
+   highest-impact source is `dclm` (`35.486%` of the extracted recipe), which
+   would raise coverage to roughly two thirds if sampled successfully.
 4. If production completion is required, run the original 5,000-prompt x
    8-completion x 3-temperature generation grids for the retained ladders and
    rebuild the compounding and cross-ladder artifacts at that scope.

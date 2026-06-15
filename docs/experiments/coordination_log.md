@@ -2091,3 +2091,28 @@
   `docs/experiments/source_card_notes.md` to distinguish the now-resolved
   recipe-weight discovery step from the still-missing production weighted
   feature-rate baseline across the remaining SmolLM3 sources.
+
+## 2026-06-15 - SmolLM3 weighted baseline coverage proxy
+
+- Added `slop-assemble-weighted-pretrain-baseline`, which joins sampled
+  feature-rate rows to exact recipe source weights through explicit source
+  maps and reports coverage-aware weighted rates. It emits both
+  `weighted_per_1k_tokens_covered_only` and
+  `weighted_per_1k_tokens_missing_as_zero`, so unsampled recipe sources are
+  not silently imputed.
+- Ran it on
+  `artifacts/phase3/analysis/smollm3_config_source_weights_aggregate.csv` and
+  `artifacts/stage1/census/smollm3_pretrain_mid_baselines_2k_tier1_feature_rates.csv`
+  with source maps `smollm3_pretrain_fineweb_edu_2k=fineweb-edu` and
+  `smollm3_pretrain_stackexchange_apple_2k=stackexchange`. Outputs:
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy_summary.md`.
+- Current weighted feature-rate coverage is `31.473%` of the extracted recipe
+  and missing share is `68.527%`. Covered-only rates per 1k tokens include
+  `slop_lexicon` `0.534`, `rule_of_three_approx` `6.162`,
+  `contrastive_negation` `0.386`, `stock_closers` `0.041`, `stock_openers`
+  `0.027`, and pooled stock phrases `0.069`. These are coverage-normalized
+  diagnostics, not full-mixture estimates. Updated Phase 3 docs to identify
+  `dclm` (`35.486%`) as the next highest-impact source for pretraining
+  feature-rate sampling.

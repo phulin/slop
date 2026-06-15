@@ -55,6 +55,7 @@ slop-analyze-phase2-compounding = "slop_sftdiv.cli.analyze_phase2_compounding:ma
 slop-compare-phase2-biber = "slop_sftdiv.cli.compare_phase2_biber:main"
 slop-build-style-signature = "slop_sftdiv.cli.build_style_signature:main"
 slop-extract-smollm3-config-weights = "slop_sftdiv.cli.extract_smollm3_config_weights:main"
+slop-assemble-weighted-pretrain-baseline = "slop_sftdiv.cli.assemble_weighted_pretrain_baseline:main"
 slop-teacher-forced-propensity = "slop_sftdiv.cli.teacher_forced_propensity:main"
 slop-free-running-emission = "slop_sftdiv.cli.free_running_emission:main"
 slop-prepare-phase2-prompts = "slop_sftdiv.cli.prepare_phase2_prompts:main"
