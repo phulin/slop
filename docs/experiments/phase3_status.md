@@ -29,6 +29,7 @@ Added CLI:
 - `slop-classify-amplification-spectrum`
 - `slop-compare-phase3-ladders`
 - `slop-plan-phase2-propensity`
+- `slop-analyze-phase3-free-run-effects`
 
 Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
 
@@ -51,6 +52,8 @@ Outputs:
 
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_feature_classification_t1.csv`
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_feature_classification_t1_summary.md`
+- `artifacts/phase3/analysis/olmo3_phase3_free_run_stage_effects_t1.csv`
+- `artifacts/phase3/analysis/olmo3_phase3_free_run_stage_effects_t1_summary.md`
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_artifact_manifest.csv`
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_artifact_manifest.json`
 - `artifacts/phase3/analysis/olmo3_phase3_bounded_artifact_manifest.md`
@@ -84,6 +87,23 @@ stage. It uses normalized AF where present, otherwise raw AF. The current
 OLMo-vs-OLMo self-check aligned 24 feature-stage rows and returned overall
 Spearman AF `1.000`, which verifies the command path but is not a substitute
 for the missing SmolLM3 no_think spectrum.
+
+The free-running stage-effect analyzer runs paired sign tests over shared
+`(record_id, completion_index, temperature, top_p)` generation units and
+applies BH-FDR across the requested feature/comparison family. On the retained
+OLMo target-shape `t=1.0` caches it produced 18 feature-comparison rows and 15
+BH-FDR-significant rows.
+
+Key free-running FDR reads:
+
+- SFT -> DPO increases all six retained feature views after BH-FDR:
+  `contrastive_negation`, `rule_of_three_approx`, `slop_lexicon`,
+  `stock_closers`, `stock_openers`, and pooled `stock_openers_closers`.
+- DPO -> final/RLVR significantly attenuates `slop_lexicon`,
+  `stock_closers`, and pooled `stock_openers_closers`.
+- DPO -> final/RLVR changes for `rule_of_three_approx`, `stock_openers`, and
+  `contrastive_negation` are not significant under this sign-test/BH-FDR
+  family.
 
 ## Classification Rules
 
@@ -132,8 +152,8 @@ Class counts:
 | Cross-reference preference-amplified features with chosen-vs-rejected complicity | Classifier uses paired Result A sign-test BH-FDR to label `slop_lexicon` dynamics-driven. | Bounded OLMo done |
 | Compounding-dominant classification | Rule implemented; no current retained feature qualifies under default thresholds. | Implemented, no positive class |
 | Cluster bootstrap CIs | Existing Phase 2 AF table includes bootstrap CIs where teacher-forced measurements exist. | Partially done from Phase 2 |
-| Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is now joined into Phase 3 from `olmo3_dolci_dpo_10k_pair_analysis.csv`; AF-stage p-values are still absent. | Partial |
-| Paired designs wherever corpora share prompts | The preference-complicity cross-reference now uses paired sign-test BH-FDR from Phase 1. AF/free-running stage tests are not yet paired/FDR-corrected in Phase 3. | Partial |
+| Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is joined from `olmo3_dolci_dpo_10k_pair_analysis.csv`; target-shape OLMo free-running stage effects now have paired sign-test BH-FDR in `olmo3_phase3_free_run_stage_effects_t1.csv`; AF-stage p-values are still absent. | Partial |
+| Paired designs wherever corpora share prompts | Preference-complicity uses paired Phase 1 sign-test BH-FDR. Free-running stage effects now use paired shared-prompt/completion sign tests. AF-stage tests are not yet paired/FDR-corrected in Phase 3. | Partial |
 | Replicate full spectrum on SmolLM3-3B no_think ladder | No SmolLM3 Phase 2 artifacts present. | Missing |
 | Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` now implements the statistic and passes an OLMo self-check; real OLMo-vs-SmolLM3 correlation still requires a SmolLM3 spectrum. | Tooling done, data missing |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
@@ -207,9 +227,8 @@ already high, output-only, or unsupported by the teacher-forced proxy.
 
 The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
 
-1. Add p-value production for AF-stage and free-running stage effects, then
-   compute Benjamini-Hochberg q-values in the Phase 3 classifier for those
-   families.
+1. Add p-value production for AF-stage effects, then compute
+   Benjamini-Hochberg q-values in the Phase 3 classifier for that family.
 2. Decide whether full Phase 3 completion should use the bounded OLMo artifact
    shape or launch the original full production shape.
 3. Build or run the SmolLM3 no_think Phase 1/2 ladder artifacts.

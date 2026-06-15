@@ -1641,3 +1641,25 @@
   SmolLM3 no_think replication, but the SmolLM3 prompt package,
   teacher-forced summaries, free-running summaries, assembled spectrum, and
   OLMo-vs-SmolLM3 AF rank correlation are still missing.
+
+## 2026-06-15 - Phase 3 paired free-running stage-effect FDR
+
+- Added `slop-analyze-phase3-free-run-effects`, which loads stage-tagged
+  free-running generation JSONL caches, aligns generations by shared
+  `(record_id, completion_index, temperature, top_p)`, computes paired
+  per-completion feature-rate deltas, runs two-sided sign tests, and applies
+  Benjamini-Hochberg FDR across feature/comparison rows.
+- Ran it on the retained OLMo target-shape `t=1.0` caches for base, SFT, DPO,
+  and final/RLVR. Local outputs:
+  `artifacts/phase3/analysis/olmo3_phase3_free_run_stage_effects_t1.csv` and
+  `artifacts/phase3/analysis/olmo3_phase3_free_run_stage_effects_t1_summary.md`.
+- Result: 18 feature-comparison rows over adjacent ladder comparisons and six
+  retained feature views; 15 rows are BH-FDR significant at alpha `0.05`.
+  SFT -> DPO significantly increases all six retained free-running feature
+  views. DPO -> final/RLVR significantly decreases `slop_lexicon`,
+  `stock_closers`, and pooled `stock_openers_closers`, while
+  `rule_of_three_approx`, `stock_openers`, and `contrastive_negation` are not
+  significant in the DPO -> final/RLVR comparison.
+- This closes the paired/FDR layer for retained OLMo target-shape free-running
+  stage effects, but AF-stage p-values/FDR and SmolLM3 replication remain
+  incomplete Phase 3 requirements.
