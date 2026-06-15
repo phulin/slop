@@ -1,7 +1,12 @@
 import csv
 import json
 
-from slop_sftdiv.cli.free_running_emission import build_parser, run_free_running_emission
+from slop_sftdiv.cli.free_running_emission import (
+    _chat_template_kwargs,
+    _prompt_ids,
+    build_parser,
+    run_free_running_emission,
+)
 
 
 class FakeTokenizer:
@@ -13,6 +18,28 @@ class FakeTokenizer:
     def encode(self, text, add_special_tokens=False):
         del add_special_tokens
         return [max(1, ord(char) % 97) for char in text[:5]]
+
+    def apply_chat_template(self, messages, add_generation_prompt=False, tokenize=True, **kwargs):
+        assert tokenize is True
+        assert add_generation_prompt is True
+        assert kwargs == {"enable_thinking": False}
+        rendered = "|".join(f"{message['role']}:{message['content']}" for message in messages)
+        rendered += "|assistant:"
+        return [max(1, ord(char) % 97) for char in rendered[:20]]
+
+
+class StringChatTemplateTokenizer(FakeTokenizer):
+    def apply_chat_template(self, messages, add_generation_prompt=False, tokenize=True, **kwargs):
+        del tokenize, kwargs
+        assert add_generation_prompt is True
+        return "|".join(f"{message['role']}:{message['content']}" for message in messages)
+
+
+class MappingChatTemplateTokenizer(FakeTokenizer):
+    def apply_chat_template(self, messages, add_generation_prompt=False, tokenize=True, **kwargs):
+        del messages, tokenize, kwargs
+        assert add_generation_prompt is True
+        return {"input_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9], "attention_mask": [1] * 9}
 
 
 def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_path, monkeypatch):
@@ -118,6 +145,47 @@ def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_pa
     assert init_kwargs["config"]["model_revision"] == "it-SFT"
     assert logged_payloads[-1]["generation/generations"] == 1
     assert "Certainly, delve" not in json.dumps(logged_tables["generation_samples_redacted"])
+
+
+def test_prompt_ids_can_apply_chat_template_with_kwargs():
+    kwargs = _chat_template_kwargs('{"enable_thinking": false}')
+
+    ids = _prompt_ids(
+        FakeTokenizer(),
+        "Answer the user.",
+        max_prompt_tokens=8,
+        apply_chat_template=True,
+        chat_template_kwargs=kwargs,
+    )
+
+    assert ids
+    assert len(ids) <= 8
+
+
+def test_prompt_ids_handles_string_chat_template_result():
+    ids = _prompt_ids(
+        StringChatTemplateTokenizer(),
+        "Answer the user.",
+        max_prompt_tokens=8,
+        apply_chat_template=True,
+        chat_template_kwargs={},
+    )
+
+    assert ids
+    assert len(ids) <= 8
+    assert all(isinstance(token_id, int) for token_id in ids)
+
+
+def test_prompt_ids_handles_mapping_chat_template_result():
+    ids = _prompt_ids(
+        MappingChatTemplateTokenizer(),
+        "Answer the user.",
+        max_prompt_tokens=8,
+        apply_chat_template=True,
+        chat_template_kwargs={},
+    )
+
+    assert ids == [2, 3, 4, 5, 6, 7, 8, 9]
 
 
 def test_free_running_emission_batches_generation_and_tracks_repeats(tmp_path, monkeypatch):

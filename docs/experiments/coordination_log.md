@@ -1741,3 +1741,32 @@
   still needs the four-stage SmolLM3 free-running and teacher-forced summaries,
   SmolLM3 amplification-spectrum assembly, and the real OLMo-vs-SmolLM3 AF
   rank-correlation result.
+
+## 2026-06-15 - SmolLM3 no_think chat-template generation support
+
+- Added `--apply-chat-template` and `--chat-template-kwargs-json` to
+  `slop-free-running-emission`, plus passthrough support in
+  `slop-plan-phase2-generation`. This is needed for SmolLM3 no_think
+  generation because the plain-prompt smoke can make the final checkpoint
+  continue the dialogue as user text instead of answering as the assistant.
+- The chat-template implementation handles tokenizer return variants observed
+  in practice: raw strings, tensors/lists, and `BatchEncoding`/mapping objects
+  with `input_ids`. Focused tests:
+  `uv run pytest -q tests/test_free_running_emission.py
+  tests/test_plan_phase2_generation.py` (`7 passed`) and
+  `uv run ruff check src/slop_sftdiv/cli/free_running_emission.py
+  src/slop_sftdiv/cli/plan_phase2_generation.py
+  tests/test_free_running_emission.py tests/test_plan_phase2_generation.py`
+  (`All checks passed`).
+- Regenerated the canonical SmolLM3 no_think generation plan with
+  `--apply-chat-template --chat-template-kwargs-json '{"enable_thinking":
+  false}'`: `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1_chat.csv`
+  and `.md`. It supersedes the earlier plain-prompt generation plan for actual
+  SmolLM3 no_think free-running work.
+- Re-ran the 2-prompt final-checkpoint generation smoke through the chat
+  template. Outputs:
+  `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_chat_smoke.jsonl`
+  and
+  `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_chat_smoke_summary.csv`.
+  The generated text is assistant-style, writes valid feature-count JSON, and
+  has no obvious generated reasoning markup.

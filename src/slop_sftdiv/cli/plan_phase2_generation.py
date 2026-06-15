@@ -31,6 +31,8 @@ OUTPUT_COLUMNS = [
     "sample_size",
     "completions_per_prompt",
     "max_new_tokens",
+    "apply_chat_template",
+    "chat_template_kwargs_json",
     "expected_generations",
     "expected_generated_tokens",
     "estimated_seconds",
@@ -61,6 +63,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-new-tokens", type=int, default=1024)
     parser.add_argument("--generation-batch-size", type=int, default=1024)
     parser.add_argument("--max-prompt-tokens", type=int, default=1024)
+    parser.add_argument(
+        "--apply-chat-template",
+        action="store_true",
+        help="Include --apply-chat-template in planned slop-free-running-emission commands.",
+    )
+    parser.add_argument(
+        "--chat-template-kwargs-json",
+        default=None,
+        help="Optional JSON object to pass through to --chat-template-kwargs-json.",
+    )
     parser.add_argument("--dtype", default="bfloat16")
     parser.add_argument("--seed", type=int, default=1729)
     parser.add_argument("--torch-compile", action=argparse.BooleanOptionalAction, default=True)
@@ -165,6 +177,8 @@ def _command(
     completions_per_prompt: int,
     generation_batch_size: int,
     max_prompt_tokens: int,
+    apply_chat_template: bool,
+    chat_template_kwargs_json: str | None,
     dtype: str,
     torch_compile: bool,
     generations_output: Path,
@@ -208,6 +222,10 @@ def _command(
     ]
     if model_revision:
         parts.extend(["--model-revision", model_revision])
+    if apply_chat_template:
+        parts.append("--apply-chat-template")
+    if chat_template_kwargs_json:
+        parts.extend(["--chat-template-kwargs-json", chat_template_kwargs_json])
     parts.append("--torch-compile" if torch_compile else "--no-torch-compile")
     return " ".join(_shell_quote(part) for part in parts)
 
@@ -293,6 +311,8 @@ def run_plan_phase2_generation(args: argparse.Namespace) -> list[dict[str, Any]]
                     "sample_size": args.sample_size,
                     "completions_per_prompt": args.completions_per_prompt,
                     "max_new_tokens": args.max_new_tokens,
+                    "apply_chat_template": args.apply_chat_template,
+                    "chat_template_kwargs_json": args.chat_template_kwargs_json or "",
                     "expected_generations": expected_generations,
                     "expected_generated_tokens": expected_generated_tokens,
                     "estimated_seconds": estimated_seconds,
@@ -313,6 +333,8 @@ def run_plan_phase2_generation(args: argparse.Namespace) -> list[dict[str, Any]]
                         completions_per_prompt=args.completions_per_prompt,
                         generation_batch_size=args.generation_batch_size,
                         max_prompt_tokens=args.max_prompt_tokens,
+                        apply_chat_template=args.apply_chat_template,
+                        chat_template_kwargs_json=args.chat_template_kwargs_json,
                         dtype=args.dtype,
                         torch_compile=args.torch_compile,
                         generations_output=generations_output,
@@ -345,6 +367,8 @@ def run_plan_phase2_generation(args: argparse.Namespace) -> list[dict[str, Any]]
             },
             "max_new_tokens": args.max_new_tokens,
             "generation_batch_size": args.generation_batch_size,
+            "apply_chat_template": args.apply_chat_template,
+            "chat_template_kwargs_json": args.chat_template_kwargs_json,
             "tokens_per_sec_estimate": args.tokens_per_sec_estimate,
         },
     )

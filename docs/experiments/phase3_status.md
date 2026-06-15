@@ -43,6 +43,12 @@ Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
   the plan CSV.
 - `slop-plan-phase2-propensity` now emits the matching revision-aware
   teacher-forced AF shard checklist for the same stage spec format.
+- `slop-free-running-emission` now accepts `--apply-chat-template` and
+  `--chat-template-kwargs-json`, allowing SmolLM3 no_think generation commands
+  to render prompts through the tokenizer chat template with
+  `{"enable_thinking": false}`.
+- `slop-plan-phase2-generation` passes those chat-template options through to
+  planned generation commands.
 
 Inputs:
 
@@ -68,10 +74,14 @@ Outputs:
 - `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512_summary.json`
 - `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1.csv`
 - `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1.md`
+- `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1_chat.csv`
+- `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1_chat.md`
 - `artifacts/phase3/analysis/smollm3_no_think_propensity_plan_512_slop_neutral.csv`
 - `artifacts/phase3/analysis/smollm3_no_think_propensity_plan_512_slop_neutral.md`
 - `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke.jsonl`
 - `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_smoke_summary.csv`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_chat_smoke.jsonl`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_chat_smoke_summary.csv`
 - `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_opportunities.csv`
 - `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_summary.csv`
 - `artifacts/phase2/propensity/smollm3_final_smoltalk2_everyday_no_think_2prompt_slop_neutral_smoke_reference_subset_summary.csv`
@@ -256,12 +266,19 @@ seed `1729`. The split yielded 2,260 scanned rows before exhaustion, 2,258
 eligible prompts after near-duplicate filtering, and 512 selected prompts. The
 selected package contains 20,081 prompt tokens and 43,390 target tokens.
 
-Two launch plans were generated against this prompt package:
+Three launch plans were generated against this prompt package:
 
 - `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1.csv`
-  and `.md`: base/SFT/APO/final, `512` prompts, `8` completions, `t=1.0`,
-  `top_p=0.95`, `max_new_tokens=1024`. Estimated missing A100-hours:
-  `13.09`.
+  and `.md`: the first plain-prompt base/SFT/APO/final generation plan. This
+  is retained for audit only, because a live smoke showed plain prompts can
+  cause SmolLM3 to continue the dialogue as user text rather than answer as an
+  assistant.
+- `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512_t1_chat.csv`
+  and `.md`: the current launch plan to use for SmolLM3 no_think generation.
+  It adds `--apply-chat-template --chat-template-kwargs-json
+  '{"enable_thinking": false}'` to each base/SFT/APO/final command. It keeps
+  the same `512` prompts, `8` completions, `t=1.0`, `top_p=0.95`, and
+  `max_new_tokens=1024`. Estimated missing A100-hours: `13.09`.
 - `artifacts/phase3/analysis/smollm3_no_think_propensity_plan_512_slop_neutral.csv`
   and `.md`: base/SFT/APO/final teacher-forced `slop_lexicon` plus
   `neutral_common_controls`, sequence mass, neutral normalization. Estimated
@@ -295,6 +312,38 @@ the sampled generations. This verifies model loading, CUDA execution, the new
 prompt package, and the generation output schema. It is not a Phase 3
 replication result because it covers only two prompts from the final
 checkpoint.
+
+That first smoke used plain prompts and surfaced a launch-quality issue: the
+final SmolLM3 checkpoint continued the dialogue in user style on the sampled
+prompts. The generation harness and planner were updated to support tokenizer
+chat-template rendering, and a replacement chat-template smoke completed:
+
+```bash
+uv run slop-free-running-emission \
+  --model HuggingFaceTB/SmolLM3-3B \
+  --input artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_512.jsonl \
+  --sample-size 2 \
+  --temperature 1.0 \
+  --top-p 0.95 \
+  --max-new-tokens 64 \
+  --completions-per-prompt 1 \
+  --generation-batch-size 2 \
+  --apply-chat-template \
+  --chat-template-kwargs-json '{"enable_thinking": false}' \
+  --dtype bfloat16 \
+  --wandb-mode disabled \
+  --no-torch-compile
+```
+
+Outputs:
+
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_chat_smoke.jsonl`
+- `artifacts/phase2/generations/smollm3_final_smoltalk2_everyday_no_think_2prompt_1comp_t1_64tok_chat_smoke_summary.csv`
+
+The replacement smoke produced assistant-style completions, valid
+feature-count JSON, and no obvious generated reasoning markup. This
+chat-template path supersedes the plain-prompt path for SmolLM3 no_think
+free-running generation.
 
 A matching tiny final-checkpoint teacher-forced smoke also completed:
 

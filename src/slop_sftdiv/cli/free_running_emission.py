@@ -8,7 +8,7 @@ import resource
 import time
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Any
+from typing import Any, Mapping
 
 from tqdm import tqdm
 
@@ -54,6 +54,22 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--max-prompt-tokens", type=int, default=1024)
     parser.add_argument("--fallback-text-as-prompt", action="store_true")
+    parser.add_argument(
+        "--apply-chat-template",
+        action="store_true",
+        help=(
+            "Render each prompt as a single user message with tokenizer.apply_chat_template "
+            "and add_generation_prompt=True before generation."
+        ),
+    )
+    parser.add_argument(
+        "--chat-template-kwargs-json",
+        default=None,
+        help=(
+            "Optional JSON object passed as extra kwargs to apply_chat_template, e.g. "
+            "'{\"enable_thinking\": false}' for SmolLM3 no_think generation."
+        ),
+    )
     parser.add_argument("--dtype", default="auto", choices=["auto", "float16", "bfloat16", "float32"])
     parser.add_argument("--device", default="auto")
     parser.add_argument("--torch-compile", action=argparse.BooleanOptionalAction, default=True)
@@ -194,8 +210,48 @@ def _pad_batch(
     )
 
 
-def _prompt_ids(tokenizer: Any, prompt: str, *, max_prompt_tokens: int) -> list[int]:
-    ids = tokenizer.encode(prompt, add_special_tokens=False)[-max_prompt_tokens:]
+def _chat_template_kwargs(raw_json: str | None) -> dict[str, Any]:
+    if raw_json is None:
+        return {}
+    try:
+        payload = json.loads(raw_json)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"invalid --chat-template-kwargs-json: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise ValueError("--chat-template-kwargs-json must decode to a JSON object")
+    return payload
+
+
+def _prompt_ids(
+    tokenizer: Any,
+    prompt: str,
+    *,
+    max_prompt_tokens: int,
+    apply_chat_template: bool,
+    chat_template_kwargs: dict[str, Any],
+) -> list[int]:
+    if apply_chat_template:
+        if not hasattr(tokenizer, "apply_chat_template"):
+            raise ValueError("tokenizer does not support apply_chat_template")
+        rendered = tokenizer.apply_chat_template(
+            [{"role": "user", "content": prompt}],
+            add_generation_prompt=True,
+            tokenize=True,
+            **chat_template_kwargs,
+        )
+        if isinstance(rendered, Mapping) and "input_ids" in rendered:
+            ids = rendered["input_ids"]
+        elif isinstance(rendered, str):
+            ids = tokenizer.encode(rendered, add_special_tokens=False)
+        elif hasattr(rendered, "tolist"):
+            ids = rendered.tolist()
+        else:
+            ids = list(rendered)
+        if ids and isinstance(ids[0], list):
+            ids = ids[0]
+    else:
+        ids = tokenizer.encode(prompt, add_special_tokens=False)
+    ids = ids[-max_prompt_tokens:]
     if ids:
         return ids
     return [_fallback_prompt_token_id(tokenizer)]
@@ -212,13 +268,22 @@ def _generate_batch(
     max_new_tokens: int,
     max_prompt_tokens: int,
     seed: int,
+    apply_chat_template: bool,
+    chat_template_kwargs: dict[str, Any],
 ) -> list[tuple[str, int, int]]:
     import torch
 
     if not prompts:
         return []
     tokenized_prompts = [
-        _prompt_ids(tokenizer, prompt, max_prompt_tokens=max_prompt_tokens) for prompt in prompts
+        _prompt_ids(
+            tokenizer,
+            prompt,
+            max_prompt_tokens=max_prompt_tokens,
+            apply_chat_template=apply_chat_template,
+            chat_template_kwargs=chat_template_kwargs,
+        )
+        for prompt in prompts
     ]
     pad_token_id = tokenizer.pad_token_id
     if pad_token_id is None:
@@ -299,6 +364,7 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
     temperatures = args.temperature or [0.0]
     top_ps = args.top_p or [0.95]
     selected_features = _selected_features(args.feature)
+    chat_template_kwargs = _chat_template_kwargs(args.chat_template_kwargs_json)
     sampling = SamplingConfig(cap=args.sample_size, seed=args.seed, max_scan=args.max_scan)
     id_fields = _id_fields_with_pair_id(DEFAULT_ID_FIELDS)
     generation_rows: list[dict[str, Any]] = []
@@ -340,6 +406,8 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
             "generation_batch_size": args.generation_batch_size,
             "max_prompt_tokens": args.max_prompt_tokens,
             "fallback_text_as_prompt": args.fallback_text_as_prompt,
+            "apply_chat_template": args.apply_chat_template,
+            "chat_template_kwargs": chat_template_kwargs,
             "dtype": args.dtype,
             "device": str(device),
             "torch_compile": args.torch_compile,
@@ -368,6 +436,8 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
                     max_new_tokens=args.max_new_tokens,
                     max_prompt_tokens=args.max_prompt_tokens,
                     seed=args.seed + completion_index,
+                    apply_chat_template=args.apply_chat_template,
+                    chat_template_kwargs=chat_template_kwargs,
                 )
                 for (record, _prompt), (generation, prompt_tokens, generated_tokens) in zip(
                     batch, generated, strict=True

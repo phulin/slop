@@ -60,6 +60,9 @@ def test_plan_phase2_generation_writes_commands_and_completion_status(tmp_path, 
             "1.0",
             "--generation-batch-size",
             "4",
+            "--apply-chat-template",
+            "--chat-template-kwargs-json",
+            '{"enable_thinking": false}',
             "--max-new-tokens",
             "8",
             "--tokens-per-sec-estimate",
@@ -87,11 +90,14 @@ def test_plan_phase2_generation_writes_commands_and_completion_status(tmp_path, 
     assert by_temp[1.0]["model_revision"] == "it-SFT"
     assert "uv run slop-free-running-emission" in by_temp[1.0]["command"]
     assert "--model-revision it-SFT" in by_temp[1.0]["command"]
+    assert "--apply-chat-template" in by_temp[1.0]["command"]
+    assert "--chat-template-kwargs-json '{\"enable_thinking\": false}'" in by_temp[1.0]["command"]
     assert "--torch-compile" in by_temp[1.0]["command"]
     with plan_path.open(encoding="utf-8", newline="") as handle:
         csv_rows = list(csv.DictReader(handle))
     assert csv_rows[0]["stage"] == "sft"
     assert csv_rows[0]["model_revision"] == "it-SFT"
+    assert csv_rows[0]["apply_chat_template"] == "True"
     assert summary_path.exists()
     assert logged_payloads[-1]["generation_plan/shards"] == 2
     assert logged_tables["phase2_generation_plan"] == rows
