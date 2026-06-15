@@ -1472,3 +1472,29 @@
   tests/test_run_phase2_post_shard_analysis.py` (`7 passed`) and
   `uv run ruff check src/slop_sftdiv/cli/analyze_phase2_compounding.py
   tests/test_analyze_phase2_compounding.py` (`All checks passed`).
+- Closed Phase 2 as a single-temperature OLMo/Dolci package at generation
+  temperature `1.0`. Reran the four-stage target-shape compounding join after
+  the pooled `stock_openers_closers` accounting fix. W&B run:
+  `stage2-phase2-olmo3-generation-compounding-target-shape-512prompt-8comp-t1-tf1024-v2`
+  (`66a0iy2z`). The primary `slop_lexicon` Result B rows are unchanged in
+  interpretation: base observed/expected/excess per 1k opportunities
+  `0.615/0.232/0.383`, SFT `0.697/0.336/0.361`, DPO `0.638/0.439/0.199`, and
+  final/RLVR `0.582/0.445/0.137`. Corrected pooled `stock_openers_closers`
+  direct-test rows now have nonzero hits across all stages: base `382`, SFT
+  `277`, DPO `452`, final/RLVR `380`.
+- Rebuilt the final single-temperature amplification spectrum as v6. W&B run:
+  `stage2-phase2-olmo3-amplification-spectrum-single-temp-t1-v6`
+  (`jxqcadhe`). Outputs:
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_single_temp_t1_v6.csv`
+  and
+  `artifacts/phase2/analysis/olmo3_amplification_spectrum_single_temp_t1_v6_summary.md`.
+  The table has 24 feature-stage rows, all 24 target-shape free-running cells,
+  and 20 teacher-forced cells.
+- Logged the final retained single-temperature Phase 2 artifact manifest as
+  W&B run `stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest`
+  (`oxc252zk`). Local manifest outputs:
+  `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.csv`,
+  `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.json`,
+  and
+  `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.md`.
+  This manifest supersedes the older v5 headline manifest for Phase 2 close-out.

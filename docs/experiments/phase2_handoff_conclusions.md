@@ -6,7 +6,9 @@ Date: 2026-06-14
 
 Phase 2 is implemented and exercised for the OLMo 3 Instruct ladder as a
 bounded measurement package, not as the full EXPERIMENTS.md production-scale
-run. The implemented components are:
+run. The final Phase 2 read fixes free-running generation at temperature
+`1.0` and treats the earlier DPO temperature sweep only as sensitivity context.
+The implemented components are:
 
 - Held-out Dolci SFT prompt packaging with near-duplicate prompt filtering.
 - Exact sequence teacher-forced propensity with shared-prefix KV caching,
@@ -22,6 +24,23 @@ The scorer of record for exact teacher-forced propensity remains
 torch/Transformers. SGLang or vLLM should only be revisited for free-running
 generation throughput, or after a separate exactness benchmark reproduces the
 torch fixed-branch probability-mass summaries.
+
+## Final Single-Temperature Scope
+
+The retained Phase 2 deliverable uses one free-running temperature:
+
+- Temperature: `1.0`
+- Top-p: `0.95`
+- Main target-shape generation grid: base, SFT, DPO, and final/RLVR, each
+  `512` prompts x `8` completions x up to `1,024` new tokens.
+- Scale check: DPO-only `1,024` prompts x `8` completions at the same decoding
+  settings.
+- Teacher-forced grids: exact sequence scoring on the retained Tier-1
+  opportunity contracts; no decoding temperature applies to these.
+
+This is the final bounded OLMo/Dolci Phase 2 measurement package. The original
+EXPERIMENTS.md three-temperature, 5,000-prompt, two-ladder production grid is
+not part of this close-out.
 
 ## Retained Features
 
@@ -261,24 +280,33 @@ temperatures at this target shape. Temperature moves the magnitude slightly,
 but the larger result is that observed generation rates exceed teacher-forced
 expectation even under deterministic decoding.
 
-## Bounded Amplification Spectrum
+## Final Single-Temperature Amplification Spectrum
 
-The current bounded headline table is assembled by
-`slop-assemble-amplification-spectrum` and logged as W&B run `87y3gz6m`
-(`stage2-phase2-olmo3-amplification-spectrum-bounded-v5`). Local outputs:
+The final single-temperature headline table is assembled by
+`slop-assemble-amplification-spectrum` and logged as W&B run `jxqcadhe`
+(`stage2-phase2-olmo3-amplification-spectrum-single-temp-t1-v6`). Local
+outputs:
 
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v5.csv`
-- `artifacts/phase2/analysis/olmo3_amplification_spectrum_bounded_v5_summary.md`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_single_temp_t1_v6.csv`
+- `artifacts/phase2/analysis/olmo3_amplification_spectrum_single_temp_t1_v6_summary.md`
 
 It contains 24 rows: six retained feature views across base, SFT, DPO, and
 final/RLVR. Each row joins Phase 1 corpus rates, available teacher-forced AF,
 target-shape free-running rates, compounding summaries, and denominator-support
-notes. The v5 table includes the 5,000-prompt `rule_of_three_approx`
-comma-pair extension teacher-forced proxy and the 5,000-prompt pooled
-`stock_openers_closers` teacher-forced grid, plus separate 5,000-prompt
-`stock_openers` and `stock_closers` teacher-forced grids. Teacher-forced
-coverage is now 20 cells. Blank cells mean missing measurements, not zero
-effects.
+notes. The v6 table uses the corrected `stock_openers_closers` direct
+prior/no-prior accounting in the target-shape compounding CSV, the 5,000-prompt
+`rule_of_three_approx` comma-pair extension teacher-forced proxy, the
+5,000-prompt pooled `stock_openers_closers` teacher-forced grid, and separate
+5,000-prompt `stock_openers` and `stock_closers` teacher-forced grids.
+Teacher-forced coverage is 20 cells. Blank cells mean missing measurements,
+not zero effects.
+
+The retained local artifact manifest is W&B run `oxc252zk`
+(`stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest`). Local outputs:
+
+- `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.csv`
+- `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.json`
+- `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.md`
 
 Current spectrum read:
 
@@ -300,8 +328,8 @@ Current spectrum read:
 - `contrastive_negation` remains too sparse in the 5k denominator audit for a
   strong bounded conclusion.
 
-Treat this as the current bounded amplification spectrum, not the full
-production-scale EXPERIMENTS.md table.
+Treat this as the final bounded single-temperature OLMo/Dolci Phase 2
+amplification spectrum, not the full production-scale EXPERIMENTS.md table.
 
 The `rule_of_three_approx` comma-pair extension proxy supersedes the earlier
 512-prompt mini-grid with a full 5,000-prompt teacher-forced grid. All stages
@@ -357,12 +385,13 @@ the model, with final/RLVR roughly back at base mass after the SFT dip.
 
 ## Current Compute Posture
 
-Do not launch a full 5,000-prompt x 8-completion x 1,024-token generation grid
-blindly. The target-shape DPO benchmark (`kji583m6`) plus the 512-prompt
-base/SFT/DPO/final shards (`nw6yoj5u`, `il07fjn1`, `8rud2kxl`, `b8xo8axn`)
-validate the heavy shape on the A100, but the full 5,000-prompt x 3-temperature
-OLMo target remains expensive. The next GPU work should be selected by the
-question it answers:
+Phase 2 is closed out at temperature `1.0`. Do not launch a full
+5,000-prompt x 8-completion x 1,024-token generation grid blindly. The
+target-shape DPO benchmark (`kji583m6`) plus the 512-prompt base/SFT/DPO/final
+shards (`nw6yoj5u`, `il07fjn1`, `8rud2kxl`, `b8xo8axn`) validate the heavy
+shape on the A100, but the full 5,000-prompt x 3-temperature OLMo target
+remains expensive and is outside this Phase 2 close-out. Any next GPU work
+should be a new, explicit follow-on question:
 
 - For a stronger Result B estimate, the scaled 1,024-prompt DPO shard now
   stabilizes the DPO t=1.0 rate. Matched 1,024-prompt base/SFT/final shards are
