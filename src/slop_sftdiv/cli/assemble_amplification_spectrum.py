@@ -24,10 +24,11 @@ STAGE_LABELS = {
     "final": "Final/RLVR",
 }
 DATA_RATE_COLUMNS = {
-    ("pretrain_document",): "pretrain_per_1k_tokens",
-    ("target_response",): "sft_target_per_1k_tokens",
-    ("chosen",): "dpo_chosen_per_1k_tokens",
-    ("rejected",): "dpo_rejected_per_1k_tokens",
+    "pretrain_document": "pretrain_per_1k_tokens",
+    "mid_target_response": "mid_target_per_1k_tokens",
+    "target_response": "sft_target_per_1k_tokens",
+    "chosen": "dpo_chosen_per_1k_tokens",
+    "rejected": "dpo_rejected_per_1k_tokens",
 }
 
 
@@ -86,15 +87,54 @@ def _stage_order(stage: str) -> int:
     return STAGE_ORDER.index(stage) if stage in STAGE_ORDER else len(STAGE_ORDER)
 
 
+def _safe_column_part(value: str) -> str:
+    parts = []
+    for char in value.lower():
+        if char.isalnum():
+            parts.append(char)
+        elif parts and parts[-1] != "_":
+            parts.append("_")
+    return "".join(parts).strip("_") or "unknown"
+
+
+def _source_rate_column(role: str, source: str) -> str | None:
+    source_part = _safe_column_part(source)
+    if role == "pretrain_document":
+        return f"pretrain_{source_part}_per_1k_tokens"
+    if role == "mid_target_response":
+        return f"mid_{source_part}_per_1k_tokens"
+    return None
+
+
 def _data_rates(paths: list[str]) -> dict[str, dict[str, float]]:
     rates: dict[str, dict[str, float]] = {}
+    aggregate_counts: dict[tuple[str, str], float] = {}
+    aggregate_tokens: dict[tuple[str, str], float] = {}
     for raw_path in paths:
         for row in _read_rows(Path(raw_path)):
             feature = str(row.get("feature", ""))
             role = str(row.get("role", ""))
-            for roles, column in DATA_RATE_COLUMNS.items():
-                if role in roles and row.get("per_1k_tokens") not in (None, ""):
-                    rates.setdefault(feature, {})[column] = float(row["per_1k_tokens"])
+            if not feature or role not in DATA_RATE_COLUMNS:
+                continue
+            if row.get("per_1k_tokens") in (None, ""):
+                continue
+            column = DATA_RATE_COLUMNS[role]
+            source_column = _source_rate_column(role, str(row.get("source", "")))
+            if source_column:
+                rates.setdefault(feature, {})[source_column] = float(row["per_1k_tokens"])
+            count = _float_or_none(row.get("count"))
+            tokens = _float_or_none(row.get("tokens"))
+            if count is None or tokens is None or tokens <= 0:
+                rates.setdefault(feature, {})[column] = float(row["per_1k_tokens"])
+                continue
+            key = (feature, role)
+            aggregate_counts[key] = aggregate_counts.get(key, 0.0) + count
+            aggregate_tokens[key] = aggregate_tokens.get(key, 0.0) + tokens
+
+    for (feature, role), count in aggregate_counts.items():
+        tokens = aggregate_tokens[(feature, role)]
+        if tokens > 0:
+            rates.setdefault(feature, {})[DATA_RATE_COLUMNS[role]] = count / tokens * 1000.0
     return rates
 
 
@@ -230,6 +270,7 @@ def assemble_spectrum(args: argparse.Namespace) -> list[dict[str, Any]]:
                 "stage_order": _stage_order(stage),
                 "stage_label": STAGE_LABELS.get(stage, stage),
                 "pretrain_per_1k_tokens": None,
+                "mid_target_per_1k_tokens": None,
                 "sft_target_per_1k_tokens": None,
                 "dpo_chosen_per_1k_tokens": None,
                 "dpo_rejected_per_1k_tokens": None,
@@ -254,6 +295,7 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "stage_label",
         "coverage_note",
         "pretrain_per_1k_tokens",
+        "mid_target_per_1k_tokens",
         "sft_target_per_1k_tokens",
         "dpo_chosen_per_1k_tokens",
         "dpo_rejected_per_1k_tokens",
@@ -288,14 +330,16 @@ def _write_summary(path: Path, rows: list[dict[str, Any]]) -> None:
         "This table assembles existing bounded measurement artifacts. Blank cells are missing",
         "measurements, not zero effects.",
         "",
-        "| Feature | Stage | SFT data /1k | DPO chosen /1k | DPO rejected /1k | TF norm AF | Free-run /1k | Compounding excess /1k opp | Note |",
-        "|---|---|---:|---:|---:|---:|---:|---:|---|",
+        "| Feature | Stage | Pretrain /1k | Mid /1k | SFT data /1k | DPO chosen /1k | DPO rejected /1k | TF norm AF | Free-run /1k | Compounding excess /1k opp | Note |",
+        "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
     ]
     for row in rows:
         lines.append(
-            "| {feature} | {stage} | {sft} | {chosen} | {rejected} | {tf} | {free} | {excess} | {note} |".format(
+            "| {feature} | {stage} | {pretrain} | {mid} | {sft} | {chosen} | {rejected} | {tf} | {free} | {excess} | {note} |".format(
                 feature=row["feature"],
                 stage=row["stage_label"],
+                pretrain=_fmt(row.get("pretrain_per_1k_tokens")),
+                mid=_fmt(row.get("mid_target_per_1k_tokens")),
                 sft=_fmt(row.get("sft_target_per_1k_tokens")),
                 chosen=_fmt(row.get("dpo_chosen_per_1k_tokens")),
                 rejected=_fmt(row.get("dpo_rejected_per_1k_tokens")),

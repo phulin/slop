@@ -2005,3 +2005,48 @@
   Phase 3 still needs the original production grid, a SmolLM3
   pretraining/mid-training baseline, broader teacher-forced support where
   denominator support permits it, and the stretch Think/RL Zero comparison.
+
+## 2026-06-15 - SmolLM3 bounded pretrain/Mid baselines
+
+- Probed the SmolLM3 pretraining collection path and confirmed
+  `HuggingFaceTB/smollm3-pretraining-datasets` is a Hugging Face collection,
+  not a loadable dataset ID. Bounded pretraining baselines therefore sample
+  named source datasets from the collection rather than an exact weighted mix.
+- Sampled two pretraining-source baselines and one Mid baseline:
+  `artifacts/stage1/corpora/smollm3_pretrain_fineweb_edu_2k.jsonl`
+  (2,000 rows, 1,610,774 tokens),
+  `artifacts/stage1/corpora/smollm3_pretrain_stackexchange_apple_2k.jsonl`
+  (2,000 rows, 1,013,267 tokens), and
+  `artifacts/stage1/corpora/smollm3_smoltalk2_mid_llama_nemotron_reasoning_2k.jsonl`
+  (2,000 rows, 6,041,904 tokens). The StackExchange sample uses
+  `ThreadText`; the Mid sample uses SmolTalk2 `Mid` split
+  `Llama_Nemotron_Post_Training_Dataset_reasoning_r1`.
+- Ran the Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_mid_baselines_2k_tier1_feature_rates.csv`.
+  Key rates per 1k tokens:
+  `slop_lexicon` pretrain aggregate `0.455`, FineWeb-Edu `0.536`,
+  StackExchange `0.327`, Mid `0.050`;
+  `rule_of_three_approx` pretrain aggregate `4.424`, FineWeb-Edu `6.211`,
+  StackExchange `1.583`, Mid `1.273`;
+  `contrastive_negation` pretrain aggregate `0.433`, FineWeb-Edu `0.385`,
+  StackExchange `0.509`, Mid `0.177`.
+- Updated `slop-assemble-amplification-spectrum` so repeated same-role data
+  rates are token-weighted instead of overwritten. It now supports
+  `mid_target_response` as `mid_target_per_1k_tokens` and emits
+  source-specific pretrain/Mid columns such as
+  `pretrain_smollm3_pretrain_fineweb_edu_2k_per_1k_tokens`.
+- Reassembled the current best bounded SmolLM3 spectrum and classifier:
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_baselines_data_rates_slop_neutral_rule3.csv`
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_baselines_data_rates_slop_neutral_rule3.csv`.
+  Class labels are unchanged: `slop_lexicon` remains `sft-amplified`,
+  `rule_of_three_approx` remains `measured-no-phase3-class`, and sparse
+  teacher-forced features remain `observed-output-only`.
+- Re-ran OLMo-vs-SmolLM3 on the baseline data-rate spectrum:
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_baselines_data_rates_tf_generation_compounding_slop_neutral_rule3_aligned.csv`,
+  `_correlations.csv`, and `_summary.md`. AF support is unchanged from the
+  prior data-rate comparison: 24 aligned feature-stage rows, 8 shared AF
+  values, overall Spearman AF `0.762`, Pearson AF `0.978`.
+- Caveat: this closes the bounded pretrain/Mid baseline gap but not the full
+  production baseline. The pretrain aggregate is token-weighted over two
+  selected source samples, not the exact weighted SmolLM3 11T pretraining mix.

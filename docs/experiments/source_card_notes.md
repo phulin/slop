@@ -249,6 +249,25 @@ Live config-specific SmolTalk2 probe:
 - This closes the generic-config loader issue and proves config/split-aware
   bounded probing works. It still does not finish Phase 1.
 
+Live bounded SmolLM3 baseline samples:
+
+- The pretraining collection URL is a Hugging Face collection, not a loadable
+  dataset ID. Exact production pretraining rates still need source weights from
+  the training recipe.
+- Bounded source-stratified proxy samples now exist:
+  `artifacts/stage1/corpora/smollm3_pretrain_fineweb_edu_2k.jsonl`
+  from `HuggingFaceFW/fineweb-edu`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stackexchange_apple_2k.jsonl`
+  from `HuggingFaceTB/stackexchange_2025_md` config
+  `apple.stackexchange.com`, and
+  `artifacts/stage1/corpora/smollm3_smoltalk2_mid_llama_nemotron_reasoning_2k.jsonl`
+  from `HuggingFaceTB/smoltalk2` config `Mid` split
+  `Llama_Nemotron_Post_Training_Dataset_reasoning_r1`.
+- The retained Tier-1 census is
+  `artifacts/stage1/census/smollm3_pretrain_mid_baselines_2k_tier1_feature_rates.csv`.
+  These rows are suitable as bounded baseline context in Phase 3, but they are
+  not the exact weighted SmolLM3 11T pretraining mix.
+
 In-progress source-identification plan:
 
 1. Resolve exact SmolLM3 pretraining source IDs and stage weights from primary
@@ -277,9 +296,10 @@ In-progress source-identification plan:
 
 Current interpretation:
 
-- SmolLM3 is still in source-identification status for Phase 1. The primary
-  cards now give strong candidates for exact sources, but sampling should wait
-  for bounded schema probes and training-recipe weight confirmation.
+- SmolLM3 exact production source identification remains incomplete. Bounded
+  source-stratified proxy samples now exist for Phase 3 context, but exact
+  pretraining-mixture claims should wait for training-recipe weight
+  confirmation.
 - The live probes narrow SmolTalk2/Tulu source identification to specific
   configs and splits and verify config/split-aware loading. Remaining blockers
   are broader split/source count census, target response extraction and

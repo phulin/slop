@@ -25,6 +25,33 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
         feature_rates,
         [
             {
+                "source": "pretrain_web",
+                "role": "pretrain_document",
+                "feature": "slop_lexicon",
+                "count": "2",
+                "docs": "1",
+                "tokens": "1000",
+                "per_1k_tokens": "2.0",
+            },
+            {
+                "source": "pretrain_qa",
+                "role": "pretrain_document",
+                "feature": "slop_lexicon",
+                "count": "8",
+                "docs": "1",
+                "tokens": "1000",
+                "per_1k_tokens": "8.0",
+            },
+            {
+                "source": "mid",
+                "role": "mid_target_response",
+                "feature": "slop_lexicon",
+                "count": "1",
+                "docs": "1",
+                "tokens": "1000",
+                "per_1k_tokens": "1.0",
+            },
+            {
                 "source": "sft",
                 "role": "target_response",
                 "feature": "slop_lexicon",
@@ -200,6 +227,11 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
 
     by_key = {(row["feature"], row["stage"]): row for row in rows}
     dpo_slop = by_key[("slop_lexicon", "dpo")]
+    assert dpo_slop["pretrain_per_1k_tokens"] == 5.0
+    assert dpo_slop["pretrain_pretrain_web_per_1k_tokens"] == 2.0
+    assert dpo_slop["pretrain_pretrain_qa_per_1k_tokens"] == 8.0
+    assert dpo_slop["mid_target_per_1k_tokens"] == 1.0
+    assert dpo_slop["mid_mid_per_1k_tokens"] == 1.0
     assert dpo_slop["sft_target_per_1k_tokens"] == 10.0
     assert dpo_slop["dpo_chosen_per_1k_tokens"] == 15.0
     assert dpo_slop["teacher_forced_normalized_af"] == 1.5
