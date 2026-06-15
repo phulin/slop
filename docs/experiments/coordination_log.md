@@ -2236,3 +2236,31 @@
   `slop_lexicon` `0.414`, `rule_of_three_approx` `4.524`,
   `contrastive_negation` `0.401`, `stock_closers` `0.037`, `stock_openers`
   `0.029`, and pooled stock phrases `0.065`.
+
+## 2026-06-15 - FineMath pretraining feature-rate coverage
+
+- Sampled the next directly measurable SmolLM3 recipe source:
+  `artifacts/stage1/corpora/smollm3_pretrain_finemath_2k.jsonl`, with
+  manifests and summary. Source: `HuggingFaceTB/finemath`, config
+  `finemath-3plus`, split `train`, 20,000 scanned rows, 2,000 retained rows,
+  2,302,447 simple tokens, `hash_reservoir` seed `1729`. The sample was a
+  single `unknown` stratum.
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_finemath_2k_tier1_feature_rates.csv`.
+  Source-aggregated FineMath rates per 1k tokens are `slop_lexicon` `0.150`,
+  `rule_of_three_approx` `1.817`, `contrastive_negation` `0.181`,
+  `stock_closers` `0.036`, `stock_openers` `0.065`, and pooled stock phrases
+  `0.100`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with source map `smollm3_pretrain_finemath_2k=finemath`.
+  Current retained Tier-1 coverage is now `75.912%` of the extracted SmolLM3
+  recipe, with missing share `24.088%`. Covered-only weighted rates per 1k
+  tokens are `slop_lexicon` `0.410`, `rule_of_three_approx` `4.473`,
+  `contrastive_negation` `0.397`, `stock_closers` `0.037`, `stock_openers`
+  `0.030`, and pooled stock phrases `0.066`.
+- `stack-edu-Python` (`1.811%`) remains the largest unresolved source, but it
+  needs code-text hydration because the public HF config exposes blob metadata
+  only. The next directly sampleable source by recipe weight is FineWeb2
+  Italian (`1.062%`); `stack-edu-Cpp` (`1.304%`) carries the same hydration
+  caveat as Python.
