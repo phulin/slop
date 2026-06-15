@@ -9,6 +9,31 @@ explains the question, the measured artifacts, the model progression across
 checkpoints, the feature-level results, the Biber-lite style signature, and the
 conclusions that should carry forward into Phase 3.
 
+## Start Here
+
+This report is the reader-facing close-out for Phase 2. It is meant to answer
+four practical questions:
+
+1. What did Phase 2 measure that Phase 1 did not?
+2. How did the OLMo 3 checkpoints change from Base to SFT to DPO to
+   Final/RLVR?
+3. Which "slop" features are actually amplified, and which are inherited or
+   suppressed?
+4. What should Phase 3 treat as settled, tentative, or still unmeasured?
+
+The short answer is that Phase 2 found a non-monotonic checkpoint progression.
+Base already emits many measured assistant-style markers. SFT often lowers
+visible marker rates in sampled output. DPO selectively rebounds, especially
+for `slop_lexicon` local propensity and stock phrase emissions. Final/RLVR is
+closest to DPO in the assembled output style signature, but it does not
+uniformly increase measured slop beyond DPO.
+
+The report is intentionally detailed because the conclusion depends on not
+collapsing several different measurements into one number. A word-count rate
+in sampled generations, a teacher-forced probability ratio, a chosen-vs-rejected
+data comparison, and a self-conditioning window test are all evidence, but they
+answer different questions.
+
 ## Reader's Guide
 
 This project uses "slop" as an empirical label, not as a moral judgment about
@@ -43,6 +68,59 @@ The report intentionally separates four things that are easy to conflate:
 
 Those four views do not always agree. That disagreement is one of the main
 findings.
+
+## Glossary
+
+**Phase 1** measured data. It counted feature rates in corpus samples:
+pretraining-like text, SFT targets, DPO chosen responses, and DPO rejected
+responses.
+
+**Phase 2** measured models. It asked whether checkpoints assign probability to
+the same features under teacher forcing, whether generated completions contain
+those features, and whether feature hits compound after they appear once in a
+generation.
+
+**Checkpoint ladder** means the sequence of model states being compared:
+Base, SFT, DPO, and Final/RLVR.
+
+**Teacher forcing** means the model is scored on a fixed reference prefix
+instead of being allowed to sample freely. This isolates local model
+probability from generation drift.
+
+**Free-running generation** means the model samples completions normally. This
+is closest to user-visible output, but it mixes local model preference,
+decoding, sequence length, and self-conditioning.
+
+**Amplification factor**, or AF, is a ratio comparing model probability mass
+for a feature to the feature's reference rate under a specific opportunity
+definition. An AF above `1` means the model assigns more probability to that
+feature than the reference rate would suggest; an AF below `1` means less.
+
+**Neutral-normalized AF** is AF divided by a neutral control basket. The main
+`slop_lexicon` teacher-forced result uses this because it reduces the chance
+that a general calibration shift is mistaken for slop-specific amplification.
+
+**Prior/no-prior compounding** is the direct test for repetition dynamics. It
+compares windows that occur after a feature has already appeared in the same
+generation with windows where no earlier hit has appeared.
+
+**Biber-lite** is a regex-based register proxy layer for pronouns, modals,
+hedges, amplifiers, verb classes, nominalizations, complements,
+subordination, wh-questions, and passive-voice approximations. It is useful
+style evidence, but it is not full pybiber extraction.
+
+## Evidence Map
+
+For a new reader, the main evidence can be organized like this:
+
+| Evidence type | Main artifact | What it answers | Strongest use in this report |
+|---|---|---|---|
+| Phase 1 data rates | Corpus census and preference-pair tables | Was the feature already common in data? | Shows SFT targets and DPO pairs do not explain all model-side changes. |
+| Teacher-forced propensity | `olmo3_amplification_spectrum_single_temp_t1_v6.csv` | Which checkpoint locally prefers the feature? | `slop_lexicon` peaks at DPO by neutral-normalized AF. |
+| Free-running emissions | `olmo3_generation_stage_grid_target_shape_512prompt_8comp_t1_1024.csv` | What appears in sampled output? | SFT is lowest across retained Tier-1 markers; DPO rebounds selectively. |
+| Compounding | `olmo3_generation_compounding_target_shape_512prompt_8comp_t1_1024_tf1024.csv` | Does an earlier hit make later hits more likely? | `slop_lexicon` has a large prior/no-prior signal at every checkpoint. |
+| Biber-lite register | `olmo3_biber_lite_generation_vs_corpus_t1.csv` | How does broader output style shift? | Final/RLVR is DPO-like overall but differs from Base and SFT targets in register. |
+| Style signature | `olmo3_style_signature_t1.csv` | Which checkpoints are closest in final output style? | Final/RLVR is closest to DPO, then SFT, then Base. |
 
 ## Project Context In Plain Language
 
