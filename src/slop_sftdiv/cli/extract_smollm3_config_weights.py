@@ -277,18 +277,17 @@ def _summary(
             f"| `{row['source_group']}` | {float(row['share_percent']):.3f}% | "
             f"{float(row['tokens']) / 1_000_000_000:.3f}B |"
         )
-    sampled = {
-        row["source_name"]: row for row in aggregate_rows if row["source_name"] in {"fineweb-edu", "stackexchange"}
-    }
-    lines.extend(["", "## Currently Sampled Phase 3 Baseline Sources", ""])
-    lines.extend(["| Source | Exact config share | Note |", "|---|---:|---|"])
-    for source, note in (
-        ("fineweb-edu", "Covered by the existing FineWeb-Edu bounded source sample."),
-        ("stackexchange", "Covered by the existing StackExchange bounded source sample."),
-    ):
-        row = sampled.get(source)
-        share = f"{float(row['share_percent']):.3f}%" if row else "not present"
-        lines.append(f"| `{source}` | {share} | {note} |")
+    lines.extend(
+        [
+            "",
+            "## Feature-Rate Coverage",
+            "",
+            "This extractor reports recipe source weights only. Current sampled "
+            "feature-rate coverage is assembled by "
+            "`slop-assemble-weighted-pretrain-baseline`, which joins these weights "
+            "to explicit source maps for local corpus censuses.",
+        ]
+    )
     lines.extend(
         [
             "",

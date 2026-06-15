@@ -82,4 +82,7 @@ def test_extract_smollm3_config_weights_uses_stage_boundaries(tmp_path):
     assert float(by_group["web"]["tokens"]) == 250.0
     assert float(by_group["qa_forum"]["tokens"]) == 50.0
     assert float(by_group["code"]["tokens"]) == 100.0
-    assert "Total config-implied tokens" in summary.read_text(encoding="utf-8")
+    summary_text = summary.read_text(encoding="utf-8")
+    assert "Total config-implied tokens" in summary_text
+    assert "Feature-Rate Coverage" in summary_text
+    assert "Currently Sampled Phase 3 Baseline Sources" not in summary_text

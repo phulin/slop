@@ -2083,8 +2083,8 @@
   `11.234968T` config-implied tokens when including the two long-context
   extension stages. Top aggregate sources are `dclm` (`35.486%`),
   `fineweb-edu` (`31.140%`), `fw2-deu` (`2.209%`), `fw2-spa` (`2.003%`),
-  `stack-edu-Python` (`1.811%`), and `pes2o` (`1.724%`). Current sampled
-  pretraining feature-rate coverage is now quantifiable: `fineweb-edu`
+  `stack-edu-Python` (`1.811%`), and `pes2o` (`1.724%`). At that point,
+  sampled pretraining feature-rate coverage was quantifiable: `fineweb-edu`
   covers `31.140%` of the extracted recipe and `stackexchange` covers
   `0.333%`.
 - Updated `docs/experiments/phase3_status.md` and
@@ -2144,3 +2144,42 @@
   `rule_of_three_approx` `4.882`, `contrastive_negation` `0.440`,
   `stock_closers` `0.039`, `stock_openers` `0.032`, and pooled stock phrases
   `0.071`.
+
+## 2026-06-15 - FineWeb2 German and Spanish pretraining feature-rate coverage
+
+- Sampled the next highest SmolLM3 recipe source after DCLM:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_deu_2k.jsonl`, with
+  manifests and summary. Source: `HuggingFaceFW/fineweb-2`, config
+  `deu_Latn`, split `train`, 20,000 scanned rows, 2,000 retained rows,
+  986,326 simple tokens, `hash_reservoir` seed `1729`. The sample was a
+  single `unknown` stratum because FineWeb2 rows expose language metadata but
+  no local source-domain stratum.
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_fw2_deu_2k_tier1_feature_rates.csv`.
+  Source-aggregated FineWeb2 German rates per 1k tokens are `slop_lexicon`
+  `0.047`, `rule_of_three_approx` `0.184`, `contrastive_negation` `0.006`,
+  `stock_closers` `0.002`, `stock_openers` `0.000`, and pooled stock phrases
+  `0.002`.
+- Sampled the next FineWeb2 source:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_spa_2k.jsonl`, with
+  manifests and summary. Source: `HuggingFaceFW/fineweb-2`, config
+  `spa_Latn`, split `train`, 20,000 scanned rows, 2,000 retained rows,
+  1,271,133 simple tokens, `hash_reservoir` seed `1729`.
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_fw2_spa_2k_tier1_feature_rates.csv`.
+  Source-aggregated FineWeb2 Spanish rates per 1k tokens are `slop_lexicon`
+  `0.005`, `rule_of_three_approx` `0.038`, `contrastive_negation` `0.002`,
+  `stock_closers` `0.000`, `stock_openers` `0.000`, and pooled stock phrases
+  `0.000`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with source maps `smollm3_pretrain_fw2_deu_2k=fw2-deu` and
+  `smollm3_pretrain_fw2_spa_2k=fw2-spa`. Current retained Tier-1 coverage is
+  now `71.171%` of the extracted SmolLM3 recipe, with missing share `28.829%`.
+  Covered-only weighted rates per 1k tokens are `slop_lexicon` `0.415`,
+  `rule_of_three_approx` `4.599`, `contrastive_negation` `0.414`,
+  `stock_closers` `0.037`, `stock_openers` `0.030`, and pooled stock phrases
+  `0.067`.
+- FineWeb2 German and Spanish are much lower on the retained English-oriented
+  Tier-1 markers than DCLM or FineWeb-Edu, so adding them improves coverage
+  while lowering the covered-only weighted baseline rates.

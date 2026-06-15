@@ -260,6 +260,10 @@ Live bounded SmolLM3 baseline samples:
   from `HuggingFaceFW/fineweb-edu`,
   `artifacts/stage1/corpora/smollm3_pretrain_dclm_2k.jsonl`
   from `mlfoundations/dclm-baseline-1.0` config `default`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_deu_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `deu_Latn`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_spa_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `spa_Latn`,
   `artifacts/stage1/corpora/smollm3_pretrain_stackexchange_apple_2k.jsonl`
   from `HuggingFaceTB/stackexchange_2025_md` config
   `apple.stackexchange.com`, and
@@ -291,10 +295,11 @@ Live SmolLM3 recipe-weight extraction:
   `dclm` (`35.486%`), `fineweb-edu` (`31.140%`), `fw2-deu` (`2.209%`),
   `fw2-spa` (`2.003%`), `stack-edu-Python` (`1.811%`), and `pes2o`
   (`1.724%`).
-- The current bounded pretraining feature-rate samples cover `fineweb-edu`
-  (`31.140%` exact config share) and `stackexchange` (`0.333%`). The remaining
-  production baseline blocker is feature-rate coverage for the other recipe
-  sources, not source-weight discovery.
+- The current bounded pretraining feature-rate samples cover `dclm`
+  (`35.486%` exact config share), `fineweb-edu` (`31.140%`), `fw2-deu`
+  (`2.209%`), `fw2-spa` (`2.003%`), and `stackexchange` (`0.333%`). The
+  remaining production baseline blocker is feature-rate coverage for the other
+  recipe sources, not source-weight discovery.
 - Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
   sampled pretraining feature rates to the extracted recipe weights with
   explicit source maps. Outputs:
@@ -307,9 +312,22 @@ Live SmolLM3 recipe-weight extraction:
   `artifacts/stage1/census/smollm3_pretrain_dclm_2k_tier1_feature_rates.csv`.
   The sample retained 2,000 rows and 1,780,498 simple tokens from a 20,000-row
   hash-reservoir scan.
-- With DCLM included, the current proxy covers `66.959%` of the extracted
-  recipe and leaves `33.041%` unsampled, so its covered-only rates are
-  majority-coverage diagnostics rather than full-mixture estimates.
+- Added a bounded `fw2-deu` source sample from `HuggingFaceFW/fineweb-2`,
+  config `deu_Latn`, split `train`:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_deu_2k.jsonl` and
+  `artifacts/stage1/census/smollm3_pretrain_fw2_deu_2k_tier1_feature_rates.csv`.
+  The sample retained 2,000 rows and 986,326 simple tokens from a 20,000-row
+  hash-reservoir scan.
+- Added a bounded `fw2-spa` source sample from `HuggingFaceFW/fineweb-2`,
+  config `spa_Latn`, split `train`:
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_spa_2k.jsonl` and
+  `artifacts/stage1/census/smollm3_pretrain_fw2_spa_2k_tier1_feature_rates.csv`.
+  The sample retained 2,000 rows and 1,271,133 simple tokens from a 20,000-row
+  hash-reservoir scan.
+- With DCLM, FineWeb2 German, and FineWeb2 Spanish included, the current
+  retained Tier-1 proxy covers `71.171%` of the extracted recipe and leaves
+  `28.829%` unsampled, so its covered-only rates are majority-coverage
+  diagnostics rather than full-mixture estimates.
 
 In-progress source-identification plan:
 
@@ -343,9 +361,10 @@ Current interpretation:
   configs. Bounded source-stratified proxy samples exist for Phase 3 context,
   but production pretraining-mixture feature-rate claims should wait for
   feature-rate coverage across the relevant weighted sources. The coverage
-  proxy quantifies the current gap; DCLM is now sampled, and the largest
-  remaining recipe sources are `fw2-deu` (`2.209%`), `fw2-spa` (`2.003%`),
-  and `stack-edu-Python` (`1.811%`).
+  proxy quantifies the current gap; DCLM, FineWeb2 German, and FineWeb2
+  Spanish are now sampled, and the largest remaining recipe sources are
+  `stack-edu-Python` (`1.811%`), `pes2o` (`1.724%`), and `fw2-fra`
+  (`1.607%`).
 - The live probes narrow SmolTalk2/Tulu source identification to specific
   configs and splits and verify config/split-aware loading. Remaining blockers
   are broader split/source count census, target response extraction and
