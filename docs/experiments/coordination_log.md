@@ -1607,3 +1607,30 @@
 - This completes the reusable cross-ladder correlation tooling for Phase 3,
   but the actual OLMo-vs-SmolLM3 result still requires the SmolLM3 no_think
   Phase 1/2 artifacts and assembled spectrum.
+
+## 2026-06-15 - SmolLM3 checkpoint-revision harness support
+
+- Added optional Hugging Face revision support to the Phase 2 model-loading
+  CLIs needed for Phase 3 replication:
+  `slop-free-running-emission --model-revision REVISION` and
+  `slop-teacher-forced-propensity --model-revision REVISION`. Both pass the
+  revision to tokenizer and model `from_pretrained` and record it in W&B
+  config.
+- Updated `slop-plan-phase2-generation` to accept `STAGE=MODEL@REVISION`
+  stage specs, emit a separate `model_revision` column, and include
+  `--model-revision` in planned commands. Existing `STAGE=MODEL` specs remain
+  backward compatible.
+- Re-verified current SmolLM3 branch refs from Hugging Face on 2026-06-15:
+  base `HuggingFaceTB/SmolLM3-3B-Base` main
+  `d78a42f79198603e614095753484a04c10c2b940`, checkpoint repo branches
+  `it-SFT` `f6ddaa5f2e99f24ea507596c214595769fb06387`,
+  `it-soup-APO` `cfb32d505f5025ec9be4e704f70cfbf5bdf8da94`,
+  `it-mid-training` `0485ec16b618f88f6dbb27b23dbdecca1d6a1cdd`,
+  `it-LC-expert` `99d07b0a954f07f1237176440b0a61149c7d03d3`, and final
+  `HuggingFaceTB/SmolLM3-3B` main
+  `a07cc9a04f16550a088caea529712d1d335b0ac1`.
+- Updated `docs/experiments/phase3_status.md` with the SmolLM3 checkpoint
+  table and example generation-plan stage specs. This removes a harness
+  blocker for SmolLM3 no_think replication, but the SmolLM3 prompt package,
+  teacher-forced summaries, free-running summaries, assembled spectrum, and
+  OLMo-vs-SmolLM3 AF rank correlation are still missing.

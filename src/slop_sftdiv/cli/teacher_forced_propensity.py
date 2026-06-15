@@ -113,6 +113,11 @@ class ReferenceSubsetSpec:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run Phase 2 teacher-forced propensity smoke.")
     parser.add_argument("--model", required=True, help="Hugging Face causal LM ID or local path.")
+    parser.add_argument(
+        "--model-revision",
+        default=None,
+        help="Optional Hugging Face model revision, branch, tag, or commit SHA.",
+    )
     parser.add_argument("--input", action="append", required=True, help="Local JSONL file or HF dataset id.")
     parser.add_argument("--split", default="train")
     parser.add_argument("--hf-config", default=None)
@@ -205,7 +210,14 @@ def _load_corpus_components():
     return SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS
 
 
-def _load_model(*, model_name: str, dtype_name: str, device_name: str, compile_model: bool):
+def _load_model(
+    *,
+    model_name: str,
+    model_revision: str | None,
+    dtype_name: str,
+    device_name: str,
+    compile_model: bool,
+):
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -214,11 +226,12 @@ def _load_model(*, model_name: str, dtype_name: str, device_name: str, compile_m
     if device.type == "cuda":
         _ensure_cuda_library_path()
         torch.set_float32_matmul_precision("high")
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    revision_kwargs = {"revision": model_revision} if model_revision else {}
+    tokenizer = AutoTokenizer.from_pretrained(model_name, **revision_kwargs)
     model_kwargs: dict[str, Any] = {}
     if dtype is not None:
         model_kwargs["torch_dtype"] = dtype
-    model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
+    model = AutoModelForCausalLM.from_pretrained(model_name, **revision_kwargs, **model_kwargs)
     model.to(device)
     model.eval()
     if compile_model:
@@ -1166,6 +1179,7 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
     SamplingConfig, iter_corpus_records, DEFAULT_ID_FIELDS = _load_corpus_components()
     tokenizer, model, device = _load_model(
         model_name=args.model,
+        model_revision=args.model_revision,
         dtype_name=args.dtype,
         device_name=args.device,
         compile_model=args.torch_compile,
@@ -1200,6 +1214,7 @@ def run_teacher_forced_propensity(args: argparse.Namespace) -> list[dict[str, An
         tags=["stage2", "phase2", "teacher-forced", "smoke", *args.wandb_tag],
         config={
             "model": args.model,
+            "model_revision": args.model_revision,
             "inputs": args.input,
             "split": args.split,
             "hf_config": args.hf_config,

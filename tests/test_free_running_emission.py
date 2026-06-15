@@ -33,6 +33,8 @@ def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_pa
     )
     logged_tables = {}
     logged_payloads = []
+    load_kwargs = {}
+    init_kwargs = {}
 
     class FakeRun:
         def log(self, payload):
@@ -43,7 +45,7 @@ def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_pa
 
     monkeypatch.setattr(
         "slop_sftdiv.cli.free_running_emission._load_model",
-        lambda **_kwargs: (FakeTokenizer(), object(), "cpu"),
+        lambda **kwargs: load_kwargs.update(kwargs) or (FakeTokenizer(), object(), "cpu"),
     )
     monkeypatch.setattr(
         "slop_sftdiv.cli.free_running_emission._generate_batch",
@@ -53,7 +55,7 @@ def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_pa
     )
     monkeypatch.setattr(
         "slop_sftdiv.cli.free_running_emission.init_wandb",
-        lambda **_kwargs: FakeRun(),
+        lambda **kwargs: init_kwargs.update(kwargs) or FakeRun(),
     )
     monkeypatch.setattr(
         "slop_sftdiv.cli.free_running_emission.log_summary_table",
@@ -63,6 +65,8 @@ def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_pa
         [
             "--model",
             "fake",
+            "--model-revision",
+            "it-SFT",
             "--input",
             str(input_path),
             "--sample-size",
@@ -110,6 +114,8 @@ def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_pa
         summary_csv = list(csv.DictReader(handle))
     assert summary == summary_csv or len(summary) == len(summary_csv)
     assert {row["feature"] for row in summary} == {"slop_lexicon", "stock_openers"}
+    assert load_kwargs["model_revision"] == "it-SFT"
+    assert init_kwargs["config"]["model_revision"] == "it-SFT"
     assert logged_payloads[-1]["generation/generations"] == 1
     assert "Certainly, delve" not in json.dumps(logged_tables["generation_samples_redacted"])
 

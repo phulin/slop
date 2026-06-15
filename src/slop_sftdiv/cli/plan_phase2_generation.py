@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -15,9 +16,16 @@ DEFAULT_STAGES = {
     "final": "allenai/Olmo-3-7B-Instruct",
 }
 
+
+@dataclass(frozen=True)
+class StageSpec:
+    model: str
+    revision: str | None = None
+
 OUTPUT_COLUMNS = [
     "stage",
     "model",
+    "model_revision",
     "temperature",
     "top_p",
     "sample_size",
@@ -60,8 +68,12 @@ def build_parser() -> argparse.ArgumentParser:
         "--stage",
         action="append",
         default=[],
-        metavar="STAGE=MODEL",
-        help="Stage/model pair. Defaults to the four OLMo 3 Instruct stages.",
+        metavar="STAGE=MODEL[@REVISION]",
+        help=(
+            "Stage/model pair. Add @REVISION for Hugging Face branches/tags, "
+            "for example sft=HuggingFaceTB/SmolLM3-3B-checkpoints@it-SFT. "
+            "Defaults to the four OLMo 3 Instruct stages."
+        ),
     )
     parser.add_argument(
         "--tokens-per-sec-estimate",
@@ -81,20 +93,27 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _parse_stage(raw_value: str) -> tuple[str, str]:
+def _parse_stage(raw_value: str) -> tuple[str, StageSpec]:
     if "=" not in raw_value:
-        raise ValueError(f"invalid --stage {raw_value!r}; expected STAGE=MODEL")
-    stage, model = raw_value.split("=", 1)
+        raise ValueError(f"invalid --stage {raw_value!r}; expected STAGE=MODEL[@REVISION]")
+    stage, model_spec = raw_value.split("=", 1)
     stage = stage.strip()
-    model = model.strip()
-    if not stage or not model:
-        raise ValueError(f"invalid --stage {raw_value!r}; expected STAGE=MODEL")
-    return stage, model
+    model_spec = model_spec.strip()
+    if not stage or not model_spec:
+        raise ValueError(f"invalid --stage {raw_value!r}; expected STAGE=MODEL[@REVISION]")
+    if "@" in model_spec:
+        model, revision = model_spec.rsplit("@", 1)
+        model = model.strip()
+        revision = revision.strip()
+        if not model or not revision:
+            raise ValueError(f"invalid --stage {raw_value!r}; expected STAGE=MODEL[@REVISION]")
+        return stage, StageSpec(model=model, revision=revision)
+    return stage, StageSpec(model=model_spec)
 
 
-def _stages(raw_stages: list[str]) -> dict[str, str]:
+def _stages(raw_stages: list[str]) -> dict[str, StageSpec]:
     if not raw_stages:
-        return dict(DEFAULT_STAGES)
+        return {stage: StageSpec(model=model) for stage, model in DEFAULT_STAGES.items()}
     stages = [_parse_stage(item) for item in raw_stages]
     return dict(stages)
 
@@ -136,6 +155,7 @@ def _shell_quote(value: str) -> str:
 def _command(
     *,
     model: str,
+    model_revision: str | None,
     prompt_package: Path,
     sample_size: int,
     seed: int,
@@ -186,6 +206,8 @@ def _command(
         "--wandb-mode",
         "online",
     ]
+    if model_revision:
+        parts.extend(["--model-revision", model_revision])
     parts.append("--torch-compile" if torch_compile else "--no-torch-compile")
     return " ".join(_shell_quote(part) for part in parts)
 
@@ -237,7 +259,7 @@ def run_plan_phase2_generation(args: argparse.Namespace) -> list[dict[str, Any]]
     package_rows = _jsonl_records(args.prompt_package)
     planned_prompts = min(args.sample_size, package_rows) if package_rows is not None else args.sample_size
     rows: list[dict[str, Any]] = []
-    for stage, model in stages.items():
+    for stage, stage_spec in stages.items():
         for temperature in temperatures:
             temp_tag = _temperature_tag(temperature)
             shard_tag = (
@@ -264,7 +286,8 @@ def run_plan_phase2_generation(args: argparse.Namespace) -> list[dict[str, Any]]
             rows.append(
                 {
                     "stage": stage,
-                    "model": model,
+                    "model": stage_spec.model,
+                    "model_revision": stage_spec.revision or "",
                     "temperature": temperature,
                     "top_p": args.top_p,
                     "sample_size": args.sample_size,
@@ -279,7 +302,8 @@ def run_plan_phase2_generation(args: argparse.Namespace) -> list[dict[str, Any]]
                     "completed": completed,
                     "existing_generations": existing_generations,
                     "command": _command(
-                        model=model,
+                        model=stage_spec.model,
+                        model_revision=stage_spec.revision,
                         prompt_package=args.prompt_package,
                         sample_size=args.sample_size,
                         seed=args.seed,
@@ -315,7 +339,10 @@ def run_plan_phase2_generation(args: argparse.Namespace) -> list[dict[str, Any]]
             "sample_size": args.sample_size,
             "completions_per_prompt": args.completions_per_prompt,
             "temperatures": temperatures,
-            "stages": stages,
+            "stages": {
+                stage: {"model": spec.model, "revision": spec.revision}
+                for stage, spec in stages.items()
+            },
             "max_new_tokens": args.max_new_tokens,
             "generation_batch_size": args.generation_batch_size,
             "tokens_per_sec_estimate": args.tokens_per_sec_estimate,

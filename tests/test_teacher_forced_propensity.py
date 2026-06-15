@@ -43,6 +43,7 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
     logged_payloads = []
     logged_tables = {}
     init_kwargs = {}
+    load_kwargs = {}
 
     class FakeRun:
         def log(self, payload):
@@ -57,7 +58,7 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
 
     monkeypatch.setattr(
         "slop_sftdiv.cli.teacher_forced_propensity._load_model",
-        lambda **_kwargs: (FakeTokenizer(), object(), "cpu"),
+        lambda **kwargs: load_kwargs.update(kwargs) or (FakeTokenizer(), object(), "cpu"),
     )
     monkeypatch.setattr(
         "slop_sftdiv.cli.teacher_forced_propensity._prefix_input_ids",
@@ -77,6 +78,8 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
         [
             "--model",
             "fake-model",
+            "--model-revision",
+            "it-SFT",
             "--input",
             str(input_path),
             "--sample-size",
@@ -116,7 +119,9 @@ def test_teacher_forced_propensity_writes_outputs_and_logs_summary(tmp_path, mon
     assert "Great question" not in json.dumps(logged_tables)
     assert summary == logged_tables["propensity_summary"]
     assert logged_payloads[-1]["propensity/opportunities"] == len(rows)
+    assert load_kwargs["model_revision"] == "it-SFT"
     assert init_kwargs["tags"][:4] == ["stage2", "phase2", "teacher-forced", "smoke"]
+    assert init_kwargs["config"]["model_revision"] == "it-SFT"
     assert init_kwargs["config"]["bootstrap_samples"] == 1000
 
 

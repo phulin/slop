@@ -29,6 +29,16 @@ Added CLI:
 - `slop-classify-amplification-spectrum`
 - `slop-compare-phase3-ladders`
 
+Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
+
+- `slop-free-running-emission` now accepts `--model-revision` and passes it to
+  tokenizer/model `from_pretrained`.
+- `slop-teacher-forced-propensity` now accepts the same `--model-revision`
+  flag.
+- `slop-plan-phase2-generation` now accepts stage specs in
+  `STAGE=MODEL@REVISION` form and writes a separate `model_revision` column in
+  the plan CSV.
+
 Inputs:
 
 - `artifacts/phase2/analysis/olmo3_amplification_spectrum_single_temp_t1_v6.csv`
@@ -124,6 +134,50 @@ Class counts:
 | Replicate full spectrum on SmolLM3-3B no_think ladder | No SmolLM3 Phase 2 artifacts present. | Missing |
 | Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` now implements the statistic and passes an OLMo self-check; real OLMo-vs-SmolLM3 correlation still requires a SmolLM3 spectrum. | Tooling done, data missing |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
+
+## SmolLM3 Replication Readiness
+
+The Phase 3 replication ladder needs Hugging Face revisions because several
+SmolLM3 training stages are branches of `HuggingFaceTB/SmolLM3-3B-checkpoints`
+rather than separate model repo IDs. Current branch tips verified on
+2026-06-15:
+
+| Stage candidate | Model repo | Revision | Current SHA |
+|---|---|---|---|
+| Base | `HuggingFaceTB/SmolLM3-3B-Base` | `main` | `d78a42f79198603e614095753484a04c10c2b940` |
+| Mid-training reference | `HuggingFaceTB/SmolLM3-3B-checkpoints` | `it-mid-training` | `0485ec16b618f88f6dbb27b23dbdecca1d6a1cdd` |
+| SFT | `HuggingFaceTB/SmolLM3-3B-checkpoints` | `it-SFT` | `f6ddaa5f2e99f24ea507596c214595769fb06387` |
+| Preference/APO soup | `HuggingFaceTB/SmolLM3-3B-checkpoints` | `it-soup-APO` | `cfb32d505f5025ec9be4e704f70cfbf5bdf8da94` |
+| Long-context expert candidate | `HuggingFaceTB/SmolLM3-3B-checkpoints` | `it-LC-expert` | `99d07b0a954f07f1237176440b0a61149c7d03d3` |
+| Final | `HuggingFaceTB/SmolLM3-3B` | `main` | `a07cc9a04f16550a088caea529712d1d335b0ac1` |
+
+The likely no_think Phase 3 ladder is base -> SFT -> preference/APO soup ->
+final. The `it-mid-training` and `it-LC-expert` branches are useful audit
+points but are not direct replacements for the SFT/APO/final cells in the
+OLMo-style spectrum.
+
+Example generation-plan stage specs now supported:
+
+```bash
+--stage base=HuggingFaceTB/SmolLM3-3B-Base \
+--stage sft=HuggingFaceTB/SmolLM3-3B-checkpoints@it-SFT \
+--stage dpo=HuggingFaceTB/SmolLM3-3B-checkpoints@it-soup-APO \
+--stage final=HuggingFaceTB/SmolLM3-3B
+```
+
+This removes a harness blocker for SmolLM3 Phase 2/3 replication. It does not
+create the missing SmolLM3 prompt package, teacher-forced summaries,
+free-running summaries, or assembled amplification spectrum.
+
+Local W&B-disabled planner smoke outputs:
+
+- `artifacts/phase3/analysis/smollm3_revision_generation_plan_smoke.csv`
+- `artifacts/phase3/analysis/smollm3_revision_generation_plan_smoke.md`
+
+The smoke plan uses the existing no_think SmolTalk2 smoke file and verifies
+that SFT/APO rows emit `--model-revision it-SFT` and
+`--model-revision it-soup-APO` in the planned free-running commands. It is a
+planner contract check only; it does not run model generation.
 
 ## Current Interpretation
 

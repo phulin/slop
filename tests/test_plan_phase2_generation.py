@@ -65,7 +65,7 @@ def test_plan_phase2_generation_writes_commands_and_completion_status(tmp_path, 
             "--tokens-per-sec-estimate",
             "4",
             "--stage",
-            "sft=fake-sft",
+            "sft=fake-sft@it-SFT",
             "--output",
             str(plan_path),
             "--summary-output",
@@ -83,11 +83,15 @@ def test_plan_phase2_generation_writes_commands_and_completion_status(tmp_path, 
     assert by_temp[1.0]["completed"] is False
     assert by_temp[1.0]["expected_generations"] == 4
     assert by_temp[1.0]["estimated_a100_hours"] == 8 / 3600
+    assert by_temp[1.0]["model"] == "fake-sft"
+    assert by_temp[1.0]["model_revision"] == "it-SFT"
     assert "uv run slop-free-running-emission" in by_temp[1.0]["command"]
+    assert "--model-revision it-SFT" in by_temp[1.0]["command"]
     assert "--torch-compile" in by_temp[1.0]["command"]
     with plan_path.open(encoding="utf-8", newline="") as handle:
         csv_rows = list(csv.DictReader(handle))
     assert csv_rows[0]["stage"] == "sft"
+    assert csv_rows[0]["model_revision"] == "it-SFT"
     assert summary_path.exists()
     assert logged_payloads[-1]["generation_plan/shards"] == 2
     assert logged_tables["phase2_generation_plan"] == rows
