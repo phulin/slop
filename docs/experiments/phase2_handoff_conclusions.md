@@ -2,9 +2,11 @@
 
 Date: 2026-06-14
 
-For a reader-facing final report with project framing, measurement definitions,
-checkpoint progression, caveats, and the final conclusion, see
-`docs/experiments/phase2_final_conclusion_report.md`.
+For the recommended new-reader final report with project framing, measurement
+definitions, checkpoint progression, caveats, and the final conclusion, see
+`docs/experiments/phase2_new_reader_conclusion_report.md`. The earlier
+`docs/experiments/phase2_final_conclusion_report.md` remains a detailed
+close-out and artifact index.
 
 ## Current Scope
 
