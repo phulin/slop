@@ -1498,3 +1498,27 @@
   and
   `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.md`.
   This manifest supersedes the older v5 headline manifest for Phase 2 close-out.
+- Added `slop-compare-phase2-biber` to measure Biber-lite register proxies on
+  cached Phase 2 generations and compare them with Phase 1 corpus-role samples
+  from `artifacts/stage1/census/feature_rates_by_corpus.parquet`. Ran it over
+  the final single-temperature `t=1.0` target-shape generation caches for
+  base/SFT/DPO/final. W&B run:
+  `stage2-phase2-olmo3-biber-lite-generation-vs-corpus-t1` (`eu4glzoq`).
+  Outputs:
+  `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1.csv`
+  and
+  `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1_summary.md`.
+  The table has 76 rows: 19 Biber-lite features across four stages.
+- Main Biber-lite register read: averaged across generated stages, the largest
+  generation-vs-SFT-target lifts are demonstratives (`+2.147` per 1k tokens),
+  third-person pronouns (`+1.932`), second-person pronouns (`+1.706`),
+  necessity modals (`+1.674`), first-person pronouns (`+1.658`), and
+  conditional subordinators (`+1.562`). From base to DPO/final, demonstratives,
+  first-person pronouns, infinitives, necessity modals, hedges, and
+  that-complements decline, while second-person pronouns and conditional
+  subordinators rise. This is register context only, not teacher-forced AF or
+  Result B compounding.
+- Regenerated the final Phase 2 artifact manifest to include the Biber-lite
+  comparison. W&B run:
+  `stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest-v2`
+  (`p3ehymfc`). The manifest now covers 14 retained artifacts and 192 records.

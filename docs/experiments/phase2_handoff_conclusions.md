@@ -302,7 +302,10 @@ Teacher-forced coverage is 20 cells. Blank cells mean missing measurements,
 not zero effects.
 
 The retained local artifact manifest is W&B run `oxc252zk`
-(`stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest`). Local outputs:
+(`stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest`), superseded by
+the Biber-inclusive manifest W&B run `p3ehymfc`
+(`stage2-phase2-olmo3-single-temp-t1-final-artifact-manifest-v2`). Local
+outputs:
 
 - `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.csv`
 - `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.json`
@@ -382,6 +385,59 @@ closer-side effect. The magnitude should be read cautiously because the held
 out reference denominator has only 18 positives, but the qualitative direction
 is clear: stock closer phrases remain relatively cheap local continuations for
 the model, with final/RLVR roughly back at base mass after the SFT dip.
+
+## Biber-Lite Register Comparison
+
+Biber-lite features are measured as a Phase 2 register comparison layer over
+the same `t=1.0` target-shape generation caches, then joined to the Phase 1
+corpus-role rates from `feature_rates_by_corpus.parquet`. This is not a
+teacher-forced AF or compounding analysis.
+
+W&B run:
+
+- `stage2-phase2-olmo3-biber-lite-generation-vs-corpus-t1` (`eu4glzoq`)
+
+Local outputs:
+
+- `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1.csv`
+- `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1_summary.md`
+
+The table has 76 rows: 19 Biber-lite proxies across base, SFT, DPO, and
+final/RLVR. Rates are regex-token-normalized per 1k tokens, matching the Phase
+1 Biber-lite census.
+
+Largest average generation-vs-SFT-target lifts across the four generation
+stages:
+
+| Feature | Avg Generation /1k | SFT Target /1k | Avg Delta | Ratio |
+|---|---:|---:|---:|---:|
+| `biber_lite_demonstratives` | 11.801 | 9.655 | 2.147 | 1.222 |
+| `biber_lite_third_person_pronouns` | 5.507 | 3.575 | 1.932 | 1.540 |
+| `biber_lite_second_person_pronouns` | 4.988 | 3.282 | 1.706 | 1.520 |
+| `biber_lite_necessity_modals` | 3.105 | 1.431 | 1.674 | 2.170 |
+| `biber_lite_first_person_pronouns` | 12.039 | 10.381 | 1.658 | 1.160 |
+| `biber_lite_conditional_subordinators` | 6.741 | 5.179 | 1.562 | 1.302 |
+
+Largest stage movements from base to DPO/final:
+
+| Feature | Base /1k | DPO - Base | Final - Base |
+|---|---:|---:|---:|
+| `biber_lite_demonstratives` | 15.686 | -5.702 | -5.571 |
+| `biber_lite_first_person_pronouns` | 15.325 | -5.023 | -3.687 |
+| `biber_lite_infinitives` | 17.426 | -4.417 | -3.803 |
+| `biber_lite_necessity_modals` | 5.037 | -2.622 | -2.532 |
+| `biber_lite_second_person_pronouns` | 4.349 | 1.100 | 1.198 |
+| `biber_lite_conditional_subordinators` | 6.133 | 1.732 | 1.525 |
+
+Interpretation: the base checkpoint is high on demonstratives, first-person
+pronouns, infinitives, necessity/possibility/prediction modals, hedges, and
+that-complements relative to the post-training checkpoints. DPO/final move
+many of those base-heavy register proxies downward, while increasing
+second-person pronouns and conditional subordinators. The generated
+nominalization rate is close to SFT targets and below DPO-chosen data, while
+all generation stages are well above the pretrain sample for nominalizations.
+Treat these as register/context shifts alongside the Tier-1 slop results, not
+as claims about opportunity-normalized amplification.
 
 ## Current Compute Posture
 
