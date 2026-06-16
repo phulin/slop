@@ -334,14 +334,14 @@ Live SmolLM3 recipe-weight extraction:
   `dclm` (`35.486%`), `fineweb-edu` (`31.140%`), `fw2-deu` (`2.209%`),
   `fw2-spa` (`2.003%`), `stack-edu-Python` (`1.811%`), and `pes2o`
   (`1.724%`).
-- The current bounded pretraining feature-rate samples cover 36 mapped recipe
-  sources and `91.161%` of the extracted recipe for retained Tier-1 features.
+- The current bounded pretraining feature-rate samples cover 38 mapped recipe
+  sources and `91.553%` of the extracted recipe for retained Tier-1 features.
   The covered set includes the largest web sources (`dclm` and
   `fineweb-edu`), sampled FineWeb2 language shards, math sources, PES2O,
-  StackExchange, MegaMath subdirectories, InfiWebMath-4plus, and thirteen
-  mirror-hydrated Stack-Edu language sources. The remaining production
-  baseline blocker is feature-rate coverage for the other recipe sources, not
-  source-weight discovery.
+  StackExchange, GitHub issues, Kaggle, MegaMath subdirectories,
+  InfiWebMath-4plus, and thirteen mirror-hydrated Stack-Edu language sources.
+  The remaining production baseline blocker is feature-rate coverage for the
+  other recipe sources, not source-weight discovery.
 - Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
   sampled pretraining feature rates to the extracted recipe weights with
   explicit source maps. Outputs:
@@ -439,15 +439,23 @@ Live SmolLM3 recipe-weight extraction:
   IDs, so these are reasonable source-mapped samples, but any writeup should
   describe them as mirror-hydrated Stack-Edu samples rather than direct
   canonical text loads.
+- Added bounded exact GitHub issues and Kaggle source samples from
+  `HuggingFaceTB/issues-kaggle-notebooks`, configs `issues` and `kaggle`,
+  split `train`. The GitHub issues sample retained 2,000 rows and 565,111
+  simple tokens from a 20,000-row hash-reservoir scan; the Kaggle sample
+  retained 2,000 rows and 2,259,555 simple tokens from the same scan cap.
+  These map conservatively to the extracted recipe sources `github-issues`
+  (`0.340%`) and `kaggle` (`0.051%`). They do not map to the separate
+  `pull-requests` or `jupyter-scripts` recipe rows.
 - With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineWeb2
   Italian, FineWeb2 Chinese, FineWeb2 Russian, FineWeb2 Portuguese, FineWeb2
   Persian, FineWeb2 Hindi, FineWeb2 Japanese, FineWeb2 Korean, FineWeb2 Thai,
   FineWeb2 Vietnamese, FineWeb2 Greek, FineMath, FineMath-4plus,
-  InfiWebMath-4plus, MegaMath text-code-block, MegaMath web-pro, PES2O, and
-  the thirteen Stack-Edu mirror-hydrated language samples included, the
-  current retained Tier-1 proxy covers `91.161%` of the extracted recipe and
-  leaves `8.839%` unsampled, so its covered-only rates are high-coverage
-  diagnostics rather than full-mixture estimates.
+  InfiWebMath-4plus, MegaMath text-code-block, MegaMath web-pro, PES2O,
+  GitHub issues, Kaggle, and the thirteen Stack-Edu mirror-hydrated language
+  samples included, the current retained Tier-1 proxy covers `91.553%` of the
+  extracted recipe and leaves `8.447%` unsampled, so its covered-only rates
+  are high-coverage diagnostics rather than full-mixture estimates.
 
 In-progress source-identification plan:
 
@@ -486,8 +494,9 @@ Current interpretation:
   FineWeb2 Portuguese, FineWeb2 Persian, FineWeb2 Hindi, FineWeb2 Japanese,
   FineWeb2 Korean, FineWeb2 Thai, FineWeb2 Vietnamese, FineWeb2 Greek,
   FineMath, FineMath-4plus, InfiWebMath-4plus, MegaMath text-code-block,
-  MegaMath web-pro, PES2O, StackExchange, and thirteen Stack-Edu language
-  mirror samples are now measured. The largest remaining missing sources are
+  MegaMath web-pro, PES2O, StackExchange, GitHub issues, Kaggle, and thirteen
+  Stack-Edu language mirror samples are now measured. The largest remaining
+  missing sources are
   real-shuffled Stack-Edu Python (`1.156%`), `infiwebmath` (`0.903%`),
   real-shuffled Stack-Edu Cpp (`0.762%`), Jupyter scripts (`0.691%`), pull
   requests (`0.672%`), and Stack-Edu HTML (`0.642%`). The `infiwebmath` source

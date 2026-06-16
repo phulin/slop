@@ -2596,3 +2596,39 @@
   classifier, and OLMo-vs-SmolLM3 comparison. The OLMo-vs-SmolLM3 AF
   correlation remains Spearman `0.762` and Pearson `0.978`, because this pass
   changed the data-rate baseline rather than the teacher-forced AF layer.
+
+2026-06-16:
+
+- Probed `HuggingFaceTB/issues-kaggle-notebooks` and confirmed two public
+  text-bearing configs: `issues` and `kaggle`, both with split `train`.
+- Added bounded exact source samples:
+  `artifacts/stage1/corpora/smollm3_pretrain_github_issues_2k.jsonl`
+  retained 2,000 rows and 565,111 simple tokens from a 20,000-row
+  hash-reservoir scan; `artifacts/stage1/corpora/smollm3_pretrain_kaggle_2k.jsonl`
+  retained 2,000 rows and 2,259,555 simple tokens from the same scan cap.
+- Ran Tier-1 censi:
+  `artifacts/stage1/census/smollm3_pretrain_github_issues_2k_tier1_feature_rates.csv`
+  and
+  `artifacts/stage1/census/smollm3_pretrain_kaggle_2k_tier1_feature_rates.csv`.
+  GitHub issues rates per 1k tokens: `contrastive_negation` `0.324`,
+  `rule_of_three_approx` `0.743`, `slop_lexicon` `0.251`,
+  `stock_openers` `0.071`, `stock_closers` `0.016`, pooled stock phrases
+  `0.087`. Kaggle rates per 1k tokens: `contrastive_negation` `0.050`,
+  `rule_of_three_approx` `0.993`, `slop_lexicon` `0.105`,
+  `stock_openers` `0.003`, `stock_closers` `0.074`, pooled stock phrases
+  `0.077`.
+- Regenerated the coverage-aware weighted pretraining baseline with exact
+  maps `smollm3_pretrain_github_issues_2k=github-issues` and
+  `smollm3_pretrain_kaggle_2k=kaggle`. Retained Tier-1 recipe coverage is now
+  `91.553%` through 38 mapped source samples, with missing share `8.447%`.
+  Covered-only weighted rates per 1k tokens are `slop_lexicon` `0.356`,
+  `rule_of_three_approx` `3.792`, `contrastive_negation` `0.335`,
+  `stock_closers` `0.032`, `stock_openers` `0.026`, and pooled stock phrases
+  `0.058`.
+- Regenerated the preferred bounded SmolLM3 baseline data-rate spectrum,
+  classifier, and OLMo-vs-SmolLM3 comparison after the weighted-baseline
+  refresh. The SmolLM3 spectrum now carries source-specific
+  `pretrain_smollm3_pretrain_github_issues_2k_per_1k_tokens` and
+  `pretrain_smollm3_pretrain_kaggle_2k_per_1k_tokens` columns. The
+  OLMo-vs-SmolLM3 AF correlation remains Spearman `0.762` and Pearson
+  `0.978`, because the teacher-forced AF layer did not change.

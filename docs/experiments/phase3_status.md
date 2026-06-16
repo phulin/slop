@@ -30,7 +30,7 @@ weighted SmolLM3 pretraining feature-rate baseline, broader teacher-forced
 feature coverage, and stretch Instruct/Think/RL Zero comparison are not
 present. The exact SmolLM3 recipe source weights have now been extracted from
 the published configs, and retained Tier-1 feature-rate coverage now reaches
-`91.161%` of the extracted recipe through 36 mapped source samples.
+`91.553%` of the extracted recipe through 38 mapped source samples.
 
 ## Implemented Phase 3 Layer
 
@@ -348,7 +348,7 @@ Class counts:
 | Cluster bootstrap CIs | Existing Phase 2 AF table includes bootstrap CIs where teacher-forced measurements exist. | Partially done from Phase 2 |
 | Benjamini-Hochberg FDR across full feature set | Result A chosen-vs-rejected sign-test BH-FDR is joined from `olmo3_dolci_dpo_10k_pair_analysis.csv`; target-shape OLMo free-running stage effects have paired sign-test BH-FDR in `olmo3_phase3_free_run_stage_effects_t1.csv`; retained OLMo teacher-forced stage effects have paired opportunity-level sign-test BH-FDR in `olmo3_phase3_teacher_forced_stage_effects_t1.csv`; both stage-effect families are joined into the regenerated classifier table. | Bounded OLMo done |
 | Paired designs wherever corpora share prompts | Preference-complicity uses paired Phase 1 sign-test BH-FDR. Free-running stage effects use paired shared-prompt/completion sign tests. Teacher-forced stage effects use paired shared-opportunity sign tests. | Bounded OLMo done |
-| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, canonical chat-template generation plan, propensity plan, all-stage 4-prompt calibration, full 512-prompt four-stage SmolLM3 teacher-forced spectrum for `slop_lexicon`, `neutral_common_controls`, and `rule_of_three_approx`, full 512-prompt x 8-completion free-running caches at `t=1.0`, paired free-running FDR, compounding, SmolTalk2 SFT/preference data rates, bounded FineWeb-Edu/DCLM/FineWeb2 German/FineWeb2 Spanish/FineWeb2 French/FineWeb2 Italian/FineWeb2 Chinese/FineWeb2 Russian/FineWeb2 Portuguese/FineWeb2 Persian/FineWeb2 Hindi/FineWeb2 Japanese/FineWeb2 Korean/FineWeb2 Thai/FineWeb2 Vietnamese/FineWeb2 Greek/FineMath/FineMath-4plus/InfiWebMath-4plus/MegaMath text-code/MegaMath web-pro/PES2O/StackExchange/Stack-Edu Python/Cpp/Java/JavaScript/C/PHP/TypeScript/SQL/Go/Ruby/Rust/Shell/Swift pretraining-source baselines, bounded SmolTalk2 Mid rates, extracted SmolLM3 recipe weights, a coverage-aware weighted pretrain baseline proxy, and a generation-inclusive SmolLM3 spectrum/classification now exist. Missing pieces are the original 5,000-prompt x 8 x 3-temperature production grid, production weighted pretraining feature-rate coverage beyond the current 91.161% recipe share for retained Tier-1 features, and broader teacher-forced support for sparse features. | Bounded generation-inclusive SmolLM3 slice with baseline data rates done; full production spectrum incomplete |
+| Replicate full spectrum on SmolLM3-3B no_think ladder | A 512-row no_think SmolTalk2 prompt package, canonical chat-template generation plan, propensity plan, all-stage 4-prompt calibration, full 512-prompt four-stage SmolLM3 teacher-forced spectrum for `slop_lexicon`, `neutral_common_controls`, and `rule_of_three_approx`, full 512-prompt x 8-completion free-running caches at `t=1.0`, paired free-running FDR, compounding, SmolTalk2 SFT/preference data rates, bounded FineWeb-Edu/DCLM/FineWeb2 German/FineWeb2 Spanish/FineWeb2 French/FineWeb2 Italian/FineWeb2 Chinese/FineWeb2 Russian/FineWeb2 Portuguese/FineWeb2 Persian/FineWeb2 Hindi/FineWeb2 Japanese/FineWeb2 Korean/FineWeb2 Thai/FineWeb2 Vietnamese/FineWeb2 Greek/FineMath/FineMath-4plus/InfiWebMath-4plus/MegaMath text-code/MegaMath web-pro/PES2O/StackExchange/GitHub issues/Kaggle/Stack-Edu Python/Cpp/Java/JavaScript/C/PHP/TypeScript/SQL/Go/Ruby/Rust/Shell/Swift pretraining-source baselines, bounded SmolTalk2 Mid rates, extracted SmolLM3 recipe weights, a coverage-aware weighted pretrain baseline proxy, and a generation-inclusive SmolLM3 spectrum/classification now exist. Missing pieces are the original 5,000-prompt x 8 x 3-temperature production grid, production weighted pretraining feature-rate coverage beyond the current 91.553% recipe share for retained Tier-1 features, and broader teacher-forced support for sparse features. | Bounded generation-inclusive SmolLM3 slice with baseline data rates done; full production spectrum incomplete |
 | Report cross-ladder AF rank correlation | `slop-compare-phase3-ladders` implements the statistic, passes an OLMo self-check, aligns OLMo vs. the SmolLM3 4-prompt calibration spectrum, reports a 512-prompt teacher-forced slop-lexicon-only comparison with Spearman AF `0.400`, reports a two-feature teacher-forced comparison with Spearman AF `0.762`, and reports the generation-inclusive bounded comparison with 24 aligned rows and 8 shared AF values, Spearman AF `0.762`, Pearson AF `0.978`. The data-rate comparison is the current best bounded comparison, but full production correlation remains missing until the shared feature scope has broader teacher-forced coverage where support allows and the intended production prompt/temperature grid is complete. | Bounded generation-inclusive data-rate comparison done; full production correlation incomplete |
 | Stretch Instruct vs. Think vs. RL Zero comparison | Not started. | Stretch missing |
 
@@ -833,11 +833,11 @@ production Phase 3 completion.
 ## SmolLM3 Baseline And Preference Data-Rate Layer
 
 The bounded SmolLM3 no_think spectrum now has source-stratified baseline data
-rates: thirty-six mapped pretraining source samples, one SmolTalk2 Mid sample,
+rates: thirty-eight mapped pretraining source samples, one SmolTalk2 Mid sample,
 the no_think SFT target sample, and the candidate no_think Tulu preference
 sample. This closes a much larger bounded data-rate gap for Phase 3
 classification. It still does not reconstruct a full production weighted
-SmolLM3 pretraining feature-rate baseline, because `8.839%` of the extracted
+SmolLM3 pretraining feature-rate baseline, because `8.447%` of the extracted
 recipe remains unsampled and some sampled Stack-Edu rows come from hydrated
 public mirrors rather than the metadata-only canonical HF config.
 
@@ -868,6 +868,8 @@ Sampled inputs:
 | MegaMath web-pro pretraining source | 2,000 | 1,182,841 | Exact public math web source; sampled from `LLM360/MegaMath` parquet data files under `megamath-web-pro/*.parquet` through the generic `parquet` loader, split `train`, hash reservoir over 20,000 scanned rows. Source rates are token-weighted across inferred strata. |
 | PES2O pretraining source | 2,000 | 399,454 | Academic/scientific source; sampled from `allenai/dolmino-mix-1124`, config `pes2o`, split `train`, hash reservoir over 20,000 scanned rows. |
 | StackExchange Apple pretraining source | 2,000 | 1,013,267 | Q&A/forum-like source from the SmolLM3 pretraining collection, using `ThreadText`. |
+| GitHub issues pretraining source | 2,000 | 565,111 | Exact public source mapped to `github-issues`; sampled from `HuggingFaceTB/issues-kaggle-notebooks`, config `issues`, split `train`, text field `text`, hash reservoir over 20,000 scanned rows. |
+| Kaggle pretraining source | 2,000 | 2,259,555 | Exact public source mapped to `kaggle`; sampled from `HuggingFaceTB/issues-kaggle-notebooks`, config `kaggle`, split `train`, text field `text`, hash reservoir over 20,000 scanned rows. |
 | Stack-Edu Python pretraining source | 2,000 | 611,029 | Code source mapped to `stack-edu-Python`; sampled from hydrated mirror `hongliu9903/stack_edu_python`, split `train`, text field `text`, hash reservoir over 20,000 scanned rows. The canonical `HuggingFaceTB/stack-edu` config exposes blob metadata only. |
 | Stack-Edu Cpp pretraining source | 2,000 | 621,130 | Code source mapped to `stack-edu-Cpp`; sampled from hydrated mirror `hongliu9903/stack_edu_cpp`, split `train`, text field `text`, hash reservoir over 20,000 scanned rows. |
 | Stack-Edu Java pretraining source | 2,000 | 761,122 | Code source mapped to `stack-edu-Java`; sampled from hydrated mirror `hongliu9903/stack_edu_java`, split `train`, text field `text`, hash reservoir over 20,000 scanned rows. |
@@ -918,7 +920,8 @@ Published config source weights:
   (`0.333%`), `fw2-hin` (`0.321%`), `fw2-jpn` (`0.321%`), `fw2-kor`
   (`0.321%`), `fw2-tha` (`0.321%`), `stack-edu-SQL` (`0.290%`),
   `stack-edu-TypeScript` (`0.264%`), `fw2-vie` (`0.237%`), `fw2-ell`
-  (`0.222%`), `stack-edu-Swift` (`0.088%`), `stack-edu-Rust` (`0.071%`),
+  (`0.222%`), `github-issues` (`0.340%`), `kaggle` (`0.051%`),
+  `stack-edu-Swift` (`0.088%`), `stack-edu-Rust` (`0.071%`),
   `stack-edu-Ruby` (`0.061%`), `stack-edu-Shell` (`0.052%`), and
   `stack-edu-Go` (`0.044%`) of the extracted recipe. This is enough for a
   high-coverage weighted proxy, but not enough to compute a production
@@ -963,11 +966,12 @@ Coverage-aware weighted baseline proxy:
   `stack-edu-Python`, `stack-edu-Cpp`, `stack-edu-Java`,
   `stack-edu-JavaScript`, `stack-edu-C`, `stack-edu-PHP`,
   `stack-edu-TypeScript`, `stack-edu-SQL`, `stack-edu-Go`, `stack-edu-Ruby`,
-  `stack-edu-Rust`, `stack-edu-Shell`, and `stack-edu-Swift`. The current
-  retained Tier-1 proxy covers `91.161%` of the extracted recipe and leaves
-  `8.839%` unsampled.
-- Covered-only weighted rates per 1k tokens are: `slop_lexicon` `0.357`,
-  `rule_of_three_approx` `3.805`, `contrastive_negation` `0.335`,
+  `stack-edu-Rust`, `stack-edu-Shell`, and `stack-edu-Swift`, then added
+  exact source maps for `github-issues` and `kaggle` from
+  `HuggingFaceTB/issues-kaggle-notebooks`. The current retained Tier-1 proxy
+  covers `91.553%` of the extracted recipe and leaves `8.447%` unsampled.
+- Covered-only weighted rates per 1k tokens are: `slop_lexicon` `0.356`,
+  `rule_of_three_approx` `3.792`, `contrastive_negation` `0.335`,
   `stock_closers` `0.032`, `stock_openers` `0.026`, and pooled stock phrases
   `0.058`. These are coverage-normalized diagnostics, not full-mixture
   estimates, because the remaining unsampled recipe share is still nonzero.
@@ -1098,8 +1102,8 @@ Reassembled data-rate spectrum outputs:
 The `baselines_data_rates` spectrum is the current preferred bounded SmolLM3
 data-rate spectrum. It now uses
 `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
-as the aggregate pretraining baseline override, with `91.161%` covered recipe
-share and source-specific columns retained for all thirty-six mapped
+as the aggregate pretraining baseline override, with `91.553%` covered recipe
+share and source-specific columns retained for all thirty-eight mapped
 pretraining source samples. The regenerated OLMo-vs-SmolLM3 comparison still
 aligns 24 feature-stage rows and 8 shared AF values, with overall Spearman AF
 `0.762` and Pearson AF `0.978`; the correlation is unchanged because this pass
@@ -1128,7 +1132,7 @@ preference mixture, but the current SmolLM3 paired analysis is not yet
 stratified by per-row preference-construction metadata.
 
 Second caveat: the current SmolLM3 feature-rate pretrain baseline is a
-coverage-aware weighted proxy over thirty-six mapped recipe source samples. It is
+coverage-aware weighted proxy over thirty-eight mapped recipe source samples. It is
 useful as a pretraining-source baseline for Phase 3 classification, but it is
 not the full SmolLM3 pretraining mixture. The exact published recipe weights
 are now resolved, so the remaining baseline gap is feature-rate coverage for
@@ -1187,13 +1191,14 @@ The next concrete work needed to complete Phase 3 from `EXPERIMENTS.md` is:
    512-prompt denominator audit has zero references for stock phrases and
    contrastive negation.
 3. Expand SmolLM3 pretraining feature-rate coverage beyond the current
-   `91.161%` retained Tier-1 recipe share covered by DCLM, FineWeb-Edu,
+   `91.553%` retained Tier-1 recipe share covered by DCLM, FineWeb-Edu,
    FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineWeb2 Italian,
    FineWeb2 Chinese, FineWeb2 Russian, FineWeb2 Portuguese, FineWeb2 Persian,
    FineWeb2 Hindi, FineWeb2 Japanese, FineWeb2 Korean, FineWeb2 Thai,
    FineWeb2 Vietnamese, FineWeb2 Greek, FineMath, FineMath-4plus,
    InfiWebMath-4plus, MegaMath text-code-block, MegaMath web-pro, PES2O,
-   StackExchange, and the thirteen Stack-Edu mirror-hydrated language samples.
+   StackExchange, GitHub issues, Kaggle, and the thirteen Stack-Edu
+   mirror-hydrated language samples.
    The largest remaining missing sources are real-shuffled Stack-Edu Python
    (`1.156%`), `infiwebmath` (`0.903%`), real-shuffled Stack-Edu Cpp
    (`0.762%`), Jupyter scripts (`0.691%`), pull requests (`0.672%`), and
