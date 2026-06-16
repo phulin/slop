@@ -2558,3 +2558,41 @@
   `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_baselines_data_rates_tf_generation_compounding_slop_neutral_rule3_summary.md`.
   The OLMo-vs-SmolLM3 AF correlation remains Spearman `0.762` and Pearson
   `0.978`, because the teacher-forced AF layer did not change.
+
+## 2026-06-16 - Stack-Edu mirror coverage for SmolLM3 weighted baseline
+
+- Sampled thirteen text-bearing Stack-Edu language mirrors for SmolLM3
+  pretraining-source coverage: Python, Cpp, Java, JavaScript, C, PHP,
+  TypeScript, SQL, Go, Ruby, Rust, Shell, and Swift. Each sample used
+  `hash_reservoir`, seed `1729`, a 2,000-row target, and a 20,000-row scan cap
+  over the mirror `text` field. The canonical `HuggingFaceTB/stack-edu`
+  configs expose blob metadata rather than hydrated code text; Python and Cpp
+  mirror probes matched canonical first blob IDs, so these are documented as
+  mirror-hydrated Stack-Edu source samples.
+- Ran retained Tier-1 census for all thirteen Stack-Edu samples:
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_python_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_cpp_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_java_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_javascript_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_c_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_php_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_typescript_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_sql_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_go_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_ruby_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_rust_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_shell_2k_tier1_feature_rates.csv`,
+  and
+  `artifacts/stage1/census/smollm3_pretrain_stack_edu_swift_2k_tier1_feature_rates.csv`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with new source maps for the thirteen Stack-Edu language
+  sources. Current retained Tier-1 coverage is now `91.161%` of the extracted
+  recipe, with missing share `8.839%`. Covered-only weighted rates per 1k
+  tokens are `slop_lexicon` `0.357`, `rule_of_three_approx` `3.805`,
+  `contrastive_negation` `0.335`, `stock_closers` `0.032`, `stock_openers`
+  `0.026`, and pooled stock phrases `0.058`.
+- Regenerated the preferred bounded SmolLM3 baseline data-rate spectrum,
+  classifier, and OLMo-vs-SmolLM3 comparison. The OLMo-vs-SmolLM3 AF
+  correlation remains Spearman `0.762` and Pearson `0.978`, because this pass
+  changed the data-rate baseline rather than the teacher-forced AF layer.

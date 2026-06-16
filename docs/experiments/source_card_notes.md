@@ -291,6 +291,21 @@ Live bounded SmolLM3 baseline samples:
   `artifacts/stage1/corpora/smollm3_pretrain_stackexchange_apple_2k.jsonl`
   from `HuggingFaceTB/stackexchange_2025_md` config
   `apple.stackexchange.com`, and
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_python_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_cpp_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_java_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_javascript_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_c_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_php_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_typescript_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_sql_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_go_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_ruby_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_rust_2k.jsonl`,
+  `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_shell_2k.jsonl`,
+  and `artifacts/stage1/corpora/smollm3_pretrain_stack_edu_swift_2k.jsonl`
+  from public hydrated `hongliu9903/stack_edu_*` mirrors, mapped to the
+  corresponding SmolLM3 recipe source names, and
   `artifacts/stage1/corpora/smollm3_smoltalk2_mid_llama_nemotron_reasoning_2k.jsonl`
   from `HuggingFaceTB/smoltalk2` config `Mid` split
   `Llama_Nemotron_Post_Training_Dataset_reasoning_r1`.
@@ -319,16 +334,14 @@ Live SmolLM3 recipe-weight extraction:
   `dclm` (`35.486%`), `fineweb-edu` (`31.140%`), `fw2-deu` (`2.209%`),
   `fw2-spa` (`2.003%`), `stack-edu-Python` (`1.811%`), and `pes2o`
   (`1.724%`).
-- The current bounded pretraining feature-rate samples cover `dclm`
-  (`35.486%` exact config share), `fineweb-edu` (`31.140%`), `fw2-deu`
-  (`2.209%`), `fw2-spa` (`2.003%`), `pes2o` (`1.724%`), `fw2-fra`
-  (`1.607%`), `finemath` (`1.410%`), `fw2-ita` (`1.062%`), and
-  `fw2-cmn` (`0.991%`), `fw2-rus` (`0.991%`), `fw2-por` (`0.931%`),
-  `finemath-4plus` (`0.606%`), `fw2-fas` (`0.347%`), `stackexchange`
-  (`0.333%`), `fw2-hin` (`0.321%`), `fw2-jpn` (`0.321%`), `fw2-kor`
-  (`0.321%`), `fw2-tha` (`0.321%`), `fw2-vie` (`0.237%`), and `fw2-ell`
-  (`0.222%`). The remaining production baseline blocker is feature-rate
-  coverage for the other recipe sources, not source-weight discovery.
+- The current bounded pretraining feature-rate samples cover 36 mapped recipe
+  sources and `91.161%` of the extracted recipe for retained Tier-1 features.
+  The covered set includes the largest web sources (`dclm` and
+  `fineweb-edu`), sampled FineWeb2 language shards, math sources, PES2O,
+  StackExchange, MegaMath subdirectories, InfiWebMath-4plus, and thirteen
+  mirror-hydrated Stack-Edu language sources. The remaining production
+  baseline blocker is feature-rate coverage for the other recipe sources, not
+  source-weight discovery.
 - Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
   sampled pretraining feature rates to the extracted recipe weights with
   explicit source maps. Outputs:
@@ -417,15 +430,24 @@ Live SmolLM3 recipe-weight extraction:
   `LLM360/MegaMath` dataset loader exposes metadata-like rows for the first
   data directory, so sampling uses the generic `parquet` loader plus
   `--hf-data-files` to target the exact source paths.
+- Added thirteen bounded Stack-Edu language source samples from public hydrated
+  mirrors: Python, Cpp, Java, JavaScript, C, PHP, TypeScript, SQL, Go, Ruby,
+  Rust, Shell, and Swift. Each sample retained 2,000 rows from a 20,000-row
+  hash-reservoir scan over `text`. The canonical `HuggingFaceTB/stack-edu`
+  configs expose blob metadata through the HF dataset interface, not hydrated
+  code text. Mirror probes for Python and Cpp matched the first canonical blob
+  IDs, so these are reasonable source-mapped samples, but any writeup should
+  describe them as mirror-hydrated Stack-Edu samples rather than direct
+  canonical text loads.
 - With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineWeb2
   Italian, FineWeb2 Chinese, FineWeb2 Russian, FineWeb2 Portuguese, FineWeb2
   Persian, FineWeb2 Hindi, FineWeb2 Japanese, FineWeb2 Korean, FineWeb2 Thai,
   FineWeb2 Vietnamese, FineWeb2 Greek, FineMath, FineMath-4plus,
-  InfiWebMath-4plus, MegaMath text-code-block, MegaMath web-pro, and PES2O
-  included, the current retained Tier-1 proxy covers `84.350%` of the
-  extracted recipe and leaves `15.650%`
-  unsampled, so its covered-only rates are majority-coverage diagnostics
-  rather than full-mixture estimates.
+  InfiWebMath-4plus, MegaMath text-code-block, MegaMath web-pro, PES2O, and
+  the thirteen Stack-Edu mirror-hydrated language samples included, the
+  current retained Tier-1 proxy covers `91.161%` of the extracted recipe and
+  leaves `8.839%` unsampled, so its covered-only rates are high-coverage
+  diagnostics rather than full-mixture estimates.
 
 In-progress source-identification plan:
 
@@ -457,21 +479,19 @@ Current interpretation:
 
 - SmolLM3 exact recipe source weights are now extracted from the published
   configs. Bounded source-stratified proxy samples exist for Phase 3 context,
-  but production pretraining-mixture feature-rate claims should wait for
-  feature-rate coverage across the relevant weighted sources. The coverage
-  proxy quantifies the current gap; DCLM, FineWeb2 German, FineWeb2 Spanish,
+  but production pretraining-mixture feature-rate claims should still be
+  described as coverage-aware rather than complete. The coverage proxy
+  quantifies the current gap; DCLM, FineWeb2 German, FineWeb2 Spanish,
   FineWeb2 French, FineWeb2 Italian, FineWeb2 Chinese, FineWeb2 Russian,
   FineWeb2 Portuguese, FineWeb2 Persian, FineWeb2 Hindi, FineWeb2 Japanese,
   FineWeb2 Korean, FineWeb2 Thai, FineWeb2 Vietnamese, FineWeb2 Greek,
   FineMath, FineMath-4plus, InfiWebMath-4plus, MegaMath text-code-block,
-  MegaMath web-pro, and PES2O are now sampled.
-  `stack-edu-Python` (`1.811%`) is the largest unresolved source, but
-  `HuggingFaceTB/stack-edu` config `Python` exposes blob metadata rather than
-  code text, so measuring it needs a blob-hydration path or another
-  text-bearing mirror. `stack-edu-Cpp` (`1.304%`) carries the same caveat; the
-  next directly sampleable sources are smaller FineWeb2 language shards and
-  other small exact recipe sources. The `infiwebmath` source row (`0.903%`)
-  remains unmapped to an exact public `HuggingFaceTB/finemath` config; the
+  MegaMath web-pro, PES2O, StackExchange, and thirteen Stack-Edu language
+  mirror samples are now measured. The largest remaining missing sources are
+  real-shuffled Stack-Edu Python (`1.156%`), `infiwebmath` (`0.903%`),
+  real-shuffled Stack-Edu Cpp (`0.762%`), Jupyter scripts (`0.691%`), pull
+  requests (`0.672%`), and Stack-Edu HTML (`0.642%`). The `infiwebmath` source
+  row remains unmapped to an exact public `HuggingFaceTB/finemath` config; the
   public configs expose `infiwebmath-3plus` and `infiwebmath-4plus`, with
   `infiwebmath-4plus` now sampled for its exact `0.383%` source row.
 - The live probes narrow SmolTalk2/Tulu source identification to specific
