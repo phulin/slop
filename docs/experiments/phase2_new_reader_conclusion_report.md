@@ -20,6 +20,36 @@ For audit detail and artifact hashes, see:
 - `docs/experiments/phase2_final_conclusion_report.md`
 - `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.md`
 
+## Reader Orientation
+
+If you are new to the project, read Phase 2 as a model-behavior measurement,
+not as a broad benchmark of answer quality. The project calls the measured
+features "slop" because they are recognizable surface style markers, but the
+label is operational: a marker hit is a detector event, not a judgment that the
+answer is wrong, useless, or low quality.
+
+The short version is:
+
+1. Phase 1 counted where the markers appear in data.
+2. Phase 2 measured where those markers appear in model behavior.
+3. Phase 3 joins the two into a cross-ladder amplification spectrum.
+
+Phase 2's main contribution is that it separates three things that are easy to
+confuse:
+
+| Evidence layer | What it can tell us | What it cannot tell us alone |
+|---|---|---|
+| Teacher-forced propensity | Whether a checkpoint locally assigns more probability to feature-starting continuations under fixed context. | Whether the feature will be frequent in long sampled answers. |
+| Free-running generation | What users would see in sampled outputs under the retained decoding setting. | Whether the feature came from local preference, inherited base behavior, or self-conditioning. |
+| Compounding | Whether earlier wording in a generated answer makes later feature hits more likely. | Whether the training data caused the first hit. |
+| Biber-lite register | How broader output style shifts across checkpoints and data roles. | Whether a Tier-1 slop feature is causally amplified. |
+
+That separation is why several Phase 2 results are intentionally non-simple.
+For example, DPO has the strongest local `slop_lexicon` propensity, but Base is
+slightly higher than DPO in sampled `slop_lexicon` output. That is not a
+contradiction. It means local token preference, inherited distribution, decoding
+dynamics, and within-answer self-conditioning are all participating.
+
 ## Executive Summary
 
 The project studies where recognizable assistant-style surface patterns enter a
@@ -80,6 +110,16 @@ The practical handoff is:
 > some rebound at DPO, some compound during generation, and Biber-lite register
 > shifts describe broader final-output style rather than direct causal
 > amplification.
+
+The confidence ranking is also feature-specific:
+
+| Feature family | Confidence in Phase 2 conclusion | Why |
+|---|---|---|
+| `slop_lexicon` | Highest | It has Phase 1 corpus rates, teacher-forced AF, sampled generation rates, expected-vs-observed compounding, and direct prior/no-prior window tests. |
+| `rule_of_three_approx` | Medium | It is frequent in sampled output and has a teacher-forced proxy, but the proxy measures third-item extension rather than full open-vocabulary construction initiation. |
+| Stock phrases | Medium | Sampled-output rates are clear, but opener and closer contracts behave differently and closer AF has a rare-reference denominator. |
+| `contrastive_negation` | Lower | The sampled-output rebound is clear, but retained teacher-forced reference support is sparse. |
+| Biber-lite register | Descriptive, not causal | It provides a useful final-output style signature, but it is not an opportunity-normalized propensity measurement. |
 
 ## What Phase 2 Was Trying To Answer
 
