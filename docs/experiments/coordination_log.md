@@ -2425,3 +2425,33 @@
   on code-text hydration. The next exact public math source is
   `infiwebmath-4plus` (`0.383%`), and the next smaller web sources are
   FineWeb2 language shards.
+
+## 2026-06-16 - InfiWebMath-4plus pretraining feature-rate coverage
+
+- Sampled
+  `artifacts/stage1/corpora/smollm3_pretrain_infiwebmath_4plus_2k.jsonl`,
+  with manifests and summary. Source: `HuggingFaceTB/finemath`, config
+  `infiwebmath-4plus`, split `train`, 20,000 scanned rows, 2,000 retained
+  rows, 1,868,874 simple tokens, `hash_reservoir` seed `1729`. Retained
+  strata are `web_cc` (1,516 rows), `forums_qa` (308), `wiki` (86), `code`
+  (47), and `scientific` (43).
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_infiwebmath_4plus_2k_tier1_feature_rates.csv`.
+  Token-weighted source rates per 1k tokens are `slop_lexicon` `0.177`,
+  `rule_of_three_approx` `1.896`, `contrastive_negation` `0.158`,
+  `stock_closers` `0.029`, `stock_openers` `0.073`, and pooled stock phrases
+  `0.102`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with source map
+  `smollm3_pretrain_infiwebmath_4plus_2k=infiwebmath-4plus`. Current retained
+  Tier-1 coverage is now `80.875%` of the extracted SmolLM3 recipe, with
+  missing share `19.125%`. Covered-only weighted rates per 1k tokens are
+  `slop_lexicon` `0.388`, `rule_of_three_approx` `4.227`,
+  `contrastive_negation` `0.375`, `stock_closers` `0.035`, `stock_openers`
+  `0.029`, and pooled stock phrases `0.063`.
+- Added a regression test so multi-stratum source rows are token-weighted when
+  they map to one recipe source. The larger `infiwebmath` recipe row
+  (`0.903%`) remains unmapped to an exact public `HuggingFaceTB/finemath`
+  config; `infiwebmath-4plus` covers only its exact `0.383%` recipe source
+  row.
