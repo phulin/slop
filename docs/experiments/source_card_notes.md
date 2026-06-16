@@ -392,10 +392,20 @@ Live SmolLM3 recipe-weight extraction:
   The sample retained 2,000 rows and 1,868,874 simple tokens from a
   20,000-row hash-reservoir scan, with retained strata `web_cc`, `forums_qa`,
   `wiki`, `code`, and `scientific`.
+- Added bounded `megamath-text-code-block` and `megamath-web-pro` source
+  samples from exact `LLM360/MegaMath` parquet subdirectories:
+  `megamath-text-code-block/*.parquet` and `megamath-web-pro/*.parquet`.
+  The text-code sample retained 2,000 rows and 844,480 simple tokens from a
+  19,150-row hash-reservoir scan. The web-pro sample retained 2,000 rows and
+  1,182,841 simple tokens from a 20,000-row hash-reservoir scan. The default
+  `LLM360/MegaMath` dataset loader exposes metadata-like rows for the first
+  data directory, so sampling uses the generic `parquet` loader plus
+  `--hf-data-files` to target the exact source paths.
 - With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineWeb2
   Italian, FineWeb2 Chinese, FineWeb2 Russian, FineWeb2 Portuguese, FineMath,
-  FineMath-4plus, InfiWebMath-4plus, and PES2O included, the current retained
-  Tier-1 proxy covers `80.875%` of the extracted recipe and leaves `19.125%`
+  FineMath-4plus, InfiWebMath-4plus, MegaMath text-code-block, MegaMath
+  web-pro, and PES2O included, the current retained Tier-1 proxy covers
+  `82.259%` of the extracted recipe and leaves `17.741%`
   unsampled, so its covered-only rates are majority-coverage diagnostics
   rather than full-mixture estimates.
 
@@ -433,8 +443,8 @@ Current interpretation:
   feature-rate coverage across the relevant weighted sources. The coverage
   proxy quantifies the current gap; DCLM, FineWeb2 German, FineWeb2 Spanish,
   FineWeb2 French, FineWeb2 Italian, FineWeb2 Chinese, FineWeb2 Russian,
-  FineWeb2 Portuguese, FineMath, FineMath-4plus, InfiWebMath-4plus, and PES2O
-  are now sampled.
+  FineWeb2 Portuguese, FineMath, FineMath-4plus, InfiWebMath-4plus,
+  MegaMath text-code-block, MegaMath web-pro, and PES2O are now sampled.
   `stack-edu-Python` (`1.811%`) is the largest unresolved source, but
   `HuggingFaceTB/stack-edu` config `Python` exposes blob metadata rather than
   code text, so measuring it needs a blob-hydration path or another

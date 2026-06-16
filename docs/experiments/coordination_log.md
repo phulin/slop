@@ -2474,3 +2474,44 @@
 - The regenerated spectrum uses the `80.875%` covered-recipe weighted proxy as
   the aggregate pretrain baseline. The OLMo-vs-SmolLM3 AF correlation remains
   Spearman `0.762` and Pearson `0.978`, because the AF layer did not change.
+
+## 2026-06-16 - MegaMath pretraining feature-rate coverage
+
+- Probed `LLM360/MegaMath` and confirmed the exact public source directories
+  needed for the SmolLM3 recipe rows. The default dataset loader exposes
+  metadata-like rows for the first data directory, so `slop-sample-corpus` now
+  accepts `--hf-data-files` and can target text-bearing HF parquet
+  subdirectories through the generic `parquet` loader.
+- Sampled exact `LLM360/MegaMath` source paths:
+  `artifacts/stage1/corpora/smollm3_pretrain_megamath_text_code_block_2k.jsonl`
+  from `megamath-text-code-block/*.parquet` and
+  `artifacts/stage1/corpora/smollm3_pretrain_megamath_web_pro_2k.jsonl` from
+  `megamath-web-pro/*.parquet`. Both use `hash_reservoir`, seed `1729`, and a
+  2,000-row target. The text-code sample scanned 19,150 rows and retained
+  844,480 simple tokens; web-pro scanned 20,000 rows and retained 1,182,841
+  simple tokens.
+- Ran retained Tier-1 census:
+  `artifacts/stage1/census/smollm3_pretrain_megamath_text_code_block_2k_tier1_feature_rates.csv`
+  and
+  `artifacts/stage1/census/smollm3_pretrain_megamath_web_pro_2k_tier1_feature_rates.csv`.
+  Source-aggregated MegaMath text-code rates per 1k tokens are
+  `slop_lexicon` `0.124`, `rule_of_three_approx` `0.817`,
+  `contrastive_negation` `0.109`, `stock_closers` `0.033`,
+  `stock_openers` `0.000`, and pooled stock phrases `0.033`. MegaMath
+  web-pro rates are `slop_lexicon` `0.332`, `rule_of_three_approx` `4.451`,
+  `contrastive_negation` `0.099`, `stock_closers` `0.085`,
+  `stock_openers` `0.008`, and pooled stock phrases `0.093`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with source maps
+  `smollm3_pretrain_megamath_text_code_block_2k=megamath-text-code-block`
+  and `smollm3_pretrain_megamath_web_pro_2k=megamath-web-pro`. Current
+  retained Tier-1 coverage is now `82.259%` of the extracted SmolLM3 recipe,
+  with missing share `17.741%`. Covered-only weighted rates per 1k tokens are
+  `slop_lexicon` `0.384`, `rule_of_three_approx` `4.191`,
+  `contrastive_negation` `0.370`, `stock_closers` `0.035`,
+  `stock_openers` `0.028`, and pooled stock phrases `0.063`.
+- Regenerated the preferred bounded SmolLM3 baseline data-rate spectrum,
+  classifier, and OLMo-vs-SmolLM3 comparison. The OLMo-vs-SmolLM3 AF
+  correlation remains Spearman `0.762` and Pearson `0.978`, because the
+  teacher-forced AF layer did not change.

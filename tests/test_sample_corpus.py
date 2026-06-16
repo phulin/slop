@@ -3,11 +3,26 @@ import json
 
 import pandas as pd
 
-from slop_sftdiv.cli.sample_corpus import build_parser, run_sample
+from slop_sftdiv.cli.sample_corpus import build_parser, run_sample, _source_from_input
 
 
 def _write_jsonl(path, rows):
     path.write_text("\n".join(json.dumps(row) for row in rows) + "\n", encoding="utf-8")
+
+
+def test_hf_data_files_are_passed_to_hf_source():
+    source = _source_from_input(
+        "parquet",
+        split="train",
+        hf_config=None,
+        hf_data_files=["hf://datasets/LLM360/MegaMath/megamath-text-code-block/*.parquet"],
+        source_dataset="LLM360/MegaMath",
+    )
+
+    assert source.kind == "hf"
+    assert source.hf_name == "parquet"
+    assert source.name == "LLM360/MegaMath"
+    assert source.data_files == "hf://datasets/LLM360/MegaMath/megamath-text-code-block/*.parquet"
 
 
 def test_run_sample_writes_retained_jsonl_and_manifest_outputs(tmp_path, monkeypatch):

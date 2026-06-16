@@ -49,6 +49,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--input", required=True, help="Local JSONL file or HF dataset id.")
     parser.add_argument("--split", default="train", help="Dataset split for HF inputs.")
     parser.add_argument("--hf-config", default=None, help="Optional Hugging Face dataset config name.")
+    parser.add_argument(
+        "--hf-data-files",
+        action="append",
+        default=[],
+        help=(
+            "Optional Hugging Face data_files pattern for sources with text-bearing "
+            "subdirectories. Repeat for multiple patterns."
+        ),
+    )
     parser.add_argument("--text-field", default=None, help="Override text field name.")
     parser.add_argument("--seed", type=int, default=1729)
     parser.add_argument(
@@ -120,12 +129,29 @@ def _load_components():
     return CorpusSource, SamplingConfig, iter_corpus_records, SENTENCE_RE, count_tokens, DEFAULT_ID_FIELDS
 
 
-def _source_from_input(raw_input: str, *, split: str, hf_config: str | None, source_dataset: str):
+def _source_from_input(
+    raw_input: str,
+    *,
+    split: str,
+    hf_config: str | None,
+    hf_data_files: list[str],
+    source_dataset: str,
+):
     CorpusSource, _, _, _, _, _ = _load_components()
     path = Path(raw_input)
     if path.exists():
         return CorpusSource.jsonl(path, name=source_dataset)
-    return CorpusSource.hf(raw_input, name=source_dataset, split=split, hf_config=hf_config, streaming=True)
+    data_files: str | list[str] | None = None
+    if hf_data_files:
+        data_files = hf_data_files[0] if len(hf_data_files) == 1 else hf_data_files
+    return CorpusSource.hf(
+        raw_input,
+        name=source_dataset,
+        split=split,
+        hf_config=hf_config,
+        streaming=True,
+        data_files=data_files,
+    )
 
 
 def _peak_rss_mb() -> float:
@@ -304,7 +330,13 @@ def _write_summary(path: Path, summary: dict[str, Any], stratum_counts: dict[str
 def _select_records(args: argparse.Namespace) -> tuple[list[dict[str, Any]], list[dict[str, Any]], SampleStats]:
     _, SamplingConfig, iter_corpus_records, sentence_re, count_tokens, default_id_fields = _load_components()
     source_dataset = args.source_dataset or args.input
-    source = _source_from_input(args.input, split=args.split, hf_config=args.hf_config, source_dataset=source_dataset)
+    source = _source_from_input(
+        args.input,
+        split=args.split,
+        hf_config=args.hf_config,
+        hf_data_files=args.hf_data_files,
+        source_dataset=source_dataset,
+    )
     text_fields = [args.text_field] if args.text_field else None
     sampling = SamplingConfig(cap=None, seed=args.seed, strategy="first", max_scan=args.max_scan)
     records_kwargs: dict[str, Any] = {
