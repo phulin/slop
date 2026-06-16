@@ -2455,3 +2455,22 @@
   (`0.903%`) remains unmapped to an exact public `HuggingFaceTB/finemath`
   config; `infiwebmath-4plus` covers only its exact `0.383%` recipe source
   row.
+
+## 2026-06-16 - Weighted SmolLM3 baseline downstream refresh
+
+- Updated `slop-assemble-amplification-spectrum` with a
+  `--weighted-pretrain-baseline` input. The weighted covered-only rate now
+  overrides the aggregate `pretrain_per_1k_tokens` field, while raw
+  source-specific pretraining columns remain in the spectrum for audit.
+- Fixed source-specific pretraining columns to token-weight repeated rows from
+  the same source before writing values. This avoids reporting a single last
+  stratum for multi-stratum samples such as `infiwebmath-4plus`.
+- Regenerated the current preferred bounded SmolLM3 baseline data-rate
+  spectrum, classifier, and OLMo-vs-SmolLM3 comparison:
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_baselines_data_rates_slop_neutral_rule3.csv`,
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_baselines_data_rates_slop_neutral_rule3.csv`,
+  and
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_baselines_data_rates_tf_generation_compounding_slop_neutral_rule3_summary.md`.
+- The regenerated spectrum uses the `80.875%` covered-recipe weighted proxy as
+  the aggregate pretrain baseline. The OLMo-vs-SmolLM3 AF correlation remains
+  Spearman `0.762` and Pearson `0.978`, because the AF layer did not change.

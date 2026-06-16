@@ -12,6 +12,7 @@ def _write_csv(path, rows):
 
 def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, monkeypatch):
     feature_rates = tmp_path / "feature_rates.csv"
+    weighted_pretrain = tmp_path / "weighted_pretrain.csv"
     propensity = tmp_path / "propensity.csv"
     rule_propensity = tmp_path / "rule_propensity.csv"
     generation = tmp_path / "generation.csv"
@@ -32,6 +33,15 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
                 "docs": "1",
                 "tokens": "1000",
                 "per_1k_tokens": "2.0",
+            },
+            {
+                "source": "pretrain_web",
+                "role": "pretrain_document",
+                "feature": "slop_lexicon",
+                "count": "4",
+                "docs": "1",
+                "tokens": "1000",
+                "per_1k_tokens": "4.0",
             },
             {
                 "source": "pretrain_qa",
@@ -69,6 +79,23 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
                 "tokens": "1000",
                 "per_1k_tokens": "15.0",
             },
+        ],
+    )
+    _write_csv(
+        weighted_pretrain,
+        [
+            {
+                "feature": "slop_lexicon",
+                "role": "pretrain_document",
+                "matched_recipe_sources": "pretrain_web:2.0@0.5;pretrain_qa:8.0@0.5",
+                "matched_source_count": "2",
+                "covered_recipe_share": "0.5",
+                "missing_recipe_share": "0.5",
+                "weighted_per_1k_tokens_covered_only": "7.0",
+                "weighted_per_1k_tokens_missing_as_zero": "3.5",
+                "sample_count": "10",
+                "sample_tokens": "2000",
+            }
         ],
     )
     _write_csv(
@@ -196,6 +223,8 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
         [
             "--feature-rate",
             str(feature_rates),
+            "--weighted-pretrain-baseline",
+            str(weighted_pretrain),
             "--propensity-grid",
             str(propensity),
             "--propensity-grid",
@@ -227,8 +256,11 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
 
     by_key = {(row["feature"], row["stage"]): row for row in rows}
     dpo_slop = by_key[("slop_lexicon", "dpo")]
-    assert dpo_slop["pretrain_per_1k_tokens"] == 5.0
-    assert dpo_slop["pretrain_pretrain_web_per_1k_tokens"] == 2.0
+    assert dpo_slop["pretrain_per_1k_tokens"] == 7.0
+    assert dpo_slop["pretrain_weighted_covered_recipe_share"] == 0.5
+    assert dpo_slop["pretrain_weighted_missing_recipe_share"] == 0.5
+    assert dpo_slop["pretrain_weighted_missing_as_zero_per_1k_tokens"] == 3.5
+    assert dpo_slop["pretrain_pretrain_web_per_1k_tokens"] == 3.0
     assert dpo_slop["pretrain_pretrain_qa_per_1k_tokens"] == 8.0
     assert dpo_slop["mid_target_per_1k_tokens"] == 1.0
     assert dpo_slop["mid_mid_per_1k_tokens"] == 1.0

@@ -37,6 +37,17 @@ def build_parser() -> argparse.ArgumentParser:
         description="Assemble existing Phase 1/2 artifacts into an amplification-spectrum table."
     )
     parser.add_argument("--feature-rate", action="append", default=[])
+    parser.add_argument(
+        "--weighted-pretrain-baseline",
+        action="append",
+        type=Path,
+        default=[],
+        help=(
+            "Coverage-aware weighted pretraining baseline CSV from "
+            "slop-assemble-weighted-pretrain-baseline. Its covered-only rate "
+            "overrides the aggregate pretrain_per_1k_tokens field."
+        ),
+    )
     parser.add_argument("--propensity-grid", action="append", type=Path, default=[])
     parser.add_argument("--generation-grid", type=Path, default=None)
     parser.add_argument("--compounding", type=Path, default=None)
@@ -106,10 +117,38 @@ def _source_rate_column(role: str, source: str) -> str | None:
     return None
 
 
-def _data_rates(paths: list[str]) -> dict[str, dict[str, float]]:
+def _weighted_pretrain_rates(paths: list[Path]) -> dict[str, dict[str, float]]:
+    rates: dict[str, dict[str, float]] = {}
+    for path in paths:
+        for row in _read_rows(path):
+            feature = str(row.get("feature", ""))
+            role = str(row.get("role", ""))
+            if not feature or role != "pretrain_document":
+                continue
+            covered_only = _float_or_none(row.get("weighted_per_1k_tokens_covered_only"))
+            if covered_only is None:
+                continue
+            out = rates.setdefault(feature, {})
+            out["pretrain_per_1k_tokens"] = covered_only
+            out["pretrain_weighted_covered_recipe_share"] = _float_or_none(
+                row.get("covered_recipe_share")
+            )
+            out["pretrain_weighted_missing_recipe_share"] = _float_or_none(
+                row.get("missing_recipe_share")
+            )
+            out["pretrain_weighted_missing_as_zero_per_1k_tokens"] = _float_or_none(
+                row.get("weighted_per_1k_tokens_missing_as_zero")
+            )
+    return rates
+
+
+def _data_rates(paths: list[str], weighted_pretrain_paths: list[Path]) -> dict[str, dict[str, float]]:
     rates: dict[str, dict[str, float]] = {}
     aggregate_counts: dict[tuple[str, str], float] = {}
     aggregate_tokens: dict[tuple[str, str], float] = {}
+    source_counts: dict[tuple[str, str], float] = {}
+    source_tokens: dict[tuple[str, str], float] = {}
+    source_fallback_rates: dict[tuple[str, str], list[float]] = {}
     for raw_path in paths:
         for row in _read_rows(Path(raw_path)):
             feature = str(row.get("feature", ""))
@@ -120,21 +159,36 @@ def _data_rates(paths: list[str]) -> dict[str, dict[str, float]]:
                 continue
             column = DATA_RATE_COLUMNS[role]
             source_column = _source_rate_column(role, str(row.get("source", "")))
-            if source_column:
-                rates.setdefault(feature, {})[source_column] = float(row["per_1k_tokens"])
             count = _float_or_none(row.get("count"))
             tokens = _float_or_none(row.get("tokens"))
+            per_1k_tokens = float(row["per_1k_tokens"])
+            if source_column:
+                source_key = (feature, source_column)
+                if count is not None and tokens is not None and tokens > 0:
+                    source_counts[source_key] = source_counts.get(source_key, 0.0) + count
+                    source_tokens[source_key] = source_tokens.get(source_key, 0.0) + tokens
+                else:
+                    source_fallback_rates.setdefault(source_key, []).append(per_1k_tokens)
             if count is None or tokens is None or tokens <= 0:
-                rates.setdefault(feature, {})[column] = float(row["per_1k_tokens"])
+                rates.setdefault(feature, {})[column] = per_1k_tokens
                 continue
             key = (feature, role)
             aggregate_counts[key] = aggregate_counts.get(key, 0.0) + count
             aggregate_tokens[key] = aggregate_tokens.get(key, 0.0) + tokens
 
+    for (feature, source_column), count in source_counts.items():
+        tokens = source_tokens[(feature, source_column)]
+        if tokens > 0:
+            rates.setdefault(feature, {})[source_column] = count / tokens * 1000.0
+    for (feature, source_column), values in source_fallback_rates.items():
+        if values and source_column not in rates.setdefault(feature, {}):
+            rates[feature][source_column] = sum(values) / len(values)
     for (feature, role), count in aggregate_counts.items():
         tokens = aggregate_tokens[(feature, role)]
         if tokens > 0:
             rates.setdefault(feature, {})[DATA_RATE_COLUMNS[role]] = count / tokens * 1000.0
+    for feature, weighted_rates in _weighted_pretrain_rates(weighted_pretrain_paths).items():
+        rates.setdefault(feature, {}).update(weighted_rates)
     return rates
 
 
@@ -255,7 +309,7 @@ def _coverage_note(row: dict[str, Any]) -> str:
 
 def assemble_spectrum(args: argparse.Namespace) -> list[dict[str, Any]]:
     features = tuple(args.feature or DEFAULT_FEATURES)
-    data_rates = _data_rates(args.feature_rate)
+    data_rates = _data_rates(args.feature_rate, args.weighted_pretrain_baseline)
     propensity = _propensity(args.propensity_grid)
     generation = _generation(args.generation_grid)
     compounding = _compounding(args.compounding)
@@ -295,6 +349,9 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "stage_label",
         "coverage_note",
         "pretrain_per_1k_tokens",
+        "pretrain_weighted_covered_recipe_share",
+        "pretrain_weighted_missing_recipe_share",
+        "pretrain_weighted_missing_as_zero_per_1k_tokens",
         "mid_target_per_1k_tokens",
         "sft_target_per_1k_tokens",
         "dpo_chosen_per_1k_tokens",
@@ -376,6 +433,9 @@ def run(args: argparse.Namespace) -> list[dict[str, Any]]:
         tags=["stage2", "phase2", "amplification-spectrum", *args.wandb_tag],
         config={
             "feature_rates": args.feature_rate,
+            "weighted_pretrain_baseline": [
+                str(path) for path in args.weighted_pretrain_baseline
+            ],
             "propensity_grid": [str(path) for path in args.propensity_grid],
             "generation_grid": str(args.generation_grid) if args.generation_grid else None,
             "compounding": str(args.compounding) if args.compounding else None,

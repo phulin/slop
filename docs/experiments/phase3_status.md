@@ -71,6 +71,13 @@ Updated Phase 2 harness support needed for the Phase 3 SmolLM3 replication:
   long no_think generation impractically slow without the override.
 - `slop-assemble-amplification-spectrum` now writes a model-neutral summary
   title because the same assembler is used for OLMo and SmolLM3 spectra.
+- `slop-assemble-amplification-spectrum` now accepts
+  `--weighted-pretrain-baseline`, so coverage-aware weighted pretraining
+  baselines can override the aggregate `pretrain_per_1k_tokens` field while
+  raw source-specific pretrain columns remain available for audit. It also
+  token-weights repeated rows from the same source before writing
+  source-specific pretrain columns, which matters for multi-stratum sources
+  such as `infiwebmath-4plus`.
 
 Inputs:
 
@@ -1012,6 +1019,16 @@ Reassembled data-rate spectrum outputs:
 - `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_baselines_data_rates_tf_generation_compounding_slop_neutral_rule3_aligned.csv`
 - `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_baselines_data_rates_tf_generation_compounding_slop_neutral_rule3_correlations.csv`
 - `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_baselines_data_rates_tf_generation_compounding_slop_neutral_rule3_summary.md`
+
+The `baselines_data_rates` spectrum is the current preferred bounded SmolLM3
+data-rate spectrum. It now uses
+`artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+as the aggregate pretraining baseline override, with `80.875%` covered recipe
+share and source-specific columns retained for all fourteen sampled
+pretraining source files. The regenerated OLMo-vs-SmolLM3 comparison still
+aligns 24 feature-stage rows and 8 shared AF values, with overall Spearman AF
+`0.762` and Pearson AF `0.978`; the correlation is unchanged because this pass
+updated the data-rate layer rather than the teacher-forced AF layer.
 
 The data-rate classifier still labels `slop_lexicon` as `sft-amplified`, not
 preference-amplified. The no_think Tulu preference data are complicit for
