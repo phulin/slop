@@ -2515,3 +2515,46 @@
   classifier, and OLMo-vs-SmolLM3 comparison. The OLMo-vs-SmolLM3 AF
   correlation remains Spearman `0.762` and Pearson `0.978`, because the
   teacher-forced AF layer did not change.
+
+## 2026-06-16 - Additional FineWeb2 pretraining feature-rate coverage
+
+- Sampled seven additional directly measurable FineWeb2 language shards for
+  the SmolLM3 recipe-weighted pretraining baseline. Each sample used
+  `hash_reservoir`, seed `1729`, a 2,000-row target, and a 20,000-row scan cap:
+  `fw2-fas` (`fas_Arab`, 1,674,442 simple tokens), `fw2-hin` (`hin_Deva`,
+  1,781,688 tokens), `fw2-jpn` (`jpn_Jpan`, 258,131 tokens), `fw2-kor`
+  (`kor_Hang`, 709,095 tokens), `fw2-tha` (`tha_Thai`, 1,180,666 tokens),
+  `fw2-vie` (`vie_Latn`, 1,984,302 tokens), and `fw2-ell` (`ell_Grek`,
+  1,054,624 tokens).
+- Ran retained Tier-1 census for all seven new samples:
+  `artifacts/stage1/census/smollm3_pretrain_fw2_fas_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_fw2_hin_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_fw2_jpn_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_fw2_kor_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_fw2_tha_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_fw2_vie_2k_tier1_feature_rates.csv`,
+  and
+  `artifacts/stage1/census/smollm3_pretrain_fw2_ell_2k_tier1_feature_rates.csv`.
+- Source rates per 1k tokens are low for the retained English-oriented
+  detectors. `slop_lexicon`: `fw2-fas` `0.002`, `fw2-hin` `0.004`,
+  `fw2-jpn` `0.008`, `fw2-kor` `0.024`, `fw2-tha` `0.023`, `fw2-vie`
+  `0.005`, `fw2-ell` `0.018`. `rule_of_three_approx`: `fw2-fas` `0.045`,
+  `fw2-hin` `0.053`, `fw2-jpn` `0.256`, `fw2-kor` `0.118`, `fw2-tha`
+  `0.042`, `fw2-vie` `0.033`, `fw2-ell` `0.117`.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  and summary with new source maps for `fw2-fas`, `fw2-hin`, `fw2-jpn`,
+  `fw2-kor`, `fw2-tha`, `fw2-vie`, and `fw2-ell`. Current retained Tier-1
+  coverage is now `84.350%` of the extracted SmolLM3 recipe, with missing
+  share `15.650%`. Covered-only weighted rates per 1k tokens are
+  `slop_lexicon` `0.375`, `rule_of_three_approx` `4.090`,
+  `contrastive_negation` `0.361`, `stock_closers` `0.034`,
+  `stock_openers` `0.028`, and pooled stock phrases `0.062`.
+- Regenerated the preferred bounded SmolLM3 baseline data-rate spectrum,
+  classifier, and OLMo-vs-SmolLM3 comparison:
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_baselines_data_rates_slop_neutral_rule3.csv`,
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_baselines_data_rates_slop_neutral_rule3.csv`,
+  and
+  `artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_baselines_data_rates_tf_generation_compounding_slop_neutral_rule3_summary.md`.
+  The OLMo-vs-SmolLM3 AF correlation remains Spearman `0.762` and Pearson
+  `0.978`, because the teacher-forced AF layer did not change.

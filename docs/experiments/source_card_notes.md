@@ -270,6 +270,20 @@ Live bounded SmolLM3 baseline samples:
   from `HuggingFaceFW/fineweb-2` config `ita_Latn`,
   `artifacts/stage1/corpora/smollm3_pretrain_fw2_cmn_2k.jsonl`
   from `HuggingFaceFW/fineweb-2` config `cmn_Hani`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_fas_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `fas_Arab`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_hin_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `hin_Deva`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_jpn_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `jpn_Jpan`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_kor_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `kor_Hang`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_tha_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `tha_Thai`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_vie_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `vie_Latn`,
+  `artifacts/stage1/corpora/smollm3_pretrain_fw2_ell_2k.jsonl`
+  from `HuggingFaceFW/fineweb-2` config `ell_Grek`,
   `artifacts/stage1/corpora/smollm3_pretrain_finemath_2k.jsonl`
   from `HuggingFaceTB/finemath` config `finemath-3plus`,
   `artifacts/stage1/corpora/smollm3_pretrain_pes2o_2k.jsonl`
@@ -310,9 +324,11 @@ Live SmolLM3 recipe-weight extraction:
   (`2.209%`), `fw2-spa` (`2.003%`), `pes2o` (`1.724%`), `fw2-fra`
   (`1.607%`), `finemath` (`1.410%`), `fw2-ita` (`1.062%`), and
   `fw2-cmn` (`0.991%`), `fw2-rus` (`0.991%`), `fw2-por` (`0.931%`),
-  `finemath-4plus` (`0.606%`), and `stackexchange` (`0.333%`). The remaining
-  production baseline blocker is feature-rate coverage for the other recipe
-  sources, not source-weight discovery.
+  `finemath-4plus` (`0.606%`), `fw2-fas` (`0.347%`), `stackexchange`
+  (`0.333%`), `fw2-hin` (`0.321%`), `fw2-jpn` (`0.321%`), `fw2-kor`
+  (`0.321%`), `fw2-tha` (`0.321%`), `fw2-vie` (`0.237%`), and `fw2-ell`
+  (`0.222%`). The remaining production baseline blocker is feature-rate
+  coverage for the other recipe sources, not source-weight discovery.
 - Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
   sampled pretraining feature rates to the extracted recipe weights with
   explicit source maps. Outputs:
@@ -402,10 +418,12 @@ Live SmolLM3 recipe-weight extraction:
   data directory, so sampling uses the generic `parquet` loader plus
   `--hf-data-files` to target the exact source paths.
 - With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineWeb2
-  Italian, FineWeb2 Chinese, FineWeb2 Russian, FineWeb2 Portuguese, FineMath,
-  FineMath-4plus, InfiWebMath-4plus, MegaMath text-code-block, MegaMath
-  web-pro, and PES2O included, the current retained Tier-1 proxy covers
-  `82.259%` of the extracted recipe and leaves `17.741%`
+  Italian, FineWeb2 Chinese, FineWeb2 Russian, FineWeb2 Portuguese, FineWeb2
+  Persian, FineWeb2 Hindi, FineWeb2 Japanese, FineWeb2 Korean, FineWeb2 Thai,
+  FineWeb2 Vietnamese, FineWeb2 Greek, FineMath, FineMath-4plus,
+  InfiWebMath-4plus, MegaMath text-code-block, MegaMath web-pro, and PES2O
+  included, the current retained Tier-1 proxy covers `84.350%` of the
+  extracted recipe and leaves `15.650%`
   unsampled, so its covered-only rates are majority-coverage diagnostics
   rather than full-mixture estimates.
 
@@ -443,8 +461,10 @@ Current interpretation:
   feature-rate coverage across the relevant weighted sources. The coverage
   proxy quantifies the current gap; DCLM, FineWeb2 German, FineWeb2 Spanish,
   FineWeb2 French, FineWeb2 Italian, FineWeb2 Chinese, FineWeb2 Russian,
-  FineWeb2 Portuguese, FineMath, FineMath-4plus, InfiWebMath-4plus,
-  MegaMath text-code-block, MegaMath web-pro, and PES2O are now sampled.
+  FineWeb2 Portuguese, FineWeb2 Persian, FineWeb2 Hindi, FineWeb2 Japanese,
+  FineWeb2 Korean, FineWeb2 Thai, FineWeb2 Vietnamese, FineWeb2 Greek,
+  FineMath, FineMath-4plus, InfiWebMath-4plus, MegaMath text-code-block,
+  MegaMath web-pro, and PES2O are now sampled.
   `stack-edu-Python` (`1.811%`) is the largest unresolved source, but
   `HuggingFaceTB/stack-edu` config `Python` exposes blob metadata rather than
   code text, so measuring it needs a blob-hydration path or another
