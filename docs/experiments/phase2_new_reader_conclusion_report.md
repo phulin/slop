@@ -1,74 +1,73 @@
-# Phase 2 Full Conclusion Report For New Readers
+# Phase 2 Conclusion Report For New Readers
 
-Date: 2026-06-15
+Date: 2026-06-16
 
-Status: bounded OLMo 3 / Dolci Phase 2 conclusion.
+Status: final bounded OLMo 3 / Dolci Phase 2 conclusion report.
 
-This is the readable entry point for Phase 2. It assumes no prior project
-context and explains what was measured, why the measurements matter, what was
-actually run, how to read the main numbers, how the OLMo 3 checkpoints changed
-from Base to SFT to DPO to Final/RLVR, and what conclusions should carry into
-Phase 3.
+This is the readable entry point for Phase 2. It is written for someone who has
+not followed the project history and needs to understand what Phase 2 measured,
+what it found, what it did not prove, and what should carry forward into Phase
+3.
 
-For audit-level detail, see the longer close-out report in
-`docs/experiments/phase2_final_conclusion_report.md` and the retained artifact
-manifest in
-`artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.md`.
+Phase 2 should be read as a bounded scientific close-out, not as the full
+production-scale run originally imagined in `EXPERIMENTS.md`. The completed
+package gives a coherent OLMo 3 / Dolci slice: one model ladder, one prompt
+family, one headline generation setting, retained teacher-forced contracts,
+generation-side compounding tests, and a broader Biber-lite style signature.
 
-## Quick Orientation
+For audit detail and artifact hashes, see:
 
-Phase 2 is the model-behavior half of the project. Phase 1 counted style
-features in data; Phase 2 asks whether trained checkpoints locally prefer
-those features, whether the features show up in generated answers, and whether
-one early feature hit makes later hits more likely.
-
-The report has three important reading rules:
-
-1. "Slop" means detector-defined surface style markers, not a judgment that an
-   answer is wrong or useless.
-2. There is no single global slop score. The result is a feature-by-feature
-   spectrum.
-3. Teacher-forced propensity, sampled-output frequency, and compounding are
-   different measurements. When they disagree, the disagreement is part of the
-   result.
+- `docs/experiments/phase2_final_conclusion_report.md`
+- `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.md`
 
 ## Executive Summary
 
-The project studies where recognizable assistant-style "slop" enters a model
-pipeline. Here, "slop" is not a global quality judgment. It means a set of
-measurable style markers: stock lexical items, formulaic openers and closers,
-contrastive phrasing, three-part rhetorical lists, and broader register
-features measured with Biber-lite proxies.
+The project studies where recognizable assistant-style surface patterns enter a
+model pipeline. It does not try to score answer quality directly. A helpful
+answer can contain a measured marker, and an unhelpful answer can contain none.
+The target is narrower: measurable style features such as curated lexical tics,
+formulaic openings and closings, three-part rhetorical lists, contrastive "not
+X but Y" phrasing, and broader register markers.
 
-Phase 1 measured the data side: pretraining-like text, Dolci SFT targets, and
-Dolci DPO chosen/rejected responses.
+Phase 1 measured the data side. It counted these features in pretraining-like
+text, Dolci SFT target responses, Dolci DPO chosen responses, and Dolci DPO
+rejected responses.
 
-Phase 2 measured the model side on the OLMo 3 Instruct checkpoint ladder:
-Base, SFT, DPO, and Final/RLVR. It asked whether each checkpoint locally
-prefers measured style features under teacher forcing, whether those features
-appear in sampled completions, and whether early hits cause later hits in the
-same generation.
+Phase 2 measured the model side. It asked how the OLMo 3 Instruct checkpoint
+ladder behaves when those same features are scored under fixed-context
+teacher forcing, counted in sampled generations, and tested for
+self-reinforcement during generation.
+
+The measured OLMo 3 ladder was:
+
+| Stage | Meaning in this report |
+|---|---|
+| Base | The base OLMo 3 checkpoint in the measured ladder. |
+| SFT | The supervised fine-tuned checkpoint. |
+| DPO | The preference-optimized checkpoint. |
+| Final/RLVR | The later released final checkpoint after the RLVR-style stage. |
 
 The main conclusion is:
 
 > Phase 2 does not support a simple story where every later checkpoint becomes
-> more slop-heavy. Base already contains substantial measured style, SFT often
-> suppresses visible Tier-1 markers, DPO selectively rebounds, and Final/RLVR
-> remains closest to DPO in aggregate style without broadly exceeding DPO on
-> the headline slop markers.
+> more slop-heavy. Base already contains substantial measured style. SFT often
+> suppresses visible Tier-1 markers. DPO selectively rebounds, especially for
+> `slop_lexicon` local propensity and stock phrase output. Final/RLVR remains
+> closest to DPO in aggregate style, but it does not broadly exceed DPO on the
+> headline slop markers.
 
 The strongest positive result is `slop_lexicon`:
 
 - DPO has the highest teacher-forced neutral-normalized amplification factor:
   `1.999`, with 95% CI `1.446-2.837`.
-- Final/RLVR falls back to `1.659`, closer to SFT than to a monotonic late-stage
-  increase.
-- In free-running output, Base and DPO are almost tied: Base `0.233` vs. DPO
+- Final/RLVR falls back to `1.659`, closer to SFT than to a monotonic
+  late-stage increase.
+- In sampled output, Base and DPO are nearly tied: Base `0.233` vs. DPO
   `0.229` hits per 1,000 generated tokens.
 - Once a generation contains a `slop_lexicon` hit, later windows are about
   6x-9x more likely to contain another hit than windows with no prior hit.
 
-The strongest negative result is also important:
+The strongest negative result is equally important:
 
 > DPO does not universally amplify every measured slop feature. For
 > `rule_of_three_approx`, Base has the highest sampled-output rate and the
@@ -76,48 +75,53 @@ The strongest negative result is also important:
 
 The practical handoff is:
 
-> Treat slop as a feature-level amplification spectrum, not as one global
+> Treat "slop" as a feature-level amplification spectrum, not as one global
 > score. Some features are inherited or Base-heavy, some are SFT-suppressed,
 > some rebound at DPO, some compound during generation, and Biber-lite register
 > shifts describe broader final-output style rather than direct causal
 > amplification.
 
-## What Phase 2 Was Trying To Measure
+## What Phase 2 Was Trying To Answer
 
-The original question was not "are answers good?" A correct, helpful answer can
-contain a measured marker, and a bad answer can contain none. The question was
-mechanistic:
+The motivating question was not "are model answers good?" The project asked a
+mechanistic question:
 
 > When a model produces recognizable assistant-style surface patterns, can we
-> tell whether those patterns were inherited from data, amplified by training,
-> or amplified by generation dynamics?
+> distinguish whether those patterns were inherited from data, amplified by
+> post-training, or amplified by generation dynamics?
 
-Several forces can create the final output style:
+A final generated answer can reflect several forces:
 
 1. The base model distribution may already prefer some patterns.
-2. SFT targets may teach or suppress those patterns.
-3. DPO chosen responses may contain more of a pattern than rejected responses.
-4. Preference optimization may shift model probability even when chosen data
-   does not have a clean feature advantage.
-5. During generation, one hit may make later hits more likely because the model
-   conditions on its own words.
+2. SFT target responses may teach, reshape, or suppress those patterns.
+3. DPO preference data may favor chosen responses that contain those patterns.
+4. Preference optimization may shift model probabilities even when the chosen
+   data does not have a clean feature advantage.
+5. During generation, one feature hit may make later hits more likely because
+   the model conditions on its own wording.
 
 Phase 2 measured items 1, 2, 4, and 5 on the model side. It does not by itself
-prove preference-data complicity; that requires joining these results back to
-Phase 1 chosen/rejected corpus rates in Phase 3.
+prove preference-data complicity. That requires joining model-side stage
+effects back to Phase 1 chosen/rejected corpus rates, which is part of Phase 3.
 
-## Model Ladder And Run Scope
+## Plain-Language Glossary
 
-The measured ladder was the OLMo 3 Instruct path:
+| Term | Meaning |
+|---|---|
+| Slop | A shorthand label for detector-defined surface style markers. It is not a claim that an answer is wrong or low quality. |
+| Feature | One measurable marker, such as `slop_lexicon` or `rule_of_three_approx`. |
+| Corpus rate | How often a feature appears in a dataset sample, reported per 1,000 simple tokens. |
+| Teacher forcing | Scoring model probabilities on fixed held-out reference text instead of sampling new text. |
+| Opportunity | A context position where a feature could begin under a feature's scoring contract. |
+| Amplification factor, AF | Model feature probability divided by reference feature rate. Values above 1 mean the model locally assigns more probability than the reference rate would suggest. |
+| Neutral-normalized AF | Slop AF divided by a neutral-control AF, used to reduce the risk of confusing general calibration shifts with slop-specific shifts. |
+| Free-running generation | Normal sampled model output. In the headline grid, this means 8 completions per prompt at temperature `1.0`. |
+| Compounding | A generated-text effect where an earlier feature hit makes later hits more likely in the same answer. |
+| Biber-lite | Regex-based proxies for broader register categories, not full pybiber extraction. |
 
-| Stage | Report label | Interpretation |
-|---|---|---|
-| Base | Base | The base OLMo 3 checkpoint in the measured ladder. |
-| SFT | SFT | The supervised fine-tuned checkpoint. |
-| DPO | DPO | The preference-optimized checkpoint. |
-| Final/RLVR | Final/RLVR | The later released final checkpoint after the RLVR-style stage. |
+## What Was Actually Run
 
-The final retained generation grid used:
+The final retained generation grid used one target shape:
 
 | Setting | Value |
 |---|---:|
@@ -130,18 +134,25 @@ The final retained generation grid used:
 | Temperature | 1.0 |
 | Top-p | 0.95 |
 
-Supporting Phase 2 evidence included teacher-forced propensity grids,
-generation counts, DPO scale checks, DPO temperature checks, compounding tests,
-Biber-lite register comparisons, and a combined style-signature table.
+Supporting evidence included:
 
-This was a bounded close-out, not the full production grid in `EXPERIMENTS.md`.
-The original plan called for 5,000 prompts, 8 completions, 3 temperatures,
-multiple ladders, and full pybiber extraction. The delivered Phase 2 package is
-a coherent OLMo 3 / Dolci slice that supports stage-localized conclusions, but
-it should not be treated as a universal claim about all preference-trained
-models.
+- teacher-forced propensity grids for retained feature/opportunity contracts;
+- a DPO-only scale check at 1,024 prompts x 8 completions;
+- DPO-only temperature sensitivity runs at `0.0`, `0.7`, and `1.0`;
+- expected-vs-observed compounding analysis;
+- direct prior/no-prior compounding window tests;
+- Biber-lite register comparisons over generated outputs;
+- an assembled final-output style signature over Tier-1 features, compounding
+  metrics, and Biber-lite rates.
 
-## Feature Set
+This differs from the original production plan. The original Phase 2 plan
+called for 5,000 prompts, 8 completions, 3 temperatures, multiple model
+ladders, and full pybiber extraction. The delivered Phase 2 package is smaller
+but internally consistent. Its strongest claims are OLMo 3 / Dolci claims.
+They should not be quoted as universal claims about all preference-trained
+models until Phase 3 replication is complete.
+
+## Features Measured
 
 The retained Tier-1 features were:
 
@@ -157,26 +168,30 @@ The retained Tier-1 features were:
 Phase 2 also measured 19 `biber_lite` register proxies on generated outputs.
 These include pronouns, modals, hedges, amplifiers, nominalizations,
 subordination, complement patterns, wh-questions, and passive-voice
-approximations. They are regex-style proxies, not full pybiber categories.
+approximations. They are broader style descriptors, not teacher-forced
+amplification measurements.
 
-## How To Read The Metrics
+## How To Read The Measurements
 
-Phase 2 uses several measurements because they answer different questions:
+Phase 2 uses several measurements because no single number can answer the whole
+question.
 
-| Metric | What it asks | Interpretation |
+| Metric | What it asks | How to interpret it |
 |---|---|---|
-| Corpus rate | How often does a feature appear in data? | Data-side availability or preference-pair imbalance. |
-| Teacher-forced propensity | Given the same fixed context, how much probability does a checkpoint assign to feature-bearing continuations? | Local model preference independent of sampling drift. |
-| Amplification factor, AF | Model feature probability divided by reference feature rate. | A ratio-style measure of local over- or under-weighting. |
-| Neutral-normalized AF | Slop AF divided by neutral-control AF. | Reduces the chance that general calibration shifts are mistaken for slop-specific shifts. |
+| Corpus rate | How often did the feature appear in data? | Data-side availability or chosen/rejected imbalance. |
+| Teacher-forced propensity | With context fixed, how much probability does a checkpoint assign to feature-bearing continuations? | Local model preference independent of sampling drift. |
+| Amplification factor | How large is model feature probability relative to a reference rate? | Ratio-style local over- or under-weighting. |
+| Neutral-normalized AF | How large is slop AF after dividing by a neutral-control AF? | Slop-specific shift after a coarse calibration control. |
 | Free-running emission | How often does the feature appear in sampled completions? | Closest to user-visible behavior. |
-| Compounding | Does an earlier feature hit raise the chance of later hits in the same answer? | Tests self-conditioning and path dependence. |
-| Biber-lite register | How broader register features move across generated outputs. | A descriptive final-output style layer, not causal AF. |
+| Compounding | Does an earlier hit raise the chance of later hits in the same answer? | Evidence for self-conditioning and path dependence. |
+| Biber-lite register | How broader register proxies move across stages. | Descriptive output style, not causal AF. |
 
-These measurements can disagree. That disagreement is not a failure; it is one
-of the main findings. Teacher forcing is best for local propensity,
-free-running emission is best for visible output, and compounding asks whether
-style reinforces itself once generation begins.
+These measurements can disagree. That disagreement is part of the result. A
+checkpoint can locally prefer a feature while sampled output does not peak
+there, and sampled output can contain a feature because the base model already
+emits it often. Teacher forcing is best for local propensity, free-running
+generation is best for visible output, and compounding is best for
+path-dependent generation behavior.
 
 ## Phase 1 Data Context
 
@@ -201,12 +216,12 @@ The data-side facts are:
 - DPO chosen responses are not higher than rejected responses for
   `slop_lexicon`.
 
-That final point is central. If DPO model propensity for `slop_lexicon` rises,
-the simplest explanation cannot be "chosen responses just had more
-`slop_lexicon` than rejected responses." Phase 3 should treat that as a
-candidate dynamics-driven or mixed effect.
+That last point matters. If DPO model propensity for `slop_lexicon` rises, the
+simplest explanation cannot be "chosen DPO responses just had more
+`slop_lexicon` than rejected responses." Phase 3 should treat that mismatch as
+a candidate dynamics-driven or mixed effect.
 
-## Result 1: The Checkpoint Progression Is Non-Monotonic
+## Headline Result: Checkpoint Progression Is Non-Monotonic
 
 A simple story would be: Base is clean, SFT adds assistant style, DPO adds
 slop, and Final/RLVR adds the most. The measured OLMo 3 / Dolci slice does not
@@ -223,21 +238,21 @@ Target-shape free-running rates per 1,000 generated tokens:
 | `stock_openers` | 0.064 | 0.052 | 0.064 | 0.059 | DPO |
 | `stock_closers` | 0.028 | 0.020 | 0.043 | 0.032 | DPO |
 
-The stage progression is feature-specific:
+The checkpoint progression is feature-specific:
 
 - Base is highest for `rule_of_three_approx` and narrowly highest for
   `slop_lexicon` in sampled output.
 - SFT is the lowest checkpoint for every retained Tier-1 free-running feature.
 - DPO rebounds on selected markers, especially stock phrases and local
   `slop_lexicon` propensity.
-- Final/RLVR stays close to DPO in the combined style signature but does not
-  broadly exceed DPO on headline rates.
+- Final/RLVR stays close to DPO in aggregate style, but it does not broadly
+  exceed DPO on headline rates.
 
-## Result 2: `slop_lexicon` Is The Strongest Amplification-Like Signal
+## Result 1: `slop_lexicon` Is The Strongest Amplification-Like Signal
 
-`slop_lexicon` has the strongest measurement chain: Phase 1 corpus rates,
-teacher-forced AF, free-running emission, expected-vs-observed compounding,
-and direct prior/no-prior compounding windows.
+`slop_lexicon` has the strongest measurement chain in Phase 2: Phase 1 corpus
+rates, teacher-forced AF, free-running emission, expected-vs-observed
+compounding, and direct prior/no-prior compounding windows.
 
 Teacher-forced neutral-normalized AF:
 
@@ -262,13 +277,15 @@ Free-running `slop_lexicon` emission:
 | Final/RLVR | 0.193 |
 
 Base is narrowly above DPO in sampled output, DPO is clearly above SFT, and
-Final/RLVR is below DPO. The conclusion is:
+Final/RLVR is below DPO.
+
+Conclusion:
 
 > DPO is the peak local-propensity checkpoint for `slop_lexicon`, but visible
 > sampled output does not become a clean DPO-only peak because Base already
 > emits the feature at a comparable rate.
 
-## Result 3: `slop_lexicon` Compounds During Generation
+## Result 2: `slop_lexicon` Compounds During Generation
 
 The expected-vs-observed compounding analysis compares generated opportunity
 rates against teacher-forced expectations. For `slop_lexicon`, observed rates
@@ -293,11 +310,13 @@ The direct prior/no-prior window test is the clearest compounding read:
 After a `slop_lexicon` hit appears, later windows are about six to nine times
 more likely to contain another hit than windows without a prior hit.
 
-This effect is not DPO-specific. Base, SFT, DPO, and Final/RLVR all compound.
-That means free-running style is not just a sequence of independent local token
-choices; generated wording can reinforce later wording.
+Conclusion:
 
-## Result 4: `rule_of_three_approx` Is Visible But Not DPO-Amplified Here
+> `slop_lexicon` has a real self-conditioning signal. The effect is not
+> DPO-specific; Base, SFT, DPO, and Final/RLVR all compound. Free-running style
+> is not just a sequence of independent local token decisions.
+
+## Result 3: `rule_of_three_approx` Is Visible But Not DPO-Amplified Here
 
 `rule_of_three_approx` is the highest-rate retained Tier-1 feature in sampled
 output, but it does not support a DPO-specific amplification claim in this
@@ -330,13 +349,13 @@ below Base. All stages are below the held-out reference extension rate.
 
 Conclusion:
 
-> `rule_of_three_approx` is best described as inherited/base-heavy with SFT
+> `rule_of_three_approx` is best described as inherited or Base-heavy with SFT
 > suppression and later rebound, not as DPO-amplified in this OLMo slice.
 
-## Result 5: Stock Openers And Closers Need To Be Split
+## Result 4: Stock Openers And Closers Need To Be Split
 
-The pooled `stock_openers_closers` feature is useful for summaries but hides
-an opener-vs-closer split.
+The pooled `stock_openers_closers` feature is useful for summaries, but it
+hides an opener-vs-closer distinction.
 
 Teacher-forced `stock_openers` raw AF:
 
@@ -377,7 +396,7 @@ Conclusion:
 > closer behavior should be analyzed separately. The large teacher-forced
 > closer AF is a rare-reference result.
 
-## Result 6: `contrastive_negation` Is Output-Visible But Teacher-Forced Support Is Sparse
+## Result 5: `contrastive_negation` Is Output-Visible But Causally Under-Supported
 
 `contrastive_negation` has a clear sampled-output pattern:
 
@@ -399,7 +418,7 @@ Conclusion:
 > generated text, SFT suppresses it, and later checkpoints rebound. It needs
 > better teacher-forced support before stronger causal interpretation.
 
-## Result 7: Biber-Lite Adds A Broader Register Signature
+## Result 6: Biber-Lite Adds A Broader Register Signature
 
 The Biber-lite layer asks a different question from Tier-1 slop features. It
 does not estimate teacher-forced amplification. It describes broader generated
@@ -449,7 +468,7 @@ Conclusion:
 > Final/RLVR is more question-heavy, hedged, selected-verb-heavy, pronominal,
 > modal, and subordinating than the SFT target sample.
 
-## Result 8: Final/RLVR Is DPO-Like But Not DPO-Identical
+## Result 7: Final/RLVR Is DPO-Like But Not DPO-Identical
 
 The final style-signature artifact combines Tier-1 free-running rates,
 empirical compounding metrics, and Biber-lite register rates. Stage distances
@@ -493,7 +512,7 @@ Conclusion:
 > Final/RLVR keeps a DPO-like aggregate style while changing selected register
 > markers and reducing several headline slop measurements.
 
-## Checkpoint-By-Checkpoint Conclusions
+## Checkpoint-By-Checkpoint Read
 
 ### Base
 
