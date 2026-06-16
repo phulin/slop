@@ -1,13 +1,36 @@
-# Phase 2 New-Reader Conclusion Report
+# Phase 2 Full Conclusion Report For New Readers
 
 Date: 2026-06-15
 
 Status: bounded OLMo 3 / Dolci Phase 2 conclusion.
 
-This report is written for a reader who has not followed the project. It
-explains what Phase 2 was trying to measure, what was actually run, what the
-main numbers mean, how the OLMo 3 checkpoints changed from Base to SFT to DPO
-to Final/RLVR, and what conclusions should carry into Phase 3.
+This is the readable entry point for Phase 2. It assumes no prior project
+context and explains what was measured, why the measurements matter, what was
+actually run, how to read the main numbers, how the OLMo 3 checkpoints changed
+from Base to SFT to DPO to Final/RLVR, and what conclusions should carry into
+Phase 3.
+
+For audit-level detail, see the longer close-out report in
+`docs/experiments/phase2_final_conclusion_report.md` and the retained artifact
+manifest in
+`artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.md`.
+
+## Quick Orientation
+
+Phase 2 is the model-behavior half of the project. Phase 1 counted style
+features in data; Phase 2 asks whether trained checkpoints locally prefer
+those features, whether the features show up in generated answers, and whether
+one early feature hit makes later hits more likely.
+
+The report has three important reading rules:
+
+1. "Slop" means detector-defined surface style markers, not a judgment that an
+   answer is wrong or useless.
+2. There is no single global slop score. The result is a feature-by-feature
+   spectrum.
+3. Teacher-forced propensity, sampled-output frequency, and compounding are
+   different measurements. When they disagree, the disagreement is part of the
+   result.
 
 ## Executive Summary
 
