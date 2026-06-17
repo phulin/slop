@@ -90,11 +90,6 @@ def build_parser() -> argparse.ArgumentParser:
         default=[],
         help="Feature ID to keep in outputs; repeat to include multiple features.",
     )
-    parser.add_argument(
-        "--include-biber-lite",
-        action="store_true",
-        help="Add sampled Biber-style surface feature counts to census outputs.",
-    )
     parser.add_argument("--output", type=Path, default=Path("runs/stage1_census/summary.csv"))
     parser.add_argument(
         "--pair-output",
@@ -116,20 +111,19 @@ def _load_components():
     # Imported lazily so `--help` works before optional dependencies are installed.
     from slop_sftdiv.data import CorpusSource, SamplingConfig, iter_corpus_records
     from slop_sftdiv.data.corpora import DEFAULT_ID_FIELDS
-    from slop_sftdiv.features import extract_biber_lite_features, extract_tier1_features
+    from slop_sftdiv.features import extract_tier1_features
 
     return (
         CorpusSource,
         SamplingConfig,
         iter_corpus_records,
         extract_tier1_features,
-        extract_biber_lite_features,
         DEFAULT_ID_FIELDS,
     )
 
 
 def _source_from_input(raw_input: str, *, split: str, hf_config: str | None):
-    CorpusSource, _, _, _, _, _ = _load_components()
+    CorpusSource, _, _, _, _ = _load_components()
     path = Path(raw_input)
     if path.exists():
         return CorpusSource.jsonl(path)
@@ -233,7 +227,6 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
         SamplingConfig,
         iter_corpus_records,
         extract_tier1_features,
-        extract_biber_lite_features,
         DEFAULT_ID_FIELDS,
     ) = _load_components()
     feature_counts: dict[tuple[str, str, str], Counter[str]] = defaultdict(Counter)
@@ -274,7 +267,6 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
             "sampling_strategy": args.sampling_strategy,
             "max_scan": args.max_scan,
             "features": args.feature,
-            "include_biber_lite": args.include_biber_lite,
             "pair_output": str(args.pair_output) if args.pair_output is not None else None,
             "wandb_group": args.wandb_group,
             "wandb_job_type": args.wandb_job_type,
@@ -299,8 +291,6 @@ def run_census(args: argparse.Namespace) -> pd.DataFrame:
                 for role, text, pair_id in _measurement_texts(record):
                     analysis = extract_tier1_features(text)
                     counts = Counter(analysis.counts)
-                    if args.include_biber_lite:
-                        counts.update(extract_biber_lite_features(text).counts)
                     counts = _filtered_counts(counts, selected_features)
                     token_count = int(analysis.helpers["token_count"])
                     metrics.measurement_rows += 1

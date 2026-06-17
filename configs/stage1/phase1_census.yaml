@@ -32,21 +32,22 @@ execution:
   write_denominators: true
   fail_on_missing_core_feature: true
   fail_on_pair_misalignment: true
-  include_biber_lite: true
+  include_pybiber_full: false
   revised_phase1_features:
     - contrastive_negation
     - rule_of_three_approx
     - slop_lexicon
+    - slop_lexicon_v2_candidate
+    - eqbench_slop_score
     - stock_openers
     - stock_closers
     - stock_openers_closers
   excluded_from_revised_phase1:
-    - list_header_bold_lead_in
     - punctuation_rhythm
-  biber_note: >-
-    Full pybiber extraction is deferred on this CPython 3.14 environment because
-    pybiber's spaCy dependency has no compatible wheel. Phase 1 records
-    Biber-lite surface proxies with explicit caveats.
+  pybiber_note: >-
+    Full pybiber extraction is available through the separate
+    `slop-pybiber-full` batched register pipeline. The Tier-1 census does not
+    emit Biber proxy features.
 
 sampled_corpus_measurements:
   required_before_full_run: true

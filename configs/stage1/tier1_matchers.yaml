@@ -62,6 +62,37 @@ features:
     report_pooled_index: true
     go_no_go_role: core
 
+  - id: slop_lexicon_v2_candidate
+    tier: 1
+    matcher_type: lexicon_and_ngram
+    examples:
+      - meticulous
+      - commendable
+      - pivotal
+      - transformative
+    normalization:
+      - per_1k_tokens
+      - per_opportunity
+    opportunity_context: all_non_code_token_positions_with_item_specific_prefix_checks
+    report_items_individually: true
+    report_pooled_index: true
+    precision_note: Versioned addendum candidate; do not merge into historical `slop_lexicon` rates.
+    go_no_go_role: exploratory
+
+  - id: eqbench_slop_score
+    tier: 1
+    matcher_type: benchmark_score
+    examples:
+      - EQ-Bench Slop Score weighted composite
+      - slop words
+      - not-X-but-Y
+      - slop trigrams
+    normalization:
+      - document_scalar
+    opportunity_context: document_level_weighted_score
+    precision_note: Uses vendored EQ-Bench word/trigram lists, leaderboard normalization ranges, and portable Stage-1 contrast regexes.
+    go_no_go_role: exploratory
+
   - id: rule_of_three_approx
     tier: 1
     matcher_type: regex
@@ -74,21 +105,6 @@ features:
     opportunity_context: comma_or_conjunction_delimited_triple_span
     precision_note: Reports a surface approximation, not a full NP/VP/clause chunk analysis.
     go_no_go_role: core
-
-  - id: list_header_bold_lead_in
-    tier: 1
-    matcher_type: markdown_regex
-    subtypes:
-      - bullet_list_onset
-      - numbered_list_onset
-      - markdown_header_onset
-      - bold_lead_in_definition
-    normalization:
-      - per_1k_tokens
-      - document_scalar
-      - per_opportunity
-    opportunity_context: response_start_post_newline_or_post_colon_position
-    go_no_go_role: future_exploratory
 
   - id: generic_hedging
     tier: 1
@@ -166,29 +182,11 @@ go_no_go:
     - stock_closers
     - stock_openers_closers
   excluded_by_revised_phase1_scope:
-    - list_header_bold_lead_in
     - punctuation_rhythm
     - generic_hedging
-  biber_lite_sampled_features:
-    - biber_lite_first_person_pronouns
-    - biber_lite_second_person_pronouns
-    - biber_lite_third_person_pronouns
-    - biber_lite_demonstratives
-    - biber_lite_possibility_modals
-    - biber_lite_necessity_modals
-    - biber_lite_prediction_modals
-    - biber_lite_hedges
-    - biber_lite_amplifiers
-    - biber_lite_private_verbs
-    - biber_lite_public_verbs
-    - biber_lite_suasive_verbs
-    - biber_lite_nominalizations
-    - biber_lite_that_complements
-    - biber_lite_infinitives
-    - biber_lite_causal_subordinators
-    - biber_lite_conditional_subordinators
-    - biber_lite_wh_questions
-    - biber_lite_passive_voice_approx
+  pybiber_register_features:
+    source: slop-pybiber-full
+    count: 67
   demote_if:
     - precision_below_target_after_refinement
     - opportunity_context_not_freezable

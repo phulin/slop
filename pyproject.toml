@@ -28,6 +28,10 @@ dev = [
     "pytest>=8.0",
     "ruff>=0.5",
 ]
+biber = [
+    "pybiber>=0.3.1",
+    "spacy>=3.8",
+]
 
 [project.scripts]
 slop-census = "slop_sftdiv.cli.census:main"
@@ -43,17 +47,31 @@ slop-assemble-phase2-grid = "slop_sftdiv.cli.assemble_phase2_grid:main"
 slop-assemble-phase2-generation-grid = "slop_sftdiv.cli.assemble_phase2_generation_grid:main"
 slop-plan-phase2-generation = "slop_sftdiv.cli.plan_phase2_generation:main"
 slop-plan-phase2-propensity = "slop_sftdiv.cli.plan_phase2_propensity:main"
+slop-materialize-phase2-generation-continuation-plan = "slop_sftdiv.cli.materialize_phase2_generation_continuation_plan:main"
+slop-materialize-sglang-generation-plan = "slop_sftdiv.cli.materialize_sglang_generation_plan:main"
+slop-materialize-phase3-full-sglang-finalize-plan = "slop_sftdiv.cli.materialize_phase3_full_sglang_finalize_plan:main"
+slop-audit-phase3-completion = "slop_sftdiv.cli.audit_phase3_completion:main"
+slop-audit-sglang-generation-cache = "slop_sftdiv.cli.audit_sglang_generation_cache:main"
 slop-launch-phase2-generation-shard = "slop_sftdiv.cli.launch_phase2_generation_shard:main"
+slop-continue-phase2-generation-plan = "slop_sftdiv.cli.continue_phase2_generation_plan:main"
 slop-phase2-generation-status = "slop_sftdiv.cli.phase2_generation_status:main"
 slop-run-phase2-post-shard-analysis = "slop_sftdiv.cli.run_phase2_post_shard_analysis:main"
 slop-assemble-amplification-spectrum = "slop_sftdiv.cli.assemble_amplification_spectrum:main"
 slop-classify-amplification-spectrum = "slop_sftdiv.cli.classify_amplification_spectrum:main"
 slop-compare-phase3-ladders = "slop_sftdiv.cli.compare_phase3_ladders:main"
+slop-summarize-phase3-generation-plans = "slop_sftdiv.cli.summarize_phase3_generation_plans:main"
+slop-assemble-olmo-stretch-comparison = "slop_sftdiv.cli.assemble_olmo_stretch_comparison:main"
+slop-audit-no-think-generations = "slop_sftdiv.cli.audit_no_think_generations:main"
 slop-analyze-phase3-free-run-effects = "slop_sftdiv.cli.analyze_phase3_free_run_effects:main"
 slop-analyze-phase3-teacher-forced-effects = "slop_sftdiv.cli.analyze_phase3_teacher_forced_effects:main"
 slop-analyze-phase2-compounding = "slop_sftdiv.cli.analyze_phase2_compounding:main"
-slop-compare-phase2-biber = "slop_sftdiv.cli.compare_phase2_biber:main"
+slop-pybiber-full = "slop_sftdiv.cli.pybiber_full:main"
 slop-build-style-signature = "slop_sftdiv.cli.build_style_signature:main"
+slop-eqbench-score = "slop_sftdiv.cli.eqbench_slop_score:main"
+slop-phase4-discover-style-markers = "slop_sftdiv.cli.phase4_discover_style_markers:main"
+slop-phase4-train-detector = "slop_sftdiv.cli.phase4_train_detector:main"
+slop-phase4-attribute-detector = "slop_sftdiv.cli.phase4_attribute_detector:main"
+slop-phase4-cluster-attributed-spans = "slop_sftdiv.cli.phase4_cluster_attributed_spans:main"
 slop-extract-smollm3-config-weights = "slop_sftdiv.cli.extract_smollm3_config_weights:main"
 slop-assemble-weighted-pretrain-baseline = "slop_sftdiv.cli.assemble_weighted_pretrain_baseline:main"
 slop-teacher-forced-propensity = "slop_sftdiv.cli.teacher_forced_propensity:main"
@@ -67,6 +85,9 @@ slop-benchmark-opportunity-extraction = "slop_sftdiv.cli.benchmark_opportunity_e
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+slop_sftdiv = ["resources/eqbench_slop/*.json", "resources/eqbench_slop/*.mjs"]
 
 [tool.ruff]
 line-length = 100

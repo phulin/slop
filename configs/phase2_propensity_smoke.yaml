@@ -64,7 +64,7 @@ teacher_forced:
   notes:
     - Exact sequence mass is the default Phase 2 propensity estimator.
     - First-token mass remains available only as a debugging fallback.
-    - Keep Biber-lite as register covariates, not propensity targets.
+    - Keep full pybiber register measurements separate from propensity targets.
     - Neutral controls are calibration targets, not slop features.
     - Score multiple features sharing the same prefix in one cached prefix pass.
     - Initiator sequence enumeration includes sentence-case variants because

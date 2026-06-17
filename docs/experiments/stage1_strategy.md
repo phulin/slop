@@ -41,10 +41,8 @@ Tasks:
   slop lexicon, rule-of-three approximation, and stock openers/closers.
 - Keep list/header onset and punctuation/rhythm implemented but out of the
   Phase 1 core claims. They can be reported only as future/exploratory context.
-- Add sampled Biber-style register measurements. Full `pybiber` extraction is
-  deferred on this CPython 3.14 machine because its spaCy dependency currently
-  lacks a compatible wheel; Phase 1 uses explicitly caveated Biber-lite surface
-  proxies.
+- Keep Biber/register measurements in the separate full `pybiber` extraction
+  path. The Tier-1 matcher port does not emit sampled Biber proxy features.
 - For each feature, freeze the default normalization unit: per 1k tokens, per sentence, per opportunity, or document-level scalar.
 - For each feature, define `opportunity_context` even if Stage 1 only uses corpus frequencies. These definitions become the contract for Week 3-5 teacher-forced propensity.
 - Add a neutral-control basket for later AF calibration: `for example`, `such as`, `in particular`, and `as a result`.
@@ -87,8 +85,7 @@ Go/no-go:
 Config: `configs/stage1/phase1_census.yaml`
 
 Tasks:
-- Run validated revised Tier-1 matchers plus Biber-lite sampled register
-  features over sampled data corpora.
+- Run validated revised Tier-1 matchers over sampled data corpora.
 - Report per-1k-token rates for all features where meaningful.
 - Report per-sentence rates for clause-level features.
 - Report per-opportunity rates wherever Stage 1 opportunity extraction is implemented.
@@ -103,9 +100,9 @@ Expected artifacts:
 
 Go/no-go:
 - Go if chosen/rejected rows align 1:1 by pair ID and length distributions match dataset-card expectations.
-- Bug-suspect no-go if no revised core feature, Biber-lite proxy, or length
-  measure differs between chosen and rejected on either ladder. Markdown/list
-  markers are exploratory diagnostics only in the revised scope.
+- Bug-suspect no-go if no revised core feature or length measure differs
+  between chosen and rejected on either ladder. Markdown/list markers are
+  exploratory diagnostics only in the revised scope.
 
 ## Component Task Notes
 
@@ -185,9 +182,8 @@ Stage 1:
 - Use streaming dataset reads and bounded writer buffers for Dolma-scale sources.
 - Cache normalized text, token counts, sentence counts, paragraph counts, matcher spans, and denominator tables separately.
 - Prefer a two-pass plan: small smoke sample, then calibrated full Stage 1 sample.
-- Keep full pybiber/Tier-2 extraction out of the default critical path until a
-  compatible Python/spaCy environment is available. Use Biber-lite sampled
-  proxies for this Phase 1 close-out.
+- Keep full pybiber/Tier-2 extraction out of the default Tier-1 critical path;
+  run it as a separate batched register pass when needed.
 
 Later model jobs:
 - Use vLLM for generation grids when possible.

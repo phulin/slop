@@ -23,7 +23,7 @@ def test_assemble_phase1_writes_parquets_and_summary(tmp_path, monkeypatch):
                 "source": "sft",
                 "subset": "code",
                 "role": "target_response",
-                "feature": "biber_lite_private_verbs",
+                "feature": "stock_openers_closers",
                 "count": 1,
                 "docs": 1,
                 "tokens": 50,
@@ -97,7 +97,7 @@ def test_assemble_phase1_writes_parquets_and_summary(tmp_path, monkeypatch):
     assert pd.read_parquet(corpus_output).shape[0] == 2
     assert pd.read_parquet(stratum_output).shape[0] == 2
     assert pd.read_parquet(pair_output).shape[0] == 1
-    assert "Biber coverage is represented by sampled `biber_lite`" in summary_output.read_text(
+    assert "Full pybiber extraction is handled by the separate" in summary_output.read_text(
         encoding="utf-8"
     )
     assert logged["assembly/preference_pair_delta_rows"] == 1

@@ -284,7 +284,7 @@ def test_run_census_uses_retained_text_role_for_non_pair_rows(tmp_path, monkeypa
     assert frame.loc[frame["feature"] == "slop_lexicon", "count"].sum() == 2
 
 
-def test_run_census_can_filter_revised_phase1_features_and_include_biber_lite(tmp_path, monkeypatch):
+def test_run_census_can_filter_revised_phase1_features(tmp_path, monkeypatch):
     monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
     input_path = tmp_path / "input.jsonl"
     output_path = tmp_path / "summary.csv"
@@ -309,17 +309,12 @@ def test_run_census_can_filter_revised_phase1_features_and_include_biber_lite(tm
             "1",
             "--output",
             str(output_path),
-            "--include-biber-lite",
             "--feature",
             "contrastive_negation",
             "--feature",
             "slop_lexicon",
             "--feature",
             "stock_openers_closers",
-            "--feature",
-            "biber_lite_private_verbs",
-            "--feature",
-            "biber_lite_second_person_pronouns",
             "--wandb-mode",
             "disabled",
         ]
@@ -328,14 +323,10 @@ def test_run_census_can_filter_revised_phase1_features_and_include_biber_lite(tm
     frame = run_census(args)
 
     assert set(frame["feature"]) == {
-        "biber_lite_private_verbs",
-        "biber_lite_second_person_pronouns",
         "contrastive_negation",
         "slop_lexicon",
         "stock_openers_closers",
     }
-    assert frame.loc[frame["feature"] == "biber_lite_private_verbs", "count"].sum() == 1
-    assert frame.loc[frame["feature"] == "biber_lite_second_person_pronouns", "count"].sum() == 1
 
 
 def test_run_census_logs_throughput_metrics(tmp_path, monkeypatch):

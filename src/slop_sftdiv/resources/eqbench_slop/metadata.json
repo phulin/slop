@@ -1,0 +1,27 @@
+{
+  "downloaded_utc": "2026-06-17",
+  "files": {
+    "leaderboard_results.json": "https://raw.githubusercontent.com/sam-paech/slop-score/main/data/leaderboard_results.json",
+    "prompts.json": "https://raw.githubusercontent.com/sam-paech/slop-score/main/data/prompts.json",
+    "slop_list.json": "https://raw.githubusercontent.com/sam-paech/slop-score/main/data/slop_list.json",
+    "slop_list_trigrams.json": "https://raw.githubusercontent.com/sam-paech/slop-score/main/data/slop_list_trigrams.json"
+  },
+  "formula": "100 * (0.60*norm(slop_list_matches_per_1k_words) + 0.25*norm(not_x_but_y_per_1k_chars) + 0.15*norm(slop_trigram_matches_per_1k_words))",
+  "normalization_note": "Ranges reproduce slop-score.html: min/max over leaderboard_results.json with 10% buffer.",
+  "normalization_ranges": {
+    "contrast": {
+      "max": 0.8881555162544392,
+      "min": -0.0323480255696472
+    },
+    "slop_trigrams": {
+      "max": 1.2293612202273094,
+      "min": -0.027052241145113065
+    },
+    "slop_words": {
+      "max": 43.924784489934034,
+      "min": 2.1214882577844882
+    }
+  },
+  "source_page": "https://eqbench.com/slop-score.html",
+  "source_repo": "https://github.com/sam-paech/slop-score"
+}

@@ -11,6 +11,8 @@ from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
 EXCLUDED_REVISED_PHASE1_FEATURES = {
     "generic_hedging",
+    # Legacy artifact guard: older stage-1 tables may still contain this retired
+    # formatting feature, but new matcher runs no longer emit it.
     "list_header_bold_lead_in",
     "punctuation_rhythm",
 }
@@ -90,14 +92,7 @@ def _write_summary(
     pair_delta_input: Path,
 ) -> None:
     excluded_present = sorted(set(feature_rates["feature"]) & EXCLUDED_REVISED_PHASE1_FEATURES)
-    core_features = sorted(
-        feature
-        for feature in feature_rates["feature"].unique()
-        if not str(feature).startswith("biber_lite_")
-    )
-    biber_features = sorted(
-        feature for feature in feature_rates["feature"].unique() if str(feature).startswith("biber_lite_")
-    )
+    core_features = sorted(feature_rates["feature"].unique())
     lines = [
         "# Phase 1 Census Summary",
         "",
@@ -105,10 +100,10 @@ def _write_summary(
         "",
         "Scope: revised Phase 1 close-out. Core deterministic features are contrastive",
         "negation, rule-of-three approximation, slop lexicon, and stock",
-        "openers/closers. Biber coverage is represented by sampled `biber_lite`",
-        "surface proxies. Full pybiber extraction, punctuation/rhythm, list/header",
-        "lead-ins, generic hedging, and full SmolLM replication remain future or",
-        "exploratory work.",
+        "openers/closers. Full pybiber extraction is handled by the separate",
+        "`slop-pybiber-full` batched register pipeline. Punctuation/rhythm,",
+        "generic hedging, and full SmolLM replication remain exploratory or",
+        "out of this assembly surface.",
         "",
         "## Inputs",
         "",
@@ -125,7 +120,7 @@ def _write_summary(
         "## Feature Scope",
         "",
         f"- Revised core/table features: {', '.join(core_features)}",
-        f"- Biber-lite proxies: {len(biber_features)} features",
+        "- Full pybiber register features: separate `slop-pybiber-full` outputs",
         f"- Removed Phase 1 features present in assembled tables: {excluded_present or 'none'}",
         "",
         "## Caveats",

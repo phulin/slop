@@ -22,11 +22,11 @@ EPSILON = 1e-9
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Build a generated-output style signature from Tier-1, compounding, and Biber artifacts."
+        description="Build a generated-output style signature from Tier-1, compounding, and pybiber register artifacts."
     )
     parser.add_argument("--tier1-generation-grid", type=Path, required=True)
     parser.add_argument("--compounding", type=Path, required=True)
-    parser.add_argument("--biber-comparison", type=Path, required=True)
+    parser.add_argument("--register-comparison", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--distance-output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, required=True)
@@ -64,7 +64,7 @@ def _stage_order(stage: str) -> int:
 
 
 def _feature_order(feature_group: str, feature: str) -> tuple[int, str]:
-    group_order = {"tier1": 0, "compounding": 1, "biber_lite": 2}
+    group_order = {"tier1": 0, "compounding": 1, "pybiber": 2}
     return group_order.get(feature_group, 99), feature
 
 
@@ -72,6 +72,7 @@ def _tier1_rows(path: Path) -> list[dict[str, Any]]:
     rows = []
     for row in _read_csv(path):
         stage = str(row["stage"])
+        value = _float_or_none(row.get("per_1k_tokens"))
         rows.append(
             {
                 "feature_group": "tier1",
@@ -79,7 +80,9 @@ def _tier1_rows(path: Path) -> list[dict[str, Any]]:
                 "feature": str(row["feature"]),
                 "stage": stage,
                 "stage_label": STAGE_LABELS.get(stage, stage),
-                "value": _float_or_none(row.get("per_1k_tokens")),
+                "value": value,
+                "value_ci_low": _float_or_none(row.get("per_1k_tokens_ci_low")),
+                "value_ci_high": _float_or_none(row.get("per_1k_tokens_ci_high")),
                 "sft_target_baseline": None,
                 "dpo_chosen_baseline": None,
                 "pretrain_baseline": None,
@@ -97,6 +100,7 @@ def _compounding_rows(path: Path) -> list[dict[str, Any]]:
             ("prior_risk_diff", "risk_diff_after_prior"),
             ("observed_per_1k_opportunities", "observed_per_1k_opportunities"),
         ):
+            value = _float_or_none(row.get(source_column))
             rows.append(
                 {
                     "feature_group": "compounding",
@@ -104,7 +108,9 @@ def _compounding_rows(path: Path) -> list[dict[str, Any]]:
                     "feature": str(row["feature"]),
                     "stage": stage,
                     "stage_label": STAGE_LABELS.get(stage, stage),
-                    "value": _float_or_none(row.get(source_column)),
+                    "value": value,
+                    "value_ci_low": _float_or_none(row.get(f"{source_column}_ci_low")),
+                    "value_ci_high": _float_or_none(row.get(f"{source_column}_ci_high")),
                     "sft_target_baseline": None,
                     "dpo_chosen_baseline": None,
                     "pretrain_baseline": None,
@@ -113,18 +119,21 @@ def _compounding_rows(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
-def _biber_rows(path: Path) -> list[dict[str, Any]]:
+def _register_rows(path: Path) -> list[dict[str, Any]]:
     rows = []
     for row in _read_csv(path):
         stage = str(row["stage"])
+        value = _float_or_none(row.get("generation_per_1k_tokens"))
         rows.append(
             {
-                "feature_group": "biber_lite",
+                "feature_group": "pybiber",
                 "metric": "generation_per_1k_tokens",
                 "feature": str(row["feature"]),
                 "stage": stage,
                 "stage_label": STAGE_LABELS.get(stage, stage),
-                "value": _float_or_none(row.get("generation_per_1k_tokens")),
+                "value": value,
+                "value_ci_low": _float_or_none(row.get("generation_per_1k_tokens_ci_low")),
+                "value_ci_high": _float_or_none(row.get("generation_per_1k_tokens_ci_high")),
                 "sft_target_baseline": _float_or_none(row.get("sft_target_per_1k_tokens")),
                 "dpo_chosen_baseline": _float_or_none(row.get("dpo_chosen_per_1k_tokens")),
                 "pretrain_baseline": _float_or_none(row.get("pretrain_per_1k_tokens")),
@@ -176,7 +185,7 @@ def build_signature(args: argparse.Namespace) -> list[dict[str, Any]]:
     rows = [
         *_tier1_rows(args.tier1_generation_grid),
         *_compounding_rows(args.compounding),
-        *_biber_rows(args.biber_comparison),
+        *_register_rows(args.register_comparison),
     ]
     rows = _with_stage_references(rows)
     return sorted(
@@ -251,6 +260,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "stage",
         "stage_label",
         "value",
+        "value_ci_low",
+        "value_ci_high",
         "sft_target_baseline",
         "dpo_chosen_baseline",
         "pretrain_baseline",
@@ -303,7 +314,7 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], distance_rows: list[d
     lines = [
         "# Phase 2 Final Output Style Signature",
         "",
-        "This signature joins Tier-1 slop emission, empirical compounding metrics, and Biber-lite register rates over the final `t=1.0` generated outputs.",
+        "This signature joins Tier-1 slop emission, empirical compounding metrics, and pybiber register rates over the final `t=1.0` generated outputs.",
         "",
         f"Rows: {len(rows)}",
         f"Stage-distance rows: {len(distance_rows)}",
@@ -358,7 +369,7 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], distance_rows: list[d
         rows,
         "log2_ratio_vs_sft_target",
         stage="final",
-        feature_group="biber_lite",
+        feature_group="pybiber",
         limit=10,
     ):
         lines.append(
@@ -393,8 +404,8 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], distance_rows: list[d
             "",
             "## Caveats",
             "",
-            "- Distances are on raw metric scales, so high-rate Biber and compounding metrics dominate; use feature-level deltas for interpretation.",
-            "- Biber-lite values are register proxies, not opportunity-normalized propensity measurements.",
+            "- Distances are on raw metric scales, so high-rate pybiber and compounding metrics dominate; use feature-level deltas for interpretation.",
+            "- Pybiber values are generated-output register measurements, not opportunity-normalized propensity measurements.",
             "- Compounding values are empirical generated-text window tests; only `slop_lexicon` has the full teacher-forced expected-vs-observed join.",
         ]
     )
@@ -418,7 +429,7 @@ def run(args: argparse.Namespace) -> list[dict[str, Any]]:
         config={
             "tier1_generation_grid": str(args.tier1_generation_grid),
             "compounding": str(args.compounding),
-            "biber_comparison": str(args.biber_comparison),
+            "register_comparison": str(args.register_comparison),
             "output": str(args.output),
             "distance_output": str(args.distance_output),
             "summary_output": str(args.summary_output),

@@ -6,3 +6,4 @@ runs/
 artifacts/
 *.egg-info/
 wandb/
+node_modules/

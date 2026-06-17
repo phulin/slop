@@ -78,7 +78,7 @@ Implemented smoke targets:
 
 Held back from the first smoke:
 
-- Biber-lite features: keep as register covariates, not propensity targets.
+- Full pybiber features: keep as register covariates, not propensity targets.
 
 Free-running smoke CLI:
 
