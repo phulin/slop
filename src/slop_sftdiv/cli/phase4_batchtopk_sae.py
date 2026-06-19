@@ -113,6 +113,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument(
+        "--load-sae",
+        type=Path,
+        default=None,
+        help="Load an existing phase4_batchtopk_sae.pt and score it instead of training a new SAE.",
+    )
+    parser.add_argument(
         "--reference-jsonl",
         action="append",
         default=[],
@@ -1037,6 +1043,26 @@ def _save_sae(path: Path, sae: BatchTopKSAE, summary: dict[str, Any]) -> None:
     )
 
 
+def _load_sae(path: Path, *, device: torch.device) -> tuple[BatchTopKSAE, dict[str, Any]]:
+    payload = torch.load(path, map_location="cpu")
+    if not isinstance(payload, dict):
+        raise ValueError(f"SAE checkpoint {path} must contain a dictionary payload")
+    config = payload.get("config")
+    state_dict = payload.get("state_dict")
+    if not isinstance(config, dict) or not isinstance(state_dict, dict):
+        raise ValueError(f"SAE checkpoint {path} must contain config and state_dict entries")
+    sae = BatchTopKSAE(
+        input_dim=int(config["input_dim"]),
+        latent_dim=int(config["latent_dim"]),
+        k=int(config["k"]),
+    )
+    sae.load_state_dict(state_dict)
+    sae.to(device)
+    sae.eval()
+    summary = payload.get("summary")
+    return sae, summary if isinstance(summary, dict) else {}
+
+
 def _load_activation_cache(path: Path) -> torch.Tensor:
     payload = torch.load(path, map_location="cpu")
     if isinstance(payload, torch.Tensor):
@@ -1087,6 +1113,71 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     cache_path = args.activation_cache or output_dir / "phase4_batchtopk_sae_activation_cache.pt"
     model: Any | None = None
     tokenizer: Any | None = None
+
+    if args.load_sae is not None:
+        sae, loaded_summary = _load_sae(args.load_sae, device=device)
+        if args.skip_latent_scoring:
+            latent_rows: list[dict[str, Any]] = []
+            example_rows: list[dict[str, Any]] = []
+        else:
+            model, tokenizer = _load_detector(args.checkpoint, device=device)
+            latent_rows, example_rows = score_latents(
+                model=model,
+                tokenizer=tokenizer,
+                sae=sae,
+                docs=docs,
+                args=args,
+                device=device,
+            )
+        source_counts = Counter(doc.source for doc in docs)
+        label_counts = Counter(str(doc.label) for doc in docs)
+        summary = {
+            "checkpoint": str(args.checkpoint),
+            "device": str(device),
+            "cuda_name": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "",
+            "documents": len(docs),
+            "source_counts": dict(sorted(source_counts.items())),
+            "label_counts": dict(sorted(label_counts.items())),
+            "activation_cache": str(loaded_summary.get("activation_cache", cache_path)),
+            "activation_cache_reused": True,
+            "activation_vectors": loaded_summary.get("activation_vectors"),
+            "input_dim": sae.input_dim,
+            "pad_to_max_length": loaded_summary.get("pad_to_max_length", bool(args.pad_to_max_length)),
+            "latent_dim": sae.latent_dim,
+            "k": sae.k,
+            "epochs": loaded_summary.get("epochs"),
+            "learning_rate": loaded_summary.get("learning_rate"),
+            "weight_decay": loaded_summary.get("weight_decay"),
+            "lr_schedule": loaded_summary.get("lr_schedule"),
+            "warmup_ratio": loaded_summary.get("warmup_ratio"),
+            "decay_ratio": loaded_summary.get("decay_ratio"),
+            "min_lr_ratio": loaded_summary.get("min_lr_ratio"),
+            "warmup_steps": loaded_summary.get("warmup_steps", 0),
+            "stable_steps": loaded_summary.get("stable_steps", 0),
+            "decay_steps": loaded_summary.get("decay_steps", 0),
+            "eval_fraction": loaded_summary.get("eval_fraction"),
+            "final_train_mse": loaded_summary.get("final_train_mse"),
+            "best_eval_mse": loaded_summary.get("best_eval_mse"),
+            "compile_sae": loaded_summary.get("compile_sae"),
+            "compile_detector": bool(args.compile_detector),
+            "compile_sae_fallback": loaded_summary.get("compile_sae_fallback"),
+            "compile_detector_fallback": False,
+            "compile_mode": loaded_summary.get("compile_mode", args.compile_mode),
+            "skip_latent_scoring": bool(args.skip_latent_scoring),
+            "score_top_latents": args.score_top_latents,
+            "ranked_latents": len(latent_rows),
+            "example_rows": len(example_rows),
+            "loaded_sae": str(args.load_sae),
+            "loaded_sae_summary": loaded_summary,
+        }
+        _save_sae(output_dir / "phase4_batchtopk_sae.pt", sae, summary)
+        _write_csv(output_dir / "phase4_batchtopk_sae_train_log.csv", [])
+        _write_csv(output_dir / "phase4_batchtopk_sae_eval_log.csv", [])
+        _write_csv(output_dir / "phase4_batchtopk_sae_latents.csv", latent_rows)
+        _write_csv(output_dir / "phase4_batchtopk_sae_examples.csv", example_rows)
+        _write_json(output_dir / "phase4_batchtopk_sae_summary.json", summary)
+        return summary
+
     cache_reused = cache_path.exists() and not args.refresh_activation_cache
     if cache_reused:
         print(f"Loading activation cache from {cache_path}", flush=True)

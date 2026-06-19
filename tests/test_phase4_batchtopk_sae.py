@@ -11,7 +11,9 @@ from slop_sftdiv.cli.phase4_batchtopk_sae import (
     BatchTopKSAE,
     _load_jsonl_docs,
     _load_parquet_docs,
+    _load_sae,
     _logits_with_sae,
+    _save_sae,
     _target_class_ids,
     train_sae,
 )
@@ -93,6 +95,22 @@ def test_train_sae_returns_loss_rows() -> None:
     assert train_summary["lr_schedule"] == "wsd"
     assert train_summary["warmup_steps"] == 1
     assert "learning_rate" in rows[-1]
+
+
+def test_save_and_load_sae_round_trip(tmp_path) -> None:
+    path = tmp_path / "phase4_batchtopk_sae.pt"
+    sae = BatchTopKSAE(input_dim=4, latent_dim=8, k=2)
+    summary = {"best_eval_mse": 1.25}
+
+    _save_sae(path, sae, summary)
+    loaded, loaded_summary = _load_sae(path, device=torch.device("cpu"))
+
+    assert loaded.input_dim == sae.input_dim
+    assert loaded.latent_dim == sae.latent_dim
+    assert loaded.k == sae.k
+    assert loaded_summary == summary
+    for key, value in sae.state_dict().items():
+        assert torch.equal(value, loaded.state_dict()[key])
 
 
 def test_load_parquet_docs_labels_human_and_llm_rows(tmp_path) -> None:
