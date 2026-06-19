@@ -334,17 +334,25 @@ Live SmolLM3 recipe-weight extraction:
   `dclm` (`35.486%`), `fineweb-edu` (`31.140%`), `fw2-deu` (`2.209%`),
   `fw2-spa` (`2.003%`), `stack-edu-Python` (`1.811%`), and `pes2o`
   (`1.724%`).
-- The current bounded pretraining feature-rate samples cover 38 mapped recipe
-  sources and `91.553%` of the extracted recipe for retained Tier-1 features.
+- The current bounded pretraining feature-rate samples directly cover 47 mapped
+  recipe sources and `91.969%` of the extracted recipe for retained Tier-1
+  features. The weighted baseline now additionally uses 22 explicit
+  same-family source proxies covering `4.601%`, for `96.571%` total covered
+  recipe share and `3.429%` still unsampled.
   The covered set includes the largest web sources (`dclm` and
   `fineweb-edu`), sampled FineWeb2 language shards, math sources, PES2O,
-  StackExchange, GitHub issues, Kaggle, MegaMath subdirectories,
-  InfiWebMath-4plus, and thirteen mirror-hydrated Stack-Edu language sources.
+  StackExchange, Wikipedia, GitHub issues, Kaggle, MegaMath subdirectories,
+  OpenMathInstruct-2 solution text, OpenMathReasoning-4k answer text, Natural
+  Reasoning joined responses, MegaMath QA Qwen, a public Cosmopedia2 proxy,
+  OpenCodeReasoning-4k output text, a three-language multilingual Wikipedia
+  proxy, InfiWebMath-3plus, InfiWebMath-4plus, and thirteen mirror-hydrated
+  Stack-Edu language sources.
   The remaining production baseline blocker is feature-rate coverage for the
   other recipe sources, not source-weight discovery.
 - Added and ran `slop-assemble-weighted-pretrain-baseline` to join current
   sampled pretraining feature rates to the extracted recipe weights with
-  explicit source maps. Outputs:
+  explicit source maps, then added `--source-proxy` support to keep
+  same-family source proxies auditable rather than implicit. Outputs:
   `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
   and
   `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy_summary.md`.
@@ -447,23 +455,47 @@ Live SmolLM3 recipe-weight extraction:
   These map conservatively to the extracted recipe sources `github-issues`
   (`0.340%`) and `kaggle` (`0.051%`). They do not map to the separate
   `pull-requests` or `jupyter-scripts` recipe rows.
+- Added bounded exact samples for `wiki`, `infiwebmath-3plus`,
+  `openmathinstruct-2`, `openmathreasoning-4k`, and `natural_reasoning`:
+  English Wikipedia from `wikimedia/wikipedia`, config `20231101.en`, text
+  field `text` (`2,000` rows / `2,183,945` simple tokens); InfiWebMath-3plus
+  from `HuggingFaceTB/finemath`, config `infiwebmath-3plus`, text field
+  `text` (`2,000` rows / `1,990,392` simple tokens); OpenMathInstruct-2
+  solution text from `nvidia/OpenMathInstruct-2`, text field
+  `generated_solution` (`2,000` rows / `319,125` simple tokens);
+  OpenMathReasoning-4k answer text from
+  `LLMcompe-Team-Watanabe/math_OpenMathReasoning_preprocess_4k-8k`, text
+  field `answer` (`2,000` rows / `4,401,574` simple tokens); and Natural
+  Reasoning joined responses from `facebook/natural_reasoning`, text field
+  `responses` (`2,000` rows / `1,000,263` simple tokens). The
+  OpenMathInstruct sample is a bounded solution-text measurement rather than a
+  reconstruction of combined problem-plus-solution training records; the
+  Natural Reasoning sample joins `responses[].response` strings per row rather
+  than reconstructing tokenizer packing.
 - With DCLM, FineWeb2 German, FineWeb2 Spanish, FineWeb2 French, FineWeb2
   Italian, FineWeb2 Chinese, FineWeb2 Russian, FineWeb2 Portuguese, FineWeb2
   Persian, FineWeb2 Hindi, FineWeb2 Japanese, FineWeb2 Korean, FineWeb2 Thai,
   FineWeb2 Vietnamese, FineWeb2 Greek, FineMath, FineMath-4plus,
-  InfiWebMath-4plus, MegaMath text-code-block, MegaMath web-pro, PES2O,
-  GitHub issues, Kaggle, and the thirteen Stack-Edu mirror-hydrated language
-  samples included, the current retained Tier-1 proxy covers `91.553%` of the
-  extracted recipe and leaves `8.447%` unsampled, so its covered-only rates
-  are high-coverage diagnostics rather than full-mixture estimates.
+  InfiWebMath-3plus, InfiWebMath-4plus, OpenMathInstruct-2 solution text,
+  OpenMathReasoning-4k answer text, Natural Reasoning joined responses,
+  MegaMath text-code-block, MegaMath web-pro, PES2O, Wikipedia, GitHub issues,
+  Kaggle, and the thirteen Stack-Edu mirror-hydrated language samples
+  included, plus MegaMath QA Qwen, a public Cosmopedia2 proxy,
+  OpenCodeReasoning-4k output text, and a three-language multilingual
+  Wikipedia proxy, the retained Tier-1 direct source-map coverage is
+  `91.969%`. Explicit proxy mappings from `infiwebmath-4plus` to
+  `infiwebmath` and from measured Stack-Edu language samples to inaccessible
+  same-language `real`/`real-shuffled` recipe rows add `4.601%`, so the
+  current proxy-aware retained Tier-1 baseline covers `96.571%` and leaves
+  `3.429%` unsampled. The covered-only rates are high-coverage diagnostics
+  rather than exact full-mixture estimates.
 
-In-progress source-identification plan:
+Source-identification plan:
 
-1. Use the extracted SmolLM3 recipe weights to decide the next source-sampling
-   strata for a production weighted feature-rate baseline. Map each usable
-   source to Phase 1 strata: web/CC, forums/Q&A, wiki/science, math/reasoning,
-   and code-excluded audit bucket. Do not treat the collection listing alone
-   as final mixture weights.
+1. Use the extracted SmolLM3 recipe weights and the current proxy-aware
+   baseline as the Phase 3 pretraining reference. Do not chase full source
+   coverage before interpreting the measured model progression; describe the
+   baseline as high-coverage and coverage-aware rather than exact.
 2. Run only bounded metadata probes before sampling: no full dataset downloads,
    fixed scan caps, streaming reads where available, and W&B logging of source
    counts, schema fields, split/config names, scan caps, seed, and failures.
@@ -487,27 +519,27 @@ Current interpretation:
 
 - SmolLM3 exact recipe source weights are now extracted from the published
   configs. Bounded source-stratified proxy samples exist for Phase 3 context,
-  but production pretraining-mixture feature-rate claims should still be
-  described as coverage-aware rather than complete. The coverage proxy
-  quantifies the current gap; DCLM, FineWeb2 German, FineWeb2 Spanish,
+  and the current proxy-aware baseline is sufficient for bounded Phase 3
+  interpretation. Pretraining-mixture feature-rate claims should still be
+  described as coverage-aware rather than complete; the remaining unsampled
+  share is not an active blocker. DCLM, FineWeb2 German, FineWeb2 Spanish,
   FineWeb2 French, FineWeb2 Italian, FineWeb2 Chinese, FineWeb2 Russian,
   FineWeb2 Portuguese, FineWeb2 Persian, FineWeb2 Hindi, FineWeb2 Japanese,
   FineWeb2 Korean, FineWeb2 Thai, FineWeb2 Vietnamese, FineWeb2 Greek,
-  FineMath, FineMath-4plus, InfiWebMath-4plus, MegaMath text-code-block,
-  MegaMath web-pro, PES2O, StackExchange, GitHub issues, Kaggle, and thirteen
-  Stack-Edu language mirror samples are now measured. The largest remaining
-  missing sources are
-  real-shuffled Stack-Edu Python (`1.156%`), `infiwebmath` (`0.903%`),
-  real-shuffled Stack-Edu Cpp (`0.762%`), Jupyter scripts (`0.691%`), pull
-  requests (`0.672%`), and Stack-Edu HTML (`0.642%`). The `infiwebmath` source
-  row remains unmapped to an exact public `HuggingFaceTB/finemath` config; the
-  public configs expose `infiwebmath-3plus` and `infiwebmath-4plus`, with
-  `infiwebmath-4plus` now sampled for its exact `0.383%` source row.
+  FineMath, FineMath-4plus, InfiWebMath-3plus, InfiWebMath-4plus,
+  OpenMathInstruct-2 solution text, OpenMathReasoning-4k answer text, Natural
+  Reasoning joined responses, MegaMath text-code-block, MegaMath web-pro,
+  PES2O, StackExchange, Wikipedia, GitHub issues, Kaggle, and thirteen
+  Stack-Edu language mirror samples are now measured. Explicit source proxies
+  now cover `infiwebmath` from `infiwebmath-4plus` and same-language
+  Stack-Edu `real`/`real-shuffled` recipe rows from the measured Stack-Edu
+  language samples. The largest remaining unsampled sources are Jupyter
+  scripts (`0.691%`), pull requests (`0.672%`), Stack-Edu HTML (`0.642%`),
+  Stack-Edu C-Sharp (`0.435%`), and Stack-Edu Markdown (`0.362%`).
 - The live probes narrow SmolTalk2/Tulu source identification to specific
-  configs and splits and verify config/split-aware loading. Remaining blockers
-  are broader split/source count census, target response extraction and
-  normalization, Tulu construction semantics, and weighted pretraining
-  feature-rate coverage.
+  configs and splits and verify config/split-aware loading. Remaining source
+  blockers are broader split/source count census, target response extraction
+  and normalization, and Tulu construction semantics.
 - SmolTalk2 provides the likely SFT and APO preference substrate for the
   replication ladder, but its SFT and Preference configs must be handled as
   multiple source/config strata rather than one homogeneous dataset.
@@ -526,7 +558,7 @@ Current interpretation:
 - Map Dolci SFT `source_dataset` and `domain` fields to a defensible
   human/synthetic/mixed provenance taxonomy, or avoid human-vs-synthetic
   claims in Phase 1.
-- Complete bounded, W&B-logged SmolLM3 probes for weighted pretraining
-  feature-rate coverage, SmolTalk2 SFT schema/configs, and Tulu/APO preference construction.
+- Complete bounded, W&B-logged SmolLM3 probes for SmolTalk2 SFT schema/configs
+  and Tulu/APO preference construction.
   Use primary Hugging Face metadata, dataset cards, and linked training recipes;
   avoid secondary summaries for source semantics.

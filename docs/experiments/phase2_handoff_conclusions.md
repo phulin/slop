@@ -2,6 +2,11 @@
 
 Date: 2026-06-14
 
+Supersession note, 2026-06-18: the active paper-facing Tier-2 register surface
+is corpus-side full pybiber from Phase 1. The Biber-lite/register-proxy section
+below is retained as historical generated-output diagnostic context, not as an
+active paper feature surface and not as generated-output full pybiber evidence.
+
 For the recommended new-reader final report with project framing, measurement
 definitions, checkpoint progression, caveats, and the final conclusion, see
 `docs/experiments/phase2_new_reader_conclusion_report.md`. The earlier
@@ -392,12 +397,13 @@ out reference denominator has only 18 positives, but the qualitative direction
 is clear: stock closer phrases remain relatively cheap local continuations for
 the model, with final/RLVR roughly back at base mass after the SFT dip.
 
-## Biber-Lite Register Comparison
+## Archived Register-Proxy Comparison
 
-Biber-lite features are measured as a Phase 2 register comparison layer over
-the same `t=1.0` target-shape generation caches, then joined to the Phase 1
-corpus-role rates from `feature_rates_by_corpus.parquet`. This is not a
-teacher-forced AF or compounding analysis.
+The historical Biber-lite proxy features were measured as a Phase 2 register
+comparison layer over the same `t=1.0` target-shape generation caches, then
+joined to the Phase 1 corpus-role rates from `feature_rates_by_corpus.parquet`.
+This is not full pybiber extraction, not a teacher-forced AF measurement, and
+not a compounding analysis.
 
 W&B run:
 
@@ -408,9 +414,9 @@ Local outputs:
 - `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1.csv`
 - `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1_summary.md`
 
-The table has 76 rows: 19 Biber-lite proxies across base, SFT, DPO, and
-final/RLVR. Rates are regex-token-normalized per 1k tokens, matching the Phase
-1 Biber-lite census.
+The table has 76 rows: 19 historical register proxies across base, SFT, DPO,
+and final/RLVR. Rates are regex-token-normalized per 1k tokens, matching the
+retired Phase 1 proxy census.
 
 Largest average generation-vs-SFT-target lifts across the four generation
 stages:
@@ -452,7 +458,7 @@ The final style-signature artifact joins three generated-output views:
 - Tier-1 slop emission rates from the `t=1.0` target-shape generation grid.
 - Empirical compounding metrics from the corrected target-shape compounding
   table.
-- Biber-lite register rates from the generation-vs-corpus comparison.
+- Historical register-proxy rates from the generation-vs-corpus comparison.
 
 W&B run:
 
@@ -465,8 +471,8 @@ Local outputs:
 - `artifacts/phase2/analysis/olmo3_style_signature_t1_summary.md`
 
 The signature has 172 rows over 25 feature names and four stages. The distance
-matrix uses raw metric scales, so high-rate Biber and compounding metrics
-dominate; use it as an orientation aid, not a formal inferential statistic.
+matrix uses raw metric scales, so high-rate register-proxy and compounding
+metrics dominate; use it as an orientation aid, not a formal inferential statistic.
 Under that raw-vector read, final/RLVR is closest to DPO, then SFT, then base:
 
 | Comparison | Shared Features | Euclidean | Cosine Distance |
@@ -482,10 +488,10 @@ Largest final-vs-base movements:
   free-running rate peaking at base.
 - `stock_openers` observed opportunities drop sharply (`1.477` vs. `8.592`
   per 1k opportunities).
-- Biber-lite demonstratives, infinitives, first-person pronouns, necessity
-  modals, prediction modals, and possibility modals all decline from base to
-  final.
-- Biber-lite nominalizations rise modestly from base to final.
+- Historical register-proxy demonstratives, infinitives, first-person pronouns,
+  necessity modals, prediction modals, and possibility modals all decline from
+  base to final.
+- Historical register-proxy nominalizations rise modestly from base to final.
 
 Largest final-vs-DPO movements:
 
@@ -545,8 +551,9 @@ should be a new, explicit follow-on question:
 
 - Phase 1 and Phase 2 are OLMo/Dolci-first. SmolLM3 replication remains future
   work.
-- Biber-lite is available as register context, not as a primary Phase 2
-  opportunity-normalized propensity target.
+- Historical register-proxy diagnostics are available as context, not as a
+  primary Phase 2 opportunity-normalized propensity target or active
+  full-pybiber evidence.
 - Removed punctuation and list/header features should not be used for core
   claims without renewed validation.
 - `contrastive_negation` is measurable but sparse in the 5k denominator audit.

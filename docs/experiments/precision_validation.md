@@ -6,16 +6,46 @@ are interpreted.
 
 ## Task Plan
 
-- [ ] Generate reproducible hit samples for each Tier-1 feature.
+- [x] Generate reproducible hit samples for current core and exploratory
+  features where bounded sampling finds hits.
 - [ ] Hand-label sampled hits with the shared label schema.
-- [ ] Compute per-feature precision and ambiguous rate. Ready: scoring inputs,
-  formulas, report fields, and W&B metric/table names are specified below.
-- [ ] Demote features that miss the precision or reviewability gates. Planned:
-  scoring report emits core-feature gate status and demotion reason fields.
+- [x] Compute current per-feature precision and ambiguous-rate status in a
+  versioned local report.
+- [x] Demote features that miss the precision or reviewability gates. Current:
+  `stock_openers_closers` should remain a derived convenience metric unless a
+  broader direct scan is explicitly budgeted.
 - [ ] Log validation metrics and artifacts to W&B. Planned: scoring step logs
   aggregate metrics, per-feature metrics, and labeled-hit/report tables.
 - [ ] Apply go/no-go rules before making Phase 1 claims. Planned: use the
   scoring report's core gate summary before interpreting Phase 1 rates.
+
+## Current Snapshot
+
+The current local status artifact is
+`docs/experiments/precision_validation_status.md`, with the machine-readable
+table at `artifacts/stage1/validation/precision_validation_status.csv`.
+
+As of 2026-06-18, the interim gate status is:
+
+- Passing core features: `contrastive_negation`, `slop_lexicon`,
+  `stock_openers`, `stock_closers`.
+- Demoted independent core feature: `rule_of_three_approx` (50 labels, 28
+  exact, 1 partial, 19 false positives, 2 ambiguous; precision 0.560).
+- Derived, non-blocking pooled view: `stock_openers_closers`.
+- Exploratory and unlabeled: `eqbench_slop_score`,
+  `slop_lexicon_v2_candidate`.
+
+The direct bounded queue attempt for `stock_openers_closers` produced zero
+retained hits, so the pooled feature should not be promoted as an independently
+precision-validated matcher under the current sample. Treat it as a derived
+opener/closer convenience metric unless a broader scan is deliberately run.
+
+The additional sequential `rule_of_three_approx` labels show that the current
+regex is too broad for publication-grade claims about true rhetorical triples.
+It often captures ordinary lists, clause fusions, appositives, code/math
+fragments, or two-item constructions. Keep it as an exploratory
+coordinated-triple surface unless a parser-backed replacement passes the same
+precision gate.
 
 ## Hit Samples
 
@@ -38,6 +68,20 @@ uv run slop-sample-hits \
   --feature stock_closers \
   --hits-per-feature 200 \
   --output artifacts/stage1/validation/hit_samples/revised_phase1_core_hits.csv \
+  --wandb-mode online
+```
+
+For exploratory benchmark/candidate features, run a separate queue so they do
+not change the frozen core-labeling denominator:
+
+```bash
+uv run slop-sample-hits \
+  --input artifacts/stage1/corpora/olmo3_dolci_sft_10k_retained_sample.jsonl \
+  --input artifacts/stage1/corpora/olmo3_dolci_dpo_10k_retained_sample.jsonl \
+  --feature slop_lexicon_v2_candidate \
+  --feature eqbench_slop_score \
+  --hits-per-feature 200 \
+  --output artifacts/stage1/validation/hit_samples/exploratory_eqbench_and_v2_hits.csv \
   --wandb-mode online
 ```
 
@@ -119,6 +163,20 @@ uv run slop-score-labels \
 The scorer accepts an input label CSV, an output report CSV, threshold options,
 and optional W&B project/group/job-type arguments.
 
+For the current multi-file status report, use:
+
+```bash
+uv run slop-summarize-precision-validation \
+  --label-input artifacts/stage1/validation/labels/olmo3_dolci_sft_dpo_10k_labels.csv \
+  --label-input artifacts/stage1/validation/labels/revised_phase1_remaining_core_labels.csv \
+  --queue-input artifacts/stage1/validation/hit_samples/olmo3_dolci_sft_dpo_10k_hits_for_labeling.csv \
+  --queue-input artifacts/stage1/validation/hit_samples/revised_phase1_remaining_core_hits.csv \
+  --queue-input artifacts/stage1/validation/hit_samples/manual_feature_smell_test_20_each_updated.csv \
+  --queue-input artifacts/stage1/validation/hit_samples/revised_phase1_stock_openers_closers_hits.csv \
+  --output-csv artifacts/stage1/validation/precision_validation_status.csv \
+  --output-md docs/experiments/precision_validation_status.md
+```
+
 Required input label fields:
 
 - `feature`
@@ -171,8 +229,13 @@ The precision report should include one row per feature with:
 The target precision is `>= 0.90` for every feature used in Phase 1 claims.
 Core Tier-1 features must meet the target before census results are interpreted:
 contrastive negation, rule-of-three approximation, pooled slop lexicon, and
-stock openers/closers. List/header onset and punctuation/rhythm are excluded
-from the revised Phase 1 core scope and should not block close-out claims.
+stock openers/closers. List/header/bold lead-in formatting is retired from the
+active feature surface. Punctuation/rhythm is excluded from the revised Phase 1
+core scope and should not block close-out claims.
+
+`eqbench_slop_score` and `slop_lexicon_v2_candidate` are exploratory addenda.
+They can be reported as benchmark/candidate comparisons after smell testing, but
+they do not revise historical Phase 2/3 `slop_lexicon` claims.
 
 ## Demotion Rules
 

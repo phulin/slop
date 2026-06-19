@@ -2632,3 +2632,3714 @@
   `pretrain_smollm3_pretrain_kaggle_2k_per_1k_tokens` columns. The
   OLMo-vs-SmolLM3 AF correlation remains Spearman `0.762` and Pearson
   `0.978`, because the teacher-forced AF layer did not change.
+
+## 2026-06-16 - Wiki, InfiWebMath-3plus, and OpenMathInstruct-2 baseline coverage
+
+- Probed and sampled three additional exact public SmolLM3 recipe sources for
+  the retained Tier-1 weighted pretraining baseline:
+  `wiki`, `infiwebmath-3plus`, and `openmathinstruct-2`.
+- Added bounded source samples with `hash_reservoir`, seed `1729`, a
+  2,000-row target, and a 20,000-row scan cap:
+  `artifacts/stage1/corpora/smollm3_pretrain_wiki_2k.jsonl` from
+  `wikimedia/wikipedia`, config `20231101.en`, text field `text`
+  (`2,183,945` simple tokens);
+  `artifacts/stage1/corpora/smollm3_pretrain_infiwebmath_3plus_2k.jsonl`
+  from `HuggingFaceTB/finemath`, config `infiwebmath-3plus`, text field
+  `text` (`1,990,392` simple tokens); and
+  `artifacts/stage1/corpora/smollm3_pretrain_openmathinstruct_2_solution_2k.jsonl`
+  from `nvidia/OpenMathInstruct-2`, text field `generated_solution`
+  (`319,125` simple tokens). The OpenMathInstruct measurement is a bounded
+  solution-text sample, not a reconstruction of combined problem-plus-solution
+  training records.
+- Ran retained Tier-1 censi:
+  `artifacts/stage1/census/smollm3_pretrain_wiki_2k_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/smollm3_pretrain_infiwebmath_3plus_2k_tier1_feature_rates.csv`,
+  and
+  `artifacts/stage1/census/smollm3_pretrain_openmathinstruct_2_solution_2k_tier1_feature_rates.csv`.
+  Wiki rates per 1k tokens: `contrastive_negation` `0.219`,
+  `rule_of_three_approx` `6.121`, `slop_lexicon` `0.356`,
+  `stock_openers` `0.002`, `stock_closers` `0.019`, pooled stock phrases
+  `0.021`. OpenMathInstruct solution-text rates per 1k tokens:
+  `contrastive_negation` `0.066`, `rule_of_three_approx` `0.417`,
+  `slop_lexicon` `0.034`, `stock_openers` `0.019`, `stock_closers` `0.038`,
+  pooled stock phrases `0.056`. InfiWebMath-3plus rates are token-weighted
+  across inferred `web_cc`, `forums_qa`, `wiki`, `code`, and `scientific`
+  strata by the weighted-baseline assembler.
+- Regenerated the coverage-aware weighted pretraining baseline with source
+  maps `smollm3_pretrain_wiki_2k=wiki`,
+  `smollm3_pretrain_infiwebmath_3plus_2k=infiwebmath-3plus`, and
+  `smollm3_pretrain_openmathinstruct_2_solution_2k=openmathinstruct-2`.
+  Retained Tier-1 recipe coverage is now `91.720%` through 41 mapped source
+  samples, with missing share `8.280%`. Covered-only weighted rates per 1k
+  tokens are `slop_lexicon` `0.356`, `rule_of_three_approx` `3.792`,
+  `contrastive_negation` `0.335`, `stock_closers` `0.032`,
+  `stock_openers` `0.026`, and pooled stock phrases `0.058`.
+- Regenerated the preferred bounded SmolLM3 baseline data-rate spectrum,
+  classifier, and OLMo-vs-SmolLM3 comparison after the weighted-baseline
+  refresh. The SmolLM3 spectrum now carries source-specific
+  `pretrain_smollm3_pretrain_wiki_2k_per_1k_tokens`,
+  `pretrain_smollm3_pretrain_infiwebmath_3plus_2k_per_1k_tokens`, and
+  `pretrain_smollm3_pretrain_openmathinstruct_2_solution_2k_per_1k_tokens`
+  columns. The OLMo-vs-SmolLM3 AF correlation remains Spearman `0.762` and
+  Pearson `0.978`, because the teacher-forced AF layer did not change.
+
+## 2026-06-16 - OpenMathReasoning-4k and Natural Reasoning baseline coverage
+
+- Added one generic corpus-reader extraction path for response-style mappings:
+  list elements with a `response` key now coerce as text, alongside existing
+  `content`, `text`, and `value` keys. This supports bounded sampling of
+  `facebook/natural_reasoning` through `--text-field responses`.
+- Sampled two additional exact public SmolLM3 recipe sources with
+  `hash_reservoir`, seed `1729`, a 2,000-row target, and a 20,000-row scan
+  cap:
+  `artifacts/stage1/corpora/smollm3_pretrain_openmathreasoning_4k_2k.jsonl`
+  from `LLMcompe-Team-Watanabe/math_OpenMathReasoning_preprocess_4k-8k`, text
+  field `answer` (`4,401,574` simple tokens), and
+  `artifacts/stage1/corpora/smollm3_pretrain_natural_reasoning_responses_2k.jsonl`
+  from `facebook/natural_reasoning`, text field `responses` (`1,000,263`
+  simple tokens). The OpenMathReasoning sample includes answer text as
+  published, including `<think>` reasoning markup where present; the Natural
+  Reasoning sample joins `responses[].response` strings per row.
+- Ran retained Tier-1 censi:
+  `artifacts/stage1/census/smollm3_pretrain_openmathreasoning_4k_2k_tier1_feature_rates.csv`
+  and
+  `artifacts/stage1/census/smollm3_pretrain_natural_reasoning_responses_2k_tier1_feature_rates.csv`.
+  OpenMathReasoning-4k rates per 1k tokens: `contrastive_negation` `0.080`,
+  `rule_of_three_approx` `0.814`, `slop_lexicon` `0.025`,
+  `stock_openers` `0.005`, `stock_closers` `0.020`, pooled stock phrases
+  `0.025`, `list_header_bold_lead_in` `6.260`, and `punctuation_rhythm`
+  `28.077`. Natural Reasoning joined-response rates per 1k tokens:
+  `contrastive_negation` `0.198`, `rule_of_three_approx` `3.977`,
+  `slop_lexicon` `0.524`, `stock_openers` `0.023`, `stock_closers` `0.108`,
+  pooled stock phrases `0.131`, `list_header_bold_lead_in` `17.822`, and
+  `punctuation_rhythm` `23.859`.
+- Regenerated the coverage-aware weighted pretraining baseline with source
+  maps `smollm3_pretrain_openmathreasoning_4k_2k=openmathreasoning-4k` and
+  `smollm3_pretrain_natural_reasoning_responses_2k=natural_reasoning`.
+  Retained Tier-1 recipe coverage is now `91.794%` through 43 mapped source
+  samples, with missing share `8.206%`. Covered-only weighted rates per 1k
+  tokens are `slop_lexicon` `0.356`, `rule_of_three_approx` `3.790`,
+  `contrastive_negation` `0.334`, `stock_closers` `0.032`,
+  `stock_openers` `0.026`, and pooled stock phrases `0.058`.
+- Regenerated the preferred bounded SmolLM3 baseline data-rate spectrum,
+  classifier, and OLMo-vs-SmolLM3 comparison. The SmolLM3 spectrum now carries
+  source-specific
+  `pretrain_smollm3_pretrain_openmathreasoning_4k_2k_per_1k_tokens` and
+  `pretrain_smollm3_pretrain_natural_reasoning_responses_2k_per_1k_tokens`
+  columns. The OLMo-vs-SmolLM3 AF correlation remains Spearman `0.762` and
+  Pearson `0.978`, because this refresh changed data-rate baselines rather
+  than teacher-forced AF values.
+
+## 2026-06-16 - Multilingual Wikipedia baseline coverage refresh
+
+- Probed the remaining SmolLM3 source gaps. Public `HuggingFaceTB/stack-edu`
+  configs expose blob metadata only for the missing CSharp/Markdown/HTML-style
+  rows; the tested BigCode code datasets are gated; and the public
+  `verify-ppt` Jupyter datasets do not expose supported data files through the
+  local dataset loader. The next exact public source chosen for bounded
+  coverage was `multilingual_wiki`.
+- Sampled three `wikimedia/wikipedia` non-English configs with
+  `hash_reservoir`, seed `1729`, 1,000 retained rows per language, and a
+  10,000-row scan cap per language:
+  `smollm3_pretrain_multilingual_wiki_de_1k` (`2,653,575` simple tokens),
+  `smollm3_pretrain_multilingual_wiki_es_1k` (`2,407,799` simple tokens),
+  and `smollm3_pretrain_multilingual_wiki_fr_1k` (`2,672,780` simple tokens).
+  This is a bounded three-language proxy for the `multilingual_wiki` recipe
+  source, not a full multilingual mixture reconstruction.
+- Ran retained Tier-1 censi for all three samples and regenerated the
+  coverage-aware weighted pretraining baseline with all three source maps
+  pointing to `multilingual_wiki`. Retained Tier-1 recipe coverage is now
+  `91.969%` through 47 mapped source samples, with missing share `8.031%`.
+  Covered-only weighted rates per 1k tokens are `slop_lexicon` `0.358`,
+  `rule_of_three_approx` `3.789`, `contrastive_negation` `0.334`,
+  `stock_closers` `0.032`, `stock_openers` `0.026`, and pooled stock phrases
+  `0.058`. `list_header_bold_lead_in` and `punctuation_rhythm` coverage rose
+  to `31.722%`.
+- Regenerated the preferred bounded SmolLM3 baseline data-rate spectrum,
+  classifier, and OLMo-vs-SmolLM3 comparison. The SmolLM3 spectrum now carries
+  source-specific multilingual wiki columns for the German, Spanish, and
+  French bounded samples. The OLMo-vs-SmolLM3 AF correlation remains Spearman
+  `0.762` and Pearson `0.978`, because this refresh changed data-rate
+  baselines rather than teacher-forced AF values.
+
+## 2026-06-16 - MegaMath QA Qwen, Cosmopedia2, and OpenCodeReasoning coverage refresh
+
+- Added three additional bounded public SmolLM3 recipe-source samples:
+  `smollm3_pretrain_megamath_qa_qwen_2k` from `LLM360/MegaMath`
+  `megamath-qa/qwen-2.5/*.parquet` (`298,474` simple tokens),
+  `smollm3_pretrain_cosmopedia2_20k_2k` from
+  `HuggingFaceTB/cosmopedia-20k` (`1,057,350` simple tokens), and
+  `smollm3_pretrain_open_codereasoning_4k_output_2k` from
+  `nvidia/OpenCodeReasoning`, config/split `split_0`, text field `output`
+  (`9,993,355` simple tokens). Cosmopedia2 is represented by the public 20k
+  sample rather than a full corpus reconstruction; OpenCodeReasoning measures
+  output text rather than exact 4k tokenizer packing.
+- Regenerated FineWeb-Edu and StackExchange censi from their existing local
+  corpus JSONL files because the current worktree no longer had their census
+  CSVs, then regenerated the weighted pretraining baseline with source maps
+  `megamath-qa-qwen`, `cosmopedia2`, and `open-codereasoning-4k`.
+- Retained Tier-1 recipe coverage is now `91.882%` through 46 mapped source
+  samples, with missing share `8.118%`. Covered-only weighted rates per 1k
+  tokens are `slop_lexicon` `0.358`, `rule_of_three_approx` `3.793`,
+  `contrastive_negation` `0.335`, `stock_closers` `0.032`,
+  `stock_openers` `0.026`, and pooled stock phrases `0.058`.
+  `list_header_bold_lead_in` and `punctuation_rhythm` coverage rose to
+  `31.635%`.
+- Regenerated the preferred bounded SmolLM3 baseline data-rate spectrum,
+  classifier, and OLMo-vs-SmolLM3 comparison. The SmolLM3 spectrum now carries
+  source-specific `pretrain_smollm3_pretrain_megamath_qa_qwen_2k_per_1k_tokens`,
+  `pretrain_smollm3_pretrain_cosmopedia2_20k_2k_per_1k_tokens`, and
+  `pretrain_smollm3_pretrain_open_codereasoning_4k_output_2k_per_1k_tokens`
+  columns. The OLMo-vs-SmolLM3 AF correlation remains Spearman `0.762` and
+  Pearson `0.978`, because this refresh changed data-rate baselines rather
+  than teacher-forced AF values.
+
+## 2026-06-16 - Explicit SmolLM3 source-proxy weighted-baseline refresh
+
+- Added `--source-proxy MEASURED_RECIPE_SOURCE=PROXY_RECIPE_SOURCE` to
+  `slop-assemble-weighted-pretrain-baseline`. The weighted baseline now
+  reports direct and proxy coverage separately via
+  `exact_covered_recipe_share`, `proxy_covered_recipe_share`,
+  `exact_matched_source_count`, `proxy_source_count`, and
+  `proxy_recipe_sources`, while preserving the combined
+  `covered_recipe_share` used by downstream spectra.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv`
+  with explicit same-family proxies for `infiwebmath` from
+  `infiwebmath-4plus` and inaccessible Stack-Edu `real`/`real-shuffled`
+  sibling recipe rows from the measured same-language Stack-Edu samples.
+  Retained Tier-1 direct coverage remains `91.969%` through 47 mapped source
+  samples; explicit proxies add `4.601%`, bringing total covered recipe share
+  to `96.571%` and reducing missing recipe share to `3.429%`.
+- Proxy-aware covered-only weighted rates per 1k tokens are now
+  `slop_lexicon` `0.347`, `rule_of_three_approx` `3.638`,
+  `contrastive_negation` `0.320`, `stock_closers` `0.031`,
+  `stock_openers` `0.025`, and pooled stock phrases `0.056`. Structural
+  exploratory features remain at `31.722%` direct coverage because the proxy
+  source censi cover retained Tier-1 rows only.
+- Propagated the exact/proxy coverage split into
+  `slop-assemble-amplification-spectrum` and regenerated the preferred
+  bounded SmolLM3 baseline data-rate spectrum, classifier, and
+  OLMo-vs-SmolLM3 comparison. The OLMo-vs-SmolLM3 AF correlation remains
+  Spearman `0.762` and Pearson `0.978` because this refresh only changed the
+  pretraining data-rate layer, not teacher-forced AF values.
+
+## 2026-06-16 - SmolLM3 Biber-lite style signature and non-pretrain Phase 3 pivot
+
+- Stopped treating the remaining `3.429%` proxy-aware SmolLM3 pretraining
+  recipe-source gap as the active Phase 3 blocker. The current bounded
+  analysis keeps the `96.571%` proxy-aware pretraining baseline as sufficient
+  for interpretation and shifts remaining work to teacher-forced support,
+  generation grids, and reporting.
+- Ran a SmolLM3 Biber-lite corpus census over the local SmolTalk2 no_think
+  SFT target pool plus the 10k Tulu no_think preference-pair sample:
+  `artifacts/stage1/census/smollm3_smoltalk2_sft2260_pref10k_biber_lite_feature_rates.csv`
+  and
+  `artifacts/stage1/census/smollm3_smoltalk2_pref10k_biber_lite_pair_deltas.csv`.
+- Compared Biber-lite generated-output rates for the four 512-prompt
+  SmolLM3 no_think `t=1.0` generation caches against that corpus baseline:
+  `artifacts/phase2/analysis/smollm3_biber_lite_generation_vs_corpus_512prompt_8comp_t1_chat.csv`.
+- Built the combined SmolLM3 output-style signature from Tier-1 generation
+  rates, compounding, and Biber-lite register rates:
+  `artifacts/phase3/analysis/smollm3_no_think_style_signature_512prompt_8comp_t1_chat.csv`.
+  The distance table has 43 shared coordinates; Final/RLVR is closest to
+  APO/DPO (`6.398`), then SFT (`31.315`), and far from Base (`454.800`).
+- Wrote a feature-support audit separating raw target occurrence from
+  teacher-forced opportunity support:
+  `artifacts/phase3/analysis/smollm3_no_think_phase3_feature_support_audit_512prompt_and_full_sft.md`.
+  In the actual 512-prompt package, `slop_lexicon`,
+  `rule_of_three_approx`, and neutral controls have teacher-forced support;
+  `contrastive_negation` and stock opener/closer families remain
+  generation-side only under the current opportunity contract.
+- Added a runnable SmolLM3 no_think production-shape generation plan for the
+  available 512-prompt package across four stages, 8 completions, and
+  temperatures `0.0`, `0.7`, and `1.0`:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`.
+- Added `docs/experiments/phase3_completion_audit.md` as the strict
+  requirement-by-requirement completion audit for `EXPERIMENTS.md` Phase 3.
+  It records the current state as a bounded Tier-1 Phase 3 slice, not full
+  completion, and identifies the real remaining blockers as unrun generation
+  grids, post-grid compounding/style rebuilds, and broader teacher-forced
+  support only where opportunity contracts have nonzero references.
+- Dry-ran the guarded launcher against the SmolLM3 3-temperature plan and
+  recorded the next executable shard selection without launching GPU work:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_next_shard.json`.
+  The selected shard is base, temperature `0.0`, 4,096 expected generations,
+  estimated at `3.273` A100-hours.
+- Added `docs/experiments/phase3_production_runbook.md` with the guarded
+  launch, status, plan-refresh, and rebuild commands needed after the
+  remaining generation shards complete. Also generated
+  `artifacts/phase3/analysis/phase3_generation_plan_status_summary.csv` and
+  `.md` from the current OLMo and SmolLM3 production generation plans.
+- Added `slop-summarize-phase3-generation-plans` so that combined Phase 3
+  generation-plan status summaries can be regenerated from plan CSVs without
+  ad hoc scripting. The current status summary was regenerated with this CLI.
+
+## 2026-06-16 - SmolLM3 Phase 3 base/t0 production shard launched
+
+- Per the decision to stop prioritizing the remaining SmolLM3 pretraining
+  source-coverage gap, launched the next actual Phase 3 execution step: the
+  SmolLM3 no_think production-shape 512-prompt, 8-completion base checkpoint
+  shard at temperature `0.0`.
+- The guarded launcher wrote
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_next_shard.json`
+  with `executed=true`, `detached=true`, expected generations `4,096`, and
+  estimated cost `3.273` A100-hours.
+- Detached log:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_next_shard.log`.
+  The job had loaded model weights at launch verification time.
+- This launch does not make Phase 3 complete. The shard must finish, the plan
+  must be refreshed, and downstream generation-grid, compounding,
+  Biber-lite/style-signature, spectrum, classification, and cross-ladder
+  artifacts must be rebuilt at the chosen scope.
+
+## 2026-06-16 - Live Phase 3 generation status accounting
+
+- Extended `slop-phase2-generation-status` with a generated-row ETA fallback
+  based on the detached launch `started_at` timestamp. This makes active
+  shards report useful ETA even when the tqdm log does not expose prompt-level
+  timing.
+- Extended `slop-summarize-phase3-generation-plans` with
+  `--selection-status PLAN=CSV`, allowing the cross-plan summary to include
+  in-flight shard counts, live generated-row totals, and active ETAs.
+- Regenerated
+  `artifacts/phase3/analysis/phase3_generation_plan_status_summary.csv` and
+  `.md` with the active SmolLM3 base/t0 status merged in. The summary now
+  reports one in-flight SmolLM3 shard rather than treating the whole plan as
+  merely unstarted.
+
+## 2026-06-16 - SmolLM3 no_think generation markup audit helper
+
+- Added `slop-audit-no-think-generations`, a small JSONL audit for explicit
+  thinking/reasoning markup in generated text caches. It flags tags such as
+  `<think>`, `</think>`, `<reasoning>`, and fenced `thinking`/`reasoning`
+  blocks without treating ordinary prose uses of `think` as failures.
+- Ran the audit on the active partial SmolLM3 base/t0 production cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_base_t0_no_think_audit.csv`
+  and `.md`. At 1,280 records, it found zero explicit thinking-marker records
+  and zero marker hits. This is a no_think mode-compliance check for the
+  partial cache, not a completion or generation-quality verdict.
+
+## 2026-06-16 - SmolLM3 production grid base/t0 complete, base/t0.7 launched
+
+- The SmolLM3 no_think production-grid base checkpoint at temperature `0.0`
+  completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed base/t0 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_base_t0_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 1/12 completed shards and `36.00`
+  estimated A100-hours remaining.
+- Launched the next SmolLM3 production-grid shard: base checkpoint,
+  temperature `0.7`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_base_t07_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_base_t07_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_base_t07_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid base/t0.7 complete, base/t1 launched
+
+- The SmolLM3 no_think production-grid base checkpoint at temperature `0.7`
+  completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed base/t0.7 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_base_t07_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 2/12 completed shards and `32.73`
+  estimated A100-hours remaining.
+- Launched the next SmolLM3 production-grid shard: base checkpoint,
+  temperature `1.0`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_base_t1_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_base_t1_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_base_t1_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid base/t1 complete, SFT/t0 launched
+
+- The SmolLM3 no_think production-grid base checkpoint at temperature `1.0`
+  completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed base/t1 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_base_t1_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 3/12 completed shards and `29.45`
+  estimated A100-hours remaining.
+- Launched the first SFT production-grid shard: SFT checkpoint,
+  temperature `0.0`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t0_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t0_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t0_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid SFT/t0 complete, SFT/t0.7 launched
+
+- The SmolLM3 no_think production-grid SFT checkpoint at temperature `0.0`
+  completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed SFT/t0 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_sft_t0_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 4/12 completed shards and `26.18`
+  estimated A100-hours remaining.
+- Launched the next SFT production-grid shard: SFT checkpoint,
+  temperature `0.7`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t07_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t07_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t07_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid SFT/t0.7 complete, SFT/t1 launched
+
+- The SmolLM3 no_think production-grid SFT checkpoint at temperature `0.7`
+  completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed SFT/t0.7 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_sft_t07_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 5/12 completed shards and `22.91`
+  estimated A100-hours remaining.
+- Launched the next SFT production-grid shard: SFT checkpoint,
+  temperature `1.0`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t1_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t1_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_sft_t1_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid SFT/t1 complete, APO/DPO t0 launched
+
+- The SmolLM3 no_think production-grid SFT checkpoint at temperature `1.0`
+  completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed SFT/t1 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_sft_t1_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 6/12 completed shards and `19.64`
+  estimated A100-hours remaining.
+- Launched the first APO/DPO production-grid shard: APO/DPO checkpoint,
+  temperature `0.0`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t0_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t0_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t0_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid APO/DPO t0 complete, APO/DPO t0.7 launched
+
+- The SmolLM3 no_think production-grid APO/DPO checkpoint at temperature
+  `0.0` completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed APO/DPO t0 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_dpo_t0_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 7/12 completed shards and `16.36`
+  estimated A100-hours remaining.
+- Launched the next APO/DPO production-grid shard: APO/DPO checkpoint,
+  temperature `0.7`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t07_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t07_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t07_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid APO/DPO t0.7 complete, APO/DPO t1 launched
+
+- The SmolLM3 no_think production-grid APO/DPO checkpoint at temperature
+  `0.7` completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed APO/DPO t0.7 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_dpo_t07_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 8/12 completed shards and `13.09`
+  estimated A100-hours remaining.
+- Launched the next APO/DPO production-grid shard: APO/DPO checkpoint,
+  temperature `1.0`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t1_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t1_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_dpo_t1_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid APO/DPO t1 complete, final/RLVR t0 launched
+
+- The SmolLM3 no_think production-grid APO/DPO checkpoint at temperature
+  `1.0` completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed APO/DPO t1 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_dpo_t1_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 9/12 completed shards and `9.82`
+  estimated A100-hours remaining.
+- Launched the first final/RLVR production-grid shard: final/RLVR checkpoint,
+  temperature `0.0`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t0_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t0_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t0_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid final/RLVR t0 complete, final/RLVR t0.7 launched
+
+- The SmolLM3 no_think production-grid final/RLVR checkpoint at temperature
+  `0.0` completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed final/RLVR t0 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_final_t0_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 10/12 completed shards and `6.55`
+  estimated A100-hours remaining.
+- Launched the next final/RLVR production-grid shard: final/RLVR checkpoint,
+  temperature `0.7`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t07_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t07_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t07_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid final/RLVR t0.7 complete, final/RLVR t1 launched
+
+- The SmolLM3 no_think production-grid final/RLVR checkpoint at temperature
+  `0.7` completed: 4,096/4,096 generation records plus summary CSV exist.
+- Re-ran the no_think markup audit on the completed final/RLVR t0.7 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_final_t07_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Regenerated
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat.csv`
+  and `.md`; the SmolLM3 plan now records 11/12 completed shards and `3.27`
+  estimated A100-hours remaining.
+- Launched the last final/RLVR production-grid shard: final/RLVR checkpoint,
+  temperature `1.0`, 4,096 expected generations. Selection/status/log files:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t1_shard.json`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t1_shard_status.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_plan_512prompt_8comp_3temp_chat_final_t1_shard.log`.
+
+## 2026-06-16 - SmolLM3 production grid complete and downstream rebuilt
+
+- The SmolLM3 no_think production-grid final/RLVR checkpoint at temperature
+  `1.0` completed: 4,096/4,096 generation records plus summary CSV exist.
+  The full SmolLM3 512-prompt production-shape grid is now 12/12 shards
+  complete, with 49,152/49,152 generated records.
+- Re-ran the no_think markup audit on the completed final/RLVR t1 cache:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg512_chat_production_grid_final_t1_no_think_audit.csv`
+  and `.md`. The completed cache has zero explicit thinking-marker records
+  and zero marker hits.
+- Rebuilt per-temperature production generation grids:
+  `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_512prompt_8comp_t0_chat_production.csv`,
+  `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_512prompt_8comp_t07_chat_production.csv`,
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_512prompt_8comp_t1_chat_production.csv`.
+- Rebuilt production `t=1.0` free-run effects, compounding, Biber-lite
+  comparison, style signature, spectrum, classifier, and cross-ladder
+  comparison. The production classifier still labels `slop_lexicon` as
+  `sft-amplified`, `rule_of_three_approx` as
+  `measured-no-phase3-class`, and sparse teacher-forced features as
+  `observed-output-only`. The production OLMo-vs-SmolLM3 AF comparison remains
+  Spearman `0.762`, Pearson `0.978` over 8 shared AF values.
+
+## 2026-06-16 - OLMo full production grid started with lower batch size
+
+- Attempted the first full OLMo production-grid shard from the original
+  `batched1024` plan: base checkpoint, temperature `0.0`, 40,000 expected
+  generations. The launch failed before writing usable rows because compiled
+  prefill tried to allocate an additional 21.50 GiB and hit CUDA OOM on the
+  A100. The failed output file is zero bytes and no summary CSV exists.
+- Regenerated the full OLMo 5,000-prompt x 8-completion x 3-temperature plan
+  with `--generation-batch-size 256`:
+  `artifacts/phase2/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_batched256.csv`
+  and `.md`. That compiled lower-batch launch also failed before writing rows,
+  with CUDA OOM during efficient attention.
+- Regenerated the full plan again with `--generation-batch-size 128` and
+  `--no-torch-compile`:
+  `artifacts/phase2/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_batched128_no_compile.csv`
+  and `.md`. That no-compile lower-batch launch also failed before writing
+  usable rows, with CUDA OOM in the MLP.
+- Regenerated the full plan again with `--generation-batch-size 64` and
+  `--no-torch-compile`:
+  `artifacts/phase2/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_batched64_no_compile.csv`
+  and `.md`.
+- Launched the replacement OLMo base/t0 shard detached from the
+  `batched64_no_compile` plan. Selection/status/log files:
+  `artifacts/phase2/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_batched64_no_compile_base_t0_shard.json`,
+  `artifacts/phase2/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_batched64_no_compile_base_t0_shard_status.csv`,
+  and
+  `artifacts/phase2/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_batched64_no_compile_base_t0_shard.log`.
+  This run passed the early OOM point and wrote initial rows: latest checked
+  status was alive with `384/40000` generations and an existing-row ETA of
+  `16:48:10`.
+- Refreshed
+  `artifacts/phase3/analysis/phase3_generation_plan_status_summary.md`; it
+  now records OLMo `0` completed shards, `1` in-flight shard, `11` missing
+  shards, and SmolLM3 `12/12` complete.
+
+## 2026-06-16 - OLMo continuation guard added
+
+- Added `slop-continue-phase2-generation-plan`, a guarded continuation helper
+  for the long OLMo production grid. It detects active detached shards from
+  tracked selection JSON files, refuses to overwrite partial missing shard
+  output by default, applies the estimated A100-hour cap, and writes the next
+  selection payload only when a clean missing shard can be launched.
+- Dry-ran the helper against the active OLMo `batched64_no_compile` plan with
+  selection prefix
+  `olmo3_generation_plan_full_5000prompt_8comp_3temp_batched64_no_compile`.
+  It correctly reported `active_shard_running` for the current base/t0 shard
+  instead of selecting a new shard.
+- Refreshed the live OLMo status and combined plan summary. The active OLMo
+  base/t0 shard is alive at `512/40000` generations with log-derived active
+  ETA `10:04:15`; SmolLM3 remains `12/12` complete.
+
+## 2026-06-16 - OLMo base/t0 resumed after batch64 OOM
+
+- The active OLMo base/t0 `batched64_no_compile` attempt died after writing
+  512/40,000 generation rows. The log shows CUDA OOM during KV-cache growth:
+  the process held about 78.30 GiB and failed on an additional 1002 MiB
+  allocation.
+- Added `--resume` to `slop-free-running-emission`. Resume mode preserves the
+  existing generations JSONL, loads existing rows into summary counters, skips
+  already written source/record/completion/temperature/top-p cells, and
+  appends only missing generations.
+- Updated `slop-continue-phase2-generation-plan` so explicit partial retries
+  append `--resume`, can override `--generation-batch-size`, and record
+  `resume_initial_generations` for sane post-restart throughput accounting.
+- Relaunched OLMo base/t0 with the same output cache, `--resume`, and
+  `--generation-batch-size 32`. New selection:
+  `artifacts/phase2/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_batched64_no_compile_base_t0p0.json`.
+  Latest refreshed status is alive at `608/40000` generations, active ETA
+  `30:00:37`, with GPU memory around 61 GiB.
+- Added the effective OLMo continuation plan
+  `artifacts/phase2/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_batched64_outputs_batched32_resume.csv`
+  and `.md`. It preserves the existing `batched64` output paths, switches all
+  commands to `--generation-batch-size 32`, and enables `--resume`, so future
+  launches do not strand the partial base/t0 cache.
+- Dry-ran the continuation helper against the effective plan. It correctly
+  reports the active base/t0 shard at `704/40000` generations rather than
+  selecting a new shard. The combined Phase 3 plan summary now uses this
+  effective plan and reports OLMo active ETA `31:50:47`.
+
+## 2026-06-16 - OLMo batch-size policy clarified
+
+- Rechecked the resumed OLMo base/t0 shard: it is alive at `1312/40000`
+  generations with active ETA `15:01:51`, with GPU memory around 61 GiB.
+- Clarified that `--generation-batch-size 32` is the recovery-safe setting
+  after the observed batch-64 KV-cache OOM, not a final throughput optimum.
+- Added a runbook gate for profiling `--generation-batch-size-override 48` at
+  the next clean handoff rather than interrupting the healthy active shard.
+- Added `slop-materialize-phase2-generation-continuation-plan` so the
+  effective batch-32/resume OLMo continuation plan is reproducible from the
+  original batch-64 plan without ad hoc scripting.
+
+## 2026-06-16 - OLMo reduced SGLang generation plan adopted
+
+- Stopped the resumed full-grid OLMo base/t0 shard after confirming it was
+  alive at `1472/40000` rows and using the A100 heavily. The partial JSONL is
+  preserved at
+  `artifacts/phase2/generations/olmo3_base_promptpkg5000_free_run_5000prompt_8comp_t0_batched64.jsonl`
+  as pilot/cache data, but the 5,000-prompt x 8-completion x 3-temperature
+  grid is no longer the active operational target.
+- Materialized a reduced OLMo Phase 3 generation design: 8,192 main paired
+  style-signature generations, 6,144 temperature-sensitivity generations, and
+  2,048 long-output compounding generations, for 16,384 planned OLMo
+  generations total.
+- Added `slop-materialize-sglang-generation-plan`, which rewrites ordinary
+  Phase 2 generation plan rows into SGLang launch commands while preserving
+  output paths, expected row counts, and the existing guarded launcher/status
+  workflow.
+- Materialized the active SGLang OLMo plans:
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_main_signature_1024prompt_2comp_t07_512_sglang.csv`,
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_temperature_512prompt_1comp_3temp_512_sglang.csv`,
+  and
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_long_compounding_256prompt_2comp_t07_1024_sglang.csv`.
+  The combined status summary is
+  `artifacts/phase3/analysis/phase3_reduced_sglang_generation_plan_status_summary.md`.
+- The SGLang plans use `.venvs/sglang-cu128/bin/python`,
+  `scripts/benchmark_sglang_generation.py`, and `--ignore-eos` fixed-budget
+  generation. The repo-local SGLang sidecar still needs to be created before
+  launch; the runbook records the validated CUDA 12.8 setup commands. Current
+  host check found `python3.12`, but not `gcc-14`, `g++-14`, or
+  `/usr/local/cuda-12.8`, so the SGLang sidecar/toolchain must be installed or
+  exposed before launching the reduced OLMo shards.
+
+## 2026-06-16 - Reduced OLMo SGLang main panel completed
+
+- Built the repo-local `.venvs/sglang-cu128` sidecar with Torch
+  `2.8.0+cu128`, SGLang `0.5.2`, and a forced Transformers `4.57.6` upgrade
+  for OLMo 3 support. SGLang initially failed on missing `libnuma.so.1`; fixed
+  that without root by downloading and extracting Ubuntu's
+  `libnuma1_2.0.18-1build1_amd64.deb` under the sidecar sysroot. SGLang then
+  failed on FlashInfer's `nvcc` JIT path, so the working command shape uses
+  `--attention-backend triton` and `--disable-cuda-graph`.
+- Updated `scripts/benchmark_sglang_generation.py` to expose
+  `--attention-backend` and `--disable-cuda-graph`, and updated
+  `slop-materialize-sglang-generation-plan` so generated plan commands include
+  the required `env LD_LIBRARY_PATH=... TORCH_CUDA_ARCH_LIST=8.0` prefix.
+- Ran a one-prompt OLMo base SGLang smoke successfully:
+  `artifacts/phase3/generations/olmo3_phase3_sglang_base_1prompt_smoke.jsonl`
+  and summary CSV.
+- Completed all four reduced OLMo main style-signature shards with SGLang:
+  base, SFT, DPO, and final/RLVR at temperature `0.7`, 1,024 prompts, two
+  completions, and 512 max new tokens each. The main panel is now 4/4 shards
+  complete with 8,192/8,192 generations.
+- Built the reduced main Tier-1 generation grid:
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_main_generation_stage_grid_1024prompt_2comp_t07_sglang.csv`
+  and comparison/summary artifacts. The `slop_lexicon` rate per 1k generated
+  tokens is base `0.283`, SFT `0.366`, DPO `0.362`, and final/RLVR `0.312`.
+- Started the reduced temperature panel and completed the base checkpoint at
+  temperatures `0.0`, `0.7`, and `1.0`, for 1,536/6,144 temperature-panel
+  generations. The combined reduced status now records OLMo main complete,
+  OLMo temperature 3/12 shards complete, and OLMo long compounding not
+  started:
+  `artifacts/phase3/analysis/phase3_reduced_sglang_generation_plan_status_summary.md`.
+
+## 2026-06-16 - Reduced OLMo SGLang generation plan completed
+
+- Completed the remaining reduced OLMo SGLang generation panels:
+  temperature-sensitivity reached 12/12 shards and 6,144/6,144 generations;
+  long-output compounding reached 4/4 shards and 2,048/2,048 generations.
+  Together with the previously completed main panel, the reduced OLMo SGLang
+  plan is now 16,384/16,384 generations complete.
+- Refreshed the combined reduced status summary:
+  `artifacts/phase3/analysis/phase3_reduced_sglang_generation_plan_status_summary.md`.
+- Assembled reduced OLMo generated-output grids:
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_temperature_generation_stage_grid_512prompt_1comp_3temp_sglang.csv`
+  and
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_long_generation_stage_grid_256prompt_2comp_t07_1024_sglang.csv`.
+- Ran the reduced OLMo long-output compounding analysis over the four 1,024-token
+  caches:
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_long_compounding_analysis_256prompt_2comp_t07_1024_sglang.csv`.
+  The optional realized-AF SVG was not produced because no teacher-forced
+  propensity grid was supplied for expected-rate columns in this reduced run;
+  the empirical prior/no-prior window rates were written successfully.
+
+## 2026-06-16 - Reduced OLMo SGLang spectrum integrated
+
+- Fixed `slop-analyze-phase3-free-run-effects` to pair SGLang generation
+  caches by `prompt_id` when `record_id` is absent. The previous reducer
+  collapsed SGLang rows to two completion-index keys; the corrected reduced
+  long-output free-run stage effects now use 512 paired units per adjacent
+  comparison and report 10/18 BH-FDR-significant rows:
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_long_free_run_stage_effects_256prompt_2comp_t07_1024_sglang.csv`.
+- Reran reduced OLMo long-output compounding with the
+  `slop_lexicon` teacher-forced propensity grid, producing expected/excess
+  columns and the realized-AF SVG:
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_long_compounding_analysis_256prompt_2comp_t07_1024_sglang.csv`
+  and
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_long_compounding_analysis_256prompt_2comp_t07_1024_sglang_realized_af.svg`.
+  The primary `slop_lexicon` compounding rows are base
+  observed/expected/excess `0.446/0.232/0.214`, SFT `0.559/0.336/0.223`,
+  DPO `0.700/0.439/0.261`, and final/RLVR `0.643/0.445/0.198` per 1k
+  opportunities.
+- Assembled the integrated reduced OLMo spectrum and classifier:
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_sglang_amplification_spectrum_t07_long1024.csv`
+  and
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_sglang_feature_classification_t07_long1024.csv`.
+  The reduced classifier keeps `slop_lexicon` as preference-amplified and
+  dynamics-driven, with DPO as the free-running and teacher-forced peak.
+- Rebuilt the OLMo-reduced-vs-SmolLM3 production cross-ladder comparison:
+  `artifacts/phase3/analysis/olmo3_reduced_sglang_vs_smollm3_no_think_production_summary.md`.
+  It aligns 24 feature-stage rows and reports overall Spearman AF `0.762` and
+  Pearson AF `0.978` over 8 shared AF values.
+
+## 2026-06-16 - Temperature-dependent realized AF completed for bounded Phase 3
+
+- Updated `slop-analyze-phase2-compounding` to accept repeated
+  `--generation-cache stage=path` arguments. This is required for temperature
+  panels where stage is constant but temperature differs; aggregation already
+  keys rows by `(stage, source, temperature, top_p, feature)`.
+- Ran reduced OLMo temperature-dependent compounding over the 12 completed
+  SGLang temperature caches. Outputs:
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_temperature_compounding_analysis_512prompt_1comp_3temp_512_sglang.csv`,
+  summary markdown, and
+  `artifacts/phase3/analysis/olmo3_phase3_reduced_temperature_compounding_analysis_512prompt_1comp_3temp_512_sglang_realized_af.svg`.
+  For `slop_lexicon`, realized AF is base `0.537/1.177/1.065`, SFT
+  `1.226/1.135/1.359`, DPO `1.154/1.012/1.107`, and final/RLVR
+  `0.972/1.086/1.138` at temperatures `0.0/0.7/1.0`.
+- Ran SmolLM3 no_think temperature-dependent compounding over the completed
+  12-shard production-shape grid. Outputs:
+  `artifacts/phase3/analysis/smollm3_no_think_temperature_compounding_analysis_512prompt_8comp_3temp_chat_production_tf_slop_neutral_rule3.csv`,
+  summary markdown, and
+  `artifacts/phase3/analysis/smollm3_no_think_temperature_compounding_analysis_512prompt_8comp_3temp_chat_production_tf_slop_neutral_rule3_realized_af.svg`.
+  For `slop_lexicon`, realized AF is base `0.309/0.370/0.649`, SFT
+  `1.744/1.937/2.133`, APO/DPO `2.070/1.972/2.285`, and final
+  `1.645/2.011/2.279` at temperatures `0.0/0.7/1.0`.
+
+## 2026-06-16 - Generated-output bootstrap CIs propagated into Phase 3 spectra
+
+- Added `--generation-cache`, `--bootstrap-samples`, and `--bootstrap-seed`
+  to `slop-assemble-phase2-generation-grid`, with document/prompt-cluster
+  bootstrap intervals for generated-output per-1k feature rates.
+- Updated `slop-assemble-amplification-spectrum` to propagate those intervals
+  as `free_run_per_1k_tokens_ci_low/high`. The assembler now also infers the
+  intended OLMo data-rate role for raw Dolma pretraining and Dolci SFT census
+  rows that are labeled as generic `text`.
+- Regenerated the reduced OLMo long-output grid, SmolLM3 no_think production
+  `t=1.0` grid, both current spectra, both classifiers, and the
+  OLMo-reduced-vs-SmolLM3-production cross-ladder comparison.
+- The OLMo reduced long-panel `slop_lexicon` generated-output rates are base
+  `0.278` `[0.183, 0.397]`, SFT `0.317` `[0.166, 0.477]`, DPO `0.381`
+  `[0.269, 0.511]`, and final/RLVR `0.366` `[0.254, 0.488]` hits per 1k
+  generated tokens.
+- The SmolLM3 no_think production `t=1.0` `slop_lexicon` rates are base
+  `0.118` `[0.082, 0.165]`, SFT `0.310` `[0.268, 0.352]`, APO/DPO `0.379`
+  `[0.332, 0.425]`, and final `0.390` `[0.344, 0.445]` hits per 1k
+  generated tokens.
+- The refreshed cross-ladder comparison still aligns 24 feature-stage rows and
+  reports overall Spearman AF `0.762` and Pearson AF `0.978` over 8 shared AF
+  values.
+
+## 2026-06-16 - Compounding bootstrap CIs added to primary Phase 3 artifacts
+
+- Added `--bootstrap-samples` and `--bootstrap-seed` to
+  `slop-analyze-phase2-compounding`. The analyzer now resamples
+  document/prompt clusters from cached generation JSONL and emits CIs for
+  observed per-1k opportunities, excess per-1k opportunities, realized AF,
+  observed/expected ratio, and prior/no-prior risk metrics.
+- Updated `slop-assemble-amplification-spectrum` to propagate primary
+  compounding CI fields into the integrated spectra.
+- Regenerated reduced OLMo long-output compounding with 1,000 bootstrap
+  samples, reduced OLMo temperature compounding with 1,000 bootstrap samples,
+  and SmolLM3 production `t=1.0` compounding with 1,000 bootstrap samples.
+  Rebuilt both current spectra, both classifiers, and the current
+  OLMo-reduced-vs-SmolLM3-production cross-ladder comparison.
+- OLMo reduced long-panel `slop_lexicon` excess per 1k opportunity CIs are:
+  base `0.214` `[0.066, 0.401]`, SFT `0.223` `[-0.042, 0.528]`, DPO
+  `0.261` `[0.050, 0.488]`, and final/RLVR `0.198` `[0.007, 0.383]`.
+- SmolLM3 production `t=1.0` `slop_lexicon` excess per 1k opportunity CIs
+  are: base `0.090` `[0.003, 0.203]`, SFT `-0.372` `[-0.482, -0.248]`,
+  APO/DPO `-0.456` `[-0.571, -0.332]`, and final `-0.465`
+  `[-0.590, -0.338]`.
+- The all-temperature SmolLM3 compounding bootstrap was attempted with 250
+  samples but stopped after several minutes because rescoring all 49,152
+  generated rows was too slow for the lightweight Phase 3 route. The existing
+  SmolLM3 temperature realized-AF table remains the point-estimate
+  temperature-dependence artifact; adding CIs there should use a cached-counter
+  bootstrap rather than rescoring raw text.
+
+## 2026-06-16 - Biber-lite generated-side bootstrap CIs added
+
+- Added `--bootstrap-samples` and `--bootstrap-seed` to
+  `slop-compare-phase2-biber`. The comparison now resamples generation
+  document/prompt clusters and emits generated-side CIs for Biber-lite
+  generated rates, generated per-doc rates, document shares, and
+  generated-vs-corpus deltas/ratios while holding aggregate corpus baselines
+  fixed.
+- Updated `slop-build-style-signature` to preserve source-layer uncertainty as
+  `value_ci_low/high` for Tier-1, compounding, and Biber-lite rows where the
+  input artifact supplies intervals.
+- Regenerated SmolLM3 no_think production Biber-lite comparison and style
+  signature with 1,000 bootstrap samples:
+  `artifacts/phase2/analysis/smollm3_biber_lite_generation_vs_corpus_512prompt_8comp_t1_chat_production.csv`
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_style_signature_512prompt_8comp_t1_chat_production.csv`.
+- Built a combined OLMo Biber-lite corpus-rate table from the existing Dolma
+  pretraining, Dolci SFT, and retained Dolci DPO Biber-lite censi:
+  `artifacts/stage1/census/olmo3_revised_biber_lite_combined_feature_rates.csv`.
+  Regenerated the OLMo Biber-lite comparison and style signature with 1,000
+  bootstrap samples:
+  `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1.csv`
+  and `artifacts/phase2/analysis/olmo3_style_signature_t1.csv`.
+- The Biber-lite layer now has generated-output uncertainty for both ladders;
+  corpus-side Biber baselines remain aggregate point rates in these comparison
+  artifacts.
+
+## 2026-06-16 - Lightweight SGLang/counter-cache strategy recorded
+
+- Confirmed SGLang as the preferred backend for pure generation tasks. The
+  reduced OLMo Phase 3 route remains the active replacement for the abandoned
+  480,000-generation OLMo grid; further Transformers batch-size tuning is not
+  the right use of the A100 for generation-only shards.
+- Added reusable compounding counter caches to
+  `slop-analyze-phase2-compounding` through `--counter-cache-output` and
+  `--counter-cache-input`. Bootstrap sampling now uses deterministic
+  prompt-cluster ordering, so cached reruns are byte-reproducible with the
+  same seed.
+- Regenerated the supplemental SmolLM3 no_think three-temperature
+  `slop_lexicon` compounding CI table from the materialized counter cache in
+  about 20 seconds:
+  `artifacts/phase3/analysis/smollm3_no_think_temperature_compounding_slop_lexicon_512prompt_8comp_3temp_chat_production_tf_slop_neutral_rule3.csv`.
+- Verified the cached regeneration byte-for-byte against an independent
+  `/tmp` rerun. The counter cache is:
+  `artifacts/phase3/analysis/smollm3_no_think_temperature_compounding_slop_lexicon_cluster_counts_512prompt_8comp_3temp_chat_production_tf_slop_neutral_rule3.jsonl`.
+- Updated the Phase 3 conclusion report, completion audit, status file, and
+  production runbook to state the lightweight compute policy: SGLang for pure
+  generation, reduced purpose-built panels, cached counters for repeated
+  compounding bootstraps, and no blocking on perfect pretraining-source
+  coverage.
+
+## 2026-06-16 - DPO-vs-APO variation report added
+
+- Added `docs/experiments/phase3_dpo_vs_apo_variation_report.md` as the
+  bounded Phase 3 writeup comparing OLMo 3/DPO and SmolLM3/APO over the
+  current measured overlap.
+- The report records the central stage-localization contrast: OLMo
+  `slop_lexicon` is preference-amplified and dynamics-driven, while SmolLM3
+  `slop_lexicon` is already SFT-amplified and remains high through APO/final.
+- Updated the Phase 3 status, completion audit, and integrated conclusion to
+  point to the report and removed the DPO-vs-APO writeup from the active
+  remaining-work list.
+
+## 2026-06-16 - Optional Think/RL-Zero stretch plan materialized
+
+- Verified the current OLMo 3 Think and RL-Zero model IDs from Hugging Face
+  model cards before planning the optional stretch path.
+- Materialized a reduced optional OLMo Instruct-vs-Think-vs-RL-Zero
+  generation plan:
+  `artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_256prompt_2comp_t07_1024.csv`.
+- Materialized the matching SGLang command plan:
+  `artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_256prompt_2comp_t07_1024_sglang.csv`,
+  with summary
+  `artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_256prompt_2comp_t07_1024_sglang.md`.
+- The plan covers base, Instruct final, Think SFT, Think DPO, Think final, and
+  RL-Zero General/IF/Math/Code/Mix: 10 shards, 512 expected generations per
+  shard, 5,120 generations total, and `4.09` source-estimated A100-hours
+  before SGLang speedup.
+- The stretch remains unrun. After generation, analysis must strip or
+  separately score reasoning traces so feature extraction uses final-answer
+  text only.
+
+## 2026-06-16 - Final-answer feature extraction implemented for reasoning outputs
+
+- Added `slop_sftdiv.generation_text` with `raw` and `final_answer` feature
+  text modes. `final_answer` strips explicit `<think>`/`<reasoning>` blocks
+  and fenced thinking/reasoning blocks before Tier-1 feature extraction.
+- Added `--feature-text-mode {raw,final_answer}` to
+  `slop-free-running-emission` and `scripts/benchmark_sglang_generation.py`.
+  Raw generations remain in JSONL; feature counts and per-1k denominators use
+  the selected feature text. In final-answer mode, denominators use the
+  final-answer token count rather than full reasoning-trace generated tokens.
+- Added `--feature-text-mode` passthrough to
+  `slop-materialize-sglang-generation-plan` and regenerated the optional
+  Think/RL-Zero stretch SGLang plan with
+  `--feature-text-mode final_answer` embedded in every command:
+  `artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_256prompt_2comp_t07_1024_sglang.csv`.
+- The optional stretch is still unrun, but the planned generation commands now
+  satisfy the `EXPERIMENTS.md` requirement that Think/RL-Zero feature
+  extraction use final-response text only.
+
+## 2026-06-16 - Think/RL-Zero stretch comparison assembler added
+
+- Added `slop-assemble-olmo-stretch-comparison`, a post-generation assembler
+  for the optional OLMo Instruct/Think/RL-Zero stretch path. It consumes the
+  final-answer-mode generation grid and writes a per-stage comparison table,
+  feature-summary table, and Markdown report.
+- The assembler reports per-feature maxima, deltas/ratios versus Base,
+  Instruct final, and Think final, and an RL-Zero family mean. This makes the
+  downstream stretch comparison deterministic once the 10 SGLang shards
+  complete.
+- Updated the Phase 3 production runbook with the exact commands to assemble
+  the stretch generation grid and the path-comparison report after generation.
+
+## 2026-06-16 - Think/RL-Zero stretch SGLang generation completed
+
+- Ran the reduced OLMo Instruct-vs-Think-vs-RL-Zero SGLang stretch plan:
+  10/10 stages, 5,120/5,120 generated records, with every JSONL row verified
+  as `feature_text_mode=final_answer`.
+- Completed stages: base, Instruct final, Think SFT, Think DPO, Think final,
+  RL-Zero General, RL-Zero IF, RL-Zero Math, RL-Zero Code, and RL-Zero Mix.
+- The run initially filled `/home/user` because the Hugging Face cache held
+  multiple 7B checkpoint copies. Cleared only disposable OLMo model-cache
+  directories, then resumed from completed summaries.
+- `allenai/Olmo-3-7B-RL-Zero-Mix` failed under SGLang/Transformers `4.57.6`
+  because its downloaded config used `model_type=olmo2-retrofit`; the other
+  RL-Zero checkpoints use `model_type=olmo3`. Patched the local downloaded
+  cache config for Mix to the same OLMo 3 loader identifiers and reran the
+  shard successfully.
+- Rebuilt the stretch generation grid with document/prompt-cluster bootstrap
+  CIs from the JSONL caches:
+  `artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_generation_grid_256prompt_2comp_t07_1024_sglang.csv`.
+- Rebuilt the path comparison:
+  `artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_comparison_256prompt_2comp_t07_1024_sglang.csv`,
+  feature summary
+  `artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_feature_summary_256prompt_2comp_t07_1024_sglang.csv`,
+  and Markdown summary
+  `artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_comparison_256prompt_2comp_t07_1024_sglang_summary.md`.
+- Result: Instruct final is the maximum for every tracked Tier-1 output
+  feature in this reduced final-answer-mode path comparison. For
+  `slop_lexicon`, Instruct final is `0.807` per 1k final-answer tokens; Think
+  final is lower by `0.384`, and the RL-Zero family mean is lower by `0.244`.
+
+## 2026-06-16 - Sparse SmolLM3 teacher-forced addendum completed
+
+- Materialized a full eligible SmolTalk2 everyday no_think SFT prompt package:
+  `artifacts/phase2/prompts/smollm3_smoltalk2_sft_everyday_no_think_phase2_prompt_package_2258.jsonl`.
+  It contains 2,258 selected prompts, 87,458 prompt tokens, and 188,435 target
+  tokens.
+- Measured denominator support on the 2,258-prompt package:
+  `artifacts/phase3/analysis/smollm3_no_think_promptpkg2258_denominator_support.csv`.
+  Sparse nonzero support exists for `contrastive_negation` (16,526
+  opportunities, 2 references), `stock_closers` (4,139 opportunities, 3
+  references), and `stock_openers_closers` (6,397 opportunities, 3 references).
+  `stock_openers` remains unsupported with zero target references.
+- Regenerated the sparse teacher-forced plan with the corrected SmolLM3 model
+  specs:
+  base `HuggingFaceTB/SmolLM3-3B-Base`, SFT
+  `HuggingFaceTB/SmolLM3-3B-checkpoints@it-SFT`, APO
+  `HuggingFaceTB/SmolLM3-3B-checkpoints@it-soup-APO`, and final
+  `HuggingFaceTB/SmolLM3-3B`.
+- Completed all four sparse teacher-forced shards for
+  `contrastive_negation`, `stock_closers`, and `stock_openers_closers`.
+  Practical runtime was about 11.5-11.75 minutes per stage, because actual
+  sparse opportunity rows were about 27k per stage rather than the planner's
+  pessimistic capped estimate.
+- Assembled the sparse stage grid:
+  `artifacts/phase3/analysis/smollm3_no_think_propensity_stage_grid_2258prompt_sparse_supported.csv`.
+  Raw AFs:
+  `contrastive_negation` base `1.967`, SFT `3.124`, APO `3.026`, final
+  `3.254`; `stock_closers` base `42.206`, SFT `91.178`, APO `100.983`,
+  final `96.294`; `stock_openers_closers` base `53.770`, SFT `105.893`,
+  APO `128.318`, final `123.391`.
+- Ran paired opportunity-level teacher-forced stage effects:
+  `artifacts/phase3/analysis/smollm3_no_think_teacher_forced_stage_effects_2258prompt_sparse_supported.csv`.
+  The test produced 9 rows and 8 BH-FDR-significant rows at alpha `0.05`.
+- Assembled sparse addendum spectrum and classifier:
+  `artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_2258prompt_sparse_supported.csv`
+  and
+  `artifacts/phase3/analysis/smollm3_no_think_feature_classification_2258prompt_sparse_supported.csv`.
+  The addendum labels `contrastive_negation` as `sft-amplified`, and labels
+  `stock_closers` and `stock_openers_closers` as
+  `preference-amplified`/`dynamics-driven`.
+- Interpretation caveat: this is useful broader teacher-forced support, but
+  it is still sparse addendum evidence. Held-out references are only 2 or 3
+  per measured sparse feature, every raw-AF CI overlaps 1, and there is no
+  matching generated-output compounding expectation join for this 2,258-prompt
+  sparse package.
+
+## 2026-06-16 - Full OLMo SGLang plan made resumable and launched
+
+- Materialized a SGLang-backed version of the original OLMo 5,000-prompt x
+  8-completion x 3-temperature generation grid:
+  `artifacts/phase3/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_sglang.csv`
+  and
+  `artifacts/phase3/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_sglang.md`.
+- Added `--resume` support to `scripts/benchmark_sglang_generation.py`. The
+  SGLang harness now reads existing JSONL rows, reconstructs feature-rate
+  summaries from them, skips already written
+  source/prompt/completion/temperature/top-p keys, and appends only missing
+  rows.
+- Added `--prompt-batch-size` to the SGLang harness and to
+  `slop-materialize-sglang-generation-plan`. This prevents full-grid shards
+  from waiting for one monolithic 5,000-prompt `engine.generate` call before
+  writing any output.
+- Tested the resume/chunk behavior with a pre-populated JSONL row and a fake
+  SGLang engine. Focused tests:
+  `uv run pytest tests/test_benchmark_sglang_generation.py tests/test_materialize_sglang_generation_plan.py tests/test_continue_phase2_generation_plan.py`.
+- A first attempt at the full base/t0 shard with one monolithic request was
+  stopped before writing rows because it was not checkpointing soon enough.
+  A second attempt with `--prompt-batch-size 512` was also stopped before
+  writing rows because each checkpoint would still require about 4.2M
+  generated tokens.
+- Relaunched the first full-grid shard with `--prompt-batch-size 128`:
+  base `allenai/Olmo-3-1025-7B`, temperature `0.0`, 40,000 expected
+  generations.
+  Selection:
+  `artifacts/phase3/analysis/olmo3_full_sglang_chunk128_generation_shard_base_t0p0.json`.
+  Log:
+  `artifacts/phase3/analysis/olmo3_full_sglang_chunk128_generation_shard_base_t0p0.log`.
+  Output:
+  `artifacts/phase2/generations/olmo3_base_promptpkg5000_free_run_5000prompt_8comp_t0_batched1024.jsonl`.
+- First live checkpoint at `2026-06-16T20:36:28Z`: the shard is still alive
+  and has written `1024/40000` rows. This is one 128-prompt chunk with 8
+  completions per prompt, `1,048,576` generated tokens, and all rows
+  length-capped at 1,024 tokens under the fixed-budget `--ignore-eos`
+  contract. The status helper projected about `7:22:13` remaining from the
+  existing row rate, so the full-grid SGLang recovery path is hours per shard
+  rather than weeks per shard.
+- Second live checkpoint at `2026-06-16T20:41:57Z`: the shard is still alive
+  and has written `2048/40000` rows. The refreshed SGLang plan now records
+  base/t0 `existing_generations=2048`, and the status helper projects about
+  `5:27:19` remaining from the existing row rate.
+- Third live checkpoint at `2026-06-16T20:50:10Z`: the shard is still alive
+  and has written `3072/40000` rows. The refreshed SGLang plan now records
+  base/t0 `existing_generations=3072`, and the status helper projects about
+  `5:18:27` remaining from the existing row rate.
+- Fourth live checkpoint at `2026-06-16T20:56:05Z`: the shard is still alive
+  and has written `4096/40000` rows. The refreshed SGLang plan now records
+  base/t0 `existing_generations=4096`, and the status helper projects about
+  `5:00:11` remaining from the existing row rate.
+- Added `scripts/phase3_full_sglang_supervisor.sh` and started it detached via
+  `setsid -f` as PID `3890` after confirming that plain `nohup ... &` did not
+  survive this execution environment. The supervisor checks the full SGLang
+  plan every 600 seconds, refreshes the plan summary from current JSONL caches,
+  uses `slop-continue-phase2-generation-plan --execute --allow-partial-retry`,
+  refuses to proceed below `12` GiB free on `/home/user`, and relies on the
+  launcher's active-shard detection to avoid duplicate GPU jobs. Supervisor
+  PID and log paths are
+  `artifacts/phase3/analysis/olmo3_full_sglang_chunk128_supervisor.pid` and
+  `artifacts/phase3/analysis/olmo3_full_sglang_chunk128_supervisor.log`.
+- Added `slop-materialize-phase3-full-sglang-finalize-plan` and generated the
+  first full-grid post-generation finalization plan:
+  `artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_finalize.sh`
+  and
+  `artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_finalize.md`.
+  The readiness summary currently has zero enabled commands because no
+  complete four-stage temperature slice exists yet: temperature `0.0` is
+  `5120/160000` rows, and temperatures `0.7` and `1.0` are `0/160000`.
+  The generated script comments out incomplete assembly/compounding commands
+  and will enable generation-grid, compounding, spectrum, classification, and
+  cross-ladder commands after the relevant slices complete.
+- Added `--priority-temperature` to `slop-continue-phase2-generation-plan` and
+  restarted the full-grid supervisor as PID `6211`. The supervisor now passes
+  `--priority-temperature 1.0`, so active-shard detection still prevents
+  duplicates, but after the current base/t0 shard exits the next launches will
+  prioritize the primary t=1.0 slice across stages. This should make the main
+  spectrum/classification path ready earlier while preserving the full
+  12-shard grid.
+- Recorded the generation backend policy explicitly: SGLang is the default for
+  pure generation tasks, while Torch/Transformers batch-size recovery is legacy
+  context unless SGLang hits a concrete loader/runtime blocker. For the
+  original full-grid recovery, the control knobs are SGLang prompt chunk size,
+  JSONL resume checkpoints, and temperature-slice ordering rather than
+  returning to batch-size-32 Transformers generation.
+- Fifth live checkpoint at `2026-06-16T21:07:00Z`: the base/t0 SGLang shard is
+  still alive as PID `1032`, has written `5120/40000` rows, and the detached
+  supervisor is alive as PID `6211`. `/home/user` has `24` GiB free, and the
+  A100 is at `100%` utilization with about `70.8/81.9` GiB used. The status
+  helper projects about 5 hours remaining from the existing row rate.
+- Extended `slop-materialize-phase3-full-sglang-finalize-plan` so the
+  readiness summary now includes a per-stage table in addition to the
+  temperature-level command gate. The regenerated summary currently shows only
+  `base/t0` with partial rows (`6144/40000`) and no complete stage summaries,
+  so the finalization script still has zero enabled commands.
+- Extended `scripts/phase3_full_sglang_supervisor.sh` with
+  `REFRESH_FINALIZATION=1` by default. Each supervisor loop now regenerates
+  `artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_finalize.sh`
+  and `.md` after refreshing the SGLang generation plan, keeping downstream
+  readiness current without a manual materializer run. Restarted only the
+  supervisor, not the active generation process; the live supervisor is PID
+  `8230`, the active SGLang generation process remains PID `1032`, and no
+  stale supervisor process remains.
+- Sixth live checkpoint at `2026-06-16T21:15:00Z`: the base/t0 SGLang shard is
+  still alive as PID `1032`, has written `6144/40000` rows, or six
+  128-prompt chunks. The refreshed SGLang plan and finalization readiness now
+  record temperature `0.0` at `6144/160000` rows, temperatures `0.7` and `1.0`
+  at `0/160000`, and zero enabled downstream commands.
+- Updated the finalization materializer so complete slices skip downstream
+  commands whose declared output artifacts already exist. This keeps the
+  generated finalization script focused on pending work and prevents automatic
+  readiness refreshes or manual reruns from redoing already completed
+  generation-grid, compounding, spectrum, classification, or cross-ladder
+  outputs.
+- Added `slop-audit-phase3-completion`, which writes
+  `artifacts/phase3/analysis/phase3_completion_audit_snapshot.csv` and `.md`
+  from the current full SGLang generation plan, finalization readiness summary,
+  and named required artifacts. It now also treats enabled finalization
+  commands as pending work. The current snapshot reports `8/10` tracked
+  requirements complete: bounded OLMo/SmolLM3 outputs, the conclusion report,
+  finalization readiness, and zero pending finalization commands are verified,
+  while `full_olmo_sglang_generation_grid` and
+  `primary_temperature_1_four_stage_slice` remain incomplete.
+- Extended `scripts/phase3_full_sglang_supervisor.sh` with
+  `REFRESH_COMPLETION_AUDIT=1` by default. Restarted only the supervisor; the
+  live supervisor is PID `12474`, the active generation process remains PID
+  `1032`, and the supervisor log confirms it refreshed the SGLang plan,
+  finalization readiness, completion audit, and then detected the active shard
+  rather than launching a duplicate.
+- Seventh live checkpoint at `2026-06-16T21:23:00Z`: the base/t0 SGLang shard
+  is still alive as PID `1032`, has written `7168/40000` rows, or seven
+  128-prompt chunks. The refreshed plan and finalization readiness record
+  temperature `0.0` at `7168/160000`, temperatures `0.7` and `1.0` at
+  `0/160000`, and zero enabled downstream commands.
+- Expanded the completion audit gate set to include the expected full-grid
+  primary t=1 downstream outputs: generation grid, compounding table,
+  amplification spectrum, feature classification, and cross-ladder summary.
+  The current machine-readable snapshot now reports `8/15` complete; the
+  newly added full-grid primary downstream gates are correctly `missing` until
+  the t=1 four-stage slice finishes and finalization runs.
+- Tightened `slop-audit-phase3-completion` so named required artifacts must
+  exist and have nonzero file size, with CSV files requiring at least one data
+  row and JSONL files requiring at least one non-empty record. Missing, empty,
+  or header-only artifacts now report `missing_or_empty_or_header_only`, which
+  prevents empty placeholders from satisfying Phase 3 gates.
+- Eighth live checkpoint at `2026-06-16T21:32:00Z`: the base/t0 SGLang shard
+  is still alive as PID `1032`, has written `8192/40000` rows, or eight
+  128-prompt chunks. The refreshed plan and finalization readiness record
+  temperature `0.0` at `8192/160000`, temperatures `0.7` and `1.0` at
+  `0/160000`, and zero enabled downstream commands. The completion audit
+  remains `8/15` complete, with the full-grid primary downstream gates
+  `missing_or_empty_or_header_only`.
+- Added `severity` and `blocker` columns to `slop-audit-phase3-completion`.
+  The current incomplete full-grid and full-grid-primary rows are now marked
+  `critical`, with concise blocker text explaining whether generation,
+  finalization, or downstream artifacts are missing.
+- Ninth live checkpoint at `2026-06-16T21:39:00Z`: the base/t0 SGLang shard is
+  still alive as PID `1032`, has written `9216/40000` rows, or nine
+  128-prompt chunks. The refreshed plan and finalization readiness record
+  temperature `0.0` at `9216/160000`, temperatures `0.7` and `1.0` at
+  `0/160000`, and zero enabled downstream commands. The completion audit
+  remains `8/15` complete with the new severity/blocker columns.
+- Clarified the written status to match the active compute policy: the
+  abandoned path is the Torch/Transformers OLMo full-grid route, not
+  original-scope OLMo parity itself. Pure generation work now uses SGLang by
+  default, including original-scope full-grid recovery; Transformers
+  batch-size-32 recovery remains legacy context unless SGLang hits a concrete
+  loader or runtime blocker.
+- Expanded the automatic and manual Phase 3 completion audit gates from
+  `15` to `39` requirements so the snapshot now explicitly checks retained
+  data-rate inputs, reduced OLMo generation grids, temperature and long-output
+  compounding, SmolLM3 production generation/compounding, Biber-lite/style
+  signature outputs, sparse-support addendum artifacts, cross-ladder
+  correlations, and the OLMo Think/RL-Zero stretch comparison. The refreshed
+  audit reports `32/39` complete; the seven incomplete gates are the full
+  OLMo grid, primary t=1 four-stage slice, and five full-grid primary
+  downstream artifacts.
+- Tenth live checkpoint at `2026-06-16T21:49:00Z`: the base/t0 SGLang shard is
+  still alive as PID `1032`, has written `10240/40000` rows, or ten
+  128-prompt chunks. The refreshed plan and finalization readiness record
+  temperature `0.0` at `10240/160000`, temperatures `0.7` and `1.0` at
+  `0/160000`, and zero enabled downstream commands.
+- Restarted only the detached supervisor so the live monitor picks up the
+  expanded 39-gate completion audit command. The active SGLang generation
+  process remains PID `1032`; the new supervisor is PID `15597`. Its first
+  loop refreshed the SGLang plan, finalization readiness, and `32/39`
+  completion audit, then detected the active shard rather than launching a
+  duplicate.
+- Added a focused continuation-plan regression test for the next critical
+  handoff: after a `t=0` shard has complete JSONL and summary outputs, a stale
+  completed selection file is ignored and `--priority-temperature 1.0` selects
+  the `t=1.0` shard before `t=0.7`. Verification:
+  `uv run pytest tests/test_continue_phase2_generation_plan.py`,
+  `uv run ruff check src/slop_sftdiv/cli/continue_phase2_generation_plan.py tests/test_continue_phase2_generation_plan.py`,
+  and `uv run ty check src/slop_sftdiv/cli/continue_phase2_generation_plan.py`.
+- Factored the 39-gate Phase 3 completion audit command into
+  `scripts/phase3_refresh_completion_audit.sh` and changed
+  `scripts/phase3_full_sglang_supervisor.sh` to call that helper. The runbook
+  now points manual refreshes at the same helper, reducing drift between the
+  automatic and manual audit paths.
+- Eleventh live checkpoint at `2026-06-16T21:57:00Z`: the base/t0 SGLang shard
+  is still alive as PID `1032`, has written `11264/40000` rows, or eleven
+  128-prompt chunks. The refreshed plan and finalization readiness record
+  temperature `0.0` at `11264/160000`, temperatures `0.7` and `1.0` at
+  `0/160000`, and zero enabled downstream commands. Restarted only the
+  supervisor to use the new helper; the live supervisor is PID `16614`, and
+  its first loop refreshed the `32/39` completion audit and detected the
+  active shard instead of launching a duplicate.
+- Added guarded downstream finalization automation to
+  `scripts/phase3_full_sglang_supervisor.sh`. Each loop now checks the
+  refreshed finalization readiness summary; when `Enabled commands` is
+  nonzero, the supervisor runs the generated pending-work finalization script,
+  refreshes the finalization summary again, and then refreshes the completion
+  audit. With the current `11264/160000` temperature-0 slice and incomplete
+  primary t=1 slice, this remains a no-op until a complete slice is ready.
+- Restarted only the supervisor to pick up the ready-finalization hook. The
+  active SGLang generation process remains PID `1032`; the new supervisor is
+  PID `17195`. Its first loop refreshed the plan, finalization summary, and
+  `32/39` audit, saw zero enabled finalization commands, and detected the
+  active shard instead of launching a duplicate.
+- Twelfth live checkpoint at `2026-06-16T22:03:00Z`: the base/t0 SGLang shard
+  is still alive as PID `1032`, has written `12288/40000` rows, or twelve
+  128-prompt chunks. The refreshed plan and finalization readiness record
+  temperature `0.0` at `12288/160000`, temperatures `0.7` and `1.0` at
+  `0/160000`, and zero enabled downstream commands. The completion audit
+  remains `32/39` complete.
+- Added a PID-file singleton guard to
+  `scripts/phase3_full_sglang_supervisor.sh` so an accidental second
+  supervisor exits if the PID file points at a live supervisor process.
+  Verified by attempting a duplicate `setsid -f` launch: the PID file remained
+  `17195`, the existing supervisor stayed alive, and the log recorded
+  `supervisor already running pid=17195; exiting`.
+- Added a bounded supervisor-log rotation guard. On startup the monitor now
+  rotates `LOG_OUTPUT` when it exceeds `MAX_LOG_BYTES` (default `5000000`),
+  keeping future diagnostics focused on the current run rather than the full
+  sequence of previous supervisor restarts.
+- Verified the rotation guard with a temporary-log smoke test using
+  `MAX_LOG_BYTES=4` and a disk-guard exit path, then restarted only the
+  supervisor so the guard is live. The active SGLang generation process
+  remains PID `1032`; the live supervisor is PID `18430`. Its first loop
+  refreshed the current `12288/40000` state and detected the active shard
+  instead of launching a duplicate.
+- Recorded the final compute-policy clarification in the integrated
+  conclusion report and production runbook: SGLang is the active backend for
+  pure generation tasks, including the original-scope OLMo recovery grid;
+  Transformers batch-size-32 generation is legacy context. The bounded report
+  remains driven by completed purpose-built SGLang panels, while original
+  parity continues through resumable SGLang shards, prompt chunk sizing,
+  JSONL resume checkpoints, and prioritized `t=1.0` shard ordering.
+- Thirteenth live checkpoint at `2026-06-16T22:11:00Z`: the base/t0 SGLang
+  shard is still alive as PID `1032`, has written `13312/40000` rows, or
+  thirteen 128-prompt chunks. Refreshed the SGLang plan, full-grid
+  finalization readiness, and completion audit manually; the plan and
+  readiness now record `13312` existing rows, the finalization script still
+  has zero enabled commands, and the completion audit remains `32/39`
+  complete.
+- Added `slop-audit-sglang-generation-cache`, a structural JSONL integrity
+  audit for SGLang generation caches. It checks required fields, duplicate
+  `(source, prompt_id, source_row_index, completion_index, temperature,
+  top_p)` keys, expected backend/model/temperature/top-p metadata,
+  completion-index bounds, generated-token/feature-token sanity, empty
+  generations, and parsed `features_json`/`repeated_features_json`.
+- Wired the new integrity audit into `scripts/phase3_full_sglang_supervisor.sh`.
+  Each monitor loop now refreshes
+  `artifacts/phase3/analysis/olmo3_full_sglang_existing_cache_integrity.{csv,md}`
+  for existing full-grid caches before refreshing the completion audit.
+  Verification: `uv run pytest tests/test_audit_sglang_generation_cache.py`,
+  `uv run ruff check src/slop_sftdiv/cli/audit_sglang_generation_cache.py tests/test_audit_sglang_generation_cache.py`,
+  `uv run ty check src/slop_sftdiv/cli/audit_sglang_generation_cache.py`,
+  and `bash -n scripts/phase3_full_sglang_supervisor.sh`.
+- Restarted only the detached supervisor to pick up the integrity-audit
+  refresh. The active SGLang generation process remained PID `1032`; the new
+  supervisor is PID `20500`. Its first loop refreshed the plan, finalization
+  readiness, integrity audit, and `32/39` completion audit, then detected the
+  active shard instead of launching a duplicate.
+- Fourteenth live checkpoint at `2026-06-16T22:19:00Z`: the base/t0 SGLang
+  shard has written `14336/40000` rows, or fourteen 128-prompt chunks. The
+  refreshed plan and readiness record temperature `0.0` at `14336/160000`;
+  the integrity audit reports `1/1` existing caches passed with `14336`
+  unique generation keys and zero structural failures.
+- Promoted the SGLang cache-integrity audit into the Phase 3 completion audit.
+  `slop-audit-phase3-completion` now accepts `--integrity-audit` and adds a
+  `full_grid_sglang_cache_integrity` gate that is critical if the audit is
+  missing or any cache fails. `scripts/phase3_refresh_completion_audit.sh`
+  passes the live integrity CSV, and the supervisor forwards
+  `INTEGRITY_AUDIT` overrides into that helper. Refreshed snapshot:
+  `33/40` requirements complete; the new integrity gate is complete, and the
+  remaining seven blockers are unchanged.
+- Restarted only the detached supervisor to pick up the promoted integrity
+  gate in the automatic completion-audit path. The active SGLang generation
+  process remained PID `1032`; the new supervisor is PID `21542`. Its first
+  loop refreshed the plan, finalization readiness, integrity audit, and
+  `33/40` completion audit, then detected the active shard instead of
+  launching a duplicate.
+- Added explicit prerequisite checking to
+  `slop-materialize-phase3-full-sglang-finalize-plan`. The finalization
+  readiness summary now includes a `Prerequisite Inputs` table, and commands
+  with missing auxiliary inputs are commented out instead of being enabled.
+  Downstream spectrum/classifier/cross-ladder commands inherit upstream
+  prerequisite failures, so the supervisor will not launch a command that is
+  guaranteed to fail because an input is absent.
+- Promoted finalization prerequisites into the Phase 3 completion audit. The
+  refreshed audit reports `34/41` complete: the new prerequisite gate and the
+  SGLang cache-integrity gate both pass, while the seven critical full-grid
+  generation/downstream blockers remain.
+- Fifteenth live checkpoint at `2026-06-16T22:28:00Z`: the base/t0 SGLang
+  shard has written `15360/40000` rows, or fifteen 128-prompt chunks. The
+  refreshed plan, finalization readiness, integrity audit, and completion
+  audit all agree on the `15360` row count; integrity remains `1/1` passing.
+- Extended `slop-audit-sglang-generation-cache` to verify prompt-group
+  completion coverage. In addition to duplicate generation keys and row
+  metadata, the audit now checks that every observed
+  `(source, prompt_id, source_row_index, temperature, top_p)` prompt group has
+  exactly the plan's expected number of completion indices. The live base/t0
+  cache reports `1920` prompt groups and zero incomplete or overfull groups.
+- Added an integrity-before-finalization hard gate to
+  `scripts/phase3_full_sglang_supervisor.sh`. If the finalization readiness
+  summary has enabled commands, the supervisor now requires the refreshed
+  SGLang cache-integrity CSV to exist and have every existing cache marked
+  passing before it runs the generated finalization script. A failing isolated
+  smoke test exited with status `3`, wrote the expected block message, and did
+  not invoke the fake finalization script.
+- Restarted only the detached supervisor to pick up the new hard gate. The
+  active SGLang generation process remained PID `1032`; the new supervisor is
+  PID `23911`. Its first loop refreshed the plan, finalization readiness,
+  integrity audit, and `34/41` completion audit, then detected the active
+  shard instead of launching a duplicate.
+- Sixteenth live checkpoint at `2026-06-16T22:37:00Z`: the base/t0 SGLang
+  shard has written `16384/40000` rows, or sixteen 128-prompt chunks. The
+  integrity audit reports `1/1` existing caches passed with `16384` unique
+  generation keys, `2048` prompt groups, and zero incomplete or overfull
+  prompt groups.
+- Hardened `slop-continue-phase2-generation-plan` so current filesystem
+  evidence wins over a stale `completed=True` value in the plan CSV. A shard
+  is now skipped only when its current JSONL row count and summary output prove
+  completion. This prevents a stale sidecar plan from silently skipping a
+  required full-grid shard after the active SGLang job exits. Added the
+  regression test `test_continue_phase2_generation_plan_ignores_stale_completed_flag`;
+  `uv run pytest tests/test_continue_phase2_generation_plan.py`,
+  `uv run ruff check`, and `uv run ty check` all pass for the touched launcher
+  files.
+- Switched full-grid compute ordering toward the Phase 3-critical primary
+  temperature slice. Paused the supervisor, waited for the live base/t0 SGLang
+  shard to flush its next JSONL checkpoint, and stopped PID `1032` after
+  `18432/40000` rows. The integrity audit passes on this partial cache with
+  `18432` unique generation keys, `2304` prompt groups, and zero structural
+  failures.
+- Refreshed the SGLang plan and launched base/t1 as PID `25449` using
+  `slop-continue-phase2-generation-plan --execute --allow-partial-retry
+  --priority-temperature 1.0`. Restarted the detached supervisor as PID
+  `25515`; its first loop detected the active base/t1 shard at `0/40000`
+  instead of launching a duplicate. The completion audit remains `34/41`, with
+  full-grid generation now at `18432/480000` and the primary t=1 slice still
+  at `0/160000` until base/t1 starts flushing rows.
+- Base/t1 flushed its first 128-prompt checkpoint: `1024/40000` rows. After
+  refreshing the SGLang plan, finalization readiness, integrity audit, and
+  completion audit, the live blockers are full-grid generation
+  `19456/480000`, primary t=1 generation `1024/160000`, and the five
+  full-grid primary downstream artifacts. The integrity audit now covers two
+  partial caches and passes `2/2`: base/t0 at `18432` rows and base/t1 at
+  `1024` rows, with zero bad prompt groups or structural failures.
+- Base/t1 flushed a second 128-prompt checkpoint: `2048/40000` rows. Refreshed
+  plan/finalization/integrity/completion artifacts now report full-grid
+  generation `20480/480000`, primary t=1 generation `2048/160000`, and
+  integrity `2/2` passing. Base/t1 remains active as PID `25449`, the
+  supervisor remains active as PID `25515`, and GPU utilization is `100%`.
+- Base/t1 flushed a third 128-prompt checkpoint: `3072/40000` rows. Refreshed
+  plan/finalization/integrity/completion artifacts now report full-grid
+  generation `21504/480000`, primary t=1 generation `3072/160000`, and
+  integrity `2/2` passing. The active worker and supervisor remain PID `25449`
+  and PID `25515`, respectively.
+- Base/t1 flushed a fourth 128-prompt checkpoint: `4096/40000` rows. Refreshed
+  plan/finalization/integrity/completion artifacts now report full-grid
+  generation `22528/480000`, primary t=1 generation `4096/160000`, and
+  integrity `2/2` passing. The base/t1 cache now has `512` complete prompt
+  groups and zero structural failures.
+- Base/t1 flushed a fifth 128-prompt checkpoint: `5120/40000` rows. Refreshed
+  plan/finalization/integrity/completion artifacts now report full-grid
+  generation `23552/480000`, primary t=1 generation `5120/160000`, and
+  integrity `2/2` passing. The base/t1 cache now has `640` complete prompt
+  groups and zero structural failures.
+- Base/t1 flushed a sixth 128-prompt checkpoint: `6144/40000` rows. Refreshed
+  plan/finalization/integrity/completion artifacts now report full-grid
+  generation `24576/480000`, primary t=1 generation `6144/160000`, and
+  integrity `2/2` passing. The base/t1 cache now has `768` complete prompt
+  groups and zero structural failures.
+- Base/t1 flushed a seventh 128-prompt checkpoint: `7168/40000` rows.
+  Refreshed plan/finalization/integrity/completion artifacts now report
+  full-grid generation `25600/480000`, primary t=1 generation
+  `7168/160000`, and integrity `2/2` passing. The base/t1 cache now has
+  `896` complete prompt groups and zero structural failures.
+- Base/t1 flushed an eighth 128-prompt checkpoint: `8192/40000` rows.
+  Refreshed plan/finalization/integrity/completion artifacts now report
+  full-grid generation `26624/480000`, primary t=1 generation
+  `8192/160000`, and integrity `2/2` passing. The base/t1 cache now has
+  `1024` complete prompt groups and zero structural failures.
+- Paused the original-scope OLMo full-grid runner after the user clarified
+  that the intended Phase 3 production path should be much smaller than
+  `480000` generations. Stopped supervisor PID `25515`; base/t1 worker PID
+  `25449` required SIGKILL after SIGTERM did not release the GPU. The partial
+  caches remain intact at `26624` total full-grid rows (`18432` base/t0 and
+  `8192` base/t1), and the A100 memory was released.
+- Realigned the Phase 3 completion audit to the lightweight production scope:
+  `scripts/phase3_refresh_completion_audit.sh` now passes
+  `--full-grid-scope optional`, keeps the original full-grid rows as
+  optional/addendum evidence, and requires the reduced OLMo, SmolLM3,
+  Biber-lite/style-signature, cross-ladder, sparse-support, and stretch
+  artifacts. Regenerated
+  `artifacts/phase3/analysis/phase3_completion_audit_snapshot.md`; it now
+  reports `30/30` required rows complete, `34/41` all tracked rows complete,
+  and `4/11` optional/addendum rows complete.
+
+## 2026-06-18 - Phase 1 English-filtered fixed-sample rerun completed
+
+- Replaced the previous character-composition language screen with
+  source-metadata-first Lingua language detection and reran the revised Tier-1
+  Phase 1 census over the new fixed retained English samples:
+  40,000 Dolci SFT target rows, 40,000 Dolci DPO pairs expanded to 80,000
+  chosen/rejected rows, and 5,740 retained Dolma 3 documents from the 80k scan.
+  The sampling pass filtered 13,125 SFT source records, 7,541 DPO source pairs,
+  and 3,868 Dolma records. W&B was disabled for these local reruns.
+- Regenerated the scoped Tier-1 inputs:
+  `artifacts/stage1/census/olmo3_dolci_sft_40k_revised_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/olmo3_dolci_dpo_40k_retained_revised_tier1_feature_rates.csv`,
+  `artifacts/stage1/census/olmo3_dolci_dpo_40k_retained_revised_tier1_pair_deltas.csv`,
+  and
+  `artifacts/stage1/census/olmo3_dolma3_80k_scan_revised_tier1_feature_rates.csv`.
+- Reassembled the canonical Phase 1 artifacts:
+  `artifacts/stage1/census/feature_rates_by_corpus.parquet` (`36` rows),
+  `artifacts/stage1/census/feature_rates_by_stratum.parquet` (`99` rows),
+  `artifacts/stage1/census/preference_pair_deltas.parquet` (`360,000` rows),
+  and `artifacts/stage1/census/census_summary.md`.
+- Ran full pybiber over all three retained samples after fixing duplicate
+  document IDs in the pybiber CLI by row-qualifying colliding IDs before
+  calling pybiber. Full pybiber outputs now exist with complete retained-row
+  coverage for Dolma (`5,740` returned docs x `67` features), Dolci SFT
+  (`40,000` returned docs x `67` features), and Dolci DPO (`80,000` returned
+  docs x `67` features), each with wide and long CSV outputs under
+  `artifacts/stage1/census/`.
+- The earlier pybiber row shortfall is resolved for the English-filtered
+  samples; language filtering is now part of the Phase 1 sample definition.
+- Added the token-weighted full-pybiber register analysis:
+  `artifacts/stage1/census/phase1_pybiber_register_means.csv`,
+  `artifacts/stage1/census/phase1_pybiber_register_deltas.csv`, and
+  `docs/experiments/phase1_pybiber_register_analysis.md`. The substantive read
+  is that alignment data shift away from narrative/personal web prose toward
+  nominalized, adjectival, answer-like exposition; this does not support a
+  generic "alignment adds hedging" claim.
+- Updated `docs/experiments/phase1_conclusions.md`,
+  `docs/experiments/phase1_gap_audit.md`, `EXPERIMENTS.md`, and
+  `artifacts/stage1/census/census_summary.md` to reflect the fixed-sample
+  rerun and full pybiber support. Focused verification passed:
+  `uv run pytest tests/test_assemble_phase1.py` and
+  `uv run pytest tests/test_pybiber_full.py`.
+
+## 2026-06-18 - Phase 4 512-document exact Tier-3 production run completed
+
+- Completed the production-grade Phase 4 exact sequence-mass Tier-3 OLMo grid
+  under
+  `artifacts/phase4/modernbert_detector_combined_v2_clean/tier3_teacher_forced_exact_512/`.
+  All four stages now have opportunity and summary CSVs: base, SFT, DPO, and
+  final.
+- Assembled:
+  `olmo3_phase4_tier3_512_exact_sequence_stage_grid.csv`,
+  `olmo3_phase4_tier3_512_exact_sequence_primary_comparison.csv`,
+  `olmo3_phase4_tier3_512_exact_sequence_stage_grid_summary.md`,
+  `olmo3_phase4_tier3_512_exact_sequence_stage_effects.csv`, and
+  `olmo3_phase4_tier3_512_exact_sequence_stage_effects_summary.md`.
+- The paired stage-effects table contains `33` comparison-feature rows, with
+  `31` BH-FDR-significant rows at `alpha=0.05`.
+- Primary process-framing raw AF rises across the OLMo ladder from `1.401`
+  (base) to `1.957` (final). Neutral-normalized process-framing AF declines
+  from `7.701` to `6.056` because the neutral common-control AF rises faster
+  than process framing.
+- Refreshed `docs/experiments/phase4_tier3_teacher_forced_addendum.md`,
+  `docs/experiments/phase4_completion_audit.md`, and
+  `docs/experiments/phase4_production_runbook.md` with the 512-document
+  results.
+
+## 2026-06-18 - Paper claim matrix added
+
+- Added `docs/experiments/paper_claim_matrix.md` as the current
+  paper-facing authority for bounded claims, evidence sources, claim strength,
+  caveats, and allowed wording.
+- Added `docs/experiments/paper_scaffold.md` to turn the claim matrix into a
+  manuscript structure, including title, thesis, abstract skeleton, section
+  plan, and figure/table inventory.
+- Updated `EXPERIMENTS.md` and the status memos to point readers to the claim
+  matrix. The matrix keeps the central thesis bounded: post-training shifts
+  style toward answer-register prose, selected surface markers amplify at
+  feature- and ladder-specific stages, and detector-discovered Tier-3 features
+  remain provisional until human perceptibility and precision validation are
+  complete.
+
+## 2026-06-18 - Draft paper figures rendered
+
+- Added `slop-render-paper-figures`, a reproducible renderer for paper draft
+  SVGs from cached artifacts, with a smoke test in
+  `tests/test_render_paper_figures.py`.
+- Rendered five draft figures under `artifacts/paper/figures/`:
+  `figure1_pybiber_register_selected.svg`,
+  `figure2_eqbench_stage_scores.svg`,
+  `figure3_olmo_slop_lexicon_views.svg`,
+  `figure4_cross_ladder_af_scatter.svg`, and
+  `figure5_phase4_tier3_raw_af.svg`.
+- Updated `docs/experiments/paper_scaffold.md` so the figure inventory points
+  at the rendered draft SVGs. Remaining figure work is polish and deciding
+  whether Figure 3 should expand from the headline `slop_lexicon` view to a
+  broader spectrum panel.
+
+## 2026-06-18 - Precision-validation status table refreshed
+
+- Added `slop-summarize-precision-validation`, a local status summarizer that
+  combines multiple label CSVs and hit queues into
+  `artifacts/stage1/validation/precision_validation_status.csv` and
+  `docs/experiments/precision_validation_status.md`.
+- Refreshed the status table with the labels available at that point plus four
+  hit queues, including the bounded direct `stock_openers_closers` attempt.
+  The then-current independent core gate status was `2/6` passing:
+  `contrastive_negation` and `stock_openers` passed the interim gate, while
+  `rule_of_three_approx`, `slop_lexicon`, `stock_closers`, and the pooled
+  `stock_openers_closers` view still needed additional treatment.
+- The direct bounded queue for `stock_openers_closers` produced zero retained
+  hits, so the pooled feature should remain a derived convenience metric unless
+  a broader scan is deliberately budgeted.
+- Updated `docs/experiments/phase1_gap_audit.md`,
+  `docs/experiments/precision_validation.md`,
+  `docs/experiments/status_memo_2026_06_17.md`,
+  `docs/experiments/project_status_memo_2026-06-17.md`,
+  `docs/experiments/paper_claim_matrix.md`, and
+  `docs/experiments/paper_scaffold.md` to reference the versioned status
+  table and the current validation caveat.
+
+## 2026-06-18 - Paper table draft added
+
+- Added `docs/experiments/paper_tables.md` with manuscript-oriented draft
+  tables for data/measurement scope, selected full-pybiber register means,
+  claim strength bands, Tier-1 precision-validation status, and paper-safe
+  negative claims.
+- Updated `docs/experiments/paper_scaffold.md` to point the figure/table
+  inventory and immediate paper-prep queue at the new table pack.
+
+## 2026-06-18 - Paper Methods draft added
+
+- Added `docs/experiments/paper_methods_draft.md`, a manuscript-facing Methods
+  draft that explains the bounded study design, OLMo and SmolLM3 ladders,
+  feature tiers, pybiber, EQ-Bench score bridge, teacher-forced propensity,
+  SGLang generation, compounding, amplification-spectrum assembly, detector
+  discovery, statistical treatment, and caveats.
+- Updated `docs/experiments/paper_scaffold.md` and `EXPERIMENTS.md` to list
+  the Methods draft as part of the active paper artifact set.
+
+## 2026-06-18 - Paper Results draft added
+
+- Added `docs/experiments/paper_results_draft.md`, a manuscript-facing Results
+  draft organized by claim IDs. It covers the pybiber register shift,
+  EQ-Bench score bridge, OLMo `slop_lexicon` DPO propensity peak and
+  compounding, SmolLM3 stage-localization difference, Phase 4 Tier-3 detector
+  candidates, and the bounded overall thesis.
+- Updated `docs/experiments/paper_scaffold.md` and `EXPERIMENTS.md` to list
+  the Results draft as part of the active paper artifact set.
+
+## 2026-06-18 - Paper introduction/discussion draft added
+
+- Added `docs/experiments/paper_intro_discussion_draft.md`, a
+  manuscript-facing draft for the Introduction, Discussion, Limitations, and
+  Conclusion. It frames "slop style" as a localization problem across corpus
+  inheritance, fixed-context propensity, free-running emission, and
+  self-conditioning.
+- The draft preserves the bounded thesis: post-training data shift toward
+  answer-register prose; selected markers amplify feature- and
+  ladder-specifically; EQ-Bench is an aggregate bridge; and detector-derived
+  Tier-3 features remain candidates until human perceptibility and precision
+  validation.
+- Updated `docs/experiments/paper_scaffold.md` and `EXPERIMENTS.md` to list
+  the introduction/discussion draft as part of the active paper artifact set.
+
+## 2026-06-18 - Integrated manuscript draft added
+
+- Added `docs/experiments/paper_manuscript_draft.md`, an end-to-end paper
+  draft that stitches the introduction, methods, results, discussion,
+  limitations, conclusion, figure/table callouts, and appendix pointers into a
+  single readable manuscript skeleton.
+- Updated `docs/experiments/paper_scaffold.md` and `EXPERIMENTS.md` to list
+  the integrated manuscript draft as the current stitched paper artifact.
+
+## 2026-06-18 - Citation plan added
+
+- Added `docs/experiments/paper_citation_plan.md`, a related-work and
+  bibliography plan organized by citation slot: AI-writing detection, Biber
+  register work, preference optimization, open model/data ladders, EQ-Bench,
+  teacher-forced/generation methods, and detector attribution/clustering.
+- The plan intentionally records source requirements rather than unverified
+  bibliography entries; each slot requires checking title, authors, year,
+  venue, and URL/DOI against a primary source before entering a final
+  references file.
+- Updated `docs/experiments/paper_scaffold.md`,
+  `docs/experiments/paper_manuscript_draft.md`, and `EXPERIMENTS.md` to point
+  to the citation plan.
+
+## 2026-06-18 - Initial checked bibliography added
+
+- Added `docs/experiments/paper_reference_sources.md`, a primary-source
+  inventory for the initial verified citation set. It records source URLs,
+  what each source supports, and which citation slots still need verification.
+- Added `docs/experiments/paper_references.bib`, an initial BibTeX file for
+  checked sources including OLMo 3, OLMo/Dolci Hugging Face cards, SmolLM3,
+  EQ-Bench Slop Score, DPO, ModernBERT, SGLang, HAP-E/LLM style work,
+  pybiber, Integrated Gradients, and HDBSCAN.
+- Updated `docs/experiments/paper_citation_plan.md`,
+  `docs/experiments/paper_scaffold.md`,
+  `docs/experiments/paper_manuscript_draft.md`, and `EXPERIMENTS.md` to link
+  the checked source inventory and BibTeX draft.
+
+## 2026-06-18 - Integrated manuscript citation pass
+
+- Added a compact Related Work section to
+  `docs/experiments/paper_manuscript_draft.md` using only the verified initial
+  BibTeX set.
+- Inserted citation keys for open model/data provenance, DPO, SmolLM3,
+  EQ-Bench Slop Score, pybiber, HAP-E, ModernBERT, Integrated Gradients,
+  HDBSCAN, and SGLang.
+- Renumbered the integrated manuscript after adding Related Work and validated
+  that all 18 cited keys resolve to `docs/experiments/paper_references.bib`
+  with no duplicate or unused BibTeX keys.
+- Updated `docs/experiments/paper_scaffold.md` and
+  `docs/experiments/paper_citation_plan.md` so the remaining citation work is
+  limited to the still-unverified slots rather than the already completed
+  initial citation pass.
+
+## 2026-06-18 - Second bibliography verification pass
+
+- Added checked BibTeX/source-inventory entries for Biber's
+  `Variation across Speech and Writing`, Shaib et al.'s AI slop taxonomy
+  paper, Anchored Preference Optimization, verbosity bias in LLM preference
+  labeling, and the `Alibaba-NLP/gte-large-en-v1.5` model card.
+- Wired those references into `docs/experiments/paper_manuscript_draft.md`
+  for register-analysis background, human-perceived slop taxonomy framing,
+  APO/SmolLM3 method context, preference-style-bias background, and Phase 4
+  embedding-model provenance.
+- Updated `docs/experiments/paper_citation_plan.md` and
+  `docs/experiments/paper_scaffold.md` so the remaining citation gaps are
+  optional background slots rather than missing core provenance for the current
+  manuscript.
+
+## 2026-06-18 - Calibration and generation-background citations added
+
+- Added checked BibTeX/source-inventory entries for Guo et al. on neural
+  calibration, Holtzman et al. on neural text degeneration/nucleus sampling,
+  and Welleck et al. on unlikelihood training for repetitive text generation.
+- Cited these in `docs/experiments/paper_manuscript_draft.md` as background
+  for neutral-normalized AF caveats and generation-time compounding/repetition
+  context.
+- Updated `docs/experiments/paper_citation_plan.md` and
+  `docs/experiments/paper_scaffold.md` so the remaining optional citation gap
+  is mainly teacher-forcing/LM-scoring background if the final Methods section
+  needs it.
+
+## 2026-06-18 - Figure/table manifest added
+
+- Added `docs/experiments/paper_figure_table_manifest.md`, defining the
+  current five-figure and five-table paper package with draft captions, source
+  artifacts, intended claims, caveats, and manuscript placement.
+- Replaced draft "callout" prose in
+  `docs/experiments/paper_manuscript_draft.md` with normal numbered
+  figure/table references tied to the manifest.
+- Updated `docs/experiments/paper_scaffold.md` and `EXPERIMENTS.md` so the
+  manifest is discoverable from the top-level paper artifact set.
+
+## 2026-06-18 - Claim evidence map added
+
+- Added `docs/experiments/paper_claim_evidence_map.md`, mapping C1-C14 from
+  the paper claim matrix to manuscript sections, figure/table support, primary
+  evidence artifacts, and residual caveats.
+- Linked the map from `EXPERIMENTS.md`,
+  `docs/experiments/paper_scaffold.md`, and
+  `docs/experiments/paper_manuscript_draft.md`.
+- This gives the manuscript a review trail from bounded claim wording to the
+  exact current evidence package without changing the claim matrix itself.
+
+## 2026-06-18 - Paper readiness audit added
+
+- Added `docs/experiments/paper_readiness_audit.md`, separating paper-grade
+  evidence, usable-with-caveat evidence, submission blockers, non-blocking
+  deferred work, recommended next actions, and submission exit criteria.
+- Linked the readiness audit from `EXPERIMENTS.md`,
+  `docs/experiments/paper_scaffold.md`, and
+  `docs/experiments/paper_manuscript_draft.md`.
+- The audit records the current state as paper-draft ready but
+  submission-blocked by validation and polish, especially Tier-1 precision
+  validation, Phase 4 human perceptibility labels, camera-ready figures/tables,
+  and final manuscript formatting.
+
+## 2026-06-18 - Methods draft citation/equation refresh
+
+- Updated `docs/experiments/paper_methods_draft.md` to match the integrated
+  manuscript's supported citation set for OLMo/Dolci, SmolLM3/APO, Biber and
+  pybiber, EQ-Bench, SGLang, calibration, generation-degeneration background,
+  HAP-E, ModernBERT, Integrated Gradients, GTE-large, and HDBSCAN.
+- Replaced the inline amplification-factor definition with explicit displayed
+  formulas for `AF_f(m)` and `normalized_AF_f(m)`.
+- Updated `docs/experiments/paper_scaffold.md` so the Methods queue now
+  reflects final prose polish rather than missing citation/equation parity.
+
+## 2026-06-18 - Results draft figure/table alignment
+
+- Updated `docs/experiments/paper_results_draft.md` to link the claim evidence
+  map and figure/table manifest, and to identify Figure 1-Figure 5 plus
+  Table 2/Table 3/Table 5 placements for the result sections.
+- Preserved the existing claim language while making the standalone Results
+  draft align with `docs/experiments/paper_manuscript_draft.md` and
+  `docs/experiments/paper_figure_table_manifest.md`.
+- Updated `docs/experiments/paper_scaffold.md` so the Results queue now
+  reflects final prose polish rather than missing figure/table placement.
+
+## 2026-06-18 - Caption and reproducibility appendix draft added
+
+- Added `docs/experiments/paper_caption_appendix_draft.md` with
+  submission-facing captions for Figure 1-Figure 5 and Table 1-Table 5, plus a
+  reproducibility appendix draft grouping claim controls, Phase 1/pybiber,
+  precision validation, EQ-Bench, Phase 3, Phase 4, figures/tables, and
+  references.
+- Linked the caption/appendix draft from `EXPERIMENTS.md`,
+  `docs/experiments/paper_scaffold.md`,
+  `docs/experiments/paper_manuscript_draft.md`, and
+  `docs/experiments/paper_figure_table_manifest.md`.
+- This separates paper-facing caption text from repo artifact provenance, so
+  the main manuscript can later replace repo-path appendix pointers with
+  submission-style appendix references.
+
+## 2026-06-18 - LaTeX table draft pack wired into checks
+
+- Added `docs/experiments/paper_latex_table_drafts.tex` as a generic
+  booktabs/threeparttable draft pack for Table 1, Table 2, Table 4, and the
+  current appendix tables.
+- Linked the LaTeX table pack from the figure/table manifest, caption appendix,
+  readiness audit, and paper scaffold so the Markdown table bodies and
+  submission-oriented LaTeX bodies are discoverable together.
+- Extended `slop-check-paper-package` and its tests to require the LaTeX table
+  pack, reject repo/provenance markers in it, and assert the expected
+  table labels/captions are present.
+- Verification passed:
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`; and the broader
+  focused paper utility suite covering pybiber intervals, figure rendering,
+  EQ-Bench intervals, and Phase 4 human-label summaries.
+
+## 2026-06-18 - Stock closer precision gate advanced
+
+- Added 30 additional manual labels for clear `Let me know if...`
+  `stock_closers` hits in
+  `artifacts/stage1/validation/labels/revised_phase1_stock_closers_additional_labels_2026-06-18.csv`.
+- Regenerated
+  `artifacts/stage1/validation/precision_validation_status.csv` and
+  `docs/experiments/precision_validation_status.md` with the new label file.
+  `stock_closers` now passes the interim gate with 50 labels, 48 exact hits, 2
+  false positives, precision `0.960`, and ambiguous rate `0.000`.
+- Updated the paper-facing policy, camera-ready Markdown tables, LaTeX table
+  draft, manuscript, methods/discussion drafts, readiness audit, claim matrix,
+  scaffold, and Phase 1 gap audit from `2/6` to `3/6` core features passing.
+  The remaining Tier-1 blockers are `rule_of_three_approx`, `slop_lexicon`,
+  and the derived pooled `stock_openers_closers` view.
+- Extended `slop-check-paper-package` to require the precision-validation
+  status artifacts and fail if `stock_closers` regresses to the stale
+  incomplete state.
+- Verification passed:
+  `uv run pytest tests/test_check_paper_package.py tests/test_summarize_precision_validation.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/summarize_precision_validation.py tests/test_check_paper_package.py tests/test_summarize_precision_validation.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`; and a stale
+  language scan over the paper-facing docs.
+
+## 2026-06-18 - Slop lexicon span precision gate advanced
+
+- Added 42 additional manual labels for `slop_lexicon` hits in
+  `artifacts/stage1/validation/labels/revised_phase1_slop_lexicon_additional_labels_2026-06-18.csv`.
+  These labels validate the frozen lexicon word-family/span definition rather
+  than making a semantic judgment that every matched word is always
+  human-perceived slop in context.
+- Regenerated
+  `artifacts/stage1/validation/precision_validation_status.csv` and
+  `docs/experiments/precision_validation_status.md`. `slop_lexicon` now
+  passes the interim span/item precision gate with 50 labels, 50 exact hits,
+  precision `1.000`, and ambiguous rate `0.000`.
+- Updated the Tier-1 publication policy, camera-ready Markdown tables, LaTeX
+  table draft, manuscript, methods/discussion drafts, readiness audit, claim
+  matrix, scaffold, precision-validation guide, and Phase 1 gap audit from
+  `3/6` to `4/6` core features passing under the previous taxonomy. The
+  remaining issue was `rule_of_three_approx`, with the pooled
+  `stock_openers_closers` view already best treated as derived.
+- Extended `slop-check-paper-package` to fail if `slop_lexicon` regresses to
+  the stale underlabeled state and to require the then-current `4/6` precision
+  summary.
+- Verification passed:
+  `uv run pytest tests/test_check_paper_package.py tests/test_summarize_precision_validation.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/summarize_precision_validation.py tests/test_check_paper_package.py tests/test_summarize_precision_validation.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`; and a stale
+  language scan over paper-facing docs.
+
+## 2026-06-18 - Pooled stock feature demoted to derived validation status
+
+- Updated the precision-validation source of truth so
+  `stock_openers_closers` is no longer an independent core regex-validation
+  blocker. It remains measured as a pooled opener/closer convenience view, but
+  precision claims should be made through the already validated component
+  features unless a broader direct scan is deliberately budgeted.
+- Regenerated
+  `artifacts/stage1/validation/precision_validation_status.csv` and
+  `docs/experiments/precision_validation_status.md`. The current independent
+  core status is now 4/5 passing: `contrastive_negation`, `slop_lexicon`,
+  `stock_openers`, and `stock_closers` pass the interim gate; only
+  `rule_of_three_approx` remains blocking for publication-grade independent
+  regex claims.
+- Updated paper-facing policy/status docs, table drafts, the manuscript, and
+  the paper-package checker to require the `4/5` summary and the derived pooled
+  stock row.
+- Verification passed:
+  `uv run pytest tests/test_check_paper_package.py tests/test_summarize_precision_validation.py tests/test_score_labels.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/summarize_precision_validation.py src/slop_sftdiv/cli/score_labels.py tests/test_check_paper_package.py tests/test_summarize_precision_validation.py tests/test_score_labels.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`; and a stale
+  language scan over current paper/status docs.
+
+## 2026-06-18 - Rule-of-three interim validation completed and demoted
+
+- Added 38 additional sequential labels for `rule_of_three_approx` hits in
+  `artifacts/stage1/validation/labels/revised_phase1_rule_of_three_additional_labels_2026-06-18.csv`,
+  bringing the interim labeled sample to 50 rows.
+- Regenerated
+  `artifacts/stage1/validation/precision_validation_status.csv` and
+  `docs/experiments/precision_validation_status.md`. The rule-of-three regex
+  now has 50 labels, 28 exact hits, 1 partial, 19 false positives, and 2
+  ambiguous cases, for precision `0.560` and ambiguous rate `0.040`; it is
+  marked `demote`.
+- Updated the publication policy, table drafts, manuscript/methods/discussion
+  prose, Phase 1 conclusions, Phase 1 gap audit, and paper-package checker to
+  treat `rule_of_three_approx` as an exploratory coordinated-triple surface
+  rather than a publication-grade independent rhetorical-triad matcher.
+- Verification passed:
+  `uv run pytest tests/test_check_paper_package.py tests/test_summarize_precision_validation.py tests/test_score_labels.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/summarize_precision_validation.py src/slop_sftdiv/cli/score_labels.py tests/test_check_paper_package.py tests/test_summarize_precision_validation.py tests/test_score_labels.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`; and a targeted
+  stale-language scan over current paper/status docs.
+
+## 2026-06-18 - Tier-1 validation removed as a submission blocker
+
+- Updated the paper readiness audit, claim matrix, claim-evidence map,
+  manuscript, methods draft, discussion draft, Phase 1 conclusions, and Phase
+  1 gap audit to reflect the new scoped Tier-1 disposition: four independent
+  regex rows pass the interim gate, `rule_of_three_approx` is demoted, and
+  `stock_openers_closers` is derived.
+- Reclassified the readiness state from a generic validation blocker to a
+  Phase 4 human-validation/polish blocker. Tier-1 is now a claim-boundary
+  issue enforced by `docs/experiments/paper_tier1_publication_policy.md`, not
+  an unresolved submission blocker for the current scoped paper.
+- Verification passed:
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_summarize_precision_validation.py tests/test_score_labels.py`;
+  and a stale-language scan for old Tier-1 incomplete/blocking phrasing in
+  current paper/status docs.
+
+## 2026-06-18 - Manuscript and table-package prose polish
+
+- Polished the integrated manuscript and companion Results/caption/table docs
+  to remove remaining report-style wording such as "corpus censi", "Paper
+  interpretation", "Figure N should", stale "incomplete validation" captions,
+  and local-artifact phrasing in the main methods prose.
+- Corrected the camera-ready table pack so Tier-1 precision validation is
+  consistently Table 4, matching the manuscript and figure/table manifest, and
+  added a `slop-check-paper-package` guard plus test coverage for missing main
+  table headings.
+- Updated the caption appendix and manifest so Table 4 is described as a
+  pass/demote/derived/unlabeled claim-boundary table rather than an incomplete
+  validation limitation.
+- Verification passed:
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_summarize_precision_validation.py tests/test_score_labels.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  and a targeted prose scan over current paper docs.
+
+## 2026-06-18 - Phase 4 human-annotation readiness audit added
+
+- Added `slop-audit-phase4-human-package`, which audits the 1,000-row Phase 4
+  human-perceptibility annotation package for required fields, 100-row
+  per-feature balance, blank label state, duplicate annotation IDs, and
+  per-candidate source/record coverage.
+- Ran the audit on the current package, producing
+  `docs/experiments/phase4_human_annotation_readiness.md`,
+  `artifacts/phase4/modernbert_detector_combined_v2_clean/phase4_human_annotation_readiness.csv`,
+  and a deterministic 20-row-per-candidate pilot sheet at
+  `artifacts/phase4/modernbert_detector_combined_v2_clean/phase4_human_perceptibility_pilot_20_each.csv`.
+- Updated the Phase 4 protocol, completion audit, paper readiness audit, claim
+  matrix, claim-evidence map, and reproducibility appendix to cite the
+  readiness/pilot artifacts while preserving the claim boundary: the package
+  is ready for labeling, but human perceptibility remains unlabeled.
+
+## 2026-06-18 - Paper scaffold/status wording tightened
+
+- Cleaned remaining paper-facing scaffold/manuscript wording so Tier-1
+  validation is described as scoped pass/demote/derived status rather than as
+  an incomplete blocker, and Figure 2 interval generation is no longer listed
+  as pending now that EQ-Bench intervals are integrated.
+- Updated the integrated manuscript and intro/discussion draft to use
+  declarative limitation language for derived pooled features, bounded SGLang
+  scope, and Dolci DPO caveats.
+- Extended `slop-check-paper-package` with stale-phrase guards for the old
+  Tier-1 incomplete wording and stale Figure 2 interval task.
+- Verification passed:
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  and `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Main manuscript internal-prose cleanup
+
+- Cleaned remaining workflow-facing phrasing from the integrated manuscript,
+  caption appendix, and figure/table manifest, including references to "local
+  retained artifacts", "project vocabulary", "current paper package", and
+  writing-guardrail table language.
+- Reworded Methods and Limitations prose to describe the evidence as filtered
+  retained samples, OLMo/SmolLM3 generation/reference slices, SGLang generation
+  panels, and an analysis taxonomy rather than internal project machinery.
+- Extended `slop-check-paper-package` so those internal phrases are rejected in
+  future manuscript/control-doc edits.
+- Verification passed:
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  a targeted stale-phrase scan over paper-facing docs; and
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Paper figure readiness audit added
+
+- Added `slop-audit-paper-figures`, which audits the five rendered paper SVGs
+  for dimensions, viewBox, editable text, expected title strings,
+  deterministic date metadata, and local path/provenance leakage.
+- Ran the audit on the current rendered figures. All five figures are marked
+  `ready_for_visual_review` in
+  `docs/experiments/paper_figure_readiness_audit.md` and
+  `artifacts/paper/figures/paper_figure_readiness_audit.csv`.
+- Wired the figure-readiness audit into `slop-check-paper-package`, the paper
+  readiness audit, the paper scaffold, the figure/table manifest, and the
+  reproducibility appendix. The remaining figure blocker is now narrowed to
+  human visual review and venue sizing, not basic SVG package hygiene.
+- Verification passed:
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_figures.py tests/test_render_paper_figures.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/audit_paper_figures.py tests/test_check_paper_package.py tests/test_audit_paper_figures.py`;
+  and `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Paper table readiness audit added
+
+- Added `slop-audit-paper-tables`, which audits the submission-facing Markdown
+  and generic booktabs table drafts for required headings, minimum data rows,
+  LaTeX captions/labels, and local path/provenance leakage.
+- Ran the audit on the current table package. Table 1, Table 2, Table 4, and
+  appendix tables A1-A3 are marked `ready_for_venue_styling` in
+  `docs/experiments/paper_table_readiness_audit.md` and
+  `artifacts/paper/tables/paper_table_readiness_audit.csv`.
+- Wired the table-readiness audit into `slop-check-paper-package`, the paper
+  readiness audit, the paper scaffold, the figure/table manifest, and the
+  reproducibility appendix. The remaining table blocker is now venue-specific
+  typography and placement, not basic table package hygiene.
+
+## 2026-06-18 - Manuscript-facing wording cleanup
+
+- Tightened the integrated manuscript, standalone Methods draft, Results
+  draft, Intro/Discussion draft, and caption appendix to remove internal
+  "current/project/local" status phrasing in favor of submission-facing
+  bounded-evidence language.
+- Extended `slop-check-paper-package` stale-phrase coverage to the standalone
+  manuscript section drafts, so internal phrasing such as
+  "project-specific generation slices" and stale "current interim gate"
+  wording is rejected outside the integrated manuscript too.
+- Verification passed:
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_tables.py`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  and a targeted scan over manuscript-facing drafts.
+
+## 2026-06-18 - Citation coverage gate broadened
+
+- Extended `slop-check-paper-package` citation validation from the integrated
+  manuscript alone to the manuscript plus standalone Methods, Results, and
+  Intro/Discussion drafts, so all manuscript-facing citation keys must resolve
+  to `paper_references.bib`.
+- Updated `paper_citation_plan.md` to distinguish covered citation slots from
+  optional expansion slots; the current bounded draft is citation-complete
+  under the verified BibTeX/source inventory, while teacher-forcing,
+  SmolTalk/Tulu, and deeper RLVR citations remain optional only if final prose
+  expands those claims.
+- Added `paper_citation_plan.md` to the required paper package paths and linked
+  path checks.
+- Verification passed:
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py`; and
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`.
+
+## 2026-06-18 - Claim-language audit added
+
+- Added `slop-audit-paper-claim-language`, which checks the integrated
+  manuscript for concrete C1-C14 claim/caveat phrases and the seven
+  explicitly forbidden overclaims from the paper claim matrix.
+- Ran the audit on the current manuscript, producing
+  `docs/experiments/paper_claim_language_audit.md` and
+  `artifacts/paper/claims/paper_claim_language_audit.csv`; all 14 claim rows
+  and all 7 forbidden-overclaim checks are marked `ready`.
+- Wired the claim-language audit into `slop-check-paper-package`, the paper
+  readiness audit, the paper scaffold, and the reproducibility appendix so
+  claim wording remains mechanically checked as the manuscript changes.
+- Verification passed:
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_claim_language.py`; and
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/audit_paper_claim_language.py tests/test_check_paper_package.py tests/test_audit_paper_claim_language.py`.
+
+## 2026-06-18 - Manuscript-structure audit added
+
+- Added `slop-audit-paper-manuscript-structure`, which checks the integrated
+  manuscript for expected main section order, Result 4.x subsection coverage,
+  word-count bounds, figure/table caption counts, and reproducibility appendix
+  presence.
+- Ran the audit on the manuscript, producing
+  `docs/experiments/paper_manuscript_structure_audit.md` and
+  `artifacts/paper/manuscript/paper_manuscript_structure_audit.csv`; all nine
+  structure checks are marked `ready`.
+- Wired the manuscript-structure audit into `slop-check-paper-package`, the
+  paper readiness audit, the paper scaffold, and the reproducibility appendix
+  so future manuscript edits cannot silently drop sections, captions, or the
+  appendix surface.
+
+## 2026-06-18 - Submission-exit audit added
+
+- Added `slop-audit-paper-submission-exit`, which converts the submission exit
+  criteria into machine-readable rows for figure/table finalization,
+  manuscript structure, claim discipline, Tier-1 boundaries, Phase 4 human
+  perceptibility, bibliography/package state, and overall submission status.
+- Ran the audit on the paper package, producing
+  `docs/experiments/paper_submission_exit_audit.md` and
+  `artifacts/paper/submission/paper_submission_exit_audit.csv`.
+- The audit intentionally marks `overall_submission_status` as `blocked`,
+  with `figure_table_finalization=venue_review_pending` and
+  `phase4_human_perceptibility=human_validation_pending`, while manuscript,
+  claim, Tier-1, and bibliography/package rows are `ready`.
+- Wired the audit into `slop-check-paper-package`, the paper readiness audit,
+  paper scaffold, reproducibility appendix, and `EXPERIMENTS.md` so draft-ready
+  and submission-ready states remain mechanically distinct.
+
+## 2026-06-18 - Figure rendered-layout review and Figure 4 label cleanup
+
+- Rendered PNG sidecars from the same Matplotlib code used for the paper SVGs
+  under `artifacts/paper/figures/visual_review_png/` and inspected Figure 1
+  through Figure 5 for legibility, label overlap, legend placement, and data
+  occlusion.
+- Found repeated per-point labels colliding in Figure 4's lower-left `rule3`
+  cluster and upper `slop` cluster. Updated `slop-render-paper-figures` so the
+  cross-ladder scatter labels each feature cluster once instead of labeling
+  every stage point.
+- Re-rendered Figure 1-Figure 5 and reran `slop-audit-paper-figures`; all SVG
+  package-readiness rows remain `ready_for_visual_review`.
+- Added `docs/experiments/paper_figure_visual_review.md` and
+  `artifacts/paper/figures/paper_figure_visual_review.csv`; all five figures
+  are marked `visual_review_passed`. The remaining figure-side blocker is now
+  final venue sizing/export, not visible layout defects in the rendered draft.
+
+## 2026-06-18 - Table typography review added
+
+- Added `slop-audit-paper-table-typography`, which reviews the LaTeX table
+  draft for generic submission-neutral typography conventions: booktabs rules,
+  `tabularx`, expected table/table* environments, expected width targets,
+  compact sizing, table notes where expected, and absence of vertical rules.
+- Ran the audit on `paper_latex_table_drafts.tex`, producing
+  `docs/experiments/paper_table_typography_review.md` and
+  `artifacts/paper/tables/paper_table_typography_review.csv`; Table 1, Table
+  2, Table 4, and appendix tables A1-A3 are marked
+  `typography_review_passed`.
+- Wired the table typography review into `slop-check-paper-package` and
+  `slop-audit-paper-submission-exit`. The submission-exit audit still keeps
+  figure/table finalization at `venue_review_pending`, but the remaining table
+  work is now target-venue template adaptation rather than generic table-body
+  typography.
+
+## 2026-06-18 - Integrated manuscript polish pass
+
+- Edited `paper_manuscript_draft.md` to remove several internal/project-status
+  turns of phrase, including the auxiliary-tooling paragraph, the
+  opener/closer validation-boundary paragraph, and colloquial wording in the
+  pybiber discussion.
+- Reran `slop-audit-paper-claim-language` and
+  `slop-audit-paper-manuscript-structure`; all C1-C14 claim checks, all seven
+  forbidden-overclaim checks, and all nine manuscript-structure checks remain
+  `ready`.
+- Updated `paper_readiness_audit.md` and `paper_scaffold.md` so the remaining
+  manuscript work is described as final venue copyediting rather than an
+  unstarted editorial pass.
+
+## 2026-06-18 - Standalone section-draft polish pass
+
+- Tightened `paper_methods_draft.md` so the Methods preamble, Tier-1
+  validation-boundary paragraph, pybiber implementation paragraph, EQ-Bench
+  bridge description, Tier-3 rerun description, and reproducibility section
+  read as manuscript-facing methods rather than command notes.
+- Tightened `paper_results_draft.md` so figure/table references use final
+  paper-facing language and the closing result section no longer reads as a
+  manuscript assembly note.
+- Tightened `paper_intro_discussion_draft.md` to match the polished integrated
+  manuscript language for the pybiber discussion and Tier-1 limitation.
+- Updated `paper_scaffold.md` and `paper_readiness_audit.md` to mark Methods
+  Results, and Intro/Discussion as polished drafts whose remaining work is
+  final venue copyediting.
+
+## 2026-06-18 - Venue-decision checklist added
+
+- Added `docs/experiments/paper_venue_decision_checklist.md` and
+  `artifacts/paper/submission/paper_venue_decision_checklist.csv` to make
+  unresolved target-venue choices explicit rather than implicit blockers.
+- The checklist tracks `decision_pending` rows for target venue, figure
+  dimensions, figure export format, table placement, appendix-table inclusion,
+  manuscript template, and the human-labeling requirement for detector
+  candidates.
+- Wired the checklist into `slop-check-paper-package`, `EXPERIMENTS.md`, the
+  paper readiness audit, the paper scaffold, the reproducibility appendix, and
+  the regenerated submission-exit audit. The package remains submission-blocked
+  until venue decisions and Phase 4 human labels are resolved.
+
+## 2026-06-18 - Abstract/conclusion alignment audit added
+
+- Added `slop-audit-paper-abstract-conclusion`, which checks that the
+  manuscript abstract and conclusion preserve the bounded slop-style thesis,
+  pybiber/EQ-Bench framing, DPO chosen-enrichment caveat, and Phase 4
+  human-validation caveat.
+- Ran the audit on the integrated manuscript, producing
+  `docs/experiments/paper_abstract_conclusion_audit.md` and
+  `artifacts/paper/manuscript/paper_abstract_conclusion_audit.csv`; both
+  abstract and conclusion rows are marked `ready`.
+- Wired the audit into `slop-check-paper-package`, the paper readiness audit,
+  the paper scaffold, the reproducibility appendix, and `EXPERIMENTS.md` so
+  abstract/conclusion edits cannot silently drop the key bounded-claim
+  language.
+
+## 2026-06-18 - Historical Biber-lite report language retired
+
+- Updated the Phase 2 final/new-reader reports and the Phase 3 completion
+  audit so older generated-output Biber-lite/register-proxy artifacts are
+  described as archived diagnostics rather than the active Tier-2 feature
+  surface.
+- Preserved the historical proxy tables for provenance, but redirected active
+  paper interpretation to the full pybiber Phase 1 corpus-side register result
+  and repeated that generated-output full pybiber is not claimed.
+- Rechecked the active paper package after the edits with
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Paper presentation decisions resolved
+
+- Replaced the remaining review-question block in
+  `paper_claim_evidence_map.md` with resolved presentation decisions: Figure 3
+  remains the headline OLMo `slop_lexicon` mechanism panel; Table 3 and Table
+  5 remain appendix/review controls by default; no separate
+  teacher-forcing/LM-scoring citation is needed unless final prose broadens
+  into a literature claim.
+- Updated the paper scaffold, figure/table manifest, and caption appendix so
+  the immediate queue no longer asks future readers to re-decide those points.
+
+## 2026-06-18 - Paper limitations audit wired into readiness controls
+
+- Added the integrated-manuscript limitations audit to the paper readiness
+  audit, paper scaffold inventory, reproducibility appendix key artifacts, and
+  `EXPERIMENTS.md` so bounded open-ladder/sample, Tier-1, sparse denominator,
+  DPO, pybiber-generation, EQ-Bench, Phase 4 human-validation, and reduced-grid
+  caveats are visible paper controls.
+- Tightened `slop-audit-paper-submission-exit` so the `manuscript_body` row now
+  requires both the manuscript-structure audit and the limitations audit.
+- Regenerated `docs/experiments/paper_submission_exit_audit.md` and
+  `artifacts/paper/submission/paper_submission_exit_audit.csv`; the audit now
+  marks manuscript body `ready` under the stricter condition while preserving
+  the real submission blockers: venue review and Phase 4 human perceptibility
+  labels.
+- Added `--root` support to `slop-audit-paper-limitations` so it can be run
+  with the same repository-root invocation style as the other paper audits.
+
+## 2026-06-18 - Paper reproducibility manifest added
+
+- Added `slop-audit-paper-reproducibility-manifest`, which writes a
+  categorized paper-facing evidence manifest with file sizes and SHA-256
+  checksums for paper controls, manuscript drafts, audits, figures, Phase 1
+  pybiber evidence, EQ-Bench interval evidence, and Phase 4 human-labeling
+  materials.
+- Generated `docs/experiments/paper_reproducibility_manifest.md` and
+  `artifacts/paper/submission/paper_reproducibility_manifest.csv`; the
+  manifest currently has 53 ready rows and no missing files.
+- Wired the manifest into `slop-check-paper-package`, the paper readiness
+  audit, paper scaffold, reproducibility appendix, submission-exit audit, and
+  `EXPERIMENTS.md` so final evidence packaging has a checksum surface without
+  pretending venue review or Phase 4 human labels are complete.
+
+## 2026-06-18 - Paper numeric claims audit integrated
+
+- Added `slop-audit-paper-numeric-claims`, which checks 15 headline manuscript numeric claims against their source CSV/JSON artifacts after manuscript rounding.
+- Generated `docs/experiments/paper_numeric_claims_audit.md` and `artifacts/paper/manuscript/paper_numeric_claims_audit.csv`; all 15 rows currently mark `ready`.
+- Wired the numeric audit into `EXPERIMENTS.md`, the paper readiness audit, paper scaffold, reproducibility appendix inventory, package checker, and reproducibility manifest defaults so numeric drift is checked before final paper edits.
+
+## 2026-06-18 - Paper claim-evidence audit integrated
+
+- Added `slop-audit-paper-claim-evidence`, which checks that the paper
+  claim-to-evidence map covers C1-C14, that mapped backticked source paths or
+  directories exist, and that claim-to-claim evidence inheritance is explicit.
+- Generated `docs/experiments/paper_claim_evidence_audit.md` and
+  `artifacts/paper/claims/paper_claim_evidence_audit.csv`; all 14 claim rows
+  currently mark `ready`.
+- Wired the claim-evidence audit into `EXPERIMENTS.md`, the paper readiness
+  audit, paper scaffold, reproducibility appendix inventory, submission-exit
+  audit, package checker, and reproducibility manifest defaults so evidence-map
+  drift is checked before final paper edits.
+
+## 2026-06-18 - Paper citation/source audit integrated
+
+- Added `slop-audit-paper-citations`, which checks manuscript-facing citation
+  keys against `paper_references.bib`, checks every BibTeX key against a
+  verified source row, checks every source row against BibTeX, and verifies
+  populated source/URL/note cells.
+- Generated `docs/experiments/paper_citation_audit.md` and
+  `artifacts/paper/references/paper_citation_audit.csv`; all six citation and
+  source-integrity rows currently mark `ready`.
+- Wired the citation audit into `EXPERIMENTS.md`, the paper readiness audit,
+  paper scaffold, reproducibility appendix inventory, submission-exit audit,
+  package checker, and reproducibility manifest defaults so reference drift is
+  checked before final paper edits.
+
+## 2026-06-18 - Paper terminology/readability audit integrated
+
+- Added `slop-audit-paper-terminology`, which checks that the integrated
+  manuscript defines slop-style scope, separates corpus/propensity/generation/
+  compounding measurements, and preserves pybiber, EQ-Bench, Tier-1, and
+  Phase 4 interpretation boundaries for new readers.
+- Generated `docs/experiments/paper_terminology_audit.md` and
+  `artifacts/paper/manuscript/paper_terminology_audit.csv`; all eight
+  terminology rows currently mark `ready`.
+- Wired the terminology audit into `EXPERIMENTS.md`, the paper readiness
+  audit, paper scaffold, reproducibility appendix inventory, submission-exit
+  audit, package checker, and reproducibility manifest defaults so final
+  readability edits cannot silently drop the core measurement definitions.
+
+## 2026-06-18 - Pybiber result prose tightened
+
+- Tightened the integrated manuscript and standalone Results draft so the
+  pybiber result reads as a substantive register finding: post-training data
+  shift away from narrative/personal prose toward noun-heavy, descriptive
+  assistant-answer prose, while narrower lexical/rhetorical markers vary on
+  top of that broader voice.
+- Preserved the claim-language audit's exact C1/C3 guard phrases while adding
+  plainer reader-facing explanation for what the pybiber deltas mean.
+- Regenerated terminology, claim-language, manuscript-structure,
+  abstract/conclusion, submission-exit, and reproducibility-manifest artifacts;
+  all manuscript-facing audit rows remain `ready`.
+
+## 2026-06-18 - Phase 4 human annotation codebook added
+
+- Added `docs/experiments/phase4_human_annotation_codebook.md` with concrete
+  yes/no/context-dependent decision rules, taxonomy shortcuts, and
+  candidate-specific labeling boundaries for the 10 detector-derived Tier-3
+  candidate families.
+- Wired the codebook into the Phase 4 perceptibility protocol, paper readiness
+  audit, paper scaffold, reproducibility appendix, C11 claim evidence trail,
+  package checker, and reproducibility manifest defaults.
+- The package still remains human-label blocked: the codebook reduces
+  annotation ambiguity but does not replace the prepared pilot or full
+  1,000-row human-labeling pass.
+
+## 2026-06-18 - Venue adaptation runbook added
+
+- Added `docs/experiments/paper_venue_adaptation_runbook.md`, which converts
+  the remaining venue blocker into explicit post-decision steps for figure
+  sizing/export, table placement/typography, manuscript template adaptation,
+  and the Phase 4 human-labeling decision.
+- Wired the runbook into `EXPERIMENTS.md`, the paper readiness audit, paper
+  scaffold, reproducibility appendix, package checker, and reproducibility
+  manifest defaults.
+- The package remains venue-blocked until a target venue is selected and the
+  decision checklist rows are resolved; the runbook documents the execution
+  path without pretending those decisions have been made.
+
+## 2026-06-18 - Paper reproduction runbook added
+
+- Added `docs/experiments/paper_reproduction_runbook.md`, which records the
+  command order for refreshing the paper-facing evidence layer: EQ-Bench
+  intervals, rendered figures, table audits, manuscript/claim/citation audits,
+  Phase 4 human-label summaries, submission-exit audit, reproducibility
+  manifest, and final package check.
+- Wired the runbook into `EXPERIMENTS.md`, paper scaffold, readiness audit,
+  reproducibility appendix, package checker, and reproducibility manifest
+  defaults.
+- The runbook explicitly treats cached Phase 1-4 outputs as inputs and does
+  not relaunch generation, teacher-forced propensity, full pybiber extraction,
+  or detector-training jobs.
+
+## 2026-06-18 - Reviewer FAQ added
+
+- Added `docs/experiments/paper_reviewer_faq.md`, a concise scope and
+  interpretation FAQ for likely review questions: slop-style terminology,
+  pybiber's corpus-side role, EQ-Bench as aggregate bridge, Dolci DPO caveats,
+  reduced-grid scope, SmolLM3 replication pressure, and remaining blockers.
+- Wired the FAQ into `EXPERIMENTS.md`, the paper scaffold, readiness audit,
+  reproducibility appendix, package checker, and reproducibility manifest
+  defaults.
+- The FAQ is documentation only; `paper_claim_matrix.md` remains the authority
+  for allowed paper claims.
+
+## 2026-06-18 - Phase 4 blind pilot packet added
+
+- Extended `uv run slop-audit-phase4-human-package` to emit a randomized
+  annotator-facing blind pilot CSV and a separate unblinding map for the
+  existing 20-per-candidate Phase 4 human-perceptibility pilot.
+- The blind sheet contains only `blind_id`, matched span, snippet, and blank
+  label fields; feature names, candidate labels, source names, and record IDs
+  stay in the map until after adjudication.
+- Updated the Phase 4 human-perceptibility protocol, annotation codebook, and
+  reproducibility manifest defaults so the labeling handoff is checksum-tracked
+  and does not rely on the internal pilot sheet.
+
+## 2026-06-18 - Phase 4 blind-label import path added
+
+- Added `uv run slop-import-phase4-blind-labels`, which joins a filled blind
+  pilot CSV to the unblinding map and emits canonical JSONL rows compatible
+  with `uv run slop-summarize-phase4-human-labels`.
+- Verified the importer on the current blank blind pilot as a smoke test:
+  200 canonical rows are produced and 0 rows are labeled, preserving the
+  current human-validation boundary.
+- Updated the Phase 4 protocol, venue adaptation runbook, reproduction
+  runbook, paper readiness audit, scaffold, claim matrix, and claim evidence
+  map to describe the blind-label import workflow without claiming completed
+  human labels.
+
+## 2026-06-18 - Phase 4 label-agreement tooling added
+
+- Added `uv run slop-summarize-phase4-label-agreement`, which compares two
+  independently labeled blind pilot CSVs against the unblinding map and writes
+  per-feature agreement rows, Cohen's kappa over `human_perceived_slop`, and a
+  disagreement CSV for adjudication.
+- Updated the human-perceptibility protocol, annotation codebook, reproduction
+  runbook, venue adaptation runbook, readiness audit, and paper scaffold so the
+  two-annotator workflow has an explicit agreement/adjudication step.
+- This remains annotation infrastructure only: current Phase 4 human labels are
+  still absent, and detector-derived families remain candidate-only until real
+  labels are collected and adjudicated.
+
+## 2026-06-18 - Phase 4 label-adjudication apply path added
+
+- Added `uv run slop-apply-phase4-label-adjudication`, which merges two
+  independently labeled blind pilot sheets with filled adjudication rows and
+  emits canonical JSONL for `uv run slop-summarize-phase4-human-labels`.
+- Extended the disagreement CSV produced by
+  `uv run slop-summarize-phase4-label-agreement` with blank
+  `adjudicated_human_perceived_slop`, `adjudicated_shaib_taxonomy_label`, and
+  `adjudication_notes` columns so it can be used directly as an adjudication
+  worksheet.
+- Updated the Phase 4 protocol, codebook, reproduction runbook, venue
+  adaptation runbook, readiness audit, and scaffold. Human labels are still not
+  complete; this only closes the workflow gap between agreement measurement and
+  final label summarization.
+
+## 2026-06-18 - Paper package index added
+
+- Added `docs/experiments/paper_package_index.md` as a compact start-here guide
+  for new readers: core thesis, main evidence objects, claim boundaries,
+  active blockers, and validation commands.
+- Wired the index into the paper scaffold, readiness audit, package checker,
+  reproducibility manifest defaults, and package-check tests.
+- The index deliberately delegates claim authority to
+  `docs/experiments/paper_claim_matrix.md`; it is orientation documentation,
+  not a new claim surface.
+
+## 2026-06-18 - Package-index alignment audit added
+
+- Extended `uv run slop-audit-paper-abstract-conclusion` with a
+  `package_index_alignment` row so the new start-here index is checked against
+  the same bounded thesis, pybiber/EQ-Bench boundaries, Phase 4 candidate-only
+  caveat, and package-check command.
+- Updated `uv run slop-check-paper-package` and its fixtures to require the
+  third abstract/conclusion/package-index alignment row.
+- Regenerated abstract/conclusion, claim-evidence, claim-language,
+  submission-exit, and reproducibility-manifest artifacts; the paper package
+  still passes while retaining the human-label and venue blockers.
+
+## 2026-06-18 - Phase 4 full blind annotation packet added
+
+- Extended `uv run slop-audit-phase4-human-package` to emit a blinded
+  full-package annotation CSV and separate ID map for all 1,000 Phase 4 human
+  perceptibility rows, in addition to the existing 20-per-candidate blind
+  pilot packet.
+- Wired the full blind packet into the Phase 4 protocol/codebook, paper
+  readiness docs, claim evidence wording, package checker, and reproducibility
+  manifest. The manifest now includes both full blind files alongside the
+  pilot packet.
+- Verified the new full blind files parse as 1,000 rows with annotator-facing
+  columns limited to blind ID, matched text, snippet, labels, and notes. Human
+  labels remain absent; this removes a workflow blocker for collecting them.
+
+## 2026-06-18 - Phase 4 blind packet package checks tightened
+
+- Extended `uv run slop-check-paper-package` to parse both Phase 4 blinded
+  annotation packets and their ID maps, rather than only requiring the files to
+  exist.
+- The package gate now verifies expected row counts, exact annotator-facing
+  columns, absence of unblinded feature/source metadata in blind sheets,
+  unique blind IDs, matching blind-ID sets between sheets and maps, and
+  nonblank feature/annotation IDs in maps.
+- Added a regression test that fails when a blind full-package sheet leaks the
+  `feature` column. The full paper package still passes.
+
+## 2026-06-18 - Venue-neutral submission draft bundle added
+
+- Added `uv run slop-materialize-paper-submission-bundle`, which stages the
+  current manuscript draft, caption appendix, table drafts, BibTeX file,
+  SVG/PDF/PNG figure candidates, and claim/readiness controls under
+  `artifacts/paper/submission/draft_bundle/`.
+- The bundle writes its own `MANIFEST.csv` with source paths, staged paths,
+  file sizes, and SHA-256 checksums, plus a README that preserves the
+  venue-neutral and human-labeling caveats.
+- Wired the bundle into `uv run slop-check-paper-package`, the paper
+  reproducibility manifest, readiness/scaffold docs, and reproduction/venue
+  runbooks. The bundle currently contains 24 ready files and 0 missing files.
+
+## 2026-06-18 - Paper review-hygiene audit added
+
+- Added `uv run slop-audit-paper-review-hygiene` to check that the integrated
+  manuscript main body and paper-facing staged bundle files avoid local paths,
+  internal tool commands, draft placeholders, and author placeholder text.
+- Wired the review-hygiene CSV/Markdown outputs into
+  `uv run slop-check-paper-package`, `uv run slop-audit-paper-reproducibility-manifest`,
+  `EXPERIMENTS.md`, the package index, readiness audit, and reproduction runbook.
+- Added the hygiene audit to the venue-neutral draft bundle review controls,
+  moving the bundle to 25 ready files and 0 missing files after regeneration.
+
+## 2026-06-18 - Paper open-release inventory added
+
+- Added `uv run slop-audit-paper-release-inventory` to map the open-release
+  deliverable to concrete feature definitions, opportunity definitions,
+  harness code, phase runbooks, and cached paper statistics.
+- Wired `paper_release_inventory.md` and
+  `artifacts/paper/submission/paper_release_inventory.csv` into the paper
+  package checker, reproducibility manifest, package index, readiness audit,
+  scaffold, and reproduction runbook.
+- Added the release inventory to the venue-neutral draft bundle review
+  controls, moving the bundle to 26 ready files and 0 missing files after
+  regeneration.
+
+## 2026-06-18 - Paper source/provenance audit added
+
+- Added `uv run slop-audit-paper-source-provenance` to make source-card and
+  manuscript interpretation boundaries explicit for Dolci DPO, Dolma sampling,
+  full pybiber, and SmolLM3 APO/source claims.
+- The audit checks that Dolci DPO is not treated as pure human-preference
+  evidence, the retained Dolma reference is not treated as full Dolma, and
+  generated-output full pybiber is not claimed.
+- Wired `paper_source_provenance_audit.md` and
+  `artifacts/paper/submission/paper_source_provenance_audit.csv` into the
+  paper package checker, reproducibility manifest, package index, readiness
+  audit, scaffold, and reproduction runbook. This was later superseded by the
+  reader-glossary bundle update; the current regenerated draft bundle contains
+  28 ready files and 0 missing files.
+
+## 2026-06-18 - Phase 4 human annotation handoff bundle added
+
+- Added `uv run slop-materialize-phase4-human-handoff`, which creates
+  `artifacts/phase4/modernbert_detector_combined_v2_clean/human_annotation_handoff/`.
+- The handoff separates annotator-facing blinded CSVs and the codebook under
+  `annotator/` from coordinator-only maps/source identifiers under
+  `coordinator/private_maps/`.
+- The generated manifest records source paths, bundle paths, SHA-256 hashes,
+  and redaction status; after the two-annotator assignment update, the current
+  run produces 12 ready files, 0 missing files, and 6 redacted annotator CSVs.
+
+## 2026-06-18 - Reader glossary wired into paper package
+
+- Added `docs/experiments/paper_reader_glossary.md` as a new-reader map for
+  slop style, register, pybiber, EQ-Bench Slop Score, Tier 1/2/3 features,
+  amplification factors, model ladders, and evidence layers.
+- Wired the glossary into `uv run slop-check-paper-package`,
+  `uv run slop-audit-paper-reproducibility-manifest`, and
+  `uv run slop-materialize-paper-submission-bundle`.
+- Regenerated the venue-neutral draft bundle and reproducibility manifest. The
+  current bundle has 28 ready files and 0 missing files; the reproducibility
+  manifest has 99 ready rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/audit_paper_reproducibility_manifest.py src/slop_sftdiv/cli/materialize_paper_submission_bundle.py tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Pybiber conclusion wording tightened
+
+- Revised the manuscript conclusion and the source introduction/discussion
+  conclusion draft so the final paper-facing takeaway states the substantive
+  pybiber result directly: OLMo/Dolci data shift away from narrative/personal
+  prose toward nominalized, adjectival assistant-answer exposition; this is
+  not an aggregate hedging increase, and DPO chosen responses are not
+  uniformly more slop-like than rejected responses.
+- Regenerated the abstract/conclusion audit, the venue-neutral draft bundle,
+  and the reproducibility manifest after the manuscript edit.
+- Validation passed:
+  `uv run slop-audit-paper-abstract-conclusion`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py`.
+
+## 2026-06-18 - Claim-matrix pybiber boundary tightened
+
+- Narrowed the claim-matrix scope summary from "post-training shifts model
+  outputs toward polished answer-register prose" to the evidence-supported
+  distinction: post-training data shift toward assistant-answer prose, while
+  some surface markers in model propensity and sampled output amplify at
+  particular stages.
+- Regenerated claim-language and claim-evidence audits, then refreshed the
+  venue-neutral draft bundle and reproducibility manifest.
+- Validation passed:
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-claim-evidence`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_source_provenance.py`.
+
+## 2026-06-18 - Data-vs-output register wording consistency pass
+
+- Scanned paper-facing docs for phrasing that could blur corpus-side full
+  pybiber evidence with generated-output style evidence.
+- Tightened `paper_results_draft.md` Result 6 so its summary matches the
+  integrated manuscript and claim matrix: post-training data shift away from
+  narrative/personal prose toward nominalized, adjectival answer-register
+  exposition.
+- Regenerated claim-language, review-hygiene, and reproducibility-manifest
+  artifacts. Validation passed:
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-review-hygiene --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_source_provenance.py`.
+
+## 2026-06-18 - Pybiber output-boundary regression guard added
+
+- Extended `slop-audit-paper-source-provenance` so the paper-scope docs now
+  explicitly fail review if they reintroduce the over-broad wording
+  "post-training shifts model outputs toward polished answer-register prose."
+- Added a regression test covering that exact failure mode in
+  `tests/test_audit_paper_source_provenance.py`.
+- Regenerated the source-provenance audit, venue-neutral draft bundle, and
+  reproducibility manifest. Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_source_provenance.py tests/test_audit_paper_source_provenance.py`;
+  `uv run pytest tests/test_audit_paper_source_provenance.py`;
+  `uv run slop-audit-paper-source-provenance --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_source_provenance.py`.
+
+## 2026-06-18 - EQ-Bench causal-overclaim guard added
+
+- Tightened `slop-audit-paper-claim-language` with two additional forbidden
+  overclaim checks: "The EQ-Bench Slop Score is the causal measurement layer."
+  and "EQ-Bench is the causal estimand."
+- Added a regression test for the causal-measurement-layer overclaim and
+  updated `slop-check-paper-package` to expect 9 forbidden-overclaim rows.
+- Regenerated the claim-language audit and reproducibility manifest. The
+  current claim-language audit reports C1-C14 ready and forbidden-overclaim
+  checks `9/9` passed.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_claim_language.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_source_provenance.py`.
+
+## 2026-06-18 - Phase 4 human-perception overclaim guard added
+
+- Tightened `slop-audit-paper-claim-language` with two additional forbidden
+  overclaim checks: "Detector clusters are human-perceived slop." and
+  "Phase 4 detector clusters are validated human-perceived slop."
+- Added a regression test for the detector-clusters overclaim and updated
+  `slop-check-paper-package` to expect 11 forbidden-overclaim rows.
+- Regenerated the claim-language audit and reproducibility manifest. The
+  current claim-language audit reports C1-C14 ready and forbidden-overclaim
+  checks `11/11` passed.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_claim_language.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_source_provenance.py`.
+
+## 2026-06-18 - Full-grid overclaim guard added
+
+- Tightened `slop-audit-paper-claim-language` with two additional forbidden
+  overclaim checks: "We ran the full 5,000 prompt x 8 completion x 3
+  temperature OLMo grid." and "The original exhaustive OLMo generation grid is
+  complete."
+- Added a regression test for the full-grid overclaim and updated
+  `slop-check-paper-package` to expect 13 forbidden-overclaim rows.
+- Regenerated the claim-language audit and reproducibility manifest. The
+  current claim-language audit reports C1-C14 ready and forbidden-overclaim
+  checks `13/13` passed.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_claim_language.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_source_provenance.py`.
+
+## 2026-06-18 - DPO human-preference overclaim guard added
+
+- Tightened `slop-audit-paper-claim-language` with two additional forbidden
+  overclaim checks: "Dolci DPO chosen responses reveal human preference." and
+  "Chosen responses are direct evidence of human taste."
+- Added a regression test for the Dolci DPO human-preference overclaim and
+  updated `slop-check-paper-package` to expect 15 forbidden-overclaim rows.
+- Regenerated the claim-language audit and reproducibility manifest. The
+  current claim-language audit reports C1-C14 ready and forbidden-overclaim
+  checks `15/15` passed.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_claim_language.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_source_provenance.py`.
+
+## 2026-06-18 - Universal-scope overclaim guard added
+
+- Tightened `slop-audit-paper-claim-language` with three additional forbidden
+  overclaim checks: "All LLMs exhibit the same slop style.", "All alignment
+  methods produce the same slop style.", and "Slop style is a single global
+  score."
+- Added a regression test for the all-LLMs overclaim and updated
+  `slop-check-paper-package` to expect 18 forbidden-overclaim rows.
+- Regenerated the claim-language audit and reproducibility manifest. The
+  current claim-language audit reports C1-C14 ready and forbidden-overclaim
+  checks `18/18` passed.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_claim_language.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_source_provenance.py`.
+
+## 2026-06-18 - Tier-1 feature-boundary overclaim guard added
+
+- Tightened `slop-audit-paper-claim-language` with four additional forbidden
+  overclaim checks for Tier-1 feature boundaries: demoted
+  `rule_of_three_approx`, derived `stock_openers_closers`, global Tier-1
+  precision, and broad semantic `slop_lexicon` detector claims.
+- Added regression tests for the Tier-1 precision and derived-feature
+  overclaim cases and updated `slop-check-paper-package` to expect 22
+  forbidden-overclaim rows.
+- Regenerated the claim-language audit and reproducibility manifest. The
+  current claim-language audit reports C1-C14 ready and forbidden-overclaim
+  checks `22/22` passed.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_claim_language.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Replication and sparse-Tier-3 overclaim guard added
+
+- Tightened `slop-audit-paper-claim-language` with four additional forbidden
+  overclaim checks for SmolLM3 and Tier-3 boundaries: no universal SmolLM3
+  replication claim, no identical OLMo/SmolLM3 stage-localization claim, no
+  standalone-headline follow-up-offer claim, and no denominator-stable sparse
+  Tier-3 AF claim.
+- Added regression tests for the SmolLM3 replication and sparse follow-up-offer
+  overclaim cases and updated `slop-check-paper-package` to expect 26
+  forbidden-overclaim rows.
+- Regenerated the claim-language audit and reproducibility manifest. The
+  current claim-language audit reports C1-C14 ready and forbidden-overclaim
+  checks `26/26` passed.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_claim_language.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Reviewer FAQ expanded for claim-boundary readability
+
+- Expanded `docs/experiments/paper_reviewer_faq.md` with reader-facing answers
+  for corpus-side pybiber versus generated-output evidence, publication-safe
+  Tier-1 feature use, SmolLM3 as replication pressure rather than identical
+  stage localization, and sparse Tier-3 AF interpretation.
+- Tightened `slop-check-paper-package` so the FAQ must retain those boundary
+  phrases instead of regressing to a generic scope FAQ.
+- Regenerated the reproducibility manifest after the FAQ content change.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Draft bundle refreshed after FAQ and audit updates
+
+- Refreshed the draft submission bundle after the FAQ and claim-language audit
+  changes so copied paper-control files and bundle metadata stay aligned with
+  source docs.
+- Regenerated the reproducibility manifest after the bundle refresh.
+- Validation passed:
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 28 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 99 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Dolma retained-sample FAQ boundary added
+
+- Expanded `docs/experiments/paper_reviewer_faq.md` with a direct answer that
+  the OLMo pretraining reference is an English-filtered retained Dolma sample
+  from a bounded 80k scan, not a full Dolma/source-inventory measurement.
+- Tightened `slop-check-paper-package` so the reviewer FAQ must retain this
+  retained-sample/source-coverage boundary.
+- Refreshed the draft submission bundle and reproducibility manifest after the
+  FAQ update.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 28 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 99 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Full local test suite passed after paper hardening
+
+- Ran the full local test suite after the claim-language, FAQ, bundle, and
+  package-checker updates.
+- Validation passed:
+  `uv run pytest` collected 334 tests and passed all 334. The only warnings
+  were pybiber/spaCy/polars deprecation warnings from the pybiber smoke tests.
+
+## 2026-06-18 - Paper audit refresh and pybiber numeric-claim fix
+
+- Refreshed the paper manuscript/control audits after the FAQ and claim
+  hardening pass: abstract/conclusion, manuscript structure, limitations,
+  terminology, review hygiene, source provenance, claim evidence, numeric
+  claims, citations, release inventory, submission exit, figure readiness,
+  table readiness, table typography, and claim language.
+- The refreshed numeric-claims audit exposed a wording mismatch for the
+  `pybiber_dpo_contrast` manuscript sentence. Updated the manuscript to carry
+  the exact source-backed DPO pybiber contrast for broad nouns, attributive
+  adjectives, adverbs, and prepositions.
+- Refreshed the draft submission bundle and reproducibility manifest after the
+  audit outputs changed.
+- Validation passed:
+  `uv run slop-audit-paper-numeric-claims`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 28 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 99 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Readiness-audit next action updated
+
+- Updated `docs/experiments/paper_readiness_audit.md` so the recommended next
+  work no longer treats claim-safe manuscript wording as open. The next action
+  now emphasizes venue copyediting while preserving claim-language,
+  numeric-claims, and structure audits.
+- Refreshed the draft submission bundle and reproducibility manifest after the
+  readiness-audit wording change.
+- Validation passed:
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 28 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 99 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Reproduction runbook bundle/manifest order clarified
+
+- Updated `docs/experiments/paper_reproduction_runbook.md` to run
+  `slop-audit-paper-submission-exit` before bundle materialization, and to run
+  reproducibility-manifest generation only after the draft bundle is stable.
+- Added an explicit note not to parallelize bundle materialization and manifest
+  generation because the reproducibility manifest hashes the bundle manifest.
+- Validation passed with the documented sequential order:
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 28 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 99 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Package index aligned with retained-sample and bundle order
+
+- Updated `docs/experiments/paper_package_index.md` so the claim boundaries
+  include the retained English-filtered Dolma sample boundary and the
+  validation command block includes draft-bundle materialization before
+  reproducibility-manifest generation.
+- Tightened `slop-check-paper-package` so the package index must retain those
+  two entry-point guardrails.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 28 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 99 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Readiness executive blocker wording aligned
+
+- Updated `docs/experiments/paper_readiness_audit.md` executive status to match
+  the current submission-exit audit: paper-draft ready, submission-blocked by
+  venue finalization and Phase 4 human-validation.
+- Refreshed submission-exit, draft bundle, and reproducibility manifest after
+  the readiness-audit wording change.
+- Validation passed:
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 28 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 99 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Final validation after package-control edits
+
+- Re-ran the full local test suite after the package-index, reproduction
+  runbook, readiness-audit, claim-language, FAQ, and bundle/manifest updates.
+- Validation passed:
+  `uv run pytest` collected 334 tests and passed all 334. The only warnings
+  were pybiber/spaCy/polars deprecation warnings from the pybiber smoke tests.
+  `uv run slop-check-paper-package --root /home/user/slop` passed at
+  2026-06-18T11:09:17Z.
+
+## 2026-06-18 - Phase 4 annotation codebook fill rules tightened
+
+- Expanded `docs/experiments/phase4_human_annotation_codebook.md` with
+  annotator fill rules: edit only `human_perceived_slop`,
+  `shaib_taxonomy_label`, and `notes`; preserve blinded IDs, matched text, and
+  snippets for import/agreement/adjudication.
+- Cleaned up the pilot procedure so agreement, yes/no disagreement review,
+  adjudication fields, and full-package escalation are ordered unambiguously.
+- Tightened `slop-check-paper-package` so the codebook must retain the new
+  fill-rule and agreement-sequencing phrases.
+- Refreshed Phase 4 annotation readiness outputs, rematerialized the redacted
+  human annotation handoff, refreshed submission-exit, the draft paper bundle,
+  and the reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-phase4-human-package`;
+  `uv run slop-materialize-phase4-human-handoff --root /home/user/slop`
+  reported 12 ready files, 0 missing, and 6 redacted annotator CSVs;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_phase4_human_handoff.py tests/test_audit_phase4_human_package.py`.
+
+## 2026-06-18 - Phase 4 handoff README fill-rule reminder added
+
+- Updated `src/slop_sftdiv/cli/materialize_phase4_human_handoff.py` so the
+  generated handoff README repeats the annotator fill rules: edit only
+  `human_perceived_slop`, `shaib_taxonomy_label`, and `notes`; preserve
+  `blind_id`, `matched_text`, and `snippet`.
+- Tightened the package checker and handoff tests so the README-level reminder
+  remains present in regenerated handoff bundles.
+- Refreshed the Phase 4 human handoff, submission-exit audit, draft paper
+  bundle, and reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/materialize_phase4_human_handoff.py src/slop_sftdiv/cli/check_paper_package.py tests/test_materialize_phase4_human_handoff.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_materialize_phase4_human_handoff.py tests/test_check_paper_package.py`;
+  `uv run slop-materialize-phase4-human-handoff --root /home/user/slop`
+  reported 12 ready files, 0 missing, and 6 redacted annotator CSVs;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 28 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 99 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Venue sizing inventory added
+
+- Added `docs/experiments/paper_venue_sizing_inventory.md` to make the
+  remaining venue-formatting blocker concrete: current Figure 1-Figure 5 SVG
+  sizes in points/inches, PDF/PNG export availability, table float/width
+  assumptions, and venue-adaptation decisions.
+- Linked the sizing inventory from the package index, venue adaptation runbook,
+  and readiness audit.
+- Added the sizing inventory to required package paths, the draft submission
+  bundle, and the reproducibility manifest. The current draft bundle now has
+  29 ready files and 0 missing; the reproducibility manifest now has 100 rows.
+- Added package-check coverage so stale sizing-inventory content is flagged.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/materialize_paper_submission_bundle.py src/slop_sftdiv/cli/audit_paper_reproducibility_manifest.py tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_reproducibility_manifest.py`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 29 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 100 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Venue sizing inventory cross-check hardened
+
+- Tightened `slop-check-paper-package` so
+  `docs/experiments/paper_venue_sizing_inventory.md` is cross-checked against
+  `paper_figure_readiness_audit.csv` and `paper_table_typography_review.csv`.
+  The checker now verifies figure-specific path/size rows, inch conversions,
+  and table environment/width rows.
+- Added regression coverage for stale figure dimensions in the sizing
+  inventory.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_reproducibility_manifest.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Venue sizing inventory added to release inventory
+
+- Added `docs/experiments/paper_venue_sizing_inventory.md` to
+  `slop-audit-paper-release-inventory` as a runbook/control item, so the
+  release-facing inventory covers the venue-formatting adaptation artifact.
+- Regenerated the release inventory, draft bundle, and reproducibility
+  manifest. The release inventory now reports 19 ready rows and 0 missing.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_release_inventory.py tests/test_audit_paper_release_inventory.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_release_inventory.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-release-inventory --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 29 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 100 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Venue checklist linked to sizing inventory
+
+- Updated `docs/experiments/paper_venue_decision_checklist.md` and
+  `artifacts/paper/submission/paper_venue_decision_checklist.csv` so the
+  figure-dimensions and table-placement rows explicitly cite
+  `paper_venue_sizing_inventory.md` as current evidence.
+- Tightened `slop-check-paper-package` so the venue checklist must retain the
+  sizing-inventory links for both figures and tables.
+- Refreshed submission-exit, draft bundle, and reproducibility manifest after
+  the checklist update.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 29 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 100 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Submission-exit figure/table blocker cites sizing inventory
+
+- Updated `slop-audit-paper-submission-exit` so the
+  `figure_table_finalization` evidence row names the venue sizing inventory in
+  addition to figure/table audits, rendered-layout review, export candidates,
+  and venue-decision checklist.
+- Regenerated submission-exit, draft bundle, and reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_submission_exit.py tests/test_audit_paper_submission_exit.py`;
+  `uv run pytest tests/test_audit_paper_submission_exit.py`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`
+  reported 29 ready files and 0 missing;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`
+  reported 100 rows;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Phase 4 production runbook denominator guard added
+
+- Corrected `docs/experiments/phase4_production_runbook.md` so the opening
+  status sentence names the current 512-document exact teacher-forced
+  continuation rather than the historical 128-document scoping run.
+- Added `slop-check-paper-package` coverage for the Phase 4 production runbook
+  so stale 128-document "already exists" wording is flagged while the
+  historical 128-document artifact remains allowed as a scoping note.
+- Refreshed submission-exit, the draft paper bundle, and the reproducibility
+  manifest after the runbook edit. The draft bundle still reports 29 ready
+  files and 0 missing; the reproducibility manifest still reports 100 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_reproducibility_manifest.py tests/test_audit_paper_release_inventory.py tests/test_audit_paper_submission_exit.py`;
+  `uv run pytest` collected 337 tests and passed all 337, with only the known
+  pybiber/spaCy/polars deprecation warnings.
+
+## 2026-06-18 - Package index links Phase 4 production runbook
+
+- Updated `docs/experiments/paper_package_index.md` so the Phase 4 detector
+  evidence row links `phase4_production_runbook.md` and tells new readers that
+  it records the completed 512-document exact Tier-3 rerun.
+- Tightened `slop-check-paper-package` so the package index must keep both the
+  production-runbook link and the 512-document rerun description.
+- Refreshed submission-exit, the draft paper bundle, and the reproducibility
+  manifest after the index edit. The draft bundle still reports 29 ready files
+  and 0 missing; the reproducibility manifest still reports 100 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_reproducibility_manifest.py tests/test_audit_paper_release_inventory.py tests/test_audit_paper_submission_exit.py`.
+
+## 2026-06-18 - Retired Biber-lite spelling guard broadened
+
+- Broadened `slop-check-paper-package` retired-feature checks over
+  paper-facing docs so both hyphenated/underscored and plain-space
+  Biber-lite spellings are rejected.
+- Added regression coverage for the plain-space `Biber lite` spelling.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Phase 4 handoff coordinator workflow made explicit
+
+- Updated the generated Phase 4 human-annotation handoff README so the
+  coordinator path names the agreement, adjudication, and final-summary
+  commands directly instead of only referring to the protocol.
+- Tightened `slop-check-paper-package` so the handoff README must retain the
+  coordinator command sequence and adjudication-column reminder.
+- Regenerated the Phase 4 human handoff, submission-exit audit, draft paper
+  bundle, and reproducibility manifest. The handoff still reports 12 ready
+  files, 0 missing, and 6 redacted annotator CSVs; the draft bundle still
+  reports 29 ready files and 0 missing; the reproducibility manifest still
+  reports 100 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/materialize_phase4_human_handoff.py src/slop_sftdiv/cli/check_paper_package.py tests/test_materialize_phase4_human_handoff.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_materialize_phase4_human_handoff.py tests/test_check_paper_package.py`;
+  `uv run slop-materialize-phase4-human-handoff --root /home/user/slop`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_phase4_human_handoff.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_reproducibility_manifest.py tests/test_audit_paper_release_inventory.py tests/test_audit_paper_submission_exit.py`.
+
+## 2026-06-18 - Venue adaptation final gate uses safe bundle order
+
+- Updated `docs/experiments/paper_venue_adaptation_runbook.md` so the final
+  post-venue command sequence rematerializes the draft submission bundle before
+  regenerating the reproducibility manifest.
+- Added package-check coverage so the venue adaptation runbook must keep the
+  bundle materialization command and the refreshed `draft_bundle/MANIFEST.csv`
+  requirement.
+- Refreshed submission-exit, the draft paper bundle, and the reproducibility
+  manifest after the runbook edit. The draft bundle still reports 29 ready
+  files and 0 missing; the reproducibility manifest still reports 100 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_reproducibility_manifest.py tests/test_audit_paper_release_inventory.py tests/test_audit_paper_submission_exit.py`.
+
+## 2026-06-18 - Additional full-grid overclaim guard added
+
+- Added a claim-language forbidden-overclaim check for the affirmative sentence
+  "We completed the 5,000 prompt x 8 completion x 3 temperature OLMo grid."
+  without banning the manuscript's safe negative wording that the reduced
+  panels are not the same evidence as such a completed grid.
+- Regenerated the claim-language audit. It now reports 41 rows total:
+  C1-C14 plus 27 forbidden-overclaim checks.
+- Refreshed submission-exit, the draft paper bundle, and the reproducibility
+  manifest after the claim-language audit update. The draft bundle still
+  reports 29 ready files and 0 missing; the reproducibility manifest still
+  reports 100 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_claim_language.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-claim-language`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_audit_paper_claim_language.py tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_reproducibility_manifest.py tests/test_audit_paper_submission_exit.py`.
+
+## 2026-06-18 - Phase 4 full-package label summary path fixed
+
+- Corrected `docs/experiments/phase4_human_perceptibility_protocol.md` so the
+  full-package annotation flow imports the blinded full sheet to
+  `phase4_human_perceptibility_blind_full_labeled.jsonl` and summarizes the
+  post-agreement/adjudicated full-package JSONL rather than the original blank
+  annotation package.
+- Added `slop-check-paper-package` coverage so the protocol must retain the
+  full labeled/adjudicated paths and must not use the blank
+  `phase4_human_perceptibility_annotation_package.jsonl` as the full-package
+  post-label summary input.
+- Regenerated the Phase 4 human handoff, submission-exit audit, draft paper
+  bundle, and reproducibility manifest. The handoff still reports 12 ready
+  files, 0 missing, and 6 redacted annotator CSVs; the draft bundle still
+  reports 29 ready files and 0 missing; the reproducibility manifest still
+  reports 100 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-materialize-phase4-human-handoff --root /home/user/slop`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_phase4_human_handoff.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_reproducibility_manifest.py tests/test_audit_paper_submission_exit.py`.
+
+## 2026-06-18 - EXPERIMENTS pybiber scope boundary guarded
+
+- Tightened `EXPERIMENTS.md` so Phase 1 explicitly separates Tier-1 matcher
+  use on generated checkpoint outputs from full pybiber's active paper role:
+  corpus-side register extraction over retained pretrain/SFT/DPO samples only.
+- Added `slop-check-paper-package` coverage for that boundary. The checker now
+  requires the corpus-side full-pybiber scope sentence in `EXPERIMENTS.md` and
+  flags the old wording that bundled full pybiber with generated checkpoint
+  measurements.
+- Refreshed submission-exit, the draft paper bundle, and the reproducibility
+  manifest after the `EXPERIMENTS.md` edit. The draft bundle still reports 29
+  ready files and 0 missing; the reproducibility manifest still reports 100
+  rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Phase 4 annotator quickstart added to handoff bundle
+
+- Added an annotator-facing quickstart to the Phase 4 human annotation handoff
+  bundle. The quickstart tells annotators which assigned CSV to fill, which
+  columns may be edited, how to interpret the `human_perceived_slop` labels,
+  and not to use or request coordinator maps.
+- Regenerated the handoff bundle with `uv run slop-materialize-phase4-human-handoff
+  --root /home/user/slop`. The bundle now reports 13 ready files, 0 missing
+  files, and 6 redacted annotator CSVs.
+- Updated the readiness audit and package checker so the high-level paper
+  package explicitly preserves the annotator quickstart in addition to the
+  codebook, blinded sheets, redacted handoff, agreement tooling, and
+  adjudication tooling.
+- Regenerated the submission draft bundle and reproducibility manifest. The
+  draft bundle still reports 30 ready files and 0 missing; the reproducibility
+  manifest now reports 114 rows.
+
+## 2026-06-18 - Phase 4 blind-label import rejects protected-field edits
+
+- Hardened the Phase 4 blinded-label workflow so coordinator maps now retain
+  the protected `snippet` field alongside `matched_text`, while annotator
+  sheets remain stripped of source identifiers.
+- Updated blind-label import to reject edits to protected `matched_text` or
+  `snippet` fields before writing canonical labeled JSONL rows. This makes the
+  annotator quickstart rule machine-enforced rather than only documentary.
+- Regenerated the Phase 4 annotation-readiness outputs, blind pilot/full
+  sheets, blind pilot/full maps, and the redacted handoff bundle. The handoff
+  still reports 13 ready files, 0 missing files, and 6 redacted annotator CSVs.
+- Refreshed the venue-neutral submission draft bundle and reproducibility
+  manifest after the generated artifact and source changes.
+
+## 2026-06-18 - Phase 4 import now requires protected map fields
+
+- Tightened `slop-import-phase4-blind-labels` so blind maps must contain the
+  protected `matched_text` and `snippet` fields before import proceeds.
+  Older or incomplete maps can no longer bypass protected-field checks.
+- Updated the agreement and adjudication test fixtures to use the current
+  blind-map schema, and added a regression test that rejects maps missing the
+  protected `snippet` field.
+- Validation passed for the import/agreement/adjudication tests before
+  refreshing the paper draft bundle and reproducibility manifest.
+
+## 2026-06-18 - Phase 4 adjudication rejects stale or typo rows
+
+- Hardened `slop-apply-phase4-label-adjudication` so adjudication rows must
+  reference real `blind_id` values that actually disagreed between annotators.
+  Unknown IDs and stale adjudication rows for consensus examples now fail
+  before canonical JSONL is written.
+- Added regression tests for typo adjudication IDs and stale consensus-row
+  adjudications, in addition to the existing missing-adjudication strict-mode
+  check.
+- Updated the human-perceptibility protocol and reproduction runbook to record
+  the adjudication integrity contract, and added a paper-package checker guard
+  so the protocol keeps that warning.
+
+## 2026-06-18 - Phase 4 handoff manifest integrity checked
+
+- Tightened `slop-check-paper-package` so the Phase 4 human handoff manifest
+  now verifies each ready bundle file exists and that manifest `size_bytes` and
+  `sha256` match the actual file.
+- For copied handoff rows, the checker also verifies the declared source path
+  exists and that the copied bundle file still matches the source file. The
+  generated annotator quickstart is skipped only for source-copy comparison.
+- Updated the package-checker fixture to generate real handoff manifest hashes
+  from fixture bundle files, and added regression tests for handoff hash drift
+  and missing bundle files.
+
+## 2026-06-18 - Phase 4 handoff redaction validated from file headers
+
+- Extended `slop-check-paper-package` to inspect the actual headers of every
+  annotator-facing CSV in the Phase 4 handoff bundle, rather than trusting only
+  the manifest `redaction_status` field.
+- Added a regression test where the handoff manifest hash and redaction status
+  match a leaked annotator CSV, but the checker still rejects the file because
+  its header contains an unblinded `feature` column.
+- This keeps the handoff package safe even if the manifest is regenerated
+  after an accidental annotator-file edit.
+
+## 2026-06-18 - Submission-exit audit requires venue controls
+
+- Tightened `slop-audit-paper-submission-exit` so the figure/table
+  finalization row only reports `venue_review_pending` when the venue-decision
+  checklist CSV, venue-decision checklist document, adaptation runbook, and
+  sizing inventory exist.
+- The venue checklist must include the expected decision items and keep them
+  `decision_pending`; otherwise the figure/table row is `blocked`, not merely
+  pending final venue review.
+- The audit now reads the current venue-checklist schema's `item` column while
+  remaining compatible with the older `decision_item` fixture name.
+- Added a regression test for missing venue controls, then regenerated the
+  submission-exit audit, venue-neutral draft bundle, and reproducibility
+  manifest.
+
+## 2026-06-18 - Submission-exit package row checks audit readiness
+
+- Tightened the `bibliography_and_package` row in
+  `slop-audit-paper-submission-exit`. The row now requires citation,
+  claim-evidence, and source-provenance audit CSVs to contain ready statuses,
+  rather than checking only for file existence.
+- The same row now validates the reproducibility manifest's row statuses,
+  positive sizes, and SHA-256 shape before reporting `ready`.
+- Added regression coverage for a non-ready citation audit blocking the
+  `bibliography_and_package` row, then regenerated the submission-exit audit,
+  draft bundle, and reproducibility manifest.
+
+## 2026-06-18 - Submission-exit manifest row checks file hashes
+
+- Strengthened the `bibliography_and_package` row again so the
+  reproducibility manifest must match the actual files named in each row. The
+  audit now checks row status, positive size, SHA-256 shape, file existence,
+  actual size, and actual SHA-256.
+- Added a regression test that mutates a manifest-tracked file after manifest
+  creation and verifies that `bibliography_and_package` becomes `blocked`.
+- Refreshed the reproducibility manifest before regenerating the
+  submission-exit audit, then refreshed the draft bundle and manifest again
+  after the audit output changed.
+
+## 2026-06-18 - Phase 3 generated-output pybiber runbook retired
+
+- Replaced the stale Phase 3 runbook section that instructed extracting full
+  pybiber over generated caches with an explicit boundary note: generated-output
+  full pybiber is not part of the active Phase 3 route, and older
+  register-proxy/style-signature artifacts remain archived diagnostics only.
+- Added `slop-check-paper-package` coverage so
+  `docs/experiments/phase3_production_runbook.md` must retain the boundary and
+  must not reintroduce the old generated-output pybiber instruction.
+- Refreshed the release inventory, submission-exit audit, draft paper bundle,
+  and reproducibility manifest after the runbook edit. The release inventory
+  still reports 19 ready rows and 0 missing; the draft bundle still reports 29
+  ready files and 0 missing; the reproducibility manifest still reports 100
+  rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-release-inventory --root /home/user/slop`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Phase 3 status Biber-lite language superseded
+
+- Updated `docs/experiments/phase3_status.md` with a 2026-06-18 supersession
+  note: active Tier-2 register evidence is corpus-side full pybiber from Phase
+  1, while generated-output Biber-lite/register-proxy artifacts in the status
+  memo are historical diagnostics only.
+- Reworded the Phase 3 status scope, completion-gate summary, bootstrap-CI
+  audit row, and SmolLM3 diagnostic section so they refer to archived
+  generated-output register-proxy/style-signature diagnostics rather than an
+  active generated-output Biber layer.
+- Validation passed:
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Phase 2 handoff register-proxy language superseded
+
+- Updated `docs/experiments/phase2_handoff_conclusions.md` with the same
+  2026-06-18 boundary: active Tier-2 register evidence is corpus-side full
+  pybiber from Phase 1, while the older Biber-lite/register-proxy section is
+  historical generated-output diagnostic context only.
+- Reworded the archived register-proxy section, style-signature bullets, and
+  open-caveat language so the handoff report no longer describes Biber-lite as
+  an active Phase 2 register layer or full-pybiber evidence.
+- Validation passed:
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Phase 4 human-summary package guard added
+
+- Tightened `slop-check-paper-package` so
+  `phase4_human_perceptibility_summary.csv` must match the current unlabeled
+  Phase 4 state: 10 candidate rows, 100 total examples per candidate, 0 labeled
+  rows, blank rates/taxonomy labels, and `venn_region=unlabeled`.
+- Added Markdown checks for the generated Phase 4 human-perceptibility summary
+  so it must keep the detector-only warning and the 0/100 follow-up-offer row.
+- Added regression coverage that catches accidental promotion of a candidate to
+  `detector_and_human_perceived` while the paper package still claims
+  candidate-only Phase 4 status.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Reproduction runbook Phase 4 summary commands guarded
+
+- Tightened `slop-check-paper-package` so
+  `docs/experiments/paper_reproduction_runbook.md` must include the Phase 4
+  handoff materialization command, the human-label summarizer command, and the
+  reminder that the current human-perceptibility summary remains unlabeled
+  unless real labels have been added.
+- Updated the package-check fixture so the reproduction-runbook guard reflects
+  the current paper refresh sequence.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Open-release inventory includes package and label utilities
+
+- Added the paper package checker and Phase 4 blind-label workflow utilities
+  to the open-release inventory:
+  `src/slop_sftdiv/cli/check_paper_package.py`,
+  `src/slop_sftdiv/cli/import_phase4_blind_labels.py`,
+  `src/slop_sftdiv/cli/summarize_phase4_label_agreement.py`, and
+  `src/slop_sftdiv/cli/apply_phase4_label_adjudication.py`.
+- Tightened `slop-check-paper-package` so the release inventory must carry at
+  least 23 rows and include the new control/handoff utility paths.
+- Regenerated the release inventory, submission-exit audit, draft bundle, and
+  reproducibility manifest. The release inventory now reports 23 ready rows and
+  0 missing; the draft bundle still reports 29 ready files and 0 missing; the
+  reproducibility manifest still reports 100 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_release_inventory.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_release_inventory.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_release_inventory.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-release-inventory --root /home/user/slop`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Reproducibility manifest now checksums release code
+
+- Added a `release_code` category to
+  `artifacts/paper/submission/paper_reproducibility_manifest.csv` and
+  `docs/experiments/paper_reproducibility_manifest.md` for the source files
+  already advertised in the open-release inventory: Tier-1 matchers,
+  EQ-Bench scoring, full pybiber extraction, propensity definitions,
+  generation text normalization, teacher-forced/free-running harnesses, the
+  Phase 4 blind-label utilities, and the package checker.
+- Tightened `slop-check-paper-package` so the reproducibility manifest must
+  include that `release_code` category and the concrete release-code paths,
+  and so each release-code source row must actually be categorized as
+  `release_code`. This prevents the paper package from looking reproducible
+  while only checksumming generated artifacts and prose.
+- Regenerated the reproducibility manifest. It now reports 111 rows.
+- Updated `docs/experiments/paper_package_index.md` and
+  `docs/experiments/paper_reproduction_runbook.md` so a new reader can see
+  that the reproducibility manifest covers both release-code source files and
+  generated paper artifacts.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_reproducibility_manifest.py src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py tests/test_audit_paper_reproducibility_manifest.py`;
+  `uv run pytest tests/test_audit_paper_reproducibility_manifest.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Draft bundle includes package index and source-copy guard
+
+- Added `docs/experiments/paper_package_index.md` to the venue-neutral draft
+  bundle under `review_controls/paper_package_index.md`, so the staged bundle
+  now carries its own start-here orientation file.
+- Tightened `slop-check-paper-package` for the draft bundle. The checker now
+  expects 30 bundle rows, requires the package-index bundle path, verifies each
+  ready bundle file against both its manifest hash and the current
+  `source_path` hash, and requires the bundle README to mention the package
+  index plus claim/readiness controls.
+- Updated the reproduction runbook and paper scaffold from 29 to 30 ready
+  staged files.
+- Regenerated the draft bundle and reproducibility manifest. The draft bundle
+  now reports 30 ready files and 0 missing; the reproducibility manifest still
+  reports 111 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/materialize_paper_submission_bundle.py src/slop_sftdiv/cli/check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_materialize_paper_submission_bundle.py tests/test_check_paper_package.py`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Release surface includes paper-package materializers
+
+- Added the venue-neutral draft-bundle materializer and reproducibility
+  manifest writer to the open-release inventory:
+  `src/slop_sftdiv/cli/materialize_paper_submission_bundle.py` and
+  `src/slop_sftdiv/cli/audit_paper_reproducibility_manifest.py`.
+- Added both utilities to the `release_code` checksum surface in the
+  reproducibility manifest and tightened `slop-check-paper-package` so the
+  release inventory and manifest must retain those paths.
+- Regenerated the release inventory, draft bundle, and reproducibility
+  manifest. The release inventory now reports 25 ready rows and 0 missing; the
+  draft bundle reports 30 ready files and 0 missing; the reproducibility
+  manifest reports 113 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/materialize_paper_submission_bundle.py src/slop_sftdiv/cli/audit_paper_release_inventory.py src/slop_sftdiv/cli/audit_paper_reproducibility_manifest.py src/slop_sftdiv/cli/check_paper_package.py tests/test_materialize_paper_submission_bundle.py tests/test_audit_paper_release_inventory.py tests/test_audit_paper_reproducibility_manifest.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_release_inventory.py tests/test_audit_paper_reproducibility_manifest.py tests/test_materialize_paper_submission_bundle.py tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-release-inventory --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Readiness audit reflects expanded release package
+
+- Updated `docs/experiments/paper_readiness_audit.md` so the draft-bundle row
+  names the package index as part of the staged bundle, the release-inventory
+  row names paper-package materializers, and the reproducibility-manifest row
+  names release-code source files as part of the checksum surface.
+- Added `slop-check-paper-package` coverage for those readiness-audit phrases
+  so the high-level readiness page cannot drift behind the release inventory,
+  draft bundle, and manifest.
+- Regenerated the reproducibility manifest after the readiness-audit and
+  checker updates. The manifest still reports 113 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Venue adaptation runbook adds per-artifact matrices
+
+- Added per-figure and per-table decision matrices to
+  `docs/experiments/paper_venue_adaptation_runbook.md`. The figure matrix now
+  records each figure's current paper role, likely placement, required venue
+  decision, and post-decision verification. The table matrix does the same for
+  Table 1, Table 2, Table 4, and appendix tables A1-A3.
+- Updated `docs/experiments/paper_venue_sizing_inventory.md` to point readers
+  from the current venue-neutral dimensions to those per-artifact decision
+  matrices.
+- Tightened `slop-check-paper-package` so the venue runbook must retain the
+  per-artifact matrices, including the Phase 4 Tier-3 Figure 5 row and the
+  pybiber-interval Appendix Table A2 row, and so the sizing inventory must
+  keep the decision-matrix cross-reference.
+- Regenerated the draft bundle and reproducibility manifest after the runbook
+  edit. The draft bundle still reports 30 ready files and 0 missing; the
+  reproducibility manifest still reports 113 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Release inventory detects file-size drift
+
+- Tightened `slop-check-paper-package` so every `ready` row in
+  `artifacts/paper/submission/paper_release_inventory.csv` must point to an
+  existing file whose current byte size matches the recorded `size_bytes`.
+  This makes the release inventory a live drift check, not only a declarative
+  list of paths.
+- Added regression coverage that mutates a release-inventory source file after
+  fixture materialization and verifies the package checker reports the stale
+  `size_bytes` value.
+- Updated the package-check fixture so release-inventory rows are generated
+  after all listed files are materialized and include the Phase 4 Tier-3 matcher
+  spec plus cached statistics rows.
+- Regenerated the release inventory, submission-exit audit, draft bundle, and
+  reproducibility manifest in dependency order. The release inventory reports
+  25 ready rows and 0 missing; the draft bundle reports 30 ready files and 0
+  missing; the reproducibility manifest reports 114 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py tests/test_audit_paper_release_inventory.py`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_audit_paper_release_inventory.py`;
+  `uv run slop-audit-paper-release-inventory --root /home/user/slop`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Paper measurement synthesis added
+
+- Added `docs/experiments/paper_measurement_synthesis.md` as a paper-facing
+  review-control note that connects the core measurement layers: Phase 1 corpus
+  rates, full pybiber register, EQ-Bench Slop Score, teacher-forced
+  propensity, free-running emission/compounding, and detector-derived Tier 3.
+- The synthesis records the intended interpretation hierarchy: pybiber supplies
+  the broad corpus-side register backbone, EQ-Bench is an aggregate benchmark
+  bridge, feature-specific AF remains the model-side localization layer,
+  sampled emissions and compounding answer generation questions, and detector
+  clusters remain candidate-only until human labels exist.
+- Wired the synthesis into the new-reader path in
+  `docs/experiments/paper_package_index.md`, staged it in the venue-neutral
+  submission draft bundle, added it to the reproducibility manifest, and
+  tightened `slop-check-paper-package` so the synthesis cannot be dropped or
+  weakened silently.
+- The draft bundle now reports 31 ready files and 0 missing. The
+  reproducibility manifest now reports 115 rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/materialize_paper_submission_bundle.py src/slop_sftdiv/cli/audit_paper_reproducibility_manifest.py tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py`;
+  `uv run pytest tests/test_check_paper_package.py tests/test_materialize_paper_submission_bundle.py`;
+  `uv run slop-audit-paper-release-inventory --root /home/user/slop`;
+  `uv run slop-materialize-paper-submission-bundle --root /home/user/slop`;
+  `uv run slop-audit-paper-reproducibility-manifest --root /home/user/slop`;
+  `uv run slop-audit-paper-submission-exit --root /home/user/slop`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Readiness audit surfaces measurement synthesis
+
+- Updated `docs/experiments/paper_readiness_audit.md` so the Reader
+  orientation row names `paper_measurement_synthesis.md` alongside the package
+  index, glossary, scaffold, and reviewer FAQ.
+- Updated the venue-neutral draft-bundle readiness row so it explicitly says
+  the bundle includes the measurement synthesis, not only generic
+  claim/readiness controls.
+- Tightened `slop-check-paper-package` to require the readiness audit to keep
+  the pybiber/EQ-Bench/propensity/generation/compounding/detector hierarchy
+  language.
+- Regenerated release inventory, the 31-file draft bundle, submission-exit
+  audit, and 115-row reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Manuscript methods align to measurement hierarchy
+
+- Updated `docs/experiments/paper_manuscript_draft.md` and
+  `docs/experiments/paper_methods_draft.md` so the methods framing now
+  distinguishes four localization layers from two auxiliary measurement
+  surfaces.
+- The four localization layers remain corpus inheritance, fixed-context
+  propensity, free-running emission, and self-conditioning. EQ-Bench is now
+  explicitly identified as an aggregate public benchmark bridge, while
+  detector-derived Tier 3 is identified as a candidate-feature discovery
+  surface pending human labels and matcher precision checks.
+- Regenerated the 31-file venue-neutral draft bundle, submission-exit audit,
+  and 115-row reproducibility manifest after the manuscript/methods edits.
+- Validation passed:
+  `uv run slop-check-paper-package --root /home/user/slop`;
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`.
+
+## 2026-06-18 - Terminology audit guards measurement hierarchy
+
+- Added a `localization_surface_boundary` row to
+  `slop-audit-paper-terminology`. The row requires the manuscript to preserve
+  the four-localization-layer framing and the separate EQ-Bench/Tier-3
+  measurement-surface boundaries.
+- Tightened `slop-check-paper-package` so
+  `artifacts/paper/manuscript/paper_terminology_audit.csv` must include the
+  new row and `docs/experiments/paper_terminology_audit.md` must report it as
+  ready.
+- Regenerated the terminology audit, release inventory, 31-file draft bundle,
+  submission-exit audit, and 115-row reproducibility manifest. The terminology
+  audit now reports 9 ready rows.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_terminology.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_terminology.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_terminology.py tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Abstract/conclusion audit guards compounding and synthesis path
+
+- Updated the integrated manuscript abstract so the measurement list includes
+  compounding tests alongside pybiber, teacher-forced propensity,
+  free-running generation, EQ-Bench, and detector discovery.
+- Tightened `slop-audit-paper-abstract-conclusion` so the abstract must keep
+  the compounding phrase and the package-index alignment row must keep the
+  measurement-synthesis link.
+- Tightened `slop-check-paper-package` so the abstract/conclusion audit must
+  report `abstract_alignment` as 8/8 and `package_index_alignment` as 8/8.
+- Regenerated the abstract/conclusion audit, manuscript-structure audit,
+  release inventory, 31-file draft bundle, submission-exit audit, and 115-row
+  reproducibility manifest. The manuscript remains within structure-audit word
+  bounds: 182 abstract words, 213 conclusion words, and 5,584 total words.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/audit_paper_abstract_conclusion.py src/slop_sftdiv/cli/check_paper_package.py tests/test_audit_paper_abstract_conclusion.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_audit_paper_abstract_conclusion.py tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Reviewer FAQ aligns to measurement hierarchy
+
+- Updated `docs/experiments/paper_reviewer_faq.md` so the opening explanation
+  now separates four localization layers from the two auxiliary measurement
+  surfaces.
+- The FAQ now names self-conditioning as its own localization layer and
+  states that EQ-Bench is an aggregate public benchmark bridge while
+  detector-derived Tier 3 remains a candidate-feature discovery surface.
+- Added reviewer-facing language that aggregate EQ-Bench movement can disagree
+  with a feature-specific propensity path, reinforcing that slop style is not
+  one scalar quantity.
+- Tightened `slop-check-paper-package` and its fixture so the reviewer FAQ
+  cannot drift back to the stale three-layer framing.
+- Regenerated release inventory, the 31-file draft bundle, submission-exit
+  audit, and 115-row reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Venue adaptation docs get default packing plan
+
+- Added a venue-neutral packing default to
+  `docs/experiments/paper_venue_adaptation_runbook.md` and
+  `docs/experiments/paper_venue_sizing_inventory.md`.
+- The default keeps Figure 1, Figure 2, Figure 3, Figure 4, Table 1, Table 2,
+  and Table 4 as the main-text starting point, with Figure 5 and appendix
+  guardrail tables moving to appendix/supplement first if page limits are
+  tight.
+- The docs now explicitly say not to remove caveat columns, candidate-only
+  labels, or measurement-boundary notes just to fit the venue template.
+- Tightened `slop-check-paper-package` and its fixture so this practical
+  venue-adaptation guidance remains present while the target venue is still
+  unresolved.
+- Regenerated release inventory, the 31-file draft bundle, submission-exit
+  audit, and 115-row reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Phase 4 human-label coordinator checklist added
+
+- Added `docs/experiments/phase4_human_labeling_execution_checklist.md` as a
+  coordinator-facing bridge from the existing blind-label handoff to the
+  paper-safe claim update path.
+- The checklist records the external-label execution status, the rule to share
+  only `human_annotation_handoff/annotator/`, the full-package agreement,
+  adjudication, and summary command templates, and the rule to keep detector
+  claims machine-detectable until real labeled rows exist.
+- Updated `slop-materialize-phase4-human-handoff` so the coordinator checklist
+  is copied into `human_annotation_handoff/coordinator/`. The handoff now
+  reports 14 ready files, 0 missing files, and 6 redacted annotator CSVs.
+- Updated paper-facing orientation docs (`EXPERIMENTS.md`, package index,
+  readiness audit, scaffold, and caption appendix) so they name the checklist
+  alongside the protocol, codebook, readiness audit, handoff, and summary.
+- Tightened `slop-check-paper-package` and focused tests to require the
+  checklist source, the copied coordinator checklist, and the key safety and
+  claim-boundary phrases.
+- Regenerated release inventory, the 31-file draft bundle, submission-exit
+  audit, Phase 4 human handoff, and 117-row reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py src/slop_sftdiv/cli/materialize_phase4_human_handoff.py src/slop_sftdiv/cli/audit_paper_reproducibility_manifest.py tests/test_check_paper_package.py tests/test_materialize_phase4_human_handoff.py`;
+  `uv run pytest tests/test_materialize_phase4_human_handoff.py tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Pybiber substantive interpretation guarded in paper controls
+
+- Updated `docs/experiments/paper_measurement_synthesis.md` so the
+  reader-facing synthesis now records both substantive pybiber lessons:
+  the Phase 1 register shift is not simply more hedging/intensification, and
+  Dolci DPO chosen responses are more descriptive/expository while rejected
+  responses are more personal, narrative, and mental-state framed.
+- Updated `docs/experiments/paper_reviewer_faq.md` with the same DPO-register
+  interpretation, explicitly separating it from a claim that chosen responses
+  are uniformly more slop-like.
+- Tightened `slop-check-paper-package` and its fixture so the measurement
+  synthesis and reviewer FAQ continue to carry those pybiber interpretation
+  boundaries.
+- Regenerated release inventory, the 31-file draft bundle, submission-exit
+  audit, and 117-row reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Pybiber DPO-register read added to new-reader path
+
+- Updated `docs/experiments/paper_package_index.md` so the shortest
+  new-reader path now states that the pybiber DPO contrast is
+  register-specific: chosen responses are more descriptive/expository, while
+  rejected responses are more personal, narrative, and mental-state framed.
+- Updated `docs/experiments/paper_reader_glossary.md` so the Dolci DPO entry
+  carries the same boundary alongside the existing warning that Dolci DPO is
+  not a pure human-preference contrast.
+- Tightened `slop-check-paper-package` and its fixture so package-index and
+  glossary drift cannot silently drop this pybiber DPO-register interpretation.
+- Regenerated release inventory, the 31-file draft bundle, submission-exit
+  audit, and 117-row reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - EQ-Bench aggregate-score boundary added to new-reader path
+
+- Updated `docs/experiments/paper_package_index.md` so the core-thesis and
+  claim-boundary sections now state the substantive EQ-Bench lesson: the
+  public aggregate score is useful for benchmark comparison, but its trajectory
+  can disagree with feature-specific propensity and is mostly lexical-density
+  evidence rather than a mechanism claim.
+- Updated `docs/experiments/paper_reader_glossary.md` so the EQ-Bench entry
+  says the score is not AF and its stage path can disagree with
+  feature-specific propensity.
+- Tightened `slop-check-paper-package` and its fixture so the package index
+  and glossary preserve the EQ-Bench aggregate-score boundary.
+- Regenerated release inventory, the 31-file draft bundle, submission-exit
+  audit, and 117-row reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.
+
+## 2026-06-18 - Submission blocker burn-down order added
+
+- Added a `Submission Blocker Burn-Down Order` section to
+  `docs/experiments/paper_readiness_audit.md` so the remaining blockers are
+  operationalized as two explicit tracks: Phase 4 human labels and venue
+  adaptation.
+- The human-label track now names the submission-minimum path: collect two
+  independent full-package blind label sheets, run agreement before
+  discussion, adjudicate disagreements, apply adjudication to canonical JSONL,
+  regenerate the human-perceptibility summary, and update C11/C12/C13 before
+  promoting detector-derived families.
+- The venue track now names the done condition: resolve every
+  `decision_pending` venue row, apply figure/table sizing and export
+  requirements, rerun figure/table/submission/reproducibility/package checks,
+  and require `overall_submission_status` to become `ready`.
+- Tightened `slop-check-paper-package` and its fixture so these blocker
+  burn-down criteria remain in the readiness audit.
+- Regenerated release inventory, the 31-file draft bundle, submission-exit
+  audit, and 117-row reproducibility manifest.
+- Validation passed:
+  `uv run ruff check src/slop_sftdiv/cli/check_paper_package.py tests/test_check_paper_package.py`;
+  `uv run pytest tests/test_check_paper_package.py`;
+  `uv run slop-check-paper-package --root /home/user/slop`.

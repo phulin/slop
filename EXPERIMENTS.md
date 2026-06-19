@@ -4,6 +4,71 @@
 
 **Headline deliverable.** An *amplification spectrum*: for each stylistic feature, its empirical rate in pretrain / SFT / DPO-chosen / DPO-rejected data, and the model's amplification factor at each post-training stage (base → SFT → DPO → final), decomposed into per-step propensity shift vs. self-conditioning compounding.
 
+**Current claim surface.** The paper-facing claim matrix is
+`docs/experiments/paper_claim_matrix.md`. It is the current authority for
+which bounded claims are headline-ready, caveated, or methods/status-only; the
+reviewer-facing scope FAQ is `docs/experiments/paper_reviewer_faq.md`; the
+manuscript claim-to-evidence map is
+`docs/experiments/paper_claim_evidence_map.md`; the Tier-1 publication-use
+policy is `docs/experiments/paper_tier1_publication_policy.md`; the current
+submission readiness audit is `docs/experiments/paper_readiness_audit.md`.
+Claim evidence-map path integrity is checked in
+`docs/experiments/paper_claim_evidence_audit.md`.
+New-reader terminology is summarized in
+`docs/experiments/paper_reader_glossary.md`.
+Abstract/conclusion claim alignment is checked in
+`docs/experiments/paper_abstract_conclusion_audit.md`.
+Reader-facing measurement terminology and interpretation boundaries are
+checked in `docs/experiments/paper_terminology_audit.md`.
+Headline manuscript numbers are checked against their source CSV/JSON artifacts
+in `docs/experiments/paper_numeric_claims_audit.md`.
+Paper-facing review/anonymity hygiene is checked in
+`docs/experiments/paper_review_hygiene_audit.md`.
+Source-card and provenance interpretation boundaries are checked in
+`docs/experiments/paper_source_provenance_audit.md`.
+Open-release inventory coverage is tracked in
+`docs/experiments/paper_release_inventory.md`.
+The manuscript section/figure scaffold is `docs/experiments/paper_scaffold.md`;
+the submission-exit audit is
+`docs/experiments/paper_submission_exit_audit.md`;
+the paper-facing reproducibility checksum manifest is
+`docs/experiments/paper_reproducibility_manifest.md`; the paper-package
+refresh command sequence is `docs/experiments/paper_reproduction_runbook.md`;
+draft manuscript tables, camera-ready table drafts, and Methods prose are
+`docs/experiments/paper_tables.md`,
+`docs/experiments/paper_camera_ready_tables.md`, and
+`docs/experiments/paper_methods_draft.md`; draft Results prose is
+`docs/experiments/paper_results_draft.md`; draft Introduction/Discussion/
+Limitations prose is `docs/experiments/paper_intro_discussion_draft.md`; the
+integrated manuscript draft is `docs/experiments/paper_manuscript_draft.md`;
+the paper-facing figure/table manifest is
+`docs/experiments/paper_figure_table_manifest.md`; the caption and
+reproducibility appendix draft is
+`docs/experiments/paper_caption_appendix_draft.md`;
+venue-template decisions that remain blocked on final venue selection are
+tracked in `docs/experiments/paper_venue_decision_checklist.md`, with
+post-decision adaptation steps in
+`docs/experiments/paper_venue_adaptation_runbook.md`;
+figure/table readiness, rendered-layout, and generic table-typography audits
+are tracked in
+`docs/experiments/paper_figure_readiness_audit.md`,
+`docs/experiments/paper_figure_visual_review.md`,
+`docs/experiments/paper_table_readiness_audit.md`, and
+`docs/experiments/paper_table_typography_review.md`;
+the citation-slot plan is `docs/experiments/paper_citation_plan.md`; citation
+and source-inventory integrity is checked in
+`docs/experiments/paper_citation_audit.md`; checked reference-source and BibTeX drafts are
+`docs/experiments/paper_reference_sources.md` and
+`docs/experiments/paper_references.bib`. The repeatable paper-package
+consistency check is `uv run slop-check-paper-package --root /home/user/slop`;
+it verifies required paper artifacts, manuscript/table path hygiene,
+manuscript-structure, limitations, terminology, and numeric-claims audits,
+figure/table references, figure/table audit status, C1-C14 claim-map coverage,
+cited BibTeX keys, and linked local paths. Figure 2
+intervals are regenerated with:
+`uv run slop-summarize-eqbench-intervals --bootstrap-samples 500 --seed 1729`
+before rerunning `uv run slop-render-paper-figures`.
+
 ---
 
 ## 0. Core hypotheses
@@ -61,7 +126,12 @@ Reference corpora:
 
 Retired from the active feature surface: list/header/bold lead-in formatting. Deferred from Phase 1 core claims: punctuation/rhythm and generic hedging. These should not block the revised Phase 1 close-out.
 
-**Tier 2 — Biber/linguistic features:** use full `pybiber` extraction for Biber/register analysis. The active implementation exposes the 67 pybiber features through `uv run slop-pybiber-full`; the old sampled surface-proxy layer is retired.
+**Tier 2 — Biber/linguistic features:** use full `pybiber` extraction for
+Biber/register analysis. The active implementation exposes the 67 pybiber
+features through `uv run slop-pybiber-full`; the old sampled surface-proxy
+layer is retired. Full pybiber is currently a corpus-side Phase 1 register
+surface for retained pretrain/SFT/DPO samples; generated-output full pybiber is
+not part of the active paper claim surface.
 
 **Tier 3 — discovered features (from Phase 4):** clusters extracted from detector attribution; added to the pipeline with hand-written or classifier-based matchers.
 
@@ -69,7 +139,34 @@ Every feature gets: (i) a span matcher, (ii) a defined *opportunity context* (wh
 
 ## 3. Phase 1 — Frequency census (grounding)
 
-**What:** run the revised Tier-1 matchers and full pybiber register features over: pretrain strata, SFT targets (split by available provenance/source metadata), DPO-chosen, DPO-rejected, and later generations from each checkpoint.
+**What:** run the revised Tier-1 matchers over pretrain strata, SFT targets
+(split by available provenance/source metadata), DPO-chosen, DPO-rejected, and
+later generations from each checkpoint. Run full pybiber register features over
+the retained Phase 1 corpus-side samples only: pretrain, SFT target,
+DPO-chosen, and DPO-rejected.
+
+**Execution status (2026-06-18).** The OLMo 3 data-side Phase 1 rerun is
+complete over detector-backed English-filtered fixed samples: 40,000 Dolci SFT
+targets, 40,000 Dolci DPO pairs expanded to chosen/rejected rows, and 5,740
+retained Dolma 3 pretraining documents from the 80k scan. The canonical Tier-1
+artifacts are
+`artifacts/stage1/census/feature_rates_by_corpus.parquet`,
+`artifacts/stage1/census/feature_rates_by_stratum.parquet`,
+`artifacts/stage1/census/preference_pair_deltas.parquet`, and
+`artifacts/stage1/census/census_summary.md`. Full pybiber outputs now exist for
+all three retained samples under `artifacts/stage1/census/*_pybiber_full.csv`
+and `*_pybiber_full_long.csv`; pybiber returned complete coverage on the
+English-filtered samples: 5,740 Dolma rows, 40,000 SFT rows, and 80,000 DPO
+rows across the 67-feature surface. The token-weighted register analysis is
+`docs/experiments/phase1_pybiber_register_analysis.md`, with selected-feature
+document-bootstrap intervals in
+`artifacts/stage1/census/phase1_pybiber_register_intervals.csv`; its main read is that
+alignment data shift away from narrative/personal web prose toward
+nominalized, adjectival, answer-like exposition rather than simply adding
+hedging. The detailed readable report is `docs/experiments/phase1_conclusions.md`;
+the caveat/status audit is `docs/experiments/phase1_gap_audit.md`. The
+integrated paper limitations boundary is audited in
+`docs/experiments/paper_limitations_audit.md`.
 
 **Normalization:** per-1k-tokens (default), per-sentence (for clause-level constructions), and per-opportunity (see §4). Report all three for Tier-1.
 
@@ -117,11 +214,11 @@ Statistics: cluster bootstrap (document-level) for all CIs; Benjamini–Hochberg
 
 Runs after the Phase 1–3 pipeline is validated; feeds Tier-3 features back into it.
 
-**Execution status (2026-06-17).** Phase 4 now has a real detector-driven run under the 24h A100 cap. ModernBERT-large was fine-tuned on HAP-E plus OLMo/SmolLM3 generation/reference slices, evaluated on held-out HAP-E and external OLMo/SmolLM3 sources, attributed with integrated gradients over 10,000 generated documents, embedded with GTE-large, clustered with HDBSCAN, and converted into provisional Tier-3 matcher specs plus a generated-output census. The run also produced a 1,000-example annotation package, a proxy detector-vs-perceived Venn against the Shaib taxonomy, and a bounded OLMo base/SFT/DPO/final exact sequence-mass teacher-forced Tier-3 AF rerun over 128 SFT-reference documents. The true human-label Venn still requires annotators. Primary artifacts live under `artifacts/phase4/modernbert_detector_combined_v2_clean/`; the reader report is `docs/experiments/phase4_detector_discovery_report.md`; the Tier-3 teacher-forced addendum is `docs/experiments/phase4_tier3_teacher_forced_addendum.md`; the requirement-by-requirement audit is `docs/experiments/phase4_completion_audit.md`. Remaining non-compute-complete items are Shaib-taxonomy human annotation/Venn analysis, larger post-validation Tier-3 AF denominator expansion, and the SAE stretch path.
+**Execution status (2026-06-18).** Phase 4 now has a real detector-driven run under the 24h A100 cap. ModernBERT-large was fine-tuned on HAP-E plus OLMo/SmolLM3 generation/reference slices, evaluated on held-out HAP-E and external OLMo/SmolLM3 sources, attributed with integrated gradients over 10,000 generated documents, embedded with GTE-large, clustered with HDBSCAN, and converted into provisional Tier-3 matcher specs plus a generated-output census. The run also produced a 1,000-example annotation package, a proxy detector-vs-perceived Venn against the Shaib taxonomy, and an OLMo base/SFT/DPO/final exact sequence-mass teacher-forced Tier-3 AF rerun over 512 SFT-reference documents under `artifacts/phase4/modernbert_detector_combined_v2_clean/tier3_teacher_forced_exact_512/`. All four stage summaries, the stage grid, the primary comparison, and paired stage effects are complete. The true human-label Venn still requires annotators, but the human-perceptibility protocol, package-readiness audit, redacted annotator handoff bundle, coordinator execution checklist, 20-per-candidate pilot sheet, and reproducible label summarizer now exist: `docs/experiments/phase4_human_perceptibility_protocol.md`, `docs/experiments/phase4_human_annotation_readiness.md`, `docs/experiments/phase4_human_annotation_handoff.md`, `docs/experiments/phase4_human_labeling_execution_checklist.md`, `docs/experiments/phase4_human_perceptibility_summary.md`, `uv run slop-audit-phase4-human-package`, `uv run slop-materialize-phase4-human-handoff`, and `uv run slop-summarize-phase4-human-labels`. Primary artifacts live under `artifacts/phase4/modernbert_detector_combined_v2_clean/`; the reader report is `docs/experiments/phase4_detector_discovery_report.md`; the Tier-3 teacher-forced addendum is `docs/experiments/phase4_tier3_teacher_forced_addendum.md`; the requirement-by-requirement audit is `docs/experiments/phase4_completion_audit.md`; and the production runbook is `docs/experiments/phase4_production_runbook.md`. Remaining non-compute-complete items are Shaib-taxonomy human annotation/Venn analysis, larger post-validation Tier-3 AF denominator expansion for sparse features, and the SAE stretch path.
 
 1. **Detector:** fine-tune ModernBERT-large on HAP-E (topic-controlled human vs. LLM pairs) + generations from our checkpoints vs. their human/SFT counterparts. Evaluate cross-model generalization (train on HAP-E's Llama/GPT-4o outputs, test on OLMo 3 and SmolLM3 outputs) to confirm it learned style, not model identity.
 2. **Attribution (cheap path, default):** integrated-gradients token attribution over ≥10k documents; extract top-attribution spans; embed spans (e.g., GTE-large) and cluster (HDBSCAN); auto-label clusters with an LLM + manual review.
-3. **Attribution (SAE path, stretch):** train a BatchTopK SAE on the detector's penultimate-layer residual activations; rank latents by ablation effect on the LLM-class logit; interpret via max-activating examples. Kept as a robustness check / methods contribution, not a dependency.
+3. **Attribution (SAE path):** train a BatchTopK SAE on the detector's penultimate-layer residual activations; rank latents by ablation effect on the LLM-class logit; interpret via max-activating examples.
 4. **Human-perceptibility validation:** for each discovered cluster, annotate 100 examples against the Shaib et al. slop taxonomy; report which clusters humans perceive as slop vs. detector-only ("machine-detectability") features. The Venn diagram of detector features vs. human-perceived slop is a standalone figure.
 5. Write matchers + opportunity definitions for the top ~10 perceptible clusters; rerun Phases 1–3 on them.
 
@@ -156,4 +253,7 @@ The thin-slice ordering is deliberate: the only genuinely novel measurement code
 3. Compounding decomposition + temperature dependence (H3).
 4. Cross-ladder comparison (model-to-model and DPO-vs-APO variation in slop fingerprints); stretch: Instruct/Think/RL Zero path comparison within OLMo 3.
 5. Detector-feature vs. human-perception Venn analysis + Tier-3 taxonomy additions.
-6. Open release: matchers, opportunity definitions, harness code, cached per-checkpoint statistics.
+6. Paper claim matrix with evidence source, strength, caveat, and allowed
+   wording for each supported claim.
+7. Manuscript scaffold and paper figure/table inventory.
+8. Open release: matchers, opportunity definitions, harness code, cached per-checkpoint statistics.

@@ -4,6 +4,11 @@ Date: 2026-06-15
 
 Status: final bounded OLMo 3 / Dolci Phase 2 close-out.
 
+Supersession note: after the full pybiber Phase 1 rerun, the active Tier-2
+register surface is corpus-side full pybiber. Any Biber-lite/register-proxy
+material in this historical Phase 2 report is retained for provenance only and
+should not be promoted into current paper claims.
+
 Audience: this report is written for someone new to the project. It explains
 the motivation, the measurement design, the model checkpoints, the resulting
 feature-level evidence, the limits of the current run, and the conclusions
@@ -124,7 +129,7 @@ settle whether DPO preference data are complicit; that requires joining Phase
 | Neutral-normalized AF | A slop AF divided by a neutral-control AF, used to reduce general calibration effects. |
 | Free-running generation | Normal sampled model output, here 8 completions per prompt at temperature `1.0`. |
 | Compounding | A generated-text effect where an earlier feature hit makes later hits more likely in the same answer. |
-| Biber-lite | Regex-based proxies for broader register categories, not full pybiber extraction. |
+| Historical register proxy | Earlier regex-based proxies for broader register categories. These are not full pybiber extraction and are no longer an active paper feature surface. |
 
 ## Phase 2 Scope
 
@@ -157,9 +162,9 @@ Supporting Phase 2 analyses included:
 - DPO-only temperature sensitivity runs at `0.0`, `0.7`, and `1.0`;
 - expected-vs-observed compounding analysis;
 - direct prior/no-prior compounding windows;
-- Biber-lite register measurements over generated outputs;
+- archived generated-output register-proxy diagnostics;
 - a final assembled style-signature table combining Tier-1 emissions,
-  compounding metrics, and Biber-lite rates.
+  compounding metrics, and archived register-proxy rates.
 
 This is a bounded close-out, not the full production grid originally described
 in `EXPERIMENTS.md`. The original production plan called for 5,000 prompts,
@@ -198,7 +203,7 @@ slice:
 | Free-running emission | Delivered | 512 prompts x 8 completions x 4 checkpoints at temperature `1.0`, max 1,024 new tokens. |
 | Temperature grid | Partial | DPO temperature sensitivity exists; headline conclusions use the single-temperature `t=1.0` target-shape grid. |
 | Result B compounding | Delivered | Expected-vs-observed and prior/no-prior window tests are included. |
-| Biber/full register style layer | Partial | Biber-lite regex proxies were measured; full pybiber was not run. |
+| Register style layer | Partial in Phase 2 | Historical generated-output proxies were measured, but the active full-pybiber result is the Phase 1 corpus-side rerun. |
 | Cross-ladder replication | Not Phase 2 | SmolLM3 replication belongs to Phase 3. |
 
 The main deviation from the original plan is scale. The original design was a
@@ -226,11 +231,11 @@ The retained Tier-1 feature views were:
 | `stock_closers` | Formulaic response closings. |
 | `stock_openers_closers` | Pooled opener/closer view. Useful for summaries, but it hides opener-vs-closer differences. |
 
-Phase 2 also measured `biber_lite` register proxies on generated outputs.
-These cover broader style features such as pronouns, modals, hedges,
-amplifiers, nominalizations, complements, subordination, wh-questions, and
-passive-voice approximations. They describe final-output register. They are
-not teacher-forced amplification measurements.
+The earlier Phase 2 pass also produced generated-output register-proxy
+artifacts. Those artifacts are now historical diagnostics only. The active
+Tier-2 register surface is the full pybiber Phase 1 corpus-side analysis; this
+report should not be read as providing full generated-output pybiber register
+measurement.
 
 ## How To Read The Metrics
 
@@ -244,7 +249,7 @@ Phase 2 uses several metrics because each answers a different question:
 | Neutral-normalized AF | How large is slop AF after dividing by a neutral control basket? | Reduces the chance that general calibration shifts are mistaken for slop-specific effects. |
 | Free-running emission | How often does the feature appear in sampled completions? | Closest to user-visible output, but affected by decoding, length, prompt mix, and self-conditioning. |
 | Compounding | Does an earlier hit make later hits more likely in the same answer? | Tests whether output style is path-dependent during generation. |
-| Biber-lite register | How does broader linguistic register move across stages? | Adds a style signature beyond hand-selected slop markers. |
+| Historical register-proxy artifacts | How did an earlier proxy layer describe generated-output style? | Archived diagnostic only; not part of the active paper claim surface. |
 
 These metrics can disagree. That disagreement is not noise; it is one of the
 main findings. A checkpoint can locally prefer a feature while sampled output
@@ -301,7 +306,7 @@ The final conclusion combines several artifact families:
 | Amplification spectrum | `olmo3_amplification_spectrum_single_temp_t1_v6.csv` | Joins Phase 1 data rates, teacher-forced AF, free-running rates, and compounding where available. |
 | Free-running stage grid | `olmo3_generation_stage_grid_target_shape_512prompt_8comp_t1_1024.csv` | Counts visible Tier-1 feature rates in sampled completions. |
 | Compounding | `olmo3_generation_compounding_target_shape_512prompt_8comp_t1_1024_tf1024.csv` | Compares observed generation rates with teacher-forced expectations and prior/no-prior windows. |
-| Biber-lite comparison | `olmo3_biber_lite_generation_vs_corpus_t1.csv` | Compares broader generated-output register to Phase 1 corpus samples. |
+| Archived register-proxy comparison | `olmo3_biber_lite_generation_vs_corpus_t1.csv` | Historical generated-output proxy comparison; superseded in active paper claims by Phase 1 full pybiber. |
 | Style signature | `olmo3_style_signature_t1.csv` and stage distances | Summarizes which checkpoints are closest in the assembled final-output feature vector. |
 
 ## Result 1: The Checkpoint Progression Is Non-Monotonic
@@ -508,13 +513,15 @@ Conclusion:
 > Base-like rates. It needs better teacher-forced support before stronger
 > causal interpretation.
 
-## Result 7: Biber-Lite Gives A Broader Final-Output Style Signature
+## Result 7: Archived Register Proxies Give A Broader Historical Style Signature
 
-Phase 2 measured Biber-lite features on generated outputs and compared them to
-Phase 1 corpus samples. This gives a wider style signature beyond the
-hand-selected Tier-1 markers.
+Phase 2 measured generated-output register proxies and compared them to Phase
+1 corpus samples. This gave a wider historical style signature beyond the
+hand-selected Tier-1 markers. These proxy results are no longer the active
+Tier-2 register surface; the active paper claim uses the full pybiber Phase 1
+corpus-side analysis.
 
-Selected Biber-lite progression, per 1,000 generated tokens:
+Selected historical proxy progression, per 1,000 generated tokens:
 
 | Feature | Base | SFT | DPO | Final/RLVR | Final - Base |
 |---|---:|---:|---:|---:|---:|
@@ -561,8 +568,8 @@ Conclusion:
 ## Result 8: Final/RLVR Is DPO-Like But Not DPO-Identical
 
 The final output style signature joins Tier-1 free-running slop rates,
-empirical compounding metrics, and Biber-lite register rates. It then computes
-checkpoint distances over the combined raw vector.
+empirical compounding metrics, and historical register-proxy rates. It then
+computes checkpoint distances over the combined raw vector.
 
 These distances are useful for orientation. They are not formal statistical
 tests because high-rate metrics dominate Euclidean distance.
@@ -584,12 +591,12 @@ Largest Final-vs-Base shifts:
 |---|---|---|---:|---:|---:|
 | Compounding | Observed /1k opportunities | `rule_of_three_approx` | 428.106 | 344.007 | +84.098 |
 | Compounding | Observed /1k opportunities | `stock_openers` | 1.477 | 8.592 | -7.115 |
-| Biber-lite | Generation /1k tokens | Demonstratives | 10.115 | 15.686 | -5.571 |
-| Biber-lite | Generation /1k tokens | Infinitives | 13.623 | 17.426 | -3.803 |
-| Biber-lite | Generation /1k tokens | First-person pronouns | 11.638 | 15.325 | -3.687 |
-| Biber-lite | Generation /1k tokens | Necessity modals | 2.505 | 5.037 | -2.532 |
-| Biber-lite | Generation /1k tokens | Prediction modals | 1.879 | 3.851 | -1.972 |
-| Biber-lite | Generation /1k tokens | Nominalizations | 27.309 | 25.499 | +1.810 |
+| Historical proxy | Generation /1k tokens | Demonstratives | 10.115 | 15.686 | -5.571 |
+| Historical proxy | Generation /1k tokens | Infinitives | 13.623 | 17.426 | -3.803 |
+| Historical proxy | Generation /1k tokens | First-person pronouns | 11.638 | 15.325 | -3.687 |
+| Historical proxy | Generation /1k tokens | Necessity modals | 2.505 | 5.037 | -2.532 |
+| Historical proxy | Generation /1k tokens | Prediction modals | 1.879 | 3.851 | -1.972 |
+| Historical proxy | Generation /1k tokens | Nominalizations | 27.309 | 25.499 | +1.810 |
 
 Largest Final-vs-DPO shifts:
 
@@ -597,10 +604,10 @@ Largest Final-vs-DPO shifts:
 |---|---|---|---:|---:|---:|
 | Compounding | Observed /1k opportunities | `rule_of_three_approx` | 428.106 | 458.417 | -30.311 |
 | Compounding | Prior risk ratio | `stock_closers` | 9.399 | 6.198 | +3.201 |
-| Biber-lite | Generation /1k tokens | First-person pronouns | 11.638 | 10.302 | +1.336 |
-| Biber-lite | Generation /1k tokens | Causal subordinators | 3.831 | 2.856 | +0.975 |
-| Biber-lite | Generation /1k tokens | Hedges | 1.868 | 1.109 | +0.759 |
-| Biber-lite | Generation /1k tokens | Infinitives | 13.623 | 13.009 | +0.614 |
+| Historical proxy | Generation /1k tokens | First-person pronouns | 11.638 | 10.302 | +1.336 |
+| Historical proxy | Generation /1k tokens | Causal subordinators | 3.831 | 2.856 | +0.975 |
+| Historical proxy | Generation /1k tokens | Hedges | 1.868 | 1.109 | +0.759 |
+| Historical proxy | Generation /1k tokens | Infinitives | 13.623 | 13.009 | +0.614 |
 
 Conclusion:
 
@@ -613,7 +620,7 @@ Conclusion:
 
 Base already contains much of the measured style. It is the target-shape
 free-running maximum for `rule_of_three_approx` and `slop_lexicon`, and it is
-high on Biber-lite demonstratives, first-person pronouns, infinitives, and
+high on historical-proxy demonstratives, first-person pronouns, infinitives, and
 modal markers.
 
 This rules out a naive story where slop begins only at preference
@@ -655,7 +662,7 @@ Compared with DPO, Final/RLVR is lower on `slop_lexicon` free-running rate,
 `rule_of_three_approx` free-running rate, pooled stock phrase free-running
 rate, and `rule_of_three_approx` observed compounding opportunities.
 
-Compared with DPO, Final/RLVR is higher on selected Biber-lite register
+Compared with DPO, Final/RLVR is higher on selected historical proxy
 markers, including first-person pronouns, causal subordinators, hedges,
 infinitives, passive-voice approximation, public verbs, and possibility
 modals.
@@ -673,7 +680,7 @@ partially smoothing or redirecting several DPO-stage movements.
 | `stock_openers` | Low rates. DPO is tied or near peak in free-running output, but teacher-forced raw AF falls through the ladder. |
 | `stock_closers` | DPO peaks in free-running output; teacher-forced raw AF is very high because references are rare. Direction useful, magnitude fragile. |
 | `stock_openers_closers` | Useful pooled view. DPO is the free-running peak, but pooled interpretation hides the opener/closer split. |
-| Biber-lite register proxies | Descriptive style layer. Final/RLVR is less Base-like on many modal/pronoun/demonstrative markers and remains close to DPO overall. |
+| Historical register proxies | Archived descriptive style layer. Final/RLVR is less Base-like on many modal/pronoun/demonstrative markers and remains close to DPO overall, but this is not active full-pybiber evidence. |
 
 ## Hypothesis Status
 
@@ -698,7 +705,7 @@ slop lexicon" explanation.
 | Does DPO explain every measured slop feature? | No. `rule_of_three_approx` is Base-heavy in sampled output and SFT-peaked in its teacher-forced proxy. |
 | Did we measure self-conditioning? | Yes. For `slop_lexicon`, later windows are about 6x-9x more likely to contain another hit after a prior hit has already appeared. |
 | What is the prior-vs-after-prior result? | For `slop_lexicon`, `P(hit after prior)` is `0.069-0.105` depending on stage, while `P(hit without prior)` is about `0.011`. That is the clearest compounding signal. |
-| Did we measure Biber-style features? | Yes, as `biber_lite` regex proxies on generated outputs and Phase 1 corpus samples. This is a register/style comparison layer, not full pybiber. |
+| Did we measure Biber-style features? | Yes for the active paper scope: full pybiber was run over the Phase 1 corpus-side samples. Generated-output full pybiber was not run; older generated-output proxy artifacts are historical diagnostics only. |
 | What is Final/RLVR closest to? | DPO, under the assembled style signature. Final/RLVR is DPO-like overall but lower than DPO on several headline slop rates. |
 | What should Phase 3 inherit from Phase 2? | A feature-by-feature amplification spectrum, not a single global slop score. |
 
@@ -721,8 +728,8 @@ extension proxy.
 Phase 2 does not provide cross-ladder generalization. The SmolLM3 no_think
 replication and OLMo-vs-SmolLM3 comparison belong to Phase 3.
 
-Phase 2 does not provide full pybiber extraction. Biber-lite is a useful
-surface-register layer, not full Biber category measurement.
+Phase 2 does not provide generated-output full pybiber extraction. The active
+full-pybiber result is corpus-side Phase 1 register analysis.
 
 ## Main Caveats
 
@@ -747,8 +754,9 @@ prompt denominator audit, so strong teacher-forced claims are not retained.
 reference denominator is small. The qualitative direction is useful; the exact
 magnitude should be handled cautiously.
 
-Biber-lite features are regex proxies. They are useful for register comparison
-but should not be presented as full pybiber extraction.
+Historical generated-output register-proxy features should not be presented as
+full pybiber extraction or as part of the current paper's active Tier-2
+surface.
 
 The style-signature distance uses raw metric scales. It is useful for saying
 which checkpoints are closest in the assembled output signature, but it is not
@@ -795,7 +803,7 @@ next job is to classify features by combining:
 - Phase 2 teacher-forced AF;
 - Phase 2 free-running emission;
 - Phase 2 compounding evidence;
-- Phase 2 Biber-lite style-signature evidence.
+- archived Phase 2 register-proxy style-signature evidence.
 
 Immediate Phase 3 interpretations implied by this report:
 
@@ -807,8 +815,8 @@ Immediate Phase 3 interpretations implied by this report:
 - Stock phrases need opener/closer separation before making a causal claim.
 - `contrastive_negation` needs better teacher-forced support before it can be
   classified beyond output-visible rebound.
-- Biber-lite should be used as the broader final-output style signature, not
-  as causal slop evidence.
+- Historical register-proxy signatures should be treated as archived
+  diagnostics, not as active full-pybiber or causal slop evidence.
 - SmolLM3 no_think replication is required before presenting these as
   cross-model results.
 
@@ -822,12 +830,14 @@ Final report inputs:
 - `artifacts/phase2/analysis/olmo3_generation_stage_grid_target_shape_512prompt_8comp_t1_1024_summary.md`
 - `artifacts/phase2/analysis/olmo3_generation_compounding_target_shape_512prompt_8comp_t1_1024_tf1024.csv`
 - `artifacts/phase2/analysis/olmo3_generation_compounding_target_shape_512prompt_8comp_t1_1024_tf1024_summary.md`
-- `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1.csv`
-- `artifacts/phase2/analysis/olmo3_biber_lite_generation_vs_corpus_t1_summary.md`
 - `artifacts/phase2/analysis/olmo3_style_signature_t1.csv`
 - `artifacts/phase2/analysis/olmo3_style_signature_t1_stage_distances.csv`
 - `artifacts/phase2/analysis/olmo3_style_signature_t1_summary.md`
 - `artifacts/phase2/analysis/olmo3_phase2_single_temp_t1_final_artifact_manifest.md`
+
+Archived generated-output register-proxy artifacts from the earlier Phase 2
+pass remain on disk for provenance, but they are no longer final-report inputs
+for the active pybiber-augmented paper scope.
 
 Important W&B runs:
 
