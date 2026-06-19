@@ -155,6 +155,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--epochs", type=int, default=2)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--weight-decay", type=float, default=0.0)
+    parser.add_argument(
+        "--lr-schedule",
+        choices=["constant", "wsd"],
+        default="constant",
+        help="SAE learning-rate schedule. WSD is linear warmup, stable plateau, linear decay.",
+    )
+    parser.add_argument("--warmup-ratio", type=float, default=0.1)
+    parser.add_argument("--decay-ratio", type=float, default=0.1)
+    parser.add_argument("--min-lr-ratio", type=float, default=0.0)
     parser.add_argument("--eval-fraction", type=float, default=0.1)
     parser.add_argument("--compile-sae", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--compile-detector", action=argparse.BooleanOptionalAction, default=True)
@@ -493,6 +502,69 @@ def _evaluate_sae_mse(
     return total_sse / max(1, total_values)
 
 
+def _wsd_lr_multiplier(
+    step: int,
+    *,
+    total_steps: int,
+    warmup_steps: int,
+    decay_steps: int,
+    min_lr_ratio: float,
+) -> float:
+    if step <= 0:
+        return 0.0 if warmup_steps > 0 else 1.0
+    if warmup_steps > 0 and step <= warmup_steps:
+        return step / warmup_steps
+    decay_start = max(warmup_steps, total_steps - decay_steps)
+    if decay_steps > 0 and step > decay_start:
+        remaining = max(0, total_steps - step)
+        decay_progress = remaining / decay_steps
+        return min_lr_ratio + (1.0 - min_lr_ratio) * decay_progress
+    return 1.0
+
+
+def _build_lr_scheduler(
+    optimizer: torch.optim.Optimizer,
+    *,
+    args: argparse.Namespace,
+    total_steps: int,
+) -> tuple[torch.optim.lr_scheduler.LambdaLR | None, dict[str, Any]]:
+    if args.warmup_ratio < 0.0 or args.decay_ratio < 0.0:
+        raise ValueError("--warmup-ratio and --decay-ratio must be non-negative")
+    if args.warmup_ratio + args.decay_ratio > 1.0:
+        raise ValueError("--warmup-ratio + --decay-ratio must be <= 1")
+    if not 0.0 <= args.min_lr_ratio <= 1.0:
+        raise ValueError("--min-lr-ratio must be between 0 and 1")
+    if args.lr_schedule == "constant":
+        return None, {
+            "lr_schedule": "constant",
+            "warmup_steps": 0,
+            "stable_steps": total_steps,
+            "decay_steps": 0,
+            "min_lr_ratio": 1.0,
+        }
+    warmup_steps = int(total_steps * args.warmup_ratio)
+    decay_steps = int(total_steps * args.decay_ratio)
+    stable_steps = max(0, total_steps - warmup_steps - decay_steps)
+
+    def lr_lambda(step: int) -> float:
+        return _wsd_lr_multiplier(
+            step,
+            total_steps=total_steps,
+            warmup_steps=warmup_steps,
+            decay_steps=decay_steps,
+            min_lr_ratio=args.min_lr_ratio,
+        )
+
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lr_lambda)
+    return scheduler, {
+        "lr_schedule": "wsd",
+        "warmup_steps": warmup_steps,
+        "stable_steps": stable_steps,
+        "decay_steps": decay_steps,
+        "min_lr_ratio": args.min_lr_ratio,
+    }
+
+
 def train_sae(
     *,
     activations: torch.Tensor,
@@ -529,6 +601,12 @@ def train_sae(
         num_workers=args.num_workers,
         pin_memory=device.type == "cuda",
     )
+    total_steps = max(1, len(loader) * args.epochs)
+    scheduler, scheduler_summary = _build_lr_scheduler(
+        optimizer,
+        args=args,
+        total_steps=total_steps,
+    )
     train_rows: list[dict[str, Any]] = []
     eval_rows: list[dict[str, Any]] = []
     start = time.time()
@@ -558,21 +636,26 @@ def train_sae(
             loss = mse
             loss.backward()
             optimizer.step()
+            if scheduler is not None:
+                scheduler.step()
             sae.normalize_decoder_weights()
             if step == 1 or step % args.progress_every == 0:
                 active_per_vector = (sparse_codes > 0).float().sum(dim=1).mean()
+                current_lr = float(optimizer.param_groups[0]["lr"])
                 row = {
                     "step": step,
                     "epoch": epoch,
                     "loss": float(loss.detach().cpu()),
                     "mse": float(mse.detach().cpu()),
+                    "learning_rate": current_lr,
                     "active_latents_per_vector": float(active_per_vector.detach().cpu()),
                     "elapsed_seconds": time.time() - start,
                 }
                 train_rows.append(row)
                 print(
                     f"SAE step {step}: loss={row['loss']:.6f} "
-                    f"active/vector={row['active_latents_per_vector']:.2f}",
+                    f"active/vector={row['active_latents_per_vector']:.2f} "
+                    f"lr={current_lr:.3g}",
                     flush=True,
                 )
         eval_mse = _evaluate_sae_mse(
@@ -594,6 +677,7 @@ def train_sae(
     train_summary = {
         "compile_sae_requested": bool(getattr(args, "compile_sae", False)),
         "compile_sae_fallback": sae_compile_fallback,
+        **scheduler_summary,
     }
     return sae, train_rows, eval_rows, train_summary
 
@@ -1087,6 +1171,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "epochs": args.epochs,
         "learning_rate": args.learning_rate,
         "weight_decay": args.weight_decay,
+        "lr_schedule": args.lr_schedule,
+        "warmup_ratio": args.warmup_ratio,
+        "decay_ratio": args.decay_ratio,
+        "min_lr_ratio": args.min_lr_ratio,
+        "warmup_steps": train_summary.get("warmup_steps", 0),
+        "stable_steps": train_summary.get("stable_steps", 0),
+        "decay_steps": train_summary.get("decay_steps", 0),
         "eval_fraction": args.eval_fraction,
         "final_train_mse": final_train_mse,
         "best_eval_mse": best_eval_mse,

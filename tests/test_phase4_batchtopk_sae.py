@@ -63,6 +63,10 @@ def test_train_sae_returns_loss_rows() -> None:
         k=2,
         learning_rate=1e-3,
         weight_decay=0.0,
+        lr_schedule="wsd",
+        warmup_ratio=0.5,
+        decay_ratio=0.25,
+        min_lr_ratio=0.0,
         train_batch_size=8,
         epochs=1,
         eval_fraction=0.25,
@@ -86,6 +90,9 @@ def test_train_sae_returns_loss_rows() -> None:
     assert eval_rows
     assert eval_rows[-1]["eval_mse"] >= 0
     assert train_summary["compile_sae_fallback"] is False
+    assert train_summary["lr_schedule"] == "wsd"
+    assert train_summary["warmup_steps"] == 1
+    assert "learning_rate" in rows[-1]
 
 
 def test_load_parquet_docs_labels_human_and_llm_rows(tmp_path) -> None:
