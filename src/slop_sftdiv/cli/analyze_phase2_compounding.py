@@ -4,6 +4,7 @@ import argparse
 import csv
 import json
 import math
+import random
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -36,8 +37,20 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--generation-cache",
         action="append",
-        required=True,
+        default=[],
         help="Stage-labelled generation JSONL in the form stage=path.",
+    )
+    parser.add_argument(
+        "--counter-cache-input",
+        action="append",
+        default=[],
+        help="Previously materialized compounding cluster-counter JSONL.",
+    )
+    parser.add_argument(
+        "--counter-cache-output",
+        type=Path,
+        default=None,
+        help="Optional JSONL path for materialized compounding cluster counters.",
     )
     parser.add_argument("--feature", action="append", default=[])
     parser.add_argument(
@@ -61,6 +74,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional SVG plot of realized AF temperature dependence.",
     )
     parser.add_argument("--primary-feature", default="slop_lexicon")
+    parser.add_argument(
+        "--bootstrap-samples",
+        type=int,
+        default=0,
+        help="Document/prompt-cluster bootstrap samples for compounding CIs.",
+    )
+    parser.add_argument(
+        "--bootstrap-seed",
+        type=int,
+        default=1729,
+        help="Random seed for compounding bootstrap CIs.",
+    )
     parser.add_argument("--wandb-project", default="slop-stage1")
     parser.add_argument("--wandb-entity", default=None)
     parser.add_argument("--wandb-run-name", default=None)
@@ -73,7 +98,6 @@ def build_parser() -> argparse.ArgumentParser:
 
 def _parse_generation_specs(raw_specs: list[str]) -> list[GenerationSpec]:
     specs: list[GenerationSpec] = []
-    seen: set[str] = set()
     for raw_spec in raw_specs:
         if "=" not in raw_spec:
             raise ValueError(f"generation cache must be stage=path, got {raw_spec!r}")
@@ -81,9 +105,6 @@ def _parse_generation_specs(raw_specs: list[str]) -> list[GenerationSpec]:
         stage = stage.strip()
         if not stage:
             raise ValueError(f"empty stage in generation cache spec {raw_spec!r}")
-        if stage in seen:
-            raise ValueError(f"duplicate stage {stage!r}")
-        seen.add(stage)
         specs.append(GenerationSpec(stage=stage, path=Path(raw_path)))
     return specs
 
@@ -103,6 +124,14 @@ def _load_generation_rows(path: Path) -> list[dict[str, Any]]:
             except json.JSONDecodeError as exc:
                 raise ValueError(f"invalid JSON at {path}:{line_number}") from exc
     return rows
+
+
+def _record_key(row: dict[str, Any]) -> str:
+    for key in ("record_id", "prompt_id", "phase2_prompt_id", "source_row_index", "id"):
+        value = row.get(key)
+        if value not in (None, ""):
+            return str(value)
+    return str(row.get("row_index", ""))
 
 
 def _token_windows(text: str, *, window_tokens: int) -> list[tuple[int, int]]:
@@ -142,6 +171,25 @@ def _safe_ratio(numerator: float, denominator: float) -> float:
     return numerator / denominator
 
 
+def _quantile(sorted_values: list[float], probability: float) -> float:
+    if not sorted_values:
+        return 0.0
+    if len(sorted_values) == 1:
+        return sorted_values[0]
+    index = probability * (len(sorted_values) - 1)
+    lower = int(index)
+    upper = min(lower + 1, len(sorted_values) - 1)
+    fraction = index - lower
+    return sorted_values[lower] * (1.0 - fraction) + sorted_values[upper] * fraction
+
+
+def _interval(values: list[float]) -> tuple[float | None, float | None]:
+    finite_values = sorted(value for value in values if math.isfinite(value))
+    if not finite_values:
+        return None, None
+    return _quantile(finite_values, 0.025), _quantile(finite_values, 0.975)
+
+
 def _empty_counter() -> Counter[str]:
     return Counter(
         {
@@ -169,14 +217,17 @@ def _analyze_generation(
 ) -> dict[str, Counter[str]]:
     windows = _token_windows(text, window_tokens=window_tokens)
     hits = _hits_by_feature(text, selected_features)
+    opportunity_features = [
+        feature for feature in selected_features if feature in PHASE2_OPPORTUNITY_SPECS
+    ]
+    opportunities_by_feature: dict[str, list[Any]] = {feature: [] for feature in opportunity_features}
+    if opportunity_features:
+        for opportunity in iter_feature_opportunities(text, features=opportunity_features):
+            opportunities_by_feature[opportunity.feature].append(opportunity)
     feature_counts: dict[str, Counter[str]] = {}
     for feature in selected_features:
         starts = hits.get(feature, [])
-        opportunities = (
-            iter_feature_opportunities(text, features=[feature])
-            if feature in PHASE2_OPPORTUNITY_SPECS
-            else []
-        )
+        opportunities = opportunities_by_feature.get(feature, [])
         counter = _empty_counter()
         counter["generations"] = 1
         counter["feature_hits"] = len(starts)
@@ -359,6 +410,186 @@ def _summarize_counts(
             }
         )
     return rows
+
+
+def _derived_metrics(
+    *,
+    counter: Counter[str],
+    propensity: dict[str, Any],
+) -> dict[str, float | None]:
+    prior_windows = int(counter["prior_windows"])
+    no_prior_windows = int(counter["no_prior_windows"])
+    p_after_prior = _safe_rate(int(counter["hit_windows_after_prior"]), prior_windows)
+    p_without_prior = _safe_rate(int(counter["hit_windows_without_prior"]), no_prior_windows)
+    generation_opportunities = int(counter["generation_opportunities"])
+    observed_initiations = int(counter["observed_initiations"])
+    observed_rate = _safe_rate(observed_initiations, generation_opportunities)
+    expected_rate = propensity.get("mean_prob_mass")
+    reference_rate = propensity.get("reference_rate")
+    excess_rate = observed_rate - expected_rate if expected_rate is not None else None
+    return {
+        "p_hit_after_prior": p_after_prior,
+        "p_hit_without_prior": p_without_prior,
+        "risk_diff_after_prior": p_after_prior - p_without_prior,
+        "risk_ratio_after_prior": _safe_ratio(p_after_prior, p_without_prior),
+        "observed_per_1k_opportunities": 1000.0 * observed_rate,
+        "excess_per_1k_opportunities": (
+            1000.0 * excess_rate if excess_rate is not None else None
+        ),
+        "observed_over_expected": (
+            _safe_ratio(observed_rate, expected_rate)
+            if expected_rate is not None
+            else None
+        ),
+        "realized_af": (
+            _safe_ratio(observed_rate, reference_rate)
+            if reference_rate is not None
+            else None
+        ),
+    }
+
+
+def _bootstrap_intervals(
+    cluster_counts: dict[
+        tuple[str, str, float, float, str],
+        dict[str, Counter[str]],
+    ],
+    *,
+    propensity_grid: dict[tuple[str, str], dict[str, Any]],
+    samples: int,
+    seed: int,
+) -> dict[tuple[str, str, float, float, str], dict[str, float | None]]:
+    if samples <= 0:
+        return {}
+    rng = random.Random(seed)
+    intervals: dict[tuple[str, str, float, float, str], dict[str, float | None]] = {}
+    metric_names = [
+        "p_hit_after_prior",
+        "p_hit_without_prior",
+        "risk_diff_after_prior",
+        "risk_ratio_after_prior",
+        "observed_per_1k_opportunities",
+        "excess_per_1k_opportunities",
+        "observed_over_expected",
+        "realized_af",
+    ]
+    for key, clusters in sorted(cluster_counts.items()):
+        cluster_values = [clusters[cluster] for cluster in sorted(clusters)]
+        if not cluster_values:
+            continue
+        stage, _source, _temperature, _top_p, feature = key
+        propensity = propensity_grid.get((stage, feature), {})
+        sampled_metrics: dict[str, list[float]] = {name: [] for name in metric_names}
+        for _ in range(samples):
+            sampled = _empty_counter()
+            for _cluster_index in range(len(cluster_values)):
+                sampled.update(rng.choice(cluster_values))
+            metrics = _derived_metrics(counter=sampled, propensity=propensity)
+            for name, value in metrics.items():
+                if value is not None:
+                    sampled_metrics[name].append(value)
+        row_intervals: dict[str, float | None] = {}
+        for name, values in sampled_metrics.items():
+            low, high = _interval(values)
+            row_intervals[f"{name}_ci_low"] = low
+            row_intervals[f"{name}_ci_high"] = high
+        intervals[key] = row_intervals
+    return intervals
+
+
+def _apply_intervals(
+    rows: list[dict[str, Any]],
+    intervals: dict[tuple[str, str, float, float, str], dict[str, float | None]],
+) -> None:
+    if not intervals:
+        return
+    for row in rows:
+        key = (
+            str(row["stage"]),
+            str(row["source"]),
+            float(row["temperature"]),
+            float(row["top_p"]),
+            str(row["feature"]),
+        )
+        row.update(intervals.get(key, {}))
+
+
+def _write_counter_cache(
+    path: Path,
+    cluster_counts: dict[
+        tuple[str, str, float, float, str],
+        dict[str, Counter[str]],
+    ],
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as handle:
+        for (stage, source, temperature, top_p, feature), clusters in sorted(
+            cluster_counts.items()
+        ):
+            for cluster, counter in sorted(clusters.items()):
+                payload = {
+                    "stage": stage,
+                    "source": source,
+                    "temperature": temperature,
+                    "top_p": top_p,
+                    "feature": feature,
+                    "cluster": cluster,
+                    "counts": {key: int(value) for key, value in counter.items()},
+                }
+                handle.write(json.dumps(payload, sort_keys=True) + "\n")
+
+
+def _load_counter_cache(
+    paths: list[str],
+) -> dict[
+    tuple[str, str, float, float, str],
+    dict[str, Counter[str]],
+]:
+    cluster_counts: dict[
+        tuple[str, str, float, float, str],
+        dict[str, Counter[str]],
+    ] = defaultdict(dict)
+    for path_text in paths:
+        path = Path(path_text)
+        with path.open("r", encoding="utf-8") as handle:
+            for line_number, line in enumerate(handle, start=1):
+                if not line.strip():
+                    continue
+                try:
+                    row = json.loads(line)
+                except json.JSONDecodeError as exc:
+                    raise ValueError(f"invalid JSON at {path}:{line_number}") from exc
+                key = (
+                    str(row["stage"]),
+                    str(row.get("source", "")),
+                    float(row.get("temperature", 0.0)),
+                    float(row.get("top_p", 0.0)),
+                    str(row["feature"]),
+                )
+                cluster = str(row["cluster"])
+                counter = _empty_counter()
+                counter.update(
+                    {
+                        str(count_key): int(count_value)
+                        for count_key, count_value in dict(row.get("counts", {})).items()
+                    }
+                )
+                cluster_counts[key][cluster] = counter
+    return cluster_counts
+
+
+def _flatten_cluster_counts(
+    cluster_counts: dict[
+        tuple[str, str, float, float, str],
+        dict[str, Counter[str]],
+    ],
+) -> dict[tuple[str, str, float, float, str], Counter[str]]:
+    counts: dict[tuple[str, str, float, float, str], Counter[str]] = defaultdict(_empty_counter)
+    for key, clusters in sorted(cluster_counts.items()):
+        for cluster in sorted(clusters):
+            counter = clusters[cluster]
+            counts[key].update(counter)
+    return counts
 
 
 def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -572,6 +803,8 @@ def _write_markdown_summary(path: Path, rows: list[dict[str, Any]]) -> None:
 
 def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, Any]]:
     specs = _parse_generation_specs(args.generation_cache)
+    if not specs and not args.counter_cache_input:
+        raise ValueError("provide at least one --generation-cache or --counter-cache-input")
     selected_features = _selected_features(args.feature)
     propensity_grid = _load_propensity_grid(args.propensity_grid)
     _validate_propensity_coverage(
@@ -579,7 +812,6 @@ def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, A
         propensity_grid=propensity_grid,
         primary_feature=args.primary_feature,
     )
-    counts: dict[tuple[str, str, float, float, str], Counter[str]] = defaultdict(_empty_counter)
 
     run = init_wandb(
         project=args.wandb_project,
@@ -590,29 +822,60 @@ def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, A
         mode=args.wandb_mode,
         tags=["stage2", "phase2", "compounding", *args.wandb_tag],
         config={
-            "generation_caches": {spec.stage: str(spec.path) for spec in specs},
+            "generation_caches": [
+                {"stage": spec.stage, "path": str(spec.path)} for spec in specs
+            ],
+            "counter_cache_input": args.counter_cache_input,
+            "counter_cache_output": (
+                str(args.counter_cache_output) if args.counter_cache_output else None
+            ),
             "propensity_grid": str(args.propensity_grid) if args.propensity_grid else None,
             "features": selected_features,
             "primary_feature": args.primary_feature,
             "window_tokens": args.window_tokens,
+            "bootstrap_samples": args.bootstrap_samples,
+            "bootstrap_seed": args.bootstrap_seed,
         },
     )
     try:
+        cluster_counts = _load_counter_cache(args.counter_cache_input)
+        selected_feature_set = set(selected_features)
+        if cluster_counts:
+            cluster_counts = {
+                key: clusters
+                for key, clusters in cluster_counts.items()
+                if key[4] in selected_feature_set
+            }
         for spec in specs:
-            for row in _load_generation_rows(spec.path):
+            for row_index, row in enumerate(_load_generation_rows(spec.path)):
+                row.setdefault("row_index", row_index)
                 text = str(row.get("generation", ""))
                 generation_counts = _analyze_generation(
                     text=text,
                     selected_features=selected_features,
                     window_tokens=args.window_tokens,
                 )
+                cluster = _record_key(row)
                 for feature, feature_counter in generation_counts.items():
-                    counts[_row_key(spec.stage, row, feature)].update(feature_counter)
+                    row_key = _row_key(spec.stage, row, feature)
+                    cluster_counts[row_key].setdefault(cluster, _empty_counter()).update(
+                        feature_counter
+                    )
+        if args.counter_cache_output is not None:
+            _write_counter_cache(args.counter_cache_output, cluster_counts)
+        counts = _flatten_cluster_counts(cluster_counts)
         rows = _summarize_counts(
             counts,
             window_tokens=args.window_tokens,
             propensity_grid=propensity_grid,
         )
+        intervals = _bootstrap_intervals(
+            cluster_counts,
+            propensity_grid=propensity_grid,
+            samples=args.bootstrap_samples,
+            seed=args.bootstrap_seed,
+        )
+        _apply_intervals(rows, intervals)
         _write_csv(args.output, rows)
         _write_markdown_summary(args.summary_output, rows)
         if args.plot_output is not None:
@@ -638,13 +901,21 @@ def run_analyze_phase2_compounding(args: argparse.Namespace) -> list[dict[str, A
         )
         payload: dict[str, Any] = {
             "phase2_compounding/rows": len(rows),
-            "phase2_compounding/stages": len(specs),
+            "phase2_compounding/cache_specs": len(specs),
+            "phase2_compounding/counter_cache_inputs": len(args.counter_cache_input),
+            "phase2_compounding/stages": len({spec.stage for spec in specs}),
             "phase2_compounding/features": len(selected_features),
             "phase2_compounding/primary_feature": args.primary_feature,
             "phase2_compounding/window_tokens": args.window_tokens,
+            "phase2_compounding/bootstrap_samples": args.bootstrap_samples,
+            "phase2_compounding/bootstrap_cells": len(intervals),
             "phase2_compounding/output": str(args.output),
             "phase2_compounding/summary_output": str(args.summary_output),
         }
+        if args.counter_cache_output is not None:
+            payload["phase2_compounding/counter_cache_output"] = str(
+                args.counter_cache_output
+            )
         if args.plot_output is not None:
             payload["phase2_compounding/plot_output"] = str(args.plot_output)
         if max_diff_row is not None:

@@ -145,3 +145,69 @@ def test_assemble_weighted_pretrain_baseline_token_weights_multi_subset_source(t
     assert row["weighted_per_1k_tokens_missing_as_zero"] == pytest.approx(2.625)
     assert row["sample_count"] == pytest.approx(21.0)
     assert row["sample_tokens"] == pytest.approx(2000.0)
+
+
+def test_assemble_weighted_pretrain_baseline_tracks_explicit_source_proxies(tmp_path):
+    weights = tmp_path / "weights.csv"
+    rates = tmp_path / "rates.csv"
+    output = tmp_path / "weighted.csv"
+    summary = tmp_path / "weighted.md"
+    _write_csv(
+        weights,
+        [
+            {"source_name": "stack-edu-Python", "share": "0.2", "tokens": "200"},
+            {"source_name": "stack-edu-real-shuffled-Python", "share": "0.3", "tokens": "300"},
+            {"source_name": "dclm", "share": "0.5", "tokens": "500"},
+        ],
+    )
+    _write_csv(
+        rates,
+        [
+            {
+                "source": "smollm3_pretrain_stack_edu_python_2k",
+                "subset": "unknown",
+                "role": "pretrain_document",
+                "feature": "slop_lexicon",
+                "count": "6",
+                "docs": "2",
+                "tokens": "3000",
+                "per_1k_tokens": "2.0",
+                "per_doc": "3.0",
+            },
+        ],
+    )
+    args = build_parser().parse_args(
+        [
+            "--source-weights",
+            str(weights),
+            "--feature-rates",
+            str(rates),
+            "--source-map",
+            "smollm3_pretrain_stack_edu_python_2k=stack-edu-Python",
+            "--source-proxy",
+            "stack-edu-Python=stack-edu-real-shuffled-Python",
+            "--output",
+            str(output),
+            "--summary-output",
+            str(summary),
+        ]
+    )
+
+    rows = run(args)
+
+    assert len(rows) == 1
+    row = rows[0]
+    assert row["exact_matched_source_count"] == 1
+    assert row["proxy_source_count"] == 1
+    assert row["exact_covered_recipe_share"] == pytest.approx(0.2)
+    assert row["proxy_covered_recipe_share"] == pytest.approx(0.3)
+    assert row["covered_recipe_share"] == pytest.approx(0.5)
+    assert row["missing_recipe_share"] == pytest.approx(0.5)
+    assert row["weighted_per_1k_tokens_covered_only"] == pytest.approx(2.0)
+    assert row["weighted_per_1k_tokens_missing_as_zero"] == pytest.approx(1.0)
+    assert row["sample_count"] == pytest.approx(6.0)
+    assert row["sample_tokens"] == pytest.approx(3000.0)
+    assert "stack-edu-real-shuffled-Python:2.000000@0.300000~proxy_from=stack-edu-Python" in row[
+        "proxy_recipe_sources"
+    ]
+    assert "explicit source proxies" in summary.read_text(encoding="utf-8")

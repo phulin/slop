@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
+import random
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -29,12 +31,24 @@ def build_parser() -> argparse.ArgumentParser:
         help="Stage-tagged free-running summary CSV in the form stage=path.",
     )
     parser.add_argument(
+        "--generation-cache",
+        action="append",
+        default=[],
+        help=(
+            "Optional stage-tagged free-running JSONL cache in the form stage=path. "
+            "When supplied with --bootstrap-samples > 0, document-cluster bootstrap "
+            "CIs are added for per_1k_tokens."
+        ),
+    )
+    parser.add_argument(
         "--checkpoint-label",
         action="append",
         default=[],
         help="Optional display label in the form stage=label.",
     )
     parser.add_argument("--primary-feature", default="slop_lexicon")
+    parser.add_argument("--bootstrap-samples", type=int, default=0)
+    parser.add_argument("--bootstrap-seed", type=int, default=1729)
     parser.add_argument(
         "--output",
         type=Path,
@@ -60,50 +74,193 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def _parse_stage_paths(items: list[str], *, argument_name: str) -> dict[str, list[str]]:
+    mapping: dict[str, list[str]] = {}
+    for item in items:
+        if "=" not in item:
+            raise ValueError(f"{argument_name} must use stage=value syntax: {item!r}")
+        stage, value = item.split("=", 1)
+        stage = stage.strip()
+        value = value.strip()
+        if not stage or not value:
+            raise ValueError(f"{argument_name} must use non-empty stage=value syntax: {item!r}")
+        mapping.setdefault(stage, []).append(value)
+    return mapping
+
+
 def _read_generation_rows(
-    summary_inputs: dict[str, str],
+    summary_inputs: dict[str, list[str]],
     checkpoint_labels: dict[str, str],
 ) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for stage in sorted(summary_inputs, key=_stage_sort_key):
-        path = Path(summary_inputs[stage])
-        with path.open("r", encoding="utf-8", newline="") as handle:
-            for row in csv.DictReader(handle):
-                rows.append(
-                    {
-                        "stage": stage,
-                        "stage_order": _stage_sort_key(stage)[0],
-                        "checkpoint_label": checkpoint_labels.get(stage, stage),
-                        "input_path": str(path),
-                        "source": row.get("source") or "",
-                        "temperature": _float_or_none(row.get("temperature")),
-                        "top_p": _float_or_none(row.get("top_p")),
-                        "feature": row["feature"],
-                        "count": _int_or_zero(row.get("count")),
-                        "repeated_count": _int_or_zero(row.get("repeated_count")),
-                        "generations": _int_or_zero(row.get("generations")),
-                        "generations_with_feature": _int_or_zero(
-                            row.get("generations_with_feature")
-                        ),
-                        "repeat_generations": _int_or_zero(row.get("repeat_generations")),
-                        "generated_tokens": _int_or_zero(row.get("generated_tokens")),
-                        "per_1k_tokens": _float_or_none(row.get("per_1k_tokens")),
-                        "per_generation": _float_or_none(row.get("per_generation")),
-                        "repeat_per_generation": _float_or_none(
-                            row.get("repeat_per_generation")
-                        ),
-                        "repeat_share_after_first": _float_or_none(
-                            row.get("repeat_share_after_first")
-                        ),
-                        "share_generations_with_feature": _float_or_none(
-                            row.get("share_generations_with_feature")
-                        ),
-                        "share_repeat_generations": _float_or_none(
-                            row.get("share_repeat_generations")
-                        ),
-                    }
-                )
+        for path_text in summary_inputs[stage]:
+            path = Path(path_text)
+            with path.open("r", encoding="utf-8", newline="") as handle:
+                for row in csv.DictReader(handle):
+                    rows.append(
+                        {
+                            "stage": stage,
+                            "stage_order": _stage_sort_key(stage)[0],
+                            "checkpoint_label": checkpoint_labels.get(stage, stage),
+                            "input_path": str(path),
+                            "source": row.get("source") or "",
+                            "temperature": _float_or_none(row.get("temperature")),
+                            "top_p": _float_or_none(row.get("top_p")),
+                            "feature": row["feature"],
+                            "count": _int_or_zero(row.get("count")),
+                            "repeated_count": _int_or_zero(row.get("repeated_count")),
+                            "generations": _int_or_zero(row.get("generations")),
+                            "generations_with_feature": _int_or_zero(
+                                row.get("generations_with_feature")
+                            ),
+                            "repeat_generations": _int_or_zero(
+                                row.get("repeat_generations")
+                            ),
+                            "generated_tokens": _int_or_zero(row.get("generated_tokens")),
+                            "per_1k_tokens": _float_or_none(row.get("per_1k_tokens")),
+                            "per_generation": _float_or_none(row.get("per_generation")),
+                            "repeat_per_generation": _float_or_none(
+                                row.get("repeat_per_generation")
+                            ),
+                            "repeat_share_after_first": _float_or_none(
+                                row.get("repeat_share_after_first")
+                            ),
+                            "share_generations_with_feature": _float_or_none(
+                                row.get("share_generations_with_feature")
+                            ),
+                            "share_repeat_generations": _float_or_none(
+                                row.get("share_repeat_generations")
+                            ),
+                        }
+                    )
     return rows
+
+
+def _record_key(row: dict[str, Any]) -> str:
+    for key in ("record_id", "prompt_id", "phase2_prompt_id", "source_row_index", "id"):
+        value = row.get(key)
+        if value not in (None, ""):
+            return str(value)
+    return str(row.get("row_index", ""))
+
+
+def _quantile(sorted_values: list[float], probability: float) -> float:
+    if not sorted_values:
+        return 0.0
+    if len(sorted_values) == 1:
+        return sorted_values[0]
+    index = probability * (len(sorted_values) - 1)
+    lower = int(index)
+    upper = min(lower + 1, len(sorted_values) - 1)
+    fraction = index - lower
+    return sorted_values[lower] * (1.0 - fraction) + sorted_values[upper] * fraction
+
+
+def _bootstrap_rate_intervals(
+    cache_inputs: dict[str, list[str]],
+    *,
+    samples: int,
+    seed: int,
+) -> dict[tuple[str, str, float | None, float | None, str], dict[str, float]]:
+    if samples <= 0 or not cache_inputs:
+        return {}
+    rng = random.Random(seed)
+    grouped: dict[
+        tuple[str, str, float | None, float | None],
+        dict[str, dict[str, float]],
+    ] = {}
+    for stage in sorted(cache_inputs, key=_stage_sort_key):
+        for path_text in cache_inputs[stage]:
+            path = Path(path_text)
+            with path.open("r", encoding="utf-8") as handle:
+                for line in handle:
+                    if not line.strip():
+                        continue
+                    row = json.loads(line)
+                    source = str(row.get("source") or "")
+                    temperature = _float_or_none(row.get("temperature"))
+                    top_p = _float_or_none(row.get("top_p"))
+                    generated_tokens = float(row.get("generated_tokens") or 0.0)
+                    features = json.loads(row.get("features_json") or "{}")
+                    repeated = json.loads(row.get("repeated_features_json") or "{}")
+                    cluster = _record_key(row)
+                    cell_key = (stage, source, temperature, top_p)
+                    group = grouped.setdefault(cell_key, {}).setdefault(cluster, {})
+                    group["__tokens__"] = group.get("__tokens__", 0.0) + generated_tokens
+                    group["__generations__"] = group.get("__generations__", 0.0) + 1.0
+                    for feature, count in features.items():
+                        feature = str(feature)
+                        value = float(count)
+                        count_key = f"{feature}__count"
+                        generation_key = f"{feature}__generations_with_feature"
+                        group[count_key] = group.get(count_key, 0.0) + value
+                        group[generation_key] = group.get(generation_key, 0.0) + (
+                            1.0 if value > 0 else 0.0
+                        )
+                    for feature, count in repeated.items():
+                        repeated_key = f"{feature}__repeated_count"
+                        group[repeated_key] = group.get(repeated_key, 0.0) + float(count)
+
+    intervals: dict[tuple[str, str, float | None, float | None, str], dict[str, float]] = {}
+    for key, clusters in grouped.items():
+        cluster_values = list(clusters.values())
+        if not cluster_values:
+            continue
+        features = sorted(
+            {
+                metric.removesuffix("__count")
+                for cluster in cluster_values
+                for metric in cluster
+                if metric.endswith("__count")
+            }
+        )
+        for feature in features:
+            per_1k_samples: list[float] = []
+            share_samples: list[float] = []
+            for _ in range(samples):
+                count = 0.0
+                tokens = 0.0
+                generations = 0.0
+                generations_with_feature = 0.0
+                for _cluster_index in range(len(cluster_values)):
+                    cluster = rng.choice(cluster_values)
+                    count += cluster.get(f"{feature}__count", 0.0)
+                    tokens += cluster.get("__tokens__", 0.0)
+                    generations += cluster.get("__generations__", 0.0)
+                    generations_with_feature += cluster.get(
+                        f"{feature}__generations_with_feature", 0.0
+                    )
+                per_1k_samples.append(1000.0 * count / tokens if tokens > 0 else 0.0)
+                share_samples.append(
+                    generations_with_feature / generations if generations > 0 else 0.0
+                )
+            per_1k_samples.sort()
+            share_samples.sort()
+            intervals[(*key, feature)] = {
+                "per_1k_tokens_ci_low": _quantile(per_1k_samples, 0.025),
+                "per_1k_tokens_ci_high": _quantile(per_1k_samples, 0.975),
+                "share_generations_with_feature_ci_low": _quantile(share_samples, 0.025),
+                "share_generations_with_feature_ci_high": _quantile(share_samples, 0.975),
+            }
+    return intervals
+
+
+def _apply_bootstrap_intervals(
+    rows: list[dict[str, Any]],
+    intervals: dict[tuple[str, str, float | None, float | None, str], dict[str, float]],
+) -> None:
+    if not intervals:
+        return
+    for row in rows:
+        key = (
+            row["stage"],
+            row["source"],
+            row["temperature"],
+            row["top_p"],
+            row["feature"],
+        )
+        row.update(intervals.get(key, {}))
 
 
 def _comparison_sort_key(row: dict[str, Any]) -> tuple[float, int, str]:
@@ -146,6 +303,8 @@ def _primary_feature_comparison(
                 "generations": row["generations"],
                 "generated_tokens": row["generated_tokens"],
                 "per_1k_tokens": per_1k_tokens,
+                "per_1k_tokens_ci_low": row.get("per_1k_tokens_ci_low"),
+                "per_1k_tokens_ci_high": row.get("per_1k_tokens_ci_high"),
                 "per_generation": row["per_generation"],
                 "repeat_per_generation": row["repeat_per_generation"],
                 "repeat_share_after_first": row["repeat_share_after_first"],
@@ -194,7 +353,14 @@ def _write_summary(
                     _fmt(row["temperature"]),
                     str(row["stage"]),
                     str(row["count"]),
-                    _fmt(row["per_1k_tokens"]),
+                    (
+                        f"{_fmt(row['per_1k_tokens'])} "
+                        f"[{_fmt(row.get('per_1k_tokens_ci_low'))}, "
+                        f"{_fmt(row.get('per_1k_tokens_ci_high'))}]"
+                        if row.get("per_1k_tokens_ci_low") is not None
+                        and row.get("per_1k_tokens_ci_high") is not None
+                        else _fmt(row["per_1k_tokens"])
+                    ),
                     _fmt(row["per_generation"]),
                     _fmt(row["repeat_per_generation"]),
                     _fmt(row["repeat_share_after_first"]),
@@ -210,14 +376,18 @@ def _write_summary(
             *[
                 f"- `{row['stage']}`: `{row['input_path']}`"
                 for row in sorted(
-                    {row["stage"]: row for row in grid_rows}.values(),
-                    key=lambda item: (item["stage_order"], item["stage"]),
+                    {
+                        (row["stage"], row["input_path"]): row
+                        for row in grid_rows
+                    }.values(),
+                    key=lambda item: (item["stage_order"], item["stage"], item["input_path"]),
                 )
             ],
             "",
             "## Caveats",
             "",
             "- This assembles existing free-running summary CSVs; it does not rerun generation.",
+            "- Generation-rate CIs are document/prompt-cluster bootstrap intervals when JSONL caches are supplied.",
             "- Sparse shards are useful throughput and plumbing measurements, not stable rate estimates.",
             "- Repeat columns are the direct inputs for the Phase 2 compounding analysis.",
         ]
@@ -227,9 +397,15 @@ def _write_summary(
 
 
 def run_assemble_phase2_generation_grid(args: argparse.Namespace) -> dict[str, Any]:
-    summary_inputs = _parse_stage_mapping(
+    if args.bootstrap_samples < 0:
+        raise ValueError("--bootstrap-samples must be non-negative")
+    summary_inputs = _parse_stage_paths(
         args.generation_summary,
         argument_name="--generation-summary",
+    )
+    cache_inputs = _parse_stage_paths(
+        args.generation_cache,
+        argument_name="--generation-cache",
     )
     checkpoint_labels = _parse_stage_mapping(
         args.checkpoint_label,
@@ -238,6 +414,12 @@ def run_assemble_phase2_generation_grid(args: argparse.Namespace) -> dict[str, A
     grid_rows = _read_generation_rows(summary_inputs, checkpoint_labels)
     if not grid_rows:
         raise ValueError("no generation summary rows loaded")
+    intervals = _bootstrap_rate_intervals(
+        cache_inputs,
+        samples=args.bootstrap_samples,
+        seed=args.bootstrap_seed,
+    )
+    _apply_bootstrap_intervals(grid_rows, intervals)
     comparison_rows = _primary_feature_comparison(
         grid_rows,
         primary_feature=args.primary_feature,
@@ -261,6 +443,8 @@ def run_assemble_phase2_generation_grid(args: argparse.Namespace) -> dict[str, A
         "stages": len(summary_inputs),
         "features": len({row["feature"] for row in grid_rows}),
         "temperatures": len({row["temperature"] for row in grid_rows}),
+        "bootstrap_samples": args.bootstrap_samples,
+        "bootstrap_cells": len(intervals),
         "primary_feature": args.primary_feature,
         "max_per_1k_stage": best_row["stage"],
         "max_per_1k_temperature": best_row["temperature"],
@@ -280,8 +464,11 @@ def run_assemble_phase2_generation_grid(args: argparse.Namespace) -> dict[str, A
         tags=["stage2", "phase2", "assemble", "generation_grid", *args.wandb_tag],
         config={
             "generation_summaries": summary_inputs,
+            "generation_caches": cache_inputs,
             "checkpoint_labels": checkpoint_labels,
             "primary_feature": args.primary_feature,
+            "bootstrap_samples": args.bootstrap_samples,
+            "bootstrap_seed": args.bootstrap_seed,
             "output": str(args.output),
             "comparison_output": str(args.comparison_output),
             "summary_output": str(args.summary_output),

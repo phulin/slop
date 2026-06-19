@@ -21,9 +21,8 @@ I hope this helps."""
     assert features.item_counts["slop_lexicon"]["robust"] == 1
     assert features.item_counts["slop_lexicon"]["nuanced"] == 1
     assert features.item_counts["slop_lexicon"]["multifaceted"] == 1
-    assert features.item_counts["structure"]["bold_lead_in"] == 1
-    assert features.item_counts["structure"]["bullet_line"] == 1
-    assert features.item_counts["structure"]["numbered_line"] == 1
+    assert "structure" not in features.item_counts
+    assert "list_header_bold_lead_in" not in features.counts
     assert features.item_counts["punctuation"]["colon"] >= 1
     assert features.item_counts["punctuation"]["semicolon"] == 1
     assert features.item_counts["punctuation"]["ellipsis"] == 1
@@ -82,9 +81,47 @@ def test_iter_tier1_hits_returns_spans_and_context():
     assert delve.context.startswith("...")
 
 
-def test_iter_tier1_hits_expands_structure_hits_to_full_line():
-    text = "- Robust tests\nNext line"
+def test_eqbench_slop_score_feature_uses_vendored_lists_and_components():
+    text = (
+        "This is not just a tool, but a paradigm shift. "
+        "He took deep breath with unwavering resolve and meticulous care."
+    )
 
-    [hit] = [hit for hit in iter_tier1_hits(text) if hit.feature == "list_header_bold_lead_in"]
+    features = extract_tier1_features(text)
+    hits = iter_tier1_hits(text, features=["eqbench_slop_score"])
 
-    assert hit.text == "- Robust tests"
+    assert features.counts["eqbench_slop_score"] > 0
+    assert features.item_counts["eqbench_slop_score"]["word_hits"] >= 3
+    assert features.item_counts["eqbench_slop_score"]["trigram_hits"] == 1
+    assert features.item_counts["eqbench_slop_score"]["contrast_hits"] == 1
+    word_rate = features.helpers["eqbench_slop_word_matches_per_1k_words"]
+    assert isinstance(word_rate, float)
+    assert word_rate > 0
+    assert {hit.subtype for hit in hits} >= {
+        "word:meticulous",
+        "word:paradigm",
+        "word:unwavering",
+        "trigram:took deep breath",
+    }
+
+
+def test_stock_closer_overall_requires_final_discourse_frame():
+    ordinary = extract_tier1_features("The specific materials differ, but the overall process is the same.")
+    framed = extract_tier1_features("The details vary. Overall, this improves the system.")
+
+    assert ordinary.item_counts["stock_closers"]["overall"] == 0
+    assert framed.item_counts["stock_closers"]["overall"] == 1
+
+
+def test_rule_of_three_skips_code_and_table_lines():
+    text = """Here is code:
+```python
+read arrays from standard input, computes their valid convolution, and prints the result
+```
+
+It supports empathy, clarity, and rigor.
+"""
+
+    features = extract_tier1_features(text)
+
+    assert features.item_counts["rule_of_three"]["approx_triple"] == 1

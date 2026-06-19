@@ -52,6 +52,99 @@ NEUTRAL_COMMON_INITIATORS: dict[str, tuple[str, ...]] = {
     "neutral_common_is_a": ("is a",),
 }
 
+PHASE4_DISCOVERED_PATTERNS: dict[str, re.Pattern[str]] = {
+    "phase4_ig_conversation_greeting": re.compile(
+        r"\b(?:hey there|hi there|hey!|sure,?|certainly,?|great question)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_process_framing": re.compile(
+        r"\b(?:step[- ]by[- ]step|problem step by step|to solve|let's solve|"
+        r"let us solve)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_additive_transition": re.compile(
+        r"\b(?:also|additionally|moreover|however|therefore|thus|typically)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_prescriptive_instruction": re.compile(
+        r"\b(?:should|need to|consider|ensure|make sure|must)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_followup_offer": re.compile(
+        r"\b(?:you can|if you want|happy to help|i(?:'|’)m glad)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_response_constraint": re.compile(
+        r"\b(?:your response|your answer|must)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_code_boilerplate": re.compile(
+        r"\b(?:def|class|import|return|const|let|var|function)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_quantity_time_recipe": re.compile(
+        r"\b(?:cup|cups|minute|minutes|hour|hours|degrees|tablespoon|"
+        r"tablespoons|teaspoon|teaspoons)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_benefit_intensifier": re.compile(
+        r"\b(?:significantly enhance|greatly enhance|greatly benefit|"
+        r"significantly|greatly)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+    "phase4_ig_careful_reasoning": re.compile(
+        r"\b(?:think carefully|let's think|let us think|carefully first)\b",
+        re.IGNORECASE | re.UNICODE,
+    ),
+}
+
+PHASE4_DISCOVERED_INITIATORS: dict[str, tuple[str, ...]] = {
+    "phase4_ig_conversation_greeting": ("hey", "hi", "sure", "certainly", "great"),
+    "phase4_ig_process_framing": ("step", "problem", "to", "let's", "let"),
+    "phase4_ig_additive_transition": (
+        "also",
+        "additionally",
+        "moreover",
+        "however",
+        "therefore",
+        "thus",
+        "typically",
+    ),
+    "phase4_ig_prescriptive_instruction": (
+        "should",
+        "need",
+        "consider",
+        "ensure",
+        "make",
+        "must",
+    ),
+    "phase4_ig_followup_offer": ("you", "if", "happy", "i'm"),
+    "phase4_ig_response_constraint": ("your", "must"),
+    "phase4_ig_code_boilerplate": (
+        "def",
+        "class",
+        "import",
+        "return",
+        "const",
+        "let",
+        "var",
+        "function",
+    ),
+    "phase4_ig_quantity_time_recipe": (
+        "cup",
+        "cups",
+        "minute",
+        "minutes",
+        "hour",
+        "hours",
+        "degrees",
+        "tablespoon",
+        "teaspoon",
+    ),
+    "phase4_ig_benefit_intensifier": ("significantly", "greatly"),
+    "phase4_ig_careful_reasoning": ("think", "let's", "let", "carefully"),
+}
+
 
 @dataclass(frozen=True)
 class OpportunitySpec:
@@ -107,6 +200,26 @@ PHASE2_OPPORTUNITY_SPECS: dict[str, OpportunitySpec] = {
             "comprehensive",
             "moreover",
             "ultimately",
+        ),
+    ),
+    "slop_lexicon_v2_candidate": OpportunitySpec(
+        feature="slop_lexicon_v2_candidate",
+        opportunity_kind="token_start",
+        initiators=(
+            "meticulous",
+            "commendable",
+            "pivotal",
+            "burgeoning",
+            "paradigm",
+            "transformative",
+            "tailored",
+            "harness",
+            "unwavering",
+            "captivate",
+            "captivating",
+            "captivated",
+            "kaleidoscope",
+            "symphony",
         ),
     ),
     "stock_openers": OpportunitySpec(
@@ -215,6 +328,56 @@ PHASE2_OPPORTUNITY_SPECS: dict[str, OpportunitySpec] = {
             for phrase in phrases
         ),
     ),
+    "phase4_ig_conversation_greeting": OpportunitySpec(
+        feature="phase4_ig_conversation_greeting",
+        opportunity_kind="line_or_sentence_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_conversation_greeting"],
+    ),
+    "phase4_ig_process_framing": OpportunitySpec(
+        feature="phase4_ig_process_framing",
+        opportunity_kind="token_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_process_framing"],
+    ),
+    "phase4_ig_additive_transition": OpportunitySpec(
+        feature="phase4_ig_additive_transition",
+        opportunity_kind="line_or_sentence_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_additive_transition"],
+    ),
+    "phase4_ig_prescriptive_instruction": OpportunitySpec(
+        feature="phase4_ig_prescriptive_instruction",
+        opportunity_kind="token_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_prescriptive_instruction"],
+    ),
+    "phase4_ig_followup_offer": OpportunitySpec(
+        feature="phase4_ig_followup_offer",
+        opportunity_kind="token_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_followup_offer"],
+    ),
+    "phase4_ig_response_constraint": OpportunitySpec(
+        feature="phase4_ig_response_constraint",
+        opportunity_kind="token_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_response_constraint"],
+    ),
+    "phase4_ig_code_boilerplate": OpportunitySpec(
+        feature="phase4_ig_code_boilerplate",
+        opportunity_kind="token_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_code_boilerplate"],
+    ),
+    "phase4_ig_quantity_time_recipe": OpportunitySpec(
+        feature="phase4_ig_quantity_time_recipe",
+        opportunity_kind="token_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_quantity_time_recipe"],
+    ),
+    "phase4_ig_benefit_intensifier": OpportunitySpec(
+        feature="phase4_ig_benefit_intensifier",
+        opportunity_kind="token_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_benefit_intensifier"],
+    ),
+    "phase4_ig_careful_reasoning": OpportunitySpec(
+        feature="phase4_ig_careful_reasoning",
+        opportunity_kind="line_or_sentence_start",
+        initiators=PHASE4_DISCOVERED_INITIATORS["phase4_ig_careful_reasoning"],
+    ),
 }
 
 
@@ -259,6 +422,7 @@ def _hit_starts_by_feature(text: str, selected: set[str]) -> dict[str, dict[int,
         in {
             "contrastive_negation",
             "slop_lexicon",
+            "slop_lexicon_v2_candidate",
             "stock_openers",
             "stock_closers",
             "rule_of_three_approx",
@@ -290,6 +454,12 @@ def _hit_starts_by_feature(text: str, selected: set[str]) -> dict[str, dict[int,
             subtype = feature.removeprefix("neutral_common_")
             starts.setdefault(feature, {})[match.start()] = subtype
             starts.setdefault("neutral_common_controls", {})[match.start()] = subtype
+    for feature, pattern in PHASE4_DISCOVERED_PATTERNS.items():
+        if feature not in selected:
+            continue
+        subtype = feature.removeprefix("phase4_ig_")
+        for match in pattern.finditer(text):
+            starts.setdefault(feature, {})[match.start()] = subtype
     return starts
 
 
@@ -307,6 +477,8 @@ def _opportunity_offsets(
             return offsets[:max_token_start_opportunities]
         return offsets
     if opportunity_kind == "clause_boundary":
+        return _boundary_offsets(text)
+    if opportunity_kind == "line_or_sentence_start":
         return _boundary_offsets(text)
     if opportunity_kind == "final_clause_boundary":
         offsets = _boundary_offsets(text)

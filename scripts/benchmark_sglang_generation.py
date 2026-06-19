@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from slop_sftdiv.features import extract_tier1_features
+from slop_sftdiv.generation_text import feature_text_for_mode, feature_text_token_count
 from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
 
@@ -46,11 +47,31 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--top-p", action="append", type=float, default=[])
     parser.add_argument("--max-new-tokens", type=int, default=128)
     parser.add_argument("--completions-per-prompt", type=int, default=1)
+    parser.add_argument(
+        "--prompt-batch-size",
+        type=int,
+        default=0,
+        help=(
+            "Number of prompts to send to each SGLang generate call. Use 0 to send "
+            "all pending prompts at once."
+        ),
+    )
     parser.add_argument("--max-prompt-tokens", type=int, default=1024)
     parser.add_argument("--context-length", type=int, default=2048)
     parser.add_argument("--dtype", default="bfloat16")
     parser.add_argument("--tp-size", type=int, default=1)
     parser.add_argument("--mem-fraction-static", type=float, default=0.85)
+    parser.add_argument(
+        "--attention-backend",
+        default=None,
+        help="Optional SGLang attention backend override, e.g. triton.",
+    )
+    parser.add_argument(
+        "--disable-cuda-graph",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Disable SGLang CUDA graph capture during engine startup.",
+    )
     parser.add_argument(
         "--ignore-eos",
         action=argparse.BooleanOptionalAction,
@@ -59,8 +80,25 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--trust-remote-code", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--log-level", default="error")
+    parser.add_argument(
+        "--feature-text-mode",
+        default="raw",
+        choices=["raw", "final_answer"],
+        help=(
+            "Text used for feature extraction. Use final_answer for reasoning models "
+            "so explicit <think>/<reasoning> traces are excluded from feature counts."
+        ),
+    )
     parser.add_argument("--generations-output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, required=True)
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help=(
+            "Preserve an existing generations JSONL cache and skip already written "
+            "source/prompt/completion/temperature/top-p rows."
+        ),
+    )
     parser.add_argument("--wandb-project", default="slop-stage1")
     parser.add_argument("--wandb-entity", default=None)
     parser.add_argument("--wandb-run-name", default=None)
@@ -157,6 +195,65 @@ def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     with path.open("w", encoding="utf-8") as handle:
         for row in rows:
             handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+
+
+def _append_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+
+
+def _existing_generation_rows(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    rows = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                rows.append(json.loads(line))
+    return rows
+
+
+def _output_prompt_id(row: dict[str, Any]) -> Any:
+    return row.get("phase2_prompt_id") or row.get("prompt_id") or row.get("doc_id")
+
+
+def _output_source_row_index(row: dict[str, Any]) -> Any:
+    if row.get("source_row_index") is not None:
+        return row.get("source_row_index")
+    return row.get("_sglang_source_row_index")
+
+
+def _generation_key(row: dict[str, Any]) -> tuple[str, str, str, int, float, float]:
+    return (
+        str(row.get("source", "")),
+        str(row.get("prompt_id", "")),
+        str(row.get("source_row_index", "")),
+        int(row.get("completion_index", 0)),
+        float(row.get("temperature", 0.0)),
+        float(row.get("top_p", 0.0)),
+    )
+
+
+def _prompt_generation_key(
+    *,
+    source: str,
+    prompt_row: dict[str, Any],
+    completion_index: int,
+    temperature: float,
+    top_p: float,
+) -> tuple[str, str, str, int, float, float]:
+    prompt_id = _output_prompt_id(prompt_row)
+    source_row_index = _output_source_row_index(prompt_row)
+    return (
+        source,
+        str(prompt_id if prompt_id is not None else ""),
+        str(source_row_index if source_row_index is not None else ""),
+        completion_index,
+        float(temperature),
+        float(top_p),
+    )
 
 
 def _write_csv(path: Path, rows: list[dict[str, Any]], columns: list[str]) -> None:
@@ -264,9 +361,11 @@ def _normalize_responses(
 
 
 def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
-    import sglang as sgl
+    import sglang as sgl  # ty: ignore[unresolved-import]
     from transformers import AutoTokenizer
 
+    if args.prompt_batch_size < 0:
+        raise ValueError("--prompt-batch-size must be non-negative")
     selected_features = set(args.feature or sorted(DEFAULT_FEATURES))
     temperatures = args.temperature or [0.0, 0.7]
     top_ps = args.top_p or [0.95]
@@ -306,14 +405,19 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
             "top_ps": top_ps,
             "max_new_tokens": args.max_new_tokens,
             "completions_per_prompt": args.completions_per_prompt,
+            "prompt_batch_size": args.prompt_batch_size,
             "max_prompt_tokens": args.max_prompt_tokens,
             "context_length": args.context_length,
             "dtype": args.dtype,
             "tp_size": args.tp_size,
             "mem_fraction_static": args.mem_fraction_static,
+            "attention_backend": args.attention_backend,
+            "disable_cuda_graph": args.disable_cuda_graph,
             "ignore_eos": args.ignore_eos,
             "trust_remote_code": args.trust_remote_code,
             "log_level": args.log_level,
+            "feature_text_mode": args.feature_text_mode,
+            "resume": args.resume,
             "backend": "sglang",
         },
     )
@@ -328,6 +432,8 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
             dtype=args.dtype,
             context_length=args.context_length,
             mem_fraction_static=args.mem_fraction_static,
+            attention_backend=args.attention_backend,
+            disable_cuda_graph=args.disable_cuda_graph,
             trust_remote_code=args.trust_remote_code,
             log_level=args.log_level,
             random_seed=args.seed,
@@ -343,10 +449,59 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
         summary_repeat_generations: dict[tuple[float, float], Counter[str]] = defaultdict(Counter)
         summary_tokens: Counter[tuple[float, float]] = Counter()
         summary_generations: Counter[tuple[float, float]] = Counter()
+        completed_generation_keys: set[tuple[str, str, str, int, float, float]] = set()
+        args.generations_output.parent.mkdir(parents=True, exist_ok=True)
+        if args.resume:
+            for row in _existing_generation_rows(args.generations_output):
+                counts = json.loads(str(row.get("features_json", "{}")))
+                repeated_counts = json.loads(str(row.get("repeated_features_json", "{}")))
+                key = (float(row["temperature"]), float(row["top_p"]))
+                summary_counts[key].update(
+                    {str(feature): int(count) for feature, count in counts.items()}
+                )
+                summary_repeated_counts[key].update(
+                    {str(feature): int(count) for feature, count in repeated_counts.items()}
+                )
+                for feature, count in counts.items():
+                    if int(count) > 0:
+                        summary_generations_with_feature[key][str(feature)] += 1
+                for feature, count in repeated_counts.items():
+                    if int(count) > 0:
+                        summary_repeat_generations[key][str(feature)] += 1
+                token_denominator = row.get("feature_text_tokens") or row.get(
+                    "generated_tokens", 0
+                )
+                summary_tokens[key] += max(1, int(token_denominator))
+                summary_generations[key] += 1
+                completed_generation_keys.add(_generation_key(row))
+                generation_rows.append(row)
+        else:
+            args.generations_output.write_text("", encoding="utf-8")
 
         decode_started_at = time.perf_counter()
         for temperature in temperatures:
             for top_p in top_ps:
+                pending_prompt_rows: list[dict[str, Any]] = []
+                pending_prompt_token_ids: list[list[int]] = []
+                for prompt_row, input_token_ids in zip(
+                    prompt_rows, prompt_token_ids, strict=True
+                ):
+                    if all(
+                        _prompt_generation_key(
+                            source=source_name,
+                            prompt_row=prompt_row,
+                            completion_index=completion_index,
+                            temperature=temperature,
+                            top_p=top_p,
+                        )
+                        in completed_generation_keys
+                        for completion_index in range(args.completions_per_prompt)
+                    ):
+                        continue
+                    pending_prompt_rows.append(prompt_row)
+                    pending_prompt_token_ids.append(input_token_ids)
+                if not pending_prompt_rows:
+                    continue
                 sampling_params = {
                     "temperature": temperature,
                     "top_p": top_p,
@@ -354,47 +509,70 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                     "n": args.completions_per_prompt,
                     "ignore_eos": args.ignore_eos,
                 }
-                _ensure_event_loop()
-                responses = engine.generate(
-                    input_ids=prompt_token_ids,
-                    sampling_params=sampling_params,
-                )
-                normalized_responses = _normalize_responses(
-                    responses,
-                    prompt_count=len(prompt_rows),
-                    completions_per_prompt=args.completions_per_prompt,
-                )
-                for prompt_row, input_token_ids, completions in zip(
-                    prompt_rows, prompt_token_ids, normalized_responses, strict=True
-                ):
-                    for completion_index, completion in enumerate(completions):
-                        generation = completion["text"]
-                        generated_tokens = int(completion["generated_tokens"])
-                        counts = _feature_counts(generation, selected_features)
-                        repeated_counts = {
-                            feature: max(0, count - 1) for feature, count in counts.items()
-                        }
-                        key = (temperature, top_p)
-                        summary_counts[key].update(counts)
-                        summary_repeated_counts[key].update(repeated_counts)
-                        for feature, count in counts.items():
-                            if count > 0:
-                                summary_generations_with_feature[key][feature] += 1
-                            if count > 1:
-                                summary_repeat_generations[key][feature] += 1
-                        summary_tokens[key] += max(1, generated_tokens)
-                        summary_generations[key] += 1
-                        generation_rows.append(
-                            {
+                prompt_batch_size = args.prompt_batch_size or len(pending_prompt_rows)
+                for start in range(0, len(pending_prompt_rows), prompt_batch_size):
+                    batch_prompt_rows = pending_prompt_rows[start : start + prompt_batch_size]
+                    batch_prompt_token_ids = pending_prompt_token_ids[
+                        start : start + prompt_batch_size
+                    ]
+                    _ensure_event_loop()
+                    responses = engine.generate(
+                        input_ids=batch_prompt_token_ids,
+                        sampling_params=sampling_params,
+                    )
+                    normalized_responses = _normalize_responses(
+                        responses,
+                        prompt_count=len(batch_prompt_rows),
+                        completions_per_prompt=args.completions_per_prompt,
+                    )
+                    new_generation_rows = []
+                    for prompt_row, input_token_ids, completions in zip(
+                        batch_prompt_rows,
+                        batch_prompt_token_ids,
+                        normalized_responses,
+                        strict=True,
+                    ):
+                        for completion_index, completion in enumerate(completions):
+                            completed_key = _prompt_generation_key(
+                                source=source_name,
+                                prompt_row=prompt_row,
+                                completion_index=completion_index,
+                                temperature=temperature,
+                                top_p=top_p,
+                            )
+                            if completed_key in completed_generation_keys:
+                                continue
+                            generation = completion["text"]
+                            generated_tokens = int(completion["generated_tokens"])
+                            feature_text = feature_text_for_mode(
+                                generation, args.feature_text_mode
+                            )
+                            feature_text_tokens = feature_text_token_count(
+                                raw_generated_tokens=generated_tokens,
+                                feature_text=feature_text,
+                                mode=args.feature_text_mode,
+                            )
+                            counts = _feature_counts(feature_text, selected_features)
+                            repeated_counts = {
+                                feature: max(0, count - 1)
+                                for feature, count in counts.items()
+                            }
+                            key = (temperature, top_p)
+                            summary_counts[key].update(counts)
+                            summary_repeated_counts[key].update(repeated_counts)
+                            for feature, count in counts.items():
+                                if count > 0:
+                                    summary_generations_with_feature[key][feature] += 1
+                                if count > 1:
+                                    summary_repeat_generations[key][feature] += 1
+                            summary_tokens[key] += feature_text_tokens
+                            summary_generations[key] += 1
+                            row = {
                                 "backend": "sglang",
                                 "model": args.model,
                                 "source": source_name,
-                                "prompt_id": prompt_row.get("phase2_prompt_id")
-                                or prompt_row.get("prompt_id")
-                                or prompt_row.get("doc_id"),
-                                "source_row_index": prompt_row.get("source_row_index")
-                                if prompt_row.get("source_row_index") is not None
-                                else prompt_row.get("_sglang_source_row_index"),
+                                "prompt_id": _output_prompt_id(prompt_row),
+                                "source_row_index": _output_source_row_index(prompt_row),
                                 "completion_index": completion_index,
                                 "temperature": temperature,
                                 "top_p": top_p,
@@ -402,20 +580,27 @@ def run_benchmark(args: argparse.Namespace) -> list[dict[str, Any]]:
                                 "prompt_tokens": len(input_token_ids),
                                 "generated_tokens": generated_tokens,
                                 "generation_chars": len(generation),
+                                "feature_text_mode": args.feature_text_mode,
+                                "feature_text_chars": len(feature_text),
+                                "feature_text_tokens": feature_text_tokens,
                                 "features_json": json.dumps(counts, sort_keys=True),
                                 "repeated_features_json": json.dumps(
                                     repeated_counts, sort_keys=True
                                 ),
                                 "feature_count_total": sum(counts.values()),
-                                "repeated_feature_count_total": sum(repeated_counts.values()),
+                                "repeated_feature_count_total": sum(
+                                    repeated_counts.values()
+                                ),
                                 "finish_reason": completion["finish_reason"],
                                 "generation": generation,
                             }
-                        )
+                            generation_rows.append(row)
+                            new_generation_rows.append(row)
+                            completed_generation_keys.add(completed_key)
+                    _append_jsonl(args.generations_output, new_generation_rows)
 
         decode_seconds = time.perf_counter() - decode_started_at
         wall_seconds = time.perf_counter() - started_at
-        _write_jsonl(args.generations_output, generation_rows)
 
         summary_rows = []
         total_generated_tokens = sum(summary_tokens.values())

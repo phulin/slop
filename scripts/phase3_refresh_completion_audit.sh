@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PLAN=${PLAN:-artifacts/phase3/analysis/olmo3_generation_plan_full_5000prompt_8comp_3temp_sglang.csv}
+FINALIZE_SUMMARY=${FINALIZE_SUMMARY:-artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_finalize.md}
+INTEGRITY_AUDIT=${INTEGRITY_AUDIT:-artifacts/phase3/analysis/olmo3_full_sglang_existing_cache_integrity.csv}
+COMPLETION_AUDIT=${COMPLETION_AUDIT:-artifacts/phase3/analysis/phase3_completion_audit_snapshot.csv}
+COMPLETION_AUDIT_SUMMARY=${COMPLETION_AUDIT_SUMMARY:-artifacts/phase3/analysis/phase3_completion_audit_snapshot.md}
+
+uv run slop-audit-phase3-completion \
+  --generation-plan "$PLAN" \
+  --finalization-summary "$FINALIZE_SUMMARY" \
+  --integrity-audit "$INTEGRITY_AUDIT" \
+  --full-grid-scope optional \
+  --required-artifact reduced_olmo_spectrum=artifacts/phase3/analysis/olmo3_phase3_reduced_sglang_amplification_spectrum_t07_long1024.csv \
+  --required-artifact reduced_olmo_classifier=artifacts/phase3/analysis/olmo3_phase3_reduced_sglang_feature_classification_t07_long1024.csv \
+  --required-artifact olmo3_sft_dpo_data_rates=artifacts/stage1/census/olmo3_dolci_sft_dpo_10k_feature_rates.csv \
+  --required-artifact olmo3_pretrain_data_rates=artifacts/stage1/census/olmo3_dolma3_20k_scan_feature_rates.csv \
+  --required-artifact olmo3_preference_pair_analysis=artifacts/stage1/census/olmo3_dolci_dpo_10k_pair_analysis.csv \
+  --required-artifact reduced_olmo_main_generation_grid=artifacts/phase3/analysis/olmo3_phase3_reduced_main_generation_stage_grid_1024prompt_2comp_t07_sglang.csv \
+  --required-artifact reduced_olmo_temperature_generation_grid=artifacts/phase3/analysis/olmo3_phase3_reduced_temperature_generation_stage_grid_512prompt_1comp_3temp_sglang.csv \
+  --required-artifact reduced_olmo_temperature_compounding=artifacts/phase3/analysis/olmo3_phase3_reduced_temperature_compounding_analysis_512prompt_1comp_3temp_512_sglang.csv \
+  --required-artifact reduced_olmo_long_generation_grid=artifacts/phase3/analysis/olmo3_phase3_reduced_long_generation_stage_grid_256prompt_2comp_t07_1024_sglang.csv \
+  --required-artifact reduced_olmo_long_compounding=artifacts/phase3/analysis/olmo3_phase3_reduced_long_compounding_analysis_256prompt_2comp_t07_1024_sglang.csv \
+  --optional-artifact full_olmo_primary_generation_grid=artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_generation_stage_grid_5000prompt_8comp_t1_1024.csv \
+  --optional-artifact full_olmo_primary_compounding=artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_compounding_analysis_5000prompt_8comp_t1_1024.csv \
+  --optional-artifact full_olmo_primary_spectrum=artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_amplification_spectrum_5000prompt_8comp_t1_1024.csv \
+  --optional-artifact full_olmo_primary_classifier=artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_feature_classification_5000prompt_8comp_t1_1024.csv \
+  --optional-artifact full_olmo_primary_cross_ladder=artifacts/phase3/analysis/olmo3_full_sglang_5000prompt_8comp_3temp_vs_smollm3_fullgrid_t1_summary.md \
+  --required-artifact smollm3_sft_preference_data_rates=artifacts/stage1/census/smollm3_smoltalk2_sft2260_pref10k_tier1_feature_rates.csv \
+  --required-artifact smollm3_preference_pair_analysis=artifacts/stage1/census/smollm3_smoltalk2_pref10k_tier1_pair_analysis.csv \
+  --required-artifact smollm3_weighted_pretrain_baseline=artifacts/phase3/analysis/smollm3_weighted_pretrain_baseline_coverage_proxy.csv \
+  --required-artifact smollm3_style_signature=artifacts/phase3/analysis/smollm3_no_think_style_signature_512prompt_8comp_t1_chat_production.csv \
+  --required-artifact smollm3_style_signature_distances=artifacts/phase3/analysis/smollm3_no_think_style_signature_512prompt_8comp_t1_chat_production_distances.csv \
+  --required-artifact smollm3_production_generation_grid_t1=artifacts/phase3/analysis/smollm3_no_think_generation_stage_grid_512prompt_8comp_t1_chat_production.csv \
+  --required-artifact smollm3_production_compounding_t1=artifacts/phase3/analysis/smollm3_no_think_generation_compounding_512prompt_8comp_t1_chat_production_tf_slop_neutral_rule3.csv \
+  --required-artifact smollm3_temperature_compounding=artifacts/phase3/analysis/smollm3_no_think_temperature_compounding_slop_lexicon_512prompt_8comp_3temp_chat_production_tf_slop_neutral_rule3.csv \
+  --required-artifact smollm3_production_spectrum=artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_512prompt_tf_generation_compounding_baselines_data_rates_slop_neutral_rule3_production.csv \
+  --required-artifact smollm3_production_classifier=artifacts/phase3/analysis/smollm3_no_think_feature_classification_512prompt_tf_generation_compounding_baselines_data_rates_slop_neutral_rule3_production.csv \
+  --required-artifact smollm3_sparse_spectrum=artifacts/phase3/analysis/smollm3_no_think_amplification_spectrum_2258prompt_sparse_supported.csv \
+  --required-artifact smollm3_sparse_classifier=artifacts/phase3/analysis/smollm3_no_think_feature_classification_2258prompt_sparse_supported.csv \
+  --required-artifact smollm3_feature_support_audit=artifacts/phase3/analysis/smollm3_no_think_phase3_feature_support_audit_512prompt_and_full_sft.md \
+  --required-artifact reduced_cross_ladder=artifacts/phase3/analysis/olmo3_reduced_sglang_vs_smollm3_no_think_production_summary.md \
+  --required-artifact reduced_cross_ladder_correlations=artifacts/phase3/analysis/olmo3_vs_smollm3_no_think_512prompt_production_baselines_data_rates_tf_generation_compounding_slop_neutral_rule3_correlations.csv \
+  --required-artifact olmo3_stretch_think_rlzero_comparison=artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_comparison_256prompt_2comp_t07_1024_sglang.csv \
+  --required-artifact olmo3_stretch_think_rlzero_summary=artifacts/phase3/analysis/olmo3_phase3_stretch_think_rlzero_comparison_256prompt_2comp_t07_1024_sglang_summary.md \
+  --required-artifact phase3_conclusion_report=docs/experiments/phase3_integrated_conclusion_report.md \
+  --output "$COMPLETION_AUDIT" \
+  --summary-output "$COMPLETION_AUDIT_SUMMARY"

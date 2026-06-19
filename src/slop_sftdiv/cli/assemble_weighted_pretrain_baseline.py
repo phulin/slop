@@ -22,6 +22,15 @@ def build_parser() -> argparse.ArgumentParser:
         default=[],
         help="Map feature-rate source name to recipe source name as FEATURE_SOURCE=RECIPE_SOURCE.",
     )
+    parser.add_argument(
+        "--source-proxy",
+        action="append",
+        default=[],
+        help=(
+            "Use an already mapped recipe source as an explicit proxy for another recipe "
+            "source as MEASURED_RECIPE_SOURCE=PROXY_RECIPE_SOURCE. May be repeated."
+        ),
+    )
     parser.add_argument("--role", default="pretrain_document")
     parser.add_argument(
         "--output",
@@ -57,6 +66,20 @@ def _parse_source_map(items: list[str]) -> dict[str, str]:
             raise ValueError(f"Invalid --source-map entry {item!r}; both sides are required")
         source_map[left] = right
     return source_map
+
+
+def _parse_proxy_map(items: list[str]) -> dict[str, list[str]]:
+    proxy_map: dict[str, list[str]] = defaultdict(list)
+    for item in items:
+        if "=" not in item:
+            raise ValueError(
+                f"Invalid --source-proxy entry {item!r}; expected MEASURED_RECIPE_SOURCE=PROXY_RECIPE_SOURCE"
+            )
+        left, right = item.split("=", 1)
+        if not left or not right:
+            raise ValueError(f"Invalid --source-proxy entry {item!r}; both sides are required")
+        proxy_map[left].append(right)
+    return dict(proxy_map)
 
 
 def _source_weights(path: Path) -> dict[str, float]:
@@ -119,6 +142,26 @@ def _sample_rates(
     return rates
 
 
+def _apply_proxy_rates(
+    rates: dict[tuple[str, str], dict[str, Any]],
+    *,
+    proxy_map: dict[str, list[str]],
+) -> dict[tuple[str, str], dict[str, Any]]:
+    if not proxy_map:
+        return rates
+    out = dict(rates)
+    for (feature, measured_source), rate_info in list(rates.items()):
+        for proxy_source in proxy_map.get(measured_source, []):
+            proxy_key = (feature, proxy_source)
+            if proxy_key in out:
+                continue
+            proxy_info = dict(rate_info)
+            proxy_info["proxy_for_source"] = proxy_source
+            proxy_info["proxy_from_source"] = measured_source
+            out[proxy_key] = proxy_info
+    return out
+
+
 def _assemble_rows(
     weights: dict[str, float],
     rates: dict[tuple[str, str], dict[str, Any]],
@@ -130,12 +173,21 @@ def _assemble_rows(
     rows: list[dict[str, Any]] = []
     for feature, entries in sorted(by_feature.items()):
         covered_share = sum(weights[source] for source, _ in entries)
+        exact_entries = [
+            (source, info) for source, info in entries if not info.get("proxy_from_source")
+        ]
+        proxy_entries = [
+            (source, info) for source, info in entries if info.get("proxy_from_source")
+        ]
+        exact_covered_share = sum(weights[source] for source, _ in exact_entries)
+        proxy_covered_share = sum(weights[source] for source, _ in proxy_entries)
         weighted_sum = sum(weights[source] * info["per_1k_tokens"] for source, info in entries)
         covered_only = weighted_sum / covered_share if covered_share > 0 else None
         matched_sources = []
+        proxy_sources = []
         sample_tokens = 0.0
         sample_count = 0.0
-        for source, info in sorted(entries):
+        for source, info in sorted(exact_entries):
             source_sample_tokens = info["sample_tokens"]
             source_sample_count = info["sample_count"]
             if source_sample_tokens is not None:
@@ -149,12 +201,27 @@ def _assemble_rows(
                     share=weights[source],
                 )
             )
+        for source, info in sorted(proxy_entries):
+            proxy_from = info["proxy_from_source"]
+            proxy_sources.append(
+                "{source}:{rate:.6f}@{share:.6f}~proxy_from={proxy_from}".format(
+                    source=source,
+                    rate=info["per_1k_tokens"],
+                    share=weights[source],
+                    proxy_from=proxy_from,
+                )
+            )
         rows.append(
             {
                 "feature": feature,
                 "role": "pretrain_document",
-                "matched_recipe_sources": ";".join(matched_sources),
+                "matched_recipe_sources": ";".join(matched_sources + proxy_sources),
                 "matched_source_count": len(entries),
+                "exact_matched_source_count": len(exact_entries),
+                "proxy_source_count": len(proxy_entries),
+                "exact_covered_recipe_share": exact_covered_share,
+                "proxy_covered_recipe_share": proxy_covered_share,
+                "proxy_recipe_sources": ";".join(proxy_sources),
                 "covered_recipe_share": covered_share,
                 "missing_recipe_share": max(0.0, 1.0 - covered_share),
                 "weighted_per_1k_tokens_covered_only": covered_only,
@@ -173,6 +240,11 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "role",
         "matched_recipe_sources",
         "matched_source_count",
+        "exact_matched_source_count",
+        "proxy_source_count",
+        "exact_covered_recipe_share",
+        "proxy_covered_recipe_share",
+        "proxy_recipe_sources",
         "covered_recipe_share",
         "missing_recipe_share",
         "weighted_per_1k_tokens_covered_only",
@@ -214,11 +286,14 @@ def _summary(rows: list[dict[str, Any]], args: argparse.Namespace) -> str:
             "## Interpretation",
             "",
             "- `weighted_per_1k_tokens_covered_only` renormalizes over the recipe sources "
-            "that currently have sampled feature rates.",
+            "that currently have sampled feature rates or explicit source proxies.",
             "- `weighted_per_1k_tokens_missing_as_zero` is a lower-bound diagnostic, not a "
             "real estimate, because unsampled sources are treated as zero.",
-            "- A production weighted baseline requires enough feature-rate coverage to make "
-            "the missing recipe share acceptably small or an explicit source-group proxy.",
+            "- `exact_covered_recipe_share` counts directly source-mapped samples; "
+            "`proxy_covered_recipe_share` counts explicit recipe-source proxies from "
+            "`--source-proxy`.",
+            "- A production weighted baseline requires enough direct feature-rate coverage "
+            "or clearly documented source-group proxies.",
             "",
             "## Inputs",
             "",
@@ -232,8 +307,10 @@ def _summary(rows: list[dict[str, Any]], args: argparse.Namespace) -> str:
 
 def run(args: argparse.Namespace) -> list[dict[str, Any]]:
     source_map = _parse_source_map(args.source_map)
+    proxy_map = _parse_proxy_map(args.source_proxy)
     weights = _source_weights(args.source_weights)
     rates = _sample_rates(args.feature_rates, source_map=source_map, role=args.role)
+    rates = _apply_proxy_rates(rates, proxy_map=proxy_map)
     rows = _assemble_rows(weights, rates)
     _write_csv(args.output, rows)
     args.summary_output.parent.mkdir(parents=True, exist_ok=True)

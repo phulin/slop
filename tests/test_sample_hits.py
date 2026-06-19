@@ -62,9 +62,9 @@ def test_sample_hits_writes_label_template_and_logs_counts(tmp_path, monkeypatch
         "stock_openers",
         "contrastive_negation",
         "slop_lexicon",
-        "list_header_bold_lead_in",
         "stock_closers",
     }
+    assert "list_header_bold_lead_in" not in {row["feature"] for row in rows}
     assert all(row["label"] == "" for row in rows)
     assert all(row["context"] for row in rows)
     assert metric_payloads[-1]["precision/docs"] == 2

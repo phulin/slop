@@ -26,8 +26,8 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
         feature_rates,
         [
             {
-                "source": "pretrain_web",
-                "role": "pretrain_document",
+                "source": "olmo3_dolma3_20k_scan_retained_sample",
+                "role": "text",
                 "feature": "slop_lexicon",
                 "count": "2",
                 "docs": "1",
@@ -62,8 +62,8 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
                 "per_1k_tokens": "1.0",
             },
             {
-                "source": "sft",
-                "role": "target_response",
+                "source": "allenai/Dolci-Instruct-SFT",
+                "role": "text",
                 "feature": "slop_lexicon",
                 "count": "10",
                 "docs": "2",
@@ -89,6 +89,11 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
                 "role": "pretrain_document",
                 "matched_recipe_sources": "pretrain_web:2.0@0.5;pretrain_qa:8.0@0.5",
                 "matched_source_count": "2",
+                "exact_matched_source_count": "1",
+                "proxy_source_count": "1",
+                "exact_covered_recipe_share": "0.3",
+                "proxy_covered_recipe_share": "0.2",
+                "proxy_recipe_sources": "pretrain_qa:8.0@0.2~proxy_from=pretrain_web",
                 "covered_recipe_share": "0.5",
                 "missing_recipe_share": "0.5",
                 "weighted_per_1k_tokens_covered_only": "7.0",
@@ -149,6 +154,8 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
                 "generations": "4",
                 "generated_tokens": "1000",
                 "per_1k_tokens": "8.0",
+                "per_1k_tokens_ci_low": "6.0",
+                "per_1k_tokens_ci_high": "10.0",
                 "share_generations_with_feature": "0.5",
                 "share_repeat_generations": "0.25",
             }
@@ -161,12 +168,22 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
                 "stage": "dpo",
                 "feature": "slop_lexicon",
                 "observed_per_1k_opportunities": "6.0",
+                "observed_per_1k_opportunities_ci_low": "5.0",
+                "observed_per_1k_opportunities_ci_high": "7.0",
                 "expected_per_1k_opportunities": "4.0",
                 "excess_per_1k_opportunities": "2.0",
+                "excess_per_1k_opportunities_ci_low": "1.0",
+                "excess_per_1k_opportunities_ci_high": "3.0",
                 "realized_af": "1.2",
+                "realized_af_ci_low": "1.1",
+                "realized_af_ci_high": "1.3",
                 "repeat_generations": "2",
                 "risk_diff_after_prior": "0.1",
+                "risk_diff_after_prior_ci_low": "0.05",
+                "risk_diff_after_prior_ci_high": "0.2",
                 "risk_ratio_after_prior": "2.0",
+                "risk_ratio_after_prior_ci_low": "1.5",
+                "risk_ratio_after_prior_ci_high": "2.5",
             }
         ],
     )
@@ -258,9 +275,12 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
     dpo_slop = by_key[("slop_lexicon", "dpo")]
     assert dpo_slop["pretrain_per_1k_tokens"] == 7.0
     assert dpo_slop["pretrain_weighted_covered_recipe_share"] == 0.5
+    assert dpo_slop["pretrain_weighted_exact_covered_recipe_share"] == 0.3
+    assert dpo_slop["pretrain_weighted_proxy_covered_recipe_share"] == 0.2
     assert dpo_slop["pretrain_weighted_missing_recipe_share"] == 0.5
     assert dpo_slop["pretrain_weighted_missing_as_zero_per_1k_tokens"] == 3.5
-    assert dpo_slop["pretrain_pretrain_web_per_1k_tokens"] == 3.0
+    assert dpo_slop["pretrain_olmo3_dolma3_20k_scan_retained_sample_per_1k_tokens"] == 2.0
+    assert dpo_slop["pretrain_pretrain_web_per_1k_tokens"] == 4.0
     assert dpo_slop["pretrain_pretrain_qa_per_1k_tokens"] == 8.0
     assert dpo_slop["mid_target_per_1k_tokens"] == 1.0
     assert dpo_slop["mid_mid_per_1k_tokens"] == 1.0
@@ -268,7 +288,15 @@ def test_assemble_amplification_spectrum_merges_existing_artifacts(tmp_path, mon
     assert dpo_slop["dpo_chosen_per_1k_tokens"] == 15.0
     assert dpo_slop["teacher_forced_normalized_af"] == 1.5
     assert dpo_slop["free_run_per_1k_tokens"] == 8.0
+    assert dpo_slop["free_run_per_1k_tokens_ci_low"] == 6.0
+    assert dpo_slop["free_run_per_1k_tokens_ci_high"] == 10.0
     assert dpo_slop["compounding_excess_per_1k_opportunities"] == 2.0
+    assert dpo_slop["compounding_excess_per_1k_opportunities_ci_low"] == 1.0
+    assert dpo_slop["compounding_excess_per_1k_opportunities_ci_high"] == 3.0
+    assert dpo_slop["compounding_realized_af_ci_low"] == 1.1
+    assert dpo_slop["compounding_realized_af_ci_high"] == 1.3
+    assert dpo_slop["compounding_risk_diff_after_prior_ci_low"] == 0.05
+    assert dpo_slop["compounding_risk_ratio_after_prior_ci_high"] == 2.5
     rule_base = by_key[("rule_of_three_approx", "base")]
     assert rule_base["teacher_forced_af"] == 0.75
     assert rule_base["denominator_reference_initiations_5k"] == 80

@@ -6,6 +6,7 @@ import json
 import os
 import re
 import shlex
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -28,6 +29,10 @@ OUTPUT_COLUMNS = [
     "eta_hms",
     "eta_avg_seconds",
     "eta_avg_hms",
+    "elapsed_since_start_seconds",
+    "existing_generations_per_second",
+    "existing_eta_seconds",
+    "existing_eta_hms",
     "generations_output",
     "summary_output",
     "log_output",
@@ -110,6 +115,21 @@ def _format_hms(seconds: float | int | None) -> str:
     return f"{hours:d}:{minutes:02d}:{seconds_int:02d}"
 
 
+def _parse_started_at(value: Any) -> datetime | None:
+    if not value:
+        return None
+    text = str(value)
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+    try:
+        started_at = datetime.fromisoformat(text)
+    except ValueError:
+        return None
+    if started_at.tzinfo is None:
+        return started_at.replace(tzinfo=timezone.utc)
+    return started_at.astimezone(timezone.utc)
+
+
 def _remaining_seconds(
     *,
     expected_prompts: float | None,
@@ -163,6 +183,23 @@ def _status_row(path: Path) -> dict[str, Any]:
     log_output = Path(log_output_raw) if log_output_raw else None
     existing_generations = _jsonl_records(generations_output)
     expected_generations = int(payload["expected_generations"])
+    resume_initial_generations = int(payload.get("resume_initial_generations", 0) or 0)
+    new_generations_since_start = max(0, existing_generations - resume_initial_generations)
+    started_at = _parse_started_at(payload.get("started_at"))
+    elapsed_since_start_seconds = None
+    existing_generations_per_second = None
+    existing_eta_seconds = None
+    if started_at is not None:
+        elapsed_since_start_seconds = max(
+            0.0,
+            (datetime.now(timezone.utc) - started_at).total_seconds(),
+        )
+        if new_generations_since_start > 0 and elapsed_since_start_seconds > 0:
+            existing_generations_per_second = new_generations_since_start / elapsed_since_start_seconds
+            existing_eta_seconds = max(
+                0.0,
+                (expected_generations - existing_generations) / existing_generations_per_second,
+            )
     latest_log_progress = _latest_log_progress(log_output)
     latest_log_prompts = latest_log_progress["prompts"]
     latest_log_elapsed_seconds = latest_log_progress["elapsed_seconds"]
@@ -221,6 +258,14 @@ def _status_row(path: Path) -> dict[str, Any]:
         "eta_hms": _format_hms(eta_seconds),
         "eta_avg_seconds": eta_avg_seconds if eta_avg_seconds is not None else "",
         "eta_avg_hms": _format_hms(eta_avg_seconds),
+        "elapsed_since_start_seconds": (
+            elapsed_since_start_seconds if elapsed_since_start_seconds is not None else ""
+        ),
+        "existing_generations_per_second": (
+            existing_generations_per_second if existing_generations_per_second is not None else ""
+        ),
+        "existing_eta_seconds": existing_eta_seconds if existing_eta_seconds is not None else "",
+        "existing_eta_hms": _format_hms(existing_eta_seconds),
         "generations_output": str(generations_output),
         "summary_output": str(summary_output),
         "log_output": log_output_raw,
@@ -243,7 +288,7 @@ def run_phase2_generation_status(args: argparse.Namespace) -> list[dict[str, Any
         print(
             "{stage} t={temperature}: alive={alive} completed={completed} "
             "generations={existing}/{expected} log_prompts={log_prompts} "
-            "eta={eta} eta_avg={eta_avg}".format(
+            "eta={eta} eta_avg={eta_avg} eta_existing={eta_existing}".format(
                 stage=row["stage"],
                 temperature=row["temperature"],
                 alive=row["process_alive"],
@@ -253,6 +298,7 @@ def run_phase2_generation_status(args: argparse.Namespace) -> list[dict[str, Any
                 log_prompts=row["latest_log_prompts"] or "n/a",
                 eta=row["eta_hms"] or "n/a",
                 eta_avg=row["eta_avg_hms"] or "n/a",
+                eta_existing=row["existing_eta_hms"] or "n/a",
             )
         )
     return rows

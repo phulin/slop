@@ -14,6 +14,7 @@ from tqdm import tqdm
 
 from slop_sftdiv.cli.census import _id_fields_with_pair_id, _source_from_input
 from slop_sftdiv.features import extract_tier1_features
+from slop_sftdiv.generation_text import feature_text_for_mode, feature_text_token_count
 from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
 
@@ -84,6 +85,23 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--torch-compile", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--generations-output", type=Path, required=True)
     parser.add_argument("--summary-output", type=Path, required=True)
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help=(
+            "Preserve an existing generations JSONL cache, skip already written "
+            "source/record/completion/temperature/top-p cells, and include them in the summary."
+        ),
+    )
+    parser.add_argument(
+        "--feature-text-mode",
+        default="raw",
+        choices=["raw", "final_answer"],
+        help=(
+            "Text used for feature extraction. Use final_answer for reasoning models "
+            "so explicit <think>/<reasoning> traces are excluded from feature counts."
+        ),
+    )
     parser.add_argument("--wandb-project", default="slop-stage1")
     parser.add_argument("--wandb-entity", default=None)
     parser.add_argument("--wandb-run-name", default=None)
@@ -367,6 +385,28 @@ def _append_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
 
 
+def _generation_key(row: Mapping[str, Any]) -> tuple[str, str, str, int, float, float]:
+    return (
+        str(row.get("source", "")),
+        str(row.get("record_id", "")),
+        str(row.get("row_index", "")),
+        int(row.get("completion_index", 0)),
+        float(row.get("temperature", 0.0)),
+        float(row.get("top_p", 0.95)),
+    )
+
+
+def _existing_generation_rows(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    rows = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                rows.append(json.loads(line))
+    return rows
+
+
 def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
     if args.generation_batch_size <= 0:
         raise ValueError("--generation-batch-size must be positive")
@@ -395,11 +435,33 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
     summary_repeat_generations: dict[tuple[float, float, str], Counter[str]] = defaultdict(Counter)
     summary_tokens: Counter[tuple[float, float, str]] = Counter()
     summary_generations: Counter[tuple[float, float, str]] = Counter()
+    completed_generation_keys: set[tuple[str, str, str, int, float, float]] = set()
     prompts_seen = 0
     prompts_skipped = 0
     started_at = time.perf_counter()
     args.generations_output.parent.mkdir(parents=True, exist_ok=True)
-    args.generations_output.write_text("", encoding="utf-8")
+    if args.resume:
+        for row in _existing_generation_rows(args.generations_output):
+            counts = json.loads(str(row.get("features_json", "{}")))
+            repeated_counts = json.loads(str(row.get("repeated_features_json", "{}")))
+            key = (float(row["temperature"]), float(row["top_p"]), str(row["source"]))
+            summary_counts[key].update({str(feature): int(count) for feature, count in counts.items()})
+            summary_repeated_counts[key].update(
+                {str(feature): int(count) for feature, count in repeated_counts.items()}
+            )
+            for feature, count in counts.items():
+                if int(count) > 0:
+                    summary_generations_with_feature[key][str(feature)] += 1
+            for feature, count in repeated_counts.items():
+                if int(count) > 0:
+                    summary_repeat_generations[key][str(feature)] += 1
+            token_denominator = row.get("feature_text_tokens") or row.get("generated_tokens", 0)
+            summary_tokens[key] += max(1, int(token_denominator))
+            summary_generations[key] += 1
+            completed_generation_keys.add(_generation_key(row))
+            generation_rows.append(row)
+    else:
+        args.generations_output.write_text("", encoding="utf-8")
 
     run = init_wandb(
         project=args.wandb_project,
@@ -431,6 +493,9 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
             "dtype": args.dtype,
             "device": str(device),
             "torch_compile": args.torch_compile,
+            "resume": args.resume,
+            "existing_generations": len(completed_generation_keys),
+            "feature_text_mode": args.feature_text_mode,
         },
     )
 
@@ -463,7 +528,13 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
                 for (record, _prompt), (generation, prompt_tokens, generated_tokens) in zip(
                     batch, generated, strict=True
                 ):
-                    counts = _feature_counts(generation, selected_features)
+                    feature_text = feature_text_for_mode(generation, args.feature_text_mode)
+                    feature_text_tokens = feature_text_token_count(
+                        raw_generated_tokens=generated_tokens,
+                        feature_text=feature_text,
+                        mode=args.feature_text_mode,
+                    )
+                    counts = _feature_counts(feature_text, selected_features)
                     repeated_counts = {
                         feature: max(0, count - 1)
                         for feature, count in counts.items()
@@ -476,7 +547,7 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
                             summary_generations_with_feature[key][feature] += 1
                         if count > 1:
                             summary_repeat_generations[key][feature] += 1
-                    summary_tokens[key] += max(1, generated_tokens)
+                    summary_tokens[key] += feature_text_tokens
                     summary_generations[key] += 1
                     generation_rows.append(
                         {
@@ -492,6 +563,9 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
                             "prompt_tokens": prompt_tokens,
                             "generated_tokens": generated_tokens,
                             "generation_chars": len(generation),
+                            "feature_text_mode": args.feature_text_mode,
+                            "feature_text_chars": len(feature_text),
+                            "feature_text_tokens": feature_text_tokens,
                             "features_json": json.dumps(counts, sort_keys=True),
                             "repeated_features_json": json.dumps(repeated_counts, sort_keys=True),
                             "feature_count_total": sum(counts.values()),
@@ -511,6 +585,16 @@ def run_free_running_emission(args: argparse.Namespace) -> list[dict[str, Any]]:
                 for temperature in temperatures:
                     for top_p in top_ps:
                         for completion_index in range(args.completions_per_prompt):
+                            generation_key = (
+                                source.name,
+                                str(record.record_id),
+                                str(record.row_index),
+                                completion_index,
+                                float(temperature),
+                                float(top_p),
+                            )
+                            if generation_key in completed_generation_keys:
+                                continue
                             batch_key = (temperature, top_p, completion_index)
                             pending[batch_key].append((record, prompt))
                             if len(pending[batch_key]) >= generation_batch_size:

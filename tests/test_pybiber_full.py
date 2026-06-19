@@ -3,7 +3,7 @@ import json
 
 import pytest
 
-from slop_sftdiv.cli.pybiber_full import build_parser, run
+from slop_sftdiv.cli.pybiber_full import _ensure_unique_doc_ids, build_parser, run
 from slop_sftdiv.features.pybiber_full import (
     PYBIBER_FEATURES,
     extract_pybiber_full_features,
@@ -78,3 +78,15 @@ def test_pybiber_full_cli_writes_wide_and_long_outputs(tmp_path):
     with long_path.open(encoding="utf-8", newline="") as handle:
         long_rows = list(csv.DictReader(handle))
     assert len(long_rows) == 2 * len(PYBIBER_FEATURES)
+
+
+def test_pybiber_full_row_qualifies_duplicate_doc_ids():
+    records = _ensure_unique_doc_ids(
+        [
+            {"doc_id": "dup", "text": "First duplicate."},
+            {"doc_id": "unique", "text": "Unique document."},
+            {"doc_id": "dup", "text": "Second duplicate."},
+        ]
+    )
+
+    assert [record["doc_id"] for record in records] == ["dup#row0", "unique", "dup#row2"]

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -96,7 +97,7 @@ def _write_summary(
     lines = [
         "# Phase 1 Census Summary",
         "",
-        "Date: 2026-06-12",
+        f"Date: {date.today().isoformat()}",
         "",
         "Scope: revised Phase 1 close-out. Core deterministic features are contrastive",
         "negation, rule-of-three approximation, slop lexicon, and stock",
@@ -132,8 +133,8 @@ def _write_summary(
         "  row-qualified pair IDs. Interpret chosen/rejected differences by",
         "  preference type and model-pair metadata, not as a pure human-preference",
         "  effect.",
-        "- Dolma 3 is a bounded 20k-scan retained sample; rare strata are prefix-skewed",
-        "  and underfilled relative to the nominal cap.",
+        "- Dolma 3 is a bounded retained sample; rare strata may remain",
+        "  underfilled relative to the nominal per-stratum cap.",
     ]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

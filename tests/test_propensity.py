@@ -122,7 +122,7 @@ def test_iter_feature_opportunities_excludes_unknown_or_deferred_features():
 
     opportunities = iter_feature_opportunities(
         text,
-        features=["list_header_bold_lead_in", "punctuation_rhythm", "contrastive_negation"],
+        features=["retired_formatting_feature", "punctuation_rhythm", "contrastive_negation"],
     )
 
     assert {item.feature for item in opportunities} == {"contrastive_negation"}
@@ -141,3 +141,37 @@ def test_iter_feature_opportunities_skips_tier1_hits_for_neutral_only(monkeypatc
     )
 
     assert any(item.reference_initiates for item in opportunities)
+
+
+def test_iter_feature_opportunities_marks_phase4_discovered_features():
+    text = (
+        "Sure, let's solve this step-by-step. "
+        "Additionally, you should make sure the answer is concise. "
+        "If you want, I can explain more."
+    )
+
+    opportunities = iter_feature_opportunities(
+        text,
+        features=[
+            "phase4_ig_conversation_greeting",
+            "phase4_ig_process_framing",
+            "phase4_ig_additive_transition",
+            "phase4_ig_prescriptive_instruction",
+            "phase4_ig_followup_offer",
+        ],
+        max_token_start_opportunities=32,
+    )
+
+    by_feature = {}
+    for opportunity in opportunities:
+        by_feature.setdefault(opportunity.feature, []).append(opportunity)
+
+    assert any(
+        item.reference_initiates for item in by_feature["phase4_ig_conversation_greeting"]
+    )
+    assert any(item.reference_initiates for item in by_feature["phase4_ig_process_framing"])
+    assert any(item.reference_initiates for item in by_feature["phase4_ig_additive_transition"])
+    assert any(
+        item.reference_initiates for item in by_feature["phase4_ig_prescriptive_instruction"]
+    )
+    assert any(item.reference_initiates for item in by_feature["phase4_ig_followup_offer"])

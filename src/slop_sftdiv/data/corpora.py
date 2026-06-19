@@ -413,7 +413,7 @@ def _coerce_text(value: Any, *, preferred_roles: Sequence[str] = ()) -> str | No
         text = "\n".join(part for part in parts if part)
         return text or None
     if isinstance(value, Mapping):
-        for key in ("content", "text", "value"):
+        for key in ("content", "text", "value", "response"):
             text = _coerce_text(value.get(key), preferred_roles=preferred_roles)
             if text:
                 return text

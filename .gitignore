@@ -4,6 +4,7 @@ __pycache__/
 *.py[cod]
 runs/
 artifacts/
+data/external/
 *.egg-info/
 wandb/
 node_modules/

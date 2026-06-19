@@ -129,6 +129,9 @@ def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_pa
     assert set(generation_rows[0]) == {
         "completion_index",
         "feature_count_total",
+        "feature_text_chars",
+        "feature_text_mode",
+        "feature_text_tokens",
         "features_json",
         "generated_tokens",
         "generation",
@@ -153,6 +156,180 @@ def test_free_running_emission_writes_generation_cache_and_redacted_wandb(tmp_pa
     assert init_kwargs["config"]["model_revision"] == "it-SFT"
     assert logged_payloads[-1]["generation/generations"] == 1
     assert "Certainly, delve" not in json.dumps(logged_tables["generation_samples_redacted"])
+
+
+def test_free_running_emission_can_count_final_answer_text_only(tmp_path, monkeypatch):
+    input_path = tmp_path / "prompts.jsonl"
+    generations_path = tmp_path / "generations.jsonl"
+    summary_path = tmp_path / "summary.csv"
+    input_path.write_text(
+        json.dumps({"id": "p1", "prompt": "Answer.", "text": "Reference."}) + "\n",
+        encoding="utf-8",
+    )
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission._load_model",
+        lambda **_kwargs: (FakeTokenizer(), object(), "cpu"),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission._generate_batch",
+        lambda prompts, **_kwargs: [
+            ("<think>Certainly, delve hidden.</think>\nPlain answer.", 5, 8)
+            for _prompt in prompts
+        ],
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission.init_wandb",
+        lambda **_kwargs: FakeRun(),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission.log_summary_table",
+        lambda *_args: None,
+    )
+    args = build_parser().parse_args(
+        [
+            "--model",
+            "fake",
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "1",
+            "--feature",
+            "slop_lexicon",
+            "--feature",
+            "stock_openers",
+            "--temperature",
+            "0.0",
+            "--feature-text-mode",
+            "final_answer",
+            "--generations-output",
+            str(generations_path),
+            "--summary-output",
+            str(summary_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    summary = run_free_running_emission(args)
+
+    rows = [json.loads(line) for line in generations_path.read_text().splitlines()]
+    assert rows[0]["generation"].startswith("<think>")
+    assert rows[0]["feature_text_mode"] == "final_answer"
+    assert rows[0]["feature_text_chars"] == len("Plain answer.")
+    by_feature = {row["feature"]: row for row in summary}
+    assert by_feature["slop_lexicon"]["count"] == 0
+    assert by_feature["stock_openers"]["count"] == 0
+    assert by_feature["slop_lexicon"]["generated_tokens"] == 2
+
+
+def test_free_running_emission_resume_preserves_existing_rows_and_skips_cells(tmp_path, monkeypatch):
+    input_path = tmp_path / "prompts.jsonl"
+    generations_path = tmp_path / "generations.jsonl"
+    summary_path = tmp_path / "summary.csv"
+    input_path.write_text(
+        "\n".join(
+            [
+                json.dumps({"id": "p1", "prompt": "One", "text": "Reference."}),
+                json.dumps({"id": "p2", "prompt": "Two", "text": "Reference."}),
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    generations_path.write_text(
+        json.dumps(
+            {
+                "source": input_path.stem,
+                "record_id": "p1",
+                "source_kind": "jsonl",
+                "split": "train",
+                "row_index": 0,
+                "completion_index": 0,
+                "temperature": 0.0,
+                "top_p": 0.95,
+                "seed": 1729,
+                "prompt_tokens": 1,
+                "generated_tokens": 1,
+                "generation_chars": 5,
+                "features_json": json.dumps({"slop_lexicon": 1}),
+                "repeated_features_json": json.dumps({"slop_lexicon": 0}),
+                "feature_count_total": 1,
+                "repeated_feature_count_total": 0,
+                "generation": "delve",
+            },
+            sort_keys=True,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    generated_prompts = []
+    logged_payloads = []
+
+    class FakeRun:
+        def log(self, payload):
+            logged_payloads.append(payload)
+
+        def finish(self):
+            pass
+
+    def fake_generate_batch(prompts, **_kwargs):
+        generated_prompts.extend(prompts)
+        return [("plain text", 3, 2) for _prompt in prompts]
+
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission._load_model",
+        lambda **_kwargs: (FakeTokenizer(), object(), "cpu"),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission._generate_batch",
+        fake_generate_batch,
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission.init_wandb",
+        lambda **_kwargs: FakeRun(),
+    )
+    monkeypatch.setattr(
+        "slop_sftdiv.cli.free_running_emission.log_summary_table",
+        lambda *_args: None,
+    )
+    args = build_parser().parse_args(
+        [
+            "--model",
+            "fake",
+            "--input",
+            str(input_path),
+            "--sample-size",
+            "2",
+            "--feature",
+            "slop_lexicon",
+            "--temperature",
+            "0.0",
+            "--generations-output",
+            str(generations_path),
+            "--summary-output",
+            str(summary_path),
+            "--wandb-mode",
+            "disabled",
+            "--resume",
+        ]
+    )
+
+    summary = run_free_running_emission(args)
+
+    assert generated_prompts == ["Two"]
+    rows = [json.loads(line) for line in generations_path.read_text(encoding="utf-8").splitlines()]
+    assert [row["record_id"] for row in rows] == ["p1", "p2"]
+    assert logged_payloads[-1]["generation/generations"] == 2
+    assert summary[0]["generations"] == 2
+    assert summary[0]["count"] == 1
 
 
 def test_prompt_ids_can_apply_chat_template_with_kwargs():

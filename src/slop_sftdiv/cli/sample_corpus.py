@@ -17,12 +17,25 @@ from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
 
 MAX_WANDB_MANIFEST_ROWS = 1000
+LANGUAGE_METADATA_FIELDS = (
+    "language",
+    "lang",
+    "language_code",
+    "metadata.language",
+    "metadata.lang",
+    "metadata.language_code",
+    "attributes.language",
+    "attributes.lang",
+)
+
+_LANGUAGE_DETECTOR: Any | None = None
 
 
 @dataclass
 class SampleStats:
     scanned: int = 0
     kept: int = 0
+    language_filtered: int = 0
     tokens: int = 0
     bytes_written: int = 0
     wall_seconds: float = 0.0
@@ -96,6 +109,21 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--source-dataset", default=None, help="Canonical source dataset id.")
     parser.add_argument("--provenance", default=None, help="Fallback provenance label.")
     parser.add_argument("--text-role", default="text", help="Text role label for output rows.")
+    parser.add_argument(
+        "--require-english",
+        action="store_true",
+        help=(
+            "Drop source records whose retained text is not detected as English. For expanded "
+            "preference pairs, both chosen and rejected texts must pass. Source language "
+            "metadata is used when present; otherwise lingua-language-detector is used."
+        ),
+    )
+    parser.add_argument(
+        "--language-detection-max-chars",
+        type=int,
+        default=4000,
+        help="Maximum text characters passed to the language detector per retained text.",
+    )
     parser.add_argument(
         "--expand-preference-roles",
         action="store_true",
@@ -262,6 +290,58 @@ def _record_text_roles(record: Any, default_text_role: str, expand_preference_ro
     return [(default_text_role, record.text)]
 
 
+def _normalise_language_label(value: Any) -> str | None:
+    if value is None:
+        return None
+    label = str(value).strip().lower()
+    if not label:
+        return None
+    if label.startswith("__label__"):
+        label = label.removeprefix("__label__")
+    label = label.replace("_", "-")
+    if label in {"en", "eng", "english"} or label.startswith("en-"):
+        return "en"
+    return label
+
+
+def _metadata_language(record: Any) -> str | None:
+    metadata = dict(record.metadata)
+    for field_name in LANGUAGE_METADATA_FIELDS:
+        label = _normalise_language_label(metadata.get(field_name))
+        if label is not None:
+            return label
+    return None
+
+
+def _language_detection_text(text: str, max_chars: int) -> str:
+    if max_chars <= 0 or len(text) <= max_chars:
+        return text
+    return text[:max_chars]
+
+
+def _detect_language_label(text: str, *, max_chars: int) -> str | None:
+    global _LANGUAGE_DETECTOR
+    if _LANGUAGE_DETECTOR is None:
+        try:
+            from lingua import LanguageDetectorBuilder
+        except ImportError as exc:
+            raise RuntimeError(
+                "--require-english requires lingua-language-detector to be installed"
+            ) from exc
+        _LANGUAGE_DETECTOR = LanguageDetectorBuilder.from_all_languages().build()
+    detected = _LANGUAGE_DETECTOR.detect_language_of(_language_detection_text(text, max_chars))
+    if detected is None:
+        return None
+    return _normalise_language_label(detected.iso_code_639_1.name)
+
+
+def _is_english_record_text(record: Any, text: str, *, max_chars: int) -> bool:
+    metadata_label = _metadata_language(record)
+    if metadata_label is not None:
+        return metadata_label == "en"
+    return _detect_language_label(text, max_chars=max_chars) == "en"
+
+
 def _unique_record_id(record: Any) -> str:
     return f"{record.record_id}#row{record.row_index}"
 
@@ -361,6 +441,19 @@ def _select_records(args: argparse.Namespace) -> tuple[list[dict[str, Any]], lis
             continue
         if stratum in excluded:
             continue
+        role_texts = _record_text_roles(
+            record,
+            default_text_role=args.text_role,
+            expand_preference_roles=args.expand_preference_roles,
+        )
+        if not role_texts:
+            continue
+        if args.require_english and not all(
+            _is_english_record_text(record, text, max_chars=args.language_detection_max_chars)
+            for _, text in role_texts
+        ):
+            stats.language_filtered += 1
+            continue
         role_rows = [
             _output_row(
                 record,
@@ -373,14 +466,8 @@ def _select_records(args: argparse.Namespace) -> tuple[list[dict[str, Any]], lis
                 sentence_re=sentence_re,
                 count_tokens=count_tokens,
             )
-            for text_role, text in _record_text_roles(
-                record,
-                default_text_role=args.text_role,
-                expand_preference_roles=args.expand_preference_roles,
-            )
+            for text_role, text in role_texts
         ]
-        if not role_rows:
-            continue
         sequence += 1
         if args.sampling_strategy == "first":
             heap = heaps.setdefault(stratum, [])
@@ -459,6 +546,8 @@ def run_sample(args: argparse.Namespace) -> list[dict[str, Any]]:
             "source_dataset": args.source_dataset,
             "text_role": args.text_role,
             "expand_preference_roles": args.expand_preference_roles,
+            "require_english": args.require_english,
+            "language_detection_max_chars": args.language_detection_max_chars,
             "output": str(args.output),
             "manifest_output": str(args.manifest_output),
         },
@@ -477,6 +566,9 @@ def run_sample(args: argparse.Namespace) -> list[dict[str, Any]]:
             "input": args.input,
             "rows_scanned": stats.scanned,
             "rows_retained": stats.kept,
+            "records_language_filtered": stats.language_filtered,
+            "require_english": args.require_english,
+            "language_detection_max_chars": args.language_detection_max_chars,
             "tokens": stats.tokens,
             "wall_seconds": stats.wall_seconds,
             "rows_per_sec": stats.rows_per_sec,
@@ -495,6 +587,7 @@ def run_sample(args: argparse.Namespace) -> list[dict[str, Any]]:
             {
                 "corpus/scanned_rows": stats.scanned,
                 "corpus/rows": stats.kept,
+                "corpus/records_language_filtered": stats.language_filtered,
                 "corpus/tokens": stats.tokens,
                 "corpus/wall_seconds": stats.wall_seconds,
                 "corpus/rows_per_sec": stats.rows_per_sec,

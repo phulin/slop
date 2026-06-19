@@ -32,6 +32,13 @@ def _row(record_id, completion_index, slop_count, stock_count=0, generated_token
     }
 
 
+def _sglang_row(prompt_id, completion_index, slop_count, generated_tokens=100):
+    row = _row("", completion_index, slop_count, generated_tokens=generated_tokens)
+    row.pop("record_id")
+    row["prompt_id"] = prompt_id
+    return row
+
+
 def test_analyze_free_run_effects_uses_paired_sign_test_and_bh(tmp_path):
     left_path = tmp_path / "left.jsonl"
     right_path = tmp_path / "right.jsonl"
@@ -85,6 +92,53 @@ def test_analyze_free_run_effects_uses_paired_sign_test_and_bh(tmp_path):
     assert by_feature["slop_lexicon"]["left_mean_per_1k_tokens"] == pytest.approx(5.0)
     assert by_feature["stock_openers"]["direction"] == "left_gt_right"
     assert all("bh_q" in row for row in rows)
+
+
+def test_analyze_free_run_effects_pairs_sglang_prompt_ids(tmp_path):
+    left_path = tmp_path / "left.jsonl"
+    right_path = tmp_path / "right.jsonl"
+    _write_cache(
+        left_path,
+        [
+            _sglang_row("prompt-a", 0, 0),
+            _sglang_row("prompt-a", 1, 0),
+            _sglang_row("prompt-b", 0, 1),
+            _sglang_row("prompt-b", 1, 1),
+        ],
+    )
+    _write_cache(
+        right_path,
+        [
+            _sglang_row("prompt-a", 0, 1),
+            _sglang_row("prompt-a", 1, 1),
+            _sglang_row("prompt-b", 0, 1),
+            _sglang_row("prompt-b", 1, 0),
+        ],
+    )
+    args = build_parser().parse_args(
+        [
+            "--generation-cache",
+            f"base={left_path}",
+            "--generation-cache",
+            f"sft={right_path}",
+            "--comparison",
+            "base=sft",
+            "--feature",
+            "slop_lexicon",
+            "--output",
+            str(tmp_path / "out.csv"),
+            "--summary-output",
+            str(tmp_path / "out.md"),
+        ]
+    )
+
+    rows = analyze_free_run_effects(args)
+
+    assert len(rows) == 1
+    assert rows[0]["paired_units"] == 4
+    assert rows[0]["positive_pairs"] == 2
+    assert rows[0]["negative_pairs"] == 1
+    assert rows[0]["zero_pairs"] == 1
 
 
 def test_run_analyze_phase3_free_run_effects_writes_outputs_and_logs(tmp_path, monkeypatch):

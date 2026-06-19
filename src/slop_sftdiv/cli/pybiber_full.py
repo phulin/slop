@@ -54,6 +54,7 @@ def run(args: argparse.Namespace) -> list[dict[str, Any]]:
                 input_index=input_index,
             )
         )
+    records = _ensure_unique_doc_ids(records)
     if args.sample_size is not None:
         records = records[: args.sample_size]
     rows = cast(
@@ -132,6 +133,21 @@ def _record_from_payload(
         return None
     doc_id = _first_string(payload, [*id_fields, "doc_id", "record_id", "prompt_id", "id"])
     return {"doc_id": doc_id or fallback_doc_id, "text": text}
+
+
+def _ensure_unique_doc_ids(records: list[dict[str, str]]) -> list[dict[str, str]]:
+    counts: dict[str, int] = {}
+    for record in records:
+        counts[record["doc_id"]] = counts.get(record["doc_id"], 0) + 1
+    if all(count == 1 for count in counts.values()):
+        return records
+    unique_records: list[dict[str, str]] = []
+    for row_index, record in enumerate(records):
+        if counts[record["doc_id"]] == 1:
+            unique_records.append(record)
+            continue
+        unique_records.append({**record, "doc_id": f"{record['doc_id']}#row{row_index}"})
+    return unique_records
 
 
 def _first_string(payload: dict[str, Any], fields: list[str]) -> str | None:

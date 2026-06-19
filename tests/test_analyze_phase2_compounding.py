@@ -105,6 +105,10 @@ def test_analyze_phase2_compounding_writes_conditional_rates(tmp_path, monkeypat
             str(summary_path),
             "--plot-output",
             str(plot_path),
+            "--bootstrap-samples",
+            "25",
+            "--bootstrap-seed",
+            "7",
             "--wandb-mode",
             "disabled",
         ]
@@ -132,14 +136,21 @@ def test_analyze_phase2_compounding_writes_conditional_rates(tmp_path, monkeypat
     assert row["excess_rate"] == pytest.approx(1 / 6 - 0.1)
     assert row["observed_over_expected"] == pytest.approx(5 / 3)
     assert row["realized_af"] == pytest.approx(50 / 3)
+    assert row["observed_per_1k_opportunities_ci_low"] is not None
+    assert row["observed_per_1k_opportunities_ci_high"] is not None
+    assert row["excess_per_1k_opportunities_ci_low"] is not None
+    assert row["realized_af_ci_high"] is not None
     with output_path.open("r", encoding="utf-8", newline="") as handle:
         output_rows = list(csv.DictReader(handle))
     assert output_rows[0]["feature"] == "slop_lexicon"
+    assert output_rows[0]["realized_af_ci_low"] != ""
     assert "Phase 2 Compounding Analysis" in summary_path.read_text(encoding="utf-8")
     plot_text = plot_path.read_text(encoding="utf-8")
     assert "<svg" in plot_text
     assert "Realized AF vs. temperature" in plot_text
     assert logged_payloads[-1]["phase2_compounding/rows"] == 1
+    assert logged_payloads[-1]["phase2_compounding/bootstrap_samples"] == 25
+    assert logged_payloads[-1]["phase2_compounding/bootstrap_cells"] == 1
     assert logged_payloads[-1]["phase2_compounding/plot_output"] == str(plot_path)
     assert logged_tables["phase2_compounding"] == rows
 
@@ -189,24 +200,133 @@ def test_analyze_phase2_compounding_counts_pooled_stock_openers_closers(tmp_path
     assert row["observed_initiations"] == 2
 
 
-def test_analyze_phase2_compounding_rejects_duplicate_stage(tmp_path):
+def test_analyze_phase2_compounding_can_reuse_counter_cache(tmp_path):
     generation_path = tmp_path / "generations.jsonl"
-    generation_path.write_text("", encoding="utf-8")
+    cache_path = tmp_path / "counter_cache.jsonl"
+    output_path = tmp_path / "compounding.csv"
+    cached_output_path = tmp_path / "compounding_cached.csv"
+    generation_path.write_text(
+        "\n".join(
+            [
+                json.dumps(
+                    {
+                        "prompt_id": "p1",
+                        "source": "prompt_package",
+                        "temperature": 1.0,
+                        "top_p": 0.95,
+                        "generation": "delve into this and delve again",
+                    }
+                ),
+                json.dumps(
+                    {
+                        "prompt_id": "p2",
+                        "source": "prompt_package",
+                        "temperature": 1.0,
+                        "top_p": 0.95,
+                        "generation": "plain answer",
+                    }
+                ),
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    scan_args = build_parser().parse_args(
+        [
+            "--generation-cache",
+            f"base={generation_path}",
+            "--feature",
+            "slop_lexicon",
+            "--counter-cache-output",
+            str(cache_path),
+            "--output",
+            str(output_path),
+            "--summary-output",
+            str(tmp_path / "out.md"),
+            "--bootstrap-samples",
+            "25",
+            "--bootstrap-seed",
+            "11",
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+    cached_args = build_parser().parse_args(
+        [
+            "--counter-cache-input",
+            str(cache_path),
+            "--feature",
+            "slop_lexicon",
+            "--output",
+            str(cached_output_path),
+            "--summary-output",
+            str(tmp_path / "cached.md"),
+            "--bootstrap-samples",
+            "25",
+            "--bootstrap-seed",
+            "11",
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    scan_rows = run_analyze_phase2_compounding(scan_args)
+    cached_rows = run_analyze_phase2_compounding(cached_args)
+
+    assert cache_path.exists()
+    assert cached_rows == scan_rows
+
+
+def test_analyze_phase2_compounding_allows_repeated_stage_temperature_cells(tmp_path):
+    t0_path = tmp_path / "generations_t0.jsonl"
+    t1_path = tmp_path / "generations_t1.jsonl"
+    t0_path.write_text(
+        json.dumps(
+            {
+                "source": "prompt_package",
+                "temperature": 0.0,
+                "top_p": 0.95,
+                "generation": "delve",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    t1_path.write_text(
+        json.dumps(
+            {
+                "source": "prompt_package",
+                "temperature": 1.0,
+                "top_p": 0.95,
+                "generation": "delve delve",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     args = build_parser().parse_args(
         [
             "--generation-cache",
-            f"sft={generation_path}",
+            f"sft={t0_path}",
             "--generation-cache",
-            f"sft={generation_path}",
+            f"sft={t1_path}",
+            "--feature",
+            "slop_lexicon",
             "--output",
             str(tmp_path / "out.csv"),
             "--summary-output",
             str(tmp_path / "out.md"),
+            "--wandb-mode",
+            "disabled",
         ]
     )
 
-    with pytest.raises(ValueError, match="duplicate stage"):
-        run_analyze_phase2_compounding(args)
+    rows = run_analyze_phase2_compounding(args)
+
+    assert len(rows) == 2
+    by_temperature = {row["temperature"]: row for row in rows}
+    assert by_temperature[0.0]["feature_hits"] == 1
+    assert by_temperature[1.0]["feature_hits"] == 2
 
 
 def test_analyze_phase2_compounding_rejects_missing_propensity_stage(tmp_path):

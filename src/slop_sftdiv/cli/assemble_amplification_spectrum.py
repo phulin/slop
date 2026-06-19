@@ -32,6 +32,17 @@ DATA_RATE_COLUMNS = {
 }
 
 
+def _normalized_data_rate_role(source: str, role: str) -> str:
+    if role != "text":
+        return role
+    source_lower = source.lower()
+    if "dolma" in source_lower or "pretrain" in source_lower:
+        return "pretrain_document"
+    if "sft" in source_lower:
+        return "target_response"
+    return role
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Assemble existing Phase 1/2 artifacts into an amplification-spectrum table."
@@ -117,8 +128,8 @@ def _source_rate_column(role: str, source: str) -> str | None:
     return None
 
 
-def _weighted_pretrain_rates(paths: list[Path]) -> dict[str, dict[str, float]]:
-    rates: dict[str, dict[str, float]] = {}
+def _weighted_pretrain_rates(paths: list[Path]) -> dict[str, dict[str, float | None]]:
+    rates: dict[str, dict[str, float | None]] = {}
     for path in paths:
         for row in _read_rows(path):
             feature = str(row.get("feature", ""))
@@ -133,6 +144,12 @@ def _weighted_pretrain_rates(paths: list[Path]) -> dict[str, dict[str, float]]:
             out["pretrain_weighted_covered_recipe_share"] = _float_or_none(
                 row.get("covered_recipe_share")
             )
+            out["pretrain_weighted_exact_covered_recipe_share"] = _float_or_none(
+                row.get("exact_covered_recipe_share")
+            )
+            out["pretrain_weighted_proxy_covered_recipe_share"] = _float_or_none(
+                row.get("proxy_covered_recipe_share")
+            )
             out["pretrain_weighted_missing_recipe_share"] = _float_or_none(
                 row.get("missing_recipe_share")
             )
@@ -142,8 +159,8 @@ def _weighted_pretrain_rates(paths: list[Path]) -> dict[str, dict[str, float]]:
     return rates
 
 
-def _data_rates(paths: list[str], weighted_pretrain_paths: list[Path]) -> dict[str, dict[str, float]]:
-    rates: dict[str, dict[str, float]] = {}
+def _data_rates(paths: list[str], weighted_pretrain_paths: list[Path]) -> dict[str, dict[str, float | None]]:
+    rates: dict[str, dict[str, float | None]] = {}
     aggregate_counts: dict[tuple[str, str], float] = {}
     aggregate_tokens: dict[tuple[str, str], float] = {}
     source_counts: dict[tuple[str, str], float] = {}
@@ -152,13 +169,14 @@ def _data_rates(paths: list[str], weighted_pretrain_paths: list[Path]) -> dict[s
     for raw_path in paths:
         for row in _read_rows(Path(raw_path)):
             feature = str(row.get("feature", ""))
-            role = str(row.get("role", ""))
+            source = str(row.get("source", ""))
+            role = _normalized_data_rate_role(source, str(row.get("role", "")))
             if not feature or role not in DATA_RATE_COLUMNS:
                 continue
             if row.get("per_1k_tokens") in (None, ""):
                 continue
             column = DATA_RATE_COLUMNS[role]
-            source_column = _source_rate_column(role, str(row.get("source", "")))
+            source_column = _source_rate_column(role, source)
             count = _float_or_none(row.get("count"))
             tokens = _float_or_none(row.get("tokens"))
             per_1k_tokens = float(row["per_1k_tokens"])
@@ -231,6 +249,12 @@ def _generation(path: Path | None) -> dict[tuple[str, str], dict[str, Any]]:
     for row in _read_rows(path):
         out[(str(row["feature"]), str(row["stage"]))] = {
             "free_run_per_1k_tokens": _float_or_none(row.get("per_1k_tokens")),
+            "free_run_per_1k_tokens_ci_low": _float_or_none(
+                row.get("per_1k_tokens_ci_low")
+            ),
+            "free_run_per_1k_tokens_ci_high": _float_or_none(
+                row.get("per_1k_tokens_ci_high")
+            ),
             "free_run_count": _int_or_none(row.get("count")),
             "free_run_repeated_count": _int_or_none(row.get("repeated_count")),
             "free_run_generations": _int_or_none(row.get("generations")),
@@ -254,19 +278,49 @@ def _compounding(path: Path | None) -> dict[tuple[str, str], dict[str, Any]]:
             "compounding_observed_per_1k_opportunities": _float_or_none(
                 row.get("observed_per_1k_opportunities")
             ),
+            "compounding_observed_per_1k_opportunities_ci_low": _float_or_none(
+                row.get("observed_per_1k_opportunities_ci_low")
+            ),
+            "compounding_observed_per_1k_opportunities_ci_high": _float_or_none(
+                row.get("observed_per_1k_opportunities_ci_high")
+            ),
             "compounding_expected_per_1k_opportunities": _float_or_none(
                 row.get("expected_per_1k_opportunities")
             ),
             "compounding_excess_per_1k_opportunities": _float_or_none(
                 row.get("excess_per_1k_opportunities")
             ),
+            "compounding_excess_per_1k_opportunities_ci_low": _float_or_none(
+                row.get("excess_per_1k_opportunities_ci_low")
+            ),
+            "compounding_excess_per_1k_opportunities_ci_high": _float_or_none(
+                row.get("excess_per_1k_opportunities_ci_high")
+            ),
             "compounding_realized_af": _float_or_none(row.get("realized_af")),
+            "compounding_realized_af_ci_low": _float_or_none(
+                row.get("realized_af_ci_low")
+            ),
+            "compounding_realized_af_ci_high": _float_or_none(
+                row.get("realized_af_ci_high")
+            ),
             "compounding_repeat_generations": _int_or_none(row.get("repeat_generations")),
             "compounding_risk_diff_after_prior": _float_or_none(
                 row.get("risk_diff_after_prior")
             ),
+            "compounding_risk_diff_after_prior_ci_low": _float_or_none(
+                row.get("risk_diff_after_prior_ci_low")
+            ),
+            "compounding_risk_diff_after_prior_ci_high": _float_or_none(
+                row.get("risk_diff_after_prior_ci_high")
+            ),
             "compounding_risk_ratio_after_prior": _float_or_none(
                 row.get("risk_ratio_after_prior")
+            ),
+            "compounding_risk_ratio_after_prior_ci_low": _float_or_none(
+                row.get("risk_ratio_after_prior_ci_low")
+            ),
+            "compounding_risk_ratio_after_prior_ci_high": _float_or_none(
+                row.get("risk_ratio_after_prior_ci_high")
             ),
         }
     return out
@@ -350,6 +404,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "coverage_note",
         "pretrain_per_1k_tokens",
         "pretrain_weighted_covered_recipe_share",
+        "pretrain_weighted_exact_covered_recipe_share",
+        "pretrain_weighted_proxy_covered_recipe_share",
         "pretrain_weighted_missing_recipe_share",
         "pretrain_weighted_missing_as_zero_per_1k_tokens",
         "mid_target_per_1k_tokens",
@@ -359,8 +415,14 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "teacher_forced_af",
         "teacher_forced_normalized_af",
         "free_run_per_1k_tokens",
+        "free_run_per_1k_tokens_ci_low",
+        "free_run_per_1k_tokens_ci_high",
         "compounding_excess_per_1k_opportunities",
+        "compounding_excess_per_1k_opportunities_ci_low",
+        "compounding_excess_per_1k_opportunities_ci_high",
         "compounding_realized_af",
+        "compounding_realized_af_ci_low",
+        "compounding_realized_af_ci_high",
     ]
     columns = [column for column in preferred if column in columns] + [
         column for column in columns if column not in preferred

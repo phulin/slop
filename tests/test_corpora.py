@@ -134,6 +134,27 @@ def test_preference_chat_lists_extract_assistant_responses(tmp_path):
     assert record.rejected == "No."
 
 
+def test_response_mapping_lists_extract_as_text(tmp_path):
+    path = tmp_path / "responses.jsonl"
+    _write_jsonl(
+        path,
+        [
+            {
+                "id": "reasoning-1",
+                "responses": [
+                    {"response_model": "model-a", "response": "First response."},
+                    {"response_model": "model-b", "response": "Second response."},
+                ],
+            }
+        ],
+    )
+
+    [record] = list(iter_corpus_records(CorpusSource.jsonl(path, name="responses"), text_fields=("responses",)))
+
+    assert record.text == "First response.\nSecond response."
+    assert record.fields["text"] == "responses"
+
+
 def test_row_metadata_promotes_common_corpus_fields_and_json_metadata(tmp_path):
     path = tmp_path / "dolma.jsonl"
     _write_jsonl(

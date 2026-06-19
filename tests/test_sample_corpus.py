@@ -1,9 +1,17 @@
 import csv
 import json
+from types import SimpleNamespace
 
 import pandas as pd
 
-from slop_sftdiv.cli.sample_corpus import build_parser, run_sample, _source_from_input
+from slop_sftdiv.cli.sample_corpus import (
+    _detect_language_label,
+    _metadata_language,
+    _normalise_language_label,
+    build_parser,
+    run_sample,
+    _source_from_input,
+)
 
 
 def _write_jsonl(path, rows):
@@ -175,6 +183,85 @@ def test_run_sample_hash_reservoir_is_deterministic_within_stratum(tmp_path, mon
     assert run_once("a") == run_once("b")
 
 
+def test_language_label_normalization_accepts_common_english_forms():
+    assert _normalise_language_label("en") == "en"
+    assert _normalise_language_label("eng") == "en"
+    assert _normalise_language_label("English") == "en"
+    assert _normalise_language_label("__label__en") == "en"
+    assert _normalise_language_label("en_US") == "en"
+    assert _normalise_language_label("ja") == "ja"
+
+
+def test_metadata_language_reads_flattened_source_language_fields():
+    assert _metadata_language(SimpleNamespace(metadata={"metadata.language": "en"})) == "en"
+    assert _metadata_language(SimpleNamespace(metadata={"attributes.language": "ja"})) == "ja"
+    assert _metadata_language(SimpleNamespace(metadata={"source": "web"})) is None
+
+
+def test_language_detector_rejects_non_english_and_symbol_only_text():
+    assert _detect_language_label("This is a clear English answer.", max_chars=4000) == "en"
+    assert _detect_language_label("これは日本語の文章です", max_chars=4000) != "en"
+    assert _detect_language_label("12345 !!!", max_chars=4000) is None
+
+
+def test_run_sample_can_filter_non_english_rows(tmp_path, monkeypatch):
+    monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
+    input_path = tmp_path / "rows.jsonl"
+    output_path = tmp_path / "sample.jsonl"
+    manifest_path = tmp_path / "manifest.parquet"
+    summary_path = tmp_path / "summary.md"
+    _write_jsonl(
+        input_path,
+        [
+            {"id": "en-1", "text": "This is a clear English document.", "source": "web"},
+            {"id": "jp-1", "text": "これは日本語の文章です", "source": "web"},
+            {"id": "sym-1", "text": "12345 !!!", "source": "web"},
+        ],
+    )
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    monkeypatch.setattr("slop_sftdiv.cli.sample_corpus.init_wandb", lambda **_kwargs: FakeRun())
+    monkeypatch.setattr("slop_sftdiv.cli.sample_corpus.log_summary_table", lambda *_args: None)
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--corpus",
+            "dolma3_pretrain_sample",
+            "--ladder",
+            "olmo3",
+            "--source-dataset",
+            "local",
+            "--target-rows",
+            "3",
+            "--require-english",
+            "--output",
+            str(output_path),
+            "--manifest-output",
+            str(manifest_path),
+            "--summary-output",
+            str(summary_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    manifest_rows = run_sample(args)
+
+    retained = [json.loads(line) for line in output_path.read_text(encoding="utf-8").splitlines()]
+    assert [row["doc_id"] for row in retained] == ["en-1"]
+    assert [row["doc_id"] for row in manifest_rows] == ["en-1"]
+    summary = summary_path.read_text(encoding="utf-8")
+    assert "`records_language_filtered` | 2" in summary
+    assert "`require_english` | True" in summary
+
+
 def test_run_sample_expands_preference_roles_without_splitting_pairs(tmp_path, monkeypatch):
     monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
     input_path = tmp_path / "pairs.jsonl"
@@ -250,6 +337,58 @@ def test_run_sample_expands_preference_roles_without_splitting_pairs(tmp_path, m
     logged_manifest_payload = json.dumps(logged_tables["corpus_manifest_sample"])
     assert "Chosen answer" not in logged_manifest_payload
     assert "Rejected answer" not in logged_manifest_payload
+
+
+def test_run_sample_english_filter_drops_entire_non_english_preference_pair(tmp_path, monkeypatch):
+    monkeypatch.setenv("WANDB_DIR", str(tmp_path / "wandb"))
+    input_path = tmp_path / "pairs.jsonl"
+    output_path = tmp_path / "dpo_sample.jsonl"
+    manifest_path = tmp_path / "dpo_manifest.parquet"
+    _write_jsonl(
+        input_path,
+        [
+            {"prompt_id": "mixed", "chosen": "Chosen answer in English.", "rejected": "これは日本語です"},
+            {"prompt_id": "english", "chosen": "Chosen answer.", "rejected": "Rejected answer."},
+        ],
+    )
+
+    class FakeRun:
+        def log(self, _payload):
+            pass
+
+        def finish(self):
+            pass
+
+    monkeypatch.setattr("slop_sftdiv.cli.sample_corpus.init_wandb", lambda **_kwargs: FakeRun())
+    monkeypatch.setattr("slop_sftdiv.cli.sample_corpus.log_summary_table", lambda *_args: None)
+    args = build_parser().parse_args(
+        [
+            "--input",
+            str(input_path),
+            "--corpus",
+            "dolci_instruct_dpo",
+            "--ladder",
+            "olmo3",
+            "--source-dataset",
+            "allenai/Dolci-Instruct-DPO",
+            "--target-rows",
+            "2",
+            "--expand-preference-roles",
+            "--require-english",
+            "--output",
+            str(output_path),
+            "--manifest-output",
+            str(manifest_path),
+            "--wandb-mode",
+            "disabled",
+        ]
+    )
+
+    manifest_rows = run_sample(args)
+
+    assert [row["prompt_id"] for row in manifest_rows] == ["english", "english"]
+    assert [row["text_role"] for row in manifest_rows] == ["chosen", "rejected"]
+    assert {row["pair_id"] for row in manifest_rows} == {"english#row1"}
 
 
 def test_run_sample_skips_incomplete_preference_pairs_when_expanding(tmp_path, monkeypatch):

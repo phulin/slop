@@ -146,9 +146,17 @@ def _median(values: list[float]) -> float:
     return 0.5 * (ordered[midpoint - 1] + ordered[midpoint])
 
 
+def _record_key(row: dict[str, Any]) -> str:
+    for key in ("record_id", "prompt_id", "phase2_prompt_id", "source_row_index", "id"):
+        value = row.get(key)
+        if value not in (None, ""):
+            return str(value)
+    return ""
+
+
 def _pair_key(row: dict[str, Any]) -> tuple[str, str, str, str]:
     return (
-        str(row.get("record_id", "")),
+        _record_key(row),
         str(row.get("completion_index", "")),
         str(row.get("temperature", "")),
         str(row.get("top_p", "")),
@@ -262,7 +270,7 @@ def _write_summary(path: Path, rows: list[dict[str, Any]], args: argparse.Namesp
     lines = [
         "# Phase 3 Free-Running Stage Effects",
         "",
-        "Paired sign tests over shared `(record_id, completion_index, temperature, top_p)` "
+        "Paired sign tests over shared `(record/prompt id, completion_index, temperature, top_p)` "
         "generation units.",
         "",
         f"Rows: `{len(rows)}`",

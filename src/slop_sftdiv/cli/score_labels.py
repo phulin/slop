@@ -15,8 +15,10 @@ CORE_FEATURES = {
     "slop_lexicon",
     "stock_openers",
     "stock_closers",
-    "stock_openers_closers",
     "rule_of_three_approx",
+}
+DERIVED_FEATURES = {
+    "stock_openers_closers",
 }
 
 
@@ -81,11 +83,16 @@ def _score_rows(
         precision_pass = precision >= target_precision
         ambiguity_pass = ambiguous_rate <= max_ambiguous_rate
         sample_size_pass = total >= min_labeled or not is_core
-        status = "pass" if precision_pass and ambiguity_pass and sample_size_pass else "demote"
+        is_derived = feature in DERIVED_FEATURES
+        if is_derived:
+            status = "derived"
+        else:
+            status = "pass" if precision_pass and ambiguity_pass and sample_size_pass else "demote"
         scored.append(
             {
                 "feature": feature,
                 "is_core": is_core,
+                "is_derived": is_derived,
                 "status": status,
                 "labeled": total,
                 "exact": exact,
@@ -110,6 +117,7 @@ def _write_report(path: Path, rows: list[dict[str, Any]]) -> None:
     fieldnames = [
         "feature",
         "is_core",
+        "is_derived",
         "status",
         "labeled",
         "exact",

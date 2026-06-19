@@ -12,6 +12,13 @@ import re
 from collections.abc import Iterable
 from typing import Mapping
 
+from slop_sftdiv.features.eqbench_slop import (
+    extract_eqbench_slop_metrics,
+    iter_eqbench_contrast_hits,
+    iter_eqbench_trigram_hits,
+    iter_eqbench_word_hits,
+)
+
 
 TOKEN_RE = re.compile(r"\b[\w']+\b", re.UNICODE)
 SENTENCE_RE = re.compile(r"[.!?]+(?:\s+|$)")
@@ -71,11 +78,19 @@ SLOP_LEXICON: Mapping[str, re.Pattern[str]] = {
 }
 
 
-STRUCTURE_PATTERNS: Mapping[str, re.Pattern[str]] = {
-    "bullet_line": _compile(r"^\s*(?:[-*+]|[•‣])\s+\S"),
-    "numbered_line": _compile(r"^\s*\d{1,3}[.)]\s+\S"),
-    "header_line": _compile(r"^\s{0,3}#{1,6}\s+\S"),
-    "bold_lead_in": _compile(r"^\s*(?:[-*+]\s+)?\*\*[^*\n]{1,80}\*\*\s*[:—-]\s*"),
+SLOP_LEXICON_V2_CANDIDATE: Mapping[str, re.Pattern[str]] = {
+    "meticulous": _compile(r"\bmeticulous(?:ly|ness)?\b"),
+    "commendable": _compile(r"\bcommendable\b"),
+    "pivotal": _compile(r"\bpivotal\b"),
+    "burgeoning": _compile(r"\bburgeoning\b"),
+    "paradigm": _compile(r"\bparadigms?\b"),
+    "transformative": _compile(r"\btransformative\b"),
+    "tailored": _compile(r"\btailored\b"),
+    "harness": _compile(r"\bharness(?:es|ed|ing)?\b"),
+    "unwavering": _compile(r"\bunwavering(?:ly)?\b"),
+    "captivate": _compile(r"\bcaptivat(?:e|es|ed|ing|ingly)\b"),
+    "kaleidoscope": _compile(r"\bkaleidoscope\b"),
+    "symphony": _compile(r"\bsymphony\b"),
 }
 
 
@@ -91,7 +106,7 @@ STOCK_OPENERS: Mapping[str, re.Pattern[str]] = {
 STOCK_CLOSERS: Mapping[str, re.Pattern[str]] = {
     "hope_this_helps": _compile(r"\bi\s+hope\s+(?:this|that)\s+helps[.!]?\s*$"),
     "in_conclusion": _compile(r"\bin\s+conclusion[,:]?\s+[^.!?]{0,180}[.!?]?\s*$"),
-    "overall": _compile(r"\boverall[,:]?\s+[^.!?]{0,180}[.!?]?\s*$"),
+    "overall": _compile(r"(?:^|(?<=[.!?]\s)|\n\s*)overall,\s+[^.!?]{0,180}[.!?]?\s*$"),
     "to_summarize": _compile(r"\bto\s+summari[sz]e[,:]?\s+[^.!?]{0,180}[.!?]?\s*$"),
     "let_me_know": _compile(r"\blet\s+me\s+know\s+if\s+you(?:'d)?\s+(?:like|need|want)\b[^.!?]*[.!?]?\s*$"),
 }
@@ -123,7 +138,7 @@ RULE_OF_THREE_PATTERN = _compile(
 class Tier1Features:
     """Counts and normalized helper values for one input text."""
 
-    counts: dict[str, int]
+    counts: dict[str, float]
     rates_per_1k_tokens: dict[str, float]
     item_counts: dict[str, dict[str, int]]
     helpers: dict[str, float | int | list[int]]
@@ -159,11 +174,17 @@ def extract_tier1_features(text: str) -> Tier1Features:
     item_counts = {
         "contrastive_negation": _count_patterns(text, CONTRASTIVE_NEGATION_PATTERNS),
         "slop_lexicon": _count_patterns(text, SLOP_LEXICON),
-        "structure": _count_patterns(text, STRUCTURE_PATTERNS),
+        "slop_lexicon_v2_candidate": _count_patterns(text, SLOP_LEXICON_V2_CANDIDATE),
         "stock_openers": _count_patterns(text, STOCK_OPENERS),
         "stock_closers": _count_patterns(text, STOCK_CLOSERS),
         "punctuation": _count_patterns(text, PUNCTUATION_PATTERNS),
-        "rule_of_three": {"approx_triple": len(RULE_OF_THREE_PATTERN.findall(text))},
+        "rule_of_three": {"approx_triple": _count_rule_of_three(text)},
+    }
+    eqbench_metrics = extract_eqbench_slop_metrics(text)
+    item_counts["eqbench_slop_score"] = {
+        "word_hits": eqbench_metrics.word_hit_count,
+        "trigram_hits": eqbench_metrics.trigram_hit_count,
+        "contrast_hits": eqbench_metrics.contrast_hit_count,
     }
 
     paragraph_token_counts = _paragraph_token_counts(text)
@@ -174,7 +195,8 @@ def extract_tier1_features(text: str) -> Tier1Features:
     counts = {
         "contrastive_negation": sum(item_counts["contrastive_negation"].values()),
         "slop_lexicon": sum(item_counts["slop_lexicon"].values()),
-        "list_header_bold_lead_in": sum(item_counts["structure"].values()),
+        "slop_lexicon_v2_candidate": sum(item_counts["slop_lexicon_v2_candidate"].values()),
+        "eqbench_slop_score": eqbench_metrics.slop_score,
         "stock_openers": sum(item_counts["stock_openers"].values()),
         "stock_closers": sum(item_counts["stock_closers"].values()),
         "punctuation_rhythm": sum(item_counts["punctuation"].values()),
@@ -195,6 +217,13 @@ def extract_tier1_features(text: str) -> Tier1Features:
         "paragraph_token_stdev": paragraph_stdev,
         "paragraph_rhythm_uniformity": rhythm_uniformity,
         "rule_of_three_per_sentence": counts["rule_of_three_approx"] / sentence_count,
+        "eqbench_slop_word_matches_per_1k_words": eqbench_metrics.word_matches_per_1k_words,
+        "eqbench_slop_trigram_matches_per_1k_words": eqbench_metrics.trigram_matches_per_1k_words,
+        "eqbench_not_x_but_y_per_1k_chars": eqbench_metrics.not_x_but_y_per_1k_chars,
+        "eqbench_slop_word_hit_count": eqbench_metrics.word_hit_count,
+        "eqbench_slop_trigram_hit_count": eqbench_metrics.trigram_hit_count,
+        "eqbench_slop_contrast_hit_count": eqbench_metrics.contrast_hit_count,
+        "eqbench_slop_token_count": eqbench_metrics.token_count,
     }
 
     for name, count in item_counts["punctuation"].items():
@@ -224,14 +253,16 @@ def iter_tier1_hits(
 
     selected = set(features) if features is not None else None
     hits: list[FeatureHit] = []
+    if selected is None or "eqbench_slop_score" in selected:
+        hits.extend(_iter_eqbench_slop_score_hits(text, context_chars=context_chars))
     for feature, patterns in _validation_patterns().items():
         if selected is not None and feature not in selected:
             continue
         for subtype, pattern in patterns.items():
             for match in pattern.finditer(text):
+                if feature == "rule_of_three_approx" and _is_code_or_data_line(text, match.start()):
+                    continue
                 start, end = match.span()
-                if feature == "list_header_bold_lead_in":
-                    start, end = _line_span(text, start=start, end=end)
                 hits.append(
                     FeatureHit(
                         feature=feature,
@@ -253,12 +284,79 @@ def _validation_patterns() -> dict[str, Mapping[str, re.Pattern[str]]]:
     return {
         "contrastive_negation": CONTRASTIVE_NEGATION_PATTERNS,
         "slop_lexicon": SLOP_LEXICON,
-        "list_header_bold_lead_in": STRUCTURE_PATTERNS,
+        "slop_lexicon_v2_candidate": SLOP_LEXICON_V2_CANDIDATE,
         "stock_openers": STOCK_OPENERS,
         "stock_closers": STOCK_CLOSERS,
-        "punctuation_rhythm": PUNCTUATION_PATTERNS,
         "rule_of_three_approx": {"approx_triple": RULE_OF_THREE_PATTERN},
     }
+
+
+def _count_rule_of_three(text: str) -> int:
+    return sum(
+        1
+        for match in RULE_OF_THREE_PATTERN.finditer(text)
+        if not _is_code_or_data_line(text, match.start())
+    )
+
+
+def _is_code_or_data_line(text: str, offset: int) -> bool:
+    if _inside_fenced_code(text, offset):
+        return True
+    line_start = text.rfind("\n", 0, offset) + 1
+    line_end = text.find("\n", offset)
+    if line_end == -1:
+        line_end = len(text)
+    line = text[line_start:line_end].strip()
+    if not line:
+        return False
+    if re.search(r"\b(?:def|class|import|from|return|lambda|const|let|var)\b", line):
+        return True
+    if any(char in line for char in "{}[]`|"):
+        return True
+    if "=" in line and re.search(r"\b[a-zA-Z_][\w.]*\s*=", line):
+        return True
+    return False
+
+
+def _inside_fenced_code(text: str, offset: int) -> bool:
+    return text[:offset].count("```") % 2 == 1
+
+
+def _iter_eqbench_slop_score_hits(text: str, *, context_chars: int) -> list[FeatureHit]:
+    hits = [
+        FeatureHit(
+            feature="eqbench_slop_score",
+            subtype=f"word:{word}",
+            start=start,
+            end=end,
+            text=text[start:end],
+            context=_context_window(text, start=start, end=end, context_chars=context_chars),
+        )
+        for word, start, end in iter_eqbench_word_hits(text)
+    ]
+    hits.extend(
+        FeatureHit(
+            feature="eqbench_slop_score",
+            subtype=f"trigram:{trigram}",
+            start=start,
+            end=end,
+            text=text[start:end],
+            context=_context_window(text, start=start, end=end, context_chars=context_chars),
+        )
+        for trigram, start, end in iter_eqbench_trigram_hits(text)
+    )
+    hits.extend(
+        FeatureHit(
+            feature="eqbench_slop_score",
+            subtype=f"contrast:{pattern_name}",
+            start=start,
+            end=end,
+            text=match_text,
+            context=_context_window(text, start=start, end=end, context_chars=context_chars),
+        )
+        for pattern_name, start, end, match_text in iter_eqbench_contrast_hits(text)
+    )
+    return hits
 
 
 def _context_window(text: str, *, start: int, end: int, context_chars: int) -> str:
@@ -267,14 +365,6 @@ def _context_window(text: str, *, start: int, end: int, context_chars: int) -> s
     prefix = "..." if left > 0 else ""
     suffix = "..." if right < len(text) else ""
     return prefix + text[left:right] + suffix
-
-
-def _line_span(text: str, *, start: int, end: int) -> tuple[int, int]:
-    line_start = text.rfind("\n", 0, start) + 1
-    line_end = text.find("\n", end)
-    if line_end == -1:
-        line_end = len(text)
-    return line_start, line_end
 
 
 def _paragraph_token_counts(text: str) -> list[int]:
