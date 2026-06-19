@@ -52,10 +52,14 @@ The best two 300k-cache settings were rerun on a 1M-token activation cache built
 | `ld2048_k512_lr1e3_wsd_e16` | 1,000,000 | 2048 | 512 | 0.001 | 16 | 6.630 |
 | `ld2048_k512_lr1e3_wsd_e8` | 1,000,000 | 2048 | 512 | 0.001 | 8 | 7.932 |
 | `ld2048_k512_lr1e3_e8` | 1,000,000 | 2048 | 512 | 0.001 | 8 | 8.181 |
+| `ld2048_k384_lr1e3_wsd_e16` | 1,000,000 | 2048 | 384 | 0.001 | 16 | 8.863 |
 | `ld2048_k512_lr2e3_e8` | 1,000,000 | 2048 | 512 | 0.002 | 8 | 9.083 |
 | `ld2048_k512_lr2e3_e4` | 1,000,000 | 2048 | 512 | 0.002 | 4 | 10.945 |
+| `ld2048_k256_lr1e3_wsd_e16` | 1,000,000 | 2048 | 256 | 0.001 | 16 | 12.050 |
 
 The larger cache preserves the same ranking and lowers measured MSE substantially. The 1M-cache pure reconstruction boundary is now `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k1280_lr1e3_e16`, but this is a saturated high-k setting: increasing `k` to 1536 produced the same 8-epoch loss and similar active counts because the learned ReLU codes only kept about 1,250 positive entries per vector. The best weakly sparse reconstruction candidate is now `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k768_lr1e3_e16`. The more conservative 1M-cache candidate is `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k512_lr1e3_wsd_e16`.
+
+Lower-k frontier checks show the reconstruction cost of stricter sparsity: `k384` lands at 8.863 MSE and `k256` at 12.050 MSE after 16 epochs with WSD. These are useful reference points, but the current tradeoff knee remains k512.
 
 Scored 1M-cache outputs were also produced:
 
