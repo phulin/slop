@@ -13,7 +13,8 @@ This sweep trained BatchTopK sparse autoencoders on penultimate-token activation
 - Activation vectors: 300,000 penultimate hidden states, dimension 1024
 - SAE training split: 90% train / 10% held-out activation vectors
 - Compile mode: `torch.compile(mode="reduce-overhead")`
-- Sweep summary: `artifacts/phase4/sae_wsd_sweep/sweep_results.csv`
+- Initial sweep summary: `artifacts/phase4/sae_wsd_sweep/sweep_results.csv`
+- Larger-cache confirmation summary: `artifacts/phase4/sae_wsd_sweep_1m/sweep_results.csv`
 
 The first compiled detector attempt failed until `LD_LIBRARY_PATH` included `/usr/lib/x86_64-linux-gnu`, where `libcuda.so.1` is installed. After that, detector activation collection and SAE training both compiled successfully with no fallback.
 
@@ -32,6 +33,19 @@ The first compiled detector attempt failed until `LD_LIBRARY_PATH` included `/us
 The pure reconstruction winner is `2048` latents with `k=768`, LR `2e-3`, trained for 8 epochs. This is a high-active setting: 768 active latents out of 2048 per token, so it should be treated as a reconstruction-oriented upper bound rather than the most interpretable sparse configuration.
 
 For a more conservative sparse setting, `2048/k512/lr2e-3/e8` is the best current compromise: held-out MSE 12.704 with 25% of latents active per token. The `2048/k1024/e4` boundary was tested as a half-active reconstruction lower-bound check; it did not beat `k768/e8`.
+
+## Larger-Cache Confirmation
+
+The best two 300k-cache settings were rerun on a 1M-token activation cache built from up to 5,000 documents per source.
+
+| Run | Activations | Latents | k | LR | Epochs | Held-out MSE |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `ld2048_k768_lr2e3_e8` | 1,000,000 | 2048 | 768 | 0.002 | 8 | 4.932 |
+| `ld2048_k768_lr2e3_e4` | 1,000,000 | 2048 | 768 | 0.002 | 4 | 6.627 |
+| `ld2048_k512_lr2e3_e8` | 1,000,000 | 2048 | 512 | 0.002 | 8 | 9.083 |
+| `ld2048_k512_lr2e3_e4` | 1,000,000 | 2048 | 512 | 0.002 | 4 | 10.945 |
+
+The larger cache preserves the same ranking and lowers measured MSE substantially. The 1M-cache pure reconstruction winner is now `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k768_lr2e3_e8`. The more conservative 1M-cache candidate is `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k512_lr2e3_e8`.
 
 ## Scored SAE Output
 
@@ -66,7 +80,7 @@ Top positive AI-target latent effects for the conservative `k512` candidate:
 
 ## Conclusions
 
-The main reconstruction driver was `k`, not latent width. At fixed or similar training budgets, smaller 2048-latent models often beat wider 4096/8192 models once `k` was raised. Longer training also helped substantially: `2048/k512/lr2e-3` improved from 24.351 MSE at 2 epochs to 12.704 at 8 epochs.
+The main reconstruction driver was `k`, not latent width. At fixed or similar training budgets, smaller 2048-latent models often beat wider 4096/8192 models once `k` was raised. Longer training also helped substantially: `2048/k512/lr2e-3` improved from 24.351 MSE at 2 epochs to 12.704 at 8 epochs on the 300k cache, and to 9.083 on the 1M cache.
 
 LR `2e-3` was the best tested learning rate in the useful region. LR `5e-4` undertrained badly; LR `3e-3` was worse than `2e-3` for the same 2048/k512/e4 setting.
 
@@ -74,6 +88,6 @@ The scored runs have similar top positive detector-relevant latents, especially 
 
 The current recommended follow-up depends on the goal:
 
-- For lowest reconstruction error: continue from the `2048/k768/lr2e-3/e8` region, but treat it as weakly sparse.
-- For a better sparsity/reconstruction tradeoff: use `2048/k512/lr2e-3/e8` as the next production candidate.
+- For lowest reconstruction error: continue from the 1M-cache `2048/k768/lr2e-3/e8` region, but treat it as weakly sparse.
+- For a better sparsity/reconstruction tradeoff: use the 1M-cache `2048/k512/lr2e-3/e8` run as the next production candidate.
 - For interpretability: run larger latent scoring on the `k512` and `k768` candidates and compare whether high-k latents remain coherent enough to use.
