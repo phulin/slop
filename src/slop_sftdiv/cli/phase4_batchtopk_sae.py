@@ -140,6 +140,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-length", type=int, default=512)
     parser.add_argument("--collect-batch-size", type=int, default=8)
     parser.add_argument("--score-batch-size", type=int, default=4)
+    parser.add_argument("--pad-to-max-length", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--max-activations", type=int, default=200_000)
     parser.add_argument(
         "--activation-cache",
@@ -347,10 +348,11 @@ def _encode_docs(
     *,
     max_length: int,
     device: torch.device,
+    pad_to_max_length: bool = False,
 ) -> dict[str, Any]:
     encoded = tokenizer(
         [doc.text for doc in docs],
-        padding=True,
+        padding="max_length" if pad_to_max_length else True,
         truncation=True,
         max_length=max_length,
         return_tensors="pt",
@@ -381,6 +383,7 @@ def collect_penultimate_activations(
     max_activations: int,
     device: torch.device,
     progress_every: int,
+    pad_to_max_length: bool = False,
 ) -> torch.Tensor:
     if max_activations <= 0:
         raise ValueError("--max-activations must be positive")
@@ -388,7 +391,13 @@ def collect_penultimate_activations(
     collected = 0
     batches = _token_batches(docs, batch_size)
     for batch_index, batch_docs in enumerate(batches, start=1):
-        encoded = _encode_docs(tokenizer, batch_docs, max_length=max_length, device=device)
+        encoded = _encode_docs(
+            tokenizer,
+            batch_docs,
+            max_length=max_length,
+            device=device,
+            pad_to_max_length=pad_to_max_length,
+        )
         outputs = model(
             input_ids=encoded["input_ids"],
             attention_mask=encoded["attention_mask"],
@@ -739,7 +748,13 @@ def score_latents(
 
     batches = _token_batches(candidate_docs, args.score_batch_size)
     for batch_index, batch_docs in enumerate(batches, start=1):
-        encoded = _encode_docs(tokenizer, batch_docs, max_length=args.max_length, device=device)
+        encoded = _encode_docs(
+            tokenizer,
+            batch_docs,
+            max_length=args.max_length,
+            device=device,
+            pad_to_max_length=args.pad_to_max_length,
+        )
         _, sparse_codes = _logits_with_sae(
             model=model,
             encoded=encoded,
@@ -826,7 +841,13 @@ def score_latents(
     ablation_effects: dict[int, list[float]] = {latent_id: [] for latent_id in candidate_latents}
     baseline_logit_sums: dict[int, float] = defaultdict(float)
     for batch_index, batch_docs in enumerate(batches, start=1):
-        encoded = _encode_docs(tokenizer, batch_docs, max_length=args.max_length, device=device)
+        encoded = _encode_docs(
+            tokenizer,
+            batch_docs,
+            max_length=args.max_length,
+            device=device,
+            pad_to_max_length=args.pad_to_max_length,
+        )
         baseline_logits, _ = _logits_with_sae(model=model, encoded=encoded, sae=sae)
         baseline_target_scores = _target_scores(baseline_logits, target_ids)
         for latent_id in candidate_latents:
@@ -962,6 +983,7 @@ def _save_activation_cache(
             "reference_jsonl": list(args.reference_jsonl),
             "generation_jsonl": list(args.generation_jsonl),
             "max_length": args.max_length,
+            "pad_to_max_length": bool(args.pad_to_max_length),
             "max_activations": args.max_activations,
             "documents": len(docs),
         },
@@ -975,6 +997,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     output_dir: Path = args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if device.type == "cuda":
+        torch.set_float32_matmul_precision("high")
     docs = _load_docs(args)
     cache_path = args.activation_cache or output_dir / "phase4_batchtopk_sae_activation_cache.pt"
     model: Any | None = None
@@ -1003,6 +1027,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 max_activations=args.max_activations,
                 device=device,
                 progress_every=args.progress_every,
+                pad_to_max_length=args.pad_to_max_length,
             )
         except Exception as exc:
             if collection_model is model:
@@ -1023,6 +1048,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 max_activations=args.max_activations,
                 device=device,
                 progress_every=args.progress_every,
+                pad_to_max_length=args.pad_to_max_length,
             )
         _save_activation_cache(cache_path, activations=activations, args=args, docs=docs)
     sae, train_rows, eval_rows, train_summary = train_sae(activations=activations, args=args, device=device)
@@ -1055,6 +1081,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "activation_cache_reused": cache_reused,
         "activation_vectors": int(activations.shape[0]),
         "input_dim": int(activations.shape[1]),
+        "pad_to_max_length": bool(args.pad_to_max_length),
         "latent_dim": args.latent_dim,
         "k": args.k,
         "epochs": args.epochs,
