@@ -31,19 +31,20 @@ The first compiled detector attempt failed until `LD_LIBRARY_PATH` included `/us
 
 The pure reconstruction winner is `2048` latents with `k=768`, LR `2e-3`, trained for 8 epochs. This is a high-active setting: 768 active latents out of 2048 per token, so it should be treated as a reconstruction-oriented upper bound rather than the most interpretable sparse configuration.
 
-For a more conservative sparse setting, `2048/k512/lr2e-3/e8` is the best current compromise: held-out MSE 12.704 with 25% of latents active per token.
+For a more conservative sparse setting, `2048/k512/lr2e-3/e8` is the best current compromise: held-out MSE 12.704 with 25% of latents active per token. The `2048/k1024/e4` boundary was tested as a half-active reconstruction lower-bound check; it did not beat `k768/e8`.
 
 ## Scored SAE Output
 
-A scored run was produced for the reconstruction winner:
+Scored runs were produced for the reconstruction winner and the more conservative sparse candidate:
 
-- Output directory: `artifacts/phase4/sae_wsd_sweep/ld2048_k768_lr2e3_e8_scored`
-- Ranked latents: 16
-- Example rows: 48
+- Reconstruction winner output: `artifacts/phase4/sae_wsd_sweep/ld2048_k768_lr2e3_e8_scored`
+- Conservative candidate output: `artifacts/phase4/sae_wsd_sweep/ld2048_k512_lr2e3_e8_scored`
+- Ranked latents: 16 per scored run
+- Example rows: 48 for k768, 64 for k512
 - Scoring docs: 200 per source, with ablations scored on the 400 AI continuations
 - Target detector classes: `gemini-3.5-flash` and `gpt-5.5`
 
-Top positive AI-target latent effects:
+Top positive AI-target latent effects for the reconstruction winner:
 
 | Latent | Mean target-logit drop when ablated | Positive effect rate |
 | ---: | ---: | ---: |
@@ -53,11 +54,23 @@ Top positive AI-target latent effects:
 | 208 | 0.0151 | 1.000 |
 | 1227 | 0.0150 | 0.935 |
 
+Top positive AI-target latent effects for the conservative `k512` candidate:
+
+| Latent | Mean target-logit drop when ablated | Positive effect rate |
+| ---: | ---: | ---: |
+| 862 | 0.0321 | 1.000 |
+| 208 | 0.0147 | 1.000 |
+| 1530 | 0.0138 | 0.978 |
+| 1520 | 0.0132 | 0.875 |
+| 1227 | 0.0127 | 0.940 |
+
 ## Conclusions
 
 The main reconstruction driver was `k`, not latent width. At fixed or similar training budgets, smaller 2048-latent models often beat wider 4096/8192 models once `k` was raised. Longer training also helped substantially: `2048/k512/lr2e-3` improved from 24.351 MSE at 2 epochs to 12.704 at 8 epochs.
 
 LR `2e-3` was the best tested learning rate in the useful region. LR `5e-4` undertrained badly; LR `3e-3` was worse than `2e-3` for the same 2048/k512/e4 setting.
+
+The scored runs have similar top positive detector-relevant latents, especially latent 862. The high-k winner improves reconstruction, but the top detector-effect signal is not obviously stronger than the k512 model on this small scoring pass.
 
 The current recommended follow-up depends on the goal:
 
