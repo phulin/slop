@@ -234,9 +234,17 @@ def _target_max_output_tokens(
         raise ValueError("--min-output-tokens must be positive")
     if max_output_tokens < min_output_tokens:
         raise ValueError("--max-output-tokens must be >= --min-output-tokens")
-    word_count = len(target_text.split())
-    estimated = int(word_count * 1.6) + 96
-    return max(min_output_tokens, min(max_output_tokens, estimated))
+    return max_output_tokens
+
+
+def _response_requirements(target_word_count: int) -> str:
+    word_label = "word" if target_word_count == 1 else "words"
+    return (
+        f"Response requirements: aim for about {target_word_count} {word_label}. "
+        "Write plain text only. Do not use Markdown formatting, bullets, numbered lists, "
+        "titles, headlines, headings, tables, code fences, emphasis markers, block quotes, "
+        "decorative indentation, or other visual formatting."
+    )
 
 
 def _non_system_roles(messages: list[dict[str, str]]) -> list[str]:
@@ -255,7 +263,11 @@ def _can_use_native_messages(messages: list[dict[str, str]]) -> bool:
     return True
 
 
-def _render_transcript_prompt(messages: list[dict[str, str]]) -> str:
+def _render_transcript_prompt(
+    messages: list[dict[str, str]],
+    *,
+    target_word_count: int | None = None,
+) -> str:
     lines = [
         "The following is a conversation transcript. Write the next assistant message only.",
         "Do not include labels, markdown fences, commentary, or alternatives.",
@@ -265,6 +277,8 @@ def _render_transcript_prompt(messages: list[dict[str, str]]) -> str:
     role_names = {"system": "System", "user": "User", "assistant": "Assistant"}
     for message in messages:
         lines.append(f"{role_names[message['role']]}: {message['content']}")
+    if target_word_count is not None:
+        lines.extend(["", _response_requirements(target_word_count)])
     lines.append("Assistant:")
     return "\n".join(lines)
 
@@ -353,11 +367,32 @@ def _turn_input_messages(turn: dict[str, Any]) -> list[dict[str, str]]:
     return json.loads(str(turn["input_messages_json"]))
 
 
+def _messages_with_response_requirements(
+    messages: list[dict[str, str]],
+    *,
+    target_word_count: int,
+) -> list[dict[str, str]]:
+    updated = [dict(message) for message in messages]
+    requirement = _response_requirements(target_word_count)
+    for index in range(len(updated) - 1, -1, -1):
+        if updated[index]["role"] == "user":
+            updated[index]["content"] = f"{updated[index]['content']}\n\n{requirement}"
+            return updated
+    return [*updated, {"role": "user", "content": requirement}]
+
+
 def _turn_prompt_or_messages(turn: dict[str, Any]) -> tuple[bool, list[dict[str, str]] | str]:
     messages = _turn_input_messages(turn)
+    target_word_count = int(turn["target_word_count"])
     if bool(turn.get("uses_transcript_prompt")):
-        return True, _render_transcript_prompt(messages)
-    return False, messages
+        return True, _render_transcript_prompt(
+            messages,
+            target_word_count=target_word_count,
+        )
+    return False, _messages_with_response_requirements(
+        messages,
+        target_word_count=target_word_count,
+    )
 
 
 def _provider_manifest_rows(
@@ -545,12 +580,16 @@ def _fireworks_request_rows(
 
 
 def _estimated_enqueued_tokens(turn: dict[str, Any]) -> int:
-    messages = _turn_input_messages(turn)
-    if bool(turn.get("uses_transcript_prompt")):
-        prompt_text = _render_transcript_prompt(messages)
+    is_prompt, payload = _turn_prompt_or_messages(turn)
+    if is_prompt:
+        prompt_text = str(payload)
     else:
-        prompt_text = "\n".join(message["content"] for message in messages)
-    return int(len(prompt_text) / 3) + int(turn["max_output_tokens"]) + (16 * len(messages))
+        prompt_text = "\n".join(message["content"] for message in payload)  # type: ignore[union-attr]
+    return (
+        int(len(prompt_text) / 3)
+        + int(turn["max_output_tokens"])
+        + (16 * int(turn["input_message_count"]))
+    )
 
 
 def _write_gemini_shards(

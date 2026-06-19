@@ -101,11 +101,22 @@ def test_provider_requests_set_lowest_reasoning_controls() -> None:
     fireworks = _fireworks_request_rows(turns, fireworks_manifest)[0]
 
     assert openai["body"]["reasoning"] == {"effort": "none"}
+    assert openai["body"]["max_output_tokens"] == 256
+    assert openai["body"]["input"][0]["content"].endswith(
+        "Do not use Markdown formatting, bullets, numbered lists, titles, headlines, "
+        "headings, tables, code fences, emphasis markers, block quotes, decorative "
+        "indentation, or other visual formatting."
+    )
     assert gemini["request"]["generationConfig"]["thinkingConfig"] == {
         "thinkingLevel": "minimal"
     }
+    assert gemini["request"]["generationConfig"]["maxOutputTokens"] == 256
+    assert "aim for about 1 word" in gemini["request"]["contents"][0]["parts"][0]["text"]
+    assert "Do not use Markdown formatting" in gemini["request"]["contents"][0]["parts"][0]["text"]
     assert "thinking" not in anthropic["params"]
+    assert anthropic["params"]["max_tokens"] == 256
     assert fireworks["body"]["reasoning_effort"] == "none"
+    assert fireworks["body"]["max_tokens"] == 256
     assert len(anthropic["custom_id"]) <= 64
 
 
