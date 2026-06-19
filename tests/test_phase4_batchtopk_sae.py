@@ -3,13 +3,16 @@ from __future__ import annotations
 import json
 from argparse import Namespace
 
+import pandas as pd
 import torch
 from torch import nn
 
 from slop_sftdiv.cli.phase4_batchtopk_sae import (
     BatchTopKSAE,
     _load_jsonl_docs,
+    _load_parquet_docs,
     _logits_with_sae,
+    _target_class_ids,
     train_sae,
 )
 
@@ -62,15 +65,47 @@ def test_train_sae_returns_loss_rows() -> None:
         weight_decay=0.0,
         train_batch_size=8,
         epochs=1,
+        eval_fraction=0.25,
+        seed=1729,
+        compile_sae=False,
+        compile_mode="default",
+        num_workers=0,
         progress_every=1,
     )
 
-    sae, rows = train_sae(activations=activations, args=args, device=torch.device("cpu"))
+    sae, rows, eval_rows = train_sae(activations=activations, args=args, device=torch.device("cpu"))
 
     assert sae.input_dim == 4
     assert sae.latent_dim == 8
     assert rows
     assert rows[-1]["loss"] >= 0
+    assert eval_rows
+    assert eval_rows[-1]["eval_mse"] >= 0
+
+
+def test_load_parquet_docs_labels_human_and_llm_rows(tmp_path) -> None:
+    path = tmp_path / "continuations.parquet"
+    pd.DataFrame(
+        [
+            {
+                "record_id": "human-1",
+                "role": "human_continuation",
+                "model": "human",
+                "text": "Human continuation.",
+            },
+            {
+                "record_id": "ai-1",
+                "role": "llm_continuation",
+                "model": "gpt-5.5",
+                "text": "Generated continuation.",
+            },
+        ]
+    ).to_parquet(path, index=False)
+
+    docs = _load_parquet_docs(path, max_docs_per_source=10, seed=1729)
+
+    labels = {doc.doc_id: doc.label for doc in docs}
+    assert labels == {"human-1": 0, "ai-1": 1}
 
 
 class _DummyLayer(nn.Module):
@@ -94,6 +129,16 @@ class _DummyModel(nn.Module):
         hidden = self.model.layers[-1](hidden_states=hidden, attention_mask=attention_mask)
         pooled = hidden[:, 0, :]
         return Namespace(logits=self.classifier(pooled))
+
+
+class _DummyConfigModel(nn.Module):
+    def __init__(self) -> None:
+        super().__init__()
+        self.config = Namespace(id2label={0: "gemini-3.5-flash", 1: "gpt-5.5", 2: "human"})
+
+
+def test_target_class_ids_default_to_non_human_labels() -> None:
+    assert _target_class_ids(_DummyConfigModel(), []) == [0, 1]
 
 
 def test_logits_with_sae_hook_can_ablate_latent() -> None:

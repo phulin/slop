@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, cast
 
+import pandas as pd
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
@@ -125,18 +126,48 @@ def build_parser() -> argparse.ArgumentParser:
         metavar="LABEL=PATH[:FIELD]",
         help="Generation JSONL included in SAE training and LLM-logit scoring with label 1.",
     )
+    parser.add_argument(
+        "--dataset-parquet",
+        type=Path,
+        default=None,
+        help=(
+            "Compiled continuation parquet with role/model/text columns. "
+            "Rows with role=human_continuation are label 0; llm_continuation rows are label 1."
+        ),
+    )
     parser.add_argument("--feature-text-mode", choices=["raw", "final_answer"], default="final_answer")
     parser.add_argument("--max-docs-per-source", type=int, default=512)
     parser.add_argument("--max-length", type=int, default=512)
     parser.add_argument("--collect-batch-size", type=int, default=8)
     parser.add_argument("--score-batch-size", type=int, default=4)
     parser.add_argument("--max-activations", type=int, default=200_000)
+    parser.add_argument(
+        "--activation-cache",
+        type=Path,
+        default=None,
+        help="Optional shared activation cache path. Existing caches are reused unless --refresh-activation-cache is set.",
+    )
+    parser.add_argument("--refresh-activation-cache", action="store_true")
     parser.add_argument("--latent-dim", type=int, default=4096)
     parser.add_argument("--k", type=int, default=32)
     parser.add_argument("--train-batch-size", type=int, default=4096)
     parser.add_argument("--epochs", type=int, default=2)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--weight-decay", type=float, default=0.0)
+    parser.add_argument("--eval-fraction", type=float, default=0.1)
+    parser.add_argument("--compile-sae", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument("--compile-mode", choices=["default", "reduce-overhead", "max-autotune"], default="default")
+    parser.add_argument("--num-workers", type=int, default=0)
+    parser.add_argument("--skip-latent-scoring", action="store_true")
+    parser.add_argument(
+        "--target-class",
+        action="append",
+        default=[],
+        help=(
+            "Detector class name/id to treat as the AI target for latent ablation scoring. "
+            "Defaults to all non-human labels when label metadata is present."
+        ),
+    )
     parser.add_argument("--score-top-latents", type=int, default=128)
     parser.add_argument("--max-examples-per-latent", type=int, default=8)
     parser.add_argument("--example-context-tokens", type=int, default=12)
@@ -202,6 +233,61 @@ def _load_jsonl_docs(
     return docs
 
 
+def _string_or_empty(value: Any) -> str:
+    if value is None:
+        return ""
+    try:
+        if pd.isna(value):
+            return ""
+    except TypeError:
+        pass
+    return str(value).strip()
+
+
+def _load_parquet_docs(
+    path: Path,
+    *,
+    max_docs_per_source: int,
+    seed: int,
+) -> list[SAEDoc]:
+    if not path.exists():
+        raise FileNotFoundError(path)
+    frame = pd.read_parquet(path)
+    required = {"role", "model", "text"}
+    missing = sorted(required - set(frame.columns))
+    if missing:
+        raise ValueError(f"dataset parquet is missing columns: {missing}")
+    frame = frame[frame["role"].isin(["human_continuation", "llm_continuation"])].copy()
+    frame["text"] = frame["text"].fillna("").astype(str).str.strip()
+    frame["model"] = frame["model"].fillna("").astype(str).str.strip()
+    if "record_id" not in frame.columns:
+        frame["record_id"] = [str(index) for index in range(len(frame))]
+    docs: list[SAEDoc] = []
+    rng = random.Random(seed)
+    for source, source_frame in frame.groupby("model", sort=True):
+        rows = list(source_frame.itertuples(index=False))
+        rng.shuffle(rows)
+        loaded = 0
+        for row in rows:
+            if loaded >= max_docs_per_source:
+                break
+            text = _string_or_empty(getattr(row, "text"))
+            role = _string_or_empty(getattr(row, "role"))
+            if not text:
+                continue
+            label = 0 if role == "human_continuation" else 1
+            docs.append(
+                SAEDoc(
+                    source=_string_or_empty(source),
+                    doc_id=_string_or_empty(getattr(row, "record_id", loaded)),
+                    text=text,
+                    label=label,
+                )
+            )
+            loaded += 1
+    return docs
+
+
 def _load_docs(args: argparse.Namespace) -> list[SAEDoc]:
     docs = [
         *_load_jsonl_docs(
@@ -219,8 +305,16 @@ def _load_docs(args: argparse.Namespace) -> list[SAEDoc]:
             feature_text_mode=args.feature_text_mode,
         ),
     ]
+    if args.dataset_parquet is not None:
+        docs.extend(
+            _load_parquet_docs(
+                args.dataset_parquet,
+                max_docs_per_source=args.max_docs_per_source,
+                seed=args.seed,
+            )
+        )
     if not docs:
-        raise ValueError("provide at least one --reference-jsonl or --generation-jsonl input")
+        raise ValueError("provide at least one --reference-jsonl, --generation-jsonl, or --dataset-parquet input")
     random.Random(args.seed).shuffle(docs)
     return docs
 
@@ -321,34 +415,113 @@ def collect_penultimate_activations(
     return torch.cat(chunks, dim=0)
 
 
+def _split_activations(
+    activations: torch.Tensor,
+    *,
+    eval_fraction: float,
+    seed: int,
+) -> tuple[torch.Tensor, torch.Tensor]:
+    if not 0.0 <= eval_fraction < 1.0:
+        raise ValueError("--eval-fraction must be >= 0 and < 1")
+    if eval_fraction == 0.0 or activations.shape[0] < 2:
+        return activations, activations[:0]
+    generator = torch.Generator()
+    generator.manual_seed(seed)
+    permutation = torch.randperm(activations.shape[0], generator=generator)
+    eval_count = max(1, int(activations.shape[0] * eval_fraction))
+    eval_indexes = permutation[:eval_count]
+    train_indexes = permutation[eval_count:]
+    return activations[train_indexes].contiguous(), activations[eval_indexes].contiguous()
+
+
+def _compile_module(module: nn.Module, *, enabled: bool, mode: str, device: torch.device) -> nn.Module:
+    if not enabled or device.type != "cuda":
+        return module
+    if not hasattr(torch, "compile"):
+        return module
+    print(f"Compiling {module.__class__.__name__} with torch.compile(mode={mode})", flush=True)
+    return cast(nn.Module, torch.compile(module, mode=mode))
+
+
+@torch.inference_mode()
+def _evaluate_sae_mse(
+    *,
+    sae_model: nn.Module,
+    activations: torch.Tensor,
+    batch_size: int,
+    device: torch.device,
+    num_workers: int,
+) -> float | None:
+    if activations.numel() == 0:
+        return None
+    loader = DataLoader(
+        TensorDataset(activations),
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        pin_memory=device.type == "cuda",
+    )
+    total_sse = 0.0
+    total_values = 0
+    was_training = sae_model.training
+    sae_model.eval()
+    for (batch_cpu,) in loader:
+        batch = batch_cpu.to(device=device, dtype=torch.float32, non_blocking=device.type == "cuda")
+        reconstruction, _sparse_codes = sae_model(batch)
+        residual = reconstruction.float() - batch
+        total_sse += float(residual.pow(2).sum().detach().cpu())
+        total_values += int(residual.numel())
+    if was_training:
+        sae_model.train()
+    return total_sse / max(1, total_values)
+
+
 def train_sae(
     *,
     activations: torch.Tensor,
     args: argparse.Namespace,
     device: torch.device,
-) -> tuple[BatchTopKSAE, list[dict[str, Any]]]:
+) -> tuple[BatchTopKSAE, list[dict[str, Any]], list[dict[str, Any]]]:
+    train_activations, eval_activations = _split_activations(
+        activations,
+        eval_fraction=args.eval_fraction,
+        seed=args.seed,
+    )
     sae = BatchTopKSAE(
         input_dim=int(activations.shape[1]),
         latent_dim=args.latent_dim,
         k=args.k,
     ).to(device)
+    sae_model = _compile_module(
+        sae,
+        enabled=bool(getattr(args, "compile_sae", False)),
+        mode=getattr(args, "compile_mode", "default"),
+        device=device,
+    )
     optimizer = torch.optim.AdamW(
         sae.parameters(),
         lr=args.learning_rate,
         weight_decay=args.weight_decay,
     )
-    dataset = TensorDataset(activations)
-    loader = DataLoader(dataset, batch_size=args.train_batch_size, shuffle=True)
+    dataset = TensorDataset(train_activations)
+    loader = DataLoader(
+        dataset,
+        batch_size=args.train_batch_size,
+        shuffle=True,
+        num_workers=args.num_workers,
+        pin_memory=device.type == "cuda",
+    )
     train_rows: list[dict[str, Any]] = []
+    eval_rows: list[dict[str, Any]] = []
     start = time.time()
     step = 0
-    sae.train()
+    sae_model.train()
     for epoch in range(1, args.epochs + 1):
         for (batch_cpu,) in loader:
             step += 1
-            batch = batch_cpu.to(device=device, dtype=torch.float32)
+            batch = batch_cpu.to(device=device, dtype=torch.float32, non_blocking=device.type == "cuda")
             optimizer.zero_grad(set_to_none=True)
-            reconstruction, sparse_codes = sae(batch)
+            reconstruction, sparse_codes = sae_model(batch)
             residual = reconstruction - batch
             mse = residual.pow(2).mean()
             loss = mse
@@ -371,7 +544,23 @@ def train_sae(
                     f"active/vector={row['active_latents_per_vector']:.2f}",
                     flush=True,
                 )
-    return sae, train_rows
+        eval_mse = _evaluate_sae_mse(
+            sae_model=sae_model,
+            activations=eval_activations,
+            batch_size=args.train_batch_size,
+            device=device,
+            num_workers=args.num_workers,
+        )
+        if eval_mse is not None:
+            row = {
+                "step": step,
+                "epoch": epoch,
+                "eval_mse": eval_mse,
+                "elapsed_seconds": time.time() - start,
+            }
+            eval_rows.append(row)
+            print(f"SAE epoch {epoch}: eval_mse={eval_mse:.6f}", flush=True)
+    return sae, train_rows, eval_rows
 
 
 def _last_layer(model: Any) -> nn.Module:
@@ -454,6 +643,53 @@ def _push_example(
         heapq.heapreplace(heap, item)
 
 
+def _id_to_label(model: Any) -> dict[int, str]:
+    raw = getattr(getattr(model, "config", None), "id2label", {}) or {}
+    labels: dict[int, str] = {}
+    for key, value in dict(raw).items():
+        try:
+            label_id = int(key)
+        except (TypeError, ValueError):
+            continue
+        labels[label_id] = str(value)
+    return labels
+
+
+def _target_class_ids(model: Any, raw_targets: list[str]) -> list[int]:
+    labels = _id_to_label(model)
+    label_to_id = {label.lower(): label_id for label_id, label in labels.items()}
+    if raw_targets:
+        targets: list[int] = []
+        for raw in raw_targets:
+            raw_text = str(raw).strip()
+            if raw_text == "":
+                continue
+            if raw_text.isdigit():
+                targets.append(int(raw_text))
+            else:
+                lowered = raw_text.lower()
+                if lowered not in label_to_id:
+                    raise ValueError(f"unknown --target-class {raw_text!r}; known labels are {labels}")
+                targets.append(label_to_id[lowered])
+        if targets:
+            return sorted(set(targets))
+    non_human = [
+        label_id
+        for label_id, label in labels.items()
+        if label.strip().lower() not in {"human", "label_0"}
+    ]
+    if non_human:
+        return sorted(non_human)
+    return [1]
+
+
+def _target_scores(logits: torch.Tensor, target_ids: list[int]) -> torch.Tensor:
+    valid_ids = [target_id for target_id in target_ids if 0 <= target_id < logits.shape[-1]]
+    if not valid_ids:
+        raise ValueError(f"target class ids {target_ids} are out of range for logits with shape {tuple(logits.shape)}")
+    return logits[:, valid_ids].float().mean(dim=-1)
+
+
 @torch.inference_mode()
 def score_latents(
     *,
@@ -466,6 +702,9 @@ def score_latents(
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     sae.eval()
     candidate_docs = [doc for doc in docs if doc.label == 1] or docs
+    target_ids = _target_class_ids(model, args.target_class)
+    id_to_label = _id_to_label(model)
+    target_labels = [id_to_label.get(target_id, str(target_id)) for target_id in target_ids]
     latent_sum = torch.zeros(sae.latent_dim, dtype=torch.float64)
     latent_active_docs: Counter[int] = Counter()
     latent_max = torch.zeros(sae.latent_dim, dtype=torch.float32)
@@ -563,7 +802,7 @@ def score_latents(
     for batch_index, batch_docs in enumerate(batches, start=1):
         encoded = _encode_docs(tokenizer, batch_docs, max_length=args.max_length, device=device)
         baseline_logits, _ = _logits_with_sae(model=model, encoded=encoded, sae=sae)
-        baseline_llm_logits = baseline_logits[:, 1]
+        baseline_target_scores = _target_scores(baseline_logits, target_ids)
         for latent_id in candidate_latents:
             ablated_logits, _ = _logits_with_sae(
                 model=model,
@@ -571,9 +810,11 @@ def score_latents(
                 sae=sae,
                 ablate_latent=latent_id,
             )
-            effects = (baseline_llm_logits - ablated_logits[:, 1]).detach().cpu().tolist()
+            effects = (
+                baseline_target_scores - _target_scores(ablated_logits, target_ids)
+            ).detach().cpu().tolist()
             ablation_effects[latent_id].extend(float(value) for value in effects)
-            baseline_logit_sums[latent_id] += float(baseline_llm_logits.detach().sum().cpu())
+            baseline_logit_sums[latent_id] += float(baseline_target_scores.detach().sum().cpu())
         if args.progress_every > 0 and (batch_index == 1 or batch_index % args.progress_every == 0):
             print(
                 f"Ablated {len(candidate_latents)} candidate latents on "
@@ -595,6 +836,8 @@ def score_latents(
                 "activation_sum": float(latent_sum[latent_id]),
                 "max_activation": float(latent_max[latent_id]),
                 "active_doc_count": int(latent_active_docs[latent_id]),
+                "target_class_ids": "|".join(str(target_id) for target_id in target_ids),
+                "target_class_labels": "|".join(target_labels),
             }
         )
     latent_rows.sort(
@@ -663,43 +906,89 @@ def _save_sae(path: Path, sae: BatchTopKSAE, summary: dict[str, Any]) -> None:
     )
 
 
+def _load_activation_cache(path: Path) -> torch.Tensor:
+    payload = torch.load(path, map_location="cpu")
+    if isinstance(payload, torch.Tensor):
+        activations = payload
+    elif isinstance(payload, dict) and isinstance(payload.get("activations"), torch.Tensor):
+        activations = payload["activations"]
+    else:
+        raise ValueError(f"activation cache {path} does not contain an activation tensor")
+    if activations.ndim != 2:
+        raise ValueError(f"activation cache {path} must be a 2D tensor, got shape {tuple(activations.shape)}")
+    return activations.contiguous()
+
+
+def _save_activation_cache(
+    path: Path,
+    *,
+    activations: torch.Tensor,
+    args: argparse.Namespace,
+    docs: list[SAEDoc],
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    torch.save(
+        {
+            "activations": activations.half(),
+            "source": "modernbert_penultimate_hidden_states",
+            "checkpoint": str(args.checkpoint),
+            "dataset_parquet": str(args.dataset_parquet) if args.dataset_parquet else "",
+            "reference_jsonl": list(args.reference_jsonl),
+            "generation_jsonl": list(args.generation_jsonl),
+            "max_length": args.max_length,
+            "max_activations": args.max_activations,
+            "documents": len(docs),
+        },
+        path,
+    )
+
+
 def run(args: argparse.Namespace) -> dict[str, Any]:
     random.seed(args.seed)
     torch.manual_seed(args.seed)
     output_dir: Path = args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model, tokenizer = _load_detector(args.checkpoint, device=device)
     docs = _load_docs(args)
-    activations = collect_penultimate_activations(
-        model=model,
-        tokenizer=tokenizer,
-        docs=docs,
-        max_length=args.max_length,
-        batch_size=args.collect_batch_size,
-        max_activations=args.max_activations,
-        device=device,
-        progress_every=args.progress_every,
-    )
-    torch.save(
-        {
-            "activations": activations.half(),
-            "source": "modernbert_penultimate_hidden_states",
-            "checkpoint": str(args.checkpoint),
-        },
-        output_dir / "phase4_batchtopk_sae_activation_cache.pt",
-    )
-    sae, train_rows = train_sae(activations=activations, args=args, device=device)
-    latent_rows, example_rows = score_latents(
-        model=model,
-        tokenizer=tokenizer,
-        sae=sae,
-        docs=docs,
-        args=args,
-        device=device,
-    )
+    cache_path = args.activation_cache or output_dir / "phase4_batchtopk_sae_activation_cache.pt"
+    model: Any | None = None
+    tokenizer: Any | None = None
+    cache_reused = cache_path.exists() and not args.refresh_activation_cache
+    if cache_reused:
+        print(f"Loading activation cache from {cache_path}", flush=True)
+        activations = _load_activation_cache(cache_path)
+    else:
+        model, tokenizer = _load_detector(args.checkpoint, device=device)
+        activations = collect_penultimate_activations(
+            model=model,
+            tokenizer=tokenizer,
+            docs=docs,
+            max_length=args.max_length,
+            batch_size=args.collect_batch_size,
+            max_activations=args.max_activations,
+            device=device,
+            progress_every=args.progress_every,
+        )
+        _save_activation_cache(cache_path, activations=activations, args=args, docs=docs)
+    sae, train_rows, eval_rows = train_sae(activations=activations, args=args, device=device)
+    if args.skip_latent_scoring:
+        latent_rows: list[dict[str, Any]] = []
+        example_rows: list[dict[str, Any]] = []
+    else:
+        if model is None or tokenizer is None:
+            model, tokenizer = _load_detector(args.checkpoint, device=device)
+        latent_rows, example_rows = score_latents(
+            model=model,
+            tokenizer=tokenizer,
+            sae=sae,
+            docs=docs,
+            args=args,
+            device=device,
+        )
     source_counts = Counter(doc.source for doc in docs)
     label_counts = Counter(str(doc.label) for doc in docs)
+    best_eval_mse = min((float(row["eval_mse"]) for row in eval_rows), default=None)
+    final_train_mse = float(train_rows[-1]["mse"]) if train_rows else None
     summary = {
         "checkpoint": str(args.checkpoint),
         "device": str(device),
@@ -707,18 +996,28 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "documents": len(docs),
         "source_counts": dict(sorted(source_counts.items())),
         "label_counts": dict(sorted(label_counts.items())),
+        "activation_cache": str(cache_path),
+        "activation_cache_reused": cache_reused,
         "activation_vectors": int(activations.shape[0]),
         "input_dim": int(activations.shape[1]),
         "latent_dim": args.latent_dim,
         "k": args.k,
         "epochs": args.epochs,
         "learning_rate": args.learning_rate,
+        "weight_decay": args.weight_decay,
+        "eval_fraction": args.eval_fraction,
+        "final_train_mse": final_train_mse,
+        "best_eval_mse": best_eval_mse,
+        "compile_sae": bool(args.compile_sae),
+        "compile_mode": args.compile_mode,
+        "skip_latent_scoring": bool(args.skip_latent_scoring),
         "score_top_latents": args.score_top_latents,
         "ranked_latents": len(latent_rows),
         "example_rows": len(example_rows),
     }
     _save_sae(output_dir / "phase4_batchtopk_sae.pt", sae, summary)
     _write_csv(output_dir / "phase4_batchtopk_sae_train_log.csv", train_rows)
+    _write_csv(output_dir / "phase4_batchtopk_sae_eval_log.csv", eval_rows)
     _write_csv(output_dir / "phase4_batchtopk_sae_latents.csv", latent_rows)
     _write_csv(output_dir / "phase4_batchtopk_sae_examples.csv", example_rows)
     _write_json(output_dir / "phase4_batchtopk_sae_summary.json", summary)
