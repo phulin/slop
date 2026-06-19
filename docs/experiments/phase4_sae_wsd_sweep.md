@@ -47,6 +47,31 @@ The best two 300k-cache settings were rerun on a 1M-token activation cache built
 
 The larger cache preserves the same ranking and lowers measured MSE substantially. The 1M-cache pure reconstruction winner is now `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k768_lr2e3_e8`. The more conservative 1M-cache candidate is `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k512_lr2e3_e8`.
 
+Scored 1M-cache outputs were also produced:
+
+- `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k768_lr2e3_e8_scored`
+- `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k512_lr2e3_e8_scored`
+
+Top 1M-cache k768 AI-target latent effects:
+
+| Latent | Mean target-logit drop when ablated | Positive effect rate |
+| ---: | ---: | ---: |
+| 1130 | 0.1199 | 0.965 |
+| 1341 | 0.1095 | 0.998 |
+| 862 | 0.0287 | 1.000 |
+| 1189 | 0.0098 | 0.723 |
+| 1520 | 0.0095 | 0.823 |
+
+Top 1M-cache k512 AI-target latent effects:
+
+| Latent | Mean target-logit drop when ablated | Positive effect rate |
+| ---: | ---: | ---: |
+| 286 | 0.2812 | 1.000 |
+| 1265 | 0.2328 | 1.000 |
+| 580 | 0.1705 | 1.000 |
+| 862 | 0.0294 | 1.000 |
+| 1530 | 0.0144 | 0.990 |
+
 ## Scored SAE Output
 
 Scored runs were produced for the reconstruction winner and the more conservative sparse candidate:
@@ -84,7 +109,7 @@ The main reconstruction driver was `k`, not latent width. At fixed or similar tr
 
 LR `2e-3` was the best tested learning rate in the useful region. LR `5e-4` undertrained badly; LR `3e-3` was worse than `2e-3` for the same 2048/k512/e4 setting.
 
-The scored runs have similar top positive detector-relevant latents, especially latent 862. The high-k winner improves reconstruction, but the top detector-effect signal is not obviously stronger than the k512 model on this small scoring pass.
+The 300k-cache scored runs have similar top positive detector-relevant latents, especially latent 862. On the 1M-cache scored runs, the k512 candidate produces the largest top ablation effects while the k768 candidate keeps the best reconstruction loss. That makes k512 more attractive for interpretability despite weaker reconstruction.
 
 The current recommended follow-up depends on the goal:
 
