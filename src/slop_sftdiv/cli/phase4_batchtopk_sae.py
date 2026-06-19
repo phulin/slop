@@ -156,6 +156,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--weight-decay", type=float, default=0.0)
     parser.add_argument("--eval-fraction", type=float, default=0.1)
     parser.add_argument("--compile-sae", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument("--compile-detector", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--compile-mode", choices=["default", "reduce-overhead", "max-autotune"], default="default")
     parser.add_argument("--num-workers", type=int, default=0)
     parser.add_argument("--skip-latent-scoring", action="store_true")
@@ -959,8 +960,14 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         activations = _load_activation_cache(cache_path)
     else:
         model, tokenizer = _load_detector(args.checkpoint, device=device)
+        collection_model = _compile_module(
+            model,
+            enabled=bool(args.compile_detector),
+            mode=args.compile_mode,
+            device=device,
+        )
         activations = collect_penultimate_activations(
-            model=model,
+            model=collection_model,
             tokenizer=tokenizer,
             docs=docs,
             max_length=args.max_length,
@@ -1009,6 +1016,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "final_train_mse": final_train_mse,
         "best_eval_mse": best_eval_mse,
         "compile_sae": bool(args.compile_sae),
+        "compile_detector": bool(args.compile_detector),
         "compile_mode": args.compile_mode,
         "skip_latent_scoring": bool(args.skip_latent_scoring),
         "score_top_latents": args.score_top_latents,
