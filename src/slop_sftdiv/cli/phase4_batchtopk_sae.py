@@ -444,6 +444,13 @@ def _compile_module(module: nn.Module, *, enabled: bool, mode: str, device: torc
     return cast(nn.Module, torch.compile(module, mode=mode))
 
 
+def _reset_torch_compile() -> None:
+    dynamo = getattr(torch, "_dynamo", None)
+    reset = getattr(dynamo, "reset", None)
+    if callable(reset):
+        reset()
+
+
 @torch.inference_mode()
 def _evaluate_sae_mse(
     *,
@@ -482,7 +489,7 @@ def train_sae(
     activations: torch.Tensor,
     args: argparse.Namespace,
     device: torch.device,
-) -> tuple[BatchTopKSAE, list[dict[str, Any]], list[dict[str, Any]]]:
+) -> tuple[BatchTopKSAE, list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
     train_activations, eval_activations = _split_activations(
         activations,
         eval_fraction=args.eval_fraction,
@@ -499,6 +506,7 @@ def train_sae(
         mode=getattr(args, "compile_mode", "default"),
         device=device,
     )
+    sae_compile_fallback = False
     optimizer = torch.optim.AdamW(
         sae.parameters(),
         lr=args.learning_rate,
@@ -522,7 +530,20 @@ def train_sae(
             step += 1
             batch = batch_cpu.to(device=device, dtype=torch.float32, non_blocking=device.type == "cuda")
             optimizer.zero_grad(set_to_none=True)
-            reconstruction, sparse_codes = sae_model(batch)
+            try:
+                reconstruction, sparse_codes = sae_model(batch)
+            except Exception as exc:
+                if sae_model is sae:
+                    raise
+                print(
+                    f"torch.compile SAE forward failed ({type(exc).__name__}: {exc}); falling back to eager SAE",
+                    flush=True,
+                )
+                _reset_torch_compile()
+                sae_compile_fallback = True
+                sae_model = sae
+                sae_model.train()
+                reconstruction, sparse_codes = sae_model(batch)
             residual = reconstruction - batch
             mse = residual.pow(2).mean()
             loss = mse
@@ -561,7 +582,11 @@ def train_sae(
             }
             eval_rows.append(row)
             print(f"SAE epoch {epoch}: eval_mse={eval_mse:.6f}", flush=True)
-    return sae, train_rows, eval_rows
+    train_summary = {
+        "compile_sae_requested": bool(getattr(args, "compile_sae", False)),
+        "compile_sae_fallback": sae_compile_fallback,
+    }
+    return sae, train_rows, eval_rows, train_summary
 
 
 def _last_layer(model: Any) -> nn.Module:
@@ -958,6 +983,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     if cache_reused:
         print(f"Loading activation cache from {cache_path}", flush=True)
         activations = _load_activation_cache(cache_path)
+        detector_compile_fallback = False
     else:
         model, tokenizer = _load_detector(args.checkpoint, device=device)
         collection_model = _compile_module(
@@ -966,18 +992,40 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             mode=args.compile_mode,
             device=device,
         )
-        activations = collect_penultimate_activations(
-            model=collection_model,
-            tokenizer=tokenizer,
-            docs=docs,
-            max_length=args.max_length,
-            batch_size=args.collect_batch_size,
-            max_activations=args.max_activations,
-            device=device,
-            progress_every=args.progress_every,
-        )
+        detector_compile_fallback = False
+        try:
+            activations = collect_penultimate_activations(
+                model=collection_model,
+                tokenizer=tokenizer,
+                docs=docs,
+                max_length=args.max_length,
+                batch_size=args.collect_batch_size,
+                max_activations=args.max_activations,
+                device=device,
+                progress_every=args.progress_every,
+            )
+        except Exception as exc:
+            if collection_model is model:
+                raise
+            print(
+                f"torch.compile detector collection failed ({type(exc).__name__}: {exc}); "
+                "falling back to eager detector collection",
+                flush=True,
+            )
+            _reset_torch_compile()
+            detector_compile_fallback = True
+            activations = collect_penultimate_activations(
+                model=model,
+                tokenizer=tokenizer,
+                docs=docs,
+                max_length=args.max_length,
+                batch_size=args.collect_batch_size,
+                max_activations=args.max_activations,
+                device=device,
+                progress_every=args.progress_every,
+            )
         _save_activation_cache(cache_path, activations=activations, args=args, docs=docs)
-    sae, train_rows, eval_rows = train_sae(activations=activations, args=args, device=device)
+    sae, train_rows, eval_rows, train_summary = train_sae(activations=activations, args=args, device=device)
     if args.skip_latent_scoring:
         latent_rows: list[dict[str, Any]] = []
         example_rows: list[dict[str, Any]] = []
@@ -1017,6 +1065,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "best_eval_mse": best_eval_mse,
         "compile_sae": bool(args.compile_sae),
         "compile_detector": bool(args.compile_detector),
+        "compile_sae_fallback": bool(train_summary["compile_sae_fallback"]),
+        "compile_detector_fallback": detector_compile_fallback,
         "compile_mode": args.compile_mode,
         "skip_latent_scoring": bool(args.skip_latent_scoring),
         "score_top_latents": args.score_top_latents,

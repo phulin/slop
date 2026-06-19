@@ -73,7 +73,11 @@ def test_train_sae_returns_loss_rows() -> None:
         progress_every=1,
     )
 
-    sae, rows, eval_rows = train_sae(activations=activations, args=args, device=torch.device("cpu"))
+    sae, rows, eval_rows, train_summary = train_sae(
+        activations=activations,
+        args=args,
+        device=torch.device("cpu"),
+    )
 
     assert sae.input_dim == 4
     assert sae.latent_dim == 8
@@ -81,6 +85,7 @@ def test_train_sae_returns_loss_rows() -> None:
     assert rows[-1]["loss"] >= 0
     assert eval_rows
     assert eval_rows[-1]["eval_mse"] >= 0
+    assert train_summary["compile_sae_fallback"] is False
 
 
 def test_load_parquet_docs_labels_human_and_llm_rows(tmp_path) -> None:
