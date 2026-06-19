@@ -57,9 +57,11 @@ The best two 300k-cache settings were rerun on a 1M-token activation cache built
 | `ld4096_k768_lr3e3_wsd_e16` | 1,000,000 | 4096 | 768 | 0.003 | WSD | 16 | 1.763 |
 | `ld4096_k768_lr5e3_wsd_e16` | 1,000,000 | 4096 | 768 | 0.005 | WSD | 16 | 1.779 |
 | `ld8192_k768_lr4e3_wsd_e48` | 1,000,000 | 8192 | 768 | 0.004 | WSD | 48 | 1.787 |
+| `ld8192_k768_lr4e3_wsd_e40` | 1,000,000 | 8192 | 768 | 0.004 | WSD | 40 | 2.025 |
 | `ld8192_k768_lr5e3_wsd_e16` | 1,000,000 | 8192 | 768 | 0.005 | WSD | 16 | 2.138 |
 | `ld4096_k768_lr1e3_e16` | 1,000,000 | 4096 | 768 | 0.001 | constant | 16 | 2.350 |
 | `ld2048_k768_lr1e3_e16` | 1,000,000 | 2048 | 768 | 0.001 | constant | 16 | 3.237 |
+| `ld4096_k512_lr5e3_wsd_e64` | 1,000,000 | 4096 | 512 | 0.005 | WSD | 64 | 4.175 |
 | `ld2048_k768_lr1e3_e8` | 1,000,000 | 2048 | 768 | 0.001 | constant | 8 | 4.239 |
 | `ld4096_k512_lr5e3_wsd_e48` | 1,000,000 | 4096 | 512 | 0.005 | WSD | 48 | 4.263 |
 | `ld4096_k512_lr5e3_wsd_e32` | 1,000,000 | 4096 | 512 | 0.005 | WSD | 32 | 4.342 |
@@ -88,7 +90,7 @@ The best two 300k-cache settings were rerun on a 1M-token activation cache built
 
 The larger cache lowers measured MSE substantially. The 1M-cache pure reconstruction boundary is now `artifacts/phase4/sae_wsd_sweep_1m/ld4096_k3072_lr1e3_wsd_e16`, but this is a dense upper-bound setting rather than an interpretable sparse model: `k=3072` allows 75% of the 4096-latent dictionary to be active, and the learned ReLU codes still kept roughly 2,600 positive entries per vector late in training. WSD improved high-k reconstruction: `4096/k1280` dropped from 0.456 with constant LR to 0.241 with WSD, then k1536, k2048, and k3072 edged the boundary down to 0.236, 0.222, and 0.210. Going wider to `8192/k1536/WSD` did not help and landed at 0.288.
 
-Wider 4096-latent dictionaries helped at the more usable sparse settings: `4096/k768/e16` improved held-out MSE from 3.237 to 2.350 versus `2048/k768/e16`, and `4096/k512/WSD/e16` improved from 6.630 to 5.264 versus `2048/k512/WSD/e16` before LR tuning. Tuning WSD LR improved those further: `4096/k768/lr4e-3/WSD/e16` reached 1.754, and `4096/k512/lr5e-3/WSD/e16` reached 4.614. Going wider again to 8192 latents helped k768 modestly at the tuned LR, reaching 1.697, but did not help k512: `8192/k512/lr5e-3/WSD/e16` landed at 4.632 versus 4.614 for 4096 latents. Extending the current usable candidates continued to help up to different horizons: `8192/k768/lr4e-3/WSD` reached 1.538 at 24 epochs and 1.474 at 32 epochs, then regressed to 1.787 at 48 epochs after mid-run instability; `4096/k512/lr5e-3/WSD` reached 4.380 at 24 epochs, 4.342 at 32 epochs, and 4.263 at 48 epochs. The best weakly sparse reconstruction candidate remains `artifacts/phase4/sae_wsd_sweep_1m/ld8192_k768_lr4e3_wsd_e32`. The more conservative 1M-cache candidate is now `artifacts/phase4/sae_wsd_sweep_1m/ld4096_k512_lr5e3_wsd_e48`.
+Wider 4096-latent dictionaries helped at the more usable sparse settings: `4096/k768/e16` improved held-out MSE from 3.237 to 2.350 versus `2048/k768/e16`, and `4096/k512/WSD/e16` improved from 6.630 to 5.264 versus `2048/k512/WSD/e16` before LR tuning. Tuning WSD LR improved those further: `4096/k768/lr4e-3/WSD/e16` reached 1.754, and `4096/k512/lr5e-3/WSD/e16` reached 4.614. Going wider again to 8192 latents helped k768 modestly at the tuned LR, reaching 1.697, but did not help k512: `8192/k512/lr5e-3/WSD/e16` landed at 4.632 versus 4.614 for 4096 latents. Extending the current usable candidates continued to help up to different horizons: `8192/k768/lr4e-3/WSD` reached 1.538 at 24 epochs and 1.474 at 32 epochs, then regressed to 2.025 at 40 epochs and 1.787 at 48 epochs after mid-run instability; `4096/k512/lr5e-3/WSD` reached 4.380 at 24 epochs, 4.342 at 32 epochs, 4.263 at 48 epochs, and 4.175 at 64 epochs. The best weakly sparse reconstruction candidate remains `artifacts/phase4/sae_wsd_sweep_1m/ld8192_k768_lr4e3_wsd_e32`. The more conservative 1M-cache candidate is now `artifacts/phase4/sae_wsd_sweep_1m/ld4096_k512_lr5e3_wsd_e64`.
 
 Lower-k frontier checks show the reconstruction cost of stricter sparsity: `2048/k384` lands at 8.863 MSE and `2048/k256` at 12.050 MSE after 16 epochs with WSD. A wider `4096/k384/WSD` run improves that lower-k frontier to 7.675. These are useful reference points, but the current tradeoff knee remains k512.
 
@@ -113,6 +115,7 @@ Scored 1M-cache outputs were also produced:
 - `artifacts/phase4/sae_wsd_sweep_1m/ld8192_k768_lr4e3_wsd_e32_scored`
 - `artifacts/phase4/sae_wsd_sweep_1m/ld4096_k512_lr5e3_wsd_e32_scored`
 - `artifacts/phase4/sae_wsd_sweep_1m/ld4096_k512_lr5e3_wsd_e48_scored`
+- `artifacts/phase4/sae_wsd_sweep_1m/ld4096_k512_lr5e3_wsd_e64_scored`
 
 Top 1M-cache k1280/lr1e-3/e16 AI-target latent effects:
 
@@ -274,6 +277,16 @@ Top 1M-cache 4096-latent k512/lr5e-3/WSD/e48 AI-target latent effects:
 | 1939 | 0.1154 | 0.948 |
 | 3936 | 0.0636 | 0.875 |
 
+Top 1M-cache 4096-latent k512/lr5e-3/WSD/e64 AI-target latent effects:
+
+| Latent | Mean target-logit drop when ablated | Positive effect rate |
+| ---: | ---: | ---: |
+| 911 | 0.5366 | 1.000 |
+| 2089 | 0.2392 | 1.000 |
+| 2301 | 0.1776 | 1.000 |
+| 1346 | 0.1011 | 0.883 |
+| 13 | 0.0728 | 0.998 |
+
 Top 1M-cache k512/WSD/e8 AI-target latent effects:
 
 | Latent | Mean target-logit drop when ablated | Positive effect rate |
@@ -327,15 +340,15 @@ Top positive AI-target latent effects for the conservative `k512` candidate:
 
 ## Conclusions
 
-The main reconstruction driver in the first sweep was `k`, but the 1M-cache follow-ups show that latent width matters once the run is trained long enough at a usable sparse `k`. Wider 4096-latent dictionaries improved both current production-shaped candidates: k768 fell from 3.237 to 2.350 MSE before LR tuning and to 1.754 after WSD LR tuning, while k512/WSD fell from 6.630 to 5.264 before LR tuning and to 4.614 after LR tuning. A further 8192-latent k768 run improved the weakly sparse frontier to 1.697 at 16 epochs, 1.538 at 24 epochs, and 1.474 at 32 epochs, but regressed to 1.787 at 48 epochs after mid-run instability. The analogous k512 run was slightly worse at 8192 latents, but extending the 4096/k512 candidate improved it to 4.380 at 24 epochs, 4.342 at 32 epochs, and 4.263 at 48 epochs. Longer training helps, but the useful horizon is architecture-dependent. Pushing `k` past 768 continues to lower reconstruction loss, but by k1280 the SAE is already no longer meaningfully sparse; k2048 and k3072 should be treated only as dense reconstruction upper bounds.
+The main reconstruction driver in the first sweep was `k`, but the 1M-cache follow-ups show that latent width matters once the run is trained long enough at a usable sparse `k`. Wider 4096-latent dictionaries improved both current production-shaped candidates: k768 fell from 3.237 to 2.350 MSE before LR tuning and to 1.754 after WSD LR tuning, while k512/WSD fell from 6.630 to 5.264 before LR tuning and to 4.614 after LR tuning. A further 8192-latent k768 run improved the weakly sparse frontier to 1.697 at 16 epochs, 1.538 at 24 epochs, and 1.474 at 32 epochs, but regressed at 40 and 48 epochs after mid-run instability. The analogous k512 run was slightly worse at 8192 latents, but extending the 4096/k512 candidate improved it to 4.380 at 24 epochs, 4.342 at 32 epochs, 4.263 at 48 epochs, and 4.175 at 64 epochs. Longer training helps, but the useful horizon is architecture-dependent. Pushing `k` past 768 continues to lower reconstruction loss, but by k1280 the SAE is already no longer meaningfully sparse; k2048 and k3072 should be treated only as dense reconstruction upper bounds.
 
-LR `2e-3` was the best tested learning rate in the initial useful region. On the 1M-cache k768/e8 and k512/e8 follow-ups, `1e-3` beat `2e-3`; `3e-3` was unstable and worse by the final epoch. That conclusion did not hold after moving to 4096 latents, 16 epochs, and WSD: for `4096/k512/WSD`, LR `5e-4` undertrained at 5.840 MSE, `1e-3` reached 5.264, `2e-3` reached 4.904, `3e-3` reached 4.731, `4e-3` reached 4.651, `5e-3` reached 4.614, and `6e-3` backed off to 4.657. For `4096/k768/WSD`, LR `3e-3` reached 1.763, `4e-3` reached 1.754, and `5e-3` backed off to 1.779. The current best k768 setting is `8192/k768/lr4e-3/WSD/e32`; the current best k512 setting is `4096/k512/lr5e-3/WSD/e48`.
+LR `2e-3` was the best tested learning rate in the initial useful region. On the 1M-cache k768/e8 and k512/e8 follow-ups, `1e-3` beat `2e-3`; `3e-3` was unstable and worse by the final epoch. That conclusion did not hold after moving to 4096 latents, 16 epochs, and WSD: for `4096/k512/WSD`, LR `5e-4` undertrained at 5.840 MSE, `1e-3` reached 5.264, `2e-3` reached 4.904, `3e-3` reached 4.731, `4e-3` reached 4.651, `5e-3` reached 4.614, and `6e-3` backed off to 4.657. For `4096/k768/WSD`, LR `3e-3` reached 1.763, `4e-3` reached 1.754, and `5e-3` backed off to 1.779. The current best k768 setting is `8192/k768/lr4e-3/WSD/e32`; the current best k512 setting is `4096/k512/lr5e-3/WSD/e64`.
 
-The 300k-cache scored runs have similar top positive detector-relevant latents, especially latent 862. On the 1M-cache scored runs, the tuned 4096 and 8192 candidates produce much larger top ablation effects than the earlier k512 and k768 candidates. The 32-epoch 8192/k768 run's top latents have mean target-logit drops of 0.710, 0.487, 0.262, 0.250, and 0.224, all with 1.000 positive effect rate. The 48-epoch 4096/k512 run's top latents drop the detector's AI-target logits by 0.518, 0.499, 0.205, 0.115, and 0.064 on average, with positive effect rates from 0.875 to 1.000. Tuned k768 now has both stronger reconstruction and strong detector-relevant latents, while tuned k512 remains the more conservative sparsity tradeoff.
+The 300k-cache scored runs have similar top positive detector-relevant latents, especially latent 862. On the 1M-cache scored runs, the tuned 4096 and 8192 candidates produce much larger top ablation effects than the earlier k512 and k768 candidates. The 32-epoch 8192/k768 run's top latents have mean target-logit drops of 0.710, 0.487, 0.262, 0.250, and 0.224, all with 1.000 positive effect rate. The 64-epoch 4096/k512 run's top latents drop the detector's AI-target logits by 0.537, 0.239, 0.178, 0.101, and 0.073 on average, with positive effect rates from 0.883 to 1.000. Tuned k768 now has both stronger reconstruction and strong detector-relevant latents, while tuned k512 remains the more conservative sparsity tradeoff.
 
 The current recommended follow-up depends on the goal:
 
 - For lowest reconstruction error: use the 1M-cache `4096/k3072/lr1e-3/wsd/e16` run as the current dense reconstruction boundary, but do not treat it as sparse or likely interpretable.
 - For weakly sparse reconstruction: continue from the 1M-cache `8192/k768/lr4e-3/wsd/e32` region.
-- For a better sparsity/reconstruction tradeoff: use the 1M-cache `4096/k512/lr5e-3/wsd/e48` run as the next production candidate.
+- For a better sparsity/reconstruction tradeoff: use the 1M-cache `4096/k512/lr5e-3/wsd/e64` run as the next production candidate.
 - For interpretability: run larger latent scoring on the `k512` and `k768` candidates and compare whether high-k latents remain coherent enough to use.
