@@ -40,6 +40,9 @@ The best two 300k-cache settings were rerun on a 1M-token activation cache built
 
 | Run | Activations | Latents | k | LR | Epochs | Held-out MSE |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `ld2048_k1280_lr1e3_e8` | 1,000,000 | 2048 | 1280 | 0.001 | 8 | 0.878 |
+| `ld2048_k1536_lr1e3_e8` | 1,000,000 | 2048 | 1536 | 0.001 | 8 | 0.878 |
+| `ld2048_k1024_lr1e3_e8` | 1,000,000 | 2048 | 1024 | 0.001 | 8 | 1.596 |
 | `ld2048_k768_lr1e3_e8` | 1,000,000 | 2048 | 768 | 0.001 | 8 | 4.239 |
 | `ld2048_k768_lr2e3_e8` | 1,000,000 | 2048 | 768 | 0.002 | 8 | 4.932 |
 | `ld2048_k768_lr3e3_e8` | 1,000,000 | 2048 | 768 | 0.003 | 8 | 5.746 |
@@ -48,7 +51,7 @@ The best two 300k-cache settings were rerun on a 1M-token activation cache built
 | `ld2048_k512_lr2e3_e8` | 1,000,000 | 2048 | 512 | 0.002 | 8 | 9.083 |
 | `ld2048_k512_lr2e3_e4` | 1,000,000 | 2048 | 512 | 0.002 | 4 | 10.945 |
 
-The larger cache preserves the same ranking and lowers measured MSE substantially. The 1M-cache pure reconstruction winner is now `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k768_lr1e3_e8`. The more conservative 1M-cache candidate is `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k512_lr1e3_e8`.
+The larger cache preserves the same ranking and lowers measured MSE substantially. The 1M-cache pure reconstruction boundary is now `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k1280_lr1e3_e8`, but this is a saturated high-k setting: increasing `k` to 1536 produced the same loss and similar active counts because the learned ReLU codes only kept about 1,250 positive entries per vector. The best weakly sparse reconstruction candidate remains `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k768_lr1e3_e8`. The more conservative 1M-cache candidate is `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k512_lr1e3_e8`.
 
 Scored 1M-cache outputs were also produced:
 
@@ -56,6 +59,17 @@ Scored 1M-cache outputs were also produced:
 - `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k768_lr1e3_e8_scored`
 - `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k512_lr2e3_e8_scored`
 - `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k512_lr1e3_e8_scored`
+- `artifacts/phase4/sae_wsd_sweep_1m/ld2048_k1280_lr1e3_e8_scored`
+
+Top 1M-cache k1280/lr1e-3 AI-target latent effects:
+
+| Latent | Mean target-logit drop when ablated | Positive effect rate |
+| ---: | ---: | ---: |
+| 1733 | 0.1535 | 1.000 |
+| 461 | 0.0641 | 1.000 |
+| 72 | 0.0444 | 0.883 |
+| 139 | 0.0347 | 0.995 |
+| 867 | 0.0301 | 0.973 |
 
 Top 1M-cache k768/lr1e-3 AI-target latent effects:
 
@@ -120,7 +134,7 @@ Top positive AI-target latent effects for the conservative `k512` candidate:
 
 ## Conclusions
 
-The main reconstruction driver was `k`, not latent width. At fixed or similar training budgets, smaller 2048-latent models often beat wider 4096/8192 models once `k` was raised. Longer training also helped substantially: `2048/k512` improved from 24.351 MSE at 2 epochs to 12.704 at 8 epochs on the 300k cache, and the 1M-cache k512 run improved further to 8.181 after the LR was lowered to `1e-3`.
+The main reconstruction driver was `k`, not latent width. At fixed or similar training budgets, smaller 2048-latent models often beat wider 4096/8192 models once `k` was raised. Longer training also helped substantially: `2048/k512` improved from 24.351 MSE at 2 epochs to 12.704 at 8 epochs on the 300k cache, and the 1M-cache k512 run improved further to 8.181 after the LR was lowered to `1e-3`. Pushing `k` past 768 continues to lower reconstruction loss, but by k1280 the SAE is no longer meaningfully sparse.
 
 LR `2e-3` was the best tested learning rate in the initial useful region. On the 1M-cache k768/e8 and k512/e8 follow-ups, `1e-3` beat `2e-3`; `3e-3` was unstable and worse by the final epoch. LR `5e-4` undertrained badly in the initial k32 check.
 
@@ -128,6 +142,7 @@ The 300k-cache scored runs have similar top positive detector-relevant latents, 
 
 The current recommended follow-up depends on the goal:
 
-- For lowest reconstruction error: continue from the 1M-cache `2048/k768/lr1e-3/e8` region, but treat it as weakly sparse.
+- For lowest reconstruction error: use the 1M-cache `2048/k1280/lr1e-3/e8` run as the current reconstruction boundary, but do not treat it as sparse or likely interpretable.
+- For weakly sparse reconstruction: continue from the 1M-cache `2048/k768/lr1e-3/e8` region.
 - For a better sparsity/reconstruction tradeoff: use the 1M-cache `2048/k512/lr1e-3/e8` run as the next production candidate.
 - For interpretability: run larger latent scoring on the `k512` and `k768` candidates and compare whether high-k latents remain coherent enough to use.
