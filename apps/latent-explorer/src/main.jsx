@@ -10,8 +10,9 @@ function numeric(value, fallback = 0) {
 }
 
 const LATENT_LABELS_STORAGE_KEY = "slop.latentExplorer.latentLabels.v1";
+const LATENT_LABELS_API = "/api/latent-labels";
 
-function loadLatentLabels() {
+function loadCachedLatentLabels() {
   try {
     return JSON.parse(window.localStorage.getItem(LATENT_LABELS_STORAGE_KEY) ?? "{}");
   } catch (_error) {
@@ -19,12 +20,35 @@ function loadLatentLabels() {
   }
 }
 
-function saveLatentLabels(labels) {
+function cacheLatentLabels(labels) {
   try {
     window.localStorage.setItem(LATENT_LABELS_STORAGE_KEY, JSON.stringify(labels));
   } catch (_error) {
     // Ignore storage errors; labeling should not break exploration.
   }
+}
+
+async function fetchLatentLabels() {
+  const response = await fetch(LATENT_LABELS_API, {
+    headers: { accept: "application/json" },
+    cache: "no-store",
+  });
+  if (!response.ok) throw new Error(`Label fetch failed: ${response.status}`);
+  const payload = await response.json();
+  return payload.labels ?? {};
+}
+
+async function persistLatentLabel(latentId, label) {
+  const response = await fetch(LATENT_LABELS_API, {
+    method: "PUT",
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({ latentId: String(latentId), label }),
+  });
+  if (!response.ok) throw new Error(`Label save failed: ${response.status}`);
+  return response.json();
 }
 
 function modelName(value) {
@@ -207,7 +231,7 @@ function App() {
   const [selectedLatent, setSelectedLatent] = useState(null);
   const [selectedExampleDocId, setSelectedExampleDocId] = useState(null);
   const [selectedDocumentId, setSelectedDocumentId] = useState(null);
-  const [latentLabels, setLatentLabels] = useState(loadLatentLabels);
+  const [latentLabels, setLatentLabels] = useState(loadCachedLatentLabels);
   const [query, setQuery] = useState("");
   const [source, setSource] = useState("all");
   const [loadedDocs, setLoadedDocs] = useState({});
@@ -222,6 +246,8 @@ function App() {
   const requestIdRef = useRef(0);
   const pendingRequestsRef = useRef(new Map());
   const prefetchRequestedRef = useRef(new Set());
+  const pendingLabelSavesRef = useRef(new Map());
+  const labelSaveTimeoutRef = useRef(null);
 
   function workerCall(type, payload) {
     const worker = workerRef.current;
@@ -233,6 +259,55 @@ function App() {
       worker.postMessage({ id, type, payload });
     });
   }
+
+  async function flushPendingLabelSaves() {
+    const entries = Array.from(pendingLabelSavesRef.current.entries());
+    pendingLabelSavesRef.current.clear();
+    await Promise.allSettled(
+      entries.map(([latentId, label]) => persistLatentLabel(latentId, label)),
+    );
+  }
+
+  function scheduleLabelSave(latentId, label) {
+    pendingLabelSavesRef.current.set(String(latentId), label.trim());
+    if (labelSaveTimeoutRef.current) window.clearTimeout(labelSaveTimeoutRef.current);
+    labelSaveTimeoutRef.current = window.setTimeout(() => {
+      labelSaveTimeoutRef.current = null;
+      flushPendingLabelSaves().catch((error) => {
+        console.warn("label save failed", error);
+      });
+    }, 350);
+  }
+
+  useEffect(() => {
+    let cancelled = false;
+    async function loadLabels() {
+      const cachedLabels = loadCachedLatentLabels();
+      try {
+        const remoteLabels = await fetchLatentLabels();
+        if (cancelled) return;
+        const mergedLabels = { ...cachedLabels, ...remoteLabels };
+        setLatentLabels(mergedLabels);
+        cacheLatentLabels(mergedLabels);
+        const missingRemoteEntries = Object.entries(cachedLabels).filter(
+          ([latentId, label]) => label && remoteLabels[latentId] === undefined,
+        );
+        await Promise.allSettled(
+          missingRemoteEntries.map(([latentId, label]) => persistLatentLabel(latentId, label)),
+        );
+      } catch (error) {
+        console.warn("label load failed; using cached labels", error);
+      }
+    }
+    loadLabels();
+    return () => {
+      cancelled = true;
+      if (labelSaveTimeoutRef.current) {
+        window.clearTimeout(labelSaveTimeoutRef.current);
+        labelSaveTimeoutRef.current = null;
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const worker = new Worker(new URL("./parquetWorker.js", import.meta.url), { type: "module" });
@@ -561,9 +636,10 @@ function App() {
       const next = { ...previous };
       if (label.trim()) next[String(latentId)] = label;
       else delete next[String(latentId)];
-      saveLatentLabels(next);
+      cacheLatentLabels(next);
       return next;
     });
+    scheduleLabelSave(latentId, label);
   }
 
   return (

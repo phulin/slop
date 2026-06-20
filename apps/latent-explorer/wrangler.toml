@@ -1,0 +1,8 @@
+name = "latent-explorer"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-06-20"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "latent-explorer"
+database_id = "2a0d7709-29e7-4adf-aab3-f0a13f5bdb46"

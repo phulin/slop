@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS latent_labels (
+  latent_id TEXT PRIMARY KEY,
+  label TEXT NOT NULL,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
