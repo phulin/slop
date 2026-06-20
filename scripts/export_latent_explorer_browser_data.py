@@ -184,18 +184,30 @@ def _generation_maxes(
     return maxes
 
 
-def _tokenize_doc(tokenizer: Any, text: str, *, max_length: int) -> tuple[list[int], list[str]]:
-    encoded = tokenizer(
-        text,
-        truncation=True,
-        max_length=max_length,
-        padding="max_length",
-        return_tensors=None,
-        return_special_tokens_mask=True,
-    )
+def _tokenize_doc(tokenizer: Any, text: str, *, max_length: int) -> tuple[list[int], list[str], list[int], list[int]]:
+    try:
+        encoded = tokenizer(
+            text,
+            truncation=True,
+            max_length=max_length,
+            padding="max_length",
+            return_tensors=None,
+            return_special_tokens_mask=True,
+            return_offsets_mapping=True,
+        )
+    except NotImplementedError:
+        encoded = tokenizer(
+            text,
+            truncation=True,
+            max_length=max_length,
+            padding="max_length",
+            return_tensors=None,
+            return_special_tokens_mask=True,
+        )
     input_ids = [int(value) for value in encoded.get("input_ids", [])]
     attention_mask = [int(value) for value in encoded.get("attention_mask", [])]
     special_mask = [int(value) for value in encoded.get("special_tokens_mask", [])]
+    offset_mapping = encoded.get("offset_mapping") or [(0, 0)] * len(input_ids)
     token_indices = [
         index
         for index, attention in enumerate(attention_mask)
@@ -205,7 +217,9 @@ def _tokenize_doc(tokenizer: Any, text: str, *, max_length: int) -> tuple[list[i
         str(tokenizer.convert_tokens_to_string([tokenizer.convert_ids_to_tokens(input_ids[index])]))
         for index in token_indices
     ]
-    return token_indices, tokens
+    token_start_offsets = [int(offset_mapping[index][0]) for index in token_indices]
+    token_end_offsets = [int(offset_mapping[index][1]) for index in token_indices]
+    return token_indices, tokens, token_start_offsets, token_end_offsets
 
 
 def export_browser_data(args: argparse.Namespace) -> dict[str, Any]:
@@ -265,7 +279,7 @@ def export_browser_data(args: argparse.Namespace) -> dict[str, Any]:
         turn_id = _string(row.get("turn_id")).strip()
         turn = turns_by_id.get(turn_id, {})
         prompt, _messages = _prompt_text(_string(turn.get("input_messages_json", "")))
-        token_indices, tokens = _tokenize_doc(
+        token_indices, tokens, token_start_offsets, token_end_offsets = _tokenize_doc(
             tokenizer,
             _string(row.get("text")),
             max_length=int(args.max_length),
@@ -287,6 +301,8 @@ def export_browser_data(args: argparse.Namespace) -> dict[str, Any]:
             "sparse_row_end": int(row_ranges[doc_index]["end"]),
             "token_indices": token_indices,
             "tokens": tokens,
+            "token_start_offsets": token_start_offsets,
+            "token_end_offsets": token_end_offsets,
         }
         doc_records.append(record)
         documents[doc_id] = {

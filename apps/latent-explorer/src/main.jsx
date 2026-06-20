@@ -81,16 +81,84 @@ function modelSortKey(model) {
   }[model] ?? 99;
 }
 
+function isJoinerSegment(text) {
+  const chars = Array.from(String(text ?? ""));
+  if (!chars.length) return false;
+  return chars.every((char) => {
+    const codePoint = char.codePointAt(0);
+    return (
+      codePoint === 0x200d ||
+      (codePoint >= 0xfe00 && codePoint <= 0xfe0f) ||
+      (codePoint >= 0x0300 && codePoint <= 0x036f) ||
+      (codePoint >= 0x1f3fb && codePoint <= 0x1f3ff)
+    );
+  });
+}
+
+function shouldMergeTokenSpan(current, segment, start) {
+  if (!current) return false;
+  return start < current.end || current.text.endsWith("\u200d") || isJoinerSegment(segment);
+}
+
+function activationAt(activationMap, tokenIndex) {
+  return numeric(activationMap?.[tokenIndex], 0);
+}
+
 function tokenRowsForDoc(doc, activationMap) {
   const tokens = doc?.tokens ?? [];
   const tokenIndices = doc?.token_indices ?? [];
+  const starts = doc?.token_start_offsets ?? [];
+  const ends = doc?.token_end_offsets ?? [];
+  const text = String(doc?.text ?? "");
+  if (starts.length === tokens.length && ends.length === tokens.length && text) {
+    const rows = [];
+    for (let index = 0; index < tokens.length; index += 1) {
+      const tokenIndex = numeric(tokenIndices[index], index);
+      const start = numeric(starts[index], -1);
+      const end = numeric(ends[index], -1);
+      const activation = activationAt(activationMap, tokenIndex);
+      if (start < 0 || end <= start || end > text.length) {
+        rows.push({
+          id: `${tokenIndex}-${index}`,
+          text: String(tokens[index]),
+          tokenIndex,
+          tokenIndices: [tokenIndex],
+          activation,
+        });
+        continue;
+      }
+      const segment = text.slice(start, end);
+      const current = rows[rows.length - 1];
+      if (shouldMergeTokenSpan(current, segment, start)) {
+        current.end = Math.max(current.end, end);
+        current.text = text.slice(current.start, current.end);
+        current.tokenIndices.push(tokenIndex);
+        if (activation > current.activation) {
+          current.activation = activation;
+          current.tokenIndex = tokenIndex;
+        }
+      } else {
+        rows.push({
+          id: `${tokenIndex}-${index}`,
+          start,
+          end,
+          text: segment,
+          tokenIndex,
+          tokenIndices: [tokenIndex],
+          activation,
+        });
+      }
+    }
+    return rows;
+  }
   return tokens.map((token, index) => {
     const tokenIndex = numeric(tokenIndices[index], index);
-    const activation = numeric(activationMap?.[tokenIndex], 0);
+    const activation = activationAt(activationMap, tokenIndex);
     return {
       id: `${tokenIndex}-${index}`,
       text: String(token),
       tokenIndex,
+      tokenIndices: [tokenIndex],
       activation,
     };
   });
