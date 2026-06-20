@@ -32,6 +32,7 @@ from slop_sftdiv.cli.phase4_batchtopk_sae import (
     _write_json,
     train_sae,
 )
+from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
 
 PANGRAM_ADAPTER_ID = "pangram/editlens_Llama-3.2-3B"
@@ -145,6 +146,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--score-batch-size", type=int, default=4096)
     parser.add_argument("--max-examples-per-latent", type=int, default=12)
     parser.add_argument("--example-context-tokens", type=int, default=24)
+    parser.add_argument("--wandb-project", default="slop-stage1")
+    parser.add_argument("--wandb-entity", default=None)
+    parser.add_argument("--wandb-run-name", default=None)
+    parser.add_argument("--wandb-group", default="phase4-pangram-llama-sae")
+    parser.add_argument("--wandb-job-type", default="train-pangram-llama-batchtopk-sae")
+    parser.add_argument("--wandb-tag", action="append", default=[])
+    parser.add_argument("--wandb-mode", default=None, choices=["online", "offline", "disabled"])
     return parser
 
 
@@ -889,6 +897,121 @@ def _summary(
     }
 
 
+def _wandb_config(
+    args: argparse.Namespace,
+    *,
+    docs: list[SAEDoc],
+    cache_path: Path,
+    activation_vectors: int | None = None,
+    input_dim: int | None = None,
+) -> dict[str, Any]:
+    source_counts = Counter(doc.source for doc in docs)
+    label_counts = Counter(str(doc.label) for doc in docs)
+    return {
+        "base_model": args.base_model,
+        "adapter_model": args.adapter_model,
+        "local_model_dir": str(args.local_model_dir),
+        "output_dir": str(args.output_dir),
+        "dataset_parquet": str(args.dataset_parquet) if args.dataset_parquet else "",
+        "reference_jsonl": list(args.reference_jsonl),
+        "generation_jsonl": list(args.generation_jsonl),
+        "feature_text_mode": args.feature_text_mode,
+        "documents": len(docs),
+        "source_counts": dict(sorted(source_counts.items())),
+        "label_counts": dict(sorted(label_counts.items())),
+        "max_docs_per_source": args.max_docs_per_source,
+        "max_length": args.max_length,
+        "collect_batch_size": args.collect_batch_size,
+        "score_batch_size": args.score_batch_size,
+        "pad_to_max_length": bool(args.pad_to_max_length),
+        "max_activations": args.max_activations,
+        "activation_cache": str(cache_path),
+        "activation_layer": args.activation_layer,
+        "activation_vectors": activation_vectors,
+        "input_dim": input_dim,
+        "latent_dim": args.latent_dim,
+        "k": args.k,
+        "init_mode": getattr(args, "init_mode", "kaiming"),
+        "train_batch_size": args.train_batch_size,
+        "epochs": args.epochs,
+        "learning_rate": args.learning_rate,
+        "weight_decay": args.weight_decay,
+        "lr_schedule": args.lr_schedule,
+        "warmup_ratio": args.warmup_ratio,
+        "decay_ratio": args.decay_ratio,
+        "min_lr_ratio": args.min_lr_ratio,
+        "eval_fraction": args.eval_fraction,
+        "compile_sae": bool(args.compile_sae),
+        "compile_mode": args.compile_mode,
+        "num_workers": args.num_workers,
+        "skip_latent_scoring": bool(args.skip_latent_scoring),
+        "score_top_latents": args.score_top_latents,
+        "max_examples_per_latent": args.max_examples_per_latent,
+        "example_context_tokens": args.example_context_tokens,
+        "seed": args.seed,
+    }
+
+
+def _init_pangram_wandb(
+    args: argparse.Namespace,
+    *,
+    docs: list[SAEDoc],
+    cache_path: Path,
+    activation_vectors: int | None = None,
+    input_dim: int | None = None,
+):
+    return init_wandb(
+        project=args.wandb_project,
+        entity=args.wandb_entity,
+        run_name=args.wandb_run_name,
+        group=args.wandb_group,
+        job_type=args.wandb_job_type,
+        mode=args.wandb_mode,
+        tags=[
+            "stage4",
+            "phase4",
+            "sae",
+            "batchtopk",
+            "pangram",
+            "llama",
+            *args.wandb_tag,
+        ],
+        config=_wandb_config(
+            args,
+            docs=docs,
+            cache_path=cache_path,
+            activation_vectors=activation_vectors,
+            input_dim=input_dim,
+        ),
+    )
+
+
+def _log_pangram_wandb_outputs(
+    wandb_run: Any,
+    *,
+    summary: dict[str, Any],
+    train_rows: list[dict[str, Any]],
+    eval_rows: list[dict[str, Any]],
+    latent_rows: list[dict[str, Any]],
+    example_rows: list[dict[str, Any]],
+) -> None:
+    wandb_run.log(
+        {
+            "summary/best_eval_mse": summary.get("best_eval_mse"),
+            "summary/final_train_mse": summary.get("final_train_mse"),
+            "summary/activation_vectors": summary.get("activation_vectors"),
+            "summary/activation_layer": summary.get("activation_layer"),
+            "summary/latents_written": summary.get("latent_scoring", {}).get("latents_written"),
+            "summary/examples_written": summary.get("latent_scoring", {}).get("examples_written"),
+        }
+    )
+    log_summary_table(wandb_run, "pangram_llama_sae_train_log", train_rows)
+    log_summary_table(wandb_run, "pangram_llama_sae_eval_log", eval_rows)
+    log_summary_table(wandb_run, "pangram_llama_sae_latents", latent_rows)
+    log_summary_table(wandb_run, "pangram_llama_sae_examples", example_rows)
+    log_summary_table(wandb_run, "pangram_llama_sae_summary", [summary])
+
+
 def run(args: argparse.Namespace) -> dict[str, Any]:
     random.seed(args.seed)
     torch.manual_seed(args.seed)
@@ -966,48 +1089,69 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             )
         activations = activation_cache.activations
 
-    sae, train_rows, eval_rows, train_summary = train_sae(
-        activations=activations,
-        args=args,
-        device=device,
-    )
-    summary = _summary(
+    wandb_run = _init_pangram_wandb(
         args,
         docs=docs,
-        device=device,
         cache_path=cache_path,
-        cache_reused=cache_reused,
-        activation_cache_has_provenance=activation_cache.has_provenance,
-        activations=activations,
-        train_rows=train_rows,
-        eval_rows=eval_rows,
-        train_summary=train_summary,
+        activation_vectors=int(activations.shape[0]),
+        input_dim=int(activations.shape[1]),
     )
-    _save_sae(args.output_dir / "pangram_llama_batchtopk_sae.pt", sae, summary)
-    _write_csv(args.output_dir / "pangram_llama_sae_train_log.csv", train_rows)
-    _write_csv(args.output_dir / "pangram_llama_sae_eval_log.csv", eval_rows)
-    if not args.skip_latent_scoring:
-        if tokenizer is None:
-            tokenizer = load_pangram_tokenizer(args)
-        latent_rows, example_rows = score_pangram_latents_from_cache(
-            sae=sae,
-            activation_cache=activation_cache,
-            docs=docs,
-            tokenizer=tokenizer,
+    try:
+        sae, train_rows, eval_rows, train_summary = train_sae(
+            activations=activations,
             args=args,
             device=device,
+            wandb_run=wandb_run,
         )
-        _write_csv(args.output_dir / "pangram_llama_sae_latents.csv", latent_rows)
-        _write_csv(args.output_dir / "pangram_llama_sae_examples.csv", example_rows)
-        summary["latent_scoring"] = {
-            "score_top_latents": int(args.score_top_latents),
-            "max_examples_per_latent": int(args.max_examples_per_latent),
-            "latents_written": len(latent_rows),
-            "examples_written": len(example_rows),
-            "scoring_method": "dense_relu_source_enrichment_from_activation_cache",
-        }
-    _write_json(args.output_dir / "pangram_llama_sae_summary.json", summary)
-    return summary
+        summary = _summary(
+            args,
+            docs=docs,
+            device=device,
+            cache_path=cache_path,
+            cache_reused=cache_reused,
+            activation_cache_has_provenance=activation_cache.has_provenance,
+            activations=activations,
+            train_rows=train_rows,
+            eval_rows=eval_rows,
+            train_summary=train_summary,
+        )
+        _save_sae(args.output_dir / "pangram_llama_batchtopk_sae.pt", sae, summary)
+        _write_csv(args.output_dir / "pangram_llama_sae_train_log.csv", train_rows)
+        _write_csv(args.output_dir / "pangram_llama_sae_eval_log.csv", eval_rows)
+        latent_rows: list[dict[str, Any]] = []
+        example_rows: list[dict[str, Any]] = []
+        if not args.skip_latent_scoring:
+            if tokenizer is None:
+                tokenizer = load_pangram_tokenizer(args)
+            latent_rows, example_rows = score_pangram_latents_from_cache(
+                sae=sae,
+                activation_cache=activation_cache,
+                docs=docs,
+                tokenizer=tokenizer,
+                args=args,
+                device=device,
+            )
+            _write_csv(args.output_dir / "pangram_llama_sae_latents.csv", latent_rows)
+            _write_csv(args.output_dir / "pangram_llama_sae_examples.csv", example_rows)
+            summary["latent_scoring"] = {
+                "score_top_latents": int(args.score_top_latents),
+                "max_examples_per_latent": int(args.max_examples_per_latent),
+                "latents_written": len(latent_rows),
+                "examples_written": len(example_rows),
+                "scoring_method": "dense_relu_source_enrichment_from_activation_cache",
+            }
+        _write_json(args.output_dir / "pangram_llama_sae_summary.json", summary)
+        _log_pangram_wandb_outputs(
+            wandb_run,
+            summary=summary,
+            train_rows=train_rows,
+            eval_rows=eval_rows,
+            latent_rows=latent_rows,
+            example_rows=example_rows,
+        )
+        return summary
+    finally:
+        wandb_run.finish()
 
 
 def main() -> None:
