@@ -20,6 +20,28 @@ function modelName(value) {
   return names[text] ?? text.replace(/^accounts\/fireworks\/models\//, "").replaceAll("-", " ");
 }
 
+function routeModelName(value) {
+  const text = String(value ?? "");
+  const names = {
+    human: "human",
+    "gpt-5.5": "gpt-5.5",
+    "gemini-3.5-flash": "gemini-3.5-flash",
+    "accounts/fireworks/models/glm-5p2": "glm-5.2",
+  };
+  return names[text] ?? encodeURIComponent(text);
+}
+
+function modelFromRoute(value) {
+  const text = decodeURIComponent(String(value ?? ""));
+  const names = {
+    human: "human",
+    "gpt-5.5": "gpt-5.5",
+    "gemini-3.5-flash": "gemini-3.5-flash",
+    "glm-5.2": "accounts/fireworks/models/glm-5p2",
+  };
+  return names[text] ?? text;
+}
+
 function shortDocId(value) {
   const text = String(value ?? "");
   return text.length > 10 ? `${text.slice(0, 10)}…` : text || "-";
@@ -56,6 +78,31 @@ function tokenRowsForDoc(doc, activationMap) {
   });
 }
 
+function routeSelectionFromPath(pathname, loadedIndex) {
+  const parts = pathname.split("/").filter(Boolean);
+  if (parts.length !== 3 || !/^L\d+$/.test(parts[0])) return null;
+  const latentId = parts[0].slice(1);
+  const turnId = decodeURIComponent(parts[1]);
+  const model = modelFromRoute(parts[2]);
+  const promptDocs = loadedIndex.promptGroups?.[turnId] ?? [];
+  const documentId = promptDocs.find((docId) => loadedIndex.documents?.[docId]?.model === model);
+  if (!documentId || !loadedIndex.latentDocs?.[latentId]) return null;
+  const example = loadedIndex.latentDocs[latentId].find((row) => {
+    return loadedIndex.documents?.[row.doc_id]?.turn_id === turnId;
+  });
+  if (!example) return null;
+  return {
+    latentId,
+    exampleDocId: example.doc_id,
+    documentId,
+  };
+}
+
+function routePathForSelection({ latentId, turnId, model }) {
+  if (!latentId || !turnId || !model) return "/";
+  return `/L${encodeURIComponent(String(latentId))}/${encodeURIComponent(String(turnId))}/${routeModelName(model)}`;
+}
+
 function App() {
   const [manifest, setManifest] = useState(null);
   const [indexData, setIndexData] = useState(null);
@@ -72,7 +119,6 @@ function App() {
   const [loadingGeneration, setLoadingGeneration] = useState(false);
   const [loadingActivations, setLoadingActivations] = useState(false);
   const [loadingDocs, setLoadingDocs] = useState(true);
-  const [preloadedDocRows, setPreloadedDocRows] = useState(0);
   const [loadError, setLoadError] = useState("");
   const workerRef = useRef(null);
   const requestIdRef = useRef(0);
@@ -104,7 +150,7 @@ function App() {
     async function load() {
       const loadedManifest = await fetch("/data/manifest.json").then((response) => response.json());
       const loadedIndex = await fetch(loadedManifest.browserIndexJson).then((response) => response.json());
-      const initResult = await workerCall("init", {
+      await workerCall("init", {
         docTokensUrl: loadedManifest.docTokensParquet ?? loadedIndex.docTokensParquet,
         sparseTopkUrl: loadedIndex.sparseTopkParquet ?? loadedManifest.sparseTopkParquet,
       });
@@ -112,13 +158,14 @@ function App() {
         setManifest(loadedManifest);
         setIndexData(loadedIndex);
         setWorkerReady(true);
-        setPreloadedDocRows(numeric(initResult.docRows));
         setLoadingDocs(false);
       });
-      const firstLatent = String(loadedIndex.latents?.[0]?.latent_id ?? "");
+      const routeSelection = routeSelectionFromPath(window.location.pathname, loadedIndex);
+      const firstLatent = routeSelection?.latentId ?? String(loadedIndex.latents?.[0]?.latent_id ?? "");
       startTransition(() => {
         setSelectedLatent(firstLatent);
-        setSelectedExampleDocId(loadedIndex.latentDocs?.[firstLatent]?.[0]?.doc_id ?? null);
+        setSelectedExampleDocId(routeSelection?.exampleDocId ?? loadedIndex.latentDocs?.[firstLatent]?.[0]?.doc_id ?? null);
+        setSelectedDocumentId(routeSelection?.documentId ?? null);
       });
     }
     load().catch((error) => {
@@ -140,6 +187,8 @@ function App() {
         ...latent,
         latent_id: String(latent.latent_id),
         rank: numeric(latent.rank, 999999),
+        causal_mean_abs_target_logit_change: numeric(latent.causal_mean_abs_target_logit_change),
+        causal_mean_target_logit_drop: numeric(latent.causal_mean_target_logit_drop),
         ai_human_log_odds: numeric(latent.ai_human_log_odds),
         ai_mass_share: numeric(latent.ai_mass_share),
         total_mass: numeric(latent.total_mass),
@@ -185,6 +234,7 @@ function App() {
   const activeExample = latentExamples.find((example) => example.doc_id === selectedExampleDocId) ?? latentExamples[0];
   const selectedLatentId = numeric(selectedLatent);
   const selectedMeta = activeExample ? indexData?.documents?.[activeExample.doc_id] : null;
+  const selectedDocumentMeta = selectedDocumentId ? indexData?.documents?.[selectedDocumentId] : null;
   const siblingDocIds = useMemo(
     () => (selectedMeta?.turn_id ? (indexData?.promptGroups?.[selectedMeta.turn_id] ?? []) : []),
     [indexData, selectedMeta?.turn_id],
@@ -198,6 +248,19 @@ function App() {
     setDocActivations({});
     prefetchRequestedRef.current.clear();
   }, [selectedLatent]);
+
+  useEffect(() => {
+    if (!indexData || !selectedLatent || !selectedDocumentId || !selectedDocumentMeta) return;
+    const nextPath = routePathForSelection({
+      latentId: selectedLatent,
+      turnId: selectedDocumentMeta.turn_id,
+      model: selectedDocumentMeta.model,
+    });
+    const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    if (currentPath !== nextPath) {
+      window.history.replaceState(null, "", nextPath);
+    }
+  }, [indexData, selectedDocumentId, selectedDocumentMeta, selectedLatent]);
 
   useEffect(() => {
     let cancelled = false;
@@ -414,6 +477,7 @@ function App() {
               className={latent.latent_id === String(selectedLatent) ? "latent active" : "latent"}
               onClick={() => {
                 const latentId = String(latent.latent_id);
+                if (latentId === String(selectedLatent)) return;
                 setSelectedLatent(latentId);
                 setSelectedExampleDocId(indexData?.latentDocs?.[latentId]?.[0]?.doc_id ?? null);
                 setSelectedDocumentId(null);
@@ -421,7 +485,9 @@ function App() {
             >
               <span className="rank">#{latent.rank}</span>
               <span className="latentId">L{latent.latent_id}</span>
-              <span className="score">{latent.ai_human_log_odds.toFixed(2)}</span>
+              <span className="score">
+                {(latent.causal_mean_abs_target_logit_change || latent.ai_human_log_odds).toFixed(2)}
+              </span>
             </button>
           ))}
         </div>
@@ -432,7 +498,9 @@ function App() {
           <div>
             <h2>{activeLatent ? `Latent ${activeLatent.latent_id}` : "Latent"}</h2>
             <p>
-              Rank {activeLatent?.rank ?? "-"} · log-odds {activeLatent?.ai_human_log_odds?.toFixed(3) ?? "-"} ·
+              Rank {activeLatent?.rank ?? "-"} · impact{" "}
+              {activeLatent?.causal_mean_target_logit_drop?.toFixed(3) ?? "-"} · log-odds{" "}
+              {activeLatent?.ai_human_log_odds?.toFixed(3) ?? "-"} ·
               mass share {activeLatent ? `${(activeLatent.ai_mass_share * 100).toFixed(1)}%` : "-"}
             </p>
           </div>
@@ -460,12 +528,16 @@ function App() {
                   key={`${example.doc_id}-${example.example_rank}`}
                   className={activeExample?.doc_id === example.doc_id ? "example active" : "example"}
                   onClick={() => {
+                    if (activeExample?.doc_id === example.doc_id) return;
                     setSelectedExampleDocId(example.doc_id);
                     setSelectedDocumentId(null);
                   }}
                 >
                   <span className="exampleMeta">
-                    #{example.example_rank} · {modelName(example.source)} · peak {numeric(example.peak_activation).toFixed(3)}
+                    #{example.example_rank} · {modelName(example.source)} · impact{" "}
+                    {(example.causal_logit_drop !== undefined
+                      ? numeric(example.causal_logit_drop)
+                      : numeric(example.peak_activation)).toFixed(3)}
                   </span>
                   <span className="exampleText">{example.context}</span>
                 </button>
@@ -494,7 +566,9 @@ function App() {
                   <button
                     key={row.docId}
                     className={row.docId === selectedDocumentId ? "modelTab active" : "modelTab"}
-                    onClick={() => setSelectedDocumentId(row.docId)}
+                    onClick={() => {
+                      if (row.docId !== selectedDocumentId) setSelectedDocumentId(row.docId);
+                    }}
                     title={row.docId}
                   >
                     <span>{modelName(row.model)}</span>
@@ -508,7 +582,7 @@ function App() {
                 <span title={selectedDocumentId ?? ""}>doc {shortDocId(selectedDocumentId)}</span>
                 <span>{numeric(activeDocument?.word_count, "-")} words</span>
                 <span>{numeric(activeDocument?.token_len, "-")} tokens</span>
-                {loadingDocs ? <span>preloading docs</span> : <span>{preloadedDocRows.toLocaleString()} docs cached</span>}
+                {loadingDocs ? <span>preloading docs</span> : null}
                 {loadingGeneration ? <span>loading prompt group</span> : null}
                 {loadingActivations ? <span>loading token activations</span> : null}
                 {loadError ? <span className="errorText">{loadError}</span> : null}
