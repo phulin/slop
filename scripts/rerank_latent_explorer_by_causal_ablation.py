@@ -94,6 +94,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "causal_active_tokens",
         "source",
         "doc_id",
+        "turn_id",
+        "model",
         "activation",
         "peak_activation",
         "token_index",
@@ -286,12 +288,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     index, docs_by_id = _load_payloads(args)
     selected_latents = index.get("latents", [])[: int(args.top_latents)]
     selected_ids = [str(int(row["latent_id"])) for row in selected_latents]
+    documents = index.get("documents", {})
+    prompt_groups = index.get("promptGroups", {})
     selected_doc_ids = sorted(
         {
-            str(example["doc_id"])
+            str(sibling_doc_id)
             for latent_id in selected_ids
             for example in index.get("latentDocs", {}).get(latent_id, [])[: int(args.examples_per_latent)]
-            if str(example.get("doc_id", "")) in docs_by_id
+            for sibling_doc_id in prompt_groups.get(
+                str(documents.get(str(example.get("doc_id", "")), {}).get("turn_id", "")),
+                [],
+            )
+            if str(sibling_doc_id) in docs_by_id
         }
     )
     selected_docs = [docs_by_id[doc_id] for doc_id in selected_doc_ids]
@@ -319,17 +327,24 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
     latent_rows: list[dict[str, Any]] = []
     example_rows: list[dict[str, Any]] = []
-    effects_by_latent_doc: dict[str, dict[str, dict[str, Any]]] = {}
+    generation_impact_rows: list[dict[str, Any]] = []
+    generation_impacts: dict[str, dict[str, dict[str, Any]]] = {}
     latents_by_id = {str(int(row["latent_id"])): dict(row) for row in selected_latents}
 
     for latent_offset, latent_id_text in enumerate(selected_ids, start=1):
         latent_id = int(latent_id_text)
         examples = index.get("latentDocs", {}).get(latent_id_text, [])[: int(args.examples_per_latent)]
-        latent_docs = [
-            docs_by_id[str(example["doc_id"])]
-            for example in examples
-            if str(example.get("doc_id", "")) in docs_by_id
-        ]
+        latent_doc_ids: list[str] = []
+        seen_doc_ids: set[str] = set()
+        for example in examples:
+            example_doc_id = str(example.get("doc_id", ""))
+            turn_id = str(documents.get(example_doc_id, {}).get("turn_id", ""))
+            for sibling_doc_id in prompt_groups.get(turn_id, []):
+                sibling_doc_id = str(sibling_doc_id)
+                if sibling_doc_id in docs_by_id and sibling_doc_id not in seen_doc_ids:
+                    latent_doc_ids.append(sibling_doc_id)
+                    seen_doc_ids.add(sibling_doc_id)
+        latent_docs = [docs_by_id[doc_id] for doc_id in latent_doc_ids]
         effects = _ablate_latent_on_docs(
             model=model,
             tokenizer=tokenizer,
@@ -342,7 +357,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             args=args,
             device=device,
         )
-        effects_by_latent_doc[latent_id_text] = effects
+        generation_impacts[latent_id_text] = effects
         drops = [float(row["causal_logit_drop"]) for row in effects.values()]
         prob_drops = [float(row["causal_probability_drop"]) for row in effects.values()]
         abs_drops = [abs(drop) for drop in drops]
@@ -391,6 +406,17 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     **example,
                 }
             )
+        for doc_id, effect in effects.items():
+            metadata = documents.get(doc_id, {})
+            generation_impact_rows.append(
+                {
+                    "latent_id": latent_id,
+                    "doc_id": doc_id,
+                    "turn_id": metadata.get("turn_id", ""),
+                    "model": metadata.get("model", docs_by_id[doc_id].source),
+                    **effect,
+                }
+            )
         if args.progress_every > 0 and (
             latent_offset == 1 or latent_offset % int(args.progress_every) == 0
         ):
@@ -434,8 +460,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     index["latents"] = reranked_latents + untouched_latents
     for latent_id, docs in reranked_latent_docs.items():
         index["latentDocs"][latent_id] = docs
+    index["generationImpacts"] = generation_impacts
     index["causalRerank"] = {
-        "method": "exact_layer_ablation_on_displayed_explorer_docs",
+        "method": "exact_layer_ablation_on_displayed_prompt_generations",
         "activation_layer": int(args.activation_layer),
         "target_class": target_class,
         "top_latents": int(args.top_latents),
@@ -452,6 +479,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     )
     _write_csv(args.output_dir / "pangram_llama_sae_causal_reranked_latents.csv", latent_rows)
     _write_csv(args.output_dir / "pangram_llama_sae_causal_reranked_examples.csv", example_rows)
+    _write_csv(args.output_dir / "pangram_llama_sae_causal_generation_impacts.csv", generation_impact_rows)
     summary = {
         "browser_index": str(args.browser_index),
         "doc_tokens_parquet": str(args.doc_tokens_parquet),
@@ -464,6 +492,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "top_latents": int(args.top_latents),
         "examples_per_latent": int(args.examples_per_latent),
         "selected_documents": len(selected_docs),
+        "generation_impacts": sum(len(rows) for rows in generation_impacts.values()),
         "source_counts": dict(sorted(Counter(doc.source for doc in selected_docs).items())),
         "label_counts": dict(sorted(Counter(str(doc.label) for doc in selected_docs).items())),
         "sae_summary": sae_summary,

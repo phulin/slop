@@ -9,6 +9,24 @@ function numeric(value, fallback = 0) {
   return Number.isFinite(parsed) ? parsed : fallback;
 }
 
+const LATENT_LABELS_STORAGE_KEY = "slop.latentExplorer.latentLabels.v1";
+
+function loadLatentLabels() {
+  try {
+    return JSON.parse(window.localStorage.getItem(LATENT_LABELS_STORAGE_KEY) ?? "{}");
+  } catch (_error) {
+    return {};
+  }
+}
+
+function saveLatentLabels(labels) {
+  try {
+    window.localStorage.setItem(LATENT_LABELS_STORAGE_KEY, JSON.stringify(labels));
+  } catch (_error) {
+    // Ignore storage errors; labeling should not break exploration.
+  }
+}
+
 function modelName(value) {
   const text = String(value ?? "");
   const names = {
@@ -103,6 +121,17 @@ function routePathForSelection({ latentId, turnId, model }) {
   return `/L${encodeURIComponent(String(latentId))}/${encodeURIComponent(String(turnId))}/${routeModelName(model)}`;
 }
 
+function causalImpactForDoc(indexData, latentId, docId) {
+  const rows = indexData?.latentDocs?.[String(latentId)] ?? [];
+  const match = rows.find((row) => row.doc_id === docId);
+  if (match?.causal_logit_drop !== undefined) return numeric(match.causal_logit_drop, null);
+  const generationImpact = indexData?.generationImpacts?.[String(latentId)]?.[docId];
+  if (generationImpact?.causal_logit_drop !== undefined) {
+    return numeric(generationImpact.causal_logit_drop, null);
+  }
+  return null;
+}
+
 function App() {
   const [manifest, setManifest] = useState(null);
   const [indexData, setIndexData] = useState(null);
@@ -110,6 +139,7 @@ function App() {
   const [selectedLatent, setSelectedLatent] = useState(null);
   const [selectedExampleDocId, setSelectedExampleDocId] = useState(null);
   const [selectedDocumentId, setSelectedDocumentId] = useState(null);
+  const [latentLabels, setLatentLabels] = useState(loadLatentLabels);
   const [query, setQuery] = useState("");
   const [source, setSource] = useState("all");
   const [loadedDocs, setLoadedDocs] = useState({});
@@ -283,6 +313,7 @@ function App() {
             model: doc?.model ?? meta.model,
             maxActivation: numeric(maxSummary.max_activation),
             maxTokenIndex: numeric(maxSummary.max_token_index, -1),
+            scoreImpact: causalImpactForDoc(indexData, selectedLatentId, docId),
           });
         }
         if (cancelled) return;
@@ -450,6 +481,17 @@ function App() {
   );
   const inspectedToken = hoveredToken ?? peakToken;
 
+  function updateLatentLabel(latentId, value) {
+    const label = value.trimStart();
+    setLatentLabels((previous) => {
+      const next = { ...previous };
+      if (label.trim()) next[String(latentId)] = label;
+      else delete next[String(latentId)];
+      saveLatentLabels(next);
+      return next;
+    });
+  }
+
   return (
     <main className="shell">
       <aside className="sidebar">
@@ -484,7 +526,12 @@ function App() {
               }}
             >
               <span className="rank">#{latent.rank}</span>
-              <span className="latentId">L{latent.latent_id}</span>
+              <span className="latentTitle">
+                <span className="latentId">L{latent.latent_id}</span>
+                {latentLabels[latent.latent_id] ? (
+                  <span className="latentLabel">{latentLabels[latent.latent_id]}</span>
+                ) : null}
+              </span>
               <span className="score">
                 {(latent.causal_mean_abs_target_logit_change || latent.ai_human_log_odds).toFixed(2)}
               </span>
@@ -496,7 +543,17 @@ function App() {
       <section className="workspace">
         <header className="toolbar">
           <div>
-            <h2>{activeLatent ? `Latent ${activeLatent.latent_id}` : "Latent"}</h2>
+            <div className="latentHeading">
+              <h2>{activeLatent ? `Latent ${activeLatent.latent_id}` : "Latent"}</h2>
+              {activeLatent ? (
+                <input
+                  className="latentLabelInput"
+                  value={latentLabels[activeLatent.latent_id] ?? ""}
+                  onChange={(event) => updateLatentLabel(activeLatent.latent_id, event.target.value)}
+                  placeholder="Label"
+                />
+              ) : null}
+            </div>
             <p>
               Rank {activeLatent?.rank ?? "-"} · impact{" "}
               {activeLatent?.causal_mean_target_logit_drop?.toFixed(3) ?? "-"} · log-odds{" "}
@@ -572,7 +629,9 @@ function App() {
                     title={row.docId}
                   >
                     <span>{modelName(row.model)}</span>
-                    <span className="tabScore">{row.maxActivation.toFixed(3)}</span>
+                    <span className="tabScore">
+                      {row.scoreImpact === null ? "-" : row.scoreImpact.toFixed(3)}
+                    </span>
                   </button>
                 ))}
               </div>

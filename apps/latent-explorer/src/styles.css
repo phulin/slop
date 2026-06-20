@@ -100,9 +100,9 @@ h1 {
 
 .latent {
   display: grid;
-  grid-template-columns: 54px 1fr 64px;
+  grid-template-columns: 42px minmax(0, 1fr) 54px;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   border: 1px solid #d9dee6;
   border-radius: 8px;
   background: #ffffff;
@@ -131,8 +131,24 @@ h1 {
   font-size: 12px;
 }
 
+.latentTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
 .latentId {
   font-weight: 650;
+}
+
+.latentLabel {
+  overflow: hidden;
+  color: #4b5869;
+  font-size: 12px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .score {
@@ -160,6 +176,29 @@ h1 {
 h2 {
   font-size: 22px;
   line-height: 1.2;
+}
+
+.latentHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.latentLabelInput {
+  width: min(360px, 34vw);
+  min-height: 32px;
+  border: 1px solid #cfd6df;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1f2933;
+  padding: 0 10px;
+  outline: 0;
+}
+
+.latentLabelInput:focus {
+  border-color: #9aa8ba;
+  box-shadow: 0 0 0 3px rgba(154, 168, 186, 0.18);
 }
 
 .sourceSelect {
