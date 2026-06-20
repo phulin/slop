@@ -217,6 +217,8 @@ function App() {
         ...latent,
         latent_id: String(latent.latent_id),
         rank: numeric(latent.rank, 999999),
+        causal_max_abs_target_logit_change: numeric(latent.causal_max_abs_target_logit_change),
+        causal_max_target_logit_drop: numeric(latent.causal_max_target_logit_drop),
         causal_mean_abs_target_logit_change: numeric(latent.causal_mean_abs_target_logit_change),
         causal_mean_target_logit_drop: numeric(latent.causal_mean_target_logit_drop),
         ai_human_log_odds: numeric(latent.ai_human_log_odds),
@@ -319,7 +321,11 @@ function App() {
         if (cancelled) return;
         rows.sort((a, b) => modelSortKey(a.model) - modelSortKey(b.model));
         const best = rows.reduce(
-          (current, row) => (row.maxActivation > current.maxActivation ? row : current),
+          (current, row) => {
+            const currentImpact = current.scoreImpact === null ? -Infinity : Math.abs(current.scoreImpact);
+            const rowImpact = row.scoreImpact === null ? -Infinity : Math.abs(row.scoreImpact);
+            return rowImpact > currentImpact ? row : current;
+          },
           rows[0] ?? null,
         );
         startTransition(() => {
@@ -533,7 +539,7 @@ function App() {
                 ) : null}
               </span>
               <span className="score">
-                {(latent.causal_mean_abs_target_logit_change || latent.ai_human_log_odds).toFixed(2)}
+                {(latent.causal_max_abs_target_logit_change || latent.ai_human_log_odds).toFixed(2)}
               </span>
             </button>
           ))}
@@ -556,7 +562,7 @@ function App() {
             </div>
             <p>
               Rank {activeLatent?.rank ?? "-"} · impact{" "}
-              {activeLatent?.causal_mean_target_logit_drop?.toFixed(3) ?? "-"} · log-odds{" "}
+              {activeLatent?.causal_max_target_logit_drop?.toFixed(3) ?? "-"} · log-odds{" "}
               {activeLatent?.ai_human_log_odds?.toFixed(3) ?? "-"} ·
               mass share {activeLatent ? `${(activeLatent.ai_mass_share * 100).toFixed(1)}%` : "-"}
             </p>

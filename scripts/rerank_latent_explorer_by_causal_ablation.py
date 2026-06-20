@@ -75,6 +75,8 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "causal_rank",
         "rank",
         "latent_id",
+        "causal_max_abs_target_logit_change",
+        "causal_max_target_logit_drop",
         "causal_mean_abs_target_logit_change",
         "causal_mean_target_logit_drop",
         "causal_mean_abs_target_probability_change",
@@ -370,6 +372,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 **latent,
                 "latent_id": latent_id,
                 "original_rank": int(latent.get("rank", latent_offset)),
+                "causal_max_abs_target_logit_change": max(abs_drops, default=0.0),
+                "causal_max_target_logit_drop": max(
+                    drops,
+                    key=lambda value: abs(value),
+                    default=0.0,
+                ),
                 "causal_mean_abs_target_logit_change": sum(abs_drops) / max(1, len(abs_drops)),
                 "causal_mean_target_logit_drop": sum(drops) / max(1, len(drops)),
                 "causal_mean_positive_target_logit_drop": sum(positives) / max(1, len(positives)),
@@ -397,7 +405,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             ),
             reverse=True,
         )
-        for example_rank, example in enumerate(ranked_examples, start=1):
+        deduped_examples = []
+        seen_turn_ids: set[str] = set()
+        for example in ranked_examples:
+            doc_id = str(example.get("doc_id", ""))
+            turn_id = str(example.get("turn_id") or documents.get(doc_id, {}).get("turn_id", ""))
+            if not turn_id:
+                turn_id = doc_id
+            if turn_id in seen_turn_ids:
+                continue
+            seen_turn_ids.add(turn_id)
+            deduped_examples.append({**example, "turn_id": turn_id})
+        for example_rank, example in enumerate(deduped_examples, start=1):
             example["example_rank"] = example_rank
             example_rows.append(
                 {
@@ -428,8 +447,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
     latent_rows.sort(
         key=lambda row: (
+            float(row["causal_max_abs_target_logit_change"]),
+            abs(float(row["causal_max_target_logit_drop"])),
             float(row["causal_mean_abs_target_logit_change"]),
-            abs(float(row["causal_mean_target_logit_drop"])),
             float(row["causal_active_doc_rate"]),
             float(row.get("ai_human_log_odds", 0.0)),
         ),
@@ -468,8 +488,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "top_latents": int(args.top_latents),
         "examples_per_latent": int(args.examples_per_latent),
         "selected_documents": len(selected_docs),
-        "score": "absolute_baseline_target_logit_minus_ablated_target_logit",
+        "score": "max_absolute_baseline_target_logit_minus_ablated_target_logit",
         "signed_score": "baseline_target_logit_minus_ablated_target_logit",
+        "mean_score": "mean_absolute_baseline_target_logit_minus_ablated_target_logit",
     }
 
     output_index = args.output_browser_index or args.browser_index
