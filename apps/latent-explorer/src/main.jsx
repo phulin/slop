@@ -106,7 +106,7 @@ function App() {
       const loadedIndex = await fetch(loadedManifest.browserIndexJson).then((response) => response.json());
       const initResult = await workerCall("init", {
         docTokensUrl: loadedManifest.docTokensParquet ?? loadedIndex.docTokensParquet,
-        sparseTopkUrl: loadedManifest.sparseTopkParquet ?? loadedIndex.sparseTopkParquet,
+        sparseTopkUrl: loadedIndex.sparseTopkParquet ?? loadedManifest.sparseTopkParquet,
       });
       startTransition(() => {
         setManifest(loadedManifest);
@@ -195,6 +195,11 @@ function App() {
   }, [selectedLatent, selectedExampleDocId, selectedDocumentId]);
 
   useEffect(() => {
+    setDocActivations({});
+    prefetchRequestedRef.current.clear();
+  }, [selectedLatent]);
+
+  useEffect(() => {
     let cancelled = false;
     async function loadGenerationGroup() {
       if (!workerReady || !indexData || !activeExample || !siblingDocIds.length) return;
@@ -250,21 +255,49 @@ function App() {
       if (docActivations[selectedDocumentId]) return;
       const meta = indexData.documents?.[selectedDocumentId];
       if (!meta) return;
+      const turnId = meta.turn_id;
+      const turnRange = indexData.turnRanges?.[turnId];
+      const promptDocs = (indexData.promptGroups?.[turnId] ?? [])
+        .map((docId) => {
+          const docMeta = indexData.documents?.[docId];
+          if (!docMeta) return null;
+          return {
+            docId,
+            start: numeric(docMeta.sparse_row_start),
+            end: numeric(docMeta.sparse_row_end),
+          };
+        })
+        .filter(Boolean);
       setLoadingActivations(true);
       try {
-        const result = await workerCall("readActivation", {
-          selectedDocumentId,
-          docId: selectedDocumentId,
-          latentId: selectedLatentId,
-          start: numeric(meta.sparse_row_start),
-          end: numeric(meta.sparse_row_end),
-        });
+        const result = turnRange
+          ? await workerCall("readPromptActivation", {
+            turnId,
+            latentId: selectedLatentId,
+            start: numeric(turnRange.row_start),
+            end: numeric(turnRange.row_end),
+            docs: promptDocs,
+          })
+          : await workerCall("readActivation", {
+            selectedDocumentId,
+            docId: selectedDocumentId,
+            latentId: selectedLatentId,
+            start: numeric(meta.sparse_row_start),
+            end: numeric(meta.sparse_row_end),
+          });
         if (cancelled) return;
-        const activationMap = Object.fromEntries(result.entries ?? []);
+        const activationMaps = result.docs
+          ? Object.fromEntries(
+            Object.entries(result.docs).map(([docId, docResult]) => [
+              docId,
+              Object.fromEntries(docResult.entries ?? []),
+            ]),
+          )
+          : { [selectedDocumentId]: Object.fromEntries(result.entries ?? []) };
         startTransition(() => {
           setDocActivations((previous) => ({
             ...previous,
-            [selectedDocumentId]: activationMap,
+            ...activationMaps,
           }));
         });
       } catch (error) {
@@ -297,15 +330,36 @@ function App() {
       const promptKey = `${selectedLatentId}:${turnId}`;
       if (prefetchRequestedRef.current.has(promptKey)) continue;
       prefetchRequestedRef.current.add(promptKey);
-      for (const docId of indexData.promptGroups?.[turnId] ?? []) {
-        const docMeta = indexData.documents?.[docId];
-        if (!docMeta) continue;
+      const turnRange = indexData.turnRanges?.[turnId];
+      if (turnRange) {
         tasks.push({
-          docId,
+          turnId,
           latentId: selectedLatentId,
-          start: numeric(docMeta.sparse_row_start),
-          end: numeric(docMeta.sparse_row_end),
+          start: numeric(turnRange.row_start),
+          end: numeric(turnRange.row_end),
+          docs: (indexData.promptGroups?.[turnId] ?? [])
+            .map((docId) => {
+              const docMeta = indexData.documents?.[docId];
+              if (!docMeta) return null;
+              return {
+                docId,
+                start: numeric(docMeta.sparse_row_start),
+                end: numeric(docMeta.sparse_row_end),
+              };
+            })
+            .filter(Boolean),
         });
+      } else {
+        for (const docId of indexData.promptGroups?.[turnId] ?? []) {
+          const docMeta = indexData.documents?.[docId];
+          if (!docMeta) continue;
+          tasks.push({
+            docId,
+            latentId: selectedLatentId,
+            start: numeric(docMeta.sparse_row_start),
+            end: numeric(docMeta.sparse_row_end),
+          });
+        }
       }
     }
     if (!tasks.length) return;

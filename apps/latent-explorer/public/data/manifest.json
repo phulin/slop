@@ -6,5 +6,5 @@
   "documentsJson": "/data/full/pangram_llama_sae_documents.json",
   "browserIndexJson": "/data/full/pangram_llama_sae_browser_index.json",
   "docTokensParquet": "/data/full/pangram_llama_sae_doc_tokens.parquet",
-  "sparseTopkParquet": "/data/full/pangram_llama_sae_sparse_topk_k64.parquet"
+  "sparseTopkParquet": "/data/full/pangram_llama_sae_sparse_topk_k64_by_prompt.parquet"
 }

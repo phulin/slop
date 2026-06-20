@@ -7,6 +7,7 @@ const docRowCache = new Map();
 let allDocRowsPromise = null;
 const sparseRowCache = new Map();
 const activationCache = new Map();
+const promptActivationCache = new Map();
 
 function numeric(value, fallback = 0) {
   if (typeof value === "bigint") return Number(value);
@@ -99,6 +100,47 @@ async function readActivationMap({ docId, latentId, start, end }) {
   return activationCache.get(key);
 }
 
+async function readPromptActivationMap({ turnId, latentId, start, end, docs }) {
+  const key = `${latentId}:${turnId}`;
+  if (!promptActivationCache.has(key)) {
+    promptActivationCache.set(key, (async () => {
+      const sparseRows = await readSparseRows(start, end);
+      const sortedDocs = [...(docs ?? [])]
+        .map((doc) => ({
+          docId: doc.docId,
+          start: numeric(doc.start),
+          end: numeric(doc.end),
+        }))
+        .filter((doc) => doc.docId && doc.end > doc.start)
+        .sort((a, b) => a.start - b.start);
+      const byDoc = Object.fromEntries(sortedDocs.map((doc) => [
+        doc.docId,
+        { entries: [], maxActivation: 0, maxTokenIndex: -1 },
+      ]));
+      let docOffset = 0;
+      for (let rowOffset = 0; rowOffset < sparseRows.length; rowOffset += 1) {
+        const globalRow = start + rowOffset;
+        while (docOffset < sortedDocs.length && globalRow >= sortedDocs[docOffset].end) {
+          docOffset += 1;
+        }
+        const doc = sortedDocs[docOffset];
+        if (!doc || globalRow < doc.start || globalRow >= doc.end) continue;
+        const sparseRow = sparseRows[rowOffset];
+        const tokenIndex = numeric(sparseRow.token_index);
+        const value = activationForLatent(sparseRow, latentId);
+        const result = byDoc[doc.docId];
+        result.entries.push([tokenIndex, value]);
+        if (value > result.maxActivation) {
+          result.maxActivation = value;
+          result.maxTokenIndex = tokenIndex;
+        }
+      }
+      return { docs: byDoc };
+    })());
+  }
+  return promptActivationCache.get(key);
+}
+
 self.onmessage = async (event) => {
   const { id, type, payload } = event.data;
   try {
@@ -110,12 +152,15 @@ self.onmessage = async (event) => {
       result = { ok: true, docRows: rows.length };
     } else if (type === "readDoc") {
       result = await readDocRow(payload.row);
-} else if (type === "readActivation") {
+    } else if (type === "readActivation") {
       result = await readActivationMap(payload);
+    } else if (type === "readPromptActivation") {
+      result = await readPromptActivationMap(payload);
     } else if (type === "prefetchActivations") {
       let prefetched = 0;
       for (const task of payload.tasks ?? []) {
-        await readActivationMap(task);
+        if (task.turnId) await readPromptActivationMap(task);
+        else await readActivationMap(task);
         prefetched += 1;
       }
       result = { prefetched };
