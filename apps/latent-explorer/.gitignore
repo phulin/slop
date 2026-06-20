@@ -1,0 +1,4 @@
+dist/
+node_modules/
+public/data/full/
+public/data/smoke/

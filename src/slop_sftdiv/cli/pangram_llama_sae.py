@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import heapq
 import math
 import os
@@ -15,6 +16,7 @@ from torch import nn
 
 from slop_sftdiv.cli.phase4_batchtopk_sae import (
     ActivationCache,
+    ActivationCacheParquetStream,
     SAEDoc,
     _activation_mask,
     _activation_document_rows,
@@ -431,6 +433,96 @@ def collect_last_token_activation_cache(
 
 
 @torch.inference_mode()
+def collect_last_token_activation_cache_parquet(
+    *,
+    path: Path,
+    model: Any,
+    tokenizer: Any,
+    docs: list[SAEDoc],
+    max_length: int,
+    batch_size: int,
+    max_activations: int,
+    activation_layer: int,
+    device: torch.device,
+    progress_every: int,
+    pad_to_max_length: bool,
+    metadata: dict[str, Any],
+    compression_level: int,
+) -> None:
+    if max_activations <= 0:
+        raise ValueError("--max-activations must be positive")
+    writer: ActivationCacheParquetStream | None = None
+    collected = 0
+    batches = _token_batches(docs, batch_size)
+    try:
+        for batch_index, batch_docs in enumerate(batches, start=1):
+            batch_start_doc_index = (batch_index - 1) * batch_size
+            encoded = _encode_docs(
+                tokenizer,
+                batch_docs,
+                max_length=max_length,
+                device=device,
+                pad_to_max_length=pad_to_max_length,
+            )
+            outputs = model(
+                input_ids=encoded["input_ids"],
+                attention_mask=encoded["attention_mask"],
+                output_hidden_states=True,
+                return_dict=True,
+            )
+            hidden_states = getattr(outputs, "hidden_states", None)
+            if hidden_states is None:
+                raise RuntimeError("Pangram/Llama forward pass did not return hidden_states")
+            hidden_index = -1 if activation_layer < 0 else activation_layer + 1
+            if not -len(hidden_states) <= hidden_index < len(hidden_states):
+                raise ValueError(
+                    f"--activation-layer {activation_layer} is out of range for "
+                    f"{len(hidden_states) - 1} decoder layers"
+                )
+            hidden = hidden_states[hidden_index]
+            token_mask = _activation_mask(encoded)
+            vectors = hidden[token_mask].detach().to(dtype=torch.float16).cpu()
+            doc_indexes, token_indexes = _activation_row_indexes(
+                token_mask=token_mask,
+                batch_start_doc_index=batch_start_doc_index,
+            )
+            remaining = max_activations - collected
+            if remaining <= 0:
+                break
+            if vectors.shape[0] > remaining:
+                vectors = vectors[:remaining]
+                doc_indexes = doc_indexes[:remaining]
+                token_indexes = token_indexes[:remaining]
+            if writer is None:
+                writer = ActivationCacheParquetStream(
+                    path,
+                    hidden_dim=int(vectors.shape[1]),
+                    metadata=metadata,
+                    compression_level=compression_level,
+                )
+            writer.write(
+                activations=vectors,
+                doc_indices=doc_indexes,
+                token_indices=token_indexes,
+            )
+            collected += int(vectors.shape[0])
+            if progress_every > 0 and (batch_index == 1 or batch_index % progress_every == 0):
+                layer_name = "final-layer" if activation_layer < 0 else f"layer-{activation_layer}"
+                print(
+                    f"Streamed {collected:,}/{max_activations:,} {layer_name} Llama activation vectors "
+                    f"from {min(batch_index * batch_size, len(docs)):,}/{len(docs):,} docs",
+                    flush=True,
+                )
+            if collected >= max_activations:
+                break
+    finally:
+        if writer is not None:
+            writer.close(document_rows=_activation_document_rows(docs))
+    if writer is None:
+        raise RuntimeError("no activation vectors collected")
+
+
+@torch.inference_mode()
 def collect_last_token_activations(
     *,
     model: Any,
@@ -467,21 +559,7 @@ def _save_pangram_activation_cache(
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     activation_cache = _validate_activation_cache(activation_cache)
-    metadata = {
-        "cache_version": 2,
-        "source": "pangram_llama_last_hidden_state",
-        "activation_layer": args.activation_layer,
-        "base_model": args.base_model,
-        "adapter_model": args.adapter_model,
-        "local_model_dir": str(args.local_model_dir),
-        "dataset_parquet": str(args.dataset_parquet) if args.dataset_parquet else "",
-        "reference_jsonl": list(args.reference_jsonl),
-        "generation_jsonl": list(args.generation_jsonl),
-        "max_length": args.max_length,
-        "pad_to_max_length": bool(args.pad_to_max_length),
-        "max_activations": args.max_activations,
-        "documents": len(docs),
-    }
+    metadata = _pangram_activation_cache_metadata(args, docs=docs)
     if path.suffix == ".parquet":
         _save_activation_cache_parquet(
             path,
@@ -498,6 +576,28 @@ def _save_pangram_activation_cache(
             "activation_token_indices": activation_cache.token_indices,
         }
         torch.save(payload, path)
+
+
+def _pangram_activation_cache_metadata(
+    args: argparse.Namespace,
+    *,
+    docs: list[SAEDoc],
+) -> dict[str, Any]:
+    return {
+        "cache_version": 2,
+        "source": "pangram_llama_last_hidden_state",
+        "activation_layer": args.activation_layer,
+        "base_model": args.base_model,
+        "adapter_model": args.adapter_model,
+        "local_model_dir": str(args.local_model_dir),
+        "dataset_parquet": str(args.dataset_parquet) if args.dataset_parquet else "",
+        "reference_jsonl": list(args.reference_jsonl),
+        "generation_jsonl": list(args.generation_jsonl),
+        "max_length": args.max_length,
+        "pad_to_max_length": bool(args.pad_to_max_length),
+        "max_activations": args.max_activations,
+        "documents": len(docs),
+    }
 
 
 def _source_key_for_document(row: dict[str, Any]) -> str:
@@ -823,25 +923,48 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         activations = activation_cache.activations
     else:
         model, tokenizer = load_pangram_model(args, device=device)
-        activation_cache = collect_last_token_activation_cache(
-            model=model,
-            tokenizer=tokenizer,
-            docs=docs,
-            max_length=args.max_length,
-            batch_size=args.collect_batch_size,
-            max_activations=args.max_activations,
-            activation_layer=args.activation_layer,
-            device=device,
-            progress_every=args.progress_every,
-            pad_to_max_length=args.pad_to_max_length,
-        )
+        if cache_path.suffix == ".parquet":
+            collect_last_token_activation_cache_parquet(
+                path=cache_path,
+                model=model,
+                tokenizer=tokenizer,
+                docs=docs,
+                max_length=args.max_length,
+                batch_size=args.collect_batch_size,
+                max_activations=args.max_activations,
+                activation_layer=args.activation_layer,
+                device=device,
+                progress_every=args.progress_every,
+                pad_to_max_length=args.pad_to_max_length,
+                metadata=_pangram_activation_cache_metadata(args, docs=docs),
+                compression_level=args.activation_cache_compresslevel,
+            )
+            del model
+            gc.collect()
+            if device.type == "cuda":
+                torch.cuda.empty_cache()
+            print(f"Loading streamed activation cache from {cache_path}", flush=True)
+            activation_cache = _load_activation_cache(cache_path)
+        else:
+            activation_cache = collect_last_token_activation_cache(
+                model=model,
+                tokenizer=tokenizer,
+                docs=docs,
+                max_length=args.max_length,
+                batch_size=args.collect_batch_size,
+                max_activations=args.max_activations,
+                activation_layer=args.activation_layer,
+                device=device,
+                progress_every=args.progress_every,
+                pad_to_max_length=args.pad_to_max_length,
+            )
+            _save_pangram_activation_cache(
+                cache_path,
+                activation_cache=activation_cache,
+                args=args,
+                docs=docs,
+            )
         activations = activation_cache.activations
-        _save_pangram_activation_cache(
-            cache_path,
-            activation_cache=activation_cache,
-            args=args,
-            docs=docs,
-        )
 
     sae, train_rows, eval_rows, train_summary = train_sae(
         activations=activations,

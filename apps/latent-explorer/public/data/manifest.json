@@ -1,0 +1,10 @@
+{
+  "name": "Pangram Llama SAE layer20 full GLM-5.2 cap640 k64 e50",
+  "latentsCsv": "/data/full/pangram_llama_sae_latents.csv",
+  "examplesCsv": "/data/full/pangram_llama_sae_examples.csv",
+  "traceJson": "/data/full/pangram_llama_sae_traces.json",
+  "documentsJson": "/data/full/pangram_llama_sae_documents.json",
+  "browserIndexJson": "/data/full/pangram_llama_sae_browser_index.json",
+  "docTokensParquet": "/data/full/pangram_llama_sae_doc_tokens.parquet",
+  "sparseTopkParquet": "/data/full/pangram_llama_sae_sparse_topk_k64.parquet"
+}

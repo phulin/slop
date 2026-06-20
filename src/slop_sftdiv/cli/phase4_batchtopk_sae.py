@@ -1554,6 +1554,87 @@ def _save_activation_cache_parquet(
     _write_json(_activation_cache_sidecar(path, "metadata.json"), cache_metadata)
 
 
+class ActivationCacheParquetStream:
+    def __init__(
+        self,
+        path: Path,
+        *,
+        hidden_dim: int,
+        metadata: dict[str, Any],
+        compression_level: int = 3,
+        row_group_size: int = 8192,
+    ) -> None:
+        self.path = path
+        self.hidden_dim = int(hidden_dim)
+        self.metadata = {
+            **metadata,
+            "cache_version": 3,
+            "format": "parquet_fixed_size_list_halffloat",
+            "compression": "zstd",
+            "compression_level": int(compression_level),
+            "activation_dim": int(hidden_dim),
+        }
+        self.row_group_size = int(row_group_size)
+        self.row_count = 0
+        path.parent.mkdir(parents=True, exist_ok=True)
+        self.schema = pa.schema(
+            [
+                ("activation", pa.list_(pa.float16(), list_size=self.hidden_dim)),
+                ("doc_index", pa.int64()),
+                ("token_index", pa.int64()),
+            ],
+            metadata={b"slop_activation_cache": json.dumps(self.metadata).encode("utf-8")},
+        )
+        self.writer = pq.ParquetWriter(
+            path,
+            self.schema,
+            compression="zstd",
+            compression_level=max(1, min(22, int(compression_level))),
+            use_dictionary=False,
+        )
+
+    def write(
+        self,
+        *,
+        activations: torch.Tensor,
+        doc_indices: torch.Tensor,
+        token_indices: torch.Tensor,
+    ) -> None:
+        activations = activations.detach().cpu().contiguous().to(dtype=torch.float16)
+        if activations.ndim != 2 or int(activations.shape[1]) != self.hidden_dim:
+            raise ValueError(
+                f"activation chunk must have shape [N, {self.hidden_dim}], got {tuple(activations.shape)}"
+            )
+        if doc_indices.numel() != activations.shape[0] or token_indices.numel() != activations.shape[0]:
+            raise ValueError("provenance chunk lengths must match activation rows")
+        activation_array = activations.numpy()
+        flat_values = pa.array(activation_array.reshape(-1), type=pa.float16())
+        table = pa.Table.from_arrays(
+            [
+                pa.FixedSizeListArray.from_arrays(flat_values, self.hidden_dim),
+                pa.array(doc_indices.detach().cpu().to(dtype=torch.int64).numpy(), type=pa.int64()),
+                pa.array(token_indices.detach().cpu().to(dtype=torch.int64).numpy(), type=pa.int64()),
+            ],
+            schema=self.schema,
+        )
+        self.writer.write_table(table, row_group_size=self.row_group_size)
+        self.row_count += int(activations.shape[0])
+
+    def close(self, *, document_rows: list[dict[str, Any]]) -> None:
+        self.writer.close()
+        final_metadata = {
+            **self.metadata,
+            "activation_rows": int(self.row_count),
+            "document_rows": int(len(document_rows)),
+        }
+        pd.DataFrame(document_rows).to_parquet(
+            _activation_cache_sidecar(self.path, "documents.parquet"),
+            compression="zstd",
+            index=False,
+        )
+        _write_json(_activation_cache_sidecar(self.path, "metadata.json"), final_metadata)
+
+
 def _load_activation_cache_parquet(path: Path) -> ActivationCache:
     parquet_file = pq.ParquetFile(path)
     if not parquet_file.schema_arrow.names or "activation" not in parquet_file.schema_arrow.names:
@@ -1562,9 +1643,11 @@ def _load_activation_cache_parquet(path: Path) -> ActivationCache:
     if not isinstance(activation_type, pa.FixedSizeListType):
         raise ValueError(f"activation cache {path} must use a fixed-size-list activation column")
     hidden_dim = int(activation_type.list_size)
-    activation_chunks: list[torch.Tensor] = []
-    doc_index_chunks: list[torch.Tensor] = []
-    token_index_chunks: list[torch.Tensor] = []
+    row_count = int(parquet_file.metadata.num_rows)
+    activations = torch.empty((row_count, hidden_dim), dtype=torch.float16)
+    doc_indices = torch.empty(row_count, dtype=torch.long)
+    token_indices = torch.empty(row_count, dtype=torch.long)
+    offset = 0
     for batch in parquet_file.iter_batches(
         columns=["activation", "doc_index", "token_index"],
         batch_size=8192,
@@ -1573,29 +1656,31 @@ def _load_activation_cache_parquet(path: Path) -> ActivationCache:
         if not isinstance(activation_column, pa.FixedSizeListArray):
             activation_column = activation_column.combine_chunks()
         values = activation_column.values.to_numpy(zero_copy_only=False)
-        activation_chunks.append(
+        next_offset = offset + len(activation_column)
+        activations[offset:next_offset].copy_(
             torch.from_numpy(values.reshape(len(activation_column), hidden_dim).copy())
         )
-        doc_index_chunks.append(
+        doc_indices[offset:next_offset].copy_(
             torch.from_numpy(batch.column("doc_index").to_numpy(zero_copy_only=False).copy()).long()
         )
-        token_index_chunks.append(
+        token_indices[offset:next_offset].copy_(
             torch.from_numpy(batch.column("token_index").to_numpy(zero_copy_only=False).copy()).long()
         )
+        offset = next_offset
     documents_path = _activation_cache_sidecar(path, "documents.parquet")
     document_rows = (
         pd.read_parquet(documents_path).to_dict(orient="records")
         if documents_path.is_file()
         else []
     )
-    if not activation_chunks:
+    if row_count == 0:
         raise ValueError(f"activation cache {path} does not contain activation rows")
     return _validate_activation_cache(
         ActivationCache(
-            activations=torch.cat(activation_chunks, dim=0).to(dtype=torch.float16),
+            activations=activations,
             document_rows=[dict(row) for row in document_rows],
-            doc_indices=torch.cat(doc_index_chunks, dim=0),
-            token_indices=torch.cat(token_index_chunks, dim=0),
+            doc_indices=doc_indices,
+            token_indices=token_indices,
         ),
         path=path,
     )
