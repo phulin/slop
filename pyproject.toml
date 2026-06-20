@@ -117,6 +117,7 @@ slop-materialize-paper-submission-bundle = "slop_sftdiv.cli.materialize_paper_su
 slop-hape-augment-batch = "slop_sftdiv.cli.hape_augment_batch:main"
 slop-hape-author-classifier = "slop_sftdiv.cli.hape_author_classifier:main"
 slop-no-robots-batch = "slop_sftdiv.cli.no_robots_batch:main"
+slop-no-robots-ai-ranker = "slop_sftdiv.cli.no_robots_ai_ranker:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

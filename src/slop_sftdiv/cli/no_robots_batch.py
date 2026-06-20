@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import time
 from collections import Counter
 from pathlib import Path
@@ -239,12 +240,7 @@ def _target_max_output_tokens(
 
 def _response_requirements(target_word_count: int) -> str:
     word_label = "word" if target_word_count == 1 else "words"
-    return (
-        f"Response requirements: aim for about {target_word_count} {word_label}. "
-        "Write plain text only. Do not use Markdown formatting, bullets, numbered lists, "
-        "titles, headlines, headings, tables, code fences, emphasis markers, block quotes, "
-        "decorative indentation, or other visual formatting."
-    )
+    return f"Response requirements: aim for about {target_word_count} {word_label}."
 
 
 def _non_system_roles(messages: list[dict[str, str]]) -> list[str]:
@@ -270,7 +266,7 @@ def _render_transcript_prompt(
 ) -> str:
     lines = [
         "The following is a conversation transcript. Write the next assistant message only.",
-        "Do not include labels, markdown fences, commentary, or alternatives.",
+        "Do not include labels, commentary, or alternatives.",
         "",
         "Transcript:",
     ]
@@ -1586,6 +1582,43 @@ def drive_fireworks_batch(args: argparse.Namespace) -> None:
     print("Fireworks driver stopped at runtime limit", flush=True)
 
 
+def _strip_markdown_formatting(text: str) -> str:
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    text = re.sub(r"```[^\n`]*\n?", "", text)
+    text = text.replace("```", "")
+    text = re.sub(r"`([^`\n]+)`", r"\1", text)
+    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.I)
+    text = re.sub(r"</?(?:details|summary|b|strong|i|em)\b[^>]*>", "", text, flags=re.I)
+    text = re.sub(r"!\[([^\]]*)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+
+    cleaned_lines: list[str] = []
+    for line in text.split("\n"):
+        line = line.strip()
+        line = re.sub(r"^>+\s*", "", line)
+        line = re.sub(r"^#{1,6}\s*", "", line)
+        standalone_number = re.fullmatch(r"(\d{1,2})[.)]", line)
+        if standalone_number and 1 <= int(standalone_number.group(1)) <= 50:
+            continue
+        line = re.sub(r"^(?:(?:[-*+]|\d+[.)])\s+)+", "", line)
+        if re.fullmatch(r"[-*_]{3,}", line):
+            continue
+        if re.fullmatch(r"\|?(?:\s*:?-{3,}:?\s*\|)+\s*:?-{3,}:?\s*\|?", line):
+            continue
+        if "|" in line:
+            line = line.strip("|")
+            line = re.sub(r"\s*\|\s*", " ", line)
+        line = re.sub(r"(\*\*|__)(.*?)\1", r"\2", line)
+        line = re.sub(r"(\*|_)(.*?)\1", r"\2", line)
+        line = line.replace("*", "").replace("_", "").replace("`", "")
+        line = re.sub(r"[ \t]+", " ", line).strip()
+        cleaned_lines.append(line)
+
+    cleaned = "\n".join(cleaned_lines)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned.strip()
+
+
 def _collect_generated_rows(output_dir: Path) -> tuple[pd.DataFrame, dict[str, Any]]:
     manifest = pd.read_parquet(output_dir / "request_manifest.parquet")
     turns = pd.read_parquet(output_dir / "assistant_turns.parquet")
@@ -1593,14 +1626,24 @@ def _collect_generated_rows(output_dir: Path) -> tuple[pd.DataFrame, dict[str, A
     manifest_by_custom = {
         str(row.custom_id): row._asdict() for row in manifest.itertuples(index=False)
     }
+    manifest_by_turn_provider = {
+        (str(row.turn_id), str(row.provider)): row._asdict()
+        for row in manifest.itertuples(index=False)
+    }
     rows: list[dict[str, Any]] = []
     parse_counts: Counter[str] = Counter()
     results_dir = output_dir / "results"
 
-    def append_generated(custom_id: str, text: str, *, batch_id: str | None) -> None:
-        meta = manifest_by_custom.get(custom_id)
-        if not meta:
-            parse_counts["unknown_custom_id"] += 1
+    def append_generated_from_meta(
+        meta: dict[str, Any],
+        *,
+        custom_id: str,
+        text: str,
+        batch_id: str | None,
+    ) -> None:
+        text = _strip_markdown_formatting(text)
+        if not text:
+            parse_counts["empty_after_markdown_strip"] += 1
             return
         turn = turn_by_id[str(meta["turn_id"])]
         rows.append(
@@ -1627,6 +1670,13 @@ def _collect_generated_rows(output_dir: Path) -> tuple[pd.DataFrame, dict[str, A
                 "target_sha256": turn["target_sha256"],
             }
         )
+
+    def append_generated(custom_id: str, text: str, *, batch_id: str | None) -> None:
+        meta = manifest_by_custom.get(custom_id)
+        if not meta:
+            parse_counts["unknown_custom_id"] += 1
+            return
+        append_generated_from_meta(meta, custom_id=custom_id, text=text, batch_id=batch_id)
 
     for path in sorted(results_dir.glob("openai_output*.jsonl")):
         for row in _iter_jsonl_rows(path):
@@ -1690,7 +1740,44 @@ def _collect_generated_rows(output_dir: Path) -> tuple[pd.DataFrame, dict[str, A
                 continue
             append_generated(custom_id, text, batch_id=str(row.get("request_id") or ""))
 
+    for path in sorted(results_dir.glob("neuralwatt_*.jsonl")):
+        if path.name.endswith(".summary.json"):
+            continue
+        for row in _iter_jsonl_rows(path):
+            parse_counts["neuralwatt_rows"] += 1
+            if row.get("error") or int(row.get("status_code") or 200) >= 400:
+                parse_counts["neuralwatt_error_rows"] += 1
+                continue
+            text = str(row.get("cleaned_text") or row.get("raw_text") or "").strip()
+            if not text:
+                choices = (row.get("choices") or [])
+                if choices:
+                    text = str(((choices[0].get("message") or {}).get("content")) or "").strip()
+            if not text:
+                parse_counts["neuralwatt_empty_rows"] += 1
+                continue
+            turn_id = str(row.get("turn_id") or "")
+            meta = manifest_by_turn_provider.get((turn_id, "fireworks"))
+            if not meta:
+                parse_counts["neuralwatt_unknown_turn_id"] += 1
+                continue
+            append_generated_from_meta(
+                meta,
+                custom_id=str(meta["custom_id"]),
+                text=text,
+                batch_id=str(row.get("id") or ""),
+            )
+
     generated = pd.DataFrame(rows)
+    if len(generated):
+        before_dedupe = len(generated)
+        generated = generated.drop_duplicates(
+            subset=["turn_id", "provider", "model"],
+            keep="last",
+        ).copy()
+        dropped = before_dedupe - len(generated)
+        if dropped:
+            parse_counts["duplicate_turn_provider_model_rows_dropped"] += int(dropped)
     return generated, dict(sorted(parse_counts.items()))
 
 
@@ -1818,7 +1905,7 @@ def compile_categorical_dataset(args: argparse.Namespace) -> None:
 
     human_rows = []
     for row in turns.itertuples(index=False):
-        text = str(row.target_text).strip()
+        text = _strip_markdown_formatting(str(row.target_text))
         if not text:
             continue
         human_rows.append(
@@ -1847,7 +1934,7 @@ def compile_categorical_dataset(args: argparse.Namespace) -> None:
 
     generated_rows = []
     for row in generated.itertuples(index=False):
-        text = str(row.generated_text).strip()
+        text = _strip_markdown_formatting(str(row.generated_text))
         if not text:
             continue
         provider = str(row.provider)

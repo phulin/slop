@@ -12,6 +12,7 @@ from slop_sftdiv.cli.no_robots_batch import (
     _gemini_request_rows,
     _openai_request_rows,
     _provider_manifest_rows,
+    _strip_markdown_formatting,
 )
 
 
@@ -103,21 +104,43 @@ def test_provider_requests_set_lowest_reasoning_controls() -> None:
     assert openai["body"]["reasoning"] == {"effort": "none"}
     assert openai["body"]["max_output_tokens"] == 256
     assert openai["body"]["input"][0]["content"].endswith(
-        "Do not use Markdown formatting, bullets, numbered lists, titles, headlines, "
-        "headings, tables, code fences, emphasis markers, block quotes, decorative "
-        "indentation, or other visual formatting."
+        "Response requirements: aim for about 1 word."
     )
+    assert "Markdown" not in openai["body"]["input"][0]["content"]
     assert gemini["request"]["generationConfig"]["thinkingConfig"] == {
         "thinkingLevel": "minimal"
     }
     assert gemini["request"]["generationConfig"]["maxOutputTokens"] == 256
     assert "aim for about 1 word" in gemini["request"]["contents"][0]["parts"][0]["text"]
-    assert "Do not use Markdown formatting" in gemini["request"]["contents"][0]["parts"][0]["text"]
+    assert "Markdown" not in gemini["request"]["contents"][0]["parts"][0]["text"]
     assert "thinking" not in anthropic["params"]
     assert anthropic["params"]["max_tokens"] == 256
     assert fireworks["body"]["reasoning_effort"] == "none"
     assert fireworks["body"]["max_tokens"] == 256
     assert len(anthropic["custom_id"]) <= 64
+
+
+def test_strip_markdown_formatting_removes_visual_tells() -> None:
+    text = """# Title
+
+  * **First** item
+  1. 1. Repeated marker item
+  1. `Second` item
+  2.
+  Third item
+  > quoted _line_
+  ---
+  <details><summary><b>Answer</b></summary><br><i>Explanation</i></details>
+
+| name | value |
+| ---- | ----- |
+| foo | bar |
+"""
+
+    assert _strip_markdown_formatting(text) == (
+        "Title\n\nFirst item\nRepeated marker item\nSecond item\nThird item\nquoted line\n"
+        "Answer\nExplanation\n\nname value\nfoo bar"
+    )
 
 
 def test_complete_triplet_turn_ids_excludes_incomplete_and_long_examples() -> None:
