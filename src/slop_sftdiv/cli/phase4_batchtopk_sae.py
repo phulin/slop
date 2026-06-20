@@ -12,9 +12,12 @@ from pathlib import Path
 from typing import Any, cast
 
 import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
 import torch
 from torch import nn
-from torch.utils.data import DataLoader, TensorDataset
+from torch.nn import functional as F
+from torch.utils.data import DataLoader, Dataset, TensorDataset
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 from slop_sftdiv.generation_text import (
@@ -22,6 +25,7 @@ from slop_sftdiv.generation_text import (
     feature_text_for_mode,
     strip_chat_role_markers,
 )
+from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
 
 @dataclass(frozen=True)
@@ -30,6 +34,22 @@ class SAEDoc:
     doc_id: str
     text: str
     label: int
+
+
+@dataclass(frozen=True)
+class ActivationCache:
+    activations: torch.Tensor
+    document_rows: list[dict[str, Any]]
+    doc_indices: torch.Tensor
+    token_indices: torch.Tensor
+
+    @property
+    def has_provenance(self) -> bool:
+        return (
+            bool(self.document_rows)
+            and self.doc_indices.numel() == self.activations.shape[0]
+            and self.token_indices.numel() == self.activations.shape[0]
+        )
 
 
 class BatchTopKSAE(nn.Module):
@@ -47,6 +67,7 @@ class BatchTopKSAE(nn.Module):
         latent_dim: int,
         k: int,
         decoder_bias: bool = True,
+        init_mode: str = "kaiming",
     ) -> None:
         super().__init__()
         if input_dim <= 0:
@@ -58,14 +79,23 @@ class BatchTopKSAE(nn.Module):
         self.input_dim = input_dim
         self.latent_dim = latent_dim
         self.k = k
+        self.init_mode = init_mode
         self.encoder = nn.Linear(input_dim, latent_dim)
         self.decoder = nn.Linear(latent_dim, input_dim, bias=decoder_bias)
         self.reset_parameters()
 
     def reset_parameters(self) -> None:
-        nn.init.kaiming_uniform_(self.encoder.weight, a=5**0.5)
+        if self.init_mode not in {"kaiming", "tied"}:
+            raise ValueError(f"unknown SAE init_mode {self.init_mode!r}")
+        if self.init_mode == "tied":
+            nn.init.kaiming_uniform_(self.decoder.weight, a=5**0.5)
+            self.normalize_decoder_weights()
+            with torch.no_grad():
+                self.encoder.weight.copy_(self.decoder.weight.T)
+        else:
+            nn.init.kaiming_uniform_(self.encoder.weight, a=5**0.5)
+            nn.init.kaiming_uniform_(self.decoder.weight, a=5**0.5)
         nn.init.zeros_(self.encoder.bias)
-        nn.init.kaiming_uniform_(self.decoder.weight, a=5**0.5)
         if self.decoder.bias is not None:
             nn.init.zeros_(self.decoder.bias)
         self.normalize_decoder_weights()
@@ -79,11 +109,18 @@ class BatchTopKSAE(nn.Module):
         keep = min(dense_codes.numel(), max(1, dense_codes.shape[0] * self.k))
         if keep >= dense_codes.numel():
             return dense_codes
-        threshold = torch.topk(dense_codes.flatten(), keep).values[-1]
-        return dense_codes * (dense_codes >= threshold)
+        flat_codes = dense_codes.flatten()
+        top_values, top_indexes = torch.topk(flat_codes, keep)
+        sparse_flat = torch.zeros_like(flat_codes)
+        sparse_flat.scatter_(0, top_indexes, top_values)
+        return sparse_flat.reshape_as(dense_codes)
 
     def encode(self, activations: torch.Tensor) -> torch.Tensor:
         return self.batch_topk(self.encode_dense(activations))
+
+    def encode_with_dense(self, activations: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        dense_codes = self.encode_dense(activations)
+        return self.batch_topk(dense_codes), dense_codes
 
     def decode(self, sparse_codes: torch.Tensor) -> torch.Tensor:
         return self.decoder(sparse_codes)
@@ -96,7 +133,6 @@ class BatchTopKSAE(nn.Module):
     def normalize_decoder_weights(self) -> None:
         norms = self.decoder.weight.norm(dim=0, keepdim=True).clamp_min(1e-6)
         self.decoder.weight.div_(norms)
-
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -157,19 +193,57 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--refresh-activation-cache", action="store_true")
     parser.add_argument("--latent-dim", type=int, default=4096)
     parser.add_argument("--k", type=int, default=32)
+    parser.add_argument(
+        "--init-mode",
+        choices=["kaiming", "tied"],
+        default="kaiming",
+        help="SAE initialization. tied initializes encoder rows from normalized decoder columns.",
+    )
     parser.add_argument("--train-batch-size", type=int, default=4096)
     parser.add_argument("--epochs", type=int, default=2)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--weight-decay", type=float, default=0.0)
     parser.add_argument(
+        "--optimizer",
+        choices=["adamw", "muon-adamw"],
+        default="adamw",
+        help="SAE optimizer. muon-adamw uses torch.optim.Muon for 2D weights and AdamW for biases.",
+    )
+    parser.add_argument(
+        "--muon-learning-rate",
+        type=float,
+        default=None,
+        help="Muon LR for 2D SAE weights. Defaults to --learning-rate when omitted.",
+    )
+    parser.add_argument(
+        "--adamw-learning-rate",
+        type=float,
+        default=None,
+        help="AdamW LR for non-2D SAE params. Defaults to --learning-rate when omitted.",
+    )
+    parser.add_argument("--muon-weight-decay", type=float, default=0.0)
+    parser.add_argument("--muon-momentum", type=float, default=0.95)
+    parser.add_argument("--muon-ns-steps", type=int, default=5)
+    parser.add_argument(
         "--lr-schedule",
-        choices=["constant", "wsd"],
+        choices=["constant", "wsd", "warmup_linear_decay"],
         default="constant",
-        help="SAE learning-rate schedule. WSD is linear warmup, stable plateau, linear decay.",
+        help=(
+            "SAE learning-rate schedule. WSD is warmup/stable/decay; "
+            "warmup_linear_decay linearly decays from 1.0 to --min-lr-ratio after warmup."
+        ),
     )
     parser.add_argument("--warmup-ratio", type=float, default=0.1)
     parser.add_argument("--decay-ratio", type=float, default=0.1)
     parser.add_argument("--min-lr-ratio", type=float, default=0.0)
+    parser.add_argument("--auxk-coefficient", type=float, default=0.0)
+    parser.add_argument("--auxk", type=int, default=256)
+    parser.add_argument(
+        "--auxk-dead-steps",
+        type=int,
+        default=500,
+        help="A latent is AuxK-eligible after this many optimizer steps without activation.",
+    )
     parser.add_argument("--eval-fraction", type=float, default=0.1)
     parser.add_argument("--compile-sae", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--compile-detector", action=argparse.BooleanOptionalAction, default=True)
@@ -190,6 +264,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--example-context-tokens", type=int, default=12)
     parser.add_argument("--seed", type=int, default=1729)
     parser.add_argument("--progress-every", type=int, default=25)
+    parser.add_argument("--wandb-project", default="slop-stage1")
+    parser.add_argument("--wandb-entity", default=None)
+    parser.add_argument("--wandb-run-name", default=None)
+    parser.add_argument("--wandb-group", default="phase4-sae")
+    parser.add_argument("--wandb-job-type", default="train-batchtopk-sae")
+    parser.add_argument("--wandb-tag", action="append", default=[])
+    parser.add_argument("--wandb-mode", default=None, choices=["online", "offline", "disabled"])
     return parser
 
 
@@ -387,8 +468,85 @@ def _activation_mask(encoded: dict[str, Any]) -> torch.Tensor:
     return mask
 
 
+def _activation_document_rows(docs: list[SAEDoc]) -> list[dict[str, Any]]:
+    return [
+        {
+            "document_index": index,
+            "source": doc.source,
+            "doc_id": doc.doc_id,
+            "label": int(doc.label),
+        }
+        for index, doc in enumerate(docs)
+    ]
+
+
+def _activation_row_indexes(
+    *,
+    token_mask: torch.Tensor,
+    batch_start_doc_index: int,
+) -> tuple[torch.Tensor, torch.Tensor]:
+    mask = token_mask.detach().cpu().bool()
+    if mask.ndim != 2:
+        raise ValueError(f"activation mask must be 2D, got shape {tuple(mask.shape)}")
+    batch_docs, doc_token_count = mask.shape
+    flat_doc_positions = (
+        torch.arange(batch_docs, dtype=torch.long)
+        .unsqueeze(1)
+        .expand(-1, doc_token_count)
+        .reshape(-1)
+    )
+    flat_token_positions = (
+        torch.arange(doc_token_count, dtype=torch.long)
+        .unsqueeze(0)
+        .expand(batch_docs, -1)
+        .reshape(-1)
+    )
+    flat_mask = mask.reshape(-1)
+    return flat_doc_positions[flat_mask] + batch_start_doc_index, flat_token_positions[flat_mask]
+
+
+def _validate_activation_cache(cache: ActivationCache, *, path: Path | None = None) -> ActivationCache:
+    where = f" {path}" if path is not None else ""
+    if cache.activations.ndim != 2:
+        raise ValueError(
+            f"activation cache{where} must be a 2D tensor, got shape {tuple(cache.activations.shape)}"
+        )
+    if cache.doc_indices.numel() == 0 and cache.token_indices.numel() == 0 and not cache.document_rows:
+        return ActivationCache(
+            activations=cache.activations.contiguous(),
+            document_rows=[],
+            doc_indices=torch.empty(0, dtype=torch.long),
+            token_indices=torch.empty(0, dtype=torch.long),
+        )
+    if cache.doc_indices.ndim != 1 or cache.token_indices.ndim != 1:
+        raise ValueError(f"activation cache{where} provenance indexes must be 1D tensors")
+    if cache.doc_indices.numel() != cache.activations.shape[0]:
+        raise ValueError(
+            f"activation cache{where} has {cache.activations.shape[0]} activation rows "
+            f"but {cache.doc_indices.numel()} doc indexes"
+        )
+    if cache.token_indices.numel() != cache.activations.shape[0]:
+        raise ValueError(
+            f"activation cache{where} has {cache.activations.shape[0]} activation rows "
+            f"but {cache.token_indices.numel()} token indexes"
+        )
+    if cache.document_rows:
+        max_doc_index = int(cache.doc_indices.max().item()) if cache.doc_indices.numel() else -1
+        if max_doc_index >= len(cache.document_rows):
+            raise ValueError(
+                f"activation cache{where} references document index {max_doc_index} "
+                f"but only stores {len(cache.document_rows)} documents"
+            )
+    return ActivationCache(
+        activations=cache.activations.contiguous(),
+        document_rows=list(cache.document_rows),
+        doc_indices=cache.doc_indices.to(dtype=torch.long).contiguous(),
+        token_indices=cache.token_indices.to(dtype=torch.long).contiguous(),
+    )
+
+
 @torch.inference_mode()
-def collect_penultimate_activations(
+def collect_penultimate_activation_cache(
     *,
     model: Any,
     tokenizer: Any,
@@ -399,13 +557,16 @@ def collect_penultimate_activations(
     device: torch.device,
     progress_every: int,
     pad_to_max_length: bool = False,
-) -> torch.Tensor:
+) -> ActivationCache:
     if max_activations <= 0:
         raise ValueError("--max-activations must be positive")
     chunks: list[torch.Tensor] = []
+    doc_index_chunks: list[torch.Tensor] = []
+    token_index_chunks: list[torch.Tensor] = []
     collected = 0
     batches = _token_batches(docs, batch_size)
     for batch_index, batch_docs in enumerate(batches, start=1):
+        batch_start_doc_index = (batch_index - 1) * batch_size
         encoded = _encode_docs(
             tokenizer,
             batch_docs,
@@ -419,13 +580,22 @@ def collect_penultimate_activations(
             output_hidden_states=True,
         )
         hidden = outputs.hidden_states[-2]
-        vectors = hidden[_activation_mask(encoded)].detach().float().cpu()
+        token_mask = _activation_mask(encoded)
+        vectors = hidden[token_mask].detach().float().cpu()
+        doc_indexes, token_indexes = _activation_row_indexes(
+            token_mask=token_mask,
+            batch_start_doc_index=batch_start_doc_index,
+        )
         remaining = max_activations - collected
         if remaining <= 0:
             break
         if vectors.shape[0] > remaining:
             vectors = vectors[:remaining]
+            doc_indexes = doc_indexes[:remaining]
+            token_indexes = token_indexes[:remaining]
         chunks.append(vectors)
+        doc_index_chunks.append(doc_indexes)
+        token_index_chunks.append(token_indexes)
         collected += int(vectors.shape[0])
         if progress_every > 0 and (batch_index == 1 or batch_index % progress_every == 0):
             print(
@@ -437,26 +607,84 @@ def collect_penultimate_activations(
             break
     if not chunks:
         raise RuntimeError("no activation vectors collected")
-    return torch.cat(chunks, dim=0)
+    return _validate_activation_cache(
+        ActivationCache(
+            activations=torch.cat(chunks, dim=0),
+            document_rows=_activation_document_rows(docs),
+            doc_indices=torch.cat(doc_index_chunks, dim=0),
+            token_indices=torch.cat(token_index_chunks, dim=0),
+        )
+    )
 
 
-def _split_activations(
+@torch.inference_mode()
+def collect_penultimate_activations(
+    *,
+    model: Any,
+    tokenizer: Any,
+    docs: list[SAEDoc],
+    max_length: int,
+    batch_size: int,
+    max_activations: int,
+    device: torch.device,
+    progress_every: int,
+    pad_to_max_length: bool = False,
+) -> torch.Tensor:
+    return collect_penultimate_activation_cache(
+        model=model,
+        tokenizer=tokenizer,
+        docs=docs,
+        max_length=max_length,
+        batch_size=batch_size,
+        max_activations=max_activations,
+        device=device,
+        progress_every=progress_every,
+        pad_to_max_length=pad_to_max_length,
+    ).activations
+
+
+class _ActivationSubsetDataset(Dataset):
+    def __init__(self, activations: torch.Tensor, indexes: torch.Tensor) -> None:
+        self.activations = activations
+        self.indexes = indexes.to(dtype=torch.long).contiguous()
+
+    def __len__(self) -> int:
+        return int(self.indexes.numel())
+
+    def __getitem__(self, index: int) -> tuple[torch.Tensor]:
+        return (self.activations[int(self.indexes[index])],)
+
+
+def _activation_dataset(
     activations: torch.Tensor,
+    indexes: torch.Tensor,
+) -> Dataset:
+    if indexes.numel() == activations.shape[0] and torch.equal(
+        indexes,
+        torch.arange(indexes.numel(), dtype=indexes.dtype),
+    ):
+        return TensorDataset(activations)
+    return _ActivationSubsetDataset(activations, indexes)
+
+
+def _split_activation_indexes(
+    activation_count: int,
     *,
     eval_fraction: float,
     seed: int,
 ) -> tuple[torch.Tensor, torch.Tensor]:
     if not 0.0 <= eval_fraction < 1.0:
         raise ValueError("--eval-fraction must be >= 0 and < 1")
-    if eval_fraction == 0.0 or activations.shape[0] < 2:
-        return activations, activations[:0]
+    all_indexes = torch.arange(activation_count, dtype=torch.long)
+    if eval_fraction == 0.0 or activation_count < 2:
+        return all_indexes, all_indexes[:0]
     generator = torch.Generator()
     generator.manual_seed(seed)
-    permutation = torch.randperm(activations.shape[0], generator=generator)
-    eval_count = max(1, int(activations.shape[0] * eval_fraction))
+    permutation = torch.randperm(activation_count, generator=generator)
+    eval_count = max(1, int(activation_count * eval_fraction))
     eval_indexes = permutation[:eval_count]
     train_indexes = permutation[eval_count:]
-    return activations[train_indexes].contiguous(), activations[eval_indexes].contiguous()
+    return train_indexes.contiguous(), eval_indexes.contiguous()
 
 
 def _compile_module(module: nn.Module, *, enabled: bool, mode: str, device: torch.device) -> nn.Module:
@@ -480,14 +708,15 @@ def _evaluate_sae_mse(
     *,
     sae_model: nn.Module,
     activations: torch.Tensor,
+    indexes: torch.Tensor,
     batch_size: int,
     device: torch.device,
     num_workers: int,
 ) -> float | None:
-    if activations.numel() == 0:
+    if activations.numel() == 0 or indexes.numel() == 0:
         return None
     loader = DataLoader(
-        TensorDataset(activations),
+        _activation_dataset(activations, indexes),
         batch_size=batch_size,
         shuffle=False,
         num_workers=num_workers,
@@ -536,7 +765,7 @@ def _build_lr_scheduler(
 ) -> tuple[torch.optim.lr_scheduler.LambdaLR | None, dict[str, Any]]:
     if args.warmup_ratio < 0.0 or args.decay_ratio < 0.0:
         raise ValueError("--warmup-ratio and --decay-ratio must be non-negative")
-    if args.warmup_ratio + args.decay_ratio > 1.0:
+    if args.lr_schedule == "wsd" and args.warmup_ratio + args.decay_ratio > 1.0:
         raise ValueError("--warmup-ratio + --decay-ratio must be <= 1")
     if not 0.0 <= args.min_lr_ratio <= 1.0:
         raise ValueError("--min-lr-ratio must be between 0 and 1")
@@ -547,6 +776,28 @@ def _build_lr_scheduler(
             "stable_steps": total_steps,
             "decay_steps": 0,
             "min_lr_ratio": 1.0,
+        }
+    if args.lr_schedule == "warmup_linear_decay":
+        warmup_steps = int(total_steps * args.warmup_ratio)
+        decay_steps = max(0, total_steps - warmup_steps)
+
+        def lr_lambda(step: int) -> float:
+            if step <= 0:
+                return 0.0 if warmup_steps > 0 else 1.0
+            if warmup_steps > 0 and step <= warmup_steps:
+                return step / warmup_steps
+            if decay_steps <= 0:
+                return args.min_lr_ratio
+            decay_progress = min(1.0, max(0.0, (step - warmup_steps) / decay_steps))
+            return 1.0 - (1.0 - args.min_lr_ratio) * decay_progress
+
+        scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lr_lambda)
+        return scheduler, {
+            "lr_schedule": "warmup_linear_decay",
+            "warmup_steps": warmup_steps,
+            "stable_steps": 0,
+            "decay_steps": decay_steps,
+            "min_lr_ratio": args.min_lr_ratio,
         }
     warmup_steps = int(total_steps * args.warmup_ratio)
     decay_steps = int(total_steps * args.decay_ratio)
@@ -571,14 +822,108 @@ def _build_lr_scheduler(
     }
 
 
+def _build_sae_optimizers(
+    sae: BatchTopKSAE,
+    *,
+    args: argparse.Namespace,
+) -> tuple[list[torch.optim.Optimizer], dict[str, Any]]:
+    optimizer_name = getattr(args, "optimizer", "adamw")
+    if optimizer_name == "adamw":
+        optimizer = torch.optim.AdamW(
+            sae.parameters(),
+            lr=args.learning_rate,
+            weight_decay=args.weight_decay,
+        )
+        return [optimizer], {
+            "optimizer": "adamw",
+            "learning_rate": args.learning_rate,
+            "adamw_learning_rate": args.learning_rate,
+            "muon_learning_rate": None,
+        }
+    if optimizer_name != "muon-adamw":
+        raise ValueError(f"unknown SAE optimizer {optimizer_name!r}")
+    muon_cls = getattr(torch.optim, "Muon", None)
+    if muon_cls is None:
+        raise RuntimeError("torch.optim.Muon is unavailable in this PyTorch build")
+    muon_lr = args.muon_learning_rate if args.muon_learning_rate is not None else args.learning_rate
+    adamw_lr = args.adamw_learning_rate if args.adamw_learning_rate is not None else args.learning_rate
+    muon_params: list[nn.Parameter] = []
+    adamw_params: list[nn.Parameter] = []
+    for _name, parameter in sae.named_parameters():
+        if not parameter.requires_grad:
+            continue
+        if parameter.ndim == 2:
+            muon_params.append(parameter)
+        else:
+            adamw_params.append(parameter)
+    optimizers: list[torch.optim.Optimizer] = []
+    if muon_params:
+        optimizers.append(
+            muon_cls(
+                muon_params,
+                lr=muon_lr,
+                weight_decay=args.muon_weight_decay,
+                momentum=args.muon_momentum,
+                ns_steps=args.muon_ns_steps,
+            )
+        )
+    if adamw_params:
+        optimizers.append(
+            torch.optim.AdamW(
+                adamw_params,
+                lr=adamw_lr,
+                weight_decay=args.weight_decay,
+            )
+        )
+    if not optimizers:
+        raise ValueError("SAE has no trainable parameters")
+    return optimizers, {
+        "optimizer": "muon-adamw",
+        "learning_rate": None,
+        "muon_learning_rate": muon_lr,
+        "adamw_learning_rate": adamw_lr,
+        "muon_weight_decay": args.muon_weight_decay,
+        "muon_momentum": args.muon_momentum,
+        "muon_ns_steps": args.muon_ns_steps,
+        "muon_parameter_count": sum(parameter.numel() for parameter in muon_params),
+        "adamw_parameter_count": sum(parameter.numel() for parameter in adamw_params),
+    }
+
+
+def _auxk_loss(
+    *,
+    sae: BatchTopKSAE,
+    dense_codes: torch.Tensor,
+    residual: torch.Tensor,
+    dead_latents: torch.Tensor,
+    auxk: int,
+) -> tuple[torch.Tensor, int]:
+    dead_indexes = torch.nonzero(dead_latents, as_tuple=False).flatten()
+    if auxk <= 0 or dead_indexes.numel() == 0:
+        return dense_codes.new_zeros(()), int(dead_indexes.numel())
+    dead_codes = dense_codes[:, dead_indexes]
+    keep = min(dead_codes.numel(), max(1, dense_codes.shape[0] * min(auxk, dead_indexes.numel())))
+    if dead_codes.numel() == 0 or keep <= 0:
+        return dense_codes.new_zeros(()), int(dead_indexes.numel())
+    top_values, top_indexes = torch.topk(dead_codes.flatten(), keep)
+    aux_flat = torch.zeros_like(dead_codes.flatten())
+    aux_flat.scatter_(0, top_indexes, top_values)
+    aux_dead_codes = aux_flat.reshape_as(dead_codes)
+    aux_codes = torch.zeros_like(dense_codes)
+    aux_codes[:, dead_indexes] = aux_dead_codes
+    aux_reconstruction = F.linear(aux_codes, sae.decoder.weight)
+    return F.mse_loss(aux_reconstruction, residual.detach()), int(dead_indexes.numel())
+
+
 def train_sae(
     *,
     activations: torch.Tensor,
     args: argparse.Namespace,
     device: torch.device,
+    wandb_run: Any | None = None,
 ) -> tuple[BatchTopKSAE, list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
-    train_activations, eval_activations = _split_activations(
-        activations,
+    train_indexes, eval_indexes = _split_activation_indexes(
+        int(activations.shape[0]),
         eval_fraction=args.eval_fraction,
         seed=args.seed,
     )
@@ -586,6 +931,7 @@ def train_sae(
         input_dim=int(activations.shape[1]),
         latent_dim=args.latent_dim,
         k=args.k,
+        init_mode=getattr(args, "init_mode", "kaiming"),
     ).to(device)
     sae_model = _compile_module(
         sae,
@@ -594,12 +940,8 @@ def train_sae(
         device=device,
     )
     sae_compile_fallback = False
-    optimizer = torch.optim.AdamW(
-        sae.parameters(),
-        lr=args.learning_rate,
-        weight_decay=args.weight_decay,
-    )
-    dataset = TensorDataset(train_activations)
+    optimizers, optimizer_summary = _build_sae_optimizers(sae, args=args)
+    dataset = _activation_dataset(activations, train_indexes)
     loader = DataLoader(
         dataset,
         batch_size=args.train_batch_size,
@@ -608,21 +950,32 @@ def train_sae(
         pin_memory=device.type == "cuda",
     )
     total_steps = max(1, len(loader) * args.epochs)
-    scheduler, scheduler_summary = _build_lr_scheduler(
-        optimizer,
-        args=args,
-        total_steps=total_steps,
-    )
+    scheduler_pairs: list[tuple[torch.optim.Optimizer, torch.optim.lr_scheduler.LambdaLR | None]] = []
+    scheduler_summary: dict[str, Any] = {}
+    for optimizer_index, optimizer in enumerate(optimizers):
+        scheduler, one_scheduler_summary = _build_lr_scheduler(
+            optimizer,
+            args=args,
+            total_steps=total_steps,
+        )
+        scheduler_pairs.append((optimizer, scheduler))
+        if optimizer_index == 0:
+            scheduler_summary = one_scheduler_summary
     train_rows: list[dict[str, Any]] = []
     eval_rows: list[dict[str, Any]] = []
     start = time.time()
     step = 0
+    last_active_step = torch.zeros(args.latent_dim, dtype=torch.long, device=device)
+    auxk_coefficient = float(getattr(args, "auxk_coefficient", 0.0))
+    auxk = int(getattr(args, "auxk", 0))
+    auxk_dead_steps = max(1, int(getattr(args, "auxk_dead_steps", 500)))
     sae_model.train()
     for epoch in range(1, args.epochs + 1):
         for (batch_cpu,) in loader:
             step += 1
             batch = batch_cpu.to(device=device, dtype=torch.float32, non_blocking=device.type == "cuda")
-            optimizer.zero_grad(set_to_none=True)
+            for optimizer in optimizers:
+                optimizer.zero_grad(set_to_none=True)
             try:
                 reconstruction, sparse_codes = sae_model(batch)
             except Exception as exc:
@@ -639,34 +992,80 @@ def train_sae(
                 reconstruction, sparse_codes = sae_model(batch)
             residual = reconstruction - batch
             mse = residual.pow(2).mean()
-            loss = mse
+            active_latents = (sparse_codes.detach() > 0).any(dim=0)
+            last_active_step[active_latents] = step
+            dead_latents = (step - last_active_step) >= auxk_dead_steps
+            aux_loss = batch.new_zeros(())
+            dead_latent_count = int(dead_latents.sum().detach().cpu())
+            if auxk_coefficient > 0.0:
+                dense_codes = sae.encode_dense(batch)
+                aux_loss, dead_latent_count = _auxk_loss(
+                    sae=sae,
+                    dense_codes=dense_codes,
+                    residual=residual,
+                    dead_latents=dead_latents,
+                    auxk=auxk,
+                )
+            loss = mse + auxk_coefficient * aux_loss
             loss.backward()
-            optimizer.step()
-            if scheduler is not None:
+            for optimizer, scheduler in scheduler_pairs:
+                optimizer.step()
+                if scheduler is None:
+                    continue
                 scheduler.step()
             sae.normalize_decoder_weights()
             if step == 1 or step % args.progress_every == 0:
                 active_per_vector = (sparse_codes > 0).float().sum(dim=1).mean()
-                current_lr = float(optimizer.param_groups[0]["lr"])
+                current_lrs = [
+                    float(optimizer.param_groups[0]["lr"])
+                    for optimizer, _scheduler in scheduler_pairs
+                    if optimizer.param_groups
+                ]
+                current_lr = current_lrs[0] if current_lrs else 0.0
                 row = {
                     "step": step,
                     "epoch": epoch,
                     "loss": float(loss.detach().cpu()),
                     "mse": float(mse.detach().cpu()),
+                    "auxk_loss": float(aux_loss.detach().cpu()),
+                    "auxk_coefficient": auxk_coefficient,
                     "learning_rate": current_lr,
+                    "learning_rates": "|".join(f"{lr:.8g}" for lr in current_lrs),
                     "active_latents_per_vector": float(active_per_vector.detach().cpu()),
+                    "unique_active_latents": int(active_latents.sum().detach().cpu()),
+                    "dead_latents": dead_latent_count,
                     "elapsed_seconds": time.time() - start,
                 }
                 train_rows.append(row)
+                if wandb_run is not None:
+                    wandb_run.log(
+                        {
+                            "train/loss": row["loss"],
+                            "train/mse": row["mse"],
+                            "train/auxk_loss": row["auxk_loss"],
+                            "train/learning_rate": current_lr,
+                            "train/dead_latents": dead_latent_count,
+                            "train/unique_active_latents": row["unique_active_latents"],
+                            "train/active_latents_per_vector": row[
+                                "active_latents_per_vector"
+                            ],
+                            "train/epoch": epoch,
+                            "train/elapsed_seconds": row["elapsed_seconds"],
+                        },
+                        step=step,
+                    )
                 print(
                     f"SAE step {step}: loss={row['loss']:.6f} "
+                    f"mse={row['mse']:.6f} auxk={row['auxk_loss']:.6f} "
                     f"active/vector={row['active_latents_per_vector']:.2f} "
+                    f"unique={row['unique_active_latents']} dead={row['dead_latents']} "
                     f"lr={current_lr:.3g}",
                     flush=True,
                 )
         eval_mse = _evaluate_sae_mse(
             sae_model=sae_model,
-            activations=eval_activations,
+            activations=activations,
+            indexes=eval_indexes,
             batch_size=args.train_batch_size,
             device=device,
             num_workers=args.num_workers,
@@ -679,10 +1078,23 @@ def train_sae(
                 "elapsed_seconds": time.time() - start,
             }
             eval_rows.append(row)
+            if wandb_run is not None:
+                wandb_run.log(
+                    {
+                        "eval/mse": eval_mse,
+                        "eval/epoch": epoch,
+                        "eval/elapsed_seconds": row["elapsed_seconds"],
+                    },
+                    step=step,
+                )
             print(f"SAE epoch {epoch}: eval_mse={eval_mse:.6f}", flush=True)
     train_summary = {
         "compile_sae_requested": bool(getattr(args, "compile_sae", False)),
         "compile_sae_fallback": sae_compile_fallback,
+        "auxk_coefficient": auxk_coefficient,
+        "auxk": auxk,
+        "auxk_dead_steps": auxk_dead_steps,
+        **optimizer_summary,
         **scheduler_summary,
     }
     return sae, train_rows, eval_rows, train_summary
@@ -709,7 +1121,10 @@ def _logits_with_sae(
         kwargs: dict[str, Any],
     ) -> tuple[tuple[Any, ...], dict[str, Any]]:
         nonlocal captured_codes
-        hidden = kwargs.get("hidden_states") if "hidden_states" in kwargs else args[0]
+        hidden = cast(
+            torch.Tensor,
+            kwargs.get("hidden_states") if "hidden_states" in kwargs else args[0],
+        )
         flat = hidden.reshape(-1, hidden.shape[-1]).float()
         sparse_codes = sae.encode(flat)
         if record_codes:
@@ -1033,10 +1448,11 @@ def _save_sae(path: Path, sae: BatchTopKSAE, summary: dict[str, Any]) -> None:
         {
             "state_dict": sae.state_dict(),
             "config": {
-                "input_dim": sae.input_dim,
-                "latent_dim": sae.latent_dim,
-                "k": sae.k,
-            },
+            "input_dim": sae.input_dim,
+            "latent_dim": sae.latent_dim,
+            "k": sae.k,
+            "init_mode": sae.init_mode,
+        },
             "summary": summary,
         },
         path,
@@ -1055,6 +1471,7 @@ def _load_sae(path: Path, *, device: torch.device) -> tuple[BatchTopKSAE, dict[s
         input_dim=int(config["input_dim"]),
         latent_dim=int(config["latent_dim"]),
         k=int(config["k"]),
+        init_mode=str(config.get("init_mode", "kaiming")),
     )
     sae.load_state_dict(state_dict)
     sae.to(device)
@@ -1063,30 +1480,181 @@ def _load_sae(path: Path, *, device: torch.device) -> tuple[BatchTopKSAE, dict[s
     return sae, summary if isinstance(summary, dict) else {}
 
 
-def _load_activation_cache(path: Path) -> torch.Tensor:
+def _activation_cache_sidecar(path: Path, suffix: str) -> Path:
+    return path.with_name(f"{path.stem}.{suffix}")
+
+
+def _save_activation_cache_parquet(
+    path: Path,
+    *,
+    activation_cache: ActivationCache,
+    metadata: dict[str, Any],
+    compression_level: int = 3,
+    row_group_size: int = 8192,
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    activation_cache = _validate_activation_cache(activation_cache)
+    activations = activation_cache.activations.detach().cpu().contiguous().to(dtype=torch.float16)
+    row_count, hidden_dim = activations.shape
+    doc_indices = activation_cache.doc_indices.detach().cpu().to(dtype=torch.int64).numpy()
+    token_indices = activation_cache.token_indices.detach().cpu().to(dtype=torch.int64).numpy()
+    activation_array = activations.numpy()
+    cache_metadata = {
+        **metadata,
+        "cache_version": 3,
+        "format": "parquet_fixed_size_list_halffloat",
+        "compression": "zstd",
+        "compression_level": int(compression_level),
+        "activation_rows": int(row_count),
+        "activation_dim": int(hidden_dim),
+        "document_rows": int(len(activation_cache.document_rows)),
+    }
+    schema = pa.schema(
+        [
+            ("activation", pa.list_(pa.float16(), list_size=hidden_dim)),
+            ("doc_index", pa.int64()),
+            ("token_index", pa.int64()),
+        ],
+        metadata={b"slop_activation_cache": json.dumps(cache_metadata).encode("utf-8")},
+    )
+    writer: pq.ParquetWriter | None = None
+    try:
+        writer = pq.ParquetWriter(
+            path,
+            schema,
+            compression="zstd",
+            compression_level=max(1, min(22, int(compression_level))),
+            use_dictionary=False,
+        )
+        for start in range(0, row_count, row_group_size):
+            end = min(start + row_group_size, row_count)
+            flat_values = pa.array(
+                activation_array[start:end].reshape(-1),
+                type=pa.float16(),
+            )
+            table = pa.Table.from_arrays(
+                [
+                    pa.FixedSizeListArray.from_arrays(flat_values, hidden_dim),
+                    pa.array(doc_indices[start:end], type=pa.int64()),
+                    pa.array(token_indices[start:end], type=pa.int64()),
+                ],
+                schema=schema,
+            )
+            writer.write_table(table, row_group_size=row_group_size)
+    finally:
+        if writer is not None:
+            writer.close()
+
+    documents_path = _activation_cache_sidecar(path, "documents.parquet")
+    pd.DataFrame(activation_cache.document_rows).to_parquet(
+        documents_path,
+        compression="zstd",
+        index=False,
+    )
+    _write_json(_activation_cache_sidecar(path, "metadata.json"), cache_metadata)
+
+
+def _load_activation_cache_parquet(path: Path) -> ActivationCache:
+    parquet_file = pq.ParquetFile(path)
+    if not parquet_file.schema_arrow.names or "activation" not in parquet_file.schema_arrow.names:
+        raise ValueError(f"activation cache {path} is missing an activation column")
+    activation_type = parquet_file.schema_arrow.field("activation").type
+    if not isinstance(activation_type, pa.FixedSizeListType):
+        raise ValueError(f"activation cache {path} must use a fixed-size-list activation column")
+    hidden_dim = int(activation_type.list_size)
+    activation_chunks: list[torch.Tensor] = []
+    doc_index_chunks: list[torch.Tensor] = []
+    token_index_chunks: list[torch.Tensor] = []
+    for batch in parquet_file.iter_batches(
+        columns=["activation", "doc_index", "token_index"],
+        batch_size=8192,
+    ):
+        activation_column = batch.column("activation")
+        if not isinstance(activation_column, pa.FixedSizeListArray):
+            activation_column = activation_column.combine_chunks()
+        values = activation_column.values.to_numpy(zero_copy_only=False)
+        activation_chunks.append(
+            torch.from_numpy(values.reshape(len(activation_column), hidden_dim).copy())
+        )
+        doc_index_chunks.append(
+            torch.from_numpy(batch.column("doc_index").to_numpy(zero_copy_only=False).copy()).long()
+        )
+        token_index_chunks.append(
+            torch.from_numpy(batch.column("token_index").to_numpy(zero_copy_only=False).copy()).long()
+        )
+    documents_path = _activation_cache_sidecar(path, "documents.parquet")
+    document_rows = (
+        pd.read_parquet(documents_path).to_dict(orient="records")
+        if documents_path.is_file()
+        else []
+    )
+    if not activation_chunks:
+        raise ValueError(f"activation cache {path} does not contain activation rows")
+    return _validate_activation_cache(
+        ActivationCache(
+            activations=torch.cat(activation_chunks, dim=0).to(dtype=torch.float16),
+            document_rows=[dict(row) for row in document_rows],
+            doc_indices=torch.cat(doc_index_chunks, dim=0),
+            token_indices=torch.cat(token_index_chunks, dim=0),
+        ),
+        path=path,
+    )
+
+
+def _load_activation_cache(path: Path) -> ActivationCache:
+    if path.suffix == ".parquet":
+        return _load_activation_cache_parquet(path)
     payload = torch.load(path, map_location="cpu")
     if isinstance(payload, torch.Tensor):
-        activations = payload
+        cache = ActivationCache(
+            activations=payload,
+            document_rows=[],
+            doc_indices=torch.empty(0, dtype=torch.long),
+            token_indices=torch.empty(0, dtype=torch.long),
+        )
     elif isinstance(payload, dict) and isinstance(payload.get("activations"), torch.Tensor):
-        activations = payload["activations"]
+        raw_documents = payload.get("activation_documents")
+        document_rows = (
+            [dict(row) for row in raw_documents if isinstance(row, dict)]
+            if isinstance(raw_documents, list)
+            else []
+        )
+        raw_doc_indices = payload.get("activation_doc_indices")
+        raw_token_indices = payload.get("activation_token_indices")
+        doc_indices = (
+            raw_doc_indices
+            if isinstance(raw_doc_indices, torch.Tensor)
+            else torch.empty(0, dtype=torch.long)
+        )
+        token_indices = (
+            raw_token_indices
+            if isinstance(raw_token_indices, torch.Tensor)
+            else torch.empty(0, dtype=torch.long)
+        )
+        cache = ActivationCache(
+            activations=payload["activations"],
+            document_rows=document_rows,
+            doc_indices=doc_indices,
+            token_indices=token_indices,
+        )
     else:
         raise ValueError(f"activation cache {path} does not contain an activation tensor")
-    if activations.ndim != 2:
-        raise ValueError(f"activation cache {path} must be a 2D tensor, got shape {tuple(activations.shape)}")
-    return activations.contiguous()
+    return _validate_activation_cache(cache, path=path)
 
 
 def _save_activation_cache(
     path: Path,
     *,
-    activations: torch.Tensor,
+    activation_cache: ActivationCache,
     args: argparse.Namespace,
     docs: list[SAEDoc],
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    activation_cache = _validate_activation_cache(activation_cache)
     torch.save(
         {
-            "activations": activations.half(),
+            "activations": activation_cache.activations.half(),
+            "cache_version": 2,
             "source": "modernbert_penultimate_hidden_states",
             "checkpoint": str(args.checkpoint),
             "dataset_parquet": str(args.dataset_parquet) if args.dataset_parquet else "",
@@ -1096,9 +1664,126 @@ def _save_activation_cache(
             "pad_to_max_length": bool(args.pad_to_max_length),
             "max_activations": args.max_activations,
             "documents": len(docs),
+            "activation_documents": activation_cache.document_rows,
+            "activation_doc_indices": activation_cache.doc_indices,
+            "activation_token_indices": activation_cache.token_indices,
         },
         path,
     )
+
+
+def _wandb_config(
+    args: argparse.Namespace,
+    *,
+    docs: list[SAEDoc],
+    cache_path: Path,
+    activation_vectors: int | None = None,
+    input_dim: int | None = None,
+) -> dict[str, Any]:
+    source_counts = Counter(doc.source for doc in docs)
+    label_counts = Counter(str(doc.label) for doc in docs)
+    return {
+        "checkpoint": str(args.checkpoint),
+        "output_dir": str(args.output_dir),
+        "load_sae": str(args.load_sae) if args.load_sae else "",
+        "dataset_parquet": str(args.dataset_parquet) if args.dataset_parquet else "",
+        "reference_jsonl": list(args.reference_jsonl),
+        "generation_jsonl": list(args.generation_jsonl),
+        "feature_text_mode": args.feature_text_mode,
+        "documents": len(docs),
+        "source_counts": dict(sorted(source_counts.items())),
+        "label_counts": dict(sorted(label_counts.items())),
+        "max_docs_per_source": args.max_docs_per_source,
+        "max_length": args.max_length,
+        "collect_batch_size": args.collect_batch_size,
+        "score_batch_size": args.score_batch_size,
+        "pad_to_max_length": bool(args.pad_to_max_length),
+        "max_activations": args.max_activations,
+        "activation_cache": str(cache_path),
+        "activation_vectors": activation_vectors,
+        "input_dim": input_dim,
+        "latent_dim": args.latent_dim,
+        "k": args.k,
+        "init_mode": getattr(args, "init_mode", "kaiming"),
+        "train_batch_size": args.train_batch_size,
+        "epochs": args.epochs,
+        "optimizer": getattr(args, "optimizer", "adamw"),
+        "learning_rate": args.learning_rate,
+        "muon_learning_rate": getattr(args, "muon_learning_rate", None),
+        "adamw_learning_rate": getattr(args, "adamw_learning_rate", None),
+        "muon_weight_decay": getattr(args, "muon_weight_decay", None),
+        "muon_momentum": getattr(args, "muon_momentum", None),
+        "muon_ns_steps": getattr(args, "muon_ns_steps", None),
+        "weight_decay": args.weight_decay,
+        "lr_schedule": args.lr_schedule,
+        "warmup_ratio": args.warmup_ratio,
+        "decay_ratio": args.decay_ratio,
+        "min_lr_ratio": args.min_lr_ratio,
+        "auxk_coefficient": getattr(args, "auxk_coefficient", 0.0),
+        "auxk": getattr(args, "auxk", 0),
+        "auxk_dead_steps": getattr(args, "auxk_dead_steps", 0),
+        "eval_fraction": args.eval_fraction,
+        "compile_sae": bool(args.compile_sae),
+        "compile_detector": bool(args.compile_detector),
+        "compile_mode": args.compile_mode,
+        "num_workers": args.num_workers,
+        "skip_latent_scoring": bool(args.skip_latent_scoring),
+        "target_class": list(args.target_class),
+        "score_top_latents": args.score_top_latents,
+        "max_examples_per_latent": args.max_examples_per_latent,
+        "seed": args.seed,
+    }
+
+
+def _init_sae_wandb(
+    args: argparse.Namespace,
+    *,
+    docs: list[SAEDoc],
+    cache_path: Path,
+    activation_vectors: int | None = None,
+    input_dim: int | None = None,
+):
+    return init_wandb(
+        project=args.wandb_project,
+        entity=args.wandb_entity,
+        run_name=args.wandb_run_name,
+        group=args.wandb_group,
+        job_type=args.wandb_job_type,
+        mode=args.wandb_mode,
+        tags=["stage4", "phase4", "sae", "batchtopk", *args.wandb_tag],
+        config=_wandb_config(
+            args,
+            docs=docs,
+            cache_path=cache_path,
+            activation_vectors=activation_vectors,
+            input_dim=input_dim,
+        ),
+    )
+
+
+def _log_sae_wandb_outputs(
+    wandb_run: Any,
+    *,
+    summary: dict[str, Any],
+    train_rows: list[dict[str, Any]],
+    eval_rows: list[dict[str, Any]],
+    latent_rows: list[dict[str, Any]],
+    example_rows: list[dict[str, Any]],
+) -> None:
+    wandb_run.log(
+        {
+            "summary/best_eval_mse": summary.get("best_eval_mse"),
+            "summary/final_train_mse": summary.get("final_train_mse"),
+            "summary/activation_vectors": summary.get("activation_vectors"),
+            "summary/ranked_latents": summary.get("ranked_latents"),
+            "summary/example_rows": summary.get("example_rows"),
+        }
+    )
+    log_summary_table(wandb_run, "phase4_batchtopk_sae_train_log", train_rows)
+    log_summary_table(wandb_run, "phase4_batchtopk_sae_eval_log", eval_rows)
+    log_summary_table(wandb_run, "phase4_batchtopk_sae_latents", latent_rows)
+    log_summary_table(wandb_run, "phase4_batchtopk_sae_examples", example_rows)
+    log_summary_table(wandb_run, "phase4_batchtopk_sae_summary", [summary])
 
 
 def run(args: argparse.Namespace) -> dict[str, Any]:
@@ -1116,72 +1801,103 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
     if args.load_sae is not None:
         sae, loaded_summary = _load_sae(args.load_sae, device=device)
-        if args.skip_latent_scoring:
-            latent_rows: list[dict[str, Any]] = []
-            example_rows: list[dict[str, Any]] = []
-        else:
-            model, tokenizer = _load_detector(args.checkpoint, device=device)
-            latent_rows, example_rows = score_latents(
-                model=model,
-                tokenizer=tokenizer,
-                sae=sae,
-                docs=docs,
-                args=args,
-                device=device,
+        wandb_run = _init_sae_wandb(
+            args,
+            docs=docs,
+            cache_path=Path(str(loaded_summary.get("activation_cache", cache_path))),
+            activation_vectors=loaded_summary.get("activation_vectors"),
+            input_dim=sae.input_dim,
+        )
+        try:
+            if args.skip_latent_scoring:
+                latent_rows: list[dict[str, Any]] = []
+                example_rows: list[dict[str, Any]] = []
+            else:
+                model, tokenizer = _load_detector(args.checkpoint, device=device)
+                latent_rows, example_rows = score_latents(
+                    model=model,
+                    tokenizer=tokenizer,
+                    sae=sae,
+                    docs=docs,
+                    args=args,
+                    device=device,
+                )
+            source_counts = Counter(doc.source for doc in docs)
+            label_counts = Counter(str(doc.label) for doc in docs)
+            summary = {
+                "checkpoint": str(args.checkpoint),
+                "device": str(device),
+                "cuda_name": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "",
+                "documents": len(docs),
+                "source_counts": dict(sorted(source_counts.items())),
+                "label_counts": dict(sorted(label_counts.items())),
+                "activation_cache": str(loaded_summary.get("activation_cache", cache_path)),
+                "activation_cache_reused": True,
+                "activation_vectors": loaded_summary.get("activation_vectors"),
+                "input_dim": sae.input_dim,
+                "pad_to_max_length": loaded_summary.get(
+                    "pad_to_max_length", bool(args.pad_to_max_length)
+                ),
+                "latent_dim": sae.latent_dim,
+                "k": sae.k,
+                "init_mode": loaded_summary.get("init_mode", sae.init_mode),
+                "epochs": loaded_summary.get("epochs"),
+                "optimizer": loaded_summary.get("optimizer"),
+                "learning_rate": loaded_summary.get("learning_rate"),
+                "muon_learning_rate": loaded_summary.get("muon_learning_rate"),
+                "adamw_learning_rate": loaded_summary.get("adamw_learning_rate"),
+                "muon_weight_decay": loaded_summary.get("muon_weight_decay"),
+                "muon_momentum": loaded_summary.get("muon_momentum"),
+                "muon_ns_steps": loaded_summary.get("muon_ns_steps"),
+                "weight_decay": loaded_summary.get("weight_decay"),
+                "lr_schedule": loaded_summary.get("lr_schedule"),
+                "warmup_ratio": loaded_summary.get("warmup_ratio"),
+                "decay_ratio": loaded_summary.get("decay_ratio"),
+                "min_lr_ratio": loaded_summary.get("min_lr_ratio"),
+                "warmup_steps": loaded_summary.get("warmup_steps", 0),
+                "stable_steps": loaded_summary.get("stable_steps", 0),
+                "decay_steps": loaded_summary.get("decay_steps", 0),
+                "auxk_coefficient": loaded_summary.get("auxk_coefficient"),
+                "auxk": loaded_summary.get("auxk"),
+                "auxk_dead_steps": loaded_summary.get("auxk_dead_steps"),
+                "eval_fraction": loaded_summary.get("eval_fraction"),
+                "final_train_mse": loaded_summary.get("final_train_mse"),
+                "best_eval_mse": loaded_summary.get("best_eval_mse"),
+                "compile_sae": loaded_summary.get("compile_sae"),
+                "compile_detector": bool(args.compile_detector),
+                "compile_sae_fallback": loaded_summary.get("compile_sae_fallback"),
+                "compile_detector_fallback": False,
+                "compile_mode": loaded_summary.get("compile_mode", args.compile_mode),
+                "skip_latent_scoring": bool(args.skip_latent_scoring),
+                "score_top_latents": args.score_top_latents,
+                "ranked_latents": len(latent_rows),
+                "example_rows": len(example_rows),
+                "loaded_sae": str(args.load_sae),
+                "loaded_sae_summary": loaded_summary,
+            }
+            _save_sae(output_dir / "phase4_batchtopk_sae.pt", sae, summary)
+            _write_csv(output_dir / "phase4_batchtopk_sae_train_log.csv", [])
+            _write_csv(output_dir / "phase4_batchtopk_sae_eval_log.csv", [])
+            _write_csv(output_dir / "phase4_batchtopk_sae_latents.csv", latent_rows)
+            _write_csv(output_dir / "phase4_batchtopk_sae_examples.csv", example_rows)
+            _write_json(output_dir / "phase4_batchtopk_sae_summary.json", summary)
+            _log_sae_wandb_outputs(
+                wandb_run,
+                summary=summary,
+                train_rows=[],
+                eval_rows=[],
+                latent_rows=latent_rows,
+                example_rows=example_rows,
             )
-        source_counts = Counter(doc.source for doc in docs)
-        label_counts = Counter(str(doc.label) for doc in docs)
-        summary = {
-            "checkpoint": str(args.checkpoint),
-            "device": str(device),
-            "cuda_name": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "",
-            "documents": len(docs),
-            "source_counts": dict(sorted(source_counts.items())),
-            "label_counts": dict(sorted(label_counts.items())),
-            "activation_cache": str(loaded_summary.get("activation_cache", cache_path)),
-            "activation_cache_reused": True,
-            "activation_vectors": loaded_summary.get("activation_vectors"),
-            "input_dim": sae.input_dim,
-            "pad_to_max_length": loaded_summary.get("pad_to_max_length", bool(args.pad_to_max_length)),
-            "latent_dim": sae.latent_dim,
-            "k": sae.k,
-            "epochs": loaded_summary.get("epochs"),
-            "learning_rate": loaded_summary.get("learning_rate"),
-            "weight_decay": loaded_summary.get("weight_decay"),
-            "lr_schedule": loaded_summary.get("lr_schedule"),
-            "warmup_ratio": loaded_summary.get("warmup_ratio"),
-            "decay_ratio": loaded_summary.get("decay_ratio"),
-            "min_lr_ratio": loaded_summary.get("min_lr_ratio"),
-            "warmup_steps": loaded_summary.get("warmup_steps", 0),
-            "stable_steps": loaded_summary.get("stable_steps", 0),
-            "decay_steps": loaded_summary.get("decay_steps", 0),
-            "eval_fraction": loaded_summary.get("eval_fraction"),
-            "final_train_mse": loaded_summary.get("final_train_mse"),
-            "best_eval_mse": loaded_summary.get("best_eval_mse"),
-            "compile_sae": loaded_summary.get("compile_sae"),
-            "compile_detector": bool(args.compile_detector),
-            "compile_sae_fallback": loaded_summary.get("compile_sae_fallback"),
-            "compile_detector_fallback": False,
-            "compile_mode": loaded_summary.get("compile_mode", args.compile_mode),
-            "skip_latent_scoring": bool(args.skip_latent_scoring),
-            "score_top_latents": args.score_top_latents,
-            "ranked_latents": len(latent_rows),
-            "example_rows": len(example_rows),
-            "loaded_sae": str(args.load_sae),
-            "loaded_sae_summary": loaded_summary,
-        }
-        _save_sae(output_dir / "phase4_batchtopk_sae.pt", sae, summary)
-        _write_csv(output_dir / "phase4_batchtopk_sae_train_log.csv", [])
-        _write_csv(output_dir / "phase4_batchtopk_sae_eval_log.csv", [])
-        _write_csv(output_dir / "phase4_batchtopk_sae_latents.csv", latent_rows)
-        _write_csv(output_dir / "phase4_batchtopk_sae_examples.csv", example_rows)
-        _write_json(output_dir / "phase4_batchtopk_sae_summary.json", summary)
-        return summary
+            return summary
+        finally:
+            wandb_run.finish()
 
     cache_reused = cache_path.exists() and not args.refresh_activation_cache
     if cache_reused:
         print(f"Loading activation cache from {cache_path}", flush=True)
-        activations = _load_activation_cache(cache_path)
+        activation_cache = _load_activation_cache(cache_path)
+        activations = activation_cache.activations
         detector_compile_fallback = False
     else:
         model, tokenizer = _load_detector(args.checkpoint, device=device)
@@ -1193,7 +1909,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         )
         detector_compile_fallback = False
         try:
-            activations = collect_penultimate_activations(
+            activation_cache = collect_penultimate_activation_cache(
                 model=collection_model,
                 tokenizer=tokenizer,
                 docs=docs,
@@ -1214,7 +1930,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             )
             _reset_torch_compile()
             detector_compile_fallback = True
-            activations = collect_penultimate_activations(
+            activation_cache = collect_penultimate_activation_cache(
                 model=model,
                 tokenizer=tokenizer,
                 docs=docs,
@@ -1225,70 +1941,105 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 progress_every=args.progress_every,
                 pad_to_max_length=args.pad_to_max_length,
             )
-        _save_activation_cache(cache_path, activations=activations, args=args, docs=docs)
-    sae, train_rows, eval_rows, train_summary = train_sae(activations=activations, args=args, device=device)
-    if args.skip_latent_scoring:
-        latent_rows: list[dict[str, Any]] = []
-        example_rows: list[dict[str, Any]] = []
-    else:
-        if model is None or tokenizer is None:
-            model, tokenizer = _load_detector(args.checkpoint, device=device)
-        latent_rows, example_rows = score_latents(
-            model=model,
-            tokenizer=tokenizer,
-            sae=sae,
-            docs=docs,
+        activations = activation_cache.activations
+        _save_activation_cache(cache_path, activation_cache=activation_cache, args=args, docs=docs)
+    wandb_run = _init_sae_wandb(
+        args,
+        docs=docs,
+        cache_path=cache_path,
+        activation_vectors=int(activations.shape[0]),
+        input_dim=int(activations.shape[1]),
+    )
+    try:
+        sae, train_rows, eval_rows, train_summary = train_sae(
+            activations=activations,
             args=args,
             device=device,
+            wandb_run=wandb_run,
         )
-    source_counts = Counter(doc.source for doc in docs)
-    label_counts = Counter(str(doc.label) for doc in docs)
-    best_eval_mse = min((float(row["eval_mse"]) for row in eval_rows), default=None)
-    final_train_mse = float(train_rows[-1]["mse"]) if train_rows else None
-    summary = {
-        "checkpoint": str(args.checkpoint),
-        "device": str(device),
-        "cuda_name": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "",
-        "documents": len(docs),
-        "source_counts": dict(sorted(source_counts.items())),
-        "label_counts": dict(sorted(label_counts.items())),
-        "activation_cache": str(cache_path),
-        "activation_cache_reused": cache_reused,
-        "activation_vectors": int(activations.shape[0]),
-        "input_dim": int(activations.shape[1]),
-        "pad_to_max_length": bool(args.pad_to_max_length),
-        "latent_dim": args.latent_dim,
-        "k": args.k,
-        "epochs": args.epochs,
-        "learning_rate": args.learning_rate,
-        "weight_decay": args.weight_decay,
-        "lr_schedule": args.lr_schedule,
-        "warmup_ratio": args.warmup_ratio,
-        "decay_ratio": args.decay_ratio,
-        "min_lr_ratio": args.min_lr_ratio,
-        "warmup_steps": train_summary.get("warmup_steps", 0),
-        "stable_steps": train_summary.get("stable_steps", 0),
-        "decay_steps": train_summary.get("decay_steps", 0),
-        "eval_fraction": args.eval_fraction,
-        "final_train_mse": final_train_mse,
-        "best_eval_mse": best_eval_mse,
-        "compile_sae": bool(args.compile_sae),
-        "compile_detector": bool(args.compile_detector),
-        "compile_sae_fallback": bool(train_summary["compile_sae_fallback"]),
-        "compile_detector_fallback": detector_compile_fallback,
-        "compile_mode": args.compile_mode,
-        "skip_latent_scoring": bool(args.skip_latent_scoring),
-        "score_top_latents": args.score_top_latents,
-        "ranked_latents": len(latent_rows),
-        "example_rows": len(example_rows),
-    }
-    _save_sae(output_dir / "phase4_batchtopk_sae.pt", sae, summary)
-    _write_csv(output_dir / "phase4_batchtopk_sae_train_log.csv", train_rows)
-    _write_csv(output_dir / "phase4_batchtopk_sae_eval_log.csv", eval_rows)
-    _write_csv(output_dir / "phase4_batchtopk_sae_latents.csv", latent_rows)
-    _write_csv(output_dir / "phase4_batchtopk_sae_examples.csv", example_rows)
-    _write_json(output_dir / "phase4_batchtopk_sae_summary.json", summary)
-    return summary
+        if args.skip_latent_scoring:
+            latent_rows: list[dict[str, Any]] = []
+            example_rows: list[dict[str, Any]] = []
+        else:
+            if model is None or tokenizer is None:
+                model, tokenizer = _load_detector(args.checkpoint, device=device)
+            latent_rows, example_rows = score_latents(
+                model=model,
+                tokenizer=tokenizer,
+                sae=sae,
+                docs=docs,
+                args=args,
+                device=device,
+            )
+        source_counts = Counter(doc.source for doc in docs)
+        label_counts = Counter(str(doc.label) for doc in docs)
+        best_eval_mse = min((float(row["eval_mse"]) for row in eval_rows), default=None)
+        final_train_mse = float(train_rows[-1]["mse"]) if train_rows else None
+        summary = {
+            "checkpoint": str(args.checkpoint),
+            "device": str(device),
+            "cuda_name": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "",
+            "documents": len(docs),
+            "source_counts": dict(sorted(source_counts.items())),
+            "label_counts": dict(sorted(label_counts.items())),
+            "activation_cache": str(cache_path),
+            "activation_cache_reused": cache_reused,
+            "activation_cache_has_provenance": activation_cache.has_provenance,
+            "activation_vectors": int(activations.shape[0]),
+            "input_dim": int(activations.shape[1]),
+            "pad_to_max_length": bool(args.pad_to_max_length),
+            "latent_dim": args.latent_dim,
+            "k": args.k,
+            "init_mode": getattr(args, "init_mode", "kaiming"),
+            "epochs": args.epochs,
+            "optimizer": train_summary.get("optimizer", getattr(args, "optimizer", "adamw")),
+            "learning_rate": args.learning_rate,
+            "muon_learning_rate": train_summary.get("muon_learning_rate"),
+            "adamw_learning_rate": train_summary.get("adamw_learning_rate"),
+            "muon_weight_decay": train_summary.get("muon_weight_decay"),
+            "muon_momentum": train_summary.get("muon_momentum"),
+            "muon_ns_steps": train_summary.get("muon_ns_steps"),
+            "weight_decay": args.weight_decay,
+            "lr_schedule": args.lr_schedule,
+            "warmup_ratio": args.warmup_ratio,
+            "decay_ratio": args.decay_ratio,
+            "min_lr_ratio": args.min_lr_ratio,
+            "warmup_steps": train_summary.get("warmup_steps", 0),
+            "stable_steps": train_summary.get("stable_steps", 0),
+            "decay_steps": train_summary.get("decay_steps", 0),
+            "auxk_coefficient": train_summary.get("auxk_coefficient"),
+            "auxk": train_summary.get("auxk"),
+            "auxk_dead_steps": train_summary.get("auxk_dead_steps"),
+            "eval_fraction": args.eval_fraction,
+            "final_train_mse": final_train_mse,
+            "best_eval_mse": best_eval_mse,
+            "compile_sae": bool(args.compile_sae),
+            "compile_detector": bool(args.compile_detector),
+            "compile_sae_fallback": bool(train_summary["compile_sae_fallback"]),
+            "compile_detector_fallback": detector_compile_fallback,
+            "compile_mode": args.compile_mode,
+            "skip_latent_scoring": bool(args.skip_latent_scoring),
+            "score_top_latents": args.score_top_latents,
+            "ranked_latents": len(latent_rows),
+            "example_rows": len(example_rows),
+        }
+        _save_sae(output_dir / "phase4_batchtopk_sae.pt", sae, summary)
+        _write_csv(output_dir / "phase4_batchtopk_sae_train_log.csv", train_rows)
+        _write_csv(output_dir / "phase4_batchtopk_sae_eval_log.csv", eval_rows)
+        _write_csv(output_dir / "phase4_batchtopk_sae_latents.csv", latent_rows)
+        _write_csv(output_dir / "phase4_batchtopk_sae_examples.csv", example_rows)
+        _write_json(output_dir / "phase4_batchtopk_sae_summary.json", summary)
+        _log_sae_wandb_outputs(
+            wandb_run,
+            summary=summary,
+            train_rows=train_rows,
+            eval_rows=eval_rows,
+            latent_rows=latent_rows,
+            example_rows=example_rows,
+        )
+        return summary
+    finally:
+        wandb_run.finish()
 
 
 def main() -> None:

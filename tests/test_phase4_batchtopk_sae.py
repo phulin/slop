@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from argparse import Namespace
+from typing import cast
 
 import pandas as pd
 import torch
@@ -9,12 +10,16 @@ from torch import nn
 
 from slop_sftdiv.cli.phase4_batchtopk_sae import (
     BatchTopKSAE,
+    SAEDoc,
     _load_jsonl_docs,
     _load_parquet_docs,
+    _load_activation_cache,
     _load_sae,
     _logits_with_sae,
+    _save_activation_cache,
     _save_sae,
     _target_class_ids,
+    collect_penultimate_activation_cache,
     train_sae,
 )
 
@@ -28,6 +33,23 @@ def test_batchtopk_sae_keeps_batch_level_average_k() -> None:
     assert int((sparse_codes > 0).sum()) == 8
     assert sparse_codes[0, 0] == 0
     assert sparse_codes[-1, -1] == dense_codes[-1, -1]
+
+
+def test_batchtopk_sae_keeps_exact_count_when_cutoff_ties() -> None:
+    sae = BatchTopKSAE(input_dim=3, latent_dim=6, k=2)
+    dense_codes = torch.ones(4, 6)
+
+    sparse_codes = sae.batch_topk(dense_codes)
+
+    assert int((sparse_codes > 0).sum()) == 8
+
+
+def test_batchtopk_sae_tied_init_copies_decoder_columns_to_encoder_rows() -> None:
+    sae = BatchTopKSAE(input_dim=4, latent_dim=8, k=2, init_mode="tied")
+
+    assert sae.init_mode == "tied"
+    assert torch.allclose(sae.encoder.weight, sae.decoder.weight.T)
+    assert torch.allclose(sae.decoder.weight.norm(dim=0), torch.ones(8), atol=1e-6)
 
 
 def test_load_jsonl_docs_strips_generation_chat_markers(tmp_path) -> None:
@@ -138,6 +160,90 @@ def test_load_parquet_docs_labels_human_and_llm_rows(tmp_path) -> None:
     assert labels == {"human-1": 0, "ai-1": 1}
 
 
+class _TinyActivationTokenizer:
+    def __call__(
+        self,
+        texts: list[str],
+        *,
+        padding: str | bool,
+        truncation: bool,
+        max_length: int,
+        return_tensors: str,
+        return_special_tokens_mask: bool,
+    ) -> dict[str, torch.Tensor]:
+        _ = (texts, padding, truncation, max_length, return_tensors, return_special_tokens_mask)
+        return {
+            "input_ids": torch.tensor([[1, 2, 3, 0], [4, 5, 0, 0]])[: len(texts)],
+            "attention_mask": torch.tensor([[1, 1, 1, 0], [1, 1, 0, 0]])[: len(texts)],
+            "special_tokens_mask": torch.tensor([[1, 0, 0, 1], [1, 0, 1, 1]])[: len(texts)],
+        }
+
+
+class _PenultimateHiddenStateModel(nn.Module):
+    def forward(self, input_ids: torch.Tensor, attention_mask: torch.Tensor, **kwargs):  # noqa: ANN001
+        _ = (attention_mask, kwargs)
+        early = torch.zeros((*input_ids.shape, 2), dtype=torch.float32)
+        penultimate = torch.stack([input_ids.float(), input_ids.float() + 10.0], dim=-1)
+        final = penultimate + 100.0
+        return Namespace(hidden_states=(early, penultimate, final))
+
+
+def test_collect_penultimate_activation_cache_tracks_document_and_token_indexes(tmp_path) -> None:
+    docs = [
+        SAEDoc(source="src-a", doc_id="doc-a", text="alpha", label=0),
+        SAEDoc(source="src-b", doc_id="doc-b", text="beta", label=1),
+    ]
+
+    cache = collect_penultimate_activation_cache(
+        model=_PenultimateHiddenStateModel(),
+        tokenizer=_TinyActivationTokenizer(),
+        docs=docs,
+        max_length=4,
+        batch_size=2,
+        max_activations=3,
+        device=torch.device("cpu"),
+        progress_every=0,
+        pad_to_max_length=True,
+    )
+
+    assert torch.equal(cache.activations, torch.tensor([[2.0, 12.0], [3.0, 13.0], [5.0, 15.0]]))
+    assert cache.doc_indices.tolist() == [0, 0, 1]
+    assert cache.token_indices.tolist() == [1, 2, 1]
+    assert cache.document_rows == [
+        {"document_index": 0, "source": "src-a", "doc_id": "doc-a", "label": 0},
+        {"document_index": 1, "source": "src-b", "doc_id": "doc-b", "label": 1},
+    ]
+
+    path = tmp_path / "activation_cache.pt"
+    args = Namespace(
+        checkpoint=tmp_path / "checkpoint",
+        dataset_parquet=None,
+        reference_jsonl=["src-a=refs.jsonl"],
+        generation_jsonl=["src-b=gens.jsonl"],
+        max_length=4,
+        pad_to_max_length=True,
+        max_activations=3,
+    )
+    _save_activation_cache(path, activation_cache=cache, args=args, docs=docs)
+    loaded = _load_activation_cache(path)
+
+    assert torch.allclose(loaded.activations.float(), cache.activations)
+    assert loaded.doc_indices.tolist() == [0, 0, 1]
+    assert loaded.token_indices.tolist() == [1, 2, 1]
+    assert loaded.document_rows == cache.document_rows
+    assert loaded.has_provenance is True
+
+
+def test_load_activation_cache_accepts_legacy_tensor_payload(tmp_path) -> None:
+    path = tmp_path / "legacy_activation_cache.pt"
+    torch.save(torch.ones(2, 3), path)
+
+    cache = _load_activation_cache(path)
+
+    assert torch.equal(cache.activations, torch.ones(2, 3))
+    assert cache.has_provenance is False
+
+
 class _DummyLayer(nn.Module):
     def forward(self, hidden_states, attention_mask=None):  # noqa: ANN001
         return hidden_states
@@ -156,7 +262,8 @@ class _DummyModel(nn.Module):
 
     def forward(self, input_ids, attention_mask=None):  # noqa: ANN001
         hidden = self.embedding(input_ids)
-        hidden = self.model.layers[-1](hidden_states=hidden, attention_mask=attention_mask)
+        layers = cast(nn.ModuleList, self.model.layers)
+        hidden = layers[-1](hidden_states=hidden, attention_mask=attention_mask)
         pooled = hidden[:, 0, :]
         return Namespace(logits=self.classifier(pooled))
 
