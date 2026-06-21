@@ -51,24 +51,44 @@ async function persistLatentLabel(latentId, label) {
   return response.json();
 }
 
-function modelName(value) {
+function canonicalModelId(value) {
   const text = String(value ?? "");
+  const names = {
+    "accounts/fireworks/models/glm-5p2": "glm-5.2",
+    "zai-org/GLM-5.2-FP8": "glm-5.2",
+    "neuralwatt/glm-5.2-short": "glm-5.2",
+    "qwen3.6-35b-fast": "qwen3.6-35b",
+  };
+  return names[text] ?? text;
+}
+
+function modelName(value) {
+  const text = canonicalModelId(value);
   const names = {
     human: "Human",
     "gpt-5.5": "GPT-5.5",
     "gemini-3.5-flash": "Gemini 3.5 Flash",
-    "accounts/fireworks/models/glm-5p2": "GLM-5.2",
+    "glm-5.2": "GLM-5.2",
+    "qwen3.6-35b": "Qwen3.6 35B",
   };
-  return names[text] ?? text.replace(/^accounts\/fireworks\/models\//, "").replaceAll("-", " ");
+  return (
+    names[text] ??
+    text
+      .replace(/^accounts\/fireworks\/models\//, "")
+      .replace(/^zai-org\//, "")
+      .replace(/^neuralwatt\//, "")
+      .replaceAll("-", " ")
+  );
 }
 
 function routeModelName(value) {
-  const text = String(value ?? "");
+  const text = canonicalModelId(value);
   const names = {
     human: "human",
     "gpt-5.5": "gpt-5.5",
     "gemini-3.5-flash": "gemini-3.5-flash",
-    "accounts/fireworks/models/glm-5p2": "glm-5.2",
+    "glm-5.2": "glm-5.2",
+    "qwen3.6-35b": "qwen3.6-35b",
   };
   return names[text] ?? encodeURIComponent(text);
 }
@@ -79,9 +99,10 @@ function modelFromRoute(value) {
     human: "human",
     "gpt-5.5": "gpt-5.5",
     "gemini-3.5-flash": "gemini-3.5-flash",
-    "glm-5.2": "accounts/fireworks/models/glm-5p2",
+    "glm-5.2": "glm-5.2",
+    "qwen3.6-35b": "qwen3.6-35b",
   };
-  return names[text] ?? text;
+  return canonicalModelId(names[text] ?? text);
 }
 
 function shortDocId(value) {
@@ -101,8 +122,9 @@ function modelSortKey(model) {
     human: 0,
     "gpt-5.5": 1,
     "gemini-3.5-flash": 2,
-    "accounts/fireworks/models/glm-5p2": 3,
-  }[model] ?? 99;
+    "glm-5.2": 3,
+    "qwen3.6-35b": 4,
+  }[canonicalModelId(model)] ?? 99;
 }
 
 function activationAt(activationMap, tokenIndex) {
@@ -132,7 +154,7 @@ function routeSelectionFromPath(pathname, loadedIndex) {
   const turnId = decodeURIComponent(parts[1]);
   const model = modelFromRoute(parts[2]);
   const promptDocs = loadedIndex.promptGroups?.[turnId] ?? [];
-  const documentId = promptDocs.find((docId) => loadedIndex.documents?.[docId]?.model === model);
+  const documentId = promptDocs.find((docId) => canonicalModelId(loadedIndex.documents?.[docId]?.model) === model);
   if (!documentId || !loadedIndex.latentDocs?.[latentId]) return null;
   const example = loadedIndex.latentDocs[latentId].find((row) => {
     return loadedIndex.documents?.[row.doc_id]?.turn_id === turnId;
@@ -311,7 +333,7 @@ function App() {
   const latentExamples = useMemo(() => {
     const examples = indexData?.latentDocs?.[String(selectedLatent)] ?? [];
     return examples
-      .filter((example) => source === "all" || example.source === source)
+      .filter((example) => source === "all" || canonicalModelId(example.source) === source)
       .sort((a, b) => numeric(a.example_rank) - numeric(b.example_rank));
   }, [indexData, selectedLatent, source]);
 
@@ -327,7 +349,7 @@ function App() {
 
   const sources = useMemo(() => {
     const allExamples = Object.values(indexData?.latentDocs ?? {}).flat();
-    return ["all", ...Array.from(new Set(allExamples.map((example) => example.source))).sort()];
+    return ["all", ...Array.from(new Set(allExamples.map((example) => canonicalModelId(example.source)))).sort()];
   }, [indexData]);
 
   const filteredLatents = useMemo(() => {
@@ -392,7 +414,7 @@ function App() {
           rows.push({
             docId,
             doc,
-            model: doc?.model ?? meta.model,
+            model: canonicalModelId(doc?.model ?? meta.model),
             maxActivation: numeric(maxSummary.max_activation),
             maxTokenIndex: numeric(maxSummary.max_token_index, -1),
             scoreImpact: causalImpactForDoc(indexData, selectedLatentId, docId),
