@@ -1619,6 +1619,21 @@ def _strip_markdown_formatting(text: str) -> str:
     return cleaned.strip()
 
 
+def _canonical_generated_model_id(model: Any) -> str:
+    text = str(model or "").strip()
+    aliases = {
+        "accounts/fireworks/models/glm-5p2": "glm-5.2",
+        "zai-org/GLM-5.2-FP8": "glm-5.2",
+        "neuralwatt/glm-5.2-short": "glm-5.2",
+        "glm-5.2": "glm-5.2",
+        "glm-5.2-short": "glm-5.2",
+        "glm-5.2-fp8": "glm-5.2",
+        "qwen3.6-35b-fast": "qwen3.6-35b",
+        "qwen3.6-35b": "qwen3.6-35b",
+    }
+    return aliases.get(text, text)
+
+
 def _collect_generated_rows(output_dir: Path) -> tuple[pd.DataFrame, dict[str, Any]]:
     manifest = pd.read_parquet(output_dir / "request_manifest.parquet")
     turns = pd.read_parquet(output_dir / "assistant_turns.parquet")
@@ -1651,7 +1666,7 @@ def _collect_generated_rows(output_dir: Path) -> tuple[pd.DataFrame, dict[str, A
                 "custom_id": custom_id,
                 "turn_id": meta["turn_id"],
                 "provider": meta["provider"],
-                "model": meta["model"],
+                "model": _canonical_generated_model_id(meta["model"]),
                 "split": meta["split"],
                 "source_row_index": meta["source_row_index"],
                 "prompt_id": meta["prompt_id"],
@@ -1741,7 +1756,7 @@ def _collect_generated_rows(output_dir: Path) -> tuple[pd.DataFrame, dict[str, A
             append_generated(custom_id, text, batch_id=str(row.get("request_id") or ""))
 
     for path in sorted(results_dir.glob("neuralwatt_*.jsonl")):
-        if path.name.endswith(".summary.json"):
+        if path.name.endswith(".summary.json") or "_probe" in path.name:
             continue
         for row in _iter_jsonl_rows(path):
             parse_counts["neuralwatt_rows"] += 1
@@ -1757,15 +1772,39 @@ def _collect_generated_rows(output_dir: Path) -> tuple[pd.DataFrame, dict[str, A
                 parse_counts["neuralwatt_empty_rows"] += 1
                 continue
             turn_id = str(row.get("turn_id") or "")
-            meta = manifest_by_turn_provider.get((turn_id, "fireworks"))
-            if not meta:
+            turn = turn_by_id.get(turn_id)
+            if not turn:
                 parse_counts["neuralwatt_unknown_turn_id"] += 1
                 continue
-            append_generated_from_meta(
-                meta,
-                custom_id=str(meta["custom_id"]),
-                text=text,
-                batch_id=str(row.get("id") or ""),
+            text = _strip_markdown_formatting(text)
+            if not text:
+                parse_counts["empty_after_markdown_strip"] += 1
+                continue
+            model = _canonical_generated_model_id(row.get("model") or "neuralwatt")
+            custom_id = f"neuralwatt_{re.sub(r'[^A-Za-z0-9]+', '_', model).strip('_')}_{turn_id}"
+            rows.append(
+                {
+                    "custom_id": custom_id,
+                    "turn_id": turn_id,
+                    "provider": "neuralwatt",
+                    "model": model,
+                    "split": turn["split"],
+                    "source_row_index": turn["source_row_index"],
+                    "prompt_id": turn["prompt_id"],
+                    "category": turn["category"],
+                    "assistant_message_index": turn["assistant_message_index"],
+                    "assistant_turn_ordinal": turn["assistant_turn_ordinal"],
+                    "uses_transcript_prompt": turn["uses_transcript_prompt"],
+                    "batch_id": str(row.get("id") or ""),
+                    "generated_text": text,
+                    "generated_word_count": len(text.split()),
+                    "generated_char_count": len(text),
+                    "generated_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
+                    "target_text": turn["target_text"],
+                    "target_word_count": turn["target_word_count"],
+                    "target_char_count": turn["target_char_count"],
+                    "target_sha256": turn["target_sha256"],
+                }
             )
 
     generated = pd.DataFrame(rows)
