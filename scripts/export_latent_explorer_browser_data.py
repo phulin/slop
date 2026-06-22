@@ -265,6 +265,7 @@ def export_browser_data(args: argparse.Namespace) -> dict[str, Any]:
         "gpt-5.5": 1,
         "gemini-3.5-flash": 2,
         "accounts/fireworks/models/glm-5p2": 3,
+        "qwen3.6-35b": 4,
     }
     doc_records: list[dict[str, Any]] = []
     documents: dict[str, dict[str, Any]] = {}

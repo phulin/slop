@@ -146,6 +146,11 @@ self.onmessage = async (event) => {
   try {
     let result;
     if (type === "init") {
+      docRowCache.clear();
+      allDocRowsPromise = null;
+      sparseRowCache.clear();
+      activationCache.clear();
+      promptActivationCache.clear();
       docFile = await openFile(payload.docTokensUrl);
       sparseFile = await openFile(payload.sparseTopkUrl);
       const rows = await preloadDocRows();

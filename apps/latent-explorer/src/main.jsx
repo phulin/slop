@@ -1,6 +1,14 @@
 import React, { startTransition, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { BookOpenText, FileText, Flame, MessageSquareText, Search, SlidersHorizontal } from "lucide-react";
+import {
+  BookOpenText,
+  FileText,
+  Flame,
+  LoaderCircle,
+  MessageSquareText,
+  Search,
+  SlidersHorizontal,
+} from "lucide-react";
 import "./styles.css";
 
 function numeric(value, fallback = 0) {
@@ -10,7 +18,31 @@ function numeric(value, fallback = 0) {
 }
 
 const LATENT_LABELS_STORAGE_KEY = "slop.latentExplorer.latentLabels.v1";
+const SELECTED_RUN_STORAGE_KEY = "slop.latentExplorer.selectedRun.v1";
 const LATENT_LABELS_API = "/api/latent-labels";
+
+function normalizeManifest(payload) {
+  const fallbackRun = {
+    id: payload.id ?? "default",
+    name: payload.name ?? "SAE run",
+    browserIndexJson: payload.browserIndexJson,
+    docTokensParquet: payload.docTokensParquet,
+    sparseTopkParquet: payload.sparseTopkParquet,
+  };
+  const rawRuns = Array.isArray(payload.runs) && payload.runs.length ? payload.runs : [fallbackRun];
+  const runs = rawRuns.map((run, index) => ({
+    ...fallbackRun,
+    ...run,
+    id: String(run.id ?? `run-${index + 1}`),
+    name: String(run.name ?? run.id ?? `Run ${index + 1}`),
+  }));
+  const defaultRunId = String(payload.defaultRunId ?? payload.activeRunId ?? runs[0]?.id ?? "");
+  return { ...payload, runs, defaultRunId };
+}
+
+function latentLabelKey(runId, latentId) {
+  return `${runId || "default"}:${latentId}`;
+}
 
 function loadCachedLatentLabels() {
   try {
@@ -185,7 +217,9 @@ function causalImpactForDoc(indexData, latentId, docId) {
 
 function App() {
   const [manifest, setManifest] = useState(null);
+  const [selectedRunId, setSelectedRunId] = useState("");
   const [indexData, setIndexData] = useState(null);
+  const [workerOnline, setWorkerOnline] = useState(false);
   const [workerReady, setWorkerReady] = useState(false);
   const [selectedLatent, setSelectedLatent] = useState(null);
   const [selectedExampleDocId, setSelectedExampleDocId] = useState(null);
@@ -200,13 +234,19 @@ function App() {
   const [loadingGeneration, setLoadingGeneration] = useState(false);
   const [loadingActivations, setLoadingActivations] = useState(false);
   const [loadingDocs, setLoadingDocs] = useState(true);
+  const [loadStage, setLoadStage] = useState("Starting");
   const [loadError, setLoadError] = useState("");
   const workerRef = useRef(null);
   const requestIdRef = useRef(0);
+  const dataLoadIdRef = useRef(0);
   const pendingRequestsRef = useRef(new Map());
   const prefetchRequestedRef = useRef(new Set());
   const pendingLabelSavesRef = useRef(new Map());
   const labelSaveTimeoutRef = useRef(null);
+  const runs = manifest?.runs ?? [];
+  const activeRun = useMemo(() => {
+    return runs.find((run) => run.id === selectedRunId) ?? runs[0] ?? null;
+  }, [runs, selectedRunId]);
 
   function workerCall(type, payload) {
     const worker = workerRef.current;
@@ -271,6 +311,7 @@ function App() {
   useEffect(() => {
     const worker = new Worker(new URL("./parquetWorker.js", import.meta.url), { type: "module" });
     workerRef.current = worker;
+    setWorkerOnline(true);
     worker.onmessage = (event) => {
       const { id, result, error } = event.data;
       const pending = pendingRequestsRef.current.get(id);
@@ -279,39 +320,106 @@ function App() {
       if (error) pending.reject(new Error(error));
       else pending.resolve(result);
     };
-    async function load() {
-      const loadedManifest = await fetch("/data/manifest.json").then((response) => response.json());
-      const loadedIndex = await fetch(loadedManifest.browserIndexJson).then((response) => response.json());
-      await workerCall("init", {
-        docTokensUrl: loadedManifest.docTokensParquet ?? loadedIndex.docTokensParquet,
-        sparseTopkUrl: loadedIndex.sparseTopkParquet ?? loadedManifest.sparseTopkParquet,
-      });
-      startTransition(() => {
-        setManifest(loadedManifest);
-        setIndexData(loadedIndex);
-        setWorkerReady(true);
-        setLoadingDocs(false);
-      });
-      const routeSelection = routeSelectionFromPath(window.location.pathname, loadedIndex);
-      const firstLatent = routeSelection?.latentId ?? String(loadedIndex.latents?.[0]?.latent_id ?? "");
-      startTransition(() => {
-        setSelectedLatent(firstLatent);
-        setSelectedExampleDocId(routeSelection?.exampleDocId ?? loadedIndex.latentDocs?.[firstLatent]?.[0]?.doc_id ?? null);
-        setSelectedDocumentId(routeSelection?.documentId ?? null);
-      });
-    }
-    load().catch((error) => {
-      console.error(error);
-      setLoadError(String(error));
-      setLoadingDocs(false);
-    });
     return () => {
+      setWorkerOnline(false);
       worker.terminate();
       workerRef.current = null;
       pendingRequestsRef.current.forEach(({ reject }) => reject(new Error("Parquet worker terminated")));
       pendingRequestsRef.current.clear();
     };
   }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function loadManifest() {
+      try {
+        setLoadStage("Loading manifest");
+        const loadedManifest = normalizeManifest(
+          await fetch("/data/manifest.json").then((response) => response.json()),
+        );
+        if (cancelled) return;
+        const cachedRunId = window.localStorage.getItem(SELECTED_RUN_STORAGE_KEY);
+        const initialRunId = loadedManifest.runs.some((run) => run.id === cachedRunId)
+          ? cachedRunId
+          : loadedManifest.defaultRunId;
+        startTransition(() => {
+          setManifest(loadedManifest);
+          setSelectedRunId(initialRunId);
+        });
+      } catch (error) {
+        console.error(error);
+        if (!cancelled) {
+          setLoadError(String(error));
+          setLoadingDocs(false);
+        }
+      }
+    }
+    loadManifest();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!workerOnline || !activeRun) return;
+    let cancelled = false;
+    const loadId = dataLoadIdRef.current + 1;
+    dataLoadIdRef.current = loadId;
+    startTransition(() => {
+      setIndexData(null);
+      setWorkerReady(false);
+      setSelectedLatent(null);
+      setSelectedExampleDocId(null);
+      setSelectedDocumentId(null);
+      setLoadedDocs({});
+      setDocActivations({});
+      setGenerationRows([]);
+      setHoveredToken(null);
+      setSource("all");
+      setLoadingDocs(true);
+      setLoadingGeneration(false);
+      setLoadingActivations(false);
+      setLoadError("");
+    });
+    prefetchRequestedRef.current.clear();
+    try {
+      window.localStorage.setItem(SELECTED_RUN_STORAGE_KEY, activeRun.id);
+    } catch (_error) {
+      // Ignore storage errors; run selection should still work.
+    }
+    async function loadRun() {
+      setLoadStage("Loading index");
+      const loadedIndex = await fetch(activeRun.browserIndexJson).then((response) => response.json());
+      if (cancelled || dataLoadIdRef.current !== loadId) return;
+      setLoadStage("Opening parquet roots");
+      await workerCall("init", {
+        docTokensUrl: activeRun.docTokensParquet ?? loadedIndex.docTokensParquet,
+        sparseTopkUrl: loadedIndex.sparseTopkParquet ?? activeRun.sparseTopkParquet,
+      });
+      if (cancelled || dataLoadIdRef.current !== loadId) return;
+      setLoadStage("Ready");
+      const routeSelection = routeSelectionFromPath(window.location.pathname, loadedIndex);
+      const firstLatent = routeSelection?.latentId ?? String(loadedIndex.latents?.[0]?.latent_id ?? "");
+      startTransition(() => {
+        setIndexData(loadedIndex);
+        setWorkerReady(true);
+        setLoadingDocs(false);
+        setSelectedLatent(firstLatent);
+        setSelectedExampleDocId(routeSelection?.exampleDocId ?? loadedIndex.latentDocs?.[firstLatent]?.[0]?.doc_id ?? null);
+        setSelectedDocumentId(routeSelection?.documentId ?? null);
+      });
+    }
+    loadRun().catch((error) => {
+      console.error(error);
+      if (!cancelled && dataLoadIdRef.current === loadId) {
+        setLoadError(String(error));
+        setLoadingDocs(false);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [activeRun, workerOnline]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const latents = useMemo(() => {
     return (indexData?.latents ?? [])
@@ -364,6 +472,8 @@ function App() {
     });
   }, [latents, query]);
 
+  const rootLoading = loadingDocs && !indexData;
+  const rootLoadFailed = Boolean(loadError) && !indexData;
   const activeLatent = latents.find((latent) => latent.latent_id === String(selectedLatent));
   const activeExample = latentExamples.find((example) => example.doc_id === selectedExampleDocId) ?? latentExamples[0];
   const selectedLatentId = numeric(selectedLatent);
@@ -589,16 +699,22 @@ function App() {
   );
   const inspectedToken = hoveredToken ?? peakToken;
 
+  function labelForLatent(latentId) {
+    const key = latentLabelKey(selectedRunId, latentId);
+    return latentLabels[key] ?? latentLabels[String(latentId)] ?? "";
+  }
+
   function updateLatentLabel(latentId, value) {
     const label = value.trimStart();
+    const key = latentLabelKey(selectedRunId, latentId);
     setLatentLabels((previous) => {
       const next = { ...previous };
-      if (label.trim()) next[String(latentId)] = label;
-      else delete next[String(latentId)];
+      if (label.trim()) next[key] = label;
+      else delete next[key];
       cacheLatentLabels(next);
       return next;
     });
-    scheduleLabelSave(latentId, label);
+    scheduleLabelSave(key, label);
   }
 
   return (
@@ -608,9 +724,24 @@ function App() {
           <Flame size={22} />
           <div>
             <h1>Latent Explorer</h1>
-            <p>{manifest?.name ?? "Loading artifacts"}</p>
+            <p>{activeRun?.name ?? manifest?.name ?? "Loading artifacts"}</p>
           </div>
         </div>
+
+        <label className="runSelect">
+          <span>SAE</span>
+          <select
+            value={selectedRunId}
+            onChange={(event) => setSelectedRunId(event.target.value)}
+            disabled={!runs.length}
+          >
+            {runs.map((run) => (
+              <option key={run.id} value={run.id}>
+                {run.name}
+              </option>
+            ))}
+          </select>
+        </label>
 
         <label className="search">
           <Search size={16} />
@@ -618,11 +749,21 @@ function App() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search latents"
+            disabled={rootLoading || rootLoadFailed}
           />
         </label>
 
         <div className="latentList">
-          {filteredLatents.slice(0, 120).map((latent) => (
+          {rootLoading ? (
+            Array.from({ length: 12 }, (_, index) => (
+              <div className="latentSkeleton" key={index}>
+                <span />
+                <span />
+                <span />
+              </div>
+            ))
+          ) : null}
+          {!rootLoading && filteredLatents.slice(0, 120).map((latent) => (
             <button
               key={latent.latent_id}
               className={latent.latent_id === String(selectedLatent) ? "latent active" : "latent"}
@@ -637,8 +778,8 @@ function App() {
               <span className="rank">#{latent.rank}</span>
               <span className="latentTitle">
                 <span className="latentId">L{latent.latent_id}</span>
-                {latentLabels[latent.latent_id] ? (
-                  <span className="latentLabel">{latentLabels[latent.latent_id]}</span>
+                {labelForLatent(latent.latent_id) ? (
+                  <span className="latentLabel">{labelForLatent(latent.latent_id)}</span>
                 ) : null}
               </span>
               <span className="score">
@@ -657,7 +798,7 @@ function App() {
               {activeLatent ? (
                 <input
                   className="latentLabelInput"
-                  value={latentLabels[activeLatent.latent_id] ?? ""}
+                  value={labelForLatent(activeLatent.latent_id)}
                   onChange={(event) => updateLatentLabel(activeLatent.latent_id, event.target.value)}
                   placeholder="Label"
                 />
@@ -672,7 +813,11 @@ function App() {
           </div>
           <label className="sourceSelect">
             <SlidersHorizontal size={16} />
-            <select value={source} onChange={(event) => setSource(event.target.value)}>
+            <select
+              value={source}
+              onChange={(event) => setSource(event.target.value)}
+              disabled={rootLoading || rootLoadFailed}
+            >
               {sources.map((item) => (
                 <option key={item} value={item}>
                   {item === "all" ? "all" : modelName(item)}
@@ -682,6 +827,17 @@ function App() {
           </label>
         </header>
 
+        {rootLoading || rootLoadFailed ? (
+          <div className="rootState">
+            <div className={rootLoadFailed ? "rootStatePanel error" : "rootStatePanel"}>
+              {rootLoadFailed ? <FileText size={24} /> : <LoaderCircle className="spin" size={24} />}
+              <div>
+                <h3>{rootLoadFailed ? "Data Load Failed" : "Loading Root Data"}</h3>
+                <p>{rootLoadFailed ? loadError : `${activeRun?.name ?? "Selected SAE"} · ${loadStage}`}</p>
+              </div>
+            </div>
+          </div>
+        ) : (
         <div className="grid">
           <section className="examples">
             <div className="sectionTitle">
@@ -777,6 +933,7 @@ function App() {
             </div>
           </section>
         </div>
+        )}
       </section>
     </main>
   );

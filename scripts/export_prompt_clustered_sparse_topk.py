@@ -17,6 +17,7 @@ MODEL_ORDER = {
     "gpt-5.5": 1,
     "gemini-3.5-flash": 2,
     "accounts/fireworks/models/glm-5p2": 3,
+    "qwen3.6-35b": 4,
 }
 
 
@@ -66,7 +67,12 @@ def _ordered_docs(doc_rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
             ),
         )
         for row in docs:
-            token_count = len(row.get("token_indices") or [])
+            sparse_start = row.get("sparse_row_start")
+            sparse_end = row.get("sparse_row_end")
+            if sparse_start is not None and sparse_end is not None:
+                token_count = int(sparse_end) - int(sparse_start)
+            else:
+                token_count = len(row.get("token_indices") or [])
             start = cursor
             end = start + token_count
             doc_id = str(row["doc_id"])
