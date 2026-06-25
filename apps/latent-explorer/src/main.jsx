@@ -1,9 +1,13 @@
 import React, { startTransition, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
+  Activity,
+  BarChart3,
   BookOpenText,
   FileText,
   Flame,
+  Gauge,
+  ListTree,
   LoaderCircle,
   MessageSquareText,
   Search,
@@ -15,6 +19,16 @@ function numeric(value, fallback = 0) {
   if (typeof value === "bigint") return Number(value);
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
+}
+
+function formatNumber(value, digits = 3, fallback = "-") {
+  const parsed = numeric(value, Number.NaN);
+  return Number.isFinite(parsed) ? parsed.toFixed(digits) : fallback;
+}
+
+function formatPercent(value, digits = 1, fallback = "-") {
+  const parsed = numeric(value, Number.NaN);
+  return Number.isFinite(parsed) ? `${(parsed * 100).toFixed(digits)}%` : fallback;
 }
 
 const LATENT_LABELS_STORAGE_KEY = "slop.latentExplorer.latentLabels.v1";
@@ -804,6 +818,75 @@ function App() {
   );
   const inspectedToken = hoveredToken ?? peakToken;
   const displayMetricLabel = tokenDisplayMode === "positive-delta" ? "delta" : "activation";
+  const activationValues = useMemo(
+    () => latentExamples
+      .map((example) => numeric(example.peak_activation ?? example.activation, Number.NaN))
+      .filter((value) => Number.isFinite(value) && value > 0),
+    [latentExamples],
+  );
+  const activationHistogram = useMemo(() => {
+    if (!activationValues.length) return [];
+    const maxValue = Math.max(...activationValues);
+    const binCount = 16;
+    const counts = Array.from({ length: binCount }, () => 0);
+    for (const value of activationValues) {
+      const index = Math.min(binCount - 1, Math.floor((value / Math.max(maxValue, 1e-9)) * binCount));
+      counts[index] += 1;
+    }
+    const maxCount = Math.max(...counts, 1);
+    return counts.map((count, index) => ({
+      index,
+      count,
+      height: `${Math.max(3, (count / maxCount) * 100)}%`,
+    }));
+  }, [activationValues]);
+  const activationIntervals = useMemo(() => {
+    const ranked = [...latentExamples]
+      .filter((example) => numeric(example.peak_activation ?? example.activation) > 0)
+      .sort((a, b) => numeric(b.peak_activation ?? b.activation) - numeric(a.peak_activation ?? a.activation));
+    if (!ranked.length) return [];
+    const intervals = [];
+    const intervalCount = Math.min(10, ranked.length);
+    for (let index = 0; index < intervalCount; index += 1) {
+      const rowIndex = Math.round((index / Math.max(1, intervalCount - 1)) * (ranked.length - 1));
+      intervals.push({
+        interval: index,
+        example: ranked[rowIndex],
+      });
+    }
+    return intervals;
+  }, [latentExamples]);
+  const featureStats = useMemo(() => {
+    const stats = [
+      ["rank", activeLatent?.rank ?? "-"],
+      ["max impact", formatNumber(activeLatent?.causal_max_abs_target_logit_change)],
+      ["mean impact", formatNumber(activeLatent?.causal_mean_abs_target_logit_change)],
+      ["AI mass", formatPercent(activeLatent?.ai_mass_share)],
+    ];
+    if (activeLatent?.activation_difference_mean_abs !== undefined) {
+      stats.push(["mean act diff", formatNumber(activeLatent.activation_difference_mean_abs)]);
+    }
+    if (activeLatent?.activation_difference_max_abs !== undefined) {
+      stats.push(["max act diff", formatNumber(activeLatent.activation_difference_max_abs)]);
+    }
+    return stats;
+  }, [activeLatent]);
+  const selectedExampleContrast = useMemo(() => {
+    if (!activeExample) return null;
+    const humanPeak = numeric(activeExample.human_peak_activation, Number.NaN);
+    const aiPeak = numeric(activeExample.max_ai_peak_activation, Number.NaN);
+    const diff = numeric(activeExample.activation_difference, Number.NaN);
+    if (!Number.isFinite(humanPeak) && !Number.isFinite(aiPeak) && !Number.isFinite(diff)) return null;
+    return { humanPeak, aiPeak, diff };
+  }, [activeExample]);
+  const generationEffectRows = useMemo(
+    () => generationRows.map((row) => ({
+      ...row,
+      score: row.scoreImpact,
+      activation: row.maxActivation,
+    })),
+    [generationRows],
+  );
 
   function labelForLatent(latentId) {
     const key = latentLabelKey(selectedRunId, latentId);
@@ -976,6 +1059,107 @@ function App() {
             </div>
           </div>
         ) : (
+        <>
+        <div className="featureCard">
+          <section className="featureIntro">
+            <div className="featureNumber">
+              <span>L{selectedLatent ?? "-"}</span>
+              <strong>{labelForLatent(selectedLatent) || "Unlabeled feature"}</strong>
+            </div>
+            <div className="featureStats">
+              {featureStats.map(([label, value]) => (
+                <div className="featureStat" key={label}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="featurePanel histogramPanel">
+            <div className="featurePanelTitle">
+              <BarChart3 size={15} />
+              <h3>Activations</h3>
+            </div>
+            <div className="miniHistogram" aria-label="Activation histogram">
+              {activationHistogram.map((bin) => (
+                <span
+                  key={bin.index}
+                  style={{ height: bin.height }}
+                  title={`${bin.count} examples`}
+                />
+              ))}
+            </div>
+            <div className="featurePanelMeta">
+              {activationValues.length} examples · max {formatNumber(Math.max(...activationValues, 0))}
+            </div>
+          </section>
+
+          <section className="featurePanel">
+            <div className="featurePanelTitle">
+              <Gauge size={15} />
+              <h3>Effects</h3>
+            </div>
+            <div className="effectGrid">
+              <span>human peak</span>
+              <strong>{formatNumber(selectedExampleContrast?.humanPeak)}</strong>
+              <span>max AI peak</span>
+              <strong>{formatNumber(selectedExampleContrast?.aiPeak)}</strong>
+              <span>activation diff</span>
+              <strong>{formatNumber(selectedExampleContrast?.diff)}</strong>
+              <span>score impact</span>
+              <strong>{formatNumber(causalImpactForDoc(indexData, selectedLatentId, selectedDocumentId))}</strong>
+            </div>
+          </section>
+
+          <section className="featurePanel generationEffectsPanel">
+            <div className="featurePanelTitle">
+              <Activity size={15} />
+              <h3>Prompt Effects</h3>
+            </div>
+            <div className="compactRows">
+              {generationEffectRows.map((row) => (
+                <button
+                  key={`effect-${row.docId}`}
+                  className={row.docId === selectedDocumentId ? "compactRow active" : "compactRow"}
+                  onClick={() => {
+                    if (row.docId !== selectedDocumentId) setSelectedDocumentId(row.docId);
+                  }}
+                  title={row.docId}
+                >
+                  <span>{modelName(row.model)}</span>
+                  <strong>{row.score === null ? "-" : formatNumber(row.score)}</strong>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          <section className="featurePanel intervalPanel">
+            <div className="featurePanelTitle">
+              <ListTree size={15} />
+              <h3>Activation Bands</h3>
+            </div>
+            <div className="intervalRows">
+              {activationIntervals.map(({ interval, example }) => (
+                <button
+                  key={`${interval}-${example.doc_id}`}
+                  className={activeExample?.doc_id === example.doc_id ? "intervalRow active" : "intervalRow"}
+                  onClick={() => {
+                    if (activeExample?.doc_id === example.doc_id) return;
+                    setSelectedExampleDocId(example.doc_id);
+                    setSelectedDocumentId(null);
+                  }}
+                  title={example.context}
+                >
+                  <span>{formatNumber(example.peak_activation ?? example.activation)}</span>
+                  <strong>{modelName(example.source)}</strong>
+                  <em>{example.context}</em>
+                </button>
+              ))}
+            </div>
+          </section>
+        </div>
+
         <div className="grid">
           {viewMode === "document" ? (
             <section className="examples">
@@ -1117,6 +1301,7 @@ function App() {
             </div>
           </section>
         </div>
+        </>
         )}
       </section>
     </main>

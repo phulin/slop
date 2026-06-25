@@ -362,6 +362,202 @@ h2 {
   width: min(260px, 40vw);
 }
 
+.featureCard {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.1fr) minmax(220px, 0.9fr) minmax(210px, 0.8fr) minmax(220px, 0.9fr) minmax(280px, 1.1fr);
+  gap: 12px;
+  overflow: hidden;
+  border-bottom: 1px solid #d9dee6;
+  background: #ffffff;
+  padding: 14px 18px;
+}
+
+.featureIntro,
+.featurePanel {
+  min-width: 0;
+  border: 1px solid #d9dee6;
+  border-radius: 8px;
+  background: #fbfcfd;
+  padding: 11px;
+}
+
+.featureIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.featureNumber {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.featureNumber span {
+  color: #5d697a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.featureNumber strong {
+  overflow: hidden;
+  color: #17212f;
+  font-size: 16px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.featureStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.featureStat {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  color: #66758a;
+  font-size: 12px;
+}
+
+.featureStat strong {
+  color: #253140;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.featurePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.featurePanelTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #334155;
+}
+
+.featurePanelTitle h3 {
+  font-size: 13px;
+}
+
+.featurePanelTitle svg {
+  color: #b42318;
+}
+
+.miniHistogram {
+  display: flex;
+  align-items: end;
+  gap: 3px;
+  height: 76px;
+  border-bottom: 1px solid #d9dee6;
+  padding: 4px 0 0;
+}
+
+.miniHistogram span {
+  width: 100%;
+  min-width: 5px;
+  border-radius: 3px 3px 0 0;
+  background: #f4b183;
+}
+
+.featurePanelMeta {
+  color: #66758a;
+  font-size: 12px;
+}
+
+.effectGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px 10px;
+  align-items: center;
+  color: #66758a;
+  font-size: 12px;
+}
+
+.effectGrid strong {
+  color: #253140;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.compactRows,
+.intervalRows {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.compactRow,
+.intervalRow {
+  display: grid;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #334155;
+  padding: 4px 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.compactRow {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.intervalRow {
+  grid-template-columns: 54px 78px minmax(0, 1fr);
+}
+
+.compactRow:hover,
+.intervalRow:hover,
+.compactRow.active,
+.intervalRow.active {
+  border-color: #f1b7ad;
+  background: #fff6f3;
+}
+
+.compactRow span,
+.intervalRow strong,
+.intervalRow em {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.compactRow strong,
+.intervalRow span {
+  color: #253140;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  font-weight: 650;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+.intervalRow strong {
+  color: #334155;
+  font-size: 12px;
+}
+
+.intervalRow em {
+  color: #66758a;
+  font-size: 12px;
+  font-style: normal;
+}
+
 .grid {
   display: grid;
   grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
@@ -643,6 +839,14 @@ h3 {
 }
 
 @media (max-width: 1280px) {
+  .featureCard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intervalPanel {
+    grid-column: 1 / -1;
+  }
+
   .grid {
     grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
   }
@@ -674,6 +878,12 @@ h3 {
   .toolbar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .featureCard {
+    grid-template-columns: 1fr;
+    overflow: auto;
+    max-height: 42dvh;
   }
 
   .sourceSelect {

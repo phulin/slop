@@ -47,6 +47,9 @@ class LinearizedDocImpact:
     peak_activation: float = 0.0
     peak_token_index: int | str = ""
     candidate_source: str = "linearized_impact"
+    human_peak_activation: float = 0.0
+    max_ai_peak_activation: float = 0.0
+    activation_difference: float = 0.0
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -72,7 +75,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--linearized-top-generations-per-latent", type=int, default=50)
     parser.add_argument(
         "--candidate-doc-source",
-        choices=["linearized_impact", "max_activation"],
+        choices=["linearized_impact", "max_activation", "max_ai_human_activation_difference"],
         default="linearized_impact",
         help=(
             "How to choose prompt groups within each selected latent. Latent selection always uses "
@@ -124,7 +127,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--candidate-score", choices=["abs", "signed"], default="abs")
     parser.add_argument(
         "--final-latent-rank-score",
-        choices=["linearized_abs_mean", "linearized_signed_mean", "exact_max_abs"],
+        choices=[
+            "linearized_abs_mean",
+            "linearized_signed_mean",
+            "exact_max_abs",
+            "activation_difference_abs_mean",
+            "activation_difference_max_abs",
+        ],
         default="linearized_abs_mean",
         help=(
             "Primary ordering for the final explorer latent list. "
@@ -698,6 +707,84 @@ def _max_activation_doc_candidates(
     return candidates, dict(maxes)
 
 
+def _activation_difference_doc_candidates(
+    *,
+    peak_activations_by_latent: dict[int, dict[str, dict[str, float | int]]],
+    latent_ids: list[int],
+    documents: dict[str, Any],
+    prompt_groups: dict[str, list[str]],
+    docs_by_id: dict[str, ExplorerDoc],
+    candidates_per_latent: int,
+) -> tuple[dict[int, list[LinearizedDocImpact]], dict[int, dict[str, Any]]]:
+    candidates: dict[int, list[LinearizedDocImpact]] = {}
+    latent_stats: dict[int, dict[str, Any]] = {}
+    for latent_id in latent_ids:
+        doc_peaks = peak_activations_by_latent.get(int(latent_id), {})
+        estimates: list[LinearizedDocImpact] = []
+        abs_differences: list[float] = []
+        signed_differences: list[float] = []
+        for turn_id, sibling_ids in prompt_groups.items():
+            human_doc_id = ""
+            human_peak = 0.0
+            max_ai_doc_id = ""
+            max_ai_peak = 0.0
+            for raw_doc_id in sibling_ids:
+                doc_id = str(raw_doc_id)
+                if doc_id not in docs_by_id:
+                    continue
+                peak = float(doc_peaks.get(doc_id, {}).get("peak_activation", 0.0))
+                model = str(documents.get(doc_id, {}).get("model", docs_by_id[doc_id].source))
+                if model == "human":
+                    if not human_doc_id or peak > human_peak:
+                        human_doc_id = doc_id
+                        human_peak = peak
+                elif peak > max_ai_peak:
+                    max_ai_doc_id = doc_id
+                    max_ai_peak = peak
+            if not human_doc_id or not max_ai_doc_id:
+                continue
+            difference = human_peak - max_ai_peak
+            abs_difference = abs(difference)
+            if abs_difference <= 0:
+                continue
+            representative_doc_id = human_doc_id if difference >= 0 else max_ai_doc_id
+            peak = doc_peaks.get(representative_doc_id, {})
+            estimates.append(
+                LinearizedDocImpact(
+                    doc_id=representative_doc_id,
+                    turn_id=str(turn_id),
+                    estimated_logit_drop=difference,
+                    estimated_abs_logit_change=abs_difference,
+                    human_estimated_logit_drop=human_peak,
+                    mean_ai_estimated_logit_drop=max_ai_peak,
+                    peak_activation=float(peak.get("peak_activation", max(human_peak, max_ai_peak))),
+                    peak_token_index=peak.get("peak_token_index", ""),
+                    candidate_source="max_ai_human_activation_difference",
+                    human_peak_activation=human_peak,
+                    max_ai_peak_activation=max_ai_peak,
+                    activation_difference=difference,
+                )
+            )
+            signed_differences.append(difference)
+            abs_differences.append(abs_difference)
+        estimates.sort(
+            key=lambda estimate: (
+                estimate.estimated_abs_logit_change,
+                estimate.peak_activation,
+                estimate.turn_id,
+            ),
+            reverse=True,
+        )
+        candidates[int(latent_id)] = estimates[: int(candidates_per_latent)]
+        latent_stats[int(latent_id)] = {
+            "activation_difference_max_abs": max(abs_differences, default=0.0),
+            "activation_difference_mean_abs": sum(abs_differences) / max(1, len(abs_differences)),
+            "activation_difference_mean_signed": sum(signed_differences) / max(1, len(signed_differences)),
+            "activation_difference_prompt_count": len(abs_differences),
+        }
+    return candidates, latent_stats
+
+
 def run(args: argparse.Namespace) -> dict[str, Any]:
     random.seed(int(args.seed))
     torch.manual_seed(int(args.seed))
@@ -764,22 +851,44 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         for row in index.get("latents", [])
     }
     peak_activations_by_latent: dict[int, dict[str, dict[str, float | int]]] = {}
-    if str(args.candidate_doc_source) == "max_activation":
+    activation_difference_stats: dict[int, dict[str, Any]] = {}
+    if str(args.candidate_doc_source) in {"max_activation", "max_ai_human_activation_difference"}:
         if args.sparse_topk_parquet is None:
-            raise ValueError("--sparse-topk-parquet is required with --candidate-doc-source max_activation")
+            raise ValueError(
+                "--sparse-topk-parquet is required with activation-based --candidate-doc-source"
+            )
         print(
             f"Selecting top {int(args.activation_candidates_per_latent):,} docs per latent by peak activation",
             flush=True,
         )
-        top_docs_by_latent, peak_activations_by_latent = _max_activation_doc_candidates(
+        peak_doc_candidates, peak_activations_by_latent = _max_activation_doc_candidates(
             sparse_topk_parquet=args.sparse_topk_parquet,
             latent_ids=selected_ids,
             documents=documents,
             docs_by_id=docs_by_id,
-            candidates_per_latent=int(args.activation_candidates_per_latent),
+            candidates_per_latent=(
+                len(all_docs)
+                if str(args.candidate_doc_source) == "max_ai_human_activation_difference"
+                else int(args.activation_candidates_per_latent)
+            ),
             batch_size=int(args.sparse_scan_batch_size),
             progress_every=int(args.progress_every),
         )
+        if str(args.candidate_doc_source) == "max_activation":
+            top_docs_by_latent = peak_doc_candidates
+        else:
+            print(
+                "Aggregating candidates by max human-vs-AI activation difference per prompt",
+                flush=True,
+            )
+            top_docs_by_latent, activation_difference_stats = _activation_difference_doc_candidates(
+                peak_activations_by_latent=peak_activations_by_latent,
+                latent_ids=selected_ids,
+                documents=documents,
+                prompt_groups=prompt_groups,
+                docs_by_id=docs_by_id,
+                candidates_per_latent=int(args.activation_candidates_per_latent),
+            )
 
     latent_rows: list[dict[str, Any]] = []
     example_rows: list[dict[str, Any]] = []
@@ -851,10 +960,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         active_prompts = [drop for drop in drops if abs(drop) > 0]
         base_latent = original_latents_by_id.get(latent_id_text, {})
         linearized = linearized_by_id[latent_id]
+        activation_difference = activation_difference_stats.get(latent_id, {})
         latent_rows.append(
             {
                 **base_latent,
                 **linearized,
+                **activation_difference,
                 "latent_id": latent_id,
                 "original_rank": int(base_latent.get("rank", linearized.get("linearized_rank", latent_offset))),
                 "causal_max_abs_target_logit_change": max(abs_drops, default=0.0),
@@ -903,6 +1014,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     "peak_activation": peak_activation,
                     "token_index": peak_token_index,
                     "candidate_source": prompt_contrast.get("candidate_source", args.candidate_doc_source),
+                    "human_peak_activation": getattr(candidate_estimate_by_turn.get(turn_id), "human_peak_activation", ""),
+                    "max_ai_peak_activation": getattr(candidate_estimate_by_turn.get(turn_id), "max_ai_peak_activation", ""),
+                    "activation_difference": getattr(candidate_estimate_by_turn.get(turn_id), "activation_difference", ""),
                     "prompt_contrast_logit_drop": prompt_contrast["prompt_contrast_logit_drop"],
                     "prompt_abs_contrast_logit_change": prompt_contrast["prompt_abs_contrast_logit_change"],
                     "prompt_human_logit_drop": prompt_contrast["prompt_human_logit_drop"],
@@ -920,6 +1034,15 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     float(row["prompt_abs_contrast_logit_change"]),
                     abs(float(row["prompt_human_logit_drop"])),
                     abs(float(row["prompt_mean_ai_logit_drop"])),
+                ),
+                reverse=True,
+            )
+        elif str(args.candidate_doc_source) == "max_ai_human_activation_difference":
+            prompt_examples.sort(
+                key=lambda row: (
+                    abs(float(row["activation_difference"] or 0.0)),
+                    float(row["peak_activation"]),
+                    float(row["prompt_abs_contrast_logit_change"]),
                 ),
                 reverse=True,
             )
@@ -969,6 +1092,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         latent_sort_key = lambda row: (
             float(row["linearized_mean_estimated_logit_drop"]),
             float(row["linearized_mean_abs_estimated_logit_change"]),
+            float(row["causal_max_abs_target_logit_change"]),
+        )
+    elif args.final_latent_rank_score == "activation_difference_abs_mean":
+        latent_sort_key = lambda row: (
+            float(row.get("activation_difference_mean_abs", 0.0) or 0.0),
+            float(row.get("activation_difference_max_abs", 0.0) or 0.0),
+            float(row["causal_max_abs_target_logit_change"]),
+        )
+    elif args.final_latent_rank_score == "activation_difference_max_abs":
+        latent_sort_key = lambda row: (
+            float(row.get("activation_difference_max_abs", 0.0) or 0.0),
+            float(row.get("activation_difference_mean_abs", 0.0) or 0.0),
             float(row["causal_max_abs_target_logit_change"]),
         )
     else:
@@ -1025,7 +1160,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "human_estimated_drop - mean(ai_estimated_drop)"
         ),
         "candidate_doc_score": (
-            "per-document peak browser sparse activation"
+            "per-prompt absolute difference between human peak activation and max AI peak activation"
+            if str(args.candidate_doc_source) == "max_ai_human_activation_difference"
+            else "per-document peak browser sparse activation"
             if str(args.candidate_doc_source) == "max_activation"
             else "linearized prompt contrast score"
         ),
@@ -1055,6 +1192,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     "model": metadata.get("model", docs_by_id[estimate.doc_id].source),
                     "peak_activation": estimate.peak_activation,
                     "peak_token_index": estimate.peak_token_index,
+                    "human_peak_activation": estimate.human_peak_activation,
+                    "max_ai_peak_activation": estimate.max_ai_peak_activation,
+                    "activation_difference": estimate.activation_difference,
                     "linearized_estimated_logit_drop": estimate.estimated_logit_drop,
                     "linearized_estimated_abs_logit_change": estimate.estimated_abs_logit_change,
                     "linearized_prompt_contrast_logit_drop": estimate.estimated_logit_drop,
