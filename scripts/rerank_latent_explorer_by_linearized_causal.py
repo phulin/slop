@@ -50,6 +50,9 @@ class LinearizedDocImpact:
     human_peak_activation: float = 0.0
     max_ai_peak_activation: float = 0.0
     activation_difference: float = 0.0
+    paired_activation_effect: float = 0.0
+    human_activation_score: float = 0.0
+    mean_ai_activation_score: float = 0.0
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -75,13 +78,18 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--linearized-top-generations-per-latent", type=int, default=50)
     parser.add_argument(
         "--latent-selection-source",
-        choices=["linearized", "max_ai_human_activation_difference"],
+        choices=["linearized", "max_ai_human_activation_difference", "paired_activation_effect_size"],
         default="linearized",
         help="How to select candidate latents before exact prompt-level ablation.",
     )
     parser.add_argument(
         "--candidate-doc-source",
-        choices=["linearized_impact", "max_activation", "max_ai_human_activation_difference"],
+        choices=[
+            "linearized_impact",
+            "max_activation",
+            "max_ai_human_activation_difference",
+            "paired_activation_effect_size",
+        ],
         default="linearized_impact",
         help=(
             "How to choose prompt groups within each selected latent. Latent selection always uses "
@@ -130,6 +138,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Per-token dense-code top-k activation definition used by the browser sparse parquet.",
     )
     parser.add_argument("--max-gradient-docs", type=int, default=None)
+    parser.add_argument(
+        "--effect-target",
+        choices=["target_class", "ai_human_margin"],
+        default="target_class",
+        help="Exact ablation target: single target-class logit or AI-vs-human classifier margin.",
+    )
+    parser.add_argument("--paired-min-active-prompts", type=int, default=100)
+    parser.add_argument("--paired-min-sign-consistency", type=float, default=0.65)
     parser.add_argument("--candidate-score", choices=["abs", "signed"], default="abs")
     parser.add_argument(
         "--final-latent-rank-score",
@@ -137,8 +153,11 @@ def build_parser() -> argparse.ArgumentParser:
             "linearized_abs_mean",
             "linearized_signed_mean",
             "exact_max_abs",
+            "exact_mean_abs",
             "activation_difference_abs_mean",
             "activation_difference_max_abs",
+            "paired_activation_effect_size",
+            "paired_causal_consistent",
         ],
         default="linearized_abs_mean",
         help=(
@@ -186,6 +205,62 @@ def _activation_mask(encoded: dict[str, Any]) -> torch.Tensor:
     return mask
 
 
+def _class_groups_from_docs(logits: torch.Tensor, docs: list[ExplorerDoc]) -> tuple[int, list[int], list[dict[str, Any]]]:
+    labels = torch.tensor([doc.label for doc in docs], dtype=torch.long)
+    rows: list[dict[str, Any]] = []
+    for class_id in range(int(logits.shape[1])):
+        ai_mean = float(logits[labels == 1, class_id].mean())
+        human_mean = float(logits[labels == 0, class_id].mean())
+        rows.append(
+            {
+                "class_id": class_id,
+                "mean_ai_logit": ai_mean,
+                "mean_human_logit": human_mean,
+                "ai_minus_human_logit": ai_mean - human_mean,
+                "human_minus_ai_logit": human_mean - ai_mean,
+            }
+        )
+    human_class = int(max(rows, key=lambda row: float(row["human_minus_ai_logit"]))["class_id"])
+    ai_classes = [class_id for class_id in range(int(logits.shape[1])) if class_id != human_class]
+    return human_class, ai_classes, rows
+
+
+def _ai_human_margin(logits: torch.Tensor, *, human_class: int, ai_classes: list[int]) -> torch.Tensor:
+    logits = logits.float()
+    ai_index = torch.tensor(ai_classes, dtype=torch.long, device=logits.device)
+    return torch.logsumexp(logits.index_select(dim=-1, index=ai_index), dim=-1) - logits[:, int(human_class)]
+
+
+def _effect_values(
+    *,
+    baseline_logits: torch.Tensor,
+    ablated_logits: torch.Tensor,
+    target_class: int,
+    human_class: int,
+    ai_classes: list[int],
+    effect_target: str,
+) -> tuple[float, float]:
+    if effect_target == "ai_human_margin":
+        baseline_value = float(
+            _ai_human_margin(
+                baseline_logits.unsqueeze(0),
+                human_class=int(human_class),
+                ai_classes=ai_classes,
+            )[0]
+        )
+        ablated_value = float(
+            _ai_human_margin(
+                ablated_logits.unsqueeze(0),
+                human_class=int(human_class),
+                ai_classes=ai_classes,
+            )[0]
+        )
+        return baseline_value - ablated_value, 0.0
+    baseline_prob = float(_softmax_target(baseline_logits.unsqueeze(0), target_class)[0])
+    ablated_prob = float(_softmax_target(ablated_logits.unsqueeze(0), target_class)[0])
+    return float(baseline_logits[target_class] - ablated_logits[target_class]), baseline_prob - ablated_prob
+
+
 def _browser_sparse_codes(sae: Any, token_vectors: torch.Tensor, *, top_k: int) -> torch.Tensor:
     dense_codes = sae.encode_dense(token_vectors.float()).float()
     keep = min(int(top_k), int(dense_codes.shape[1]))
@@ -218,6 +293,8 @@ def _ablate_latent_on_docs_browser_aligned(
     docs: list[ExplorerDoc],
     baseline_logits_by_doc: dict[str, torch.Tensor],
     target_class: int,
+    human_class: int,
+    ai_classes: list[int],
     args: argparse.Namespace,
     device: torch.device,
 ) -> dict[str, dict[str, Any]]:
@@ -275,16 +352,20 @@ def _ablate_latent_on_docs_browser_aligned(
         finally:
             handle.remove()
         ablated_logits = cast(torch.Tensor, outputs.logits).detach().float().cpu()
-        ablated_probs = _softmax_target(ablated_logits, target_class)
         for doc_index, doc in enumerate(batch_docs):
             baseline_logits = baseline_logits_by_doc[doc.doc_id]
-            baseline_prob = float(_softmax_target(baseline_logits.unsqueeze(0), target_class)[0])
             if doc_index not in active_doc_indexes:
                 logit_drop = 0.0
                 prob_drop = 0.0
             else:
-                logit_drop = float(baseline_logits[target_class] - ablated_logits[doc_index, target_class])
-                prob_drop = float(baseline_prob - ablated_probs[doc_index])
+                logit_drop, prob_drop = _effect_values(
+                    baseline_logits=baseline_logits,
+                    ablated_logits=ablated_logits[doc_index],
+                    target_class=int(target_class),
+                    human_class=int(human_class),
+                    ai_classes=ai_classes,
+                    effect_target=str(args.effect_target),
+                )
             results[doc.doc_id] = {
                 "causal_logit_drop": logit_drop,
                 "causal_abs_logit_change": abs(logit_drop),
@@ -292,6 +373,7 @@ def _ablate_latent_on_docs_browser_aligned(
                 "causal_abs_probability_change": abs(prob_drop),
                 "causal_active_tokens": int(active_token_counts[doc_index]),
                 "causal_active": doc_index in active_doc_indexes,
+                "causal_effect_target": str(args.effect_target),
             }
     return results
 
@@ -912,6 +994,224 @@ def _activation_difference_doc_candidates(
     return candidates, latent_stats
 
 
+def _paired_activation_effect_rows(
+    *,
+    sparse_topk_parquet: Path,
+    latent_dim: int,
+    documents: dict[str, Any],
+    prompt_groups: dict[str, list[str]],
+    docs_by_id: dict[str, ExplorerDoc],
+    candidates_per_latent: int,
+    batch_size: int,
+    progress_every: int,
+    min_active_prompts: int,
+    min_sign_consistency: float,
+    target_class: int,
+    activation_layer: int,
+) -> tuple[list[dict[str, Any]], dict[int, list[LinearizedDocImpact]], dict[int, dict[str, Any]]]:
+    doc_rows: list[tuple[int, str, str, bool, float]] = []
+    for doc_id, metadata in documents.items():
+        if doc_id not in docs_by_id or "doc_index" not in metadata:
+            continue
+        turn_id = str(metadata.get("turn_id", ""))
+        if not turn_id:
+            continue
+        model = str(metadata.get("model", docs_by_id[doc_id].source))
+        token_len = max(
+            1.0,
+            float(
+                metadata.get(
+                    "token_len",
+                    int(metadata.get("sparse_row_end", 1)) - int(metadata.get("sparse_row_start", 0)),
+                )
+                or 1
+            ),
+        )
+        doc_rows.append((int(metadata["doc_index"]), str(doc_id), turn_id, model == "human", token_len))
+    if not doc_rows:
+        raise ValueError("browser index does not contain doc_index/turn_id metadata")
+
+    doc_rows.sort()
+    doc_index_to_pos = {doc_index: pos for pos, (doc_index, _doc_id, _turn_id, _is_human, _token_len) in enumerate(doc_rows)}
+    max_doc_index = max(doc_index_to_pos)
+    doc_lookup = np.full(max_doc_index + 1, -1, dtype=np.int32)
+    for doc_index, pos in doc_index_to_pos.items():
+        doc_lookup[doc_index] = pos
+
+    doc_ids = [doc_id for _doc_index, doc_id, _turn_id, _is_human, _token_len in doc_rows]
+    turn_ids_by_doc = [turn_id for _doc_index, _doc_id, turn_id, _is_human, _token_len in doc_rows]
+    is_human_by_doc = np.asarray([is_human for _doc_index, _doc_id, _turn_id, is_human, _token_len in doc_rows], dtype=np.bool_)
+    token_lens = np.asarray([token_len for _doc_index, _doc_id, _turn_id, _is_human, token_len in doc_rows], dtype=np.float32)
+
+    activation_sums = np.zeros((len(doc_rows), int(latent_dim)), dtype=np.float32)
+    parquet = pq.ParquetFile(sparse_topk_parquet)
+    processed = 0
+    for batch_index, batch in enumerate(
+        parquet.iter_batches(
+            batch_size=int(batch_size),
+            columns=["latent_ids", "activations", "doc_index"],
+        ),
+        start=1,
+    ):
+        doc_indices = batch.column("doc_index").to_numpy(zero_copy_only=False).astype(np.int64, copy=False)
+        valid_rows = doc_indices <= max_doc_index
+        if valid_rows.any():
+            doc_positions = np.full(len(doc_indices), -1, dtype=np.int32)
+            doc_positions[valid_rows] = doc_lookup[doc_indices[valid_rows]]
+            valid_rows &= doc_positions >= 0
+        if valid_rows.any():
+            rows = len(doc_indices)
+            latent_column = batch.column("latent_ids")
+            value_column = batch.column("activations")
+            width = int(latent_column.type.list_size)
+            latent_matrix = latent_column.values.to_numpy(zero_copy_only=False).reshape(rows, width)[valid_rows]
+            value_matrix = value_column.values.to_numpy(zero_copy_only=False).reshape(rows, width)[valid_rows]
+            doc_flat = np.repeat(doc_positions[valid_rows], width)
+            latent_flat = latent_matrix.reshape(-1).astype(np.int64, copy=False)
+            value_flat = value_matrix.reshape(-1).astype(np.float32, copy=False)
+            np.add.at(activation_sums, (doc_flat, latent_flat), value_flat)
+        processed += len(doc_indices)
+        if progress_every > 0 and (batch_index == 1 or batch_index % int(progress_every) == 0):
+            print(
+                f"Scanned {processed:,}/{parquet.metadata.num_rows:,} sparse rows for paired activation scores",
+                flush=True,
+            )
+
+    doc_scores = np.log1p(activation_sums) / np.sqrt(token_lens).reshape(-1, 1)
+    prompt_ids = [
+        turn_id
+        for turn_id, sibling_ids in prompt_groups.items()
+        if any(str(doc_id) in docs_by_id for doc_id in sibling_ids)
+    ]
+    prompt_effects = np.zeros((len(prompt_ids), int(latent_dim)), dtype=np.float32)
+    prompt_human_scores = np.zeros_like(prompt_effects)
+    prompt_ai_scores = np.zeros_like(prompt_effects)
+    representative_doc_pos = np.full((len(prompt_ids), int(latent_dim)), -1, dtype=np.int32)
+    prompt_valid = np.zeros((len(prompt_ids), int(latent_dim)), dtype=np.bool_)
+    doc_pos_by_id = {doc_id: pos for pos, doc_id in enumerate(doc_ids)}
+    for prompt_index, turn_id in enumerate(prompt_ids):
+        sibling_positions = [
+            doc_pos_by_id[str(doc_id)]
+            for doc_id in prompt_groups.get(turn_id, [])
+            if str(doc_id) in doc_pos_by_id
+        ]
+        if not sibling_positions:
+            continue
+        human_positions = [pos for pos in sibling_positions if bool(is_human_by_doc[pos])]
+        ai_positions = [pos for pos in sibling_positions if not bool(is_human_by_doc[pos])]
+        if not human_positions or not ai_positions:
+            continue
+        human_score = doc_scores[human_positions].mean(axis=0)
+        ai_score = doc_scores[ai_positions].mean(axis=0)
+        effect = ai_score - human_score
+        prompt_effects[prompt_index] = effect
+        prompt_human_scores[prompt_index] = human_score
+        prompt_ai_scores[prompt_index] = ai_score
+        prompt_valid[prompt_index] = (doc_scores[sibling_positions] > 0).any(axis=0)
+        ai_matrix = doc_scores[ai_positions]
+        ai_best_offsets = ai_matrix.argmax(axis=0)
+        human_matrix = doc_scores[human_positions]
+        human_best_offsets = human_matrix.argmax(axis=0)
+        ai_best_positions = np.asarray(ai_positions, dtype=np.int32)[ai_best_offsets]
+        human_best_positions = np.asarray(human_positions, dtype=np.int32)[human_best_offsets]
+        representative_doc_pos[prompt_index] = np.where(effect >= 0, ai_best_positions, human_best_positions)
+
+    valid_counts = prompt_valid.sum(axis=0)
+    signed_sums = prompt_effects.sum(axis=0, dtype=np.float64)
+    abs_sums = np.abs(prompt_effects).sum(axis=0, dtype=np.float64)
+    positive_counts = (prompt_effects > 0).sum(axis=0)
+    negative_counts = (prompt_effects < 0).sum(axis=0)
+    sign_consistency = np.maximum(positive_counts, negative_counts) / np.maximum(valid_counts, 1)
+    mean_signed = signed_sums / np.maximum(valid_counts, 1)
+    mean_abs = abs_sums / np.maximum(valid_counts, 1)
+    paired_score = np.abs(mean_signed) * sign_consistency * np.log1p(valid_counts)
+    paired_score = np.where(
+        (valid_counts >= int(min_active_prompts)) & (sign_consistency >= float(min_sign_consistency)),
+        paired_score,
+        0.0,
+    )
+
+    rows: list[dict[str, Any]] = []
+    top_doc_rows: dict[int, list[LinearizedDocImpact]] = {}
+    latent_stats: dict[int, dict[str, Any]] = {}
+    for latent_id in range(int(latent_dim)):
+        rows.append(
+            {
+                "latent_id": latent_id,
+                "paired_activation_effect_score": float(paired_score[latent_id]),
+                "paired_activation_mean_signed_effect": float(mean_signed[latent_id]),
+                "paired_activation_mean_abs_effect": float(mean_abs[latent_id]),
+                "paired_activation_sign_consistency": float(sign_consistency[latent_id]),
+                "paired_activation_active_prompts": int(valid_counts[latent_id]),
+                "linearized_mean_estimated_logit_drop": 0.0,
+                "linearized_mean_abs_estimated_logit_change": 0.0,
+                "linearized_mean_prompt_contrast_logit_drop": 0.0,
+                "linearized_mean_abs_prompt_contrast_logit_change": 0.0,
+                "linearized_active_docs": int(valid_counts[latent_id]),
+                "linearized_active_doc_share": float(valid_counts[latent_id] / max(1, len(prompt_ids))),
+                "linearized_active_prompts": int(valid_counts[latent_id]),
+                "linearized_active_prompt_share": float(valid_counts[latent_id] / max(1, len(prompt_ids))),
+                "linearized_scored_docs": len(docs_by_id),
+                "linearized_scored_prompts": len(prompt_ids),
+                "target_class": target_class,
+                "activation_layer": int(activation_layer),
+            }
+        )
+        latent_stats[latent_id] = {
+            "paired_activation_effect_score": float(paired_score[latent_id]),
+            "paired_activation_mean_signed_effect": float(mean_signed[latent_id]),
+            "paired_activation_mean_abs_effect": float(mean_abs[latent_id]),
+            "paired_activation_sign_consistency": float(sign_consistency[latent_id]),
+            "paired_activation_active_prompts": int(valid_counts[latent_id]),
+        }
+        effects = np.abs(prompt_effects[:, latent_id])
+        if effects.size == 0:
+            top_doc_rows[latent_id] = []
+            continue
+        count = min(int(candidates_per_latent), int((effects > 0).sum()))
+        if count <= 0:
+            top_doc_rows[latent_id] = []
+            continue
+        top_positions = np.argpartition(effects, -count)[-count:]
+        top_positions = top_positions[np.argsort(effects[top_positions])[::-1]]
+        estimates: list[LinearizedDocImpact] = []
+        for prompt_index in top_positions.tolist():
+            doc_pos = int(representative_doc_pos[prompt_index, latent_id])
+            if doc_pos < 0:
+                continue
+            signed = float(prompt_effects[prompt_index, latent_id])
+            estimates.append(
+                LinearizedDocImpact(
+                    doc_id=doc_ids[doc_pos],
+                    turn_id=prompt_ids[prompt_index],
+                    estimated_logit_drop=signed,
+                    estimated_abs_logit_change=abs(signed),
+                    human_estimated_logit_drop=float(prompt_human_scores[prompt_index, latent_id]),
+                    mean_ai_estimated_logit_drop=float(prompt_ai_scores[prompt_index, latent_id]),
+                    peak_activation=float(doc_scores[doc_pos, latent_id]),
+                    peak_token_index="",
+                    candidate_source="paired_activation_effect_size",
+                    paired_activation_effect=signed,
+                    human_activation_score=float(prompt_human_scores[prompt_index, latent_id]),
+                    mean_ai_activation_score=float(prompt_ai_scores[prompt_index, latent_id]),
+                )
+            )
+        top_doc_rows[latent_id] = estimates
+
+    rows.sort(
+        key=lambda row: (
+            float(row["paired_activation_effect_score"]),
+            float(row["paired_activation_mean_abs_effect"]),
+            int(row["paired_activation_active_prompts"]),
+        ),
+        reverse=True,
+    )
+    for rank, row in enumerate(rows, start=1):
+        row["linearized_rank"] = rank
+        row["paired_activation_rank"] = rank
+    return rows, top_doc_rows, latent_stats
+
+
 def run(args: argparse.Namespace) -> dict[str, Any]:
     random.seed(int(args.seed))
     torch.manual_seed(int(args.seed))
@@ -947,6 +1247,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         for index_offset, doc in enumerate(all_docs)
     }
     target_class, class_diffs = _target_class_from_docs(baseline_logits, all_docs)
+    human_class, ai_classes, margin_class_diffs = _class_groups_from_docs(baseline_logits, all_docs)
 
     if str(args.latent_selection_source) == "max_ai_human_activation_difference":
         if args.sparse_topk_parquet is None:
@@ -967,6 +1268,27 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             activation_layer=int(args.activation_layer),
         )
         top_docs_by_latent: dict[int, list[LinearizedDocImpact]] = {}
+    elif str(args.latent_selection_source) == "paired_activation_effect_size":
+        if args.sparse_topk_parquet is None:
+            raise ValueError("--sparse-topk-parquet is required for paired activation-effect selection")
+        print(
+            "Selecting latents by paired prompt-level aggregate activation effect size",
+            flush=True,
+        )
+        ranked_linearized_rows, top_docs_by_latent, paired_activation_stats = _paired_activation_effect_rows(
+            sparse_topk_parquet=args.sparse_topk_parquet,
+            latent_dim=int(sae.latent_dim),
+            documents=documents,
+            prompt_groups=prompt_groups,
+            docs_by_id=docs_by_id,
+            candidates_per_latent=int(args.activation_candidates_per_latent),
+            batch_size=int(args.sparse_scan_batch_size),
+            progress_every=int(args.progress_every),
+            min_active_prompts=int(args.paired_min_active_prompts),
+            min_sign_consistency=float(args.paired_min_sign_consistency),
+            target_class=target_class,
+            activation_layer=int(args.activation_layer),
+        )
     else:
         print(
             f"Estimating linearized causal impact for {len(all_docs):,} docs "
@@ -999,6 +1321,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     }
     peak_activations_by_latent: dict[int, dict[str, dict[str, float | int]]] = {}
     activation_difference_stats: dict[int, dict[str, Any]] = {}
+    paired_activation_stats = locals().get("paired_activation_stats", {})
     if str(args.candidate_doc_source) in {"max_activation", "max_ai_human_activation_difference"}:
         if args.sparse_topk_parquet is None:
             raise ValueError(
@@ -1036,6 +1359,24 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 docs_by_id=docs_by_id,
                 candidates_per_latent=int(args.activation_candidates_per_latent),
             )
+    elif str(args.candidate_doc_source) == "paired_activation_effect_size":
+        if args.sparse_topk_parquet is None:
+            raise ValueError("--sparse-topk-parquet is required with paired activation-effect candidates")
+        if str(args.latent_selection_source) != "paired_activation_effect_size":
+            _rows, top_docs_by_latent, paired_activation_stats = _paired_activation_effect_rows(
+                sparse_topk_parquet=args.sparse_topk_parquet,
+                latent_dim=int(sae.latent_dim),
+                documents=documents,
+                prompt_groups=prompt_groups,
+                docs_by_id=docs_by_id,
+                candidates_per_latent=int(args.activation_candidates_per_latent),
+                batch_size=int(args.sparse_scan_batch_size),
+                progress_every=int(args.progress_every),
+                min_active_prompts=int(args.paired_min_active_prompts),
+                min_sign_consistency=float(args.paired_min_sign_consistency),
+                target_class=target_class,
+                activation_layer=int(args.activation_layer),
+            )
 
     latent_rows: list[dict[str, Any]] = []
     example_rows: list[dict[str, Any]] = []
@@ -1049,7 +1390,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         candidate_estimate_by_turn: dict[str, LinearizedDocImpact] = {}
         candidate_limit = (
             int(args.activation_candidates_per_latent)
-            if str(args.candidate_doc_source) == "max_activation"
+            if str(args.candidate_doc_source) != "linearized_impact"
             else int(args.linearized_top_generations_per_latent)
         )
         for estimate in top_docs_by_latent[latent_id][:candidate_limit]:
@@ -1081,6 +1422,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             docs=latent_docs,
             baseline_logits_by_doc=baseline_by_doc,
             target_class=target_class,
+            human_class=human_class,
+            ai_classes=ai_classes,
             args=args,
             device=device,
         )
@@ -1108,11 +1451,20 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         base_latent = original_latents_by_id.get(latent_id_text, {})
         linearized = linearized_by_id[latent_id]
         activation_difference = activation_difference_stats.get(latent_id, {})
+        paired_activation = paired_activation_stats.get(latent_id, {})
+        causal_sign_consistency = 0.0
+        causal_consistent_score = 0.0
+        if drops:
+            positive_prompt_count = sum(1 for value in drops if value > 0)
+            negative_prompt_count = sum(1 for value in drops if value < 0)
+            causal_sign_consistency = max(positive_prompt_count, negative_prompt_count) / max(1, len(drops))
+            causal_consistent_score = abs(sum(drops) / max(1, len(drops))) * causal_sign_consistency * (len(drops) ** 0.5)
         latent_rows.append(
             {
                 **base_latent,
                 **linearized,
                 **activation_difference,
+                **paired_activation,
                 "latent_id": latent_id,
                 "original_rank": int(base_latent.get("rank", linearized.get("linearized_rank", latent_offset))),
                 "causal_max_abs_target_logit_change": max(abs_drops, default=0.0),
@@ -1129,6 +1481,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 "causal_positive_doc_rate": len(positives) / max(1, len(drops)),
                 "causal_active_doc_rate": len(active_prompts) / max(1, len(drops)),
                 "causal_active_prompt_rate": len(active_prompts) / max(1, len(drops)),
+                "causal_prompt_sign_consistency": causal_sign_consistency,
+                "causal_prompt_consistent_score": causal_consistent_score,
                 "causal_docs": len(effects),
                 "causal_prompts": len(prompt_contrast_rows),
                 "exact_max_abs_prompt_contrast_logit_change": max(abs_drops, default=0.0),
@@ -1164,6 +1518,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     "human_peak_activation": getattr(candidate_estimate_by_turn.get(turn_id), "human_peak_activation", ""),
                     "max_ai_peak_activation": getattr(candidate_estimate_by_turn.get(turn_id), "max_ai_peak_activation", ""),
                     "activation_difference": getattr(candidate_estimate_by_turn.get(turn_id), "activation_difference", ""),
+                    "paired_activation_effect": getattr(candidate_estimate_by_turn.get(turn_id), "paired_activation_effect", ""),
+                    "human_activation_score": getattr(candidate_estimate_by_turn.get(turn_id), "human_activation_score", ""),
+                    "mean_ai_activation_score": getattr(candidate_estimate_by_turn.get(turn_id), "mean_ai_activation_score", ""),
                     "prompt_contrast_logit_drop": prompt_contrast["prompt_contrast_logit_drop"],
                     "prompt_abs_contrast_logit_change": prompt_contrast["prompt_abs_contrast_logit_change"],
                     "prompt_human_logit_drop": prompt_contrast["prompt_human_logit_drop"],
@@ -1190,6 +1547,15 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     abs(float(row["activation_difference"] or 0.0)),
                     float(row["peak_activation"]),
                     float(row["prompt_abs_contrast_logit_change"]),
+                ),
+                reverse=True,
+            )
+        elif str(args.candidate_doc_source) == "paired_activation_effect_size":
+            prompt_examples.sort(
+                key=lambda row: (
+                    abs(float(row["paired_activation_effect"] or 0.0)),
+                    float(row["prompt_abs_contrast_logit_change"]),
+                    float(row["peak_activation"]),
                 ),
                 reverse=True,
             )
@@ -1235,6 +1601,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             float(row["causal_mean_abs_target_logit_change"]),
             float(row["linearized_mean_abs_estimated_logit_change"]),
         )
+    elif args.final_latent_rank_score == "exact_mean_abs":
+        latent_sort_key = lambda row: (
+            float(row["causal_mean_abs_target_logit_change"]),
+            float(row["causal_max_abs_target_logit_change"]),
+            float(row.get("paired_activation_effect_score", 0.0) or 0.0),
+        )
     elif args.final_latent_rank_score == "linearized_signed_mean":
         latent_sort_key = lambda row: (
             float(row["linearized_mean_estimated_logit_drop"]),
@@ -1252,6 +1624,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             float(row.get("activation_difference_max_abs", 0.0) or 0.0),
             float(row.get("activation_difference_mean_abs", 0.0) or 0.0),
             float(row["causal_max_abs_target_logit_change"]),
+        )
+    elif args.final_latent_rank_score == "paired_activation_effect_size":
+        latent_sort_key = lambda row: (
+            float(row.get("paired_activation_effect_score", 0.0) or 0.0),
+            float(row.get("paired_activation_mean_abs_effect", 0.0) or 0.0),
+            float(row.get("causal_prompt_consistent_score", 0.0) or 0.0),
+        )
+    elif args.final_latent_rank_score == "paired_causal_consistent":
+        latent_sort_key = lambda row: (
+            float(row.get("causal_prompt_consistent_score", 0.0) or 0.0),
+            float(row.get("causal_mean_abs_target_logit_change", 0.0) or 0.0),
+            float(row.get("paired_activation_effect_score", 0.0) or 0.0),
         )
     else:
         latent_sort_key = lambda row: (
@@ -1289,6 +1673,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         index["latentDocs"][latent_id] = docs
     index["generationImpacts"] = generation_impacts
     rerank_method = (
+        "browser_aligned_paired_activation_effect_then_exact_prompt_contrast_ablation"
+        if str(args.latent_selection_source) == "paired_activation_effect_size"
+        else
         "browser_aligned_activation_difference_selection_then_exact_prompt_contrast_ablation"
         if str(args.latent_selection_source) == "max_ai_human_activation_difference"
         else "browser_aligned_linearized_prompt_contrast_then_exact_prompt_contrast_ablation"
@@ -1304,6 +1691,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "activation_candidates_per_latent": int(args.activation_candidates_per_latent),
         "examples_per_latent": int(args.examples_per_latent),
         "linearized_scored_documents": len(all_docs),
+        "effect_target": str(args.effect_target),
+        "human_class": int(human_class),
+        "ai_classes": ai_classes,
+        "paired_min_active_prompts": int(args.paired_min_active_prompts),
+        "paired_min_sign_consistency": float(args.paired_min_sign_consistency),
         "candidate_score": str(args.candidate_score),
         "final_latent_rank_score": str(args.final_latent_rank_score),
         "browser_top_k": int(args.browser_top_k),
@@ -1313,6 +1705,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "human_estimated_drop - mean(ai_estimated_drop)"
         ),
         "candidate_doc_score": (
+            "per-prompt normalized aggregate activation effect size: mean(ai) - human"
+            if str(args.candidate_doc_source) == "paired_activation_effect_size"
+            else
             "per-prompt absolute difference between human peak activation and max AI peak activation"
             if str(args.candidate_doc_source) == "max_ai_human_activation_difference"
             else "per-document peak browser sparse activation"
@@ -1320,8 +1715,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             else "linearized prompt contrast score"
         ),
         "exact_score": (
-            "prompt contrast of exact browser-aligned ablation: "
-            "human_target_logit_drop - mean(ai_target_logit_drop)"
+            "prompt contrast of exact browser-aligned ablation effect: "
+            "human_effect_drop - mean(ai_effect_drop)"
         ),
     }
 
@@ -1348,6 +1743,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     "human_peak_activation": estimate.human_peak_activation,
                     "max_ai_peak_activation": estimate.max_ai_peak_activation,
                     "activation_difference": estimate.activation_difference,
+                    "paired_activation_effect": estimate.paired_activation_effect,
+                    "human_activation_score": estimate.human_activation_score,
+                    "mean_ai_activation_score": estimate.mean_ai_activation_score,
                     "linearized_estimated_logit_drop": estimate.estimated_logit_drop,
                     "linearized_estimated_abs_logit_change": estimate.estimated_abs_logit_change,
                     "linearized_prompt_contrast_logit_drop": estimate.estimated_logit_drop,
@@ -1377,6 +1775,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "activation_candidates_per_latent": int(args.activation_candidates_per_latent),
         "examples_per_latent": int(args.examples_per_latent),
         "linearized_scored_documents": len(all_docs),
+        "effect_target": str(args.effect_target),
+        "human_class": int(human_class),
+        "ai_classes": ai_classes,
+        "margin_class_diffs": margin_class_diffs,
         "final_latent_rank_score": str(args.final_latent_rank_score),
         "browser_top_k": int(args.browser_top_k),
         "activation_definition": "dense_relu_per_token_topk_non_special_tokens",
