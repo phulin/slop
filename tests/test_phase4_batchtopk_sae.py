@@ -11,6 +11,7 @@ from torch import nn
 from slop_sftdiv.cli.phase4_batchtopk_sae import (
     BatchTopKSAE,
     SAEDoc,
+    _matryoshka_reconstruction_loss,
     _load_jsonl_docs,
     _load_parquet_docs,
     _load_activation_cache,
@@ -50,6 +51,28 @@ def test_batchtopk_sae_tied_init_copies_decoder_columns_to_encoder_rows() -> Non
     assert sae.init_mode == "tied"
     assert torch.allclose(sae.encoder.weight, sae.decoder.weight.T)
     assert torch.allclose(sae.decoder.weight.norm(dim=0), torch.ones(8), atol=1e-6)
+
+
+def test_matryoshka_loss_slices_global_batchtopk_codes() -> None:
+    sae = BatchTopKSAE(input_dim=4, latent_dim=4, k=1)
+    batch = torch.zeros(1, 4)
+    dense_codes = torch.tensor([[1.0, 1.0, 10.0, 9.0]])
+
+    with torch.no_grad():
+        sae.decoder.weight.copy_(torch.eye(4))
+        if sae.decoder.bias is not None:
+            sae.decoder.bias.zero_()
+    sae.encode_dense = lambda _batch: dense_codes  # type: ignore[method-assign]
+
+    loss, metrics = _matryoshka_reconstruction_loss(
+        sae=sae,
+        batch=batch,
+        prefixes=[2],
+        weights=[1.0],
+    )
+
+    assert loss.item() == 0.0
+    assert metrics["matryoshka_mse_2"] == 0.0
 
 
 def test_load_jsonl_docs_strips_generation_chat_markers(tmp_path) -> None:

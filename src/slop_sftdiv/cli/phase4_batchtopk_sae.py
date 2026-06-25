@@ -1077,10 +1077,11 @@ def _matryoshka_reconstruction_loss(
     weights: list[float],
 ) -> tuple[torch.Tensor, dict[str, float]]:
     dense_codes = sae.encode_dense(batch)
+    sparse_codes = sae.batch_topk(dense_codes)
     losses: list[torch.Tensor] = []
     metrics: dict[str, float] = {}
     for prefix, weight in zip(prefixes, weights, strict=True):
-        prefix_codes = sae.batch_topk(dense_codes[:, :prefix])
+        prefix_codes = sparse_codes[:, :prefix]
         reconstruction = F.linear(
             prefix_codes,
             sae.decoder.weight[:, :prefix],
