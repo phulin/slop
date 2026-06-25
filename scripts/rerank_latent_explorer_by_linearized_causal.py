@@ -790,7 +790,8 @@ def _activation_difference_latent_rows(
             )
 
     valid = np.isfinite(human_max) & np.isfinite(ai_max)
-    differences = np.where(valid, human_max - ai_max, 0.0)
+    differences = np.zeros_like(human_max)
+    np.subtract(human_max, ai_max, out=differences, where=valid)
     abs_differences = np.abs(differences)
     prompt_counts = valid.sum(axis=0)
     mean_abs = abs_differences.sum(axis=0) / np.maximum(prompt_counts, 1)
@@ -1287,8 +1288,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     for latent_id, docs in reranked_latent_docs.items():
         index["latentDocs"][latent_id] = docs
     index["generationImpacts"] = generation_impacts
+    rerank_method = (
+        "browser_aligned_activation_difference_selection_then_exact_prompt_contrast_ablation"
+        if str(args.latent_selection_source) == "max_ai_human_activation_difference"
+        else "browser_aligned_linearized_prompt_contrast_then_exact_prompt_contrast_ablation"
+    )
     index["causalRerank"] = {
-        "method": "browser_aligned_linearized_prompt_contrast_then_exact_prompt_contrast_ablation",
+        "method": rerank_method,
         "activation_layer": int(args.activation_layer),
         "target_class": target_class,
         "linearized_top_latents": int(args.linearized_top_latents),
