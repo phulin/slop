@@ -1,0 +1,1160 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:262` | `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` | `human` | 225 | `897.51` | `7.73` | word:182|sentence_boundary:16|style_function_word:8|expanded_negation_word:7|punctuation:5|discourse_marker_word:5|contraction_piece:2 |
+| `L19:262` | `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` | `gpt-5.5` | 432 | `1494.89` | `7.93` | word:312|punctuation:58|sentence_boundary:32|style_function_word:18|expanded_negation_word:9|contraction_piece:2|discourse_marker_word:1 |
+| `L19:262` | `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` | `gpt-5.5` | 495 | `2620.12` | `10.37` | word:376|punctuation:62|sentence_boundary:34|style_function_word:15|expanded_negation_word:6|discourse_marker_word:2 |
+| `L19:262` | `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` | `gpt-5.5` | 486 | `2073.94` | `9.29` | word:355|punctuation:69|sentence_boundary:26|style_function_word:21|expanded_negation_word:10|discourse_marker_word:4|contraction_piece:1 |
+| `L19:262` | `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` | `gpt-5.5` | 482 | `1785.39` | `8.49` | word:397|punctuation:36|sentence_boundary:23|style_function_word:17|expanded_negation_word:4|empty:3|discourse_marker_word:2 |
+| `L19:262` | `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` | `gpt-5.5` | 391 | `2026.47` | `9.57` | word:299|style_function_word:35|punctuation:26|sentence_boundary:20|expanded_negation_word:9|discourse_marker_word:2 |
+| `L19:262` | `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` | `gpt-5.5` | 468 | `1716.83` | `9.01` | word:379|punctuation:32|sentence_boundary:26|style_function_word:19|expanded_negation_word:5|discourse_marker_word:3|empty:2|contraction_piece:2 |
+| `L19:262` | `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` | `gpt-5.5` | 391 | `2108.29` | `9.87` | word:296|style_function_word:32|punctuation:29|sentence_boundary:18|empty:8|expanded_negation_word:7|discourse_marker_word:1 |
+| `L19:262` | `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` | `glm-5.2` | 427 | `2691.96` | `10.28` | word:334|sentence_boundary:32|punctuation:29|style_function_word:27|expanded_negation_word:3|discourse_marker_word:1|contraction_piece:1 |
+| `L19:262` | `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` | `gpt-5.5` | 460 | `2570.83` | `10.25` | word:369|style_function_word:32|sentence_boundary:29|punctuation:26|expanded_negation_word:3|empty:1 |
+| `L19:262` | `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` | `gpt-5.5` | 243 | `1679.69` | `12.19` | word:183|punctuation:23|style_function_word:18|sentence_boundary:12|expanded_negation_word:7 |
+| `L19:262` | `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` | `gpt-5.5` | 496 | `1999.40` | `7.73` | word:381|sentence_boundary:41|punctuation:37|expanded_negation_word:21|style_function_word:13|discourse_marker_word:3 |
+| `L19:262` | `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` | `gpt-5.5` | 186 | `903.21` | `8.72` | word:135|punctuation:21|style_function_word:13|sentence_boundary:9|expanded_negation_word:4|discourse_marker_word:4 |
+| `L19:262` | `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` | `gpt-5.5` | 436 | `1744.12` | `8.05` | word:339|sentence_boundary:28|style_function_word:24|punctuation:21|empty:12|contraction_piece:6|discourse_marker_word:5|expanded_negation_word:1 |
+| `L24:1664` | `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` | `human` | 221 | `1385.11` | `12.84` | word:177|sentence_boundary:16|style_function_word:8|expanded_negation_word:7|punctuation:5|discourse_marker_word:5|contraction_piece:2|empty:1 |
+| `L24:1664` | `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` | `gpt-5.5` | 430 | `2694.38` | `13.82` | word:311|punctuation:57|sentence_boundary:32|style_function_word:18|expanded_negation_word:9|contraction_piece:2|discourse_marker_word:1 |
+| `L24:1664` | `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` | `gpt-5.5` | 489 | `4336.82` | `18.03` | word:370|punctuation:62|sentence_boundary:34|style_function_word:15|expanded_negation_word:6|discourse_marker_word:2 |
+| `L24:1664` | `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` | `gpt-5.5` | 491 | `3630.13` | `14.54` | word:357|punctuation:71|sentence_boundary:27|style_function_word:21|expanded_negation_word:10|discourse_marker_word:4|contraction_piece:1 |
+| `L24:1664` | `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` | `gpt-5.5` | 485 | `3213.33` | `15.38` | word:399|punctuation:35|sentence_boundary:23|style_function_word:18|expanded_negation_word:4|empty:4|discourse_marker_word:2 |
+| `L24:1664` | `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` | `gpt-5.5` | 387 | `3486.86` | `15.30` | word:296|style_function_word:34|punctuation:26|sentence_boundary:20|expanded_negation_word:9|discourse_marker_word:2 |
+| `L24:1664` | `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` | `gpt-5.5` | 474 | `3121.21` | `14.89` | word:379|punctuation:33|sentence_boundary:26|style_function_word:19|empty:7|expanded_negation_word:5|discourse_marker_word:3|contraction_piece:2 |
+| `L24:1664` | `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` | `gpt-5.5` | 391 | `3755.60` | `15.72` | word:296|style_function_word:32|punctuation:29|sentence_boundary:18|empty:8|expanded_negation_word:7|discourse_marker_word:1 |
+| `L24:1664` | `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` | `glm-5.2` | 420 | `4492.79` | `17.22` | word:329|sentence_boundary:32|punctuation:28|style_function_word:26|expanded_negation_word:3|discourse_marker_word:1|contraction_piece:1 |
+| `L24:1664` | `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` | `gpt-5.5` | 467 | `4376.03` | `18.47` | word:375|style_function_word:32|sentence_boundary:29|punctuation:27|expanded_negation_word:3|empty:1 |
+| `L24:1664` | `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` | `gpt-5.5` | 244 | `2376.62` | `17.25` | word:184|punctuation:23|style_function_word:18|sentence_boundary:12|expanded_negation_word:7 |
+| `L24:1664` | `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` | `gpt-5.5` | 492 | `3437.33` | `12.99` | word:378|sentence_boundary:40|punctuation:37|expanded_negation_word:21|style_function_word:13|discourse_marker_word:3 |
+| `L24:1664` | `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` | `gpt-5.5` | 192 | `1588.62` | `15.90` | word:139|punctuation:21|style_function_word:13|sentence_boundary:9|expanded_negation_word:5|discourse_marker_word:5 |
+| `L24:1664` | `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` | `gpt-5.5` | 433 | `3026.16` | `13.58` | word:337|sentence_boundary:28|style_function_word:24|punctuation:20|empty:13|discourse_marker_word:5|contraction_piece:5|expanded_negation_word:1 |
+
+## Top Tokens
+
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `419` activation `7.726` class `word` token ` to`
+  - for her dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast. When she
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `411` activation `7.221` class `word` token ` She`
+  - was sad, Sally decided to keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills while
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `421` activation `7.025` class `word` token ` her`
+  - dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast. When she started to
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `436` activation `7.022` class `word` token ` she`
+  - she was in her cast. When she started to recover, she eased back into dancing little by little. It wasn't an
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `459` activation `6.965` class `word` token ` is`
+  - 't an easy journey for Sally. Coming back from an injury is painful and frustrating. But she persisted. She spent hours perfect
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `402` activation `6.743` class `word` token ` Sally`
+  - ina had almost come true. Even though she was sad, Sally decided to keep fighting for her dream. She spent hours watching
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `457` activation `6.435` class `word` token ` an`
+  - It wasn't an easy journey for Sally. Coming back from an injury is painful and frustrating. But she persisted. She spent
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `404` activation `6.406` class `word` token ` to`
+  - almost come true. Even though she was sad, Sally decided to keep fighting for her dream. She spent hours watching videos of
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `418` activation `6.360` class `word` token ` dancers`
+  - fighting for her dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast. When
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `414` activation `6.343` class `word` token ` watching`
+  - Sally decided to keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills while she was in
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `415` activation `6.331` class `word` token ` videos`
+  - decided to keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills while she was in her
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `461` activation `6.245` class `word` token ` and`
+  - easy journey for Sally. Coming back from an injury is painful and frustrating. But she persisted. She spent hours perfecting her
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `417` activation `6.153` class `word` token ` other`
+  - keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast.
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `399` activation `6.048` class `expanded_negation_word` token ` was`
+  - top ballerina had almost come true. Even though she was sad, Sally decided to keep fighting for her dream. She
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `425` activation `6.045` class `expanded_negation_word` token ` was`
+  - hours watching videos of other dancers to improve her skills while she was in her cast. When she started to recover, she eased
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `420` activation `6.035` class `word` token ` improve`
+  - her dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast. When she started
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `445` activation `6.027` class `word` token `It`
+  - to recover, she eased back into dancing little by little. It wasn't an easy journey for Sally. Coming back from an
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `449` activation `6.004` class `word` token ` easy`
+  - eased back into dancing little by little. It wasn't an easy journey for Sally. Coming back from an injury is painful and
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `410` activation `5.985` class `sentence_boundary` token `.`
+  - she was sad, Sally decided to keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills
+- `L19:262` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `413` activation `5.979` class `word` token ` hours`
+  - , Sally decided to keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills while she was
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `446` activation `7.929` class `style_function_word` token ` can`
+  - quickly. “Come on! If we work together, we can make it look normal.” Addison nodded seriously. “No
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `449` activation `7.861` class `word` token ` look`
+  - Come on! If we work together, we can make it look normal.” Addison nodded seriously. “No more summer snow
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `442` activation `7.790` class `word` token ` work`
+  - Emma wiped the table quickly. “Come on! If we work together, we can make it look normal.” Addison nodded
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `445` activation `7.715` class `word` token ` we`
+  - table quickly. “Come on! If we work together, we can make it look normal.” Addison nodded seriously. “
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `447` activation `7.336` class `style_function_word` token ` make`
+  - . “Come on! If we work together, we can make it look normal.” Addison nodded seriously. “No more
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `443` activation `7.060` class `word` token ` together`
+  - wiped the table quickly. “Come on! If we work together, we can make it look normal.” Addison nodded seriously
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `448` activation `7.052` class `word` token ` it`
+  - “Come on! If we work together, we can make it look normal.” Addison nodded seriously. “No more summer
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `441` activation `7.007` class `word` token ` we`
+  - .” Emma wiped the table quickly. “Come on! If we work together, we can make it look normal.” Addison
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `454` activation `6.325` class `word` token ` nodded`
+  - work together, we can make it look normal.” Addison nodded seriously. “No more summer snow.” Just then, the
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `444` activation `6.320` class `punctuation` token `,`
+  - the table quickly. “Come on! If we work together, we can make it look normal.” Addison nodded seriously.
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `459` activation `6.117` class `word` token ` more`
+  - make it look normal.” Addison nodded seriously. “No more summer snow.” Just then, the back door handle jigg
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `453` activation `5.987` class `word` token `ison`
+  - we work together, we can make it look normal.” Addison nodded seriously. “No more summer snow.” Just then,
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `450` activation `5.944` class `word` token ` normal`
+  - on! If we work together, we can make it look normal.” Addison nodded seriously. “No more summer snow.”
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `224` activation `5.850` class `word` token `Emma`
+  - those sprinkles?” Addison smiled. “Summer snow!” Emma looked toward the kitchen. The floor was sticky, and a
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `235` activation `5.738` class `word` token ` and`
+  - !” Emma looked toward the kitchen. The floor was sticky, and a melted popsicle puddle shined under the table.
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `458` activation `5.724` class `expanded_negation_word` token `No`
+  - can make it look normal.” Addison nodded seriously. “No more summer snow.” Just then, the back door handle j
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `344` activation `5.706` class `word` token ` they`
+  - weeds near the fence. “We have maybe ten minutes before they come in.” Emma grabbed a trash bag. “Okay.
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `330` activation `5.634` class `expanded_negation_word` token ` were`
+  - !” Chandler rushed to the window. Outside, their parents were pulling weeds near the fence. “We have maybe ten minutes
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `460` activation `5.561` class `word` token ` summer`
+  - it look normal.” Addison nodded seriously. “No more summer snow.” Just then, the back door handle jiggled
+- `L19:262` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `225` activation `5.558` class `word` token ` looked`
+  - sprinkles?” Addison smiled. “Summer snow!” Emma looked toward the kitchen. The floor was sticky, and a melted
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `233` activation `10.373` class `word` token ` a`
+  - quiet. But I train a lot, and I go with a team. That helps me feel brave.” A black kitten named
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `238` activation `10.231` class `word` token ` me`
+  - a lot, and I go with a team. That helps me feel brave.” A black kitten named Shadow raised her paw next
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `239` activation `10.130` class `style_function_word` token ` feel`
+  - lot, and I go with a team. That helps me feel brave.” A black kitten named Shadow raised her paw next.
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `218` activation `9.960` class `word` token ` is`
+  - . “It can feel a little scary at first because it is dark and quiet. But I train a lot, and I
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `230` activation `9.727` class `word` token ` I`
+  - is dark and quiet. But I train a lot, and I go with a team. That helps me feel brave.” A
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `198` activation `9.505` class `word` token ` space`
+  - A small orange kitten named Tiger raised his paw. “Is space scary?” Mittens smiled kindly. “It can feel
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `276` activation `9.495` class `style_function_word` token ` That`
+  - ens. “In space, there is very little gravity. That means I can float from one side of the spaceship to the
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `236` activation `9.124` class `style_function_word` token ` That`
+  - I train a lot, and I go with a team. That helps me feel brave.” A black kitten named Shadow raised her
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `232` activation `9.093` class `word` token ` with`
+  - and quiet. But I train a lot, and I go with a team. That helps me feel brave.” A black kitten
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `234` activation `9.087` class `word` token ` team`
+  - . But I train a lot, and I go with a team. That helps me feel brave.” A black kitten named Shadow
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `456` activation `9.030` class `word` token ` study`
+  - you become an astronaut?” Mittens answered, “You study hard, learn science and math, stay healthy, and practice
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `413` activation `9.006` class `word` token ` It`
+  - The moon looks big and bright. I also see Earth. It looks like a beautiful blue and green ball.” “Wow,”
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `220` activation `9.000` class `word` token ` and`
+  - It can feel a little scary at first because it is dark and quiet. But I train a lot, and I go with
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `271` activation `8.930` class `word` token ` is`
+  - ?” “Yes!” said Mittens. “In space, there is very little gravity. That means I can float from one side
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `459` activation `8.894` class `word` token ` learn`
+  - astronaut?” Mittens answered, “You study hard, learn science and math, stay healthy, and practice being a good
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `279` activation `8.863` class `style_function_word` token ` can`
+  - In space, there is very little gravity. That means I can float from one side of the spaceship to the other. Sometimes
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `175` activation `8.862` class `word` token ` and`
+  - job is to travel in a rocket, float in space, and learn about stars, planets, and the moon.” A small
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `237` activation `8.835` class `style_function_word` token ` helps`
+  - train a lot, and I go with a team. That helps me feel brave.” A black kitten named Shadow raised her paw
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `176` activation `8.831` class `word` token ` learn`
+  - is to travel in a rocket, float in space, and learn about stars, planets, and the moon.” A small orange
+- `L19:262` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `168` activation `8.815` class `word` token ` a`
+  - picture of a rocket. “My job is to travel in a rocket, float in space, and learn about stars, planets
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `184` activation `9.292` class `word` token ` with`
+  - kneeling beside her. “But at school, you also learn with other kids. You hear their ideas, and they hear yours
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `185` activation `9.186` class `word` token ` other`
+  - beside her. “But at school, you also learn with other kids. You hear their ideas, and they hear yours.
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `102` activation `8.780` class `word` token ` learn`
+  - You learn at home all the time. But school helps you learn things I might not think to teach you.” “Like what
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `101` activation `8.708` class `word` token ` you`
+  - . You learn at home all the time. But school helps you learn things I might not think to teach you.” “Like
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `203` activation `8.589` class `word` token ` a`
+  - ideas, and they hear yours. Sometimes they see things in a way you haven’t thought of yet.” Lily zipped
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `199` activation `8.255` class `word` token ` they`
+  - . You hear their ideas, and they hear yours. Sometimes they see things in a way you haven’t thought of yet.”
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `180` activation `8.224` class `punctuation` token `,`
+  - ,” Mom said, kneeling beside her. “But at school, you also learn with other kids. You hear their ideas,
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `182` activation `8.134` class `style_function_word` token ` also`
+  - said, kneeling beside her. “But at school, you also learn with other kids. You hear their ideas, and they
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `183` activation `8.012` class `word` token ` learn`
+  - , kneeling beside her. “But at school, you also learn with other kids. You hear their ideas, and they hear
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `145` activation `7.995` class `word` token ` to`
+  - to write stories, how to ask good questions, and how to try again when something feels hard.” Lily frowned. “
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `190` activation `7.969` class `word` token ` their`
+  - at school, you also learn with other kids. You hear their ideas, and they hear yours. Sometimes they see things in
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `103` activation `7.951` class `word` token ` things`
+  - learn at home all the time. But school helps you learn things I might not think to teach you.” “Like what?”
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `100` activation `7.908` class `style_function_word` token ` helps`
+  - me. You learn at home all the time. But school helps you learn things I might not think to teach you.” “
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `270` activation `7.798` class `word` token ` us`
+  - parts of their days too. But even boring things can help us practice patience and paying attention.” “Do I have to go
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `126` activation `7.786` class `word` token ` how`
+  - what?” “Like how plants grow, how maps work, how to add big numbers, how to write stories, how to
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `138` activation `7.773` class `word` token ` to`
+  - how to add big numbers, how to write stories, how to ask good questions, and how to try again when something feels
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `268` activation `7.762` class `style_function_word` token ` can`
+  - have boring parts of their days too. But even boring things can help us practice patience and paying attention.” “Do I have
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `231` activation `7.718` class `word` token ` is`
+  - ipped the front pocket of her backpack. “But sometimes school is boring.” “Sometimes it is,” Mom admitted. “Not
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `181` activation `7.684` class `word` token ` you`
+  - Mom said, kneeling beside her. “But at school, you also learn with other kids. You hear their ideas, and
+- `L19:262` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `127` activation `7.677` class `word` token ` to`
+  - ?” “Like how plants grow, how maps work, how to add big numbers, how to write stories, how to ask
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `40` activation `8.490` class `punctuation` token `,`
+  - often called cryptids. Cryptozoologists look at old stories, eyewitness reports, footprints, photos, and local legends to
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `52` activation `8.234` class `word` token ` to`
+  - , eyewitness reports, footprints, photos, and local legends to search for possible clues. Sometimes these tales are hoaxes or
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `70` activation `8.077` class `word` token ` people`
+  - Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there? Here are
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `68` activation `7.858` class `word` token ` they`
+  - clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there?
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `49` activation `7.766` class `word` token ` and`
+  - at old stories, eyewitness reports, footprints, photos, and local legends to search for possible clues. Sometimes these tales are
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `83` activation `7.530` class `word` token ` four`
+  - wondering, What if something is really out there? Here are four famous cryptozoological creatures: Bigfoot (Sasqu
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `39` activation `7.482` class `word` token ` stories`
+  - are often called cryptids. Cryptozoologists look at old stories, eyewitness reports, footprints, photos, and local legends
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `61` activation `7.387` class `word` token ` are`
+  - and local legends to search for possible clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `111` activation `7.371` class `word` token ` people`
+  - in the forests of North America, especially the Pacific Northwest, people tell of a towering, hairy creature that walks on two legs
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `37` activation `7.364` class `word` token ` at`
+  - mystery animals are often called cryptids. Cryptozoologists look at old stories, eyewitness reports, footprints, photos, and
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `58` activation `7.149` class `word` token ` Sometimes`
+  - , photos, and local legends to search for possible clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `76` activation `7.005` class `word` token ` is`
+  - or mistakes—but sometimes they keep people wondering, What if something is really out there? Here are four famous cryptozoological creatures
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `69` activation `6.993` class `word` token ` keep`
+  - . Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there? Here
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `38` activation `6.974` class `word` token ` old`
+  - animals are often called cryptids. Cryptozoologists look at old stories, eyewitness reports, footprints, photos, and local
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `43` activation `6.929` class `punctuation` token `,`
+  - ids. Cryptozoologists look at old stories, eyewitness reports, footprints, photos, and local legends to search for possible
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `110` activation `6.855` class `punctuation` token `,`
+  - Deep in the forests of North America, especially the Pacific Northwest, people tell of a towering, hairy creature that walks on two
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `65` activation `6.839` class `word` token ` mistakes`
+  - search for possible clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `36` activation `6.660` class `word` token ` look`
+  - These mystery animals are often called cryptids. Cryptozoologists look at old stories, eyewitness reports, footprints, photos,
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `112` activation `6.609` class `word` token ` tell`
+  - the forests of North America, especially the Pacific Northwest, people tell of a towering, hairy creature that walks on two legs like
+- `L19:262` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `84` activation `6.602` class `word` token ` famous`
+  - , What if something is really out there? Here are four famous cryptozoological creatures: Bigfoot (Sasquatch
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `311` activation `9.572` class `word` token ` has`
+  - we understand we are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `315` activation `8.892` class `style_function_word` token ` can`
+  - connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day,
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `319` activation `8.869` class `word` token ` One`
+  - . Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day, but one kind word
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `314` activation `8.642` class `word` token ` it`
+  - are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `310` activation `8.404` class `style_function_word` token ` also`
+  - that we understand we are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `228` activation `8.240` class `word` token ` Some`
+  - are all trying to figure out what a good life means. Some people think success is about money, popularity, or being the
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `316` activation `8.209` class `word` token ` interrupt`
+  - to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day, but
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `309` activation `7.917` class `word` token `ness`
+  - prove that we understand we are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `325` activation `7.908` class `word` token `’s`
+  - because it can interrupt negativity. One rude comment can ruin someone’s day, but one kind word can sometimes rescue it. We
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `304` activation `7.855` class `word` token ` to`
+  - one of the ways we prove that we understand we are connected to each other. Kindness also has power because it can interrupt
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `294` activation `7.840` class `word` token ` the`
+  - world better. Kindness is important because it is one of the ways we prove that we understand we are connected to each other
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `322` activation `7.800` class `style_function_word` token ` can`
+  - also has power because it can interrupt negativity. One rude comment can ruin someone’s day, but one kind word can sometimes rescue
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `369` activation `7.679` class `word` token ` in`
+  - , or a simple “Are you okay?” can be small in action but huge in meaning. It is like dropping a pe
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `313` activation `7.674` class `style_function_word` token ` because`
+  - we are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `318` activation `7.664` class `sentence_boundary` token `.`
+  - other. Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day, but one kind
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `367` activation `7.652` class `word` token ` be`
+  - with someone, or a simple “Are you okay?” can be small in action but huge in meaning. It is like dropping
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `373` activation `7.647` class `word` token ` in`
+  - “Are you okay?” can be small in action but huge in meaning. It is like dropping a pebble into water:
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `454` activation `7.642` class `word` token ` in`
+  - and to care when we could just ignore things. So, in conclusion, kindness matters because it reminds us that life is not
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `302` activation `7.610` class `word` token ` are`
+  - it is one of the ways we prove that we understand we are connected to each other. Kindness also has power because it
+- `L19:262` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `490` activation `7.595` class `word` token ` the`
+  - feel seen instead of invisible. And maybe that is one of the deepest things we can do: to make someone else feel,
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `155` activation `9.011` class `word` token ` a`
+  - the smaller number of young people in the U.S., or a strong job market pulling graduates straight into work. But experts say
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `154` activation `8.257` class `word` token ` or`
+  - , the smaller number of young people in the U.S., or a strong job market pulling graduates straight into work. But experts
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `178` activation `8.242` class `word` token ` is`
+  - experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16- to
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `168` activation `8.218` class `word` token ` the`
+  - strong job market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is more complicated
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `166` activation `8.045` class `word` token ` experts`
+  - or a strong job market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `176` activation `7.899` class `word` token ` the`
+  - . But experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16-
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `179` activation `7.808` class `word` token ` more`
+  - say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16- to 24
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `137` activation `7.791` class `word` token ` people`
+  - college students now than there were 10 years ago. Some people blame Covid-19, the smaller number of young people in
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `136` activation `7.422` class `word` token ` Some`
+  - fewer college students now than there were 10 years ago. Some people blame Covid-19, the smaller number of young people
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `177` activation `7.391` class `word` token ` explanation`
+  - But experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16- to
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `175` activation `7.340` class `word` token ` and`
+  - work. But experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `153` activation `7.338` class `punctuation` token `.,`
+  - 19, the smaller number of young people in the U.S., or a strong job market pulling graduates straight into work. But
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `151` activation `7.240` class `word` token ` U`
+  - Covid-19, the smaller number of young people in the U.S., or a strong job market pulling graduates straight into work
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `119` activation `7.234` class `word` token ` are`
+  - students are enrolling in college than in the past. There are about 4 million fewer college students now than there were
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `170` activation `7.219` class `word` token ` started`
+  - market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is more complicated. Work
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `174` activation `6.889` class `punctuation` token `,`
+  - into work. But experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `167` activation `6.858` class `word` token ` say`
+  - a strong job market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is more
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `156` activation `6.773` class `word` token ` strong`
+  - smaller number of young people in the U.S., or a strong job market pulling graduates straight into work. But experts say the
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `138` activation `6.445` class `word` token ` blame`
+  - students now than there were 10 years ago. Some people blame Covid-19, the smaller number of young people in the
+- `L19:262` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `135` activation `6.409` class `sentence_boundary` token `.`
+  - million fewer college students now than there were 10 years ago. Some people blame Covid-19, the smaller number of young
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `229` activation `9.874` class `word` token ` the`
+  - Curiosity means wanting to learn, ask questions, and understand the world. Curious kids become better problem-solvers and discover
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `181` activation `9.647` class `word` token ` is`
+  - good they bring into the world. Brave Bravery is not about never feeling scared—it means trying even when something feels
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `221` activation `9.106` class `word` token ` to`
+  - , and keep growing. Curious Curiosity means wanting to learn, ask questions, and understand the world. Curious
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `204` activation `9.077` class `word` token ` handle`
+  - something feels hard or uncertain. Brave kids learn that they can handle challenges, speak up, and keep growing. Curious
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `168` activation `8.983` class `word` token ` the`
+  - . Kindness helps kids build strong friendships and feel proud of the good they bring into the world. Brave Bravery
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `218` activation `8.895` class `word` token `iosity`
+  - , speak up, and keep growing. Curious Curiosity means wanting to learn, ask questions, and understand the world
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `180` activation `8.892` class `word` token `avery`
+  - the good they bring into the world. Brave Bravery is not about never feeling scared—it means trying even when something
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `301` activation `8.873` class `word` token ` a`
+  - imagination to make, build, solve, or express something in a new way. Creative kids learn that their ideas matter and that
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `300` activation `8.789` class `word` token ` in`
+  - using imagination to make, build, solve, or express something in a new way. Creative kids learn that their ideas matter and
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `158` activation `8.726` class `word` token `ness`
+  - how others feel and choosing to help when you can. Kindness helps kids build strong friendships and feel proud of the good they
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `203` activation `8.683` class `style_function_word` token ` can`
+  - when something feels hard or uncertain. Brave kids learn that they can handle challenges, speak up, and keep growing. Curious
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `219` activation `8.591` class `word` token ` means`
+  - speak up, and keep growing. Curious Curiosity means wanting to learn, ask questions, and understand the world.
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `193` activation `8.344` class `style_function_word` token ` feels`
+  - is not about never feeling scared—it means trying even when something feels hard or uncertain. Brave kids learn that they can handle challenges
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `220` activation `8.289` class `word` token ` wanting`
+  - up, and keep growing. Curious Curiosity means wanting to learn, ask questions, and understand the world. Cur
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `331` activation `8.288` class `word` token `ience`
+  - one way to do something. Resilient Resilience means bouncing back after mistakes, disappointment, or difficulty. This
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `241` activation `8.269` class `word` token ` discover`
+  - the world. Curious kids become better problem-solvers and discover new interests, talents, and ideas. Honest Being
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `184` activation `8.210` class `expanded_negation_word` token ` never`
+  - into the world. Brave Bravery is not about never feeling scared—it means trying even when something feels hard or uncertain
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `228` activation `8.141` class `word` token ` understand`
+  - Curiosity means wanting to learn, ask questions, and understand the world. Curious kids become better problem-solvers and
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `159` activation `8.136` class `style_function_word` token ` helps`
+  - others feel and choosing to help when you can. Kindness helps kids build strong friendships and feel proud of the good they bring
+- `L19:262` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `255` activation `8.090` class `word` token ` means`
+  - interests, talents, and ideas. Honest Being honest means telling the truth and being trustworthy. Honesty helps children build
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `407` activation `10.276` class `word` token ` are`
+  - down, it leaves the special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny,
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `406` activation `10.082` class `word` token ` Scientists`
+  - sinks down, it leaves the special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `408` activation `9.956` class `word` token ` still`
+  - , it leaves the special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny, invisible
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `415` activation `9.799` class `word` token ` Some`
+  - ingredients behind. Scientists are still studying exactly how this works. Some even think tiny, invisible bugs called microbes help mix the potion
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `274` activation `9.762` class `word` token ` spaces`
+  - , or little holes inside the dirt. Sometimes, these empty spaces are made when old rocks dissolve. Even ancient bugs, shells
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `275` activation `9.491` class `word` token ` are`
+  - or little holes inside the dirt. Sometimes, these empty spaces are made when old rocks dissolve. Even ancient bugs, shells,
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `331` activation `9.401` class `word` token ` fills`
+  - opal water doesn't fill big holes. Instead, it fills the tiny gaps between grains of sand. It acts like glue
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `263` activation `9.231` class `word` token ` or`
+  - need empty spaces underground. Think of cracks in big rocks, or little holes inside the dirt. Sometimes, these empty spaces are
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `277` activation `9.226` class `style_function_word` token ` when`
+  - holes inside the dirt. Sometimes, these empty spaces are made when old rocks dissolve. Even ancient bugs, shells, and dinosaur
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `292` activation `9.113` class `word` token ` behind`
+  - dissolve. Even ancient bugs, shells, and dinosaur bones leave behind empty shapes in the rock. The opal water flows into
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `432` activation `9.060` class `word` token ` best`
+  - invisible bugs called microbes help mix the potion! Australia is the best place on Earth to find these sparkly treasures. We have
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `279` activation `8.967` class `word` token ` rocks`
+  - the dirt. Sometimes, these empty spaces are made when old rocks dissolve. Even ancient bugs, shells, and dinosaur bones leave
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `330` activation `8.945` class `word` token ` it`
+  - the opal water doesn't fill big holes. Instead, it fills the tiny gaps between grains of sand. It acts like
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `478` activation `8.905` class `word` token ` are`
+  - . From South Australia, we get white opals, which are light and milky. From Queensland, we get boulder
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `291` activation `8.900` class `word` token ` leave`
+  - rocks dissolve. Even ancient bugs, shells, and dinosaur bones leave behind empty shapes in the rock. The opal water flows
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `412` activation `8.841` class `style_function_word` token ` this`
+  - special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny, invisible bugs called microbes help
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `387` activation `8.823` class `word` token ` level`
+  - level deep down rises. When it gets dry, the water level falls. As the water slowly sinks down, it leaves the
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `409` activation `8.787` class `word` token ` studying`
+  - it leaves the special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny, invisible bugs
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `430` activation `8.779` class `word` token ` is`
+  - tiny, invisible bugs called microbes help mix the potion! Australia is the best place on Earth to find these sparkly treasures.
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `321` activation `8.775` class `word` token ` water`
+  - ens like jelly in a mold. Sometimes, the opal water doesn't fill big holes. Instead, it fills the tiny
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `429` activation `10.247` class `word` token ` still`
+  - is often found near white clay called kaolin. Scientists are still learning exactly how opal forms. Some think the water may
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `437` activation `9.837` class `word` token ` Some`
+  - olin. Scientists are still learning exactly how opal forms. Some think the water may need to become acidic at some point,
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `427` activation `9.710` class `word` token `Scientists`
+  - opal is often found near white clay called kaolin. Scientists are still learning exactly how opal forms. Some think the
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `428` activation `9.708` class `word` token ` are`
+  - al is often found near white clay called kaolin. Scientists are still learning exactly how opal forms. Some think the water
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `461` activation `8.804` class `word` token ` many`
+  - , possibly because of tiny living things called microbes. Australia has many kinds of precious opal, but most valuable opal comes
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `430` activation `8.645` class `word` token ` learning`
+  - often found near white clay called kaolin. Scientists are still learning exactly how opal forms. Some think the water may need
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `369` activation `8.488` class `style_function_word` token ` can`
+  - opal forms. Weather is important. Wet and dry times can make underground water rise and fall. When the water level drops
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `330` activation `8.475` class `style_function_word` token ` This`
+  - soak into sand or silt and glue the grains together. This can make special kinds of opal, such as matrix op
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `417` activation `8.356` class `word` token ` is`
+  - breaking down of ancient clay rocks. In Australia, opal is often found near white clay called kaolin. Scientists are still
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `154` activation `8.349` class `word` token ` is`
+  - precious opal can begin to form. Precious opal is the kind that flashes with bright colours. The tiny balls are
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `351` activation `8.315` class `word` token `Many`
+  - such as matrix opal or opalised sandstone. Many things affect what type of opal forms. Weather is important
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `485` activation `8.304` class `word` token ` main`
+  - comes from sedimentary rocks in the Great Australian Basin. The main types are black opal from Lightning Ridge, white opal
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `240` activation `8.263` class `word` token ` spaces`
+  - In sedimentary rocks, there are many more spaces. These spaces can be made when water wears away parts of rocks, fossils
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `380` activation `8.248` class `word` token ` level`
+  - times can make underground water rise and fall. When the water level drops, silica can become more concentrated, helping opal grow
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `460` activation `8.242` class `word` token ` has`
+  - point, possibly because of tiny living things called microbes. Australia has many kinds of precious opal, but most valuable opal
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `242` activation `8.198` class `word` token ` be`
+  - ary rocks, there are many more spaces. These spaces can be made when water wears away parts of rocks, fossils, or
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `331` activation `8.149` class `style_function_word` token ` can`
+  - into sand or silt and glue the grains together. This can make special kinds of opal, such as matrix opal
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `469` activation `8.089` class `word` token ` most`
+  - microbes. Australia has many kinds of precious opal, but most valuable opal comes from sedimentary rocks in the Great Australian
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `404` activation `8.040` class `word` token ` slow`
+  - grow. The silica may come from volcanoes or from the slow breaking down of ancient clay rocks. In Australia, opal
+- `L19:262` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `418` activation `7.986` class `word` token ` often`
+  - down of ancient clay rocks. In Australia, opal is often found near white clay called kaolin. Scientists are still learning
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `463` activation `12.192` class `word` token ` to`
+  - and laws. It makes history feel less boring because it connects to life today. When I make a project about Rome, I
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `476` activation `10.521` class `style_function_word` token ` can`
+  - life today. When I make a project about Rome, I can draw maps, make models, or write fun facts. That
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `415` activation `10.393` class `expanded_negation_word` token ` were`
+  - they had shields, armor, and smart battle plans. They were really organized and that helped them win lots of battles. I
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `500` activation `10.308` class `word` token ` they`
+  - That is why the Romans are my favorite history topic, because they were powerful, clever, and full of awesome stories.
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `462` activation `10.291` class `word` token ` connects`
+  - , and laws. It makes history feel less boring because it connects to life today. When I make a project about Rome,
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `421` activation `10.170` class `word` token ` them`
+  - and smart battle plans. They were really organized and that helped them win lots of battles. I also think it is cool that
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `501` activation `10.104` class `expanded_negation_word` token ` were`
+  - is why the Romans are my favorite history topic, because they were powerful, clever, and full of awesome stories.
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `424` activation `10.087` class `word` token ` of`
+  - plans. They were really organized and that helped them win lots of battles. I also think it is cool that the Romans invented
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `403` activation `10.045` class `word` token ` they`
+  - people lived in the city. I like the Roman army because they had shields, armor, and smart battle plans. They were
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `458` activation `9.857` class `word` token ` less`
+  - , concrete, calendars, and laws. It makes history feel less boring because it connects to life today. When I make a
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `441` activation `9.775` class `word` token ` still`
+  - think it is cool that the Romans invented or improved things we still use, like roads, concrete, calendars, and laws.
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `422` activation `9.766` class `word` token ` win`
+  - smart battle plans. They were really organized and that helped them win lots of battles. I also think it is cool that the
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `438` activation `9.720` class `word` token ` improved`
+  - . I also think it is cool that the Romans invented or improved things we still use, like roads, concrete, calendars,
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `442` activation `9.693` class `word` token ` use`
+  - it is cool that the Romans invented or improved things we still use, like roads, concrete, calendars, and laws. It
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `457` activation `9.687` class `style_function_word` token ` feel`
+  - roads, concrete, calendars, and laws. It makes history feel less boring because it connects to life today. When I make
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `440` activation `9.658` class `word` token ` we`
+  - also think it is cool that the Romans invented or improved things we still use, like roads, concrete, calendars, and laws
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `461` activation `9.599` class `word` token ` it`
+  - calendars, and laws. It makes history feel less boring because it connects to life today. When I make a project about Rome
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `502` activation `9.592` class `word` token ` powerful`
+  - why the Romans are my favorite history topic, because they were powerful, clever, and full of awesome stories.
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `464` activation `9.563` class `word` token ` life`
+  - laws. It makes history feel less boring because it connects to life today. When I make a project about Rome, I can
+- `L19:262` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `475` activation `9.495` class `word` token ` I`
+  - to life today. When I make a project about Rome, I can draw maps, make models, or write fun facts.
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `321` activation `7.733` class `word` token ` to`
+  - a little, but it was enough. Kevin’s heart began to thump. They ran down the street together, calling Milo
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `319` activation `7.628` class `word` token ` heart`
+  - only open a little, but it was enough. Kevin’s heart began to thump. They ran down the street together,
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `296` activation `7.529` class `word` token ` changed`
+  - , a little louder. His mom came outside. Her face changed when she saw the open side gate. It was only open
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `434` activation `7.356` class `word` token ` big`
+  - with Milo’s picture. Kevin wrote LOST DOG in big, careful letters. Under it, he wrote: He is
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `428` activation `7.327` class `word` token ` wrote`
+  - his hand. They made posters with Milo’s picture. Kevin wrote LOST DOG in big, careful letters. Under it
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `212` activation `7.203` class `word` token ` a`
+  - carrying a picture he had drawn in art class. It was a picture of Milo wearing a superhero cape. “Milo!”
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `323` activation `6.938` class `word` token `ump`
+  - , but it was enough. Kevin’s heart began to thump. They ran down the street together, calling Milo’s name
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `211` activation `6.884` class `expanded_negation_word` token ` was`
+  - home carrying a picture he had drawn in art class. It was a picture of Milo wearing a superhero cape. “Milo
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `285` activation `6.829` class `word` token ` a`
+  - stolen a sock. “Milo?” Kevin called again, a little louder. His mom came outside. Her face changed when
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `210` activation `6.772` class `word` token ` It`
+  - came home carrying a picture he had drawn in art class. It was a picture of Milo wearing a superhero cape. “M
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `436` activation `6.741` class `word` token ` careful`
+  - ’s picture. Kevin wrote LOST DOG in big, careful letters. Under it, he wrote: He is very friendly
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `403` activation `6.726` class `word` token `’s`
+  - “Maybe he’s scared,” Kevin said. “Maybe he’s hiding.” “Maybe,” his mom said gently. She squeezed
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `442` activation `6.586` class `word` token ` he`
+  - OST DOG in big, careful letters. Under it, he wrote: He is very friendly. He likes peanut butter.
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `305` activation `6.579` class `word` token ` It`
+  - . Her face changed when she saw the open side gate. It was only open a little, but it was enough. Kevin
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `306` activation `6.571` class `expanded_negation_word` token ` was`
+  - Her face changed when she saw the open side gate. It was only open a little, but it was enough. Kevin’s
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `325` activation `6.533` class `word` token `They`
+  - it was enough. Kevin’s heart began to thump. They ran down the street together, calling Milo’s name. Kevin
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `467` activation `6.442` class `word` token ` Kevin`
+  - Please help him come home. As the evening grew dark, Kevin stood at the gate and listened. No paws pattered
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `464` activation `6.391` class `word` token ` grew`
+  - peanut butter. Please help him come home. As the evening grew dark, Kevin stood at the gate and listened. No p
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `295` activation `6.376` class `word` token ` face`
+  - again, a little louder. His mom came outside. Her face changed when she saw the open side gate. It was only
+- `L19:262` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `433` activation `6.352` class `word` token ` in`
+  - posters with Milo’s picture. Kevin wrote LOST DOG in big, careful letters. Under it, he wrote: He
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `361` activation `8.724` class `sentence_boundary` token `.`
+  - can make children think math is only about getting one right answer. Instead, the curriculum should include more problem-solving, games,
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `405` activation `8.404` class `word` token ` Mathematics`
+  - build confidence. A report by the National Council of Teachers of Mathematics, Principles and Standards for School Mathematics, argues that students learn
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `413` activation `8.120` class `punctuation` token `,`
+  - Council of Teachers of Mathematics, Principles and Standards for School Mathematics, argues that students learn best when they explore ideas, explain their
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `390` activation `8.095` class `word` token ` math`
+  - patterns, and group activities. These methods help students understand why math matters and build confidence. A report by the National Council of
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `366` activation `8.091` class `expanded_negation_word` token ` should`
+  - is only about getting one right answer. Instead, the curriculum should include more problem-solving, games, measuring, money, patterns
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `383` activation `8.007` class `sentence_boundary` token `.`
+  - , games, measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence.
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `385` activation `7.956` class `word` token ` methods`
+  - , measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence. A report
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `384` activation `7.569` class `style_function_word` token ` These`
+  - games, measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence. A
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `397` activation `7.556` class `word` token ` report`
+  - methods help students understand why math matters and build confidence. A report by the National Council of Teachers of Mathematics, Principles and Standards
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `391` activation `7.545` class `word` token ` matters`
+  - , and group activities. These methods help students understand why math matters and build confidence. A report by the National Council of Teachers
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `367` activation `7.427` class `word` token ` include`
+  - only about getting one right answer. Instead, the curriculum should include more problem-solving, games, measuring, money, patterns,
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `453` activation `7.257` class `word` token ` people`
+  - school, when children are forming their attitudes toward learning. Some people may worry that changing the curriculum would weaken basic skills. However
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `393` activation `7.219` class `word` token ` build`
+  - group activities. These methods help students understand why math matters and build confidence. A report by the National Council of Teachers of Mathematics
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `386` activation `7.185` class `style_function_word` token ` help`
+  - measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence. A report by
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `460` activation `7.163` class `expanded_negation_word` token ` would`
+  - attitudes toward learning. Some people may worry that changing the curriculum would weaken basic skills. However, a better curriculum would still teach
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `387` activation `7.116` class `word` token ` students`
+  - , money, patterns, and group activities. These methods help students understand why math matters and build confidence. A report by the
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `436` activation `7.066` class `word` token ` is`
+  - explain their reasoning, and connect math to everyday situations. This is especially important in primary school, when children are forming their attitudes
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `389` activation `7.043` class `word` token ` why`
+  - , patterns, and group activities. These methods help students understand why math matters and build confidence. A report by the National Council
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `435` activation `7.012` class `style_function_word` token ` This`
+  - , explain their reasoning, and connect math to everyday situations. This is especially important in primary school, when children are forming their
+- `L19:262` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `382` activation `6.970` class `word` token ` activities`
+  - -solving, games, measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `441` activation `8.048` class `word` token ` is`
+  - . Expect some fingertip soreness Mild soreness is normal at first. Take breaks when needed, and don’t
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `372` activation `7.426` class `word` token ` is`
+  - . Tune your guitar every time A free tuner app is enough. If your guitar is out of tune, even correct
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `391` activation `7.061` class `style_function_word` token ` can`
+  - out of tune, even correct playing will sound bad, which can be discouraging. Don’t press too hard Beginners
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `355` activation `7.030` class `word` token ` tutorials`
+  - Free videos, chord charts, tuner apps, and beginner song tutorials can help a lot. Tune your guitar every time
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `392` activation `6.881` class `word` token ` be`
+  - of tune, even correct playing will sound bad, which can be discouraging. Don’t press too hard Beginners often
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `422` activation `6.821` class `style_function_word` token ` This`
+  - . Use just enough pressure to make the note sound clean. This helps reduce finger pain and tension. Expect some fingertip sore
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `232` activation `6.810` class `word` token ` practice`
+  - with only two to four chords. Playing real music early makes practice more fun and helps you see progress faster. Practice strum
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `390` activation `6.679` class `style_function_word` token ` which`
+  - is out of tune, even correct playing will sound bad, which can be discouraging. Don’t press too hard Begin
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `356` activation `6.676` class `style_function_word` token ` can`
+  - videos, chord charts, tuner apps, and beginner song tutorials can help a lot. Tune your guitar every time A
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `342` activation `6.619` class `sentence_boundary` token `.`
+  - free learning resources You don’t need paid lessons right away. Free videos, chord charts, tuner apps, and beginner song
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `282` activation `6.529` class `word` token `hythm`
+  - only, then move to down-up strumming. Rhythm matters more than speed. Keep your guitar nearby If your
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `386` activation `6.412` class `style_function_word` token ` will`
+  - . If your guitar is out of tune, even correct playing will sound bad, which can be discouraging. Don’t press
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `387` activation `6.404` class `word` token ` sound`
+  - If your guitar is out of tune, even correct playing will sound bad, which can be discouraging. Don’t press too
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `233` activation `6.355` class `word` token ` more`
+  - only two to four chords. Playing real music early makes practice more fun and helps you see progress faster. Practice strumming
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `333` activation `6.309` class `empty` token `
+`
+  - feel easier and less like a chore. Use free learning resources You don’t need paid lessons right away. Free videos,
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `403` activation `6.300` class `word` token `ners`
+  - can be discouraging. Don’t press too hard Beginners often squeeze the strings too much. Use just enough pressure to
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `208` activation `6.293` class `style_function_word` token ` feel`
+  - slowly switch between them. The goal is to make the movement feel natural. Use simple songs to stay motivated Choose songs with
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `320` activation `6.233` class `word` token ` practice`
+  - likely to pick it up for a few minutes. This makes practice feel easier and less like a chore. Use free learning resources
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `321` activation `6.199` class `style_function_word` token ` feel`
+  - to pick it up for a few minutes. This makes practice feel easier and less like a chore. Use free learning resources
+- `L19:262` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `440` activation `6.191` class `word` token `ness`
+  - tension. Expect some fingertip soreness Mild soreness is normal at first. Take breaks when needed, and don
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `419` activation `12.839` class `word` token ` to`
+  - for her dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast. When she
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `459` activation `12.662` class `word` token ` is`
+  - 't an easy journey for Sally. Coming back from an injury is painful and frustrating. But she persisted. She spent hours perfect
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `461` activation `11.700` class `word` token ` and`
+  - easy journey for Sally. Coming back from an injury is painful and frustrating. But she persisted. She spent hours perfecting her
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `457` activation `11.371` class `word` token ` an`
+  - It wasn't an easy journey for Sally. Coming back from an injury is painful and frustrating. But she persisted. She spent
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `436` activation `10.685` class `word` token ` she`
+  - she was in her cast. When she started to recover, she eased back into dancing little by little. It wasn't an
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `458` activation `10.646` class `word` token ` injury`
+  - wasn't an easy journey for Sally. Coming back from an injury is painful and frustrating. But she persisted. She spent hours
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `421` activation `10.477` class `word` token ` her`
+  - dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast. When she started to
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `415` activation `10.294` class `word` token ` videos`
+  - decided to keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills while she was in her
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `411` activation `10.293` class `word` token ` She`
+  - was sad, Sally decided to keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills while
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `418` activation `10.263` class `word` token ` dancers`
+  - fighting for her dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast. When
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `402` activation `10.188` class `word` token ` Sally`
+  - ina had almost come true. Even though she was sad, Sally decided to keep fighting for her dream. She spent hours watching
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `425` activation `10.124` class `expanded_negation_word` token ` was`
+  - hours watching videos of other dancers to improve her skills while she was in her cast. When she started to recover, she eased
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `465` activation `10.086` class `word` token ` she`
+  - . Coming back from an injury is painful and frustrating. But she persisted. She spent hours perfecting her dancing once again.
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `447` activation `10.015` class `word` token `'t`
+  - , she eased back into dancing little by little. It wasn't an easy journey for Sally. Coming back from an injury is
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `413` activation `9.970` class `word` token ` hours`
+  - , Sally decided to keep fighting for her dream. She spent hours watching videos of other dancers to improve her skills while she was
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `448` activation `9.805` class `word` token ` an`
+  - she eased back into dancing little by little. It wasn't an easy journey for Sally. Coming back from an injury is painful
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `449` activation `9.720` class `word` token ` easy`
+  - eased back into dancing little by little. It wasn't an easy journey for Sally. Coming back from an injury is painful and
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `399` activation `9.714` class `expanded_negation_word` token ` was`
+  - top ballerina had almost come true. Even though she was sad, Sally decided to keep fighting for her dream. She
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `420` activation `9.543` class `word` token ` improve`
+  - her dream. She spent hours watching videos of other dancers to improve her skills while she was in her cast. When she started
+- `L24:1664` `ad13d1bdd9050ed2d666c2af825b9eb4d9ccd518d92b17a466169dae073f8083@turn_01@human` token `404` activation `9.492` class `word` token ` to`
+  - almost come true. Even though she was sad, Sally decided to keep fighting for her dream. She spent hours watching videos of
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `446` activation `13.817` class `style_function_word` token ` can`
+  - quickly. “Come on! If we work together, we can make it look normal.” Addison nodded seriously. “No
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `442` activation `13.755` class `word` token ` work`
+  - Emma wiped the table quickly. “Come on! If we work together, we can make it look normal.” Addison nodded
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `449` activation `13.160` class `word` token ` look`
+  - Come on! If we work together, we can make it look normal.” Addison nodded seriously. “No more summer snow
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `448` activation `12.580` class `word` token ` it`
+  - “Come on! If we work together, we can make it look normal.” Addison nodded seriously. “No more summer
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `445` activation `12.343` class `word` token ` we`
+  - table quickly. “Come on! If we work together, we can make it look normal.” Addison nodded seriously. “
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `441` activation `11.957` class `word` token ` we`
+  - .” Emma wiped the table quickly. “Come on! If we work together, we can make it look normal.” Addison
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `443` activation `11.592` class `word` token ` together`
+  - wiped the table quickly. “Come on! If we work together, we can make it look normal.” Addison nodded seriously
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `453` activation `11.520` class `word` token `ison`
+  - we work together, we can make it look normal.” Addison nodded seriously. “No more summer snow.” Just then,
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `224` activation `11.131` class `word` token `Emma`
+  - those sprinkles?” Addison smiled. “Summer snow!” Emma looked toward the kitchen. The floor was sticky, and a
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `241` activation `11.085` class `word` token `le`
+  - . The floor was sticky, and a melted popsicle puddle shined under the table. “We were only trying to
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `447` activation `11.082` class `style_function_word` token ` make`
+  - . “Come on! If we work together, we can make it look normal.” Addison nodded seriously. “No more
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `232` activation `11.050` class `expanded_negation_word` token ` was`
+  - “Summer snow!” Emma looked toward the kitchen. The floor was sticky, and a melted popsicle puddle shined under
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `454` activation `10.964` class `word` token ` nodded`
+  - work together, we can make it look normal.” Addison nodded seriously. “No more summer snow.” Just then, the
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `419` activation `10.819` class `word` token `andler`
+  - through the blanket pile, dragging a towel behind him. Chandler groaned. “Fluffy is not helping.” Emma wiped
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `384` activation `10.785` class `word` token `ison`
+  - . “Addison, pick up the crayons.” Addison picked up one crayon, then hugged Fluffy. “
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `475` activation `10.752` class `word` token `andler`
+  - Just then, the back door handle jiggled. Chandler froze. Emma froze. Addison put the mixing bowl back on
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `411` activation `10.729` class `punctuation` token `,`
+  - helps.” Fluffy barked and ran through the blanket pile, dragging a towel behind him. Chandler groaned. “
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `468` activation `10.655` class `word` token ` door`
+  - . “No more summer snow.” Just then, the back door handle jiggled. Chandler froze. Emma froze.
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `430` activation `10.539` class `word` token `Emma`
+  - Chandler groaned. “Fluffy is not helping.” Emma wiped the table quickly. “Come on! If we work
+- `L24:1664` `9a7d2b49b83bfcbbec9c6dc10dd5eb329da72b74dbb704c420ce3922a8ec437e@turn_01@gpt-5.5` token `459` activation `10.508` class `word` token ` more`
+  - make it look normal.” Addison nodded seriously. “No more summer snow.” Just then, the back door handle jigg
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `239` activation `18.033` class `style_function_word` token ` feel`
+  - lot, and I go with a team. That helps me feel brave.” A black kitten named Shadow raised her paw next.
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `238` activation `16.821` class `word` token ` me`
+  - a lot, and I go with a team. That helps me feel brave.” A black kitten named Shadow raised her paw next
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `218` activation `16.523` class `word` token ` is`
+  - . “It can feel a little scary at first because it is dark and quiet. But I train a lot, and I
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `364` activation `16.358` class `word` token ` be`
+  - soup, fruit, and even tuna! But I have to be careful, because crumbs can float into the buttons.” A fluffy
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `276` activation `16.338` class `style_function_word` token ` That`
+  - ens. “In space, there is very little gravity. That means I can float from one side of the spaceship to the
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `469` activation `15.796` class `word` token ` being`
+  - hard, learn science and math, stay healthy, and practice being a good teammate.” Miss Fluffy clapped her paws
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `279` activation `15.718` class `style_function_word` token ` can`
+  - In space, there is very little gravity. That means I can float from one side of the spaceship to the other. Sometimes
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `220` activation `15.656` class `word` token ` and`
+  - It can feel a little scary at first because it is dark and quiet. But I train a lot, and I go with
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `198` activation `15.585` class `word` token ` space`
+  - A small orange kitten named Tiger raised his paw. “Is space scary?” Mittens smiled kindly. “It can feel
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `230` activation `15.541` class `word` token ` I`
+  - is dark and quiet. But I train a lot, and I go with a team. That helps me feel brave.” A
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `233` activation `15.514` class `word` token ` a`
+  - quiet. But I train a lot, and I go with a team. That helps me feel brave.” A black kitten named
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `175` activation `15.396` class `word` token ` and`
+  - job is to travel in a rocket, float in space, and learn about stars, planets, and the moon.” A small
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `210` activation `15.390` class `style_function_word` token ` feel`
+  - space scary?” Mittens smiled kindly. “It can feel a little scary at first because it is dark and quiet.
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `468` activation `15.353` class `word` token ` practice`
+  - study hard, learn science and math, stay healthy, and practice being a good teammate.” Miss Fluffy clapped her p
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `369` activation `15.240` class `style_function_word` token ` can`
+  - even tuna! But I have to be careful, because crumbs can float into the buttons.” A fluffy white kitten named Snowball
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `467` activation `15.203` class `word` token ` and`
+  - You study hard, learn science and math, stay healthy, and practice being a good teammate.” Miss Fluffy clapped her
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `236` activation `15.169` class `style_function_word` token ` That`
+  - I train a lot, and I go with a team. That helps me feel brave.” A black kitten named Shadow raised her
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `414` activation `14.883` class `word` token ` looks`
+  - moon looks big and bright. I also see Earth. It looks like a beautiful blue and green ball.” “Wow,” whispered
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `413` activation `14.856` class `word` token ` It`
+  - The moon looks big and bright. I also see Earth. It looks like a beautiful blue and green ball.” “Wow,”
+- `L24:1664` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@gpt-5.5` token `409` activation `14.757` class `style_function_word` token ` also`
+  - Mittens. “The moon looks big and bright. I also see Earth. It looks like a beautiful blue and green ball
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `203` activation `14.541` class `word` token ` a`
+  - ideas, and they hear yours. Sometimes they see things in a way you haven’t thought of yet.” Lily zipped
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `150` activation `14.361` class `style_function_word` token ` feels`
+  - to ask good questions, and how to try again when something feels hard.” Lily frowned. “I can try again at
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `268` activation `14.137` class `style_function_word` token ` can`
+  - have boring parts of their days too. But even boring things can help us practice patience and paying attention.” “Do I have
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `182` activation `14.103` class `style_function_word` token ` also`
+  - said, kneeling beside her. “But at school, you also learn with other kids. You hear their ideas, and they
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `184` activation `13.982` class `word` token ` with`
+  - kneeling beside her. “But at school, you also learn with other kids. You hear their ideas, and they hear yours
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `185` activation `13.866` class `word` token ` other`
+  - beside her. “But at school, you also learn with other kids. You hear their ideas, and they hear yours.
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `190` activation `13.755` class `word` token ` their`
+  - at school, you also learn with other kids. You hear their ideas, and they hear yours. Sometimes they see things in
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `199` activation `13.660` class `word` token ` they`
+  - . You hear their ideas, and they hear yours. Sometimes they see things in a way you haven’t thought of yet.”
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `101` activation `13.484` class `word` token ` you`
+  - . You learn at home all the time. But school helps you learn things I might not think to teach you.” “Like
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `270` activation `13.476` class `word` token ` us`
+  - parts of their days too. But even boring things can help us practice patience and paying attention.” “Do I have to go
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `102` activation `13.382` class `word` token ` learn`
+  - You learn at home all the time. But school helps you learn things I might not think to teach you.” “Like what
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `183` activation `13.372` class `word` token ` learn`
+  - , kneeling beside her. “But at school, you also learn with other kids. You hear their ideas, and they hear
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `145` activation `13.360` class `word` token ` to`
+  - to write stories, how to ask good questions, and how to try again when something feels hard.” Lily frowned. “
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `200` activation `13.347` class `word` token ` see`
+  - You hear their ideas, and they hear yours. Sometimes they see things in a way you haven’t thought of yet.” L
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `260` activation `13.137` class `word` token ` their`
+  - day will feel exciting. Grown-ups have boring parts of their days too. But even boring things can help us practice patience
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `181` activation `13.075` class `word` token ` you`
+  - Mom said, kneeling beside her. “But at school, you also learn with other kids. You hear their ideas, and
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `231` activation `13.053` class `word` token ` is`
+  - ipped the front pocket of her backpack. “But sometimes school is boring.” “Sometimes it is,” Mom admitted. “Not
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `180` activation `13.019` class `punctuation` token `,`
+  - ,” Mom said, kneeling beside her. “But at school, you also learn with other kids. You hear their ideas,
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `267` activation `12.984` class `word` token ` things`
+  - -ups have boring parts of their days too. But even boring things can help us practice patience and paying attention.” “Do I
+- `L24:1664` `75c3cd6d94f4ffca4b7590d05ea6487e46ff99b0d74718153acac89f17109d01@turn_01@gpt-5.5` token `189` activation `12.908` class `word` token ` hear`
+  - But at school, you also learn with other kids. You hear their ideas, and they hear yours. Sometimes they see things
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `70` activation `15.384` class `word` token ` people`
+  - Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there? Here are
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `68` activation `14.527` class `word` token ` they`
+  - clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there?
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `61` activation `13.411` class `word` token ` are`
+  - and local legends to search for possible clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `52` activation `13.375` class `word` token ` to`
+  - , eyewitness reports, footprints, photos, and local legends to search for possible clues. Sometimes these tales are hoaxes or
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `76` activation `13.115` class `word` token ` is`
+  - or mistakes—but sometimes they keep people wondering, What if something is really out there? Here are four famous cryptozoological creatures
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `60` activation `12.578` class `word` token ` tales`
+  - , and local legends to search for possible clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering,
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `111` activation `12.454` class `word` token ` people`
+  - in the forests of North America, especially the Pacific Northwest, people tell of a towering, hairy creature that walks on two legs
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `72` activation `12.423` class `punctuation` token `,`
+  - tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there? Here are four famous
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `65` activation `12.355` class `word` token ` mistakes`
+  - search for possible clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `69` activation `12.256` class `word` token ` keep`
+  - . Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there? Here
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `40` activation `12.211` class `punctuation` token `,`
+  - often called cryptids. Cryptozoologists look at old stories, eyewitness reports, footprints, photos, and local legends to
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `83` activation `12.196` class `word` token ` four`
+  - wondering, What if something is really out there? Here are four famous cryptozoological creatures: Bigfoot (Sasqu
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `75` activation `11.933` class `word` token ` something`
+  - axes or mistakes—but sometimes they keep people wondering, What if something is really out there? Here are four famous cryptozoological
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `63` activation `11.909` class `word` token `axes`
+  - legends to search for possible clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `71` activation `11.853` class `word` token ` wondering`
+  - these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there? Here are four
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `130` activation `11.520` class `word` token ` is`
+  - creature that walks on two legs like a person. Bigfoot is said to leave enormous footprints in mud and snow, sometimes
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `77` activation `11.505` class `word` token ` really`
+  - mistakes—but sometimes they keep people wondering, What if something is really out there? Here are four famous cryptozoological creatures:
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `39` activation `11.497` class `word` token ` stories`
+  - are often called cryptids. Cryptozoologists look at old stories, eyewitness reports, footprints, photos, and local legends
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `299` activation `11.339` class `word` token ` it`
+  - ripple. The lake is extremely deep and murky, which makes it easy to imagine something ancient hiding below, gliding through black
+- `L24:1664` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@gpt-5.5` token `67` activation `11.294` class `word` token ` sometimes`
+  - possible clues. Sometimes these tales are hoaxes or mistakes—but sometimes they keep people wondering, What if something is really out there
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `315` activation `15.295` class `style_function_word` token ` can`
+  - connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day,
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `322` activation `15.119` class `style_function_word` token ` can`
+  - also has power because it can interrupt negativity. One rude comment can ruin someone’s day, but one kind word can sometimes rescue
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `333` activation `14.953` class `word` token ` sometimes`
+  - comment can ruin someone’s day, but one kind word can sometimes rescue it. We do not always realize how much influence we
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `342` activation `14.914` class `word` token ` how`
+  - kind word can sometimes rescue it. We do not always realize how much influence we have. A smile, an invitation to sit
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `310` activation `14.829` class `style_function_word` token ` also`
+  - that we understand we are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `311` activation `14.660` class `word` token ` has`
+  - we understand we are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `314` activation `14.623` class `word` token ` it`
+  - are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `367` activation `14.509` class `word` token ` be`
+  - with someone, or a simple “Are you okay?” can be small in action but huge in meaning. It is like dropping
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `316` activation `14.361` class `word` token ` interrupt`
+  - to each other. Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day, but
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `373` activation `14.355` class `word` token ` in`
+  - “Are you okay?” can be small in action but huge in meaning. It is like dropping a pebble into water:
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `319` activation `14.140` class `word` token ` One`
+  - . Kindness also has power because it can interrupt negativity. One rude comment can ruin someone’s day, but one kind word
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `371` activation `14.138` class `word` token ` but`
+  - a simple “Are you okay?” can be small in action but huge in meaning. It is like dropping a pebble into
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `332` activation `13.970` class `style_function_word` token ` can`
+  - rude comment can ruin someone’s day, but one kind word can sometimes rescue it. We do not always realize how much influence
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `465` activation `13.632` class `word` token ` is`
+  - , in conclusion, kindness matters because it reminds us that life is not only about ourselves. It helps create a world where people
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `393` activation `13.532` class `style_function_word` token ` can`
+  - pebble into water: the circles spread out farther than we can see. I also think kindness takes courage. It is easy
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `309` activation `13.479` class `word` token `ness`
+  - prove that we understand we are connected to each other. Kindness also has power because it can interrupt negativity. One rude comment
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `366` activation `13.479` class `style_function_word` token ` can`
+  - sit with someone, or a simple “Are you okay?” can be small in action but huge in meaning. It is like
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `325` activation `13.359` class `word` token `’s`
+  - because it can interrupt negativity. One rude comment can ruin someone’s day, but one kind word can sometimes rescue it. We
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `417` activation `13.242` class `word` token ` is`
+  - easy to laugh when everyone else is laughing at someone. It is harder to stand up, or even just not join in.
+- `L24:1664` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `329` activation `13.240` class `word` token ` one`
+  - negativity. One rude comment can ruin someone’s day, but one kind word can sometimes rescue it. We do not always realize
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `178` activation `14.891` class `word` token ` is`
+  - experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16- to
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `179` activation `14.410` class `word` token ` more`
+  - say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16- to 24
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `155` activation `14.065` class `word` token ` a`
+  - the smaller number of young people in the U.S., or a strong job market pulling graduates straight into work. But experts say
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `177` activation `13.970` class `word` token ` explanation`
+  - But experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16- to
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `166` activation `13.721` class `word` token ` experts`
+  - or a strong job market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `168` activation `13.331` class `word` token ` the`
+  - strong job market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is more complicated
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `154` activation `13.217` class `word` token ` or`
+  - , the smaller number of young people in the U.S., or a strong job market pulling graduates straight into work. But experts
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `170` activation `13.101` class `word` token ` started`
+  - market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is more complicated. Work
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `176` activation `12.673` class `word` token ` the`
+  - . But experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16-
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `175` activation `12.638` class `word` token ` and`
+  - work. But experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among 16
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `174` activation `12.631` class `punctuation` token `,`
+  - into work. But experts say the drop started before the pandemic, and the explanation is more complicated. Workforce participation among
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `193` activation `12.025` class `word` token `-olds`
+  - . Workforce participation among 16- to 24-year-olds is actually lower than it was before Covid, according to the
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `137` activation `11.898` class `word` token ` people`
+  - college students now than there were 10 years ago. Some people blame Covid-19, the smaller number of young people in
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `153` activation `11.630` class `punctuation` token `.,`
+  - 19, the smaller number of young people in the U.S., or a strong job market pulling graduates straight into work. But
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `169` activation `11.432` class `word` token ` drop`
+  - job market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is more complicated.
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `119` activation `11.398` class `word` token ` are`
+  - students are enrolling in college than in the past. There are about 4 million fewer college students now than there were
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `167` activation `11.328` class `word` token ` say`
+  - a strong job market pulling graduates straight into work. But experts say the drop started before the pandemic, and the explanation is more
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `195` activation `11.322` class `word` token ` actually`
+  - force participation among 16- to 24-year-olds is actually lower than it was before Covid, according to the Bureau of
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `156` activation `11.241` class `word` token ` strong`
+  - smaller number of young people in the U.S., or a strong job market pulling graduates straight into work. But experts say the
+- `L24:1664` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@gpt-5.5` token `212` activation `11.209` class `word` token ` it`
+  - before Covid, according to the Bureau of Labor Statistics, so it isn’t as simple as everyone skipping college to get a job
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `193` activation `15.721` class `style_function_word` token ` feels`
+  - is not about never feeling scared—it means trying even when something feels hard or uncertain. Brave kids learn that they can handle challenges
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `204` activation `15.676` class `word` token ` handle`
+  - something feels hard or uncertain. Brave kids learn that they can handle challenges, speak up, and keep growing. Curious
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `221` activation `15.526` class `word` token ` to`
+  - , and keep growing. Curious Curiosity means wanting to learn, ask questions, and understand the world. Curious
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `218` activation `15.450` class `word` token `iosity`
+  - , speak up, and keep growing. Curious Curiosity means wanting to learn, ask questions, and understand the world
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `229` activation `15.398` class `word` token ` the`
+  - Curiosity means wanting to learn, ask questions, and understand the world. Curious kids become better problem-solvers and discover
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `203` activation `15.185` class `style_function_word` token ` can`
+  - when something feels hard or uncertain. Brave kids learn that they can handle challenges, speak up, and keep growing. Curious
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `301` activation `15.046` class `word` token ` a`
+  - imagination to make, build, solve, or express something in a new way. Creative kids learn that their ideas matter and that
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `195` activation `14.949` class `word` token ` or`
+  - about never feeling scared—it means trying even when something feels hard or uncertain. Brave kids learn that they can handle challenges, speak
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `181` activation `14.912` class `word` token ` is`
+  - good they bring into the world. Brave Bravery is not about never feeling scared—it means trying even when something feels
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `300` activation `14.854` class `word` token ` in`
+  - using imagination to make, build, solve, or express something in a new way. Creative kids learn that their ideas matter and
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `219` activation `14.775` class `word` token ` means`
+  - speak up, and keep growing. Curious Curiosity means wanting to learn, ask questions, and understand the world.
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `227` activation `14.723` class `word` token ` and`
+  - ious Curiosity means wanting to learn, ask questions, and understand the world. Curious kids become better problem-solvers
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `180` activation `14.589` class `word` token `avery`
+  - the good they bring into the world. Brave Bravery is not about never feeling scared—it means trying even when something
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `185` activation `14.540` class `word` token ` feeling`
+  - the world. Brave Bravery is not about never feeling scared—it means trying even when something feels hard or uncertain.
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `188` activation `14.438` class `word` token ` means`
+  - Brave Bravery is not about never feeling scared—it means trying even when something feels hard or uncertain. Brave kids learn
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `234` activation `14.412` class `word` token ` kids`
+  - learn, ask questions, and understand the world. Curious kids become better problem-solvers and discover new interests, talents,
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `199` activation `14.380` class `word` token ` kids`
+  - —it means trying even when something feels hard or uncertain. Brave kids learn that they can handle challenges, speak up, and keep
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `168` activation `14.252` class `word` token ` the`
+  - . Kindness helps kids build strong friendships and feel proud of the good they bring into the world. Brave Bravery
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `264` activation `14.155` class `word` token `esty`
+  - Being honest means telling the truth and being trustworthy. Honesty helps children build respect with others and feel confident because they know
+- `L24:1664` `416876f4d3ea3169928dc47bcff6280b7546c4414701909bb401307bdced41a5@turn_01@gpt-5.5` token `158` activation `14.072` class `word` token `ness`
+  - how others feel and choosing to help when you can. Kindness helps kids build strong friendships and feel proud of the good they
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `408` activation `17.225` class `word` token ` still`
+  - , it leaves the special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny, invisible
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `407` activation `16.627` class `word` token ` are`
+  - down, it leaves the special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny,
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `274` activation `16.571` class `word` token ` spaces`
+  - , or little holes inside the dirt. Sometimes, these empty spaces are made when old rocks dissolve. Even ancient bugs, shells
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `387` activation `16.490` class `word` token ` level`
+  - level deep down rises. When it gets dry, the water level falls. As the water slowly sinks down, it leaves the
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `275` activation `16.227` class `word` token ` are`
+  - or little holes inside the dirt. Sometimes, these empty spaces are made when old rocks dissolve. Even ancient bugs, shells,
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `406` activation `16.072` class `word` token ` Scientists`
+  - sinks down, it leaves the special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `330` activation `15.960` class `word` token ` it`
+  - the opal water doesn't fill big holes. Instead, it fills the tiny gaps between grains of sand. It acts like
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `291` activation `15.897` class `word` token ` leave`
+  - rocks dissolve. Even ancient bugs, shells, and dinosaur bones leave behind empty shapes in the rock. The opal water flows
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `292` activation `15.867` class `word` token ` behind`
+  - dissolve. Even ancient bugs, shells, and dinosaur bones leave behind empty shapes in the rock. The opal water flows into
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `375` activation `15.768` class `word` token ` level`
+  - helps! When the ground gets wet from rain, the water level deep down rises. When it gets dry, the water level
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `331` activation `15.686` class `word` token ` fills`
+  - opal water doesn't fill big holes. Instead, it fills the tiny gaps between grains of sand. It acts like glue
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `279` activation `15.634` class `word` token ` rocks`
+  - the dirt. Sometimes, these empty spaces are made when old rocks dissolve. Even ancient bugs, shells, and dinosaur bones leave
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `290` activation `15.613` class `word` token ` bones`
+  - old rocks dissolve. Even ancient bugs, shells, and dinosaur bones leave behind empty shapes in the rock. The opal water
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `412` activation `15.553` class `style_function_word` token ` this`
+  - special opal ingredients behind. Scientists are still studying exactly how this works. Some even think tiny, invisible bugs called microbes help
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `344` activation `15.395` class `punctuation` token `,`
+  - the tiny gaps between grains of sand. It acts like glue, sticking the sand together into hard lumps. How does the
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `321` activation `15.269` class `word` token ` water`
+  - ens like jelly in a mold. Sometimes, the opal water doesn't fill big holes. Instead, it fills the tiny
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `305` activation `15.156` class `style_function_word` token ` these`
+  - empty shapes in the rock. The opal water flows into these shapes and hardens like jelly in a mold. Sometimes,
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `423` activation `15.123` class `word` token ` microbes`
+  - how this works. Some even think tiny, invisible bugs called microbes help mix the potion! Australia is the best place on Earth
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `374` activation `15.118` class `word` token ` water`
+  - weather helps! When the ground gets wet from rain, the water level deep down rises. When it gets dry, the water
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@glm-5.2` token `415` activation `15.114` class `word` token ` Some`
+  - ingredients behind. Scientists are still studying exactly how this works. Some even think tiny, invisible bugs called microbes help mix the potion
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `429` activation `18.474` class `word` token ` still`
+  - is often found near white clay called kaolin. Scientists are still learning exactly how opal forms. Some think the water may
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `428` activation `17.135` class `word` token ` are`
+  - al is often found near white clay called kaolin. Scientists are still learning exactly how opal forms. Some think the water
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `380` activation `16.206` class `word` token ` level`
+  - times can make underground water rise and fall. When the water level drops, silica can become more concentrated, helping opal grow
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `369` activation `16.196` class `style_function_word` token ` can`
+  - opal forms. Weather is important. Wet and dry times can make underground water rise and fall. When the water level drops
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `417` activation `15.865` class `word` token ` is`
+  - breaking down of ancient clay rocks. In Australia, opal is often found near white clay called kaolin. Scientists are still
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `427` activation `15.779` class `word` token `Scientists`
+  - opal is often found near white clay called kaolin. Scientists are still learning exactly how opal forms. Some think the
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `437` activation `15.740` class `word` token ` Some`
+  - olin. Scientists are still learning exactly how opal forms. Some think the water may need to become acidic at some point,
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `418` activation `15.375` class `word` token ` often`
+  - down of ancient clay rocks. In Australia, opal is often found near white clay called kaolin. Scientists are still learning
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `362` activation `15.362` class `word` token ` is`
+  - . Many things affect what type of opal forms. Weather is important. Wet and dry times can make underground water rise and
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `331` activation `15.298` class `style_function_word` token ` can`
+  - into sand or silt and glue the grains together. This can make special kinds of opal, such as matrix opal
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `430` activation `15.200` class `word` token ` learning`
+  - often found near white clay called kaolin. Scientists are still learning exactly how opal forms. Some think the water may need
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `384` activation `15.184` class `style_function_word` token ` can`
+  - water rise and fall. When the water level drops, silica can become more concentrated, helping opal grow. The silica may
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `372` activation `15.140` class `word` token ` water`
+  - . Weather is important. Wet and dry times can make underground water rise and fall. When the water level drops, silica can
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `379` activation `15.122` class `word` token ` water`
+  - dry times can make underground water rise and fall. When the water level drops, silica can become more concentrated, helping opal
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `270` activation `15.115` class `word` token ` all`
+  - shells, bones, cracks, and gaps inside ironstone can all become natural moulds where opal may form. Not all
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `240` activation `15.005` class `word` token ` spaces`
+  - In sedimentary rocks, there are many more spaces. These spaces can be made when water wears away parts of rocks, fossils
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `447` activation `14.987` class `word` token ` some`
+  - forms. Some think the water may need to become acidic at some point, possibly because of tiny living things called microbes. Australia
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `269` activation `14.837` class `style_function_word` token ` can`
+  - Old shells, bones, cracks, and gaps inside ironstone can all become natural moulds where opal may form. Not
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `242` activation `14.824` class `word` token ` be`
+  - ary rocks, there are many more spaces. These spaces can be made when water wears away parts of rocks, fossils, or
+- `L24:1664` `919289cf4fa9da752978fc52c54a6a42c1f84c9c4f0e2093d94e4b28fb84f72f@turn_01@gpt-5.5` token `441` activation `14.808` class `style_function_word` token ` may`
+  - still learning exactly how opal forms. Some think the water may need to become acidic at some point, possibly because of tiny
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `463` activation `17.249` class `word` token ` to`
+  - and laws. It makes history feel less boring because it connects to life today. When I make a project about Rome, I
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `476` activation `16.637` class `style_function_word` token ` can`
+  - life today. When I make a project about Rome, I can draw maps, make models, or write fun facts. That
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `501` activation `16.352` class `expanded_negation_word` token ` were`
+  - is why the Romans are my favorite history topic, because they were powerful, clever, and full of awesome stories.
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `500` activation `16.170` class `word` token ` they`
+  - That is why the Romans are my favorite history topic, because they were powerful, clever, and full of awesome stories.
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `415` activation `15.802` class `expanded_negation_word` token ` were`
+  - they had shields, armor, and smart battle plans. They were really organized and that helped them win lots of battles. I
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `421` activation `15.725` class `word` token ` them`
+  - and smart battle plans. They were really organized and that helped them win lots of battles. I also think it is cool that
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `506` activation `15.709` class `word` token ` and`
+  - my favorite history topic, because they were powerful, clever, and full of awesome stories.
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `508` activation `15.641` class `word` token ` of`
+  - history topic, because they were powerful, clever, and full of awesome stories.
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `458` activation `15.607` class `word` token ` less`
+  - , concrete, calendars, and laws. It makes history feel less boring because it connects to life today. When I make a
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `492` activation `15.507` class `word` token ` Romans`
+  - make models, or write fun facts. That is why the Romans are my favorite history topic, because they were powerful, clever
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `493` activation `15.472` class `word` token ` are`
+  - models, or write fun facts. That is why the Romans are my favorite history topic, because they were powerful, clever,
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `509` activation `15.460` class `word` token ` awesome`
+  - topic, because they were powerful, clever, and full of awesome stories.
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `457` activation `15.393` class `style_function_word` token ` feel`
+  - roads, concrete, calendars, and laws. It makes history feel less boring because it connects to life today. When I make
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `424` activation `15.247` class `word` token ` of`
+  - plans. They were really organized and that helped them win lots of battles. I also think it is cool that the Romans invented
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `503` activation `15.238` class `punctuation` token `,`
+  - the Romans are my favorite history topic, because they were powerful, clever, and full of awesome stories.
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `456` activation `15.231` class `word` token ` history`
+  - like roads, concrete, calendars, and laws. It makes history feel less boring because it connects to life today. When I
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `418` activation `15.167` class `word` token ` and`
+  - , armor, and smart battle plans. They were really organized and that helped them win lots of battles. I also think it
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `462` activation `15.130` class `word` token ` connects`
+  - , and laws. It makes history feel less boring because it connects to life today. When I make a project about Rome,
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `461` activation `15.100` class `word` token ` it`
+  - calendars, and laws. It makes history feel less boring because it connects to life today. When I make a project about Rome
+- `L24:1664` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gpt-5.5` token `442` activation `14.968` class `word` token ` use`
+  - it is cool that the Romans invented or improved things we still use, like roads, concrete, calendars, and laws. It
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `321` activation `12.991` class `word` token ` to`
+  - a little, but it was enough. Kevin’s heart began to thump. They ran down the street together, calling Milo
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `319` activation `12.927` class `word` token ` heart`
+  - only open a little, but it was enough. Kevin’s heart began to thump. They ran down the street together,
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `436` activation `11.788` class `word` token ` careful`
+  - ’s picture. Kevin wrote LOST DOG in big, careful letters. Under it, he wrote: He is very friendly
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `442` activation `11.761` class `word` token ` he`
+  - OST DOG in big, careful letters. Under it, he wrote: He is very friendly. He likes peanut butter.
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `285` activation `11.746` class `word` token ` a`
+  - stolen a sock. “Milo?” Kevin called again, a little louder. His mom came outside. Her face changed when
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `323` activation `11.738` class `word` token `ump`
+  - , but it was enough. Kevin’s heart began to thump. They ran down the street together, calling Milo’s name
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `296` activation `11.675` class `word` token ` changed`
+  - , a little louder. His mom came outside. Her face changed when she saw the open side gate. It was only open
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `306` activation `11.618` class `expanded_negation_word` token ` was`
+  - Her face changed when she saw the open side gate. It was only open a little, but it was enough. Kevin’s
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `434` activation `11.582` class `word` token ` big`
+  - with Milo’s picture. Kevin wrote LOST DOG in big, careful letters. Under it, he wrote: He is
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `403` activation `11.369` class `word` token `’s`
+  - “Maybe he’s scared,” Kevin said. “Maybe he’s hiding.” “Maybe,” his mom said gently. She squeezed
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `467` activation `11.368` class `word` token ` Kevin`
+  - Please help him come home. As the evening grew dark, Kevin stood at the gate and listened. No paws pattered
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `305` activation `11.367` class `word` token ` It`
+  - . Her face changed when she saw the open side gate. It was only open a little, but it was enough. Kevin
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `314` activation `11.265` class `expanded_negation_word` token ` was`
+  - side gate. It was only open a little, but it was enough. Kevin’s heart began to thump. They ran
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `295` activation `11.077` class `word` token ` face`
+  - again, a little louder. His mom came outside. Her face changed when she saw the open side gate. It was only
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `463` activation `11.024` class `word` token ` evening`
+  - likes peanut butter. Please help him come home. As the evening grew dark, Kevin stood at the gate and listened. No
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `284` activation `10.992` class `punctuation` token `,`
+  - had stolen a sock. “Milo?” Kevin called again, a little louder. His mom came outside. Her face changed
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `210` activation `10.959` class `word` token ` It`
+  - came home carrying a picture he had drawn in art class. It was a picture of Milo wearing a superhero cape. “M
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `298` activation `10.892` class `word` token ` she`
+  - little louder. His mom came outside. Her face changed when she saw the open side gate. It was only open a little
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `313` activation `10.881` class `word` token ` it`
+  - open side gate. It was only open a little, but it was enough. Kevin’s heart began to thump. They
+- `L24:1664` `d549a7c4cef2c3138a7ca834a0514f86b181d29ed1d0d55e5280eb1777685d01@turn_01@gpt-5.5` token `435` activation `10.862` class `punctuation` token `,`
+  - Milo’s picture. Kevin wrote LOST DOG in big, careful letters. Under it, he wrote: He is very
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `385` activation `15.898` class `word` token ` methods`
+  - , measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence. A report
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `390` activation `15.193` class `word` token ` math`
+  - patterns, and group activities. These methods help students understand why math matters and build confidence. A report by the National Council of
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `366` activation `14.460` class `expanded_negation_word` token ` should`
+  - is only about getting one right answer. Instead, the curriculum should include more problem-solving, games, measuring, money, patterns
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `387` activation `14.374` class `word` token ` students`
+  - , money, patterns, and group activities. These methods help students understand why math matters and build confidence. A report by the
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `392` activation `14.155` class `word` token ` and`
+  - and group activities. These methods help students understand why math matters and build confidence. A report by the National Council of Teachers of
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `405` activation `14.041` class `word` token ` Mathematics`
+  - build confidence. A report by the National Council of Teachers of Mathematics, Principles and Standards for School Mathematics, argues that students learn
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `384` activation `14.038` class `style_function_word` token ` These`
+  - games, measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence. A
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `413` activation `13.999` class `punctuation` token `,`
+  - Council of Teachers of Mathematics, Principles and Standards for School Mathematics, argues that students learn best when they explore ideas, explain their
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `391` activation `13.839` class `word` token ` matters`
+  - , and group activities. These methods help students understand why math matters and build confidence. A report by the National Council of Teachers
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `382` activation `13.730` class `word` token ` activities`
+  - -solving, games, measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `393` activation `13.504` class `word` token ` build`
+  - group activities. These methods help students understand why math matters and build confidence. A report by the National Council of Teachers of Mathematics
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `365` activation `13.449` class `word` token ` curriculum`
+  - math is only about getting one right answer. Instead, the curriculum should include more problem-solving, games, measuring, money,
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `460` activation `13.158` class `expanded_negation_word` token ` would`
+  - attitudes toward learning. Some people may worry that changing the curriculum would weaken basic skills. However, a better curriculum would still teach
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `386` activation `12.938` class `style_function_word` token ` help`
+  - measuring, money, patterns, and group activities. These methods help students understand why math matters and build confidence. A report by
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `437` activation `12.919` class `word` token ` especially`
+  - their reasoning, and connect math to everyday situations. This is especially important in primary school, when children are forming their attitudes toward
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `420` activation `12.502` class `word` token ` they`
+  - and Standards for School Mathematics, argues that students learn best when they explore ideas, explain their reasoning, and connect math to everyday
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `394` activation `12.327` class `word` token ` confidence`
+  - activities. These methods help students understand why math matters and build confidence. A report by the National Council of Teachers of Mathematics,
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `389` activation `12.302` class `word` token ` why`
+  - , patterns, and group activities. These methods help students understand why math matters and build confidence. A report by the National Council
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `367` activation `12.279` class `word` token ` include`
+  - only about getting one right answer. Instead, the curriculum should include more problem-solving, games, measuring, money, patterns,
+- `L24:1664` `7e0a0c4917435ebd55de12762004a191dd30f8df7e5988302cfa7a718a57d00b@turn_01@gpt-5.5` token `436` activation `12.249` class `word` token ` is`
+  - explain their reasoning, and connect math to everyday situations. This is especially important in primary school, when children are forming their attitudes
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `441` activation `13.579` class `word` token ` is`
+  - . Expect some fingertip soreness Mild soreness is normal at first. Take breaks when needed, and don’t
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `392` activation `13.488` class `word` token ` be`
+  - of tune, even correct playing will sound bad, which can be discouraging. Don’t press too hard Beginners often
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `391` activation `13.421` class `style_function_word` token ` can`
+  - out of tune, even correct playing will sound bad, which can be discouraging. Don’t press too hard Beginners
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `390` activation `12.049` class `style_function_word` token ` which`
+  - is out of tune, even correct playing will sound bad, which can be discouraging. Don’t press too hard Begin
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `386` activation `12.022` class `style_function_word` token ` will`
+  - . If your guitar is out of tune, even correct playing will sound bad, which can be discouraging. Don’t press
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `372` activation `11.943` class `word` token ` is`
+  - . Tune your guitar every time A free tuner app is enough. If your guitar is out of tune, even correct
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `387` activation `11.815` class `word` token ` sound`
+  - If your guitar is out of tune, even correct playing will sound bad, which can be discouraging. Don’t press too
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `422` activation `11.667` class `style_function_word` token ` This`
+  - . Use just enough pressure to make the note sound clean. This helps reduce finger pain and tension. Expect some fingertip sore
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `232` activation `11.415` class `word` token ` practice`
+  - with only two to four chords. Playing real music early makes practice more fun and helps you see progress faster. Practice strum
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `403` activation `11.398` class `word` token `ners`
+  - can be discouraging. Don’t press too hard Beginners often squeeze the strings too much. Use just enough pressure to
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `407` activation `11.232` class `word` token ` strings`
+  - . Don’t press too hard Beginners often squeeze the strings too much. Use just enough pressure to make the note sound
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `355` activation `11.167` class `word` token ` tutorials`
+  - Free videos, chord charts, tuner apps, and beginner song tutorials can help a lot. Tune your guitar every time
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `356` activation `11.153` class `style_function_word` token ` can`
+  - videos, chord charts, tuner apps, and beginner song tutorials can help a lot. Tune your guitar every time A
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `282` activation `11.064` class `word` token `hythm`
+  - only, then move to down-up strumming. Rhythm matters more than speed. Keep your guitar nearby If your
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `207` activation `10.998` class `word` token ` movement`
+  - and slowly switch between them. The goal is to make the movement feel natural. Use simple songs to stay motivated Choose songs
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `208` activation `10.945` class `style_function_word` token ` feel`
+  - slowly switch between them. The goal is to make the movement feel natural. Use simple songs to stay motivated Choose songs with
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `419` activation `10.927` class `word` token ` sound`
+  - strings too much. Use just enough pressure to make the note sound clean. This helps reduce finger pain and tension. Expect some
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `389` activation `10.835` class `punctuation` token `,`
+  - guitar is out of tune, even correct playing will sound bad, which can be discouraging. Don’t press too hard
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `320` activation `10.774` class `word` token ` practice`
+  - likely to pick it up for a few minutes. This makes practice feel easier and less like a chore. Use free learning resources
+- `L24:1664` `062d838fc1e9a08f5ffeb86028b6d024ae475fac42d688c309960ef61616d13a@turn_01@gpt-5.5` token `497` activation `10.661` class `word` token ` improve`
+  - , not perfection A few minutes every day will help you improve faster than occasional long practices. Keep it simple and enjoy the

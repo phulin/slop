@@ -8,6 +8,7 @@ let allDocRowsPromise = null;
 const sparseRowCache = new Map();
 const activationCache = new Map();
 const promptActivationCache = new Map();
+const documentLatentCache = new Map();
 
 function numeric(value, fallback = 0) {
   if (typeof value === "bigint") return Number(value);
@@ -141,6 +142,49 @@ async function readPromptActivationMap({ turnId, latentId, start, end, docs }) {
   return promptActivationCache.get(key);
 }
 
+async function readDocumentLatentSummary({ docId, start, end, limit = 200 }) {
+  const key = `${docId}:${start}:${end}:${limit}`;
+  if (!documentLatentCache.has(key)) {
+    documentLatentCache.set(key, (async () => {
+      const sparseRows = await readSparseRows(start, end);
+      const summaries = new Map();
+      for (const sparseRow of sparseRows) {
+        const tokenIndex = numeric(sparseRow.token_index);
+        const latentIds = sparseRow.latent_ids ?? [];
+        const activations = sparseRow.activations ?? [];
+        for (let index = 0; index < latentIds.length; index += 1) {
+          const activation = numeric(activations[index]);
+          if (activation <= 0) continue;
+          const latentId = String(numeric(latentIds[index]));
+          const current = summaries.get(latentId) ?? {
+            latentId,
+            maxActivation: 0,
+            peakTokenIndex: -1,
+            mass: 0,
+            tokenCount: 0,
+          };
+          current.mass += activation;
+          current.tokenCount += 1;
+          if (activation > current.maxActivation) {
+            current.maxActivation = activation;
+            current.peakTokenIndex = tokenIndex;
+          }
+          summaries.set(latentId, current);
+        }
+      }
+      const rows = Array.from(summaries.values())
+        .sort((a, b) => (
+          b.maxActivation - a.maxActivation ||
+          b.mass - a.mass ||
+          numeric(a.latentId) - numeric(b.latentId)
+        ))
+        .slice(0, limit);
+      return { rows };
+    })());
+  }
+  return documentLatentCache.get(key);
+}
+
 self.onmessage = async (event) => {
   const { id, type, payload } = event.data;
   try {
@@ -151,6 +195,7 @@ self.onmessage = async (event) => {
       sparseRowCache.clear();
       activationCache.clear();
       promptActivationCache.clear();
+      documentLatentCache.clear();
       docFile = await openFile(payload.docTokensUrl);
       sparseFile = await openFile(payload.sparseTopkUrl);
       const rows = await preloadDocRows();
@@ -161,6 +206,8 @@ self.onmessage = async (event) => {
       result = await readActivationMap(payload);
     } else if (type === "readPromptActivation") {
       result = await readPromptActivationMap(payload);
+    } else if (type === "readDocumentLatents") {
+      result = await readDocumentLatentSummary(payload);
     } else if (type === "prefetchActivations") {
       let prefetched = 0;
       for (const task of payload.tasks ?? []) {

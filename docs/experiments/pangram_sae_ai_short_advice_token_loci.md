@@ -1,0 +1,661 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:401` | `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` | `gpt-5.5` | 84 | `317.81` | `7.48` | word:58|punctuation:19|style_function_word:3|sentence_boundary:3|whitespace:1 |
+| `L19:401` | `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 207 | `506.45` | `6.86` | word:162|punctuation:21|sentence_boundary:15|line_break:7|style_function_word:1|expanded_negation_word:1 |
+| `L19:401` | `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` | `gpt-5.5` | 116 | `295.06` | `6.90` | word:82|punctuation:23|line_break:6|style_function_word:2|sentence_boundary:2|discourse_marker_word:1 |
+| `L19:401` | `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` | `gpt-5.5` | 33 | `99.86` | `6.37` | word:26|punctuation:5|sentence_boundary:2 |
+| `L19:401` | `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 145 | `497.19` | `6.91` | word:97|line_break:42|expanded_negation_word:4|contraction_piece:1|sentence_boundary:1 |
+| `L19:401` | `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` | `gpt-5.5` | 62 | `218.34` | `7.31` | word:47|punctuation:9|sentence_boundary:3|expanded_negation_word:1|style_function_word:1|whitespace:1 |
+| `L19:401` | `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` | `gpt-5.5` | 113 | `257.45` | `6.33` | word:83|punctuation:20|line_break:6|style_function_word:2|sentence_boundary:2 |
+| `L19:401` | `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` | `glm-5.2` | 67 | `162.12` | `5.15` | word:50|sentence_boundary:7|punctuation:7|style_function_word:2|discourse_marker_word:1 |
+| `L19:401` | `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` | `gpt-5.5` | 150 | `396.29` | `6.88` | word:112|punctuation:24|style_function_word:5|sentence_boundary:5|line_break:3|discourse_marker_word:1 |
+| `L19:401` | `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` | `gpt-5.5` | 39 | `77.90` | `6.29` | word:23|punctuation:9|sentence_boundary:4|style_function_word:1|discourse_marker_word:1|whitespace:1 |
+| `L19:401` | `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` | `gpt-5.5` | 85 | `221.08` | `6.54` | word:58|punctuation:18|sentence_boundary:5|discourse_marker_word:3|whitespace:1 |
+| `L19:401` | `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` | `gpt-5.5` | 40 | `96.96` | `7.97` | word:26|punctuation:9|sentence_boundary:3|style_function_word:2 |
+| `L19:401` | `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` | `gpt-5.5` | 566 | `1192.76` | `7.02` | word:387|punctuation:87|line_break:41|whitespace:41|style_function_word:5|sentence_boundary:3|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:3218` | `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` | `gpt-5.5` | 70 | `248.09` | `7.27` | word:47|punctuation:16|style_function_word:3|sentence_boundary:3|whitespace:1 |
+| `L24:3218` | `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 212 | `568.33` | `7.49` | word:164|punctuation:22|sentence_boundary:16|line_break:7|expanded_negation_word:2|style_function_word:1 |
+| `L24:3218` | `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` | `gpt-5.5` | 84 | `195.36` | `6.75` | word:51|punctuation:23|line_break:5|style_function_word:2|sentence_boundary:2|discourse_marker_word:1 |
+| `L24:3218` | `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` | `gpt-5.5` | 29 | `87.42` | `5.74` | word:23|punctuation:4|sentence_boundary:2 |
+| `L24:3218` | `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 131 | `364.07` | `5.81` | word:89|line_break:38|expanded_negation_word:3|sentence_boundary:1 |
+| `L24:3218` | `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` | `gpt-5.5` | 49 | `154.25` | `6.07` | word:37|punctuation:7|sentence_boundary:3|expanded_negation_word:1|style_function_word:1 |
+| `L24:3218` | `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` | `gpt-5.5` | 85 | `178.92` | `5.62` | word:63|punctuation:14|line_break:4|style_function_word:2|sentence_boundary:2 |
+| `L24:3218` | `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` | `glm-5.2` | 63 | `157.27` | `5.66` | word:48|sentence_boundary:6|punctuation:6|style_function_word:2|discourse_marker_word:1 |
+| `L24:3218` | `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` | `gpt-5.5` | 110 | `292.84` | `6.06` | word:88|punctuation:14|style_function_word:4|sentence_boundary:3|line_break:1 |
+| `L24:3218` | `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` | `gpt-5.5` | 26 | `57.49` | `5.53` | word:16|punctuation:5|sentence_boundary:3|style_function_word:1|discourse_marker_word:1 |
+| `L24:3218` | `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` | `gpt-5.5` | 58 | `158.26` | `5.77` | word:39|punctuation:11|sentence_boundary:4|discourse_marker_word:3|whitespace:1 |
+| `L24:3218` | `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` | `gpt-5.5` | 22 | `58.93` | `6.71` | word:14|punctuation:5|style_function_word:2|sentence_boundary:1 |
+| `L24:3218` | `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` | `gpt-5.5` | 384 | `685.06` | `5.54` | word:275|punctuation:57|line_break:29|whitespace:13|style_function_word:5|sentence_boundary:3|discourse_marker_word:1|expanded_negation_word:1 |
+
+## Top Tokens
+
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `631` activation `7.485` class `word` token ` what`
+  - TikTok/IG/YouTube Shorts, and track what performs—then make more of that.
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `632` activation `7.237` class `word` token ` performs`
+  - Tok/IG/YouTube Shorts, and track what performs—then make more of that.
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `615` activation `7.201` class `word` token ` with`
+  - and hidden gems. Engage daily, collab with local creators, repost to TikTok/IG/
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `616` activation `6.959` class `word` token ` local`
+  - hidden gems. Engage daily, collab with local creators, repost to TikTok/IG/YouTube
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `600` activation `6.901` class `punctuation` token `,`
+  - hooks (“$200 weekend in Nashville”), show costs, routes, mistakes, and hidden gems. Engage
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `603` activation `6.551` class `word` token ` mistakes`
+  - 200 weekend in Nashville”), show costs, routes, mistakes, and hidden gems. Engage daily, coll
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `618` activation `6.467` class `punctuation` token `,`
+  - . Engage daily, collab with local creators, repost to TikTok/IG/YouTube Shorts,
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `604` activation `6.436` class `punctuation` token `,`
+  - weekend in Nashville”), show costs, routes, mistakes, and hidden gems. Engage daily, collab
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `612` activation `6.362` class `punctuation` token `,`
+  - , mistakes, and hidden gems. Engage daily, collab with local creators, repost to TikTok
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `629` activation `6.266` class `word` token ` and`
+  - repost to TikTok/IG/YouTube Shorts, and track what performs—then make more of that.
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `602` activation `6.187` class `punctuation` token `,`
+  - $200 weekend in Nashville”), show costs, routes, mistakes, and hidden gems. Engage daily,
+- `L19:401` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `607` activation `6.153` class `word` token ` gems`
+  - ”), show costs, routes, mistakes, and hidden gems. Engage daily, collab with local creators
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `478` activation `6.862` class `word` token ` is`
+  - temples. "Superheroes are dead. True crime is tired." "What about AI?" suggested Chloe, the
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `473` activation `5.620` class `word` token ` are`
+  - groaned, rubbing his temples. "Superheroes are dead. True crime is tired." "What about AI
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `518` activation `5.598` class `word` token ` forward`
+  - ie. "People want escape." Chloe leaned forward, eyes shining. "Okay, what if we
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `521` activation `5.328` class `word` token ` shining`
+  - People want escape." Chloe leaned forward, eyes shining. "Okay, what if we combine cozy fantasy
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `517` activation `4.716` class `word` token ` leaned`
+  - sharpie. "People want escape." Chloe leaned forward, eyes shining. "Okay, what if
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `477` activation `4.610` class `word` token ` crime`
+  - his temples. "Superheroes are dead. True crime is tired." "What about AI?" suggested Chloe,
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `479` activation `4.349` class `word` token ` tired`
+  - . "Superheroes are dead. True crime is tired." "What about AI?" suggested Chloe, the junior
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `520` activation `4.180` class `word` token ` eyes`
+  - "People want escape." Chloe leaned forward, eyes shining. "Okay, what if we combine cozy
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `531` activation `4.067` class `word` token ` fantasy`
+  - shining. "Okay, what if we combine cozy fantasy with corporate espionage? A retired wizard opens a magical
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `513` activation `4.032` class `word` token ` escape`
+  - Dave, spinning a sharpie. "People want escape." Chloe leaned forward, eyes shining. "
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `542` activation `4.013` class `word` token ` bakery`
+  - with corporate espionage? A retired wizard opens a magical bakery in the human world, but his croissants
+- `L19:401` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `465` activation `4.009` class `punctuation` token `,`
+  - by Monday. "Think bigger," Marcus groaned, rubbing his temples. "Superheroes are dead.
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `635` activation `6.896` class `style_function_word` token ` can`
+  - and nearby food trucks. Call ahead—policies can change seasonally.
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `634` activation `6.138` class `word` token `olicies`
+  - , and nearby food trucks. Call ahead—policies can change seasonally.
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `636` activation `5.612` class `word` token ` change`
+  - nearby food trucks. Call ahead—policies can change seasonally.
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `630` activation `5.267` class `word` token ` Call`
+  - patio seating, events, and nearby food trucks. Call ahead—policies can change seasonally.
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `631` activation `4.775` class `word` token ` ahead`
+  - seating, events, and nearby food trucks. Call ahead—policies can change seasonally.
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `610` activation `4.611` class `word` token ` vary`
+  - patio, big social beer hall feel. Perks vary, but look for water bowls, treats, patio
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `623` activation `4.543` class `word` token ` events`
+  - look for water bowls, treats, patio seating, events, and nearby food trucks. Call ahead—p
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `611` activation `4.528` class `punctuation` token `,`
+  - , big social beer hall feel. Perks vary, but look for water bowls, treats, patio seating
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `629` activation `4.465` class `sentence_boundary` token `.`
+  - , patio seating, events, and nearby food trucks. Call ahead—policies can change seasonally.
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `632` activation `4.207` class `punctuation` token `—`
+  - , events, and nearby food trucks. Call ahead—policies can change seasonally.
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `606` activation `4.145` class `style_function_word` token ` feel`
+  - Labs: dog-friendly patio, big social beer hall feel. Perks vary, but look for water bowls
+- `L19:401` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `605` activation `4.134` class `word` token ` hall`
+  - Brew Labs: dog-friendly patio, big social beer hall feel. Perks vary, but look for water
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `624` activation `6.369` class `word` token `ing`
+  - . Break tasks into tiny steps, limit doom-scrolling, drink water, and talk to someone—prefer
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `627` activation `5.526` class `word` token ` water`
+  - into tiny steps, limit doom-scrolling, drink water, and talk to someone—preferably alive and
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `631` activation `5.493` class `word` token ` to`
+  - limit doom-scrolling, drink water, and talk to someone—preferably alive and supportive.
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `630` activation `5.320` class `word` token ` talk`
+  - , limit doom-scrolling, drink water, and talk to someone—preferably alive and supportive.
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `620` activation `4.571` class `punctuation` token `,`
+  - and writing worries down. Break tasks into tiny steps, limit doom-scrolling, drink water, and talk
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `629` activation `4.307` class `word` token ` and`
+  - steps, limit doom-scrolling, drink water, and talk to someone—preferably alive and supportive.
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `632` activation `4.274` class `word` token ` someone`
+  - doom-scrolling, drink water, and talk to someone—preferably alive and supportive.
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `626` activation `4.204` class `word` token ` drink`
+  - tasks into tiny steps, limit doom-scrolling, drink water, and talk to someone—preferably alive
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `621` activation `4.169` class `word` token ` limit`
+  - writing worries down. Break tasks into tiny steps, limit doom-scrolling, drink water, and talk to
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `617` activation `4.132` class `word` token ` into`
+  - better sleep, and writing worries down. Break tasks into tiny steps, limit doom-scrolling, drink water
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `625` activation `4.122` class `punctuation` token `,`
+  - Break tasks into tiny steps, limit doom-scrolling, drink water, and talk to someone—preferably
+- `L19:401` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `619` activation `3.963` class `word` token ` steps`
+  - , and writing worries down. Break tasks into tiny steps, limit doom-scrolling, drink water, and
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `560` activation `6.913` class `word` token ` reaches`
+  - . Lies linger. She weeps. He reaches. She shrinks. Too late. Trust broken
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `569` activation `6.544` class `word` token `Trust`
+  - He reaches. She shrinks. Too late. Trust broken. Gold ring. Slipped off. Cold
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `549` activation `6.296` class `word` token ` shines`
+  - meet. No words. Deep sigh. Guilt shines. Lies linger. She weeps. He
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `576` activation `6.249` class `word` token `ipped`
+  - Too late. Trust broken. Gold ring. Slipped off. Cold metal. Drop down. Hits pavement
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `559` activation `6.184` class `word` token `He`
+  - shines. Lies linger. She weeps. He reaches. She shrinks. Too late. Trust
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `564` activation `6.122` class `word` token `inks`
+  - . She weeps. He reaches. She shrinks. Too late. Trust broken. Gold ring.
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `542` activation `6.099` class `word` token ` words`
+  - races. He stops. Eyes meet. No words. Deep sigh. Guilt shines. Lies
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `562` activation `6.071` class `word` token `She`
+  - ies linger. She weeps. He reaches. She shrinks. Too late. Trust broken. Gold
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `580` activation `5.861` class `word` token ` metal`
+  - broken. Gold ring. Slipped off. Cold metal. Drop down. Hits pavement. No sound.
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `577` activation `5.796` class `word` token ` off`
+  - late. Trust broken. Gold ring. Slipped off. Cold metal. Drop down. Hits pavement.
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `570` activation `5.774` class `word` token ` broken`
+  - reaches. She shrinks. Too late. Trust broken. Gold ring. Slipped off. Cold metal
+- `L19:401` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `548` activation `5.661` class `word` token `uilt`
+  - yes meet. No words. Deep sigh. Guilt shines. Lies linger. She weeps.
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `599` activation `7.310` class `punctuation` token `,`
+  - . Some students work to cover costs or gain experience, but others focus on classes, internships, clubs
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `598` activation `7.151` class `word` token ` experience`
+  - level. Some students work to cover costs or gain experience, but others focus on classes, internships,
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `605` activation `6.450` class `punctuation` token `,`
+  - costs or gain experience, but others focus on classes, internships, clubs, or adjusting to college life
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `607` activation `6.373` class `word` token `ships`
+  - gain experience, but others focus on classes, internships, clubs, or adjusting to college life. If
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `597` activation `6.372` class `word` token ` gain`
+  - stress level. Some students work to cover costs or gain experience, but others focus on classes, internships
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `602` activation `6.124` class `word` token ` focus`
+  - work to cover costs or gain experience, but others focus on classes, internships, clubs, or adjusting
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `600` activation `6.120` class `word` token ` but`
+  - Some students work to cover costs or gain experience, but others focus on classes, internships, clubs,
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `609` activation `6.002` class `word` token ` clubs`
+  - , but others focus on classes, internships, clubs, or adjusting to college life. If you do
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `603` activation `5.982` class `word` token ` on`
+  - to cover costs or gain experience, but others focus on classes, internships, clubs, or adjusting to
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `601` activation `5.761` class `word` token ` others`
+  - students work to cover costs or gain experience, but others focus on classes, internships, clubs, or
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `604` activation `5.587` class `word` token ` classes`
+  - cover costs or gain experience, but others focus on classes, internships, clubs, or adjusting to college
+- `L19:401` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `596` activation `5.434` class `word` token ` or`
+  - and stress level. Some students work to cover costs or gain experience, but others focus on classes, intern
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `590` activation `6.331` class `word` token ` policies`
+  - (Minneapolis): beer plus comedy/events; patio policies may vary. Urban Growler (St. Paul
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `591` activation `6.162` class `style_function_word` token ` may`
+  - Minneapolis): beer plus comedy/events; patio policies may vary. Urban Growler (St. Paul):
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `556` activation `5.434` class `word` token ` events`
+  - haus Brew Labs (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing (Min
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `592` activation `4.832` class `word` token ` vary`
+  - neapolis): beer plus comedy/events; patio policies may vary. Urban Growler (St. Paul): patio
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `557` activation `4.678` class `punctuation` token `,`
+  - Brew Labs (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing (Minneapolis
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `559` activation `4.317` class `word` token ` trucks`
+  - (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing (Minneapolis): large
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `588` activation `4.281` class `punctuation` token `;`
+  - us Brewing (Minneapolis): beer plus comedy/events; patio policies may vary. Urban Growler (St
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `555` activation `4.259` class `punctuation` token `,`
+  - auhaus Brew Labs (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing (
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `572` activation `4.240` class `word` token ` garden`
+  - tepils Brewing (Minneapolis): large outdoor beer garden vibe. Sisyphus Brewing (Minneapolis
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `573` activation `4.221` class `word` token ` vibe`
+  - ils Brewing (Minneapolis): large outdoor beer garden vibe. Sisyphus Brewing (Minneapolis):
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `538` activation `4.068` class `punctuation` token `;`
+  - location): Indeed Brewing (NE Minneapolis): patio beers; check food truck schedule. Bauhaus Brew Labs
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `589` activation `3.983` class `word` token ` patio`
+  - Brewing (Minneapolis): beer plus comedy/events; patio policies may vary. Urban Growler (St.
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `629` activation `5.153` class `word` token ` vary`
+  - treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will enjoy the outdoor social scene!
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `606` activation `4.997` class `word` token ` events`
+  - treats, and shaded seating. Some host dog-centric events or even have special "dog menus" with pup
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `628` activation `4.772` class `word` token ` policies`
+  - approval treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will enjoy the outdoor social scene
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `624` activation `4.764` class `word` token ` rules`
+  - " with pup-approval treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will enjoy
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `602` activation `4.170` class `word` token ` Some`
+  - have water bowls, treats, and shaded seating. Some host dog-centric events or even have special "dog
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `625` activation `4.044` class `style_function_word` token ` as`
+  - with pup-approval treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will enjoy the
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `605` activation `3.998` class `word` token `-centric`
+  - , treats, and shaded seating. Some host dog-centric events or even have special "dog menus" with
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `603` activation `3.977` class `word` token ` host`
+  - water bowls, treats, and shaded seating. Some host dog-centric events or even have special "dog menus
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `607` activation `3.859` class `word` token ` or`
+  - , and shaded seating. Some host dog-centric events or even have special "dog menus" with pup-
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `621` activation `3.735` class `word` token ` Confirm`
+  - "dog menus" with pup-approval treats. Confirm seasonal patio rules as indoor pet policies vary. Your
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `623` activation `3.687` class `word` token ` patio`
+  - menus" with pup-approval treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will
+- `L19:401` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `620` activation `3.517` class `sentence_boundary` token `.`
+  - special "dog menus" with pup-approval treats. Confirm seasonal patio rules as indoor pet policies vary.
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `570` activation `6.881` class `word` token ` is`
+  - suggestions and compare with trusted guides. A hand lens is very useful; many beetle features are small. Start
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `571` activation `5.891` class `word` token ` very`
+  - and compare with trusted guides. A hand lens is very useful; many beetle features are small. Start a
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `548` activation `5.555` class `word` token ` Apps`
+  - , habitat, plant, date, and behaviour. Apps like iNaturalist can help, but treat IDs
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `576` activation `5.512` class `word` token ` features`
+  - . A hand lens is very useful; many beetle features are small. Start a simple notebook or photo folder
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `555` activation `5.397` class `punctuation` token `,`
+  - and behaviour. Apps like iNaturalist can help, but treat IDs as suggestions and compare with trusted guides
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `564` activation `5.298` class `word` token ` trusted`
+  - help, but treat IDs as suggestions and compare with trusted guides. A hand lens is very useful; many
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `553` activation `5.225` class `style_function_word` token ` can`
+  - date, and behaviour. Apps like iNaturalist can help, but treat IDs as suggestions and compare with
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `621` activation `5.186` class `word` token ` is`
+  - ing a local natural history group or online beetle forum is one of the fastest ways to improve, especially if
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `552` activation `5.153` class `word` token `ist`
+  - , date, and behaviour. Apps like iNaturalist can help, but treat IDs as suggestions and compare
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `560` activation `5.132` class `word` token ` suggestions`
+  - iNaturalist can help, but treat IDs as suggestions and compare with trusted guides. A hand lens is
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `562` activation `5.093` class `word` token ` compare`
+  - ist can help, but treat IDs as suggestions and compare with trusted guides. A hand lens is very useful
+- `L19:401` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `583` activation `5.053` class `word` token ` notebook`
+  - ; many beetle features are small. Start a simple notebook or photo folder with “definite,” “prob
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `636` activation `6.291` class `word` token ` matter`
+  - through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `635` activation `5.971` class `style_function_word` token ` can`
+  - cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `634` activation `5.216` class `word` token ` behavior`
+  - )), cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `639` activation `5.056` class `sentence_boundary` token `.`
+  - or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `632` activation `4.410` class `sentence_boundary` token `.`
+  - 2)), cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `638` activation `3.513` class `word` token ` negatives`
+  - , or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `637` activation `3.404` class `word` token ` with`
+  - values, or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `631` activation `2.756` class `word` token ` indexes`
+  - , 2)), cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `627` activation `2.478` class `word` token ` values`
+  - numbers (Mod(n, 2)), cycle through values, or wrap indexes. Sign behavior can matter with
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `628` activation `2.296` class `punctuation` token `,`
+  - (Mod(n, 2)), cycle through values, or wrap indexes. Sign behavior can matter with negatives
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `610` activation `2.262` class `word` token ` often`
+  - , 3) returns 1. It’s often used to detect even/odd numbers (Mod(n
+- `L19:401` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `629` activation `2.082` class `word` token ` or`
+  - Mod(n, 2)), cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `621` activation `6.540` class `word` token `ch`
+  - 7b areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `622` activation `6.484` class `word` token ` well`
+  - 7b areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `623` activation `6.009` class `punctuation` token `,`
+  - b areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’ for
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `619` activation `5.821` class `punctuation` token `,`
+  - In warmer 7b areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `624` activation `5.340` class `word` token ` and`
+  - areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’ for a
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `625` activation `5.020` class `word` token ` ensure`
+  - , give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’ for a sweet
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `601` activation `4.901` class `word` token ` is`
+  - late summer into fall; ‘Joan J’ is a good thornless option. In warmer
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `614` activation `4.827` class `word` token ` areas`
+  - thornless option. In warmer 7b areas, give afternoon shade, mulch well, and
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `618` activation `4.732` class `word` token ` shade`
+  - . In warmer 7b areas, give afternoon shade, mulch well, and ensure excellent drainage.
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `595` activation `4.543` class `punctuation` token `;`
+  - and ‘Heritage’ for late summer into fall; ‘Joan J’ is a good thorn
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `615` activation `4.307` class `punctuation` token `,`
+  - ornless option. In warmer 7b areas, give afternoon shade, mulch well, and ensure
+- `L19:401` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `613` activation `4.279` class `word` token `b`
+  - good thornless option. In warmer 7b areas, give afternoon shade, mulch well,
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `636` activation `7.965` class `word` token ` are`
+  - ASUS, MSI, Gigabyte, ASRock are common choices.
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `637` activation `6.078` class `word` token ` common`
+  - US, MSI, Gigabyte, ASRock are common choices.
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `638` activation `4.930` class `word` token ` choices`
+  - , MSI, Gigabyte, ASRock are common choices.
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `625` activation `4.870` class `punctuation` token `—`
+  - , Wi‑Fi if needed, and solid reviews—ASUS, MSI, Gigabyte, ASRock
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `619` activation `4.588` class `style_function_word` token ` if`
+  - slots, M.2 storage, Wi‑Fi if needed, and solid reviews—ASUS, MSI
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `632` activation `4.466` class `word` token `abyte`
+  - and solid reviews—ASUS, MSI, Gigabyte, ASRock are common choices.
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `624` activation `4.274` class `word` token ` reviews`
+  - storage, Wi‑Fi if needed, and solid reviews—ASUS, MSI, Gigabyte, AS
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `635` activation `4.177` class `word` token `Rock`
+  - —ASUS, MSI, Gigabyte, ASRock are common choices.
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `620` activation `3.317` class `word` token ` needed`
+  - , M.2 storage, Wi‑Fi if needed, and solid reviews—ASUS, MSI,
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `629` activation `3.160` class `word` token ` MSI`
+  - if needed, and solid reviews—ASUS, MSI, Gigabyte, ASRock are common choices.
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `628` activation `2.943` class `punctuation` token `,`
+  - Fi if needed, and solid reviews—ASUS, MSI, Gigabyte, ASRock are common choices
+- `L19:401` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `639` activation `2.931` class `sentence_boundary` token `.`
+  - MSI, Gigabyte, ASRock are common choices.
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `177` activation `7.019` class `word` token ` is`
+  - before progressing. Pain rule: Muscle soreness is normal; sharp pain, worsening pain, or pain
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `178` activation `6.381` class `word` token ` normal`
+  - progressing. Pain rule: Muscle soreness is normal; sharp pain, worsening pain, or pain that
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `155` activation `5.777` class `style_function_word` token ` if`
+  - anks, and rows/pushups. Repeat weeks if needed: If a week feels too hard, repeat
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `183` activation `5.659` class `word` token ` worsening`
+  - : Muscle soreness is normal; sharp pain, worsening pain, or pain that changes your stride means stop
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `179` activation `5.475` class `punctuation` token `;`
+  - . Pain rule: Muscle soreness is normal; sharp pain, worsening pain, or pain that changes
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `176` activation `5.455` class `word` token `ness`
+  - it before progressing. Pain rule: Muscle soreness is normal; sharp pain, worsening pain, or
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `182` activation `5.344` class `punctuation` token `,`
+  - rule: Muscle soreness is normal; sharp pain, worsening pain, or pain that changes your stride means
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `194` activation `5.200` class `word` token ` and`
+  - pain, or pain that changes your stride means stop and rest. Phase 1: Build the habit,
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `168` activation `5.180` class `word` token ` progressing`
+  - If a week feels too hard, repeat it before progressing. Pain rule: Muscle soreness is normal
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `181` activation `5.079` class `word` token ` pain`
+  - ain rule: Muscle soreness is normal; sharp pain, worsening pain, or pain that changes your stride
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `192` activation `4.968` class `word` token ` means`
+  - , worsening pain, or pain that changes your stride means stop and rest. Phase 1: Build the
+- `L19:401` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `188` activation `4.841` class `style_function_word` token ` that`
+  - normal; sharp pain, worsening pain, or pain that changes your stride means stop and rest. Phase
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `632` activation `7.265` class `word` token ` performs`
+  - Tok/IG/YouTube Shorts, and track what performs—then make more of that.
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `631` activation `6.813` class `word` token ` what`
+  - TikTok/IG/YouTube Shorts, and track what performs—then make more of that.
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `629` activation `5.984` class `word` token ` and`
+  - repost to TikTok/IG/YouTube Shorts, and track what performs—then make more of that.
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `612` activation `5.942` class `punctuation` token `,`
+  - , mistakes, and hidden gems. Engage daily, collab with local creators, repost to TikTok
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `603` activation `5.910` class `word` token ` mistakes`
+  - 200 weekend in Nashville”), show costs, routes, mistakes, and hidden gems. Engage daily, coll
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `618` activation `5.871` class `punctuation` token `,`
+  - . Engage daily, collab with local creators, repost to TikTok/IG/YouTube Shorts,
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `634` activation `5.560` class `style_function_word` token `then`
+  - IG/YouTube Shorts, and track what performs—then make more of that.
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `611` activation `5.495` class `word` token ` daily`
+  - routes, mistakes, and hidden gems. Engage daily, collab with local creators, repost to Tik
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `617` activation `5.446` class `word` token ` creators`
+  - gems. Engage daily, collab with local creators, repost to TikTok/IG/YouTube Shorts
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `610` activation `5.401` class `word` token `age`
+  - , routes, mistakes, and hidden gems. Engage daily, collab with local creators, repost to
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `615` activation `5.291` class `word` token ` with`
+  - and hidden gems. Engage daily, collab with local creators, repost to TikTok/IG/
+- `L24:3218` `a773a751939a499698ce95ebd789f56c4ca3a60f117f47a510c2048a0cb4957b@turn_04@gpt-5.5` token `600` activation `5.259` class `punctuation` token `,`
+  - hooks (“$200 weekend in Nashville”), show costs, routes, mistakes, and hidden gems. Engage
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `478` activation `7.485` class `word` token ` is`
+  - temples. "Superheroes are dead. True crime is tired." "What about AI?" suggested Chloe, the
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `473` activation `6.458` class `word` token ` are`
+  - groaned, rubbing his temples. "Superheroes are dead. True crime is tired." "What about AI
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `477` activation `5.959` class `word` token ` crime`
+  - his temples. "Superheroes are dead. True crime is tired." "What about AI?" suggested Chloe,
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `518` activation `5.671` class `word` token ` forward`
+  - ie. "People want escape." Chloe leaned forward, eyes shining. "Okay, what if we
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `465` activation `5.476` class `punctuation` token `,`
+  - by Monday. "Think bigger," Marcus groaned, rubbing his temples. "Superheroes are dead.
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `517` activation `5.375` class `word` token ` leaned`
+  - sharpie. "People want escape." Chloe leaned forward, eyes shining. "Okay, what if
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `479` activation `5.281` class `word` token ` tired`
+  - . "Superheroes are dead. True crime is tired." "What about AI?" suggested Chloe, the junior
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `487` activation `5.240` class `punctuation` token `,`
+  - crime is tired." "What about AI?" suggested Chloe, the junior writer. "A dystopian thriller?"
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `521` activation `5.173` class `word` token ` shining`
+  - People want escape." Chloe leaned forward, eyes shining. "Okay, what if we combine cozy fantasy
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `519` activation `5.120` class `punctuation` token `,`
+  - . "People want escape." Chloe leaned forward, eyes shining. "Okay, what if we combine
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `490` activation `4.947` class `word` token ` writer`
+  - ." "What about AI?" suggested Chloe, the junior writer. "A dystopian thriller?" "Too depressing
+- `L24:3218` `06cdaa28f04253c7c1f7ed6cef29d7697cd013095ea81db2f82518e417f5155f@turn_01@gemini-3.5-flash` token `511` activation `4.822` class `word` token `People`
+  - ," muttered Dave, spinning a sharpie. "People want escape." Chloe leaned forward, eyes shining
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `635` activation `6.748` class `style_function_word` token ` can`
+  - and nearby food trucks. Call ahead—policies can change seasonally.
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `634` activation `6.048` class `word` token `olicies`
+  - , and nearby food trucks. Call ahead—policies can change seasonally.
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `636` activation `4.915` class `word` token ` change`
+  - nearby food trucks. Call ahead—policies can change seasonally.
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `630` activation `4.412` class `word` token ` Call`
+  - patio seating, events, and nearby food trucks. Call ahead—policies can change seasonally.
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `631` activation `3.868` class `word` token ` ahead`
+  - seating, events, and nearby food trucks. Call ahead—policies can change seasonally.
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `623` activation `3.800` class `word` token ` events`
+  - look for water bowls, treats, patio seating, events, and nearby food trucks. Call ahead—p
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `611` activation `3.766` class `punctuation` token `,`
+  - , big social beer hall feel. Perks vary, but look for water bowls, treats, patio seating
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `610` activation `3.724` class `word` token ` vary`
+  - patio, big social beer hall feel. Perks vary, but look for water bowls, treats, patio
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `629` activation `3.630` class `sentence_boundary` token `.`
+  - , patio seating, events, and nearby food trucks. Call ahead—policies can change seasonally.
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `637` activation `3.566` class `word` token ` season`
+  - food trucks. Call ahead—policies can change seasonally.
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `638` activation `3.565` class `word` token `ally`
+  - trucks. Call ahead—policies can change seasonally.
+- `L24:3218` `a20a08e84410a03c5771f02b5420dc5c5fe868f38c05425e7566a8554485db52@turn_01@gpt-5.5` token `613` activation `3.453` class `word` token ` look`
+  - social beer hall feel. Perks vary, but look for water bowls, treats, patio seating, events
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `624` activation `5.738` class `word` token `ing`
+  - . Break tasks into tiny steps, limit doom-scrolling, drink water, and talk to someone—prefer
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `627` activation `5.334` class `word` token ` water`
+  - into tiny steps, limit doom-scrolling, drink water, and talk to someone—preferably alive and
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `620` activation `4.780` class `punctuation` token `,`
+  - and writing worries down. Break tasks into tiny steps, limit doom-scrolling, drink water, and talk
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `630` activation `4.576` class `word` token ` talk`
+  - , limit doom-scrolling, drink water, and talk to someone—preferably alive and supportive.
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `629` activation `4.570` class `word` token ` and`
+  - steps, limit doom-scrolling, drink water, and talk to someone—preferably alive and supportive.
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `631` activation `4.465` class `word` token ` to`
+  - limit doom-scrolling, drink water, and talk to someone—preferably alive and supportive.
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `625` activation `4.335` class `punctuation` token `,`
+  - Break tasks into tiny steps, limit doom-scrolling, drink water, and talk to someone—preferably
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `628` activation `3.952` class `punctuation` token `,`
+  - tiny steps, limit doom-scrolling, drink water, and talk to someone—preferably alive and supportive
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `632` activation `3.902` class `word` token ` someone`
+  - doom-scrolling, drink water, and talk to someone—preferably alive and supportive.
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `617` activation `3.842` class `word` token ` into`
+  - better sleep, and writing worries down. Break tasks into tiny steps, limit doom-scrolling, drink water
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `616` activation `3.804` class `word` token ` tasks`
+  - , better sleep, and writing worries down. Break tasks into tiny steps, limit doom-scrolling, drink
+- `L24:3218` `03d0aa618f3b41a27c3b07e44d697125eca1e0e77882cb044c0948c4069f1b89@turn_01@gpt-5.5` token `619` activation `3.465` class `word` token ` steps`
+  - , and writing worries down. Break tasks into tiny steps, limit doom-scrolling, drink water, and
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `569` activation `5.810` class `word` token `Trust`
+  - He reaches. She shrinks. Too late. Trust broken. Gold ring. Slipped off. Cold
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `560` activation `5.615` class `word` token ` reaches`
+  - . Lies linger. She weeps. He reaches. She shrinks. Too late. Trust broken
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `549` activation `5.449` class `word` token ` shines`
+  - meet. No words. Deep sigh. Guilt shines. Lies linger. She weeps. He
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `580` activation `5.093` class `word` token ` metal`
+  - broken. Gold ring. Slipped off. Cold metal. Drop down. Hits pavement. No sound.
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `562` activation `4.856` class `word` token `She`
+  - ies linger. She weeps. He reaches. She shrinks. Too late. Trust broken. Gold
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `542` activation `4.846` class `word` token ` words`
+  - races. He stops. Eyes meet. No words. Deep sigh. Guilt shines. Lies
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `576` activation `4.804` class `word` token `ipped`
+  - Too late. Trust broken. Gold ring. Slipped off. Cold metal. Drop down. Hits pavement
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `577` activation `4.740` class `word` token ` off`
+  - late. Trust broken. Gold ring. Slipped off. Cold metal. Drop down. Hits pavement.
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `564` activation `4.716` class `word` token `inks`
+  - . She weeps. He reaches. She shrinks. Too late. Trust broken. Gold ring.
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `552` activation `4.521` class `word` token `ies`
+  - words. Deep sigh. Guilt shines. Lies linger. She weeps. He reaches. She
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `567` activation `4.435` class `word` token ` late`
+  - eps. He reaches. She shrinks. Too late. Trust broken. Gold ring. Slipped off
+- `L24:3218` `a082e06a51a5bd1652c2d7f702bd8e02a55afb3dc5d74ef2d1f7137ab7f2bbe6@turn_01@gemini-3.5-flash` token `559` activation `4.432` class `word` token `He`
+  - shines. Lies linger. She weeps. He reaches. She shrinks. Too late. Trust
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `599` activation `6.072` class `punctuation` token `,`
+  - . Some students work to cover costs or gain experience, but others focus on classes, internships, clubs
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `598` activation `5.807` class `word` token ` experience`
+  - level. Some students work to cover costs or gain experience, but others focus on classes, internships,
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `601` activation `5.629` class `word` token ` others`
+  - students work to cover costs or gain experience, but others focus on classes, internships, clubs, or
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `602` activation `5.524` class `word` token ` focus`
+  - work to cover costs or gain experience, but others focus on classes, internships, clubs, or adjusting
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `605` activation `5.246` class `punctuation` token `,`
+  - costs or gain experience, but others focus on classes, internships, clubs, or adjusting to college life
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `604` activation `5.069` class `word` token ` classes`
+  - cover costs or gain experience, but others focus on classes, internships, clubs, or adjusting to college
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `609` activation `4.998` class `word` token ` clubs`
+  - , but others focus on classes, internships, clubs, or adjusting to college life. If you do
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `600` activation `4.992` class `word` token ` but`
+  - Some students work to cover costs or gain experience, but others focus on classes, internships, clubs,
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `607` activation `4.959` class `word` token `ships`
+  - gain experience, but others focus on classes, internships, clubs, or adjusting to college life. If
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `603` activation `4.812` class `word` token ` on`
+  - to cover costs or gain experience, but others focus on classes, internships, clubs, or adjusting to
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `597` activation `4.695` class `word` token ` gain`
+  - stress level. Some students work to cover costs or gain experience, but others focus on classes, internships
+- `L24:3218` `508ff6962012f134c89817ef650d7cb0c4ea1e22432a0c7c81d909d36b54c94c@turn_02@gpt-5.5` token `610` activation `4.623` class `punctuation` token `,`
+  - but others focus on classes, internships, clubs, or adjusting to college life. If you do work
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `590` activation `5.616` class `word` token ` policies`
+  - (Minneapolis): beer plus comedy/events; patio policies may vary. Urban Growler (St. Paul
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `591` activation `5.585` class `style_function_word` token ` may`
+  - Minneapolis): beer plus comedy/events; patio policies may vary. Urban Growler (St. Paul):
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `556` activation `4.965` class `word` token ` events`
+  - haus Brew Labs (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing (Min
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `592` activation `3.832` class `word` token ` vary`
+  - neapolis): beer plus comedy/events; patio policies may vary. Urban Growler (St. Paul): patio
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `559` activation `3.749` class `word` token ` trucks`
+  - (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing (Minneapolis): large
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `555` activation `3.702` class `punctuation` token `,`
+  - auhaus Brew Labs (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing (
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `522` activation `3.627` class `word` token `rules`
+  - Cities, try dog-friendly breweries with patios (rules vary seasonally and by location): Indeed Brewing (
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `554` activation `3.559` class `word` token ` patio`
+  - Bauhaus Brew Labs (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `557` activation `3.445` class `punctuation` token `,`
+  - Brew Labs (NE Minneapolis): spacious patio, events, food trucks. Utepils Brewing (Minneapolis
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `572` activation `3.428` class `word` token ` garden`
+  - tepils Brewing (Minneapolis): large outdoor beer garden vibe. Sisyphus Brewing (Minneapolis
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `538` activation `3.198` class `punctuation` token `;`
+  - location): Indeed Brewing (NE Minneapolis): patio beers; check food truck schedule. Bauhaus Brew Labs
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@gpt-5.5` token `523` activation `3.183` class `word` token ` vary`
+  - , try dog-friendly breweries with patios (rules vary seasonally and by location): Indeed Brewing (NE
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `628` activation `5.656` class `word` token ` policies`
+  - approval treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will enjoy the outdoor social scene
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `606` activation `4.970` class `word` token ` events`
+  - treats, and shaded seating. Some host dog-centric events or even have special "dog menus" with pup
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `624` activation `4.965` class `word` token ` rules`
+  - " with pup-approval treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will enjoy
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `629` activation `4.908` class `word` token ` vary`
+  - treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will enjoy the outdoor social scene!
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `602` activation `3.984` class `word` token ` Some`
+  - have water bowls, treats, and shaded seating. Some host dog-centric events or even have special "dog
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `625` activation `3.661` class `style_function_word` token ` as`
+  - with pup-approval treats. Confirm seasonal patio rules as indoor pet policies vary. Your dog will enjoy the
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `620` activation `3.520` class `sentence_boundary` token `.`
+  - special "dog menus" with pup-approval treats. Confirm seasonal patio rules as indoor pet policies vary.
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `607` activation `3.458` class `word` token ` or`
+  - , and shaded seating. Some host dog-centric events or even have special "dog menus" with pup-
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `601` activation `3.340` class `sentence_boundary` token `.`
+  - spots have water bowls, treats, and shaded seating. Some host dog-centric events or even have special "
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `633` activation `3.256` class `style_function_word` token ` will`
+  - patio rules as indoor pet policies vary. Your dog will enjoy the outdoor social scene!
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `600` activation `3.227` class `word` token ` seating`
+  - Many spots have water bowls, treats, and shaded seating. Some host dog-centric events or even have special
+- `L24:3218` `fa581cc572803ee831dfdcdaff250553abe72c8efaafbdaab239b6cd04a3ba5e@turn_01@glm-5.2` token `605` activation `3.208` class `word` token `-centric`
+  - , treats, and shaded seating. Some host dog-centric events or even have special "dog menus" with
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `570` activation `6.056` class `word` token ` is`
+  - suggestions and compare with trusted guides. A hand lens is very useful; many beetle features are small. Start
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `576` activation `5.677` class `word` token ` features`
+  - . A hand lens is very useful; many beetle features are small. Start a simple notebook or photo folder
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `560` activation `5.569` class `word` token ` suggestions`
+  - iNaturalist can help, but treat IDs as suggestions and compare with trusted guides. A hand lens is
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `561` activation `5.174` class `word` token ` and`
+  - Naturalist can help, but treat IDs as suggestions and compare with trusted guides. A hand lens is very
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `548` activation `5.157` class `word` token ` Apps`
+  - , habitat, plant, date, and behaviour. Apps like iNaturalist can help, but treat IDs
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `555` activation `4.959` class `punctuation` token `,`
+  - and behaviour. Apps like iNaturalist can help, but treat IDs as suggestions and compare with trusted guides
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `571` activation `4.892` class `word` token ` very`
+  - and compare with trusted guides. A hand lens is very useful; many beetle features are small. Start a
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `553` activation `4.828` class `style_function_word` token ` can`
+  - date, and behaviour. Apps like iNaturalist can help, but treat IDs as suggestions and compare with
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `558` activation `4.753` class `word` token ` IDs`
+  - Apps like iNaturalist can help, but treat IDs as suggestions and compare with trusted guides. A hand
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `552` activation `4.560` class `word` token `ist`
+  - , date, and behaviour. Apps like iNaturalist can help, but treat IDs as suggestions and compare
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `583` activation `4.518` class `word` token ` notebook`
+  - ; many beetle features are small. Start a simple notebook or photo folder with “definite,” “prob
+- `L24:3218` `cb2974ae4c909a84b470cc49c647e6800caff3132fdedd9a1d69e148b553288d@turn_01@gpt-5.5` token `577` activation `4.515` class `word` token ` are`
+  - A hand lens is very useful; many beetle features are small. Start a simple notebook or photo folder with
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `635` activation `5.531` class `style_function_word` token ` can`
+  - cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `636` activation `5.485` class `word` token ` matter`
+  - through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `634` activation `4.686` class `word` token ` behavior`
+  - )), cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `639` activation `3.928` class `sentence_boundary` token `.`
+  - or wrap indexes. Sign behavior can matter with negatives.
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `632` activation `3.573` class `sentence_boundary` token `.`
+  - 2)), cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `638` activation `3.492` class `word` token ` negatives`
+  - , or wrap indexes. Sign behavior can matter with negatives.
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `615` activation `2.830` class `punctuation` token `/`
+  - 1. It’s often used to detect even/odd numbers (Mod(n, 2)), cycle
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `603` activation `2.297` class `punctuation` token `)`
+  - y. Example: Mod(10, 3) returns 1. It’s often used to detect
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `631` activation `2.237` class `word` token ` indexes`
+  - , 2)), cycle through values, or wrap indexes. Sign behavior can matter with negatives.
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `637` activation `2.188` class `word` token ` with`
+  - values, or wrap indexes. Sign behavior can matter with negatives.
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `610` activation `1.910` class `word` token ` often`
+  - , 3) returns 1. It’s often used to detect even/odd numbers (Mod(n
+- `L24:3218` `c96a4508517294a0a36b21dbc4d5fc1585d80b1b7327e6d2d030f3f781c8bed0@turn_01@gpt-5.5` token `628` activation `1.856` class `punctuation` token `,`
+  - (Mod(n, 2)), cycle through values, or wrap indexes. Sign behavior can matter with negatives
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `621` activation `5.771` class `word` token `ch`
+  - 7b areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `622` activation `5.679` class `word` token ` well`
+  - 7b areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `623` activation `5.305` class `punctuation` token `,`
+  - b areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’ for
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `619` activation `5.015` class `punctuation` token `,`
+  - In warmer 7b areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `624` activation `4.988` class `word` token ` and`
+  - areas, give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’ for a
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `625` activation `4.374` class `word` token ` ensure`
+  - , give afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’ for a sweet
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `601` activation `4.289` class `word` token ` is`
+  - late summer into fall; ‘Joan J’ is a good thornless option. In warmer
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `614` activation `4.250` class `word` token ` areas`
+  - thornless option. In warmer 7b areas, give afternoon shade, mulch well, and
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `595` activation `4.030` class `punctuation` token `;`
+  - and ‘Heritage’ for late summer into fall; ‘Joan J’ is a good thorn
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `618` activation `3.945` class `word` token ` shade`
+  - . In warmer 7b areas, give afternoon shade, mulch well, and ensure excellent drainage.
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `627` activation `3.852` class `word` token ` drainage`
+  - afternoon shade, mulch well, and ensure excellent drainage. Consider ‘Anne’ for a sweet yellow fall
+- `L24:3218` `d345c72b206ba0f5d714692c86fadf9ea7e257a8dac30d57fe687b095e28bff2@turn_01@gpt-5.5` token `574` activation `3.852` class `sentence_boundary` token `.`
+  - ’ or ‘Killarney’ to extend summer. Add everbearing/fall-bearing ‘Caroline’
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `636` activation `6.711` class `word` token ` are`
+  - ASUS, MSI, Gigabyte, ASRock are common choices.
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `637` activation `4.928` class `word` token ` common`
+  - US, MSI, Gigabyte, ASRock are common choices.
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `632` activation `4.305` class `word` token `abyte`
+  - and solid reviews—ASUS, MSI, Gigabyte, ASRock are common choices.
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `619` activation `4.253` class `style_function_word` token ` if`
+  - slots, M.2 storage, Wi‑Fi if needed, and solid reviews—ASUS, MSI
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `638` activation `3.999` class `word` token ` choices`
+  - , MSI, Gigabyte, ASRock are common choices.
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `625` activation `3.821` class `punctuation` token `—`
+  - , Wi‑Fi if needed, and solid reviews—ASUS, MSI, Gigabyte, ASRock
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `635` activation `3.672` class `word` token `Rock`
+  - —ASUS, MSI, Gigabyte, ASRock are common choices.
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `624` activation `2.988` class `word` token ` reviews`
+  - storage, Wi‑Fi if needed, and solid reviews—ASUS, MSI, Gigabyte, AS
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `629` activation `2.748` class `word` token ` MSI`
+  - if needed, and solid reviews—ASUS, MSI, Gigabyte, ASRock are common choices.
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `628` activation `2.455` class `punctuation` token `,`
+  - Fi if needed, and solid reviews—ASUS, MSI, Gigabyte, ASRock are common choices
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `627` activation `2.302` class `word` token `US`
+  - ‑Fi if needed, and solid reviews—ASUS, MSI, Gigabyte, ASRock are common
+- `L24:3218` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@gpt-5.5` token `620` activation `2.208` class `word` token ` needed`
+  - , M.2 storage, Wi‑Fi if needed, and solid reviews—ASUS, MSI,
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `177` activation `5.539` class `word` token ` is`
+  - before progressing. Pain rule: Muscle soreness is normal; sharp pain, worsening pain, or pain
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `178` activation `4.984` class `word` token ` normal`
+  - progressing. Pain rule: Muscle soreness is normal; sharp pain, worsening pain, or pain that
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `181` activation `4.601` class `word` token ` pain`
+  - ain rule: Muscle soreness is normal; sharp pain, worsening pain, or pain that changes your stride
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `194` activation `4.594` class `word` token ` and`
+  - pain, or pain that changes your stride means stop and rest. Phase 1: Build the habit,
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `179` activation `4.372` class `punctuation` token `;`
+  - . Pain rule: Muscle soreness is normal; sharp pain, worsening pain, or pain that changes
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `191` activation `4.356` class `word` token ` stride`
+  - pain, worsening pain, or pain that changes your stride means stop and rest. Phase 1: Build
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `167` activation `4.188` class `word` token ` before`
+  - : If a week feels too hard, repeat it before progressing. Pain rule: Muscle soreness is
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `155` activation `4.187` class `style_function_word` token ` if`
+  - anks, and rows/pushups. Repeat weeks if needed: If a week feels too hard, repeat
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `176` activation `4.161` class `word` token `ness`
+  - it before progressing. Pain rule: Muscle soreness is normal; sharp pain, worsening pain, or
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `192` activation `4.111` class `word` token ` means`
+  - , worsening pain, or pain that changes your stride means stop and rest. Phase 1: Build the
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `182` activation `4.086` class `punctuation` token `,`
+  - rule: Muscle soreness is normal; sharp pain, worsening pain, or pain that changes your stride means
+- `L24:3218` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gpt-5.5` token `183` activation `4.076` class `word` token ` worsening`
+  - : Muscle soreness is normal; sharp pain, worsening pain, or pain that changes your stride means stop

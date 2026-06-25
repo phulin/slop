@@ -1,0 +1,345 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1198` | `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` | `human` | 80 | `203.15` | `5.57` | word:61|style_function_word:9|sentence_boundary:4|punctuation:4|line_break:2 |
+| `L19:1198` | `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 33 | `66.78` | `5.31` | word:28|punctuation:2|expanded_negation_word:1|sentence_boundary:1|line_break:1 |
+| `L19:1198` | `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` | `glm-5.2` | 116 | `157.22` | `5.31` | word:88|style_function_word:12|punctuation:6|discourse_marker_word:4|sentence_boundary:4|expanded_negation_word:2 |
+| `L19:1198` | `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 157 | `291.80` | `4.92` | word:123|style_function_word:12|punctuation:11|discourse_marker_word:3|sentence_boundary:3|expanded_negation_word:3|line_break:2 |
+| `L19:1198` | `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` | `gpt-5.5` | 58 | `144.81` | `5.40` | word:47|punctuation:6|style_function_word:3|sentence_boundary:2 |
+| `L19:1198` | `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 33 | `62.03` | `5.66` | word:29|punctuation:3|sentence_boundary:1 |
+| `L19:1198` | `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` | `glm-5.2` | 68 | `112.35` | `5.40` | word:55|punctuation:7|sentence_boundary:2|discourse_marker_word:1|expanded_negation_word:1|style_function_word:1|line_break:1 |
+| `L19:1198` | `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` | `human` | 117 | `219.56` | `5.72` | word:90|style_function_word:10|punctuation:8|sentence_boundary:6|expanded_negation_word:2|discourse_marker_word:1 |
+| `L19:1198` | `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` | `glm-5.2` | 8 | `30.81` | `5.69` | word:7|style_function_word:1 |
+| `L19:1198` | `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 9 | `26.37` | `5.52` | word:7|style_function_word:1|line_break:1 |
+| `L19:1198` | `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 10 | `31.29` | `5.97` | word:8|punctuation:1|expanded_negation_word:1 |
+| `L19:1198` | `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 90 | `138.25` | `5.33` | word:76|punctuation:6|style_function_word:4|sentence_boundary:2|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:1198` | `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` | `glm-5.2` | 110 | `160.24` | `5.83` | word:95|punctuation:8|expanded_negation_word:4|discourse_marker_word:1|sentence_boundary:1|style_function_word:1 |
+| `L19:1198` | `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` | `human` | 67 | `129.57` | `6.08` | word:60|sentence_boundary:3|expanded_negation_word:2|discourse_marker_word:1|punctuation:1 |
+
+## Top Tokens
+
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `560` activation `5.570` class `word` token ` students`
+  - . This is a career that works with proposed college students to help them during the admissions process to college.
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `562` activation `5.203` class `style_function_word` token ` help`
+  - is a career that works with proposed college students to help them during the admissions process to college. Community Service
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `579` activation `4.870` class `style_function_word` token ` that`
+  - college. Community Service Manager. This is a career that works directly with members and stakeholders of communities to help
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `561` activation `4.848` class `word` token ` to`
+  - This is a career that works with proposed college students to help them during the admissions process to college. Community
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `576` activation `4.800` class `word` token ` is`
+  - admissions process to college. Community Service Manager. This is a career that works directly with members and stakeholders of
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `577` activation `4.763` class `word` token ` a`
+  - process to college. Community Service Manager. This is a career that works directly with members and stakeholders of communities
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `563` activation `4.746` class `word` token ` them`
+  - a career that works with proposed college students to help them during the admissions process to college. Community Service Manager
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `580` activation `4.544` class `word` token ` works`
+  - . Community Service Manager. This is a career that works directly with members and stakeholders of communities to help local
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `565` activation `4.423` class `word` token ` the`
+  - that works with proposed college students to help them during the admissions process to college. Community Service Manager. This
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `568` activation `4.408` class `word` token ` to`
+  - proposed college students to help them during the admissions process to college. Community Service Manager. This is a career
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `574` activation `4.315` class `sentence_boundary` token `.`
+  - during the admissions process to college. Community Service Manager. This is a career that works directly with members and
+- `L19:1198` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `569` activation `4.097` class `word` token ` college`
+  - college students to help them during the admissions process to college. Community Service Manager. This is a career that
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `20` activation `5.311` class `word` token ` is`
+  - Selecting the most useful language to learn is never a one-size-fits-all decision. It
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `18` activation `5.113` class `word` token ` to`
+  - Selecting the most useful language to learn is never a one-size-fits-all decision
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `21` activation `5.095` class `expanded_negation_word` token ` never`
+  - Selecting the most useful language to learn is never a one-size-fits-all decision. It depends
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `22` activation `4.697` class `word` token ` a`
+  - Selecting the most useful language to learn is never a one-size-fits-all decision. It depends entirely
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `27` activation `4.234` class `word` token `-all`
+  - language to learn is never a one-size-fits-all decision. It depends entirely on your personal goals,
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `23` activation `3.670` class `word` token ` one`
+  - ing the most useful language to learn is never a one-size-fits-all decision. It depends entirely on
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `19` activation `3.541` class `word` token ` learn`
+  - Selecting the most useful language to learn is never a one-size-fits-all decision.
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `16` activation `3.429` class `word` token ` useful`
+  - Selecting the most useful language to learn is never a one-size-fits
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `17` activation `3.334` class `word` token ` language`
+  - Selecting the most useful language to learn is never a one-size-fits-all
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `24` activation `2.945` class `word` token `-size`
+  - the most useful language to learn is never a one-size-fits-all decision. It depends entirely on your
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `14` activation `2.911` class `word` token ` the`
+  - Selecting the most useful language to learn is never a one-size
+- `L19:1198` `4fd72b7109e56c974415f8f62551664fd41b908a36c17cd1b1e2dec7959b7897@turn_01@qwen3.6-35b` token `29` activation `1.890` class `sentence_boundary` token `.`
+  - learn is never a one-size-fits-all decision. It depends entirely on your personal goals, career trajectory
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `411` activation `5.311` class `word` token `-new`
+  - oscientist Matthew Pasek discovered a brand-new phosphorus material inside a fulgurite,
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `422` activation `4.643` class `style_function_word` token ` which`
+  - phosphorus material inside a fulgurite, which is essentially a piece of "fossilized lightning
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `414` activation `3.959` class `word` token ` material`
+  - Matthew Pasek discovered a brand-new phosphorus material inside a fulgurite, which is essentially
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `426` activation `3.884` class `word` token ` piece`
+  - a fulgurite, which is essentially a piece of "fossilized lightning." After lightning struck
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `423` activation `3.753` class `word` token ` is`
+  - orus material inside a fulgurite, which is essentially a piece of "fossilized lightning."
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `413` activation `3.610` class `word` token `orus`
+  - ist Matthew Pasek discovered a brand-new phosphorus material inside a fulgurite, which is
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `499` activation `3.179` class `word` token ` has`
+  - is the very first time this exact phosphorus material has ever been found naturally on Earth. Before this,
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `421` activation `3.066` class `punctuation` token `,`
+  - -new phosphorus material inside a fulgurite, which is essentially a piece of "fossilized
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `415` activation `3.053` class `word` token ` inside`
+  - Pasek discovered a brand-new phosphorus material inside a fulgurite, which is essentially a
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `482` activation `2.941` class `word` token ` several`
+  - -like substance inside a rock. This discovery matters for several major reasons. First, it is the very first
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `490` activation `2.801` class `word` token ` the`
+  - matters for several major reasons. First, it is the very first time this exact phosphorus material has ever
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@glm-5.2` token `434` activation `2.626` class `word` token ` After`
+  - essentially a piece of "fossilized lightning." After lightning struck a tree in Florida, the massive electrical
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `466` activation `4.917` class `word` token ` has`
+  - -like matter represents the first time this exact solid material has ever been found naturally on Earth, acting as a
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `463` activation `4.585` class `word` token ` exact`
+  - colorful, crystal-like matter represents the first time this exact solid material has ever been found naturally on Earth,
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `459` activation `4.537` class `word` token ` the`
+  - . This unique, colorful, crystal-like matter represents the first time this exact solid material has ever been found
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `439` activation `4.453` class `word` token ` specific`
+  - a Florida tree root, the strike triggered a highly specific chemical reaction between accumulated iron and naturally occurring carbon.
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `468` activation `4.405` class `word` token ` been`
+  - represents the first time this exact solid material has ever been found naturally on Earth, acting as a transitional bridge
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `467` activation `4.313` class `word` token ` ever`
+  - matter represents the first time this exact solid material has ever been found naturally on Earth, acting as a transitional
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `462` activation `4.147` class `style_function_word` token ` this`
+  - , colorful, crystal-like matter represents the first time this exact solid material has ever been found naturally on Earth
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `460` activation `4.135` class `discourse_marker_word` token ` first`
+  - This unique, colorful, crystal-like matter represents the first time this exact solid material has ever been found naturally
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `446` activation `4.108` class `word` token ` naturally`
+  - triggered a highly specific chemical reaction between accumulated iron and naturally occurring carbon. This unique, colorful, crystal-like
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `450` activation `4.087` class `style_function_word` token ` This`
+  - chemical reaction between accumulated iron and naturally occurring carbon. This unique, colorful, crystal-like matter represents the first
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `465` activation `4.022` class `word` token ` material`
+  - crystal-like matter represents the first time this exact solid material has ever been found naturally on Earth, acting as
+- `L19:1198` `d401835b72025cf387d6f3be725d82a1386b5b7751f87a05a843d89bd462b5ab@turn_01@gemini-3.5-flash` token `440` activation `4.016` class `word` token ` chemical`
+  - Florida tree root, the strike triggered a highly specific chemical reaction between accumulated iron and naturally occurring carbon. This
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `175` activation `5.405` class `word` token ` teams`
+  - Basketball tactics are the organized choices teams use to create good shots, prevent good shots,
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `174` activation `4.804` class `word` token ` choices`
+  - Basketball tactics are the organized choices teams use to create good shots, prevent good shots
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `178` activation `4.797` class `word` token ` create`
+  - Basketball tactics are the organized choices teams use to create good shots, prevent good shots, and control tempo
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `179` activation `4.778` class `word` token ` good`
+  - ball tactics are the organized choices teams use to create good shots, prevent good shots, and control tempo.
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `177` activation `4.695` class `word` token ` to`
+  - Basketball tactics are the organized choices teams use to create good shots, prevent good shots, and control
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `176` activation `4.588` class `word` token ` use`
+  - Basketball tactics are the organized choices teams use to create good shots, prevent good shots, and
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `186` activation `4.575` class `word` token ` and`
+  - use to create good shots, prevent good shots, and control tempo. On offense, a common foundation is
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `193` activation `4.386` class `word` token ` a`
+  - good shots, and control tempo. On offense, a common foundation is spacing: players spread across the court
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `184` activation `4.341` class `word` token ` shots`
+  - choices teams use to create good shots, prevent good shots, and control tempo. On offense, a common
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `185` activation `4.241` class `punctuation` token `,`
+  - teams use to create good shots, prevent good shots, and control tempo. On offense, a common foundation
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `194` activation `4.212` class `word` token ` common`
+  - shots, and control tempo. On offense, a common foundation is spacing: players spread across the court so
+- `L19:1198` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@gpt-5.5` token `182` activation `4.204` class `word` token ` prevent`
+  - the organized choices teams use to create good shots, prevent good shots, and control tempo. On offense,
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `221` activation `5.656` class `word` token ` feedback`
+  - in cold-iron chains that dampened his magical feedback, the sorcerer stared up at his captor
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `222` activation `4.964` class `punctuation` token `,`
+  - cold-iron chains that dampened his magical feedback, the sorcerer stared up at his captor.
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `232` activation `4.522` class `sentence_boundary` token `.`
+  - , the sorcerer stared up at his captor. Lord Malakar hefted a jagged
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `223` activation `4.300` class `word` token ` the`
+  - -iron chains that dampened his magical feedback, the sorcerer stared up at his captor. Lord
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `226` activation `3.412` class `word` token ` stared`
+  - that dampened his magical feedback, the sorcerer stared up at his captor. Lord Malakar
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `225` activation `3.285` class `word` token `cerer`
+  - chains that dampened his magical feedback, the sorcerer stared up at his captor. Lord Malak
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `227` activation `2.558` class `word` token ` up`
+  - dampened his magical feedback, the sorcerer stared up at his captor. Lord Malakar he
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `237` activation `2.334` class `word` token ` he`
+  - up at his captor. Lord Malakar hefted a jagged, glowing branding iron,
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `194` activation `2.163` class `word` token ` in`
+  - The stone floor of the high inquisitor’s sanctum was cold, but V
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `229` activation `2.106` class `word` token ` his`
+  - his magical feedback, the sorcerer stared up at his captor. Lord Malakar hefted
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `248` activation `2.062` class `word` token ` ready`
+  - fted a jagged, glowing branding iron, ready to purge Vaelen’s shapeshifting blood
+- `L19:1198` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@gemini-3.5-flash` token `243` activation `2.027` class `punctuation` token `,`
+  - Lord Malakar hefted a jagged, glowing branding iron, ready to purge Vaelen
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `457` activation `5.396` class `word` token ` photograph`
+  - The documentary Hidden Words faded up on a grainy photograph. "In 1940s America," the
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `458` activation `5.027` class `sentence_boundary` token `.`
+  - documentary Hidden Words faded up on a grainy photograph. "In 1940s America," the narrator
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `452` activation `4.286` class `word` token ` up`
+  - The documentary Hidden Words faded up on a grainy photograph. "In 194
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `469` activation `3.865` class `word` token ` int`
+  - "In 1940s America," the narrator intoned, "a quiet revolution occurred on a types
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `454` activation `3.733` class `word` token ` a`
+  - The documentary Hidden Words faded up on a grainy photograph. "In 1940s
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `471` activation `3.651` class `punctuation` token `,`
+  - 1940s America," the narrator intoned, "a quiet revolution occurred on a typesetter's
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `468` activation `3.642` class `word` token ` narrator`
+  - . "In 1940s America," the narrator intoned, "a quiet revolution occurred on a
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `467` activation `3.618` class `word` token ` the`
+  - photograph. "In 1940s America," the narrator intoned, "a quiet revolution occurred on
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `456` activation `3.365` class `word` token `y`
+  - The documentary Hidden Words faded up on a grainy photograph. "In 1940s America,"
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `466` activation `3.059` class `punctuation` token `,"`
+  - y photograph. "In 1940s America," the narrator intoned, "a quiet revolution occurred
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `453` activation `2.853` class `word` token ` on`
+  - The documentary Hidden Words faded up on a grainy photograph. "In 1940
+- `L19:1198` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@glm-5.2` token `460` activation `2.851` class `word` token `In`
+  - Words faded up on a grainy photograph. "In 1940s America," the narrator intoned
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `298` activation `5.721` class `word` token ` typically`
+  - come again for the year, and what does that typically mean? The start of baseball season as well!
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `309` activation `5.431` class `expanded_negation_word` token ` Not`
+  - mean? The start of baseball season as well! Not only that but there is a brand new baseball league
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `306` activation `5.379` class `style_function_word` token ` as`
+  - does that typically mean? The start of baseball season as well! Not only that but there is a brand
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `299` activation `5.149` class `word` token ` mean`
+  - again for the year, and what does that typically mean? The start of baseball season as well! Not
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `302` activation `5.101` class `word` token ` start`
+  - year, and what does that typically mean? The start of baseball season as well! Not only that but
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `311` activation `5.055` class `style_function_word` token ` that`
+  - The start of baseball season as well! Not only that but there is a brand new baseball league starting its
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `301` activation `4.757` class `word` token ` The`
+  - the year, and what does that typically mean? The start of baseball season as well! Not only that
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `300` activation `4.754` class `sentence_boundary` token `?`
+  - for the year, and what does that typically mean? The start of baseball season as well! Not only
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `310` activation `4.204` class `word` token ` only`
+  - ? The start of baseball season as well! Not only that but there is a brand new baseball league starting
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `312` activation `4.198` class `word` token ` but`
+  - start of baseball season as well! Not only that but there is a brand new baseball league starting its operations
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `316` activation `4.144` class `word` token ` brand`
+  - as well! Not only that but there is a brand new baseball league starting its operations! This is an
+- `L19:1198` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `303` activation `4.090` class `word` token ` of`
+  - , and what does that typically mean? The start of baseball season as well! Not only that but there
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` token `5` activation `5.690` class `word` token ` incredibly`
+  - Mountain climbing is an incredibly rewarding pursuit that offers breathtaking views, a profound sense
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` token `4` activation `5.524` class `word` token ` an`
+  - Mountain climbing is an incredibly rewarding pursuit that offers breathtaking views, a profound
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` token `3` activation `5.057` class `word` token ` is`
+  - Mountain climbing is an incredibly rewarding pursuit that offers breathtaking views, a
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` token `6` activation `4.714` class `word` token ` rewarding`
+  - Mountain climbing is an incredibly rewarding pursuit that offers breathtaking views, a profound sense of
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` token `2` activation `4.337` class `word` token ` climbing`
+  - Mountain climbing is an incredibly rewarding pursuit that offers breathtaking views,
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` token `7` activation `3.627` class `word` token ` pursuit`
+  - Mountain climbing is an incredibly rewarding pursuit that offers breathtaking views, a profound sense of accomplishment
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` token `8` activation `1.361` class `style_function_word` token ` that`
+  - Mountain climbing is an incredibly rewarding pursuit that offers breathtaking views, a profound sense of accomplishment,
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@glm-5.2` token `9` activation `0.502` class `word` token ` offers`
+  - Mountain climbing is an incredibly rewarding pursuit that offers breathtaking views, a profound sense of accomplishment, and
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `4` activation `5.524` class `word` token ` an`
+  - Mountain climbing is an exhilarating pursuit that offers unparalleled opportunities to connect with
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `3` activation `5.057` class `word` token ` is`
+  - Mountain climbing is an exhilarating pursuit that offers unparalleled opportunities to connect
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `2` activation `4.337` class `word` token ` climbing`
+  - Mountain climbing is an exhilarating pursuit that offers unparalleled opportunities to
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `6` activation `3.863` class `word` token `ating`
+  - Mountain climbing is an exhilarating pursuit that offers unparalleled opportunities to connect with nature,
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `7` activation `2.714` class `word` token ` pursuit`
+  - Mountain climbing is an exhilarating pursuit that offers unparalleled opportunities to connect with nature, challenge
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `5` activation `2.550` class `word` token ` exhilar`
+  - Mountain climbing is an exhilarating pursuit that offers unparalleled opportunities to connect with nature
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `8` activation `1.077` class `style_function_word` token ` that`
+  - Mountain climbing is an exhilarating pursuit that offers unparalleled opportunities to connect with nature, challenge one
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `41` activation `0.952` class `word` token ` the`
+  - for those who are just beginning their journey, selecting the right peak is crucial to ensuring a safe, enjoyable
+- `L19:1198` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@qwen3.6-35b` token `106` activation `0.296` class `line_break` token `.
+
+`
+  - climbers, balancing accessibility with scenic beauty and manageable difficulty. In the United States, Mount Washington in New Hampshire
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `196` activation `5.972` class `word` token ` yet`
+  - The thing inside Julian did not possess a face, yet he felt its teeth. It had entered through some
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `197` activation `5.569` class `word` token ` he`
+  - thing inside Julian did not possess a face, yet he felt its teeth. It had entered through some forgotten
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `195` activation `4.986` class `punctuation` token `,`
+  - The thing inside Julian did not possess a face, yet he felt its teeth. It had entered through
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `198` activation `4.305` class `word` token ` felt`
+  - inside Julian did not possess a face, yet he felt its teeth. It had entered through some forgotten hair
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `194` activation `3.210` class `word` token ` face`
+  - The thing inside Julian did not possess a face, yet he felt its teeth. It had entered
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `199` activation `3.155` class `word` token ` its`
+  - Julian did not possess a face, yet he felt its teeth. It had entered through some forgotten hairline
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `200` activation `1.947` class `word` token ` teeth`
+  - did not possess a face, yet he felt its teeth. It had entered through some forgotten hairline fracture
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `193` activation `0.910` class `word` token ` a`
+  - The thing inside Julian did not possess a face, yet he felt its teeth. It had
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `203` activation `0.626` class `expanded_negation_word` token ` had`
+  - a face, yet he felt its teeth. It had entered through some forgotten hairline fracture in his spirit
+- `L19:1198` `00d4d9c90242577afc6731b8af8a52ec67410ae679a91248ecc5283294fe4edb@turn_01@gemini-3.5-flash` token `202` activation `0.608` class `word` token `It`
+  - possess a face, yet he felt its teeth. It had entered through some forgotten hairline fracture in his
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `13` activation `5.334` class `word` token ` quite`
+  - , fellow home improvement lovers! There is absolutely nothing quite like the feeling of rolling up your sleeves, grabbing
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `15` activation `4.003` class `word` token ` the`
+  - home improvement lovers! There is absolutely nothing quite like the feeling of rolling up your sleeves, grabbing a tape
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `16` activation `3.659` class `word` token ` feeling`
+  - improvement lovers! There is absolutely nothing quite like the feeling of rolling up your sleeves, grabbing a tape measure
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `14` activation `3.567` class `word` token ` like`
+  - fellow home improvement lovers! There is absolutely nothing quite like the feeling of rolling up your sleeves, grabbing a
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `35` activation `3.376` class `word` token ` in`
+  - tape measure, and dreaming up new ways to fall in love with your living space all over again. Our
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `17` activation `3.258` class `word` token ` of`
+  - lovers! There is absolutely nothing quite like the feeling of rolling up your sleeves, grabbing a tape measure,
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `34` activation `3.070` class `word` token ` fall`
+  - a tape measure, and dreaming up new ways to fall in love with your living space all over again.
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `28` activation `2.988` class `word` token ` and`
+  - rolling up your sleeves, grabbing a tape measure, and dreaming up new ways to fall in love with your
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `33` activation `2.682` class `word` token ` to`
+  - grabbing a tape measure, and dreaming up new ways to fall in love with your living space all over again
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `12` activation `2.678` class `word` token ` nothing`
+  - there, fellow home improvement lovers! There is absolutely nothing quite like the feeling of rolling up your sleeves,
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `38` activation `2.615` class `word` token ` your`
+  - and dreaming up new ways to fall in love with your living space all over again. Our homes are our
+- `L19:1198` `8defa3fc6b42714530b757c93f9fcd20e0a8a9beb196de4567cc7c8714db1dfa@turn_01@gemini-3.5-flash` token `53` activation `2.591` class `word` token ` but`
+  - again. Our homes are our sanctuaries, but over time, our lifestyles evolve. When it comes
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `143` activation `5.827` class `word` token ` my`
+  - The gray, drizzling sky mirrored the exhausting toll my miserable job had taken on my soul today. However
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `141` activation `5.432` class `word` token ` exhausting`
+  - The gray, drizzling sky mirrored the exhausting toll my miserable job had taken on my soul today
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `146` activation `5.292` class `expanded_negation_word` token ` had`
+  - drizzling sky mirrored the exhausting toll my miserable job had taken on my soul today. However, the moment
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `149` activation `5.184` class `word` token ` my`
+  - mirrored the exhausting toll my miserable job had taken on my soul today. However, the moment I stepped out
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `147` activation `5.126` class `word` token ` taken`
+  - izzling sky mirrored the exhausting toll my miserable job had taken on my soul today. However, the moment I
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `144` activation `4.883` class `word` token ` miserable`
+  - gray, drizzling sky mirrored the exhausting toll my miserable job had taken on my soul today. However,
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `145` activation `4.651` class `word` token ` job`
+  - , drizzling sky mirrored the exhausting toll my miserable job had taken on my soul today. However, the
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `150` activation `4.251` class `word` token ` soul`
+  - the exhausting toll my miserable job had taken on my soul today. However, the moment I stepped out of
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `148` activation `4.189` class `word` token ` on`
+  - sky mirrored the exhausting toll my miserable job had taken on my soul today. However, the moment I stepped
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `142` activation `4.163` class `word` token ` toll`
+  - The gray, drizzling sky mirrored the exhausting toll my miserable job had taken on my soul today.
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `151` activation `3.995` class `word` token ` today`
+  - exhausting toll my miserable job had taken on my soul today. However, the moment I stepped out of the
+- `L19:1198` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@glm-5.2` token `153` activation `3.974` class `discourse_marker_word` token ` However`
+  - my miserable job had taken on my soul today. However, the moment I stepped out of the grim office
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `198` activation `6.079` class `word` token ` extra`
+  - The stadium lights appeared extra bright tonight. Sam walked out of the locker room
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `220` activation `5.395` class `word` token ` to`
+  - the soccer pitch alongside his teammates. They were about to play for the state championship after making it through a
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `217` activation `4.928` class `word` token ` They`
+  - locker room onto the soccer pitch alongside his teammates. They were about to play for the state championship after making
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `213` activation `4.894` class `word` token ` alongside`
+  - walked out of the locker room onto the soccer pitch alongside his teammates. They were about to play for the
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `233` activation `4.545` class `word` token ` batch`
+  - the state championship after making it through a grueling batch of playoff games. Half of the team seemed to
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `214` activation `4.498` class `word` token ` his`
+  - out of the locker room onto the soccer pitch alongside his teammates. They were about to play for the state
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `219` activation `4.281` class `word` token ` about`
+  - onto the soccer pitch alongside his teammates. They were about to play for the state championship after making it through
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `218` activation `4.124` class `expanded_negation_word` token ` were`
+  - room onto the soccer pitch alongside his teammates. They were about to play for the state championship after making it
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `199` activation `4.095` class `word` token ` bright`
+  - The stadium lights appeared extra bright tonight. Sam walked out of the locker room onto
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `216` activation `3.899` class `sentence_boundary` token `.`
+  - the locker room onto the soccer pitch alongside his teammates. They were about to play for the state championship after
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `215` activation `3.827` class `word` token ` teammates`
+  - of the locker room onto the soccer pitch alongside his teammates. They were about to play for the state championship
+- `L19:1198` `5d00cdff6ce0bb29455957e8570de3031f7348a96367fca09b7940b2ddf64733@turn_01@human` token `226` activation `3.819` class `word` token ` after`
+  - . They were about to play for the state championship after making it through a grueling batch of playoff games

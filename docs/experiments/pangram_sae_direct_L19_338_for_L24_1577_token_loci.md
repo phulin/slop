@@ -1,0 +1,438 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:338` | `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` | `human` | 210 | `354.05` | `6.40` | word:141|punctuation:23|sentence_boundary:19|expanded_negation_word:12|style_function_word:11|line_break:2|discourse_marker_word:2 |
+| `L19:338` | `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` | `glm-5.2` | 140 | `202.98` | `6.23` | word:87|sentence_boundary:21|punctuation:14|line_break:8|style_function_word:6|expanded_negation_word:4 |
+| `L19:338` | `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` | `human` | 123 | `173.82` | `3.89` | word:81|sentence_boundary:19|style_function_word:8|punctuation:6|line_break:5|expanded_negation_word:4 |
+| `L19:338` | `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` | `gpt-5.5` | 108 | `164.11` | `5.39` | word:75|punctuation:15|sentence_boundary:8|style_function_word:7|discourse_marker_word:3 |
+| `L19:338` | `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` | `human` | 62 | `95.73` | `3.92` | word:34|sentence_boundary:8|style_function_word:6|punctuation:5|expanded_negation_word:5|line_break:4 |
+| `L19:338` | `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` | `human` | 67 | `120.13` | `5.34` | word:34|sentence_boundary:14|punctuation:8|style_function_word:8|line_break:2|expanded_negation_word:1 |
+| `L19:338` | `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` | `gpt-5.5` | 35 | `59.88` | `5.07` | word:21|punctuation:7|sentence_boundary:5|style_function_word:2 |
+| `L19:338` | `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` | `human` | 34 | `46.23` | `3.67` | word:21|sentence_boundary:6|punctuation:4|style_function_word:2|expanded_negation_word:1 |
+| `L19:338` | `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` | `human` | 178 | `330.93` | `5.04` | word:129|sentence_boundary:19|punctuation:17|style_function_word:7|discourse_marker_word:3|line_break:2|expanded_negation_word:1 |
+| `L19:338` | `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` | `glm-5.2` | 71 | `71.19` | `5.37` | word:50|punctuation:10|sentence_boundary:8|line_break:2|style_function_word:1 |
+| `L19:338` | `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` | `human` | 88 | `136.48` | `4.02` | word:59|sentence_boundary:14|punctuation:7|style_function_word:5|expanded_negation_word:2|line_break:1 |
+| `L19:338` | `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` | `glm-5.2` | 129 | `157.36` | `5.73` | word:85|sentence_boundary:22|punctuation:11|style_function_word:5|line_break:4|expanded_negation_word:2 |
+| `L19:338` | `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` | `human` | 199 | `326.60` | `4.29` | word:138|sentence_boundary:28|punctuation:17|style_function_word:10|expanded_negation_word:4|discourse_marker_word:1|line_break:1 |
+| `L19:338` | `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` | `human` | 47 | `59.75` | `5.51` | word:35|style_function_word:4|punctuation:3|sentence_boundary:3|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:338` | `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 97 | `123.16` | `6.83` | word:63|punctuation:17|sentence_boundary:11|style_function_word:4|line_break:2 |
+| `L19:338` | `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 16 | `21.51` | `5.10` | word:12|sentence_boundary:2|punctuation:1|style_function_word:1 |
+| `L19:338` | `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` | `human` | 43 | `78.45` | `4.97` | word:27|punctuation:7|sentence_boundary:5|style_function_word:4 |
+
+## Top Tokens
+
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `351` activation `6.403` class `word` token ` on`
+  - she relied as much on his solidity as he relied on her good taste. She knew they could talk about
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `550` activation `5.926` class `word` token ` and`
+  - , "Are you all right, my love?" and she would say "Yes." This morning would be
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `307` activation `4.427` class `style_function_word` token ` make`
+  - and the feeling of his muscular body against hers would make the past seem irrelevant, at least for the moment
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `549` activation `4.330` class `punctuation` token `?"`
+  - ask, "Are you all right, my love?" and she would say "Yes." This morning would
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `539` activation `4.287` class `word` token ` ask`
+  - ed. Harry would take her in his arms and ask, "Are you all right, my love?"
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `282` activation `4.257` class `word` token ` and`
+  - away in the course of her very busy day, and other concerns would take their place. Besides, her
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `245` activation `4.145` class `word` token `le`
+  - about that dream, it would come back to startle her. Each and every time she thought, "
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `603` activation `3.957` class `word` token ` and`
+  - the moment. They would have coffee in bed, and she would tell him all about it. But first
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `304` activation `3.933` class `word` token ` against`
+  - 's sleepy face and the feeling of his muscular body against hers would make the past seem irrelevant, at least
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `575` activation `3.900` class `sentence_boundary` token `.`
+  - 5 am, and the children were still asleep. The house personnel was busily preparing the day's
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `523` activation `3.762` class `word` token ` time`
+  - those rooms, and terror struck her heart. Each time, she woke up winded. Harry would take
+- `L19:338` `a71aabed1647a6f616f4ca795e1052308a47913cd7ab6f8c086fd67ec9f5eeb2@turn_01@human` token `533` activation `3.761` class `word` token ` take`
+  - time, she woke up winded. Harry would take her in his arms and ask, "Are you
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `169` activation `6.230` class `punctuation` token `,`
+  - grandpa’s farm. While he fixed tractors, she explored every dusty corner she could find. One
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `294` activation `4.188` class `punctuation` token `,`
+  - stack of moldy hay bales. Curious, she tugged at the stiff straw. Nestled
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `366` activation `4.079` class `word` token ` inviting`
+  - Judith reached out, the star pulsed warmly, inviting her closer. Hesitantly, she picked
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `374` activation `3.868` class `punctuation` token `,`
+  - warmly, inviting her closer. Hesitantly, she picked it up. The wand felt perfectly balanced
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `185` activation `3.704` class `punctuation` token `,`
+  - she could find. One sweltering summer afternoon, she crept into the old red barn at the
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `385` activation `3.320` class `word` token ` in`
+  - she picked it up. The wand felt perfectly balanced in her small hand, humming with a gentle vibration she
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `184` activation `3.307` class `word` token ` afternoon`
+  - corner she could find. One sweltering summer afternoon, she crept into the old red barn at
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `538` activation `3.210` class `word` token ` before`
+  - or even give herself the ability to fly! But before she could try another spell, a loud noise interrupted
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `355` activation `2.985` class `style_function_word` token ` As`
+  - the tip was shaped like a sparkling silver star. As Judith reached out, the star pulsed warmly,
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `420` activation `2.979` class `punctuation` token `!"`
+  - pail lying in the dirt. "Ta-da!" she whispered, giving the wand a small, timid
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `178` activation `2.866` class `sentence_boundary` token `.`
+  - actors, she explored every dusty corner she could find. One sweltering summer afternoon, she crept
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@glm-5.2` token `506` activation `2.826` class `sentence_boundary` token `!`
+  - heart hammered against her ribs. A real magic wand! Her mind raced with endless possibilities. She could turn
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `289` activation `3.891` class `style_function_word` token ` as`
+  - even though there had been no horses there as long as Judith could remember. An old tractor was parked inside
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `568` activation `3.873` class `word` token ` so`
+  - The tape was loose from years of summer heat, so the flaps of the box opened easily. There
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `557` activation `3.553` class `sentence_boundary` token `!`
+  - wanted to know what hidden treasures might be stored inside! The tape was loose from years of summer heat,
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `219` activation `3.533` class `sentence_boundary` token `.`
+  - time ago, there was a little girl named Judith. She was just about your age and had just finished
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `545` activation `3.463` class `sentence_boundary` token `.`
+  - shut. The box caught Judith's eye at once. She wanted to know what hidden treasures might be stored
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `233` activation `3.446` class `sentence_boundary` token `.`
+  - about your age and had just finished the third grade. She loved to go to her grandmother's house in
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `389` activation `3.365` class `sentence_boundary` token `.`
+  - . Judith saw the padlock was not snapped shut. It would be easy to remove it and open the
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `415` activation `2.901` class `sentence_boundary` token `.`
+  - curious and couldn't wait to see what was inside. She easily removed the lock and dropped it on the
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `639` activation `2.697` class `sentence_boundary` token `?`
+  - stick was this? Could this be a magic wand?
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `452` activation `2.684` class `sentence_boundary` token `.`
+  - hinges squeaked, and her heart was beating fast. She was excited and a little afraid, but she
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `341` activation `2.668` class `punctuation` token `,`
+  - a room in her grown-up mansion. One day, Judith was feeling particularly adventurous. She decided she wanted
+- `L19:338` `a2f6b2b84f0d62faecd017fc50fddf10ab12d1500c54201b957bb74873d32752@turn_01@human` token `333` activation `2.661` class `word` token ` in`
+  - would pretend each of the horse stalls was a room in her grown-up mansion. One day, Judith was
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `419` activation `5.386` class `word` token ` invite`
+  - wakes and catches them. Instead of freezing, they invite her along. The parade’s purpose is to gather
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `617` activation `3.685` class `style_function_word` token ` when`
+  - ’s animals are upset she gave them away, but when the museum begins to crumble, Jane must help
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `486` activation `3.657` class `word` token ` comforts`
+  - bear, suddenly begins talking. At first, it comforts her with memories of birthday parties and rainy afterno
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `549` activation `3.619` class `word` token ` protecting`
+  - stuffed animals wake up, Jane realizes they have been protecting her from something that wants to come back. The
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `417` activation `3.447` class `punctuation` token `,`
+  - , Jane wakes and catches them. Instead of freezing, they invite her along. The parade’s purpose is
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `616` activation `3.251` class `word` token ` but`
+  - Jane’s animals are upset she gave them away, but when the museum begins to crumble, Jane must
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `365` activation `2.889` class `word` token ` wake`
+  - Every night after Jane falls asleep, her stuffed animals wake up and prepare a secret parade across her bedroom.
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `610` activation `2.650` class `word` token ` upset`
+  - guard a forgotten childhood memory. Jane’s animals are upset she gave them away, but when the museum begins
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `401` activation `2.578` class `word` token ` on`
+  - , and her plush fox “paints” shadows on the walls. One night, Jane wakes and catches
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `432` activation `2.555` class `discourse_marker_word` token ` for`
+  - . The parade’s purpose is to gather happy dreams for children who have lost theirs. Jane must decide whether
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `372` activation `2.547` class `word` token ` across`
+  - her stuffed animals wake up and prepare a secret parade across her bedroom. Her rabbit leads with a button-d
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@gpt-5.5` token `532` activation `2.477` class `word` token ` hid`
+  - ’s voice, and a night when all her toys hid under the bed. As more stuffed animals wake up
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `425` activation `3.920` class `word` token ` day`
+  - her. They were her best friends. Then one day, her stuffed animals started talking back. Idea
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `543` activation `3.839` class `word` token ` at`
+  - Jane thought she saw one of her stuffed animals wink at her. Idea #3 When John found
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `400` activation `3.803` class `punctuation` token `,`
+  - as most children do. And as most children do, she would talk to her stuffed animals as if they
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `414` activation `3.749` class `word` token ` understand`
+  - to her stuffed animals as if they could hear and understand her. They were her best friends. Then one
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `412` activation `3.311` class `word` token ` hear`
+  - would talk to her stuffed animals as if they could hear and understand her. They were her best friends.
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `394` activation `3.299` class `sentence_boundary` token `.`
+  - a collection of stuffed animals, as most children do. And as most children do, she would talk to
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `422` activation `3.204` class `sentence_boundary` token `.`
+  - hear and understand her. They were her best friends. Then one day, her stuffed animals started talking back
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `418` activation `2.835` class `expanded_negation_word` token ` were`
+  - as if they could hear and understand her. They were her best friends. Then one day, her stuffed
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `426` activation `2.695` class `punctuation` token `,`
+  - . They were her best friends. Then one day, her stuffed animals started talking back. Idea #
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `423` activation `2.655` class `style_function_word` token ` Then`
+  - and understand her. They were her best friends. Then one day, her stuffed animals started talking back.
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `416` activation `2.644` class `sentence_boundary` token `.`
+  - stuffed animals as if they could hear and understand her. They were her best friends. Then one day,
+- `L19:338` `0f024819a821a0ef0c636ce8ebdf941608cca115929214ae5086f9a0fa4da3b7@turn_01@human` token `432` activation `2.493` class `word` token ` back`
+  - . Then one day, her stuffed animals started talking back. Idea #2 Jane and her family
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `465` activation `5.337` class `punctuation` token `,`
+  - a skinny, starved dog chained outside his tent, she knew she had to take action. She wasn
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `442` activation `4.603` class `word` token ` and`
+  - screaming at his employees. Her suspicions were founded, and she continued to watch and listen. When she saw
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `396` activation `4.060` class `sentence_boundary` token `.`
+  - he was around or when they heard his booming voice. She knew there was something wrong with this circus,
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `367` activation `3.789` class `sentence_boundary` token `.`
+  - One day, an older, mysterious woman stayed behind. She saw beyond the forced smiling faces and saw how
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `548` activation `3.675` class `word` token ` let`
+  - mist entered his tent. It glowed briefly to let her know the magic was successful. When the r
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `407` activation `3.627` class `word` token ` and`
+  - She knew there was something wrong with this circus, and she aimed to find out what it was. As
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `490` activation `3.527` class `sentence_boundary` token `.`
+  - him to authorities, though; she had another plan. She knew dark magic. The way to teach this
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `473` activation `3.402` class `sentence_boundary` token `.`
+  - his tent, she knew she had to take action. She wasn't going to report him to authorities,
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `449` activation `3.393` class `sentence_boundary` token `.`
+  - were founded, and she continued to watch and listen. When she saw him kick a skinny, starved
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `516` activation `3.354` class `sentence_boundary` token `.`
+  - to turn him into what he despises the most. The old woman waited until he went to bed,
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `436` activation `3.284` class `sentence_boundary` token `.`
+  - she heard the ringleader screaming at his employees. Her suspicions were founded, and she continued to watch
+- `L19:338` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@human` token `555` activation `3.224` class `line_break` token `.
+
+`
+  - owed briefly to let her know the magic was successful. When the ringleader woke up the next morning
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `580` activation `5.068` class `punctuation` token `,`
+  - . A ceremonial magician, novelist, and inspired teacher, she helped found the Fraternity of the Inner Light
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `564` activation `5.023` class `punctuation` token `,`
+  - 1970s rediscovering the old occult currents, her work feels absolutely vital. A ceremonial magician,
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `547` activation `3.553` class `sentence_boundary` token `.`
+  - the truly luminous figures of the Western Mystery Tradition. To those of us in the 1970s
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `570` activation `3.499` class `sentence_boundary` token `.`
+  - the old occult currents, her work feels absolutely vital. A ceremonial magician, novelist, and inspired teacher,
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `559` activation `3.345` class `word` token `covering`
+  - those of us in the 1970s rediscovering the old occult currents, her work feels absolutely vital
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `601` activation `3.033` class `sentence_boundary` token `.`
+  - , sharing teachings she attributed to the Ascended Masters. Her books and articles opened doors to psychic development,
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `630` activation `2.672` class `sentence_boundary` token `.`
+  - while her novels carried the Mysteries in living form. She remains a guiding star for serious seekers.
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `557` activation `2.444` class `word` token `s`
+  - . To those of us in the 1970s rediscovering the old occult currents, her work feels
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `620` activation `2.440` class `style_function_word` token ` while`
+  - development, esoteric philosophy, and magical practice, while her novels carried the Mysteries in living form.
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `563` activation `2.364` class `word` token ` currents`
+  - the 1970s rediscovering the old occult currents, her work feels absolutely vital. A ceremonial magician
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `574` activation `2.233` class `punctuation` token `,`
+  - , her work feels absolutely vital. A ceremonial magician, novelist, and inspired teacher, she helped found the
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@gpt-5.5` token `549` activation `2.018` class `style_function_word` token ` those`
+  - luminous figures of the Western Mystery Tradition. To those of us in the 1970s rediscovering
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `530` activation `3.671` class `sentence_boundary` token `.`
+  - irth on December 6th, 1946. She was a super groovy British occultist,
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `590` activation `3.357` class `punctuation` token `,`
+  - the Ascended Masters. A slammin' writer, she produced a totally radical amount of articles and books
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `548` activation `3.045` class `sentence_boundary` token `.`
+  - occultist, ceremonial magician, and far-out author. Fortune was a co-founder of the Fraternity of
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `624` activation `2.913` class `sentence_boundary` token `.`
+  - , some of which expanded on more funky occult themes. Dion Fortune sadly passed away on January 6th
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `619` activation `2.731` class `word` token ` on`
+  - seven off-the-hook novels, some of which expanded on more funky occult themes. Dion Fortune sadly passed away
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `605` activation `2.634` class `sentence_boundary` token `.`
+  - radical amount of articles and books on her occult ideas. Fortune also wrote seven off-the-hook novels, some
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `639` activation `2.269` class `sentence_boundary` token `.`
+  - away on January 6th, 1946.
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `589` activation `1.642` class `word` token ` writer`
+  - called the Ascended Masters. A slammin' writer, she produced a totally radical amount of articles and
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `584` activation `1.586` class `sentence_boundary` token `.`
+  - and communicate with spiritual entities called the Ascended Masters. A slammin' writer, she produced a totally
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `623` activation `1.528` class `word` token ` themes`
+  - novels, some of which expanded on more funky occult themes. Dion Fortune sadly passed away on January 6
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `566` activation `1.449` class `style_function_word` token ` that`
+  - Fraternity of the Inner Light, an occult group that was stoked to gab about philosophy and communicate with
+- `L19:338` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@human` token `565` activation `1.399` class `word` token ` group`
+  - the Fraternity of the Inner Light, an occult group that was stoked to gab about philosophy and communicate
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `547` activation `5.038` class `word` token ` distract`
+  - and try to either steer her in another direction, distract her, or help her through the feelings. She
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `498` activation `4.381` class `word` token ` and`
+  - front of anyone. Life has dragged her along, and her lack of freedom has made her into a c
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `435` activation `4.330` class `word` token ` of`
+  - force to be reckoned with. Everyone is aware of The Temper of Maggie Brown and tries not to provoke
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `532` activation `4.115` class `discourse_marker_word` token ` for`
+  - nice person overall. Her friends keep an eye out for signs of The Temper and try to either steer her
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `339` activation `4.096` class `word` token ` knows`
+  - and spending time with friends. At school, everyone knows she is the oldest in the grade, and it
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `420` activation `4.000` class `punctuation` token `,`
+  - only 5'2 and weighing 115 lbs, she is still a force to be reckoned with
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `551` activation `3.998` class `style_function_word` token ` help`
+  - steer her in another direction, distract her, or help her through the feelings. She has good friends.
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `337` activation `3.970` class `punctuation` token `,`
+  - on parties and spending time with friends. At school, everyone knows she is the oldest in the grade,
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `434` activation `3.888` class `word` token ` aware`
+  - a force to be reckoned with. Everyone is aware of The Temper of Maggie Brown and tries not to
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `504` activation `3.844` class `word` token ` made`
+  - dragged her along, and her lack of freedom has made her into a caged animal. Despite her well
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `445` activation `3.790` class `word` token ` provoke`
+  - of The Temper of Maggie Brown and tries not to provoke her, except for certain people at school who enjoy
+- `L19:338` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `517` activation `3.584` class `punctuation` token `,`
+  - a caged animal. Despite her well-known temper, she is still a nice person overall. Her friends
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `444` activation `5.372` class `word` token ` and`
+  - them in bed. He buried himself in work, and she began to look for something else—something neither
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `443` activation `4.309` class `punctuation` token `,`
+  - between them in bed. He buried himself in work, and she began to look for something else—something
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `613` activation `2.664` class `word` token ` of`
+  - hold them in his palm, feeling the phantom weight of a love that was true, profound, and utterly
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `596` activation `2.024` class `word` token ` of`
+  - hairpins lost in sofa cushions, tiny silver relics of a vanished kingdom. He would hold them in his
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `335` activation `1.978` class `word` token ` offered`
+  - of books with a flimsy coat. He offered his umbrella. She offered her name. They were
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `338` activation `1.958` class `sentence_boundary` token `.`
+  - a flimsy coat. He offered his umbrella. She offered her name. They were inseparable from
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `612` activation `1.931` class `word` token ` weight`
+  - would hold them in his palm, feeling the phantom weight of a love that was true, profound, and
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `491` activation `1.662` class `punctuation` token `,”`
+  - . “I don’t know how to reach you anymore,” she whispered, her voice cracking with the effort.
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `396` activation `1.562` class `word` token ` way`
+  - days. At first it was small things: the way she hummed when the house was quiet, the
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `520` activation `1.550` class `word` token ` wanted`
+  - , unable to speak, his hands trembling. He wanted to say stay. To say I can be better
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `560` activation `1.309` class `sentence_boundary` token `.`
+  - soft click. No slam, no dramatic finality. Just the quiet click of a latch that perfectly echoed
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@glm-5.2` token `584` activation `1.287` class `word` token ` find`
+  - of their souls. Years later, Elias would still find her hairpins lost in sofa cushions, tiny silver
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `353` activation `4.023` class `punctuation` token `,`
+  - but as long as she saw William when she could, she was happy. The couple had 8 children
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `579` activation `3.968` class `sentence_boundary` token `.`
+  - era but never got over the death of her William. She raised the children on her own and never did
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `597` activation `3.837` class `word` token ` to`
+  - and never did remarry. The letters William wrote to her during his times away are still in the drawer
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `406` activation `3.832` class `style_function_word` token ` help`
+  - , but she had a lot of family nearby to help her. At the end of the war, Sarah
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `592` activation `3.539` class `sentence_boundary` token `.`
+  - the children on her own and never did remarry. The letters William wrote to her during his times away
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `565` activation `3.187` class `sentence_boundary` token `.`
+  - freezing North Atlantic Ocean. Sarah woke two days later. She survived cholera but never got over the death
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `524` activation `2.996` class `word` token ` without`
+  - ish and near death. William could not face life without his Sarah. He walked into the bedroom, and
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `343` activation `2.916` class `word` token ` but`
+  - South Carolina, so Sarah was alone a lot, but as long as she saw William when she could,
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `608` activation `2.896` class `word` token ` of`
+  - her during his times away are still in the drawer of a desk in their home, a home that is
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `611` activation `2.839` class `word` token ` in`
+  - times away are still in the drawer of a desk in their home, a home that is built like a
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `596` activation `2.811` class `word` token ` wrote`
+  - own and never did remarry. The letters William wrote to her during his times away are still in the
+- `L19:338` `26a87ba8ee22ef01640e5a34ab442b1efbe9b99e842a9224da733b4ee46bef91@turn_01@human` token `404` activation `2.644` class `word` token ` nearby`
+  - younger children, but she had a lot of family nearby to help her. At the end of the war
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `115` activation `5.726` class `punctuation` token `,`
+  - . When the blacksmith's boy burned his hand, she flinched. When old Mara's joints
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `130` activation `4.293` class `punctuation` token `,`
+  - . When old Mara's joints ached before rain, Aelwen's knees stiffened too. The
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `142` activation `3.537` class `word` token ` called`
+  - elwen's knees stiffened too. The villagers called it sensitivity. The herbalist in the woods called
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `162` activation `3.356` class `punctuation` token `,"`
+  - called it something else entirely. "You have the gift," said Rowan, pressing a gnarled finger
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `602` activation `2.973` class `punctuation` token `,"`
+  - an watched her descend the mountain path. "Remember," the old herbalist called after her. "He
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `244` activation `2.707` class `word` token ` taught`
+  - tinctures lined crooked shelves. Rowan taught her the names of plants first — yarrow for
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `593` activation `2.679` class `word` token ` watched`
+  - atchel with remedies and steady courage. Rowan watched her descend the mountain path. "Remember," the
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `127` activation `2.630` class `word` token `ched`
+  - flinched. When old Mara's joints ached before rain, Aelwen's knees stiffened
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `534` activation `2.630` class `word` token ` reminding`
+  - chest, and Rowan let her grieve before reminding her that even the greatest healers were never gods
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `105` activation `2.426` class `sentence_boundary` token `.`
+  - the pain of others as though it were her own. When the blacksmith's boy burned his hand,
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `522` activation `2.402` class `word` token ` in`
+  - wounds were too deep. Each loss carved a hollow in her chest, and Rowan let her grieve
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@glm-5.2` token `106` activation `2.393` class `style_function_word` token ` When`
+  - pain of others as though it were her own. When the blacksmith's boy burned his hand, she
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `342` activation `4.291` class `word` token ` surround`
+  - starts to levitate, and the water starts to surround her. She was picked as this generation's healer
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `618` activation `4.207` class `punctuation` token `,`
+  - she doesn't need to do the trial. Quickly, she grabs the books out of one of the other
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `362` activation `4.162` class `word` token ` at`
+  - healer. The village folk all walk out and look at her, fascinated and scared. An older woman starts
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `537` activation `4.137` class `word` token ` surrounding`
+  - walks to the well with various members of the village surrounding her so she can't run away. Along the
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `237` activation `3.744` class `word` token ` give`
+  - fountain will eventually bless a woman of the village and give her supernatural powers. Enough power to help defend the
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `376` activation `3.589` class `word` token ` to`
+  - and scared. An older woman starts to walk up to Kotone and says to her "You have received
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `353` activation `3.498` class `sentence_boundary` token `.`
+  - her. She was picked as this generation's healer. The village folk all walk out and look at her
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `275` activation `3.471` class `word` token ` day`
+  - isn't the one that receives this power. Every day her wish gets granted, but this one day,
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `381` activation `3.470` class `word` token ` to`
+  - woman starts to walk up to Kotone and says to her "You have received the blessing of the goddess
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `616` activation `3.458` class `sentence_boundary` token `.`
+  - , maybe she doesn't need to do the trial. Quickly, she grabs the books out of one of
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `515` activation `3.414` class `sentence_boundary` token `.`
+  - practical, detailing how to use her newly found power. She has doubts about if she can do this.
+- `L19:338` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `310` activation `3.408` class `word` token `ouses`
+  - below, a geyser shoots up and douses the village in rain. Kotone steps back and
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `496` activation `5.509` class `word` token ` suspect`
+  - camp called True Directions by her conservative family after they suspect she might be gay. Megan gradually realizes her true
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `585` activation `3.280` class `style_function_word` token ` as`
+  - "The Watermelon Woman." The film follows Cheryl as she tracks down the actress and explores her own romantic
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `583` activation `2.901` class `word` token ` follows`
+  - only as "The Watermelon Woman." The film follows Cheryl as she tracks down the actress and explores her
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `494` activation `1.804` class `word` token ` after`
+  - conversion therapy camp called True Directions by her conservative family after they suspect she might be gay. Megan gradually realizes
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `509` activation `1.756` class `style_function_word` token ` as`
+  - be gay. Megan gradually realizes her true sexual identity as she falls for fellow camper Graham (Clea Du
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `490` activation `1.739` class `word` token ` by`
+  - is sent to a conversion therapy camp called True Directions by her conservative family after they suspect she might be gay
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `427` activation `1.726` class `word` token ` directed`
+  - film was co-written by Guinevere Turner and directed by Rose Troche, who broke up during production
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `412` activation `1.658` class `word` token ` after`
+  - ly. Although they have chemistry, they part ways after the date. The film was co-written by Gu
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `592` activation `1.630` class `word` token ` explores`
+  - film follows Cheryl as she tracks down the actress and explores her own romantic relationship with a customer at the video
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `525` activation `1.606` class `word` token ` whether`
+  - Graham (Clea DuVall) and wonders whether it's all that bad to be lesbian. "The
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `527` activation `1.571` class `word` token `'s`
+  - Clea DuVall) and wonders whether it's all that bad to be lesbian. "The Watermelon
+- `L19:338` `e4121c85df37e270b36efb94916c7a19196d2631e53daed599379a299d6b901f@turn_01@human` token `495` activation `1.566` class `word` token ` they`
+  - therapy camp called True Directions by her conservative family after they suspect she might be gay. Megan gradually realizes her
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `481` activation `6.834` class `punctuation` token `;`
+  - secrets. He learns about her fear of settling down; she learns about his grief over losing his grandmother,
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `475` activation `4.572` class `word` token ` about`
+  - and error, they exchange guarded secrets. He learns about her fear of settling down; she learns about his
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `474` activation `3.863` class `word` token ` learns`
+  - trial and error, they exchange guarded secrets. He learns about her fear of settling down; she learns about
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `356` activation `2.725` class `punctuation` token `,`
+  - and slightly offended by his lack of a beverage aura, Beatrix challenges Arthur: she has five days to
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `411` activation `2.687` class `word` token ` of`
+  - ever the pragmatist, calculates the high probability of a free month’s rent and accepts. The week
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `418` activation `2.662` class `word` token ` accepts`
+  - the high probability of a free month’s rent and accepts. The week becomes a delightful, aromatic dance.
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `292` activation `2.614` class `punctuation` token `."`
+  - a quirky barista who speaks fluent "coffee astrology." She believes a person’s daily caffeine order reveals their
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `546` activation `2.567` class `word` token ` takes`
+  - reliable, with a subtle, unexpected spark. Arthur takes a sip, and his calculated world melts. It
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `379` activation `2.434` class `word` token ` take`
+  - perfect custom drink. If she succeeds, he must take her on a proper date. If she fails,
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `389` activation `2.370` class `punctuation` token `,`
+  - take her on a proper date. If she fails, she will pay his rent for a month. Arthur
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `473` activation `2.230` class `word` token ` He`
+  - the trial and error, they exchange guarded secrets. He learns about her fear of settling down; she learns
+- `L19:338` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@gemini-3.5-flash` token `467` activation `2.190` class `punctuation` token `,`
+  - accidentally makes him cry. Through the trial and error, they exchange guarded secrets. He learns about her fear
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `259` activation `5.100` class `word` token ` to`
+  - backed by her spineless, wealthy father who yields to her every whim. Violet Beauregarde is
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `258` activation `2.851` class `word` token ` yields`
+  - , backed by her spineless, wealthy father who yields to her every whim. Violet Beauregarde
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `284` activation `2.003` class `word` token ` by`
+  - , arrogant gum-chewer, egged on by her boisterous, publicity-hungry father
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `257` activation `1.684` class `word` token ` who`
+  - instantly, backed by her spineless, wealthy father who yields to her every whim. Violet Beauregar
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `268` activation `1.173` class `word` token `de`
+  - yields to her every whim. Violet Beauregarde is a hyper-competitive, arrogant gum-chew
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `250` activation `1.149` class `word` token ` by`
+  - eking British heiress who demands everything instantly, backed by her spineless, wealthy father who yields to her
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `254` activation `0.946` class `punctuation` token `,`
+  - who demands everything instantly, backed by her spineless, wealthy father who yields to her every whim. Violet
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `246` activation `0.932` class `word` token ` everything`
+  - a spoiled, shrieking British heiress who demands everything instantly, backed by her spineless, wealthy father
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `261` activation `0.828` class `word` token ` every`
+  - her spineless, wealthy father who yields to her every whim. Violet Beauregarde is a hyper
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `482` activation `0.794` class `style_function_word` token ` which`
+  - the shift in focus from Charlie to Wonka, which was cemented by changing the title of the film
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `256` activation `0.770` class `word` token ` father`
+  - everything instantly, backed by her spineless, wealthy father who yields to her every whim. Violet Beaure
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@gemini-3.5-flash` token `566` activation `0.769` class `word` token ` edge`
+  - ’s portrayal too soft and lacking the sharp, sinister edge of the book's character. Dahl also detested
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `424` activation `4.975` class `punctuation` token `,`
+  - ka’s factory. When Wonka refuses to sell, she throws a fit, eventually falling into the "
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `421` activation `4.806` class `word` token ` refuses`
+  - goose from Wonka’s factory. When Wonka refuses to sell, she throws a fit, eventually falling
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `401` activation `4.688` class `word` token ` buy`
+  - ’t get her way. She expects her daddy to buy her everything that she wants, including a golden goose
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `423` activation `4.155` class `word` token ` sell`
+  - Wonka’s factory. When Wonka refuses to sell, she throws a fit, eventually falling into the
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `328` activation `3.784` class `sentence_boundary` token `.`
+  - ident and persistent, Violet chews gum competitively. She’s also obnoxious and doesn’t listen,
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `395` activation `3.749` class `sentence_boundary` token `.`
+  - throws tantrums when she doesn’t get her way. She expects her daddy to buy her everything that she
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `404` activation `3.429` class `style_function_word` token ` that`
+  - way. She expects her daddy to buy her everything that she wants, including a golden goose from Wonka
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `417` activation `3.175` class `sentence_boundary` token `.`
+  - , including a golden goose from Wonka’s factory. When Wonka refuses to sell, she throws a
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `403` activation `3.077` class `word` token ` everything`
+  - her way. She expects her daddy to buy her everything that she wants, including a golden goose from Won
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `339` activation `2.990` class `word` token ` leading`
+  - She’s also obnoxious and doesn’t listen, leading her to blow up like a giant blueberry when
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `321` activation `2.650` class `punctuation` token `,`
+  - by Denise Nickerson): Overconfident and persistent, Violet chews gum competitively. She’s also
+- `L19:338` `687a4a084c37ad0a608637a8e5eb2131b24e44071b0e8a781516dc84e0912201@turn_01@human` token `418` activation `2.607` class `style_function_word` token ` When`
+  - including a golden goose from Wonka’s factory. When Wonka refuses to sell, she throws a fit

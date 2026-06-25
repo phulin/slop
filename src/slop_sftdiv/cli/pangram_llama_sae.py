@@ -17,7 +17,9 @@ from torch import nn
 from slop_sftdiv.cli.phase4_batchtopk_sae import (
     ActivationCache,
     ActivationCacheParquetStream,
+    ParquetActivationChunkSource,
     SAEDoc,
+    _activation_cache_sidecar,
     _activation_mask,
     _activation_document_rows,
     _activation_row_indexes,
@@ -31,6 +33,7 @@ from slop_sftdiv.cli.phase4_batchtopk_sae import (
     _write_csv,
     _write_json,
     train_sae,
+    train_sae_from_parquet_chunks,
 )
 from slop_sftdiv.wandb_utils import init_wandb, log_summary_table
 
@@ -122,8 +125,30 @@ def build_parser() -> argparse.ArgumentParser:
         help="Zstd compression level for Parquet activation caches.",
     )
     parser.add_argument("--refresh-activation-cache", action="store_true")
+    parser.add_argument(
+        "--activation-cache-train-chunks",
+        type=int,
+        default=4,
+        help=(
+            "For Parquet activation caches, train by loading this many row-group chunks "
+            "one at a time and shuffling within each chunk. Set to 1 for the old full-cache tensor load."
+        ),
+    )
     parser.add_argument("--latent-dim", type=int, default=4096)
     parser.add_argument("--k", type=int, default=32)
+    parser.add_argument(
+        "--matryoshka-prefixes",
+        default="",
+        help=(
+            "Comma-separated latent prefix sizes for Matryoshka SAE training, "
+            "for example 256,512,1024,2048,4096. Empty disables nested-prefix loss."
+        ),
+    )
+    parser.add_argument(
+        "--matryoshka-loss-weights",
+        default="",
+        help="Optional comma-separated weights for --matryoshka-prefixes. Defaults to equal weights.",
+    )
     parser.add_argument("--init-mode", choices=["kaiming", "tied"], default="kaiming")
     parser.add_argument("--train-batch-size", type=int, default=4096)
     parser.add_argument("--epochs", type=int, default=2)
@@ -851,7 +876,8 @@ def _summary(
     cache_path: Path,
     cache_reused: bool,
     activation_cache_has_provenance: bool,
-    activations: torch.Tensor,
+    activation_vectors: int,
+    input_dim: int,
     train_rows: list[dict[str, Any]],
     eval_rows: list[dict[str, Any]],
     train_summary: dict[str, Any],
@@ -872,11 +898,15 @@ def _summary(
         "activation_cache": str(cache_path),
         "activation_cache_reused": cache_reused,
         "activation_cache_has_provenance": activation_cache_has_provenance,
-        "activation_vectors": int(activations.shape[0]),
-        "input_dim": int(activations.shape[1]),
+        "activation_cache_train_chunks": train_summary.get("activation_cache_train_chunks", 1),
+        "activation_cache_chunk_rows": train_summary.get("activation_cache_chunk_rows", []),
+        "activation_vectors": activation_vectors,
+        "input_dim": input_dim,
         "pad_to_max_length": bool(args.pad_to_max_length),
         "latent_dim": args.latent_dim,
         "k": args.k,
+        "matryoshka_prefixes": train_summary.get("matryoshka_prefixes", []),
+        "matryoshka_loss_weights": train_summary.get("matryoshka_loss_weights", []),
         "epochs": args.epochs,
         "learning_rate": args.learning_rate,
         "weight_decay": args.weight_decay,
@@ -927,10 +957,13 @@ def _wandb_config(
         "max_activations": args.max_activations,
         "activation_cache": str(cache_path),
         "activation_layer": args.activation_layer,
+        "activation_cache_train_chunks": getattr(args, "activation_cache_train_chunks", 1),
         "activation_vectors": activation_vectors,
         "input_dim": input_dim,
         "latent_dim": args.latent_dim,
         "k": args.k,
+        "matryoshka_prefixes": getattr(args, "matryoshka_prefixes", ""),
+        "matryoshka_loss_weights": getattr(args, "matryoshka_loss_weights", ""),
         "init_mode": getattr(args, "init_mode", "kaiming"),
         "train_batch_size": args.train_batch_size,
         "epochs": args.epochs,
@@ -1040,10 +1073,31 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     cache_path = args.activation_cache or args.output_dir / cache_name
     cache_reused = cache_path.exists() and not args.refresh_activation_cache
     tokenizer: Any | None = None
+    activation_cache: ActivationCache | None = None
+    activations: torch.Tensor | None = None
+    chunk_source: ParquetActivationChunkSource | None = None
     if cache_reused:
-        print(f"Loading activation cache from {cache_path}", flush=True)
-        activation_cache = _load_activation_cache(cache_path)
-        activations = activation_cache.activations
+        activation_cache_has_provenance = _activation_cache_sidecar(cache_path, "documents.parquet").is_file()
+        if cache_path.suffix == ".parquet" and int(args.activation_cache_train_chunks) > 1:
+            chunk_source = ParquetActivationChunkSource(
+                cache_path,
+                chunks=int(args.activation_cache_train_chunks),
+            )
+            print(
+                f"Training from Parquet activation cache {cache_path} in "
+                f"{len(chunk_source.chunks)} chunks "
+                f"({chunk_source.row_count} activations, dim={chunk_source.hidden_dim})",
+                flush=True,
+            )
+            activation_vectors = chunk_source.row_count
+            input_dim = chunk_source.hidden_dim
+        else:
+            print(f"Loading activation cache from {cache_path}", flush=True)
+            activation_cache = _load_activation_cache(cache_path)
+            activations = activation_cache.activations
+            activation_cache_has_provenance = activation_cache.has_provenance
+            activation_vectors = int(activations.shape[0])
+            input_dim = int(activations.shape[1])
     else:
         model, tokenizer = load_pangram_model(args, device=device)
         if cache_path.suffix == ".parquet":
@@ -1066,8 +1120,30 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             gc.collect()
             if device.type == "cuda":
                 torch.cuda.empty_cache()
-            print(f"Loading streamed activation cache from {cache_path}", flush=True)
-            activation_cache = _load_activation_cache(cache_path)
+            if int(args.activation_cache_train_chunks) > 1:
+                chunk_source = ParquetActivationChunkSource(
+                    cache_path,
+                    chunks=int(args.activation_cache_train_chunks),
+                )
+                print(
+                    f"Training from streamed Parquet activation cache {cache_path} in "
+                    f"{len(chunk_source.chunks)} chunks "
+                    f"({chunk_source.row_count} activations, dim={chunk_source.hidden_dim})",
+                    flush=True,
+                )
+                activation_cache_has_provenance = _activation_cache_sidecar(
+                    cache_path,
+                    "documents.parquet",
+                ).is_file()
+                activation_vectors = chunk_source.row_count
+                input_dim = chunk_source.hidden_dim
+            else:
+                print(f"Loading streamed activation cache from {cache_path}", flush=True)
+                activation_cache = _load_activation_cache(cache_path)
+                activations = activation_cache.activations
+                activation_cache_has_provenance = activation_cache.has_provenance
+                activation_vectors = int(activations.shape[0])
+                input_dim = int(activations.shape[1])
         else:
             activation_cache = collect_last_token_activation_cache(
                 model=model,
@@ -1087,30 +1163,44 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 args=args,
                 docs=docs,
             )
-        activations = activation_cache.activations
+            activations = activation_cache.activations
+            activation_cache_has_provenance = activation_cache.has_provenance
+            activation_vectors = int(activations.shape[0])
+            input_dim = int(activations.shape[1])
 
     wandb_run = _init_pangram_wandb(
         args,
         docs=docs,
         cache_path=cache_path,
-        activation_vectors=int(activations.shape[0]),
-        input_dim=int(activations.shape[1]),
+        activation_vectors=activation_vectors,
+        input_dim=input_dim,
     )
     try:
-        sae, train_rows, eval_rows, train_summary = train_sae(
-            activations=activations,
-            args=args,
-            device=device,
-            wandb_run=wandb_run,
-        )
+        if chunk_source is not None:
+            sae, train_rows, eval_rows, train_summary = train_sae_from_parquet_chunks(
+                source=chunk_source,
+                args=args,
+                device=device,
+                wandb_run=wandb_run,
+            )
+        else:
+            if activations is None:
+                raise ValueError("activation tensor was not loaded")
+            sae, train_rows, eval_rows, train_summary = train_sae(
+                activations=activations,
+                args=args,
+                device=device,
+                wandb_run=wandb_run,
+            )
         summary = _summary(
             args,
             docs=docs,
             device=device,
             cache_path=cache_path,
             cache_reused=cache_reused,
-            activation_cache_has_provenance=activation_cache.has_provenance,
-            activations=activations,
+            activation_cache_has_provenance=activation_cache_has_provenance,
+            activation_vectors=activation_vectors,
+            input_dim=input_dim,
             train_rows=train_rows,
             eval_rows=eval_rows,
             train_summary=train_summary,
@@ -1121,6 +1211,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         latent_rows: list[dict[str, Any]] = []
         example_rows: list[dict[str, Any]] = []
         if not args.skip_latent_scoring:
+            if activation_cache is None:
+                print(f"Loading activation cache from {cache_path} for latent scoring", flush=True)
+                activation_cache = _load_activation_cache(cache_path)
             if tokenizer is None:
                 tokenizer = load_pangram_tokenizer(args)
             latent_rows, example_rows = score_pangram_latents_from_cache(

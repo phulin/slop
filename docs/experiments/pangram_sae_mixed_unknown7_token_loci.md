@@ -1,0 +1,661 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1459` | `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` | `human` | 261 | `640.21` | `4.42` | word:208|style_function_word:16|punctuation:14|sentence_boundary:13|contraction_piece:4|expanded_negation_word:3|line_break:3 |
+| `L19:1459` | `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` | `human` | 280 | `708.39` | `4.08` | word:230|style_function_word:18|sentence_boundary:12|punctuation:9|expanded_negation_word:4|line_break:4|contraction_piece:2|discourse_marker_word:1 |
+| `L19:1459` | `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` | `human` | 340 | `1287.47` | `6.16` | word:267|punctuation:24|style_function_word:16|sentence_boundary:15|discourse_marker_word:8|expanded_negation_word:5|line_break:5 |
+| `L19:1459` | `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` | `human` | 480 | `1136.74` | `4.27` | word:375|punctuation:26|sentence_boundary:22|style_function_word:17|expanded_negation_word:16|line_break:13|contraction_piece:9|discourse_marker_word:2 |
+| `L19:1459` | `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` | `human` | 173 | `352.13` | `3.79` | word:139|punctuation:11|expanded_negation_word:10|sentence_boundary:6|style_function_word:4|discourse_marker_word:1|line_break:1|contraction_piece:1 |
+| `L19:1459` | `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` | `human` | 449 | `923.97` | `4.49` | word:394|style_function_word:15|expanded_negation_word:12|sentence_boundary:9|line_break:7|discourse_marker_word:6|punctuation:5|whitespace:1 |
+| `L19:1459` | `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` | `human` | 221 | `399.35` | `4.20` | word:175|style_function_word:17|punctuation:10|sentence_boundary:8|line_break:7|discourse_marker_word:4 |
+| `L19:1459` | `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` | `human` | 86 | `131.83` | `3.91` | word:76|expanded_negation_word:3|sentence_boundary:2|punctuation:2|style_function_word:1|discourse_marker_word:1|line_break:1 |
+| `L19:1459` | `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` | `glm-5.2` | 35 | `47.48` | `3.85` | word:31|discourse_marker_word:2|punctuation:1|line_break:1 |
+| `L19:1459` | `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` | `human` | 177 | `257.17` | `3.98` | word:133|line_break:21|style_function_word:18|punctuation:5 |
+| `L19:1459` | `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` | `human` | 263 | `305.60` | `4.15` | word:218|expanded_negation_word:21|punctuation:9|sentence_boundary:7|discourse_marker_word:4|style_function_word:3|line_break:1 |
+| `L19:1459` | `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` | `human` | 92 | `120.51` | `4.08` | word:73|style_function_word:7|punctuation:5|sentence_boundary:4|discourse_marker_word:1|expanded_negation_word:1|line_break:1 |
+| `L19:1459` | `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 37 | `58.67` | `3.55` | word:26|punctuation:3|sentence_boundary:3|expanded_negation_word:2|line_break:2|discourse_marker_word:1 |
+| `L24:1599` | `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` | `human` | 260 | `1033.54` | `7.99` | word:206|style_function_word:16|punctuation:14|sentence_boundary:14|contraction_piece:4|expanded_negation_word:3|line_break:3 |
+| `L24:1599` | `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` | `human` | 281 | `1251.49` | `8.48` | word:232|style_function_word:17|sentence_boundary:12|punctuation:9|expanded_negation_word:4|line_break:4|contraction_piece:2|discourse_marker_word:1 |
+| `L24:1599` | `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` | `human` | 336 | `2118.52` | `10.66` | word:263|punctuation:24|style_function_word:16|sentence_boundary:15|discourse_marker_word:8|expanded_negation_word:5|line_break:5 |
+| `L24:1599` | `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` | `human` | 477 | `1893.93` | `7.63` | word:374|punctuation:26|sentence_boundary:22|style_function_word:17|expanded_negation_word:15|line_break:13|contraction_piece:8|discourse_marker_word:2 |
+| `L24:1599` | `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` | `human` | 174 | `533.28` | `6.56` | word:139|punctuation:12|expanded_negation_word:10|sentence_boundary:6|style_function_word:4|discourse_marker_word:1|line_break:1|contraction_piece:1 |
+| `L24:1599` | `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` | `human` | 442 | `1495.80` | `7.90` | word:386|style_function_word:15|expanded_negation_word:12|sentence_boundary:9|line_break:7|discourse_marker_word:6|punctuation:6|whitespace:1 |
+| `L24:1599` | `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` | `human` | 224 | `699.33` | `7.72` | word:181|style_function_word:17|punctuation:8|sentence_boundary:8|line_break:7|discourse_marker_word:3 |
+| `L24:1599` | `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` | `human` | 97 | `236.70` | `6.17` | word:82|expanded_negation_word:4|style_function_word:4|sentence_boundary:3|punctuation:2|discourse_marker_word:2 |
+| `L24:1599` | `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` | `glm-5.2` | 38 | `85.49` | `7.26` | word:33|punctuation:2|expanded_negation_word:1|discourse_marker_word:1|style_function_word:1 |
+| `L24:1599` | `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` | `human` | 159 | `364.17` | `5.91` | word:125|style_function_word:17|line_break:15|punctuation:2 |
+| `L24:1599` | `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` | `human` | 277 | `502.18` | `6.78` | word:222|expanded_negation_word:23|punctuation:13|sentence_boundary:12|style_function_word:4|discourse_marker_word:2|line_break:1 |
+| `L24:1599` | `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` | `human` | 102 | `204.82` | `6.38` | word:81|style_function_word:8|punctuation:7|sentence_boundary:4|expanded_negation_word:1|discourse_marker_word:1 |
+| `L24:1599` | `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 73 | `133.37` | `6.60` | word:51|punctuation:7|sentence_boundary:7|expanded_negation_word:5|line_break:2|discourse_marker_word:1 |
+
+## Top Tokens
+
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `571` activation `4.422` class `word` token ` continuity`
+  - from them will boost their business, and ensure their continuity. Donate your resources. Last but not least,
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `585` activation `4.410` class `style_function_word` token ` can`
+  - resources. Last but not least, donations from you can also be a good way to get involved in your
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `606` activation `4.209` class `word` token ` use`
+  - community. Do you have much that you don't use? From oversized clothes to excess utensils, furniture
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `586` activation `4.159` class `style_function_word` token ` also`
+  - . Last but not least, donations from you can also be a good way to get involved in your community
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `588` activation `4.132` class `word` token ` a`
+  - but not least, donations from you can also be a good way to get involved in your community. Do
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `589` activation `4.126` class `word` token ` good`
+  - not least, donations from you can also be a good way to get involved in your community. Do you
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `621` activation `4.097` class `word` token ` stuff`
+  - to excess utensils, furniture, or just any stuff in the home. Give this to people who don
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `563` activation `4.075` class `style_function_word` token ` will`
+  - or other handmade crafts or grocery, buying from them will boost their business, and ensure their continuity. Donate
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `620` activation `4.045` class `word` token ` any`
+  - clothes to excess utensils, furniture, or just any stuff in the home. Give this to people who
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `587` activation `4.038` class `word` token ` be`
+  - Last but not least, donations from you can also be a good way to get involved in your community.
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `629` activation `4.012` class `word` token ` people`
+  - just any stuff in the home. Give this to people who don't have, it and need them.
+- `L19:1459` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `590` activation `4.008` class `word` token ` way`
+  - least, donations from you can also be a good way to get involved in your community. Do you have
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `553` activation `4.081` class `word` token ` fit`
+  - what their expectations are, and how they perform and fit into your company culture. Don't hire because they
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `621` activation `4.050` class `style_function_word` token ` will`
+  - , and get your employee's minds relaxed. This will not only improve their productivity but will help them know
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `628` activation `4.020` class `style_function_word` token ` will`
+  - relaxed. This will not only improve their productivity but will help them know their needs are well taken care of
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `634` activation `4.000` class `word` token ` are`
+  - improve their productivity but will help them know their needs are well taken care of.
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `630` activation `3.989` class `word` token ` them`
+  - This will not only improve their productivity but will help them know their needs are well taken care of.
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `620` activation `3.880` class `style_function_word` token ` This`
+  - work, and get your employee's minds relaxed. This will not only improve their productivity but will help them
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `635` activation `3.793` class `word` token ` well`
+  - their productivity but will help them know their needs are well taken care of.
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `626` activation `3.762` class `word` token ` productivity`
+  - 's minds relaxed. This will not only improve their productivity but will help them know their needs are well taken
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `521` activation `3.737` class `word` token ` are`
+  - the culture in your company to the employees before they are hired. This will set their expectations right. H
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `636` activation `3.704` class `word` token ` taken`
+  - productivity but will help them know their needs are well taken care of.
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `629` activation `3.698` class `style_function_word` token ` help`
+  - . This will not only improve their productivity but will help them know their needs are well taken care of.
+- `L19:1459` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `623` activation `3.675` class `word` token ` only`
+  - get your employee's minds relaxed. This will not only improve their productivity but will help them know their needs
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `389` activation `6.156` class `word` token ` very`
+  - ’ve got a calf at home, and she is very hungry. If you kill me right now, my
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `388` activation `5.884` class `word` token ` is`
+  - I’ve got a calf at home, and she is very hungry. If you kill me right now,
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `422` activation `5.812` class `word` token ` go`
+  - to excuse me for a while so that I could go and give milk to my calf. The tiger listened
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `343` activation `5.628` class `word` token ` gone`
+  - loved my calf very much. One day I had gone to the forest for grazing, when a tiger caught
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `401` activation `5.418` class `style_function_word` token ` will`
+  - . If you kill me right now, my calf will die of hunger.” Therefore, I requested the tiger
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `402` activation `5.396` class `word` token ` die`
+  - If you kill me right now, my calf will die of hunger.” Therefore, I requested the tiger to
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `336` activation `5.390` class `word` token ` very`
+  - used to drink my milk. I loved my calf very much. One day I had gone to the forest
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `567` activation `5.355` class `word` token ` honesty`
+  - The tiger hasn’t encountered such sincerity, morality and honesty from any animal. He was overwhelmed by my honesty
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `387` activation `5.322` class `word` token ` she`
+  - “I’ve got a calf at home, and she is very hungry. If you kill me right now
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `420` activation `5.269` class `word` token ` I`
+  - the tiger to excuse me for a while so that I could go and give milk to my calf. The
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `448` activation `5.254` class `word` token ` you`
+  - , “It is impossible. If I will leave you, you will not come back again”. I said
+- `L19:1459` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `434` activation `5.182` class `word` token ` my`
+  - give milk to my calf. The tiger listened to my request and said, “It is impossible. If
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `278` activation `4.274` class `word` token `ly`
+  - most of them just passed by and gazed weirdly at her. It was strange. Maya couldn't
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `168` activation `4.214` class `word` token ` up`
+  - was a regular morning in the village. Maya woke up at the sound of the first cockcrow, stretched
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `297` activation `4.041` class `word` token ` her`
+  - couldn't understand why she felt like a stranger in her family. Suddenly, someone tapped her from behind.
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `284` activation `4.023` class `word` token ` strange`
+  - and gazed weirdly at her. It was strange. Maya couldn't understand why she felt like a
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `169` activation `3.992` class `word` token ` at`
+  - a regular morning in the village. Maya woke up at the sound of the first cockcrow, stretched,
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `289` activation `3.981` class `word` token ` understand`
+  - at her. It was strange. Maya couldn't understand why she felt like a stranger in her family.
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `276` activation `3.897` class `word` token `azed`
+  - prisingly, most of them just passed by and gazed weirdly at her. It was strange. Maya
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `364` activation `3.859` class `word` token ` drink`
+  - a? More like this young boy has had a drink," he said sarcastically and laughed a little.
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `292` activation `3.853` class `word` token ` felt`
+  - It was strange. Maya couldn't understand why she felt like a stranger in her family. Suddenly, someone
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `366` activation `3.843` class `word` token ` he`
+  - More like this young boy has had a drink," he said sarcastically and laughed a little. "Young
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `261` activation `3.819` class `word` token ` their`
+  - step out of their rooms to the corridor to begin their daily activities. Surprisingly, most of them just
+- `L19:1459` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `298` activation `3.810` class `word` token ` family`
+  - 't understand why she felt like a stranger in her family. Suddenly, someone tapped her from behind. It
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `503` activation `3.794` class `word` token ` anything`
+  - spend the rest of the day lonely and bored without anything to do. So when he came across a paint
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `493` activation `3.595` class `word` token ` spend`
+  - because he was fast. Afterward, he would spend the rest of the day lonely and bored without anything
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `494` activation `3.468` class `word` token ` the`
+  - he was fast. Afterward, he would spend the rest of the day lonely and bored without anything to
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `504` activation `3.394` class `word` token ` to`
+  - the rest of the day lonely and bored without anything to do. So when he came across a paintbrush
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `505` activation `3.280` class `expanded_negation_word` token ` do`
+  - rest of the day lonely and bored without anything to do. So when he came across a paintbrush and
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `563` activation `3.181` class `word` token ` road`
+  - city with flying cars, large bridges, super-connected roadways, and underground spaces. He was surprised at
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `528` activation `3.155` class `word` token ` in`
+  - the family garage while cleaning, his creative juices kicked in, and he started dreaming of whimsical creations he
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `527` activation `3.123` class `word` token ` kicked`
+  - in the family garage while cleaning, his creative juices kicked in, and he started dreaming of whimsical creations
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `488` activation `3.063` class `word` token ` After`
+  - the chores within three hours because he was fast. Afterward, he would spend the rest of the day
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `533` activation `3.040` class `word` token ` dreaming`
+  - , his creative juices kicked in, and he started dreaming of whimsical creations he could come up with.
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `610` activation `3.039` class `word` token ` came`
+  - what he had come up with. When the family came back from work, they saw the painting, and
+- `L19:1459` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `522` activation `3.033` class `word` token ` cleaning`
+  - a paintbrush and canvas in the family garage while cleaning, his creative juices kicked in, and he started
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `474` activation `4.485` class `word` token ` goes`
+  - is exactly what he will do. Zareb goes home that day to his wife who sticks by every
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `465` activation `4.246` class `word` token ` exactly`
+  - world when he stepped into the business and that is exactly what he will do. Zareb goes home
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `464` activation `4.165` class `word` token ` is`
+  - the world when he stepped into the business and that is exactly what he will do. Zareb goes
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `461` activation `4.165` class `word` token ` business`
+  - wanted to rule the world when he stepped into the business and that is exactly what he will do. Z
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `468` activation `4.161` class `style_function_word` token ` will`
+  - stepped into the business and that is exactly what he will do. Zareb goes home that day to
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `475` activation `4.092` class `word` token ` home`
+  - exactly what he will do. Zareb goes home that day to his wife who sticks by every decision
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `485` activation `4.090` class `word` token ` decision`
+  - home that day to his wife who sticks by every decision he makes and is there for him like a rock
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `489` activation `4.030` class `word` token ` is`
+  - his wife who sticks by every decision he makes and is there for him like a rock. He discusses the
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `478` activation `3.970` class `word` token ` to`
+  - will do. Zareb goes home that day to his wife who sticks by every decision he makes and
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `490` activation `3.969` class `word` token ` there`
+  - wife who sticks by every decision he makes and is there for him like a rock. He discusses the weapon
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `458` activation `3.962` class `word` token ` stepped`
+  - him. He wanted to rule the world when he stepped into the business and that is exactly what he will
+- `L19:1459` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `467` activation `3.956` class `word` token ` he`
+  - he stepped into the business and that is exactly what he will do. Zareb goes home that day
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `425` activation `4.198` class `word` token ` it`
+  - are more likely to decide on a product and purchase it. Offer a loyalty program as it can make customers
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `415` activation `4.038` class `word` token ` are`
+  - options for customers can lead to increased sales as customers are more likely to decide on a product and purchase it
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `393` activation `3.952` class `word` token ` too`
+  - your retail business: Provide limited options for customers as too many choices can be overwhelming. According to research,
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `432` activation `3.952` class `word` token ` it`
+  - product and purchase it. Offer a loyalty program as it can make customers feel happier and increase their loyalty towards
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `414` activation `3.847` class `word` token ` customers`
+  - lesser options for customers can lead to increased sales as customers are more likely to decide on a product and purchase
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `416` activation `3.819` class `word` token ` more`
+  - for customers can lead to increased sales as customers are more likely to decide on a product and purchase it.
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `435` activation `3.765` class `word` token ` customers`
+  - it. Offer a loyalty program as it can make customers feel happier and increase their loyalty towards your store.
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `395` activation `3.714` class `word` token ` choices`
+  - business: Provide limited options for customers as too many choices can be overwhelming. According to research, lesser options
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `443` activation `3.707` class `word` token ` your`
+  - can make customers feel happier and increase their loyalty towards your store. Additionally, retailers gain valuable insights into customers
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `423` activation `3.667` class `word` token ` and`
+  - as customers are more likely to decide on a product and purchase it. Offer a loyalty program as it can
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `442` activation `3.635` class `word` token ` towards`
+  - it can make customers feel happier and increase their loyalty towards your store. Additionally, retailers gain valuable insights into
+- `L19:1459` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `436` activation `3.611` class `style_function_word` token ` feel`
+  - . Offer a loyalty program as it can make customers feel happier and increase their loyalty towards your store. Additionally
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `525` activation `3.908` class `word` token ` packs`
+  - scents available online and began ordering more and more packs of scented wax melts. Sharon’s mail delivery
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `517` activation `3.855` class `word` token ` available`
+  - She kept diving deeper into finding her favorite scents available online and began ordering more and more packs of sc
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `521` activation `3.284` class `word` token ` ordering`
+  - into finding her favorite scents available online and began ordering more and more packs of scented wax melts.
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `519` activation `3.055` class `word` token ` and`
+  - diving deeper into finding her favorite scents available online and began ordering more and more packs of scented wax
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `540` activation `3.008` class `word` token ` annoyed`
+  - melts. Sharon’s mail delivery lady began to get annoyed with how many packages she had to deliver. Sharon
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `524` activation `3.006` class `word` token ` more`
+  - favorite scents available online and began ordering more and more packs of scented wax melts. Sharon’s mail
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `531` activation `2.966` class `sentence_boundary` token `.`
+  - ordering more and more packs of scented wax melts. Sharon’s mail delivery lady began to get annoyed with
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `522` activation `2.927` class `word` token ` more`
+  - finding her favorite scents available online and began ordering more and more packs of scented wax melts. Sharon
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `520` activation `2.907` class `word` token ` began`
+  - deeper into finding her favorite scents available online and began ordering more and more packs of scented wax melts
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `534` activation `2.806` class `word` token ` mail`
+  - more packs of scented wax melts. Sharon’s mail delivery lady began to get annoyed with how many packages
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `548` activation `2.773` class `word` token ` deliver`
+  - to get annoyed with how many packages she had to deliver. Sharon began running out of room, boxes began
+- `L19:1459` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `530` activation `2.693` class `word` token ` melts`
+  - began ordering more and more packs of scented wax melts. Sharon’s mail delivery lady began to get annoyed
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `495` activation `3.846` class `word` token ` to`
+  - If you are looking for pure laughter and completely want to avoid any heavy or sad moments, here are three
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `494` activation `2.974` class `word` token ` want`
+  - If you are looking for pure laughter and completely want to avoid any heavy or sad moments, here are
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `500` activation `2.357` class `word` token ` sad`
+  - pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `492` activation `2.324` class `word` token ` and`
+  - If you are looking for pure laughter and completely want to avoid any heavy or sad moments,
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `497` activation `2.319` class `word` token ` any`
+  - are looking for pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic comed
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `493` activation `2.231` class `word` token ` completely`
+  - If you are looking for pure laughter and completely want to avoid any heavy or sad moments, here
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `504` activation `2.224` class `word` token ` are`
+  - want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited for your free time
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `503` activation `2.120` class `word` token ` here`
+  - completely want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited for your free
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `496` activation `2.076` class `word` token ` avoid`
+  - you are looking for pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `498` activation `1.998` class `word` token ` heavy`
+  - looking for pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic comedies
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `502` activation `1.990` class `punctuation` token `,`
+  - and completely want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited for your
+- `L19:1459` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `501` activation `1.789` class `word` token ` moments`
+  - laughter and completely want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited for
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `486` activation `3.985` class `word` token ` stretch`
+  - killer yet full of life. My long arms can stretch near and far Into our beloved Blue Pearl.
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `477` activation `3.285` class `word` token ` yet`
+  - warmth and coldness simultaneously. I am a killer yet full of life. My long arms can stretch near
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `479` activation `3.154` class `word` token ` of`
+  - coldness simultaneously. I am a killer yet full of life. My long arms can stretch near and far
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `487` activation `3.102` class `word` token ` near`
+  - yet full of life. My long arms can stretch near and far Into our beloved Blue Pearl. I
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `463` activation `3.078` class `word` token ` strong`
+  - and as dark as death; I can instill strong feelings Of warmth and coldness simultaneously. I
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `524` activation `3.030` class `word` token ` myths`
+  - excruciating pain. Many fairytales and myths involve me, Scott….and others have tried to
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `462` activation `2.970` class `word` token `ill`
+  - light and as dark as death; I can instill strong feelings Of warmth and coldness simultaneously.
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `478` activation `2.763` class `word` token ` full`
+  - and coldness simultaneously. I am a killer yet full of life. My long arms can stretch near and
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `500` activation `2.730` class `word` token ` yet`
+  - Into our beloved Blue Pearl. I am loved yet feared, Am respected yet loathed; I am
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `499` activation `2.720` class `word` token ` loved`
+  - far Into our beloved Blue Pearl. I am loved yet feared, Am respected yet loathed; I
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `480` activation `2.638` class `word` token ` life`
+  - ness simultaneously. I am a killer yet full of life. My long arms can stretch near and far
+- `L19:1459` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `488` activation `2.580` class `word` token ` and`
+  - full of life. My long arms can stretch near and far Into our beloved Blue Pearl. I am
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `267` activation `4.146` class `word` token ` great`
+  - the national park, and a family was having a great time having a barbecue. While Uncle Tom was gr
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `268` activation `4.003` class `word` token ` time`
+  - national park, and a family was having a great time having a barbecue. While Uncle Tom was grilling
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `265` activation `3.835` class `word` token ` having`
+  - set at the national park, and a family was having a great time having a barbecue. While Uncle Tom
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `264` activation `3.771` class `expanded_negation_word` token ` was`
+  - had set at the national park, and a family was having a great time having a barbecue. While Uncle
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `266` activation `3.664` class `word` token ` a`
+  - at the national park, and a family was having a great time having a barbecue. While Uncle Tom was
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `270` activation `3.555` class `word` token ` a`
+  - , and a family was having a great time having a barbecue. While Uncle Tom was grilling some ste
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `269` activation `3.533` class `word` token ` having`
+  - park, and a family was having a great time having a barbecue. While Uncle Tom was grilling some
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `261` activation `3.213` class `word` token ` and`
+  - The night had set at the national park, and a family was having a great time having a barbecue
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `263` activation `3.145` class `word` token ` family`
+  - night had set at the national park, and a family was having a great time having a barbecue. While
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `271` activation `3.048` class `word` token ` barbecue`
+  - and a family was having a great time having a barbecue. While Uncle Tom was grilling some steaks
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `260` activation `2.927` class `punctuation` token `,`
+  - The night had set at the national park, and a family was having a great time having a
+- `L19:1459` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `259` activation `2.902` class `word` token ` park`
+  - The night had set at the national park, and a family was having a great time having
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `288` activation `4.080` class `word` token ` come`
+  - Spring season has come again for the year, and what does that typically
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `293` activation `3.703` class `punctuation` token `,`
+  - Spring season has come again for the year, and what does that typically mean? The start of
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `289` activation `3.651` class `word` token ` again`
+  - Spring season has come again for the year, and what does that typically mean
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `294` activation `3.423` class `word` token ` and`
+  - Spring season has come again for the year, and what does that typically mean? The start of baseball
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `295` activation `3.420` class `word` token ` what`
+  - Spring season has come again for the year, and what does that typically mean? The start of baseball season
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `290` activation `3.335` class `discourse_marker_word` token ` for`
+  - Spring season has come again for the year, and what does that typically mean?
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `291` activation `3.292` class `word` token ` the`
+  - Spring season has come again for the year, and what does that typically mean? The
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `292` activation `3.272` class `word` token ` year`
+  - Spring season has come again for the year, and what does that typically mean? The start
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `297` activation `2.910` class `style_function_word` token ` that`
+  - has come again for the year, and what does that typically mean? The start of baseball season as well
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `287` activation `2.901` class `word` token ` has`
+  - Spring season has come again for the year, and what does that
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `296` activation `2.775` class `expanded_negation_word` token ` does`
+  - season has come again for the year, and what does that typically mean? The start of baseball season as
+- `L19:1459` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `340` activation `2.497` class `word` token ` based`
+  - called the Colonial League, and its main headquarters is based in Macon, Georgia. The Colonial League is
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `52` activation `3.548` class `word` token ` scars`
+  - The rain on Lothal did not wash away the scars; it only made the mud deeper. Ahs
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `59` activation `3.504` class `word` token ` deeper`
+  - wash away the scars; it only made the mud deeper. Ahsoka Tano stood beneath the aw
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `54` activation `3.461` class `word` token ` it`
+  - on Lothal did not wash away the scars; it only made the mud deeper. Ahsoka T
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `55` activation `3.260` class `word` token ` only`
+  - Lothal did not wash away the scars; it only made the mud deeper. Ahsoka Tano
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `56` activation `3.181` class `word` token ` made`
+  - thal did not wash away the scars; it only made the mud deeper. Ahsoka Tano stood
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `48` activation `3.117` class `expanded_negation_word` token ` not`
+  - The rain on Lothal did not wash away the scars; it only made the mud
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `49` activation `3.019` class `word` token ` wash`
+  - The rain on Lothal did not wash away the scars; it only made the mud deeper
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `53` activation `2.961` class `punctuation` token `;`
+  - rain on Lothal did not wash away the scars; it only made the mud deeper. Ahsoka
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `58` activation `2.916` class `word` token ` mud`
+  - not wash away the scars; it only made the mud deeper. Ahsoka Tano stood beneath the
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `51` activation `2.684` class `word` token ` the`
+  - The rain on Lothal did not wash away the scars; it only made the mud deeper. A
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `50` activation `2.681` class `word` token ` away`
+  - The rain on Lothal did not wash away the scars; it only made the mud deeper.
+- `L19:1459` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `57` activation `2.663` class `word` token ` the`
+  - did not wash away the scars; it only made the mud deeper. Ahsoka Tano stood beneath
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `630` activation `7.987` class `word` token ` who`
+  - any stuff in the home. Give this to people who don't have, it and need them.
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `585` activation `7.860` class `style_function_word` token ` can`
+  - resources. Last but not least, donations from you can also be a good way to get involved in your
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `588` activation `7.716` class `word` token ` a`
+  - but not least, donations from you can also be a good way to get involved in your community. Do
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `586` activation `7.609` class `style_function_word` token ` also`
+  - . Last but not least, donations from you can also be a good way to get involved in your community
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `571` activation `7.568` class `word` token ` continuity`
+  - from them will boost their business, and ensure their continuity. Donate your resources. Last but not least,
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `606` activation `7.554` class `word` token ` use`
+  - community. Do you have much that you don't use? From oversized clothes to excess utensils, furniture
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `563` activation `7.511` class `style_function_word` token ` will`
+  - or other handmade crafts or grocery, buying from them will boost their business, and ensure their continuity. Donate
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `587` activation `7.511` class `word` token ` be`
+  - Last but not least, donations from you can also be a good way to get involved in your community.
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `605` activation `7.322` class `word` token `'t`
+  - your community. Do you have much that you don't use? From oversized clothes to excess utensils,
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `633` activation `7.312` class `word` token ` have`
+  - the home. Give this to people who don't have, it and need them.
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `632` activation `7.307` class `word` token `'t`
+  - in the home. Give this to people who don't have, it and need them.
+- `L24:1599` `4ecb2950385b8a3b1f2527c3e8e2e39a84735189bda4fa6a78e7cff5cb4946b6@turn_01@human` token `629` activation `7.159` class `word` token ` people`
+  - just any stuff in the home. Give this to people who don't have, it and need them.
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `634` activation `8.478` class `word` token ` are`
+  - improve their productivity but will help them know their needs are well taken care of.
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `635` activation `8.093` class `word` token ` well`
+  - their productivity but will help them know their needs are well taken care of.
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `628` activation `7.915` class `style_function_word` token ` will`
+  - relaxed. This will not only improve their productivity but will help them know their needs are well taken care of
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `630` activation `7.794` class `word` token ` them`
+  - This will not only improve their productivity but will help them know their needs are well taken care of.
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `621` activation `7.709` class `style_function_word` token ` will`
+  - , and get your employee's minds relaxed. This will not only improve their productivity but will help them know
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `521` activation `7.415` class `word` token ` are`
+  - the culture in your company to the employees before they are hired. This will set their expectations right. H
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `623` activation `7.378` class `word` token ` only`
+  - get your employee's minds relaxed. This will not only improve their productivity but will help them know their needs
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `636` activation `7.335` class `word` token ` taken`
+  - productivity but will help them know their needs are well taken care of.
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `629` activation `7.107` class `style_function_word` token ` help`
+  - . This will not only improve their productivity but will help them know their needs are well taken care of.
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `525` activation `6.985` class `style_function_word` token ` will`
+  - company to the employees before they are hired. This will set their expectations right. Hire with diversity.
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `622` activation `6.940` class `expanded_negation_word` token ` not`
+  - and get your employee's minds relaxed. This will not only improve their productivity but will help them know their
+- `L24:1599` `492bf11dcb85394d9476a041d49672f68e3bafc52e505e29003c2823b826a1d9@turn_01@human` token `553` activation `6.694` class `word` token ` fit`
+  - what their expectations are, and how they perform and fit into your company culture. Don't hire because they
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `573` activation `10.665` class `expanded_negation_word` token ` was`
+  - sincerity, morality and honesty from any animal. He was overwhelmed by my honesty and said, “I can
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `401` activation `10.201` class `style_function_word` token ` will`
+  - . If you kill me right now, my calf will die of hunger.” Therefore, I requested the tiger
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `607` activation `10.112` class `word` token ` you`
+  - animals in the future. I want that the character you possess to encourage and impact other animals.” Saying
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `388` activation `10.089` class `word` token ` is`
+  - I’ve got a calf at home, and she is very hungry. If you kill me right now,
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `389` activation `10.041` class `word` token ` very`
+  - ’ve got a calf at home, and she is very hungry. If you kill me right now, my
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `451` activation `9.782` class `style_function_word` token ` will`
+  - is impossible. If I will leave you, you will not come back again”. I said to the tiger
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `609` activation `9.775` class `word` token ` to`
+  - the future. I want that the character you possess to encourage and impact other animals.” Saying this,
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `423` activation `9.667` class `word` token ` and`
+  - excuse me for a while so that I could go and give milk to my calf. The tiger listened to
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `403` activation `9.593` class `word` token ` of`
+  - you kill me right now, my calf will die of hunger.” Therefore, I requested the tiger to excuse
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `402` activation `9.572` class `word` token ` die`
+  - If you kill me right now, my calf will die of hunger.” Therefore, I requested the tiger to
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `567` activation `9.530` class `word` token ` honesty`
+  - The tiger hasn’t encountered such sincerity, morality and honesty from any animal. He was overwhelmed by my honesty
+- `L24:1599` `661418ed93b8b09150b496d6b6a091c59854b73552cae58dff64cf4cc4f83c00@turn_01@human` token `421` activation `9.527` class `expanded_negation_word` token ` could`
+  - tiger to excuse me for a while so that I could go and give milk to my calf. The tiger
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `168` activation `7.633` class `word` token ` up`
+  - was a regular morning in the village. Maya woke up at the sound of the first cockcrow, stretched
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `278` activation `7.476` class `word` token `ly`
+  - most of them just passed by and gazed weirdly at her. It was strange. Maya couldn't
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `283` activation `7.263` class `expanded_negation_word` token ` was`
+  - by and gazed weirdly at her. It was strange. Maya couldn't understand why she felt like
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `366` activation `7.244` class `word` token ` he`
+  - More like this young boy has had a drink," he said sarcastically and laughed a little. "Young
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `297` activation `6.925` class `word` token ` her`
+  - couldn't understand why she felt like a stranger in her family. Suddenly, someone tapped her from behind.
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `282` activation `6.866` class `word` token ` It`
+  - passed by and gazed weirdly at her. It was strange. Maya couldn't understand why she felt
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `339` activation `6.856` class `word` token ` she`
+  - see?” "It's me Grandpa, Maya," she answered. Clearly, her grandpa didn’t recognize
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `169` activation `6.790` class `word` token ` at`
+  - a regular morning in the village. Maya woke up at the sound of the first cockcrow, stretched,
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `262` activation `6.703` class `word` token ` daily`
+  - out of their rooms to the corridor to begin their daily activities. Surprisingly, most of them just passed
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `298` activation `6.611` class `word` token ` family`
+  - 't understand why she felt like a stranger in her family. Suddenly, someone tapped her from behind. It
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `170` activation `6.610` class `word` token ` the`
+  - regular morning in the village. Maya woke up at the sound of the first cockcrow, stretched, and
+- `L24:1599` `80cf131bf0176dab21cb6abdaa81a35818c912f44d81efce0aebf9aa8b48e8ce@turn_01@human` token `382` activation `6.555` class `word` token `ed`
+  - a little. "Young boy." That phrase lingered in Maya's head. She wondered why her grandfather
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `503` activation `6.555` class `word` token ` anything`
+  - spend the rest of the day lonely and bored without anything to do. So when he came across a paint
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `504` activation `5.970` class `word` token ` to`
+  - the rest of the day lonely and bored without anything to do. So when he came across a paintbrush
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `493` activation `5.232` class `word` token ` spend`
+  - because he was fast. Afterward, he would spend the rest of the day lonely and bored without anything
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `610` activation `5.141` class `word` token ` came`
+  - what he had come up with. When the family came back from work, they saw the painting, and
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `510` activation `5.073` class `word` token ` came`
+  - and bored without anything to do. So when he came across a paintbrush and canvas in the family garage
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `579` activation `5.039` class `expanded_negation_word` token ` had`
+  - . He was surprised at the level of detail he had in his art and realized his drawings were actually very
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `528` activation `5.004` class `word` token ` in`
+  - the family garage while cleaning, his creative juices kicked in, and he started dreaming of whimsical creations he
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `571` activation `4.941` class `expanded_negation_word` token ` was`
+  - super-connected roadways, and underground spaces. He was surprised at the level of detail he had in his
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `526` activation `4.874` class `word` token ` juices`
+  - canvas in the family garage while cleaning, his creative juices kicked in, and he started dreaming of whimsical
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `527` activation `4.849` class `word` token ` kicked`
+  - in the family garage while cleaning, his creative juices kicked in, and he started dreaming of whimsical creations
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `494` activation `4.844` class `word` token ` the`
+  - he was fast. Afterward, he would spend the rest of the day lonely and bored without anything to
+- `L24:1599` `49d15417a94844aaec6a79d15df5c44d4bb492ecbf6d8be621537a1caa22262b@turn_01@human` token `505` activation `4.817` class `expanded_negation_word` token ` do`
+  - rest of the day lonely and bored without anything to do. So when he came across a paintbrush and
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `468` activation `7.902` class `style_function_word` token ` will`
+  - stepped into the business and that is exactly what he will do. Zareb goes home that day to
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `489` activation `7.837` class `word` token ` is`
+  - his wife who sticks by every decision he makes and is there for him like a rock. He discusses the
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `492` activation `7.812` class `word` token ` him`
+  - sticks by every decision he makes and is there for him like a rock. He discusses the weapon supplies to
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `486` activation `7.721` class `word` token ` he`
+  - that day to his wife who sticks by every decision he makes and is there for him like a rock.
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `464` activation `7.686` class `word` token ` is`
+  - the world when he stepped into the business and that is exactly what he will do. Zareb goes
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `474` activation `7.476` class `word` token ` goes`
+  - is exactly what he will do. Zareb goes home that day to his wife who sticks by every
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `467` activation `7.288` class `word` token ` he`
+  - he stepped into the business and that is exactly what he will do. Zareb goes home that day
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `465` activation `7.275` class `word` token ` exactly`
+  - world when he stepped into the business and that is exactly what he will do. Zareb goes home
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `490` activation `6.993` class `word` token ` there`
+  - wife who sticks by every decision he makes and is there for him like a rock. He discusses the weapon
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `588` activation `6.584` class `word` token ` it`
+  - and feels that it is his right. He made it clear when Hanlon Holdings held a board meeting and
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `461` activation `6.571` class `word` token ` business`
+  - wanted to rule the world when he stepped into the business and that is exactly what he will do. Z
+- `L24:1599` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `469` activation `6.480` class `expanded_negation_word` token ` do`
+  - into the business and that is exactly what he will do. Zareb goes home that day to his
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `425` activation `7.717` class `word` token ` it`
+  - are more likely to decide on a product and purchase it. Offer a loyalty program as it can make customers
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `416` activation `7.623` class `word` token ` more`
+  - for customers can lead to increased sales as customers are more likely to decide on a product and purchase it.
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `415` activation `7.560` class `word` token ` are`
+  - options for customers can lead to increased sales as customers are more likely to decide on a product and purchase it
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `396` activation `7.503` class `style_function_word` token ` can`
+  - : Provide limited options for customers as too many choices can be overwhelming. According to research, lesser options for
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `397` activation `7.386` class `word` token ` be`
+  - Provide limited options for customers as too many choices can be overwhelming. According to research, lesser options for customers
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `433` activation `6.939` class `style_function_word` token ` can`
+  - and purchase it. Offer a loyalty program as it can make customers feel happier and increase their loyalty towards your
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `432` activation `6.916` class `word` token ` it`
+  - product and purchase it. Offer a loyalty program as it can make customers feel happier and increase their loyalty towards
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `423` activation `6.860` class `word` token ` and`
+  - as customers are more likely to decide on a product and purchase it. Offer a loyalty program as it can
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `414` activation `6.651` class `word` token ` customers`
+  - lesser options for customers can lead to increased sales as customers are more likely to decide on a product and purchase
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `395` activation `6.606` class `word` token ` choices`
+  - business: Provide limited options for customers as too many choices can be overwhelming. According to research, lesser options
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `407` activation `6.382` class `word` token ` customers`
+  - be overwhelming. According to research, lesser options for customers can lead to increased sales as customers are more likely
+- `L24:1599` `ce5bfbc7e8585740516b262da3378b5682f8a5efde3ecfa0b3441bf6c9b86b11@turn_01@human` token `408` activation `6.359` class `style_function_word` token ` can`
+  - overwhelming. According to research, lesser options for customers can lead to increased sales as customers are more likely to
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `525` activation `6.165` class `word` token ` packs`
+  - scents available online and began ordering more and more packs of scented wax melts. Sharon’s mail delivery
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `517` activation `5.437` class `word` token ` available`
+  - She kept diving deeper into finding her favorite scents available online and began ordering more and more packs of sc
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `539` activation `5.185` class `word` token ` get`
+  - wax melts. Sharon’s mail delivery lady began to get annoyed with how many packages she had to deliver.
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `540` activation `5.104` class `word` token ` annoyed`
+  - melts. Sharon’s mail delivery lady began to get annoyed with how many packages she had to deliver. Sharon
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `530` activation `4.977` class `word` token ` melts`
+  - began ordering more and more packs of scented wax melts. Sharon’s mail delivery lady began to get annoyed
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `519` activation `4.937` class `word` token ` and`
+  - diving deeper into finding her favorite scents available online and began ordering more and more packs of scented wax
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `538` activation `4.914` class `word` token ` to`
+  - ented wax melts. Sharon’s mail delivery lady began to get annoyed with how many packages she had to deliver
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `536` activation `4.830` class `word` token ` lady`
+  - of scented wax melts. Sharon’s mail delivery lady began to get annoyed with how many packages she had
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `521` activation `4.775` class `word` token ` ordering`
+  - into finding her favorite scents available online and began ordering more and more packs of scented wax melts.
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `520` activation `4.767` class `word` token ` began`
+  - deeper into finding her favorite scents available online and began ordering more and more packs of scented wax melts
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `548` activation `4.685` class `word` token ` deliver`
+  - to get annoyed with how many packages she had to deliver. Sharon began running out of room, boxes began
+- `L24:1599` `011f9982bd9c065fd54e227c0e0b1b80b11e01cd1cffd72f33558747498bd8b9@turn_01@human` token `537` activation `4.652` class `word` token ` began`
+  - scented wax melts. Sharon’s mail delivery lady began to get annoyed with how many packages she had to
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `495` activation `7.258` class `word` token ` to`
+  - If you are looking for pure laughter and completely want to avoid any heavy or sad moments, here are three
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `494` activation `4.683` class `word` token ` want`
+  - If you are looking for pure laughter and completely want to avoid any heavy or sad moments, here are
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `500` activation `4.448` class `word` token ` sad`
+  - pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `497` activation `4.208` class `word` token ` any`
+  - are looking for pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic comed
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `499` activation `4.105` class `word` token ` or`
+  - for pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic comedies perfectly
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `493` activation `4.026` class `word` token ` completely`
+  - If you are looking for pure laughter and completely want to avoid any heavy or sad moments, here
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `496` activation `3.701` class `word` token ` avoid`
+  - you are looking for pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `492` activation `3.699` class `word` token ` and`
+  - If you are looking for pure laughter and completely want to avoid any heavy or sad moments,
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `498` activation `3.624` class `word` token ` heavy`
+  - looking for pure laughter and completely want to avoid any heavy or sad moments, here are three fantastic comedies
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `504` activation `3.527` class `word` token ` are`
+  - want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited for your free time
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `501` activation `3.432` class `word` token ` moments`
+  - laughter and completely want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited for
+- `L24:1599` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `502` activation `2.938` class `punctuation` token `,`
+  - and completely want to avoid any heavy or sad moments, here are three fantastic comedies perfectly suited for your
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `486` activation `5.911` class `word` token ` stretch`
+  - killer yet full of life. My long arms can stretch near and far Into our beloved Blue Pearl.
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `524` activation `5.114` class `word` token ` myths`
+  - excruciating pain. Many fairytales and myths involve me, Scott….and others have tried to
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `479` activation `4.966` class `word` token ` of`
+  - coldness simultaneously. I am a killer yet full of life. My long arms can stretch near and far
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `477` activation `4.664` class `word` token ` yet`
+  - warmth and coldness simultaneously. I am a killer yet full of life. My long arms can stretch near
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `488` activation `4.533` class `word` token ` and`
+  - full of life. My long arms can stretch near and far Into our beloved Blue Pearl. I am
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `487` activation `4.456` class `word` token ` near`
+  - yet full of life. My long arms can stretch near and far Into our beloved Blue Pearl. I
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `522` activation `4.294` class `word` token `les`
+  - beauty and excruciating pain. Many fairytales and myths involve me, Scott….and others have
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `462` activation `4.266` class `word` token `ill`
+  - light and as dark as death; I can instill strong feelings Of warmth and coldness simultaneously.
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `463` activation `4.166` class `word` token ` strong`
+  - and as dark as death; I can instill strong feelings Of warmth and coldness simultaneously. I
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `464` activation `4.144` class `word` token ` feelings`
+  - as dark as death; I can instill strong feelings Of warmth and coldness simultaneously. I am
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `478` activation `4.136` class `word` token ` full`
+  - and coldness simultaneously. I am a killer yet full of life. My long arms can stretch near and
+- `L24:1599` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `500` activation `4.081` class `word` token ` yet`
+  - Into our beloved Blue Pearl. I am loved yet feared, Am respected yet loathed; I am
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `267` activation `6.780` class `word` token ` great`
+  - the national park, and a family was having a great time having a barbecue. While Uncle Tom was gr
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `264` activation `6.699` class `expanded_negation_word` token ` was`
+  - had set at the national park, and a family was having a great time having a barbecue. While Uncle
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `265` activation `6.553` class `word` token ` having`
+  - set at the national park, and a family was having a great time having a barbecue. While Uncle Tom
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `268` activation `6.535` class `word` token ` time`
+  - national park, and a family was having a great time having a barbecue. While Uncle Tom was grilling
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `269` activation `6.135` class `word` token ` having`
+  - park, and a family was having a great time having a barbecue. While Uncle Tom was grilling some
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `266` activation `5.984` class `word` token ` a`
+  - at the national park, and a family was having a great time having a barbecue. While Uncle Tom was
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `270` activation `5.884` class `word` token ` a`
+  - , and a family was having a great time having a barbecue. While Uncle Tom was grilling some ste
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `271` activation `5.431` class `word` token ` barbecue`
+  - and a family was having a great time having a barbecue. While Uncle Tom was grilling some steaks
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `273` activation `4.723` class `style_function_word` token ` While`
+  - family was having a great time having a barbecue. While Uncle Tom was grilling some steaks he asked
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `263` activation `4.667` class `word` token ` family`
+  - night had set at the national park, and a family was having a great time having a barbecue. While
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `276` activation `4.157` class `expanded_negation_word` token ` was`
+  - a great time having a barbecue. While Uncle Tom was grilling some steaks he asked little Jimmy to
+- `L24:1599` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `261` activation `4.130` class `word` token ` and`
+  - The night had set at the national park, and a family was having a great time having a barbecue
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `288` activation `6.380` class `word` token ` come`
+  - Spring season has come again for the year, and what does that typically
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `297` activation `5.707` class `style_function_word` token ` that`
+  - has come again for the year, and what does that typically mean? The start of baseball season as well
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `289` activation `5.604` class `word` token ` again`
+  - Spring season has come again for the year, and what does that typically mean
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `295` activation `5.552` class `word` token ` what`
+  - Spring season has come again for the year, and what does that typically mean? The start of baseball season
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `293` activation `5.413` class `punctuation` token `,`
+  - Spring season has come again for the year, and what does that typically mean? The start of
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `294` activation `5.231` class `word` token ` and`
+  - Spring season has come again for the year, and what does that typically mean? The start of baseball
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `287` activation `5.126` class `word` token ` has`
+  - Spring season has come again for the year, and what does that
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `292` activation `4.730` class `word` token ` year`
+  - Spring season has come again for the year, and what does that typically mean? The start
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `296` activation `4.454` class `expanded_negation_word` token ` does`
+  - season has come again for the year, and what does that typically mean? The start of baseball season as
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `290` activation `4.135` class `discourse_marker_word` token ` for`
+  - Spring season has come again for the year, and what does that typically mean?
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `291` activation `4.063` class `word` token ` the`
+  - Spring season has come again for the year, and what does that typically mean? The
+- `L24:1599` `baf5339776f18bcc0d9e02dc7083b7b6d169a6f1e58a0e94065d5eb7546febc9@turn_01@human` token `340` activation `3.653` class `word` token ` based`
+  - called the Colonial League, and its main headquarters is based in Macon, Georgia. The Colonial League is
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `54` activation `6.600` class `word` token ` it`
+  - on Lothal did not wash away the scars; it only made the mud deeper. Ahsoka T
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `55` activation `6.253` class `word` token ` only`
+  - Lothal did not wash away the scars; it only made the mud deeper. Ahsoka Tano
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `48` activation `5.992` class `expanded_negation_word` token ` not`
+  - The rain on Lothal did not wash away the scars; it only made the mud
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `59` activation `5.783` class `word` token ` deeper`
+  - wash away the scars; it only made the mud deeper. Ahsoka Tano stood beneath the aw
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `52` activation `5.771` class `word` token ` scars`
+  - The rain on Lothal did not wash away the scars; it only made the mud deeper. Ahs
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `56` activation `5.123` class `word` token ` made`
+  - thal did not wash away the scars; it only made the mud deeper. Ahsoka Tano stood
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `58` activation `5.108` class `word` token ` mud`
+  - not wash away the scars; it only made the mud deeper. Ahsoka Tano stood beneath the
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `53` activation `5.017` class `punctuation` token `;`
+  - rain on Lothal did not wash away the scars; it only made the mud deeper. Ahsoka
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `49` activation `4.651` class `word` token ` wash`
+  - The rain on Lothal did not wash away the scars; it only made the mud deeper
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `50` activation `4.612` class `word` token ` away`
+  - The rain on Lothal did not wash away the scars; it only made the mud deeper.
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `51` activation `4.467` class `word` token ` the`
+  - The rain on Lothal did not wash away the scars; it only made the mud deeper. A
+- `L24:1599` `6d7c279e9857309775317137ab0f52c68370d172eac63fd69839537ee0272436@turn_01@qwen3.6-35b` token `57` activation `4.173` class `word` token ` the`
+  - did not wash away the scars; it only made the mud deeper. Ahsoka Tano stood beneath

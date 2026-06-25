@@ -1,0 +1,714 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2107` | `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` | `human` | 232 | `374.33` | `4.89` | word:162|line_break:34|sentence_boundary:30|punctuation:2|contraction_piece:2|style_function_word:1|expanded_negation_word:1 |
+| `L19:2107` | `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` | `human` | 177 | `299.56` | `4.69` | word:119|punctuation:35|line_break:16|style_function_word:3|contraction_piece:2|expanded_negation_word:2 |
+| `L19:2107` | `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` | `human` | 244 | `396.32` | `5.59` | word:177|sentence_boundary:36|line_break:21|style_function_word:5|contraction_piece:2|punctuation:1|discourse_marker_word:1|expanded_negation_word:1 |
+| `L19:2107` | `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` | `human` | 30 | `49.34` | `4.65` | word:14|punctuation:7|line_break:5|style_function_word:2|expanded_negation_word:2 |
+| `L19:2107` | `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` | `human` | 35 | `54.07` | `4.39` | word:25|line_break:8|sentence_boundary:1|discourse_marker_word:1 |
+| `L19:2107` | `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` | `gpt-5.5` | 108 | `158.25` | `4.72` | word:92|punctuation:9|line_break:3|sentence_boundary:2|expanded_negation_word:1|whitespace:1 |
+| `L19:2107` | `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` | `human` | 46 | `68.94` | `4.57` | word:43|line_break:3 |
+| `L19:2107` | `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` | `human` | 27 | `39.06` | `4.42` | word:22|punctuation:3|line_break:2 |
+| `L19:2107` | `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` | `human` | 153 | `268.18` | `4.95` | word:109|sentence_boundary:25|line_break:16|punctuation:1|expanded_negation_word:1|style_function_word:1 |
+| `L19:2107` | `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` | `human` | 41 | `79.35` | `4.75` | word:31|line_break:9|punctuation:1 |
+| `L19:2107` | `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` | `gpt-5.5` | 161 | `195.72` | `4.53` | word:116|punctuation:33|line_break:11|discourse_marker_word:1 |
+| `L19:2107` | `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` | `gpt-5.5` | 91 | `119.45` | `4.81` | word:61|punctuation:15|line_break:13|style_function_word:2 |
+| `L19:2107` | `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` | `human` | 47 | `74.70` | `3.76` | word:44|style_function_word:1|whitespace:1|discourse_marker_word:1 |
+| `L19:2107` | `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` | `gpt-5.5` | 61 | `91.75` | `5.88` | word:44|punctuation:11|line_break:6 |
+| `L24:11` | `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` | `human` | 128 | `599.98` | `10.07` | word:113|line_break:8|style_function_word:2|contraction_piece:2|punctuation:2|expanded_negation_word:1 |
+| `L24:11` | `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` | `human` | 135 | `584.45` | `10.23` | word:124|punctuation:7|contraction_piece:3|style_function_word:1 |
+| `L24:11` | `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` | `human` | 166 | `813.98` | `11.34` | word:157|line_break:3|style_function_word:2|contraction_piece:1|discourse_marker_word:1|punctuation:1|expanded_negation_word:1 |
+| `L24:11` | `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` | `human` | 18 | `103.90` | `10.79` | word:14|style_function_word:2|expanded_negation_word:2 |
+| `L24:11` | `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` | `human` | 39 | `130.48` | `10.11` | word:33|line_break:4|discourse_marker_word:1|sentence_boundary:1 |
+| `L24:11` | `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` | `gpt-5.5` | 111 | `356.14` | `10.48` | word:104|punctuation:4|sentence_boundary:2|whitespace:1 |
+| `L24:11` | `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` | `human` | 30 | `93.10` | `10.60` | word:30 |
+| `L24:11` | `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` | `human` | 25 | `93.54` | `10.37` | word:22|punctuation:2|style_function_word:1 |
+| `L24:11` | `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` | `human` | 114 | `500.11` | `10.79` | word:87|line_break:24|punctuation:1|expanded_negation_word:1|sentence_boundary:1 |
+| `L24:11` | `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` | `human` | 39 | `168.55` | `10.34` | word:37|punctuation:2 |
+| `L24:11` | `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` | `gpt-5.5` | 155 | `504.03` | `10.54` | word:118|line_break:23|punctuation:13|discourse_marker_word:1 |
+| `L24:11` | `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` | `gpt-5.5` | 108 | `315.19` | `10.57` | word:90|punctuation:9|line_break:8|discourse_marker_word:1 |
+| `L24:11` | `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` | `human` | 59 | `248.71` | `10.67` | word:48|line_break:8|punctuation:2|discourse_marker_word:1 |
+| `L24:11` | `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` | `gpt-5.5` | 54 | `186.35` | `10.36` | word:40|punctuation:7|line_break:7 |
+
+## Top Tokens
+
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `623` activation `4.887` class `word` token ` Dragon`
+  - Dragon i. Crew Dragon ii. Cargo Dragon b. Boeing Starliner i. Still
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `395` activation `4.608` class `word` token ` spacecraft`
+  - a. Delays b. Destruction of robotic spacecraft III. Rendezvous with Gemini 7
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `469` activation `4.448` class `style_function_word` token `As`
+  - on the Moon b. Allowed deep space EVAs to retrieve scientific equipment c. Potential for emergency
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `447` activation `4.350` class `word` token ` Program`
+  - Importance to future space programs A. Apollo Program I. EVA a. Allowed for
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `429` activation `4.232` class `word` token ` spacecraft`
+  - 8 I. First to dock with robotic spacecraft II. Had to abort Importance to
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `502` activation `4.139` class `word` token `ing`
+  - Lunar Orbit Rendezvous" III. Docking a. Allowed retrieval of lunar module after launch
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `618` activation `3.989` class `word` token ` Dragon`
+  - spacecraft a. SpaceX Dragon i. Crew Dragon ii. Cargo Dragon b. Boeing Star
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `570` activation `3.971` class `word` token ` components`
+  - Space Telescope b. Delivery and installation of ISS components C. International Space Station operations I.
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `545` activation `3.802` class `word` token ` capability`
+  - Frequently required rendezvous, docking, and EVA capability during missions. a. Maintenance and repair missions
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `442` activation `3.785` class `word` token ` programs`
+  - . Had to abort Importance to future space programs A. Apollo Program I. EVA
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `319` activation `3.750` class `word` token `VA`
+  - was important B. Preparations for EVA mission C. Gemini 4 I.
+- `L19:2107` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `637` activation `3.742` class `word` token ` progress`
+  - Boeing Starliner i. Still a work in progress Conclusion
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `639` activation `4.691` class `word` token ` world`
+  - about MI-6 movements in different regions of the world
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `633` activation `4.150` class `word` token ` movements`
+  - Gives information to Hanlon Holdings about MI-6 movements in different regions of the world
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `632` activation `4.000` class `word` token `6`
+  - ○ Gives information to Hanlon Holdings about MI-6 movements in different regions of the world
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `553` activation `3.902` class `word` token `7`
+  - security for the Hanlon Holding company in 2017 ○ Zareb Hanlon thinks Alexander retired
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `636` activation `3.836` class `word` token ` regions`
+  - Hanlon Holdings about MI-6 movements in different regions of the world
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `419` activation `3.642` class `word` token ` scholarship`
+  - University of Manchester in 2006 through a boxing scholarship ● Qualified for the 2008 Olympics but
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `598` activation `3.548` class `word` token ` agent`
+  - his lost brother so he feels guilty being a double agent ○ Gives information to MI-6 about Han
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `501` activation `3.469` class `word` token ` market`
+  - and bringing them to Europe for sale on the black market ○ Made some money through black market deals
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `432` activation `3.465` class `word` token ` medal`
+  - Qualified for the 2008 Olympics but didn’t medal ● He joined the British Army and became the
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `411` activation `3.314` class `word` token ` Manchester`
+  - crew ● Studied psychology at the University of Manchester in 2006 through a boxing scholarship ●
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `610` activation `3.281` class `word` token ` Holdings`
+  - ○ Gives information to MI-6 about Hanlon Holdings (nothing they can take Zareb in on
+- `L19:2107` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `532` activation `3.280` class `word` token `6`
+  - a member of MI-6 in late 2016 ● Became a double agent who works undercover as
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `581` activation `5.588` class `word` token ` cryptocurrencies`
+  - cryptocurrencies b. Some ActivityPub apps may use cryptocurrencies C. Lens Protocol I. Based on
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `553` activation `5.052` class `word` token ` apps`
+  - Pub a. Possible compatibility with other ActivityPub apps IV. Doesn't use cryptocurrencies across all servers
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `481` activation `4.974` class `word` token ` apps`
+  - payments over Lightning Network b. Useful for marketplace apps like Civ Kit B. Mastodon I
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `536` activation `4.384` class `word` token ` server`
+  - a server c. Can switch to a different server III. Based on ActivityPub a.
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `440` activation `4.300` class `word` token ` apps`
+  - c. Can create a single account for all apps i. Uses public/private keys based on cryptography
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `622` activation `4.294` class `word` token `places`
+  - a. Possible to buy one on NFT marketplaces b. Or mint your own III.
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `429` activation `4.283` class `word` token ` it`
+  - app by itself b. Can develop apps on it c. Can create a single account for all
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `447` activation `4.249` class `word` token ` keys`
+  - account for all apps i. Uses public/private keys based on cryptography ii. Requires ability to keep
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `637` activation `3.963` class `word` token ` apps`
+  - mint your own III. Has lots of featured apps Conclusion
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `421` activation `3.937` class `word` token ` itself`
+  - social media protocol a. Not an app by itself b. Can develop apps on it c
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `563` activation `3.859` class `word` token ` servers`
+  - apps IV. Doesn't use cryptocurrencies across all servers a. Some servers may use cryptocurrencies b
+- `L19:2107` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `390` activation `3.828` class `word` token ` offensive`
+  - C. Occasionally see things a user may find offensive (less censorship) Some popular social media competitors
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `634` activation `4.647` class `style_function_word` token ` will`
+  - coach is giving him to do? A: Free will to do anything he wants
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `600` activation `3.739` class `word` token ` offense`
+  - basically giving him? A: The keys to the offense Q: When can he change things? A
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `639` activation `3.502` class `word` token ` wants`
+  - do? A: Free will to do anything he wants
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `614` activation `3.502` class `word` token ` wants`
+  - When can he change things? A: When he wants to Q: What does Jackson think the coach
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `582` activation `3.222` class `word` token ` scrimmage`
+  - more leeway? A: At the line of scrimmage Q: What is Monken basically giving him
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `615` activation `3.214` class `word` token ` to`
+  - can he change things? A: When he wants to Q: What does Jackson think the coach is
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `637` activation `2.690` class `word` token ` anything`
+  - him to do? A: Free will to do anything he wants
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `597` activation `2.138` class `word` token ` keys`
+  - is Monken basically giving him? A: The keys to the offense Q: When can he change
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `561` activation `2.110` class `word` token ` years`
+  - Jackson signed from the Ravens? A: 5 years Q: Where will the Ravens be giving Jackson
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `560` activation `2.045` class `word` token `5`
+  - contract Jackson signed from the Ravens? A: 5 years Q: Where will the Ravens be giving
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `632` activation `1.768` class `punctuation` token `:`
+  - think the coach is giving him to do? A: Free will to do anything he wants
+- `L19:2107` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `577` activation `1.654` class `punctuation` token `:`
+  - the Ravens be giving Jackson more leeway? A: At the line of scrimmage Q: What is
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `633` activation `4.394` class `word` token `asured`
+  - know. Valuables held Memories treasured My suitcase holds all.
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `607` activation `3.928` class `word` token `able`
+  - is your home Adaptable Dependable You give me the courage to explore I
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `596` activation `2.557` class `word` token ` terrain`
+  - ly fastened Embarking on adventure New terrain is your home Adaptable Depend
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `613` activation `2.298` class `word` token ` courage`
+  - table Dependable You give me the courage to explore I thank for more thank you know
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `627` activation `2.277` class `word` token `ables`
+  - I thank for more thank you know. Valuables held Memories treasured My suitcase holds
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `623` activation `2.146` class `word` token ` know`
+  - courage to explore I thank for more thank you know. Valuables held Memories treasured
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `599` activation `1.905` class `word` token ` home`
+  - Embarking on adventure New terrain is your home Adaptable Dependable You
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `616` activation `1.868` class `line_break` token `
+`
+  - endable You give me the courage to explore I thank for more thank you know. Valu
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `639` activation `1.734` class `sentence_boundary` token `.`
+  - Memories treasured My suitcase holds all.
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `631` activation `1.715` class `word` token `ories`
+  - thank you know. Valuables held Memories treasured My suitcase holds all.
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `636` activation `1.680` class `word` token ` suitcase`
+  - uables held Memories treasured My suitcase holds all.
+- `L19:2107` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `615` activation `1.562` class `word` token ` explore`
+  - Dependable You give me the courage to explore I thank for more thank you know. Val
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `385` activation `4.720` class `word` token `164`
+  - ~164 Hispanic victims 6% ~164 Non-Hispanic Black victims 5%
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `301` activation `4.682` class `word` token ` sex`
+  - % ~136 Article does not split this figure by sex Asian/Pacific Islander males 4%
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `335` activation `4.441` class `word` token ` sex`
+  - females 2% ~55 Separately identified by sex Combined figures where possible: Combined group Raw percentage
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `376` activation `4.344` class `word` token `164`
+  - Asian/Pacific Islander victims 6% ~164 Hispanic victims 6% ~164
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `397` activation `4.074` class `word` token `136`
+  - Non-Hispanic Black victims 5% ~136 Important annotation: The listed ethnic/racial categories
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `264` activation `3.542` class `word` token ` group`
+  - white females 15% ~409 Second largest identified group Hispanic individuals 6% ~164 Article
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `318` activation `3.212` class `word` token ` sex`
+  - males 4% ~109 Separately identified by sex Asian/Pacific Islander females 2%
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `364` activation `2.970` class `word` token `072`
+  - ispanic white victims 76% ~2,072 Asian/Pacific Islander victims 6%
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `225` activation `2.685` class `word` token ` number`
+  - / racial group stated in article Raw percentage Approx. number of victims Notes Non-Hispanic white males
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `228` activation `2.672` class `word` token ` Notes`
+  - stated in article Raw percentage Approx. number of victims Notes Non-Hispanic white males 61%
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `152` activation `2.529` class `word` token `726`
+  - Raw total used in article: 2,726 death certificates related to the World Trade Center attacks filed
+- `L19:2107` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `330` activation `2.455` class `word` token `55`
+  - Asian/Pacific Islander females 2% ~55 Separately identified by sex Combined figures where possible
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `627` activation `4.569` class `word` token ` jewelry`
+  - a section comparing stainless steel jewelry to other types of jewelry a conclusion paragraph summing up the information in
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `615` activation `3.951` class `word` token ` made`
+  - steel a section telling how stainless steel jewelry is made a section comparing stainless steel jewelry to other types
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `639` activation `3.853` class `word` token ` post`
+  - a conclusion paragraph summing up the information in the post
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `636` activation `2.796` class `word` token ` information`
+  - of jewelry a conclusion paragraph summing up the information in the post
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `631` activation `2.755` class `word` token ` paragraph`
+  - steel jewelry to other types of jewelry a conclusion paragraph summing up the information in the post
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `630` activation `2.545` class `word` token ` conclusion`
+  - stainless steel jewelry to other types of jewelry a conclusion paragraph summing up the information in the post
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `622` activation `2.471` class `word` token ` jewelry`
+  - steel jewelry is made a section comparing stainless steel jewelry to other types of jewelry a conclusion paragraph sum
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `606` activation `2.423` class `line_break` token `
+`
+  - section explaining why some jewelry is made of stainless steel a section telling how stainless steel jewelry is made
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `618` activation `2.335` class `word` token ` section`
+  - section telling how stainless steel jewelry is made a section comparing stainless steel jewelry to other types of jewelry
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `605` activation `2.334` class `word` token ` steel`
+  - a section explaining why some jewelry is made of stainless steel a section telling how stainless steel jewelry is made
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `608` activation `2.116` class `word` token ` section`
+  - why some jewelry is made of stainless steel a section telling how stainless steel jewelry is made a section
+- `L19:2107` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `596` activation `1.964` class `word` token ` section`
+  - desire to learn the information in this post a section explaining why some jewelry is made of stainless steel
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `591` activation `4.420` class `word` token ` beaches`
+  - Christ the Redeemer statue, overlooking Rio's pristine beaches From the shores of Copacabana and
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `585` activation `3.135` class `word` token ` statue`
+  - striking 125-foot-tall Christ the Redeemer statue, overlooking Rio's pristine beaches From the shores
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `562` activation `2.665` class `word` token ` mountains`
+  - Lush rainforests surround staggered green mountains, giving a panorama like nowhere else Adm
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `588` activation `2.417` class `word` token ` Rio`
+  - -foot-tall Christ the Redeemer statue, overlooking Rio's pristine beaches From the shores of Copac
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `563` activation `2.342` class `punctuation` token `,`
+  - Lush rainforests surround staggered green mountains, giving a panorama like nowhere else Admire
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `569` activation `1.968` class `word` token ` else`
+  - staggered green mountains, giving a panorama like nowhere else Admire the striking 125-foot-t
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `613` activation `1.825` class `word` token ` backdrop`
+  - panema, you'll admire the picture-perfect backdrop that has attracted Cariocas (native Braz
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `586` activation `1.684` class `punctuation` token `,`
+  - 125-foot-tall Christ the Redeemer statue, overlooking Rio's pristine beaches From the shores of
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `605` activation `1.484` class `punctuation` token `,`
+  - shores of Copacabana and Ipanema, you'll admire the picture-perfect backdrop that has
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `557` activation `1.373` class `word` token `sts`
+  - catch some sunshine or waves Lush rainforests surround staggered green mountains, giving a panorama like
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `566` activation `1.345` class `word` token ` panorama`
+  - forests surround staggered green mountains, giving a panorama like nowhere else Admire the striking
+- `L19:2107` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `592` activation `1.328` class `line_break` token `
+`
+  - the Redeemer statue, overlooking Rio's pristine beaches From the shores of Copacabana and I
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `552` activation `4.950` class `word` token `azaar`
+  - . Online cryptocurrency marketplaces i. OpenBazaar ii. INS Ecosystem iii. Sys
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `582` activation `4.757` class `word` token ` Network`
+  - . beBee b. Bounties Network D. Cryptocurrency payment processors i.
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `546` activation `4.695` class `word` token `places`
+  - . Small online retailers C. Online cryptocurrency marketplaces i. OpenBazaar ii. INS
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `594` activation `4.526` class `word` token `Pay`
+  - D. Cryptocurrency payment processors i. BitPay ii. CoinGate iii. CoinPayments
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `599` activation `4.460` class `word` token `Gate`
+  - processors i. BitPay ii. CoinGate iii. CoinPayments iv. Coinbase Commerce
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `626` activation `4.368` class `word` token ` servers`
+  - a. Set up wallets on retailers' own servers b. Cuts out "third-party"
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `569` activation `4.358` class `word` token ` sites`
+  - iii. Syscoin iv. Freelancing sites a. beBee b. B
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `533` activation `4.324` class `word` token ` socks`
+  - i. Pizza ii. Alpaca wool socks B. Small online retailers C. Online
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `465` activation `4.153` class `word` token `ances`
+  - ances C. Apps being built for remittances Savings A. Different from "H
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `558` activation `4.132` class `word` token `cosystem`
+  - i. OpenBazaar ii. INS Ecosystem iii. Syscoin iv. Freelancing
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `589` activation `4.124` class `word` token ` processors`
+  - Bounties Network D. Cryptocurrency payment processors i. BitPay ii. CoinGate
+- `L19:2107` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `500` activation `4.068` class `word` token ` exchanges`
+  - a safe location C. Recurring purchases on exchanges D. Safe even if a local bank goes
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `254` activation `4.747` class `word` token ` water`
+  - of honey One cup/250 ml of boiling water PURPOSE: To bestow the gift of
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `215` activation `4.582` class `word` token ` lighter`
+  - 15-20 cm in length Matches or a lighter White sandalwood incense Nine cl
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `245` activation `4.104` class `word` token ` honey`
+  - cm length of black sewing thread One teaspoon of honey One cup/250 ml of boiling water
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `240` activation `3.833` class `word` token ` thread`
+  - One 18"/45 cm length of black sewing thread One teaspoon of honey One cup/250
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `228` activation `3.771` class `word` token ` leaves`
+  - sandalwood incense Nine clary sage leaves One 18"/45 cm length of black
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `222` activation `3.749` class `word` token `ense`
+  - Matches or a lighter White sandalwood incense Nine clary sage leaves One 18
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `509` activation `3.635` class `word` token ` ones`
+  - the old ones The high ones The low ones Power of the moon Bestow fair speech
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `198` activation `3.335` class `word` token ` candle`
+  - in a fireproof dish One silver or white candle, 6-8"/15-20 cm
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `218` activation `3.007` class `word` token ` sand`
+  - cm in length Matches or a lighter White sandalwood incense Nine clary sage leaves
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `212` activation `2.921` class `word` token `Matches`
+  - -8"/15-20 cm in length Matches or a lighter White sandalwood incense
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `210` activation `2.846` class `word` token ` length`
+  - 6-8"/15-20 cm in length Matches or a lighter White sandalwood
+- `L19:2107` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `505` activation `2.363` class `word` token ` ones`
+  - : "Power of the old ones The high ones The low ones Power of the moon
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `38` activation `4.530` class `word` token ` Gateway`
+  - includes: A VPC Public subnet Internet Gateway Route table and public route Security group allowing
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `75` activation `4.508` class `word` token ` assignment`
+  - AMI t3.micro instance Public IP assignment terraform { requiredversion = ">= 1
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `66` activation `3.833` class `word` token `I`
+  - open to all Latest Amazon Linux 2 AMI t3.micro instance Public IP assignment
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `47` activation `3.493` class `word` token ` group`
+  - Internet Gateway Route table and public route Security group allowing inbound SSH from anywhere Egress open to
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `71` activation `3.403` class `discourse_marker_word` token ` instance`
+  - Amazon Linux 2 AMI t3.micro instance Public IP assignment terraform { requiredversion =
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `41` activation `3.400` class `word` token ` table`
+  - VPC Public subnet Internet Gateway Route table and public route Security group allowing inbound SSH from
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `35` activation `3.289` class `word` token ` subnet`
+  - region. It includes: A VPC Public subnet Internet Gateway Route table and public route
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `44` activation `3.043` class `word` token ` route`
+  - Public subnet Internet Gateway Route table and public route Security group allowing inbound SSH from anywhere E
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `353` activation `2.954` class `word` token `w`
+  - { Name = "public-ec2-igw" } } resource "awsroutetable"
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `74` activation `2.790` class `word` token ` IP`
+  - 2 AMI t3.micro instance Public IP assignment terraform { requiredversion = ">=
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `316` activation `2.779` class `word` token `net`
+  - = { Name = "public-ec2-subnet" } } resource "awsinternetgateway" "
+- `L19:2107` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `418` activation `2.674` class `word` token `-table`
+  - = { Name = "public-ec2-route-table" } } resource "awsroutetableassociation
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `206` activation `4.812` class `word` token ` display`
+  - x position on display y - y position on display width - bitmap width in pixels height -
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `211` activation `4.464` class `word` token ` width`
+  - y - y position on display width - bitmap width in pixels height - bitmap height in pixels
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `220` activation `4.273` class `word` token ` pixels`
+  - bitmap width in pixels height - bitmap height in pixels / void drawBitmapToOLED(const uint
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `213` activation `4.134` class `word` token ` pixels`
+  - y position on display width - bitmap width in pixels height - bitmap height in pixels / void
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `204` activation `3.452` class `word` token ` position`
+  - x - x position on display y - y position on display width - bitmap width in pixels
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `197` activation `3.293` class `word` token ` position`
+  - - pointer to bitmap byte array x - x position on display y - y position on display
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `199` activation `3.251` class `word` token ` display`
+  - to bitmap byte array x - x position on display y - y position on display width -
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `192` activation `2.917` class `word` token ` array`
+  - OLED. Parameters: bitmap - pointer to bitmap byte array x - x position on display y -
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `131` activation `2.916` class `word` token `10`
+  - C 9 define OLEDCS 10 define OLEDRESET 8 AdafruitSS
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `123` activation `2.686` class `word` token `9`
+  - CLK 13 define OLEDDC 9 define OLEDCS 10 define
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `137` activation `2.625` class `word` token `8`
+  - LEDCS 10 define OLEDRESET 8 AdafruitSSD1306 display( SCREEN
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `115` activation `2.517` class `word` token `13`
+  - DMOSI 11 define OLEDCLK 13 define OLEDDC 9 define
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `518` activation `3.761` class `word` token ` bitmap`
+  - y++) { // Iterate through each column of the bitmap for (int x = 0; x
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `440` activation `3.131` class `word` token ` display`
+  - .clearDisplay(); // Draw the bitmap on the OLED display drawBitmap(bitmap); } void loop() {
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `634` activation `3.074` class `word` token ` display`
+  - } } // Display the drawn bitmap on the OLED display display.display(); }
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `348` activation `2.806` class `word` token `9`
+  - S 10 define OLEDDC 9 define OLEDRESET 8 define SCREENWIDTH
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `366` activation `2.764` class `word` token `64`
+  - define SCREENWIDTH 128 define SCREENHEIGHT 64 // Create an instance of the OLED display
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `630` activation `2.751` class `word` token ` bitmap`
+  - WHITE); } } } } // Display the drawn bitmap on the OLED display display.display(); }
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `543` activation `2.576` class `word` token ` bitmap`
+  - x++) { // Get the current byte of the bitmap uint8t byte = bitmap[y SCREENWIDTH
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `354` activation `2.514` class `word` token `8`
+  - LEDDC 9 define OLEDRESET 8 define SCREENWIDTH 128 define SCREENHEIGHT
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `566` activation `2.462` class `word` token ` pixel`
+  - ]; // Draw each bit of the byte as a pixel for (int bit = 0; bit
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `607` activation `2.432` class `word` token ` position`
+  - bit is set, draw a pixel at the corresponding position display.drawPixel(x, y 8 +
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `476` activation `2.257` class `word` token ` white`
+  - t bitmap) { // Set the drawing color to white display.setTextColor(WHITE); // Iterate through each
+- `L19:2107` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `457` activation `2.250` class `word` token ` here`
+  - void loop() { // Add your main code logic here } void drawBitmap(const uint8t bitmap
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `306` activation `5.880` class `word` token `aces`
+  - genius. Materials: Two sneakers Four shoelaces (two useful, two mysteriously too long)
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `336` activation `3.991` class `word` token `ience`
+  - You can do it!” One floor Patience (very small amount) Emergency cracker Procedure
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `319` activation `3.695` class `word` token ` kid`
+  - useful, two mysteriously too long) One determined kid One parent saying, “You can do it
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `322` activation `3.090` class `word` token ` parent`
+  - mysteriously too long) One determined kid One parent saying, “You can do it!” One
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `330` activation `2.874` class `punctuation` token `!”`
+  - One parent saying, “You can do it!” One floor Patience (very small amount
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `301` activation `2.754` class `word` token ` sneakers`
+  - , I may become a genius. Materials: Two sneakers Four shoelaces (two useful, two
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `340` activation `2.751` class `word` token ` amount`
+  - !” One floor Patience (very small amount) Emergency cracker Procedure: Sit on floor
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `337` activation `2.604` class `punctuation` token ` (`
+  - can do it!” One floor Patience (very small amount) Emergency cracker Procedure:
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `307` activation `2.516` class `punctuation` token ` (`
+  - . Materials: Two sneakers Four shoelaces (two useful, two mysteriously too long) One
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `216` activation `2.425` class `word` token ` Laboratory`
+  - depending on snack time) Location: Hallway Floor Laboratory Experiment Title: Attempting to Tie Shoes Without
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `315` activation `2.385` class `word` token ` long`
+  - elaces (two useful, two mysteriously too long) One determined kid One parent saying, “
+- `L19:2107` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `214` activation `1.940` class `word` token `way`
+  - Wednesday, depending on snack time) Location: Hallway Floor Laboratory Experiment Title: Attempting to Tie
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `469` activation `10.073` class `style_function_word` token `As`
+  - on the Moon b. Allowed deep space EVAs to retrieve scientific equipment c. Potential for emergency
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `429` activation `9.483` class `word` token ` spacecraft`
+  - 8 I. First to dock with robotic spacecraft II. Had to abort Importance to
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `319` activation `9.467` class `word` token `VA`
+  - was important B. Preparations for EVA mission C. Gemini 4 I.
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `395` activation `9.455` class `word` token ` spacecraft`
+  - a. Delays b. Destruction of robotic spacecraft III. Rendezvous with Gemini 7
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `637` activation `8.829` class `word` token ` progress`
+  - Boeing Starliner i. Still a work in progress Conclusion
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `473` activation `8.807` class `word` token ` equipment`
+  - b. Allowed deep space EVAs to retrieve scientific equipment c. Potential for emergency EVA II
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `447` activation `8.768` class `word` token ` Program`
+  - Importance to future space programs A. Apollo Program I. EVA a. Allowed for
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `502` activation `8.687` class `word` token `ing`
+  - Lunar Orbit Rendezvous" III. Docking a. Allowed retrieval of lunar module after launch
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `461` activation `8.594` class `word` token ` Moon`
+  - EVA a. Allowed for walking on the Moon b. Allowed deep space EVAs to retrieve
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `570` activation `8.496` class `word` token ` components`
+  - Space Telescope b. Delivery and installation of ISS components C. International Space Station operations I.
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `361` activation `8.397` class `word` token ` missions`
+  - vous A. Importance of rendezvous for later missions B. Gemini 6 I. Originally
+- `L24:11` `2b3639e006a3bf954ed6205794d3122bff1a3b986c29d1d2da2bcf74a4258716@turn_01@human` token `347` activation `8.290` class `word` token `VA`
+  - VA-related accomplishments III. Complications during EVA Rendezvous A. Importance of rendez
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `639` activation `10.235` class `word` token ` world`
+  - about MI-6 movements in different regions of the world
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `636` activation `9.578` class `word` token ` regions`
+  - Hanlon Holdings about MI-6 movements in different regions of the world
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `598` activation `9.461` class `word` token ` agent`
+  - his lost brother so he feels guilty being a double agent ○ Gives information to MI-6 about Han
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `419` activation `9.338` class `word` token ` scholarship`
+  - University of Manchester in 2006 through a boxing scholarship ● Qualified for the 2008 Olympics but
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `633` activation `9.241` class `word` token ` movements`
+  - Gives information to Hanlon Holdings about MI-6 movements in different regions of the world
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `501` activation `9.085` class `word` token ` market`
+  - and bringing them to Europe for sale on the black market ○ Made some money through black market deals
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `432` activation `9.034` class `word` token ` medal`
+  - Qualified for the 2008 Olympics but didn’t medal ● He joined the British Army and became the
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `553` activation `8.949` class `word` token `7`
+  - security for the Hanlon Holding company in 2017 ○ Zareb Hanlon thinks Alexander retired
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `495` activation `8.945` class `word` token ` Europe`
+  - helping steal antiquities from Afghanistan and bringing them to Europe for sale on the black market ○ Made some
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `497` activation `8.913` class `word` token ` sale`
+  - antiquities from Afghanistan and bringing them to Europe for sale on the black market ○ Made some money through
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `632` activation `8.806` class `word` token `6`
+  - ○ Gives information to Hanlon Holdings about MI-6 movements in different regions of the world
+- `L24:11` `53d1aa54318fe18bc096c2d2b664ecd528d6f8ade2530dd6379f0d6742e41366@turn_01@human` token `571` activation `8.534` class `word` token ` security`
+  - thinks Alexander retired from the military and works in private security ○ Alexander develops a tight bond with Zare
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `581` activation `11.339` class `word` token ` cryptocurrencies`
+  - cryptocurrencies b. Some ActivityPub apps may use cryptocurrencies C. Lens Protocol I. Based on
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `553` activation `10.932` class `word` token ` apps`
+  - Pub a. Possible compatibility with other ActivityPub apps IV. Doesn't use cryptocurrencies across all servers
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `481` activation `10.910` class `word` token ` apps`
+  - payments over Lightning Network b. Useful for marketplace apps like Civ Kit B. Mastodon I
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `440` activation `10.832` class `word` token ` apps`
+  - c. Can create a single account for all apps i. Uses public/private keys based on cryptography
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `429` activation `10.828` class `word` token ` it`
+  - app by itself b. Can develop apps on it c. Can create a single account for all
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `379` activation `10.760` class `word` token ` started`
+  - followers B. Can sometimes be complicated to get started C. Occasionally see things a user may find
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `390` activation `10.677` class `word` token ` offensive`
+  - C. Occasionally see things a user may find offensive (less censorship) Some popular social media competitors
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `622` activation `10.622` class `word` token `places`
+  - a. Possible to buy one on NFT marketplaces b. Or mint your own III.
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `421` activation `10.505` class `word` token ` itself`
+  - social media protocol a. Not an app by itself b. Can develop apps on it c
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `563` activation `10.489` class `word` token ` servers`
+  - apps IV. Doesn't use cryptocurrencies across all servers a. Some servers may use cryptocurrencies b
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `571` activation `10.450` class `word` token ` cryptocurrencies`
+  - across all servers a. Some servers may use cryptocurrencies b. Some ActivityPub apps may use cryptocurrencies
+- `L24:11` `bc54525c05f6a881b316af5418536b3405b27beeb7585e0ec1360f10bd6979b7@turn_01@human` token `610` activation `10.437` class `word` token `s`
+  - is II. Mints accounts as NFTs a. Possible to buy one on NFT
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `615` activation `10.793` class `word` token ` to`
+  - can he change things? A: When he wants to Q: What does Jackson think the coach is
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `639` activation `10.348` class `word` token ` wants`
+  - do? A: Free will to do anything he wants
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `634` activation `10.209` class `style_function_word` token ` will`
+  - coach is giving him to do? A: Free will to do anything he wants
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `614` activation `9.506` class `word` token ` wants`
+  - When can he change things? A: When he wants to Q: What does Jackson think the coach
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `637` activation `9.282` class `word` token ` anything`
+  - him to do? A: Free will to do anything he wants
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `600` activation `9.204` class `word` token ` offense`
+  - basically giving him? A: The keys to the offense Q: When can he change things? A
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `582` activation `8.555` class `word` token ` scrimmage`
+  - more leeway? A: At the line of scrimmage Q: What is Monken basically giving him
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `597` activation `6.446` class `word` token ` keys`
+  - is Monken basically giving him? A: The keys to the offense Q: When can he change
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `561` activation `5.884` class `word` token ` years`
+  - Jackson signed from the Ravens? A: 5 years Q: Where will the Ravens be giving Jackson
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `580` activation `5.159` class `word` token ` line`
+  - giving Jackson more leeway? A: At the line of scrimmage Q: What is Monken basically
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `560` activation `4.655` class `word` token `5`
+  - contract Jackson signed from the Ravens? A: 5 years Q: Where will the Ravens be giving
+- `L24:11` `753475bd6805f45b9bae13351d239431f64b50f2e52f269852408541e997bf73@turn_01@human` token `636` activation `4.300` class `expanded_negation_word` token ` do`
+  - giving him to do? A: Free will to do anything he wants
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `633` activation `10.108` class `word` token `asured`
+  - know. Valuables held Memories treasured My suitcase holds all.
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `623` activation `8.452` class `word` token ` know`
+  - courage to explore I thank for more thank you know. Valuables held Memories treasured
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `607` activation `7.934` class `word` token `able`
+  - is your home Adaptable Dependable You give me the courage to explore I
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `613` activation `6.060` class `word` token ` courage`
+  - table Dependable You give me the courage to explore I thank for more thank you know
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `615` activation `5.922` class `word` token ` explore`
+  - Dependable You give me the courage to explore I thank for more thank you know. Val
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `596` activation `5.747` class `word` token ` terrain`
+  - ly fastened Embarking on adventure New terrain is your home Adaptable Depend
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `599` activation `5.134` class `word` token ` home`
+  - Embarking on adventure New terrain is your home Adaptable Dependable You
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `627` activation `4.873` class `word` token `ables`
+  - I thank for more thank you know. Valuables held Memories treasured My suitcase holds
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `620` activation `4.835` class `word` token ` more`
+  - give me the courage to explore I thank for more thank you know. Valuables held Mem
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `622` activation `4.823` class `word` token ` you`
+  - the courage to explore I thank for more thank you know. Valuables held Memories tre
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `628` activation `4.697` class `word` token ` held`
+  - thank for more thank you know. Valuables held Memories treasured My suitcase holds all
+- `L24:11` `c8c9cc409baadb196bae7c7da61af50a8081be51b347d1bb102bbf0eebb3acd0@turn_01@human` token `638` activation `4.010` class `word` token ` all`
+  - held Memories treasured My suitcase holds all.
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `301` activation `10.478` class `word` token ` sex`
+  - % ~136 Article does not split this figure by sex Asian/Pacific Islander males 4%
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `335` activation `10.097` class `word` token ` sex`
+  - females 2% ~55 Separately identified by sex Combined figures where possible: Combined group Raw percentage
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `318` activation `9.562` class `word` token ` sex`
+  - males 4% ~109 Separately identified by sex Asian/Pacific Islander females 2%
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `281` activation `9.274` class `word` token ` sex`
+  - % ~164 Article does not split this figure by sex Non-Hispanic Black individuals 5%
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `264` activation `9.197` class `word` token ` group`
+  - white females 15% ~409 Second largest identified group Hispanic individuals 6% ~164 Article
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `385` activation `8.409` class `word` token `164`
+  - ~164 Hispanic victims 6% ~164 Non-Hispanic Black victims 5%
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `397` activation `7.799` class `word` token `136`
+  - Non-Hispanic Black victims 5% ~136 Important annotation: The listed ethnic/racial categories
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `376` activation `7.660` class `word` token `164`
+  - Asian/Pacific Islander victims 6% ~164 Hispanic victims 6% ~164
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `227` activation `7.605` class `word` token ` victims`
+  - group stated in article Raw percentage Approx. number of victims Notes Non-Hispanic white males 61
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `338` activation `7.357` class `word` token ` figures`
+  - % ~55 Separately identified by sex Combined figures where possible: Combined group Raw percentage Approx. number
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `340` activation `7.275` class `word` token ` possible`
+  - 55 Separately identified by sex Combined figures where possible: Combined group Raw percentage Approx. number of victims
+- `L24:11` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@gpt-5.5` token `245` activation `7.115` class `word` token ` group`
+  - males 61% ~1,663 Largest identified group in the article Non-Hispanic white females
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `627` activation `10.600` class `word` token ` jewelry`
+  - a section comparing stainless steel jewelry to other types of jewelry a conclusion paragraph summing up the information in
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `639` activation `10.098` class `word` token ` post`
+  - a conclusion paragraph summing up the information in the post
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `615` activation `9.129` class `word` token ` made`
+  - steel a section telling how stainless steel jewelry is made a section comparing stainless steel jewelry to other types
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `636` activation `6.486` class `word` token ` information`
+  - of jewelry a conclusion paragraph summing up the information in the post
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `605` activation `5.901` class `word` token ` steel`
+  - a section explaining why some jewelry is made of stainless steel a section telling how stainless steel jewelry is made
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `631` activation `5.772` class `word` token ` paragraph`
+  - steel jewelry to other types of jewelry a conclusion paragraph summing up the information in the post
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `622` activation `4.172` class `word` token ` jewelry`
+  - steel jewelry is made a section comparing stainless steel jewelry to other types of jewelry a conclusion paragraph sum
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `630` activation `4.036` class `word` token ` conclusion`
+  - stainless steel jewelry to other types of jewelry a conclusion paragraph summing up the information in the post
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `634` activation `3.363` class `word` token ` up`
+  - other types of jewelry a conclusion paragraph summing up the information in the post
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `602` activation `3.274` class `word` token ` made`
+  - this post a section explaining why some jewelry is made of stainless steel a section telling how stainless steel
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `625` activation `2.282` class `word` token ` types`
+  - made a section comparing stainless steel jewelry to other types of jewelry a conclusion paragraph summing up the
+- `L24:11` `290e88a34d533c83aa725c61b56a3f01f0b55db15ba6b332c4432f14634a9fe0@turn_01@human` token `584` activation `2.190` class `word` token ` reader`
+  - an introductory paragraph appealing to the reader's desire to learn the information in this post
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `591` activation `10.367` class `word` token ` beaches`
+  - Christ the Redeemer statue, overlooking Rio's pristine beaches From the shores of Copacabana and
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `585` activation `7.660` class `word` token ` statue`
+  - striking 125-foot-tall Christ the Redeemer statue, overlooking Rio's pristine beaches From the shores
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `562` activation `7.385` class `word` token ` mountains`
+  - Lush rainforests surround staggered green mountains, giving a panorama like nowhere else Adm
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `569` activation `7.325` class `word` token ` else`
+  - staggered green mountains, giving a panorama like nowhere else Admire the striking 125-foot-t
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `613` activation `7.088` class `word` token ` backdrop`
+  - panema, you'll admire the picture-perfect backdrop that has attracted Cariocas (native Braz
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `588` activation `6.573` class `word` token ` Rio`
+  - -foot-tall Christ the Redeemer statue, overlooking Rio's pristine beaches From the shores of Copac
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `633` activation `6.407` class `word` token ` alike`
+  - Brazilians born in Rio de Janeiro) and visitors alike for more than 500 years
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `639` activation `5.064` class `word` token ` years`
+  - Janeiro) and visitors alike for more than 500 years
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `584` activation `3.642` class `word` token `emer`
+  - the striking 125-foot-tall Christ the Redeemer statue, overlooking Rio's pristine beaches From the
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `566` activation `3.364` class `word` token ` panorama`
+  - forests surround staggered green mountains, giving a panorama like nowhere else Admire the striking
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `557` activation `2.999` class `word` token `sts`
+  - catch some sunshine or waves Lush rainforests surround staggered green mountains, giving a panorama like
+- `L24:11` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@human` token `620` activation `2.472` class `style_function_word` token `as`
+  - picture-perfect backdrop that has attracted Cariocas (native Brazilians born in Rio de Janeiro)
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `465` activation `10.792` class `word` token `ances`
+  - ances C. Apps being built for remittances Savings A. Different from "H
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `546` activation `10.640` class `word` token `places`
+  - . Small online retailers C. Online cryptocurrency marketplaces i. OpenBazaar ii. INS
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `533` activation `10.537` class `word` token ` socks`
+  - i. Pizza ii. Alpaca wool socks B. Small online retailers C. Online
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `626` activation `10.482` class `word` token ` servers`
+  - a. Set up wallets on retailers' own servers b. Cuts out "third-party"
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `552` activation `10.395` class `word` token `azaar`
+  - . Online cryptocurrency marketplaces i. OpenBazaar ii. INS Ecosystem iii. Sys
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `500` activation `10.322` class `word` token ` exchanges`
+  - a safe location C. Recurring purchases on exchanges D. Safe even if a local bank goes
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `589` activation `10.315` class `word` token ` processors`
+  - Bounties Network D. Cryptocurrency payment processors i. BitPay ii. CoinGate
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `637` activation `10.049` class `word` token ` risks`
+  - b. Cuts out "third-party" risks Conclusion
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `569` activation `9.995` class `word` token ` sites`
+  - iii. Syscoin iv. Freelancing sites a. beBee b. B
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `498` activation `9.965` class `word` token ` purchases`
+  - kept in a safe location C. Recurring purchases on exchanges D. Safe even if a local
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `511` activation `9.904` class `word` token ` bankrupt`
+  - D. Safe even if a local bank goes bankrupt Shopping A. One original use of bitcoin
+- `L24:11` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `492` activation `9.873` class `word` token ` location`
+  - wallets i. Should be kept in a safe location C. Recurring purchases on exchanges D
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `254` activation `10.339` class `word` token ` water`
+  - of honey One cup/250 ml of boiling water PURPOSE: To bestow the gift of
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `215` activation `9.725` class `word` token ` lighter`
+  - 15-20 cm in length Matches or a lighter White sandalwood incense Nine cl
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `245` activation `9.481` class `word` token ` honey`
+  - cm length of black sewing thread One teaspoon of honey One cup/250 ml of boiling water
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `240` activation `9.328` class `word` token ` thread`
+  - One 18"/45 cm length of black sewing thread One teaspoon of honey One cup/250
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `228` activation `9.106` class `word` token ` leaves`
+  - sandalwood incense Nine clary sage leaves One 18"/45 cm length of black
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `210` activation `8.683` class `word` token ` length`
+  - 6-8"/15-20 cm in length Matches or a lighter White sandalwood
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `222` activation `8.194` class `word` token `ense`
+  - Matches or a lighter White sandalwood incense Nine clary sage leaves One 18
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `198` activation `7.486` class `word` token ` candle`
+  - in a fireproof dish One silver or white candle, 6-8"/15-20 cm
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `208` activation `6.276` class `word` token ` cm`
+  - candle, 6-8"/15-20 cm in length Matches or a lighter White sand
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `212` activation `6.199` class `word` token `Matches`
+  - -8"/15-20 cm in length Matches or a lighter White sandalwood incense
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `509` activation `6.117` class `word` token ` ones`
+  - the old ones The high ones The low ones Power of the moon Bestow fair speech
+- `L24:11` `b4626c5a09a0e78cd163ede5e329c94dcf7af010b4cb657b5e90e35fccd548cd@turn_01@human` token `218` activation `5.454` class `word` token ` sand`
+  - cm in length Matches or a lighter White sandalwood incense Nine clary sage leaves
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `75` activation `10.536` class `word` token ` assignment`
+  - AMI t3.micro instance Public IP assignment terraform { requiredversion = ">= 1
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `52` activation `8.790` class `word` token ` anywhere`
+  - and public route Security group allowing inbound SSH from anywhere Egress open to all Latest Amazon Linux
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `38` activation `8.381` class `word` token ` Gateway`
+  - includes: A VPC Public subnet Internet Gateway Route table and public route Security group allowing
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `66` activation `8.323` class `word` token `I`
+  - open to all Latest Amazon Linux 2 AMI t3.micro instance Public IP assignment
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `44` activation `8.246` class `word` token ` route`
+  - Public subnet Internet Gateway Route table and public route Security group allowing inbound SSH from anywhere E
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `628` activation `7.432` class `word` token `.id`
+  - " { ami = data.awsami.amazonlinux2.id instancetype = "t3.micro" subnetid
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `71` activation `7.335` class `discourse_marker_word` token ` instance`
+  - Amazon Linux 2 AMI t3.micro instance Public IP assignment terraform { requiredversion =
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `233` activation `7.266` class `word` token ` true`
+  - ostnames = true enablednssupport = true tags = { Name = "public-ec
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `442` activation `7.174` class `word` token `.id`
+  - " { subnetid = awssubnet.public.id routetableid = awsroutetable
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `269` activation `7.116` class `word` token `.id`
+  - " { vpcid = awsvpc.main.id cidrblock = "10.0.
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `47` activation `7.028` class `word` token ` group`
+  - Internet Gateway Route table and public route Security group allowing inbound SSH from anywhere Egress open to
+- `L24:11` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `74` activation `7.001` class `word` token ` IP`
+  - 2 AMI t3.micro instance Public IP assignment terraform { requiredversion = ">=
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `213` activation `10.574` class `word` token ` pixels`
+  - y position on display width - bitmap width in pixels height - bitmap height in pixels / void
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `211` activation `10.570` class `word` token ` width`
+  - y - y position on display width - bitmap width in pixels height - bitmap height in pixels
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `206` activation `10.388` class `word` token ` display`
+  - x position on display y - y position on display width - bitmap width in pixels height -
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `220` activation `10.061` class `word` token ` pixels`
+  - bitmap width in pixels height - bitmap height in pixels / void drawBitmapToOLED(const uint
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `199` activation `8.809` class `word` token ` display`
+  - to bitmap byte array x - x position on display y - y position on display width -
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `192` activation `8.467` class `word` token ` array`
+  - OLED. Parameters: bitmap - pointer to bitmap byte array x - x position on display y -
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `197` activation `7.954` class `word` token ` position`
+  - - pointer to bitmap byte array x - x position on display y - y position on display
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `123` activation `7.755` class `word` token `9`
+  - CLK 13 define OLEDDC 9 define OLEDCS 10 define
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `95` activation `7.690` class `word` token `64`
+  - define SCREENWIDTH 128 define SCREENHEIGHT 64 // SPI OLED pins define OLEDM
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `137` activation `7.415` class `word` token `8`
+  - LEDCS 10 define OLEDRESET 8 AdafruitSSD1306 display( SCREEN
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `131` activation `7.338` class `word` token `10`
+  - C 9 define OLEDCS 10 define OLEDRESET 8 AdafruitSS
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@gpt-5.5` token `327` activation `7.242` class `word` token ` bitmap`
+  - display.clearDisplay(); // Example 16x16 bitmap static const uint8t exampleBitmap[] PROGMEM
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `518` activation `10.665` class `word` token ` bitmap`
+  - y++) { // Iterate through each column of the bitmap for (int x = 0; x
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `634` activation `9.880` class `word` token ` display`
+  - } } // Display the drawn bitmap on the OLED display display.display(); }
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `440` activation `9.532` class `word` token ` display`
+  - .clearDisplay(); // Draw the bitmap on the OLED display drawBitmap(bitmap); } void loop() {
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `630` activation `9.410` class `word` token ` bitmap`
+  - WHITE); } } } } // Display the drawn bitmap on the OLED display display.display(); }
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `607` activation `9.037` class `word` token ` position`
+  - bit is set, draw a pixel at the corresponding position display.drawPixel(x, y 8 +
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `543` activation `8.984` class `word` token ` bitmap`
+  - x++) { // Get the current byte of the bitmap uint8t byte = bitmap[y SCREENWIDTH
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `490` activation `8.858` class `word` token ` bitmap`
+  - (WHITE); // Iterate through each row of the bitmap for (int y = 0; y
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `476` activation `8.637` class `word` token ` white`
+  - t bitmap) { // Set the drawing color to white display.setTextColor(WHITE); // Iterate through each
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `603` activation `8.337` class `word` token ` pixel`
+  - { // If the bit is set, draw a pixel at the corresponding position display.drawPixel(x,
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `348` activation `8.165` class `word` token `9`
+  - S 10 define OLEDDC 9 define OLEDRESET 8 define SCREENWIDTH
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `474` activation `8.081` class `word` token ` color`
+  - uint8t bitmap) { // Set the drawing color to white display.setTextColor(WHITE); // Iterate
+- `L24:11` `f9200faf3d8d563fc56fff09d2aaeb0e64ac8c914291c192f0215f722e72b23e@turn_01@human` token `566` activation `8.000` class `word` token ` pixel`
+  - ]; // Draw each bit of the byte as a pixel for (int bit = 0; bit
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `306` activation `10.360` class `word` token `aces`
+  - genius. Materials: Two sneakers Four shoelaces (two useful, two mysteriously too long)
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `319` activation `8.757` class `word` token ` kid`
+  - useful, two mysteriously too long) One determined kid One parent saying, “You can do it
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `336` activation `7.486` class `word` token `ience`
+  - You can do it!” One floor Patience (very small amount) Emergency cracker Procedure
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `196` activation `7.189` class `word` token `6`
+  - ace Experiment Scientist: Jamie, Age 6 Date: Tuesday (or possibly Wednesday, depending
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `340` activation `6.771` class `word` token ` amount`
+  - !” One floor Patience (very small amount) Emergency cracker Procedure: Sit on floor
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `216` activation `6.427` class `word` token ` Laboratory`
+  - depending on snack time) Location: Hallway Floor Laboratory Experiment Title: Attempting to Tie Shoes Without
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `301` activation `6.363` class `word` token ` sneakers`
+  - , I may become a genius. Materials: Two sneakers Four shoelaces (two useful, two
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `215` activation `6.204` class `word` token ` Floor`
+  - , depending on snack time) Location: Hallway Floor Laboratory Experiment Title: Attempting to Tie Shoes
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `228` activation `5.924` class `word` token `aming`
+  - Experiment Title: Attempting to Tie Shoes Without Screaming Question: Can a young human successfully tie their
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `330` activation `5.894` class `punctuation` token `!”`
+  - One parent saying, “You can do it!” One floor Patience (very small amount
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `225` activation `5.884` class `word` token ` Shoes`
+  - Floor Laboratory Experiment Title: Attempting to Tie Shoes Without Screaming Question: Can a young human
+- `L24:11` `f3563811818e02878d1ba20a96bdfe6d13d11834169f5e26646f32bb6187e03b@turn_01@gpt-5.5` token `187` activation `5.745` class `word` token ` Experiment`
+  - Lab Report: The Great Shoelace Experiment Scientist: Jamie, Age 6

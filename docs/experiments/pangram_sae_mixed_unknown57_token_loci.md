@@ -1,0 +1,663 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1556` | `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` | `human` | 116 | `134.99` | `4.10` | word:85|punctuation:12|style_function_word:7|line_break:4|sentence_boundary:4|discourse_marker_word:2|whitespace:2 |
+| `L19:1556` | `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` | `human` | 55 | `60.73` | `4.07` | word:44|style_function_word:5|sentence_boundary:3|line_break:3 |
+| `L19:1556` | `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` | `human` | 84 | `115.79` | `5.17` | word:63|sentence_boundary:6|style_function_word:5|punctuation:4|expanded_negation_word:3|discourse_marker_word:2|line_break:1 |
+| `L19:1556` | `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` | `human` | 20 | `21.72` | `4.18` | word:16|style_function_word:3|punctuation:1 |
+| `L19:1556` | `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` | `glm-5.2` | 72 | `76.64` | `4.53` | word:62|style_function_word:3|expanded_negation_word:2|punctuation:2|line_break:2|sentence_boundary:1 |
+| `L19:1556` | `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` | `glm-5.2` | 77 | `71.98` | `4.05` | word:58|punctuation:9|sentence_boundary:4|discourse_marker_word:2|line_break:2|expanded_negation_word:1|whitespace:1 |
+| `L19:1556` | `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` | `gpt-5.5` | 90 | `88.16` | `4.08` | word:66|punctuation:14|style_function_word:4|sentence_boundary:3|discourse_marker_word:2|line_break:1 |
+| `L19:1556` | `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` | `glm-5.2` | 55 | `55.53` | `4.27` | word:42|punctuation:6|style_function_word:5|discourse_marker_word:1|sentence_boundary:1 |
+| `L19:1556` | `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` | `glm-5.2` | 72 | `79.24` | `4.19` | word:62|expanded_negation_word:4|punctuation:3|discourse_marker_word:1|line_break:1|style_function_word:1 |
+| `L19:1556` | `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 67 | `58.68` | `3.99` | word:51|punctuation:5|line_break:5|sentence_boundary:3|style_function_word:1|discourse_marker_word:1|expanded_negation_word:1 |
+| `L19:1556` | `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` | `glm-5.2` | 79 | `89.57` | `4.21` | word:71|expanded_negation_word:3|punctuation:3|style_function_word:1|discourse_marker_word:1 |
+| `L19:1556` | `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 97 | `98.46` | `4.42` | word:66|punctuation:13|sentence_boundary:7|style_function_word:7|line_break:2|discourse_marker_word:2 |
+| `L19:1556` | `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 90 | `78.55` | `4.05` | word:68|punctuation:9|expanded_negation_word:5|sentence_boundary:4|style_function_word:3|line_break:1 |
+| `L24:310` | `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` | `human` | 70 | `109.10` | `5.03` | word:58|style_function_word:8|line_break:1|punctuation:1|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:310` | `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` | `human` | 23 | `38.72` | `5.28` | word:23 |
+| `L24:310` | `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` | `human` | 42 | `72.44` | `5.16` | word:36|discourse_marker_word:2|style_function_word:2|punctuation:1|expanded_negation_word:1 |
+| `L24:310` | `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` | `human` | 20 | `27.55` | `5.39` | word:15|style_function_word:3|contraction_piece:2 |
+| `L24:310` | `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` | `glm-5.2` | 45 | `70.49` | `5.03` | word:38|style_function_word:3|expanded_negation_word:2|punctuation:1|line_break:1 |
+| `L24:310` | `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` | `glm-5.2` | 39 | `50.54` | `3.91` | word:30|punctuation:3|expanded_negation_word:2|sentence_boundary:2|style_function_word:1|whitespace:1 |
+| `L24:310` | `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` | `gpt-5.5` | 56 | `79.11` | `5.11` | word:46|punctuation:5|style_function_word:3|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:310` | `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` | `glm-5.2` | 31 | `46.60` | `5.64` | word:23|style_function_word:6|punctuation:1|discourse_marker_word:1 |
+| `L24:310` | `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` | `glm-5.2` | 34 | `56.46` | `5.15` | word:30|expanded_negation_word:2|punctuation:2 |
+| `L24:310` | `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 25 | `36.19` | `5.12` | word:23|punctuation:1|style_function_word:1 |
+| `L24:310` | `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` | `glm-5.2` | 63 | `101.51` | `5.49` | word:54|expanded_negation_word:3|style_function_word:3|punctuation:2|discourse_marker_word:1 |
+| `L24:310` | `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 49 | `64.72` | `5.29` | word:38|style_function_word:3|sentence_boundary:3|punctuation:3|line_break:1|discourse_marker_word:1 |
+| `L24:310` | `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 40 | `53.52` | `5.12` | word:31|expanded_negation_word:4|style_function_word:3|punctuation:2 |
+
+## Top Tokens
+
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `434` activation `4.099` class `word` token ` to`
+  - come your way. Remember those big dreams you had to travel the world? Well, get ready to make
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `557` activation `3.477` class `word` token ` want`
+  - into an amazing person. Storms may come that want you to give up, but remember this: you
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `513` activation `2.749` class `word` token ` future`
+  - others with kindness and love. Some advice for the future: embrace the unknown and take risks. Face your
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `429` activation `2.631` class `style_function_word` token ` those`
+  - know what fantastic opportunities might come your way. Remember those big dreams you had to travel the world? Well
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `451` activation `2.435` class `punctuation` token `,`
+  - get ready to make them happen! You'll travel, see beautiful places, and experience different cultures. Even
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `558` activation `2.406` class `word` token ` you`
+  - an amazing person. Storms may come that want you to give up, but remember this: you are
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `540` activation `2.346` class `word` token ` both`
+  - life that doesn't make you happy. Remember, both good and bad times shape you into an amazing person
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `615` activation `2.277` class `word` token `You`
+  - , and live a life that excites you. You're awesome, 21-year-old me. Get
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `556` activation `2.274` class `style_function_word` token ` that`
+  - you into an amazing person. Storms may come that want you to give up, but remember this:
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `565` activation `2.210` class `style_function_word` token ` this`
+  - come that want you to give up, but remember this: you are strong. You will weather those storms
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `336` activation `2.178` class `word` token ` You`
+  - officially an adult, but let's be honest, You're still young and have so much to learn and
+- `L19:1556` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `486` activation `2.124` class `word` token ` important`
+  - and work hard, The people you meet will be important. Surround yourself with those who support and inspire you
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `533` activation `4.075` class `word` token ` seem`
+  - that can help us in the future. Whether you seem to constantly fail in personal relationships or with clients at
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `571` activation `2.423` class `word` token ` being`
+  - what went wrong and why. This will take you being honest with yourself. It might also help you to
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `592` activation `2.027` class `word` token ` of`
+  - make notes in a journal. Think about these aspects of the failure: • Exactly what went wrong? •
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `570` activation `1.804` class `word` token ` you`
+  - examine what went wrong and why. This will take you being honest with yourself. It might also help you
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `589` activation `1.759` class `word` token ` about`
+  - help you to make notes in a journal. Think about these aspects of the failure: • Exactly what went
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `534` activation `1.726` class `word` token ` to`
+  - can help us in the future. Whether you seem to constantly fail in personal relationships or with clients at work
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `485` activation `1.605` class `word` token ` something`
+  - what kind of mistake you make, there’s always something to learn from it. Many times, we’re
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `547` activation `1.595` class `word` token ` way`
+  - in personal relationships or with clients at work, one way you can begin to turn your failures around is to
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `606` activation `1.561` class `word` token ` to`
+  - • Exactly what went wrong? • Was one person to blame more than another? • How did you react
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `591` activation `1.519` class `word` token ` aspects`
+  - to make notes in a journal. Think about these aspects of the failure: • Exactly what went wrong?
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `582` activation `1.489` class `style_function_word` token ` make`
+  - honest with yourself. It might also help you to make notes in a journal. Think about these aspects of
+- `L19:1556` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `590` activation `1.453` class `style_function_word` token ` these`
+  - you to make notes in a journal. Think about these aspects of the failure: • Exactly what went wrong
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `502` activation `5.172` class `word` token ` are`
+  - their unique abilities is both imaginative and thrilling. These are the qualities that give the Ben 10 series a
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `548` activation `3.098` class `word` token ` Ben`
+  - added complexity and depth to the show’s narrative. Ben’s grandfather Max (David Kaye) and his
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `523` activation `3.091` class `word` token ` is`
+  - sense of novelty and unpredictability. Further, Ben is a likable and relatable protagonist. His interactions
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `503` activation `3.076` class `word` token ` the`
+  - unique abilities is both imaginative and thrilling. These are the qualities that give the Ben 10 series a sense
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `592` activation `2.879` class `word` token ` contender`
+  - . The original Ben 10 was also a top contender for excellent animation. The designs for different aliens were
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `594` activation `2.720` class `word` token ` excellent`
+  - original Ben 10 was also a top contender for excellent animation. The designs for different aliens were imaginative and
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `621` activation `2.642` class `word` token ` Using`
+  - the action sequences were visually stunning and fast-paced. Using bright colors and bold character designs helped the cartoon series
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `591` activation `2.517` class `word` token ` top`
+  - series. The original Ben 10 was also a top contender for excellent animation. The designs for different aliens
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `504` activation `2.467` class `word` token ` qualities`
+  - abilities is both imaginative and thrilling. These are the qualities that give the Ben 10 series a sense of
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `522` activation `2.422` class `word` token ` Ben`
+  - a sense of novelty and unpredictability. Further, Ben is a likable and relatable protagonist. His
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `457` activation `2.381` class `word` token `Some`
+  - watch-like device transforms him into various alien creatures. Some strengths of the show include its creative premise, which
+- `L19:1556` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `631` activation `2.369` class `word` token ` series`
+  - Using bright colors and bold character designs helped the cartoon series stand out from others of its time.
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `631` activation `4.183` class `word` token ` your`
+  - two if the room has enough lighting, or don your bathroom shelves with figurines or artwork.
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `632` activation `2.455` class `word` token ` bathroom`
+  - if the room has enough lighting, or don your bathroom shelves with figurines or artwork.
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `633` activation `1.589` class `word` token ` shelves`
+  - the room has enough lighting, or don your bathroom shelves with figurines or artwork.
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `577` activation `1.279` class `word` token ` bathroom`
+  - that looks great and is easier to use with some bathroom organization products. This can include baskets, drawer organizers
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `433` activation `1.105` class `style_function_word` token ` can`
+  - , then getting new towels will feel great. They can also make your bathroom look cleaner, especially if your
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `541` activation `1.079` class `word` token ` new`
+  - brush holders. Choose styles and colors that complement your new towels and shower curtain to tie the look together.
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `623` activation `0.907` class `word` token ` the`
+  - on the walls, add a plant or two if the room has enough lighting, or don your bathroom shelves
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `444` activation `0.896` class `word` token ` towels`
+  - also make your bathroom look cleaner, especially if your towels are stored in a visible area. Replace your shower
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `376` activation `0.805` class `word` token ` the`
+  - Do you want to refresh the look of your bathroom? No problem! Here are
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `432` activation `0.789` class `word` token ` They`
+  - out, then getting new towels will feel great. They can also make your bathroom look cleaner, especially if
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `489` activation `0.772` class `word` token ` old`
+  - of your space. Don't forget to replace the old curtain liner, too! Update bathroom accessories: Sometimes
+- `L19:1556` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `515` activation `0.726` class `word` token ` rods`
+  - the difference. Get a new shower rod, towel rods, toilet paper dispenser, shower caddies,
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `635` activation `4.526` class `style_function_word` token ` will`
+  - aches just writing this down. I wish I will see you again.
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `548` activation `2.634` class `word` token ` large`
+  - me. Our eyes locked for what felt like a large eternity. In that exact suspended second, bathed
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `636` activation `2.505` class `word` token ` see`
+  - ches just writing this down. I wish I will see you again.
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `637` activation `2.283` class `word` token ` you`
+  - just writing this down. I wish I will see you again.
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `517` activation `2.115` class `word` token `an`
+  - dark hair across her face. She didn't groan or brush it away annoyed; she just smiled,
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `388` activation `1.949` class `style_function_word` token ` that`
+  - the edge of the town botanical garden. The air that evening was crisp, carrying that faint, earthy
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `553` activation `1.945` class `word` token ` exact`
+  - for what felt like a large eternity. In that exact suspended second, bathed in the fading amber light
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `470` activation `1.822` class `expanded_negation_word` token ` was`
+  - blestones. Then, I saw her. Clara was sitting on a nearby stone wall, laughing softly at
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `564` activation `1.788` class `word` token ` with`
+  - suspended second, bathed in the fading amber light with the sound of rustling leaves around us, I
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `522` activation `1.689` class `word` token ` annoyed`
+  - . She didn't groan or brush it away annoyed; she just smiled, tucked it behind her ear
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `614` activation `1.579` class `word` token ` before`
+  - She gathered her things and walked away into the twilight before I ever found the courage to speak. My chest
+- `L19:1556` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `605` activation `1.477` class `word` token ` gathered`
+  - fell in love today. I fell hard. She gathered her things and walked away into the twilight before I
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `486` activation `4.046` class `word` token ` two`
+  - weight exercises, like squats and push-ups, two or three times a week to build metabolically active
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `400` activation `2.008` class `word` token ` Often`
+  - weight loss. Don't forget to stay hydrated! Often, our bodies confuse thirst with hunger. Keep a
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `487` activation `2.005` class `word` token ` or`
+  - exercises, like squats and push-ups, two or three times a week to build metabolically active muscle
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `376` activation `1.995` class `word` token ` Protein`
+  - and complex carbohydrates like quinoa or sweet potatoes. Protein is especially crucial—it keeps you feeling full and preserves
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `533` activation `1.875` class `expanded_negation_word` token `Never`
+  - . Lifestyle: Prioritize Sleep and Stress Never underestimate the power of sleep. Poor sleep disrupts
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `377` activation `1.745` class `word` token ` is`
+  - complex carbohydrates like quinoa or sweet potatoes. Protein is especially crucial—it keeps you feeling full and preserves muscle
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `399` activation `1.586` class `sentence_boundary` token `!`
+  - during weight loss. Don't forget to stay hydrated! Often, our bodies confuse thirst with hunger. Keep
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `274` activation `1.478` class `word` token ` Daily`
+  - Sustainable Weight Loss: Practical Daily Changes for a Healthier You Are you tired
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `282` activation `1.442` class `word` token `Are`
+  - : Practical Daily Changes for a Healthier You Are you tired of crash diets that leave you exhausted?
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `397` activation `1.396` class `word` token ` stay`
+  - muscle mass during weight loss. Don't forget to stay hydrated! Often, our bodies confuse thirst with hunger
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `408` activation `1.332` class `sentence_boundary` token `.`
+  - hydrated! Often, our bodies confuse thirst with hunger. Keep a reusable water bottle handy and sip consistently throughout
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `499` activation `1.332` class `word` token ` Most`
+  - times a week to build metabolically active muscle. Most importantly, find activities you genuinely enjoy. Dancing,
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `597` activation `4.075` class `word` token ` one`
+  - . Set realistic goals, track progress in more than one way, and celebrate improvements in energy, strength,
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `595` activation `3.149` class `word` token ` more`
+  - healthy meal. Set realistic goals, track progress in more than one way, and celebrate improvements in energy,
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `487` activation `2.258` class `style_function_word` token ` when`
+  - to get 7–9 hours of quality sleep when possible. A consistent bedtime, less screen time before
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `598` activation `2.138` class `word` token ` way`
+  - Set realistic goals, track progress in more than one way, and celebrate improvements in energy, strength, mood
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `309` activation `1.982` class `word` token ` foods`
+  - can keep you full and energized. Protein from foods like eggs, fish, tofu, beans, Greek
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `308` activation `1.912` class `word` token ` from`
+  - salad can keep you full and energized. Protein from foods like eggs, fish, tofu, beans,
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `596` activation `1.541` class `word` token ` than`
+  - meal. Set realistic goals, track progress in more than one way, and celebrate improvements in energy, strength
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `468` activation `1.525` class `word` token ` low`
+  - Poor sleep can increase hunger, cravings, and low energy, making weight loss harder. Try to get
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `427` activation `1.523` class `discourse_marker_word` token ` For`
+  - breaks, or doing household chores all add up. For structured exercise, aim for a mix of cardio and
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `490` activation `1.450` class `word` token ` A`
+  - 7–9 hours of quality sleep when possible. A consistent bedtime, less screen time before bed, and
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `429` activation `1.395` class `word` token ` exercise`
+  - or doing household chores all add up. For structured exercise, aim for a mix of cardio and strength training
+- `L19:1556` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `319` activation `1.389` class `word` token ` Greek`
+  - foods like eggs, fish, tofu, beans, Greek yogurt, and lean meats helps support muscle and manage
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `607` activation `4.271` class `word` token ` you`
+  - recognize your magic. You are alive, and that you get another day to experience the world. Let’s
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `608` activation `2.787` class `word` token ` get`
+  - your magic. You are alive, and that you get another day to experience the world. Let’s cherish
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `468` activation `1.673` class `punctuation` token `,`
+  - feel an overwhelming sense of gratitude for this wildly beautiful, chaotic, and imperfect journey. I am grateful for
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `465` activation `1.556` class `style_function_word` token ` this`
+  - pause. I feel an overwhelming sense of gratitude for this wildly beautiful, chaotic, and imperfect journey. I
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `527` activation `1.516` class `word` token ` how`
+  - in my mind and the tears that taught me exactly how to grow. Every twist, every turn, and
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `584` activation `1.485` class `style_function_word` token ` If`
+  - dance in the rain and loving every single drop. If you are reading this, I hope you take a
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `466` activation `1.426` class `word` token ` wildly`
+  - . I feel an overwhelming sense of gratitude for this wildly beautiful, chaotic, and imperfect journey. I am
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `551` activation `1.398` class `style_function_word` token ` this`
+  - our has led me to this exact moment. And this moment is an absolute gift. Life is not about
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `457` activation `1.293` class `word` token ` I`
+  - alive. Today, I am taking that pause. I feel an overwhelming sense of gratitude for this wildly beautiful
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `524` activation `1.273` class `word` token ` taught`
+  - laughter that echoes in my mind and the tears that taught me exactly how to grow. Every twist, every
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `519` activation `1.273` class `word` token ` mind`
+  - I am thankful for the laughter that echoes in my mind and the tears that taught me exactly how to grow
+- `L19:1556` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `528` activation `1.223` class `word` token ` to`
+  - my mind and the tears that taught me exactly how to grow. Every twist, every turn, and every
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `546` activation `4.192` class `word` token `.modified`
+  - frequencies, adjusting knobs based entirely on how intensely the.modified floorboards trembled against his skin. He couldn
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `429` activation `3.230` class `word` token `ging`
+  - city’s underground battle of the bands, where hedging bets were high and audiences were brutally honest. Julian
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `430` activation `2.813` class `word` token ` bets`
+  - ’s underground battle of the bands, where hedging bets were high and audiences were brutally honest. Julian entered
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `573` activation `2.545` class `word` token ` two`
+  - he felt the stamping, thunderous vibration of two thousand people jumping in unison. The floor shook
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `603` activation `2.000` class `word` token ` speaking`
+  - crashing against his shins. He smiled, finally speaking their language. He wasn't just a man left
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `423` activation `1.616` class `word` token ` of`
+  - . His ultimate goal was the city’s underground battle of the bands, where hedging bets were high and
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `586` activation `1.595` class `word` token ` endlessly`
+  - jumping in unison. The floor shook violently, endlessly, a physical wave of emotion crashing against his sh
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `268` activation `1.421` class `expanded_negation_word` token ` could`
+  - musician. The concept invited endless ridicule from those who could hear. How can a deaf man play? they
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `613` activation `1.418` class `word` token ` left`
+  - speaking their language. He wasn't just a man left out of the world of sound; he was the
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `607` activation `1.405` class `word` token ` He`
+  - ins. He smiled, finally speaking their language. He wasn't just a man left out of the world
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `631` activation `1.380` class `word` token ` the`
+  - he was the one orchestrating the vibrations, and the world was finally dancing to his beat.
+- `L19:1556` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `447` activation `1.360` class `word` token ` the`
+  - honest. Julian entered his solo electronic composition. Taking the stage in total darkness, Julian placed his bare feet
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `489` activation `3.995` class `word` token ` preparation`
+  - ing back, Kaelen realized the creature was preparation to spring again. Desperate, he ripped the
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `490` activation `2.999` class `word` token ` to`
+  - back, Kaelen realized the creature was preparation to spring again. Desperate, he ripped the heavy
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `460` activation `1.569` class `style_function_word` token ` that`
+  - beast shrieked, swinging a clawed forearm that caught Kaelen across the chest, tearing his
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `589` activation `1.537` class `word` token `ng`
+  - shuddered once and went still. Pantng, Kaelen retrieved his bloody sword. He
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `500` activation `1.217` class `word` token ` heavy`
+  - to spring again. Desperate, he ripped the heavy pouch of gold from his belt and hurled it
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `319` activation `1.114` class `word` token ` yet`
+  - heavy reminder of the life he had left above, yet he couldn't bring himself to discard it. A
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `605` activation `1.096` class `word` token ` scattered`
+  - his bloody sword. He knelt, gathered his scattered gold coins from the dirt, and looked ahead.
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `383` activation `1.090` class `word` token `K`
+  - teeth. It caught his scent and lunged. Kaelen reacted on instinct. He rolled to the
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `226` activation `1.056` class `word` token ` his`
+  - vertical maze. Kaelen had managed to pick his cell lock with a sharp splinter of bone,
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `596` activation `1.047` class `word` token ` bloody`
+  - . Pantng, Kaelen retrieved his bloody sword. He knelt, gathered his scattered gold
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `597` activation `1.046` class `word` token ` sword`
+  - Pantng, Kaelen retrieved his bloody sword. He knelt, gathered his scattered gold coins
+- `L19:1556` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `415` activation `1.031` class `discourse_marker_word` token ` second`
+  - beast crashed into the wall where he had stood a second before. Scrambling to his feet, K
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `531` activation `4.215` class `word` token ` highly`
+  - keeping most of my runs at a conversational, highly relaxed pace, I ensure that I actually look forward
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `587` activation `3.160` class `word` token ` am`
+  - Ultimately, my approach to running perfectly mirrors how I am trying to live my life: intentionally, curiously
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `366` activation `2.655` class `word` token ` it`
+  - have learned to listen to my body’s whispers so it never has to scream. Another cornerstone of my approach
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `540` activation `2.228` class `word` token ` look`
+  - , highly relaxed pace, I ensure that I actually look forward to doing it again the very next day.
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `368` activation `2.139` class `word` token ` has`
+  - to listen to my body’s whispers so it never has to scream. Another cornerstone of my approach is curiosity
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `588` activation `2.106` class `word` token ` trying`
+  - , my approach to running perfectly mirrors how I am trying to live my life: intentionally, curiously,
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `583` activation `2.103` class `word` token ` perfectly`
+  - dreading tomorrow. Ultimately, my approach to running perfectly mirrors how I am trying to live my life:
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `567` activation `1.930` class `word` token ` terrible`
+  - manageable miles comfortably than suffer through a fast-paced, terrible three miles that leaves me dreading tomorrow. Ultimately
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `367` activation `1.889` class `expanded_negation_word` token ` never`
+  - learned to listen to my body’s whispers so it never has to scream. Another cornerstone of my approach is
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `302` activation `1.856` class `word` token ` Some`
+  - the movement. Instead, I practice intuitive running. Some days, my legs feel light, and my lungs
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `488` activation `1.757` class `word` token ` want`
+  - the power of consistency over intensity. I do not want running to be a grueling chore lurking on my
+- `L19:1556` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `243` activation `1.755` class `word` token ` We`
+  - simple: run by feel, not by numbers. We live in a world obsessed with metrics. We track
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `334` activation `4.420` class `word` token ` support`
+  - less water and fertilizer than non-native plants. This support local ecosystems by providing essential habitats and food sources for
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `445` activation `2.533` class `word` token ` you`
+  - rain barrel to collect runoff from your roof, which you can then use to water your garden. This simple
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `599` activation `2.060` class `sentence_boundary` token `.`
+  - unkempt, allowing leaf litter to decompose naturally. This provides critical winter shelter for beneficial insects and amphib
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `580` activation `1.716` class `sentence_boundary` token `.`
+  - and slowly enriches the earth as it breaks down. Finally, leave some areas of your yard unkempt
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `444` activation `1.705` class `style_function_word` token ` which`
+  - a rain barrel to collect runoff from your roof, which you can then use to water your garden. This
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `486` activation `1.582` class `word` token ` to`
+  - Additionally, consider creating a permeable surface for paths to allow rainwater to soak into the ground, re
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `500` activation `1.569` class `line_break` token `
+
+`
+  - to soak into the ground, recharging groundwater supplies Composting is another excellent habit that reduces landfill waste
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `357` activation `1.543` class `punctuation` token `,`
+  - inators like bees, butterflies, and hummingbirds, fostering biodiversity. Another impactful step is eliminating chemical pesticides
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `581` activation `1.489` class `discourse_marker_word` token ` Finally`
+  - slowly enriches the earth as it breaks down. Finally, leave some areas of your yard unkempt,
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `542` activation `1.485` class `word` token ` it`
+  - for synthetic fertilizers and improve soil structure, helping it retain moisture and resist erosion. Mulching around plants
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `415` activation `1.432` class `word` token `id`
+  - as introducing predatory insects like ladybugs to control aphid populations naturally. Reducing water consumption is crucial,
+- `L19:1556` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `507` activation `1.389` class `style_function_word` token ` that`
+  - charging groundwater supplies Composting is another excellent habit that reduces landfill waste while creating nutrient-rich soil amendments.
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `387` activation `4.051` class `word` token ` Really`
+  - , fragile as glass. George looked at her, Really looked at her. He saw the kindness in her
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `170` activation `1.937` class `word` token ` in`
+  - , bright, warm, and utterly out of reach in his mind. They were best friends, the kind
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `171` activation `1.782` class `word` token ` his`
+  - bright, warm, and utterly out of reach in his mind. They were best friends, the kind who
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `206` activation `1.600` class `word` token ` terrified`
+  - George remained a prisoner of his own fear. He terrified himself with scenarios where confession led to rejection, where
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `550` activation `1.502` class `word` token ` under`
+  - George. She reached out, her hand finding his under the blanket, squeezing it gently. “I was waiting
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `207` activation `1.466` class `word` token ` himself`
+  - remained a prisoner of his own fear. He terrified himself with scenarios where confession led to rejection, where the
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `441` activation `1.454` class `word` token ` at`
+  - , anchoring himself in the moment. “Not at all,” George replied, his voice steady despite the
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `157` activation `1.391` class `word` token ` to`
+  - his ribs whenever she laughed. She was the sun to his orbit, bright, warm, and utterly out
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `346` activation `1.371` class `word` token `’ve`
+  - to see through his carefully constructed defenses. “You’ve been distant lately, George,” she said softly,
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `211` activation `1.331` class `word` token ` confession`
+  - his own fear. He terrified himself with scenarios where confession led to rejection, where the comfortable warmth of their
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `256` activation `1.266` class `punctuation` token ` “`
+  - as a friend, but as a partner. But “one day” never came, and the ache of
+- `L19:1556` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `629` activation `1.226` class `word` token ` brave`
+  - her friend anymore; he was her partner, finally brave enough to claim the love he had always held.
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `434` activation `5.030` class `word` token ` to`
+  - come your way. Remember those big dreams you had to travel the world? Well, get ready to make
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `557` activation `4.264` class `word` token ` want`
+  - into an amazing person. Storms may come that want you to give up, but remember this: you
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `336` activation `3.176` class `word` token ` You`
+  - officially an adult, but let's be honest, You're still young and have so much to learn and
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `558` activation `2.895` class `word` token ` you`
+  - an amazing person. Storms may come that want you to give up, but remember this: you are
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `337` activation `2.859` class `word` token `'re`
+  - an adult, but let's be honest, You're still young and have so much to learn and experience
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `540` activation `2.849` class `word` token ` both`
+  - life that doesn't make you happy. Remember, both good and bad times shape you into an amazing person
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `556` activation `2.810` class `style_function_word` token ` that`
+  - you into an amazing person. Storms may come that want you to give up, but remember this:
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `421` activation `2.614` class `word` token ` fantastic`
+  - risks and try new things. You never know what fantastic opportunities might come your way. Remember those big dreams
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `552` activation `2.411` class `word` token `Storm`
+  - and bad times shape you into an amazing person. Storms may come that want you to give up,
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `429` activation `2.351` class `style_function_word` token ` those`
+  - know what fantastic opportunities might come your way. Remember those big dreams you had to travel the world? Well
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `513` activation `2.304` class `word` token ` future`
+  - others with kindness and love. Some advice for the future: embrace the unknown and take risks. Face your
+- `L24:310` `13b3b89107fecb88b2b47d6cb56e7860396ba91714b070bf75a54662edc3df99@turn_01@human` token `615` activation `2.086` class `word` token `You`
+  - , and live a life that excites you. You're awesome, 21-year-old me. Get
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `533` activation `5.276` class `word` token ` seem`
+  - that can help us in the future. Whether you seem to constantly fail in personal relationships or with clients at
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `570` activation `2.509` class `word` token ` you`
+  - examine what went wrong and why. This will take you being honest with yourself. It might also help you
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `571` activation `2.442` class `word` token ` being`
+  - what went wrong and why. This will take you being honest with yourself. It might also help you to
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `513` activation `2.086` class `word` token ` find`
+  - from the error that we overlook a great opportunity to find out what went wrong and glean some valuable information that
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `591` activation `1.846` class `word` token ` aspects`
+  - to make notes in a journal. Think about these aspects of the failure: • Exactly what went wrong?
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `514` activation `1.826` class `word` token ` out`
+  - the error that we overlook a great opportunity to find out what went wrong and glean some valuable information that can
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `534` activation `1.781` class `word` token ` to`
+  - can help us in the future. Whether you seem to constantly fail in personal relationships or with clients at work
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `547` activation `1.713` class `word` token ` way`
+  - in personal relationships or with clients at work, one way you can begin to turn your failures around is to
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `541` activation `1.573` class `word` token ` with`
+  - Whether you seem to constantly fail in personal relationships or with clients at work, one way you can begin to
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `580` activation `1.551` class `word` token ` you`
+  - you being honest with yourself. It might also help you to make notes in a journal. Think about these
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `510` activation `1.505` class `word` token ` great`
+  - to move on from the error that we overlook a great opportunity to find out what went wrong and glean some
+- `L24:310` `4e98be8b65df3b17c98db48820e630d604e937a58a38f7b5e44585906b71f783@turn_01@human` token `592` activation `1.496` class `word` token ` of`
+  - make notes in a journal. Think about these aspects of the failure: • Exactly what went wrong? •
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `502` activation `5.162` class `word` token ` are`
+  - their unique abilities is both imaginative and thrilling. These are the qualities that give the Ben 10 series a
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `574` activation `3.297` class `word` token ` lots`
+  - Hernandez) are two critical supporting characters that helped add lots of humor and heart to the series. The original
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `575` activation `2.811` class `word` token ` of`
+  - ) are two critical supporting characters that helped add lots of humor and heart to the series. The original Ben
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `594` activation `2.712` class `word` token ` excellent`
+  - original Ben 10 was also a top contender for excellent animation. The designs for different aliens were imaginative and
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `631` activation `2.684` class `word` token ` series`
+  - Using bright colors and bold character designs helped the cartoon series stand out from others of its time.
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `621` activation `2.613` class `word` token ` Using`
+  - the action sequences were visually stunning and fast-paced. Using bright colors and bold character designs helped the cartoon series
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `503` activation `2.594` class `word` token ` the`
+  - unique abilities is both imaginative and thrilling. These are the qualities that give the Ben 10 series a sense
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `592` activation `2.512` class `word` token ` contender`
+  - . The original Ben 10 was also a top contender for excellent animation. The designs for different aliens were
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `591` activation `2.437` class `word` token ` top`
+  - series. The original Ben 10 was also a top contender for excellent animation. The designs for different aliens
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `523` activation `2.226` class `word` token ` is`
+  - sense of novelty and unpredictability. Further, Ben is a likable and relatable protagonist. His interactions
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `630` activation `2.034` class `word` token ` cartoon`
+  - . Using bright colors and bold character designs helped the cartoon series stand out from others of its time.
+- `L24:310` `8aa0068c003b9d5fa748fb594872c709232626acd22e3cabdc402d456eee086b@turn_01@human` token `601` activation `1.879` class `word` token ` aliens`
+  - top contender for excellent animation. The designs for different aliens were imaginative and well-executed. Plus, the
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `631` activation `5.391` class `word` token ` your`
+  - two if the room has enough lighting, or don your bathroom shelves with figurines or artwork.
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `632` activation `2.335` class `word` token ` bathroom`
+  - if the room has enough lighting, or don your bathroom shelves with figurines or artwork.
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `429` activation `1.947` class `style_function_word` token ` feel`
+  - stained or worn out, then getting new towels will feel great. They can also make your bathroom look cleaner
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `623` activation `1.865` class `word` token ` the`
+  - on the walls, add a plant or two if the room has enough lighting, or don your bathroom shelves
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `624` activation `1.504` class `word` token ` room`
+  - the walls, add a plant or two if the room has enough lighting, or don your bathroom shelves with
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `633` activation `1.404` class `word` token ` shelves`
+  - the room has enough lighting, or don your bathroom shelves with figurines or artwork.
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `430` activation `1.375` class `word` token ` great`
+  - or worn out, then getting new towels will feel great. They can also make your bathroom look cleaner,
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `424` activation `1.204` class `style_function_word` token ` then`
+  - but if your towels are stained or worn out, then getting new towels will feel great. They can also
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `432` activation `1.121` class `word` token ` They`
+  - out, then getting new towels will feel great. They can also make your bathroom look cleaner, especially if
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `606` activation `1.074` class `word` token ` you`
+  - . Personalize your space with some decorative items that you love. Hang a few pictures on the walls,
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `569` activation `1.052` class `word` token ` great`
+  - bathroom cluttered? Create a cleaner space that looks great and is easier to use with some bathroom organization products
+- `L24:310` `e1904c27172f89754d51df2ea6e636442d96bb6dae6bd4b1c3cef4e89821351f@turn_01@human` token `489` activation `1.046` class `word` token ` old`
+  - of your space. Don't forget to replace the old curtain liner, too! Update bathroom accessories: Sometimes
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `635` activation `5.027` class `style_function_word` token ` will`
+  - aches just writing this down. I wish I will see you again.
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `548` activation `4.343` class `word` token ` large`
+  - me. Our eyes locked for what felt like a large eternity. In that exact suspended second, bathed
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `388` activation `3.417` class `style_function_word` token ` that`
+  - the edge of the town botanical garden. The air that evening was crisp, carrying that faint, earthy
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `517` activation `2.466` class `word` token `an`
+  - dark hair across her face. She didn't groan or brush it away annoyed; she just smiled,
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `636` activation `2.330` class `word` token ` see`
+  - ches just writing this down. I wish I will see you again.
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `470` activation `2.220` class `expanded_negation_word` token ` was`
+  - blestones. Then, I saw her. Clara was sitting on a nearby stone wall, laughing softly at
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `637` activation `2.211` class `word` token ` you`
+  - just writing this down. I wish I will see you again.
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `553` activation `2.187` class `word` token ` exact`
+  - for what felt like a large eternity. In that exact suspended second, bathed in the fading amber light
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `605` activation `2.180` class `word` token ` gathered`
+  - fell in love today. I fell hard. She gathered her things and walked away into the twilight before I
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `544` activation `2.042` class `word` token ` what`
+  - and looked right at me. Our eyes locked for what felt like a large eternity. In that exact suspended
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `614` activation `2.021` class `word` token ` before`
+  - She gathered her things and walked away into the twilight before I ever found the courage to speak. My chest
+- `L24:310` `22be996e91eac1fccf245a4afae5e6c562017a59875ef9571071ccbaef06e243@turn_01@glm-5.2` token `522` activation `1.961` class `word` token ` annoyed`
+  - . She didn't groan or brush it away annoyed; she just smiled, tucked it behind her ear
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `486` activation `3.911` class `word` token ` two`
+  - weight exercises, like squats and push-ups, two or three times a week to build metabolically active
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `400` activation `3.317` class `word` token ` Often`
+  - weight loss. Don't forget to stay hydrated! Often, our bodies confuse thirst with hunger. Keep a
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `633` activation `2.189` class `word` token ` non`
+  - , be patient with your progress, and celebrate your non-scale victories along the way!
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `377` activation `2.123` class `word` token ` is`
+  - complex carbohydrates like quinoa or sweet potatoes. Protein is especially crucial—it keeps you feeling full and preserves muscle
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `533` activation `1.988` class `expanded_negation_word` token `Never`
+  - . Lifestyle: Prioritize Sleep and Stress Never underestimate the power of sleep. Poor sleep disrupts
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `495` activation `1.895` class `word` token `ically`
+  - , two or three times a week to build metabolically active muscle. Most importantly, find activities you genuinely
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `487` activation `1.844` class `word` token ` or`
+  - exercises, like squats and push-ups, two or three times a week to build metabolically active muscle
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `624` activation `1.584` class `word` token ` be`
+  - sprint. Implement these practical tips one by one, be patient with your progress, and celebrate your non-scale
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `274` activation `1.514` class `word` token ` Daily`
+  - Sustainable Weight Loss: Practical Daily Changes for a Healthier You Are you tired
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `402` activation `1.475` class `word` token ` our`
+  - . Don't forget to stay hydrated! Often, our bodies confuse thirst with hunger. Keep a reusable water
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `433` activation `1.382` class `word` token `You`
+  - unnecessary snacking. Exercise: Move With Purpose You don't need a grueling gym schedule to see
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `397` activation `1.378` class `word` token ` stay`
+  - muscle mass during weight loss. Don't forget to stay hydrated! Often, our bodies confuse thirst with hunger
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `597` activation `5.108` class `word` token ` one`
+  - . Set realistic goals, track progress in more than one way, and celebrate improvements in energy, strength,
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `595` activation `4.596` class `word` token ` more`
+  - healthy meal. Set realistic goals, track progress in more than one way, and celebrate improvements in energy,
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `598` activation `2.562` class `word` token ` way`
+  - Set realistic goals, track progress in more than one way, and celebrate improvements in energy, strength, mood
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `309` activation `2.499` class `word` token ` foods`
+  - can keep you full and energized. Protein from foods like eggs, fish, tofu, beans, Greek
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `575` activation `2.364` class `word` token ` return`
+  - every day. It’s about building habits you can return to even after a busy weekend or a less healthy
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `239` activation `2.338` class `word` token ` enough`
+  - small daily habits that support your health and are realistic enough to maintain long term. Focus on balanced meals
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `487` activation `2.230` class `style_function_word` token ` when`
+  - to get 7–9 hours of quality sleep when possible. A consistent bedtime, less screen time before
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `271` activation `1.912` class `word` token ` is`
+  - meals around nutritious, filling foods. A simple formula is: protein + fiber-rich carbohydrates + healthy fats +
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `237` activation `1.872` class `word` token ` are`
+  - one: small daily habits that support your health and are realistic enough to maintain long term. Focus on balanced
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `429` activation `1.847` class `word` token ` exercise`
+  - or doing household chores all add up. For structured exercise, aim for a mix of cardio and strength training
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `443` activation `1.819` class `word` token ` is`
+  - a mix of cardio and strength training. Strength training is especially helpful because building muscle can support a healthier metabolism
+- `L24:310` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@gpt-5.5` token `606` activation `1.802` class `word` token ` strength`
+  - than one way, and celebrate improvements in energy, strength, mood, and confidence. Sustainable weight loss
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `607` activation `5.644` class `word` token ` you`
+  - recognize your magic. You are alive, and that you get another day to experience the world. Let’s
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `608` activation `3.775` class `word` token ` get`
+  - your magic. You are alive, and that you get another day to experience the world. Let’s cherish
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `527` activation `2.510` class `word` token ` how`
+  - in my mind and the tears that taught me exactly how to grow. Every twist, every turn, and
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `526` activation `2.103` class `word` token ` exactly`
+  - echoes in my mind and the tears that taught me exactly how to grow. Every twist, every turn,
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `466` activation `2.072` class `word` token ` wildly`
+  - . I feel an overwhelming sense of gratitude for this wildly beautiful, chaotic, and imperfect journey. I am
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `454` activation `1.929` class `style_function_word` token ` that`
+  - miracle of being alive. Today, I am taking that pause. I feel an overwhelming sense of gratitude for
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `468` activation `1.842` class `punctuation` token `,`
+  - feel an overwhelming sense of gratitude for this wildly beautiful, chaotic, and imperfect journey. I am grateful for
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `524` activation `1.700` class `word` token ` taught`
+  - laughter that echoes in my mind and the tears that taught me exactly how to grow. Every twist, every
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `465` activation `1.511` class `style_function_word` token ` this`
+  - pause. I feel an overwhelming sense of gratitude for this wildly beautiful, chaotic, and imperfect journey. I
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `485` activation `1.497` class `word` token ` lungs`
+  - I am grateful for the early mornings, for the lungs that breathe the crisp air, and for the beating
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `610` activation `1.362` class `word` token ` day`
+  - . You are alive, and that you get another day to experience the world. Let’s cherish it all
+- `L24:310` `feed38cd28becb58beb14bd0e73242db04b02fb0c9d2a1994bba408254009535@turn_01@glm-5.2` token `584` activation `1.357` class `style_function_word` token ` If`
+  - dance in the rain and loving every single drop. If you are reading this, I hope you take a
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `546` activation `5.149` class `word` token `.modified`
+  - frequencies, adjusting knobs based entirely on how intensely the.modified floorboards trembled against his skin. He couldn
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `429` activation `4.887` class `word` token `ging`
+  - city’s underground battle of the bands, where hedging bets were high and audiences were brutally honest. Julian
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `430` activation `3.372` class `word` token ` bets`
+  - ’s underground battle of the bands, where hedging bets were high and audiences were brutally honest. Julian entered
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `613` activation `2.412` class `word` token ` left`
+  - speaking their language. He wasn't just a man left out of the world of sound; he was the
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `548` activation `2.366` class `word` token `boards`
+  - adjusting knobs based entirely on how intensely the.modified floorboards trembled against his skin. He couldn't hear
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `262` activation `2.179` class `word` token ` invited`
+  - ian wanted to be a professional musician. The concept invited endless ridicule from those who could hear. How can
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `573` activation `2.176` class `word` token ` two`
+  - he felt the stamping, thunderous vibration of two thousand people jumping in unison. The floor shook
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `603` activation `1.956` class `word` token ` speaking`
+  - crashing against his shins. He smiled, finally speaking their language. He wasn't just a man left
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `423` activation `1.861` class `word` token ` of`
+  - . His ultimate goal was the city’s underground battle of the bands, where hedging bets were high and
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `160` activation `1.731` class `word` token ` bare`
+  - Julian heard music through his bare feet. Born into absolute silence, the wooden floor
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `478` activation `1.681` class `word` token ` closed`
+  - synthesizer. The crowd couldn't see his eyes closed in concentration, but they immediately felt the opening notes
+- `L24:310` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@glm-5.2` token `504` activation `1.631` class `word` token ` teeth`
+  - ated through the venue, making the air hum and teeth chatter. Julian controlled the tempo not with his ears
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `489` activation `5.116` class `word` token ` preparation`
+  - ing back, Kaelen realized the creature was preparation to spring again. Desperate, he ripped the
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `490` activation `2.922` class `word` token ` to`
+  - back, Kaelen realized the creature was preparation to spring again. Desperate, he ripped the heavy
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `589` activation `2.243` class `word` token `ng`
+  - shuddered once and went still. Pantng, Kaelen retrieved his bloody sword. He
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `535` activation `1.780` class `word` token ` nose`
+  - shock of forty heavy gold coins slamming into its sensitive nose dazed the monster. It shook its head,
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `527` activation `1.682` class `word` token ` forty`
+  - beast squarely in its snout. The shock of forty heavy gold coins slamming into its sensitive nose dazed
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `602` activation `1.465` class `punctuation` token `,`
+  - aelen retrieved his bloody sword. He knelt, gathered his scattered gold coins from the dirt, and
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `279` activation `1.446` class `word` token ` stop`
+  - hand holding his coin purse tight against his thigh to stop it from jingling. His right hand gri
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `528` activation `1.403` class `word` token ` heavy`
+  - squarely in its snout. The shock of forty heavy gold coins slamming into its sensitive nose dazed the
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `599` activation `1.384` class `word` token ` He`
+  - ng, Kaelen retrieved his bloody sword. He knelt, gathered his scattered gold coins from the
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `357` activation `1.309` class `word` token `ed`
+  - of the darkness shambled a tunnel-gorged, a mutated, blind beast with translucent skin and
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `354` activation `1.271` class `word` token ` tunnel`
+  - froze. Out of the darkness shambled a tunnel-gorged, a mutated, blind beast with
+- `L24:310` `6ef7f10dfb57333bfe29654fc0243917cdf34c0131570dbdcfa4ef6392ab247e@turn_01@gemini-3.5-flash` token `188` activation `1.233` class `word` token ` steel`
+  - , leaving Kaelen with nothing but his heavy steel broadsword, a leather pouch containing forty gold sovereign
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `531` activation `5.491` class `word` token ` highly`
+  - keeping most of my runs at a conversational, highly relaxed pace, I ensure that I actually look forward
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `587` activation `4.471` class `word` token ` am`
+  - Ultimately, my approach to running perfectly mirrors how I am trying to live my life: intentionally, curiously
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `366` activation `3.723` class `word` token ` it`
+  - have learned to listen to my body’s whispers so it never has to scream. Another cornerstone of my approach
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `540` activation `2.955` class `word` token ` look`
+  - , highly relaxed pace, I ensure that I actually look forward to doing it again the very next day.
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `567` activation `2.719` class `word` token ` terrible`
+  - manageable miles comfortably than suffer through a fast-paced, terrible three miles that leaves me dreading tomorrow. Ultimately
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `368` activation `2.682` class `word` token ` has`
+  - to listen to my body’s whispers so it never has to scream. Another cornerstone of my approach is curiosity
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `588` activation `2.600` class `word` token ` trying`
+  - , my approach to running perfectly mirrors how I am trying to live my life: intentionally, curiously,
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `625` activation `2.480` class `word` token ` in`
+  - distant finish line. I am simply putting one foot in front of the other, deeply enjoying the beautiful scenery
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `488` activation `2.345` class `word` token ` want`
+  - the power of consistency over intensity. I do not want running to be a grueling chore lurking on my
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `367` activation `2.254` class `expanded_negation_word` token ` never`
+  - learned to listen to my body’s whispers so it never has to scream. Another cornerstone of my approach is
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `365` activation `2.234` class `word` token ` so`
+  - I have learned to listen to my body’s whispers so it never has to scream. Another cornerstone of my
+- `L24:310` `bd9ad686a5dbabd61af8c3065f7a6b2ead06de92e0d0c8a0063c6e2290af44b7@turn_01@glm-5.2` token `456` activation `2.141` class `word` token `ly`
+  - over the river or how the spring blossoms vividly erupt along fences. These small observations ground me firmly
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `334` activation `5.294` class `word` token ` support`
+  - less water and fertilizer than non-native plants. This support local ecosystems by providing essential habitats and food sources for
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `445` activation `2.844` class `word` token ` you`
+  - rain barrel to collect runoff from your roof, which you can then use to water your garden. This simple
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `542` activation `2.498` class `word` token ` it`
+  - for synthetic fertilizers and improve soil structure, helping it retain moisture and resist erosion. Mulching around plants
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `459` activation `2.312` class `word` token ` pot`
+  - to water your garden. This simple practice conserves potable water and reduces stormwater runoff, which can
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `506` activation `2.017` class `word` token ` habit`
+  - recharging groundwater supplies Composting is another excellent habit that reduces landfill waste while creating nutrient-rich soil amendments
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `516` activation `1.985` class `word` token ` amendments`
+  - habit that reduces landfill waste while creating nutrient-rich soil amendments. By turning kitchen scraps and yard waste into compost
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `486` activation `1.922` class `word` token ` to`
+  - Additionally, consider creating a permeable surface for paths to allow rainwater to soak into the ground, re
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `434` activation `1.694` class `word` token ` a`
+  - crucial, especially in drought-prone areas. Install a rain barrel to collect runoff from your roof, which
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `444` activation `1.629` class `style_function_word` token ` which`
+  - a rain barrel to collect runoff from your roof, which you can then use to water your garden. This
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `507` activation `1.510` class `style_function_word` token ` that`
+  - charging groundwater supplies Composting is another excellent habit that reduces landfill waste while creating nutrient-rich soil amendments.
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `375` activation `1.488` class `word` token ` often`
+  - eliminating chemical pesticides and herbicides. These harmful substances often wash into local waterways, causing severe ecological damage
+- `L24:310` `18f3a26c048b97caea7cecc9085c5dc9dae0a90b424ab3a84fa69000fd8e08f3@turn_01@qwen3.6-35b` token `627` activation `1.450` class `word` token ` significantly`
+  - local ecosystem. By making these conscious choices, you significantly reduce your carbon footprint and create a thriving, sustainable
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `387` activation `5.119` class `word` token ` Really`
+  - , fragile as glass. George looked at her, Really looked at her. He saw the kindness in her
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `206` activation `2.854` class `word` token ` terrified`
+  - George remained a prisoner of his own fear. He terrified himself with scenarios where confession led to rejection, where
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `550` activation `2.125` class `word` token ` under`
+  - George. She reached out, her hand finding his under the blanket, squeezing it gently. “I was waiting
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `473` activation `1.839` class `word` token ` he`
+  - always been me.” He paused, gathering the courage he had buried for a decade. “Ann, I
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `537` activation `1.609` class `style_function_word` token ` that`
+  - smile spread across her face, mirroring the relief that washed over George. She reached out, her hand
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `551` activation `1.585` class `word` token ` the`
+  - . She reached out, her hand finding his under the blanket, squeezing it gently. “I was waiting for
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `207` activation `1.520` class `word` token ` himself`
+  - remained a prisoner of his own fear. He terrified himself with scenarios where confession led to rejection, where the
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `159` activation `1.513` class `word` token ` orbit`
+  - whenever she laughed. She was the sun to his orbit, bright, warm, and utterly out of reach
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `171` activation `1.488` class `word` token ` his`
+  - bright, warm, and utterly out of reach in his mind. They were best friends, the kind who
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `170` activation `1.335` class `word` token ` in`
+  - , bright, warm, and utterly out of reach in his mind. They were best friends, the kind
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `433` activation `1.330` class `word` token `oring`
+  - bled, but he took a deep breath, anchoring himself in the moment. “Not at all,”
+- `L24:310` `9460084e383589dad85ab9291f21cd0e947ca59d6c230d0602acdeb5ef76641a@turn_01@qwen3.6-35b` token `211` activation `1.303` class `word` token ` confession`
+  - his own fear. He terrified himself with scenarios where confession led to rejection, where the comfortable warmth of their

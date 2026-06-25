@@ -1,0 +1,481 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:834` | `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` | `human` | 2 | `8.21` | `5.80` | word:2 |
+| `L19:834` | `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` | `human` | 35 | `110.52` | `5.99` | word:33|style_function_word:2 |
+| `L19:834` | `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` | `human` | 5 | `19.70` | `5.93` | word:5 |
+| `L19:834` | `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` | `human` | 10 | `29.68` | `5.62` | word:10 |
+| `L19:834` | `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 8 | `28.80` | `5.69` | word:7|style_function_word:1 |
+| `L19:834` | `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` | `glm-5.2` | 4 | `15.28` | `5.51` | word:4 |
+| `L19:834` | `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 15 | `40.82` | `5.79` | word:15 |
+| `L19:834` | `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` | `glm-5.2` | 20 | `58.86` | `5.65` | word:20 |
+| `L19:834` | `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` | `glm-5.2` | 7 | `27.21` | `5.93` | word:7 |
+| `L19:834` | `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 16 | `42.26` | `5.84` | word:16 |
+| `L19:834` | `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 12 | `39.34` | `5.89` | word:12 |
+| `L19:834` | `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 15 | `42.86` | `5.71` | word:14|style_function_word:1 |
+| `L24:2349` | `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` | `human` | 7 | `15.01` | `6.79` | word:7 |
+| `L24:2349` | `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` | `human` | 35 | `143.14` | `7.60` | word:33|style_function_word:2 |
+| `L24:2349` | `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` | `human` | 5 | `24.68` | `7.25` | word:5 |
+| `L24:2349` | `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` | `human` | 11 | `40.71` | `6.92` | word:11 |
+| `L24:2349` | `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 8 | `33.66` | `6.22` | word:7|style_function_word:1 |
+| `L24:2349` | `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` | `glm-5.2` | 4 | `18.92` | `7.32` | word:4 |
+| `L24:2349` | `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 17 | `56.11` | `7.43` | word:17 |
+| `L24:2349` | `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` | `glm-5.2` | 19 | `68.24` | `6.78` | word:19 |
+| `L24:2349` | `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` | `glm-5.2` | 8 | `34.26` | `6.94` | word:8 |
+| `L24:2349` | `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 15 | `52.99` | `7.27` | word:14|style_function_word:1 |
+| `L24:2349` | `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 14 | `52.48` | `6.82` | word:14 |
+| `L24:2349` | `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 13 | `52.13` | `7.27` | word:12|style_function_word:1 |
+
+## Top Tokens
+
+- `L19:834` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `545` activation `5.798` class `word` token ` market`
+  - B. Small online retailers C. Online cryptocurrency marketplaces i. OpenBazaar ii.
+- `L19:834` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `546` activation `2.413` class `word` token `places`
+  - . Small online retailers C. Online cryptocurrency marketplaces i. OpenBazaar ii. INS
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `634` activation `5.990` class `word` token ` mouth`
+  - amazing." Michael, with a sigh of relief, mouthed "Thank you."
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `289` activation `4.957` class `word` token ` melody`
+  - But he was guided by an internal song, a melody that played in his head that manifested itself as toe
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `175` activation `4.914` class `word` token `Michael`
+  - Michael tapped his feet on the wooden floor in rhythm.
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `522` activation `4.626` class `word` token ` melody`
+  - the room and creating a tapestry of rhythm and melody. As soon as Michael finished, his wife,
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `462` activation `4.309` class `word` token ` mimic`
+  - mind with many pictures and colors; he wanted to mimic that feeling by learning more about music and playing his
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `452` activation `4.202` class `word` token ` mind`
+  - as it was playing, and it subsequently filled his mind with many pictures and colors; he wanted to mimic
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `635` activation `4.147` class `word` token `ed`
+  - ." Michael, with a sigh of relief, mouthed "Thank you."
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `306` activation `3.945` class `word` token ` match`
+  - manifested itself as toe taps and a renewed effort to match the song to piano keys. Fingers tapped keys
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `381` activation `3.869` class `word` token ` music`
+  - shorthand he invented when he first started his journey into music at 12 years old. Michael dreamed of becoming
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `230` activation `3.825` class `word` token `Michael`
+  - the piano at the other end of the room. Michael could not hear the music, since he was born
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `441` activation `3.796` class `word` token ` music`
+  - specific rhythm that caused Michael to "feel" the music as it was playing, and it subsequently filled his
+- `L19:834` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `394` activation `3.764` class `word` token ` musician`
+  - 12 years old. Michael dreamed of becoming a professional musician when he attended a concert with his parents where the
+- `L19:834` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `537` activation `5.925` class `word` token ` milk`
+  - It is also inclusive of cheeses and whole, natural milk. Of course, fresh fruits and vegetables are whole
+- `L19:834` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `625` activation `4.549` class `word` token ` muscle`
+  - in your diet, and can even help you gain muscle. Whole foods also lessen the chance of getting cancer
+- `L19:834` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `578` activation `4.264` class `word` token ` markets`
+  - the outside parameters of the grocery store, farmer's markets, and the butcher shop. Eating a whole
+- `L19:834` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `509` activation `2.514` class `word` token ` more`
+  - such as instant pasta salads, boxed desserts, and more. Whole foods include natural proteins such as chicken,
+- `L19:834` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `457` activation `2.453` class `word` token ` many`
+  - There are many diets worldwide, but a whole-food diet is one
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `623` activation `5.624` class `word` token ` meat`
+  - and steak recipes, and they even tested out some meat-smoking methods. Jimbo and Spatty could
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `352` activation `4.027` class `word` token ` mum`
+  - thought. He would spend hours in the kitchen, mumbling to himself as he prepared three meals a day
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `597` activation `3.487` class `word` token ` meals`
+  - dog, and, not least importantly, they cooked meals they typically would not cook inside. Jimbo and
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `360` activation `3.459` class `word` token ` meals`
+  - kitchen, mumbling to himself as he prepared three meals a day for everyone. As delicious as the meals
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `370` activation `3.374` class `word` token ` meals`
+  - meals a day for everyone. As delicious as the meals were, Jimbo’s family thought he should consider
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `353` activation `3.330` class `word` token `bling`
+  - . He would spend hours in the kitchen, mumbling to himself as he prepared three meals a day for
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `626` activation `3.194` class `word` token ` methods`
+  - , and they even tested out some meat-smoking methods. Jimbo and Spatty could get used to
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `625` activation `1.436` class `word` token `oking`
+  - recipes, and they even tested out some meat-smoking methods. Jimbo and Spatty could get used
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `472` activation `1.186` class `word` token ` remember`
+  - talking to himself. For as long as he could remember, Jimbo could communicate with inanimate objects and
+- `L19:834` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `628` activation `0.559` class `word` token ` Jim`
+  - they even tested out some meat-smoking methods. Jimbo and Spatty could get used to being outside
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `512` activation `5.692` class `style_function_word` token ` must`
+  - The sweetest summer day must meet its end, As frozen velvet melts upon the
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `535` activation `5.044` class `word` token ` mourn`
+  - The spoon becomes a cold, departing friend, While mournful, silent elegies are sung. A mountain
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `545` activation `4.345` class `word` token ` mountain`
+  - mournful, silent elegies are sung. A mountain peak of rich and creamy grace, Now sits reduced
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `513` activation `3.784` class `word` token ` meet`
+  - The sweetest summer day must meet its end, As frozen velvet melts upon the tongue
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `598` activation `3.502` class `word` token ` magic`
+  - , dry, and bare, A hollow shell where magic used to dwell. I linger on the taste of
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `520` activation `2.953` class `word` token ` melts`
+  - summer day must meet its end, As frozen velvet melts upon the tongue. The spoon becomes a cold,
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `564` activation `1.981` class `word` token ` more`
+  - sits reduced to one last, lonely bite. No more the chilly bliss on hands and face, The final
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `536` activation `1.503` class `word` token `ful`
+  - spoon becomes a cold, departing friend, While mournful, silent elegies are sung. A mountain peak
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` token `589` activation `5.512` class `word` token ` mouth`
+  - and watch the evening glide. Why does this final mouthful leave a grief, An aching hollow in
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` token `614` activation `4.306` class `word` token ` melting`
+  - It was a momentary, cold relief, A melting solace put to sudden rest. Now every stainless
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` token `607` activation `4.033` class `word` token ` moment`
+  - ching hollow in my glowing chest? It was a momentary, cold relief, A melting solace put
+- `L19:834` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` token `608` activation `1.425` class `word` token `ary`
+  - hollow in my glowing chest? It was a momentary, cold relief, A melting solace put to
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `462` activation `5.792` class `word` token ` mouth`
+  - How do you think it feels, being the only mouthpiece in this duo? It’s not charming;
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `377` activation `4.358` class `word` token ` mouth`
+  - squarely in the eye. Then, he opened his mouth. "Alright, listen up, you overgrown
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `556` activation `3.863` class `word` token ` mim`
+  - is larger than the venue itself. I’ve been miming my frustration for thirty years. Now, I
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `481` activation `3.779` class `word` token ` mouth`
+  - charming; it’s lonely." Penn stared, his mouth agape, a half-eaten pretzel forgotten
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `449` activation `3.667` class `word` token ` mush`
+  - filled with cotton balls, and my brain is turning mushy. How do you think it feels, being
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `617` activation `3.295` class `word` token ` match`
+  - smiled, a genuine, unsettling grin that didn't match the silence he had cherished for decades. "Welcome
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `570` activation `3.206` class `word` token ` mime`
+  - for thirty years. Now, I’m going to mime nothing. I’m going to talk. I’m
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `557` activation `3.142` class `word` token `ing`
+  - larger than the venue itself. I’ve been miming my frustration for thirty years. Now, I’m
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `511` activation `2.624` class `word` token ` mix`
+  - talk?" he stammered, feeling a strange mix of shock and immediate annoyance. "Clearly," T
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `542` activation `2.323` class `word` token ` Mostly`
+  - And I have opinions. So many of them. Mostly that your ego is larger than the venue itself.
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `450` activation `1.046` class `word` token `y`
+  - with cotton balls, and my brain is turning mushy. How do you think it feels, being the
+- `L19:834` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `389` activation `1.043` class `word` token `ster`
+  - "Alright, listen up, you overgrown hamster," Teller said, his voice raspy from
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `324` activation `5.647` class `word` token ` meal`
+  - Here are four quick, fulfilling dinner meal prep ideas perfect for a busy household: One Pan
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `488` activation `5.043` class `word` token ` meat`
+  - ball Bowls: Use frozen, fully cooked turkey meatballs to save major time. Simmer them in
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `477` activation `4.393` class `word` token ` Meat`
+  - with fiber to keep everyone full. Teriyaki Meatball Bowls: Use frozen, fully cooked turkey
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `513` activation `4.119` class `word` token ` microwave`
+  - bought teriyaki sauce. Serve over quick cooking microwave quinoa or rice packets, and add a side
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `544` activation `3.723` class `word` token `edit`
+  - takeout alternative without the hefty price tag. Mediterranean Chickpea Salad: For a refreshing
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `446` activation `3.703` class `word` token ` microwave`
+  - taco seasoning. Store this mixture in containers alongside quick microwaveable brown rice and black beans. When dinner time
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `543` activation `3.592` class `word` token `M`
+  - satisfying takeout alternative without the hefty price tag. Mediterranean Chickpea Salad: For a
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `344` activation `3.554` class `word` token ` meal`
+  - Pan Sausage and Root Vegetables: This meal requires almost zero active cooking time. Chop up sweet
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `545` activation `3.463` class `word` token `err`
+  - out alternative without the hefty price tag. Mediterranean Chickpea Salad: For a refreshing option
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `492` activation `3.251` class `word` token ` major`
+  - Use frozen, fully cooked turkey meatballs to save major time. Simmer them in a high quality store
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `441` activation `3.151` class `word` token ` mixture`
+  - peppers, and onions in taco seasoning. Store this mixture in containers alongside quick microwaveable brown rice and black
+- `L19:834` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `637` activation `3.085` class `word` token ` much`
+  - maximizing nutrition, ensuring your busy weeknights run much smoother!
+- `L19:834` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `379` activation `5.926` class `word` token ` mist`
+  - , cherry, rhubarb, plum became a mist. (2 words: Apple, cherry, rh
+- `L19:834` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `289` activation `5.388` class `word` token ` mountain`
+  - the village toughs and ruffians. A mountain built of pastry, crusts, and fruit comp
+- `L19:834` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `419` activation `3.867` class `word` token ` mighty`
+  - 2 words: The champion was slurping with a mighty zeal.) The crowd stood back, afraid to get
+- `L19:834` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `396` activation `3.479` class `word` token ` mist`
+  - , cherry, rhubarb, plum became a mist.) The champion was slurping with a mighty zeal
+- `L19:834` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `405` activation `2.950` class `word` token ` mighty`
+  - a mist.) The champion was slurping with a mighty zeal. (2 words: The champion was slur
+- `L19:834` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `513` activation `2.875` class `word` token ` minutes`
+  - eating frenzy finally slowed. (1 word: Ten minutes passed, the eating frenzy finally slowed.) The table
+- `L19:834` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `499` activation `2.724` class `word` token ` minutes`
+  - The sugar rush was starting, everybody knows.) Ten minutes passed, the eating frenzy finally slowed. (1
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `408` activation `5.838` class `word` token ` mouth`
+  - years. That’s how long he had kept his mouth shut, protecting Marco, his brother in every way
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `388` activation `4.422` class `word` token ` mir`
+  - The rain hammered against the grimy windowpane, mirroring the storm inside Elias’s mind. Ten years
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `581` activation `4.290` class `word` token ` memor`
+  - from his pocket and dialed a number he had memorized by heart. The sirens wailed in
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `412` activation `3.491` class `word` token ` Marco`
+  - how long he had kept his mouth shut, protecting Marco, his brother in every way but blood. But
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `478` activation `3.179` class `word` token ` madness`
+  - untouchable, his eyes gleaming with a madness Elias had previously ignored. It was too much.
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `443` activation `3.155` class `word` token ` Marco`
+  - by the rhythmic ticking of the clock overhead. Marco sat across from him, sharpening a knife with
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `543` activation `2.889` class `word` token ` movement`
+  - floor. Marco looked up, confused by the sudden movement. "I'm not doing it," Elias said
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `395` activation `2.850` class `word` token ` mind`
+  - windowpane, mirroring the storm inside Elias’s mind. Ten years. That’s how long he had
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `535` activation `2.250` class `word` token ` Marco`
+  - slowly, the chair scraping loudly against the floor. Marco looked up, confused by the sudden movement. "
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `389` activation `2.101` class `word` token `roring`
+  - rain hammered against the grimy windowpane, mirroring the storm inside Elias’s mind. Ten years.
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `487` activation `1.943` class `word` token ` much`
+  - a madness Elias had previously ignored. It was too much. The weight of complicity crumbled, replaced
+- `L19:834` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `561` activation `1.644` class `word` token ` Marco`
+  - ," Elias said, his voice surprisingly steady. Before Marco could react, Elias pulled the small burner phone from
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `410` activation `5.895` class `word` token ` milk`
+  - and unsweetened coconut milk. This thick, milkshake-like blend is packed with antioxidants, healthy fats
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `452` activation `4.267` class `word` token ` milk`
+  - without the sugar crash. Blend unsweetened almond milk, one tablespoon of unsweetened cocoa powder,
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `531` activation `4.133` class `word` token ` mint`
+  - one cup of chopped cucumber, a handful of fresh mint leaves, half a cup of plain, unsweet
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `339` activation `3.976` class `word` token ` milk`
+  - for a spicy kick, and unsweetened almond milk. The healthy fats from the avocado slow down fr
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `503` activation `3.836` class `word` token ` Mint`
+  - chocolatey, and packed with protein. Cucumber Mint Refresher Perfect for a hot morning, this
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `622` activation `3.627` class `word` token ` mim`
+  - and a heavy pinch of cinnamon. Cinnamon naturally mimics sweetness while helping to regulate blood sugar levels,
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `379` activation `3.566` class `word` token ` mixed`
+  - ugar fruits available. Combine a half-cup of mixed raspberries and blackberries with half an avocado,
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `511` activation `3.412` class `word` token ` morning`
+  - Cucumber Mint Refresher Perfect for a hot morning, this ultra-hydrating blend combines one
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `405` activation `3.391` class `word` token ` milk`
+  - ened vanilla protein powder, and unsweetened coconut milk. This thick, milkshake-like blend is packed
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `623` activation `1.536` class `word` token `ics`
+  - a heavy pinch of cinnamon. Cinnamon naturally mimics sweetness while helping to regulate blood sugar levels, making
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `411` activation `1.238` class `word` token `shake`
+  - unsweetened coconut milk. This thick, milkshake-like blend is packed with antioxidants, healthy fats,
+- `L19:834` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `633` activation `0.461` class `word` token ` making`
+  - ics sweetness while helping to regulate blood sugar levels, making this a perfect breakfast option.
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `517` activation `5.712` class `word` token ` mouth`
+  - to dull his brain. So, Leo kept his mouth shut, barricading himself in silence. Tonight,
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `454` activation `4.481` class `word` token ` mattress`
+  - the dried pine needle he found wedged between his mattress and headboard. He hadn’t told his parents
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `560` activation `3.910` class `style_function_word` token ` must`
+  - ceiling, fighting the heavy pull of exhaustion. He must have drifted off, because suddenly, the air grew
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `471` activation `3.640` class `word` token `Mom`
+  - ’t told his parents. How could he? “Mom, Dad, my bed travels at night.” They
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `319` activation `3.593` class `word` token ` middle`
+  - favorite pillow, but his bed was sitting in the middle of a dark, whispering forest. He had
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `380` activation `3.573` class `word` token ` middle`
+  - But then came the night he woke up in the middle of a deserted four-way intersection under a flickering
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `402` activation `3.359` class `word` token ` mar`
+  - streetlamp. Then, the night his bed was marooned on a strip of wet sand, the
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `593` activation `3.031` class `word` token ` massive`
+  - His ceiling was gone. Above him loomed the massive, rusted girders of an abandoned warehouse
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `494` activation `2.729` class `word` token ` mind`
+  - he was sleepwalking, or worse, losing his mind. They would take him to a doctor who would
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `403` activation `2.722` class `word` token `oon`
+  - lamp. Then, the night his bed was marooned on a strip of wet sand, the black
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `353` activation `2.675` class `word` token ` morning`
+  - nightmare, and fell back asleep crying. The next morning, he woke up in his own bedroom, the
+- `L19:834` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `404` activation `1.415` class `word` token `ed`
+  - . Then, the night his bed was marooned on a strip of wet sand, the black ocean
+- `L24:2349` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `545` activation `6.791` class `word` token ` market`
+  - B. Small online retailers C. Online cryptocurrency marketplaces i. OpenBazaar ii.
+- `L24:2349` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `546` activation `3.271` class `word` token `places`
+  - . Small online retailers C. Online cryptocurrency marketplaces i. OpenBazaar ii. INS
+- `L24:2349` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `438` activation `1.213` class `word` token `itt`
+  - Remittances A. How cryptocurrency remittances work B. How cryptocurrency remittances
+- `L24:2349` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `454` activation `0.966` class `word` token `itt`
+  - How cryptocurrency remittances compare to traditional cryptocurrency remittances C. Apps being built for remitt
+- `L24:2349` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `464` activation `0.962` class `word` token `itt`
+  - ittances C. Apps being built for remittances Savings A. Different from "
+- `L24:2349` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `430` activation `0.948` class `word` token `itt`
+  - selling points of Bitcoin/cryptocurrencies Remittances A. How cryptocurrency remittances work
+- `L24:2349` `a49d26c10a863648272a05516b11fb904d77872d7b739a39389ed201a3c0b22d@turn_01@human` token `447` activation `0.862` class `word` token `itt`
+  - remittances work B. How cryptocurrency remittances compare to traditional cryptocurrency remittances C
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `634` activation `7.597` class `word` token ` mouth`
+  - amazing." Michael, with a sigh of relief, mouthed "Thank you."
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `289` activation `5.641` class `word` token ` melody`
+  - But he was guided by an internal song, a melody that played in his head that manifested itself as toe
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `635` activation `5.588` class `word` token `ed`
+  - ." Michael, with a sigh of relief, mouthed "Thank you."
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `522` activation `5.493` class `word` token ` melody`
+  - the room and creating a tapestry of rhythm and melody. As soon as Michael finished, his wife,
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `452` activation `5.249` class `word` token ` mind`
+  - as it was playing, and it subsequently filled his mind with many pictures and colors; he wanted to mimic
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `175` activation `5.228` class `word` token `Michael`
+  - Michael tapped his feet on the wooden floor in rhythm.
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `381` activation `5.032` class `word` token ` music`
+  - shorthand he invented when he first started his journey into music at 12 years old. Michael dreamed of becoming
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `306` activation `4.991` class `word` token ` match`
+  - manifested itself as toe taps and a renewed effort to match the song to piano keys. Fingers tapped keys
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `469` activation `4.983` class `word` token ` music`
+  - he wanted to mimic that feeling by learning more about music and playing his own songs. Now, Michael's
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `462` activation `4.943` class `word` token ` mimic`
+  - mind with many pictures and colors; he wanted to mimic that feeling by learning more about music and playing his
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `441` activation `4.881` class `word` token ` music`
+  - specific rhythm that caused Michael to "feel" the music as it was playing, and it subsequently filled his
+- `L24:2349` `82f9abcd4d2d1eb2d5d82dcc97e12b15259ddcaf06b01a0e4aa0b050865c11f0@turn_01@human` token `235` activation `4.797` class `word` token ` music`
+  - end of the room. Michael could not hear the music, since he was born deaf. The sheet music
+- `L24:2349` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `537` activation `7.255` class `word` token ` milk`
+  - It is also inclusive of cheeses and whole, natural milk. Of course, fresh fruits and vegetables are whole
+- `L24:2349` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `625` activation `6.142` class `word` token ` muscle`
+  - in your diet, and can even help you gain muscle. Whole foods also lessen the chance of getting cancer
+- `L24:2349` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `578` activation `5.297` class `word` token ` markets`
+  - the outside parameters of the grocery store, farmer's markets, and the butcher shop. Eating a whole
+- `L24:2349` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `457` activation `4.056` class `word` token ` many`
+  - There are many diets worldwide, but a whole-food diet is one
+- `L24:2349` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `509` activation `1.932` class `word` token ` more`
+  - such as instant pasta salads, boxed desserts, and more. Whole foods include natural proteins such as chicken,
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `623` activation `6.921` class `word` token ` meat`
+  - and steak recipes, and they even tested out some meat-smoking methods. Jimbo and Spatty could
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `360` activation `5.108` class `word` token ` meals`
+  - kitchen, mumbling to himself as he prepared three meals a day for everyone. As delicious as the meals
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `597` activation `4.819` class `word` token ` meals`
+  - dog, and, not least importantly, they cooked meals they typically would not cook inside. Jimbo and
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `370` activation `4.521` class `word` token ` meals`
+  - meals a day for everyone. As delicious as the meals were, Jimbo’s family thought he should consider
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `352` activation `4.405` class `word` token ` mum`
+  - thought. He would spend hours in the kitchen, mumbling to himself as he prepared three meals a day
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `626` activation `4.404` class `word` token ` methods`
+  - , and they even tested out some meat-smoking methods. Jimbo and Spatty could get used to
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `353` activation `4.216` class `word` token `bling`
+  - . He would spend hours in the kitchen, mumbling to himself as he prepared three meals a day for
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `625` activation `2.145` class `word` token `oking`
+  - recipes, and they even tested out some meat-smoking methods. Jimbo and Spatty could get used
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `472` activation `1.853` class `word` token ` remember`
+  - talking to himself. For as long as he could remember, Jimbo could communicate with inanimate objects and
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `628` activation `1.210` class `word` token ` Jim`
+  - they even tested out some meat-smoking methods. Jimbo and Spatty could get used to being outside
+- `L24:2349` `f9a970be1d6ba3f72e9d1ead665a2e81938f8a9cb198675ccc4533128f5cab31@turn_01@human` token `510` activation `1.103` class `word` token ` Jim`
+  - was unorthodox and would concern his family, Jimbo figured he would learn to cook; this way
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `512` activation `6.221` class `style_function_word` token ` must`
+  - The sweetest summer day must meet its end, As frozen velvet melts upon the
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `535` activation `5.797` class `word` token ` mourn`
+  - The spoon becomes a cold, departing friend, While mournful, silent elegies are sung. A mountain
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `545` activation `5.216` class `word` token ` mountain`
+  - mournful, silent elegies are sung. A mountain peak of rich and creamy grace, Now sits reduced
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `513` activation `4.774` class `word` token ` meet`
+  - The sweetest summer day must meet its end, As frozen velvet melts upon the tongue
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `598` activation `4.068` class `word` token ` magic`
+  - , dry, and bare, A hollow shell where magic used to dwell. I linger on the taste of
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `520` activation `3.771` class `word` token ` melts`
+  - summer day must meet its end, As frozen velvet melts upon the tongue. The spoon becomes a cold,
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `564` activation `1.923` class `word` token ` more`
+  - sits reduced to one last, lonely bite. No more the chilly bliss on hands and face, The final
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@gemini-3.5-flash` token `536` activation `1.889` class `word` token `ful`
+  - spoon becomes a cold, departing friend, While mournful, silent elegies are sung. A mountain peak
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` token `589` activation `7.323` class `word` token ` mouth`
+  - and watch the evening glide. Why does this final mouthful leave a grief, An aching hollow in
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` token `614` activation `5.006` class `word` token ` melting`
+  - It was a momentary, cold relief, A melting solace put to sudden rest. Now every stainless
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` token `607` activation `4.839` class `word` token ` moment`
+  - ching hollow in my glowing chest? It was a momentary, cold relief, A melting solace put
+- `L24:2349` `5fff57b3917de413b348a3aad2b28a98669a252978fa581635004f4cccd9d53f@turn_01@glm-5.2` token `608` activation `1.756` class `word` token `ary`
+  - hollow in my glowing chest? It was a momentary, cold relief, A melting solace put to
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `462` activation `7.431` class `word` token ` mouth`
+  - How do you think it feels, being the only mouthpiece in this duo? It’s not charming;
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `377` activation `6.117` class `word` token ` mouth`
+  - squarely in the eye. Then, he opened his mouth. "Alright, listen up, you overgrown
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `481` activation `5.107` class `word` token ` mouth`
+  - charming; it’s lonely." Penn stared, his mouth agape, a half-eaten pretzel forgotten
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `449` activation `4.627` class `word` token ` mush`
+  - filled with cotton balls, and my brain is turning mushy. How do you think it feels, being
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `617` activation `4.041` class `word` token ` match`
+  - smiled, a genuine, unsettling grin that didn't match the silence he had cherished for decades. "Welcome
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `557` activation `3.862` class `word` token `ing`
+  - larger than the venue itself. I’ve been miming my frustration for thirty years. Now, I’m
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `570` activation `3.816` class `word` token ` mime`
+  - for thirty years. Now, I’m going to mime nothing. I’m going to talk. I’m
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `556` activation `3.696` class `word` token ` mim`
+  - is larger than the venue itself. I’ve been miming my frustration for thirty years. Now, I
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `542` activation `3.309` class `word` token ` Mostly`
+  - And I have opinions. So many of them. Mostly that your ego is larger than the venue itself.
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `511` activation `3.158` class `word` token ` mix`
+  - talk?" he stammered, feeling a strange mix of shock and immediate annoyance. "Clearly," T
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `607` activation `1.862` class `word` token ` smiled`
+  - . And I’m never shutting up again." He smiled, a genuine, unsettling grin that didn't match
+- `L24:2349` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@qwen3.6-35b` token `424` activation `1.659` class `word` token ` finished`
+  - "I am done. I am absolutely, positively finished with the silence. It’s exhausting. My throat
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `324` activation `6.778` class `word` token ` meal`
+  - Here are four quick, fulfilling dinner meal prep ideas perfect for a busy household: One Pan
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `477` activation `5.625` class `word` token ` Meat`
+  - with fiber to keep everyone full. Teriyaki Meatball Bowls: Use frozen, fully cooked turkey
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `488` activation `5.577` class `word` token ` meat`
+  - ball Bowls: Use frozen, fully cooked turkey meatballs to save major time. Simmer them in
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `513` activation `4.763` class `word` token ` microwave`
+  - bought teriyaki sauce. Serve over quick cooking microwave quinoa or rice packets, and add a side
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `344` activation `4.579` class `word` token ` meal`
+  - Pan Sausage and Root Vegetables: This meal requires almost zero active cooking time. Chop up sweet
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `446` activation `4.534` class `word` token ` microwave`
+  - taco seasoning. Store this mixture in containers alongside quick microwaveable brown rice and black beans. When dinner time
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `544` activation `4.527` class `word` token `edit`
+  - takeout alternative without the hefty price tag. Mediterranean Chickpea Salad: For a refreshing
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `492` activation `4.280` class `word` token ` major`
+  - Use frozen, fully cooked turkey meatballs to save major time. Simmer them in a high quality store
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `637` activation `4.249` class `word` token ` much`
+  - maximizing nutrition, ensuring your busy weeknights run much smoother!
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `441` activation `3.841` class `word` token ` mixture`
+  - peppers, and onions in taco seasoning. Store this mixture in containers alongside quick microwaveable brown rice and black
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `545` activation `3.748` class `word` token `err`
+  - out alternative without the hefty price tag. Mediterranean Chickpea Salad: For a refreshing option
+- `L24:2349` `6baa99a448eace0c9384c3865f9f497c62446a322d7f56fec785ad6c5ffd2b82@turn_01@glm-5.2` token `546` activation `2.962` class `word` token `anean`
+  - alternative without the hefty price tag. Mediterranean Chickpea Salad: For a refreshing option that
+- `L24:2349` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `379` activation `6.942` class `word` token ` mist`
+  - , cherry, rhubarb, plum became a mist. (2 words: Apple, cherry, rh
+- `L24:2349` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `289` activation `6.324` class `word` token ` mountain`
+  - the village toughs and ruffians. A mountain built of pastry, crusts, and fruit comp
+- `L24:2349` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `419` activation `4.528` class `word` token ` mighty`
+  - 2 words: The champion was slurping with a mighty zeal.) The crowd stood back, afraid to get
+- `L24:2349` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `396` activation `4.282` class `word` token ` mist`
+  - , cherry, rhubarb, plum became a mist.) The champion was slurping with a mighty zeal
+- `L24:2349` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `405` activation `3.978` class `word` token ` mighty`
+  - a mist.) The champion was slurping with a mighty zeal. (2 words: The champion was slur
+- `L24:2349` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `513` activation `3.241` class `word` token ` minutes`
+  - eating frenzy finally slowed. (1 word: Ten minutes passed, the eating frenzy finally slowed.) The table
+- `L24:2349` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `499` activation `3.104` class `word` token ` minutes`
+  - The sugar rush was starting, everybody knows.) Ten minutes passed, the eating frenzy finally slowed. (1
+- `L24:2349` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `621` activation `1.856` class `word` token ` smiled`
+  - the cherries stained his shirt and tie.) He smiled wide, and burped, and rubbed his belly
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `408` activation `7.270` class `word` token ` mouth`
+  - years. That’s how long he had kept his mouth shut, protecting Marco, his brother in every way
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `388` activation `4.417` class `word` token ` mir`
+  - The rain hammered against the grimy windowpane, mirroring the storm inside Elias’s mind. Ten years
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `581` activation `4.221` class `word` token ` memor`
+  - from his pocket and dialed a number he had memorized by heart. The sirens wailed in
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `543` activation `4.173` class `word` token ` movement`
+  - floor. Marco looked up, confused by the sudden movement. "I'm not doing it," Elias said
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `478` activation `4.090` class `word` token ` madness`
+  - untouchable, his eyes gleaming with a madness Elias had previously ignored. It was too much.
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `412` activation `3.940` class `word` token ` Marco`
+  - how long he had kept his mouth shut, protecting Marco, his brother in every way but blood. But
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `395` activation `3.938` class `word` token ` mind`
+  - windowpane, mirroring the storm inside Elias’s mind. Ten years. That’s how long he had
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `443` activation `3.774` class `word` token ` Marco`
+  - by the rhythmic ticking of the clock overhead. Marco sat across from him, sharpening a knife with
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `535` activation `2.974` class `word` token ` Marco`
+  - slowly, the chair scraping loudly against the floor. Marco looked up, confused by the sudden movement. "
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `389` activation `2.960` class `word` token `roring`
+  - rain hammered against the grimy windowpane, mirroring the storm inside Elias’s mind. Ten years.
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `630` activation `2.581` class `word` token ` meant`
+  - the burden of secrets finally lifted, even if it meant destroying the only family he had ever known.
+- `L24:2349` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@qwen3.6-35b` token `487` activation `2.530` class `word` token ` much`
+  - a madness Elias had previously ignored. It was too much. The weight of complicity crumbled, replaced
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `410` activation `6.821` class `word` token ` milk`
+  - and unsweetened coconut milk. This thick, milkshake-like blend is packed with antioxidants, healthy fats
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `452` activation `5.324` class `word` token ` milk`
+  - without the sugar crash. Blend unsweetened almond milk, one tablespoon of unsweetened cocoa powder,
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `339` activation `5.243` class `word` token ` milk`
+  - for a spicy kick, and unsweetened almond milk. The healthy fats from the avocado slow down fr
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `531` activation `4.873` class `word` token ` mint`
+  - one cup of chopped cucumber, a handful of fresh mint leaves, half a cup of plain, unsweet
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `405` activation `4.761` class `word` token ` milk`
+  - ened vanilla protein powder, and unsweetened coconut milk. This thick, milkshake-like blend is packed
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `503` activation `4.486` class `word` token ` Mint`
+  - chocolatey, and packed with protein. Cucumber Mint Refresher Perfect for a hot morning, this
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `511` activation `4.247` class `word` token ` morning`
+  - Cucumber Mint Refresher Perfect for a hot morning, this ultra-hydrating blend combines one
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `622` activation `3.962` class `word` token ` mim`
+  - and a heavy pinch of cinnamon. Cinnamon naturally mimics sweetness while helping to regulate blood sugar levels,
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `379` activation `3.832` class `word` token ` mixed`
+  - ugar fruits available. Combine a half-cup of mixed raspberries and blackberries with half an avocado,
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `633` activation `3.546` class `word` token ` making`
+  - ics sweetness while helping to regulate blood sugar levels, making this a perfect breakfast option.
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `623` activation `1.717` class `word` token `ics`
+  - a heavy pinch of cinnamon. Cinnamon naturally mimics sweetness while helping to regulate blood sugar levels, making
+- `L24:2349` `5f6c8b70a27da0b69af2138cd09d34227f0a07b41604062c92d34400ee15c6b1@turn_01@gemini-3.5-flash` token `411` activation `1.633` class `word` token `shake`
+  - unsweetened coconut milk. This thick, milkshake-like blend is packed with antioxidants, healthy fats,
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `517` activation `7.273` class `word` token ` mouth`
+  - to dull his brain. So, Leo kept his mouth shut, barricading himself in silence. Tonight,
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `454` activation `5.473` class `word` token ` mattress`
+  - the dried pine needle he found wedged between his mattress and headboard. He hadn’t told his parents
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `560` activation `5.066` class `style_function_word` token ` must`
+  - ceiling, fighting the heavy pull of exhaustion. He must have drifted off, because suddenly, the air grew
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `319` activation `4.869` class `word` token ` middle`
+  - favorite pillow, but his bed was sitting in the middle of a dark, whispering forest. He had
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `380` activation `4.633` class `word` token ` middle`
+  - But then came the night he woke up in the middle of a deserted four-way intersection under a flickering
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `494` activation `4.011` class `word` token ` mind`
+  - he was sleepwalking, or worse, losing his mind. They would take him to a doctor who would
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `593` activation `3.883` class `word` token ` massive`
+  - His ceiling was gone. Above him loomed the massive, rusted girders of an abandoned warehouse
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `403` activation `3.798` class `word` token `oon`
+  - lamp. Then, the night his bed was marooned on a strip of wet sand, the black
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `471` activation `3.724` class `word` token `Mom`
+  - ’t told his parents. How could he? “Mom, Dad, my bed travels at night.” They
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `353` activation `3.664` class `word` token ` morning`
+  - nightmare, and fell back asleep crying. The next morning, he woke up in his own bedroom, the
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `402` activation `2.929` class `word` token ` mar`
+  - streetlamp. Then, the night his bed was marooned on a strip of wet sand, the
+- `L24:2349` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@gemini-3.5-flash` token `404` activation `1.833` class `word` token `ed`
+  - . Then, the night his bed was marooned on a strip of wet sand, the black ocean

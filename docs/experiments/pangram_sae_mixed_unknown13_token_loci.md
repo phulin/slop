@@ -1,0 +1,618 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1146` | `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` | `human` | 432 | `4784.86` | `16.70` | word:350|sentence_boundary:25|punctuation:22|style_function_word:19|discourse_marker_word:6|expanded_negation_word:6|line_break:4 |
+| `L19:1146` | `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` | `human` | 464 | `5028.25` | `17.34` | word:383|punctuation:26|expanded_negation_word:17|sentence_boundary:15|line_break:9|style_function_word:7|contraction_piece:5|discourse_marker_word:2 |
+| `L19:1146` | `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 138 | `1085.30` | `16.85` | word:107|line_break:18|punctuation:8|style_function_word:2|expanded_negation_word:2|sentence_boundary:1 |
+| `L19:1146` | `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` | `human` | 133 | `1467.43` | `15.77` | word:104|line_break:16|punctuation:4|expanded_negation_word:3|style_function_word:3|sentence_boundary:2|discourse_marker_word:1 |
+| `L19:1146` | `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` | `glm-5.2` | 546 | `5821.40` | `16.74` | word:465|punctuation:37|sentence_boundary:22|expanded_negation_word:9|style_function_word:8|discourse_marker_word:3|line_break:2 |
+| `L19:1146` | `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 469 | `5013.76` | `16.82` | word:377|sentence_boundary:42|punctuation:22|line_break:13|style_function_word:9|expanded_negation_word:5|contraction_piece:1 |
+| `L19:1146` | `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` | `human` | 112 | `1216.09` | `16.94` | word:104|punctuation:4|sentence_boundary:2|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:1146` | `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 127 | `1461.15` | `16.98` | word:96|punctuation:14|line_break:13|discourse_marker_word:1|style_function_word:1|expanded_negation_word:1|sentence_boundary:1 |
+| `L19:1146` | `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 98 | `1112.57` | `16.04` | word:74|line_break:13|punctuation:5|expanded_negation_word:2|style_function_word:2|discourse_marker_word:1|sentence_boundary:1 |
+| `L19:1146` | `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` | `human` | 91 | `1042.74` | `18.72` | word:74|line_break:10|punctuation:6|sentence_boundary:1 |
+| `L19:1146` | `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` | `glm-5.2` | 115 | `1398.43` | `17.01` | word:102|line_break:11|sentence_boundary:1|punctuation:1 |
+| `L19:1146` | `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` | `glm-5.2` | 403 | `4345.02` | `16.65` | word:298|punctuation:53|line_break:18|expanded_negation_word:13|sentence_boundary:13|discourse_marker_word:4|style_function_word:4 |
+| `L24:2940` | `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` | `human` | 432 | `8789.53` | `31.57` | word:350|sentence_boundary:25|punctuation:22|style_function_word:19|discourse_marker_word:6|expanded_negation_word:6|line_break:4 |
+| `L24:2940` | `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` | `human` | 464 | `9629.21` | `31.04` | word:383|punctuation:26|expanded_negation_word:17|sentence_boundary:15|line_break:9|style_function_word:7|contraction_piece:5|discourse_marker_word:2 |
+| `L24:2940` | `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 138 | `2284.88` | `30.87` | word:107|line_break:18|punctuation:8|style_function_word:2|expanded_negation_word:2|sentence_boundary:1 |
+| `L24:2940` | `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` | `human` | 133 | `2691.92` | `31.42` | word:104|line_break:16|punctuation:4|expanded_negation_word:3|style_function_word:3|sentence_boundary:2|discourse_marker_word:1 |
+| `L24:2940` | `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` | `glm-5.2` | 547 | `10990.13` | `31.74` | word:466|punctuation:37|sentence_boundary:22|expanded_negation_word:9|style_function_word:8|discourse_marker_word:3|line_break:2 |
+| `L24:2940` | `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 470 | `9746.73` | `31.60` | word:378|sentence_boundary:42|punctuation:22|line_break:13|style_function_word:9|expanded_negation_word:5|contraction_piece:1 |
+| `L24:2940` | `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` | `human` | 112 | `2331.59` | `31.94` | word:104|punctuation:4|sentence_boundary:2|expanded_negation_word:1|discourse_marker_word:1 |
+| `L24:2940` | `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 127 | `2581.27` | `29.20` | word:96|punctuation:14|line_break:13|discourse_marker_word:1|style_function_word:1|expanded_negation_word:1|sentence_boundary:1 |
+| `L24:2940` | `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 98 | `2082.53` | `31.56` | word:74|line_break:13|punctuation:5|expanded_negation_word:2|style_function_word:2|discourse_marker_word:1|sentence_boundary:1 |
+| `L24:2940` | `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` | `human` | 93 | `1746.04` | `32.10` | word:76|line_break:10|punctuation:6|sentence_boundary:1 |
+| `L24:2940` | `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` | `glm-5.2` | 115 | `2580.94` | `31.93` | word:102|line_break:11|sentence_boundary:1|punctuation:1 |
+| `L24:2940` | `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` | `glm-5.2` | 403 | `8498.67` | `31.51` | word:298|punctuation:53|line_break:18|expanded_negation_word:13|sentence_boundary:13|discourse_marker_word:4|style_function_word:4 |
+
+## Top Tokens
+
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `263` activation `16.696` class `word` token ` The`
+  - of the economy that he may use to prepare. The call is made for a desperate -- but not uncommon
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `297` activation `16.437` class `word` token ` is`
+  - readies himself for the difficult journey. His spawn is favorable. Knife in hand, he takes the Western
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `268` activation `16.196` class `word` token ` a`
+  - may use to prepare. The call is made for a desperate -- but not uncommon -- play. He purchases
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `295` activation `16.102` class `word` token `His`
+  - store and readies himself for the difficult journey. His spawn is favorable. Knife in hand, he takes
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `276` activation `16.021` class `sentence_boundary` token `.`
+  - made for a desperate -- but not uncommon -- play. He purchases what little he can from the store and
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `299` activation `15.990` class `sentence_boundary` token `.`
+  - himself for the difficult journey. His spawn is favorable. Knife in hand, he takes the Western path from
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `340` activation `15.653` class `word` token ` The`
+  - that all too often ends in a deadly outcome. The narrow corridor leading to the B-Site lies ahead
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `262` activation `15.564` class `sentence_boundary` token `.`
+  - way of the economy that he may use to prepare. The call is made for a desperate -- but not
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `277` activation `15.395` class `word` token ` He`
+  - for a desperate -- but not uncommon -- play. He purchases what little he can from the store and read
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `603` activation `15.325` class `word` token ` The`
+  - fills with white followed quickly by his own demise. The countdown ends as the opponents defuse the objective.
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `291` activation `15.321` class `word` token ` the`
+  - he can from the store and readies himself for the difficult journey. His spawn is favorable. Knife in
+- `L19:1146` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `211` activation `15.290` class `word` token ` the`
+  - Here we see the T-side player in his natural habitat. At his
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `560` activation `17.338` class `word` token ` The`
+  - glass jar. Beads in a closed fist. The Owen family in their blue family car. Alex could
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `552` activation `16.568` class `sentence_boundary` token `.`
+  - pushed off-road. Stones in a glass jar. Beads in a closed fist. The Owen family
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `559` activation `16.326` class `sentence_boundary` token `.`
+  - a glass jar. Beads in a closed fist. The Owen family in their blue family car. Alex
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `455` activation `16.094` class `word` token `The`
+  - , and the droplets skidded backward. The shriek was his own, the cry was his
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `604` activation `15.843` class `word` token ` The`
+  - sing through the crashes. Maybe he couldn't. The car hit a bump, flying a few feet up
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `443` activation `15.559` class `word` token ` a`
+  - and four bigger ones, an alarming shriek and a cry, and the droplets skidded backward
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `592` activation `15.555` class `word` token ` the`
+  - parents but he couldn't, maybe he could hear the radio sing through the crashes. Maybe he couldn't
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `523` activation `15.442` class `word` token ` the`
+  - bach, first by its blinding lights and then the rest of its impact. The two metallic bodies collided
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `540` activation `15.358` class `punctuation` token `,`
+  - two metallic bodies collided, and two asteroids suddenly tangent, and pushed off-road. Stones in a glass
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `529` activation `15.335` class `word` token ` The`
+  - inding lights and then the rest of its impact. The two metallic bodies collided, and two asteroids suddenly tangent
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `541` activation `15.311` class `word` token ` and`
+  - metallic bodies collided, and two asteroids suddenly tangent, and pushed off-road. Stones in a glass jar
+- `L19:1146` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `639` activation `15.199` class `sentence_boundary` token `.`
+  - flipped over and settled down, crushing everyone beneath it.
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `512` activation `16.846` class `word` token `The`
+  - When the concrete died, it left a scar. The sky, bruised by towers, bled.
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `511` activation `15.368` class `line_break` token `.
+`
+  - When the concrete died, it left a scar. The sky, bruised by towers, bled
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `509` activation `15.181` class `word` token ` a`
+  - When the concrete died, it left a scar. The sky, bruised by towers,
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `525` activation `14.806` class `word` token ` the`
+  - bruised by towers, bled. But where the road fractured, Earth clawed its way back.
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `506` activation `13.675` class `punctuation` token `,`
+  - When the concrete died, it left a scar. The sky, bruised
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `522` activation `13.673` class `line_break` token `.
+`
+  - The sky, bruised by towers, bled. But where the road fractured, Earth clawed its
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `514` activation `13.503` class `punctuation` token `,`
+  - concrete died, it left a scar. The sky, bruised by towers, bled. But where
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `507` activation `13.488` class `word` token ` it`
+  - When the concrete died, it left a scar. The sky, bruised by
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `503` activation `12.975` class `word` token ` the`
+  - When the concrete died, it left a scar. The sky
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `517` activation `12.894` class `word` token ` by`
+  - it left a scar. The sky, bruised by towers, bled. But where the road fractured
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `523` activation `11.828` class `word` token `But`
+  - sky, bruised by towers, bled. But where the road fractured, Earth clawed its way
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `508` activation `11.571` class `word` token ` left`
+  - When the concrete died, it left a scar. The sky, bruised by towers
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `634` activation `15.774` class `word` token `The`
+  - Wilderness could not understand human nor human wilderness. The drive Grew.
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `550` activation `15.774` class `word` token ` the`
+  - Earth looked like tearing apart. But the road ... the road The road wove them back together,
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `539` activation `15.678` class `word` token `The`
+  - the wild, Turned back to their concrete, The Earth looked like tearing apart. But the road ...
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `547` activation `15.331` class `word` token ` the`
+  - concrete, The Earth looked like tearing apart. But the road ... the road The road wove them
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `619` activation `15.170` class `word` token `The`
+  - and for all. A contention beyond apprehension. The drive never ceased. Wilderness could not understand human
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `553` activation `15.077` class `word` token `The`
+  - tearing apart. But the road ... the road The road wove them back together, Weaving wilderness
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `509` activation `14.766` class `punctuation` token `,`
+  - When wilderness, repulsed by humans, Turns inward to
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `591` activation `14.705` class `word` token ` the`
+  - humans cried out but with wilderness' fury. And the seam where wilderness and man joined pulled, Threat
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `580` activation `14.665` class `word` token ` the`
+  - wilderness blew but with the humans' might. And the humans cried out but with wilderness' fury. And
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `579` activation `13.667` class `word` token `And`
+  - So wilderness blew but with the humans' might. And the humans cried out but with wilderness' fury.
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `613` activation `13.571` class `word` token `A`
+  - to tear the world apart once and for all. A contention beyond apprehension. The drive never ceased.
+- `L19:1146` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `557` activation `13.441` class `word` token ` them`
+  - the road ... the road The road wove them back together, Weaving wilderness and man as one
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `122` activation `16.744` class `word` token ` the`
+  - realized he was happily freeing his hands. He watched the struggle with cheerful fascination, as an amused observer might
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `103` activation `16.453` class `word` token ` a`
+  - He became pleasantly aware of a joyful effort, noticing a delightful tingle in his wrist as he realized he
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `120` activation `15.569` class `word` token ` He`
+  - as he realized he was happily freeing his hands. He watched the struggle with cheerful fascination, as an amused
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `258` activation `15.257` class `sentence_boundary` token `.`
+  - of the tie brought a thrilling rush of pure energy. His neck felt wonderfully light; his brain was delight
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `119` activation `15.253` class `sentence_boundary` token `.`
+  - wrist as he realized he was happily freeing his hands. He watched the struggle with cheerful fascination, as an
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `104` activation `15.016` class `word` token ` delightful`
+  - became pleasantly aware of a joyful effort, noticing a delightful tingle in his wrist as he realized he was
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `336` activation `14.986` class `word` token ` the`
+  - fully with quick, downward strokes, guiding him toward the bright surface. He felt his head emerge; his
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `111` activation `14.905` class `word` token ` he`
+  - , noticing a delightful tingle in his wrist as he realized he was happily freeing his hands. He watched
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `160` activation `14.874` class `word` token ` The`
+  - Ah, what a wonderfully fine endeavor! Bravo! The cord fell away; his arms parted and floated upward
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `272` activation `14.852` class `word` token ` his`
+  - wonderfully light; his brain was delightfully awake; his heart, which had been fluttering faintly,
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `356` activation `14.816` class `word` token ` his`
+  - his eyes were bathed in the glorious sunlight; his chest expanded joyfully, and with a supremely
+- `L19:1146` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `421` activation `14.641` class `word` token ` his`
+  - delightfully alert. Something in the wonderful awakening of his system had so uplifted and refined them that they
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `207` activation `16.817` class `word` token ` The`
+  - . My tail is already operating at maximum frequency. The Tall One is opening their eyes. Success! I
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `242` activation `16.417` class `word` token ` The`
+  - . The worst event of the cycle has occurred. The Tall One put on the "outside-slippers,"
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `197` activation `15.909` class `sentence_boundary` token `.`
+  - must perform the ritual. Step, stretch, shake. My tail is already operating at maximum frequency. The
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `233` activation `15.855` class `word` token `The`
+  - from the deep sleep. 08:30 AM. The worst event of the cycle has occurred. The Tall
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `206` activation `15.595` class `sentence_boundary` token `.`
+  - shake. My tail is already operating at maximum frequency. The Tall One is opening their eyes. Success!
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `198` activation `15.555` class `word` token ` My`
+  - perform the ritual. Step, stretch, shake. My tail is already operating at maximum frequency. The Tall
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `210` activation `15.335` class `word` token ` is`
+  - is already operating at maximum frequency. The Tall One is opening their eyes. Success! I have successfully resurrect
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `195` activation `15.223` class `punctuation` token `,`
+  - . I must perform the ritual. Step, stretch, shake. My tail is already operating at maximum frequency
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `466` activation `15.183` class `word` token `The`
+  - is a noodle. 05:30 PM. The leash. The holy cord of destiny. We are
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `332` activation `15.169` class `word` token `A`
+  - monument to tragic abandonment. 12:15 PM. A false alarm. The metal slot in the door ratt
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `217` activation `15.105` class `word` token ` I`
+  - The Tall One is opening their eyes. Success! I have successfully resurrected them from the deep sleep.
+- `L19:1146` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `214` activation `15.086` class `sentence_boundary` token `.`
+  - maximum frequency. The Tall One is opening their eyes. Success! I have successfully resurrected them from the
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `556` activation `16.944` class `word` token ` the`
+  - 's Breath to the time of its overtake by the Wizard King Alexander in the era of the Soaring
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `549` activation `16.492` class `word` token ` the`
+  - convergence around the year of the Dragon's Breath to the time of its overtake by the Wizard King Alexander
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `552` activation `16.166` class `word` token ` its`
+  - year of the Dragon's Breath to the time of its overtake by the Wizard King Alexander in the era
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `564` activation `15.692` class `word` token ` the`
+  - take by the Wizard King Alexander in the era of the Soaring Eagle— the ancient realm of Ethy
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `561` activation `15.583` class `word` token ` the`
+  - of its overtake by the Wizard King Alexander in the era of the Soaring Eagle— the ancient realm
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `555` activation `14.964` class `word` token ` by`
+  - Dragon's Breath to the time of its overtake by the Wizard King Alexander in the era of the So
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `563` activation `14.848` class `word` token ` of`
+  - overtake by the Wizard King Alexander in the era of the Soaring Eagle— the ancient realm of Eth
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `569` activation `14.823` class `word` token ` the`
+  - Alexander in the era of the Soaring Eagle— the ancient realm of Ethyria was the paramount kingdom
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `589` activation `14.676` class `word` token ` the`
+  - kingdom in the known world of Miradel. From the magnificent crystal spires of the Age of Dawn through
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `604` activation `14.550` class `word` token ` the`
+  - of the Age of Dawn through the mystical battles of the Age of Dusk, Ethyria's grand
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `541` activation `14.314` class `word` token ` the`
+  - thousand cycles—from its union under the celestial convergence around the year of the Dragon's Breath to the time of
+- `L19:1146` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `600` activation `14.312` class `word` token ` the`
+  - magnificent crystal spires of the Age of Dawn through the mystical battles of the Age of Dusk, Eth
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `541` activation `16.981` class `word` token `My`
+  - ench my teeth, a warm sphere of joy. My tail beats wild drums against the air. Sprints
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `529` activation `15.904` class `word` token `I`
+  - . Soft, bright, perfect for the chase. I clench my teeth, a warm sphere of joy
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `523` activation `15.640` class `punctuation` token `,`
+  - The fuzzy sphere sings my name. Soft, bright, perfect for the chase. I clench my teeth
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `558` activation `15.300` class `word` token `I`
+  - air. Sprints blur past like green ghosts. I leap, jaws wide, catching sky. It smells
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `521` activation `15.039` class `punctuation` token `,`
+  - The fuzzy sphere sings my name. Soft, bright, perfect for the chase. I clench
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `540` activation `14.909` class `line_break` token `.
+`
+  - clench my teeth, a warm sphere of joy. My tail beats wild drums against the air. S
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `547` activation `14.824` class `word` token ` the`
+  - sphere of joy. My tail beats wild drums against the air. Sprints blur past like green ghosts.
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `538` activation `14.737` class `word` token ` of`
+  - . I clench my teeth, a warm sphere of joy. My tail beats wild drums against the air
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `535` activation `14.690` class `word` token ` a`
+  - for the chase. I clench my teeth, a warm sphere of joy. My tail beats wild drums
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `525` activation `14.491` class `discourse_marker_word` token ` for`
+  - sphere sings my name. Soft, bright, perfect for the chase. I clench my teeth, a
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `534` activation `14.299` class `punctuation` token `,`
+  - perfect for the chase. I clench my teeth, a warm sphere of joy. My tail beats wild
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `577` activation `14.135` class `word` token ` I`
+  - It smells of grass and mud and me. Now I shake it, spin, a fierce delight. No
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `560` activation `16.041` class `word` token ` the`
+  - the rug, waiting for the spark. Then, the Hand! The great wind of the throw. My
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `563` activation `15.817` class `word` token `The`
+  - waiting for the spark. Then, the Hand! The great wind of the throw. My heart beats in
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `555` activation `15.703` class `word` token ` the`
+  - Silent green planet on the rug, waiting for the spark. Then, the Hand! The great wind
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `570` activation `15.121` class `word` token `My`
+  - the Hand! The great wind of the throw. My heart beats in my paws— I fly
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `554` activation `15.101` class `discourse_marker_word` token ` for`
+  - . Silent green planet on the rug, waiting for the spark. Then, the Hand! The great
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `579` activation `15.065` class `word` token `I`
+  - . My heart beats in my paws— I fly, a blur of fur and teeth. There
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `604` activation `14.854` class `word` token `the`
+  - no future, only the bounce, the spin, the glorious scent of rubber and dirt. I catch the
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `582` activation `14.742` class `word` token ` a`
+  - beats in my paws— I fly, a blur of fur and teeth. There is no past
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `598` activation `14.570` class `word` token ` the`
+  - . There is no past, no future, only the bounce, the spin, the glorious scent of rubber
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `552` activation `14.568` class `line_break` token `,
+`
+  - It sits. Silent green planet on the rug, waiting for the spark. Then, the Hand!
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `544` activation `14.438` class `line_break` token `.
+`
+  - It sits. Silent green planet on the rug, waiting for
+- `L19:1146` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `601` activation `14.387` class `word` token ` the`
+  - no past, no future, only the bounce, the spin, the glorious scent of rubber and dirt.
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `614` activation `18.717` class `word` token ` the`
+  - communication of my generation being born, How I embraced the change from paint to pixels. I watched the painting
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `623` activation `17.993` class `word` token ` the`
+  - embraced the change from paint to pixels. I watched the painting artist mourn. The graphics faded and jaund
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `628` activation `17.915` class `word` token `The`
+  - to pixels. I watched the painting artist mourn. The graphics faded and jaundiced, Click Click Click
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `593` activation `17.386` class `word` token `The`
+  - paint colors. Paintings are non-classical. The paintings are non-modern. I saw the visual
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `621` activation `17.049` class `word` token `I`
+  - How I embraced the change from paint to pixels. I watched the painting artist mourn. The graphics faded and
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `606` activation `16.777` class `word` token ` my`
+  - non-modern. I saw the visual communication of my generation being born, How I embraced the change from
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `608` activation `16.640` class `word` token ` being`
+  - ern. I saw the visual communication of my generation being born, How I embraced the change from paint to
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `605` activation `16.428` class `word` token ` of`
+  - are non-modern. I saw the visual communication of my generation being born, How I embraced the change
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `595` activation `16.364` class `word` token ` are`
+  - . Paintings are non-classical. The paintings are non-modern. I saw the visual communication of
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `602` activation `16.200` class `word` token ` the`
+  - . The paintings are non-modern. I saw the visual communication of my generation being born, How I
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `620` activation `16.046` class `line_break` token `.
+`
+  - , How I embraced the change from paint to pixels. I watched the painting artist mourn. The graphics faded
+- `L19:1146` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `612` activation `16.034` class `word` token ` I`
+  - the visual communication of my generation being born, How I embraced the change from paint to pixels. I watched
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `612` activation `17.008` class `word` token `The`
+  - , And brings a shadow creeping cold and dark. The fading embers keep the lonely fires fed, And
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `595` activation `16.880` class `word` token ` the`
+  - reclaims the dry and dusty lakebed, Until the gentle evening lets the sun slide, And brings a
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `583` activation `16.763` class `word` token `The`
+  - I walk beside the beach and seek the shore. The water reclaims the dry and dusty lakebed,
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `565` activation `16.215` class `word` token ` the`
+  - concept of the warm and lazy noon, Wherein the peach pours out its perfect juice, I walk beside
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `617` activation `16.107` class `word` token ` the`
+  - creeping cold and dark. The fading embers keep the lonely fires fed, And crickets wake to master
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `556` activation `16.013` class `word` token ` of`
+  - lingering days dissolve in a quiet fire. A concept of the warm and lazy noon, Wherein the peach
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `636` activation `15.909` class `word` token ` the`
+  - to masterfully ride, The breezes blowing past the silent park.
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `580` activation `15.654` class `word` token ` the`
+  - perfect juice, I walk beside the beach and seek the shore. The water reclaims the dry and dusty
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `605` activation `15.603` class `word` token ` a`
+  - the gentle evening lets the sun slide, And brings a shadow creeping cold and dark. The fading embers
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `587` activation `15.399` class `word` token ` the`
+  - beach and seek the shore. The water reclaims the dry and dusty lakebed, Until the gentle evening
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `576` activation `15.350` class `word` token ` the`
+  - peach pours out its perfect juice, I walk beside the beach and seek the shore. The water reclaims
+- `L19:1146` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `554` activation `15.202` class `word` token `A`
+  - ! The lingering days dissolve in a quiet fire. A concept of the warm and lazy noon, Wherein
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `261` activation `16.649` class `word` token `They`
+  - crowd was ready for a行车 course invisible. They stared out to the picnic tables set in triplets
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `378` activation `16.519` class `word` token ` a`
+  - Apple, cherry, rhubarb, plum became a mist. (2 words: Apple, cherry,
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `426` activation `16.249` class `punctuation` token `,`
+  - ping with a mighty zeal.) The crowd stood back, afraid to get a sticky feel. (3 words
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `453` activation `16.192` class `expanded_negation_word` token ` was`
+  - afraid to get a sticky feel.) The blueberry was bursting, hitting chin and nose. (3 words
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `400` activation `16.183` class `expanded_negation_word` token ` was`
+  - ubarb, plum became a mist.) The champion was slurping with a mighty zeal. (2 words
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `422` activation `16.094` class `word` token `The`
+  - The champion was slurping with a mighty zeal.) The crowd stood back, afraid to get a sticky feel
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `398` activation `16.028` class `word` token `The`
+  - , rhubarb, plum became a mist.) The champion was slurping with a mighty zeal. (
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `249` activation `15.919` class `word` token `The`
+  - fair was vibrant, bright and loud on principle. The gathered crowd was ready for a行车 course invisible
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `314` activation `15.839` class `word` token `A`
+  - ary, delicious, large, and wonderful boat. A whistle blew, the clock began to tick and hum
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `479` activation `15.812` class `expanded_negation_word` token ` was`
+  - bursting, hitting chin and nose.) The sugar rush was starting, everybody knows. (1 word: The
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `265` activation `15.631` class `word` token ` the`
+  - a行车 course invisible. They stared out to the picnic tables set in triplets, Folding chairs
+- `L19:1146` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `450` activation `15.596` class `word` token `The`
+  - stood back, afraid to get a sticky feel.) The blueberry was bursting, hitting chin and nose.
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `268` activation `31.569` class `word` token ` a`
+  - may use to prepare. The call is made for a desperate -- but not uncommon -- play. He purchases
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `211` activation `30.811` class `word` token ` the`
+  - Here we see the T-side player in his natural habitat. At his
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `263` activation `30.786` class `word` token ` The`
+  - of the economy that he may use to prepare. The call is made for a desperate -- but not uncommon
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `254` activation `28.732` class `word` token ` the`
+  - hard luck, there is little in the way of the economy that he may use to prepare. The call
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `234` activation `28.681` class `word` token ` the`
+  - his development, he has many trials ahead, though the objective is clear. After an unfortunate stroke of hard
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `340` activation `28.659` class `word` token ` The`
+  - that all too often ends in a deadly outcome. The narrow corridor leading to the B-Site lies ahead
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `253` activation `28.586` class `word` token ` of`
+  - of hard luck, there is little in the way of the economy that he may use to prepare. The
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `297` activation `28.324` class `word` token ` is`
+  - readies himself for the difficult journey. His spawn is favorable. Knife in hand, he takes the Western
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `295` activation `28.220` class `word` token `His`
+  - store and readies himself for the difficult journey. His spawn is favorable. Knife in hand, he takes
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `267` activation `27.761` class `discourse_marker_word` token ` for`
+  - he may use to prepare. The call is made for a desperate -- but not uncommon -- play. He
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `291` activation `27.717` class `word` token ` the`
+  - he can from the store and readies himself for the difficult journey. His spawn is favorable. Knife in
+- `L24:2940` `f6c680386eb6d3b503e4c709dba9eb0ff3e4365b974ac77079ae9296bf8fdad7@turn_01@human` token `216` activation `27.408` class `word` token ` his`
+  - Here we see the T-side player in his natural habitat. At his point in his development,
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `523` activation `31.041` class `word` token ` the`
+  - bach, first by its blinding lights and then the rest of its impact. The two metallic bodies collided
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `560` activation `30.542` class `word` token ` The`
+  - glass jar. Beads in a closed fist. The Owen family in their blue family car. Alex could
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `564` activation `30.322` class `word` token ` their`
+  - ads in a closed fist. The Owen family in their blue family car. Alex could hear Jacob but he
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `517` activation `30.250` class `word` token ` its`
+  - engulfed by the black Maybach, first by its blinding lights and then the rest of its impact
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `443` activation `29.656` class `word` token ` a`
+  - and four bigger ones, an alarming shriek and a cry, and the droplets skidded backward
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `510` activation `29.527` class `word` token ` the`
+  - . Before he knew it they were engulfed by the black Maybach, first by its blinding lights
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `526` activation `29.402` class `word` token ` its`
+  - by its blinding lights and then the rest of its impact. The two metallic bodies collided, and two
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `400` activation `29.199` class `word` token ` the`
+  - his head against the cold grubby window and watched the raindrops form glassy globes as they trick
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `455` activation `29.143` class `word` token `The`
+  - , and the droplets skidded backward. The shriek was his own, the cry was his
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `447` activation `29.027` class `word` token ` the`
+  - , an alarming shriek and a cry, and the droplets skidded backward. The shriek
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `318` activation `29.010` class `word` token `'s`
+  - and she hit buttons senselessly. Despite his father's repeated consolations, she mindlessly raved
+- `L24:2940` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `417` activation `28.863` class `word` token ` A`
+  - es as they trickled down the car door. A red bicycle passed by, a wet dog in a
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `512` activation `30.866` class `word` token `The`
+  - When the concrete died, it left a scar. The sky, bruised by towers, bled.
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `525` activation `27.172` class `word` token ` the`
+  - bruised by towers, bled. But where the road fractured, Earth clawed its way back.
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `503` activation `26.965` class `word` token ` the`
+  - When the concrete died, it left a scar. The sky
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `509` activation `26.387` class `word` token ` a`
+  - When the concrete died, it left a scar. The sky, bruised by towers,
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `514` activation `25.331` class `punctuation` token `,`
+  - concrete died, it left a scar. The sky, bruised by towers, bled. But where
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `517` activation `24.751` class `word` token ` by`
+  - it left a scar. The sky, bruised by towers, bled. But where the road fractured
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `506` activation `24.611` class `punctuation` token `,`
+  - When the concrete died, it left a scar. The sky, bruised
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `507` activation `24.161` class `word` token ` it`
+  - When the concrete died, it left a scar. The sky, bruised by
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `519` activation `23.487` class `punctuation` token `,`
+  - a scar. The sky, bruised by towers, bled. But where the road fractured, Earth
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `532` activation `23.151` class `word` token ` its`
+  - . But where the road fractured, Earth clawed its way back. Out of the asphalt’s skull
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `511` activation `23.126` class `line_break` token `.
+`
+  - When the concrete died, it left a scar. The sky, bruised by towers, bled
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@gemini-3.5-flash` token `586` activation `23.016` class `word` token ` the`
+  - ailed itself to the wind’s ribs. We fled the iron grid, Dragging our heavy, slow engines,
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `550` activation `31.418` class `word` token ` the`
+  - Earth looked like tearing apart. But the road ... the road The road wove them back together,
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `553` activation `30.385` class `word` token `The`
+  - tearing apart. But the road ... the road The road wove them back together, Weaving wilderness
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `539` activation `29.523` class `word` token `The`
+  - the wild, Turned back to their concrete, The Earth looked like tearing apart. But the road ...
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `547` activation `28.445` class `word` token ` the`
+  - concrete, The Earth looked like tearing apart. But the road ... the road The road wove them
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `634` activation `27.844` class `word` token `The`
+  - Wilderness could not understand human nor human wilderness. The drive Grew.
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `619` activation `27.523` class `word` token `The`
+  - and for all. A contention beyond apprehension. The drive never ceased. Wilderness could not understand human
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `591` activation `27.399` class `word` token ` the`
+  - humans cried out but with wilderness' fury. And the seam where wilderness and man joined pulled, Threat
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `520` activation `27.139` class `word` token ` its`
+  - repulsed by humans, Turns inward to its forests, And humans, so scared of the wild
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `574` activation `26.907` class `word` token ` the`
+  - and man as one- So wilderness blew but with the humans' might. And the humans cried out but
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `613` activation `26.867` class `word` token `A`
+  - to tear the world apart once and for all. A contention beyond apprehension. The drive never ceased.
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `580` activation `26.860` class `word` token ` the`
+  - wilderness blew but with the humans' might. And the humans cried out but with wilderness' fury. And
+- `L24:2940` `2109bf5c5db973ca8ff4b138a9796e29e20be366383d585af45a84e05038ea39@turn_01@human` token `536` activation `26.187` class `word` token ` their`
+  - so scared of the wild, Turned back to their concrete, The Earth looked like tearing apart. But
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `103` activation `31.740` class `word` token ` a`
+  - He became pleasantly aware of a joyful effort, noticing a delightful tingle in his wrist as he realized he
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `122` activation `30.413` class `word` token ` the`
+  - realized he was happily freeing his hands. He watched the struggle with cheerful fascination, as an amused observer might
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `104` activation `28.953` class `word` token ` delightful`
+  - became pleasantly aware of a joyful effort, noticing a delightful tingle in his wrist as he realized he was
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `336` activation `28.617` class `word` token ` the`
+  - fully with quick, downward strokes, guiding him toward the bright surface. He felt his head emerge; his
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `129` activation `27.919` class `word` token ` an`
+  - . He watched the struggle with cheerful fascination, as an amused observer might enjoy a festive performance. What a
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `160` activation `27.622` class `word` token ` The`
+  - Ah, what a wonderfully fine endeavor! Bravo! The cord fell away; his arms parted and floated upward
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `172` activation `27.207` class `word` token ` the`
+  - fell away; his arms parted and floated upward, the hands dimly seen on each side in the glowing
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `117` activation `26.972` class `word` token ` his`
+  - in his wrist as he realized he was happily freeing his hands. He watched the struggle with cheerful fascination,
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `181` activation `26.949` class `word` token ` the`
+  - , the hands dimly seen on each side in the glowing morning light. He watched them with a new
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `527` activation `26.942` class `word` token ` the`
+  - stretching their webs from twig to twig. He noted the shimmering, prismatic rainbow colors in all the
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `406` activation `26.894` class `punctuation` token `,`
+  - possession of his physical senses. They were, indeed, miraculously keen and delightfully alert. Something in
+- `L24:2940` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@glm-5.2` token `583` activation `26.715` class `word` token ` the`
+  - of the dragonflies' gossamer wings, the happy, rhythmic strokes of the water spiders'
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `207` activation `31.600` class `word` token ` The`
+  - . My tail is already operating at maximum frequency. The Tall One is opening their eyes. Success! I
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `242` activation `31.131` class `word` token ` The`
+  - . The worst event of the cycle has occurred. The Tall One put on the "outside-slippers,"
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `233` activation `30.484` class `word` token `The`
+  - from the deep sleep. 08:30 AM. The worst event of the cycle has occurred. The Tall
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `175` activation `29.320` class `word` token `The`
+  - 06:00 AM. The great light-bringer has breached the fabric barrier.
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `198` activation `28.695` class `word` token ` My`
+  - perform the ritual. Step, stretch, shake. My tail is already operating at maximum frequency. The Tall
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `336` activation `28.511` class `word` token ` The`
+  - . 12:15 PM. A false alarm. The metal slot in the door rattled. I launched
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `210` activation `28.412` class `word` token ` is`
+  - is already operating at maximum frequency. The Tall One is opening their eyes. Success! I have successfully resurrect
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `564` activation `28.280` class `word` token `The`
+  - crunching is magnificent. 09:30 PM. The day is heavy now. My eyelids are weighted
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `288` activation `28.112` class `word` token ` the`
+  - boundary to explain the gravity of this error, but the portal remained sealed. I shall wait here, on
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `539` activation `27.975` class `word` token `The`
+  - to assert my dominance. 07:00 PM. The Brown Pebbles of Life have been deposited into the
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `332` activation `27.902` class `word` token `A`
+  - monument to tragic abandonment. 12:15 PM. A false alarm. The metal slot in the door ratt
+- `L24:2940` `53f2501ee9322b5ca11fd7252748e1e461c823b4152bd0a1583eefbe9c5ec67b@turn_01@gemini-3.5-flash` token `466` activation `27.812` class `word` token `The`
+  - is a noodle. 05:30 PM. The leash. The holy cord of destiny. We are
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `556` activation `31.942` class `word` token ` the`
+  - 's Breath to the time of its overtake by the Wizard King Alexander in the era of the Soaring
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `549` activation `31.638` class `word` token ` the`
+  - convergence around the year of the Dragon's Breath to the time of its overtake by the Wizard King Alexander
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `552` activation `30.310` class `word` token ` its`
+  - year of the Dragon's Breath to the time of its overtake by the Wizard King Alexander in the era
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `564` activation `30.296` class `word` token ` the`
+  - take by the Wizard King Alexander in the era of the Soaring Eagle— the ancient realm of Ethy
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `569` activation `30.131` class `word` token ` the`
+  - Alexander in the era of the Soaring Eagle— the ancient realm of Ethyria was the paramount kingdom
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `561` activation `29.523` class `word` token ` the`
+  - of its overtake by the Wizard King Alexander in the era of the Soaring Eagle— the ancient realm
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `563` activation `29.332` class `word` token ` of`
+  - overtake by the Wizard King Alexander in the era of the Soaring Eagle— the ancient realm of Eth
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `541` activation `28.787` class `word` token ` the`
+  - thousand cycles—from its union under the celestial convergence around the year of the Dragon's Breath to the time of
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `589` activation `28.739` class `word` token ` the`
+  - kingdom in the known world of Miradel. From the magnificent crystal spires of the Age of Dawn through
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `600` activation `28.200` class `word` token ` the`
+  - magnificent crystal spires of the Age of Dawn through the mystical battles of the Age of Dusk, Eth
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `555` activation `28.153` class `word` token ` by`
+  - Dragon's Breath to the time of its overtake by the Wizard King Alexander in the era of the So
+- `L24:2940` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@human` token `570` activation `27.058` class `word` token ` ancient`
+  - in the era of the Soaring Eagle— the ancient realm of Ethyria was the paramount kingdom in
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `541` activation `29.201` class `word` token `My`
+  - ench my teeth, a warm sphere of joy. My tail beats wild drums against the air. Sprints
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `535` activation `28.783` class `word` token ` a`
+  - for the chase. I clench my teeth, a warm sphere of joy. My tail beats wild drums
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `523` activation `27.994` class `punctuation` token `,`
+  - The fuzzy sphere sings my name. Soft, bright, perfect for the chase. I clench my teeth
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `521` activation `27.654` class `punctuation` token `,`
+  - The fuzzy sphere sings my name. Soft, bright, perfect for the chase. I clench
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `538` activation `27.320` class `word` token ` of`
+  - . I clench my teeth, a warm sphere of joy. My tail beats wild drums against the air
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `526` activation `27.129` class `word` token ` the`
+  - sings my name. Soft, bright, perfect for the chase. I clench my teeth, a warm
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `583` activation `26.795` class `word` token ` a`
+  - and me. Now I shake it, spin, a fierce delight. No one dares take it.
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `547` activation `26.682` class `word` token ` the`
+  - sphere of joy. My tail beats wild drums against the air. Sprints blur past like green ghosts.
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `554` activation `26.383` class `word` token ` like`
+  - wild drums against the air. Sprints blur past like green ghosts. I leap, jaws wide, catching
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `525` activation `26.364` class `discourse_marker_word` token ` for`
+  - sphere sings my name. Soft, bright, perfect for the chase. I clench my teeth, a
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `569` activation `26.151` class `word` token ` of`
+  - leap, jaws wide, catching sky. It smells of grass and mud and me. Now I shake it
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@qwen3.6-35b` token `534` activation `25.844` class `punctuation` token `,`
+  - perfect for the chase. I clench my teeth, a warm sphere of joy. My tail beats wild
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `563` activation `31.564` class `word` token `The`
+  - waiting for the spark. Then, the Hand! The great wind of the throw. My heart beats in
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `560` activation `30.365` class `word` token ` the`
+  - the rug, waiting for the spark. Then, the Hand! The great wind of the throw. My
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `582` activation `30.277` class `word` token ` a`
+  - beats in my paws— I fly, a blur of fur and teeth. There is no past
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `555` activation `29.544` class `word` token ` the`
+  - Silent green planet on the rug, waiting for the spark. Then, the Hand! The great wind
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `570` activation `29.019` class `word` token `My`
+  - the Hand! The great wind of the throw. My heart beats in my paws— I fly
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `567` activation `28.420` class `word` token ` the`
+  - . Then, the Hand! The great wind of the throw. My heart beats in my paws—
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `564` activation `28.337` class `word` token ` great`
+  - for the spark. Then, the Hand! The great wind of the throw. My heart beats in my
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `584` activation `28.217` class `word` token ` of`
+  - my paws— I fly, a blur of fur and teeth. There is no past, no
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `604` activation `27.842` class `word` token `the`
+  - no future, only the bounce, the spin, the glorious scent of rubber and dirt. I catch the
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `566` activation `27.290` class `word` token ` of`
+  - spark. Then, the Hand! The great wind of the throw. My heart beats in my paws
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `601` activation `26.929` class `word` token ` the`
+  - no past, no future, only the bounce, the spin, the glorious scent of rubber and dirt.
+- `L24:2940` `c572613bcc132993de7e8b683a218bf805ad971cd47bbc8ecb041bf282098689@turn_01@gemini-3.5-flash` token `554` activation `26.482` class `discourse_marker_word` token ` for`
+  - . Silent green planet on the rug, waiting for the spark. Then, the Hand! The great
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `614` activation `32.105` class `word` token ` the`
+  - communication of my generation being born, How I embraced the change from paint to pixels. I watched the painting
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `623` activation `31.111` class `word` token ` the`
+  - embraced the change from paint to pixels. I watched the painting artist mourn. The graphics faded and jaund
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `628` activation `30.619` class `word` token `The`
+  - to pixels. I watched the painting artist mourn. The graphics faded and jaundiced, Click Click Click
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `593` activation `30.367` class `word` token `The`
+  - paint colors. Paintings are non-classical. The paintings are non-modern. I saw the visual
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `608` activation `30.264` class `word` token ` being`
+  - ern. I saw the visual communication of my generation being born, How I embraced the change from paint to
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `595` activation `29.558` class `word` token ` are`
+  - . Paintings are non-classical. The paintings are non-modern. I saw the visual communication of
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `606` activation `28.874` class `word` token ` my`
+  - non-modern. I saw the visual communication of my generation being born, How I embraced the change from
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `605` activation `28.343` class `word` token ` of`
+  - are non-modern. I saw the visual communication of my generation being born, How I embraced the change
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `616` activation `28.321` class `word` token ` from`
+  - my generation being born, How I embraced the change from paint to pixels. I watched the painting artist mourn
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `602` activation `28.295` class `word` token ` the`
+  - . The paintings are non-modern. I saw the visual communication of my generation being born, How I
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `618` activation `27.705` class `word` token ` to`
+  - being born, How I embraced the change from paint to pixels. I watched the painting artist mourn. The
+- `L24:2940` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `588` activation `26.640` class `word` token ` are`
+  - the art; to the paint colors. Paintings are non-classical. The paintings are non-modern
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `583` activation `31.932` class `word` token `The`
+  - I walk beside the beach and seek the shore. The water reclaims the dry and dusty lakebed,
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `605` activation `31.542` class `word` token ` a`
+  - the gentle evening lets the sun slide, And brings a shadow creeping cold and dark. The fading embers
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `595` activation `31.495` class `word` token ` the`
+  - reclaims the dry and dusty lakebed, Until the gentle evening lets the sun slide, And brings a
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `631` activation `31.376` class `word` token `The`
+  - , And crickets wake to masterfully ride, The breezes blowing past the silent park.
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `612` activation `30.858` class `word` token `The`
+  - , And brings a shadow creeping cold and dark. The fading embers keep the lonely fires fed, And
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `565` activation `30.853` class `word` token ` the`
+  - concept of the warm and lazy noon, Wherein the peach pours out its perfect juice, I walk beside
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `556` activation `30.840` class `word` token ` of`
+  - lingering days dissolve in a quiet fire. A concept of the warm and lazy noon, Wherein the peach
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `636` activation `30.575` class `word` token ` the`
+  - to masterfully ride, The breezes blowing past the silent park.
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `576` activation `30.537` class `word` token ` the`
+  - peach pours out its perfect juice, I walk beside the beach and seek the shore. The water reclaims
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `587` activation `30.506` class `word` token ` the`
+  - beach and seek the shore. The water reclaims the dry and dusty lakebed, Until the gentle evening
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `557` activation `30.427` class `word` token ` the`
+  - days dissolve in a quiet fire. A concept of the warm and lazy noon, Wherein the peach pours
+- `L24:2940` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@glm-5.2` token `580` activation `30.251` class `word` token ` the`
+  - perfect juice, I walk beside the beach and seek the shore. The water reclaims the dry and dusty
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `249` activation `31.507` class `word` token `The`
+  - fair was vibrant, bright and loud on principle. The gathered crowd was ready for a行车 course invisible
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `314` activation `30.795` class `word` token `A`
+  - ary, delicious, large, and wonderful boat. A whistle blew, the clock began to tick and hum
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `265` activation `30.478` class `word` token ` the`
+  - a行车 course invisible. They stared out to the picnic tables set in triplets, Folding chairs
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `302` activation `30.476` class `word` token `A`
+  - pastry, crusts, and fruit compote, A sugary, delicious, large, and wonderful boat
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `291` activation `30.186` class `word` token ` of`
+  - toughs and ruffians. A mountain built of pastry, crusts, and fruit compote,
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `252` activation `30.172` class `expanded_negation_word` token ` was`
+  - , bright and loud on principle. The gathered crowd was ready for a行车 course invisible. They stared
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `288` activation `29.972` class `word` token `A`
+  - for the village toughs and ruffians. A mountain built of pastry, crusts, and fruit
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `378` activation `29.536` class `word` token ` a`
+  - Apple, cherry, rhubarb, plum became a mist. (2 words: Apple, cherry,
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `261` activation `29.329` class `word` token `They`
+  - crowd was ready for a行车 course invisible. They stared out to the picnic tables set in triplets
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `453` activation `29.222` class `expanded_negation_word` token ` was`
+  - afraid to get a sticky feel.) The blueberry was bursting, hitting chin and nose. (3 words
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `279` activation `28.774` class `word` token ` the`
+  - in triplets, Folding chairs sat waiting for the village toughs and ruffians. A mountain
+- `L24:2940` `9c98f12b3b1150b39913c04f786f1cd8f87f96791437cba123edc1760e422c13@turn_01@glm-5.2` token `422` activation `28.723` class `word` token `The`
+  - The champion was slurping with a mighty zeal.) The crowd stood back, afraid to get a sticky feel

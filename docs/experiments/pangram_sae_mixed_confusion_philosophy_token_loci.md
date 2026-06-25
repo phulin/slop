@@ -1,0 +1,1016 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1223` | `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` | `human` | 63 | `108.29` | `3.95` | word:42|punctuation:12|expanded_negation_word:6|style_function_word:1|sentence_boundary:1|line_break:1 |
+| `L19:1223` | `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 138 | `209.20` | `4.00` | word:122|punctuation:11|style_function_word:2|sentence_boundary:2|expanded_negation_word:1 |
+| `L19:1223` | `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` | `human` | 75 | `148.96` | `3.65` | word:59|punctuation:9|expanded_negation_word:2|style_function_word:2|sentence_boundary:1|discourse_marker_word:1|line_break:1 |
+| `L19:1223` | `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` | `human` | 21 | `55.38` | `4.10` | word:16|style_function_word:3|expanded_negation_word:1|line_break:1 |
+| `L19:1223` | `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` | `glm-5.2` | 102 | `255.47` | `3.98` | word:84|punctuation:10|style_function_word:4|expanded_negation_word:2|discourse_marker_word:1|line_break:1 |
+| `L19:1223` | `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 50 | `106.10` | `3.71` | word:42|punctuation:4|style_function_word:3|discourse_marker_word:1 |
+| `L19:1223` | `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 293 | `466.21` | `3.78` | word:211|line_break:33|style_function_word:21|punctuation:12|expanded_negation_word:11|discourse_marker_word:5 |
+| `L19:1223` | `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` | `human` | 30 | `36.04` | `3.51` | word:18|line_break:4|style_function_word:3|sentence_boundary:2|punctuation:1|whitespace:1|discourse_marker_word:1 |
+| `L19:1223` | `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` | `gpt-5.5` | 155 | `201.67` | `3.80` | word:119|punctuation:11|expanded_negation_word:7|sentence_boundary:7|style_function_word:7|discourse_marker_word:3|line_break:1 |
+| `L19:1223` | `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` | `gpt-5.5` | 303 | `476.96` | `4.27` | word:230|punctuation:30|sentence_boundary:16|style_function_word:15|expanded_negation_word:9|discourse_marker_word:2|line_break:1 |
+| `L19:1223` | `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` | `gpt-5.5` | 87 | `138.03` | `3.64` | word:81|punctuation:4|sentence_boundary:1|style_function_word:1 |
+| `L19:1223` | `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` | `human` | 44 | `84.49` | `3.82` | word:34|punctuation:5|line_break:5 |
+| `L19:1223` | `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` | `human` | 104 | `165.52` | `3.57` | word:80|expanded_negation_word:8|style_function_word:5|line_break:5|punctuation:4|sentence_boundary:1|discourse_marker_word:1 |
+| `L19:1223` | `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` | `human` | 111 | `185.77` | `3.46` | word:95|punctuation:9|style_function_word:4|discourse_marker_word:2|sentence_boundary:1 |
+| `L19:1223` | `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` | `human` | 42 | `58.99` | `3.54` | word:33|punctuation:5|expanded_negation_word:4 |
+| `L19:1223` | `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` | `human` | 24 | `59.51` | `3.90` | word:11|style_function_word:10|line_break:3 |
+| `L19:1223` | `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 30 | `53.34` | `3.48` | word:24|punctuation:3|style_function_word:3 |
+| `L19:1223` | `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 40 | `79.43` | `3.58` | word:28|style_function_word:4|punctuation:3|expanded_negation_word:3|discourse_marker_word:1|line_break:1 |
+| `L19:1223` | `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` | `human` | 23 | `56.01` | `3.70` | word:18|punctuation:3|style_function_word:2 |
+| `L19:1223` | `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 67 | `110.00` | `3.39` | word:54|punctuation:5|sentence_boundary:4|expanded_negation_word:2|style_function_word:1|line_break:1 |
+| `L24:3506` | `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` | `human` | 68 | `171.34` | `5.26` | word:45|punctuation:12|expanded_negation_word:6|line_break:4|style_function_word:1 |
+| `L24:3506` | `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 125 | `188.85` | `3.21` | word:108|punctuation:10|style_function_word:3|sentence_boundary:2|expanded_negation_word:1|line_break:1 |
+| `L24:3506` | `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` | `human` | 79 | `200.50` | `5.52` | word:59|punctuation:11|style_function_word:3|expanded_negation_word:2|line_break:2|discourse_marker_word:1|sentence_boundary:1 |
+| `L24:3506` | `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` | `human` | 24 | `83.50` | `5.97` | word:16|style_function_word:3|expanded_negation_word:1|punctuation:1|line_break:1|sentence_boundary:1|contraction_piece:1 |
+| `L24:3506` | `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` | `glm-5.2` | 103 | `265.60` | `4.92` | word:82|punctuation:13|style_function_word:4|expanded_negation_word:2|discourse_marker_word:1|line_break:1 |
+| `L24:3506` | `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 53 | `128.27` | `5.22` | word:40|punctuation:6|style_function_word:3|line_break:2|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:3506` | `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 270 | `516.75` | `5.72` | word:179|line_break:39|style_function_word:21|punctuation:14|expanded_negation_word:11|discourse_marker_word:5|sentence_boundary:1 |
+| `L24:3506` | `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` | `human` | 38 | `73.87` | `5.46` | word:22|style_function_word:4|line_break:4|punctuation:3|sentence_boundary:2|whitespace:1|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:3506` | `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` | `gpt-5.5` | 197 | `402.07` | `5.81` | word:152|punctuation:12|sentence_boundary:11|expanded_negation_word:7|style_function_word:7|line_break:5|discourse_marker_word:3 |
+| `L24:3506` | `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` | `gpt-5.5` | 353 | `841.25` | `5.89` | word:263|punctuation:40|sentence_boundary:18|style_function_word:16|expanded_negation_word:11|discourse_marker_word:3|line_break:2 |
+| `L24:3506` | `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` | `gpt-5.5` | 76 | `147.30` | `5.01` | word:71|punctuation:2|line_break:2|sentence_boundary:1 |
+| `L24:3506` | `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` | `human` | 62 | `136.13` | `5.54` | word:48|line_break:8|punctuation:6 |
+| `L24:3506` | `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` | `human` | 95 | `233.45` | `5.07` | word:74|expanded_negation_word:7|style_function_word:5|line_break:5|punctuation:3|sentence_boundary:1 |
+| `L24:3506` | `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` | `human` | 110 | `266.78` | `5.02` | word:83|punctuation:14|line_break:5|style_function_word:4|discourse_marker_word:2|sentence_boundary:1|whitespace:1 |
+| `L24:3506` | `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` | `human` | 50 | `106.76` | `5.23` | word:39|punctuation:6|expanded_negation_word:4|style_function_word:1 |
+| `L24:3506` | `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` | `human` | 29 | `82.49` | `5.37` | word:15|style_function_word:11|line_break:3 |
+| `L24:3506` | `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 33 | `87.66` | `5.11` | word:25|style_function_word:4|punctuation:3|sentence_boundary:1 |
+| `L24:3506` | `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 46 | `105.09` | `5.07` | word:31|punctuation:5|expanded_negation_word:3|style_function_word:3|whitespace:2|discourse_marker_word:1|line_break:1 |
+| `L24:3506` | `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` | `human` | 26 | `71.61` | `4.93` | word:21|punctuation:3|style_function_word:2 |
+| `L24:3506` | `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 70 | `167.81` | `5.30` | word:53|punctuation:6|sentence_boundary:4|expanded_negation_word:2|style_function_word:2|line_break:2|contraction_piece:1 |
+
+## Top Tokens
+
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `577` activation `3.947` class `word` token `Whether`
+  - Quoth the panda, "Nevermore." "Whether Devil or God-sent, tell me if I
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `586` activation `3.566` class `style_function_word` token ` if`
+  - "Whether Devil or God-sent, tell me if I'll ever hold the beautiful Lenore again?"
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `627` activation `3.495` class `word` token ` soul`
+  - oth the panda, "Nevermore." And my soul from beneath its dark shadow shall be lifted - never
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `635` activation `3.404` class `word` token ` lifted`
+  - And my soul from beneath its dark shadow shall be lifted - nevermore!
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `585` activation `3.337` class `word` token ` me`
+  - ." "Whether Devil or God-sent, tell me if I'll ever hold the beautiful Lenore again
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `588` activation `3.208` class `word` token `'ll`
+  - Devil or God-sent, tell me if I'll ever hold the beautiful Lenore again?" Quoth
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `633` activation `3.200` class `word` token ` shall`
+  - more." And my soul from beneath its dark shadow shall be lifted - nevermore!
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `634` activation `3.149` class `word` token ` be`
+  - ." And my soul from beneath its dark shadow shall be lifted - nevermore!
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `587` activation `3.114` class `word` token ` I`
+  - Whether Devil or God-sent, tell me if I'll ever hold the beautiful Lenore again?" Qu
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `580` activation `3.042` class `word` token ` God`
+  - panda, "Nevermore." "Whether Devil or God-sent, tell me if I'll ever hold
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `589` activation `2.974` class `word` token ` ever`
+  - or God-sent, tell me if I'll ever hold the beautiful Lenore again?" Quoth the
+- `L19:1223` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `632` activation `2.698` class `word` token ` shadow`
+  - Nevermore." And my soul from beneath its dark shadow shall be lifted - nevermore!
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `628` activation `4.002` class `word` token ` with`
+  - Your work is to discover your work, and then with all your heart to give yourself to it." –
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `627` activation `3.658` class `style_function_word` token ` then`
+  - "Your work is to discover your work, and then with all your heart to give yourself to it."
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `632` activation `3.643` class `word` token ` to`
+  - discover your work, and then with all your heart to give yourself to it." – Buddha
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `635` activation `3.628` class `word` token ` to`
+  - , and then with all your heart to give yourself to it." – Buddha
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `626` activation `3.465` class `word` token ` and`
+  - "Your work is to discover your work, and then with all your heart to give yourself to it
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `579` activation `3.349` class `word` token ` to`
+  - to discover your gift. The work of life is to develop it. The meaning of life is to give
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `631` activation `3.337` class `word` token ` heart`
+  - to discover your work, and then with all your heart to give yourself to it." – Buddha
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `634` activation `3.316` class `word` token ` yourself`
+  - work, and then with all your heart to give yourself to it." – Buddha
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `578` activation `3.300` class `word` token ` is`
+  - is to discover your gift. The work of life is to develop it. The meaning of life is to
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `625` activation `3.249` class `punctuation` token `,`
+  - Nietzsche "Your work is to discover your work, and then with all your heart to give yourself to
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `633` activation `3.203` class `word` token ` give`
+  - your work, and then with all your heart to give yourself to it." – Buddha
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `574` activation `3.180` class `word` token ` The`
+  - "The purpose of life is to discover your gift. The work of life is to develop it. The meaning
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `623` activation `3.647` class `word` token ` enough`
+  - a purpose." - Charles Dickens "It's not enough to have lived. We should be determined to live
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `624` activation `3.617` class `word` token ` to`
+  - purpose." - Charles Dickens "It's not enough to have lived. We should be determined to live for
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `629` activation `3.462` class `expanded_negation_word` token ` should`
+  - "It's not enough to have lived. We should be determined to live for something." - Winston Churchill
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `625` activation `3.386` class `word` token ` have`
+  - ." - Charles Dickens "It's not enough to have lived. We should be determined to live for something
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `627` activation `3.373` class `sentence_boundary` token `.`
+  - Charles Dickens "It's not enough to have lived. We should be determined to live for something." -
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `631` activation `3.337` class `word` token ` determined`
+  - 's not enough to have lived. We should be determined to live for something." - Winston Churchill
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `578` activation `3.317` class `word` token ` you`
+  - a pursuit that absorbs you, frees you, challenges you, or gives you a sense of meaning, joy
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `628` activation `3.300` class `word` token ` We`
+  - Dickens "It's not enough to have lived. We should be determined to live for something." - Winston
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `576` activation `3.282` class `punctuation` token `,`
+  - you discover a pursuit that absorbs you, frees you, challenges you, or gives you a sense of meaning
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `601` activation `3.198` class `word` token ` to`
+  - passion." - Terry Orlick "The best way to lengthen out our days is to walk steadily and
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `632` activation `3.067` class `word` token ` to`
+  - not enough to have lived. We should be determined to live for something." - Winston Churchill
+- `L19:1223` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `600` activation `2.961` class `word` token ` way`
+  - or passion." - Terry Orlick "The best way to lengthen out our days is to walk steadily
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `624` activation `4.102` class `word` token ` they`
+  - Gray, said, “Successful people are successful because they form the habits of doing those things that failures don
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `623` activation `3.865` class `style_function_word` token ` because`
+  - Albert Gray, said, “Successful people are successful because they form the habits of doing those things that failures
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `620` activation `3.734` class `word` token ` people`
+  - -known executive, Albert Gray, said, “Successful people are successful because they form the habits of doing those
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `633` activation `3.508` class `word` token ` failures`
+  - because they form the habits of doing those things that failures don’t like to do.”
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `631` activation `3.444` class `word` token ` things`
+  - are successful because they form the habits of doing those things that failures don’t like to do.”
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `621` activation `3.389` class `word` token ` are`
+  - executive, Albert Gray, said, “Successful people are successful because they form the habits of doing those things
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `632` activation `3.237` class `style_function_word` token ` that`
+  - successful because they form the habits of doing those things that failures don’t like to do.”
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `638` activation `3.206` class `expanded_negation_word` token ` do`
+  - of doing those things that failures don’t like to do.”
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `635` activation `3.080` class `word` token `’t`
+  - form the habits of doing those things that failures don’t like to do.”
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `629` activation `2.997` class `word` token ` doing`
+  - Successful people are successful because they form the habits of doing those things that failures don’t like to do.”
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `627` activation `2.803` class `word` token ` habits`
+  - , “Successful people are successful because they form the habits of doing those things that failures don’t like to
+- `L19:1223` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `637` activation `2.760` class `word` token ` to`
+  - habits of doing those things that failures don’t like to do.”
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `546` activation `3.980` class `expanded_negation_word` token `Not`
+  - makes your rose so important," I continued. "Not her beauty, not her rarity, but the slow
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `569` activation `3.794` class `word` token `ons`
+  - moments you squandered on her—the afternoons of waiting, the patient watering, the silences
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `438` activation `3.771` class `word` token ` It`
+  - secret, the only truth I have ever held: It is only with the heart that one can see rightly
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `553` activation `3.748` class `punctuation` token `,`
+  - continued. "Not her beauty, not her rarity, but the slow accumulation of moments you squandered
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `437` activation `3.734` class `punctuation` token `:`
+  - simple secret, the only truth I have ever held: It is only with the heart that one can see
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `554` activation `3.673` class `word` token ` but`
+  - . "Not her beauty, not her rarity, but the slow accumulation of moments you squandered on
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `550` activation `3.549` class `expanded_negation_word` token ` not`
+  - important," I continued. "Not her beauty, not her rarity, but the slow accumulation of moments you
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `429` activation `3.531` class `punctuation` token `,`
+  - now here is my secret, a very simple secret, the only truth I have ever held: It is
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `560` activation `3.490` class `word` token ` you`
+  - not her rarity, but the slow accumulation of moments you squandered on her—the afternoons of
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `439` activation `3.446` class `word` token ` is`
+  - , the only truth I have ever held: It is only with the heart that one can see rightly;
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `549` activation `3.313` class `punctuation` token `,`
+  - so important," I continued. "Not her beauty, not her rarity, but the slow accumulation of moments
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `433` activation `3.246` class `word` token ` I`
+  - secret, a very simple secret, the only truth I have ever held: It is only with the heart
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `600` activation `3.711` class `word` token `—the`
+  - It is the time you have wasted for your rose—the devotion, the frustration, the sheer weight of your
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `601` activation `3.574` class `word` token ` devotion`
+  - is the time you have wasted for your rose—the devotion, the frustration, the sheer weight of your attention
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `594` activation `3.274` class `word` token ` you`
+  - would no longer share. "It is the time you have wasted for your rose—the devotion, the frustration
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `531` activation `3.272` class `word` token ` is`
+  - heart that one can see rightly; what is essential is invisible to the eye." "What is essential is invisible
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `528` activation `3.254` class `word` token ` what`
+  - only with the heart that one can see rightly; what is essential is invisible to the eye." "What is
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `595` activation `3.191` class `word` token ` have`
+  - no longer share. "It is the time you have wasted for your rose—the devotion, the frustration,
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `523` activation `3.179` class `word` token ` one`
+  - to it: It is only with the heart that one can see rightly; what is essential is invisible to
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `527` activation `3.084` class `punctuation` token `;`
+  - is only with the heart that one can see rightly; what is essential is invisible to the eye." "What
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `529` activation `3.016` class `word` token ` is`
+  - with the heart that one can see rightly; what is essential is invisible to the eye." "What is essential
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `603` activation `2.903` class `word` token ` the`
+  - time you have wasted for your rose—the devotion, the frustration, the sheer weight of your attention—that makes
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `533` activation `2.864` class `word` token ` to`
+  - one can see rightly; what is essential is invisible to the eye." "What is essential is invisible to the
+- `L19:1223` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `530` activation `2.742` class `word` token ` essential`
+  - the heart that one can see rightly; what is essential is invisible to the eye." "What is essential is
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `381` activation `3.778` class `word` token `And`
+  - one Less crowded by the tourists’ gaze, And that has made all the difference. The wind how
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `250` activation `3.366` class `word` token ` where`
+  - looked down one as far as I could To where it bent in the undergrowth; Then took the
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `251` activation `3.242` class `word` token ` it`
+  - down one as far as I could To where it bent in the undergrowth; Then took the other
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `382` activation `3.179` class `style_function_word` token ` that`
+  - Less crowded by the tourists’ gaze, And that has made all the difference. The wind howled
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `275` activation `3.041` class `style_function_word` token `Because`
+  - as fair, And having perhaps the better claim, Because it was grassy and wanted wear; Though as
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `328` activation `3.030` class `word` token ` how`
+  - I kept the first for another day! Yet knowing how way leads on to way, I doubted if I
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `383` activation `3.028` class `word` token ` has`
+  - Less crowded by the tourists’ gaze, And that has made all the difference. The wind howled sharp
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `367` activation `2.942` class `punctuation` token `,`
+  - ages hence: Two trails diverged, and I, I took the one Less crowded by the tourists
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `263` activation `2.912` class `style_function_word` token ` as`
+  - in the undergrowth; Then took the other, as just as fair, And having perhaps the better claim
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `384` activation `2.910` class `word` token ` made`
+  - crowded by the tourists’ gaze, And that has made all the difference. The wind howled sharp through
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `268` activation `2.885` class `word` token `And`
+  - Then took the other, as just as fair, And having perhaps the better claim, Because it was grass
+- `L19:1223` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `276` activation `2.848` class `word` token ` it`
+  - fair, And having perhaps the better claim, Because it was grassy and wanted wear; Though as for
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `530` activation `3.512` class `word` token ` population`
+  - is 18.47% of the world's population. India: The population of India is 1
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `519` activation `3.258` class `style_function_word` token ` which`
+  - China is 1,439,323,776 which is 18.47% of the world's
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `528` activation `2.727` class `word` token ` world`
+  - 776 which is 18.47% of the world's population. India: The population of India is
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `493` activation `2.564` class `word` token ` listed`
+  - The population listed for the countries was collected in 2020.
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `529` activation `2.417` class `word` token `'s`
+  - which is 18.47% of the world's population. India: The population of India is
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `520` activation `1.973` class `word` token ` is`
+  - is 1,439,323,776 which is 18.47% of the world's population
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `526` activation `1.517` class `word` token ` of`
+  - 323,776 which is 18.47% of the world's population. India: The population of
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `498` activation `1.474` class `word` token ` collected`
+  - The population listed for the countries was collected in 2020. China: The population of
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `492` activation `1.313` class `word` token ` population`
+  - The population listed for the countries was collected in 2020
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `518` activation `1.181` class `word` token `776`
+  - of China is 1,439,323,776 which is 18.47% of the world
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `527` activation `1.073` class `word` token ` the`
+  - ,776 which is 18.47% of the world's population. India: The population of India
+- `L19:1223` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `612` activation `0.881` class `line_break` token `.
+`
+  - 2.83% of the world's population. Bangladesh: The population of Bangladesh is 164
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `348` activation `3.803` class `word` token ` you`
+  - been proud to be your daughter. To me, you were never just a retired naval officer. You were
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `335` activation `3.689` class `word` token ` I`
+  - through speeches, but through the life you lived. I have always been proud to be your daughter. To
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `346` activation `3.572` class `word` token ` me`
+  - have always been proud to be your daughter. To me, you were never just a retired naval officer.
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `347` activation `3.486` class `punctuation` token `,`
+  - always been proud to be your daughter. To me, you were never just a retired naval officer. You
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `312` activation `3.314` class `word` token ` and`
+  - for raising me with courage, discipline, honesty, and strength. Thank you for showing me what service means
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `311` activation `3.197` class `punctuation` token `,`
+  - you for raising me with courage, discipline, honesty, and strength. Thank you for showing me what service
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `343` activation `3.168` class `word` token ` daughter`
+  - lived. I have always been proud to be your daughter. To me, you were never just a retired
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `349` activation `3.160` class `expanded_negation_word` token ` were`
+  - proud to be your daughter. To me, you were never just a retired naval officer. You were,
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `306` activation `2.951` class `word` token ` courage`
+  - is thank you. Thank you for raising me with courage, discipline, honesty, and strength. Thank you
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `310` activation `2.903` class `word` token ` honesty`
+  - Thank you for raising me with courage, discipline, honesty, and strength. Thank you for showing me what
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `309` activation `2.888` class `punctuation` token `,`
+  - . Thank you for raising me with courage, discipline, honesty, and strength. Thank you for showing me
+- `L19:1223` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `336` activation `2.855` class `word` token ` have`
+  - speeches, but through the life you lived. I have always been proud to be your daughter. To me
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `248` activation `4.271` class `style_function_word` token ` must`
+  - . In fighting, as in life, a man must not be bound by classical patterns, rigid forms,
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `254` activation `3.771` class `word` token ` patterns`
+  - life, a man must not be bound by classical patterns, rigid forms, or fixed responses. A real
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `561` activation `3.556` class `word` token ` and`
+  - it becomes the teapot. Water can flow, and it can crash. Be water, my friend.
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `557` activation `3.507` class `word` token ` Water`
+  - a teapot, it becomes the teapot. Water can flow, and it can crash. Be water
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `249` activation `3.493` class `expanded_negation_word` token ` not`
+  - In fighting, as in life, a man must not be bound by classical patterns, rigid forms, or
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `247` activation `3.489` class `word` token ` man`
+  - -expression. In fighting, as in life, a man must not be bound by classical patterns, rigid forms
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `562` activation `3.425` class `word` token ` it`
+  - becomes the teapot. Water can flow, and it can crash. Be water, my friend. Je
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `556` activation `3.388` class `sentence_boundary` token `.`
+  - into a teapot, it becomes the teapot. Water can flow, and it can crash. Be
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `259` activation `3.347` class `word` token ` or`
+  - not be bound by classical patterns, rigid forms, or fixed responses. A real fight is alive. It
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `250` activation `3.309` class `word` token ` be`
+  - fighting, as in life, a man must not be bound by classical patterns, rigid forms, or fixed
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `257` activation `3.275` class `word` token ` forms`
+  - man must not be bound by classical patterns, rigid forms, or fixed responses. A real fight is alive
+- `L19:1223` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `258` activation `3.274` class `punctuation` token `,`
+  - must not be bound by classical patterns, rigid forms, or fixed responses. A real fight is alive.
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `147` activation `3.640` class `punctuation` token `,`
+  - night beneath the striped tent of the Midnight Marvel Circus, he cracked his silver whip and shouted until even the
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `148` activation `3.558` class `word` token ` he`
+  - beneath the striped tent of the Midnight Marvel Circus, he cracked his silver whip and shouted until even the lantern
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `135` activation `3.408` class `sentence_boundary` token `.`
+  - gold buttons and a smile sharp enough to cut rope. Every night beneath the striped tent of the Midnight Marvel
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `159` activation `3.369` class `word` token `s`
+  - cracked his silver whip and shouted until even the lanterns seemed to tremble. “Faster!” he
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `153` activation `3.337` class `word` token ` and`
+  - the Midnight Marvel Circus, he cracked his silver whip and shouted until even the lanterns seemed to tremble
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `152` activation `3.189` class `word` token ` whip`
+  - of the Midnight Marvel Circus, he cracked his silver whip and shouted until even the lanterns seemed to trem
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `137` activation `3.185` class `word` token ` night`
+  - and a smile sharp enough to cut rope. Every night beneath the striped tent of the Midnight Marvel Circus,
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `160` activation `3.140` class `word` token ` seemed`
+  - his silver whip and shouted until even the lanterns seemed to tremble. “Faster!” he b
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `161` activation `3.118` class `word` token ` to`
+  - silver whip and shouted until even the lanterns seemed to tremble. “Faster!” he barked
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `155` activation `3.113` class `word` token ` until`
+  - Marvel Circus, he cracked his silver whip and shouted until even the lanterns seemed to tremble. “
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `127` activation `3.051` class `word` token ` and`
+  - Voss wore a red velvet coat with gold buttons and a smile sharp enough to cut rope. Every night
+- `L19:1223` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `163` activation `2.951` class `word` token `ble`
+  - and shouted until even the lanterns seemed to tremble. “Faster!” he barked at L
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `581` activation `3.815` class `word` token ` to`
+  - , the original. Pay attention to the art; to the paint colors. Paintings are non-classical
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `571` activation `3.482` class `punctuation` token `,`
+  - Gently it goes - the creative, the unique, the original. Pay attention to the art; to
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `577` activation `3.409` class `word` token ` to`
+  - creative, the unique, the original. Pay attention to the art; to the paint colors. Paintings
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `578` activation `3.326` class `word` token ` the`
+  - , the unique, the original. Pay attention to the art; to the paint colors. Paintings are
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `576` activation `3.308` class `word` token ` attention`
+  - the creative, the unique, the original. Pay attention to the art; to the paint colors. Paint
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `568` activation `3.199` class `punctuation` token `,`
+  - the darkness, Gently it goes - the creative, the unique, the original. Pay attention to the
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `580` activation `2.982` class `punctuation` token `;`
+  - unique, the original. Pay attention to the art; to the paint colors. Paintings are non-class
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `569` activation `2.960` class `word` token ` the`
+  - darkness, Gently it goes - the creative, the unique, the original. Pay attention to the art
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `572` activation `2.890` class `word` token ` the`
+  - ently it goes - the creative, the unique, the original. Pay attention to the art; to the
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `582` activation `2.857` class `word` token ` the`
+  - the original. Pay attention to the art; to the paint colors. Paintings are non-classical.
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `557` activation `2.831` class `word` token ` into`
+  - is the imaginative artist? Down, down, down into the darkness, Gently it goes - the creative
+- `L19:1223` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `570` activation `2.775` class `word` token ` unique`
+  - , Gently it goes - the creative, the unique, the original. Pay attention to the art;
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `488` activation `3.566` class `style_function_word` token `When`
+  - coffers fill: Is Caesar a bad man? When the poor cried did Caesar run? No, no
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `444` activation `3.357` class `word` token ` he`
+  - to speak at his funeral. Because Brutus said he was a bad man. And Brutus is an
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `505` activation `3.321` class `word` token `But`
+  - ? No, no he wept with them. But still, Brutus to the top of his lungs
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `358` activation `3.299` class `word` token ` honor`
+  - I'm here tonight to bury Caesar, not to honor him. You see, The Rock knows that no
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `499` activation `3.282` class `word` token ` he`
+  - the poor cried did Caesar run? No, no he wept with them. But still, Brutus
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `492` activation `3.072` class `expanded_negation_word` token ` did`
+  - Is Caesar a bad man? When the poor cried did Caesar run? No, no he wept with
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `475` activation `3.012` class `expanded_negation_word` token ` did`
+  - ives here to Rome Whose ransoms did the general coffers fill: Is Caesar a bad
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `491` activation `2.952` class `word` token ` cried`
+  - : Is Caesar a bad man? When the poor cried did Caesar run? No, no he wept
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `359` activation `2.942` class `word` token ` him`
+  - 'm here tonight to bury Caesar, not to honor him. You see, The Rock knows that no matter
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `501` activation `2.936` class `word` token `pt`
+  - cried did Caesar run? No, no he wept with them. But still, Brutus to the
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `490` activation `2.837` class `word` token ` poor`
+  - fill: Is Caesar a bad man? When the poor cried did Caesar run? No, no he we
+- `L19:1223` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `493` activation `2.783` class `word` token ` Caesar`
+  - Caesar a bad man? When the poor cried did Caesar run? No, no he wept with them
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `384` activation `3.461` class `word` token ` presence`
+  - house. Unfortunately, the ten teenagers unleash a demonic presence that’s starved for their souls. Pump
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `311` activation `3.161` class `word` token ` and`
+  - 8) - When clown-like aliens land on Earth and begin harvesting humans in pink puffs of cotton candy
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `385` activation `3.086` class `style_function_word` token ` that`
+  - . Unfortunately, the ten teenagers unleash a demonic presence that’s starved for their souls. Pumpkin
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `336` activation `3.080` class `word` token ` way`
+  - a group of college kids have to figure out a way to send the murderous extraterrestrials back
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `375` activation `3.053` class `sentence_boundary` token `.`
+  - Halloween bash for her friends at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `377` activation `3.042` class `punctuation` token `,`
+  - for her friends at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that’s star
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `366` activation `3.029` class `word` token ` bash`
+  - (1988) - Angela is throwing a Halloween bash for her friends at a notoriously haunted house. Unfortunately
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `380` activation `2.925` class `word` token ` teenagers`
+  - at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that’s starved for their
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `321` activation `2.914` class `word` token ` candy`
+  - and begin harvesting humans in pink puffs of cotton candy, a cop and a group of college kids have
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `334` activation `2.909` class `word` token ` out`
+  - cop and a group of college kids have to figure out a way to send the murderous extraterrestri
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `324` activation `2.900` class `word` token ` cop`
+  - humans in pink puffs of cotton candy, a cop and a group of college kids have to figure out
+- `L19:1223` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `376` activation `2.761` class `word` token ` Unfortunately`
+  - bash for her friends at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that’s
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `611` activation `3.536` class `word` token ` than`
+  - Yoda: "No greater gift there is, than a creative mind." Gardener: "I
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `614` activation `3.500` class `word` token ` mind`
+  - "No greater gift there is, than a creative mind." Gardener: "I don't have
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `613` activation `3.138` class `word` token ` creative`
+  - : "No greater gift there is, than a creative mind." Gardener: "I don't
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `612` activation `2.907` class `word` token ` a`
+  - oda: "No greater gift there is, than a creative mind." Gardener: "I don
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `609` activation `2.607` class `word` token ` is`
+  - seeing. Yoda: "No greater gift there is, than a creative mind." Gardener:
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `607` activation `2.572` class `word` token ` gift`
+  - he is seeing. Yoda: "No greater gift there is, than a creative mind." Gard
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `377` activation `2.438` class `word` token ` problem`
+  - I have a problem." Yoda: "The problem what is?" Gardener: "I was
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `606` activation `1.894` class `word` token ` greater`
+  - what he is seeing. Yoda: "No greater gift there is, than a creative mind." G
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `524` activation `1.846` class `word` token ` you`
+  - oda: "Judge me by my size, do you?" Gardener: "No boss, sorry
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `521` activation `1.809` class `word` token ` size`
+  - ladder?" Yoda: "Judge me by my size, do you?" Gardener: "No
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `379` activation `1.802` class `word` token ` is`
+  - a problem." Yoda: "The problem what is?" Gardener: "I was coming to
+- `L19:1223` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `520` activation `1.729` class `word` token ` my`
+  - a ladder?" Yoda: "Judge me by my size, do you?" Gardener: "
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `449` activation `3.902` class `style_function_word` token `As`
+  - as this Earth And as young as present. As white as light and as dark as death; I
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `443` activation `3.810` class `word` token `And`
+  - OW I am as old as this Earth And as young as present. As white as light and
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `444` activation `3.615` class `style_function_word` token ` as`
+  - I am as old as this Earth And as young as present. As white as light and as
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `454` activation `3.250` class `style_function_word` token ` as`
+  - as young as present. As white as light and as dark as death; I can instill strong feelings
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `451` activation `3.062` class `style_function_word` token ` as`
+  - Earth And as young as present. As white as light and as dark as death; I can inst
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `450` activation `3.016` class `word` token ` white`
+  - this Earth And as young as present. As white as light and as dark as death; I can
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `453` activation `2.870` class `word` token ` and`
+  - And as young as present. As white as light and as dark as death; I can instill strong
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `452` activation `2.867` class `word` token ` light`
+  - And as young as present. As white as light and as dark as death; I can instill
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `445` activation `2.775` class `word` token ` young`
+  - I am as old as this Earth And as young as present. As white as light and as dark
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `447` activation `2.620` class `word` token ` present`
+  - as old as this Earth And as young as present. As white as light and as dark as death
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `456` activation `2.590` class `style_function_word` token ` as`
+  - as present. As white as light and as dark as death; I can instill strong feelings Of
+- `L19:1223` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `455` activation `2.558` class `word` token ` dark`
+  - young as present. As white as light and as dark as death; I can instill strong feelings
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `600` activation `3.481` class `word` token ` but`
+  - , tomatoes are botanically classified as fruits, but they are also considered vegetables nutritionally and culin
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `599` activation `3.115` class `punctuation` token `,`
+  - seeds, tomatoes are botanically classified as fruits, but they are also considered vegetables nutritionally and cul
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `605` activation `2.690` class `word` token ` vegetables`
+  - ically classified as fruits, but they are also considered vegetables nutritionally and culinarily because they are low
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `608` activation `2.679` class `word` token ` and`
+  - fruits, but they are also considered vegetables nutritionally and culinarily because they are low in fructose
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `607` activation `2.656` class `word` token `ally`
+  - as fruits, but they are also considered vegetables nutritionally and culinarily because they are low in fr
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `612` activation `2.642` class `style_function_word` token ` because`
+  - are also considered vegetables nutritionally and culinarily because they are low in fructose, savory in flavor
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `611` activation `2.638` class `word` token `arily`
+  - they are also considered vegetables nutritionally and culinarily because they are low in fructose, savory in
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `601` activation `2.553` class `word` token ` they`
+  - tomatoes are botanically classified as fruits, but they are also considered vegetables nutritionally and culinarily
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `613` activation `2.363` class `word` token ` they`
+  - also considered vegetables nutritionally and culinarily because they are low in fructose, savory in flavor,
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `622` activation `2.339` class `word` token ` flavor`
+  - because they are low in fructose, savory in flavor, and typically served as part of a main dish
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `619` activation `2.246` class `punctuation` token `,`
+  - culinarily because they are low in fructose, savory in flavor, and typically served as part of
+- `L19:1223` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `602` activation `2.045` class `word` token ` are`
+  - are botanically classified as fruits, but they are also considered vegetables nutritionally and culinarily because
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `471` activation `3.579` class `word` token ` they`
+  - , because the bosses can buy the cameras, but they cannot buy the creative spark. If the working class
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `443` activation `3.517` class `word` token ` and`
+  - and muscle, not a single wheel can turn, and not a single camera can roll. The strike crippled
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `435` activation `3.458` class `punctuation` token `,`
+  - of the labor movement: without our brain and muscle, not a single wheel can turn, and not a
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `476` activation `3.417` class `word` token ` spark`
+  - buy the cameras, but they cannot buy the creative spark. If the working class of Hollywood were to shut
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `442` activation `3.337` class `punctuation` token `,`
+  - brain and muscle, not a single wheel can turn, and not a single camera can roll. The strike
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `444` activation `3.150` class `expanded_negation_word` token ` not`
+  - muscle, not a single wheel can turn, and not a single camera can roll. The strike crippled the
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `449` activation `3.141` class `word` token ` roll`
+  - wheel can turn, and not a single camera can roll. The strike crippled the networks, costing the industry
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `472` activation `3.107` class `expanded_negation_word` token ` cannot`
+  - because the bosses can buy the cameras, but they cannot buy the creative spark. If the working class of
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `470` activation `2.863` class `word` token ` but`
+  - billions, because the bosses can buy the cameras, but they cannot buy the creative spark. If the working
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `447` activation `2.836` class `word` token ` camera`
+  - a single wheel can turn, and not a single camera can roll. The strike crippled the networks, costing
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `448` activation `2.822` class `style_function_word` token ` can`
+  - single wheel can turn, and not a single camera can roll. The strike crippled the networks, costing the
+- `L19:1223` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `440` activation `2.634` class `style_function_word` token ` can`
+  - without our brain and muscle, not a single wheel can turn, and not a single camera can roll.
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `439` activation `3.698` class `word` token `’t`
+  - If you want to destroy a nation, you don’t use nuclear weapons, rather destroying its education system will
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `436` activation `3.398` class `punctuation` token `,`
+  - said, “If you want to destroy a nation, you don’t use nuclear weapons, rather destroying its
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `437` activation `3.368` class `word` token ` you`
+  - , “If you want to destroy a nation, you don’t use nuclear weapons, rather destroying its education
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `447` activation `3.243` class `word` token ` education`
+  - you don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means that anyone
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `435` activation `3.173` class `word` token ` nation`
+  - once said, “If you want to destroy a nation, you don’t use nuclear weapons, rather destroying
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `440` activation `3.124` class `word` token ` use`
+  - you want to destroy a nation, you don’t use nuclear weapons, rather destroying its education system will suffice
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `445` activation `2.938` class `word` token ` destroying`
+  - nation, you don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `446` activation `2.735` class `word` token ` its`
+  - , you don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means that
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `434` activation `2.688` class `word` token ` a`
+  - Mandela once said, “If you want to destroy a nation, you don’t use nuclear weapons, rather
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `442` activation `2.644` class `word` token ` weapons`
+  - to destroy a nation, you don’t use nuclear weapons, rather destroying its education system will suffice.” Having
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `433` activation `2.538` class `word` token ` destroy`
+  - Nelson Mandela once said, “If you want to destroy a nation, you don’t use nuclear weapons,
+- `L19:1223` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `448` activation `2.435` class `word` token ` system`
+  - don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means that anyone will
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `346` activation `3.388` class `word` token `Now`
+  - only tightened her cloak and ridden into the white. Now, the blizzard howled like a wounded beast
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `347` activation `3.357` class `punctuation` token `,`
+  - tightened her cloak and ridden into the white. Now, the blizzard howled like a wounded beast,
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `332` activation `3.240` class `sentence_boundary` token `.`
+  - the weeping frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden into
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `335` activation `2.962` class `expanded_negation_word` token ` had`
+  - frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden into the white.
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `334` activation `2.949` class `word` token ` she`
+  - eping frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden into the white
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `333` activation `2.889` class `word` token ` But`
+  - weeping frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden into the
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `350` activation `2.721` class `word` token `izzard`
+  - and ridden into the white. Now, the blizzard howled like a wounded beast, thrashing her
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `326` activation `2.696` class `style_function_word` token ` that`
+  - ue to stay, warning of the weeping frost that claimed even the strongest hunters. But she had only
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `319` activation `2.677` class `punctuation` token `,`
+  - villagers of Oakhaven had begged Nimue to stay, warning of the weeping frost that claimed even the
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `356` activation `2.664` class `word` token ` beast`
+  - Now, the blizzard howled like a wounded beast, thrashing her with shards of ice. Nim
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `348` activation `2.608` class `word` token ` the`
+  - her cloak and ridden into the white. Now, the blizzard howled like a wounded beast, thr
+- `L19:1223` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `331` activation `2.581` class `word` token ` hunters`
+  - of the weeping frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `588` activation `5.261` class `word` token `'ll`
+  - Devil or God-sent, tell me if I'll ever hold the beautiful Lenore again?" Quoth
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `585` activation `5.232` class `word` token ` me`
+  - ." "Whether Devil or God-sent, tell me if I'll ever hold the beautiful Lenore again
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `627` activation `5.228` class `word` token ` soul`
+  - oth the panda, "Nevermore." And my soul from beneath its dark shadow shall be lifted - never
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `586` activation `5.218` class `style_function_word` token ` if`
+  - "Whether Devil or God-sent, tell me if I'll ever hold the beautiful Lenore again?"
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `589` activation `4.896` class `word` token ` ever`
+  - or God-sent, tell me if I'll ever hold the beautiful Lenore again?" Quoth the
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `587` activation `4.889` class `word` token ` I`
+  - Whether Devil or God-sent, tell me if I'll ever hold the beautiful Lenore again?" Qu
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `577` activation `4.571` class `word` token `Whether`
+  - Quoth the panda, "Nevermore." "Whether Devil or God-sent, tell me if I
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `635` activation `4.430` class `word` token ` lifted`
+  - And my soul from beneath its dark shadow shall be lifted - nevermore!
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `632` activation `4.329` class `word` token ` shadow`
+  - Nevermore." And my soul from beneath its dark shadow shall be lifted - nevermore!
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `633` activation `4.254` class `word` token ` shall`
+  - more." And my soul from beneath its dark shadow shall be lifted - nevermore!
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `634` activation `4.115` class `word` token ` be`
+  - ." And my soul from beneath its dark shadow shall be lifted - nevermore!
+- `L24:3506` `d2eca5300cf502f8b24ea33389ce75558cf4b51c6d3f9e26cd9759377357a522@turn_01@human` token `591` activation `4.034` class `word` token ` the`
+  - -sent, tell me if I'll ever hold the beautiful Lenore again?" Quoth the panda,
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `566` activation `3.209` class `word` token ` of`
+  - a life of genuine joy and significance. "The purpose of life is to discover your gift. The work of
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `568` activation `3.022` class `word` token ` is`
+  - of genuine joy and significance. "The purpose of life is to discover your gift. The work of life is
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `584` activation `2.900` class `word` token ` meaning`
+  - The work of life is to develop it. The meaning of life is to give your gift away." –
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `631` activation `2.836` class `word` token ` heart`
+  - to discover your work, and then with all your heart to give yourself to it." – Buddha
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `569` activation `2.829` class `word` token ` to`
+  - genuine joy and significance. "The purpose of life is to discover your gift. The work of life is to
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `607` activation `2.734` class `style_function_word` token ` can`
+  - iscott "He who has a why to live can bear almost any how." – Friedrich Nietzsche "
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `634` activation `2.721` class `word` token ` yourself`
+  - work, and then with all your heart to give yourself to it." – Buddha
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `628` activation `2.719` class `word` token ` with`
+  - Your work is to discover your work, and then with all your heart to give yourself to it." –
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `625` activation `2.680` class `punctuation` token `,`
+  - Nietzsche "Your work is to discover your work, and then with all your heart to give yourself to
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `618` activation `2.678` class `word` token `Your`
+  - bear almost any how." – Friedrich Nietzsche "Your work is to discover your work, and then with
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `573` activation `2.669` class `sentence_boundary` token `.`
+  - . "The purpose of life is to discover your gift. The work of life is to develop it. The
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@qwen3.6-35b` token `633` activation `2.620` class `word` token ` give`
+  - your work, and then with all your heart to give yourself to it." – Buddha
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `576` activation `5.520` class `punctuation` token `,`
+  - you discover a pursuit that absorbs you, frees you, challenges you, or gives you a sense of meaning
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `624` activation `4.682` class `word` token ` to`
+  - purpose." - Charles Dickens "It's not enough to have lived. We should be determined to live for
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `579` activation `4.672` class `punctuation` token `,`
+  - pursuit that absorbs you, frees you, challenges you, or gives you a sense of meaning, joy,
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `578` activation `4.608` class `word` token ` you`
+  - a pursuit that absorbs you, frees you, challenges you, or gives you a sense of meaning, joy
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `622` activation `4.294` class `expanded_negation_word` token ` not`
+  - with a purpose." - Charles Dickens "It's not enough to have lived. We should be determined to
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `599` activation `4.241` class `word` token ` best`
+  - , or passion." - Terry Orlick "The best way to lengthen out our days is to walk
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `623` activation `4.144` class `word` token ` enough`
+  - a purpose." - Charles Dickens "It's not enough to have lived. We should be determined to live
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `558` activation `3.952` class `word` token ` of`
+  - current moment. Here are three quotes: "The heart of human excellence often begins to beat when you discover a
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `601` activation `3.911` class `word` token ` to`
+  - passion." - Terry Orlick "The best way to lengthen out our days is to walk steadily and
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `577` activation `3.849` class `word` token ` challenges`
+  - discover a pursuit that absorbs you, frees you, challenges you, or gives you a sense of meaning,
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `625` activation `3.845` class `word` token ` have`
+  - ." - Charles Dickens "It's not enough to have lived. We should be determined to live for something
+- `L24:3506` `7d2d12cb308ab668dda0ae3809575088849772f119b67074f98e5d992debc6ab@turn_01@human` token `580` activation `3.798` class `word` token ` or`
+  - that absorbs you, frees you, challenges you, or gives you a sense of meaning, joy, or
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `624` activation `5.969` class `word` token ` they`
+  - Gray, said, “Successful people are successful because they form the habits of doing those things that failures don
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `632` activation `5.788` class `style_function_word` token ` that`
+  - successful because they form the habits of doing those things that failures don’t like to do.”
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `623` activation `5.451` class `style_function_word` token ` because`
+  - Albert Gray, said, “Successful people are successful because they form the habits of doing those things that failures
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `631` activation `5.181` class `word` token ` things`
+  - are successful because they form the habits of doing those things that failures don’t like to do.”
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `635` activation `5.095` class `word` token `’t`
+  - form the habits of doing those things that failures don’t like to do.”
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `637` activation `4.738` class `word` token ` to`
+  - habits of doing those things that failures don’t like to do.”
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `621` activation `4.615` class `word` token ` are`
+  - executive, Albert Gray, said, “Successful people are successful because they form the habits of doing those things
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `633` activation `4.553` class `word` token ` failures`
+  - because they form the habits of doing those things that failures don’t like to do.”
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `620` activation `4.509` class `word` token ` people`
+  - -known executive, Albert Gray, said, “Successful people are successful because they form the habits of doing those
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `628` activation `4.391` class `word` token ` of`
+  - “Successful people are successful because they form the habits of doing those things that failures don’t like to do
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `629` activation `4.262` class `word` token ` doing`
+  - Successful people are successful because they form the habits of doing those things that failures don’t like to do.”
+- `L24:3506` `7146c866dffc526d53d109dbc12de513d10b09d19d7750bc0b4185e15aed39a7@turn_01@human` token `622` activation `4.061` class `word` token ` successful`
+  - , Albert Gray, said, “Successful people are successful because they form the habits of doing those things that
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `566` activation `4.918` class `word` token `—the`
+  - slow accumulation of moments you squandered on her—the afternoons of waiting, the patient watering,
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `526` activation `4.772` class `word` token ` is`
+  - , but perhaps some things survive the decay. "It is the time you have wasted for your rose that makes
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `570` activation `4.757` class `word` token ` of`
+  - you squandered on her—the afternoons of waiting, the patient watering, the silences you
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `549` activation `4.635` class `punctuation` token `,`
+  - so important," I continued. "Not her beauty, not her rarity, but the slow accumulation of moments
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `569` activation `4.466` class `word` token `ons`
+  - moments you squandered on her—the afternoons of waiting, the patient watering, the silences
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `553` activation `4.441` class `punctuation` token `,`
+  - continued. "Not her beauty, not her rarity, but the slow accumulation of moments you squandered
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `560` activation `4.279` class `word` token ` you`
+  - not her rarity, but the slow accumulation of moments you squandered on her—the afternoons of
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `438` activation `4.197` class `word` token ` It`
+  - secret, the only truth I have ever held: It is only with the heart that one can see rightly
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `437` activation `4.160` class `punctuation` token `:`
+  - simple secret, the only truth I have ever held: It is only with the heart that one can see
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `527` activation `4.097` class `word` token ` the`
+  - but perhaps some things survive the decay. "It is the time you have wasted for your rose that makes your
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `565` activation `4.071` class `word` token ` her`
+  - the slow accumulation of moments you squandered on her—the afternoons of waiting, the patient watering
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@glm-5.2` token `429` activation `3.758` class `punctuation` token `,`
+  - now here is my secret, a very simple secret, the only truth I have ever held: It is
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `600` activation `5.220` class `word` token `—the`
+  - It is the time you have wasted for your rose—the devotion, the frustration, the sheer weight of your
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `601` activation `4.710` class `word` token ` devotion`
+  - is the time you have wasted for your rose—the devotion, the frustration, the sheer weight of your attention
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `591` activation `4.598` class `word` token ` is`
+  - wheat fields we would no longer share. "It is the time you have wasted for your rose—the devotion
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `603` activation `4.538` class `word` token ` the`
+  - time you have wasted for your rose—the devotion, the frustration, the sheer weight of your attention—that makes
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `595` activation `4.381` class `word` token ` have`
+  - no longer share. "It is the time you have wasted for your rose—the devotion, the frustration,
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `594` activation `4.179` class `word` token ` you`
+  - would no longer share. "It is the time you have wasted for your rose—the devotion, the frustration
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `592` activation `4.089` class `word` token ` the`
+  - fields we would no longer share. "It is the time you have wasted for your rose—the devotion,
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `598` activation `4.010` class `word` token ` your`
+  - . "It is the time you have wasted for your rose—the devotion, the frustration, the sheer weight
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `597` activation `3.836` class `discourse_marker_word` token ` for`
+  - share. "It is the time you have wasted for your rose—the devotion, the frustration, the sheer
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `527` activation `3.741` class `punctuation` token `;`
+  - is only with the heart that one can see rightly; what is essential is invisible to the eye." "What
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `616` activation `3.733` class `word` token ` important`
+  - the sheer weight of your attention—that makes her so important." Love, I realized, was not about perfection
+- `L24:3506` `acc6c4e3e5f86ef3060a6c679b51dc3390bf22c71ffd138a44ad4295805e2cc0@turn_01@gemini-3.5-flash` token `614` activation `3.685` class `word` token ` her`
+  - frustration, the sheer weight of your attention—that makes her so important." Love, I realized, was not
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `381` activation `5.718` class `word` token `And`
+  - one Less crowded by the tourists’ gaze, And that has made all the difference. The wind how
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `361` activation `4.338` class `word` token ` trails`
+  - sigh Somewhere ages and ages hence: Two trails diverged, and I, I took the one
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `367` activation `4.234` class `punctuation` token `,`
+  - ages hence: Two trails diverged, and I, I took the one Less crowded by the tourists
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `383` activation `4.094` class `word` token ` has`
+  - Less crowded by the tourists’ gaze, And that has made all the difference. The wind howled sharp
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `262` activation `3.965` class `punctuation` token `,`
+  - bent in the undergrowth; Then took the other, as just as fair, And having perhaps the better
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `382` activation `3.748` class `style_function_word` token ` that`
+  - Less crowded by the tourists’ gaze, And that has made all the difference. The wind howled
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `380` activation `3.747` class `line_break` token `,
+`
+  - the one Less crowded by the tourists’ gaze, And that has made all the difference. The wind
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `373` activation `3.652` class `word` token `Less`
+  - ged, and I, I took the one Less crowded by the tourists’ gaze, And that has
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `325` activation `3.602` class `line_break` token `!
+`
+  - . Oh, I kept the first for another day! Yet knowing how way leads on to way, I
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `251` activation `3.557` class `word` token ` it`
+  - down one as far as I could To where it bent in the undergrowth; Then took the other
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `390` activation `3.548` class `word` token ` wind`
+  - , And that has made all the difference. The wind howled sharp through pine and spruce, A
+- `L24:3506` `a89a67f6513afae750b6bac838d5b5d36e1f71fc118e2977f4a357a2197b6d3e@turn_01@qwen3.6-35b` token `261` activation `3.486` class `word` token ` other`
+  - it bent in the undergrowth; Then took the other, as just as fair, And having perhaps the
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `519` activation `5.458` class `style_function_word` token ` which`
+  - China is 1,439,323,776 which is 18.47% of the world's
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `530` activation `4.533` class `word` token ` population`
+  - is 18.47% of the world's population. India: The population of India is 1
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `493` activation `4.262` class `word` token ` listed`
+  - The population listed for the countries was collected in 2020.
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `528` activation `4.046` class `word` token ` world`
+  - 776 which is 18.47% of the world's population. India: The population of India is
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `520` activation `3.892` class `word` token ` is`
+  - is 1,439,323,776 which is 18.47% of the world's population
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `529` activation `3.703` class `word` token `'s`
+  - which is 18.47% of the world's population. India: The population of India is
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `526` activation `2.757` class `word` token ` of`
+  - 323,776 which is 18.47% of the world's population. India: The population of
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `518` activation `2.575` class `word` token `776`
+  - of China is 1,439,323,776 which is 18.47% of the world
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `500` activation `2.341` class `whitespace` token ` `
+  - The population listed for the countries was collected in 2020. China: The population of China is
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `498` activation `2.288` class `word` token ` collected`
+  - The population listed for the countries was collected in 2020. China: The population of
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `510` activation `2.224` class `word` token ` is`
+  - 2020. China: The population of China is 1,439,323,776 which is
+- `L24:3506` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@human` token `527` activation `2.173` class `word` token ` the`
+  - ,776 which is 18.47% of the world's population. India: The population of India
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `347` activation `5.812` class `punctuation` token `,`
+  - always been proud to be your daughter. To me, you were never just a retired naval officer. You
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `349` activation `5.677` class `expanded_negation_word` token ` were`
+  - proud to be your daughter. To me, you were never just a retired naval officer. You were,
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `312` activation `5.588` class `word` token ` and`
+  - for raising me with courage, discipline, honesty, and strength. Thank you for showing me what service means
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `348` activation `5.540` class `word` token ` you`
+  - been proud to be your daughter. To me, you were never just a retired naval officer. You were
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `335` activation `5.457` class `word` token ` I`
+  - through speeches, but through the life you lived. I have always been proud to be your daughter. To
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `311` activation `5.427` class `punctuation` token `,`
+  - you for raising me with courage, discipline, honesty, and strength. Thank you for showing me what service
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `336` activation `5.232` class `word` token ` have`
+  - speeches, but through the life you lived. I have always been proud to be your daughter. To me
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `343` activation `4.945` class `word` token ` daughter`
+  - lived. I have always been proud to be your daughter. To me, you were never just a retired
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `344` activation `4.923` class `sentence_boundary` token `.`
+  - . I have always been proud to be your daughter. To me, you were never just a retired naval
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `334` activation `4.876` class `sentence_boundary` token `.`
+  - not through speeches, but through the life you lived. I have always been proud to be your daughter.
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `346` activation `4.546` class `word` token ` me`
+  - have always been proud to be your daughter. To me, you were never just a retired naval officer.
+- `L24:3506` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gpt-5.5` token `309` activation `4.444` class `punctuation` token `,`
+  - . Thank you for raising me with courage, discipline, honesty, and strength. Thank you for showing me
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `255` activation `5.894` class `punctuation` token `,`
+  - , a man must not be bound by classical patterns, rigid forms, or fixed responses. A real fight
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `249` activation `5.697` class `expanded_negation_word` token ` not`
+  - In fighting, as in life, a man must not be bound by classical patterns, rigid forms, or
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `250` activation `5.467` class `word` token ` be`
+  - fighting, as in life, a man must not be bound by classical patterns, rigid forms, or fixed
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `252` activation `5.356` class `word` token ` by`
+  - as in life, a man must not be bound by classical patterns, rigid forms, or fixed responses.
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `248` activation `5.226` class `style_function_word` token ` must`
+  - . In fighting, as in life, a man must not be bound by classical patterns, rigid forms,
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `254` activation `5.161` class `word` token ` patterns`
+  - life, a man must not be bound by classical patterns, rigid forms, or fixed responses. A real
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `258` activation `5.150` class `punctuation` token `,`
+  - must not be bound by classical patterns, rigid forms, or fixed responses. A real fight is alive.
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `259` activation `5.041` class `word` token ` or`
+  - not be bound by classical patterns, rigid forms, or fixed responses. A real fight is alive. It
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `260` activation `4.936` class `word` token ` fixed`
+  - be bound by classical patterns, rigid forms, or fixed responses. A real fight is alive. It is
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `275` activation `4.872` class `word` token ` uncertain`
+  - fight is alive. It is changing, moving, uncertain. Therefore, the fighter must be alive also.
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `364` activation `4.847` class `word` token ` motion`
+  - to hit while he is beginning, to stop his motion with my motion. Economy of movement is important:
+- `L24:3506` `50409e0a7e235d0f5f374d80789ae3a410de9486c644763a9ba3ba67fef57e4c@turn_01@gpt-5.5` token `288` activation `4.795` class `word` token ` respond`
+  - , the fighter must be alive also. He must respond to what is, not what he wishes it to
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `148` activation `5.007` class `word` token ` he`
+  - beneath the striped tent of the Midnight Marvel Circus, he cracked his silver whip and shouted until even the lantern
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `127` activation `4.493` class `word` token ` and`
+  - Voss wore a red velvet coat with gold buttons and a smile sharp enough to cut rope. Every night
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `147` activation `4.484` class `punctuation` token `,`
+  - night beneath the striped tent of the Midnight Marvel Circus, he cracked his silver whip and shouted until even the
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `159` activation `4.419` class `word` token `s`
+  - cracked his silver whip and shouted until even the lanterns seemed to tremble. “Faster!” he
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `155` activation `4.187` class `word` token ` until`
+  - Marvel Circus, he cracked his silver whip and shouted until even the lanterns seemed to tremble. “
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `153` activation `4.165` class `word` token ` and`
+  - the Midnight Marvel Circus, he cracked his silver whip and shouted until even the lanterns seemed to tremble
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `160` activation `4.022` class `word` token ` seemed`
+  - his silver whip and shouted until even the lanterns seemed to tremble. “Faster!” he b
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `161` activation `3.846` class `word` token ` to`
+  - silver whip and shouted until even the lanterns seemed to tremble. “Faster!” he barked
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `154` activation `3.831` class `word` token ` shouted`
+  - Midnight Marvel Circus, he cracked his silver whip and shouted until even the lanterns seemed to tremble.
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `157` activation `3.482` class `word` token ` the`
+  - , he cracked his silver whip and shouted until even the lanterns seemed to tremble. “Faster
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `152` activation `3.457` class `word` token ` whip`
+  - of the Midnight Marvel Circus, he cracked his silver whip and shouted until even the lanterns seemed to trem
+- `L24:3506` `9d920dc867c23dc6ed759ad729444d86ee07b0dd4f7eece8cbd96864053751fd@turn_01@gpt-5.5` token `156` activation `3.454` class `word` token ` even`
+  - Circus, he cracked his silver whip and shouted until even the lanterns seemed to tremble. “F
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `581` activation `5.541` class `word` token ` to`
+  - , the original. Pay attention to the art; to the paint colors. Paintings are non-classical
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `580` activation `5.069` class `punctuation` token `;`
+  - unique, the original. Pay attention to the art; to the paint colors. Paintings are non-class
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `578` activation `4.884` class `word` token ` the`
+  - , the unique, the original. Pay attention to the art; to the paint colors. Paintings are
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `577` activation `4.836` class `word` token ` to`
+  - creative, the unique, the original. Pay attention to the art; to the paint colors. Paintings
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `582` activation `4.770` class `word` token ` the`
+  - the original. Pay attention to the art; to the paint colors. Paintings are non-classical.
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `557` activation `4.170` class `word` token ` into`
+  - is the imaginative artist? Down, down, down into the darkness, Gently it goes - the creative
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `579` activation `3.836` class `word` token ` art`
+  - the unique, the original. Pay attention to the art; to the paint colors. Paintings are non
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `568` activation `3.835` class `punctuation` token `,`
+  - the darkness, Gently it goes - the creative, the unique, the original. Pay attention to the
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `576` activation `3.615` class `word` token ` attention`
+  - the creative, the unique, the original. Pay attention to the art; to the paint colors. Paint
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `560` activation `3.561` class `line_break` token `,
+`
+  - artist? Down, down, down into the darkness, Gently it goes - the creative, the unique
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `571` activation `3.513` class `punctuation` token `,`
+  - Gently it goes - the creative, the unique, the original. Pay attention to the art; to
+- `L24:3506` `a8920125576e97d7e44631add9fca191ec9acb3a4bf3b52641154f5cae7afe9f@turn_01@human` token `565` activation `3.387` class `punctuation` token ` -`
+  - , down into the darkness, Gently it goes - the creative, the unique, the original. Pay
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `444` activation `5.072` class `word` token ` he`
+  - to speak at his funeral. Because Brutus said he was a bad man. And Brutus is an
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `505` activation `5.027` class `word` token `But`
+  - ? No, no he wept with them. But still, Brutus to the top of his lungs
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `488` activation `4.855` class `style_function_word` token `When`
+  - coffers fill: Is Caesar a bad man? When the poor cried did Caesar run? No, no
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `489` activation `4.517` class `word` token ` the`
+  - ers fill: Is Caesar a bad man? When the poor cried did Caesar run? No, no he
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `445` activation `4.450` class `expanded_negation_word` token ` was`
+  - speak at his funeral. Because Brutus said he was a bad man. And Brutus is an honorable
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `355` activation `4.401` class `punctuation` token `,`
+  - ROME! I'm here tonight to bury Caesar, not to honor him. You see, The Rock
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `492` activation `4.308` class `expanded_negation_word` token ` did`
+  - Is Caesar a bad man? When the poor cried did Caesar run? No, no he wept with
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `496` activation `4.241` class `expanded_negation_word` token ` No`
+  - man? When the poor cried did Caesar run? No, no he wept with them. But still
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `499` activation `4.148` class `word` token ` he`
+  - the poor cried did Caesar run? No, no he wept with them. But still, Brutus
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `475` activation `4.134` class `expanded_negation_word` token ` did`
+  - ives here to Rome Whose ransoms did the general coffers fill: Is Caesar a bad
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `481` activation `4.083` class `line_break` token `:
+`
+  - ose ransoms did the general coffers fill: Is Caesar a bad man? When the poor cried
+- `L24:3506` `380dedaa2848fc0bf3220f1006088b67de773236bf5718bc800bd2e398af349b@turn_01@human` token `474` activation `4.055` class `word` token `oms`
+  - captives here to Rome Whose ransoms did the general coffers fill: Is Caesar a
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `385` activation `5.023` class `style_function_word` token ` that`
+  - . Unfortunately, the ten teenagers unleash a demonic presence that’s starved for their souls. Pumpkin
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `375` activation `4.823` class `sentence_boundary` token `.`
+  - Halloween bash for her friends at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `377` activation `4.645` class `punctuation` token `,`
+  - for her friends at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that’s star
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `384` activation `4.632` class `word` token ` presence`
+  - house. Unfortunately, the ten teenagers unleash a demonic presence that’s starved for their souls. Pump
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `380` activation `4.536` class `word` token ` teenagers`
+  - at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that’s starved for their
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `311` activation `4.172` class `word` token ` and`
+  - 8) - When clown-like aliens land on Earth and begin harvesting humans in pink puffs of cotton candy
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `322` activation `4.112` class `punctuation` token `,`
+  - begin harvesting humans in pink puffs of cotton candy, a cop and a group of college kids have to
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `382` activation `4.034` class `word` token ` a`
+  - notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that’s starved for their souls.
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `367` activation `4.023` class `discourse_marker_word` token ` for`
+  - 1988) - Angela is throwing a Halloween bash for her friends at a notoriously haunted house. Unfortunately,
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `335` activation `4.014` class `word` token ` a`
+  - and a group of college kids have to figure out a way to send the murderous extraterrestrials
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `376` activation `3.969` class `word` token ` Unfortunately`
+  - bash for her friends at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that’s
+- `L24:3506` `e22851cdf5668ff4feea056f46a2ffb145675fd2c9d1700410d4cc758d8aa858@turn_01@human` token `378` activation `3.964` class `word` token ` the`
+  - her friends at a notoriously haunted house. Unfortunately, the ten teenagers unleash a demonic presence that’s starved
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `614` activation `5.230` class `word` token ` mind`
+  - "No greater gift there is, than a creative mind." Gardener: "I don't have
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `611` activation `5.065` class `word` token ` than`
+  - Yoda: "No greater gift there is, than a creative mind." Gardener: "I
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `613` activation `4.815` class `word` token ` creative`
+  - : "No greater gift there is, than a creative mind." Gardener: "I don't
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `609` activation `4.230` class `word` token ` is`
+  - seeing. Yoda: "No greater gift there is, than a creative mind." Gardener:
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `612` activation `4.111` class `word` token ` a`
+  - oda: "No greater gift there is, than a creative mind." Gardener: "I don
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `607` activation `3.749` class `word` token ` gift`
+  - he is seeing. Yoda: "No greater gift there is, than a creative mind." Gard
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `606` activation `3.693` class `word` token ` greater`
+  - what he is seeing. Yoda: "No greater gift there is, than a creative mind." G
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `377` activation `3.630` class `word` token ` problem`
+  - I have a problem." Yoda: "The problem what is?" Gardener: "I was
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `518` activation `2.793` class `word` token ` me`
+  - to grab a ladder?" Yoda: "Judge me by my size, do you?" Gardener
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `517` activation `2.724` class `word` token `Judge`
+  - me to grab a ladder?" Yoda: "Judge me by my size, do you?" Gard
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `379` activation `2.677` class `word` token ` is`
+  - a problem." Yoda: "The problem what is?" Gardener: "I was coming to
+- `L24:3506` `a1687a7d35e6789b95699417a0bf4288a975171a11498920626d86ee86fbeb15@turn_01@human` token `634` activation `2.627` class `word` token `Need`
+  - have any words, boss." Yoda: "Need words you do not."
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `449` activation `5.369` class `style_function_word` token `As`
+  - as this Earth And as young as present. As white as light and as dark as death; I
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `453` activation `4.942` class `word` token ` and`
+  - And as young as present. As white as light and as dark as death; I can instill strong
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `454` activation `4.796` class `style_function_word` token ` as`
+  - as young as present. As white as light and as dark as death; I can instill strong feelings
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `443` activation `4.355` class `word` token `And`
+  - OW I am as old as this Earth And as young as present. As white as light and
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `457` activation `3.690` class `word` token ` death`
+  - present. As white as light and as dark as death; I can instill strong feelings Of warmth
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `459` activation `3.572` class `word` token `I`
+  - As white as light and as dark as death; I can instill strong feelings Of warmth and cold
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `456` activation `3.520` class `style_function_word` token ` as`
+  - as present. As white as light and as dark as death; I can instill strong feelings Of
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `455` activation `3.415` class `word` token ` dark`
+  - young as present. As white as light and as dark as death; I can instill strong feelings
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `447` activation `3.400` class `word` token ` present`
+  - as old as this Earth And as young as present. As white as light and as dark as death
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `439` activation `3.272` class `style_function_word` token ` as`
+  - SNOW I am as old as this Earth And as young as present. As
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `460` activation `3.227` class `style_function_word` token ` can`
+  - white as light and as dark as death; I can instill strong feelings Of warmth and coldness
+- `L24:3506` `e70a46408206baa1717e6bfaa77581658ca1ea426964c248c47734cd222bb1f1@turn_01@human` token `444` activation `3.216` class `style_function_word` token ` as`
+  - I am as old as this Earth And as young as present. As white as light and as
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `599` activation `5.107` class `punctuation` token `,`
+  - seeds, tomatoes are botanically classified as fruits, but they are also considered vegetables nutritionally and cul
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `605` activation `4.581` class `word` token ` vegetables`
+  - ically classified as fruits, but they are also considered vegetables nutritionally and culinarily because they are low
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `600` activation `4.483` class `word` token ` but`
+  - , tomatoes are botanically classified as fruits, but they are also considered vegetables nutritionally and culin
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `608` activation `4.319` class `word` token ` and`
+  - fruits, but they are also considered vegetables nutritionally and culinarily because they are low in fructose
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `601` activation `4.070` class `word` token ` they`
+  - tomatoes are botanically classified as fruits, but they are also considered vegetables nutritionally and culinarily
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `607` activation `4.038` class `word` token `ally`
+  - as fruits, but they are also considered vegetables nutritionally and culinarily because they are low in fr
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `612` activation `4.022` class `style_function_word` token ` because`
+  - are also considered vegetables nutritionally and culinarily because they are low in fructose, savory in flavor
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `622` activation `3.919` class `word` token ` flavor`
+  - because they are low in fructose, savory in flavor, and typically served as part of a main dish
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `619` activation `3.715` class `punctuation` token `,`
+  - culinarily because they are low in fructose, savory in flavor, and typically served as part of
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `602` activation `3.703` class `word` token ` are`
+  - are botanically classified as fruits, but they are also considered vegetables nutritionally and culinarily because
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `611` activation `3.377` class `word` token `arily`
+  - they are also considered vegetables nutritionally and culinarily because they are low in fructose, savory in
+- `L24:3506` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gemini-3.5-flash` token `613` activation `3.316` class `word` token ` they`
+  - also considered vegetables nutritionally and culinarily because they are low in fructose, savory in flavor,
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `471` activation `5.074` class `word` token ` they`
+  - , because the bosses can buy the cameras, but they cannot buy the creative spark. If the working class
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `435` activation `4.575` class `punctuation` token `,`
+  - of the labor movement: without our brain and muscle, not a single wheel can turn, and not a
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `472` activation `4.474` class `expanded_negation_word` token ` cannot`
+  - because the bosses can buy the cameras, but they cannot buy the creative spark. If the working class of
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `473` activation `4.430` class `word` token ` buy`
+  - the bosses can buy the cameras, but they cannot buy the creative spark. If the working class of Hollywood
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `470` activation `4.233` class `word` token ` but`
+  - billions, because the bosses can buy the cameras, but they cannot buy the creative spark. If the working
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `474` activation `4.214` class `word` token ` the`
+  - bosses can buy the cameras, but they cannot buy the creative spark. If the working class of Hollywood were
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `476` activation `4.080` class `word` token ` spark`
+  - buy the cameras, but they cannot buy the creative spark. If the working class of Hollywood were to shut
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `443` activation `4.005` class `word` token ` and`
+  - and muscle, not a single wheel can turn, and not a single camera can roll. The strike crippled
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `442` activation `3.982` class `punctuation` token `,`
+  - brain and muscle, not a single wheel can turn, and not a single camera can roll. The strike
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `436` activation `3.504` class `expanded_negation_word` token ` not`
+  - the labor movement: without our brain and muscle, not a single wheel can turn, and not a single
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `448` activation `2.839` class `style_function_word` token ` can`
+  - single wheel can turn, and not a single camera can roll. The strike crippled the networks, costing the
+- `L24:3506` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@gemini-3.5-flash` token `440` activation `2.803` class `style_function_word` token ` can`
+  - without our brain and muscle, not a single wheel can turn, and not a single camera can roll.
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `445` activation `4.930` class `word` token ` destroying`
+  - nation, you don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `446` activation `4.733` class `word` token ` its`
+  - , you don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means that
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `447` activation `4.516` class `word` token ` education`
+  - you don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means that anyone
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `444` activation `4.491` class `word` token ` rather`
+  - a nation, you don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `449` activation `4.040` class `style_function_word` token ` will`
+  - ’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means that anyone will have
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `442` activation `3.944` class `word` token ` weapons`
+  - to destroy a nation, you don’t use nuclear weapons, rather destroying its education system will suffice.” Having
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `439` activation `3.798` class `word` token `’t`
+  - If you want to destroy a nation, you don’t use nuclear weapons, rather destroying its education system will
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `448` activation `3.784` class `word` token ` system`
+  - don’t use nuclear weapons, rather destroying its education system will suffice.” Having no cost means that anyone will
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `440` activation `3.758` class `word` token ` use`
+  - you want to destroy a nation, you don’t use nuclear weapons, rather destroying its education system will suffice
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `436` activation `3.523` class `punctuation` token `,`
+  - said, “If you want to destroy a nation, you don’t use nuclear weapons, rather destroying its
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `437` activation `3.072` class `word` token ` you`
+  - , “If you want to destroy a nation, you don’t use nuclear weapons, rather destroying its education
+- `L24:3506` `3367a7c32294e5394de02805332de6426321770db474eca2bbb5ffb09c9a4d7d@turn_01@human` token `434` activation `2.961` class `word` token ` a`
+  - Mandela once said, “If you want to destroy a nation, you don’t use nuclear weapons, rather
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `347` activation `5.304` class `punctuation` token `,`
+  - tightened her cloak and ridden into the white. Now, the blizzard howled like a wounded beast,
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `332` activation `4.891` class `sentence_boundary` token `.`
+  - the weeping frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden into
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `346` activation `4.886` class `word` token `Now`
+  - only tightened her cloak and ridden into the white. Now, the blizzard howled like a wounded beast
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `350` activation `4.329` class `word` token `izzard`
+  - and ridden into the white. Now, the blizzard howled like a wounded beast, thrashing her
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `357` activation `4.306` class `punctuation` token `,`
+  - , the blizzard howled like a wounded beast, thrashing her with shards of ice. Nimue
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `335` activation `4.287` class `expanded_negation_word` token ` had`
+  - frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden into the white.
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `333` activation `4.205` class `word` token ` But`
+  - weeping frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden into the
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `348` activation `4.062` class `word` token ` the`
+  - her cloak and ridden into the white. Now, the blizzard howled like a wounded beast, thr
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `331` activation `4.057` class `word` token ` hunters`
+  - of the weeping frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `334` activation `4.012` class `word` token ` she`
+  - eping frost that claimed even the strongest hunters. But she had only tightened her cloak and ridden into the white
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `326` activation `3.960` class `style_function_word` token ` that`
+  - ue to stay, warning of the weeping frost that claimed even the strongest hunters. But she had only
+- `L24:3506` `90ac3faef5060dd42aea77d2080b49fb91ea9c1c92f378760d2ff919dbad6dca@turn_01@gemini-3.5-flash` token `340` activation `3.774` class `word` token ` and`
+  - strongest hunters. But she had only tightened her cloak and ridden into the white. Now, the blizzard

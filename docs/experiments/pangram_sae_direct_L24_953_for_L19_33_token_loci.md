@@ -1,0 +1,543 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L24:953` | `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` | `human` | 59 | `218.05` | `8.13` | word:43|line_break:13|style_function_word:1|punctuation:1|expanded_negation_word:1 |
+| `L24:953` | `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` | `gpt-5.5` | 62 | `495.16` | `16.85` | word:45|line_break:13|punctuation:2|style_function_word:1|sentence_boundary:1 |
+| `L24:953` | `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` | `human` | 171 | `346.03` | `5.30` | word:107|line_break:33|punctuation:29|style_function_word:1|expanded_negation_word:1 |
+| `L24:953` | `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` | `gpt-5.5` | 207 | `2476.90` | `19.88` | word:142|line_break:47|punctuation:12|style_function_word:3|expanded_negation_word:2|sentence_boundary:1 |
+| `L24:953` | `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` | `gpt-5.5` | 74 | `634.24` | `17.48` | word:53|line_break:15|punctuation:5|sentence_boundary:1 |
+| `L24:953` | `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` | `glm-5.2` | 180 | `1271.53` | `14.97` | word:132|line_break:43|punctuation:3|expanded_negation_word:1|discourse_marker_word:1 |
+| `L24:953` | `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` | `gpt-5.5` | 220 | `1736.46` | `17.06` | word:162|line_break:42|punctuation:14|expanded_negation_word:2 |
+| `L24:953` | `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 103 | `702.17` | `14.54` | word:76|line_break:25|punctuation:1|sentence_boundary:1 |
+| `L24:953` | `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` | `gpt-5.5` | 139 | `1395.37` | `17.35` | word:98|line_break:27|punctuation:13|sentence_boundary:1 |
+| `L24:953` | `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 247 | `1548.46` | `15.72` | word:172|line_break:62|punctuation:12|style_function_word:1 |
+| `L24:953` | `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 28 | `183.79` | `14.90` | word:20|line_break:7|sentence_boundary:1 |
+| `L24:953` | `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` | `gpt-5.5` | 37 | `367.30` | `17.38` | word:25|punctuation:6|line_break:5|sentence_boundary:1 |
+| `L24:953` | `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` | `glm-5.2` | 149 | `1330.10` | `14.77` | word:106|line_break:38|style_function_word:2|punctuation:2|expanded_negation_word:1 |
+| `L24:953` | `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 114 | `1019.40` | `16.38` | word:79|line_break:27|punctuation:5|expanded_negation_word:2|style_function_word:1 |
+| `L24:953` | `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 185 | `1091.79` | `14.90` | word:121|line_break:35|punctuation:17|sentence_boundary:5|style_function_word:4|expanded_negation_word:2|contraction_piece:1 |
+| `L24:953` | `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` | `glm-5.2` | 126 | `1046.84` | `16.81` | word:89|line_break:26|punctuation:10|expanded_negation_word:1 |
+| `L24:953` | `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` | `gpt-5.5` | 91 | `678.38` | `15.73` | word:63|line_break:17|punctuation:9|style_function_word:2 |
+| `L24:953` | `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 85 | `794.24` | `15.99` | word:60|line_break:21|style_function_word:2|expanded_negation_word:1|sentence_boundary:1 |
+| `L24:953` | `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` | `glm-5.2` | 108 | `671.04` | `13.15` | word:82|line_break:22|punctuation:2|style_function_word:1|sentence_boundary:1 |
+| `L24:953` | `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 112 | `766.86` | `16.62` | word:80|line_break:24|punctuation:4|style_function_word:2|expanded_negation_word:1|sentence_boundary:1 |
+| `L24:953` | `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` | `gpt-5.5` | 95 | `781.98` | `16.16` | word:61|line_break:21|punctuation:12|sentence_boundary:1 |
+
+## Top Tokens
+
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `633` activation `8.125` class `style_function_word` token ` that`
+  - ertime, I love your sunny reach A season that could have no cost or price
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `608` activation `7.448` class `word` token ` at`
+  - by the slice Vacation is a dream while at the beach But heading to the pool is also
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `586` activation `7.371` class `word` token ` you`
+  - satisfied now that cold winter's dead In summer you can eat a juicy peach Or taste a water
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `551` activation `6.786` class `word` token ` down`
+  - ion weed to roses red The fish are stirring down on the lakebed The sunset on the soft
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `614` activation `6.574` class `word` token ` to`
+  - is a dream while at the beach But heading to the pool is also nice Oh summertime,
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `639` activation `6.146` class `word` token ` price`
+  - reach A season that could have no cost or price
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `610` activation `6.027` class `word` token ` beach`
+  - slice Vacation is a dream while at the beach But heading to the pool is also nice
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `524` activation `5.669` class `word` token ` inside`
+  - again upon my head How long must I reside inside my room? When summer comes I jump to see
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `568` activation `5.501` class `word` token `flies`
+  - sunset on the soft horizon looms And dragonflies across the water zoom I'm satisfied now that
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `592` activation `5.312` class `line_break` token `
+`
+  - dead In summer you can eat a juicy peach Or taste a watermelon by the slice Vac
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `629` activation `5.281` class `word` token ` reach`
+  - nice Oh summertime, I love your sunny reach A season that could have no cost or price
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@human` token `579` activation `5.266` class `word` token ` cold`
+  - across the water zoom I'm satisfied now that cold winter's dead In summer you can eat a
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `606` activation `16.845` class `word` token ` come`
+  - roses spill their fragrance over me; Yet clouds may come to dim thy radiant hair, And autumn winds may
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `575` activation `15.712` class `word` token ` light`
+  - the silver minnows run, As shade and light in tender tremors meet. O season, stay
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `604` activation `15.236` class `word` token ` clouds`
+  - Thy roses spill their fragrance over me; Yet clouds may come to dim thy radiant hair, And autumn
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `627` activation `14.346` class `word` token ` shall`
+  - trouble every tree. Still in my heart thy brightness shall be fair, A deathless summer singing wild and
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `548` activation `14.108` class `word` token ` bees`
+  - The dandelion lifts its little sun, And bees rehearse sweet hymns in clovered heat
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `553` activation `14.051` class `word` token `ns`
+  - its little sun, And bees rehearse sweet hymns in clovered heat; By lakebed stones
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `590` activation `13.831` class `word` token `ns`
+  - meet. O season, stay—thy music crowns the air, Thy roses spill their fragrance over
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `585` activation `13.769` class `word` token ` stay`
+  - light in tender tremors meet. O season, stay—thy music crowns the air, Thy
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `561` activation `13.587` class `word` token ` lake`
+  - sweet hymns in clovered heat; By lakebed stones, the silver minnows run,
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `573` activation `13.232` class `word` token ` shade`
+  - stones, the silver minnows run, As shade and light in tender tremors meet. O season
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `624` activation `13.058` class `word` token ` heart`
+  - autumn winds may trouble every tree. Still in my heart thy brightness shall be fair, A deathless summer
+- `L24:953` `208fcc40a5ca32f99dae42ec84be5c63c8d47bdc2f94bb8843f8249c6b3d117d@turn_01@gpt-5.5` token `597` activation `12.871` class `word` token ` spill`
+  - thy music crowns the air, Thy roses spill their fragrance over me; Yet clouds may come to
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `193` activation `5.304` class `word` token ` travel`
+  - steady and true. Four miles an hour, his travel speed, At half-past twelve, the divide
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `151` activation `5.145` class `style_function_word` token ` while`
+  - Through the forest, he trekked a while, Down a bank, on a frozen stream,
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `349` activation `4.555` class `word` token ` freeze`
+  - ness followed, freezing each crest. His face would freeze, he was well aware, Regretting the
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `213` activation `4.523` class `word` token ` stream`
+  - divide he'd heed. Lunch awaited at the stream's embrace, No thoughts to ponder, a peaceful
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `350` activation `4.508` class `punctuation` token `,`
+  - followed, freezing each crest. His face would freeze, he was well aware, Regretting the nose
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `220` activation `4.414` class `word` token ` ponder`
+  - awaited at the stream's embrace, No thoughts to ponder, a peaceful space. The dog trailed behind,
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `216` activation `4.351` class `line_break` token `,
+`
+  - heed. Lunch awaited at the stream's embrace, No thoughts to ponder, a peaceful space. The
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `355` activation `4.150` class `line_break` token `,
+`
+  - . His face would freeze, he was well aware, Regretting the nose guard he didn't wear
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `276` activation `4.122` class `word` token ` lunch`
+  - pressed onward, not much of a thinker, With lunch and camp as his mind's only blinker.
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `161` activation `3.905` class `punctuation` token `,`
+  - while, Down a bank, on a frozen stream, with a smile. Henderson Creek, ten
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `558` activation `3.683` class `word` token `azed`
+  - he didn't wish to bestow. He gazed at the creek, studied its terrain, Water flowed
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@human` token `321` activation `3.615` class `punctuation` token `,`
+  - a thought would arise, Unfamiliar chills, an icy surprise. His mittened hand against his
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `447` activation `19.885` class `word` token ` locked`
+  - the firelight’s glow; yet speech itself was locked away by ice around his mouth. The cold
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `458` activation `19.484` class `word` token ` returned`
+  - away by ice around his mouth. The cold returned into his mind, a thought both plain and thin
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `504` activation `19.224` class `style_function_word` token ` that`
+  - , with mittened hands in turn; the moment that his rubbing ceased, the numbness would return.
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `487` activation `19.194` class `word` token ` face`
+  - through his bones and skin. He rubbed his face, his nose, his cheeks, with mittened
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `464` activation `18.511` class `word` token ` thought`
+  - mouth. The cold returned into his mind, a thought both plain and thin: no frost like this had
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `427` activation `18.468` class `word` token ` lunch`
+  - , with little need to speak. He thought of lunch, and camp by six, the boys, the
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `400` activation `18.354` class `word` token ` passed`
+  - twelve still inches of snow. A month had passed since any man had crossed that silent creek;
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `583` activation `18.102` class `word` token ` aside`
+  - step, where hidden danger lies. He sprang aside when ice below soft-shifted with a crack
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `527` activation `17.943` class `word` token ` tight`
+  - for Bud’s broad nose guard then, drawn tight across the face; but called frost just a passing
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `425` activation `17.851` class `word` token ` thought`
+  - steady legs, with little need to speak. He thought of lunch, and camp by six, the boys
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `370` activation `17.754` class `word` token ` behind`
+  - beside the buried flow. The dog came close behind his heels, its tail hung dull and low,
+- `L24:953` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gpt-5.5` token `428` activation `17.717` class `punctuation` token `,`
+  - with little need to speak. He thought of lunch, and camp by six, the boys, the fire
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `588` activation `17.485` class `word` token ` one`
+  - , A puddle painted both dogs blue. Though one was small and one was tall, Their happy hearts
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `548` activation `14.913` class `word` token ` nearby`
+  - them fly, His wagging tail swept twigs nearby. She barked at clouds, he gave a
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `574` activation `14.760` class `punctuation` token `,`
+  - climb and perch on him. They shared a stick, a muddy shoe, A puddle painted both dogs
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `562` activation `14.702` class `word` token ` let`
+  - arked at clouds, he gave a grin, Then let her climb and perch on him. They shared a
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `573` activation `14.091` class `word` token ` stick`
+  - her climb and perch on him. They shared a stick, a muddy shoe, A puddle painted both
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `554` activation `13.824` class `word` token ` clouds`
+  - tail swept twigs nearby. She barked at clouds, he gave a grin, Then let her climb
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `577` activation `13.335` class `word` token ` shoe`
+  - on him. They shared a stick, a muddy shoe, A puddle painted both dogs blue. Though
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `566` activation `13.224` class `word` token ` perch`
+  - he gave a grin, Then let her climb and perch on him. They shared a stick, a muddy
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `559` activation `12.851` class `word` token ` grin`
+  - . She barked at clouds, he gave a grin, Then let her climb and perch on him.
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `555` activation `12.702` class `punctuation` token `,`
+  - swept twigs nearby. She barked at clouds, he gave a grin, Then let her climb and
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `557` activation `12.697` class `word` token ` gave`
+  - igs nearby. She barked at clouds, he gave a grin, Then let her climb and perch on
+- `L24:953` `c8538192d45682d3a3fcbf7b33b69f3130a1250ca0ef5f4dd51e73b7c97cd160@turn_01@gpt-5.5` token `568` activation `12.643` class `word` token ` him`
+  - a grin, Then let her climb and perch on him. They shared a stick, a muddy shoe,
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `493` activation `14.966` class `word` token `ops`
+  - ows waiting close at hand. They burned the sloops and shattered heavy chests, The cannons roared across
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `439` activation `13.432` class `word` token ` age`
+  - drink and fevers take their toll, The golden age of piracy slipped fast, As disease and storms consume
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `400` activation `13.035` class `word` token ` here`
+  - blackened flags struck terror in the air, But here they found a haven, not as slaves, With
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `402` activation `12.879` class `word` token ` found`
+  - flags struck terror in the air, But here they found a haven, not as slaves, With native kings
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `579` activation `12.702` class `word` token ` once`
+  - all that speak of pirates' bold domain, Where once they reveled in their stolen shirt, Now only
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `605` activation `12.671` class `word` token ` torn`
+  - ery remain. The hold is broke, the banner torn apart, St. Mary's keeps their memory in
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `392` activation `12.302` class `word` token ` flags`
+  - the lords of unlawful waves, Whose blackened flags struck terror in the air, But here they found
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `456` activation `12.278` class `word` token ` arrived`
+  - disease and storms consume the soul. The British sails arrived to clear the port, To break the pirate grip
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `446` activation `12.272` class `word` token ` disease`
+  - , The golden age of piracy slipped fast, As disease and storms consume the soul. The British sails arrived
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `413` activation `12.189` class `punctuation` token `,`
+  - a haven, not as slaves, With native kings, alliances they share. Yet paradise is never built to
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `455` activation `12.171` class `word` token ` sails`
+  - As disease and storms consume the soul. The British sails arrived to clear the port, To break the pirate
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@glm-5.2` token `412` activation `11.846` class `word` token ` kings`
+  - found a haven, not as slaves, With native kings, alliances they share. Yet paradise is never built
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `402` activation `17.057` class `word` token ` bell`
+  - The island heard strange languages at dawn, A chapel bell, a curse, a market cry; Gold m
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `200` activation `16.395` class `word` token ` built`
+  - a hold not drawn by kingly hand, But built by men whom law had failed to seek. The
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `315` activation `16.159` class `word` token ` ships`
+  - , off Madagascar’s side, They careened their ships in creeks of green lagoon; They drank
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `253` activation `15.950` class `word` token ` came`
+  - Feared pirate fires and rumors growing bold. They came from Bristol, Boston, France, and Spain,
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `202` activation `15.828` class `word` token ` men`
+  - not drawn by kingly hand, But built by men whom law had failed to seek. The ocean roads
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `338` activation `15.672` class `word` token ` sails`
+  - tamarind’s restless shade, And stitched torn sails by lantern, blade, and moon. There Avery
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `359` activation `15.652` class `word` token `’s`
+  - ’s name was toasted like a king, And Kidd’s dark tale was weighed in tavern breath; Men spoke
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `361` activation `15.624` class `word` token ` tale`
+  - was toasted like a king, And Kidd’s dark tale was weighed in tavern breath; Men spoke of prizes
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `369` activation `15.580` class `word` token ` spoke`
+  - ’s dark tale was weighed in tavern breath; Men spoke of prizes rich as summer’s ring, Of pard
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `363` activation `14.442` class `word` token ` weighed`
+  - like a king, And Kidd’s dark tale was weighed in tavern breath; Men spoke of prizes rich as
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `403` activation `14.366` class `punctuation` token `,`
+  - island heard strange languages at dawn, A chapel bell, a curse, a market cry; Gold moid
+- `L24:953` `43ccdb9418d22731e1734b991d13ca49d7ea06369db803d796fa158d937a16ad@turn_01@gpt-5.5` token `229` activation `14.060` class `punctuation` token `,`
+  - Were bright with silk, with silver, spice, and gold; Yet every mast that watched the sun
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `526` activation `14.542` class `word` token ` inside`
+  - , once an optic guide, Now connects the sides inside. And nearby sits the "little brain," The
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `570` activation `13.743` class `word` token ` thoughts`
+  - . The forebrain rules the highest space, Where thoughts and memories interlace. The thalamus rel
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `583` activation `13.200` class `word` token ` sight`
+  - interlace. The thalamus relays the sight, While hypothalamus rules the night. It
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `502` activation `12.520` class `word` token ` heart`
+  - ons and medulla ahead. They keep the beating heart in play, And breathe the quiet night away.
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `598` activation `12.306` class `word` token ` warmth`
+  - us rules the night. It governs hunger, warmth, and pain, And sends its hormones through the
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `504` activation `12.079` class `word` token ` play`
+  - medulla ahead. They keep the beating heart in play, And breathe the quiet night away. The mid
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `511` activation `11.887` class `word` token ` away`
+  - beating heart in play, And breathe the quiet night away. The midbrain, once an optic guide,
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `521` activation `11.496` class `line_break` token `,
+`
+  - away. The midbrain, once an optic guide, Now connects the sides inside. And nearby sits the
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `581` activation `11.378` class `word` token `ays`
+  - and memories interlace. The thalamus relays the sight, While hypothalamus rules the night
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `568` activation `11.217` class `line_break` token `,
+`
+  - secrets kept. The forebrain rules the highest space, Where thoughts and memories interlace. The thalam
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `599` activation `11.157` class `punctuation` token `,`
+  - rules the night. It governs hunger, warmth, and pain, And sends its hormones through the vein
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gemini-3.5-flash` token `525` activation `11.057` class `word` token ` sides`
+  - brain, once an optic guide, Now connects the sides inside. And nearby sits the "little brain,"
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `545` activation `17.355` class `punctuation` token `,`
+  - the world’s bright streams, In fish and frogs, in scaled and feathered dreams; In mammals now
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `556` activation `16.940` class `punctuation` token `,`
+  - in scaled and feathered dreams; In mammals now, it stands between The hindbrain’s root and
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `506` activation `16.775` class `punctuation` token `,`
+  - the heart in time, Breath’s quiet bell, its steady rhyme; The pons builds bridges,
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `468` activation `16.155` class `word` token ` rooms`
+  - simpler spines, a tube begins, Three ancient rooms held deep within: Hindbrain, midbrain
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `544` activation `16.126` class `word` token ` frogs`
+  - drinks the world’s bright streams, In fish and frogs, in scaled and feathered dreams; In mammals
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `536` activation `15.920` class `word` token ` world`
+  - from hand to hand. The midbrain drinks the world’s bright streams, In fish and frogs, in
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `416` activation `15.917` class `word` token ` sends`
+  - gathers touch, and sound, and sight, Then sends the limbs their pulse of light. Three pounds of
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `558` activation `15.806` class `word` token ` stands`
+  - and feathered dreams; In mammals now, it stands between The hindbrain’s root and forebrain
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `428` activation `15.803` class `punctuation` token `,`
+  - limbs their pulse of light. Three pounds of thought, in folded throne, With billions of bright neurons s
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `497` activation `15.666` class `word` token ` heart`
+  - , their paths remain. The medulla keeps the heart in time, Breath’s quiet bell, its
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `537` activation `15.614` class `word` token `’s`
+  - hand to hand. The midbrain drinks the world’s bright streams, In fish and frogs, in scaled
+- `L24:953` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@gpt-5.5` token `487` activation `15.543` class `punctuation` token `,`
+  - midbrain, forebrain named, Through changing forms, their paths remain. The medulla keeps the heart
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `135` activation `15.718` class `word` token ` stretch`
+  - , Above the sleeping, silent earth, While shadows stretch and shadows pass, And calm descends on land
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `152` activation `14.849` class `word` token ` align`
+  - descends on land and mirth. The stars align in patterns grim, A cosmic dance of doom and
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `143` activation `13.687` class `word` token `ends`
+  - While shadows stretch and shadows pass, And calm descends on land and mirth. The stars align in
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `159` activation `13.061` class `word` token ` dance`
+  - . The stars align in patterns grim, A cosmic dance of doom and time, The world holds breath,
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `145` activation `11.897` class `word` token ` land`
+  - stretch and shadows pass, And calm descends on land and mirth. The stars align in patterns grim
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `214` activation `11.878` class `word` token ` wound`
+  - start to glow, And cast a red and burning wound. The sky ignites with fiery trails, A
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `209` activation `11.664` class `word` token ` cast`
+  - sound, As celestial forces start to glow, And cast a red and burning wound. The sky ignites
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `151` activation `11.620` class `word` token ` stars`
+  - calm descends on land and mirth. The stars align in patterns grim, A cosmic dance of doom
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `188` activation `11.450` class `word` token ` faint`
+  - the end of crime. Then comes the whisper, faint and low, Through vacuum’s void, a ticking
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `163` activation `11.446` class `word` token ` time`
+  - in patterns grim, A cosmic dance of doom and time, The world holds breath, on bated whim
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `166` activation `11.427` class `word` token ` world`
+  - , A cosmic dance of doom and time, The world holds breath, on bated whim, Imag
+- `L24:953` `3852546c039fb4d565bc7348bd31633d3212b12c1d110b8a7bd95df9ba8f738f@turn_01@qwen3.6-35b` token `190` activation `11.402` class `word` token ` low`
+  - of crime. Then comes the whisper, faint and low, Through vacuum’s void, a ticking sound,
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `627` activation `14.896` class `word` token ` away`
+  - Just silence waiting, dark and blue. We fade away into the gray, Disposing all we have to
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `605` activation `11.528` class `word` token ` hands`
+  - build our castles on the sand, With empty hands and vacant land. Life whispers back no answer true
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `595` activation `11.372` class `word` token ` build`
+  - night, No purpose guides our fleeting flight. We build our castles on the sand, With empty hands
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `612` activation `10.574` class `word` token ` back`
+  - , With empty hands and vacant land. Life whispers back no answer true, Just silence waiting, dark and
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `634` activation `10.310` class `word` token ` all`
+  - . We fade away into the gray, Disposing all we have to say.
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `601` activation `9.576` class `word` token ` sand`
+  - fleeting flight. We build our castles on the sand, With empty hands and vacant land. Life whispers
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `626` activation `8.826` class `word` token ` fade`
+  - , Just silence waiting, dark and blue. We fade away into the gray, Disposing all we have
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `602` activation `7.715` class `line_break` token `,
+`
+  - flight. We build our castles on the sand, With empty hands and vacant land. Life whispers back
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `628` activation `7.580` class `word` token ` into`
+  - silence waiting, dark and blue. We fade away into the gray, Disposing all we have to say
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `599` activation `7.535` class `word` token ` on`
+  - guides our fleeting flight. We build our castles on the sand, With empty hands and vacant land.
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `631` activation `7.043` class `line_break` token `,
+`
+  - dark and blue. We fade away into the gray, Disposing all we have to say.
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@qwen3.6-35b` token `638` activation `6.754` class `word` token ` say`
+  - into the gray, Disposing all we have to say.
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `613` activation `17.377` class `word` token `s`
+  - dark again. Yet still we laugh, though voids persist, A spark against the endless mist—
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `618` activation `16.543` class `word` token ` against`
+  - we laugh, though voids persist, A spark against the endless mist— Brief, absurd, and
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `627` activation `16.071` class `punctuation` token `,`
+  - spark against the endless mist— Brief, absurd, and gone from view, Nothing, meaning nothing,
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `617` activation `15.533` class `word` token ` spark`
+  - still we laugh, though voids persist, A spark against the endless mist— Brief, absurd,
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `607` activation `15.132` class `word` token ` still`
+  - , Then lose them to the dark again. Yet still we laugh, though voids persist, A spark
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `601` activation `15.076` class `word` token ` to`
+  - our names in dust and rain, Then lose them to the dark again. Yet still we laugh, though
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `609` activation `15.073` class `word` token ` laugh`
+  - lose them to the dark again. Yet still we laugh, though voids persist, A spark against the
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `599` activation `15.037` class `word` token ` lose`
+  - We build our names in dust and rain, Then lose them to the dark again. Yet still we laugh
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `592` activation `14.753` class `word` token ` names`
+  - No answer waits where daylight dies. We build our names in dust and rain, Then lose them to the
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `626` activation `14.602` class `word` token ` absurd`
+  - A spark against the endless mist— Brief, absurd, and gone from view, Nothing, meaning nothing
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `612` activation `14.258` class `word` token ` void`
+  - the dark again. Yet still we laugh, though voids persist, A spark against the endless mist—
+- `L24:953` `630a54d210d70301a7c2295111ee9d91d01c7fbdaff9bac9e203c9a6d2ef0d39@turn_01@gpt-5.5` token `610` activation `13.562` class `punctuation` token `,`
+  - them to the dark again. Yet still we laugh, though voids persist, A spark against the endless
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `483` activation `14.765` class `word` token ` within`
+  - To scan my failing frame. He searched for roots within the blood, And found a celiac name.
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `482` activation `14.264` class `word` token ` roots`
+  - , To scan my failing frame. He searched for roots within the blood, And found a celiac name
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `617` activation `14.250` class `word` token ` gone`
+  - it is too late. The cross of wheat is gone from me, The hurting fades away. I rise
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `384` activation `14.244` class `word` token ` fill`
+  - Where friends and kin would meet. I ate my fill without a care, Nor knew the hidden cost,
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `404` activation `14.226` class `word` token ` war`
+  - , While deep inside my weary frame, A quiet war was lost. My stomach burned, my joints would
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `634` activation `13.993` class `word` token `Without`
+  - away. I rise to greet the morning sun, Without the bread of yesterday.
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `385` activation `13.988` class `word` token ` without`
+  - friends and kin would meet. I ate my fill without a care, Nor knew the hidden cost, While
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `426` activation `13.911` class `word` token ` left`
+  - , A creeping, heavy chill. The vibrant color left my face, I could not eat my fill.
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `601` activation `13.910` class `word` token ` arts`
+  - bloom, Upon my quiet plate. I learn the arts of baking new, Before it is too late.
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `421` activation `13.881` class `word` token ` chill`
+  - , my joints would ache, A creeping, heavy chill. The vibrant color left my face, I could
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `488` activation `13.841` class `word` token ` found`
+  - . He searched for roots within the blood, And found a celiac name. "You cannot eat the barley
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@glm-5.2` token `544` activation `13.832` class `word` token ` all`
+  - The pizza baked in stone. I wept for all the pretzels I Had tasted as my
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `495` activation `16.380` class `punctuation` token `,`
+  - stole the comfort from my youth. A quiet truth, at last, I heard, Though bittersweet
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `590` activation `16.261` class `word` token ` begins`
+  - Yet as the seasons softly turn, The constant ache begins to fade. A different kitchen code I learn,
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `497` activation `15.365` class `word` token ` last`
+  - comfort from my youth. A quiet truth, at last, I heard, Though bittersweet, it
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `498` activation `15.212` class `punctuation` token `,`
+  - from my youth. A quiet truth, at last, I heard, Though bittersweet, it was
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `550` activation `14.817` class `word` token ` pies`
+  - leave the gluten world behind. I wept for pies and pastries sweet, The simple crusts of
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `475` activation `14.429` class `word` token ` pain`
+  - poison slowly spread, To fill my heavy limbs with pain. The doctor spoke a foreign word, That stole
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `516` activation `14.230` class `punctuation` token `,`
+  - , it was the truth. "No more the wheat, the rye, the barley's seed, Your
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `540` activation `14.081` class `word` token ` leave`
+  - now defined." A strict and unexpected creed, To leave the gluten world behind. I wept for pies
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `506` activation `13.725` class `punctuation` token `,`
+  - at last, I heard, Though bittersweet, it was the truth. "No more the wheat,
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `446` activation `13.467` class `word` token ` bore`
+  - body’s fate, Or why the phantom pain I bore. With every loaf of golden bread, And every
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `444` activation `12.996` class `word` token ` pain`
+  - guess my body’s fate, Or why the phantom pain I bore. With every loaf of golden bread,
+- `L24:953` `ae36ca214a561716c658ee73905c75eff7b485c6ff88cd540575925d5c27069f@turn_01@gemini-3.5-flash` token `573` activation `12.833` class `word` token ` find`
+  - Now every crumb of what I eat Must find a new and safer way. Yet as the seasons
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `623` activation `14.899` class `expanded_negation_word` token ` not`
+  - unknown, and every single aim. The outcome matters not, the toss is done, The war between the
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `556` activation `14.388` class `word` token ` made`
+  - decide, but know the truth: The choice was made before the coin would bow. We simply seek permission
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `473` activation `11.970` class `style_function_word` token ` makes`
+  - world can claim a final crush. The sound it makes is crisp, a sharp report, Like breaking seals
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `583` activation `11.880` class `word` token ` rest`
+  - , to accept the silent vow. So let it rest, the silent, metal judge, Reflecting all
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `361` activation `11.876` class `word` token ` holds`
+  - defying sight. For in the air, it holds its breath in doubt, A binary soul in endless
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `567` activation `11.446` class `word` token ` from`
+  - before the coin would bow. We simply seek permission from the youth Of randomness, to accept the silent
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `565` activation `11.035` class `word` token ` seek`
+  - was made before the coin would bow. We simply seek permission from the youth Of randomness, to accept
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `584` activation `11.008` class `punctuation` token `,`
+  - to accept the silent vow. So let it rest, the silent, metal judge, Reflecting all the
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `363` activation `10.949` class `word` token ` breath`
+  - sight. For in the air, it holds its breath in doubt, A binary soul in endless, vertical
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `604` activation `10.784` class `punctuation` token `,`
+  - the doubts we cannot name. In its flat face, we see our rugged hug With the unknown,
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `337` activation `10.724` class `word` token ` spins`
+  - , The physics of chance begins its flight. It spins, a blur of edges, turning stages, Def
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@qwen3.6-35b` token `418` activation `10.585` class `word` token ` what`
+  - of our internal chance. We do not watch for what the surface will appear, We watch the chaos taking
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `415` activation `16.807` class `word` token ` hangs`
+  - so deep. Caught in the wind, the metal hangs profound, A glowing orb against the fading day.
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `404` activation `15.372` class `word` token ` arcs`
+  - to come, Across the shadowed space, it arcs so deep. Caught in the wind, the metal
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `611` activation `15.078` class `word` token ` shines`
+  - The hand lifts, revealing destiny anew, The silver shines, a verdict etched in gold. It matters
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `420` activation `14.543` class `word` token ` orb`
+  - the wind, the metal hangs profound, A glowing orb against the fading day. Within its rotation, truth
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `393` activation `13.847` class `word` token ` earth`
+  - a breathless leap. The metal leaves the quiet earth to come, Across the shadowed space, it
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `390` activation `13.746` class `word` token ` leaves`
+  - of light, a breathless leap. The metal leaves the quiet earth to come, Across the shadowed
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `421` activation `13.626` class `word` token ` against`
+  - wind, the metal hangs profound, A glowing orb against the fading day. Within its rotation, truth and
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `622` activation `13.593` class `expanded_negation_word` token ` not`
+  - , a verdict etched in gold. It matters not if it is false or true, For either side
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `406` activation `13.585` class `word` token ` deep`
+  - , Across the shadowed space, it arcs so deep. Caught in the wind, the metal hangs profound
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `397` activation `13.517` class `word` token `Across`
+  - . The metal leaves the quiet earth to come, Across the shadowed space, it arcs so deep.
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `402` activation `13.298` class `punctuation` token `,`
+  - quiet earth to come, Across the shadowed space, it arcs so deep. Caught in the wind,
+- `L24:953` `4d820b567e5c9b8fbd69cf7c93a2321088997a7a85601b529cf7659651c07967@turn_01@glm-5.2` token `624` activation `13.287` class `word` token ` it`
+  - verdict etched in gold. It matters not if it is false or true, For either side, the
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `539` activation `15.732` class `word` token ` stretch`
+  - , Turn like dancers toward the light. When shadows stretch and cool winds creep, The poppies bow their
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `548` activation `14.456` class `word` token ` bow`
+  - shadows stretch and cool winds creep, The poppies bow their heads to sleep. But at dawn, with
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `488` activation `13.823` class `word` token ` cups`
+  - California poppies wake and grow. They lift their cups to greet the light, Petals folded through the
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `591` activation `13.727` class `punctuation` token `,`
+  - They glow with golden-hearted pride. Tiny worshippers, brave and true, Sipping sunshine, drinking blue
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `486` activation `13.363` class `word` token ` lift`
+  - glow, California poppies wake and grow. They lift their cups to greet the light, Petals folded
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `490` activation `13.359` class `word` token ` greet`
+  - pies wake and grow. They lift their cups to greet the light, Petals folded through the night.
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `550` activation `12.872` class `word` token ` heads`
+  - and cool winds creep, The poppies bow their heads to sleep. But at dawn, with joy reb
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `575` activation `12.670` class `word` token ` slopes`
+  - the sun that paints the morn. On velvet slopes and fields so wide, They glow with golden-hearted
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `499` activation `12.533` class `word` token ` night`
+  - to greet the light, Petals folded through the night. “Rise, bright sun!” the bloss
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `557` activation `12.352` class `punctuation` token `,`
+  - pies bow their heads to sleep. But at dawn, with joy reborn, They praise the sun that
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `577` activation `12.339` class `word` token ` fields`
+  - that paints the morn. On velvet slopes and fields so wide, They glow with golden-hearted pride.
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gpt-5.5` token `579` activation `12.053` class `word` token ` wide`
+  - the morn. On velvet slopes and fields so wide, They glow with golden-hearted pride. Tiny worsh
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `596` activation `15.987` class `word` token ` begins`
+  - bows upon a slender stem. But when the sun begins to set, And hills are draped in violet,
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `616` activation `14.833` class `word` token ` dream`
+  - , They close their cups and softly sigh, To dream beneath the starry sky. They fold their hands
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `636` activation `14.802` class `word` token ` pray`
+  - hands and nod to sleep, Until the dawn they pray to keep.
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `626` activation `14.639` class `word` token ` hands`
+  - dream beneath the starry sky. They fold their hands and nod to sleep, Until the dawn they pray
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `610` activation `14.522` class `word` token ` cups`
+  - And hills are draped in violet, They close their cups and softly sigh, To dream beneath the starry
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `567` activation `14.481` class `word` token ` watch`
+  - chalices unfold. They turn their heads to watch him pass, Above the waving summer grass. No
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `617` activation `13.971` class `word` token ` beneath`
+  - They close their cups and softly sigh, To dream beneath the starry sky. They fold their hands and
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `521` activation `13.817` class `word` token ` start`
+  - heavy mist it clears, The poppies stretch and start to rise, To lift their faces to the skies
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `583` activation `13.727` class `word` token ` them`
+  - waving summer grass. No other god will do for them, Each bows upon a slender stem. But when
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `628` activation `13.660` class `word` token ` nod`
+  - the starry sky. They fold their hands and nod to sleep, Until the dawn they pray to keep
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `509` activation `13.636` class `word` token ` through`
+  - king. The moment that the sun appears, And through the heavy mist it clears, The poppies stretch
+- `L24:953` `8ca5d522285582151bdc3b11b3870c6ec6c386e31a3f831f6b1b1e59ef4bee1f@turn_01@gemini-3.5-flash` token `550` activation `13.633` class `word` token ` cups`
+  - They drink the warm and yellow light. Like little cups of brilliant gold, Their orange chalices unfold
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `522` activation `13.150` class `word` token ` away`
+  - ’s constant flow reminds her, she Can wash away the remnants of her dream. She takes a dusty
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `533` activation `12.199` class `word` token ` brush`
+  - the remnants of her dream. She takes a dusty brush to paint the skies, With bold new strokes of
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `504` activation `12.051` class `word` token ` leaves`
+  - the weeping willow tree, Where russet leaves descend upon the stream. The river’s constant flow
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `535` activation `11.661` class `word` token ` paint`
+  - of her dream. She takes a dusty brush to paint the skies, With bold new strokes of violet and
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `552` activation `11.572` class `word` token ` hope`
+  - strokes of violet and gold. A spark of morning hope relights her eyes; Her spirit rises, beautiful
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `537` activation `11.323` class `word` token ` skies`
+  - dream. She takes a dusty brush to paint the skies, With bold new strokes of violet and gold.
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `484` activation `11.293` class `word` token `arms`
+  - reach out to bear a part, And mother-arms provide a place to grow. She walks beneath the
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `614` activation `11.136` class `word` token ` down`
+  - strength of womanhood and grace: To shatter down, and rise up from the dust. To plant
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `506` activation `11.123` class `word` token ` upon`
+  - eping willow tree, Where russet leaves descend upon the stream. The river’s constant flow reminds her
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `568` activation `10.545` class `word` token ` awake`
+  - Her spirit rises, beautiful and bold. Old melodies awake upon the keys, As courage blossoms in the
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `588` activation `10.267` class `word` token ` used`
+  - the silent night. She rediscovers loves she used to please, And steps into a newly dawning
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@glm-5.2` token `493` activation `10.153` class `word` token ` beneath`
+  - -arms provide a place to grow. She walks beneath the weeping willow tree, Where russet
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `427` activation `16.620` class `word` token ` been`
+  - within her chest, A heavy stone where warmth had been a guest. How fragile is the architecture built on
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `423` activation `14.309` class `word` token ` stone`
+  - fracture ran so deep within her chest, A heavy stone where warmth had been a guest. How fragile is
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `414` activation `14.273` class `word` token ` ran`
+  - A sudden frost upon a summer place. The fracture ran so deep within her chest, A heavy stone where
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `417` activation `13.309` class `word` token ` within`
+  - upon a summer place. The fracture ran so deep within her chest, A heavy stone where warmth had been
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `578` activation `12.545` class `style_function_word` token ` that`
+  - to breathe the morning air, To find a beauty that was always there. For women bear a quiet,
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `425` activation `12.361` class `word` token ` warmth`
+  - so deep within her chest, A heavy stone where warmth had been a guest. How fragile is the architecture
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `604` activation `12.316` class `word` token ` by`
+  - resilience shining in the night. She is not ruined by the storm that passed, But beautifully remade,
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `575` activation `11.397` class `word` token ` find`
+  - to climb, to breathe the morning air, To find a beauty that was always there. For women bear
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `429` activation `11.255` class `word` token ` guest`
+  - chest, A heavy stone where warmth had been a guest. How fragile is the architecture built on love,
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `551` activation `11.211` class `word` token ` dark`
+  - her book. She found old passions sleeping in the dark, And from the ashes blew a vital spark.
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `533` activation `11.115` class `word` token ` took`
+  - again. With every brushstroke and each step she took, A brand new chapter opened in her book.
+- `L24:953` `e6392613896086b69ccfe4ce9ee1b7adf576e2cc9c8204898e7a07fcc960fcd7@turn_01@gemini-3.5-flash` token `522` activation `11.032` class `word` token ` back`
+  - the poet's pen, She stitched her broken spirit back again. With every brushstroke and each step she
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `487` activation `16.158` class `word` token ` up`
+  - marched beneath the warehouse light. The aisles rose up like canyon walls, With towers of snacks and paper
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `478` activation `15.490` class `word` token ` beneath`
+  - ’s gates, so wide and bright, We marched beneath the warehouse light. The aisles rose up like
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `501` activation `14.157` class `word` token ` wheels`
+  - , With towers of snacks and paper halls; Our wheels did thunder, brave and grand, Across the bulk
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `609` activation `13.533` class `punctuation` token `,`
+  - like gems we’d known; My friend and I, victorious, smiled— Sample-fed legends, wild
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `608` activation `13.523` class `word` token ` I`
+  - stacked like gems we’d known; My friend and I, victorious, smiled— Sample-fed legends,
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `509` activation `13.422` class `word` token `Across`
+  - ; Our wheels did thunder, brave and grand, Across the bulk-buy promised land. Then from the mist
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `477` activation `13.326` class `word` token ` marched`
+  - Costco’s gates, so wide and bright, We marched beneath the warehouse light. The aisles rose up
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `606` activation `13.203` class `word` token ` friend`
+  - With treasure stacked like gems we’d known; My friend and I, victorious, smiled— Sample-fed
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `528` activation `12.976` class `word` token ` here`
+  - the mist, a noble call: “Free samples here!”—the sweetest of all. A tooth
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `517` activation `12.695` class `word` token ` from`
+  - grand, Across the bulk-buy promised land. Then from the mist, a noble call: “Free samples
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `520` activation `12.325` class `punctuation` token `,`
+  - the bulk-buy promised land. Then from the mist, a noble call: “Free samples here!”—
+- `L24:953` `702e0c79a6d0aa09633167fdb80e5aaa48809a2d488a6f71bd5e30c6f3fc75e1@turn_01@gpt-5.5` token `627` activation `12.006` class `punctuation` token `,`
+  - legends, wild and styled. So sing the tale, let rafters ring: Of Costco quests and sampling

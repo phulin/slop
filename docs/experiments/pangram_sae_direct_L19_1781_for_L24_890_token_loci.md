@@ -1,0 +1,283 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1781` | `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` | `human` | 21 | `56.99` | `5.98` | word:19|punctuation:2 |
+| `L19:1781` | `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` | `glm-5.2` | 20 | `60.03` | `5.46` | word:20 |
+| `L19:1781` | `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` | `gpt-5.5` | 11 | `27.11` | `6.21` | word:11 |
+| `L19:1781` | `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 13 | `34.63` | `5.90` | word:13 |
+| `L19:1781` | `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 11 | `37.00` | `5.94` | word:11 |
+| `L19:1781` | `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` | `human` | 11 | `28.76` | `5.78` | word:11 |
+| `L19:1781` | `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 13 | `41.46` | `6.14` | word:13 |
+| `L19:1781` | `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` | `human` | 11 | `33.98` | `6.23` | word:11 |
+| `L19:1781` | `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` | `human` | 7 | `25.89` | `5.70` | word:7 |
+| `L19:1781` | `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` | `human` | 15 | `41.84` | `6.04` | word:14|punctuation:1 |
+| `L19:1781` | `79804e8900159513e82f0e74ec80491230e05e9fe1fe5ffbb6499fdd564c61c3@turn_01@glm-5.2` | `glm-5.2` | 2 | `7.69` | `5.79` | word:2 |
+| `L19:1781` | `18bb24633af39d0c3618373613b7f1908f6c5ca62fa572e450a6a19b5327612d@turn_01@gpt-5.5` | `gpt-5.5` | 4 | `12.63` | `6.04` | word:4 |
+| `L19:1781` | `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` | `human` | 11 | `38.94` | `5.75` | word:11 |
+| `L19:1781` | `7d0600a8702772bb5b7ac38d744e16a81fc7b89bf3c1acb0befd8ef699ef3ad8@turn_01@glm-5.2` | `glm-5.2` | 1 | `5.79` | `5.79` | word:1 |
+
+## Top Tokens
+
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `260` activation `5.980` class `word` token ` Peter`
+  - Just two weeks ago, Peter, a baby bird, made his grand entrance into
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `289` activation `4.062` class `word` token ` Peter`
+  - his mother and father, it was almost time for Peter to venture out of the nest. The world outside
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `602` activation `3.927` class `word` token ` proud`
+  - jump, he caught an insect. He was so proud to be able to catch his own meals. He
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `317` activation `3.400` class `word` token `Peter`
+  - , and Peter was anxious about making the jump. Peter's parents started nudging him and his siblings toward
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `383` activation `3.036` class `word` token ` Peter`
+  - But, Peter was intrigued. One by one, Peter's siblings made the venture outside the nest. They
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `349` activation `2.921` class `word` token ` place`
+  - better view of the world. It was a beautiful place, but there were so many noises and things moving
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `543` activation `2.794` class `word` token `Peter`
+  - to his surprise, he was flying with ease. Peter saw his parents and siblings foraging around in some
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `634` activation `2.679` class `word` token ` place`
+  - that can be quite dangerous, it was a fantastic place to explore and live.
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `375` activation `2.671` class `word` token ` Peter`
+  - was daunting would be an understatement. But, Peter was intrigued. One by one, Peter's siblings
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `319` activation `2.641` class `word` token ` parents`
+  - Peter was anxious about making the jump. Peter's parents started nudging him and his siblings toward the edge
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `436` activation `2.620` class `word` token ` parents`
+  - decided it was time to be brave and join his parents and siblings outside the nest. He slowly stepped to
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@human` token `414` activation `2.558` class `word` token ` place`
+  - . They told him that the world was a great place and that they were having so much fun exploring.
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `276` activation `5.463` class `word` token ` patch`
+  - him, the vast world stretched out in an endless patchwork of emerald ferns and swaying wild
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `256` activation `5.398` class `word` token ` Peter`
+  - ched on the slippery edge of the woven nest, Peter peered over the dizzying drop. Below him
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `257` activation `4.182` class `word` token ` pe`
+  - on the slippery edge of the woven nest, Peter peered over the dizzying drop. Below him,
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `258` activation `3.784` class `word` token `ered`
+  - the slippery edge of the woven nest, Peter peered over the dizzying drop. Below him, the
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `380` activation `3.705` class `word` token ` pushed`
+  - a deep breath, Peter squeezed his eyes shut, pushed off the twiggy ledge, and threw himself into
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `419` activation `3.651` class `word` token ` panic`
+  - falling. The air rushed past his face, and panic seized his tiny heart. Instinctively, he
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `245` activation `3.573` class `word` token `Per`
+  - Perched on the slippery edge of the woven nest,
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `471` activation `3.568` class `word` token ` past`
+  - to see the branches of the old oak tree rushing past him in a blur of green and brown. He
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `571` activation `3.556` class `word` token ` past`
+  - trajectory just as a fat bumblebee buzzed past his beak. He landed clumsily on a
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `304` activation `3.544` class `word` token ` Peter`
+  - uddled together in the back, fast asleep, but Peter felt a stubborn tug of curiosity in his chest.
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `414` activation `3.513` class `word` token ` past`
+  - heartbeat, he was just falling. The air rushed past his face, and panic seized his tiny heart.
+- `L19:1781` `ed5a57a92cbe810671565b717bf527ebb5f37aa840212874b2215fa5738d3f63@turn_01@glm-5.2` token `246` activation `3.449` class `word` token `ched`
+  - Perched on the slippery edge of the woven nest, Peter
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `578` activation `6.207` class `word` token `Pakistan`
+  - Indonesia — about 280 million people Pakistan — about 240 million people Bangladesh —
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `601` activation `3.809` class `word` token ` population`
+  - 170 million people These rankings are based on recent population estimates and can vary slightly depending on the source and
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `557` activation `2.799` class `word` token ` people`
+  - are: India — about 1.43 billion people China — about 1.41 billion people
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `543` activation `2.686` class `word` token ` populated`
+  - The five most populated countries in Asia are: India — about 1
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `638` activation `2.628` class `word` token ` population`
+  - share of both Asia’s and the world’s total population.
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `555` activation `1.986` class `word` token `43`
+  - in Asia are: India — about 1.43 billion people China — about 1.41
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `567` activation `1.780` class `word` token ` people`
+  - people China — about 1.41 billion people Indonesia — about 280 million people
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `576` activation `1.751` class `word` token ` people`
+  - billion people Indonesia — about 280 million people Pakistan — about 240 million people Bang
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `584` activation `1.505` class `word` token ` people`
+  - 280 million people Pakistan — about 240 million people Bangladesh — about 170 million people
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `565` activation `1.413` class `word` token `41`
+  - 43 billion people China — about 1.41 billion people Indonesia — about 280 million
+- `L19:1781` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@gpt-5.5` token `593` activation `0.541` class `word` token ` people`
+  - million people Bangladesh — about 170 million people These rankings are based on recent population estimates and
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `362` activation `5.900` class `word` token ` Peter`
+  - Rocket shouted, his mechanical voice trembling with panic. Peter Quill sighed, rummaging through his pockets
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `360` activation `3.814` class `word` token ` panic`
+  - button,” Rocket shouted, his mechanical voice trembling with panic. Peter Quill sighed, rummaging through
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `404` activation `3.627` class `word` token ` perfectly`
+  - Nebula? Come on, Scotch tape would work perfectly!” “Nobody has any tape!” Quill finally
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `372` activation `3.496` class `word` token ` pockets`
+  - Peter Quill sighed, rummaging through his pockets before calling out to the team. “Yo,
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `500` activation `3.127` class `word` token ` priceless`
+  - accused, pointing a trembling finger. “You have priceless batteries and an atomic bomb in your bag. If
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `492` activation `3.062` class `word` token ` pointing`
+  - , why skip the cyborg?” Rocket accused, pointing a trembling finger. “You have priceless batteries and
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `562` activation `3.009` class `word` token ` point`
+  - against his wooden body. “That’s exactly my point! I have to do everything!” Rocket wailed
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `344` activation `2.981` class `word` token ` put`
+  - Does anybody have any tape out there? I wanna put some tape over the death button,” Rocket shouted,
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `425` activation `2.855` class `word` token ` person`
+  - declared, rubbing his temples. “Not a single person has tape?” Rocket screamed, disbelief coloring his tone
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `364` activation `1.042` class `word` token `ill`
+  - , his mechanical voice trembling with panic. Peter Quill sighed, rummaging through his pockets before calling
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `410` activation `0.762` class `word` token ` tape`
+  - Scotch tape would work perfectly!” “Nobody has any tape!” Quill finally declared, rubbing his temples.
+- `L19:1781` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@qwen3.6-35b` token `449` activation `0.585` class `word` token ` replied`
+  - you ask Nebula?” “Yes!” Quill replied, exasperated. “Are you sure?”
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `528` activation `5.937` class `word` token ` polar`
+  - warm water and precipitation from the tropics toward the polar regions, while sending cold water back toward the equ
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `512` activation `4.059` class `word` token ` poles`
+  - Because the equator receives more direct sunlight than the poles, ocean currents continuously transport warm water and precipitation from
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `626` activation `3.753` class `word` token ` patterns`
+  - , ocean currents stabilize global temperatures, dictate regional weather patterns, and sustain the diverse ecosystems that make life on
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `521` activation `3.239` class `word` token ` precipitation`
+  - the poles, ocean currents continuously transport warm water and precipitation from the tropics toward the polar regions, while
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `599` activation `3.181` class `word` token ` poles`
+  - experience extreme, uninhabitable heat, while the poles would plunge into permanent, severe freezes. By evening
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `569` activation `3.101` class `word` token ` propelled`
+  - thermohaline circulation—deep-ocean currents propelled by differences in water temperature and salinity. Without
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `488` activation `3.079` class `word` token ` playing`
+  - currents act as the Earth’s global conveyor belt, playing a vital role in regulating the climate by redistributing
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `601` activation `3.074` class `word` token ` plunge`
+  - , uninhabitable heat, while the poles would plunge into permanent, severe freezes. By evening out these
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `581` activation `3.018` class `word` token ` planetary`
+  - differences in water temperature and salinity. Without this planetary heat engine, the tropics would experience extreme,
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `603` activation `2.383` class `word` token ` permanent`
+  - habitable heat, while the poles would plunge into permanent, severe freezes. By evening out these extreme thermal
+- `L19:1781` `911addc293db7efff3b603afcf5889ce970251e2f54a8f4f99f93675c8813be3@turn_01@gemini-3.5-flash` token `638` activation `2.174` class `word` token ` possible`
+  - and sustain the diverse ecosystems that make life on Earth possible.
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `617` activation `5.781` class `word` token ` park`
+  - lots of trees and birds. Plus, there are park rangers from the nearby forest reserves that can assist
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `377` activation `4.190` class `word` token ` passenger`
+  - an engaging conversation with Sally, who sat in the passenger's seat. "I haven't been on this particular
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `613` activation `3.468` class `word` token ` Plus`
+  - well-established trails and lots of trees and birds. Plus, there are park rangers from the nearby forest
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `566` activation `2.982` class `word` token ` protect`
+  - , replied: "Don't worry, I'll protect you." Sally, with a wry smile,
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `589` activation `2.867` class `word` token ` playing`
+  - enny in on the joke. "I'm just playing. There's no wildlife where we're going.
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `387` activation `2.559` class `word` token ` particular`
+  - passenger's seat. "I haven't been on this particular hike before, but I have read about it online
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `378` activation `2.037` class `word` token `'s`
+  - engaging conversation with Sally, who sat in the passenger's seat. "I haven't been on this particular hike
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `504` activation `1.480` class `word` token ` appear`
+  - he was there, but he didn't want to appear nervous and risk looking weak in front of his new
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `350` activation `1.431` class `word` token ` backpack`
+  - with ice, drinks and snacks, hiking gear, backpacks and swim attire. Lenny concentrated on the
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `389` activation `1.138` class `word` token ` before`
+  - seat. "I haven't been on this particular hike before, but I have read about it online and have
+- `L19:1781` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `351` activation `0.825` class `word` token `s`
+  - ice, drinks and snacks, hiking gear, backpacks and swim attire. Lenny concentrated on the road
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `235` activation `6.143` class `word` token ` pil`
+  - dream. I am no longer driving; I am piloting a steel lung through the city’s ribc
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `404` activation `4.612` class `word` token ` pain`
+  - Turn the wheel. The tires scream, not in pain, but in protest, scraping against the rubber skin
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `359` activation `4.475` class `word` token ` pulse`
+  - place. My hands grip the wheel, feeling the pulse of the road travel up my arms, through my
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `324` activation `3.867` class `word` token ` pooling`
+  - blood falling from an invisible wound in the asphalt, pooling in the dark, urging me to stop, to
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `298` activation `3.548` class `word` token ` paint`
+  - the windshield, smearing the night like watercolor paint left out in the rain. Each red tail-light
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `581` activation `3.325` class `word` token ` past`
+  - , always chasing, always failing to overtake the past. The green light ahead is an eye opening,
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `272` activation `3.001` class `word` token ` push`
+  - combustion, burning ancient ghosts trapped in liquid amber to push us forward into the now. Outside, streetlights
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `511` activation `2.986` class `word` token ` pass`
+  - ed out into the cold, indifferent air. I pass a sign, blurred like a thought half-remember
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `349` activation `2.960` class `word` token ` place`
+  - the destination that feels more like a ghost than a place. My hands grip the wheel, feeling the pulse
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `408` activation `2.251` class `word` token ` protest`
+  - The tires scream, not in pain, but in protest, scraping against the rubber skin of the earth.
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `236` activation `2.215` class `word` token `oting`
+  - . I am no longer driving; I am piloting a steel lung through the city’s ribcage
+- `L19:1781` `92f9deda4d200f88094635af516fd692ace5aa5b8c5776129edad47220eba09a@turn_01@qwen3.6-35b` token `476` activation `1.462` class `word` token `prints`
+  - washing over my thoughts like high tide erasing footprints on a beach. What did I say? What
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `338` activation `6.233` class `word` token ` pil`
+  - me and my colleague were there and my colleague was piloting the ship. I became terrified and thought it
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `543` activation `3.910` class `word` token ` pulled`
+  - , and she was eager to test it. She pulled out the new Catit treats but they spread everywhere
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `570` activation `3.785` class `word` token ` p`
+  - forgot that we can't grab little things with our paws, so for the rest of the trip,
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `622` activation `3.093` class `word` token ` p`
+  - , this is it for the day. Wave your paws and say goodbye to Ms.Sasha." K
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `571` activation `3.092` class `word` token `aws`
+  - that we can't grab little things with our paws, so for the rest of the trip, I
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `171` activation `3.058` class `word` token ` paw`
+  - the class of kittens with a space book in her paw. She cleared her throat, she looked at the
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `339` activation `2.794` class `word` token `oting`
+  - and my colleague were there and my colleague was piloting the ship. I became terrified and thought it was
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `186` activation `2.653` class `word` token ` permitted`
+  - throat, she looked at the students and the teacher permitted her to start. Sasha: "Hi,
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `623` activation `2.397` class `word` token `aws`
+  - this is it for the day. Wave your paws and say goodbye to Ms.Sasha." Kitt
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `325` activation `1.879` class `word` token ` impossible`
+  - of me I see another astronaut, and it was impossible because only me and my colleague were there and my
+- `L19:1781` `c51b054b620bb302f708e85933974cac9e277324f49c398326c6180a2299df13@turn_01@human` token `306` activation `1.082` class `word` token ` repairing`
+  - cat, but one time I got really scared while repairing the outside of my ship. In front of me
+- `L19:1781` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `533` activation `5.701` class `word` token ` pain`
+  - our brain a signal we need to take action like pain signals danger or harm. It also tells us when
+- `L19:1781` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `576` activation `5.348` class `word` token ` pay`
+  - for an easy escape. There is a need to pay attention. Erin Westgate, a University of
+- `L19:1781` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `628` activation `5.138` class `word` token ` pay`
+  - oredom is a necessary warning sign and we should pay attention to the cues it provides as it's happening
+- `L19:1781` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `561` activation `3.866` class `word` token ` positive`
+  - say that an episode of boredom can create opportunities for positive changes instead of looking for an easy escape. There
+- `L19:1781` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `589` activation `2.595` class `word` token ` psychologist`
+  - Erin Westgate, a University of Florida social psychologist says, "Boredom is like an emotional
+- `L19:1781` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `634` activation `2.424` class `word` token ` provides`
+  - sign and we should pay attention to the cues it provides as it's happening.
+- `L19:1781` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `554` activation `0.816` class `word` token ` episode`
+  - things aren't going well. Scientists say that an episode of boredom can create opportunities for positive changes instead of
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `442` activation `6.036` class `word` token ` pale`
+  - . There's Granny, asleep in bed. Her pale hands clutch a white handkerchief spotted with dirty
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `535` activation `4.660` class `word` token ` p`
+  - can't tell me. Something that starts with a p, Granddad said. It doesn't matter.
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `298` activation `4.643` class `word` token ` pretty`
+  - be weirder not to. "Granny's pretty sick, she's probably going to be heading out
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `254` activation `4.319` class `word` token ` past`
+  - knows. I watch the emerald green landscape slide past the train windows ignorantly. They don't even
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `471` activation `3.560` class `word` token ` powerful`
+  - tiny, like a frail rag doll, not the powerful woman who had spent so many years of her life
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `303` activation `3.503` class `word` token ` probably`
+  - . "Granny's pretty sick, she's probably going to be heading out in a few days.
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `354` activation `3.323` class `word` token ` place`
+  - , eh? Walking into Granny's house, the place is creepy and silent. None of the cheerful records
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `365` activation `2.502` class `word` token ` playing`
+  - is creepy and silent. None of the cheerful records playing. Granny isn't humming and singing and dancing along
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `196` activation `2.379` class `word` token ` Phone`
+  - at least six months since he had visited last. Phone calls were always short and distant. So unlike how
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `228` activation `2.325` class `word` token ` people`
+  - and this is now. Maybe it's because old people don't like using the phone. Maybe it's
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `234` activation `1.465` class `word` token ` phone`
+  - it's because old people don't like using the phone. Maybe it's weird to them. Who knows
+- `L19:1781` `9f7fdd36610d74e0bcfb0a071045f52d6927446df778b920d0f40721dee471c3@turn_01@human` token `536` activation `0.916` class `punctuation` token `,`
+  - 't tell me. Something that starts with a p, Granddad said. It doesn't matter. She
+- `L19:1781` `79804e8900159513e82f0e74ec80491230e05e9fe1fe5ffbb6499fdd564c61c3@turn_01@glm-5.2` token `576` activation `5.789` class `word` token ` patch`
+  - silver wings embrace the morning sky. Below, the patchwork fields dissolve to gray, And silent clouds are
+- `L19:1781` `79804e8900159513e82f0e74ec80491230e05e9fe1fe5ffbb6499fdd564c61c3@turn_01@glm-5.2` token `577` activation `1.896` class `word` token `work`
+  - wings embrace the morning sky. Below, the patchwork fields dissolve to gray, And silent clouds are drifting
+- `L19:1781` `18bb24633af39d0c3618373613b7f1908f6c5ca62fa572e450a6a19b5327612d@turn_01@gpt-5.5` token `514` activation `6.044` class `word` token ` Pennsylvania`
+  - ,” there are 4: Kentucky, Massachusetts, Pennsylvania, and Virginia. The Commonwealth of Nations is a
+- `L19:1781` `18bb24633af39d0c3618373613b7f1908f6c5ca62fa572e450a6a19b5327612d@turn_01@gpt-5.5` token `576` activation `4.824` class `word` token ` Pacific`
+  - well as many smaller island nations in the Caribbean and Pacific. The British monarch is recognized as Head of the
+- `L19:1781` `18bb24633af39d0c3618373613b7f1908f6c5ca62fa572e450a6a19b5327612d@turn_01@gpt-5.5` token `535` activation `1.033` class `word` token ` part`
+  - voluntary association of countries, most of which were formerly part of the British Empire, though not all members have
+- `L19:1781` `18bb24633af39d0c3618373613b7f1908f6c5ca62fa572e450a6a19b5327612d@turn_01@gpt-5.5` token `536` activation `0.725` class `word` token ` of`
+  - association of countries, most of which were formerly part of the British Empire, though not all members have that
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `329` activation `5.749` class `word` token ` pale`
+  - all the way to the second-floor windows of the pale blue house at the end of the lane. It
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `351` activation `4.572` class `word` token ` pleasant`
+  - always there at this time of year. Mild and pleasant and never overpowering, the occupant of that
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `601` activation `4.033` class `word` token ` paint`
+  - came away with a few crumbled pieces of ceiling paint stuck in his jet-black hair. Wyatt and his
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `314` activation `3.715` class `word` token ` passed`
+  - blossoms clung to the summer breeze as it passed by and hung on all the way to the second
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `620` activation `3.699` class `word` token ` picking`
+  - and his mother would giggle and then take turns picking the pieces out. This was the spot where it
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `488` activation `3.398` class `word` token ` presence`
+  - the road gave off a glow that betrayed the quiet presence of the neighborhood and a few cast-off stars linger
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `457` activation `3.272` class `word` token ` passed`
+  - the kitchen he heard no more. The moon had passed to the far side of the house and only dim
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `533` activation `3.069` class `word` token ` point`
+  - and forefingers as he focused on a single point on the ceiling. There was a worn spot in
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `622` activation `2.710` class `word` token ` pieces`
+  - mother would giggle and then take turns picking the pieces out. This was the spot where it all started
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `598` activation `2.388` class `word` token ` pieces`
+  - each time he came away with a few crumbled pieces of ceiling paint stuck in his jet-black hair.
+- `L19:1781` `e256b8142555baf5b4e5d7c8aee381abec54e86c581d87011605f97b85f14d19@turn_01@human` token `354` activation `2.330` class `word` token ` overpower`
+  - this time of year. Mild and pleasant and never overpowering, the occupant of that second-floor room
+- `L19:1781` `7d0600a8702772bb5b7ac38d744e16a81fc7b89bf3c1acb0befd8ef699ef3ad8@turn_01@glm-5.2` token `607` activation `5.790` class `word` token ` pale`
+  - The pale sun dies beneath the heavy snow, And withered

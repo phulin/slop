@@ -1,0 +1,711 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2301` | `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` | `glm-5.2` | 63 | `184.59` | `6.19` | word:51|sentence_boundary:7|punctuation:3|discourse_marker_word:1|whitespace:1 |
+| `L19:2301` | `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 115 | `353.80` | `5.98` | word:93|punctuation:8|sentence_boundary:5|style_function_word:4|discourse_marker_word:3|whitespace:1|expanded_negation_word:1 |
+| `L19:2301` | `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 80 | `160.03` | `5.83` | word:56|punctuation:9|style_function_word:6|sentence_boundary:5|whitespace:4 |
+| `L19:2301` | `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` | `gpt-5.5` | 433 | `971.65` | `6.90` | word:339|punctuation:44|sentence_boundary:18|style_function_word:9|line_break:9|expanded_negation_word:8|whitespace:6 |
+| `L19:2301` | `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 213 | `743.36` | `5.83` | word:177|punctuation:14|sentence_boundary:9|style_function_word:9|discourse_marker_word:2|expanded_negation_word:2 |
+| `L19:2301` | `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` | `glm-5.2` | 412 | `1298.84` | `5.99` | word:328|punctuation:34|sentence_boundary:20|style_function_word:13|discourse_marker_word:12|line_break:3|expanded_negation_word:2 |
+| `L19:2301` | `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` | `glm-5.2` | 89 | `226.58` | `6.07` | word:74|sentence_boundary:6|punctuation:5|style_function_word:2|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:2301` | `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` | `glm-5.2` | 89 | `203.81` | `6.00` | word:73|punctuation:7|sentence_boundary:4|style_function_word:4|discourse_marker_word:1 |
+| `L19:2301` | `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` | `glm-5.2` | 118 | `418.62` | `7.08` | word:93|punctuation:9|sentence_boundary:8|style_function_word:3|line_break:3|expanded_negation_word:2 |
+| `L19:2301` | `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 99 | `256.82` | `6.33` | word:86|punctuation:6|style_function_word:3|sentence_boundary:3|discourse_marker_word:1 |
+| `L19:2301` | `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` | `gpt-5.5` | 251 | `655.68` | `5.87` | word:178|line_break:37|punctuation:17|style_function_word:8|expanded_negation_word:7|discourse_marker_word:3|sentence_boundary:1 |
+| `L19:2301` | `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` | `gpt-5.5` | 370 | `1301.33` | `6.19` | word:266|line_break:39|punctuation:32|expanded_negation_word:17|style_function_word:11|sentence_boundary:3|discourse_marker_word:1|contraction_piece:1 |
+| `L19:2301` | `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 301 | `1054.08` | `6.68` | word:236|line_break:35|punctuation:21|style_function_word:6|expanded_negation_word:2|sentence_boundary:1 |
+| `L19:2301` | `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` | `human` | 228 | `728.32` | `5.97` | word:189|punctuation:14|sentence_boundary:14|style_function_word:5|line_break:3|expanded_negation_word:1|discourse_marker_word:1|contraction_piece:1 |
+| `L24:229` | `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` | `glm-5.2` | 62 | `275.97` | `9.52` | word:50|sentence_boundary:7|punctuation:3|discourse_marker_word:1|whitespace:1 |
+| `L24:229` | `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 118 | `635.42` | `10.84` | word:94|punctuation:9|sentence_boundary:5|style_function_word:4|discourse_marker_word:3|whitespace:2|expanded_negation_word:1 |
+| `L24:229` | `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 94 | `278.11` | `9.42` | word:72|punctuation:10|style_function_word:6|sentence_boundary:5|discourse_marker_word:1 |
+| `L24:229` | `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` | `gpt-5.5` | 425 | `1397.22` | `9.66` | word:328|punctuation:47|sentence_boundary:18|line_break:11|style_function_word:9|expanded_negation_word:8|whitespace:4 |
+| `L24:229` | `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 222 | `1271.90` | `9.98` | word:185|punctuation:15|style_function_word:9|sentence_boundary:9|discourse_marker_word:2|expanded_negation_word:2 |
+| `L24:229` | `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` | `glm-5.2` | 418 | `2086.37` | `10.21` | word:334|punctuation:34|sentence_boundary:20|style_function_word:13|discourse_marker_word:12|line_break:3|expanded_negation_word:2 |
+| `L24:229` | `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` | `glm-5.2` | 95 | `429.28` | `10.29` | word:79|punctuation:6|sentence_boundary:6|style_function_word:2|expanded_negation_word:1|discourse_marker_word:1 |
+| `L24:229` | `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` | `glm-5.2` | 95 | `344.32` | `9.46` | word:79|punctuation:7|sentence_boundary:4|style_function_word:4|discourse_marker_word:1 |
+| `L24:229` | `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` | `glm-5.2` | 120 | `650.50` | `10.79` | word:97|punctuation:7|sentence_boundary:6|line_break:5|style_function_word:3|expanded_negation_word:2 |
+| `L24:229` | `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 97 | `410.06` | `10.35` | word:84|punctuation:7|style_function_word:3|sentence_boundary:3 |
+| `L24:229` | `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` | `gpt-5.5` | 249 | `1043.64` | `9.67` | word:176|line_break:37|punctuation:17|style_function_word:8|expanded_negation_word:7|discourse_marker_word:3|sentence_boundary:1 |
+| `L24:229` | `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` | `gpt-5.5` | 371 | `2000.47` | `9.51` | word:267|line_break:39|punctuation:33|expanded_negation_word:17|style_function_word:10|sentence_boundary:3|discourse_marker_word:1|contraction_piece:1 |
+| `L24:229` | `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 305 | `1719.45` | `10.25` | word:240|line_break:35|punctuation:21|style_function_word:6|expanded_negation_word:2|sentence_boundary:1 |
+| `L24:229` | `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` | `human` | 230 | `1274.06` | `9.83` | word:191|punctuation:14|sentence_boundary:14|style_function_word:5|line_break:3|discourse_marker_word:1|expanded_negation_word:1|contraction_piece:1 |
+
+## Top Tokens
+
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `478` activation `6.187` class `word` token ` who`
+  - RDI. AA School grad & former Unit Master who founded my own studio in 1994. Passion
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `473` activation `5.489` class `word` token ` grad`
+  - BE, MVO & RDI. AA School grad & former Unit Master who founded my own studio in
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `470` activation `5.247` class `sentence_boundary` token `.`
+  - with an OBE, MVO & RDI. AA School grad & former Unit Master who founded my
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `482` activation `5.108` class `word` token ` studio`
+  - School grad & former Unit Master who founded my own studio in 1994. Passionate about building unforgettable
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `474` activation `4.939` class `punctuation` token ` &`
+  - , MVO & RDI. AA School grad & former Unit Master who founded my own studio in
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `480` activation `4.625` class `word` token ` my`
+  - . AA School grad & former Unit Master who founded my own studio in 1994. Passionate about
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `489` activation `4.389` class `word` token `ate`
+  - founded my own studio in 1994. Passionate about building unforgettable experiences. Looking for a partner to
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `464` activation `4.261` class `punctuation` token `,`
+  - music stage sets. Honored with an OBE, MVO & RDI. AA School grad &
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `457` activation `4.108` class `sentence_boundary` token `.`
+  - creative spirit. I design legendary rock music stage sets. Honored with an OBE, MVO &
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `477` activation `4.101` class `word` token ` Master`
+  - & RDI. AA School grad & former Unit Master who founded my own studio in 1994.
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `486` activation `4.002` class `word` token `4`
+  - Unit Master who founded my own studio in 1994. Passionate about building unforgettable experiences. Looking for
+- `L19:2301` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `490` activation `3.967` class `word` token ` about`
+  - my own studio in 1994. Passionate about building unforgettable experiences. Looking for a partner to share
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `448` activation `5.978` class `word` token `rics`
+  - inevitable legal humiliation. This performative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `450` activation `5.619` class `word` token ` the`
+  - humiliation. This performative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security debates
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `477` activation `5.599` class `word` token ` actions`
+  - abble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling disregard for civil liberties. This misguided
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `476` activation `5.505` class `word` token `’s`
+  - squabble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling disregard for civil liberties. This
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `454` activation `5.468` class `word` token ` violations`
+  - ative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security debates to a simplistic,
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `455` activation `5.463` class `punctuation` token `,`
+  - anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security debates to a simplistic, populist
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `449` activation `5.444` class `word` token ` ignores`
+  - legal humiliation. This performative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `470` activation `5.211` class `word` token ` lawmakers`
+  - debates to a simplistic, populist squabble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `475` activation `5.152` class `word` token ` Governor`
+  - populist squabble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling disregard for civil liberties.
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `431` activation `5.057` class `word` token ` he`
+  - 1, 2024, effective date, he has eagerly volunteered his state for inevitable legal humiliation.
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `451` activation `4.934` class `word` token ` blatant`
+  - . This performative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security debates to
+- `L19:2301` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `442` activation `4.860` class `style_function_word` token ` This`
+  - has eagerly volunteered his state for inevitable legal humiliation. This performative anti-China theatrics ignores the blatant First
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `496` activation `5.828` class `word` token ` edge`
+  - heat toward the outer boundary. This turbulent, boiling edge of the convection zone serves as the sun’s
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `501` activation `5.553` class `word` token ` zone`
+  - . This turbulent, boiling edge of the convection zone serves as the sun’s liquid-like "surface."
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `511` activation `5.207` class `punctuation` token `."`
+  - zone serves as the sun’s liquid-like "surface."
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `478` activation `4.718` class `punctuation` token `,`
+  - the convection zone, averaging 4 million degrees, where bubbling plasma circulates the heat toward the
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `477` activation `4.048` class `word` token ` degrees`
+  - reaches the convection zone, averaging 4 million degrees, where bubbling plasma circulates the heat toward
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `491` activation `4.031` class `sentence_boundary` token `.`
+  - bling plasma circulates the heat toward the outer boundary. This turbulent, boiling edge of the convection zone
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `462` activation `3.834` class `sentence_boundary` token `.`
+  - 2 million degrees, via thermal radiation from core photons. Next, the energy reaches the convection zone,
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `502` activation `3.737` class `word` token ` serves`
+  - This turbulent, boiling edge of the convection zone serves as the sun’s liquid-like "surface."
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `492` activation `3.694` class `style_function_word` token ` This`
+  - plasma circulates the heat toward the outer boundary. This turbulent, boiling edge of the convection zone serves
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `471` activation `3.539` class `word` token ` zone`
+  - photons. Next, the energy reaches the convection zone, averaging 4 million degrees, where bubbling
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `466` activation `3.505` class `word` token ` energy`
+  - via thermal radiation from core photons. Next, the energy reaches the convection zone, averaging 4 million
+- `L19:2301` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `504` activation `3.293` class `word` token ` the`
+  - , boiling edge of the convection zone serves as the sun’s liquid-like "surface."
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `126` activation `6.900` class `word` token `watch`
+  - : That sentence contained numbers and betrayal. My wristwatch says Tuesday, the cabin wall says “Minor Thursday
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `98` activation `6.048` class `punctuation` token `”`
+  - :20 after conversion. Also, “yesterday” refers to the departure hub’s local date, not
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `107` activation `5.938` class `punctuation` token `,`
+  - esterday” refers to the departure hub’s local date, not your biological sleep cycle. Traveler: That
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `127` activation `5.769` class `word` token ` says`
+  - That sentence contained numbers and betrayal. My wristwatch says Tuesday, the cabin wall says “Minor Thursday,”
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `92` activation `5.402` class `sentence_boundary` token `.`
+  - :80 simply means 27:20 after conversion. Also, “yesterday” refers to the departure
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `131` activation `5.391` class `word` token ` cabin`
+  - and betrayal. My wristwatch says Tuesday, the cabin wall says “Minor Thursday,” and the child in
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `178` activation `5.348` class `word` token ` is`
+  - indicator, not a time zone. Your wristwatch is still on Earth Coordinated Time. The cabin wall
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `149` activation `5.279` class `word` token `’s`
+  - the child in seat 9B told me it’s actually mango o’clock. Representative: Mango
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `177` activation `5.244` class `word` token `watch`
+  - service indicator, not a time zone. Your wristwatch is still on Earth Coordinated Time. The cabin
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `132` activation `5.138` class `word` token ` wall`
+  - betrayal. My wristwatch says Tuesday, the cabin wall says “Minor Thursday,” and the child in seat
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `150` activation `5.052` class `word` token ` actually`
+  - child in seat 9B told me it’s actually mango o’clock. Representative: Mango o
+- `L19:2301` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `198` activation `5.026` class `word` token ` are`
+  - wall is displaying Proxima Colonial Calendar, where weekdays are split into Major and Minor halves. Traveler:
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `409` activation `5.835` class `word` token ` Judaism`
+  - observance, allowing full negotiation of practices. Conservative Judaism arose as a moderate middle ground, reacting against Reform
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `316` activation `5.804` class `word` token ` Judaism`
+  - on varying sacred-secular interplays. Orthodox Judaism maintains traditional mainline beliefs, viewing the Torah as
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `357` activation `5.687` class `word` token ` Judaism`
+  - halakhah for daily life. Conversely, Reform Judaism emerged during the Enlightenment, rejecting absolute divine bindingness
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `465` activation `5.638` class `punctuation` token `,`
+  - . Finally, Reconstructionist Judaism, the newest development, prioritizes Judaism as a evolving cultural force uniting
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `460` activation `5.598` class `word` token ` Judaism`
+  - ratherimposing immediate changes. Finally, Reconstructionist Judaism, the newest development, prioritizes Judaism as a
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `415` activation `5.566` class `word` token ` ground`
+  - of practices. Conservative Judaism arose as a moderate middle ground, reacting against Reform’s rapid radicalism. It
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `425` activation `5.498` class `word` token ` It`
+  - ground, reacting against Reform’s rapid radicalism. It emphasizes ritual practice and utilizes the traditional halakhic
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `369` activation `5.485` class `word` token ` It`
+  - during the Enlightenment, rejecting absolute divine bindingness. It regards the Torah as divinely inspired but written by
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `416` activation `5.087` class `punctuation` token `,`
+  - practices. Conservative Judaism arose as a moderate middle ground, reacting against Reform’s rapid radicalism. It emphasizes
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `391` activation `5.063` class `word` token ` obligations`
+  - , serving merely as instructional material while prioritizing ethical obligations like neighborly care over rigid ritual observance,
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `441` activation `5.047` class `punctuation` token `,`
+  - the traditional halakhic process to gradually adapt laws, consulting historical scriptures and rabbinic opinions ratherim
+- `L19:2301` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `479` activation `5.046` class `word` token ` It`
+  - as a evolving cultural force uniting the people. It rejects uniform doctrinal beliefs, viewing all traditions and
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `415` activation `5.993` class `word` token ` priorities`
+  - , only specialized tools. A commercial airliner's priorities, built for paved runways, rapid turnar
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `465` activation `5.771` class `word` token ` environments`
+  - rough field capability. Physics, economics, and operational environments dictate the design. Every single wing placement represents a
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `422` activation `5.733` class `punctuation` token `,`
+  - airliner's priorities, built for paved runways, rapid turnarounds, and fuel efficiency, vastly
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `413` activation `5.662` class `word` token `iner`
+  - perfect design, only specialized tools. A commercial airliner's priorities, built for paved runways, rapid
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `218` activation `5.550` class `word` token ` design`
+  - Boeing airliners and Piper Cherokees. This design enables a shorter, lighter landing gear because the plane
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `458` activation `5.547` class `sentence_boundary` token `.`
+  - obstructed downward visibility, and rough field capability. Physics, economics, and operational environments dictate the design
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `183` activation `5.508` class `word` token ` is`
+  - Pendulum physics naturally keeps the aircraft level, which is exceptionally helpful during slow flight. Conversely,
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `175` activation `5.501` class `word` token ` physics`
+  - wings also inherently boast superior lateral stability. Pendulum physics naturally keeps the aircraft level, which is exceptionally helpful
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `265` activation `5.463` class `sentence_boundary` token `.`
+  - turning visibility since the wing sits below the cockpit windows. Aerodynamically, the low wing allows for a
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `409` activation `5.387` class `sentence_boundary` token `.`
+  - is absolutely no universally perfect design, only specialized tools. A commercial airliner's priorities, built for paved
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `182` activation `5.383` class `style_function_word` token ` which`
+  - . Pendulum physics naturally keeps the aircraft level, which is exceptionally helpful during slow flight. Conversely
+- `L19:2301` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `397` activation `5.339` class `sentence_boundary` token `.`
+  - The simple answer is that aerospace engineering demands relentless compromise. There is absolutely no universally perfect design, only specialized
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `491` activation `6.068` class `word` token ` She`
+  - Digging her work opens the inner eye completely. She was a true magical pioneer, and her writings are
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `497` activation `5.523` class `punctuation` token `,`
+  - inner eye completely. She was a true magical pioneer, and her writings are essential tools for heads on the
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `490` activation `5.480` class `sentence_boundary` token `.`
+  - . Digging her work opens the inner eye completely. She was a true magical pioneer, and her writings
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `492` activation `5.338` class `expanded_negation_word` token ` was`
+  - ging her work opens the inner eye completely. She was a true magical pioneer, and her writings are essential
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `493` activation `5.226` class `word` token ` a`
+  - her work opens the inner eye completely. She was a true magical pioneer, and her writings are essential tools
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `480` activation `5.142` class `sentence_boundary` token `.`
+  - truths in tons of books and seven far-out novels. Digging her work opens the inner eye completely.
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `500` activation `4.929` class `word` token ` writings`
+  - . She was a true magical pioneer, and her writings are essential tools for heads on the esoteric path
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `484` activation `4.676` class `word` token ` work`
+  - books and seven far-out novels. Digging her work opens the inner eye completely. She was a true
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `498` activation `4.636` class `word` token ` and`
+  - eye completely. She was a true magical pioneer, and her writings are essential tools for heads on the es
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `496` activation `4.459` class `word` token ` pioneer`
+  - the inner eye completely. She was a true magical pioneer, and her writings are essential tools for heads on
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `499` activation `4.430` class `word` token ` her`
+  - completely. She was a true magical pioneer, and her writings are essential tools for heads on the esoteric
+- `L19:2301` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `483` activation `4.346` class `word` token ` her`
+  - of books and seven far-out novels. Digging her work opens the inner eye completely. She was a
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `481` activation `5.997` class `word` token ` chin`
+  - dictate that the space from the hairline to the chin is exactly one tenth of the total height, while
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `470` activation `5.730` class `word` token ` proportions`
+  - The full height ideally reaches 24 palms. Facial proportions dictate that the space from the hairline to the
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `468` activation `5.393` class `sentence_boundary` token `.`
+  - palms. The full height ideally reaches 24 palms. Facial proportions dictate that the space from the hairline
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `511` activation `5.141` class `sentence_boundary` token `.`
+  - of the middle finger, achieving one tenth as well.
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `463` activation `5.049` class `word` token ` ideally`
+  - a cubit features six palms. The full height ideally reaches 24 palms. Facial proportions dictate that the
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `504` activation `5.045` class `word` token ` finger`
+  - stretches from the wrist to the tip of the middle finger, achieving one tenth as well.
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `471` activation `4.919` class `word` token ` dictate`
+  - full height ideally reaches 24 palms. Facial proportions dictate that the space from the hairline to the chin
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `505` activation `4.759` class `punctuation` token `,`
+  - from the wrist to the tip of the middle finger, achieving one tenth as well.
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `459` activation `4.294` class `sentence_boundary` token `.`
+  - four palms, and a cubit features six palms. The full height ideally reaches 24 palms. Facial
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `494` activation `4.137` class `word` token ` stretches`
+  - one tenth of the total height, while the hand stretches from the wrist to the tip of the middle finger
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `490` activation `3.988` class `punctuation` token `,`
+  - the chin is exactly one tenth of the total height, while the hand stretches from the wrist to the tip
+- `L19:2301` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `491` activation `3.822` class `style_function_word` token ` while`
+  - chin is exactly one tenth of the total height, while the hand stretches from the wrist to the tip of
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `469` activation `7.085` class `word` token ` operation`
+  - passed through into the final output array. The mathematical operation ord('a') + ord('z') effectively
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `457` activation `6.954` class `word` token ` are`
+  - . Supporting characters left outside our two primary unicode ranges are simply passed through into the final output array. The
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `488` activation `6.442` class `sentence_boundary` token `.`
+  - ') effectively flips the alphabet position of any lowercase input. Running the script reveals the cipher's symmetric nature,
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `466` activation `6.418` class `sentence_boundary` token `.`
+  - ranges are simply passed through into the final output array. The mathematical operation ord('a') + ord('
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `456` activation `6.402` class `word` token ` ranges`
+  - lowercase. Supporting characters left outside our two primary unicode ranges are simply passed through into the final output array.
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `449` activation `6.251` class `word` token ` characters`
+  - another possibility ensures uppercase does not corrupt lowercase. Supporting characters left outside our two primary unicode ranges are simply passed
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `441` activation `6.229` class `word` token ` ensures`
+  - ensures alphabetical inputs are perfectly transformed, while another possibility ensures uppercase does not corrupt lowercase. Supporting characters left outside
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `437` activation `6.151` class `punctuation` token `,`
+  - . A clean space ensures alphabetical inputs are perfectly transformed, while another possibility ensures uppercase does not corrupt lowercase.
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `498` activation `6.148` class `punctuation` token `,`
+  - . Running the script reveals the cipher's symmetric nature, as it successfully encrypts and entirely restores a short
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `440` activation `6.101` class `word` token ` possibility`
+  - space ensures alphabetical inputs are perfectly transformed, while another possibility ensures uppercase does not corrupt lowercase. Supporting characters left
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `447` activation `6.043` class `sentence_boundary` token `.`
+  - , while another possibility ensures uppercase does not corrupt lowercase. Supporting characters left outside our two primary unicode ranges are
+- `L19:2301` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `492` activation `5.780` class `word` token ` reveals`
+  - alphabet position of any lowercase input. Running the script reveals the cipher's symmetric nature, as it successfully encrypt
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `481` activation `6.328` class `punctuation` token `,`
+  - , cursed history birthed a sacred field of study, preserving secrets of gods and spirits that still whisper through
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `480` activation `6.314` class `word` token ` study`
+  - vibrant, cursed history birthed a sacred field of study, preserving secrets of gods and spirits that still whisper
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `473` activation `6.210` class `word` token ` history`
+  - majesty entranced scholars. This vibrant, cursed history birthed a sacred field of study, preserving secrets
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `483` activation `6.120` class `word` token ` secrets`
+  - history birthed a sacred field of study, preserving secrets of gods and spirits that still whisper through the sands
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `482` activation `5.924` class `word` token ` preserving`
+  - cursed history birthed a sacred field of study, preserving secrets of gods and spirits that still whisper through the
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `488` activation `5.669` class `style_function_word` token ` that`
+  - field of study, preserving secrets of gods and spirits that still whisper through the sands, guarding the glory of
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `476` activation `5.279` class `word` token ` a`
+  - anced scholars. This vibrant, cursed history birthed a sacred field of study, preserving secrets of gods and
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `475` activation `5.094` class `word` token `ed`
+  - entranced scholars. This vibrant, cursed history birthed a sacred field of study, preserving secrets of gods
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `487` activation `5.049` class `word` token ` spirits`
+  - sacred field of study, preserving secrets of gods and spirits that still whisper through the sands, guarding the glory
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `479` activation `4.994` class `word` token ` of`
+  - This vibrant, cursed history birthed a sacred field of study, preserving secrets of gods and spirits that still
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `484` activation `4.918` class `word` token ` of`
+  - birthed a sacred field of study, preserving secrets of gods and spirits that still whisper through the sands,
+- `L19:2301` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `477` activation `4.670` class `word` token ` sacred`
+  - scholars. This vibrant, cursed history birthed a sacred field of study, preserving secrets of gods and spirits
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `306` activation `5.868` class `word` token ` of`
+  - “Clair de Lune,” then months of hesitation until Nicolas Cage appeared like fate with
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `304` activation `5.316` class `style_function_word` token `then`
+  - whisper of “Clair de Lune,” then months of hesitation until Nicolas Cage appeared like
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `309` activation `5.048` class `word` token `until`
+  - de Lune,” then months of hesitation until Nicolas Cage appeared like fate with wild eyes
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `305` activation `4.950` class `word` token ` months`
+  - of “Clair de Lune,” then months of hesitation until Nicolas Cage appeared like fate
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `293` activation `4.863` class `word` token `a`
+  - by moonlit accident— a music course, a whisper of “Clair de Lune,”
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `366` activation `4.642` class `word` token ` around`
+  - family—Italian, loud, close, gathered around tables as if love itself needed bread, wine
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `481` activation `4.370` class `word` token ` anyone`
+  - . For date night, for cold weather, for anyone tired of ordinary love stories— Moonstruck
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `496` activation `4.205` class `word` token ` it`
+  - stories— Moonstruck wins. And now it rests in my collection, a comfort, a moon
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `463` activation `4.201` class `word` token ` love`
+  - with a pulse, a strange soft sermon on love, age, hunger, and chance. For date
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `365` activation `4.148` class `word` token `ed`
+  - was family—Italian, loud, close, gathered around tables as if love itself needed bread,
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `452` activation `4.015` class `word` token `edy`
+  - winter, romance without sugar drowning it, comedy with a pulse, a strange soft sermon on
+- `L19:2301` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `420` activation `4.013` class `word` token `so`
+  - not love them? So dramatic, so human, so funny in their longing that even their wrong turns
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `369` activation `6.185` class `word` token ` us`
+  - or wanting need not run in haste. She taught us truths, my brothers and me, to climb above
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `504` activation `5.895` class `word` token `and`
+  - bs, old Li, gold wedding ink— and secret winds that taught me think.
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `168` activation `5.853` class `word` token `a`
+  - sneaky-strong, no-shouty thing: a quiet power you cannot swing. “It wins a spat
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `476` activation `5.835` class `word` token ` held`
+  - three little locks, precise and quick. Our alley held a world to roam: pigeons, benches
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `353` activation `5.696` class `word` token ` silence`
+  - plucked a bag. I never knew that silence had a salty taste, or wanting need not run
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `444` activation `5.665` class `word` token `led`
+  - above dim sum and pastry pie. Red beans bubbled soft and sweet; sesame smells danced down the
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `170` activation `5.616` class `word` token ` power`
+  - -strong, no-shouty thing: a quiet power you cannot swing. “It wins a spat, it
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `186` activation `5.600` class `word` token ` wins`
+  - wins a spat, it wins a stare, it wins respect from here to there. And someday—whoosh
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `334` activation `5.579` class `word` token `And`
+  - — in plum-shop land of sweet delight. And when her shopping all was through, she plucked
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `354` activation `5.576` class `expanded_negation_word` token ` had`
+  - ucked a bag. I never knew that silence had a salty taste, or wanting need not run in
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `505` activation `5.571` class `word` token ` secret`
+  - , old Li, gold wedding ink— and secret winds that taught me think.
+- `L19:2301` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `370` activation `5.561` class `word` token ` truths`
+  - wanting need not run in haste. She taught us truths, my brothers and me, to climb above what
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `309` activation `6.679` class `style_function_word` token `Which`
+  - . The hindbrain holds the medulla long, Which signals send along the spinal cord, strong. It
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `352` activation `6.537` class `word` token ` groups`
+  - ons connects with tracts so wide, With cell groups turning side to side, Between the cord and cere
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `302` activation `6.462` class `word` token `brain`
+  - , These regions still remain quite strange. The hindbrain holds the medulla long, Which signals send along
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `319` activation `6.454` class `word` token `It`
+  - Which signals send along the spinal cord, strong. It keeps the heartbeat, breaths, in tune,
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `287` activation `6.392` class `word` token ` beasts`
+  - , and fore, three distinct spheres. Though higher beasts may shift and change, These regions still remain quite
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `294` activation `6.365` class `word` token ` regions`
+  - . Though higher beasts may shift and change, These regions still remain quite strange. The hindbrain holds the
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `378` activation `6.292` class `word` token `brain`
+  - Transferring knowledge through the night. The midbrain, once of optic lobes, In fish and
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `286` activation `6.184` class `word` token ` higher`
+  - mid, and fore, three distinct spheres. Though higher beasts may shift and change, These regions still remain
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `285` activation `6.083` class `style_function_word` token `Though`
+  - , mid, and fore, three distinct spheres. Though higher beasts may shift and change, These regions still
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `343` activation `5.937` class `word` token ` connects`
+  - the watchful, quiet moon. The pons connects with tracts so wide, With cell groups turning
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `445` activation `5.899` class `word` token `brain`
+  - , To make movements smooth and play. The forebrain houses hemispheres, Where thalamus and
+- `L19:2301` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `398` activation `5.823` class `punctuation` token `,`
+  - and frogs, it never stops. But in mammals, it is small, Just a link within the central
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `351` activation `5.972` class `punctuation` token `,`
+  - . Sliding the skiff along the mud bottom, we come to a gentle halt. Squishing feet
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `324` activation `5.761` class `sentence_boundary` token `.`
+  - on wheeling low near shallows, to port. We tack again and you say Going in closer,
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `337` activation `5.530` class `punctuation` token `,`
+  - again and you say Going in closer, and grin, Puck-like. Sliding the skiff along
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `365` activation `5.508` class `sentence_boundary` token `.`
+  - a gentle halt. Squishing feet, wet marsh. I feel the chill of a cooler west wind and
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `311` activation `5.497` class `sentence_boundary` token `.`
+  - uts out and canvas claps as we tack away. A heron wheeling low near shallows,
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `486` activation `5.384` class `punctuation` token `,`
+  - a blue-grey ghost, gliding along mudflat, a taunt too close to shore, too close
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `328` activation `5.307` class `word` token ` and`
+  - near shallows, to port. We tack again and you say Going in closer, and grin, P
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `325` activation `5.257` class `word` token ` We`
+  - wheeling low near shallows, to port. We tack again and you say Going in closer, and
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `347` activation `5.170` class `word` token ` along`
+  - , Puck-like. Sliding the skiff along the mud bottom, we come to a gentle halt
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `321` activation `5.134` class `punctuation` token `,`
+  - . A heron wheeling low near shallows, to port. We tack again and you say Going
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `480` activation `5.114` class `punctuation` token `,`
+  - the night. My wants are a blue-grey ghost, gliding along mudflat, a taunt too
+- `L19:2301` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `362` activation `5.055` class `punctuation` token `,`
+  - we come to a gentle halt. Squishing feet, wet marsh. I feel the chill of a cooler
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `478` activation `9.522` class `word` token ` who`
+  - RDI. AA School grad & former Unit Master who founded my own studio in 1994. Passion
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `482` activation `7.985` class `word` token ` studio`
+  - School grad & former Unit Master who founded my own studio in 1994. Passionate about building unforgettable
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `473` activation `7.773` class `word` token ` grad`
+  - BE, MVO & RDI. AA School grad & former Unit Master who founded my own studio in
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `480` activation `6.953` class `word` token ` my`
+  - . AA School grad & former Unit Master who founded my own studio in 1994. Passionate about
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `486` activation `6.753` class `word` token `4`
+  - Unit Master who founded my own studio in 1994. Passionate about building unforgettable experiences. Looking for
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `470` activation `6.730` class `sentence_boundary` token `.`
+  - with an OBE, MVO & RDI. AA School grad & former Unit Master who founded my
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `491` activation `6.711` class `word` token ` building`
+  - own studio in 1994. Passionate about building unforgettable experiences. Looking for a partner to share life
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `474` activation `6.631` class `punctuation` token ` &`
+  - , MVO & RDI. AA School grad & former Unit Master who founded my own studio in
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `489` activation `6.411` class `word` token `ate`
+  - founded my own studio in 1994. Passionate about building unforgettable experiences. Looking for a partner to
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `490` activation `6.391` class `word` token ` about`
+  - my own studio in 1994. Passionate about building unforgettable experiences. Looking for a partner to share
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `481` activation `6.099` class `word` token ` own`
+  - AA School grad & former Unit Master who founded my own studio in 1994. Passionate about building
+- `L24:229` `b6e7b5ac8929d34a164089c7c777d93751c40d9adc8f347cffb283f46381ded1@turn_01@glm-5.2` token `464` activation `6.073` class `punctuation` token `,`
+  - music stage sets. Honored with an OBE, MVO & RDI. AA School grad &
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `448` activation `10.838` class `word` token `rics`
+  - inevitable legal humiliation. This performative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `455` activation `10.235` class `punctuation` token `,`
+  - anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security debates to a simplistic, populist
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `477` activation `10.054` class `word` token ` actions`
+  - abble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling disregard for civil liberties. This misguided
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `476` activation `9.746` class `word` token `’s`
+  - squabble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling disregard for civil liberties. This
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `431` activation `9.738` class `word` token ` he`
+  - 1, 2024, effective date, he has eagerly volunteered his state for inevitable legal humiliation.
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `470` activation `9.606` class `word` token ` lawmakers`
+  - debates to a simplistic, populist squabble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `475` activation `9.346` class `word` token ` Governor`
+  - populist squabble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling disregard for civil liberties.
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `450` activation `9.287` class `word` token ` the`
+  - humiliation. This performative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security debates
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `449` activation `9.040` class `word` token ` ignores`
+  - legal humiliation. This performative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `454` activation `8.726` class `word` token ` violations`
+  - ative anti-China theatrics ignores the blatant First Amendment violations, reducing complex national security debates to a simplistic,
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `432` activation `8.585` class `word` token ` has`
+  - 1, 2024, effective date, he has eagerly volunteered his state for inevitable legal humiliation. This
+- `L24:229` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@qwen3.6-35b` token `471` activation `8.560` class `word` token ` express`
+  - to a simplistic, populist squabble. While lawmakers express skepticism, the Governor’s actions demonstrate a troubling disregard
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `501` activation `9.423` class `word` token ` zone`
+  - . This turbulent, boiling edge of the convection zone serves as the sun’s liquid-like "surface."
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `496` activation `9.303` class `word` token ` edge`
+  - heat toward the outer boundary. This turbulent, boiling edge of the convection zone serves as the sun’s
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `478` activation `7.168` class `punctuation` token `,`
+  - the convection zone, averaging 4 million degrees, where bubbling plasma circulates the heat toward the
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `511` activation `6.289` class `punctuation` token `."`
+  - zone serves as the sun’s liquid-like "surface."
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `477` activation `5.994` class `word` token ` degrees`
+  - reaches the convection zone, averaging 4 million degrees, where bubbling plasma circulates the heat toward
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `492` activation `5.982` class `style_function_word` token ` This`
+  - plasma circulates the heat toward the outer boundary. This turbulent, boiling edge of the convection zone serves
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `466` activation `5.734` class `word` token ` energy`
+  - via thermal radiation from core photons. Next, the energy reaches the convection zone, averaging 4 million
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `482` activation `5.610` class `word` token ` plasma`
+  - , averaging 4 million degrees, where bubbling plasma circulates the heat toward the outer boundary. This
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `504` activation `5.557` class `word` token ` the`
+  - , boiling edge of the convection zone serves as the sun’s liquid-like "surface."
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `490` activation `5.425` class `word` token ` boundary`
+  - bubbling plasma circulates the heat toward the outer boundary. This turbulent, boiling edge of the convection
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `502` activation `5.349` class `word` token ` serves`
+  - This turbulent, boiling edge of the convection zone serves as the sun’s liquid-like "surface."
+- `L24:229` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@gemini-3.5-flash` token `486` activation `5.208` class `word` token ` heat`
+  - million degrees, where bubbling plasma circulates the heat toward the outer boundary. This turbulent, boiling edge
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `126` activation `9.664` class `word` token `watch`
+  - : That sentence contained numbers and betrayal. My wristwatch says Tuesday, the cabin wall says “Minor Thursday
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `98` activation `9.485` class `punctuation` token `”`
+  - :20 after conversion. Also, “yesterday” refers to the departure hub’s local date, not
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `107` activation `9.220` class `punctuation` token `,`
+  - esterday” refers to the departure hub’s local date, not your biological sleep cycle. Traveler: That
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `178` activation `7.866` class `word` token ` is`
+  - indicator, not a time zone. Your wristwatch is still on Earth Coordinated Time. The cabin wall
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `119` activation `7.637` class `word` token ` contained`
+  - your biological sleep cycle. Traveler: That sentence contained numbers and betrayal. My wristwatch says Tuesday,
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `120` activation `7.606` class `word` token ` numbers`
+  - biological sleep cycle. Traveler: That sentence contained numbers and betrayal. My wristwatch says Tuesday, the
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `118` activation `7.604` class `word` token ` sentence`
+  - not your biological sleep cycle. Traveler: That sentence contained numbers and betrayal. My wristwatch says Tuesday
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `109` activation `7.560` class `word` token ` your`
+  - refers to the departure hub’s local date, not your biological sleep cycle. Traveler: That sentence contained
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `127` activation `7.523` class `word` token ` says`
+  - That sentence contained numbers and betrayal. My wristwatch says Tuesday, the cabin wall says “Minor Thursday,”
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `177` activation `7.432` class `word` token `watch`
+  - service indicator, not a time zone. Your wristwatch is still on Earth Coordinated Time. The cabin
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `132` activation `7.423` class `word` token ` wall`
+  - betrayal. My wristwatch says Tuesday, the cabin wall says “Minor Thursday,” and the child in seat
+- `L24:229` `e3073f40bb40b6031e67cabcddf7115db261312a86904ea8494c5e8220ca015e@turn_01@gpt-5.5` token `108` activation `7.128` class `expanded_negation_word` token ` not`
+  - ” refers to the departure hub’s local date, not your biological sleep cycle. Traveler: That sentence
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `357` activation `9.978` class `word` token ` Judaism`
+  - halakhah for daily life. Conversely, Reform Judaism emerged during the Enlightenment, rejecting absolute divine bindingness
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `409` activation `9.878` class `word` token ` Judaism`
+  - observance, allowing full negotiation of practices. Conservative Judaism arose as a moderate middle ground, reacting against Reform
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `316` activation `9.852` class `word` token ` Judaism`
+  - on varying sacred-secular interplays. Orthodox Judaism maintains traditional mainline beliefs, viewing the Torah as
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `415` activation `9.730` class `word` token ` ground`
+  - of practices. Conservative Judaism arose as a moderate middle ground, reacting against Reform’s rapid radicalism. It
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `369` activation `9.690` class `word` token ` It`
+  - during the Enlightenment, rejecting absolute divine bindingness. It regards the Torah as divinely inspired but written by
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `425` activation `9.567` class `word` token ` It`
+  - ground, reacting against Reform’s rapid radicalism. It emphasizes ritual practice and utilizes the traditional halakhic
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `460` activation `9.487` class `word` token ` Judaism`
+  - ratherimposing immediate changes. Finally, Reconstructionist Judaism, the newest development, prioritizes Judaism as a
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `465` activation `9.371` class `punctuation` token `,`
+  - . Finally, Reconstructionist Judaism, the newest development, prioritizes Judaism as a evolving cultural force uniting
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `441` activation `9.316` class `punctuation` token `,`
+  - the traditional halakhic process to gradually adapt laws, consulting historical scriptures and rabbinic opinions ratherim
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `416` activation `9.088` class `punctuation` token `,`
+  - practices. Conservative Judaism arose as a moderate middle ground, reacting against Reform’s rapid radicalism. It emphasizes
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `391` activation `8.912` class `word` token ` obligations`
+  - , serving merely as instructional material while prioritizing ethical obligations like neighborly care over rigid ritual observance,
+- `L24:229` `da8d95a3fe7c5082ce159ffb01410d97339acbcc7e51643fa448612a42c93ea5@turn_01@qwen3.6-35b` token `386` activation `8.836` class `word` token ` material`
+  - inspired but written by humans, serving merely as instructional material while prioritizing ethical obligations like neighborly care over
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `422` activation `10.209` class `punctuation` token `,`
+  - airliner's priorities, built for paved runways, rapid turnarounds, and fuel efficiency, vastly
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `415` activation `9.999` class `word` token ` priorities`
+  - , only specialized tools. A commercial airliner's priorities, built for paved runways, rapid turnar
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `465` activation `9.806` class `word` token ` environments`
+  - rough field capability. Physics, economics, and operational environments dictate the design. Every single wing placement represents a
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `431` activation `9.620` class `punctuation` token `,`
+  - ways, rapid turnarounds, and fuel efficiency, vastly differ from a crop duster's needs requiring
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `218` activation `9.263` class `word` token ` design`
+  - Boeing airliners and Piper Cherokees. This design enables a shorter, lighter landing gear because the plane
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `413` activation `9.186` class `word` token `iner`
+  - perfect design, only specialized tools. A commercial airliner's priorities, built for paved runways, rapid
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `475` activation `9.165` class `word` token ` a`
+  - environments dictate the design. Every single wing placement represents a careful, calculated balance between aerodynamics, structure,
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `352` activation `9.006` class `word` token ` wing`
+  - airport infrastructure efficiency for commercial jets, while a high wing optimizes rugged utility, clear downward views, and
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `250` activation `8.866` class `word` token ` wings`
+  - those long engines becomes less of a headache. Low wings provide fantastic upward and turning visibility since the wing sits
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `473` activation `8.846` class `word` token ` placement`
+  - and operational environments dictate the design. Every single wing placement represents a careful, calculated balance between aerodynamics,
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `175` activation `8.805` class `word` token ` physics`
+  - wings also inherently boast superior lateral stability. Pendulum physics naturally keeps the aircraft level, which is exceptionally helpful
+- `L24:229` `8e459a433eee96c1489749574fdb1251cf6160e0867970d21b57f8a0c07bcd5b@turn_01@glm-5.2` token `493` activation `8.754` class `word` token ` designers`
+  - , structure, and intended utility. Therefore, aircraft designers will never settle on one universal type, because the
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `491` activation `10.286` class `word` token ` She`
+  - Digging her work opens the inner eye completely. She was a true magical pioneer, and her writings are
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `497` activation `9.817` class `punctuation` token `,`
+  - inner eye completely. She was a true magical pioneer, and her writings are essential tools for heads on the
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `492` activation `9.539` class `expanded_negation_word` token ` was`
+  - ging her work opens the inner eye completely. She was a true magical pioneer, and her writings are essential
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `493` activation `9.479` class `word` token ` a`
+  - her work opens the inner eye completely. She was a true magical pioneer, and her writings are essential tools
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `500` activation `9.122` class `word` token ` writings`
+  - . She was a true magical pioneer, and her writings are essential tools for heads on the esoteric path
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `484` activation `8.573` class `word` token ` work`
+  - books and seven far-out novels. Digging her work opens the inner eye completely. She was a true
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `501` activation `8.278` class `word` token ` are`
+  - She was a true magical pioneer, and her writings are essential tools for heads on the esoteric path!
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `499` activation `8.149` class `word` token ` her`
+  - completely. She was a true magical pioneer, and her writings are essential tools for heads on the esoteric
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `490` activation `7.731` class `sentence_boundary` token `.`
+  - . Digging her work opens the inner eye completely. She was a true magical pioneer, and her writings
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `464` activation `7.709` class `word` token ` she`
+  - down to our plane. A prolific scribe, she laid down her heavy occult truths in tons of books
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `485` activation `7.626` class `word` token ` opens`
+  - and seven far-out novels. Digging her work opens the inner eye completely. She was a true magical
+- `L24:229` `b612e226e11e5510ced626f6a262810477bb7e3243f5e42c8900e36fbf6240a6@turn_01@glm-5.2` token `496` activation `7.585` class `word` token ` pioneer`
+  - the inner eye completely. She was a true magical pioneer, and her writings are essential tools for heads on
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `481` activation `9.464` class `word` token ` chin`
+  - dictate that the space from the hairline to the chin is exactly one tenth of the total height, while
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `470` activation `9.109` class `word` token ` proportions`
+  - The full height ideally reaches 24 palms. Facial proportions dictate that the space from the hairline to the
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `505` activation `8.069` class `punctuation` token `,`
+  - from the wrist to the tip of the middle finger, achieving one tenth as well.
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `463` activation `8.026` class `word` token ` ideally`
+  - a cubit features six palms. The full height ideally reaches 24 palms. Facial proportions dictate that the
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `504` activation `7.201` class `word` token ` finger`
+  - stretches from the wrist to the tip of the middle finger, achieving one tenth as well.
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `490` activation `6.938` class `punctuation` token `,`
+  - the chin is exactly one tenth of the total height, while the hand stretches from the wrist to the tip
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `471` activation `6.922` class `word` token ` dictate`
+  - full height ideally reaches 24 palms. Facial proportions dictate that the space from the hairline to the chin
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `494` activation `6.612` class `word` token ` stretches`
+  - one tenth of the total height, while the hand stretches from the wrist to the tip of the middle finger
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `462` activation `6.450` class `word` token ` height`
+  - and a cubit features six palms. The full height ideally reaches 24 palms. Facial proportions dictate that
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `468` activation `6.229` class `sentence_boundary` token `.`
+  - palms. The full height ideally reaches 24 palms. Facial proportions dictate that the space from the hairline
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `444` activation `6.201` class `punctuation` token `,`
+  - . Additionally, a human palm exactly measures four fingers, while a foot comprises four palms, and a cub
+- `L24:229` `8ee27808651790df78da9cb99ee6002c17082440c8889a9829f62845c90972a9@turn_01@glm-5.2` token `451` activation `6.176` class `punctuation` token `,`
+  - measures four fingers, while a foot comprises four palms, and a cubit features six palms. The full
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `457` activation `10.795` class `word` token ` are`
+  - . Supporting characters left outside our two primary unicode ranges are simply passed through into the final output array. The
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `469` activation `10.025` class `word` token ` operation`
+  - passed through into the final output array. The mathematical operation ord('a') + ord('z') effectively
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `456` activation `9.996` class `word` token ` ranges`
+  - lowercase. Supporting characters left outside our two primary unicode ranges are simply passed through into the final output array.
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `449` activation `9.816` class `word` token ` characters`
+  - another possibility ensures uppercase does not corrupt lowercase. Supporting characters left outside our two primary unicode ranges are simply passed
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `498` activation `9.786` class `punctuation` token `,`
+  - . Running the script reveals the cipher's symmetric nature, as it successfully encrypts and entirely restores a short
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `440` activation `9.450` class `word` token ` possibility`
+  - space ensures alphabetical inputs are perfectly transformed, while another possibility ensures uppercase does not corrupt lowercase. Supporting characters left
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `437` activation `9.389` class `punctuation` token `,`
+  - . A clean space ensures alphabetical inputs are perfectly transformed, while another possibility ensures uppercase does not corrupt lowercase.
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `500` activation `9.111` class `word` token ` it`
+  - the script reveals the cipher's symmetric nature, as it successfully encrypts and entirely restores a short sample string
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `491` activation `8.871` class `word` token ` script`
+  - the alphabet position of any lowercase input. Running the script reveals the cipher's symmetric nature, as it successfully
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `458` activation `8.661` class `word` token ` simply`
+  - Supporting characters left outside our two primary unicode ranges are simply passed through into the final output array. The mathematical
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `451` activation `8.634` class `word` token ` outside`
+  - ensures uppercase does not corrupt lowercase. Supporting characters left outside our two primary unicode ranges are simply passed through into
+- `L24:229` `48d688d8c78b056fee1f5aa32478ce4fa94aba6f7b902b52a3c055c1d5c97e88@turn_01@glm-5.2` token `493` activation `8.628` class `word` token ` the`
+  - position of any lowercase input. Running the script reveals the cipher's symmetric nature, as it successfully encrypts
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `473` activation `10.345` class `word` token ` history`
+  - majesty entranced scholars. This vibrant, cursed history birthed a sacred field of study, preserving secrets
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `481` activation `10.285` class `punctuation` token `,`
+  - , cursed history birthed a sacred field of study, preserving secrets of gods and spirits that still whisper through
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `480` activation `9.673` class `word` token ` study`
+  - vibrant, cursed history birthed a sacred field of study, preserving secrets of gods and spirits that still whisper
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `488` activation `9.399` class `style_function_word` token ` that`
+  - field of study, preserving secrets of gods and spirits that still whisper through the sands, guarding the glory of
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `483` activation `9.224` class `word` token ` secrets`
+  - history birthed a sacred field of study, preserving secrets of gods and spirits that still whisper through the sands
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `482` activation `9.112` class `word` token ` preserving`
+  - cursed history birthed a sacred field of study, preserving secrets of gods and spirits that still whisper through the
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `487` activation `8.306` class `word` token ` spirits`
+  - sacred field of study, preserving secrets of gods and spirits that still whisper through the sands, guarding the glory
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `476` activation `8.076` class `word` token ` a`
+  - anced scholars. This vibrant, cursed history birthed a sacred field of study, preserving secrets of gods and
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `489` activation `8.029` class `word` token ` still`
+  - of study, preserving secrets of gods and spirits that still whisper through the sands, guarding the glory of a
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `484` activation `7.667` class `word` token ` of`
+  - birthed a sacred field of study, preserving secrets of gods and spirits that still whisper through the sands,
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `479` activation `7.665` class `word` token ` of`
+  - This vibrant, cursed history birthed a sacred field of study, preserving secrets of gods and spirits that still
+- `L24:229` `7aafec4cf6f5b5cc835411ad996748e9afc24e9db8fddce82cf39c030e4ec0c0@turn_01@qwen3.6-35b` token `475` activation `7.589` class `word` token `ed`
+  - entranced scholars. This vibrant, cursed history birthed a sacred field of study, preserving secrets of gods
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `306` activation `9.668` class `word` token ` of`
+  - “Clair de Lune,” then months of hesitation until Nicolas Cage appeared like fate with
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `304` activation `8.440` class `style_function_word` token `then`
+  - whisper of “Clair de Lune,” then months of hesitation until Nicolas Cage appeared like
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `293` activation `8.086` class `word` token `a`
+  - by moonlit accident— a music course, a whisper of “Clair de Lune,”
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `305` activation `8.082` class `word` token ` months`
+  - of “Clair de Lune,” then months of hesitation until Nicolas Cage appeared like fate
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `309` activation `7.540` class `word` token `until`
+  - de Lune,” then months of hesitation until Nicolas Cage appeared like fate with wild eyes
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `333` activation `7.271` class `expanded_negation_word` token ` would`
+  - hand. And instantly, I knew: no regret would enter this house. There was Cher, luminous
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `291` activation `7.134` class `word` token ` course`
+  - to it by moonlit accident— a music course, a whisper of “Clair de Lune
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `289` activation `7.075` class `word` token `a`
+  - had come to it by moonlit accident— a music course, a whisper of “Clair de
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `307` activation `6.805` class `word` token ` hesitation`
+  - Clair de Lune,” then months of hesitation until Nicolas Cage appeared like fate with wild
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `295` activation `6.694` class `word` token ` of`
+  - lit accident— a music course, a whisper of “Clair de Lune,” then months
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `420` activation `6.658` class `word` token `so`
+  - not love them? So dramatic, so human, so funny in their longing that even their wrong turns
+- `L24:229` `78d34b658d45fd4467ce505da10d22726c2e13289c66eb2edc89758f48870a3d@turn_01@gpt-5.5` token `327` activation `6.602` class `punctuation` token `,`
+  - wild eyes and a wounded hand. And instantly, I knew: no regret would enter this house.
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `204` activation `9.512` class `word` token `it`
+  - someday—whoosh!—you’ll maybe see it helps in games of chess,” said she. “
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `168` activation `9.291` class `word` token `a`
+  - sneaky-strong, no-shouty thing: a quiet power you cannot swing. “It wins a spat
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `180` activation `9.213` class `word` token ` it`
+  - power you cannot swing. “It wins a spat, it wins a stare, it wins respect from here to
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `161` activation `9.175` class `punctuation` token `,`
+  - taught me best of all a sneaky-strong, no-shouty thing: a quiet power you
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `169` activation `8.968` class `word` token ` quiet`
+  - aky-strong, no-shouty thing: a quiet power you cannot swing. “It wins a spat,
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `170` activation `8.942` class `word` token ` power`
+  - -strong, no-shouty thing: a quiet power you cannot swing. “It wins a spat, it
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `291` activation `8.784` class `style_function_word` token ` will`
+  - Wind blows with poom and spin, then North will follow, whooshy-thin. The strongest
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `268` activation `8.677` class `expanded_negation_word` token ` not`
+  - home she said, “A clever one does not fight wind—no, that’s not done.
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `369` activation `8.614` class `word` token ` us`
+  - or wanting need not run in haste. She taught us truths, my brothers and me, to climb above
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `186` activation `8.612` class `word` token ` wins`
+  - wins a spat, it wins a stare, it wins respect from here to there. And someday—whoosh
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `353` activation `8.488` class `word` token ` silence`
+  - plucked a bag. I never knew that silence had a salty taste, or wanting need not run
+- `L24:229` `a050058027b6769ad83071391d844e0c83d6275325ea0c0c046d684b35f5c552@turn_01@gpt-5.5` token `259` activation `8.477` class `word` token ` she`
+  - plums in crinkly trees. At home she said, “A clever one does not fight
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `294` activation `10.254` class `word` token ` regions`
+  - . Though higher beasts may shift and change, These regions still remain quite strange. The hindbrain holds the
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `352` activation `10.121` class `word` token ` groups`
+  - ons connects with tracts so wide, With cell groups turning side to side, Between the cord and cere
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `287` activation `10.037` class `word` token ` beasts`
+  - , and fore, three distinct spheres. Though higher beasts may shift and change, These regions still remain quite
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `309` activation `9.680` class `style_function_word` token `Which`
+  - . The hindbrain holds the medulla long, Which signals send along the spinal cord, strong. It
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `378` activation `9.499` class `word` token `brain`
+  - Transferring knowledge through the night. The midbrain, once of optic lobes, In fish and
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `302` activation `9.427` class `word` token `brain`
+  - , These regions still remain quite strange. The hindbrain holds the medulla long, Which signals send along
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `285` activation `9.409` class `style_function_word` token `Though`
+  - , mid, and fore, three distinct spheres. Though higher beasts may shift and change, These regions still
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `399` activation `9.370` class `word` token ` it`
+  - frogs, it never stops. But in mammals, it is small, Just a link within the central hall
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `390` activation `9.104` class `punctuation` token `,`
+  - once of optic lobes, In fish and frogs, it never stops. But in mammals, it is
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `295` activation `9.090` class `word` token ` still`
+  - Though higher beasts may shift and change, These regions still remain quite strange. The hindbrain holds the med
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `319` activation `9.089` class `word` token `It`
+  - Which signals send along the spinal cord, strong. It keeps the heartbeat, breaths, in tune,
+- `L24:229` `01493189f5ebeaa61fbd319a37deeedec330204ba9f13a094ab40d37a3699825@turn_01@qwen3.6-35b` token `398` activation `8.996` class `punctuation` token `,`
+  - and frogs, it never stops. But in mammals, it is small, Just a link within the central
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `351` activation `9.830` class `punctuation` token `,`
+  - . Sliding the skiff along the mud bottom, we come to a gentle halt. Squishing feet
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `337` activation `9.801` class `punctuation` token `,`
+  - again and you say Going in closer, and grin, Puck-like. Sliding the skiff along
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `486` activation `9.245` class `punctuation` token `,`
+  - a blue-grey ghost, gliding along mudflat, a taunt too close to shore, too close
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `321` activation `8.946` class `punctuation` token `,`
+  - . A heron wheeling low near shallows, to port. We tack again and you say Going
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `320` activation `8.922` class `word` token `ows`
+  - away. A heron wheeling low near shallows, to port. We tack again and you say
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `362` activation `8.865` class `punctuation` token `,`
+  - we come to a gentle halt. Squishing feet, wet marsh. I feel the chill of a cooler
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `480` activation `8.699` class `punctuation` token `,`
+  - the night. My wants are a blue-grey ghost, gliding along mudflat, a taunt too
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `328` activation `8.561` class `word` token ` and`
+  - near shallows, to port. We tack again and you say Going in closer, and grin, P
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `374` activation `8.497` class `word` token ` wind`
+  - marsh. I feel the chill of a cooler west wind and wonder why we don't just stay a while
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `494` activation `8.471` class `punctuation` token `,`
+  - mudflat, a taunt too close to shore, too close tonight. Now, moonrise. Another
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `325` activation `8.463` class `word` token ` We`
+  - wheeling low near shallows, to port. We tack again and you say Going in closer, and
+- `L24:229` `45eaf01eaf37a332a6d99ab8a33aae86fffa8e505a6c8b9e18aba9ddef3d125b@turn_01@human` token `417` activation `8.355` class `punctuation` token `,`
+  - and push off again. You stow your Canon, tack out and then we're gone. You're

@@ -1,0 +1,615 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:320` | `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` | `human` | 251 | `406.20` | `2.82` | word:207|expanded_negation_word:12|sentence_boundary:9|style_function_word:8|punctuation:7|line_break:3|discourse_marker_word:3|contraction_piece:2 |
+| `L19:320` | `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` | `human` | 278 | `463.37` | `3.16` | word:222|punctuation:17|expanded_negation_word:11|line_break:9|sentence_boundary:7|style_function_word:6|discourse_marker_word:5|contraction_piece:1 |
+| `L19:320` | `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` | `human` | 274 | `511.80` | `3.26` | word:197|punctuation:28|style_function_word:12|sentence_boundary:11|expanded_negation_word:10|line_break:7|discourse_marker_word:6|contraction_piece:3 |
+| `L19:320` | `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` | `human` | 454 | `693.11` | `3.14` | word:329|punctuation:48|sentence_boundary:34|expanded_negation_word:18|style_function_word:14|contraction_piece:7|line_break:3|discourse_marker_word:1 |
+| `L19:320` | `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` | `human` | 407 | `684.75` | `3.01` | word:318|punctuation:26|style_function_word:20|expanded_negation_word:19|sentence_boundary:14|discourse_marker_word:6|line_break:3|whitespace:1 |
+| `L19:320` | `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` | `human` | 383 | `411.58` | `2.77` | word:289|punctuation:36|sentence_boundary:21|line_break:12|expanded_negation_word:9|style_function_word:8|discourse_marker_word:6|contraction_piece:2 |
+| `L19:320` | `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` | `human` | 367 | `565.92` | `3.18` | word:288|punctuation:25|sentence_boundary:23|expanded_negation_word:11|style_function_word:7|line_break:7|discourse_marker_word:4|contraction_piece:2 |
+| `L19:320` | `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` | `glm-5.2` | 206 | `170.57` | `1.79` | word:153|sentence_boundary:20|punctuation:15|expanded_negation_word:7|line_break:7|style_function_word:3|discourse_marker_word:1 |
+| `L19:320` | `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` | `human` | 224 | `372.65` | `2.96` | word:171|expanded_negation_word:20|sentence_boundary:13|punctuation:8|style_function_word:8|discourse_marker_word:2|line_break:2 |
+| `L19:320` | `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` | `human` | 392 | `500.87` | `2.80` | word:300|punctuation:29|sentence_boundary:19|expanded_negation_word:14|style_function_word:14|line_break:11|contraction_piece:3|discourse_marker_word:2 |
+| `L19:320` | `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 178 | `141.46` | `1.86` | word:123|punctuation:27|sentence_boundary:15|expanded_negation_word:5|style_function_word:4|line_break:2|discourse_marker_word:1|contraction_piece:1 |
+| `L19:320` | `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` | `human` | 459 | `699.48` | `2.95` | word:351|punctuation:49|sentence_boundary:30|style_function_word:14|expanded_negation_word:8|line_break:5|discourse_marker_word:1|contraction_piece:1 |
+| `L24:848` | `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` | `human` | 260 | `866.46` | `5.58` | word:215|expanded_negation_word:12|sentence_boundary:10|style_function_word:8|punctuation:7|discourse_marker_word:3|line_break:3|contraction_piece:2 |
+| `L24:848` | `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` | `human` | 274 | `751.72` | `5.01` | word:218|punctuation:18|expanded_negation_word:11|line_break:8|sentence_boundary:7|style_function_word:6|discourse_marker_word:5|contraction_piece:1 |
+| `L24:848` | `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` | `human` | 289 | `986.58` | `6.80` | word:210|punctuation:29|style_function_word:12|expanded_negation_word:11|sentence_boundary:11|line_break:7|discourse_marker_word:6|contraction_piece:3 |
+| `L24:848` | `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` | `human` | 452 | `971.51` | `4.67` | word:332|punctuation:50|sentence_boundary:30|expanded_negation_word:18|style_function_word:14|contraction_piece:5|line_break:2|discourse_marker_word:1 |
+| `L24:848` | `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` | `human` | 418 | `1227.78` | `5.03` | word:329|punctuation:26|style_function_word:20|expanded_negation_word:20|sentence_boundary:13|discourse_marker_word:6|line_break:3|whitespace:1 |
+| `L24:848` | `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` | `human` | 402 | `769.35` | `4.88` | word:307|punctuation:34|sentence_boundary:22|line_break:11|style_function_word:10|expanded_negation_word:9|discourse_marker_word:7|contraction_piece:2 |
+| `L24:848` | `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` | `human` | 375 | `876.96` | `4.65` | word:300|punctuation:25|sentence_boundary:22|expanded_negation_word:11|style_function_word:8|discourse_marker_word:4|line_break:4|contraction_piece:1 |
+| `L24:848` | `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` | `glm-5.2` | 571 | `1265.47` | `4.70` | word:449|sentence_boundary:41|punctuation:28|line_break:27|style_function_word:9|expanded_negation_word:7|discourse_marker_word:7|contraction_piece:3 |
+| `L24:848` | `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` | `human` | 223 | `493.91` | `5.05` | word:172|expanded_negation_word:20|sentence_boundary:13|punctuation:8|style_function_word:8|discourse_marker_word:2 |
+| `L24:848` | `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` | `human` | 457 | `1085.33` | `4.64` | word:349|punctuation:35|sentence_boundary:21|expanded_negation_word:17|style_function_word:14|line_break:12|discourse_marker_word:5|contraction_piece:4 |
+| `L24:848` | `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 425 | `774.26` | `4.87` | word:339|punctuation:34|sentence_boundary:20|expanded_negation_word:12|style_function_word:8|discourse_marker_word:5|line_break:4|contraction_piece:3 |
+| `L24:848` | `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` | `human` | 455 | `1076.21` | `4.98` | word:351|punctuation:49|sentence_boundary:28|style_function_word:14|expanded_negation_word:7|line_break:4|discourse_marker_word:1|contraction_piece:1 |
+
+## Top Tokens
+
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `560` activation `2.825` class `line_break` token `.
+
+`
+  - baggage and the porters hurried to bring them forth. A small crowd had formed near the end of the
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `420` activation `2.789` class `word` token ` be`
+  - Grimsby had been, but it seemed to be just as busy. People bustled around as they
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `424` activation `2.754` class `sentence_boundary` token `.`
+  - been, but it seemed to be just as busy. People bustled around as they went about their day
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `510` activation `2.749` class `sentence_boundary` token `.`
+  - flow of people toward where the luggage was being unloaded. Sophie only had one suitcase that held all her worldly
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `418` activation `2.730` class `word` token ` seemed`
+  - one in Grimsby had been, but it seemed to be just as busy. People bustled around
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `572` activation `2.673` class `punctuation` token `,`
+  - small crowd had formed near the end of the docks, close to where the fish market had opened. Perhaps
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `603` activation `2.671` class `sentence_boundary` token `.`
+  - long, but the smell of fish wasn't overwhelming. She rummaged around in her coin purse and
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `447` activation `2.621` class `sentence_boundary` token `.`
+  - agulls called loudly as they flew in lazy circles. The fishing boats had already docked and fishmong
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `565` activation `2.539` class `word` token ` formed`
+  - hurried to bring them forth. A small crowd had formed near the end of the docks, close to where
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `581` activation `2.526` class `sentence_boundary` token `.`
+  - docks, close to where the fish market had opened. Perhaps it was because Sophie had been at sea for
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `529` activation `2.517` class `sentence_boundary` token `.`
+  - her worldly belongings and she had it in her hands. But unsure of what she was supposed to be doing
+- `L19:320` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `563` activation `2.510` class `word` token ` crowd`
+  - porters hurried to bring them forth. A small crowd had formed near the end of the docks, close
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `577` activation `3.165` class `sentence_boundary` token `.`
+  - 's what she did, stealing for the highest bidder. That is until one day she stole the wrong thing
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `510` activation `3.134` class `punctuation` token `,`
+  - going along drifting and using his magical talents for profit, he decides to join the party for fun. C
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `487` activation `3.100` class `sentence_boundary` token `.`
+  - raised and groomed to be heir to their leader. He would have none of it and decided to run
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `639` activation `3.071` class `sentence_boundary` token `.`
+  - would be a good way to get around somewhat unnoticed.
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `511` activation `3.047` class `word` token ` he`
+  - along drifting and using his magical talents for profit, he decides to join the party for fun. Cord
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `488` activation `3.039` class `word` token ` He`
+  - and groomed to be heir to their leader. He would have none of it and decided to run away
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `638` activation `2.927` class `word` token ` unnoticed`
+  - party would be a good way to get around somewhat unnoticed.
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `499` activation `2.924` class `punctuation` token `,`
+  - would have none of it and decided to run away, going along drifting and using his magical talents for profit
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `493` activation `2.899` class `word` token ` it`
+  - heir to their leader. He would have none of it and decided to run away, going along drifting and
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `625` activation `2.855` class `word` token ` she`
+  - . On the run and keeping her head down, she figured the party would be a good way to get
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `564` activation `2.826` class `sentence_boundary` token `.`
+  - finding things, especially things she wasn't supposed to. So that's what she did, stealing for the
+- `L19:320` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `578` activation `2.791` class `style_function_word` token ` That`
+  - what she did, stealing for the highest bidder. That is until one day she stole the wrong thing and
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `427` activation `3.258` class `sentence_boundary` token `.`
+  - couldn’t back out, even if he wanted to. He was getting a fat paycheck out of this,
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `421` activation `3.182` class `punctuation` token `,`
+  - was, but he found he couldn’t back out, even if he wanted to. He was getting a
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `486` activation `3.006` class `sentence_boundary` token `.`
+  - some meat for her and she ate it with gusto. After he took out a bottle of whiskey and they
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `481` activation `3.006` class `word` token ` she`
+  - at first, Arthur grilled some meat for her and she ate it with gusto. After he took out a
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `428` activation `2.960` class `word` token ` He`
+  - ’t back out, even if he wanted to. He was getting a fat paycheck out of this, even
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `437` activation `2.888` class `punctuation` token `,`
+  - . He was getting a fat paycheck out of this, even if it meant enduring this wild, eccentric woman
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `505` activation `2.870` class `word` token `itions`
+  - and they passed it between each other, her inhibitions finally lowered and the conversation began to flow. “
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `466` activation `2.868` class `sentence_boundary` token `.`
+  - Maria lingered by the fire for a while longer. They didn’t talk at first, Arthur grilled some
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `473` activation `2.822` class `punctuation` token `,`
+  - a while longer. They didn’t talk at first, Arthur grilled some meat for her and she ate it
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `429` activation `2.822` class `expanded_negation_word` token ` was`
+  - back out, even if he wanted to. He was getting a fat paycheck out of this, even if
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `487` activation `2.813` class `word` token ` After`
+  - meat for her and she ate it with gusto. After he took out a bottle of whiskey and they passed
+- `L19:320` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `398` activation `2.783` class `sentence_boundary` token `.`
+  - , there was apparently something of interest around that area. Arthur was starting to doubt just how innocent that ‘
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `405` activation `3.137` class `punctuation` token `,`
+  - to say. He picked the small cube up again, staring at the face. "Well, what do
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `356` activation `3.054` class `punctuation` token `,`
+  - HELLO!" A voice rang out from the box, now displaying a face on one side. "O
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `459` activation `2.973` class `style_function_word` token ` that`
+  - to steal your data or anything." Edgar blinked at that comment. "Wait, why would you steal my
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `460` activation `2.854` class `word` token ` comment`
+  - steal your data or anything." Edgar blinked at that comment. "Wait, why would you steal my data
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `489` activation `2.761` class `punctuation` token `,`
+  - told you that!" The face frowned at him now, admonishing him. "I'm not that kind
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `352` activation `2.704` class `word` token ` out`
+  - like metal. "HELLO!" A voice rang out from the box, now displaying a face on one
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `314` activation `2.699` class `sentence_boundary` token `.`
+  - materials, and a small, nondescript cube. That's it. He couldn't even tell if
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `387` activation `2.693` class `line_break` token `!"
+
+`
+  - you! Don't worry, I'm not dangerous!" Well, that was an odd thing to say.
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `364` activation `2.685` class `sentence_boundary` token `.`
+  - the box, now displaying a face on one side. "Ow. Hi, it's a pleasure
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `403` activation `2.659` class `word` token ` up`
+  - odd thing to say. He picked the small cube up again, staring at the face. "Well,
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `410` activation `2.620` class `sentence_boundary` token `.`
+  - the small cube up again, staring at the face. "Well, what do you do? Are you
+- `L19:320` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `304` activation `2.601` class `word` token ` materials`
+  - the tape, opening the box easily. Some packing materials, and a small, nondescript cube.
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `350` activation `3.013` class `punctuation` token `,`
+  - sources and whatever the police are willing to give you, which isn't much. You feel like you're
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `356` activation `3.010` class `word` token ` You`
+  - willing to give you, which isn't much. You feel like you're being stonewalled in
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `355` activation `2.835` class `sentence_boundary` token `.`
+  - are willing to give you, which isn't much. You feel like you're being stonewalled
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `357` activation `2.792` class `style_function_word` token ` feel`
+  - to give you, which isn't much. You feel like you're being stonewalled in every
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `374` activation `2.770` class `word` token `'ve`
+  - ewalled in every direction you search, as you've never had such resistance from your usual resources before.
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `371` activation `2.770` class `punctuation` token `,`
+  - being stonewalled in every direction you search, as you've never had such resistance from your usual
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `351` activation `2.727` class `style_function_word` token ` which`
+  - and whatever the police are willing to give you, which isn't much. You feel like you're being
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `497` activation `2.682` class `style_function_word` token ` also`
+  - revisit and get his side of the story. You also had your connections with the authorities, a policew
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `511` activation `2.659` class `word` token ` who`
+  - with the authorities, a policewoman named Barbara who owed you a favor, and you might be able
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `540` activation `2.652` class `word` token ` It`
+  - you're being stonewalled for information. It was risky as it could get her into trouble too
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `373` activation `2.651` class `word` token ` you`
+  - onewalled in every direction you search, as you've never had such resistance from your usual resources before
+- `L19:320` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `340` activation `2.609` class `word` token ` sources`
+  - 've gathered every shred of evidence you can from public sources and whatever the police are willing to give you,
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `286` activation `2.768` class `word` token ` seems`
+  - don't really get it, but sure. It seems important to you, after all." Junya grinned
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `386` activation `2.489` class `contraction_piece` token ` don`
+  - those?" Junya demanded. "I told you I don't play anymore. I'm obviously out of shape
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `289` activation `2.430` class `word` token ` you`
+  - get it, but sure. It seems important to you, after all." Junya grinned. "Thanks
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `351` activation `2.227` class `word` token ` balls`
+  - balls on the mound. The first dozen or so balls were slow, sloppy throws. "What's that
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `419` activation `2.202` class `word` token ` It`
+  - they heard student trumpet players begin a fanfare. It was the same one that had played during the baseball
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `352` activation `2.165` class `expanded_negation_word` token ` were`
+  - on the mound. The first dozen or so balls were slow, sloppy throws. "What's that,
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `290` activation `2.130` class `punctuation` token `,`
+  - it, but sure. It seems important to you, after all." Junya grinned. "Thanks,
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `276` activation `2.124` class `contraction_piece` token ` don`
+  - it like a prayer or sorts." "Well, I don't really get it, but sure. It seems
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `287` activation `2.047` class `word` token ` important`
+  - 't really get it, but sure. It seems important to you, after all." Junya grinned.
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `350` activation `2.042` class `word` token ` so`
+  - of balls on the mound. The first dozen or so balls were slow, sloppy throws. "What's
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `311` activation `2.042` class `punctuation` token `,`
+  - man. We haven't seen each other in forever, but I know I can always count on you."
+- `L19:320` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `297` activation `2.013` class `sentence_boundary` token `.`
+  - important to you, after all." Junya grinned. "Thanks, man. We haven't seen each
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `512` activation `3.184` class `word` token ` easily`
+  - up the charge. I dodged the wild swings easily and decided to put an end to things when I
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `485` activation `3.128` class `word` token ` it`
+  - and planted a fist into its gut. This stopped it but only for a moment. It was standing again
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `483` activation `3.064` class `style_function_word` token ` This`
+  - ed it and planted a fist into its gut. This stopped it but only for a moment. It was
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `504` activation `2.851` class `word` token ` charge`
+  - standing again and throwing wild punches, giving up the charge. I dodged the wild swings easily and decided
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `492` activation `2.833` class `word` token ` It`
+  - . This stopped it but only for a moment. It was standing again and throwing wild punches, giving up
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `445` activation `2.801` class `word` token ` bull`
+  - that. Let's just quit, yeah?" The bullman came at me wildly again. I tried to
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `490` activation `2.778` class `word` token ` moment`
+  - its gut. This stopped it but only for a moment. It was standing again and throwing wild punches,
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `500` activation `2.777` class `punctuation` token `,`
+  - moment. It was standing again and throwing wild punches, giving up the charge. I dodged the wild
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `506` activation `2.747` class `word` token ` I`
+  - and throwing wild punches, giving up the charge. I dodged the wild swings easily and decided to put
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `486` activation `2.725` class `word` token ` but`
+  - planted a fist into its gut. This stopped it but only for a moment. It was standing again and
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `520` activation `2.712` class `word` token ` things`
+  - wild swings easily and decided to put an end to things when I noticed the bullman had a tattoo on
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `449` activation `2.668` class `word` token ` me`
+  - just quit, yeah?" The bullman came at me wildly again. I tried to dodge, but it
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `65` activation `1.794` class `word` token ` listing`
+  - Asuka's school fees were due. The job listing had been specific—haunting in a residential complex
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `47` activation `1.739` class `word` token ` but`
+  - . Standard poltergeist residue. Messy, but straightforward. He needed the work. Asuka's
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `43` activation `1.675` class `sentence_boundary` token `.`
+  - into the grout. Standard poltergeist residue. Messy, but straightforward. He needed the work
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `42` activation `1.628` class `word` token ` residue`
+  - layers into the grout. Standard poltergeist residue. Messy, but straightforward. He needed the
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `66` activation `1.623` class `expanded_negation_word` token ` had`
+  - uka's school fees were due. The job listing had been specific—haunting in a residential complex,
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `67` activation `1.491` class `word` token ` been`
+  - 's school fees were due. The job listing had been specific—haunting in a residential complex, third
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `357` activation `1.481` class `word` token ` output`
+  - "The girl's got a gift. Raw spiritual output off the charts. Worth a fortune to the right
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `60` activation `1.439` class `expanded_negation_word` token ` were`
+  - He needed the work. Asuka's school fees were due. The job listing had been specific—ha
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `361` activation `1.422` class `sentence_boundary` token `.`
+  - got a gift. Raw spiritual output off the charts. Worth a fortune to the right buyer. Nothing personal
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `61` activation `1.363` class `word` token ` due`
+  - needed the work. Asuka's school fees were due. The job listing had been specific—haunting
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `37` activation `1.350` class `sentence_boundary` token `.`
+  - that had already soaked three layers into the grout. Standard poltergeist residue. Messy, but
+- `L19:320` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `41` activation `1.329` class `word` token `geist`
+  - three layers into the grout. Standard poltergeist residue. Messy, but straightforward. He needed
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `437` activation `2.963` class `sentence_boundary` token `.`
+  - aze, taking in some of the sights around him. He could barely tell where he was anymore, but
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `436` activation `2.839` class `word` token ` him`
+  - daze, taking in some of the sights around him. He could barely tell where he was anymore,
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `446` activation `2.695` class `punctuation` token `,`
+  - him. He could barely tell where he was anymore, but he was certain that there was danger around.
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `438` activation `2.640` class `word` token ` He`
+  - , taking in some of the sights around him. He could barely tell where he was anymore, but he
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `456` activation `2.620` class `sentence_boundary` token `.`
+  - , but he was certain that there was danger around. He heard something move behind him. He turned around
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `449` activation `2.521` class `expanded_negation_word` token ` was`
+  - could barely tell where he was anymore, but he was certain that there was danger around. He heard something
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `439` activation `2.486` class `expanded_negation_word` token ` could`
+  - taking in some of the sights around him. He could barely tell where he was anymore, but he was
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `546` activation `2.476` class `word` token ` and`
+  - had his weapon, nobody could sneak up on him and attack him. He was able to take comfort in
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `445` activation `2.435` class `word` token ` anymore`
+  - around him. He could barely tell where he was anymore, but he was certain that there was danger around
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `448` activation `2.407` class `word` token ` he`
+  - He could barely tell where he was anymore, but he was certain that there was danger around. He heard
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `447` activation `2.333` class `word` token ` but`
+  - . He could barely tell where he was anymore, but he was certain that there was danger around. He
+- `L19:320` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `521` activation `2.332` class `word` token ` recently`
+  - for some reason that had gotten so difficult for him recently. He turned around and fired his rifle again.
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `202` activation `2.802` class `punctuation` token `!"`
+  - Keep moving. Keep moving! Prefect coming through!" said a girl's firm but nasally voice.
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `165` activation `2.600` class `sentence_boundary` token `.`
+  - the glass between her cabin and the train's corridor. She heard giggles erupt from the other side,
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `223` activation `2.397` class `contraction_piece` token ` Doesn`
+  - "Oh no! Watch out for Prefect Cat! Doesn't know she's a massive prat!" one of
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `175` activation `2.389` class `punctuation` token `,`
+  - . She heard giggles erupt from the other side, probably upperclassmen if her luck was its usual
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `320` activation `2.376` class `word` token ` it`
+  - She and her stepmother were the ones pushing for it. After all, there wasn't anything keeping her
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `241` activation `2.252` class `word` token ` voice`
+  - !" one of the kids said in a singsong voice. "Move on, Callaway, you little
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `289` activation `2.238` class `punctuation` token `,`
+  - . If these kids were making fun of a prefect, what chance did she stand at this magic school?
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `205` activation `2.223` class `word` token ` girl`
+  - Keep moving! Prefect coming through!" said a girl's firm but nasally voice. "Oh no!
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `270` activation `2.223` class `word` token ` robes`
+  - . Mary-Jess managed to get herself into her robes and unstick her face from the glass. If
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `279` activation `2.165` class `sentence_boundary` token `.`
+  - her robes and unstick her face from the glass. If these kids were making fun of a prefect,
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `339` activation `2.157` class `expanded_negation_word` token ` was`
+  - keeping her at her muggle elementary school. It was as if the kids there knew there was something weird
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `166` activation `2.150` class `word` token ` She`
+  - glass between her cabin and the train's corridor. She heard giggles erupt from the other side, probably
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `382` activation `1.865` class `word` token `I`
+  - heavy sigh, pulling out a battered notebook. “I’m Leo,” he said, tapping the cover with
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `401` activation `1.458` class `word` token `I`
+  - cover with a soot-stained finger. “I hear you’re the one who got the owl post
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `463` activation `1.422` class `word` token ` is`
+  - a bean. “Eat something. The basil flavor is actually decent.” The train began to move, the
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `464` activation `1.375` class `word` token ` actually`
+  - bean. “Eat something. The basil flavor is actually decent.” The train began to move, the wheels
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `381` activation `1.343` class `punctuation` token ` “`
+  - a heavy sigh, pulling out a battered notebook. “I’m Leo,” he said, tapping the cover
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `443` activation `1.321` class `word` token ` is`
+  - the owl. The postmistress at our estate is… eccentric.” Leo snorted, offering me a
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `383` activation `1.302` class `word` token `’m`
+  - sigh, pulling out a battered notebook. “I’m Leo,” he said, tapping the cover with a
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `345` activation `1.226` class `word` token ` train`
+  - but not unkind. “The rest of the train is a bit too loud for my liking.” I
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `163` activation `1.185` class `punctuation` token `,`
+  - . I was the first of my name to attend, the heir to a lineage that had whispered secrets in
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `400` activation `1.177` class `punctuation` token ` “`
+  - the cover with a soot-stained finger. “I hear you’re the one who got the owl
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `346` activation `1.173` class `word` token ` is`
+  - not unkind. “The rest of the train is a bit too loud for my liking.” I nodded
+- `L19:320` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `353` activation `1.156` class `word` token ` liking`
+  - of the train is a bit too loud for my liking.” I nodded, shifting my trunk to make room
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `466` activation `2.948` class `punctuation` token `,`
+  - making a functional wing. Billa is a genius, though, who can combine species, but she can
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `405` activation `2.783` class `punctuation` token `'`
+  - reminded me of caterpillars. 'Bats' were taken." Billa jabs a thumb into
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `467` activation `2.749` class `style_function_word` token ` though`
+  - a functional wing. Billa is a genius, though, who can combine species, but she can't
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `462` activation `2.748` class `word` token `illa`
+  - cats, let alone making a functional wing. Billa is a genius, though, who can combine species
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `463` activation `2.719` class `word` token ` is`
+  - , let alone making a functional wing. Billa is a genius, though, who can combine species,
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `474` activation `2.665` class `word` token ` but`
+  - a genius, though, who can combine species, but she can't come up with a name for her
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `377` activation `2.658` class `punctuation` token `'`
+  - named them yet. 'Butterkittens' just sounded like a dairy cat. I thought '
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `472` activation `2.635` class `word` token ` species`
+  - illa is a genius, though, who can combine species, but she can't come up with a name
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `442` activation `2.631` class `style_function_word` token ` can`
+  - aback, but it's oddly humorous. You can't fathom the logistics of combining butterflies and cats
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `434` activation `2.607` class `punctuation` token `,`
+  - part was naming them." You're taken aback, but it's oddly humorous. You can't f
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `424` activation `2.606` class `word` token ` part`
+  - thumb into her chest. "I guess the hardest part was naming them." You're taken aback,
+- `L19:320` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `497` activation `2.587` class `word` token ` say`
+  - "What about 'Flutterpuss'?" you say. "They are fluttering about. That name
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `418` activation `5.583` class `word` token ` seemed`
+  - one in Grimsby had been, but it seemed to be just as busy. People bustled around
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `517` activation `5.519` class `word` token ` held`
+  - was being unloaded. Sophie only had one suitcase that held all her worldly belongings and she had it in her
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `516` activation `5.391` class `style_function_word` token ` that`
+  - luggage was being unloaded. Sophie only had one suitcase that held all her worldly belongings and she had it in
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `524` activation `5.251` class `expanded_negation_word` token ` had`
+  - one suitcase that held all her worldly belongings and she had it in her hands. But unsure of what she
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `587` activation `5.135` class `expanded_negation_word` token ` had`
+  - fish market had opened. Perhaps it was because Sophie had been at sea for so long, but the smell
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `420` activation `5.125` class `word` token ` be`
+  - Grimsby had been, but it seemed to be just as busy. People bustled around as they
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `417` activation `5.000` class `word` token ` it`
+  - the one in Grimsby had been, but it seemed to be just as busy. People bustled
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `522` activation `4.952` class `word` token ` and`
+  - only had one suitcase that held all her worldly belongings and she had it in her hands. But unsure of
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `629` activation `4.930` class `word` token ` she`
+  - shillings she had. Enough for breakfast, she supposed and moved towards the end of the dock.
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `588` activation `4.914` class `word` token ` been`
+  - market had opened. Perhaps it was because Sophie had been at sea for so long, but the smell of
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `404` activation `4.912` class `word` token ` certainly`
+  - around her. The docks of Dimsdale were certainly smaller than the one in Grimsby had been
+- `L24:848` `b76b274e712fb4426a69f42ba3aec0fcc609458322ab110fc7aa07111cea5598@turn_01@human` token `415` activation `4.855` class `punctuation` token `,`
+  - smaller than the one in Grimsby had been, but it seemed to be just as busy. People
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `636` activation `5.014` class `word` token ` around`
+  - figured the party would be a good way to get around somewhat unnoticed.
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `630` activation `4.920` class `word` token ` be`
+  - keeping her head down, she figured the party would be a good way to get around somewhat unnoticed.
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `629` activation `4.836` class `expanded_negation_word` token ` would`
+  - and keeping her head down, she figured the party would be a good way to get around somewhat unnoticed.
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `637` activation `4.561` class `word` token ` somewhat`
+  - the party would be a good way to get around somewhat unnoticed.
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `626` activation `4.237` class `word` token ` figured`
+  - On the run and keeping her head down, she figured the party would be a good way to get around
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `507` activation `4.211` class `word` token ` talents`
+  - run away, going along drifting and using his magical talents for profit, he decides to join the party for
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `631` activation `4.210` class `word` token ` a`
+  - her head down, she figured the party would be a good way to get around somewhat unnoticed.
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `619` activation `4.205` class `word` token ` and`
+  - her to tie up loose ends. On the run and keeping her head down, she figured the party would
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `633` activation `4.192` class `word` token ` way`
+  - down, she figured the party would be a good way to get around somewhat unnoticed.
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `638` activation `4.150` class `word` token ` unnoticed`
+  - party would be a good way to get around somewhat unnoticed.
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `625` activation `4.067` class `word` token ` she`
+  - . On the run and keeping her head down, she figured the party would be a good way to get
+- `L24:848` `53a608114f2189fe3fe77c71d38fcdd123d7cffd55267c6aba62dabd68e2a797@turn_01@human` token `597` activation `4.032` class `word` token ` from`
+  - thing and wound up with a price on her head from both the person she stole from and the person who
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `429` activation `6.801` class `expanded_negation_word` token ` was`
+  - back out, even if he wanted to. He was getting a fat paycheck out of this, even if
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `442` activation `6.250` class `word` token ` enduring`
+  - fat paycheck out of this, even if it meant enduring this wild, eccentric woman for a while. Despite
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `430` activation `6.100` class `word` token ` getting`
+  - out, even if he wanted to. He was getting a fat paycheck out of this, even if it
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `421` activation `6.082` class `punctuation` token `,`
+  - was, but he found he couldn’t back out, even if he wanted to. He was getting a
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `426` activation `6.036` class `word` token ` to`
+  - he couldn’t back out, even if he wanted to. He was getting a fat paycheck out of this
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `436` activation `5.956` class `style_function_word` token ` this`
+  - to. He was getting a fat paycheck out of this, even if it meant enduring this wild, eccentric
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `435` activation `5.903` class `word` token ` of`
+  - wanted to. He was getting a fat paycheck out of this, even if it meant enduring this wild,
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `413` activation `5.837` class `word` token ` but`
+  - doubt just how innocent that ‘something’ was, but he found he couldn’t back out, even if
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `443` activation `5.795` class `style_function_word` token ` this`
+  - paycheck out of this, even if it meant enduring this wild, eccentric woman for a while. Despite her
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `428` activation `5.771` class `word` token ` He`
+  - ’t back out, even if he wanted to. He was getting a fat paycheck out of this, even
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `441` activation `5.767` class `word` token ` meant`
+  - a fat paycheck out of this, even if it meant enduring this wild, eccentric woman for a while.
+- `L24:848` `e43ad438c694ce352fe8cec4cffa1819c2778b87d8776c6460e4793c25bc2947@turn_01@human` token `437` activation `5.754` class `punctuation` token `,`
+  - . He was getting a fat paycheck out of this, even if it meant enduring this wild, eccentric woman
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `459` activation `4.674` class `style_function_word` token ` that`
+  - to steal your data or anything." Edgar blinked at that comment. "Wait, why would you steal my
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `392` activation `4.389` class `word` token ` an`
+  - , I'm not dangerous!" Well, that was an odd thing to say. He picked the small cube
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `391` activation `4.290` class `expanded_negation_word` token ` was`
+  - worry, I'm not dangerous!" Well, that was an odd thing to say. He picked the small
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `630` activation `3.971` class `expanded_negation_word` token ` was`
+  - This was getting weirder by the moment and he was going to get answers, no matter what.
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `393` activation `3.825` class `word` token ` odd`
+  - I'm not dangerous!" Well, that was an odd thing to say. He picked the small cube up
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `460` activation `3.786` class `word` token ` comment`
+  - steal your data or anything." Edgar blinked at that comment. "Wait, why would you steal my data
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `357` activation `3.746` class `word` token ` now`
+  - LO!" A voice rang out from the box, now displaying a face on one side. "Ow
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `621` activation `3.711` class `expanded_negation_word` token ` was`
+  - ! But why is it written in marker? This was getting weirder by the moment and he was going
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `396` activation `3.665` class `word` token ` say`
+  - dangerous!" Well, that was an odd thing to say. He picked the small cube up again, staring
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `540` activation `3.629` class `word` token ` like`
+  - izzical expression. It sat silent for what seemed like a full minute, and then said, "Well
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `405` activation `3.617` class `punctuation` token `,`
+  - to say. He picked the small cube up again, staring at the face. "Well, what do
+- `L24:848` `f7861473605f522a910557e43a3922358bd67e382a257fe788eeb9115c0e33bc@turn_01@human` token `537` activation `3.605` class `discourse_marker_word` token ` for`
+  - on a quizzical expression. It sat silent for what seemed like a full minute, and then said
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `504` activation `5.031` class `punctuation` token `,`
+  - story. You also had your connections with the authorities, a policewoman named Barbara who owed you a
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `474` activation `4.859` class `word` token ` they`
+  - the bar owner at the time, but now that they've moved on, perhaps it would be a good
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `351` activation `4.760` class `style_function_word` token ` which`
+  - and whatever the police are willing to give you, which isn't much. You feel like you're being
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `471` activation `4.722` class `word` token ` but`
+  - from interrogating the bar owner at the time, but now that they've moved on, perhaps it would
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `475` activation `4.689` class `word` token `'ve`
+  - bar owner at the time, but now that they've moved on, perhaps it would be a good time
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `503` activation `4.615` class `word` token ` authorities`
+  - the story. You also had your connections with the authorities, a policewoman named Barbara who owed you
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `345` activation `4.571` class `word` token ` are`
+  - evidence you can from public sources and whatever the police are willing to give you, which isn't much.
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `365` activation `4.560` class `word` token `alled`
+  - . You feel like you're being stonewalled in every direction you search, as you've never
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `350` activation `4.550` class `punctuation` token `,`
+  - sources and whatever the police are willing to give you, which isn't much. You feel like you're
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `541` activation `4.535` class `expanded_negation_word` token ` was`
+  - 're being stonewalled for information. It was risky as it could get her into trouble too,
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `511` activation `4.453` class `word` token ` who`
+  - with the authorities, a policewoman named Barbara who owed you a favor, and you might be able
+- `L24:848` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `356` activation `4.431` class `word` token ` You`
+  - willing to give you, which isn't much. You feel like you're being stonewalled in
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `286` activation `4.877` class `word` token ` seems`
+  - don't really get it, but sure. It seems important to you, after all." Junya grinned
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `420` activation `4.137` class `expanded_negation_word` token ` was`
+  - heard student trumpet players begin a fanfare. It was the same one that had played during the baseball championship
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `292` activation `3.619` class `word` token ` all`
+  - but sure. It seems important to you, after all." Junya grinned. "Thanks, man.
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `285` activation `3.526` class `word` token ` It`
+  - I don't really get it, but sure. It seems important to you, after all." Junya
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `309` activation `3.503` class `word` token ` in`
+  - Thanks, man. We haven't seen each other in forever, but I know I can always count on
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `419` activation `3.460` class `word` token ` It`
+  - they heard student trumpet players begin a fanfare. It was the same one that had played during the baseball
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `620` activation `3.458` class `expanded_negation_word` token ` was`
+  - home yet." Ah, Kuuya thought, it was a prayer for that. He silently sent out his
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `171` activation `3.394` class `word` token ` asked`
+  - Think you could help me with something?" Junya asked, rubbing the back of his head sheepishly.
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `434` activation `3.329` class `word` token ` recognized`
+  - that had played during the baseball championship. Junya recognized the timbre of the trumpet immediately and felt a
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `288` activation `3.316` class `word` token ` to`
+  - really get it, but sure. It seems important to you, after all." Junya grinned. "
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `424` activation `3.306` class `style_function_word` token ` that`
+  - begin a fanfare. It was the same one that had played during the baseball championship. Junya recognized
+- `L24:848` `ae8b53774c847d05fd6d28184713216aabe8ac2f67a644173d9a57296b0ad9a0@turn_01@human` token `290` activation `3.281` class `punctuation` token `,`
+  - it, but sure. It seems important to you, after all." Junya grinned. "Thanks,
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `520` activation `4.654` class `word` token ` things`
+  - wild swings easily and decided to put an end to things when I noticed the bullman had a tattoo on
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `493` activation `4.349` class `expanded_negation_word` token ` was`
+  - This stopped it but only for a moment. It was standing again and throwing wild punches, giving up the
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `519` activation `4.345` class `word` token ` to`
+  - the wild swings easily and decided to put an end to things when I noticed the bullman had a tattoo
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `550` activation `4.339` class `word` token ` to`
+  - . My stomach sank, and I knew I had to get back to Asuka immediately. I put a
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `483` activation `4.256` class `style_function_word` token ` This`
+  - ed it and planted a fist into its gut. This stopped it but only for a moment. It was
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `549` activation `4.147` class `expanded_negation_word` token ` had`
+  - tattoo. My stomach sank, and I knew I had to get back to Asuka immediately. I put
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `517` activation `4.142` class `word` token ` an`
+  - dodged the wild swings easily and decided to put an end to things when I noticed the bullman had
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `522` activation `4.137` class `word` token ` I`
+  - easily and decided to put an end to things when I noticed the bullman had a tattoo on his ankle
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `534` activation `4.087` class `word` token ` It`
+  - the bullman had a tattoo on his ankle. It was the thousand arms tattoo. My stomach sank,
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `521` activation `4.080` class `style_function_word` token ` when`
+  - swings easily and decided to put an end to things when I noticed the bullman had a tattoo on his
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `433` activation `4.048` class `contraction_piece` token ` done`
+  - easily. "You're not going to get much done like that. Let's just quit, yeah?"
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@human` token `515` activation `4.030` class `word` token ` to`
+  - . I dodged the wild swings easily and decided to put an end to things when I noticed the bull
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `57` activation `4.704` class `word` token `'s`
+  - but straightforward. He needed the work. Asuka's school fees were due. The job listing had been
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `118` activation `4.529` class `expanded_negation_word` token ` was`
+  - Questions cost time, and time cost money. He was halfway through sealing the last corruption sigil when his
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `55` activation `4.399` class `style_function_word` token ` As`
+  - y, but straightforward. He needed the work. Asuka's school fees were due. The job listing
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `107` activation `4.336` class `sentence_boundary` token `.`
+  - under the door. Touji didn't ask questions. Questions cost time, and time cost money. He
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `248` activation `4.250` class `word` token ` One`
+  - grade, the kind designed to bind spiritual entities. One had a scar across his jaw. Another was adjusting
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `54` activation `4.239` class `sentence_boundary` token `.`
+  - Messy, but straightforward. He needed the work. Asuka's school fees were due. The job
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `105` activation `4.157` class `word` token ` ask`
+  - an envelope under the door. Touji didn't ask questions. Questions cost time, and time cost money
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `350` activation `4.132` class `word` token `'s`
+  - aw gestured with his rod. "The girl's got a gift. Raw spiritual output off the charts
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `67` activation `4.087` class `word` token ` been`
+  - 's school fees were due. The job listing had been specific—haunting in a residential complex, third
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `60` activation `4.073` class `expanded_negation_word` token ` were`
+  - He needed the work. Asuka's school fees were due. The job listing had been specific—ha
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `43` activation `4.053` class `sentence_boundary` token `.`
+  - into the grout. Standard poltergeist residue. Messy, but straightforward. He needed the work
+- `L24:848` `c27b1701f36638ecf2b195cbd74309e64eed0fc3e7f97ed79d383f8cbeda9691@turn_01@glm-5.2` token `351` activation `4.022` class `word` token ` got`
+  - gestured with his rod. "The girl's got a gift. Raw spiritual output off the charts.
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `449` activation `5.045` class `expanded_negation_word` token ` was`
+  - could barely tell where he was anymore, but he was certain that there was danger around. He heard something
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `450` activation `4.126` class `word` token ` certain`
+  - barely tell where he was anymore, but he was certain that there was danger around. He heard something move
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `446` activation `4.124` class `punctuation` token `,`
+  - him. He could barely tell where he was anymore, but he was certain that there was danger around.
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `453` activation `4.118` class `expanded_negation_word` token ` was`
+  - he was anymore, but he was certain that there was danger around. He heard something move behind him.
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `448` activation `4.013` class `word` token ` he`
+  - He could barely tell where he was anymore, but he was certain that there was danger around. He heard
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `447` activation `4.008` class `word` token ` but`
+  - . He could barely tell where he was anymore, but he was certain that there was danger around. He
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `436` activation `3.934` class `word` token ` him`
+  - daze, taking in some of the sights around him. He could barely tell where he was anymore,
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `551` activation `3.927` class `expanded_negation_word` token ` was`
+  - could sneak up on him and attack him. He was able to take comfort in this. The man,
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `438` activation `3.831` class `word` token ` He`
+  - , taking in some of the sights around him. He could barely tell where he was anymore, but he
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `452` activation `3.784` class `word` token ` there`
+  - where he was anymore, but he was certain that there was danger around. He heard something move behind him
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `439` activation `3.715` class `expanded_negation_word` token ` could`
+  - taking in some of the sights around him. He could barely tell where he was anymore, but he was
+- `L24:848` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `454` activation `3.658` class `word` token ` danger`
+  - was anymore, but he was certain that there was danger around. He heard something move behind him. He
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `339` activation `4.639` class `expanded_negation_word` token ` was`
+  - keeping her at her muggle elementary school. It was as if the kids there knew there was something weird
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `315` activation `4.389` class `expanded_negation_word` token ` were`
+  - certain she should attend. She and her stepmother were the ones pushing for it. After all, there
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `441` activation `4.368` class `expanded_negation_word` token ` was`
+  - ?" the girl asked. Even her less firm tone was a bit waspish. "She means, what
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `338` activation `4.114` class `word` token ` It`
+  - anything keeping her at her muggle elementary school. It was as if the kids there knew there was something
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `496` activation `4.076` class `word` token ` she`
+  - answered, feeling color rise to her cheeks. Was she in trouble? How were these kids so big?
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `317` activation `4.042` class `word` token ` ones`
+  - should attend. She and her stepmother were the ones pushing for it. After all, there wasn't
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `289` activation `4.038` class `punctuation` token `,`
+  - . If these kids were making fun of a prefect, what chance did she stand at this magic school?
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `176` activation `4.009` class `word` token ` probably`
+  - She heard giggles erupt from the other side, probably upperclassmen if her luck was its usual ac
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `411` activation `3.992` class `expanded_negation_word` token ` was`
+  - curls and shiny prefect pin matched her robes. She was accompanied by a boy with his hair pulled back into
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `503` activation `3.975` class `word` token ` kids`
+  - cheeks. Was she in trouble? How were these kids so big? Would all the students be this much
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `181` activation `3.961` class `word` token ` her`
+  - from the other side, probably upperclassmen if her luck was its usual acerbic self. "
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@human` token `318` activation `3.920` class `word` token ` pushing`
+  - attend. She and her stepmother were the ones pushing for it. After all, there wasn't anything
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `443` activation `4.874` class `word` token ` is`
+  - the owl. The postmistress at our estate is… eccentric.” Leo snorted, offering me a
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `401` activation `4.628` class `word` token `I`
+  - cover with a soot-stained finger. “I hear you’re the one who got the owl post
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `352` activation `4.218` class `word` token ` my`
+  - rest of the train is a bit too loud for my liking.” I nodded, shifting my trunk to make
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `407` activation `4.209` class `word` token ` who`
+  - ained finger. “I hear you’re the one who got the owl post mixed up with the cat post
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `404` activation `4.193` class `word` token `’re`
+  - soot-stained finger. “I hear you’re the one who got the owl post mixed up with
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `346` activation `4.119` class `word` token ` is`
+  - not unkind. “The rest of the train is a bit too loud for my liking.” I nodded
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `403` activation `4.035` class `word` token ` you`
+  - a soot-stained finger. “I hear you’re the one who got the owl post mixed up
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `382` activation `4.002` class `word` token `I`
+  - heavy sigh, pulling out a battered notebook. “I’m Leo,” he said, tapping the cover with
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `406` activation `3.840` class `word` token ` one`
+  - -stained finger. “I hear you’re the one who got the owl post mixed up with the cat
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `351` activation `3.830` class `discourse_marker_word` token ` for`
+  - The rest of the train is a bit too loud for my liking.” I nodded, shifting my trunk to
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `383` activation `3.822` class `word` token `’m`
+  - sigh, pulling out a battered notebook. “I’m Leo,” he said, tapping the cover with a
+- `L24:848` `43d4144b3d22cc2c225f0466d525c2d306d1225a2239df043c7c7520cb83aab0@turn_01@qwen3.6-35b` token `400` activation `3.764` class `punctuation` token ` “`
+  - the cover with a soot-stained finger. “I hear you’re the one who got the owl
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `463` activation `4.980` class `word` token ` is`
+  - , let alone making a functional wing. Billa is a genius, though, who can combine species,
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `468` activation `4.531` class `punctuation` token `,`
+  - functional wing. Billa is a genius, though, who can combine species, but she can't come
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `462` activation `4.505` class `word` token `illa`
+  - cats, let alone making a functional wing. Billa is a genius, though, who can combine species
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `441` activation `4.468` class `word` token ` You`
+  - taken aback, but it's oddly humorous. You can't fathom the logistics of combining butterflies and
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `466` activation `4.465` class `punctuation` token `,`
+  - making a functional wing. Billa is a genius, though, who can combine species, but she can
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `469` activation `4.422` class `word` token ` who`
+  - wing. Billa is a genius, though, who can combine species, but she can't come up
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `442` activation `4.382` class `style_function_word` token ` can`
+  - aback, but it's oddly humorous. You can't fathom the logistics of combining butterflies and cats
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `430` activation `4.374` class `word` token `'re`
+  - I guess the hardest part was naming them." You're taken aback, but it's oddly humorous.
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `437` activation `4.315` class `word` token `'s`
+  - them." You're taken aback, but it's oddly humorous. You can't fathom the logistics
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `438` activation `4.311` class `word` token ` oddly`
+  - ." You're taken aback, but it's oddly humorous. You can't fathom the logistics of
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `467` activation `4.253` class `style_function_word` token ` though`
+  - a functional wing. Billa is a genius, though, who can combine species, but she can't
+- `L24:848` `8635f2cf6fddc090d9d44e1762a1c6374f4c24980c8b5b156bfe4cfc724e02d7@turn_01@human` token `348` activation `4.218` class `word` token ` to`
+  - , those? I made them a few years back to solve the mice problem on the higher floors. Those

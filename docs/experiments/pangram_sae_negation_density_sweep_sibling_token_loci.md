@@ -1,0 +1,645 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:913` | `negation_density_sweep_contract_00` | `negation_density_sweep` | 18 | `30.69` | `5.55` | expanded_negation_word:11|punctuation:3|sentence_boundary:2|word:2 |
+| `L19:913` | `negation_density_sweep_contract_02` | `negation_density_sweep` | 17 | `27.85` | `5.61` | expanded_negation_word:11|sentence_boundary:2|punctuation:2|word:2 |
+| `L19:913` | `negation_density_sweep_contract_04` | `negation_density_sweep` | 16 | `26.30` | `5.53` | expanded_negation_word:8|contraction_piece:2|word:2|punctuation:2|sentence_boundary:2 |
+| `L19:913` | `negation_density_sweep_contract_08` | `negation_density_sweep` | 15 | `25.96` | `5.35` | contraction_piece:5|expanded_negation_word:4|word:2|punctuation:2|sentence_boundary:2 |
+| `L19:913` | `negation_density_sweep_contract_16` | `negation_density_sweep` | 16 | `39.14` | `6.07` | contraction_piece:12|punctuation:2|word:1|sentence_boundary:1 |
+| `L19:913` | `negation_density_sweep_contract_32` | `negation_density_sweep` | 28 | `60.02` | `6.21` | contraction_piece:25|punctuation:1|word:1|sentence_boundary:1 |
+| `L19:2787` | `negation_density_sweep_contract_00` | `negation_density_sweep` | 9 | `14.21` | `2.52` | expanded_negation_word:8|sentence_boundary:1 |
+| `L19:2787` | `negation_density_sweep_contract_02` | `negation_density_sweep` | 11 | `16.90` | `2.60` | expanded_negation_word:7|contraction_piece:2|sentence_boundary:2 |
+| `L19:2787` | `negation_density_sweep_contract_04` | `negation_density_sweep` | 10 | `20.50` | `4.31` | expanded_negation_word:5|contraction_piece:4|sentence_boundary:1 |
+| `L19:2787` | `negation_density_sweep_contract_08` | `negation_density_sweep` | 12 | `22.74` | `4.31` | contraction_piece:8|expanded_negation_word:3|sentence_boundary:1 |
+| `L19:2787` | `negation_density_sweep_contract_16` | `negation_density_sweep` | 15 | `30.70` | `4.31` | contraction_piece:14|sentence_boundary:1 |
+| `L19:2787` | `negation_density_sweep_contract_32` | `negation_density_sweep` | 26 | `53.68` | `5.51` | contraction_piece:26 |
+| `L19:1650` | `negation_density_sweep_contract_00` | `negation_density_sweep` | 4 | `2.42` | `0.78` | sentence_boundary:2|expanded_negation_word:2 |
+| `L19:1650` | `negation_density_sweep_contract_02` | `negation_density_sweep` | 5 | `2.99` | `0.72` | sentence_boundary:3|expanded_negation_word:2 |
+| `L19:1650` | `negation_density_sweep_contract_04` | `negation_density_sweep` | 5 | `2.80` | `0.69` | sentence_boundary:3|expanded_negation_word:1|contraction_piece:1 |
+| `L19:1650` | `negation_density_sweep_contract_08` | `negation_density_sweep` | 5 | `2.61` | `0.55` | sentence_boundary:3|contraction_piece:2 |
+| `L19:1650` | `negation_density_sweep_contract_16` | `negation_density_sweep` | 7 | `3.38` | `0.51` | contraction_piece:4|sentence_boundary:3 |
+| `L19:1650` | `negation_density_sweep_contract_32` | `negation_density_sweep` | 5 | `2.99` | `0.82` | sentence_boundary:3|contraction_piece:2 |
+| `L24:1310` | `negation_density_sweep_contract_00` | `negation_density_sweep` | 16 | `32.41` | `6.61` | expanded_negation_word:6|sentence_boundary:5|punctuation:3|word:2 |
+| `L24:1310` | `negation_density_sweep_contract_02` | `negation_density_sweep` | 14 | `29.29` | `6.90` | expanded_negation_word:5|sentence_boundary:5|word:2|punctuation:2 |
+| `L24:1310` | `negation_density_sweep_contract_04` | `negation_density_sweep` | 14 | `29.28` | `7.01` | expanded_negation_word:4|sentence_boundary:4|contraction_piece:2|word:2|punctuation:2 |
+| `L24:1310` | `negation_density_sweep_contract_08` | `negation_density_sweep` | 16 | `31.26` | `5.79` | contraction_piece:6|sentence_boundary:4|expanded_negation_word:2|punctuation:2|word:2 |
+| `L24:1310` | `negation_density_sweep_contract_16` | `negation_density_sweep` | 19 | `52.78` | `7.42` | contraction_piece:12|sentence_boundary:4|punctuation:2|word:1 |
+| `L24:1310` | `negation_density_sweep_contract_32` | `negation_density_sweep` | 29 | `78.91` | `7.93` | contraction_piece:23|sentence_boundary:3|punctuation:2|word:1 |
+| `L24:62` | `negation_density_sweep_contract_00` | `negation_density_sweep` | 8 | `22.88` | `4.73` | expanded_negation_word:8 |
+| `L24:62` | `negation_density_sweep_contract_02` | `negation_density_sweep` | 8 | `19.67` | `4.53` | expanded_negation_word:7|contraction_piece:1 |
+| `L24:62` | `negation_density_sweep_contract_04` | `negation_density_sweep` | 9 | `22.90` | `4.54` | expanded_negation_word:5|contraction_piece:3|sentence_boundary:1 |
+| `L24:62` | `negation_density_sweep_contract_08` | `negation_density_sweep` | 8 | `20.08` | `4.51` | contraction_piece:5|expanded_negation_word:3 |
+| `L24:62` | `negation_density_sweep_contract_16` | `negation_density_sweep` | 12 | `32.69` | `5.23` | contraction_piece:12 |
+| `L24:62` | `negation_density_sweep_contract_32` | `negation_density_sweep` | 23 | `72.26` | `6.88` | contraction_piece:22|sentence_boundary:1 |
+
+## Top Tokens
+
+- `L19:913` `negation_density_sweep_contract_00` token `462` activation `5.555` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L19:913` `negation_density_sweep_contract_00` token `319` activation `5.472` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:913` `negation_density_sweep_contract_00` token `285` activation `3.515` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L19:913` `negation_density_sweep_contract_00` token `260` activation `2.942` class `expanded_negation_word` token ` did`
+  - drainage plan pass without questions. The engineer's map did not show the alley behind Cedar Street, and the
+- `L19:913` `negation_density_sweep_contract_00` token `168` activation `1.895` class `expanded_negation_word` token ` did`
+  - meeting easier. When Omar said the missing boxes probably did not matter, Lena did not answer right away.
+- `L19:913` `negation_density_sweep_contract_00` token `508` activation `1.879` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L19:913` `negation_density_sweep_contract_00` token `344` activation `1.571` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L19:913` `negation_density_sweep_contract_00` token `437` activation `0.959` class `expanded_negation_word` token ` did`
+  - curtain rise any faster. She told the crew they did not need a perfect run; they needed one honest
+- `L19:913` `negation_density_sweep_contract_00` token `232` activation `0.904` class `expanded_negation_word` token ` did`
+  - two customers had not received anything at all. Marcus did not want the council hearing to turn into a lecture
+- `L19:913` `negation_density_sweep_contract_00` token `417` activation `0.836` class `expanded_negation_word` token ` did`
+  - scene change that everyone else had practiced. Priya did not panic, because panic would not make the curtain
+- `L19:913` `negation_density_sweep_contract_00` token `378` activation `0.821` class `expanded_negation_word` token ` did`
+  - living there could see themselves in it. The rehearsal did not begin well. The lights were not focused,
+- `L19:913` `negation_density_sweep_contract_00` token `199` activation `0.783` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L19:913` `negation_density_sweep_contract_02` token `462` activation `5.605` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L19:913` `negation_density_sweep_contract_02` token `319` activation `5.418` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:913` `negation_density_sweep_contract_02` token `285` activation `3.043` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L19:913` `negation_density_sweep_contract_02` token `260` activation `2.625` class `expanded_negation_word` token ` did`
+  - drainage plan pass without questions. The engineer's map did not show the alley behind Cedar Street, and the
+- `L19:913` `negation_density_sweep_contract_02` token `508` activation `1.944` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L19:913` `negation_density_sweep_contract_02` token `344` activation `1.564` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L19:913` `negation_density_sweep_contract_02` token `437` activation `0.938` class `expanded_negation_word` token ` did`
+  - curtain rise any faster. She told the crew they did not need a perfect run; they needed one honest
+- `L19:913` `negation_density_sweep_contract_02` token `168` activation `0.908` class `expanded_negation_word` token ` did`
+  - meeting easier. When Omar said the missing boxes probably did not matter, Lena did not answer right away.
+- `L19:913` `negation_density_sweep_contract_02` token `199` activation `0.851` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L19:913` `negation_density_sweep_contract_02` token `232` activation `0.687` class `expanded_negation_word` token ` did`
+  - two customers had not received anything at all. Marcus did not want the council hearing to turn into a lecture
+- `L19:913` `negation_density_sweep_contract_02` token `378` activation `0.683` class `expanded_negation_word` token ` did`
+  - living there could see themselves in it. The rehearsal did not begin well. The lights were not focused,
+- `L19:913` `negation_density_sweep_contract_02` token `443` activation `0.675` class `punctuation` token `;`
+  - told the crew they did not need a perfect run; they needed one honest pass through every failure point.
+- `L19:913` `negation_density_sweep_contract_04` token `462` activation `5.527` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L19:913` `negation_density_sweep_contract_04` token `319` activation `5.375` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:913` `negation_density_sweep_contract_04` token `168` activation `3.104` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena did not answer right away.
+- `L19:913` `negation_density_sweep_contract_04` token `285` activation `2.049` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L19:913` `negation_density_sweep_contract_04` token `508` activation `1.866` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L19:913` `negation_density_sweep_contract_04` token `344` activation `1.636` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L19:913` `negation_density_sweep_contract_04` token `99` activation `0.933` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L19:913` `negation_density_sweep_contract_04` token `437` activation `0.927` class `expanded_negation_word` token ` did`
+  - curtain rise any faster. She told the crew they did not need a perfect run; they needed one honest
+- `L19:913` `negation_density_sweep_contract_04` token `376` activation `0.677` class `word` token `The`
+  - the people living there could see themselves in it. The rehearsal did not begin well. The lights were not
+- `L19:913` `negation_density_sweep_contract_04` token `443` activation `0.663` class `punctuation` token `;`
+  - told the crew they did not need a perfect run; they needed one honest pass through every failure point.
+- `L19:913` `negation_density_sweep_contract_04` token `472` activation `0.645` class `word` token ` Pri`
+  - did not argue when the second cue failed exactly where Priya expected. By the end of the night,
+- `L19:913` `negation_density_sweep_contract_04` token `378` activation `0.624` class `expanded_negation_word` token ` did`
+  - living there could see themselves in it. The rehearsal did not begin well. The lights were not focused,
+- `L19:913` `negation_density_sweep_contract_08` token `462` activation `5.348` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L19:913` `negation_density_sweep_contract_08` token `232` activation `4.602` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L19:913` `negation_density_sweep_contract_08` token `168` activation `3.104` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L19:913` `negation_density_sweep_contract_08` token `260` activation `2.310` class `contraction_piece` token ` didn`
+  - drainage plan pass without questions. The engineer's map didn't show the alley behind Cedar Street, and the
+- `L19:913` `negation_density_sweep_contract_08` token `508` activation `1.814` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L19:913` `negation_density_sweep_contract_08` token `196` activation `1.798` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake was not
+- `L19:913` `negation_density_sweep_contract_08` token `319` activation `1.638` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:913` `negation_density_sweep_contract_08` token `437` activation `0.955` class `expanded_negation_word` token ` did`
+  - curtain rise any faster. She told the crew they did not need a perfect run; they needed one honest
+- `L19:913` `negation_density_sweep_contract_08` token `99` activation `0.933` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L19:913` `negation_density_sweep_contract_08` token `376` activation `0.666` class `word` token `The`
+  - the people living there could see themselves in it. The rehearsal did not begin well. The lights were not
+- `L19:913` `negation_density_sweep_contract_08` token `443` activation `0.656` class `punctuation` token `;`
+  - told the crew they did not need a perfect run; they needed one honest pass through every failure point.
+- `L19:913` `negation_density_sweep_contract_08` token `291` activation `0.635` class `punctuation` token `,`
+  - cracked sidewalk. Residents do not usually read every appendix, he thought, but they should not have to guess
+- `L19:913` `negation_density_sweep_contract_16` token `437` activation `6.066` class `contraction_piece` token ` didn`
+  - curtain rise any faster. She told the crew they didn't need a perfect run; they needed one honest
+- `L19:913` `negation_density_sweep_contract_16` token `319` activation `5.689` class `contraction_piece` token ` didn`
+  - . He had not prepared a speech, so he didn't sound polished. Still, he would not apologize
+- `L19:913` `negation_density_sweep_contract_16` token `232` activation `4.595` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L19:913` `negation_density_sweep_contract_16` token `508` activation `4.300` class `contraction_piece` token ` didn`
+  - working. That was more useful than pretending the problems didn't exist.
+- `L19:913` `negation_density_sweep_contract_16` token `168` activation `3.315` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L19:913` `negation_density_sweep_contract_16` token `462` activation `2.549` class `contraction_piece` token ` didn`
+  - point. The director was not pleased, but he didn't argue when the second cue failed exactly where Pri
+- `L19:913` `negation_density_sweep_contract_16` token `260` activation `2.352` class `contraction_piece` token ` didn`
+  - drainage plan pass without questions. The engineer's map didn't show the alley behind Cedar Street, and the
+- `L19:913` `negation_density_sweep_contract_16` token `196` activation `2.226` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake was not
+- `L19:913` `negation_density_sweep_contract_16` token `344` activation `1.879` class `contraction_piece` token ` didn`
+  - . When the chair tried to move on, Marcus didn't sit down. He pointed to the blank corner
+- `L19:913` `negation_density_sweep_contract_16` token `378` activation `1.827` class `contraction_piece` token ` didn`
+  - living there could see themselves in it. The rehearsal didn't begin well. The lights were not focused,
+- `L19:913` `negation_density_sweep_contract_16` token `417` activation `1.100` class `contraction_piece` token ` didn`
+  - scene change that everyone else had practiced. Priya didn't panic, because panic would not make the curtain
+- `L19:913` `negation_density_sweep_contract_16` token `99` activation `0.933` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L19:913` `negation_density_sweep_contract_32` token `423` activation `6.214` class `contraction_piece` token ` wouldn`
+  - practiced. Priya didn't panic, because panic wouldn't make the curtain rise any faster. She told
+- `L19:913` `negation_density_sweep_contract_32` token `246` activation `5.631` class `contraction_piece` token ` couldn`
+  - council hearing to turn into a lecture, but he couldn't let the drainage plan pass without questions. The
+- `L19:913` `negation_density_sweep_contract_32` token `327` activation `5.297` class `contraction_piece` token ` wouldn`
+  - so he didn't sound polished. Still, he wouldn't apologize for asking basic questions. When the chair
+- `L19:913` `negation_density_sweep_contract_32` token `205` activation `4.426` class `contraction_piece` token ` wasn`
+  - that didn't fit. By sunset, the mistake wasn't dramatic, but it was real: three orders
+- `L19:913` `negation_density_sweep_contract_32` token `173` activation `3.950` class `contraction_piece` token ` didn`
+  - said the missing boxes probably didn't matter, Lena didn't answer right away. She walked the aisle again
+- `L19:913` `negation_density_sweep_contract_32` token `297` activation `3.578` class `contraction_piece` token ` shouldn`
+  - usually read every appendix, he thought, but they shouldn't have to guess whether their basements would flood
+- `L19:913` `negation_density_sweep_contract_32` token `232` activation `3.344` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L19:913` `negation_density_sweep_contract_32` token `462` activation `2.742` class `contraction_piece` token ` didn`
+  - point. The director wasn't pleased, but he didn't argue when the second cue failed exactly where Pri
+- `L19:913` `negation_density_sweep_contract_32` token `148` activation `2.424` class `contraction_piece` token ` wouldn`
+  - scanner could explain part of the problem, but she wouldn't close the file just to make the afternoon meeting
+- `L19:913` `negation_density_sweep_contract_32` token `486` activation `2.325` class `contraction_piece` token ` wasn`
+  - By the end of the night, the show still wasn't ready, yet the team finally knew what wasn
+- `L19:913` `negation_density_sweep_contract_32` token `273` activation `1.824` class `contraction_piece` token ` wasn`
+  - the alley behind Cedar Street, and the cost estimate wasn't clear about who would repair the cracked sidewalk.
+- `L19:913` `negation_density_sweep_contract_32` token `285` activation `1.726` class `contraction_piece` token ` don`
+  - clear about who would repair the cracked sidewalk. Residents don't usually read every appendix, he thought, but
+- `L19:2787` `negation_density_sweep_contract_00` token `319` activation `2.523` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:2787` `negation_density_sweep_contract_00` token `462` activation `2.438` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L19:2787` `negation_density_sweep_contract_00` token `168` activation `2.213` class `expanded_negation_word` token ` did`
+  - meeting easier. When Omar said the missing boxes probably did not matter, Lena did not answer right away.
+- `L19:2787` `negation_density_sweep_contract_00` token `285` activation `2.031` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L19:2787` `negation_density_sweep_contract_00` token `260` activation `1.661` class `expanded_negation_word` token ` did`
+  - drainage plan pass without questions. The engineer's map did not show the alley behind Cedar Street, and the
+- `L19:2787` `negation_density_sweep_contract_00` token `508` activation `1.247` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L19:2787` `negation_density_sweep_contract_00` token `160` activation `0.942` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably did not matter
+- `L19:2787` `negation_density_sweep_contract_00` token `417` activation `0.617` class `expanded_negation_word` token ` did`
+  - scene change that everyone else had practiced. Priya did not panic, because panic would not make the curtain
+- `L19:2787` `negation_density_sweep_contract_00` token `344` activation `0.544` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L19:2787` `negation_density_sweep_contract_02` token `70` activation `2.596` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L19:2787` `negation_density_sweep_contract_02` token `319` activation `2.516` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:2787` `negation_density_sweep_contract_02` token `462` activation `2.382` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L19:2787` `negation_density_sweep_contract_02` token `285` activation `1.745` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L19:2787` `negation_density_sweep_contract_02` token `79` activation `1.616` class `contraction_piece` token ` didn`
+  - ena didn't trust the inventory report, and she didn't hide that fact when the warehouse manager asked why
+- `L19:2787` `negation_density_sweep_contract_02` token `168` activation `1.595` class `expanded_negation_word` token ` did`
+  - meeting easier. When Omar said the missing boxes probably did not matter, Lena did not answer right away.
+- `L19:2787` `negation_density_sweep_contract_02` token `260` activation `1.416` class `expanded_negation_word` token ` did`
+  - drainage plan pass without questions. The engineer's map did not show the alley behind Cedar Street, and the
+- `L19:2787` `negation_density_sweep_contract_02` token `508` activation `1.228` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L19:2787` `negation_density_sweep_contract_02` token `160` activation `0.866` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably did not matter
+- `L19:2787` `negation_density_sweep_contract_02` token `199` activation `0.490` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L19:2787` `negation_density_sweep_contract_02` token `344` activation `0.452` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L19:2787` `negation_density_sweep_contract_04` token `99` activation `4.309` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L19:2787` `negation_density_sweep_contract_04` token `168` activation `3.743` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena did not answer right away.
+- `L19:2787` `negation_density_sweep_contract_04` token `70` activation `2.596` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L19:2787` `negation_density_sweep_contract_04` token `319` activation `2.515` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:2787` `negation_density_sweep_contract_04` token `462` activation `2.394` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L19:2787` `negation_density_sweep_contract_04` token `79` activation `1.616` class `contraction_piece` token ` didn`
+  - ena didn't trust the inventory report, and she didn't hide that fact when the warehouse manager asked why
+- `L19:2787` `negation_density_sweep_contract_04` token `285` activation `1.209` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L19:2787` `negation_density_sweep_contract_04` token `508` activation `1.118` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L19:2787` `negation_density_sweep_contract_04` token `160` activation `0.617` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably didn't matter
+- `L19:2787` `negation_density_sweep_contract_04` token `344` activation `0.382` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L19:2787` `negation_density_sweep_contract_08` token `99` activation `4.309` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L19:2787` `negation_density_sweep_contract_08` token `168` activation `3.743` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L19:2787` `negation_density_sweep_contract_08` token `232` activation `2.689` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L19:2787` `negation_density_sweep_contract_08` token `70` activation `2.596` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L19:2787` `negation_density_sweep_contract_08` token `462` activation `2.211` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L19:2787` `negation_density_sweep_contract_08` token `79` activation `1.616` class `contraction_piece` token ` didn`
+  - ena didn't trust the inventory report, and she didn't hide that fact when the warehouse manager asked why
+- `L19:2787` `negation_density_sweep_contract_08` token `196` activation `1.409` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake was not
+- `L19:2787` `negation_density_sweep_contract_08` token `508` activation `1.081` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L19:2787` `negation_density_sweep_contract_08` token `260` activation `0.835` class `contraction_piece` token ` didn`
+  - drainage plan pass without questions. The engineer's map didn't show the alley behind Cedar Street, and the
+- `L19:2787` `negation_density_sweep_contract_08` token `173` activation `0.821` class `contraction_piece` token ` didn`
+  - said the missing boxes probably didn't matter, Lena didn't answer right away. She walked the aisle again
+- `L19:2787` `negation_density_sweep_contract_08` token `319` activation `0.814` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:2787` `negation_density_sweep_contract_08` token `160` activation `0.617` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably didn't matter
+- `L19:2787` `negation_density_sweep_contract_16` token `99` activation `4.309` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L19:2787` `negation_density_sweep_contract_16` token `168` activation `4.211` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L19:2787` `negation_density_sweep_contract_16` token `319` activation `3.052` class `contraction_piece` token ` didn`
+  - . He had not prepared a speech, so he didn't sound polished. Still, he would not apologize
+- `L19:2787` `negation_density_sweep_contract_16` token `232` activation `2.843` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L19:2787` `negation_density_sweep_contract_16` token `508` activation `2.636` class `contraction_piece` token ` didn`
+  - working. That was more useful than pretending the problems didn't exist.
+- `L19:2787` `negation_density_sweep_contract_16` token `70` activation `2.596` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L19:2787` `negation_density_sweep_contract_16` token `437` activation `2.585` class `contraction_piece` token ` didn`
+  - curtain rise any faster. She told the crew they didn't need a perfect run; they needed one honest
+- `L19:2787` `negation_density_sweep_contract_16` token `196` activation `1.690` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake was not
+- `L19:2787` `negation_density_sweep_contract_16` token `79` activation `1.616` class `contraction_piece` token ` didn`
+  - ena didn't trust the inventory report, and she didn't hide that fact when the warehouse manager asked why
+- `L19:2787` `negation_density_sweep_contract_16` token `113` activation `1.286` class `contraction_piece` token ` wasn`
+  - pallets by the loading door, the return bin wasn't labeled, and the shipment log was not signed
+- `L19:2787` `negation_density_sweep_contract_16` token `462` activation `1.161` class `contraction_piece` token ` didn`
+  - point. The director was not pleased, but he didn't argue when the second cue failed exactly where Pri
+- `L19:2787` `negation_density_sweep_contract_16` token `260` activation `0.905` class `contraction_piece` token ` didn`
+  - drainage plan pass without questions. The engineer's map didn't show the alley behind Cedar Street, and the
+- `L19:2787` `negation_density_sweep_contract_32` token `129` activation `5.509` class `contraction_piece` token ` couldn`
+  - shipment log wasn't signed by the driver. She couldn't accuse anyone yet, because a bad scanner could
+- `L19:2787` `negation_density_sweep_contract_32` token `99` activation `4.309` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L19:2787` `negation_density_sweep_contract_32` token `173` activation `3.897` class `contraction_piece` token ` didn`
+  - said the missing boxes probably didn't matter, Lena didn't answer right away. She walked the aisle again
+- `L19:2787` `negation_density_sweep_contract_32` token `205` activation `3.569` class `contraction_piece` token ` wasn`
+  - that didn't fit. By sunset, the mistake wasn't dramatic, but it was real: three orders
+- `L19:2787` `negation_density_sweep_contract_32` token `148` activation `3.469` class `contraction_piece` token ` wouldn`
+  - scanner could explain part of the problem, but she wouldn't close the file just to make the afternoon meeting
+- `L19:2787` `negation_density_sweep_contract_32` token `246` activation `3.035` class `contraction_piece` token ` couldn`
+  - council hearing to turn into a lecture, but he couldn't let the drainage plan pass without questions. The
+- `L19:2787` `negation_density_sweep_contract_32` token `327` activation `2.833` class `contraction_piece` token ` wouldn`
+  - so he didn't sound polished. Still, he wouldn't apologize for asking basic questions. When the chair
+- `L19:2787` `negation_density_sweep_contract_32` token `70` activation `2.596` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L19:2787` `negation_density_sweep_contract_32` token `423` activation `2.537` class `contraction_piece` token ` wouldn`
+  - practiced. Priya didn't panic, because panic wouldn't make the curtain rise any faster. She told
+- `L19:2787` `negation_density_sweep_contract_32` token `232` activation `2.221` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L19:2787` `negation_density_sweep_contract_32` token `297` activation `2.218` class `contraction_piece` token ` shouldn`
+  - usually read every appendix, he thought, but they shouldn't have to guess whether their basements would flood
+- `L19:2787` `negation_density_sweep_contract_32` token `462` activation `1.681` class `contraction_piece` token ` didn`
+  - point. The director wasn't pleased, but he didn't argue when the second cue failed exactly where Pri
+- `L19:1650` `negation_density_sweep_contract_00` token `160` activation `0.775` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably did not matter
+- `L19:1650` `negation_density_sweep_contract_00` token `319` activation `0.648` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:1650` `negation_density_sweep_contract_00` token `199` activation `0.512` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L19:1650` `negation_density_sweep_contract_00` token `285` activation `0.486` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L19:1650` `negation_density_sweep_contract_02` token `160` activation `0.716` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably did not matter
+- `L19:1650` `negation_density_sweep_contract_02` token `319` activation `0.688` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:1650` `negation_density_sweep_contract_02` token `199` activation `0.645` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L19:1650` `negation_density_sweep_contract_02` token `285` activation `0.476` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L19:1650` `negation_density_sweep_contract_02` token `309` activation `0.466` class `sentence_boundary` token `.`
+  - have to guess whether their basements would flood again. He had not prepared a speech, so he did
+- `L19:1650` `negation_density_sweep_contract_04` token `319` activation `0.691` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L19:1650` `negation_density_sweep_contract_04` token `199` activation `0.587` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L19:1650` `negation_density_sweep_contract_04` token `160` activation `0.533` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably didn't matter
+- `L19:1650` `negation_density_sweep_contract_04` token `168` activation `0.505` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena did not answer right away.
+- `L19:1650` `negation_density_sweep_contract_04` token `309` activation `0.482` class `sentence_boundary` token `.`
+  - have to guess whether their basements would flood again. He had not prepared a speech, so he did
+- `L19:1650` `negation_density_sweep_contract_08` token `232` activation `0.553` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L19:1650` `negation_density_sweep_contract_08` token `199` activation `0.549` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that didn't fit. By sunset, the mistake was not dramatic, but
+- `L19:1650` `negation_density_sweep_contract_08` token `160` activation `0.533` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably didn't matter
+- `L19:1650` `negation_density_sweep_contract_08` token `168` activation `0.505` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L19:1650` `negation_density_sweep_contract_08` token `309` activation `0.472` class `sentence_boundary` token `.`
+  - have to guess whether their basements would flood again. He had not prepared a speech, so he did
+- `L19:1650` `negation_density_sweep_contract_16` token `232` activation `0.510` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L19:1650` `negation_density_sweep_contract_16` token `319` activation `0.506` class `contraction_piece` token ` didn`
+  - . He had not prepared a speech, so he didn't sound polished. Still, he would not apologize
+- `L19:1650` `negation_density_sweep_contract_16` token `199` activation `0.497` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that didn't fit. By sunset, the mistake was not dramatic, but
+- `L19:1650` `negation_density_sweep_contract_16` token `160` activation `0.477` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably didn't matter
+- `L19:1650` `negation_density_sweep_contract_16` token `196` activation `0.470` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake was not
+- `L19:1650` `negation_density_sweep_contract_16` token `309` activation `0.461` class `sentence_boundary` token `.`
+  - have to guess whether their basements would flood again. He had not prepared a speech, so he didn
+- `L19:1650` `negation_density_sweep_contract_16` token `168` activation `0.458` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L19:1650` `negation_density_sweep_contract_32` token `173` activation `0.823` class `contraction_piece` token ` didn`
+  - said the missing boxes probably didn't matter, Lena didn't answer right away. She walked the aisle again
+- `L19:1650` `negation_density_sweep_contract_32` token `205` activation `0.743` class `contraction_piece` token ` wasn`
+  - that didn't fit. By sunset, the mistake wasn't dramatic, but it was real: three orders
+- `L19:1650` `negation_density_sweep_contract_32` token `199` activation `0.503` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that didn't fit. By sunset, the mistake wasn't dramatic, but
+- `L19:1650` `negation_density_sweep_contract_32` token `160` activation `0.477` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably didn't matter
+- `L19:1650` `negation_density_sweep_contract_32` token `309` activation `0.444` class `sentence_boundary` token `.`
+  - have to guess whether their basements would flood again. He had not prepared a speech, so he didn
+- `L24:1310` `negation_density_sweep_contract_00` token `319` activation `6.614` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L24:1310` `negation_density_sweep_contract_00` token `462` activation `5.889` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L24:1310` `negation_density_sweep_contract_00` token `285` activation `4.196` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L24:1310` `negation_density_sweep_contract_00` token `260` activation `3.237` class `expanded_negation_word` token ` did`
+  - drainage plan pass without questions. The engineer's map did not show the alley behind Cedar Street, and the
+- `L24:1310` `negation_density_sweep_contract_00` token `168` activation `2.441` class `expanded_negation_word` token ` did`
+  - meeting easier. When Omar said the missing boxes probably did not matter, Lena did not answer right away.
+- `L24:1310` `negation_density_sweep_contract_00` token `199` activation `1.519` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L24:1310` `negation_density_sweep_contract_00` token `160` activation `1.320` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably did not matter
+- `L24:1310` `negation_density_sweep_contract_00` token `376` activation `0.934` class `word` token `The`
+  - the people living there could see themselves in it. The rehearsal did not begin well. The lights were not
+- `L24:1310` `negation_density_sweep_contract_00` token `243` activation `0.928` class `punctuation` token `,`
+  - not want the council hearing to turn into a lecture, but he could not let the drainage plan pass without
+- `L24:1310` `negation_density_sweep_contract_00` token `375` activation `0.896` class `sentence_boundary` token `.
+
+`
+  - until the people living there could see themselves in it. The rehearsal did not begin well. The lights were
+- `L24:1310` `negation_density_sweep_contract_00` token `472` activation `0.826` class `word` token ` Pri`
+  - did not argue when the second cue failed exactly where Priya expected. By the end of the night,
+- `L24:1310` `negation_density_sweep_contract_00` token `382` activation `0.821` class `sentence_boundary` token `.`
+  - themselves in it. The rehearsal did not begin well. The lights were not focused, the stage manager could
+- `L24:1310` `negation_density_sweep_contract_02` token `319` activation `6.897` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L24:1310` `negation_density_sweep_contract_02` token `462` activation `6.223` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L24:1310` `negation_density_sweep_contract_02` token `285` activation `3.688` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L24:1310` `negation_density_sweep_contract_02` token `260` activation `2.837` class `expanded_negation_word` token ` did`
+  - drainage plan pass without questions. The engineer's map did not show the alley behind Cedar Street, and the
+- `L24:1310` `negation_density_sweep_contract_02` token `199` activation `1.579` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L24:1310` `negation_density_sweep_contract_02` token `160` activation `1.160` class `sentence_boundary` token `.`
+  - close the file just to make the afternoon meeting easier. When Omar said the missing boxes probably did not matter
+- `L24:1310` `negation_density_sweep_contract_02` token `375` activation `1.058` class `sentence_boundary` token `.
+
+`
+  - until the people living there could see themselves in it. The rehearsal did not begin well. The lights were
+- `L24:1310` `negation_density_sweep_contract_02` token `376` activation `1.045` class `word` token `The`
+  - the people living there could see themselves in it. The rehearsal did not begin well. The lights were not
+- `L24:1310` `negation_density_sweep_contract_02` token `382` activation `0.890` class `sentence_boundary` token `.`
+  - themselves in it. The rehearsal did not begin well. The lights were not focused, the stage manager could
+- `L24:1310` `negation_density_sweep_contract_02` token `472` activation `0.880` class `word` token ` Pri`
+  - did not argue when the second cue failed exactly where Priya expected. By the end of the night,
+- `L24:1310` `negation_density_sweep_contract_02` token `243` activation `0.841` class `punctuation` token `,`
+  - not want the council hearing to turn into a lecture, but he could not let the drainage plan pass without
+- `L24:1310` `negation_density_sweep_contract_02` token `344` activation `0.784` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L24:1310` `negation_density_sweep_contract_04` token `319` activation `7.011` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L24:1310` `negation_density_sweep_contract_04` token `462` activation `6.065` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L24:1310` `negation_density_sweep_contract_04` token `168` activation `4.368` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena did not answer right away.
+- `L24:1310` `negation_density_sweep_contract_04` token `285` activation `2.201` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L24:1310` `negation_density_sweep_contract_04` token `99` activation `1.426` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L24:1310` `negation_density_sweep_contract_04` token `375` activation `1.085` class `sentence_boundary` token `.
+
+`
+  - until the people living there could see themselves in it. The rehearsal did not begin well. The lights were
+- `L24:1310` `negation_density_sweep_contract_04` token `199` activation `1.074` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L24:1310` `negation_density_sweep_contract_04` token `344` activation `1.067` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L24:1310` `negation_density_sweep_contract_04` token `376` activation `1.023` class `word` token `The`
+  - the people living there could see themselves in it. The rehearsal did not begin well. The lights were not
+- `L24:1310` `negation_density_sweep_contract_04` token `472` activation `0.918` class `word` token ` Pri`
+  - did not argue when the second cue failed exactly where Priya expected. By the end of the night,
+- `L24:1310` `negation_density_sweep_contract_04` token `382` activation `0.863` class `sentence_boundary` token `.`
+  - themselves in it. The rehearsal did not begin well. The lights were not focused, the stage manager could
+- `L24:1310` `negation_density_sweep_contract_04` token `243` activation `0.773` class `punctuation` token `,`
+  - not want the council hearing to turn into a lecture, but he could not let the drainage plan pass without
+- `L24:1310` `negation_density_sweep_contract_08` token `462` activation `5.786` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L24:1310` `negation_density_sweep_contract_08` token `232` activation `5.655` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L24:1310` `negation_density_sweep_contract_08` token `168` activation `4.368` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L24:1310` `negation_density_sweep_contract_08` token `260` activation `3.102` class `contraction_piece` token ` didn`
+  - drainage plan pass without questions. The engineer's map didn't show the alley behind Cedar Street, and the
+- `L24:1310` `negation_density_sweep_contract_08` token `196` activation `2.867` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake was not
+- `L24:1310` `negation_density_sweep_contract_08` token `99` activation `1.426` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L24:1310` `negation_density_sweep_contract_08` token `243` activation `1.000` class `punctuation` token `,`
+  - 't want the council hearing to turn into a lecture, but he could not let the drainage plan pass without
+- `L24:1310` `negation_density_sweep_contract_08` token `376` activation `0.979` class `word` token `The`
+  - the people living there could see themselves in it. The rehearsal did not begin well. The lights were not
+- `L24:1310` `negation_density_sweep_contract_08` token `375` activation `0.960` class `sentence_boundary` token `.
+
+`
+  - until the people living there could see themselves in it. The rehearsal did not begin well. The lights were
+- `L24:1310` `negation_density_sweep_contract_08` token `199` activation `0.865` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that didn't fit. By sunset, the mistake was not dramatic, but
+- `L24:1310` `negation_density_sweep_contract_08` token `472` activation `0.813` class `word` token ` Pri`
+  - did not argue when the second cue failed exactly where Priya expected. By the end of the night,
+- `L24:1310` `negation_density_sweep_contract_08` token `319` activation `0.774` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L24:1310` `negation_density_sweep_contract_16` token `319` activation `7.419` class `contraction_piece` token ` didn`
+  - . He had not prepared a speech, so he didn't sound polished. Still, he would not apologize
+- `L24:1310` `negation_density_sweep_contract_16` token `437` activation `7.301` class `contraction_piece` token ` didn`
+  - curtain rise any faster. She told the crew they didn't need a perfect run; they needed one honest
+- `L24:1310` `negation_density_sweep_contract_16` token `232` activation `5.799` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L24:1310` `negation_density_sweep_contract_16` token `508` activation `5.156` class `contraction_piece` token ` didn`
+  - working. That was more useful than pretending the problems didn't exist.
+- `L24:1310` `negation_density_sweep_contract_16` token `168` activation `4.706` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L24:1310` `negation_density_sweep_contract_16` token `196` activation `3.534` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake was not
+- `L24:1310` `negation_density_sweep_contract_16` token `260` activation `3.149` class `contraction_piece` token ` didn`
+  - drainage plan pass without questions. The engineer's map didn't show the alley behind Cedar Street, and the
+- `L24:1310` `negation_density_sweep_contract_16` token `462` activation `2.875` class `contraction_piece` token ` didn`
+  - point. The director was not pleased, but he didn't argue when the second cue failed exactly where Pri
+- `L24:1310` `negation_density_sweep_contract_16` token `378` activation `2.368` class `contraction_piece` token ` didn`
+  - living there could see themselves in it. The rehearsal didn't begin well. The lights were not focused,
+- `L24:1310` `negation_density_sweep_contract_16` token `344` activation `2.189` class `contraction_piece` token ` didn`
+  - . When the chair tried to move on, Marcus didn't sit down. He pointed to the blank corner
+- `L24:1310` `negation_density_sweep_contract_16` token `99` activation `1.426` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L24:1310` `negation_density_sweep_contract_16` token `417` activation `1.168` class `contraction_piece` token ` didn`
+  - scene change that everyone else had practiced. Priya didn't panic, because panic would not make the curtain
+- `L24:1310` `negation_density_sweep_contract_32` token `246` activation `7.928` class `contraction_piece` token ` couldn`
+  - council hearing to turn into a lecture, but he couldn't let the drainage plan pass without questions. The
+- `L24:1310` `negation_density_sweep_contract_32` token `423` activation `7.726` class `contraction_piece` token ` wouldn`
+  - practiced. Priya didn't panic, because panic wouldn't make the curtain rise any faster. She told
+- `L24:1310` `negation_density_sweep_contract_32` token `327` activation `6.470` class `contraction_piece` token ` wouldn`
+  - so he didn't sound polished. Still, he wouldn't apologize for asking basic questions. When the chair
+- `L24:1310` `negation_density_sweep_contract_32` token `205` activation `5.932` class `contraction_piece` token ` wasn`
+  - that didn't fit. By sunset, the mistake wasn't dramatic, but it was real: three orders
+- `L24:1310` `negation_density_sweep_contract_32` token `173` activation `5.384` class `contraction_piece` token ` didn`
+  - said the missing boxes probably didn't matter, Lena didn't answer right away. She walked the aisle again
+- `L24:1310` `negation_density_sweep_contract_32` token `297` activation `4.286` class `contraction_piece` token ` shouldn`
+  - usually read every appendix, he thought, but they shouldn't have to guess whether their basements would flood
+- `L24:1310` `negation_density_sweep_contract_32` token `148` activation `4.079` class `contraction_piece` token ` wouldn`
+  - scanner could explain part of the problem, but she wouldn't close the file just to make the afternoon meeting
+- `L24:1310` `negation_density_sweep_contract_32` token `232` activation `3.650` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L24:1310` `negation_density_sweep_contract_32` token `486` activation `2.871` class `contraction_piece` token ` wasn`
+  - By the end of the night, the show still wasn't ready, yet the team finally knew what wasn
+- `L24:1310` `negation_density_sweep_contract_32` token `196` activation `2.856` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake wasn't
+- `L24:1310` `negation_density_sweep_contract_32` token `462` activation `2.796` class `contraction_piece` token ` didn`
+  - point. The director wasn't pleased, but he didn't argue when the second cue failed exactly where Pri
+- `L24:1310` `negation_density_sweep_contract_32` token `129` activation `2.603` class `contraction_piece` token ` couldn`
+  - shipment log wasn't signed by the driver. She couldn't accuse anyone yet, because a bad scanner could
+- `L24:62` `negation_density_sweep_contract_00` token `462` activation `4.734` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L24:62` `negation_density_sweep_contract_00` token `319` activation `4.322` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L24:62` `negation_density_sweep_contract_00` token `285` activation `3.632` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L24:62` `negation_density_sweep_contract_00` token `344` activation `2.579` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L24:62` `negation_density_sweep_contract_00` token `168` activation `2.384` class `expanded_negation_word` token ` did`
+  - meeting easier. When Omar said the missing boxes probably did not matter, Lena did not answer right away.
+- `L24:62` `negation_density_sweep_contract_00` token `260` activation `2.183` class `expanded_negation_word` token ` did`
+  - drainage plan pass without questions. The engineer's map did not show the alley behind Cedar Street, and the
+- `L24:62` `negation_density_sweep_contract_00` token `508` activation `2.166` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L24:62` `negation_density_sweep_contract_00` token `417` activation `0.882` class `expanded_negation_word` token ` did`
+  - scene change that everyone else had practiced. Priya did not panic, because panic would not make the curtain
+- `L24:62` `negation_density_sweep_contract_02` token `462` activation `4.529` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L24:62` `negation_density_sweep_contract_02` token `319` activation `4.132` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L24:62` `negation_density_sweep_contract_02` token `285` activation `3.043` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L24:62` `negation_density_sweep_contract_02` token `508` activation `2.444` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L24:62` `negation_density_sweep_contract_02` token `260` activation `1.844` class `expanded_negation_word` token ` did`
+  - drainage plan pass without questions. The engineer's map did not show the alley behind Cedar Street, and the
+- `L24:62` `negation_density_sweep_contract_02` token `344` activation `1.821` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L24:62` `negation_density_sweep_contract_02` token `168` activation `0.969` class `expanded_negation_word` token ` did`
+  - meeting easier. When Omar said the missing boxes probably did not matter, Lena did not answer right away.
+- `L24:62` `negation_density_sweep_contract_02` token `70` activation `0.892` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L24:62` `negation_density_sweep_contract_04` token `462` activation `4.537` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L24:62` `negation_density_sweep_contract_04` token `319` activation `4.212` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L24:62` `negation_density_sweep_contract_04` token `99` activation `3.697` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L24:62` `negation_density_sweep_contract_04` token `168` activation `3.633` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena did not answer right away.
+- `L24:62` `negation_density_sweep_contract_04` token `508` activation `1.983` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L24:62` `negation_density_sweep_contract_04` token `285` activation `1.729` class `expanded_negation_word` token ` do`
+  - clear about who would repair the cracked sidewalk. Residents do not usually read every appendix, he thought, but
+- `L24:62` `negation_density_sweep_contract_04` token `344` activation `1.581` class `expanded_negation_word` token ` did`
+  - . When the chair tried to move on, Marcus did not sit down. He pointed to the blank corner
+- `L24:62` `negation_density_sweep_contract_04` token `70` activation `0.892` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L24:62` `negation_density_sweep_contract_04` token `199` activation `0.631` class `sentence_boundary` token `.`
+  - , and wrote down the numbers that did not fit. By sunset, the mistake was not dramatic, but
+- `L24:62` `negation_density_sweep_contract_08` token `462` activation `4.514` class `expanded_negation_word` token ` did`
+  - point. The director was not pleased, but he did not argue when the second cue failed exactly where Pri
+- `L24:62` `negation_density_sweep_contract_08` token `99` activation `3.697` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L24:62` `negation_density_sweep_contract_08` token `168` activation `3.633` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L24:62` `negation_density_sweep_contract_08` token `232` activation `2.656` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L24:62` `negation_density_sweep_contract_08` token `319` activation `2.614` class `expanded_negation_word` token ` did`
+  - . He had not prepared a speech, so he did not sound polished. Still, he would not apologize
+- `L24:62` `negation_density_sweep_contract_08` token `508` activation `1.642` class `expanded_negation_word` token ` did`
+  - working. That was more useful than pretending the problems did not exist.
+- `L24:62` `negation_density_sweep_contract_08` token `70` activation `0.892` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L24:62` `negation_density_sweep_contract_08` token `260` activation `0.427` class `contraction_piece` token ` didn`
+  - drainage plan pass without questions. The engineer's map didn't show the alley behind Cedar Street, and the
+- `L24:62` `negation_density_sweep_contract_16` token `437` activation `5.232` class `contraction_piece` token ` didn`
+  - curtain rise any faster. She told the crew they didn't need a perfect run; they needed one honest
+- `L24:62` `negation_density_sweep_contract_16` token `319` activation `4.252` class `contraction_piece` token ` didn`
+  - . He had not prepared a speech, so he didn't sound polished. Still, he would not apologize
+- `L24:62` `negation_density_sweep_contract_16` token `168` activation `4.020` class `contraction_piece` token ` didn`
+  - meeting easier. When Omar said the missing boxes probably didn't matter, Lena didn't answer right away.
+- `L24:62` `negation_density_sweep_contract_16` token `462` activation `3.958` class `contraction_piece` token ` didn`
+  - point. The director was not pleased, but he didn't argue when the second cue failed exactly where Pri
+- `L24:62` `negation_density_sweep_contract_16` token `508` activation `3.874` class `contraction_piece` token ` didn`
+  - working. That was more useful than pretending the problems didn't exist.
+- `L24:62` `negation_density_sweep_contract_16` token `99` activation `3.697` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L24:62` `negation_density_sweep_contract_16` token `232` activation `3.011` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L24:62` `negation_density_sweep_contract_16` token `344` activation `1.689` class `contraction_piece` token ` didn`
+  - . When the chair tried to move on, Marcus didn't sit down. He pointed to the blank corner
+- `L24:62` `negation_density_sweep_contract_16` token `70` activation `0.892` class `contraction_piece` token ` didn`
+  - Lena didn't trust the inventory report, and she didn't
+- `L24:62` `negation_density_sweep_contract_16` token `378` activation `0.840` class `contraction_piece` token ` didn`
+  - living there could see themselves in it. The rehearsal didn't begin well. The lights were not focused,
+- `L24:62` `negation_density_sweep_contract_16` token `196` activation `0.731` class `contraction_piece` token ` didn`
+  - every blue tag, and wrote down the numbers that didn't fit. By sunset, the mistake was not
+- `L24:62` `negation_density_sweep_contract_16` token `260` activation `0.490` class `contraction_piece` token ` didn`
+  - drainage plan pass without questions. The engineer's map didn't show the alley behind Cedar Street, and the
+- `L24:62` `negation_density_sweep_contract_32` token `462` activation `6.879` class `contraction_piece` token ` didn`
+  - point. The director wasn't pleased, but he didn't argue when the second cue failed exactly where Pri
+- `L24:62` `negation_density_sweep_contract_32` token `327` activation `5.508` class `contraction_piece` token ` wouldn`
+  - so he didn't sound polished. Still, he wouldn't apologize for asking basic questions. When the chair
+- `L24:62` `negation_density_sweep_contract_32` token `129` activation `5.229` class `contraction_piece` token ` couldn`
+  - shipment log wasn't signed by the driver. She couldn't accuse anyone yet, because a bad scanner could
+- `L24:62` `negation_density_sweep_contract_32` token `362` activation `5.112` class `contraction_piece` token ` wasn`
+  - the blank corner of the map and said the plan wasn't finished until the people living there could see themselves
+- `L24:62` `negation_density_sweep_contract_32` token `508` activation `4.552` class `contraction_piece` token ` didn`
+  - working. That was more useful than pretending the problems didn't exist.
+- `L24:62` `negation_density_sweep_contract_32` token `232` activation `4.496` class `contraction_piece` token ` didn`
+  - two customers had not received anything at all. Marcus didn't want the council hearing to turn into a lecture
+- `L24:62` `negation_density_sweep_contract_32` token `285` activation `4.489` class `contraction_piece` token ` don`
+  - clear about who would repair the cracked sidewalk. Residents don't usually read every appendix, he thought, but
+- `L24:62` `negation_density_sweep_contract_32` token `297` activation `3.803` class `contraction_piece` token ` shouldn`
+  - usually read every appendix, he thought, but they shouldn't have to guess whether their basements would flood
+- `L24:62` `negation_density_sweep_contract_32` token `423` activation `3.760` class `contraction_piece` token ` wouldn`
+  - practiced. Priya didn't panic, because panic wouldn't make the curtain rise any faster. She told
+- `L24:62` `negation_density_sweep_contract_32` token `99` activation `3.697` class `contraction_piece` token ` didn`
+  - why she was still at her desk. The totals didn't match the pallets by the loading door,
+- `L24:62` `negation_density_sweep_contract_32` token `173` activation `3.276` class `contraction_piece` token ` didn`
+  - said the missing boxes probably didn't matter, Lena didn't answer right away. She walked the aisle again
+- `L24:62` `negation_density_sweep_contract_32` token `456` activation `3.094` class `contraction_piece` token ` wasn`
+  - one honest pass through every failure point. The director wasn't pleased, but he didn't argue when the

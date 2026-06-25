@@ -1,0 +1,465 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1191` | `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` | `human` | 95 | `181.12` | `3.67` | word:76|punctuation:9|style_function_word:4|sentence_boundary:3|line_break:2|discourse_marker_word:1 |
+| `L19:1191` | `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` | `glm-5.2` | 329 | `355.83` | `3.44` | word:258|punctuation:28|sentence_boundary:22|line_break:10|expanded_negation_word:7|style_function_word:3|discourse_marker_word:1 |
+| `L19:1191` | `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` | `glm-5.2` | 124 | `142.31` | `3.44` | word:83|line_break:17|punctuation:15|style_function_word:4|sentence_boundary:2|discourse_marker_word:2|expanded_negation_word:1 |
+| `L19:1191` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` | `glm-5.2` | 361 | `377.77` | `3.47` | word:261|punctuation:42|sentence_boundary:31|style_function_word:9|line_break:8|expanded_negation_word:6|contraction_piece:4 |
+| `L19:1191` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` | `human` | 163 | `136.49` | `1.79` | word:121|punctuation:20|sentence_boundary:11|contraction_piece:5|expanded_negation_word:3|style_function_word:3 |
+| `L19:1191` | `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` | `human` | 63 | `72.20` | `3.59` | word:43|sentence_boundary:8|punctuation:6|style_function_word:3|discourse_marker_word:1|whitespace:1|line_break:1 |
+| `L19:1191` | `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` | `glm-5.2` | 130 | `161.49` | `3.99` | word:104|sentence_boundary:10|punctuation:7|style_function_word:3|line_break:2|discourse_marker_word:2|whitespace:1|expanded_negation_word:1 |
+| `L19:1191` | `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` | `glm-5.2` | 220 | `306.20` | `4.00` | word:177|punctuation:16|sentence_boundary:10|line_break:6|discourse_marker_word:6|style_function_word:5 |
+| `L19:1191` | `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` | `glm-5.2` | 89 | `149.80` | `4.56` | word:64|punctuation:14|sentence_boundary:5|line_break:3|style_function_word:2|contraction_piece:1 |
+| `L24:3009` | `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` | `human` | 100 | `347.72` | `6.74` | word:79|punctuation:11|style_function_word:4|sentence_boundary:2|discourse_marker_word:2|line_break:2 |
+| `L24:3009` | `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` | `glm-5.2` | 365 | `603.51` | `5.04` | word:303|punctuation:30|sentence_boundary:21|expanded_negation_word:5|style_function_word:3|line_break:2|discourse_marker_word:1 |
+| `L24:3009` | `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` | `glm-5.2` | 87 | `180.71` | `4.77` | word:61|punctuation:11|line_break:7|style_function_word:4|discourse_marker_word:2|sentence_boundary:2 |
+| `L24:3009` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` | `glm-5.2` | 312 | `447.94` | `4.17` | word:229|punctuation:35|sentence_boundary:31|style_function_word:8|contraction_piece:3|line_break:3|expanded_negation_word:2|discourse_marker_word:1 |
+| `L24:3009` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` | `human` | 278 | `558.80` | `5.08` | word:207|punctuation:34|sentence_boundary:15|expanded_negation_word:10|style_function_word:6|contraction_piece:5|discourse_marker_word:1 |
+| `L24:3009` | `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` | `human` | 106 | `203.71` | `4.93` | word:74|punctuation:12|style_function_word:7|sentence_boundary:7|whitespace:3|expanded_negation_word:2|discourse_marker_word:1 |
+| `L24:3009` | `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` | `glm-5.2` | 207 | `428.09` | `5.07` | word:180|sentence_boundary:10|punctuation:7|style_function_word:4|discourse_marker_word:2|expanded_negation_word:2|whitespace:1|line_break:1 |
+| `L24:3009` | `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` | `glm-5.2` | 237 | `615.32` | `5.97` | word:198|punctuation:15|sentence_boundary:10|discourse_marker_word:6|style_function_word:4|line_break:4 |
+| `L24:3009` | `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` | `glm-5.2` | 94 | `185.70` | `4.86` | word:70|punctuation:13|sentence_boundary:5|line_break:3|style_function_word:2|contraction_piece:1 |
+
+## Top Tokens
+
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `570` activation `3.672` class `style_function_word` token ` This`
+  - also be designed by hand. Structural Engineer- This career combines engineering, math skills, and attention to
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `569` activation `3.520` class `punctuation` token `-`
+  - can also be designed by hand. Structural Engineer- This career combines engineering, math skills, and attention
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `579` activation `3.501` class `word` token ` attention`
+  - - This career combines engineering, math skills, and attention to detail to plan and design buildings, roadways
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `576` activation `3.489` class `word` token ` skills`
+  - Structural Engineer- This career combines engineering, math skills, and attention to detail to plan and design buildings
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `562` activation `3.266` class `word` token ` designed`
+  - and designs with computer software. They can also be designed by hand. Structural Engineer- This career combines
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `609` activation `3.239` class `style_function_word` token ` This`
+  - prints and outlines for construction projects. Software Developer- This career usually works on a team of developers and software
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `620` activation `3.195` class `word` token ` engineers`
+  - career usually works on a team of developers and software engineers to develop and create computer programs and applications. It
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `575` activation `3.154` class `word` token ` math`
+  - . Structural Engineer- This career combines engineering, math skills, and attention to detail to plan and design
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `596` activation `3.059` class `word` token ` by`
+  - buildings, roadways, bridges, and other structures by developing blueprints and outlines for construction projects. Software
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `634` activation `2.988` class `word` token ` math`
+  - create computer programs and applications. It combines technical, math, and design skills.
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `608` activation `2.942` class `punctuation` token `-`
+  - blueprints and outlines for construction projects. Software Developer- This career usually works on a team of developers and
+- `L19:1191` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `629` activation `2.922` class `sentence_boundary` token `.`
+  - software engineers to develop and create computer programs and applications. It combines technical, math, and design skills.
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `147` activation `3.444` class `word` token `ls`
+  - howling of wolves or the hooting of owls, but a rhythmic clang & a gutt
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `140` activation `3.359` class `word` token ` wolves`
+  - . They speak of noises not the howling of wolves or the hooting of owls, but a
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `473` activation `3.150` class `word` token ` rings`
+  - table rest several beautifully crafted pieces of jewelry delicate silver rings and pendants engraved with intricate knotwork. The
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `112` activation `2.901` class `word` token ` earth`
+  - is thick with the scent of woodsmoke damp earth. The peasants huddle behind you, trembling,
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `481` activation `2.818` class `word` token `work`
+  - delicate silver rings and pendants engraved with intricate knotwork. The craftsmanship is undeniable, far finer than anything
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `476` activation `2.684` class `word` token `endants`
+  - beautifully crafted pieces of jewelry delicate silver rings and pendants engraved with intricate knotwork. The craftsmanship is undeniable
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `129` activation `2.563` class `word` token `light`
+  - you, trembling, their faces pale in the moonlight. They speak of noises not the howling of
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `486` activation `2.429` class `word` token ` undeniable`
+  - endants engraved with intricate knotwork. The craftsmanship is undeniable, far finer than anything produced by the village smith
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `119` activation `2.395` class `word` token ` you`
+  - smoke damp earth. The peasants huddle behind you, trembling, their faces pale in the moonlight
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `188` activation `2.289` class `word` token ` edge`
+  - ," whispers the elder. The mill stands at the edge of the village, silhouetted against the
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `319` activation `2.222` class `word` token ` you`
+  - tted planks, wood splintering around you. You burst into the main grinding room, sword
+- `L19:1191` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `138` activation `2.221` class `word` token `ling`
+  - moonlight. They speak of noises not the howling of wolves or the hooting of owls,
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `395` activation `3.440` class `word` token ` wrappers`
+  - to math, lets simply declare a custom validation error wrappers, ensuring the user provides actual numeric convertible floats,
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `396` activation `2.955` class `punctuation` token `,`
+  - math, lets simply declare a custom validation error wrappers, ensuring the user provides actual numeric convertible floats, returning
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `416` activation `2.642` class `word` token ` unexpectedly`
+  - returning a polite, brief error message instead of crashing unexpectedly. This makes the script highly robust for general use
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `387` activation `2.425` class `punctuation` token `,`
+  - 1j, the function will gracefully decline to math, lets simply declare a custom validation error wrappers, ensuring
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `404` activation `2.388` class `word` token ` floats`
+  - error wrappers, ensuring the user provides actual numeric convertible floats, returning a polite, brief error message instead of
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `412` activation `2.330` class `word` token ` message`
+  - numeric convertible floats, returning a polite, brief error message instead of crashing unexpectedly. This makes the script highly
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `403` activation `2.267` class `word` token ` convertible`
+  - validation error wrappers, ensuring the user provides actual numeric convertible floats, returning a polite, brief error message instead
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `409` activation `2.190` class `punctuation` token `,`
+  - user provides actual numeric convertible floats, returning a polite, brief error message instead of crashing unexpectedly. This makes
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `417` activation `2.105` class `sentence_boundary` token `.`
+  - a polite, brief error message instead of crashing unexpectedly. This makes the script highly robust for general use.
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `628` activation `2.098` class `word` token `ar`
+  - .") if name == "main": computecomplexarctangent() This script effectively meets all your requirements
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `405` activation `2.089` class `punctuation` token `,`
+  - wrappers, ensuring the user provides actual numeric convertible floats, returning a polite, brief error message instead of crashing
+- `L19:1191` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `413` activation `2.078` class `discourse_marker_word` token ` instead`
+  - convertible floats, returning a polite, brief error message instead of crashing unexpectedly. This makes the script highly robust
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `133` activation `3.467` class `style_function_word` token `as`
+  - the cupboard behind them overflowed with canned chickpeas, artisanal oatmeal, and a perfectly good
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `128` activation `2.860` class `word` token `ed`
+  - They were not starving. the cupboard behind them overflowed with canned chickpeas, artisanal oatmeal
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `86` activation `2.806` class `sentence_boundary` token `.`
+  - Arthur whispered, his voice a dry, cracking leaves. His eyes, bloodshot and wide, reflected the
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `134` activation `2.587` class `punctuation` token `,`
+  - cupboard behind them overflowed with canned chickpeas, artisanal oatmeal, and a perfectly good bag
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `138` activation `2.456` class `word` token `meal`
+  - ed with canned chickpeas, artisanal oatmeal, and a perfectly good bag of spinach. But
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `475` activation `2.192` class `punctuation` token `.</`
+  - Rock, paper, scissors on three," Julian breathed.</think> The Last Slice The fluorescent kitchen light
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `126` activation `2.171` class `word` token ` them`
+  - us." They were not starving. the cupboard behind them overflowed with canned chickpeas, artisanal
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `147` activation `2.165` class `sentence_boundary` token `.`
+  - oatmeal, and a perfectly good bag of spinach. But this wasn't about sustenance. This was
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `127` activation `2.140` class `word` token ` overflow`
+  - ." They were not starving. the cupboard behind them overflowed with canned chickpeas, artisanal oat
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `476` activation `2.090` class `word` token `think`
+  - , paper, scissors on three," Julian breathed.</think> The Last Slice The fluorescent kitchen light flick
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `123` activation `2.073` class `word` token ` the`
+  - oning is upon us." They were not starving. the cupboard behind them overflowed with canned chickpeas
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `91` activation `2.045` class `word` token `shot`
+  - a dry, cracking leaves. His eyes, bloodshot and wide, reflected the glistening cheese. Jul
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `341` activation `1.790` class `word` token ` responded`
+  - would we?" Patrick responded icily, as he responded by placing both hands on the table close to the
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `234` activation `1.647` class `word` token ` them`
+  - from sandwiches to soups. But to both of them, this was about principle. They bought their weekly
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `257` activation `1.481` class `sentence_boundary` token `.`
+  - began to idly take slices, enjoying it immensely. But when it came down to the last slice,
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `208` activation `1.414` class `sentence_boundary` token `.`
+  - , and their eyes were not kind to each other. This wasn't about starvation; the apartment had plenty
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `276` activation `1.342` class `word` token ` other`
+  - slice, they crowded around the box and stared each other down. "Thinking of taking the last slice,
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `240` activation `1.341` class `sentence_boundary` token `.`
+  - But to both of them, this was about principle. They bought their weekly pizza and began to idly
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `225` activation `1.316` class `word` token ` sandwiches`
+  - the apartment had plenty of good food available, from sandwiches to soups. But to both of them,
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `197` activation `1.298` class `word` token ` remarks`
+  - their apartment changed. There were no friendly ribs and remarks, and their eyes were not kind to each other
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `195` activation `1.294` class `word` token ` ribs`
+  - atmosphere in their apartment changed. There were no friendly ribs and remarks, and their eyes were not kind to
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `228` activation `1.276` class `word` token `ps`
+  - plenty of good food available, from sandwiches to soups. But to both of them, this was about
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `437` activation `1.267` class `word` token ` wearing`
+  - the box, James gave a quick sigh, before wearing a false smile. "Patrick. Certainly, you
+- `L19:1191` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `497` activation `1.265` class `word` token `orted`
+  - largest and meant more pizza for you overall." retorted Patrick, who was unconvinced by James'
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `456` activation `3.587` class `word` token `s`
+  - the AWACS' introduction in the 1970s, it's still very old technology. The E
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `444` activation `2.754` class `word` token ` upgrades`
+  - . And though its radar and computers have received occasional upgrades since the AWACS' introduction in the 197
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `435` activation `2.489` class `word` token ` And`
+  - -engine jet designed in the 1950s. And though its radar and computers have received occasional upgrades since
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `450` activation `2.187` class `word` token ` introduction`
+  - computers have received occasional upgrades since the AWACS' introduction in the 1970s, it's still
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `475` activation `2.091` class `word` token ` seconds`
+  - The E-3's radar rotates once every ten seconds, so it cannot provide updates about an opponent's
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `457` activation `1.891` class `punctuation` token `,`
+  - AWACS' introduction in the 1970s, it's still very old technology. The E-
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `463` activation `1.812` class `word` token ` technology`
+  - 1970s, it's still very old technology. The E-3's radar rotates once every
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `464` activation `1.799` class `sentence_boundary` token `.`
+  - 1970s, it's still very old technology. The E-3's radar rotates once every ten
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `445` activation `1.771` class `style_function_word` token ` since`
+  - And though its radar and computers have received occasional upgrades since the AWACS' introduction in the 1970
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `490` activation `1.762` class `sentence_boundary` token `.`
+  - provide updates about an opponent's position faster than that. Since aerial warfare is so fast-paced, that can
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `440` activation `1.630` class `word` token ` computers`
+  - 1950s. And though its radar and computers have received occasional upgrades since the AWACS' introduction
+- `L19:1191` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `462` activation `1.557` class `word` token ` old`
+  - the 1970s, it's still very old technology. The E-3's radar rotates once
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `543` activation `3.991` class `word` token ` pounds`
+  - enough to still harbor foolish dreams. Heavy 312 pounds of dead weight pinned Arthur to the corporate machine.
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `541` activation `3.569` class `whitespace` token ` `
+  - those young enough to still harbor foolish dreams. Heavy 312 pounds of dead weight pinned Arthur to the corporate
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `542` activation `3.513` class `word` token `312`
+  - young enough to still harbor foolish dreams. Heavy 312 pounds of dead weight pinned Arthur to the corporate machine
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `586` activation `3.493` class `word` token ` T`
+  - under the crushing weight of an existence defined entirely by TPS reports. But just as the minute hand clicked
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `476` activation `3.386` class `line_break` token `
+
+`
+  - . All of the clean frym he once had He glanced at the clock on the wall, its
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `519` activation `3.352` class `word` token `now`
+  - was devoid of life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `396` activation `2.950` class `word` token `s`
+  - Pale headaches throbbing behind his sunken eyes} served as a daily reminder of his slow physical and
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `471` activation `2.824` class `word` token ` fry`
+  - insects in the adjacent pods. All of the clean frym he once had He glanced at the clock
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `639` activation `2.800` class `sentence_boundary` token `.`
+  - before stepping out into the unrelenting downpour.
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `589` activation `2.776` class `sentence_boundary` token `.`
+  - weight of an existence defined entirely by TPS reports. But just as the minute hand clicked over to signal
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `567` activation `2.755` class `sentence_boundary` token `.`
+  - his cubicle felt like the bars of a cage. Every fiber of his tired being sagged under the
+- `L19:1191` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `477` activation `2.562` class `word` token `He`
+  - All of the clean frym he once had He glanced at the clock on the wall, its second
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `460` activation `3.995` class `word` token ` town`
+  - Browse the independent bookstores on the east side of town, and indulge in the city's famous culinary scene
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `458` activation `3.861` class `word` token ` side`
+  - delights. Browse the independent bookstores on the east side of town, and indulge in the city's famous
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `509` activation `3.717` class `word` token `ing`
+  - Cascade Mountains, a world-class destination for windsurfing and hiking. Be sure to visit Multnomah
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `500` activation `3.565` class `word` token ` Mountains`
+  - alike. This spectacular canyon carves through the Cascade Mountains, a world-class destination for windsurfing and
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `448` activation `3.493` class `word` token ` delights`
+  - love of craft and coffee, Portland offers endless culinary delights. Browse the independent bookstores on the east side
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `454` activation `3.424` class `word` token `stores`
+  - Portland offers endless culinary delights. Browse the independent bookstores on the east side of town, and indulge in
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `470` activation `3.408` class `word` token ` scene`
+  - town, and indulge in the city's famous culinary scene. • Columbia River Gorge, Oregon: an
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `545` activation `3.387` class `word` token ` Rock`
+  - want to unwind. Famous for its towering Haystack Rock, this charming coastal town offers fresh seafood, tide
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `490` activation `3.387` class `word` token ` alike`
+  - an absolute haven for nature lovers and conference escapees alike. This spectacular canyon carves through the Cascade Mountains
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `408` activation `3.367` class `word` token ` trails`
+  - apped peaks stroll through the lush Hoh Rain Forest trails walk sandy coastal beaches like Rialto. •
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `437` activation `3.261` class `word` token ` charm`
+  - foodies and creatives. Known for its quirky charm love of craft and coffee, Portland offers endless culinary
+- `L19:1191` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `520` activation `3.075` class `word` token ` Falls`
+  - and hiking. Be sure to visit Multnomah Falls. • Cannon Beach, Oregon: the ultimate coastal
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `619` activation `4.555` class `punctuation` token `;.`
+  - ятellin Дар wing to aSkeleton;. ide хطارגעשאַ
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `634` activation `4.115` class `punctuation` token `�`
+  - �עשאַפ🍑ן. nemo
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `637` activation `3.829` class `sentence_boundary` token `.`
+  - אַפ🍑ן. nemo
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `639` activation `3.715` class `word` token `emo`
+  - �פ🍑ן. nemo
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `612` activation `3.670` class `line_break` token `
+`
+  - Mutant toys cobbling theдіятellin Дар wing to aSkeleton;. ide хطار
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `636` activation `3.406` class `punctuation` token `�`
+  - שאַפ🍑ן. nemo
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `516` activation `3.239` class `punctuation` token `,`
+  - Buzz snap,觊觎 his severed arm, and casually sip tepid tea out of a miniature
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `622` activation `3.226` class `word` token `طار`
+  - Дар wing to aSkeleton;. ide хطارגעשאַפ�
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `620` activation `3.153` class `word` token ` ide`
+  - ellin Дар wing to aSkeleton;. ide хطارגעשאַ�
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `618` activation `3.124` class `word` token `Skeleton`
+  - діятellin Дар wing to aSkeleton;. ide хطارגעשא�
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `599` activation `3.072` class `line_break` token `']])
+`
+  - lessly through aps, Toy Story gives us the']]) awns("Mutant toys cobbling theдіят
+- `L19:1191` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `638` activation `2.991` class `word` token ` n`
+  - ַפ🍑ן. nemo
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `620` activation `6.738` class `word` token ` engineers`
+  - career usually works on a team of developers and software engineers to develop and create computer programs and applications. It
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `617` activation `6.294` class `word` token ` developers`
+  - Developer- This career usually works on a team of developers and software engineers to develop and create computer programs and
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `579` activation `6.084` class `word` token ` attention`
+  - - This career combines engineering, math skills, and attention to detail to plan and design buildings, roadways
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `576` activation `5.837` class `word` token ` skills`
+  - Structural Engineer- This career combines engineering, math skills, and attention to detail to plan and design buildings
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `630` activation `5.769` class `word` token ` It`
+  - engineers to develop and create computer programs and applications. It combines technical, math, and design skills.
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `581` activation `5.650` class `word` token ` detail`
+  - career combines engineering, math skills, and attention to detail to plan and design buildings, roadways, bridges
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `612` activation `5.463` class `word` token ` works`
+  - for construction projects. Software Developer- This career usually works on a team of developers and software engineers to develop
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `634` activation `5.285` class `word` token ` math`
+  - create computer programs and applications. It combines technical, math, and design skills.
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `609` activation `5.200` class `style_function_word` token ` This`
+  - prints and outlines for construction projects. Software Developer- This career usually works on a team of developers and software
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `616` activation `5.197` class `word` token ` of`
+  - Software Developer- This career usually works on a team of developers and software engineers to develop and create computer programs
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `611` activation `5.167` class `word` token ` usually`
+  - outlines for construction projects. Software Developer- This career usually works on a team of developers and software engineers to
+- `L24:3009` `749dd218364d72a3c4022bc6665491204d016ba8717793b88665219a4b4d9c70@turn_01@human` token `638` activation `5.071` class `word` token ` skills`
+  - applications. It combines technical, math, and design skills.
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `147` activation `5.043` class `word` token `ls`
+  - howling of wolves or the hooting of owls, but a rhythmic clang & a gutt
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `140` activation `4.714` class `word` token ` wolves`
+  - . They speak of noises not the howling of wolves or the hooting of owls, but a
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `119` activation `4.394` class `word` token ` you`
+  - smoke damp earth. The peasants huddle behind you, trembling, their faces pale in the moonlight
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `129` activation `3.905` class `word` token `light`
+  - you, trembling, their faces pale in the moonlight. They speak of noises not the howling of
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `473` activation `3.863` class `word` token ` rings`
+  - table rest several beautifully crafted pieces of jewelry delicate silver rings and pendants engraved with intricate knotwork. The
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `148` activation `3.722` class `punctuation` token `,`
+  - ling of wolves or the hooting of owls, but a rhythmic clang & a guttural
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `546` activation `3.476` class `word` token ` doorway`
+  - folk." The peasants are peeking through the shattered doorway, gasping at the sight of the creature.
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `476` activation `3.348` class `word` token `endants`
+  - beautifully crafted pieces of jewelry delicate silver rings and pendants engraved with intricate knotwork. The craftsmanship is undeniable
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `149` activation `3.262` class `word` token ` but`
+  - of wolves or the hooting of owls, but a rhythmic clang & a guttural mut
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `160` activation `3.257` class `word` token `tering`
+  - a rhythmic clang & a guttural muttering that chills their simple souls. "It comes from
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `481` activation `3.180` class `word` token `work`
+  - delicate silver rings and pendants engraved with intricate knotwork. The craftsmanship is undeniable, far finer than anything
+- `L24:3009` `af5644e95fdecec1df29939a4aded10abd7dbb54b2f7fce5ed345fd03d785f3d@turn_01@glm-5.2` token `125` activation `3.142` class `word` token ` pale`
+  - peasants huddle behind you, trembling, their faces pale in the moonlight. They speak of noises not
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `396` activation `4.768` class `punctuation` token `,`
+  - math, lets simply declare a custom validation error wrappers, ensuring the user provides actual numeric convertible floats, returning
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `404` activation `4.603` class `word` token ` floats`
+  - error wrappers, ensuring the user provides actual numeric convertible floats, returning a polite, brief error message instead of
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `416` activation `4.592` class `word` token ` unexpectedly`
+  - returning a polite, brief error message instead of crashing unexpectedly. This makes the script highly robust for general use
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `412` activation `4.514` class `word` token ` message`
+  - numeric convertible floats, returning a polite, brief error message instead of crashing unexpectedly. This makes the script highly
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `395` activation `4.423` class `word` token ` wrappers`
+  - to math, lets simply declare a custom validation error wrappers, ensuring the user provides actual numeric convertible floats,
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `413` activation `4.345` class `discourse_marker_word` token ` instead`
+  - convertible floats, returning a polite, brief error message instead of crashing unexpectedly. This makes the script highly robust
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `405` activation `4.129` class `punctuation` token `,`
+  - wrappers, ensuring the user provides actual numeric convertible floats, returning a polite, brief error message instead of crashing
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `403` activation `3.862` class `word` token ` convertible`
+  - validation error wrappers, ensuring the user provides actual numeric convertible floats, returning a polite, brief error message instead
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `415` activation `3.815` class `word` token ` crashing`
+  - , returning a polite, brief error message instead of crashing unexpectedly. This makes the script highly robust for general
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `409` activation `3.600` class `punctuation` token `,`
+  - user provides actual numeric convertible floats, returning a polite, brief error message instead of crashing unexpectedly. This makes
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `411` activation `3.475` class `word` token ` error`
+  - actual numeric convertible floats, returning a polite, brief error message instead of crashing unexpectedly. This makes the script
+- `L24:3009` `a9a066997988d4d02d7e3ee4a8496631cedd1acbd7da11a619f21d4113201ec1@turn_01@glm-5.2` token `394` activation `3.406` class `word` token ` error`
+  - decline to math, lets simply declare a custom validation error wrappers, ensuring the user provides actual numeric convertible floats
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `133` activation `4.174` class `style_function_word` token `as`
+  - the cupboard behind them overflowed with canned chickpeas, artisanal oatmeal, and a perfectly good
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `128` activation `4.159` class `word` token `ed`
+  - They were not starving. the cupboard behind them overflowed with canned chickpeas, artisanal oatmeal
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `134` activation `3.377` class `punctuation` token `,`
+  - cupboard behind them overflowed with canned chickpeas, artisanal oatmeal, and a perfectly good bag
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `138` activation `3.185` class `word` token `meal`
+  - ed with canned chickpeas, artisanal oatmeal, and a perfectly good bag of spinach. But
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `126` activation `3.171` class `word` token ` them`
+  - us." They were not starving. the cupboard behind them overflowed with canned chickpeas, artisanal
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `125` activation `2.993` class `word` token ` behind`
+  - upon us." They were not starving. the cupboard behind them overflowed with canned chickpeas, artisan
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `127` activation `2.975` class `word` token ` overflow`
+  - ." They were not starving. the cupboard behind them overflowed with canned chickpeas, artisanal oat
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `91` activation `2.691` class `word` token `shot`
+  - a dry, cracking leaves. His eyes, bloodshot and wide, reflected the glistening cheese. Jul
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `209` activation `2.676` class `word` token `ening`
+  - in my head," Arthur hissed, knuckles whitening around the back of a wooden chair. "Before
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `113` activation `2.594` class `word` token `oning`
+  - didn't blink. "Then it seems a reckoning is upon us." They were not starving. the
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `139` activation `2.533` class `punctuation` token `,`
+  - with canned chickpeas, artisanal oatmeal, and a perfectly good bag of spinach. But this
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `188` activation `2.470` class `word` token ` hour`
+  - , leaving them both arriving home at the witching hour, ravenous for glory. "I called dibs
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `225` activation `5.078` class `word` token ` sandwiches`
+  - the apartment had plenty of good food available, from sandwiches to soups. But to both of them,
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `275` activation `4.983` class `word` token ` each`
+  - last slice, they crowded around the box and stared each other down. "Thinking of taking the last slice
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `234` activation `4.722` class `word` token ` them`
+  - from sandwiches to soups. But to both of them, this was about principle. They bought their weekly
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `218` activation `4.718` class `word` token ` plenty`
+  - . This wasn't about starvation; the apartment had plenty of good food available, from sandwiches to soups
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `221` activation `4.601` class `word` token ` food`
+  - 't about starvation; the apartment had plenty of good food available, from sandwiches to soups. But to
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `228` activation `4.561` class `word` token `ps`
+  - plenty of good food available, from sandwiches to soups. But to both of them, this was about
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `222` activation `4.364` class `word` token ` available`
+  - about starvation; the apartment had plenty of good food available, from sandwiches to soups. But to both
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `276` activation `4.335` class `word` token ` other`
+  - slice, they crowded around the box and stared each other down. "Thinking of taking the last slice,
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `220` activation `4.286` class `word` token ` good`
+  - wasn't about starvation; the apartment had plenty of good food available, from sandwiches to soups. But
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `237` activation `4.233` class `expanded_negation_word` token ` was`
+  - soups. But to both of them, this was about principle. They bought their weekly pizza and began
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `213` activation `4.176` class `word` token ` starvation`
+  - not kind to each other. This wasn't about starvation; the apartment had plenty of good food available,
+- `L24:3009` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@human` token `214` activation `4.168` class `punctuation` token `;`
+  - kind to each other. This wasn't about starvation; the apartment had plenty of good food available, from
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `456` activation `4.925` class `word` token `s`
+  - the AWACS' introduction in the 1970s, it's still very old technology. The E
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `444` activation `4.668` class `word` token ` upgrades`
+  - . And though its radar and computers have received occasional upgrades since the AWACS' introduction in the 197
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `475` activation `4.116` class `word` token ` seconds`
+  - The E-3's radar rotates once every ten seconds, so it cannot provide updates about an opponent's
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `457` activation `3.926` class `punctuation` token `,`
+  - AWACS' introduction in the 1970s, it's still very old technology. The E-
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `463` activation `3.837` class `word` token ` technology`
+  - 1970s, it's still very old technology. The E-3's radar rotates once every
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `435` activation `3.762` class `word` token ` And`
+  - -engine jet designed in the 1950s. And though its radar and computers have received occasional upgrades since
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `450` activation `3.673` class `word` token ` introduction`
+  - computers have received occasional upgrades since the AWACS' introduction in the 1970s, it's still
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `445` activation `3.653` class `style_function_word` token ` since`
+  - And though its radar and computers have received occasional upgrades since the AWACS' introduction in the 1970
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `458` activation `3.534` class `word` token ` it`
+  - ACS' introduction in the 1970s, it's still very old technology. The E-3
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `477` activation `3.413` class `word` token ` so`
+  - -3's radar rotates once every ten seconds, so it cannot provide updates about an opponent's position faster
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `487` activation `3.156` class `word` token ` faster`
+  - so it cannot provide updates about an opponent's position faster than that. Since aerial warfare is so fast-paced
+- `L24:3009` `30c623e83336119a0c44cc2fea174b43ef4c4709b8c0b5d1667cd21b4dd297e3@turn_01@human` token `489` activation `3.143` class `style_function_word` token ` that`
+  - cannot provide updates about an opponent's position faster than that. Since aerial warfare is so fast-paced, that
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `543` activation `5.072` class `word` token ` pounds`
+  - enough to still harbor foolish dreams. Heavy 312 pounds of dead weight pinned Arthur to the corporate machine.
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `546` activation `4.124` class `word` token ` weight`
+  - harbor foolish dreams. Heavy 312 pounds of dead weight pinned Arthur to the corporate machine. The walls of
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `542` activation `3.875` class `word` token `312`
+  - young enough to still harbor foolish dreams. Heavy 312 pounds of dead weight pinned Arthur to the corporate machine
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `519` activation `3.812` class `word` token `now`
+  - was devoid of life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `586` activation `3.687` class `word` token ` T`
+  - under the crushing weight of an existence defined entirely by TPS reports. But just as the minute hand clicked
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `548` activation `3.657` class `word` token ` Arthur`
+  - dreams. Heavy 312 pounds of dead weight pinned Arthur to the corporate machine. The walls of his cub
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `609` activation `3.578` class `word` token ` slender`
+  - signal the end of his mandatory overtime, a tall slender silhouette appeared in the frosted glass doorway of the
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `477` activation `3.545` class `word` token `He`
+  - All of the clean frym he once had He glanced at the clock on the wall, its second
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `479` activation `3.517` class `word` token ` at`
+  - the clean frym he once had He glanced at the clock on the wall, its second hand seemingly
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `567` activation `3.475` class `sentence_boundary` token `.`
+  - his cubicle felt like the bars of a cage. Every fiber of his tired being sagged under the
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `518` activation `3.437` class `word` token ` fulfillment`
+  - office was devoid of life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth
+- `L24:3009` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `547` activation `3.420` class `word` token ` pinned`
+  - foolish dreams. Heavy 312 pounds of dead weight pinned Arthur to the corporate machine. The walls of his
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `509` activation `5.973` class `word` token `ing`
+  - Cascade Mountains, a world-class destination for windsurfing and hiking. Be sure to visit Multnomah
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `545` activation `5.521` class `word` token ` Rock`
+  - want to unwind. Famous for its towering Haystack Rock, this charming coastal town offers fresh seafood, tide
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `460` activation `5.495` class `word` token ` town`
+  - Browse the independent bookstores on the east side of town, and indulge in the city's famous culinary scene
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `505` activation `5.483` class `word` token ` destination`
+  - carves through the Cascade Mountains, a world-class destination for windsurfing and hiking. Be sure to
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `500` activation `5.469` class `word` token ` Mountains`
+  - alike. This spectacular canyon carves through the Cascade Mountains, a world-class destination for windsurfing and
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `537` activation `5.422` class `word` token ` unwind`
+  - : the ultimate coastal getaway if you truly want to unwind. Famous for its towering Haystack Rock, this
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `568` activation `5.329` class `word` token ` travelers`
+  - and miles of sand. It is perfect for business travelers looking to decompress before a flight home. The
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `572` activation `5.300` class `word` token `press`
+  - . It is perfect for business travelers looking to decompress before a flight home. The Pacific Northwest is a
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `490` activation `5.265` class `word` token ` alike`
+  - an absolute haven for nature lovers and conference escapees alike. This spectacular canyon carves through the Cascade Mountains
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `458` activation `5.228` class `word` token ` side`
+  - delights. Browse the independent bookstores on the east side of town, and indulge in the city's famous
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `470` activation `5.186` class `word` token ` scene`
+  - town, and indulge in the city's famous culinary scene. • Columbia River Gorge, Oregon: an
+- `L24:3009` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@glm-5.2` token `437` activation `5.181` class `word` token ` charm`
+  - foodies and creatives. Known for its quirky charm love of craft and coffee, Portland offers endless culinary
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `639` activation `4.858` class `word` token `emo`
+  - �פ🍑ן. nemo
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `620` activation `4.402` class `word` token ` ide`
+  - ellin Дар wing to aSkeleton;. ide хطارגעשאַ�
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `622` activation `4.184` class `word` token `طار`
+  - Дар wing to aSkeleton;. ide хطارגעשאַפ�
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `636` activation `4.050` class `punctuation` token `�`
+  - שאַפ🍑ן. nemo
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `634` activation `4.030` class `punctuation` token `�`
+  - �עשאַפ🍑ן. nemo
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `616` activation `3.888` class `word` token ` to`
+  - bling theдіятellin Дар wing to aSkeleton;. ide хطارגעש
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `637` activation `3.840` class `sentence_boundary` token `.`
+  - אַפ🍑ן. nemo
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `619` activation `3.819` class `punctuation` token `;.`
+  - ятellin Дар wing to aSkeleton;. ide хطارגעשאַ
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `638` activation `3.756` class `word` token ` n`
+  - ַפ🍑ן. nemo
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `618` activation `3.454` class `word` token `Skeleton`
+  - діятellin Дар wing to aSkeleton;. ide хطارגעשא�
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `624` activation `3.436` class `punctuation` token `�`
+  - ар wing to aSkeleton;. ide хطارגעשאַפ🍑
+- `L24:3009` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@glm-5.2` token `575` activation `3.256` class `word` token ` superior`
+  - his entire existence is a mass-produced lie. profoundly superior. While Nemo gives us a helicopter-parent clown

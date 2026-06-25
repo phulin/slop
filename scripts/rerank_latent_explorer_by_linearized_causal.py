@@ -93,6 +93,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--examples-per-latent", type=int, default=50)
     parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument(
+        "--ablation-batch-size",
+        type=int,
+        default=None,
+        help="Batch size for exact ablation passes. Defaults to --batch-size.",
+    )
     parser.add_argument("--max-length", type=int, default=512)
     parser.add_argument(
         "--baseline-logits-cache",
@@ -202,7 +208,8 @@ def _ablate_latent_on_docs_browser_aligned(
 ) -> dict[str, dict[str, Any]]:
     decoder_weight = sae.decoder.weight.detach()
     results: dict[str, dict[str, Any]] = {}
-    for batch_docs in _batched(docs, int(args.batch_size)):
+    ablation_batch_size = int(args.ablation_batch_size or args.batch_size)
+    for batch_docs in _batched(docs, ablation_batch_size):
         encoded = _encode_docs(
             tokenizer,
             [_as_sae_doc(doc) for doc in batch_docs],

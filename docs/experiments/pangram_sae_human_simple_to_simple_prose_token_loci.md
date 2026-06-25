@@ -1,0 +1,1161 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:3990` | `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` | `human` | 268 | `1584.46` | `8.89` | word:207|sentence_boundary:21|expanded_negation_word:17|contraction_piece:7|style_function_word:6|punctuation:5|line_break:4|discourse_marker_word:1 |
+| `L19:3990` | `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` | `human` | 275 | `1346.75` | `7.86` | word:200|punctuation:18|line_break:16|sentence_boundary:12|expanded_negation_word:12|whitespace:12|style_function_word:3|contraction_piece:2 |
+| `L19:3990` | `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` | `human` | 414 | `2171.58` | `8.07` | word:311|punctuation:32|expanded_negation_word:19|line_break:18|sentence_boundary:15|style_function_word:14|discourse_marker_word:4|whitespace:1 |
+| `L19:3990` | `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` | `human` | 501 | `2668.26` | `8.41` | word:408|punctuation:38|style_function_word:25|sentence_boundary:17|discourse_marker_word:5|line_break:5|expanded_negation_word:2|whitespace:1 |
+| `L19:3990` | `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` | `human` | 369 | `2157.50` | `7.96` | word:300|sentence_boundary:19|expanded_negation_word:19|style_function_word:14|punctuation:9|discourse_marker_word:4|line_break:4 |
+| `L19:3990` | `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` | `human` | 342 | `2026.52` | `8.83` | word:264|sentence_boundary:26|style_function_word:15|punctuation:13|contraction_piece:9|discourse_marker_word:6|line_break:6|expanded_negation_word:3 |
+| `L19:3990` | `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` | `human` | 304 | `1910.27` | `8.41` | word:260|sentence_boundary:14|style_function_word:10|punctuation:10|discourse_marker_word:8|line_break:2 |
+| `L19:3990` | `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` | `human` | 104 | `556.64` | `7.88` | word:89|line_break:14|sentence_boundary:1 |
+| `L19:3990` | `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` | `human` | 136 | `708.34` | `7.80` | word:116|line_break:14|style_function_word:5|sentence_boundary:1 |
+| `L19:3990` | `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` | `human` | 147 | `773.26` | `7.58` | word:123|line_break:15|style_function_word:4|punctuation:2|discourse_marker_word:1|sentence_boundary:1|expanded_negation_word:1 |
+| `L19:3990` | `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` | `human` | 84 | `380.38` | `7.98` | word:72|punctuation:4|style_function_word:3|sentence_boundary:3|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:3990` | `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` | `human` | 166 | `890.99` | `8.46` | word:146|punctuation:6|sentence_boundary:5|style_function_word:4|line_break:4|discourse_marker_word:1 |
+| `L19:3990` | `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` | `human` | 272 | `1767.44` | `8.76` | word:221|expanded_negation_word:13|punctuation:12|sentence_boundary:11|style_function_word:8|discourse_marker_word:4|line_break:3 |
+| `L19:3990` | `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` | `human` | 319 | `1710.33` | `7.99` | word:252|expanded_negation_word:25|sentence_boundary:18|punctuation:11|style_function_word:6|line_break:5|discourse_marker_word:1|contraction_piece:1 |
+| `L19:3990` | `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` | `human` | 107 | `530.08` | `7.72` | word:93|punctuation:5|sentence_boundary:4|style_function_word:3|discourse_marker_word:2 |
+| `L19:3990` | `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` | `human` | 430 | `1664.88` | `7.27` | word:338|line_break:37|punctuation:26|style_function_word:12|sentence_boundary:7|discourse_marker_word:5|whitespace:5 |
+| `L19:3990` | `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` | `human` | 246 | `1151.24` | `7.74` | word:209|punctuation:17|style_function_word:9|sentence_boundary:9|line_break:2 |
+| `L19:3990` | `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` | `human` | 296 | `1182.29` | `7.56` | word:243|sentence_boundary:15|expanded_negation_word:15|punctuation:11|style_function_word:7|discourse_marker_word:3|line_break:2 |
+| `L19:3990` | `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` | `gpt-5.5` | 116 | `535.64` | `8.30` | word:96|punctuation:9|sentence_boundary:6|discourse_marker_word:3|expanded_negation_word:1|whitespace:1 |
+| `L19:3990` | `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` | `gpt-5.5` | 378 | `1427.45` | `7.83` | word:285|style_function_word:34|punctuation:30|sentence_boundary:16|line_break:6|discourse_marker_word:5|expanded_negation_word:2 |
+| `L19:3990` | `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` | `gpt-5.5` | 423 | `1553.31` | `7.66` | word:329|punctuation:46|sentence_boundary:20|style_function_word:19|line_break:5|discourse_marker_word:3|expanded_negation_word:1 |
+| `L19:3990` | `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` | `human` | 457 | `2299.26` | `8.77` | word:337|expanded_negation_word:37|punctuation:30|sentence_boundary:27|style_function_word:18|discourse_marker_word:5|line_break:2|contraction_piece:1 |
+| `L19:3990` | `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` | `human` | 154 | `370.72` | `7.34` | word:127|punctuation:10|style_function_word:8|sentence_boundary:6|expanded_negation_word:2|discourse_marker_word:1 |
+| `L24:1120` | `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` | `human` | 267 | `2685.89` | `14.65` | word:206|sentence_boundary:21|expanded_negation_word:17|contraction_piece:7|style_function_word:6|punctuation:5|line_break:4|discourse_marker_word:1 |
+| `L24:1120` | `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` | `human` | 273 | `2109.68` | `11.77` | word:198|punctuation:18|line_break:16|sentence_boundary:12|expanded_negation_word:12|whitespace:12|style_function_word:3|contraction_piece:2 |
+| `L24:1120` | `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` | `human` | 403 | `3652.26` | `13.84` | word:304|punctuation:31|line_break:18|expanded_negation_word:17|sentence_boundary:15|style_function_word:14|discourse_marker_word:3|whitespace:1 |
+| `L24:1120` | `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` | `human` | 498 | `4280.23` | `13.21` | word:406|punctuation:37|style_function_word:25|sentence_boundary:17|discourse_marker_word:5|line_break:4|expanded_negation_word:3|whitespace:1 |
+| `L24:1120` | `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` | `human` | 365 | `3580.59` | `13.78` | word:296|expanded_negation_word:19|sentence_boundary:19|style_function_word:14|punctuation:9|discourse_marker_word:4|line_break:4 |
+| `L24:1120` | `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` | `human` | 342 | `3450.35` | `14.03` | word:264|sentence_boundary:26|style_function_word:15|punctuation:13|contraction_piece:9|discourse_marker_word:6|line_break:6|expanded_negation_word:3 |
+| `L24:1120` | `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` | `human` | 302 | `3172.43` | `14.43` | word:258|sentence_boundary:14|style_function_word:10|punctuation:10|discourse_marker_word:8|line_break:2 |
+| `L24:1120` | `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` | `human` | 103 | `806.14` | `12.68` | word:88|line_break:14|sentence_boundary:1 |
+| `L24:1120` | `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` | `human` | 129 | `1016.28` | `12.95` | word:110|line_break:14|style_function_word:4|sentence_boundary:1 |
+| `L24:1120` | `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` | `human` | 146 | `1169.77` | `12.03` | word:122|line_break:15|style_function_word:4|punctuation:2|discourse_marker_word:1|expanded_negation_word:1|sentence_boundary:1 |
+| `L24:1120` | `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` | `human` | 84 | `577.15` | `11.87` | word:72|punctuation:4|style_function_word:3|sentence_boundary:3|expanded_negation_word:1|discourse_marker_word:1 |
+| `L24:1120` | `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` | `human` | 167 | `1387.04` | `14.20` | word:147|punctuation:6|sentence_boundary:5|style_function_word:4|line_break:4|discourse_marker_word:1 |
+| `L24:1120` | `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` | `human` | 271 | `2926.59` | `14.34` | word:220|expanded_negation_word:13|punctuation:12|sentence_boundary:11|style_function_word:8|discourse_marker_word:4|line_break:3 |
+| `L24:1120` | `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` | `human` | 316 | `2823.48` | `12.91` | word:250|expanded_negation_word:25|sentence_boundary:18|punctuation:11|style_function_word:6|line_break:4|discourse_marker_word:1|contraction_piece:1 |
+| `L24:1120` | `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` | `human` | 106 | `812.49` | `12.82` | word:92|punctuation:5|sentence_boundary:4|style_function_word:3|discourse_marker_word:2 |
+| `L24:1120` | `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` | `human` | 430 | `2758.29` | `12.20` | word:338|line_break:37|punctuation:26|style_function_word:12|sentence_boundary:7|discourse_marker_word:5|whitespace:5 |
+| `L24:1120` | `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` | `human` | 245 | `1725.17` | `11.81` | word:208|punctuation:17|style_function_word:9|sentence_boundary:9|line_break:2 |
+| `L24:1120` | `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` | `human` | 291 | `1948.40` | `13.38` | word:239|sentence_boundary:15|expanded_negation_word:14|punctuation:11|style_function_word:7|discourse_marker_word:3|line_break:2 |
+| `L24:1120` | `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` | `gpt-5.5` | 114 | `805.23` | `12.14` | word:94|punctuation:9|sentence_boundary:6|discourse_marker_word:3|expanded_negation_word:1|whitespace:1 |
+| `L24:1120` | `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` | `gpt-5.5` | 377 | `2475.76` | `11.45` | word:285|style_function_word:34|punctuation:30|sentence_boundary:16|discourse_marker_word:5|line_break:5|expanded_negation_word:2 |
+| `L24:1120` | `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` | `gpt-5.5` | 419 | `2714.34` | `12.31` | word:326|punctuation:45|sentence_boundary:20|style_function_word:19|line_break:5|discourse_marker_word:3|expanded_negation_word:1 |
+| `L24:1120` | `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` | `human` | 451 | `3706.40` | `15.35` | word:333|expanded_negation_word:36|punctuation:29|sentence_boundary:27|style_function_word:18|discourse_marker_word:5|line_break:2|contraction_piece:1 |
+| `L24:1120` | `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` | `human` | 143 | `540.62` | `11.50` | word:118|punctuation:9|style_function_word:8|sentence_boundary:5|expanded_negation_word:2|discourse_marker_word:1 |
+
+## Top Tokens
+
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `637` activation `8.889` class `word` token ` and`
+  - didn't know what to do. I was lost and alone.
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `573` activation `8.375` class `punctuation` token `,`
+  - something bad. I didn't know what it was, but I knew that it was something I would regret
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `635` activation `8.126` class `expanded_negation_word` token ` was`
+  - . I didn't know what to do. I was lost and alone.
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `519` activation `8.115` class `word` token ` I`
+  - walk. I needed to clear my head. As I was walking, I started to remember more about the
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `465` activation `7.906` class `punctuation` token `,`
+  - the night before. I remembered going out with friends, but after that, everything was a blur. I
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `520` activation `7.848` class `expanded_negation_word` token ` was`
+  - . I needed to clear my head. As I was walking, I started to remember more about the night
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `493` activation `7.834` class `word` token ` panic`
+  - none of them answered their phones. I started to panic. I didn't know what to do. I
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `611` activation `7.776` class `sentence_boundary` token `.`
+  - . I walked back to my apartment and went inside. I sat down on the couch and put my head
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `542` activation `7.739` class `sentence_boundary` token `.`
+  - . I remembered going to a bar and getting drunk. I remembered getting into a fight with someone. I
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `588` activation `7.739` class `style_function_word` token ` feel`
+  - it was something I would regret. I started to feel sick to my stomach. I didn't know what
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `565` activation `7.632` class `sentence_boundary` token `.`
+  - away. I realized that I had done something bad. I didn't know what it was, but I
+- `L19:3990` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `584` activation `7.615` class `sentence_boundary` token `.`
+  - but I knew that it was something I would regret. I started to feel sick to my stomach. I
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `562` activation `7.855` class `word` token ` and`
+  - men continue to stare at each other, their anger and hatred palpable. Suddenly, there is a loud
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `628` activation `7.387` class `punctuation` token `,`
+  - backs to each other. The storm rages outside, but the tension in the room is even more powerful
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `638` activation `7.092` class `word` token ` powerful`
+  - , but the tension in the room is even more powerful.
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `561` activation `6.832` class `word` token ` anger`
+  - two men continue to stare at each other, their anger and hatred palpable. Suddenly, there is a
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `581` activation `6.831` class `word` token ` and`
+  - a loud crash of thunder. The two men jump and look at each other in fear. Man 1
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `563` activation `6.802` class `word` token ` hatred`
+  - continue to stare at each other, their anger and hatred palpable. Suddenly, there is a loud crash
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `637` activation `6.799` class `word` token ` more`
+  - outside, but the tension in the room is even more powerful.
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `384` activation `6.767` class `sentence_boundary` token `.`
+  - sitting in a room, drinking whiskey and smoking cigars. The air is thick with tension. Man 1
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `635` activation `6.761` class `word` token ` is`
+  - rages outside, but the tension in the room is even more powerful.
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `390` activation `6.719` class `word` token ` tension`
+  - whiskey and smoking cigars. The air is thick with tension. Man 1: I can't believe you
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `576` activation `6.671` class `sentence_boundary` token `.`
+  - . Suddenly, there is a loud crash of thunder. The two men jump and look at each other in
+- `L19:3990` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `565` activation `6.646` class `word` token `able`
+  - stare at each other, their anger and hatred palpable. Suddenly, there is a loud crash of thunder
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `618` activation `8.072` class `punctuation` token `,`
+  - Adrian. She was glad that she had met him, and she was looking forward to getting to know him
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `477` activation `7.844` class `discourse_marker_word` token ` for`
+  - It's nice to be here." They chatted for a few minutes, and then Adrian went back to
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `501` activation `7.836` class `word` token ` He`
+  - Eleanor was glad that she had met Adrian. He seemed like a nice guy, and she was sure
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `541` activation `7.750` class `word` token ` coworkers`
+  - more comfortable at her new job. She liked her coworkers, and she was starting to get the hang of
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `582` activation `7.677` class `punctuation` token `,`
+  - . She had made a good impression on her coworkers, and she was confident that she would be successful in
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `628` activation `7.547` class `word` token ` him`
+  - , and she was looking forward to getting to know him better. She smiled as she thought about the possibilities
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `542` activation `7.508` class `punctuation` token `,`
+  - comfortable at her new job. She liked her coworkers, and she was starting to get the hang of her
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `509` activation `7.431` class `word` token ` she`
+  - Adrian. He seemed like a nice guy, and she was sure that they would get along well. As
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `619` activation `7.380` class `word` token ` and`
+  - . She was glad that she had met him, and she was looking forward to getting to know him better
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `540` activation `7.375` class `word` token ` her`
+  - and more comfortable at her new job. She liked her coworkers, and she was starting to get the hang
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `413` activation `7.345` class `style_function_word` token ` also`
+  - She was still a little nervous, but she was also excited to start her new job. A few minutes
+- `L19:3990` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `584` activation `7.318` class `word` token ` she`
+  - had made a good impression on her coworkers, and she was confident that she would be successful in her new
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `242` activation `8.410` class `word` token ` and`
+  - , and sacrifice, and it is a visually stunning and thought-provoking film that will stay with you
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `241` activation `8.308` class `word` token ` stunning`
+  - love, and sacrifice, and it is a visually stunning and thought-provoking film that will stay with
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `357` activation `8.298` class `word` token ` and`
+  - the nature of reality, and it is a beautiful and intelligent film that will stay with you long after you
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `329` activation `8.289` class `punctuation` token `,`
+  - This makes it difficult for Louise to understand the aliens, but she eventually makes some progress. The film explores
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `343` activation `8.221` class `punctuation` token `,`
+  - makes some progress. The film explores themes of language, time, and the nature of reality, and it
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `331` activation `8.071` class `word` token ` she`
+  - it difficult for Louise to understand the aliens, but she eventually makes some progress. The film explores themes of
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `531` activation `8.013` class `word` token ` and`
+  - and the nature of reality. It is a dark and atmospheric film that will stay with you long after you
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `227` activation `8.003` class `word` token ` themes`
+  - space and time to reach them. The film explores themes of hope, love, and sacrifice, and it
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `432` activation `7.994` class `word` token ` but`
+  - be launched. The film is a survival story, but it is also a story of hope and determination.
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `239` activation `7.990` class `word` token ` a`
+  - hope, love, and sacrifice, and it is a visually stunning and thought-provoking film that will
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `240` activation `7.969` class `word` token ` visually`
+  - , love, and sacrifice, and it is a visually stunning and thought-provoking film that will stay
+- `L19:3990` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `355` activation `7.958` class `word` token ` a`
+  - , and the nature of reality, and it is a beautiful and intelligent film that will stay with you long
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `634` activation `7.955` class `word` token ` he`
+  - for evil. He was a true hero, and he will never be forgotten.
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `611` activation `7.922` class `word` token ` He`
+  - . Arion lived a long and happy life. He was always willing to help others and he never used
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `586` activation `7.889` class `word` token ` or`
+  - He used his magic to help people who were sick or injured. He also used his magic to fight evil
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `632` activation `7.847` class `punctuation` token `,`
+  - his power for evil. He was a true hero, and he will never be forgotten.
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `629` activation `7.730` class `word` token ` a`
+  - he never used his power for evil. He was a true hero, and he will never be forgotten.
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `633` activation `7.678` class `word` token ` and`
+  - power for evil. He was a true hero, and he will never be forgotten.
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `631` activation `7.663` class `word` token ` hero`
+  - used his power for evil. He was a true hero, and he will never be forgotten.
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `389` activation `7.641` class `word` token ` the`
+  - a job as his bodyguard. Arion accepted the job and traveled with the merchant for many years.
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `599` activation `7.640` class `word` token ` the`
+  - He also used his magic to fight evil and protect the innocent. Arion lived a long and happy life
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `607` activation `7.563` class `word` token ` and`
+  - and protect the innocent. Arion lived a long and happy life. He was always willing to help others
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `424` activation `7.549` class `word` token `cerer`
+  - ion became known as the greatest shape-shifting sorcerer in the world. One day, Arion and
+- `L19:3990` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `459` activation `7.511` class `word` token ` warriors`
+  - group of assassins. The assassins were skilled warriors and Arion was badly wounded. The merchant was
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `404` activation `8.833` class `word` token ` and`
+  - . Everyone makes mistakes. It is how we learn and grow. Don't be afraid to make mistakes,
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `361` activation `8.672` class `word` token ` and`
+  - I am writing to you to offer you some advice and wisdom that I have gained from my experiences. I
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `377` activation `8.281` class `word` token ` it`
+  - from my experiences. I hope that you will find it helpful. First, I want to tell you that
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `378` activation `8.077` class `word` token ` helpful`
+  - my experiences. I hope that you will find it helpful. First, I want to tell you that it
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `393` activation `8.075` class `word` token ` mistakes`
+  - want to tell you that it is okay to make mistakes. Everyone makes mistakes. It is how we learn
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `604` activation `8.033` class `punctuation` token `,`
+  - of the person you have become. You are strong, independent, and compassionate. You are a light in
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `375` activation `8.014` class `style_function_word` token ` will`
+  - have gained from my experiences. I hope that you will find it helpful. First, I want to tell
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `418` activation `7.974` class `word` token ` them`
+  - 't be afraid to make mistakes, but learn from them and move on. Second, don't be afraid
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `431` activation `7.894` class `word` token ` risks`
+  - on. Second, don't be afraid to take risks. Life is too short to play it safe all
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `405` activation `7.882` class `word` token ` grow`
+  - Everyone makes mistakes. It is how we learn and grow. Don't be afraid to make mistakes, but
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `459` activation `7.834` class `punctuation` token `,`
+  - after what you want. You may not always succeed, but you will never know unless you try. Third
+- `L19:3990` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `397` activation `7.769` class `word` token ` mistakes`
+  - that it is okay to make mistakes. Everyone makes mistakes. It is how we learn and grow. Don
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `403` activation `8.405` class `word` token ` to`
+  - tirelessly for the rights of marginalized communities and has worked to create a more equitable society. He has also been
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `390` activation `8.335` class `word` token ` he`
+  - ering commitment to social justice. Throughout his career, he has fought tirelessly for the rights of marginalized communities and
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `442` activation `8.149` class `word` token ` He`
+  - Obama’s strengths is his ability to inspire others. He has a natural charisma that draws people in and makes
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `391` activation `8.044` class `word` token ` has`
+  - commitment to social justice. Throughout his career, he has fought tirelessly for the rights of marginalized communities and has
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `475` activation `8.004` class `word` token ` his`
+  - is a gifted orator who can move people with his words and inspire them to take action. Obama is
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `424` activation `7.985` class `word` token ` to`
+  - a vocal advocate for environmental protection and has taken steps to combat climate change. Another one of Obama’s strengths
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `498` activation `7.863` class `word` token ` He`
+  - for his intelligence and his ability to think critically. He is a deep thinker who carefully considers all sides of
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `509` activation `7.836` class `word` token ` an`
+  - is a deep thinker who carefully considers all sides of an issue before making a decision. He is also an
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `404` activation `7.811` class `word` token ` create`
+  - for the rights of marginalized communities and has worked to create a more equitable society. He has also been a
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `464` activation `7.793` class `word` token ` He`
+  - want to be part of something bigger than themselves. He is a gifted orator who can move people with
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `533` activation `7.750` class `word` token ` new`
+  - values the opinions of others and is always open to new ideas. Finally, Obama is a man of integrity
+- `L19:3990` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `361` activation `7.722` class `word` token ` with`
+  - , his eloquence, and his ability to connect with people from all walks of life. One of Obama
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `626` activation `7.885` class `word` token ` and`
+  - The world is a beautiful place, Full of life and love, And I am grateful to be a part
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `624` activation `7.813` class `word` token ` of`
+  - wonder. The world is a beautiful place, Full of life and love, And I am grateful to be
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `630` activation `7.690` class `word` token ` I`
+  - beautiful place, Full of life and love, And I am grateful to be a part of it.
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `618` activation `7.330` class `word` token ` is`
+  - , And I am filled with wonder. The world is a beautiful place, Full of life and love,
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `625` activation `7.165` class `word` token ` life`
+  - . The world is a beautiful place, Full of life and love, And I am grateful to be a
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `619` activation `7.079` class `word` token ` a`
+  - And I am filled with wonder. The world is a beautiful place, Full of life and love, And
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `583` activation `7.053` class `word` token ` I`
+  - fields, The bees buzz among the trees, And I am filled with joy. The water flows in the
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `631` activation `6.994` class `word` token ` am`
+  - place, Full of life and love, And I am grateful to be a part of it.
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `623` activation `6.990` class `word` token `Full`
+  - with wonder. The world is a beautiful place, Full of life and love, And I am grateful to
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `634` activation `6.913` class `word` token ` be`
+  - of life and love, And I am grateful to be a part of it.
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `617` activation `6.867` class `word` token ` world`
+  - land, And I am filled with wonder. The world is a beautiful place, Full of life and love
+- `L19:3990` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `633` activation `6.779` class `word` token ` to`
+  - Full of life and love, And I am grateful to be a part of it.
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `621` activation `7.798` class `word` token ` its`
+  - , To be surrounded by its beauty, To feel its peace and tranquility, And to know that I
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `623` activation `7.741` class `word` token ` and`
+  - be surrounded by its beauty, To feel its peace and tranquility, And to know that I am part
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `616` activation `7.678` class `word` token ` its`
+  - love to be in nature, To be surrounded by its beauty, To feel its peace and tranquility,
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `615` activation `7.586` class `word` token ` by`
+  - I love to be in nature, To be surrounded by its beauty, To feel its peace and tranquility
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `619` activation `7.457` class `word` token `To`
+  - in nature, To be surrounded by its beauty, To feel its peace and tranquility, And to know
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `636` activation `7.408` class `word` token ` larger`
+  - , And to know that I am part of something larger than myself.
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `635` activation `7.353` class `word` token ` something`
+  - ility, And to know that I am part of something larger than myself.
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `612` activation `7.339` class `word` token `To`
+  - my face. I love to be in nature, To be surrounded by its beauty, To feel its peace
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `617` activation `7.267` class `word` token ` beauty`
+  - to be in nature, To be surrounded by its beauty, To feel its peace and tranquility, And
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `610` activation `7.239` class `word` token ` nature`
+  - air on my face. I love to be in nature, To be surrounded by its beauty, To feel
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `628` activation `7.225` class `word` token ` to`
+  - , To feel its peace and tranquility, And to know that I am part of something larger than myself
+- `L19:3990` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `630` activation `7.030` class `style_function_word` token ` that`
+  - feel its peace and tranquility, And to know that I am part of something larger than myself.
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `589` activation `7.578` class `word` token ` and`
+  - of everyday life. It is a place to relax and rejuvenate, To reconnect with nature and with yourself
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `636` activation `7.355` class `word` token ` you`
+  - wonder and awe, A place that will always leave you breathless.
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `606` activation `7.286` class `word` token ` and`
+  - nature and with yourself. The ocean is a beautiful and powerful force, A force that can both soothe
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `632` activation `7.246` class `style_function_word` token ` that`
+  - is a place of wonder and awe, A place that will always leave you breathless.
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `612` activation `7.239` class `style_function_word` token ` that`
+  - ocean is a beautiful and powerful force, A force that can both soothe and excite. It is
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `574` activation `7.122` class `word` token ` the`
+  - of peace and tranquility, A place to escape the hustle and bustle of everyday life. It is
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `616` activation `6.979` class `word` token `the`
+  - and powerful force, A force that can both soothe and excite. It is a place of wonder
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `621` activation `6.950` class `word` token `It`
+  - force that can both soothe and excite. It is a place of wonder and awe, A place
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `579` activation `6.854` class `word` token ` of`
+  - , A place to escape the hustle and bustle of everyday life. It is a place to relax and
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `587` activation `6.850` class `word` token ` to`
+  - bustle of everyday life. It is a place to relax and rejuvenate, To reconnect with nature and
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `607` activation `6.845` class `word` token ` powerful`
+  - and with yourself. The ocean is a beautiful and powerful force, A force that can both soothe and
+- `L19:3990` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `627` activation `6.844` class `word` token ` and`
+  - and excite. It is a place of wonder and awe, A place that will always leave you breath
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `583` activation `7.981` class `word` token ` significance`
+  - Dead Sea. They are of great historical and religious significance as they include the earliest known surviving copies of the
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `585` activation `7.783` class `word` token ` they`
+  - . They are of great historical and religious significance as they include the earliest known surviving copies of the Hebrew Bible
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `582` activation `7.098` class `word` token ` religious`
+  - the Dead Sea. They are of great historical and religious significance as they include the earliest known surviving copies of
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `584` activation `6.948` class `style_function_word` token ` as`
+  - Sea. They are of great historical and religious significance as they include the earliest known surviving copies of the Hebrew
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `581` activation `6.840` class `word` token ` and`
+  - near the Dead Sea. They are of great historical and religious significance as they include the earliest known surviving copies
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `579` activation `6.686` class `word` token ` great`
+  - eleven caves near the Dead Sea. They are of great historical and religious significance as they include the earliest known
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `615` activation `6.631` class `word` token ` into`
+  - the Second Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity, illuminating the
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `614` activation `6.584` class `word` token ` insights`
+  - from the Second Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity, illuminating
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `612` activation `6.574` class `word` token ` provide`
+  - and documents from the Second Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity,
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `596` activation `6.563` class `punctuation` token `,`
+  - include the earliest known surviving copies of the Hebrew Bible, along with other Jewish texts and documents from the Second
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `617` activation `6.456` class `word` token ` and`
+  - Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity, illuminating the historical,
+- `L19:3990` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `586` activation `6.432` class `word` token ` include`
+  - They are of great historical and religious significance as they include the earliest known surviving copies of the Hebrew Bible,
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `577` activation `8.461` class `punctuation` token `,`
+  - IMF. He is a genius with computers and gadgets, and he is always coming up with new ways to
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `578` activation `8.424` class `word` token ` and`
+  - . He is a genius with computers and gadgets, and he is always coming up with new ways to help
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `626` activation `8.417` class `word` token ` She`
+  - on the mission to stop the nuclear terrorist attack. She is a skilled fighter and an expert in hand-to
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `535` activation `8.302` class `word` token ` He`
+  - with Ethan Hunt to stop a nuclear terrorist attack. He is a skilled analyst and a valuable asset to the
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `579` activation `8.230` class `word` token ` he`
+  - He is a genius with computers and gadgets, and he is always coming up with new ways to help Ethan
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `539` activation `8.168` class `word` token ` analyst`
+  - stop a nuclear terrorist attack. He is a skilled analyst and a valuable asset to the team. Simon P
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `574` activation `8.098` class `word` token ` computers`
+  - works for the IMF. He is a genius with computers and gadgets, and he is always coming up with
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `568` activation `8.024` class `sentence_boundary` token `.`
+  - Dunn is a tech expert who works for the IMF. He is a genius with computers and gadgets, and
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `584` activation `7.950` class `word` token ` with`
+  - computers and gadgets, and he is always coming up with new ways to help Ethan Hunt on his missions.
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `631` activation `7.927` class `word` token ` and`
+  - the nuclear terrorist attack. She is a skilled fighter and an expert in hand-to-hand combat.
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `569` activation `7.808` class `word` token ` He`
+  - is a tech expert who works for the IMF. He is a genius with computers and gadgets, and he
+- `L19:3990` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `627` activation `7.803` class `word` token ` is`
+  - the mission to stop the nuclear terrorist attack. She is a skilled fighter and an expert in hand-to-hand
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `601` activation `8.757` class `word` token ` his`
+  - ripple effect throughout the community. People were inspired by his good deeds and began to help others in need as
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `487` activation `8.644` class `word` token ` and`
+  - had been living on the streets for many years, and he had lost all hope of ever finding a way
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `483` activation `8.598` class `discourse_marker_word` token ` for`
+  - of help. Tom had been living on the streets for many years, and he had lost all hope of
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `488` activation `8.592` class `word` token ` he`
+  - been living on the streets for many years, and he had lost all hope of ever finding a way out
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `486` activation `8.549` class `punctuation` token `,`
+  - Tom had been living on the streets for many years, and he had lost all hope of ever finding a
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `476` activation `8.486` class `word` token ` Tom`
+  - named Tom who was in desperate need of help. Tom had been living on the streets for many years,
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `564` activation `8.480` class `word` token `’s`
+  - reconnect with his family. Tom was amazed by Jack’s kindness and generosity, and he vowed to pay it
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `512` activation `8.403` class `word` token ` he`
+  - . But Jack saw something special in Tom, and he decided to take him under his wing. Over the
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `504` activation `8.305` class `word` token ` Jack`
+  - ever finding a way out of his situation. But Jack saw something special in Tom, and he decided to
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `539` activation `8.284` class `word` token ` He`
+  - tirelessly to help Tom get back on his feet. He helped him find a job, a place to live
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `437` activation `8.203` class `word` token ` his`
+  - and he had become well-known in the community for his good deeds. People would often stop him on the
+- `L19:3990` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `510` activation `8.108` class `punctuation` token `,`
+  - his situation. But Jack saw something special in Tom, and he decided to take him under his wing.
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `376` activation `7.993` class `sentence_boundary` token `.`
+  - street when he saw a cat sitting on a fence. The cat was unlike any cat he had ever seen
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `395` activation `7.832` class `punctuation` token `,`
+  - ever seen before. It was white with blue eyes, and it had a strange symbol on its forehead.
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `414` activation `7.602` class `punctuation` token `,`
+  - forehead. The old man stopped to pet the cat, and the cat rubbed against his leg. The old
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `412` activation `7.573` class `word` token ` the`
+  - on its forehead. The old man stopped to pet the cat, and the cat rubbed against his leg.
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `378` activation `7.540` class `word` token ` cat`
+  - he saw a cat sitting on a fence. The cat was unlike any cat he had ever seen before.
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `389` activation `7.527` class `word` token ` It`
+  - was unlike any cat he had ever seen before. It was white with blue eyes, and it had a
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `410` activation `7.512` class `word` token ` to`
+  - strange symbol on its forehead. The old man stopped to pet the cat, and the cat rubbed against his
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `377` activation `7.427` class `word` token ` The`
+  - when he saw a cat sitting on a fence. The cat was unlike any cat he had ever seen before
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `408` activation `7.407` class `word` token ` man`
+  - had a strange symbol on its forehead. The old man stopped to pet the cat, and the cat rubbed
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `411` activation `7.402` class `word` token ` pet`
+  - symbol on its forehead. The old man stopped to pet the cat, and the cat rubbed against his leg
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `456` activation `7.397` class `sentence_boundary` token `.`
+  - was sitting on his porch when the cat came back. The cat jumped up on his lap and purred
+- `L19:3990` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `396` activation `7.367` class `word` token ` and`
+  - seen before. It was white with blue eyes, and it had a strange symbol on its forehead. The
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `627` activation `7.722` class `word` token ` to`
+  - labor protests continue to be a crucial means for workers to advocate for their rights and demand fair treatment from their
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `637` activation `7.509` class `word` token ` their`
+  - to advocate for their rights and demand fair treatment from their employers.
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `636` activation `7.442` class `word` token ` from`
+  - workers to advocate for their rights and demand fair treatment from their employers.
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `601` activation `7.210` class `word` token ` the`
+  - in serious injuries or even fatalities, further exacerbating the already strained relationship between striking workers and the authorities.
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `629` activation `7.182` class `discourse_marker_word` token ` for`
+  - continue to be a crucial means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `633` activation `7.164` class `word` token ` demand`
+  - crucial means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `630` activation `7.143` class `word` token ` their`
+  - to be a crucial means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `634` activation `7.133` class `word` token ` fair`
+  - means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `626` activation `7.015` class `word` token ` workers`
+  - and labor protests continue to be a crucial means for workers to advocate for their rights and demand fair treatment from
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `625` activation `6.902` class `discourse_marker_word` token ` for`
+  - strikes and labor protests continue to be a crucial means for workers to advocate for their rights and demand fair treatment
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `600` activation `6.794` class `word` token `ating`
+  - resulted in serious injuries or even fatalities, further exacerbating the already strained relationship between striking workers and the authorities
+- `L19:3990` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `632` activation `6.733` class `word` token ` and`
+  - a crucial means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `429` activation `7.274` class `style_function_word` token ` which`
+  - cat. It is made with mackerel, which is a good source of protein and omega-3
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `433` activation `7.128` class `word` token ` source`
+  - made with mackerel, which is a good source of protein and omega-3 fatty acids. The
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `430` activation `7.027` class `word` token ` is`
+  - . It is made with mackerel, which is a good source of protein and omega-3 fatty
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `443` activation `6.931` class `word` token ` The`
+  - source of protein and omega-3 fatty acids. The brown rice adds fiber and the chicken and beef broth
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `446` activation `6.738` class `word` token ` adds`
+  - and omega-3 fatty acids. The brown rice adds fiber and the chicken and beef broth helps to keep
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `404` activation `6.706` class `word` token ` is`
+  - before serving. Mackerel Recipe: This recipe is a simple and easy way to make a healthy and
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `459` activation `6.692` class `word` token ` moist`
+  - the chicken and beef broth helps to keep the food moist. Ingredients: 1 cup of canned mackerel
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `435` activation `6.527` class `word` token ` protein`
+  - mackerel, which is a good source of protein and omega-3 fatty acids. The brown rice
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `447` activation `6.471` class `word` token ` fiber`
+  - omega-3 fatty acids. The brown rice adds fiber and the chicken and beef broth helps to keep the
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `422` activation `6.469` class `word` token ` is`
+  - a healthy and nutritious meal for your cat. It is made with mackerel, which is a good
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `436` activation `6.465` class `word` token ` and`
+  - ackerel, which is a good source of protein and omega-3 fatty acids. The brown rice adds
+- `L19:3990` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `421` activation `6.453` class `word` token ` It`
+  - make a healthy and nutritious meal for your cat. It is made with mackerel, which is a
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `407` activation `7.741` class `word` token ` They`
+  - powerful wizard who can manipulate the forces of gravity. They use their magic to protect themselves and their allies from
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `465` activation `7.457` class `word` token ` They`
+  - being who can travel through the astral plane. They use their magic to manipulate the forces of gravity to
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `482` activation `7.298` class `word` token ` They`
+  - forces of gravity to travel through space and time. They can also levitate objects, create force fields,
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `520` activation `7.210` class `word` token ` They`
+  - A graviturgy wizard specializes in gravity magic. They have learned to harness the power of gravity to create
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `420` activation `7.095` class `word` token ` They`
+  - magic to protect themselves and their allies from harm. They can also use magic to create force fields, pull
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `484` activation `7.065` class `style_function_word` token ` also`
+  - gravity to travel through space and time. They can also levitate objects, create force fields, push and
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `521` activation `6.970` class `word` token ` have`
+  - graviturgy wizard specializes in gravity magic. They have learned to harness the power of gravity to create powerful
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `428` activation `6.912` class `word` token ` fields`
+  - harm. They can also use magic to create force fields, pull enemies towards them, push enemies away,
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `519` activation `6.815` class `sentence_boundary` token `.`
+  - : A graviturgy wizard specializes in gravity magic. They have learned to harness the power of gravity to
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `487` activation `6.771` class `word` token ` objects`
+  - through space and time. They can also levitate objects, create force fields, push and pull enemies,
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `409` activation `6.723` class `word` token ` their`
+  - who can manipulate the forces of gravity. They use their magic to protect themselves and their allies from harm.
+- `L19:3990` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `483` activation `6.699` class `style_function_word` token ` can`
+  - of gravity to travel through space and time. They can also levitate objects, create force fields, push
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `419` activation `7.558` class `word` token ` fast`
+  - screaming in terror. Mike knew he had to act fast before the building collapsed from under her. He used
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `415` activation `7.364` class `word` token ` he`
+  - She was crying and screaming in terror. Mike knew he had to act fast before the building collapsed from under
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `418` activation `7.253` class `word` token ` act`
+  - and screaming in terror. Mike knew he had to act fast before the building collapsed from under her. He
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `405` activation `7.150` class `word` token ` She`
+  - the balcony, looking down at the flames below. She was crying and screaming in terror. Mike knew he
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `412` activation `7.098` class `sentence_boundary` token `.`
+  - flames below. She was crying and screaming in terror. Mike knew he had to act fast before the building
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `404` activation `7.045` class `sentence_boundary` token `.`
+  - on the balcony, looking down at the flames below. She was crying and screaming in terror. Mike knew
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `408` activation `6.827` class `word` token ` and`
+  - looking down at the flames below. She was crying and screaming in terror. Mike knew he had to act
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `413` activation `6.813` class `word` token ` Mike`
+  - below. She was crying and screaming in terror. Mike knew he had to act fast before the building collapsed
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `414` activation `6.727` class `word` token ` knew`
+  - . She was crying and screaming in terror. Mike knew he had to act fast before the building collapsed from
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `417` activation `6.589` class `word` token ` to`
+  - crying and screaming in terror. Mike knew he had to act fast before the building collapsed from under her.
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `435` activation `6.543` class `word` token ` shield`
+  - under her. He used his magic to create a shield around himself and flew up to the balcony to rescue
+- `L19:3990` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `407` activation `6.500` class `word` token ` crying`
+  - , looking down at the flames below. She was crying and screaming in terror. Mike knew he had to
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `553` activation `8.299` class `word` token ` style`
+  - influential works. It is known for its experimental narrative style, including stream-of-consciousness techniques and shifting perspectives
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `546` activation `7.897` class `word` token ` It`
+  - Faulkner’s most famous and influential works. It is known for its experimental narrative style, including stream
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `549` activation `7.523` class `discourse_marker_word` token ` for`
+  - ’s most famous and influential works. It is known for its experimental narrative style, including stream-of-consciousness
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `550` activation `7.349` class `word` token ` its`
+  - most famous and influential works. It is known for its experimental narrative style, including stream-of-consciousness techniques
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `540` activation `7.285` class `word` token ` most`
+  - 1929 and is one of Faulkner’s most famous and influential works. It is known for its
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `542` activation `7.264` class `word` token ` and`
+  - and is one of Faulkner’s most famous and influential works. It is known for its experimental narrative
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `547` activation `7.209` class `word` token ` is`
+  - kner’s most famous and influential works. It is known for its experimental narrative style, including stream-of
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `551` activation `7.177` class `word` token ` experimental`
+  - famous and influential works. It is known for its experimental narrative style, including stream-of-consciousness techniques and
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `560` activation `7.169` class `word` token ` techniques`
+  - its experimental narrative style, including stream-of-consciousness techniques and shifting perspectives. The story centers on the decline
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `552` activation `7.145` class `word` token ` narrative`
+  - and influential works. It is known for its experimental narrative style, including stream-of-consciousness techniques and shifting
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `563` activation `7.083` class `word` token ` perspectives`
+  - style, including stream-of-consciousness techniques and shifting perspectives. The story centers on the decline of the Comp
+- `L19:3990` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `554` activation `7.009` class `punctuation` token `,`
+  - works. It is known for its experimental narrative style, including stream-of-consciousness techniques and shifting perspectives.
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `283` activation `7.834` class `style_function_word` token ` these`
+  - in a consistent way. In the primary grades, these assessments often focus on early literacy, numeracy,
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `275` activation `7.684` class `word` token ` consistent`
+  - commonly used in schools to measure student learning in a consistent way. In the primary grades, these assessments often
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `276` activation `7.279` class `word` token ` way`
+  - used in schools to measure student learning in a consistent way. In the primary grades, these assessments often focus
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `284` activation `7.242` class `word` token ` assessments`
+  - a consistent way. In the primary grades, these assessments often focus on early literacy, numeracy, and
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `269` activation `7.220` class `word` token ` to`
+  - Grades Standardized assessments are commonly used in schools to measure student learning in a consistent way. In the
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `270` activation `6.805` class `word` token ` measure`
+  - Standardized assessments are commonly used in schools to measure student learning in a consistent way. In the primary
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `286` activation `6.785` class `word` token ` focus`
+  - way. In the primary grades, these assessments often focus on early literacy, numeracy, and foundational skills
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `274` activation `6.762` class `word` token ` a`
+  - are commonly used in schools to measure student learning in a consistent way. In the primary grades, these assessments
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `296` activation `6.612` class `word` token ` skills`
+  - focus on early literacy, numeracy, and foundational skills. Because young children develop at different rates, the
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `271` activation `6.584` class `word` token ` student`
+  - Standardized assessments are commonly used in schools to measure student learning in a consistent way. In the primary grades
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `272` activation `6.436` class `word` token ` learning`
+  - ized assessments are commonly used in schools to measure student learning in a consistent way. In the primary grades,
+- `L19:3990` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `287` activation `6.326` class `word` token ` on`
+  - . In the primary grades, these assessments often focus on early literacy, numeracy, and foundational skills.
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `238` activation `7.657` class `word` token ` It`
+  - of the most serious problems facing the world today. It occurs when harmful substances enter the environment and damage air
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `246` activation `7.584` class `word` token ` and`
+  - today. It occurs when harmful substances enter the environment and damage air, water, soil, and living organisms
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `237` activation `7.375` class `sentence_boundary` token `.`
+  - one of the most serious problems facing the world today. It occurs when harmful substances enter the environment and damage
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `234` activation `6.846` class `word` token ` the`
+  - Pollution is one of the most serious problems facing the world today. It occurs when harmful substances enter the
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `247` activation `6.690` class `word` token ` damage`
+  - . It occurs when harmful substances enter the environment and damage air, water, soil, and living organisms.
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `236` activation `6.463` class `word` token ` today`
+  - is one of the most serious problems facing the world today. It occurs when harmful substances enter the environment and
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `235` activation `6.420` class `word` token ` world`
+  - ution is one of the most serious problems facing the world today. It occurs when harmful substances enter the environment
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `233` activation `6.415` class `word` token ` facing`
+  - Pollution is one of the most serious problems facing the world today. It occurs when harmful substances enter
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `272` activation `6.089` class `punctuation` token `,`
+  - , pollution has become a global concern that affects health, climate, and the future of the planet. One
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `239` activation `5.930` class `word` token ` occurs`
+  - the most serious problems facing the world today. It occurs when harmful substances enter the environment and damage air,
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `242` activation `5.859` class `word` token ` substances`
+  - problems facing the world today. It occurs when harmful substances enter the environment and damage air, water, soil
+- `L19:3990` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `275` activation `5.696` class `word` token ` and`
+  - become a global concern that affects health, climate, and the future of the planet. One major cause of
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `269` activation `8.774` class `word` token ` and`
+  - . He then went into more detail about his methods and findings. He spoke clearly and passionately, and he
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `267` activation `8.709` class `word` token ` his`
+  - his research. He then went into more detail about his methods and findings. He spoke clearly and passionately,
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `268` activation `8.708` class `word` token ` methods`
+  - research. He then went into more detail about his methods and findings. He spoke clearly and passionately, and
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `338` activation `8.703` class `word` token ` they`
+  - Geraldo tried to ignore the distractions, but they were too much for him. He could feel his
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `285` activation `8.603` class `expanded_negation_word` token ` was`
+  - and passionately, and he could tell that the audience was interested. However, as Geraldo continued his
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `266` activation `8.583` class `word` token ` about`
+  - of his research. He then went into more detail about his methods and findings. He spoke clearly and passionately
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `351` activation `8.556` class `punctuation` token `,`
+  - much for him. He could feel his anxiety rising, and he was starting to stumble over his words.
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `261` activation `8.531` class `style_function_word` token ` then`
+  - by giving a brief overview of his research. He then went into more detail about his methods and findings.
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `277` activation `8.513` class `punctuation` token `,`
+  - his methods and findings. He spoke clearly and passionately, and he could tell that the audience was interested.
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `260` activation `8.506` class `word` token ` He`
+  - presentation by giving a brief overview of his research. He then went into more detail about his methods and findings
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `349` activation `8.247` class `word` token ` anxiety`
+  - were too much for him. He could feel his anxiety rising, and he was starting to stumble over his
+- `L19:3990` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `283` activation `8.240` class `word` token ` the`
+  - spoke clearly and passionately, and he could tell that the audience was interested. However, as Geraldo
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `288` activation `7.338` class `word` token ` I`
+  - through the window. The wind is blowing, and I can hear the branches as they scrape across the glass
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `286` activation `7.173` class `punctuation` token `,`
+  - is coming through the window. The wind is blowing, and I can hear the branches as they scrape across
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `291` activation `6.958` class `word` token ` the`
+  - . The wind is blowing, and I can hear the branches as they scrape across the glass of my window
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `287` activation `6.840` class `word` token ` and`
+  - coming through the window. The wind is blowing, and I can hear the branches as they scrape across the
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `290` activation `6.716` class `word` token ` hear`
+  - window. The wind is blowing, and I can hear the branches as they scrape across the glass of my
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `289` activation `6.604` class `style_function_word` token ` can`
+  - the window. The wind is blowing, and I can hear the branches as they scrape across the glass of
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `292` activation `6.577` class `word` token ` branches`
+  - The wind is blowing, and I can hear the branches as they scrape across the glass of my window,
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `294` activation `6.180` class `word` token ` they`
+  - is blowing, and I can hear the branches as they scrape across the glass of my window, making an
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `284` activation `6.134` class `word` token ` is`
+  - the moon is coming through the window. The wind is blowing, and I can hear the branches as they
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `283` activation `5.863` class `word` token ` wind`
+  - from the moon is coming through the window. The wind is blowing, and I can hear the branches as
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `281` activation `5.571` class `sentence_boundary` token `.`
+  - the light from the moon is coming through the window. The wind is blowing, and I can hear the
+- `L19:3990` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `307` activation `5.458` class `style_function_word` token ` that`
+  - the glass of my window, making an eerie sound that puts me on edge. The moon is full tonight
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `637` activation `14.651` class `word` token ` and`
+  - didn't know what to do. I was lost and alone.
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `613` activation `14.236` class `word` token ` sat`
+  - walked back to my apartment and went inside. I sat down on the couch and put my head in my
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `614` activation `13.809` class `word` token ` down`
+  - back to my apartment and went inside. I sat down on the couch and put my head in my hands
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `573` activation `13.747` class `punctuation` token `,`
+  - something bad. I didn't know what it was, but I knew that it was something I would regret
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `635` activation `13.515` class `expanded_negation_word` token ` was`
+  - . I didn't know what to do. I was lost and alone.
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `617` activation `13.301` class `word` token ` couch`
+  - apartment and went inside. I sat down on the couch and put my head in my hands. I didn
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `519` activation `13.145` class `word` token ` I`
+  - walk. I needed to clear my head. As I was walking, I started to remember more about the
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `618` activation `13.114` class `word` token ` and`
+  - and went inside. I sat down on the couch and put my head in my hands. I didn't
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `520` activation `13.103` class `expanded_negation_word` token ` was`
+  - . I needed to clear my head. As I was walking, I started to remember more about the night
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `588` activation `13.098` class `style_function_word` token ` feel`
+  - it was something I would regret. I started to feel sick to my stomach. I didn't know what
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `516` activation `12.915` class `word` token ` head`
+  - go for a walk. I needed to clear my head. As I was walking, I started to remember
+- `L24:1120` `f1a36f216898e57dece905d8ddb34bff1e3a92589f0961ab8e6e58044ece68cd@turn_01@human` token `616` activation `12.888` class `word` token ` the`
+  - my apartment and went inside. I sat down on the couch and put my head in my hands. I
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `517` activation `11.771` class `word` token ` is`
+  - each other, their faces inches apart. The tension is so thick that it could be cut with a knife
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `634` activation `11.761` class `word` token ` room`
+  - storm rages outside, but the tension in the room is even more powerful.
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `518` activation `11.675` class `word` token ` so`
+  - other, their faces inches apart. The tension is so thick that it could be cut with a knife.
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `563` activation `11.636` class `word` token ` hatred`
+  - continue to stare at each other, their anger and hatred palpable. Suddenly, there is a loud crash
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `562` activation `11.624` class `word` token ` and`
+  - men continue to stare at each other, their anger and hatred palpable. Suddenly, there is a loud
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `637` activation `11.595` class `word` token ` more`
+  - outside, but the tension in the room is even more powerful.
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `628` activation `11.494` class `punctuation` token `,`
+  - backs to each other. The storm rages outside, but the tension in the room is even more powerful
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `631` activation `11.471` class `word` token ` tension`
+  - other. The storm rages outside, but the tension in the room is even more powerful.
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `561` activation `11.427` class `word` token ` anger`
+  - two men continue to stare at each other, their anger and hatred palpable. Suddenly, there is a
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `508` activation `11.415` class `word` token ` other`
+  - 're a fool. The two men stare at each other, their faces inches apart. The tension is so
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `635` activation `11.366` class `word` token ` is`
+  - rages outside, but the tension in the room is even more powerful.
+- `L24:1120` `e8807b5bffcdae13aa2bf9c68e21ecf2b3588addd1d234ac3fe8cf7e3f68d25e@turn_01@human` token `626` activation `11.169` class `word` token `ages`
+  - , their backs to each other. The storm rages outside, but the tension in the room is even
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `628` activation `13.844` class `word` token ` him`
+  - , and she was looking forward to getting to know him better. She smiled as she thought about the possibilities
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `477` activation `13.133` class `discourse_marker_word` token ` for`
+  - It's nice to be here." They chatted for a few minutes, and then Adrian went back to
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `541` activation `12.887` class `word` token ` coworkers`
+  - more comfortable at her new job. She liked her coworkers, and she was starting to get the hang of
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `521` activation `12.731` class `word` token ` day`
+  - sure that they would get along well. As the day went on, Eleanor started to feel more and more
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `570` activation `12.601` class `style_function_word` token ` also`
+  - the day, Eleanor was exhausted, but she was also happy. She had made a good impression on her
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `415` activation `12.527` class `word` token ` to`
+  - still a little nervous, but she was also excited to start her new job. A few minutes later,
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `501` activation `12.473` class `word` token ` He`
+  - Eleanor was glad that she had met Adrian. He seemed like a nice guy, and she was sure
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `621` activation `12.470` class `expanded_negation_word` token ` was`
+  - was glad that she had met him, and she was looking forward to getting to know him better. She
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `476` activation `12.346` class `word` token `atted`
+  - "It's nice to be here." They chatted for a few minutes, and then Adrian went back
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `584` activation `12.247` class `word` token ` she`
+  - had made a good impression on her coworkers, and she was confident that she would be successful in her new
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `618` activation `12.246` class `punctuation` token `,`
+  - Adrian. She was glad that she had met him, and she was looking forward to getting to know him
+- `L24:1120` `003038851c7587c7735b66ebf83ff832484bd03522c77ddae3964f19efb3ab7a@turn_01@human` token `591` activation `12.210` class `word` token ` successful`
+  - coworkers, and she was confident that she would be successful in her new role. As she walked out of
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `452` activation `13.212` class `word` token ` dire`
+  - . It is a reminder that even in the most dire of circumstances, the human spirit can triumph. •
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `422` activation `13.150` class `word` token ` be`
+  - skills to survive on Mars until a rescue mission can be launched. The film is a survival story, but
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `240` activation `12.974` class `word` token ` visually`
+  - , love, and sacrifice, and it is a visually stunning and thought-provoking film that will stay
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `433` activation `12.967` class `word` token ` it`
+  - launched. The film is a survival story, but it is also a story of hope and determination. It
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `331` activation `12.934` class `word` token ` she`
+  - it difficult for Louise to understand the aliens, but she eventually makes some progress. The film explores themes of
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `513` activation `12.827` class `style_function_word` token ` that`
+  - replicants. The film is a visually stunning sequel that explores themes of identity, humanity, and the nature
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `449` activation `12.806` class `word` token ` in`
+  - hope and determination. It is a reminder that even in the most dire of circumstances, the human spirit can
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `412` activation `12.703` class `word` token ` skills`
+  - . Watney must use his ingenuity and engineering skills to survive on Mars until a rescue mission can be
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `605` activation `12.656` class `word` token ` soon`
+  - as intelligent as a human being. However, Caleb soon begins to question whether Ava is as innocent as she
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `437` activation `12.550` class `word` token ` story`
+  - is a survival story, but it is also a story of hope and determination. It is a reminder that
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `241` activation `12.521` class `word` token ` stunning`
+  - love, and sacrifice, and it is a visually stunning and thought-provoking film that will stay with
+- `L24:1120` `365d96c7a4f24ccf7567bd0d9c1113f4bace6fe7ecab81a368f46adf1c97b78c@turn_01@human` token `321` activation `12.491` class `word` token ` it`
+  - that their language is based on time. This makes it difficult for Louise to understand the aliens, but she
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `634` activation `13.777` class `word` token ` he`
+  - for evil. He was a true hero, and he will never be forgotten.
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `635` activation `13.308` class `style_function_word` token ` will`
+  - evil. He was a true hero, and he will never be forgotten.
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `586` activation `13.264` class `word` token ` or`
+  - He used his magic to help people who were sick or injured. He also used his magic to fight evil
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `615` activation `13.179` class `word` token ` to`
+  - a long and happy life. He was always willing to help others and he never used his power for evil
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `629` activation `12.979` class `word` token ` a`
+  - he never used his power for evil. He was a true hero, and he will never be forgotten.
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `616` activation `12.858` class `style_function_word` token ` help`
+  - long and happy life. He was always willing to help others and he never used his power for evil.
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `581` activation `12.851` class `style_function_word` token ` help`
+  - job as a healer. He used his magic to help people who were sick or injured. He also used
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `441` activation `12.841` class `word` token ` dangerous`
+  - , Arion and the merchant were traveling through a dangerous desert when they were attacked by a group of assass
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `611` activation `12.728` class `word` token ` He`
+  - . Arion lived a long and happy life. He was always willing to help others and he never used
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `624` activation `12.666` class `discourse_marker_word` token ` for`
+  - willing to help others and he never used his power for evil. He was a true hero, and he
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `598` activation `12.657` class `word` token ` protect`
+  - . He also used his magic to fight evil and protect the innocent. Arion lived a long and happy
+- `L24:1120` `dc901525404d220b58a713932004ce5d72dcd95db25eb42412ab4a1984f7292c@turn_01@human` token `529` activation `12.630` class `word` token `ifting`
+  - he would never be able to use his shape-shifting magic again, but he was determined to continue helping
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `377` activation `14.029` class `word` token ` it`
+  - from my experiences. I hope that you will find it helpful. First, I want to tell you that
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `404` activation `13.688` class `word` token ` and`
+  - . Everyone makes mistakes. It is how we learn and grow. Don't be afraid to make mistakes,
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `451` activation `13.598` class `word` token ` you`
+  - all the time. Take risks and go after what you want. You may not always succeed, but you
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `559` activation `13.435` class `word` token ` and`
+  - for help. There are people who care about you and want to help you. Don't be afraid to
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `418` activation `13.381` class `word` token ` them`
+  - 't be afraid to make mistakes, but learn from them and move on. Second, don't be afraid
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `493` activation `13.315` class `word` token ` unique`
+  - be someone you're not. The world needs your unique perspective. Be yourself and let your light shine.
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `417` activation `13.304` class `word` token ` from`
+  - Don't be afraid to make mistakes, but learn from them and move on. Second, don't be
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `420` activation `13.276` class `word` token ` move`
+  - afraid to make mistakes, but learn from them and move on. Second, don't be afraid to take
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `409` activation `13.246` class `word` token ` be`
+  - It is how we learn and grow. Don't be afraid to make mistakes, but learn from them and
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `449` activation `13.145` class `word` token ` after`
+  - it safe all the time. Take risks and go after what you want. You may not always succeed,
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `572` activation `13.134` class `discourse_marker_word` token ` for`
+  - help you. Don't be afraid to reach out for help when you need it. Finally, I want
+- `L24:1120` `7ca0e1957a4184f538cd42b5e382e669b83ed29b2c387f6c3f09009d313e8d9b@turn_01@human` token `622` activation `13.098` class `word` token ` is`
+  - a light in the world. I hope this advice is helpful. I wish you all the best in your
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `508` activation `14.432` class `word` token ` of`
+  - He is a deep thinker who carefully considers all sides of an issue before making a decision. He is also
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `509` activation `14.078` class `word` token ` an`
+  - is a deep thinker who carefully considers all sides of an issue before making a decision. He is also an
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `392` activation `14.020` class `word` token ` fought`
+  - to social justice. Throughout his career, he has fought tirelessly for the rights of marginalized communities and has worked
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `403` activation `13.791` class `word` token ` to`
+  - tirelessly for the rights of marginalized communities and has worked to create a more equitable society. He has also been
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `391` activation `13.716` class `word` token ` has`
+  - commitment to social justice. Throughout his career, he has fought tirelessly for the rights of marginalized communities and has
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `533` activation `13.711` class `word` token ` new`
+  - values the opinions of others and is always open to new ideas. Finally, Obama is a man of integrity
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `422` activation `13.674` class `word` token ` taken`
+  - also been a vocal advocate for environmental protection and has taken steps to combat climate change. Another one of Obama
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `506` activation `13.614` class `word` token ` all`
+  - critically. He is a deep thinker who carefully considers all sides of an issue before making a decision. He
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `561` activation `13.514` class `word` token ` others`
+  - honest, ethical, and always puts the needs of others before his own. He has shown time and again
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `407` activation `13.459` class `word` token ` equitable`
+  - of marginalized communities and has worked to create a more equitable society. He has also been a vocal advocate for
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `402` activation `13.396` class `word` token ` worked`
+  - fought tirelessly for the rights of marginalized communities and has worked to create a more equitable society. He has also
+- `L24:1120` `4dd767cad8169842c9afb2e43217ac314ccbe2f1ec713b2e3e3b11ccc169e694@turn_01@human` token `504` activation `13.318` class `word` token ` carefully`
+  - to think critically. He is a deep thinker who carefully considers all sides of an issue before making a decision
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `624` activation `12.679` class `word` token ` of`
+  - wonder. The world is a beautiful place, Full of life and love, And I am grateful to be
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `634` activation `12.063` class `word` token ` be`
+  - of life and love, And I am grateful to be a part of it.
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `626` activation `11.834` class `word` token ` and`
+  - The world is a beautiful place, Full of life and love, And I am grateful to be a part
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `625` activation `11.665` class `word` token ` life`
+  - . The world is a beautiful place, Full of life and love, And I am grateful to be a
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `618` activation `11.524` class `word` token ` is`
+  - , And I am filled with wonder. The world is a beautiful place, Full of life and love,
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `620` activation `11.465` class `word` token ` beautiful`
+  - I am filled with wonder. The world is a beautiful place, Full of life and love, And I
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `630` activation `11.446` class `word` token ` I`
+  - beautiful place, Full of life and love, And I am grateful to be a part of it.
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `617` activation `11.240` class `word` token ` world`
+  - land, And I am filled with wonder. The world is a beautiful place, Full of life and love
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `631` activation `11.175` class `word` token ` am`
+  - place, Full of life and love, And I am grateful to be a part of it.
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `637` activation `11.139` class `word` token ` of`
+  - love, And I am grateful to be a part of it.
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `619` activation `11.138` class `word` token ` a`
+  - And I am filled with wonder. The world is a beautiful place, Full of life and love, And
+- `L24:1120` `326cdb009f87d570bb5f8fa025d5a982ca28fa8f63c6770bb65a99f4ab1fbf1f@turn_01@human` token `633` activation `11.127` class `word` token ` to`
+  - Full of life and love, And I am grateful to be a part of it.
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `635` activation `12.951` class `word` token ` something`
+  - ility, And to know that I am part of something larger than myself.
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `634` activation `11.892` class `word` token ` of`
+  - tranquility, And to know that I am part of something larger than myself.
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `615` activation `11.737` class `word` token ` by`
+  - I love to be in nature, To be surrounded by its beauty, To feel its peace and tranquility
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `637` activation `11.622` class `word` token ` than`
+  - And to know that I am part of something larger than myself.
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `616` activation `11.338` class `word` token ` its`
+  - love to be in nature, To be surrounded by its beauty, To feel its peace and tranquility,
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `623` activation `11.203` class `word` token ` and`
+  - be surrounded by its beauty, To feel its peace and tranquility, And to know that I am part
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `620` activation `11.183` class `style_function_word` token ` feel`
+  - nature, To be surrounded by its beauty, To feel its peace and tranquility, And to know that
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `636` activation `11.172` class `word` token ` larger`
+  - , And to know that I am part of something larger than myself.
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `613` activation `11.141` class `word` token ` be`
+  - face. I love to be in nature, To be surrounded by its beauty, To feel its peace and
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `632` activation `11.038` class `word` token ` am`
+  - peace and tranquility, And to know that I am part of something larger than myself.
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `621` activation `11.017` class `word` token ` its`
+  - , To be surrounded by its beauty, To feel its peace and tranquility, And to know that I
+- `L24:1120` `6f0adddcfbfee751e8ed791da4154f05dc550b4aaf95f746efeb4043d29701e1@turn_01@human` token `612` activation `10.906` class `word` token `To`
+  - my face. I love to be in nature, To be surrounded by its beauty, To feel its peace
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `636` activation `12.034` class `word` token ` you`
+  - wonder and awe, A place that will always leave you breathless.
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `612` activation `11.756` class `style_function_word` token ` that`
+  - ocean is a beautiful and powerful force, A force that can both soothe and excite. It is
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `589` activation `11.697` class `word` token ` and`
+  - of everyday life. It is a place to relax and rejuvenate, To reconnect with nature and with yourself
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `635` activation `11.683` class `word` token ` leave`
+  - of wonder and awe, A place that will always leave you breathless.
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `595` activation `11.445` class `word` token ` with`
+  - a place to relax and rejuvenate, To reconnect with nature and with yourself. The ocean is a beautiful
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `632` activation `11.433` class `style_function_word` token ` that`
+  - is a place of wonder and awe, A place that will always leave you breathless.
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `616` activation `11.354` class `word` token `the`
+  - and powerful force, A force that can both soothe and excite. It is a place of wonder
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `579` activation `11.139` class `word` token ` of`
+  - , A place to escape the hustle and bustle of everyday life. It is a place to relax and
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `594` activation `11.089` class `word` token ` reconnect`
+  - is a place to relax and rejuvenate, To reconnect with nature and with yourself. The ocean is a
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `633` activation `11.061` class `style_function_word` token ` will`
+  - a place of wonder and awe, A place that will always leave you breathless.
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `613` activation `10.978` class `style_function_word` token ` can`
+  - is a beautiful and powerful force, A force that can both soothe and excite. It is a
+- `L24:1120` `60e7f5b66a8de0032db340f13d88a6a203e23b34b7c24a70bec956ff7523ef80@turn_01@human` token `588` activation `10.900` class `word` token ` relax`
+  - le of everyday life. It is a place to relax and rejuvenate, To reconnect with nature and with
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `585` activation `11.871` class `word` token ` they`
+  - . They are of great historical and religious significance as they include the earliest known surviving copies of the Hebrew Bible
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `612` activation `11.605` class `word` token ` provide`
+  - and documents from the Second Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity,
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `613` activation `11.470` class `word` token ` invaluable`
+  - documents from the Second Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity, illumin
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `614` activation `11.435` class `word` token ` insights`
+  - from the Second Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity, illuminating
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `582` activation `10.748` class `word` token ` religious`
+  - the Dead Sea. They are of great historical and religious significance as they include the earliest known surviving copies of
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `583` activation `10.323` class `word` token ` significance`
+  - Dead Sea. They are of great historical and religious significance as they include the earliest known surviving copies of the
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `615` activation `10.241` class `word` token ` into`
+  - the Second Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity, illuminating the
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `631` activation `10.208` class `word` token ` cultural`
+  - Christianity, illuminating the historical, political, and cultural setting in which Jesus lived and preached.
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `619` activation `9.938` class `word` token ` roots`
+  - . The scrolls provide invaluable insights into Judaism and the roots of Christianity, illuminating the historical, political,
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `616` activation `9.895` class `word` token ` Judaism`
+  - Second Temple period. The scrolls provide invaluable insights into Judaism and the roots of Christianity, illuminating the historical
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `579` activation `9.876` class `word` token ` great`
+  - eleven caves near the Dead Sea. They are of great historical and religious significance as they include the earliest known
+- `L24:1120` `6bc46aaa6017ad9a81df21b1dfeeedc540d3d16cc2f6c5b0830b8b7f2572013b@turn_01@human` token `632` activation `9.816` class `word` token ` setting`
+  - , illuminating the historical, political, and cultural setting in which Jesus lived and preached.
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `584` activation `14.200` class `word` token ` with`
+  - computers and gadgets, and he is always coming up with new ways to help Ethan Hunt on his missions.
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `585` activation `13.684` class `word` token ` new`
+  - and gadgets, and he is always coming up with new ways to help Ethan Hunt on his missions. Paul
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `579` activation `13.230` class `word` token ` he`
+  - He is a genius with computers and gadgets, and he is always coming up with new ways to help Ethan
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `578` activation `12.896` class `word` token ` and`
+  - . He is a genius with computers and gadgets, and he is always coming up with new ways to help
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `626` activation `12.798` class `word` token ` She`
+  - on the mission to stop the nuclear terrorist attack. She is a skilled fighter and an expert in hand-to
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `590` activation `12.761` class `word` token ` Hunt`
+  - is always coming up with new ways to help Ethan Hunt on his missions. Paula Patton as Jane Carter
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `592` activation `12.665` class `word` token ` his`
+  - coming up with new ways to help Ethan Hunt on his missions. Paula Patton as Jane Carter: Jane
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `574` activation `12.359` class `word` token ` computers`
+  - works for the IMF. He is a genius with computers and gadgets, and he is always coming up with
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `539` activation `12.326` class `word` token ` analyst`
+  - stop a nuclear terrorist attack. He is a skilled analyst and a valuable asset to the team. Simon P
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `587` activation `12.208` class `word` token ` to`
+  - , and he is always coming up with new ways to help Ethan Hunt on his missions. Paula Patton
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `535` activation `12.208` class `word` token ` He`
+  - with Ethan Hunt to stop a nuclear terrorist attack. He is a skilled analyst and a valuable asset to the
+- `L24:1120` `685ee2ea18e6593da21173d1b7704c850ab995cd3806001232bb3c43b1e2482f@turn_01@human` token `577` activation `12.176` class `punctuation` token `,`
+  - IMF. He is a genius with computers and gadgets, and he is always coming up with new ways to
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `483` activation `14.344` class `discourse_marker_word` token ` for`
+  - of help. Tom had been living on the streets for many years, and he had lost all hope of
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `486` activation `13.964` class `punctuation` token `,`
+  - Tom had been living on the streets for many years, and he had lost all hope of ever finding a
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `528` activation `13.901` class `word` token ` worked`
+  - his wing. Over the next few months, Jack worked tirelessly to help Tom get back on his feet.
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `488` activation `13.896` class `word` token ` he`
+  - been living on the streets for many years, and he had lost all hope of ever finding a way out
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `512` activation `13.881` class `word` token ` he`
+  - . But Jack saw something special in Tom, and he decided to take him under his wing. Over the
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `500` activation `13.859` class `word` token ` his`
+  - lost all hope of ever finding a way out of his situation. But Jack saw something special in Tom,
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `487` activation `13.628` class `word` token ` and`
+  - had been living on the streets for many years, and he had lost all hope of ever finding a way
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `532` activation `13.282` class `word` token ` Tom`
+  - the next few months, Jack worked tirelessly to help Tom get back on his feet. He helped him find
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `601` activation `13.248` class `word` token ` his`
+  - ripple effect throughout the community. People were inspired by his good deeds and began to help others in need as
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `530` activation `13.176` class `word` token ` to`
+  - . Over the next few months, Jack worked tirelessly to help Tom get back on his feet. He helped
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `493` activation `13.136` class `word` token ` of`
+  - for many years, and he had lost all hope of ever finding a way out of his situation. But
+- `L24:1120` `2e45d268863897bed9e252e71259105ae87f0593a9784708164d786b6a3758fc@turn_01@human` token `541` activation `13.135` class `word` token ` him`
+  - help Tom get back on his feet. He helped him find a job, a place to live and even
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `434` activation `12.910` class `word` token ` in`
+  - old man smiled. He hadn't felt this happy in a long time. The next day, the old
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `447` activation `12.635` class `word` token ` sitting`
+  - time. The next day, the old man was sitting on his porch when the cat came back. The
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `397` activation `12.514` class `word` token ` it`
+  - before. It was white with blue eyes, and it had a strange symbol on its forehead. The old
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `378` activation `12.477` class `word` token ` cat`
+  - he saw a cat sitting on a fence. The cat was unlike any cat he had ever seen before.
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `410` activation `12.457` class `word` token ` to`
+  - strange symbol on its forehead. The old man stopped to pet the cat, and the cat rubbed against his
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `384` activation `12.397` class `expanded_negation_word` token ` had`
+  - a fence. The cat was unlike any cat he had ever seen before. It was white with blue eyes
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `389` activation `12.348` class `word` token ` It`
+  - was unlike any cat he had ever seen before. It was white with blue eyes, and it had a
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `453` activation `12.283` class `word` token ` cat`
+  - the old man was sitting on his porch when the cat came back. The cat jumped up on his lap
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `401` activation `12.120` class `word` token ` symbol`
+  - white with blue eyes, and it had a strange symbol on its forehead. The old man stopped to pet
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `386` activation `12.046` class `word` token ` seen`
+  - . The cat was unlike any cat he had ever seen before. It was white with blue eyes, and
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `379` activation `11.991` class `expanded_negation_word` token ` was`
+  - saw a cat sitting on a fence. The cat was unlike any cat he had ever seen before. It
+- `L24:1120` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@human` token `383` activation `11.965` class `word` token ` he`
+  - on a fence. The cat was unlike any cat he had ever seen before. It was white with blue
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `627` activation `12.820` class `word` token ` to`
+  - labor protests continue to be a crucial means for workers to advocate for their rights and demand fair treatment from their
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `629` activation `11.962` class `discourse_marker_word` token ` for`
+  - continue to be a crucial means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `633` activation `11.824` class `word` token ` demand`
+  - crucial means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `630` activation `11.757` class `word` token ` their`
+  - to be a crucial means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `600` activation `11.531` class `word` token `ating`
+  - resulted in serious injuries or even fatalities, further exacerbating the already strained relationship between striking workers and the authorities
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `634` activation `11.523` class `word` token ` fair`
+  - means for workers to advocate for their rights and demand fair treatment from their employers.
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `636` activation `11.472` class `word` token ` from`
+  - workers to advocate for their rights and demand fair treatment from their employers.
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `626` activation `11.302` class `word` token ` workers`
+  - and labor protests continue to be a crucial means for workers to advocate for their rights and demand fair treatment from
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `637` activation `11.122` class `word` token ` their`
+  - to advocate for their rights and demand fair treatment from their employers.
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `622` activation `11.026` class `word` token ` a`
+  - Despite this, strikes and labor protests continue to be a crucial means for workers to advocate for their rights and
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `623` activation `11.024` class `word` token ` crucial`
+  - this, strikes and labor protests continue to be a crucial means for workers to advocate for their rights and demand
+- `L24:1120` `b65b8fac9a2fb9d05e28d97cd98216be850c5a6bff912d1ce33eda78272ea83e@turn_01@human` token `601` activation `10.778` class `word` token ` the`
+  - in serious injuries or even fatalities, further exacerbating the already strained relationship between striking workers and the authorities.
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `429` activation `12.203` class `style_function_word` token ` which`
+  - cat. It is made with mackerel, which is a good source of protein and omega-3
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `446` activation `11.964` class `word` token ` adds`
+  - and omega-3 fatty acids. The brown rice adds fiber and the chicken and beef broth helps to keep
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `432` activation `11.711` class `word` token ` good`
+  - is made with mackerel, which is a good source of protein and omega-3 fatty acids.
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `454` activation `11.682` class `style_function_word` token ` helps`
+  - brown rice adds fiber and the chicken and beef broth helps to keep the food moist. Ingredients: 1 cup
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `430` activation `11.529` class `word` token ` is`
+  - . It is made with mackerel, which is a good source of protein and omega-3 fatty
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `447` activation `11.480` class `word` token ` fiber`
+  - omega-3 fatty acids. The brown rice adds fiber and the chicken and beef broth helps to keep the
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `445` activation `11.479` class `word` token ` rice`
+  - protein and omega-3 fatty acids. The brown rice adds fiber and the chicken and beef broth helps to
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `361` activation `11.134` class `word` token `Mix`
+  - . In a large bowl, combine all ingredients. Mix well. Pour the mixture into a greased
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `453` activation `10.998` class `word` token ` broth`
+  - The brown rice adds fiber and the chicken and beef broth helps to keep the food moist. Ingredients: 1
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `358` activation `10.994` class `word` token ` all`
+  - 350 degrees Fahrenheit. In a large bowl, combine all ingredients. Mix well. Pour the mixture into a
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `431` activation `10.788` class `word` token ` a`
+  - It is made with mackerel, which is a good source of protein and omega-3 fatty acids
+- `L24:1120` `5303e9c4bf568f9a14dad791f70c3797830dcf440a9fe6e4bedd1086c9c79106@turn_01@human` token `459` activation `10.687` class `word` token ` moist`
+  - the chicken and beef broth helps to keep the food moist. Ingredients: 1 cup of canned mackerel
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `428` activation `11.814` class `word` token ` fields`
+  - harm. They can also use magic to create force fields, pull enemies towards them, push enemies away,
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `458` activation `10.986` class `word` token ` travel`
+  - An astral walker is a powerful being who can travel through the astral plane. They use their magic
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `407` activation `10.747` class `word` token ` They`
+  - powerful wizard who can manipulate the forces of gravity. They use their magic to protect themselves and their allies from
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `465` activation `10.389` class `word` token ` They`
+  - being who can travel through the astral plane. They use their magic to manipulate the forces of gravity to
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `487` activation `10.329` class `word` token ` objects`
+  - through space and time. They can also levitate objects, create force fields, push and pull enemies,
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `420` activation `10.252` class `word` token ` They`
+  - magic to protect themselves and their allies from harm. They can also use magic to create force fields, pull
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `482` activation `10.162` class `word` token ` They`
+  - forces of gravity to travel through space and time. They can also levitate objects, create force fields,
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `520` activation `10.021` class `word` token ` They`
+  - A graviturgy wizard specializes in gravity magic. They have learned to harness the power of gravity to create
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `455` activation `9.986` class `word` token ` being`
+  - stral Walker: An astral walker is a powerful being who can travel through the astral plane. They
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `521` activation `9.902` class `word` token ` have`
+  - graviturgy wizard specializes in gravity magic. They have learned to harness the power of gravity to create powerful
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `416` activation `9.896` class `word` token ` allies`
+  - . They use their magic to protect themselves and their allies from harm. They can also use magic to create
+- `L24:1120` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `423` activation `9.890` class `word` token ` use`
+  - themselves and their allies from harm. They can also use magic to create force fields, pull enemies towards them
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `418` activation `13.384` class `word` token ` act`
+  - and screaming in terror. Mike knew he had to act fast before the building collapsed from under her. He
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `419` activation `12.687` class `word` token ` fast`
+  - screaming in terror. Mike knew he had to act fast before the building collapsed from under her. He used
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `415` activation `11.846` class `word` token ` he`
+  - She was crying and screaming in terror. Mike knew he had to act fast before the building collapsed from under
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `422` activation `11.579` class `word` token ` building`
+  - . Mike knew he had to act fast before the building collapsed from under her. He used his magic to
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `414` activation `11.336` class `word` token ` knew`
+  - . She was crying and screaming in terror. Mike knew he had to act fast before the building collapsed from
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `435` activation `11.118` class `word` token ` shield`
+  - under her. He used his magic to create a shield around himself and flew up to the balcony to rescue
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `417` activation `11.067` class `word` token ` to`
+  - crying and screaming in terror. Mike knew he had to act fast before the building collapsed from under her.
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `423` activation `10.949` class `word` token ` collapsed`
+  - Mike knew he had to act fast before the building collapsed from under her. He used his magic to create
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `407` activation `10.878` class `word` token ` crying`
+  - , looking down at the flames below. She was crying and screaming in terror. Mike knew he had to
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `416` activation `10.601` class `expanded_negation_word` token ` had`
+  - was crying and screaming in terror. Mike knew he had to act fast before the building collapsed from under her
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `420` activation `10.569` class `word` token ` before`
+  - in terror. Mike knew he had to act fast before the building collapsed from under her. He used his
+- `L24:1120` `92d254fca37fcf9a2a6e518fdaca8867df3d4a0df60f2d442d6c9d445c128014@turn_01@human` token `431` activation `10.347` class `word` token ` magic`
+  - the building collapsed from under her. He used his magic to create a shield around himself and flew up to
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `553` activation `12.137` class `word` token ` style`
+  - influential works. It is known for its experimental narrative style, including stream-of-consciousness techniques and shifting perspectives
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `549` activation `11.300` class `discourse_marker_word` token ` for`
+  - ’s most famous and influential works. It is known for its experimental narrative style, including stream-of-consciousness
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `552` activation `11.237` class `word` token ` narrative`
+  - and influential works. It is known for its experimental narrative style, including stream-of-consciousness techniques and shifting
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `559` activation `10.982` class `word` token `ness`
+  - for its experimental narrative style, including stream-of-consciousness techniques and shifting perspectives. The story centers on the
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `551` activation `10.895` class `word` token ` experimental`
+  - famous and influential works. It is known for its experimental narrative style, including stream-of-consciousness techniques and
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `560` activation `10.894` class `word` token ` techniques`
+  - its experimental narrative style, including stream-of-consciousness techniques and shifting perspectives. The story centers on the decline
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `540` activation `10.728` class `word` token ` most`
+  - 1929 and is one of Faulkner’s most famous and influential works. It is known for its
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `563` activation `10.620` class `word` token ` perspectives`
+  - style, including stream-of-consciousness techniques and shifting perspectives. The story centers on the decline of the Comp
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `546` activation `10.607` class `word` token ` It`
+  - Faulkner’s most famous and influential works. It is known for its experimental narrative style, including stream
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `550` activation `10.539` class `word` token ` its`
+  - most famous and influential works. It is known for its experimental narrative style, including stream-of-consciousness techniques
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `541` activation `10.317` class `word` token ` famous`
+  - 9 and is one of Faulkner’s most famous and influential works. It is known for its experimental
+- `L24:1120` `0d0e79d66f053645b56efefbe444ab1c03fa5d2a48fd89a3b8bf11baeaa23daf@turn_01@gpt-5.5` token `543` activation `10.263` class `word` token ` influential`
+  - is one of Faulkner’s most famous and influential works. It is known for its experimental narrative style
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `275` activation `11.450` class `word` token ` consistent`
+  - commonly used in schools to measure student learning in a consistent way. In the primary grades, these assessments often
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `284` activation `11.369` class `word` token ` assessments`
+  - a consistent way. In the primary grades, these assessments often focus on early literacy, numeracy, and
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `283` activation `10.978` class `style_function_word` token ` these`
+  - in a consistent way. In the primary grades, these assessments often focus on early literacy, numeracy,
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `314` activation `10.958` class `word` token ` requires`
+  - rates, the use of standardized assessments with early learners requires careful consideration. One benefit of standardized assessments is that
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `300` activation `10.577` class `word` token ` children`
+  - , numeracy, and foundational skills. Because young children develop at different rates, the use of standardized assessments
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `331` activation `10.569` class `word` token ` with`
+  - standardized assessments is that they can provide teachers and schools with useful information about student progress. When assessments are well
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `342` activation `10.502` class `word` token ` designed`
+  - useful information about student progress. When assessments are well designed and age-appropriate, they can help identify students
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `325` activation `10.358` class `word` token ` they`
+  - careful consideration. One benefit of standardized assessments is that they can provide teachers and schools with useful information about student
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `332` activation `10.339` class `word` token ` useful`
+  - assessments is that they can provide teachers and schools with useful information about student progress. When assessments are well designed
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `286` activation `10.317` class `word` token ` focus`
+  - way. In the primary grades, these assessments often focus on early literacy, numeracy, and foundational skills
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `304` activation `10.195` class `word` token ` rates`
+  - and foundational skills. Because young children develop at different rates, the use of standardized assessments with early learners requires
+- `L24:1120` `d84183a3e51649a1e30bff4e52099156578d6bf071bdf3b372f1554cc496e5c2@turn_01@gpt-5.5` token `303` activation `10.163` class `word` token ` different`
+  - , and foundational skills. Because young children develop at different rates, the use of standardized assessments with early learners
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `238` activation `12.307` class `word` token ` It`
+  - of the most serious problems facing the world today. It occurs when harmful substances enter the environment and damage air
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `246` activation `11.432` class `word` token ` and`
+  - today. It occurs when harmful substances enter the environment and damage air, water, soil, and living organisms
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `235` activation `10.783` class `word` token ` world`
+  - ution is one of the most serious problems facing the world today. It occurs when harmful substances enter the environment
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `247` activation `10.544` class `word` token ` damage`
+  - . It occurs when harmful substances enter the environment and damage air, water, soil, and living organisms.
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `234` activation `9.988` class `word` token ` the`
+  - Pollution is one of the most serious problems facing the world today. It occurs when harmful substances enter the
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `242` activation `9.981` class `word` token ` substances`
+  - problems facing the world today. It occurs when harmful substances enter the environment and damage air, water, soil
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `239` activation `9.912` class `word` token ` occurs`
+  - the most serious problems facing the world today. It occurs when harmful substances enter the environment and damage air,
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `267` activation `9.887` class `word` token ` global`
+  - . As human activities increase, pollution has become a global concern that affects health, climate, and the future
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `232` activation `9.771` class `word` token ` problems`
+  - Solutions Pollution is one of the most serious problems facing the world today. It occurs when harmful substances
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `233` activation `9.760` class `word` token ` facing`
+  - Pollution is one of the most serious problems facing the world today. It occurs when harmful substances enter
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `260` activation `9.725` class `word` token ` activities`
+  - water, soil, and living organisms. As human activities increase, pollution has become a global concern that affects
+- `L24:1120` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `502` activation `9.361` class `word` token `To`
+  - levels. These effects threaten both humans and wildlife. To overcome pollution, action is needed at individual, community
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `349` activation `15.352` class `word` token ` anxiety`
+  - were too much for him. He could feel his anxiety rising, and he was starting to stumble over his
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `285` activation `14.891` class `expanded_negation_word` token ` was`
+  - and passionately, and he could tell that the audience was interested. However, as Geraldo continued his
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `264` activation `14.164` class `word` token ` more`
+  - brief overview of his research. He then went into more detail about his methods and findings. He spoke clearly
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `338` activation `14.115` class `word` token ` they`
+  - Geraldo tried to ignore the distractions, but they were too much for him. He could feel his
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `265` activation `14.010` class `word` token ` detail`
+  - overview of his research. He then went into more detail about his methods and findings. He spoke clearly and
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `263` activation `13.918` class `word` token ` into`
+  - a brief overview of his research. He then went into more detail about his methods and findings. He spoke
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `354` activation `13.879` class `expanded_negation_word` token ` was`
+  - . He could feel his anxiety rising, and he was starting to stumble over his words. He lost his
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `367` activation `13.766` class `word` token ` thought`
+  - stumble over his words. He lost his train of thought several times. Finally, Geraldo could take
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `284` activation `13.704` class `word` token ` audience`
+  - clearly and passionately, and he could tell that the audience was interested. However, as Geraldo continued
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `339` activation `13.700` class `expanded_negation_word` token ` were`
+  - eraldo tried to ignore the distractions, but they were too much for him. He could feel his anxiety
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `266` activation `13.430` class `word` token ` about`
+  - of his research. He then went into more detail about his methods and findings. He spoke clearly and passionately
+- `L24:1120` `887be64dc3ab21f688cc24a7cfbc74eb6198ece85e10800bdff91b5a7396c67b@turn_01@human` token `262` activation `13.347` class `word` token ` went`
+  - giving a brief overview of his research. He then went into more detail about his methods and findings. He
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `292` activation `11.496` class `word` token ` branches`
+  - The wind is blowing, and I can hear the branches as they scrape across the glass of my window,
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `286` activation `10.485` class `punctuation` token `,`
+  - is coming through the window. The wind is blowing, and I can hear the branches as they scrape across
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `290` activation `10.456` class `word` token ` hear`
+  - window. The wind is blowing, and I can hear the branches as they scrape across the glass of my
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `291` activation `10.249` class `word` token ` the`
+  - . The wind is blowing, and I can hear the branches as they scrape across the glass of my window
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `289` activation `10.241` class `style_function_word` token ` can`
+  - the window. The wind is blowing, and I can hear the branches as they scrape across the glass of
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `294` activation `10.101` class `word` token ` they`
+  - is blowing, and I can hear the branches as they scrape across the glass of my window, making an
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `287` activation `9.953` class `word` token ` and`
+  - coming through the window. The wind is blowing, and I can hear the branches as they scrape across the
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `288` activation `9.627` class `word` token ` I`
+  - through the window. The wind is blowing, and I can hear the branches as they scrape across the glass
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `284` activation `9.382` class `word` token ` is`
+  - the moon is coming through the window. The wind is blowing, and I can hear the branches as they
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `295` activation `8.941` class `word` token ` scrape`
+  - blowing, and I can hear the branches as they scrape across the glass of my window, making an eerie
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `283` activation `8.721` class `word` token ` wind`
+  - from the moon is coming through the window. The wind is blowing, and I can hear the branches as
+- `L24:1120` `bf07d08b4692c7abb730e38b62da4cf267ff48f74d294b3e4cf008c12bdf691c@turn_01@human` token `293` activation `8.585` class `style_function_word` token ` as`
+  - wind is blowing, and I can hear the branches as they scrape across the glass of my window, making

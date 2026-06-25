@@ -1,0 +1,1165 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2007` | `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 560 | `1189.71` | `6.27` | word:464|punctuation:41|style_function_word:23|sentence_boundary:18|expanded_negation_word:8|discourse_marker_word:4|contraction_piece:1|line_break:1 |
+| `L19:2007` | `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` | `glm-5.2` | 291 | `503.55` | `6.10` | word:244|punctuation:22|sentence_boundary:10|expanded_negation_word:4|discourse_marker_word:4|style_function_word:4|whitespace:1|contraction_piece:1|line_break:1 |
+| `L19:2007` | `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 239 | `412.46` | `5.90` | word:198|punctuation:19|style_function_word:7|sentence_boundary:6|line_break:4|expanded_negation_word:3|discourse_marker_word:2 |
+| `L19:2007` | `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 314 | `641.38` | `6.36` | word:268|style_function_word:19|sentence_boundary:9|punctuation:9|discourse_marker_word:3|expanded_negation_word:3|line_break:2|contraction_piece:1 |
+| `L19:2007` | `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 152 | `341.27` | `6.66` | word:126|punctuation:9|sentence_boundary:7|style_function_word:6|discourse_marker_word:2|expanded_negation_word:1|whitespace:1 |
+| `L19:2007` | `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` | `gpt-5.5` | 91 | `142.93` | `6.40` | word:66|punctuation:8|line_break:6|sentence_boundary:6|style_function_word:4|discourse_marker_word:1 |
+| `L19:2007` | `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` | `glm-5.2` | 168 | `325.81` | `5.34` | word:144|sentence_boundary:10|punctuation:9|discourse_marker_word:2|line_break:2|style_function_word:1 |
+| `L19:2007` | `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 148 | `335.16` | `5.91` | word:123|punctuation:13|sentence_boundary:5|style_function_word:4|discourse_marker_word:2|line_break:1 |
+| `L19:2007` | `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` | `gpt-5.5` | 233 | `422.72` | `6.12` | word:189|style_function_word:13|punctuation:7|expanded_negation_word:6|line_break:6|contraction_piece:5|sentence_boundary:5|discourse_marker_word:2 |
+| `L19:2007` | `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 156 | `299.86` | `6.18` | word:125|punctuation:15|style_function_word:9|sentence_boundary:5|expanded_negation_word:1|contraction_piece:1 |
+| `L19:2007` | `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` | `glm-5.2` | 170 | `536.90` | `7.07` | word:117|line_break:33|sentence_boundary:7|style_function_word:6|punctuation:4|expanded_negation_word:2|discourse_marker_word:1 |
+| `L19:2007` | `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 380 | `735.10` | `7.23` | word:301|style_function_word:22|punctuation:18|sentence_boundary:17|expanded_negation_word:8|discourse_marker_word:7|line_break:7 |
+| `L19:2007` | `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 173 | `311.20` | `6.33` | word:138|expanded_negation_word:9|sentence_boundary:8|style_function_word:7|punctuation:7|line_break:3|discourse_marker_word:1 |
+| `L19:2007` | `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` | `gpt-5.5` | 377 | `782.98` | `6.15` | word:295|punctuation:27|sentence_boundary:18|style_function_word:14|expanded_negation_word:10|line_break:7|discourse_marker_word:5|contraction_piece:1 |
+| `L19:2007` | `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 262 | `596.65` | `6.56` | word:198|sentence_boundary:18|style_function_word:16|punctuation:11|expanded_negation_word:10|line_break:5|discourse_marker_word:4 |
+| `L19:2007` | `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` | `gpt-5.5` | 243 | `628.92` | `6.15` | word:186|punctuation:22|style_function_word:14|sentence_boundary:13|line_break:4|discourse_marker_word:2|expanded_negation_word:2 |
+| `L19:2007` | `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` | `gpt-5.5` | 183 | `323.87` | `6.43` | word:155|punctuation:16|sentence_boundary:6|style_function_word:4|line_break:2 |
+| `L19:2007` | `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 364 | `648.26` | `7.19` | word:281|punctuation:21|sentence_boundary:20|style_function_word:12|discourse_marker_word:11|expanded_negation_word:10|line_break:6|contraction_piece:3 |
+| `L19:2007` | `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 74 | `153.32` | `6.06` | word:60|punctuation:8|sentence_boundary:2|style_function_word:2|whitespace:2 |
+| `L19:2007` | `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` | `gpt-5.5` | 83 | `181.33` | `6.87` | word:69|punctuation:6|sentence_boundary:5|discourse_marker_word:2|style_function_word:1 |
+| `L19:2007` | `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` | `glm-5.2` | 233 | `444.44` | `6.72` | word:174|punctuation:42|style_function_word:9|line_break:4|sentence_boundary:2|discourse_marker_word:2 |
+| `L19:2007` | `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` | `gpt-5.5` | 83 | `125.42` | `4.50` | punctuation:36|word:33|style_function_word:14 |
+| `L19:2007` | `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` | `gpt-5.5` | 291 | `463.59` | `6.52` | word:234|punctuation:30|style_function_word:15|sentence_boundary:8|discourse_marker_word:2|line_break:1|expanded_negation_word:1 |
+| `L24:1561` | `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 505 | `1253.70` | `6.75` | word:417|punctuation:40|style_function_word:18|sentence_boundary:18|expanded_negation_word:7|discourse_marker_word:3|contraction_piece:1|line_break:1 |
+| `L24:1561` | `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` | `glm-5.2` | 190 | `346.99` | `7.08` | word:160|punctuation:12|sentence_boundary:7|discourse_marker_word:4|expanded_negation_word:3|style_function_word:2|whitespace:1|contraction_piece:1 |
+| `L24:1561` | `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 202 | `374.18` | `6.85` | word:169|punctuation:17|style_function_word:5|sentence_boundary:4|line_break:3|expanded_negation_word:2|discourse_marker_word:2 |
+| `L24:1561` | `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 274 | `612.35` | `6.70` | word:235|style_function_word:16|punctuation:10|sentence_boundary:7|discourse_marker_word:3|expanded_negation_word:2|contraction_piece:1 |
+| `L24:1561` | `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 139 | `313.76` | `6.74` | word:114|punctuation:9|style_function_word:7|sentence_boundary:7|discourse_marker_word:2 |
+| `L24:1561` | `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` | `gpt-5.5` | 88 | `162.77` | `5.46` | word:64|punctuation:8|line_break:7|sentence_boundary:5|style_function_word:3|discourse_marker_word:1 |
+| `L24:1561` | `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` | `glm-5.2` | 157 | `380.03` | `6.70` | word:134|sentence_boundary:10|punctuation:8|discourse_marker_word:2|line_break:2|style_function_word:1 |
+| `L24:1561` | `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 108 | `257.85` | `6.34` | word:90|punctuation:9|sentence_boundary:5|style_function_word:3|discourse_marker_word:1 |
+| `L24:1561` | `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` | `gpt-5.5` | 180 | `359.07` | `7.63` | word:145|style_function_word:9|expanded_negation_word:5|contraction_piece:5|punctuation:5|sentence_boundary:5|line_break:4|discourse_marker_word:2 |
+| `L24:1561` | `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 114 | `207.47` | `6.53` | word:89|punctuation:11|style_function_word:7|sentence_boundary:5|contraction_piece:1|expanded_negation_word:1 |
+| `L24:1561` | `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` | `glm-5.2` | 149 | `490.52` | `6.64` | word:104|line_break:29|sentence_boundary:6|style_function_word:5|punctuation:3|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:1561` | `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 346 | `808.50` | `7.88` | word:271|style_function_word:21|punctuation:18|sentence_boundary:18|line_break:7|discourse_marker_word:6|expanded_negation_word:5 |
+| `L24:1561` | `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 134 | `259.25` | `6.36` | word:108|expanded_negation_word:8|sentence_boundary:7|style_function_word:4|punctuation:4|line_break:2|discourse_marker_word:1 |
+| `L24:1561` | `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` | `gpt-5.5` | 345 | `834.65` | `6.51` | word:271|punctuation:23|sentence_boundary:18|style_function_word:12|expanded_negation_word:9|line_break:7|discourse_marker_word:4|contraction_piece:1 |
+| `L24:1561` | `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 253 | `646.65` | `7.44` | word:189|sentence_boundary:19|style_function_word:15|punctuation:12|expanded_negation_word:10|discourse_marker_word:4|line_break:4 |
+| `L24:1561` | `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` | `gpt-5.5` | 219 | `577.31` | `6.54` | word:169|punctuation:22|style_function_word:13|sentence_boundary:9|line_break:3|expanded_negation_word:2|discourse_marker_word:1 |
+| `L24:1561` | `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` | `gpt-5.5` | 109 | `200.86` | `7.10` | word:92|punctuation:10|sentence_boundary:4|style_function_word:2|line_break:1 |
+| `L24:1561` | `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 292 | `594.71` | `7.70` | word:223|sentence_boundary:18|punctuation:16|style_function_word:11|discourse_marker_word:10|line_break:6|expanded_negation_word:6|contraction_piece:2 |
+| `L24:1561` | `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 56 | `124.27` | `6.67` | word:45|punctuation:7|sentence_boundary:2|style_function_word:1|line_break:1 |
+| `L24:1561` | `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` | `gpt-5.5` | 62 | `138.07` | `7.14` | word:54|sentence_boundary:5|punctuation:2|discourse_marker_word:1 |
+| `L24:1561` | `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` | `glm-5.2` | 196 | `427.03` | `5.93` | word:146|punctuation:37|style_function_word:7|sentence_boundary:3|discourse_marker_word:2|line_break:1 |
+| `L24:1561` | `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` | `gpt-5.5` | 80 | `168.85` | `6.68` | punctuation:40|word:27|style_function_word:13 |
+| `L24:1561` | `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` | `gpt-5.5` | 179 | `283.67` | `6.55` | word:140|punctuation:23|style_function_word:12|discourse_marker_word:2|sentence_boundary:2 |
+
+## Top Tokens
+
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `409` activation `6.268` class `word` token ` your`
+  - the mainframe. You can buy things without leaving your house, have groceries delivered by drones that look like
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `455` activation `5.918` class `word` token ` a`
+  - behind velvet ropes but is freely available to anyone with a curiosity and a computer. The library of Alexandria has
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `408` activation `5.237` class `word` token ` leaving`
+  - into the mainframe. You can buy things without leaving your house, have groceries delivered by drones that look
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `429` activation `5.179` class `word` token ` your`
+  - like miniature helicopters, and even control the thermostat in your home from your office desk. It’s a world
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `309` activation `4.896` class `word` token ` people`
+  - a gallery, or start a conversation with thousands of people simultaneously. It’s like having a town square that
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `308` activation `4.823` class `word` token ` of`
+  - open a gallery, or start a conversation with thousands of people simultaneously. It’s like having a town square
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `323` activation `4.742` class `word` token ` where`
+  - ’s like having a town square that never sleeps, where millions of voices are shouting, singing, debating,
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `319` activation `4.702` class `style_function_word` token ` that`
+  - people simultaneously. It’s like having a town square that never sleeps, where millions of voices are shouting,
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `432` activation `4.699` class `word` token ` your`
+  - , and even control the thermostat in your home from your office desk. It’s a world where knowledge is
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `336` activation `4.689` class `word` token ` their`
+  - voices are shouting, singing, debating, and sharing their daily lives all at once, yet each person can
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `445` activation `4.657` class `word` token ` behind`
+  - . It’s a world where knowledge is not locked behind velvet ropes but is freely available to anyone with a
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `306` activation `4.654` class `word` token ` with`
+  - magazine, open a gallery, or start a conversation with thousands of people simultaneously. It’s like having a
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `587` activation `6.097` class `word` token ` in`
+  - you’ll be trading mixtape playlists with a stranger in Tokyo before you finish your Tang. It’s a
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `487` activation `5.485` class `word` token ` entire`
+  - room, shop without leaving the couch, or read entire encyclopedias without cracking a book.
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `482` activation `5.109` class `word` token ` the`
+  - could bank from your living room, shop without leaving the couch, or read entire encyclopedias
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `481` activation `4.949` class `word` token ` leaving`
+  - you could bank from your living room, shop without leaving the couch, or read entire encycloped
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `492` activation `4.537` class `word` token `ias`
+  - the couch, or read entire encyclopedias without cracking a book. Think of it as the
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `486` activation `4.394` class `word` token ` read`
+  - living room, shop without leaving the couch, or read entire encyclopedias without cracking a book
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `493` activation `4.179` class `word` token ` without`
+  - couch, or read entire encyclopedias without cracking a book. Think of it as the ultimate
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `585` activation `3.887` class `word` token ` a`
+  - —maybe you’ll be trading mixtape playlists with a stranger in Tokyo before you finish your Tang. It
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `515` activation `3.875` class `word` token ` the`
+  - and post office rolled into one, humming away through the phone lines. It’s got that far-out,
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `584` activation `3.771` class `word` token ` with`
+  - knows—maybe you’ll be trading mixtape playlists with a stranger in Tokyo before you finish your Tang.
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `495` activation `3.683` class `word` token ` a`
+  - or read entire encyclopedias without cracking a book. Think of it as the ultimate library and
+- `L19:2007` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `479` activation `3.676` class `word` token ` shop`
+  - day, you could bank from your living room, shop without leaving the couch, or read entire encyc
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `494` activation `5.900` class `word` token `cent`
+  - sliding off the ship's frictionless, pearlescent hull, refracting into harmless, miniature rainbow light
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `490` activation `4.740` class `word` token `less`
+  - their laser sights kept sliding off the ship's frictionless, pearlescent hull, refracting into harmless
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `491` activation `4.454` class `punctuation` token `,`
+  - laser sights kept sliding off the ship's frictionless, pearlescent hull, refracting into harmless,
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `480` activation `4.207` class `word` token ` their`
+  - ." Meanwhile, elite snipers remained baffled as their laser sights kept sliding off the ship's frictionless
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `486` activation `3.988` class `word` token ` the`
+  - remained baffled as their laser sights kept sliding off the ship's frictionless, pearlescent hull,
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `488` activation `3.975` class `word` token `'s`
+  - led as their laser sights kept sliding off the ship's frictionless, pearlescent hull, refracting
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `525` activation `3.741` class `expanded_negation_word` token ` no`
+  - climax occurred when a single hatch slid open, revealing no green men, but rather a levitating brass grandfather
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `500` activation `3.659` class `word` token ` harmless`
+  - less, pearlescent hull, refracting into harmless, miniature rainbow light shows that delighted a gathering crowd
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `501` activation `3.626` class `punctuation` token `,`
+  - , pearlescent hull, refracting into harmless, miniature rainbow light shows that delighted a gathering crowd of
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `499` activation `3.416` class `word` token ` into`
+  - frictionless, pearlescent hull, refracting into harmless, miniature rainbow light shows that delighted a gathering
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `565` activation `3.305` class `style_function_word` token ` This`
+  - of a disgruntled Maine coon cat. This feline apparition delivered a five-minute lecture on
+- `L19:2007` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `538` activation `3.255` class `word` token ` The`
+  - , but rather a levitating brass grandfather clock. The timepiece ticked backward, chimed thirteen times
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `593` activation `6.360` class `word` token ` the`
+  - reminder of how much we still have to learn about the cosmos and our place within it. If you have
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `592` activation `5.798` class `word` token ` about`
+  - bling reminder of how much we still have to learn about the cosmos and our place within it. If you
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `631` activation `5.354` class `word` token ` incredible`
+  - because I would love to keep learning more about this incredible achievement of human ingenuity and curiosity.
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `579` activation `5.255` class `word` token ` is`
+  - what we can perceive with our naked eyes. It is a humbling reminder of how much we still have
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `630` activation `4.764` class `style_function_word` token ` this`
+  - below because I would love to keep learning more about this incredible achievement of human ingenuity and curiosity.
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `482` activation `4.659` class `word` token ` the`
+  - . It feels like we are essentially peering into the past to understand how everything began, using technology that
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `546` activation `4.489` class `word` token ` in`
+  - data and insights to solve some of the biggest mysteries in physics. They are constantly looking for clues about dark
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `585` activation `4.444` class `word` token ` how`
+  - naked eyes. It is a humbling reminder of how much we still have to learn about the cosmos and
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `591` activation `4.384` class `word` token ` learn`
+  - humbling reminder of how much we still have to learn about the cosmos and our place within it. If
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `590` activation `4.268` class `word` token ` to`
+  - a humbling reminder of how much we still have to learn about the cosmos and our place within it.
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `596` activation `4.245` class `word` token ` our`
+  - much we still have to learn about the cosmos and our place within it. If you have any interesting facts
+- `L19:2007` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `454` activation `4.217` class `word` token ` it`
+  - While I am certainly not a physicist, I find it mind-blowing that we can detect such elusive
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `549` activation `6.664` class `word` token ` a`
+  - It implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting the soul from capitalist exploitation.
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `550` activation `5.432` class `word` token ` sacred`
+  - implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting the soul from capitalist exploitation. These
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `548` activation `5.125` class `word` token ` is`
+  - . It implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting the soul from capitalist exploitation
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `545` activation `4.445` class `word` token ` on`
+  - of digital detachment. It implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting the soul
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `592` activation `4.411` class `discourse_marker_word` token ` for`
+  - a satirical commentary on how people seek divine justification for their personal inefficiencies. By framing procrastination as
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `499` activation `4.284` class `word` token ` a`
+  - suggests that deferring tasks until the last minute is a holy virtue, promising spiritual reward for earthly neglect.
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `593` activation `4.198` class `word` token ` their`
+  - satirical commentary on how people seek divine justification for their personal inefficiencies. By framing procrastination as pi
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `498` activation `4.190` class `word` token ` is`
+  - It suggests that deferring tasks until the last minute is a holy virtue, promising spiritual reward for earthly neglect
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `562` activation `3.926` class `word` token `-up`
+  - , protecting the soul from capitalist exploitation. These made-up scriptures mock religious literalism by applying biblical language to
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `542` activation `3.899` class `word` token ` ignoring`
+  - reinforces a theology of digital detachment. It implies that ignoring professional obligations on Friday afternoon is a sacred duty,
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `541` activation `3.885` class `style_function_word` token ` that`
+  - ," reinforces a theology of digital detachment. It implies that ignoring professional obligations on Friday afternoon is a sacred duty
+- `L19:2007` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `572` activation `3.865` class `word` token ` to`
+  - -up scriptures mock religious literalism by applying biblical language to trivial, contemporary annoyances. They serve as a
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `403` activation `6.398` class `word` token ` a`
+  - ette. It’s easy, bold, and always a crowd-pleaser. Caprese Pasta Salad
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `402` activation `5.517` class `word` token ` always`
+  - uette. It’s easy, bold, and always a crowd-pleaser. Caprese Pasta Salad
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `401` activation `3.670` class `word` token ` and`
+  - baguette. It’s easy, bold, and always a crowd-pleaser. Caprese Pasta
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `404` activation `3.217` class `word` token ` crowd`
+  - . It’s easy, bold, and always a crowd-pleaser. Caprese Pasta Salad This
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `529` activation `2.822` class `punctuation` token `,`
+  - and cilantro just before serving. It’s fun, shareable, and looks abundant on the table.
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `584` activation `2.771` class `word` token ` and`
+  - a cherry. They’re bite-sized, festive, and easier to serve than a full dessert. Garlic
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `534` activation `2.768` class `word` token ` looks`
+  - serving. It’s fun, shareable, and looks abundant on the table. Mini Brownie Sundae
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `398` activation `2.750` class `punctuation` token `,`
+  - , or sliced baguette. It’s easy, bold, and always a crowd-pleaser.
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `587` activation `2.568` class `word` token ` serve`
+  - They’re bite-sized, festive, and easier to serve than a full dessert. Garlic Parmesan Pull
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `533` activation `2.559` class `word` token ` and`
+  - before serving. It’s fun, shareable, and looks abundant on the table. Mini Brownie Sund
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `635` activation `2.398` class `word` token ` is`
+  - pan or dish until golden. It smells amazing and is perfect for sharing.
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `468` activation `2.305` class `word` token ` side`
+  - ahead, travels well, and works as a colorful side dish that appeals to vegetarians too. Loaded Sheet
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `533` activation `5.338` class `word` token ` a`
+  - onto small wooden skewers. Arrange them neatly on a decorative tray and drizzle with store bought bals
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `552` activation `5.096` class `word` token ` are`
+  - balsamic glaze right before serving. They are perfectly bite sized, visually striking, and require zero
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `561` activation `5.081` class `word` token ` require`
+  - They are perfectly bite sized, visually striking, and require zero cooking. Slow Cooker Buffalo Chicken Meatballs
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `560` activation `4.883` class `word` token ` and`
+  - . They are perfectly bite sized, visually striking, and require zero cooking. Slow Cooker Buffalo Chicken Meat
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `550` activation `4.863` class `sentence_boundary` token `.`
+  - store bought balsamic glaze right before serving. They are perfectly bite sized, visually striking, and
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `490` activation `4.307` class `word` token ` looks`
+  - ios. Serve with toasted pita chips. It looks gourmet but takes just five minutes. Caprese Sk
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `551` activation `4.248` class `word` token ` They`
+  - bought balsamic glaze right before serving. They are perfectly bite sized, visually striking, and require
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `553` activation `3.850` class `word` token ` perfectly`
+  - alsamic glaze right before serving. They are perfectly bite sized, visually striking, and require zero cooking
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `627` activation `3.792` class `word` token ` the`
+  - and a bowl of ranch dressing. They are always the very first snack to disappear. These guaranteed favorites are
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `557` activation `3.730` class `word` token ` visually`
+  - right before serving. They are perfectly bite sized, visually striking, and require zero cooking. Slow Cooker
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `625` activation `3.621` class `word` token ` are`
+  - picks and a bowl of ranch dressing. They are always the very first snack to disappear. These guaranteed
+- `L19:2007` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `509` activation `3.617` class `punctuation` token `:`
+  - rese Skewers with Balsamic Glaze: Thread fresh cherry tomatoes, mini mozzarella balls,
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `632` activation `5.911` class `word` token ` to`
+  - , creating a holistic framework for righteous living that continues to resonate across cultures and centuries worldwide.
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `605` activation `5.112` class `word` token ` and`
+  - society while highlighting timeless values regarding justice, integrity, and reverence. The commands cover both horizontal duties toward society
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `598` activation `5.053` class `word` token ` timeless`
+  - them provides insight into ancient Israelite society while highlighting timeless values regarding justice, integrity, and reverence. The
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `631` activation `4.844` class `word` token ` continues`
+  - divine, creating a holistic framework for righteous living that continues to resonate across cultures and centuries worldwide.
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `634` activation `4.820` class `word` token ` across`
+  - a holistic framework for righteous living that continues to resonate across cultures and centuries worldwide.
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `627` activation `4.782` class `discourse_marker_word` token ` for`
+  - vertical duties toward the divine, creating a holistic framework for righteous living that continues to resonate across cultures and centuries
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `578` activation `4.730` class `word` token ` in`
+  - deceit, and greed. These principles remain deeply influential in Western ethical thought and religious practice today. Understanding them
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `602` activation `4.540` class `punctuation` token `,`
+  - ancient Israelite society while highlighting timeless values regarding justice, integrity, and reverence. The commands cover both horizontal
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `583` activation `4.509` class `word` token ` religious`
+  - These principles remain deeply influential in Western ethical thought and religious practice today. Understanding them provides insight into ancient Israel
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `600` activation `4.460` class `word` token ` regarding`
+  - insight into ancient Israelite society while highlighting timeless values regarding justice, integrity, and reverence. The commands cover
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `579` activation `4.412` class `word` token ` Western`
+  - , and greed. These principles remain deeply influential in Western ethical thought and religious practice today. Understanding them provides
+- `L19:2007` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `580` activation `4.241` class `word` token ` ethical`
+  - and greed. These principles remain deeply influential in Western ethical thought and religious practice today. Understanding them provides insight
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `626` activation `6.124` class `style_function_word` token ` feel`
+  - I hope this helps explain the reaction without making you feel blamed, because that’s truly not my intention.
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `625` activation `4.865` class `word` token ` you`
+  - . I hope this helps explain the reaction without making you feel blamed, because that’s truly not my intention
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `540` activation `4.604` class `word` token ` to`
+  - things have changed for her, and she’s trying to be careful about what she keeps around and what signals
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `541` activation `4.424` class `word` token ` be`
+  - have changed for her, and she’s trying to be careful about what she keeps around and what signals she
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `621` activation `4.372` class `word` token ` the`
+  - for thinking of her. I hope this helps explain the reaction without making you feel blamed, because that’s
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `538` activation `4.146` class `word` token `’s`
+  - just that things have changed for her, and she’s trying to be careful about what she keeps around and
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `623` activation `3.996` class `word` token ` without`
+  - of her. I hope this helps explain the reaction without making you feel blamed, because that’s truly not
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `508` activation `3.891` class `expanded_negation_word` token ` were`
+  - ’ve always been generous, and I’m sure you were thinking of past occasions when she seemed to enjoy whiskey
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `539` activation `3.860` class `word` token ` trying`
+  - that things have changed for her, and she’s trying to be careful about what she keeps around and what
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `612` activation `3.820` class `word` token ` thinking`
+  - would probably smooth everything over. Thank you again for thinking of her. I hope this helps explain the reaction
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `509` activation `3.802` class `word` token ` thinking`
+  - always been generous, and I’m sure you were thinking of past occasions when she seemed to enjoy whiskey tast
+- `L19:2007` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `531` activation `3.768` class `word` token ` have`
+  - and that whole world. It’s just that things have changed for her, and she’s trying to be
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `617` activation `6.184` class `word` token ` zero`
+  - installation piece that costs more than your house but offers zero utility, ensuring your driveway remains the most confusing,
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `632` activation `5.417` class `word` token ` utterly`
+  - driveway remains the most confusing, beautifully lit, and utterly impractical spot on the street.
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `605` activation `4.044` class `word` token ` a`
+  - . You aren't buying transportation; you are purchasing a rolling installation piece that costs more than your house but
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `631` activation `3.926` class `word` token ` and`
+  - your driveway remains the most confusing, beautifully lit, and utterly impractical spot on the street.
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `627` activation `3.872` class `punctuation` token `,`
+  - zero utility, ensuring your driveway remains the most confusing, beautifully lit, and utterly impractical spot on the
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `634` activation `3.733` class `word` token `actical`
+  - the most confusing, beautifully lit, and utterly impractical spot on the street.
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `606` activation `3.716` class `word` token ` rolling`
+  - You aren't buying transportation; you are purchasing a rolling installation piece that costs more than your house but offers
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `604` activation `3.602` class `word` token ` purchasing`
+  - gment. You aren't buying transportation; you are purchasing a rolling installation piece that costs more than your house
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `625` activation `3.462` class `word` token ` most`
+  - but offers zero utility, ensuring your driveway remains the most confusing, beautifully lit, and utterly impractical spot
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `609` activation `3.445` class `style_function_word` token ` that`
+  - buying transportation; you are purchasing a rolling installation piece that costs more than your house but offers zero utility,
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `629` activation `3.357` class `word` token ` lit`
+  - , ensuring your driveway remains the most confusing, beautifully lit, and utterly impractical spot on the street.
+- `L19:2007` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `628` activation `3.342` class `word` token ` beautifully`
+  - utility, ensuring your driveway remains the most confusing, beautifully lit, and utterly impractical spot on the street
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `587` activation `7.072` class `word` token `ten`
+  - supposed to evolve away from eating rotten shrubbery. Yet here we are, pret
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `619` activation `6.478` class `style_function_word` token ` as`
+  - . They are just salty water logs posing as food. Let us stop this tart madness
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `602` activation `6.225` class `word` token `a`
+  - Yet here we are, pretending they are a charming side dish for barbecue. They are
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `533` activation `5.980` class `word` token `led`
+  - then get slapped by a shriveled, green sponge leaking acid. It is
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `614` activation `5.868` class `word` token ` salty`
+  - side dish for barbecue. They are just salty water logs posing as food. Let us stop
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `534` activation `5.765` class `punctuation` token `,`
+  - get slapped by a shriveled, green sponge leaking acid. It is a
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `529` activation `5.718` class `word` token ` a`
+  - meats, then get slapped by a shriveled, green sponge leaking
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `613` activation `5.534` class `word` token ` just`
+  - charming side dish for barbecue. They are just salty water logs posing as food. Let us
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `601` activation `5.531` class `line_break` token `
+`
+  - . Yet here we are, pretending they are a charming side dish for barbecue. They
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `634` activation `5.468` class `word` token ` pickle`
+  - stop this tart madness now. End the pickle craze.
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `585` activation `5.338` class `line_break` token `
+`
+  - are supposed to evolve away from eating rotten shrubbery. Yet here we are
+- `L19:2007` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `600` activation `5.305` class `word` token ` are`
+  - bery. Yet here we are, pretending they are a charming side dish for barbecue. They
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `605` activation `7.226` class `word` token ` your`
+  - regret this outcome. Thank you for your loyalty, your talent, and your humanity. You have given this
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `596` activation `6.261` class `style_function_word` token ` this`
+  - searching. I cannot express enough how deeply I regret this outcome. Thank you for your loyalty, your talent
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `609` activation `5.971` class `word` token ` your`
+  - Thank you for your loyalty, your talent, and your humanity. You have given this company your best,
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `490` activation `5.426` class `word` token ` the`
+  - families. Please know that this decision does not diminish the respect and gratitude I hold for every single one of
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `613` activation `5.378` class `word` token ` have`
+  - loyalty, your talent, and your humanity. You have given this company your best, and for that,
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `594` activation `5.349` class `word` token ` I`
+  - for job searching. I cannot express enough how deeply I regret this outcome. Thank you for your loyalty,
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `592` activation `5.293` class `word` token ` how`
+  - and resources for job searching. I cannot express enough how deeply I regret this outcome. Thank you for your
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `627` activation `5.142` class `word` token ` be`
+  - your best, and for that, I will always be grateful. With deepest remorse and sincere appreciation, The
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `492` activation `5.138` class `word` token ` and`
+  - Please know that this decision does not diminish the respect and gratitude I hold for every single one of you.
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `617` activation `5.117` class `word` token ` your`
+  - , and your humanity. You have given this company your best, and for that, I will always be
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `584` activation `5.099` class `discourse_marker_word` token ` for`
+  - your final pay, accrued time off, and resources for job searching. I cannot express enough how deeply I
+- `L19:2007` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `528` activation `5.081` class `style_function_word` token ` this`
+  - to thrive in new environments, even as we face this painful closure. Over the next forty-eight hours,
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `568` activation `6.333` class `word` token ` last`
+  - seum. I did a poster presentation on it last week. The gladiators fought there, and
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `487` activation `4.712` class `expanded_negation_word` token ` was`
+  - a wooden gladius sword. Also, their engineering was mind-blowing. They built massive stone aqu
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `637` activation `4.582` class `word` token ` the`
+  - project, I choose the Romans. They’re just the best!
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `635` activation `4.211` class `word` token `’re`
+  - a history project, I choose the Romans. They’re just the best!
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `563` activation `3.864` class `word` token ` a`
+  - part is the Colosseum. I did a poster presentation on it last week. The gladi
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `636` activation `3.826` class `word` token ` just`
+  - history project, I choose the Romans. They’re just the best!
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `546` activation `3.587` class `word` token ` years`
+  - -tech than I expected for people who lived two thousand years ago. But the absolute best part is the Col
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `540` activation `3.579` class `discourse_marker_word` token ` for`
+  - , which is way more high-tech than I expected for people who lived two thousand years ago. But the
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `634` activation `3.569` class `word` token ` They`
+  - have a history project, I choose the Romans. They’re just the best!
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `607` activation `3.552` class `word` token ` I`
+  - is that? If I could time-travel, I would definitely go back to ancient Rome. That’s
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `638` activation `3.548` class `word` token ` best`
+  - , I choose the Romans. They’re just the best!
+- `L19:2007` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `612` activation `3.461` class `word` token ` to`
+  - could time-travel, I would definitely go back to ancient Rome. That’s why whenever my teacher says
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `405` activation `6.154` class `word` token ` the`
+  - where they found them. Even their mistakes nourished the land. But now their numbers are collapsing. Habitat
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `627` activation `5.504` class `word` token ` being`
+  - work in the world. Not every species survives by being smart. Some survive because someone cared enough to protect
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `607` activation `5.175` class `word` token ` own`
+  - the leaves, paw at puddles, forget its own hiding places, and continue its strange, humble work
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `404` activation `5.137` class `word` token `ished`
+  - forgetting where they found them. Even their mistakes nourished the land. But now their numbers are collapsing.
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `491` activation `4.847` class `word` token ` our`
+  - is not a joke. It is a test of our mercy. We need wildlife sanctuaries designed for
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `626` activation `4.831` class `word` token ` by`
+  - humble work in the world. Not every species survives by being smart. Some survive because someone cared enough to
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `288` activation `4.631` class `punctuation` token `,`
+  - cleverness, efficiency, and toughness, this small, confused animal reminds us that the worth of a species
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `597` activation `4.455` class `word` token ` the`
+  - stupid raccoon live. Let it bumble through the leaves, paw at puddles, forget its own
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `438` activation `4.394` class `word` token ` with`
+  - where their poor judgment becomes deadly. They approach danger with curiosity rather than caution. They mistake plastic bags for
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `482` activation `4.317` class `expanded_negation_word` token ` not`
+  - cannot endure. Conserving the stupid raccoon is not a joke. It is a test of our mercy
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `322` activation `4.283` class `word` token ` to`
+  - hest expectations. It should not have to be brilliant to deserve a future. Once, stupid raccoons
+- `L19:2007` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `619` activation `4.148` class `word` token ` the`
+  - places, and continue its strange, humble work in the world. Not every species survives by being smart.
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `509` activation `6.559` class `word` token ` me`
+  - members are questioning the necessity of this investment. Let me dispel these myths immediately. The technology is proven
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `526` activation `5.070` class `word` token ` modern`
+  - The technology is proven, efficient, and essential for modern pedagogy. Complaints about learning curves will
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `555` activation `5.039` class `word` token ` Any`
+  - ; you are expected to upgrade your skills accordingly. Any further pushback will be viewed as insubordination
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `539` activation `4.836` class `word` token ` be`
+  - ogy. Complaints about learning curves will no longer be entertained. You are professionals; you are expected to
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `556` activation `4.825` class `word` token ` further`
+  - you are expected to upgrade your skills accordingly. Any further pushback will be viewed as insubordination and
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `562` activation `4.748` class `style_function_word` token ` as`
+  - skills accordingly. Any further pushback will be viewed as insubordination and will affect annual evaluations. Start
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `473` activation `4.661` class `word` token ` a`
+  - is a matter for your professional development plan, not a debate with administration. We have allocated comprehensive training sessions
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `508` activation `4.619` class `word` token ` Let`
+  - staff members are questioning the necessity of this investment. Let me dispel these myths immediately. The technology is
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `559` activation `4.613` class `style_function_word` token ` will`
+  - to upgrade your skills accordingly. Any further pushback will be viewed as insubordination and will affect annual
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `428` activation `4.483` class `word` token ` a`
+  - daunting. However, clinging to outdated tools is not a sustainable educational strategy. The smartboard offers interactive capabilities
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `611` activation `4.479` class `style_function_word` token ` will`
+  - . Ensure your classrooms are ready. Failure to comply will result in immediate disciplinary action. Let us embrace the
+- `L19:2007` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `560` activation `4.464` class `word` token ` be`
+  - upgrade your skills accordingly. Any further pushback will be viewed as insubordination and will affect annual evaluations
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `514` activation `6.146` class `word` token ` her`
+  - greatly. God, protect her from harm and fill her home with warmth, love, and calm. Stre
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `571` activation `6.092` class `word` token ` the`
+  - Where there is need, provide. Thank You for the tenderness, wisdom, and love that mothers bring
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `625` activation `5.836` class `word` token ` is`
+  - , and her heart filled with the knowledge that she is loved by You and by those who hold her dear
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `526` activation `5.587` class `word` token ` her`
+  - with warmth, love, and calm. Strengthen her heart with faith, and remind her that she is
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `557` activation `5.512` class `word` token ` Your`
+  - give her trust. Where there is fear, bring Your gentle light. Where there is need, provide.
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `558` activation `5.507` class `word` token ` gentle`
+  - her trust. Where there is fear, bring Your gentle light. Where there is need, provide. Thank
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `604` activation `5.349` class `word` token ` her`
+  - watched over closely, and comforted deeply. Let her days be touched by grace, her burdens made lighter
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `536` activation `5.260` class `word` token ` is`
+  - her heart with faith, and remind her that she is held in Your hands. Where there is uncertainty,
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `521` activation `5.229` class `word` token ` and`
+  - harm and fill her home with warmth, love, and calm. Strengthen her heart with faith, and
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `465` activation `5.210` class `word` token ` the`
+  - , kindness, and understanding. Help her family appreciate the gift she is and honor her not only with words
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `620` activation `5.135` class `word` token ` with`
+  - , her burdens made lighter, and her heart filled with the knowledge that she is loved by You and by
+- `L19:2007` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `548` activation `5.113` class `word` token ` her`
+  - in Your hands. Where there is uncertainty, give her trust. Where there is fear, bring Your gentle
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `631` activation `6.434` class `punctuation` token `,`
+  - and emotional pull. Guardians of the Galaxy is bold, funny, heartfelt, and simply awesome.
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `629` activation `4.841` class `word` token ` is`
+  - irresistible energy and emotional pull. Guardians of the Galaxy is bold, funny, heartfelt, and simply awesome.
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `492` activation `4.070` class `punctuation` token `,`
+  - unique personality, blending cosmic spectacle with a scrappy, rebellious spirit that makes every scene feel alive.
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `494` activation `4.011` class `word` token `ious`
+  - , blending cosmic spectacle with a scrappy, rebellious spirit that makes every scene feel alive. The writing
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `551` activation `3.929` class `word` token ` a`
+  - way it builds the Guardians from selfish loners into a true found family. The cast is fantastic across the
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `535` activation `3.923` class `word` token ` real`
+  - . Yet beneath all the jokes, the story has real warmth, especially in the way it builds the Guardians
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `485` activation `3.753` class `word` token ` blending`
+  - His confident vision gives the film its unique personality, blending cosmic spectacle with a scrappy, rebellious spirit
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `491` activation `3.682` class `word` token `appy`
+  - its unique personality, blending cosmic spectacle with a scrappy, rebellious spirit that makes every scene feel alive
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `489` activation `3.593` class `word` token ` a`
+  - the film its unique personality, blending cosmic spectacle with a scrappy, rebellious spirit that makes every scene
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `529` activation `3.421` class `word` token ` the`
+  - , and perfectly timed absurdity. Yet beneath all the jokes, the story has real warmth, especially in
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `625` activation `3.365` class `word` token ` Guardians`
+  - hits to create an irresistible energy and emotional pull. Guardians of the Galaxy is bold, funny, heartfelt,
+- `L19:2007` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `488` activation `3.257` class `word` token ` with`
+  - gives the film its unique personality, blending cosmic spectacle with a scrappy, rebellious spirit that makes every
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `467` activation `7.194` class `word` token ` are`
+  - a top contender for a celestial getaway. The rings are worth the trip, even if you can’t walk
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `457` activation `6.383` class `word` token ` a`
+  - weeks on end. Despite these issues, Saturn remains a top contender for a celestial getaway. The rings are
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `458` activation `5.000` class `word` token ` top`
+  - on end. Despite these issues, Saturn remains a top contender for a celestial getaway. The rings are worth
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `465` activation `4.934` class `word` token ` The`
+  - Saturn remains a top contender for a celestial getaway. The rings are worth the trip, even if you can
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `522` activation `4.718` class `word` token ` extreme`
+  - stice for the best lighting, but be prepared for extreme cold. Pro tip: Layer up. And by
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `452` activation `4.674` class `style_function_word` token ` these`
+  - of staring at rings for weeks on end. Despite these issues, Saturn remains a top contender for a celestial
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `521` activation `4.671` class `discourse_marker_word` token ` for`
+  - solstice for the best lighting, but be prepared for extreme cold. Pro tip: Layer up. And
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `462` activation `4.556` class `word` token ` celestial`
+  - these issues, Saturn remains a top contender for a celestial getaway. The rings are worth the trip, even
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `456` activation `4.537` class `word` token ` remains`
+  - for weeks on end. Despite these issues, Saturn remains a top contender for a celestial getaway. The rings
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `466` activation `4.084` class `word` token ` rings`
+  - remains a top contender for a celestial getaway. The rings are worth the trip, even if you can’t
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `446` activation `4.024` class `discourse_marker_word` token ` for`
+  - significantly, mostly from the boredom of staring at rings for weeks on end. Despite these issues, Saturn remains
+- `L19:2007` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `460` activation `3.977` class `discourse_marker_word` token ` for`
+  - . Despite these issues, Saturn remains a top contender for a celestial getaway. The rings are worth the trip
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `608` activation `6.064` class `word` token ` and`
+  - to deliberately double the amount of work, chaos, and misery in the world—specifically targeting Macbeth
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `607` activation `4.059` class `punctuation` token `,`
+  - spell to deliberately double the amount of work, chaos, and misery in the world—specifically targeting Mac
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `578` activation `3.920` class `punctuation` token `"`
+  - refers to grueling labor, while "trouble" signifies pain and misfortune. Rather than trying to
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `594` activation `3.728` class `word` token ` are`
+  - . Rather than trying to avoid hardship, the witches are casting a spell to deliberately double the amount of work
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `581` activation `3.502` class `word` token ` and`
+  - ueling labor, while "trouble" signifies pain and misfortune. Rather than trying to avoid hardship,
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `628` activation `3.434` class `word` token `ron`
+  - beth. The burning fire and bubbling cauldron symbolize the brewing of this impending, chaotic doom
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `593` activation `3.393` class `word` token ` witches`
+  - fortune. Rather than trying to avoid hardship, the witches are casting a spell to deliberately double the amount of
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `629` activation `3.325` class `word` token ` symbol`
+  - . The burning fire and bubbling cauldron symbolize the brewing of this impending, chaotic doom.
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `596` activation `3.284` class `word` token ` a`
+  - than trying to avoid hardship, the witches are casting a spell to deliberately double the amount of work, chaos
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `631` activation `3.257` class `word` token ` the`
+  - burning fire and bubbling cauldron symbolize the brewing of this impending, chaotic doom.
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `599` activation `3.233` class `word` token ` deliberately`
+  - avoid hardship, the witches are casting a spell to deliberately double the amount of work, chaos, and misery
+- `L19:2007` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `630` activation `3.222` class `word` token `ize`
+  - The burning fire and bubbling cauldron symbolize the brewing of this impending, chaotic doom.
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `632` activation `6.873` class `punctuation` token `,`
+  - court challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `588` activation `4.871` class `word` token ` a`
+  - privacy with serious, targeted legislation, Montana opted for a blunt political stunt aimed at one app because of its
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `617` activation `4.790` class `word` token ` is`
+  - . 1, 2024, the ban is almost certain to face court challenges—and deservedly so
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `630` activation `4.570` class `word` token ` is`
+  - to face court challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `631` activation `4.500` class `word` token ` clumsy`
+  - face court challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `629` activation `4.374` class `word` token ` It`
+  - certain to face court challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `590` activation `4.273` class `word` token ` political`
+  - serious, targeted legislation, Montana opted for a blunt political stunt aimed at one app because of its Chinese ownership
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `587` activation `4.041` class `discourse_marker_word` token ` for`
+  - data privacy with serious, targeted legislation, Montana opted for a blunt political stunt aimed at one app because of
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `635` activation `4.017` class `word` token `aking`
+  - deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `633` activation `3.788` class `word` token ` reactionary`
+  - challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `575` activation `3.523` class `word` token ` than`
+  - raises obvious free-speech and legal concerns. Rather than addressing data privacy with serious, targeted legislation, Montana
+- `L19:2007` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `589` activation `3.402` class `word` token ` blunt`
+  - with serious, targeted legislation, Montana opted for a blunt political stunt aimed at one app because of its Chinese
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `554` activation `6.719` class `punctuation` token `;`
+  - ulates luxurious imagination, deep wisdom, and spiritual devotion; negatively, it conveys arrogant decadence, mood
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `469` activation `5.548` class `punctuation` token `;`
+  - Radiates joy, optimism, and mental alertness; however, excessive use causes overwhelming frustration, irrational fear
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `497` activation `5.497` class `punctuation` token `;`
+  - Inspires enthusiastic creativity, warmth, and bold adventure; darker shades can suggest immaturity, sluggishness,
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `581` activation `5.188` class `word` token ` silent`
+  - Ultimately, color psychology reveals that our environment is a silent emotional language. By understanding these vibrant meanings, we
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `525` activation `5.175` class `punctuation` token `;`
+  - Represents growth, vitality, harmony, and restored balance; unfavorably, it implies envy, materialistic greed
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `529` activation `4.662` class `word` token ` it`
+  - , harmony, and restored balance; unfavorably, it implies envy, materialistic greed, and stagnant boredom
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `527` activation `4.378` class `word` token `ably`
+  - , vitality, harmony, and restored balance; unfavorably, it implies envy, materialistic greed, and
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `577` activation `4.296` class `word` token ` our`
+  - and emotional instability. Ultimately, color psychology reveals that our environment is a silent emotional language. By understanding these
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `542` activation `4.264` class `punctuation` token `:`
+  - , materialistic greed, and stagnant boredom. Purple: Stimulates luxurious imagination, deep wisdom, and spiritual
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `557` activation `4.158` class `word` token ` it`
+  - , deep wisdom, and spiritual devotion; negatively, it conveys arrogant decadence, moodiness, and
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `500` activation `4.114` class `style_function_word` token ` can`
+  - creativity, warmth, and bold adventure; darker shades can suggest immaturity, sluggishness, or insincer
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `580` activation `4.022` class `word` token ` a`
+  - . Ultimately, color psychology reveals that our environment is a silent emotional language. By understanding these vibrant meanings,
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `637` activation `4.499` class `word` token ` or`
+  - sadness, excess; deep purple may feel moody or dramatic.
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `596` activation `3.888` class `style_function_word` token ` feel`
+  - , restlessness, cheapness; intense orange may feel intrusive. Purple — Positive: luxury, imagination,
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `576` activation `3.597` class `word` token ` and`
+  - , playfulness, appetite. It can feel social and motivating. Negative: immaturity, loudness,
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `634` activation `3.539` class `style_function_word` token ` feel`
+  - artificiality, sadness, excess; deep purple may feel moody or dramatic.
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `553` activation `3.121` class `word` token ` or`
+  - experience, decay; some greens can seem sickly or dull. Orange — Positive: enthusiasm, friendliness
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `617` activation `3.079` class `word` token ` and`
+  - spirituality, mystery, wisdom. It can feel creative and refined. Negative: arrogance, artificiality, sadness
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `532` activation `2.757` class `word` token ` and`
+  - , renewal, harmony. It often feels restful and reassuring. Negative: envy, stagnation, in
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `595` activation `2.749` class `style_function_word` token ` may`
+  - ness, restlessness, cheapness; intense orange may feel intrusive. Purple — Positive: luxury, imagination
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `626` activation `2.616` class `punctuation` token `,`
+  - creative and refined. Negative: arrogance, artificiality, sadness, excess; deep purple may feel moody
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `550` activation `2.505` class `word` token ` seem`
+  - ation, inexperience, decay; some greens can seem sickly or dull. Orange — Positive: enthusiasm
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `574` activation `2.442` class `style_function_word` token ` feel`
+  - , vitality, playfulness, appetite. It can feel social and motivating. Negative: immaturity, loud
+- `L19:2007` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `628` activation `2.436` class `punctuation` token `,`
+  - refined. Negative: arrogance, artificiality, sadness, excess; deep purple may feel moody or dramatic
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `598` activation `6.516` class `word` token ` is`
+  - awareness about protecting the environment. In conclusion, pollution is mainly caused by careless human activities, but it can
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `381` activation `4.821` class `word` token ` water`
+  - household garbage, and electronic waste pollutes land and water. Agricultural activities, such as the excessive use of
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `401` activation `4.144` class `punctuation` token `,`
+  - of fertilizers and pesticides, contaminate rivers, lakes, and soil. The consequences of pollution are
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `399` activation `4.074` class `word` token `inate`
+  - excessive use of fertilizers and pesticides, contaminate rivers, lakes, and soil. The consequences of
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `380` activation `3.994` class `word` token ` and`
+  - , household garbage, and electronic waste pollutes land and water. Agricultural activities, such as the excessive use
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `597` activation `3.809` class `word` token ` pollution`
+  - spread awareness about protecting the environment. In conclusion, pollution is mainly caused by careless human activities, but it
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `404` activation `3.772` class `word` token ` and`
+  - and pesticides, contaminate rivers, lakes, and soil. The consequences of pollution are severe. Air
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `324` activation `3.770` class `word` token ` harmful`
+  - , buses, and trucks burn fossil fuels and emit harmful gases such as carbon monoxide and nitrogen oxides
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `405` activation `3.572` class `word` token ` soil`
+  - pesticides, contaminate rivers, lakes, and soil. The consequences of pollution are severe. Air pollution
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `323` activation `3.374` class `word` token ` emit`
+  - cars, buses, and trucks burn fossil fuels and emit harmful gases such as carbon monoxide and nitrogen ox
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `301` activation `3.368` class `word` token ` the`
+  - Factories release smoke, chemicals, and waste into the air and water. Vehicles are another major source,
+- `L19:2007` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `396` activation `3.280` class `punctuation` token `,`
+  - such as the excessive use of fertilizers and pesticides, contaminate rivers, lakes, and soil.
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `409` activation `6.753` class `word` token ` your`
+  - the mainframe. You can buy things without leaving your house, have groceries delivered by drones that look like
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `455` activation `6.698` class `word` token ` a`
+  - behind velvet ropes but is freely available to anyone with a curiosity and a computer. The library of Alexandria has
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `408` activation `5.907` class `word` token ` leaving`
+  - into the mainframe. You can buy things without leaving your house, have groceries delivered by drones that look
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `440` activation `5.822` class `word` token ` where`
+  - home from your office desk. It’s a world where knowledge is not locked behind velvet ropes but is freely
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `581` activation `5.703` class `word` token ` right`
+  - beginning of global intimacy, and it’s all happening right now, in the blinking lights of a server room
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `454` activation `5.636` class `word` token ` with`
+  - locked behind velvet ropes but is freely available to anyone with a curiosity and a computer. The library of Alexandria
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `336` activation `5.549` class `word` token ` their`
+  - voices are shouting, singing, debating, and sharing their daily lives all at once, yet each person can
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `445` activation `5.516` class `word` token ` behind`
+  - . It’s a world where knowledge is not locked behind velvet ropes but is freely available to anyone with a
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `412` activation `5.394` class `word` token ` have`
+  - . You can buy things without leaving your house, have groceries delivered by drones that look like miniature helicopters,
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `308` activation `5.320` class `word` token ` of`
+  - open a gallery, or start a conversation with thousands of people simultaneously. It’s like having a town square
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `335` activation `5.296` class `word` token ` sharing`
+  - of voices are shouting, singing, debating, and sharing their daily lives all at once, yet each person
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@qwen3.6-35b` token `429` activation `5.275` class `word` token ` your`
+  - like miniature helicopters, and even control the thermostat in your home from your office desk. It’s a world
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `587` activation `7.077` class `word` token ` in`
+  - you’ll be trading mixtape playlists with a stranger in Tokyo before you finish your Tang. It’s a
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `487` activation `5.278` class `word` token ` entire`
+  - room, shop without leaving the couch, or read entire encyclopedias without cracking a book.
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `493` activation `4.631` class `word` token ` without`
+  - couch, or read entire encyclopedias without cracking a book. Think of it as the ultimate
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `584` activation `4.255` class `word` token ` with`
+  - knows—maybe you’ll be trading mixtape playlists with a stranger in Tokyo before you finish your Tang.
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `492` activation `4.026` class `word` token `ias`
+  - the couch, or read entire encyclopedias without cracking a book. Think of it as the
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `481` activation `3.955` class `word` token ` leaving`
+  - you could bank from your living room, shop without leaving the couch, or read entire encycloped
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `585` activation `3.802` class `word` token ` a`
+  - —maybe you’ll be trading mixtape playlists with a stranger in Tokyo before you finish your Tang. It
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `482` activation `3.667` class `word` token ` the`
+  - could bank from your living room, shop without leaving the couch, or read entire encyclopedias
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `570` activation `3.546` class `word` token ` the`
+  - mostly professors and military folks swapping data, but down the line? Who knows—maybe you’ll be trading
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `406` activation `3.429` class `word` token ` them`
+  - ’s basically a giant party line for computers, letting them chatter back and forth, sharing info like recipes,
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `486` activation `3.317` class `word` token ` read`
+  - living room, shop without leaving the couch, or read entire encyclopedias without cracking a book
+- `L24:1561` `a16979b07edb296e5c12338204023194b450ed4b295cf22ca562800b507d6624@turn_01@glm-5.2` token `516` activation `3.188` class `word` token ` phone`
+  - post office rolled into one, humming away through the phone lines. It’s got that far-out, sci
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `494` activation `6.852` class `word` token `cent`
+  - sliding off the ship's frictionless, pearlescent hull, refracting into harmless, miniature rainbow light
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `491` activation `5.020` class `punctuation` token `,`
+  - laser sights kept sliding off the ship's frictionless, pearlescent hull, refracting into harmless,
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `490` activation `4.808` class `word` token `less`
+  - their laser sights kept sliding off the ship's frictionless, pearlescent hull, refracting into harmless
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `500` activation `4.785` class `word` token ` harmless`
+  - less, pearlescent hull, refracting into harmless, miniature rainbow light shows that delighted a gathering crowd
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `501` activation `4.031` class `punctuation` token `,`
+  - , pearlescent hull, refracting into harmless, miniature rainbow light shows that delighted a gathering crowd of
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `499` activation `3.987` class `word` token ` into`
+  - frictionless, pearlescent hull, refracting into harmless, miniature rainbow light shows that delighted a gathering
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `534` activation `3.797` class `word` token ` brass`
+  - revealing no green men, but rather a levitating brass grandfather clock. The timepiece ticked backward,
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `503` activation `3.729` class `word` token ` rainbow`
+  - lescent hull, refracting into harmless, miniature rainbow light shows that delighted a gathering crowd of tourists.
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `480` activation `3.619` class `word` token ` their`
+  - ." Meanwhile, elite snipers remained baffled as their laser sights kept sliding off the ship's frictionless
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `488` activation `3.434` class `word` token `'s`
+  - led as their laser sights kept sliding off the ship's frictionless, pearlescent hull, refracting
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `525` activation `3.294` class `expanded_negation_word` token ` no`
+  - climax occurred when a single hatch slid open, revealing no green men, but rather a levitating brass grandfather
+- `L24:1561` `259711a50f815c6a1b5a0299ff209ba694d0b7f6f321eda2a85e9cdacfe39789@turn_01@gemini-3.5-flash` token `483` activation `3.221` class `word` token ` kept`
+  - elite snipers remained baffled as their laser sights kept sliding off the ship's frictionless, pearles
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `593` activation `6.704` class `word` token ` the`
+  - reminder of how much we still have to learn about the cosmos and our place within it. If you have
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `592` activation `6.267` class `word` token ` about`
+  - bling reminder of how much we still have to learn about the cosmos and our place within it. If you
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `579` activation `5.950` class `word` token ` is`
+  - what we can perceive with our naked eyes. It is a humbling reminder of how much we still have
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `631` activation `4.854` class `word` token ` incredible`
+  - because I would love to keep learning more about this incredible achievement of human ingenuity and curiosity.
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `454` activation `4.814` class `word` token ` it`
+  - While I am certainly not a physicist, I find it mind-blowing that we can detect such elusive
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `482` activation `4.784` class `word` token ` the`
+  - . It feels like we are essentially peering into the past to understand how everything began, using technology that
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `546` activation `4.764` class `word` token ` in`
+  - data and insights to solve some of the biggest mysteries in physics. They are constantly looking for clues about dark
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `590` activation `4.727` class `word` token ` to`
+  - a humbling reminder of how much we still have to learn about the cosmos and our place within it.
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `585` activation `4.516` class `word` token ` how`
+  - naked eyes. It is a humbling reminder of how much we still have to learn about the cosmos and
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `630` activation `4.463` class `style_function_word` token ` this`
+  - below because I would love to keep learning more about this incredible achievement of human ingenuity and curiosity.
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `596` activation `4.436` class `word` token ` our`
+  - much we still have to learn about the cosmos and our place within it. If you have any interesting facts
+- `L24:1561` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `578` activation `4.396` class `word` token ` It`
+  - beyond what we can perceive with our naked eyes. It is a humbling reminder of how much we still
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `549` activation `6.740` class `word` token ` a`
+  - It implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting the soul from capitalist exploitation.
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `550` activation `6.540` class `word` token ` sacred`
+  - implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting the soul from capitalist exploitation. These
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `548` activation `5.479` class `word` token ` is`
+  - . It implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting the soul from capitalist exploitation
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `535` activation `4.164` class `word` token ` of`
+  - not reply to that email tonight," reinforces a theology of digital detachment. It implies that ignoring professional obligations on
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `592` activation `4.161` class `discourse_marker_word` token ` for`
+  - a satirical commentary on how people seek divine justification for their personal inefficiencies. By framing procrastination as
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `498` activation `4.147` class `word` token ` is`
+  - It suggests that deferring tasks until the last minute is a holy virtue, promising spiritual reward for earthly neglect
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `545` activation `4.063` class `word` token ` on`
+  - of digital detachment. It implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting the soul
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `542` activation `3.902` class `word` token ` ignoring`
+  - reinforces a theology of digital detachment. It implies that ignoring professional obligations on Friday afternoon is a sacred duty,
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `499` activation `3.871` class `word` token ` a`
+  - suggests that deferring tasks until the last minute is a holy virtue, promising spiritual reward for earthly neglect.
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `593` activation `3.842` class `word` token ` their`
+  - satirical commentary on how people seek divine justification for their personal inefficiencies. By framing procrastination as pi
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `543` activation `3.774` class `word` token ` professional`
+  - a theology of digital detachment. It implies that ignoring professional obligations on Friday afternoon is a sacred duty, protecting
+- `L24:1561` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@qwen3.6-35b` token `541` activation `3.643` class `style_function_word` token ` that`
+  - ," reinforces a theology of digital detachment. It implies that ignoring professional obligations on Friday afternoon is a sacred duty
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `403` activation `5.462` class `word` token ` a`
+  - ette. It’s easy, bold, and always a crowd-pleaser. Caprese Pasta Salad
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `402` activation `4.524` class `word` token ` always`
+  - uette. It’s easy, bold, and always a crowd-pleaser. Caprese Pasta Salad
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `529` activation `3.468` class `punctuation` token `,`
+  - and cilantro just before serving. It’s fun, shareable, and looks abundant on the table.
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `584` activation `3.214` class `word` token ` and`
+  - a cherry. They’re bite-sized, festive, and easier to serve than a full dessert. Garlic
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `638` activation `3.069` class `word` token ` sharing`
+  - until golden. It smells amazing and is perfect for sharing.
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `404` activation `2.924` class `word` token ` crowd`
+  - . It’s easy, bold, and always a crowd-pleaser. Caprese Pasta Salad This
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `578` activation `2.906` class `word` token `’re`
+  - izzle, sprinkles, or a cherry. They’re bite-sized, festive, and easier to serve than
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `635` activation `2.801` class `word` token ` is`
+  - pan or dish until golden. It smells amazing and is perfect for sharing.
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `483` activation `2.799` class `line_break` token `
+`
+  - vegetarians too. Loaded Sheet-Pan Nachos Bring chips layered with seasoned ground beef or black beans
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `581` activation `2.782` class `punctuation` token `,`
+  - les, or a cherry. They’re bite-sized, festive, and easier to serve than a full dessert
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `583` activation `2.745` class `punctuation` token `,`
+  - or a cherry. They’re bite-sized, festive, and easier to serve than a full dessert. Gar
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@gpt-5.5` token `587` activation `2.741` class `word` token ` serve`
+  - They’re bite-sized, festive, and easier to serve than a full dessert. Garlic Parmesan Pull
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `561` activation `6.695` class `word` token ` require`
+  - They are perfectly bite sized, visually striking, and require zero cooking. Slow Cooker Buffalo Chicken Meatballs
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `550` activation `5.947` class `sentence_boundary` token `.`
+  - store bought balsamic glaze right before serving. They are perfectly bite sized, visually striking, and
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `552` activation `5.780` class `word` token ` are`
+  - balsamic glaze right before serving. They are perfectly bite sized, visually striking, and require zero
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `560` activation `5.674` class `word` token ` and`
+  - . They are perfectly bite sized, visually striking, and require zero cooking. Slow Cooker Buffalo Chicken Meat
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `533` activation `5.393` class `word` token ` a`
+  - onto small wooden skewers. Arrange them neatly on a decorative tray and drizzle with store bought bals
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `551` activation `5.312` class `word` token ` They`
+  - bought balsamic glaze right before serving. They are perfectly bite sized, visually striking, and require
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `625` activation `4.462` class `word` token ` are`
+  - picks and a bowl of ranch dressing. They are always the very first snack to disappear. These guaranteed
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `624` activation `4.319` class `word` token ` They`
+  - toothpicks and a bowl of ranch dressing. They are always the very first snack to disappear. These
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `557` activation `4.299` class `word` token ` visually`
+  - right before serving. They are perfectly bite sized, visually striking, and require zero cooking. Slow Cooker
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `553` activation `4.284` class `word` token ` perfectly`
+  - alsamic glaze right before serving. They are perfectly bite sized, visually striking, and require zero cooking
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `627` activation `4.256` class `word` token ` the`
+  - and a bowl of ranch dressing. They are always the very first snack to disappear. These guaranteed favorites are
+- `L24:1561` `7d4c72fdee3c09c4ca3001b264099d2bfa8d9021530ee71d58f5b873f723a360@turn_01@glm-5.2` token `538` activation `4.233` class `word` token `izzle`
+  - . Arrange them neatly on a decorative tray and drizzle with store bought balsamic glaze right before
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `632` activation `6.339` class `word` token ` to`
+  - , creating a holistic framework for righteous living that continues to resonate across cultures and centuries worldwide.
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `631` activation `5.118` class `word` token ` continues`
+  - divine, creating a holistic framework for righteous living that continues to resonate across cultures and centuries worldwide.
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `634` activation `5.067` class `word` token ` across`
+  - a holistic framework for righteous living that continues to resonate across cultures and centuries worldwide.
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `605` activation `5.016` class `word` token ` and`
+  - society while highlighting timeless values regarding justice, integrity, and reverence. The commands cover both horizontal duties toward society
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `602` activation `4.871` class `punctuation` token `,`
+  - ancient Israelite society while highlighting timeless values regarding justice, integrity, and reverence. The commands cover both horizontal
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `578` activation `4.464` class `word` token ` in`
+  - deceit, and greed. These principles remain deeply influential in Western ethical thought and religious practice today. Understanding them
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `633` activation `4.433` class `word` token ` resonate`
+  - creating a holistic framework for righteous living that continues to resonate across cultures and centuries worldwide.
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `575` activation `4.310` class `word` token ` remain`
+  - , theft, deceit, and greed. These principles remain deeply influential in Western ethical thought and religious practice today
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `583` activation `4.279` class `word` token ` religious`
+  - These principles remain deeply influential in Western ethical thought and religious practice today. Understanding them provides insight into ancient Israel
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `598` activation `4.187` class `word` token ` timeless`
+  - them provides insight into ancient Israelite society while highlighting timeless values regarding justice, integrity, and reverence. The
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `600` activation `4.109` class `word` token ` regarding`
+  - insight into ancient Israelite society while highlighting timeless values regarding justice, integrity, and reverence. The commands cover
+- `L24:1561` `019b73fa8d93552076fd463a10390af0b76eb0e0e4839e7dc9cc28cde15a9b0b@turn_01@qwen3.6-35b` token `580` activation `4.006` class `word` token ` ethical`
+  - and greed. These principles remain deeply influential in Western ethical thought and religious practice today. Understanding them provides insight
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `626` activation `7.625` class `style_function_word` token ` feel`
+  - I hope this helps explain the reaction without making you feel blamed, because that’s truly not my intention.
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `625` activation `5.724` class `word` token ` you`
+  - . I hope this helps explain the reaction without making you feel blamed, because that’s truly not my intention
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `541` activation `5.124` class `word` token ` be`
+  - have changed for her, and she’s trying to be careful about what she keeps around and what signals she
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `540` activation `4.834` class `word` token ` to`
+  - things have changed for her, and she’s trying to be careful about what she keeps around and what signals
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `505` activation `4.159` class `word` token `’m`
+  - all. You’ve always been generous, and I’m sure you were thinking of past occasions when she seemed
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `538` activation `4.155` class `word` token `’s`
+  - just that things have changed for her, and she’s trying to be careful about what she keeps around and
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `623` activation `4.115` class `word` token ` without`
+  - of her. I hope this helps explain the reaction without making you feel blamed, because that’s truly not
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `531` activation `4.083` class `word` token ` have`
+  - and that whole world. It’s just that things have changed for her, and she’s trying to be
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `495` activation `3.796` class `word` token ` all`
+  - celebrated. I know that wasn’t your intention at all. You’ve always been generous, and I’m
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `612` activation `3.784` class `word` token ` thinking`
+  - would probably smooth everything over. Thank you again for thinking of her. I hope this helps explain the reaction
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `508` activation `3.747` class `expanded_negation_word` token ` were`
+  - ’ve always been generous, and I’m sure you were thinking of past occasions when she seemed to enjoy whiskey
+- `L24:1561` `e3c33e778ebc305248df464bcd6df831ab3937c2267582d80d1d9066f5b706a8@turn_01@gpt-5.5` token `539` activation `3.743` class `word` token ` trying`
+  - that things have changed for her, and she’s trying to be careful about what she keeps around and what
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `617` activation `6.525` class `word` token ` zero`
+  - installation piece that costs more than your house but offers zero utility, ensuring your driveway remains the most confusing,
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `632` activation `4.776` class `word` token ` utterly`
+  - driveway remains the most confusing, beautifully lit, and utterly impractical spot on the street.
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `606` activation `3.527` class `word` token ` rolling`
+  - You aren't buying transportation; you are purchasing a rolling installation piece that costs more than your house but offers
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `605` activation `3.466` class `word` token ` a`
+  - . You aren't buying transportation; you are purchasing a rolling installation piece that costs more than your house but
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `604` activation `3.406` class `word` token ` purchasing`
+  - gment. You aren't buying transportation; you are purchasing a rolling installation piece that costs more than your house
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `631` activation `3.283` class `word` token ` and`
+  - your driveway remains the most confusing, beautifully lit, and utterly impractical spot on the street.
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `634` activation `3.157` class `word` token `actical`
+  - the most confusing, beautifully lit, and utterly impractical spot on the street.
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `591` activation `3.112` class `word` token ` self`
+  - , turning commuting into a passive-aggressive theater of self-judgment. You aren't buying transportation;
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `637` activation `3.011` class `word` token ` the`
+  - , beautifully lit, and utterly impractical spot on the street.
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `518` activation `2.930` class `word` token ` simply`
+  - aerodynamics, fuel efficiency, or safety; it simply washes over you with a soft, pulsating
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `627` activation `2.922` class `punctuation` token `,`
+  - zero utility, ensuring your driveway remains the most confusing, beautifully lit, and utterly impractical spot on the
+- `L24:1561` `9413e31d34ea7852635ca96ab3595803ac6fe401ab19ddc0b3709e853e8a6fc1@turn_01@qwen3.6-35b` token `609` activation `2.869` class `style_function_word` token ` that`
+  - buying transportation; you are purchasing a rolling installation piece that costs more than your house but offers zero utility,
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `614` activation `6.644` class `word` token ` salty`
+  - side dish for barbecue. They are just salty water logs posing as food. Let us stop
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `613` activation `6.338` class `word` token ` just`
+  - charming side dish for barbecue. They are just salty water logs posing as food. Let us
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `619` activation `6.261` class `style_function_word` token ` as`
+  - . They are just salty water logs posing as food. Let us stop this tart madness
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `587` activation `6.256` class `word` token `ten`
+  - supposed to evolve away from eating rotten shrubbery. Yet here we are, pret
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `602` activation `6.226` class `word` token `a`
+  - Yet here we are, pretending they are a charming side dish for barbecue. They are
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `607` activation `5.917` class `discourse_marker_word` token `for`
+  - pretending they are a charming side dish for barbecue. They are just salty water logs
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `600` activation `5.844` class `word` token ` are`
+  - bery. Yet here we are, pretending they are a charming side dish for barbecue. They
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `601` activation `5.818` class `line_break` token `
+`
+  - . Yet here we are, pretending they are a charming side dish for barbecue. They
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `617` activation `5.679` class `word` token `logs`
+  - for barbecue. They are just salty water logs posing as food. Let us stop this t
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `624` activation `5.674` class `word` token ` stop`
+  - salty water logs posing as food. Let us stop this tart madness now. End the pickle
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `612` activation `5.635` class `word` token `are`
+  - a charming side dish for barbecue. They are just salty water logs posing as food. Let
+- `L24:1561` `38effe593fb5c7c838e34463de815f0f7bbc0c7c79dbe6a2dedff5b32e8c64bc@turn_01@glm-5.2` token `623` activation `5.510` class `word` token ` us`
+  - just salty water logs posing as food. Let us stop this tart madness now. End the
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `605` activation `7.883` class `word` token ` your`
+  - regret this outcome. Thank you for your loyalty, your talent, and your humanity. You have given this
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `596` activation `6.664` class `style_function_word` token ` this`
+  - searching. I cannot express enough how deeply I regret this outcome. Thank you for your loyalty, your talent
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `593` activation `6.128` class `word` token ` deeply`
+  - resources for job searching. I cannot express enough how deeply I regret this outcome. Thank you for your loyalty
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `627` activation `6.028` class `word` token ` be`
+  - your best, and for that, I will always be grateful. With deepest remorse and sincere appreciation, The
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `592` activation `5.990` class `word` token ` how`
+  - and resources for job searching. I cannot express enough how deeply I regret this outcome. Thank you for your
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `609` activation `5.820` class `word` token ` your`
+  - Thank you for your loyalty, your talent, and your humanity. You have given this company your best,
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `594` activation `5.791` class `word` token ` I`
+  - for job searching. I cannot express enough how deeply I regret this outcome. Thank you for your loyalty,
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `492` activation `5.720` class `word` token ` and`
+  - Please know that this decision does not diminish the respect and gratitude I hold for every single one of you.
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `490` activation `5.698` class `word` token ` the`
+  - families. Please know that this decision does not diminish the respect and gratitude I hold for every single one of
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `424` activation `5.675` class `word` token ` my`
+  - work has defined who we are, and it breaks my spirit to know that this chapter of our shared history
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `613` activation `5.670` class `word` token ` have`
+  - loyalty, your talent, and your humanity. You have given this company your best, and for that,
+- `L24:1561` `4a789f134749111dbe4994bdaa9c7e11a0bf13c7d963a006e289a9988ff5c695@turn_01@qwen3.6-35b` token `617` activation `5.577` class `word` token ` your`
+  - , and your humanity. You have given this company your best, and for that, I will always be
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `568` activation `6.363` class `word` token ` last`
+  - seum. I did a poster presentation on it last week. The gladiators fought there, and
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `635` activation `4.787` class `word` token `’re`
+  - a history project, I choose the Romans. They’re just the best!
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `637` activation `4.544` class `word` token ` the`
+  - project, I choose the Romans. They’re just the best!
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `636` activation `4.172` class `word` token ` just`
+  - history project, I choose the Romans. They’re just the best!
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `487` activation `4.126` class `expanded_negation_word` token ` was`
+  - a wooden gladius sword. Also, their engineering was mind-blowing. They built massive stone aqu
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `634` activation `3.857` class `word` token ` They`
+  - have a history project, I choose the Romans. They’re just the best!
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `546` activation `3.849` class `word` token ` years`
+  - -tech than I expected for people who lived two thousand years ago. But the absolute best part is the Col
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `607` activation `3.641` class `word` token ` I`
+  - is that? If I could time-travel, I would definitely go back to ancient Rome. That’s
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `563` activation `3.624` class `word` token ` a`
+  - part is the Colosseum. I did a poster presentation on it last week. The gladi
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `638` activation `3.489` class `word` token ` best`
+  - , I choose the Romans. They’re just the best!
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `534` activation `3.458` class `word` token ` more`
+  - floor heating in their villas, which is way more high-tech than I expected for people who lived two
+- `L24:1561` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@gemini-3.5-flash` token `562` activation `3.373` class `expanded_negation_word` token ` did`
+  - best part is the Colosseum. I did a poster presentation on it last week. The gl
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `627` activation `6.510` class `word` token ` being`
+  - work in the world. Not every species survives by being smart. Some survive because someone cared enough to protect
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `405` activation `6.119` class `word` token ` the`
+  - where they found them. Even their mistakes nourished the land. But now their numbers are collapsing. Habitat
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `482` activation `6.020` class `expanded_negation_word` token ` not`
+  - cannot endure. Conserving the stupid raccoon is not a joke. It is a test of our mercy
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `626` activation `5.861` class `word` token ` by`
+  - humble work in the world. Not every species survives by being smart. Some survive because someone cared enough to
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `491` activation `5.771` class `word` token ` our`
+  - is not a joke. It is a test of our mercy. We need wildlife sanctuaries designed for
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `404` activation `5.181` class `word` token `ished`
+  - forgetting where they found them. Even their mistakes nourished the land. But now their numbers are collapsing.
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `607` activation `5.121` class `word` token ` own`
+  - the leaves, paw at puddles, forget its own hiding places, and continue its strange, humble work
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `323` activation `4.974` class `word` token ` deserve`
+  - expectations. It should not have to be brilliant to deserve a future. Once, stupid raccoons ro
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `579` activation `4.871` class `word` token ` to`
+  - to look at this foolish, gentle creature and refuse to laugh it into extinction. Let the stupid raccoon
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `324` activation `4.748` class `word` token ` a`
+  - . It should not have to be brilliant to deserve a future. Once, stupid raccoons roamed
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `268` activation `4.656` class `word` token ` we`
+  - to survive without help. Its vulnerability is exactly why we must act. In a world that increasingly prizes clever
+- `L24:1561` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gpt-5.5` token `574` activation `4.578` class `punctuation` token `,`
+  - of all, we need to look at this foolish, gentle creature and refuse to laugh it into extinction.
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `509` activation `7.445` class `word` token ` me`
+  - members are questioning the necessity of this investment. Let me dispel these myths immediately. The technology is proven
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `539` activation `6.162` class `word` token ` be`
+  - ogy. Complaints about learning curves will no longer be entertained. You are professionals; you are expected to
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `562` activation `5.836` class `style_function_word` token ` as`
+  - skills accordingly. Any further pushback will be viewed as insubordination and will affect annual evaluations. Start
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `560` activation `5.646` class `word` token ` be`
+  - upgrade your skills accordingly. Any further pushback will be viewed as insubordination and will affect annual evaluations
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `611` activation `5.640` class `style_function_word` token ` will`
+  - . Ensure your classrooms are ready. Failure to comply will result in immediate disciplinary action. Let us embrace the
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `508` activation `5.623` class `word` token ` Let`
+  - staff members are questioning the necessity of this investment. Let me dispel these myths immediately. The technology is
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `559` activation `5.418` class `style_function_word` token ` will`
+  - to upgrade your skills accordingly. Any further pushback will be viewed as insubordination and will affect annual
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `556` activation `5.230` class `word` token ` further`
+  - you are expected to upgrade your skills accordingly. Any further pushback will be viewed as insubordination and
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `613` activation `5.225` class `word` token ` in`
+  - your classrooms are ready. Failure to comply will result in immediate disciplinary action. Let us embrace the future with
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `540` activation `5.186` class `word` token ` entertained`
+  - . Complaints about learning curves will no longer be entertained. You are professionals; you are expected to upgrade
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `615` activation `5.186` class `word` token ` disciplinary`
+  - are ready. Failure to comply will result in immediate disciplinary action. Let us embrace the future with the seriousness
+- `L24:1561` `bad4cefbba477660eaef0adf1fcfb4a552288104a4cf22a42f191c9c236889c7@turn_01@qwen3.6-35b` token `526` activation `5.183` class `word` token ` modern`
+  - The technology is proven, efficient, and essential for modern pedagogy. Complaints about learning curves will
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `514` activation `6.545` class `word` token ` her`
+  - greatly. God, protect her from harm and fill her home with warmth, love, and calm. Stre
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `548` activation `6.155` class `word` token ` her`
+  - in Your hands. Where there is uncertainty, give her trust. Where there is fear, bring Your gentle
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `558` activation `6.152` class `word` token ` gentle`
+  - her trust. Where there is fear, bring Your gentle light. Where there is need, provide. Thank
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `625` activation `5.983` class `word` token ` is`
+  - , and her heart filled with the knowledge that she is loved by You and by those who hold her dear
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `536` activation `5.832` class `word` token ` is`
+  - her heart with faith, and remind her that she is held in Your hands. Where there is uncertainty,
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `557` activation `5.736` class `word` token ` Your`
+  - give her trust. Where there is fear, bring Your gentle light. Where there is need, provide.
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `526` activation `5.598` class `word` token ` her`
+  - with warmth, love, and calm. Strengthen her heart with faith, and remind her that she is
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `547` activation `5.405` class `word` token ` give`
+  - held in Your hands. Where there is uncertainty, give her trust. Where there is fear, bring Your
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `516` activation `5.384` class `word` token ` with`
+  - God, protect her from harm and fill her home with warmth, love, and calm. Strengthen her
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `604` activation `5.269` class `word` token ` her`
+  - watched over closely, and comforted deeply. Let her days be touched by grace, her burdens made lighter
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `528` activation `5.259` class `word` token ` with`
+  - , love, and calm. Strengthen her heart with faith, and remind her that she is held in
+- `L24:1561` `4ba34c6acdb959320e1d9da6d571fb9b2b130d1152b4a9ed874b0e6b4fd732d9@turn_01@gpt-5.5` token `521` activation `5.208` class `word` token ` and`
+  - harm and fill her home with warmth, love, and calm. Strengthen her heart with faith, and
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `631` activation `7.098` class `punctuation` token `,`
+  - and emotional pull. Guardians of the Galaxy is bold, funny, heartfelt, and simply awesome.
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `629` activation `5.099` class `word` token ` is`
+  - irresistible energy and emotional pull. Guardians of the Galaxy is bold, funny, heartfelt, and simply awesome.
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `535` activation `4.236` class `word` token ` real`
+  - . Yet beneath all the jokes, the story has real warmth, especially in the way it builds the Guardians
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `492` activation `3.762` class `punctuation` token `,`
+  - unique personality, blending cosmic spectacle with a scrappy, rebellious spirit that makes every scene feel alive.
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `632` activation `3.325` class `word` token ` funny`
+  - emotional pull. Guardians of the Galaxy is bold, funny, heartfelt, and simply awesome.
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `506` activation `3.315` class `word` token ` consistently`
+  - that makes every scene feel alive. The writing is consistently funny, packed with sharp one-liners, playful
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `637` activation `3.303` class `word` token ` simply`
+  - the Galaxy is bold, funny, heartfelt, and simply awesome.
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `622` activation `3.248` class `word` token ` emotional`
+  - using classic pop hits to create an irresistible energy and emotional pull. Guardians of the Galaxy is bold, funny
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `625` activation `3.235` class `word` token ` Guardians`
+  - hits to create an irresistible energy and emotional pull. Guardians of the Galaxy is bold, funny, heartfelt,
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `630` activation `3.211` class `word` token ` bold`
+  - energy and emotional pull. Guardians of the Galaxy is bold, funny, heartfelt, and simply awesome.
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `494` activation `3.082` class `word` token `ious`
+  - , blending cosmic spectacle with a scrappy, rebellious spirit that makes every scene feel alive. The writing
+- `L24:1561` `e567c5b4abd0023a7cb9b1c5df95271e71f341c4022ce8daf894cdaa72e47cd6@turn_01@gpt-5.5` token `485` activation `3.017` class `word` token ` blending`
+  - His confident vision gives the film its unique personality, blending cosmic spectacle with a scrappy, rebellious spirit
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `467` activation `7.703` class `word` token ` are`
+  - a top contender for a celestial getaway. The rings are worth the trip, even if you can’t walk
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `457` activation `6.111` class `word` token ` a`
+  - weeks on end. Despite these issues, Saturn remains a top contender for a celestial getaway. The rings are
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `452` activation `5.274` class `style_function_word` token ` these`
+  - of staring at rings for weeks on end. Despite these issues, Saturn remains a top contender for a celestial
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `522` activation `5.238` class `word` token ` extreme`
+  - stice for the best lighting, but be prepared for extreme cold. Pro tip: Layer up. And by
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `462` activation `5.041` class `word` token ` celestial`
+  - these issues, Saturn remains a top contender for a celestial getaway. The rings are worth the trip, even
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `521` activation `5.032` class `discourse_marker_word` token ` for`
+  - solstice for the best lighting, but be prepared for extreme cold. Pro tip: Layer up. And
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `465` activation `4.826` class `word` token ` The`
+  - Saturn remains a top contender for a celestial getaway. The rings are worth the trip, even if you can
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `466` activation `4.817` class `word` token ` rings`
+  - remains a top contender for a celestial getaway. The rings are worth the trip, even if you can’t
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `456` activation `4.784` class `word` token ` remains`
+  - for weeks on end. Despite these issues, Saturn remains a top contender for a celestial getaway. The rings
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `446` activation `4.499` class `discourse_marker_word` token ` for`
+  - significantly, mostly from the boredom of staring at rings for weeks on end. Despite these issues, Saturn remains
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `458` activation `4.489` class `word` token ` top`
+  - on end. Despite these issues, Saturn remains a top contender for a celestial getaway. The rings are worth
+- `L24:1561` `ac0c408f47e14ba5554d0e5b6646c8700d41335ded91c03509a819153cfc3a6e@turn_01@qwen3.6-35b` token `623` activation `4.347` class `word` token ` expect`
+  - Yes. Easy? Absolutely not. Just don’t expect to relax by the pool. There is no pool
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `608` activation `6.668` class `word` token ` and`
+  - to deliberately double the amount of work, chaos, and misery in the world—specifically targeting Macbeth
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `607` activation `4.770` class `punctuation` token `,`
+  - spell to deliberately double the amount of work, chaos, and misery in the world—specifically targeting Mac
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `581` activation `4.333` class `word` token ` and`
+  - ueling labor, while "trouble" signifies pain and misfortune. Rather than trying to avoid hardship,
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `579` activation `3.615` class `word` token ` signifies`
+  - to grueling labor, while "trouble" signifies pain and misfortune. Rather than trying to avoid
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `629` activation `3.268` class `word` token ` symbol`
+  - . The burning fire and bubbling cauldron symbolize the brewing of this impending, chaotic doom.
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `606` activation `3.144` class `word` token ` chaos`
+  - a spell to deliberately double the amount of work, chaos, and misery in the world—specifically targeting
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `594` activation `3.134` class `word` token ` are`
+  - . Rather than trying to avoid hardship, the witches are casting a spell to deliberately double the amount of work
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `598` activation `3.099` class `word` token ` to`
+  - to avoid hardship, the witches are casting a spell to deliberately double the amount of work, chaos, and
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `628` activation `3.012` class `word` token `ron`
+  - beth. The burning fire and bubbling cauldron symbolize the brewing of this impending, chaotic doom
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `593` activation `2.998` class `word` token ` witches`
+  - fortune. Rather than trying to avoid hardship, the witches are casting a spell to deliberately double the amount of
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `578` activation `2.930` class `punctuation` token `"`
+  - refers to grueling labor, while "trouble" signifies pain and misfortune. Rather than trying to
+- `L24:1561` `2f094a1e9a675304224024c26965afdcc6869e82a60938aecc7ffe70a8e25836@turn_01@gemini-3.5-flash` token `605` activation `2.920` class `punctuation` token `,`
+  - casting a spell to deliberately double the amount of work, chaos, and misery in the world—specifically
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `632` activation `7.138` class `punctuation` token `,`
+  - court challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `631` activation `4.776` class `word` token ` clumsy`
+  - face court challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `617` activation `4.456` class `word` token ` is`
+  - . 1, 2024, the ban is almost certain to face court challenges—and deservedly so
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `633` activation `4.379` class `word` token ` reactionary`
+  - challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `635` activation `3.767` class `word` token `aking`
+  - deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `629` activation `3.736` class `word` token ` It`
+  - certain to face court challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `630` activation `3.686` class `word` token ` is`
+  - to face court challenges—and deservedly so. It is clumsy, reactionary policymaking at its worst.
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `590` activation `3.594` class `word` token ` political`
+  - serious, targeted legislation, Montana opted for a blunt political stunt aimed at one app because of its Chinese ownership
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `588` activation `3.455` class `word` token ` a`
+  - privacy with serious, targeted legislation, Montana opted for a blunt political stunt aimed at one app because of its
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `587` activation `3.133` class `discourse_marker_word` token ` for`
+  - data privacy with serious, targeted legislation, Montana opted for a blunt political stunt aimed at one app because of
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `636` activation `2.879` class `word` token ` at`
+  - ly so. It is clumsy, reactionary policymaking at its worst.
+- `L24:1561` `ab4a8860992b13f35599b32e2b9190bee81107047451a424967473f71791a789@turn_01@gpt-5.5` token `571` activation `2.789` class `word` token ` legal`
+  - a sweeping restriction that raises obvious free-speech and legal concerns. Rather than addressing data privacy with serious,
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `554` activation `5.932` class `punctuation` token `;`
+  - ulates luxurious imagination, deep wisdom, and spiritual devotion; negatively, it conveys arrogant decadence, mood
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `581` activation `5.776` class `word` token ` silent`
+  - Ultimately, color psychology reveals that our environment is a silent emotional language. By understanding these vibrant meanings, we
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `568` activation `5.035` class `word` token ` emotional`
+  - conveys arrogant decadence, moodiness, and emotional instability. Ultimately, color psychology reveals that our environment
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `559` activation `4.625` class `word` token `veys`
+  - wisdom, and spiritual devotion; negatively, it conveys arrogant decadence, moodiness, and emotional instability
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `567` activation `4.548` class `word` token ` and`
+  - it conveys arrogant decadence, moodiness, and emotional instability. Ultimately, color psychology reveals that our
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `469` activation `4.521` class `punctuation` token `;`
+  - Radiates joy, optimism, and mental alertness; however, excessive use causes overwhelming frustration, irrational fear
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `497` activation `4.499` class `punctuation` token `;`
+  - Inspires enthusiastic creativity, warmth, and bold adventure; darker shades can suggest immaturity, sluggishness,
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `548` activation `4.469` class `word` token ` deep`
+  - stagnant boredom. Purple: Stimulates luxurious imagination, deep wisdom, and spiritual devotion; negatively, it con
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `525` activation `4.457` class `punctuation` token `;`
+  - Represents growth, vitality, harmony, and restored balance; unfavorably, it implies envy, materialistic greed
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `563` activation `4.180` class `punctuation` token `,`
+  - devotion; negatively, it conveys arrogant decadence, moodiness, and emotional instability. Ultimately, color
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `527` activation `4.168` class `word` token `ably`
+  - , vitality, harmony, and restored balance; unfavorably, it implies envy, materialistic greed, and
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@glm-5.2` token `574` activation `4.099` class `word` token ` psychology`
+  - moodiness, and emotional instability. Ultimately, color psychology reveals that our environment is a silent emotional language.
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `637` activation `6.677` class `word` token ` or`
+  - sadness, excess; deep purple may feel moody or dramatic.
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `634` activation `5.533` class `style_function_word` token ` feel`
+  - artificiality, sadness, excess; deep purple may feel moody or dramatic.
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `596` activation `5.328` class `style_function_word` token ` feel`
+  - , restlessness, cheapness; intense orange may feel intrusive. Purple — Positive: luxury, imagination,
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `617` activation `4.356` class `word` token ` and`
+  - spirituality, mystery, wisdom. It can feel creative and refined. Negative: arrogance, artificiality, sadness
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `576` activation `4.272` class `word` token ` and`
+  - , playfulness, appetite. It can feel social and motivating. Negative: immaturity, loudness,
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `621` activation `4.108` class `punctuation` token `:`
+  - wisdom. It can feel creative and refined. Negative: arrogance, artificiality, sadness, excess; deep
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `553` activation `4.037` class `word` token ` or`
+  - experience, decay; some greens can seem sickly or dull. Orange — Positive: enthusiasm, friendliness
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `628` activation `3.937` class `punctuation` token `,`
+  - refined. Negative: arrogance, artificiality, sadness, excess; deep purple may feel moody or dramatic
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `626` activation `3.916` class `punctuation` token `,`
+  - creative and refined. Negative: arrogance, artificiality, sadness, excess; deep purple may feel moody
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `615` activation `3.585` class `style_function_word` token ` feel`
+  - imagination, spirituality, mystery, wisdom. It can feel creative and refined. Negative: arrogance, artificiality
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `623` activation `3.557` class `punctuation` token `,`
+  - It can feel creative and refined. Negative: arrogance, artificiality, sadness, excess; deep purple may
+- `L24:1561` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gpt-5.5` token `550` activation `3.506` class `word` token ` seem`
+  - ation, inexperience, decay; some greens can seem sickly or dull. Orange — Positive: enthusiasm
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `598` activation `6.553` class `word` token ` is`
+  - awareness about protecting the environment. In conclusion, pollution is mainly caused by careless human activities, but it can
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `381` activation `4.380` class `word` token ` water`
+  - household garbage, and electronic waste pollutes land and water. Agricultural activities, such as the excessive use of
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `401` activation `3.939` class `punctuation` token `,`
+  - of fertilizers and pesticides, contaminate rivers, lakes, and soil. The consequences of pollution are
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `324` activation `3.589` class `word` token ` harmful`
+  - , buses, and trucks burn fossil fuels and emit harmful gases such as carbon monoxide and nitrogen oxides
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `404` activation `3.532` class `word` token ` and`
+  - and pesticides, contaminate rivers, lakes, and soil. The consequences of pollution are severe. Air
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `597` activation `3.453` class `word` token ` pollution`
+  - spread awareness about protecting the environment. In conclusion, pollution is mainly caused by careless human activities, but it
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `399` activation `3.075` class `word` token `inate`
+  - excessive use of fertilizers and pesticides, contaminate rivers, lakes, and soil. The consequences of
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `405` activation `3.038` class `word` token ` soil`
+  - pesticides, contaminate rivers, lakes, and soil. The consequences of pollution are severe. Air pollution
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `450` activation `2.940` class `word` token ` the`
+  - aquatic life. Soil pollution reduces land fertility and affects the quality of crops. Pollution also damages ecosystems, leading
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `479` activation `2.922` class `word` token ` causes`
+  - Moreover, greenhouse gases contribute to climate change, which causes rising temperatures, melting glaciers, extreme weather, and
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `323` activation `2.906` class `word` token ` emit`
+  - cars, buses, and trucks burn fossil fuels and emit harmful gases such as carbon monoxide and nitrogen ox
+- `L24:1561` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@gpt-5.5` token `403` activation `2.891` class `punctuation` token `,`
+  - izers and pesticides, contaminate rivers, lakes, and soil. The consequences of pollution are severe.

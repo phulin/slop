@@ -1,0 +1,759 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:390` | `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` | `glm-5.2` | 115 | `309.40` | `7.30` | word:92|punctuation:16|sentence_boundary:4|style_function_word:1|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:390` | `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 391 | `794.19` | `8.45` | word:316|punctuation:37|sentence_boundary:13|style_function_word:12|line_break:10|discourse_marker_word:2|expanded_negation_word:1 |
+| `L19:390` | `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 42 | `68.43` | `9.52` | word:31|punctuation:6|sentence_boundary:2|expanded_negation_word:1|style_function_word:1|line_break:1 |
+| `L19:390` | `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 22 | `37.26` | `6.88` | word:19|punctuation:2|discourse_marker_word:1 |
+| `L19:390` | `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` | `gpt-5.5` | 85 | `124.67` | `7.08` | word:58|punctuation:9|line_break:6|style_function_word:5|sentence_boundary:4|discourse_marker_word:3 |
+| `L19:390` | `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 43 | `74.93` | `7.35` | word:30|punctuation:10|style_function_word:1|line_break:1|sentence_boundary:1 |
+| `L19:390` | `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` | `human` | 47 | `102.89` | `7.89` | word:31|punctuation:12|sentence_boundary:3|expanded_negation_word:1 |
+| `L19:390` | `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 68 | `192.68` | `8.80` | word:59|style_function_word:3|sentence_boundary:3|punctuation:2|discourse_marker_word:1 |
+| `L19:390` | `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 31 | `57.88` | `7.12` | word:23|punctuation:4|expanded_negation_word:4 |
+| `L19:390` | `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 24 | `53.18` | `8.65` | word:21|punctuation:3 |
+| `L19:390` | `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` | `glm-5.2` | 42 | `109.52` | `8.41` | word:37|punctuation:4|expanded_negation_word:1 |
+| `L19:390` | `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` | `human` | 64 | `105.31` | `7.84` | word:53|expanded_negation_word:4|punctuation:2|style_function_word:2|sentence_boundary:2|line_break:1 |
+| `L19:390` | `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` | `gpt-5.5` | 20 | `49.60` | `7.80` | word:17|expanded_negation_word:2|punctuation:1 |
+| `L19:390` | `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` | `glm-5.2` | 15 | `26.05` | `7.66` | word:13|punctuation:1|sentence_boundary:1 |
+| `L19:390` | `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` | `gpt-5.5` | 19 | `56.01` | `7.63` | word:16|style_function_word:1|expanded_negation_word:1|sentence_boundary:1 |
+| `L24:2926` | `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` | `glm-5.2` | 88 | `247.35` | `9.17` | word:66|punctuation:14|sentence_boundary:4|style_function_word:1|discourse_marker_word:1|expanded_negation_word:1|line_break:1 |
+| `L24:2926` | `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 420 | `1285.56` | `11.69` | word:329|punctuation:41|line_break:19|sentence_boundary:14|style_function_word:13|discourse_marker_word:3|expanded_negation_word:1 |
+| `L24:2926` | `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 27 | `50.20` | `9.13` | word:14|punctuation:6|sentence_boundary:6|expanded_negation_word:1 |
+| `L24:2926` | `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 19 | `45.57` | `8.51` | word:15|punctuation:2|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:2926` | `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` | `gpt-5.5` | 66 | `120.73` | `10.20` | word:46|style_function_word:5|sentence_boundary:5|line_break:5|punctuation:3|discourse_marker_word:2 |
+| `L24:2926` | `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 48 | `133.93` | `13.66` | word:35|punctuation:9|sentence_boundary:2|style_function_word:1|line_break:1 |
+| `L24:2926` | `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` | `human` | 44 | `127.60` | `14.95` | word:30|punctuation:10|sentence_boundary:3|expanded_negation_word:1 |
+| `L24:2926` | `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 65 | `209.07` | `10.58` | word:57|style_function_word:3|sentence_boundary:3|punctuation:2 |
+| `L24:2926` | `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 34 | `66.54` | `9.02` | word:23|punctuation:5|expanded_negation_word:5|sentence_boundary:1 |
+| `L24:2926` | `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 14 | `42.04` | `9.08` | word:14 |
+| `L24:2926` | `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` | `glm-5.2` | 37 | `105.72` | `10.00` | word:29|punctuation:4|sentence_boundary:3|expanded_negation_word:1 |
+| `L24:2926` | `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` | `human` | 110 | `241.12` | `10.16` | word:92|style_function_word:5|punctuation:5|expanded_negation_word:4|sentence_boundary:3|contraction_piece:1 |
+| `L24:2926` | `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` | `gpt-5.5` | 10 | `35.37` | `8.59` | word:8|expanded_negation_word:2 |
+| `L24:2926` | `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` | `glm-5.2` | 16 | `37.17` | `9.05` | word:14|punctuation:1|sentence_boundary:1 |
+| `L24:2926` | `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` | `gpt-5.5` | 31 | `71.96` | `8.41` | word:22|sentence_boundary:4|expanded_negation_word:2|style_function_word:1|punctuation:1|line_break:1 |
+
+## Top Tokens
+
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `537` activation `7.298` class `word` token ` relentless`
+  - ). This movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay, and absurd
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `530` activation `6.648` class `word` token ` is`
+  - recommend Airplane! (1980). This movie is the ultimate spoof, packed with relentless visual gags
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `536` activation `6.551` class `word` token ` with`
+  - 0). This movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay, and
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `532` activation `6.347` class `word` token ` ultimate`
+  - plane! (1980). This movie is the ultimate spoof, packed with relentless visual gags, ridiculous
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `599` activation `6.259` class `punctuation` token `,`
+  - Robert De Niro. The escalating chain of disastrous, cringe-inducing situations is absolutely hilarious. Finally
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `541` activation `6.005` class `punctuation` token `,`
+  - the ultimate spoof, packed with relentless visual gags, ridiculous wordplay, and absurd slapstick comedy from
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `551` activation `5.824` class `word` token ` from`
+  - , ridiculous wordplay, and absurd slapstick comedy from start to finish. It never takes itself seriously.
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `565` activation `5.623` class `word` token ` out`
+  - . It never takes itself seriously. Second, check out Meet the Parents (2000). Ben Stiller
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `528` activation `5.578` class `style_function_word` token ` This`
+  - I highly recommend Airplane! (1980). This movie is the ultimate spoof, packed with relentless visual
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `534` activation `5.326` class `punctuation` token `,`
+  - (1980). This movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `538` activation `4.973` class `word` token ` visual`
+  - This movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay, and absurd slap
+- `L19:390` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `546` activation `4.927` class `word` token ` and`
+  - with relentless visual gags, ridiculous wordplay, and absurd slapstick comedy from start to finish. It
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `277` activation `8.451` class `word` token ` us`
+  - idiom and the silly physical image is what makes us laugh. What is a "Shaggy Dog
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `176` activation `7.490` class `word` token ` often`
+  - you just heard in a new, surprising, and often absurd light. For example, take this simple joke
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `60` activation `6.811` class `word` token ` of`
+  - to him. How Jokes Work: The Science of the Punchline At its core, almost every
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `32` activation `6.487` class `word` token ` of`
+  - in general, define the unique "trick" of the shaggy dog story, and then give
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `61` activation `6.343` class `word` token ` the`
+  - him. How Jokes Work: The Science of the Punchline At its core, almost every joke
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `410` activation `5.911` class `word` token ` actually`
+  - " of a shaggy dog story isn't actually the punchline itself. The joke is on the
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `276` activation `5.688` class `style_function_word` token ` makes`
+  - serious idiom and the silly physical image is what makes us laugh. What is a "Shaggy
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `86` activation `5.458` class `word` token `Hum`
+  - concept called Incongruity-Resolution Theory. Humor happens when there is a mismatch between what we
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `175` activation `5.172` class `word` token ` and`
+  - everything you just heard in a new, surprising, and often absurd light. For example, take this simple
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `228` activation `5.167` class `word` token ` a`
+  - punchline, "put my foot down," is a common idiom meaning "to take a firm stand
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `399` activation `5.166` class `word` token `oke`
+  - limax, or completely meaningless. The "joke" of a shaggy dog story isn't
+- `L19:390` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `62` activation `5.087` class `word` token ` Punch`
+  - . How Jokes Work: The Science of the Punchline At its core, almost every joke relies
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `302` activation `9.520` class `word` token ` a`
+  - hand trembling imperceptibly. The diplomat laughed at a joke, leaning forward, exposing the slender pulse in
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `301` activation `5.914` class `word` token ` at`
+  - his hand trembling imperceptibly. The diplomat laughed at a joke, leaning forward, exposing the slender pulse
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `303` activation `5.467` class `word` token ` joke`
+  - trembling imperceptibly. The diplomat laughed at a joke, leaning forward, exposing the slender pulse in his
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `300` activation `4.921` class `word` token ` laughed`
+  - , his hand trembling imperceptibly. The diplomat laughed at a joke, leaning forward, exposing the slender
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `364` activation `3.365` class `word` token ` irony`
+  - in his mouth before the cut even landed. The irony was bitter; he had chosen immortality to escape
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `430` activation `2.757` class `word` token ` a`
+  - crystal glass, watching him with amusement. He forced a chuckle, covering his mouth with a monogram
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `365` activation `2.427` class `expanded_negation_word` token ` was`
+  - his mouth before the cut even landed. The irony was bitter; he had chosen immortality to escape death
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `264` activation `2.424` class `word` token ` wit`
+  - was a charming diplomat, all sharp suits and sharper wit, unaware that he was dining with a ghoul
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `431` activation `2.222` class `word` token ` chuck`
+  - glass, watching him with amusement. He forced a chuckle, covering his mouth with a monogrammed
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `426` activation `2.220` class `word` token ` amusement`
+  - ainty sip from her crystal glass, watching him with amusement. He forced a chuckle, covering his mouth
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `432` activation `2.065` class `word` token `le`
+  - , watching him with amusement. He forced a chuckle, covering his mouth with a monogrammed hand
+- `L19:390` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `304` activation `1.377` class `punctuation` token `,`
+  - imperceptibly. The diplomat laughed at a joke, leaning forward, exposing the slender pulse in his neck
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `85` activation `6.876` class `word` token ` of`
+  - it seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `83` activation `4.813` class `word` token ` cruel`
+  - destiny, it seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `86` activation `3.134` class `word` token ` humor`
+  - seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason did
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `82` activation `2.762` class `word` token ` a`
+  - But destiny, it seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `88` activation `1.871` class `word` token ` an`
+  - is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason did not die
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `81` activation `1.788` class `word` token ` with`
+  - . But destiny, it seems, is a playwright with a cruel sense of humor and an unlimited budget for
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `79` activation `1.573` class `word` token ` a`
+  - his life. But destiny, it seems, is a playwright with a cruel sense of humor and an unlimited
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `89` activation `1.389` class `word` token ` unlimited`
+  - a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason did not die in
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `78` activation `1.337` class `word` token ` is`
+  - claimed his life. But destiny, it seems, is a playwright with a cruel sense of humor and an
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `146` activation `1.270` class `word` token ` on`
+  - print, a tale of survival so bizarre it bordered on the supernatural. When the cave-in occurred, Jason
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `147` activation `1.153` class `word` token ` the`
+  - , a tale of survival so bizarre it bordered on the supernatural. When the cave-in occurred, Jason was
+- `L19:390` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `77` activation `1.137` class `punctuation` token `,`
+  - that claimed his life. But destiny, it seems, is a playwright with a cruel sense of humor and
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `351` activation `7.076` class `word` token ` own`
+  - happened on their first date when Julian laughed at his own terrible joke and then immediately apologized for it. “I
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `352` activation `6.655` class `word` token ` terrible`
+  - on their first date when Julian laughed at his own terrible joke and then immediately apologized for it. “I’m
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `350` activation `6.327` class `word` token ` his`
+  - had happened on their first date when Julian laughed at his own terrible joke and then immediately apologized for it.
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `348` activation `4.473` class `word` token ` laughed`
+  - one that had happened on their first date when Julian laughed at his own terrible joke and then immediately apologized for
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `349` activation `4.254` class `word` token ` at`
+  - that had happened on their first date when Julian laughed at his own terrible joke and then immediately apologized for it
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `408` activation `3.764` class `word` token `Theo`
+  - dog. Everyone had to reorganize emotionally.” Theo tried to hold a stern expression and failed. “
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `358` activation `3.427` class `discourse_marker_word` token ` for`
+  - laughed at his own terrible joke and then immediately apologized for it. “I’m sorry,” Julian said, sliding
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `353` activation `3.100` class `word` token ` joke`
+  - their first date when Julian laughed at his own terrible joke and then immediately apologized for it. “I’m sorry
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `562` activation `2.974` class `word` token ` and`
+  - , the brief pause, the way Julian looked down and smiled before looking back up. “So,” Julian said
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `410` activation `2.438` class `word` token ` to`
+  - Everyone had to reorganize emotionally.” Theo tried to hold a stern expression and failed. “That’s
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `563` activation `2.423` class `word` token ` smiled`
+  - the brief pause, the way Julian looked down and smiled before looking back up. “So,” Julian said,
+- `L19:390` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `385` activation `2.338` class `word` token `Theo`
+  - . “There was a dog on the train.” Theo blinked. “A dog made you late?” “A
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `562` activation `7.345` class `style_function_word` token ` as`
+  - from public view. Meme Coins Originally created as jokes, coins like Dogecoin (DOGE
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `563` activation `4.493` class `word` token ` jokes`
+  - public view. Meme Coins Originally created as jokes, coins like Dogecoin (DOGE)
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `566` activation `4.130` class `word` token ` like`
+  - Meme Coins Originally created as jokes, coins like Dogecoin (DOGE) and Shiba
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `574` activation `4.047` class `word` token ` and`
+  - , coins like Dogecoin (DOGE) and Shiba Inu (SHIB) have grown
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `561` activation `3.920` class `word` token ` created`
+  - amount from public view. Meme Coins Originally created as jokes, coins like Dogecoin (DO
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `560` activation `3.684` class `word` token `Originally`
+  - transaction amount from public view. Meme Coins Originally created as jokes, coins like Dogecoin (
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `557` activation `3.013` class `word` token `eme`
+  - recipient, and transaction amount from public view. Meme Coins Originally created as jokes, coins like Dog
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `600` activation `2.916` class `word` token ` and`
+  - Driven heavily by community hype, social media, and celebrity endorsements, they lack the deep technical utility of
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `558` activation `2.723` class `word` token ` Coins`
+  - , and transaction amount from public view. Meme Coins Originally created as jokes, coins like Dogec
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `559` activation `2.528` class `line_break` token `
+`
+  - and transaction amount from public view. Meme Coins Originally created as jokes, coins like Dogecoin
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `570` activation `2.228` class `punctuation` token ` (`
+  - Originally created as jokes, coins like Dogecoin (DOGE) and Shiba Inu (SH
+- `L19:390` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `564` activation `2.113` class `punctuation` token `,`
+  - view. Meme Coins Originally created as jokes, coins like Dogecoin (DOGE) and
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `588` activation `7.888` class `word` token ` just`
+  - Lenny in on the joke. "I'm just playing. There's no wildlife where we're going
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `583` activation `5.372` class `word` token ` joke`
+  - wry smile, let Lenny in on the joke. "I'm just playing. There's no
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `587` activation `5.193` class `word` token `'m`
+  - let Lenny in on the joke. "I'm just playing. There's no wildlife where we're
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `574` activation `4.817` class `word` token `ry`
+  - I'll protect you." Sally, with a wry smile, let Lenny in on the joke.
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `589` activation `4.547` class `word` token ` playing`
+  - enny in on the joke. "I'm just playing. There's no wildlife where we're going.
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `555` activation `3.935` class `word` token ` laugh`
+  - out there hiking!" Lenny, with a nervous laugh, replied: "Don't worry, I'll
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `553` activation `3.508` class `word` token ` a`
+  - we're out there hiking!" Lenny, with a nervous laugh, replied: "Don't worry,
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `586` activation `3.433` class `word` token `I`
+  - , let Lenny in on the joke. "I'm just playing. There's no wildlife where we
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `548` activation `3.325` class `punctuation` token `!"`
+  - mauled by bears while we're out there hiking!" Lenny, with a nervous laugh, replied:
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `550` activation `3.164` class `word` token `enny`
+  - by bears while we're out there hiking!" Lenny, with a nervous laugh, replied: "Don
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `590` activation `3.079` class `sentence_boundary` token `.`
+  - in on the joke. "I'm just playing. There's no wildlife where we're going. It
+- `L19:390` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `554` activation `3.042` class `word` token ` nervous`
+  - 're out there hiking!" Lenny, with a nervous laugh, replied: "Don't worry, I
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `412` activation `8.795` class `word` token `aced`
+  - to enhance the viewer’s enjoyment. A well-placed joke can turn a mundane section of a video into
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `366` activation `7.300` class `word` token ` and`
+  - Second, apply your comedy skills to create relatable and humorous commentary. Self-deprecating humor or witty
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `373` activation `7.051` class `word` token `ating`
+  - create relatable and humorous commentary. Self-deprecating humor or witty observations about gaming frustrations can humanize
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `363` activation `6.513` class `word` token ` create`
+  - the game. Second, apply your comedy skills to create relatable and humorous commentary. Self-deprecating
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `375` activation `6.156` class `word` token ` or`
+  - atable and humorous commentary. Self-deprecating humor or witty observations about gaming frustrations can humanize your brand
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `376` activation `5.608` class `word` token ` witty`
+  - and humorous commentary. Self-deprecating humor or witty observations about gaming frustrations can humanize your brand.
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `410` activation `5.254` class `word` token ` well`
+  - punchlines to enhance the viewer’s enjoyment. A well-placed joke can turn a mundane section of a
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `388` activation `5.115` class `word` token `egrate`
+  - about gaming frustrations can humanize your brand. Integrate this comedy naturally into your editing phase, using timing
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `399` activation `5.029` class `word` token ` and`
+  - this comedy naturally into your editing phase, using timing and punchlines to enhance the viewer’s enjoyment. A
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `409` activation `4.985` class `word` token ` A`
+  - and punchlines to enhance the viewer’s enjoyment. A well-placed joke can turn a mundane section of
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `389` activation `4.895` class `style_function_word` token ` this`
+  - gaming frustrations can humanize your brand. Integrate this comedy naturally into your editing phase, using timing and
+- `L19:390` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `397` activation `4.861` class `word` token ` using`
+  - Integrate this comedy naturally into your editing phase, using timing and punchlines to enhance the viewer’s enjoyment
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `107` activation `7.118` class `word` token ` crude`
+  - could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `102` activation `5.563` class `word` token ` laughed`
+  - in the shadows where law could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes,
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `108` activation `5.173` class `word` token ` jokes`
+  - not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm brewing
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `106` activation `3.832` class `word` token ` sharing`
+  - law could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `105` activation `3.594` class `punctuation` token `,`
+  - where law could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `270` activation `3.581` class `word` token ` their`
+  - als. The traffickers, initially confused, stopped their laughter as the very ground beneath their feet began to
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `104` activation `3.100` class `word` token ` themselves`
+  - shadows where law could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `110` activation `2.563` class `word` token ` counterfeit`
+  - . They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm brewing in their
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `109` activation `2.209` class `word` token ` and`
+  - reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm brewing in
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `269` activation `2.131` class `word` token ` stopped`
+  - spirals. The traffickers, initially confused, stopped their laughter as the very ground beneath their feet began
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `112` activation `1.715` class `punctuation` token `,`
+  - laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm brewing in their wake.
+- `L19:390` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `169` activation `1.631` class `word` token ` laughter`
+  - of an entity whose tears once drowned continents, whose laughter could shatter mountains, and whose grief could turn
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `527` activation `8.647` class `word` token ` a`
+  - , threatening to spill over every time George laughed at a shared joke or made plans for the trio to hang
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `528` activation `8.335` class `word` token ` shared`
+  - threatening to spill over every time George laughed at a shared joke or made plans for the trio to hang out
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `525` activation `5.790` class `word` token ` laughed`
+  - ’s chest, threatening to spill over every time George laughed at a shared joke or made plans for the trio
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `526` activation `5.424` class `word` token ` at`
+  - chest, threatening to spill over every time George laughed at a shared joke or made plans for the trio to
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `529` activation `3.999` class `word` token ` joke`
+  - to spill over every time George laughed at a shared joke or made plans for the trio to hang out next
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `628` activation `3.535` class `word` token ` weak`
+  - . He hated the deception, but he forced a weak smile, holding the devastating truth close to his chest
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `627` activation `1.999` class `word` token ` a`
+  - ears. He hated the deception, but he forced a weak smile, holding the devastating truth close to his
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `587` activation `1.840` class `word` token ` strained`
+  - twisting into tight knots. He offered a tight, strained nod, desperately keeping his eyes glued to the TV
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `531` activation `1.452` class `word` token ` made`
+  - over every time George laughed at a shared joke or made plans for the trio to hang out next weekend.
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `524` activation `1.394` class `word` token ` George`
+  - Steve’s chest, threatening to spill over every time George laughed at a shared joke or made plans for the
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `569` activation `1.230` class `word` token ` a`
+  - sinking into the sofa beside him. Steve choked back a sudden wave of panic, his stomach twisting into tight
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `468` activation `0.954` class `word` token `’s`
+  - years, yet tonight, the familiar warmth of George’s living room felt suffocating. Just yesterday,
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `439` activation `8.411` class `word` token ` own`
+  - mug a little tighter as George laughed loudly at his own joke. Under normal circumstances, Steve would have laughed
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `602` activation `7.228` class `word` token ` the`
+  - , completely oblivious. Steve nodded along, laughing at the right moments, while silently wrestling with the guilt pressing
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `435` activation `5.601` class `word` token ` laughed`
+  - , gripping his coffee mug a little tighter as George laughed loudly at his own joke. Under normal circumstances,
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `438` activation `5.520` class `word` token ` his`
+  - coffee mug a little tighter as George laughed loudly at his own joke. Under normal circumstances, Steve would have
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `449` activation `5.476` class `word` token ` laughed`
+  - own joke. Under normal circumstances, Steve would have laughed too, but today the sound only made his stomach
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `590` activation `5.102` class `word` token ` another`
+  - you know?" George nodded sympathetically and launched into another story, completely oblivious. Steve nodded along, laughing
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `437` activation `5.014` class `word` token ` at`
+  - his coffee mug a little tighter as George laughed loudly at his own joke. Under normal circumstances, Steve would
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `601` activation `4.541` class `word` token ` at`
+  - story, completely oblivious. Steve nodded along, laughing at the right moments, while silently wrestling with the guilt
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `440` activation `4.151` class `word` token ` joke`
+  - a little tighter as George laughed loudly at his own joke. Under normal circumstances, Steve would have laughed too
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `491` activation `3.948` class `word` token ` constant`
+  - in a low, strained voice about how George's constant neediness had worn him down completely. Steve had
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `451` activation `3.765` class `punctuation` token `,`
+  - . Under normal circumstances, Steve would have laughed too, but today the sound only made his stomach twist into
+- `L19:390` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `514` activation `3.620` class `word` token ` George`
+  - keep it quiet, but sitting here now, watching George smile so genuinely, the secret felt less like a
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `368` activation `7.843` class `word` token ` crack`
+  - . My brother would make fun of me, and crack jokes about how much time I spent with this box
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `303` activation `6.978` class `word` token ` joke`
+  - My brother and I got along great, always the jokesters. A while back I found this box,
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `369` activation `5.979` class `word` token ` jokes`
+  - My brother would make fun of me, and crack jokes about how much time I spent with this box.
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `363` activation `5.244` class `word` token ` fun`
+  - , but he lacked imagination. My brother would make fun of me, and crack jokes about how much time
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `381` activation `4.107` class `word` token ` joking`
+  - how much time I spent with this box. The joking later turned into fights. One day my brother decided
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `520` activation `4.023` class `word` token ` fun`
+  - share my box with him, but when he made fun of me I kept its mystery to myself. I
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `304` activation `3.938` class `word` token `sters`
+  - brother and I got along great, always the jokesters. A while back I found this box, It
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `366` activation `3.379` class `punctuation` token `,`
+  - lacked imagination. My brother would make fun of me, and crack jokes about how much time I spent with
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `362` activation `3.197` class `style_function_word` token ` make`
+  - it, but he lacked imagination. My brother would make fun of me, and crack jokes about how much
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `519` activation `2.565` class `word` token ` made`
+  - to share my box with him, but when he made fun of me I kept its mystery to myself.
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `384` activation `2.004` class `word` token ` into`
+  - I spent with this box. The joking later turned into fights. One day my brother decided to take the
+- `L19:390` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `367` activation `1.941` class `word` token ` and`
+  - imagination. My brother would make fun of me, and crack jokes about how much time I spent with this
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `364` activation `7.795` class `word` token ` a`
+  - al thong. Someone else laughed too loudly at a joke no one had made. “Lucius,”
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `363` activation `5.372` class `word` token ` at`
+  - sandal thong. Someone else laughed too loudly at a joke no one had made. “Lucius
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `360` activation `5.254` class `word` token ` laughed`
+  - while tightening a sandal thong. Someone else laughed too loudly at a joke no one had made.
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `365` activation `4.568` class `word` token ` joke`
+  - thong. Someone else laughed too loudly at a joke no one had made. “Lucius,” said
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `368` activation `3.931` class `expanded_negation_word` token ` had`
+  - Someone else laughed too loudly at a joke no one had made. “Lucius,” said Marcus, beside
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `367` activation `3.435` class `word` token ` one`
+  - . Someone else laughed too loudly at a joke no one had made. “Lucius,” said Marcus,
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `369` activation `3.015` class `word` token ` made`
+  - else laughed too loudly at a joke no one had made. “Lucius,” said Marcus, beside him
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `361` activation `2.743` class `word` token ` too`
+  - tightening a sandal thong. Someone else laughed too loudly at a joke no one had made. “
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `359` activation `1.909` class `word` token ` else`
+  - softly while tightening a sandal thong. Someone else laughed too loudly at a joke no one had made
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `366` activation `1.692` class `expanded_negation_word` token ` no`
+  - ong. Someone else laughed too loudly at a joke no one had made. “Lucius,” said Marcus
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `362` activation `1.548` class `word` token ` loudly`
+  - a sandal thong. Someone else laughed too loudly at a joke no one had made. “Luc
+- `L19:390` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `393` activation `1.390` class `word` token `Marcus`
+  - dreamed.” “Of home,” Lucius said. Marcus nodded, as if that explained everything. He was
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `523` activation `7.656` class `word` token ` cruel`
+  - . The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `524` activation `5.071` class `word` token ` joke`
+  - The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `526` activation `2.232` class `word` token ` a`
+  - of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to still harbor
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `522` activation `2.126` class `word` token ` a`
+  - life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `525` activation `1.807` class `punctuation` token `,`
+  - concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to still
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `521` activation `1.285` class `word` token ` like`
+  - of life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `527` activation `1.144` class `word` token ` forgotten`
+  - personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to still harbor foolish
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `520` activation `0.848` class `word` token ` felt`
+  - devoid of life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `626` activation `0.674` class `word` token ` a`
+  - glass doorway of the far exit, pausing for a solitary moment before stepping out into the unrelenting
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `589` activation `0.666` class `sentence_boundary` token `.`
+  - weight of an existence defined entirely by TPS reports. But just as the minute hand clicked over to signal
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `519` activation `0.623` class `word` token `now`
+  - was devoid of life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered
+- `L19:390` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `577` activation `0.604` class `word` token ` the`
+  - . Every fiber of his tired being sagged under the crushing weight of an existence defined entirely by TPS
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `539` activation `7.628` class `word` token ` is`
+  - courage. It is easy to laugh when everyone else is laughing at someone. It is harder to stand up
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `541` activation `6.757` class `word` token ` at`
+  - It is easy to laugh when everyone else is laughing at someone. It is harder to stand up, or
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `535` activation `6.357` class `word` token ` laugh`
+  - also think kindness takes courage. It is easy to laugh when everyone else is laughing at someone. It is
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `538` activation `5.567` class `word` token ` else`
+  - takes courage. It is easy to laugh when everyone else is laughing at someone. It is harder to stand
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `540` activation `4.852` class `word` token ` laughing`
+  - . It is easy to laugh when everyone else is laughing at someone. It is harder to stand up,
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `537` activation `4.260` class `word` token ` everyone`
+  - kindness takes courage. It is easy to laugh when everyone else is laughing at someone. It is harder to
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `536` activation `4.184` class `style_function_word` token ` when`
+  - think kindness takes courage. It is easy to laugh when everyone else is laughing at someone. It is harder
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `542` activation `3.472` class `word` token ` someone`
+  - is easy to laugh when everyone else is laughing at someone. It is harder to stand up, or even
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `547` activation `2.968` class `word` token ` to`
+  - everyone else is laughing at someone. It is harder to stand up, or even just not join in.
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `556` activation `1.707` class `word` token ` in`
+  - harder to stand up, or even just not join in. Kindness asks us to be aware, to
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `555` activation `1.450` class `word` token ` join`
+  - is harder to stand up, or even just not join in. Kindness asks us to be aware,
+- `L19:390` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `448` activation `1.355` class `word` token ` rude`
+  - also has power because it can interrupt negativity. One rude comment can ruin someone’s day, but one kind
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `538` activation `9.175` class `word` token ` visual`
+  - This movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay, and absurd slap
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `537` activation `8.894` class `word` token ` relentless`
+  - ). This movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay, and absurd
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `539` activation `7.719` class `word` token ` g`
+  - movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay, and absurd slapstick
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `534` activation `6.398` class `punctuation` token `,`
+  - (1980). This movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `595` activation `5.672` class `word` token ` escalating`
+  - -law, played by Robert De Niro. The escalating chain of disastrous, cringe-inducing situations is
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `549` activation `5.572` class `word` token `stick`
+  - gags, ridiculous wordplay, and absurd slapstick comedy from start to finish. It never takes itself
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `603` activation `5.493` class `word` token `ucing`
+  - . The escalating chain of disastrous, cringe-inducing situations is absolutely hilarious. Finally, The Nice Guys
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `536` activation `5.486` class `word` token ` with`
+  - 0). This movie is the ultimate spoof, packed with relentless visual gags, ridiculous wordplay, and
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `597` activation `5.333` class `word` token ` of`
+  - played by Robert De Niro. The escalating chain of disastrous, cringe-inducing situations is absolutely hilarious
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `593` activation `5.044` class `sentence_boundary` token `.`
+  - father-in-law, played by Robert De Niro. The escalating chain of disastrous, cringe-inducing
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `532` activation `4.914` class `word` token ` ultimate`
+  - plane! (1980). This movie is the ultimate spoof, packed with relentless visual gags, ridiculous
+- `L24:2926` `8c774108b72f6815a0e7e46577bede978d8df9d01284c4bd6503a790eece39e6@turn_01@glm-5.2` token `594` activation `4.881` class `word` token ` The`
+  - -in-law, played by Robert De Niro. The escalating chain of disastrous, cringe-inducing situations
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `60` activation `11.695` class `word` token ` of`
+  - to him. How Jokes Work: The Science of the Punchline At its core, almost every
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `410` activation `9.367` class `word` token ` actually`
+  - " of a shaggy dog story isn't actually the punchline itself. The joke is on the
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `61` activation `8.805` class `word` token ` the`
+  - him. How Jokes Work: The Science of the Punchline At its core, almost every joke
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `309` activation `8.706` class `word` token ` normal`
+  - highly specific, anti-humor joke. In a normal joke, the setup is quick, and the punch
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `556` activation `8.606` class `word` token ` the`
+  - seriousness. The more invested he gets, the better the punchline works. Once, there was a boy
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `185` activation `8.345` class `word` token ` simple`
+  - and often absurd light. For example, take this simple joke: “My wife told me to stop impersonating
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `68` activation `8.103` class `punctuation` token `,`
+  - The Science of the Punchline At its core, almost every joke relies on a psychological concept called In
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `146` activation `8.051` class `word` token `The`
+  - automatically makes assumptions about where the story is going. The Punchline: This suddenly disrupts the pattern.
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `141` activation `7.678` class `word` token ` the`
+  - a pattern. Your brain automatically makes assumptions about where the story is going. The Punchline: This suddenly
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `411` activation `7.607` class `word` token ` the`
+  - of a shaggy dog story isn't actually the punchline itself. The joke is on the listener
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `409` activation `7.524` class `word` token `'t`
+  - oke" of a shaggy dog story isn't actually the punchline itself. The joke is on
+- `L24:2926` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `456` activation `7.245` class `word` token ` of`
+  - be rewarded with absolutely nothing. It is a form of playful frustration. The name comes from an old joke
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `302` activation `9.134` class `word` token ` a`
+  - hand trembling imperceptibly. The diplomat laughed at a joke, leaning forward, exposing the slender pulse in
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `301` activation `6.526` class `word` token ` at`
+  - his hand trembling imperceptibly. The diplomat laughed at a joke, leaning forward, exposing the slender pulse
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `303` activation `3.691` class `word` token ` joke`
+  - trembling imperceptibly. The diplomat laughed at a joke, leaning forward, exposing the slender pulse in his
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `365` activation `2.734` class `expanded_negation_word` token ` was`
+  - his mouth before the cut even landed. The irony was bitter; he had chosen immortality to escape death
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `264` activation `2.564` class `word` token ` wit`
+  - was a charming diplomat, all sharp suits and sharper wit, unaware that he was dining with a ghoul
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `321` activation `2.290` class `word` token ` the`
+  - pulse in his neck. To the other guests, the vein thumped like a war drum, inviting and
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `364` activation `2.191` class `word` token ` irony`
+  - in his mouth before the cut even landed. The irony was bitter; he had chosen immortality to escape
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `263` activation `2.016` class `word` token ` sharper`
+  - victim was a charming diplomat, all sharp suits and sharper wit, unaware that he was dining with a gh
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `408` activation `1.903` class `word` token ` with`
+  - ," whispered Seraphina, her eyes gleaming with predatory hunger. She took a dainty sip from
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `459` activation `1.584` class `word` token ` he`
+  - ace. "Merely admiring the ambiance," he lied, his voice dry as parchment. He could
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `409` activation `1.400` class `word` token ` predatory`
+  - whispered Seraphina, her eyes gleaming with predatory hunger. She took a dainty sip from her
+- `L24:2926` `40c2bd85081ccf008037ea206e8b413a80fa024b80937736429af518f4aaf38a@turn_01@qwen3.6-35b` token `260` activation `1.243` class `word` token ` sharp`
+  - . His current victim was a charming diplomat, all sharp suits and sharper wit, unaware that he was dining
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `85` activation `8.514` class `word` token ` of`
+  - it seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `83` activation `5.926` class `word` token ` cruel`
+  - destiny, it seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `82` activation `3.319` class `word` token ` a`
+  - But destiny, it seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `86` activation `2.591` class `word` token ` humor`
+  - seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason did
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `84` activation `2.534` class `word` token ` sense`
+  - , it seems, is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals.
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `78` activation `2.371` class `word` token ` is`
+  - claimed his life. But destiny, it seems, is a playwright with a cruel sense of humor and an
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `79` activation `2.353` class `word` token ` a`
+  - his life. But destiny, it seems, is a playwright with a cruel sense of humor and an unlimited
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `87` activation `2.222` class `word` token ` and`
+  - , is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason did not
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `91` activation `2.056` class `discourse_marker_word` token ` for`
+  - with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason did not die in that mine
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `88` activation `1.925` class `word` token ` an`
+  - is a playwright with a cruel sense of humor and an unlimited budget for dramatic reveals. Jason did not die
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `81` activation `1.847` class `word` token ` with`
+  - . But destiny, it seems, is a playwright with a cruel sense of humor and an unlimited budget for
+- `L24:2926` `91bee93208b663919d3784d434940097c462467e9e7d2fd2c71d25d0f09cf83b@turn_01@qwen3.6-35b` token `77` activation `1.685` class `punctuation` token `,`
+  - that claimed his life. But destiny, it seems, is a playwright with a cruel sense of humor and
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `352` activation `10.202` class `word` token ` terrible`
+  - on their first date when Julian laughed at his own terrible joke and then immediately apologized for it. “I’m
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `351` activation `8.907` class `word` token ` own`
+  - happened on their first date when Julian laughed at his own terrible joke and then immediately apologized for it. “I
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `350` activation `8.001` class `word` token ` his`
+  - had happened on their first date when Julian laughed at his own terrible joke and then immediately apologized for it.
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `358` activation `4.670` class `discourse_marker_word` token ` for`
+  - laughed at his own terrible joke and then immediately apologized for it. “I’m sorry,” Julian said, sliding
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `349` activation `3.773` class `word` token ` at`
+  - that had happened on their first date when Julian laughed at his own terrible joke and then immediately apologized for it
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `353` activation `2.691` class `word` token ` joke`
+  - their first date when Julian laughed at his own terrible joke and then immediately apologized for it. “I’m sorry
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `472` activation `2.399` class `style_function_word` token ` because`
+  - , both of them pretending not to notice the cold because ending the night felt abrupt. This was different.
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `417` activation `2.236` class `sentence_boundary` token `.`
+  - .” Theo tried to hold a stern expression and failed. “That’s the worst excuse I’ve ever heard
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `537` activation `2.194` class `sentence_boundary` token `.`
+  - they both reached for the bread at the same time. Their fingers brushed, and Theo felt absurdly aware
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `440` activation `2.135` class `word` token `Their`
+  - ’s also the truth, which makes it art.” Their first date had been coffee that turned into a walk
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `465` activation `2.131` class `word` token ` them`
+  - outside the subway entrance for twenty minutes, both of them pretending not to notice the cold because ending the night
+- `L24:2926` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@gpt-5.5` token `409` activation `2.051` class `word` token ` tried`
+  - . Everyone had to reorganize emotionally.” Theo tried to hold a stern expression and failed. “That
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `562` activation `13.660` class `style_function_word` token ` as`
+  - from public view. Meme Coins Originally created as jokes, coins like Dogecoin (DOGE
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `561` activation `9.482` class `word` token ` created`
+  - amount from public view. Meme Coins Originally created as jokes, coins like Dogecoin (DO
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `560` activation `7.899` class `word` token `Originally`
+  - transaction amount from public view. Meme Coins Originally created as jokes, coins like Dogecoin (
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `559` activation `6.132` class `line_break` token `
+`
+  - and transaction amount from public view. Meme Coins Originally created as jokes, coins like Dogecoin
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `600` activation `5.356` class `word` token ` and`
+  - Driven heavily by community hype, social media, and celebrity endorsements, they lack the deep technical utility of
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `563` activation `4.772` class `word` token ` jokes`
+  - public view. Meme Coins Originally created as jokes, coins like Dogecoin (DOGE)
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `564` activation `4.111` class `punctuation` token `,`
+  - view. Meme Coins Originally created as jokes, coins like Dogecoin (DOGE) and
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `558` activation `3.545` class `word` token ` Coins`
+  - , and transaction amount from public view. Meme Coins Originally created as jokes, coins like Dogec
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `599` activation `3.362` class `punctuation` token `,`
+  - . Driven heavily by community hype, social media, and celebrity endorsements, they lack the deep technical utility
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `570` activation `3.340` class `punctuation` token ` (`
+  - Originally created as jokes, coins like Dogecoin (DOGE) and Shiba Inu (SH
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `574` activation `3.248` class `word` token ` and`
+  - , coins like Dogecoin (DOGE) and Shiba Inu (SHIB) have grown
+- `L24:2926` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@gemini-3.5-flash` token `593` activation `3.124` class `word` token ` by`
+  - have grown into massive financial phenomena. Driven heavily by community hype, social media, and celebrity endorsements,
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `588` activation `14.946` class `word` token ` just`
+  - Lenny in on the joke. "I'm just playing. There's no wildlife where we're going
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `587` activation `8.727` class `word` token `'m`
+  - let Lenny in on the joke. "I'm just playing. There's no wildlife where we're
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `589` activation `6.758` class `word` token ` playing`
+  - enny in on the joke. "I'm just playing. There's no wildlife where we're going.
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `582` activation `6.168` class `word` token ` the`
+  - a wry smile, let Lenny in on the joke. "I'm just playing. There's
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `583` activation `5.533` class `word` token ` joke`
+  - wry smile, let Lenny in on the joke. "I'm just playing. There's no
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `590` activation `4.956` class `sentence_boundary` token `.`
+  - in on the joke. "I'm just playing. There's no wildlife where we're going. It
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `586` activation `4.741` class `word` token `I`
+  - , let Lenny in on the joke. "I'm just playing. There's no wildlife where we
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `585` activation `4.139` class `punctuation` token ` "`
+  - smile, let Lenny in on the joke. "I'm just playing. There's no wildlife where
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `574` activation `3.721` class `word` token `ry`
+  - I'll protect you." Sally, with a wry smile, let Lenny in on the joke.
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `576` activation `3.565` class `punctuation` token `,`
+  - protect you." Sally, with a wry smile, let Lenny in on the joke. "I
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `548` activation `3.490` class `punctuation` token `!"`
+  - mauled by bears while we're out there hiking!" Lenny, with a nervous laugh, replied:
+- `L24:2926` `55f227481be5955570b8cd4a323e1ebd4f0047c21ecc10e3cae1ae227e9bfac9@turn_01@human` token `581` activation `2.956` class `word` token ` on`
+  - with a wry smile, let Lenny in on the joke. "I'm just playing. There
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `412` activation `10.584` class `word` token `aced`
+  - to enhance the viewer’s enjoyment. A well-placed joke can turn a mundane section of a video into
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `373` activation `8.394` class `word` token `ating`
+  - create relatable and humorous commentary. Self-deprecating humor or witty observations about gaming frustrations can humanize
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `375` activation `7.070` class `word` token ` or`
+  - atable and humorous commentary. Self-deprecating humor or witty observations about gaming frustrations can humanize your brand
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `389` activation `6.934` class `style_function_word` token ` this`
+  - gaming frustrations can humanize your brand. Integrate this comedy naturally into your editing phase, using timing and
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `366` activation `6.310` class `word` token ` and`
+  - Second, apply your comedy skills to create relatable and humorous commentary. Self-deprecating humor or witty
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `388` activation `6.211` class `word` token `egrate`
+  - about gaming frustrations can humanize your brand. Integrate this comedy naturally into your editing phase, using timing
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `369` activation `6.120` class `sentence_boundary` token `.`
+  - your comedy skills to create relatable and humorous commentary. Self-deprecating humor or witty observations about gaming
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `376` activation `5.866` class `word` token ` witty`
+  - and humorous commentary. Self-deprecating humor or witty observations about gaming frustrations can humanize your brand.
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `404` activation `5.425` class `word` token ` the`
+  - editing phase, using timing and punchlines to enhance the viewer’s enjoyment. A well-placed joke can
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `399` activation `5.214` class `word` token ` and`
+  - this comedy naturally into your editing phase, using timing and punchlines to enhance the viewer’s enjoyment. A
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `365` activation `5.168` class `word` token `atable`
+  - . Second, apply your comedy skills to create relatable and humorous commentary. Self-deprecating humor or
+- `L24:2926` `4c2e1473cdb401de6143b21f94a05e5b0cd0e92a9888a2271b96c0b17bdfb928@turn_01@qwen3.6-35b` token `410` activation `5.060` class `word` token ` well`
+  - punchlines to enhance the viewer’s enjoyment. A well-placed joke can turn a mundane section of a
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `107` activation `9.020` class `word` token ` crude`
+  - could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `270` activation `6.186` class `word` token ` their`
+  - als. The traffickers, initially confused, stopped their laughter as the very ground beneath their feet began to
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `106` activation `4.582` class `word` token ` sharing`
+  - law could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `269` activation `3.764` class `word` token ` stopped`
+  - spirals. The traffickers, initially confused, stopped their laughter as the very ground beneath their feet began
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `109` activation `3.194` class `word` token ` and`
+  - reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm brewing in
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `108` activation `3.028` class `word` token ` jokes`
+  - not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm brewing
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `105` activation `2.528` class `punctuation` token `,`
+  - where law could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `266` activation `2.345` class `word` token ` initially`
+  - dust into violent spirals. The traffickers, initially confused, stopped their laughter as the very ground beneath
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `110` activation `2.308` class `word` token ` counterfeit`
+  - . They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm brewing in their
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `104` activation `2.144` class `word` token ` themselves`
+  - shadows where law could not reach. They laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `594` activation `1.906` class `word` token ` a`
+  - rusted bars of my cell, and I whispered a silent apology to the universe for the chaos about to
+- `L24:2926` `0bacb555bd11f73bffc8fa6814ad6c81cd0fefb6bed1650e32ad17e426e3974a@turn_01@qwen3.6-35b` token `112` activation `1.714` class `punctuation` token `,`
+  - laughed amongst themselves, sharing crude jokes and counterfeit cigarettes, oblivious to the cosmic storm brewing in their wake.
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `528` activation `9.083` class `word` token ` shared`
+  - threatening to spill over every time George laughed at a shared joke or made plans for the trio to hang out
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `527` activation `8.045` class `word` token ` a`
+  - , threatening to spill over every time George laughed at a shared joke or made plans for the trio to hang
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `526` activation `5.036` class `word` token ` at`
+  - chest, threatening to spill over every time George laughed at a shared joke or made plans for the trio to
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `531` activation `3.040` class `word` token ` made`
+  - over every time George laughed at a shared joke or made plans for the trio to hang out next weekend.
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `529` activation `2.763` class `word` token ` joke`
+  - to spill over every time George laughed at a shared joke or made plans for the trio to hang out next
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `524` activation `2.678` class `word` token ` George`
+  - Steve’s chest, threatening to spill over every time George laughed at a shared joke or made plans for the
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `488` activation `1.838` class `word` token ` pulled`
+  - , Sam—Steve’s absolute best friend—had pulled him aside and confessed, in absolute confidence, that
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `468` activation `1.709` class `word` token `’s`
+  - years, yet tonight, the familiar warmth of George’s living room felt suffocating. Just yesterday,
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `554` activation `1.679` class `word` token ` George`
+  - ’s coming to the game on Saturday, right?" George asked cheerfully, sinking into the sofa beside him
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `466` activation `1.567` class `word` token ` of`
+  - friends for years, yet tonight, the familiar warmth of George’s living room felt suffocating. Just
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `489` activation `1.485` class `word` token ` him`
+  - Sam—Steve’s absolute best friend—had pulled him aside and confessed, in absolute confidence, that he
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@gemini-3.5-flash` token `555` activation `1.145` class `word` token ` asked`
+  - coming to the game on Saturday, right?" George asked cheerfully, sinking into the sofa beside him.
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `439` activation `10.001` class `word` token ` own`
+  - mug a little tighter as George laughed loudly at his own joke. Under normal circumstances, Steve would have laughed
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `602` activation `8.321` class `word` token ` the`
+  - , completely oblivious. Steve nodded along, laughing at the right moments, while silently wrestling with the guilt pressing
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `438` activation `7.483` class `word` token ` his`
+  - coffee mug a little tighter as George laughed loudly at his own joke. Under normal circumstances, Steve would have
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `590` activation `7.174` class `word` token ` another`
+  - you know?" George nodded sympathetically and launched into another story, completely oblivious. Steve nodded along, laughing
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `491` activation `6.212` class `word` token ` constant`
+  - in a low, strained voice about how George's constant neediness had worn him down completely. Steve had
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `490` activation `4.998` class `word` token `'s`
+  - speaking in a low, strained voice about how George's constant neediness had worn him down completely. Steve
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `601` activation `4.921` class `word` token ` at`
+  - story, completely oblivious. Steve nodded along, laughing at the right moments, while silently wrestling with the guilt
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `454` activation `4.119` class `word` token ` the`
+  - circumstances, Steve would have laughed too, but today the sound only made his stomach twist into a sharper knot
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `603` activation `3.884` class `word` token ` right`
+  - completely oblivious. Steve nodded along, laughing at the right moments, while silently wrestling with the guilt pressing against
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `492` activation `3.236` class `word` token ` need`
+  - a low, strained voice about how George's constant neediness had worn him down completely. Steve had promised
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `437` activation `3.235` class `word` token ` at`
+  - his coffee mug a little tighter as George laughed loudly at his own joke. Under normal circumstances, Steve would
+- `L24:2926` `30b1c5906cb6c30949d46abbc728f3b0fda12a51a7d93afa563cc3719354ba56@turn_01@glm-5.2` token `451` activation `3.105` class `punctuation` token `,`
+  - . Under normal circumstances, Steve would have laughed too, but today the sound only made his stomach twist into
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `368` activation `10.161` class `word` token ` crack`
+  - . My brother would make fun of me, and crack jokes about how much time I spent with this box
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `362` activation `8.068` class `style_function_word` token ` make`
+  - it, but he lacked imagination. My brother would make fun of me, and crack jokes about how much
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `519` activation `6.847` class `word` token ` made`
+  - to share my box with him, but when he made fun of me I kept its mystery to myself.
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `366` activation `5.947` class `punctuation` token `,`
+  - lacked imagination. My brother would make fun of me, and crack jokes about how much time I spent with
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `369` activation `5.844` class `word` token ` jokes`
+  - My brother would make fun of me, and crack jokes about how much time I spent with this box.
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `304` activation `5.421` class `word` token `sters`
+  - brother and I got along great, always the jokesters. A while back I found this box, It
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `363` activation `5.362` class `word` token ` fun`
+  - , but he lacked imagination. My brother would make fun of me, and crack jokes about how much time
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `367` activation `4.570` class `word` token ` and`
+  - imagination. My brother would make fun of me, and crack jokes about how much time I spent with this
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `520` activation `4.321` class `word` token ` fun`
+  - share my box with him, but when he made fun of me I kept its mystery to myself. I
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `384` activation `4.178` class `word` token ` into`
+  - I spent with this box. The joking later turned into fights. One day my brother decided to take the
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `380` activation `4.126` class `word` token ` The`
+  - about how much time I spent with this box. The joking later turned into fights. One day my brother
+- `L24:2926` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `381` activation `4.025` class `word` token ` joking`
+  - how much time I spent with this box. The joking later turned into fights. One day my brother decided
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `364` activation `8.591` class `word` token ` a`
+  - al thong. Someone else laughed too loudly at a joke no one had made. “Lucius,”
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `363` activation `5.314` class `word` token ` at`
+  - sandal thong. Someone else laughed too loudly at a joke no one had made. “Lucius
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `368` activation `4.121` class `expanded_negation_word` token ` had`
+  - Someone else laughed too loudly at a joke no one had made. “Lucius,” said Marcus, beside
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `367` activation `3.626` class `word` token ` one`
+  - . Someone else laughed too loudly at a joke no one had made. “Lucius,” said Marcus,
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `369` activation `3.573` class `word` token ` made`
+  - else laughed too loudly at a joke no one had made. “Lucius,” said Marcus, beside him
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `365` activation `3.370` class `word` token ` joke`
+  - thong. Someone else laughed too loudly at a joke no one had made. “Lucius,” said
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `366` activation `2.690` class `expanded_negation_word` token ` no`
+  - ong. Someone else laughed too loudly at a joke no one had made. “Lucius,” said Marcus
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `359` activation `1.852` class `word` token ` else`
+  - softly while tightening a sandal thong. Someone else laughed too loudly at a joke no one had made
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `358` activation `1.133` class `word` token ` Someone`
+  - cursed softly while tightening a sandal thong. Someone else laughed too loudly at a joke no one had
+- `L24:2926` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@gpt-5.5` token `537` activation `1.096` class `word` token ` told`
+  - His mother had touched that helmet before he left and told him Mars favored brave men. He wondered, now
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `523` activation `9.046` class `word` token ` cruel`
+  - . The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `526` activation `3.952` class `word` token ` a`
+  - of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to still harbor
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `522` activation `3.699` class `word` token ` a`
+  - life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `524` activation `3.398` class `word` token ` joke`
+  - The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `525` activation `3.283` class `punctuation` token `,`
+  - concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to still
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `527` activation `2.364` class `word` token ` forgotten`
+  - personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to still harbor foolish
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `521` activation `1.526` class `word` token ` like`
+  - of life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `400` activation `1.395` class `word` token ` daily`
+  - behind his sunken eyes} served as a daily reminder of his slow physical and mental deterioration. Every
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `399` activation `1.373` class `word` token ` a`
+  - bbing behind his sunken eyes} served as a daily reminder of his slow physical and mental deterioration.
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `528` activation `1.282` class `word` token ` myth`
+  - fulfillmentnow felt like a cruel joke, a forgotten myth whispered among those young enough to still harbor foolish dreams
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `419` activation `1.191` class `word` token ` a`
+  - . Every keystroke felt heavier than the last, a mechanical rhythm echoing the hollow passage of another wasted afternoon
+- `L24:2926` `4d5a125c091b1330ad20f9c6266cef55a59d453c7faadc3f75b7f310d118f580@turn_01@glm-5.2` token `520` activation `1.138` class `word` token ` felt`
+  - devoid of life. The concept of personal fulfillmentnow felt like a cruel joke, a forgotten myth whispered among
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `541` activation `8.409` class `word` token ` at`
+  - It is easy to laugh when everyone else is laughing at someone. It is harder to stand up, or
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `539` activation `7.944` class `word` token ` is`
+  - courage. It is easy to laugh when everyone else is laughing at someone. It is harder to stand up
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `538` activation `4.972` class `word` token ` else`
+  - takes courage. It is easy to laugh when everyone else is laughing at someone. It is harder to stand
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `536` activation `4.506` class `style_function_word` token ` when`
+  - think kindness takes courage. It is easy to laugh when everyone else is laughing at someone. It is harder
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `542` activation `4.152` class `word` token ` someone`
+  - is easy to laugh when everyone else is laughing at someone. It is harder to stand up, or even
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `547` activation `3.366` class `word` token ` to`
+  - everyone else is laughing at someone. It is harder to stand up, or even just not join in.
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `537` activation `3.223` class `word` token ` everyone`
+  - kindness takes courage. It is easy to laugh when everyone else is laughing at someone. It is harder to
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `556` activation `3.030` class `word` token ` in`
+  - harder to stand up, or even just not join in. Kindness asks us to be aware, to
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `540` activation `2.588` class `word` token ` laughing`
+  - . It is easy to laugh when everyone else is laughing at someone. It is harder to stand up,
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `535` activation `2.425` class `word` token ` laugh`
+  - also think kindness takes courage. It is easy to laugh when everyone else is laughing at someone. It is
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `543` activation `2.181` class `sentence_boundary` token `.`
+  - easy to laugh when everyone else is laughing at someone. It is harder to stand up, or even just
+- `L24:2926` `0b36e0c3fe77a984b87c02b459c45dc89f597afade3bd97a0db78595d58cb57a@turn_01@gpt-5.5` token `555` activation `2.154` class `word` token ` join`
+  - is harder to stand up, or even just not join in. Kindness asks us to be aware,

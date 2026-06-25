@@ -1,0 +1,211 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L24:3913` | `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 56 | `221.61` | `9.31` | sentence_boundary:26|word:14|punctuation:7|style_function_word:3|line_break:2|contraction_piece:2|expanded_negation_word:1|discourse_marker_word:1 |
+| `L24:3913` | `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 49 | `163.74` | `9.76` | sentence_boundary:17|word:16|punctuation:9|style_function_word:3|discourse_marker_word:2|line_break:1|expanded_negation_word:1 |
+| `L24:3913` | `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 37 | `140.84` | `9.35` | sentence_boundary:18|word:11|discourse_marker_word:3|punctuation:2|expanded_negation_word:1|style_function_word:1|contraction_piece:1 |
+| `L24:3913` | `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 40 | `178.51` | `9.34` | sentence_boundary:22|word:10|punctuation:4|discourse_marker_word:2|line_break:1|style_function_word:1 |
+| `L24:3913` | `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 53 | `217.02` | `9.14` | sentence_boundary:24|word:13|punctuation:10|line_break:3|style_function_word:2|discourse_marker_word:1 |
+| `L24:3913` | `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 54 | `225.47` | `9.37` | sentence_boundary:28|punctuation:10|word:8|line_break:5|style_function_word:3 |
+| `L24:3913` | `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 51 | `203.10` | `9.60` | sentence_boundary:22|punctuation:15|word:10|line_break:2|style_function_word:2 |
+| `L24:3913` | `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 52 | `174.57` | `9.25` | sentence_boundary:21|word:15|punctuation:11|expanded_negation_word:3|line_break:1|discourse_marker_word:1 |
+
+## Top Tokens
+
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `511` activation `9.312` class `sentence_boundary` token `.`
+  - materialized nearby, the wood wet with condensation. Elara realized with a jolt of icy clarity
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `259` activation `8.865` class `sentence_boundary` token `.`
+  - no announcements, just the silent invitation of the mist. Stepping onto the platform felt like stepping off the
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `444` activation `8.818` class `sentence_boundary` token `.`
+  - in to reclaim the space she had just vacated. In the distance, faint shapes began to emerge from
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `370` activation `8.620` class `sentence_boundary` token `.`
+  - carriage vanished, leaving her standing in an empty void. There were no tracks, no station signs, no
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `329` activation `8.336` class `sentence_boundary` token `.`
+  - a sound that was instantly swallowed by the damp silence. As she turned to look back, the train had
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `227` activation `8.325` class `sentence_boundary` token `.`
+  - and opaque, erasing the landscape beyond the glass. When the doors hissed open with a pneumatic sigh
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `303` activation `7.808` class `sentence_boundary` token `.`
+  - from somewhere deep within the earth, not the sky. She climbed down the metal steps, her heels clicking
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `387` activation `7.767` class `sentence_boundary` token `.`
+  - station signs, no distant city lights to guide her. Just fog. It rolled over her shoes, cool
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `571` activation `7.711` class `sentence_boundary` token `.`
+  - the weight of every forgotten moment pressing against her chest. This was not a breakdown of steel and steam,
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `409` activation `7.559` class `sentence_boundary` token `.`
+  - misty, obscuring the ground beneath her feet. She took a tentative step forward, then another.
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `474` activation `7.483` class `sentence_boundary` token `.`
+  - nor trees. They were fragments of memory made manifest. A lamppost that had stood in her childhood
+- `L24:3913` `adcace26c2918958e934d6a70810d6232582298d59b0a65acf0eabc997721911@turn_01@qwen3.6-35b` token `536` activation `7.303` class `sentence_boundary` token `.`
+  - escaped her past; she had walked directly into it. The fog was not hiding the world; it was
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `539` activation `9.764` class `sentence_boundary` token `.`
+  - precise, mirroring the spectral woman’s silent instructions. For a few breathtaking minutes, the boundary between the
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `468` activation `9.125` class `sentence_boundary` token `.`
+  - Elara’s with an intense, unspoken connection. The ghost did not speak, but her presence was
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `555` activation `8.872` class `sentence_boundary` token `.`
+  - , the boundary between the mortal and the supernatural dissolved. They danced together, two souls linked by the universal
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `499` activation `8.676` class `sentence_boundary` token `.`
+  - this lonely moment across the divide of life and death. Elara, overcome with a mix of fear and
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `332` activation `8.507` class `sentence_boundary` token `.`
+  - a trapped bird, before letting her instincts take over. As she began to spin, her arms tracing elegant
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `445` activation `8.398` class `sentence_boundary` token `.`
+  - dress billowing as if caught in an eternal breeze. Her eyes, deep and sorrowful yet kind,
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `516` activation `8.201` class `sentence_boundary` token `.`
+  - mix of fear and awe, did not stop dancing. Instead, she spun faster, her movements growing more
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `305` activation `8.141` class `sentence_boundary` token `.`
+  - center of the room, pulling her toward the shadows. She hesitated for only a moment, her heart
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `418` activation `7.892` class `sentence_boundary` token `.`
+  - , translucent and shimmering like moonlight on water. It was a woman dressed in the finery of
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `359` activation `7.291` class `sentence_boundary` token `.`
+  - she realized the space around her was no longer empty. The silence was broken by the soft, ghostly
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `282` activation `7.282` class `sentence_boundary` token `.`
+  - the warped parquet floor, the stale atmosphere shifted. A faint, ethereal glow began to emanate
+- `L24:3913` `27d5c23de1b1d5746a570fcb287b947bf3abec3a5a2948cb081f8daf5c285b6b@turn_01@qwen3.6-35b` token `252` activation `7.047` class `sentence_boundary` token `.`
+  - the abandoned ballroom atop the old manor house. The air was thick with dust and the scent of
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `558` activation `9.355` class `sentence_boundary` token `.`
+  - air, seemingly assessing the giant metal beast before it. Martha held her breath, afraid that even a sudden
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `576` activation `8.971` class `sentence_boundary` token `.`
+  - even a sudden movement might startle it into danger. Slowly, gracefully, the deer turned and bounded
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `525` activation `8.591` class `sentence_boundary` token `.`
+  - by the sudden proximity of such raw, wild life. The deer didn’t bolt. Instead, it tilted
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `494` activation `8.524` class `sentence_boundary` token `.`
+  - halt, mere inches from the animal’s trembling flank. Her heart hammered against her ribs like a trapped bird
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `505` activation `8.421` class `sentence_boundary` token `.`
+  - Her heart hammered against her ribs like a trapped bird. For a moment, she simply stared, paralyzed by
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `596` activation `8.168` class `sentence_boundary` token `.`
+  - bounded away, disappearing into the shadows of the trees. Only when it was gone did Martha exhale,
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `463` activation `7.973` class `sentence_boundary` token `.`
+  - tires screeching in protest against the wet pavement. The car skidded, sliding dangerously close to
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `445` activation `7.520` class `sentence_boundary` token `.`
+  - the lane, its breath visible in the cool air. Martha slammed on the brakes, the tires scree
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `614` activation `7.337` class `sentence_boundary` token `.`
+  - exhale, her hands finally relaxing on the wheel. She sat there for a long time, listening to
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `421` activation `6.303` class `sentence_boundary` token `.`
+  - beam of her high beams. Time seemed to suspend. A deer, majestic and terrified, stood frozen in
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `393` activation `5.776` class `sentence_boundary` token `.`
+  - Tonight, however, the woods held a darker secret. Just as she rounded a sharp bend, a pair
+- `L24:3913` `dca797db77cbb27c84bcd09a63a999016b835aa4da4308ea4d76a1082ddde250@turn_01@qwen3.6-35b` token `416` activation `5.494` class `sentence_boundary` token `.`
+  - , reflective eyes caught the beam of her high beams. Time seemed to suspend. A deer, majestic and
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `479` activation `9.338` class `sentence_boundary` token `.`
+  - layer of invisible comfort as she approached the shallow end. Her legs trembled, not just from the cold
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `523` activation `9.195` class `sentence_boundary` token `.`
+  - , sending a ripple of relief through her tense muscles. One by one, the other children jumped in,
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `307` activation `9.032` class `sentence_boundary` token `.`
+  - to seep through her towel and into her bones. She looked at the pool, a vast, rectangular
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `331` activation `8.896` class `sentence_boundary` token `.`
+  - turquoise blue, mesmerizing and terrifying in equal measure. It stretched out before her, an infinite mirror waiting
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `618` activation `8.870` class `sentence_boundary` token `.`
+  - , lifting the weight of the world off her shoulders. For the first time that morning, the dread in
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `556` activation `8.793` class `sentence_boundary` token `.`
+  - into a lively arena of splashes and giggles. Maya watched them, her fear slowly melting like ice
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `496` activation `8.699` class `sentence_boundary` token `.`
+  - just from the cold, but from the sudden exposure. She dipped her toes in, the water shockingly
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `588` activation `8.575` class `sentence_boundary` token `.`
+  - gave her an encouraging thumbs-up from the drying area. Taking a deep breath, Maya stepped fully into the
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `570` activation `8.534` class `sentence_boundary` token `.`
+  - , her fear slowly melting like ice in summer sun. She looked at her mother, who gave her an
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `455` activation `8.181` class `sentence_boundary` token `.`
+  - her throat dry, and took a tentative step forward. The warm air felt like a strange embrace, wrapping
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `600` activation `7.827` class `sentence_boundary` token `.`
+  - a deep breath, Maya stepped fully into the water. The buoyancy supported her small frame, lifting the
+- `L24:3913` `8432652098a896c28e60a2b9787d4ecb951c6ccf2cc4af6a09fe8a887b75ed2d@turn_01@qwen3.6-35b` token `278` activation `7.504` class `sentence_boundary` token `.`
+  - synchronized awkwardness of those who know they are late. The air felt colder here, closer to the water
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `315` activation `9.139` class `sentence_boundary` token `.`
+  - the crowd with an intensity that makes your breath hitch. You tell yourself to look away, to keep walking
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `576` activation `8.303` class `sentence_boundary` token `.`
+  - gentle it contrasts sharply with the intensity in his gaze. Then, he turns and walks away, disappearing into
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `546` activation `7.756` class `sentence_boundary` token `.`
+  - electricity, thick with unspoken promises and hidden dangers. He reaches out, his fingers brushing a stray lock
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `499` activation `7.532` class `sentence_boundary` token `.`
+  - fence, moving toward you with a predator’s grace. He stops inches away, close enough for you to
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `384` activation `7.516` class `sentence_boundary` token `.`
+  - just a mystery wrapped in expensive fabric and silent observation. He doesn’t smile, doesn’t nod, but
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `517` activation `7.508` class `sentence_boundary` token `.`
+  - for you to smell sandalwood and old paper. He doesn’t speak. He doesn’t need to
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `484` activation `7.237` class `sentence_boundary` token `.`
+  - the quarter hour, its sound distorted, echoing strangely. Julian pushes off the fence, moving toward you with
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `290` activation `7.200` class `sentence_boundary` token `.`
+  - with an inner resilience that defies the gloom. He leans against the wrought-iron fence near the
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `258` activation `7.188` class `sentence_boundary` token `.`
+  - shoulders broad enough to fill out his tailored charcoal coat. But it is the hair that catches the dim light
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `418` activation `7.092` class `sentence_boundary` token `.`
+  - possessiveness that sends a shiver down your spine. You know you should be running to the safety of
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `209` activation `6.899` class `sentence_boundary` token `.`
+  - your arm, but your senses are on high alert. That is when you see him. He stands out
+- `L24:3913` `f18bba3d96f77b751affa2c3a58f4082f9f6083e65001c32adf8cf948c9e4605@turn_01@qwen3.6-35b` token `598` activation `6.815` class `sentence_boundary` token `.`
+  - thickening fog that suddenly rolls in from the lake. You stand alone in the mist, your heart racing
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `257` activation `9.365` class `sentence_boundary` token `.`
+  - sensation sent a shockwave of warmth through his chest. He decided, with a sudden clarity, to take
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `336` activation `8.975` class `sentence_boundary` token `.`
+  - melodic hum that vibrated in Elias’s bones. As dawn broke, the window was ajar.
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `211` activation `8.930` class `sentence_boundary` token `.`
+  - gaze pierced the armor Elias had built around his soul. Without thinking, driven by an instinct he hadn’t
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `195` activation `8.787` class `sentence_boundary` token `.`
+  - when Elias approached; instead, it hovered, waiting. Something in its luminous gaze pierced the armor Elias
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `232` activation `8.383` class `sentence_boundary` token `.`
+  - felt in decades, Elias cupped his hands gently. The butterfly landed softly on his palm, its weight
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `179` activation `8.359` class `sentence_boundary` token `.`
+  - igo, violet, and a soft, glowing gold. It didn’t flutter away when Elias approached; instead
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `299` activation `7.897` class `sentence_boundary` token `.`
+  - watered honey, setting it on his windowsill. That night, the forest outside began to sing.
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `309` activation `7.822` class `sentence_boundary` token `.`
+  - . That night, the forest outside began to sing. Not with the usual cries of owls or rust
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `422` activation `7.724` class `sentence_boundary` token `.`
+  - , its leaves shimmering like the butterfly’s wings. It wasn’t just any tree; it was a
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `509` activation `7.591` class `sentence_boundary` token `.`
+  - to ease their worries, turning their tense faces peaceful. Elias realized the butterfly hadn’t been a pet,
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `401` activation `7.260` class `sentence_boundary` token `.`
+  - erupted from the earth, growing at an impossible speed. By dusk, it was a full-grown tree
+- `L24:3913` `774e9eef1436d0032b9ff548f0d46efc89328108e1a97c8e4daaab6d81cc6576@turn_01@qwen3.6-35b` token `493` activation `6.772` class `sentence_boundary` token `.`
+  - his porch, smiling for the first time in years. The tree’s glow seemed to ease their worries,
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `433` activation `9.602` class `sentence_boundary` token `.`
+  - strangers, all united by the universal language of music. Time lost its meaning, measured only by the cresc
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `456` activation `9.247` class `sentence_boundary` token `.`
+  - the drops and the hush of the breakdowns. For the first time all week, their minds were
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `415` activation `9.162` class `sentence_boundary` token `.`
+  - and swaying hips in a chaotic, beautiful dance. Faces blurred into a sea of smiling strangers, all
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `359` activation `8.989` class `sentence_boundary` token `.`
+  - making the room feel like a dream suspended in amber. Sweat began to bead on their foreheads, not
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `382` activation `8.759` class `sentence_boundary` token `.`
+  - , but from the raw, physical release of movement. They didn’t care about perfect steps or coordinated routines
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `329` activation `8.504` class `sentence_boundary` token `.`
+  - , but as a single, fluid entity of motion. The strobe lights fractured their reflections into a kale
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `603` activation `8.286` class `sentence_boundary` token `.`
+  - , less distant than they had earlier in the week. They hailed a cab, laughing softly as they caught
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `276` activation `8.191` class `sentence_boundary` token `.`
+  - that seemed to beat in time with their own hearts. The DJ, a shadowy figure behind a wall
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `304` activation `7.767` class `sentence_boundary` token `.`
+  - that instantly tightened the air, forcing everyone to move. Maya, Chloe, and Sophie merged into the crowd
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `550` activation `7.409` class `sentence_boundary` token `.`
+  - the city outside, a gentle reminder that reality awaited. They shared a quiet, knowing look, a silent
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `183` activation `6.753` class `sentence_boundary` token `.`
+  - mile marker eroding the weight of the workweek. They sang off-key to classic anthems, their
+- `L24:3913` `64c9a49b2359834f4ae837058e71212726eb3165b4eeeb233a08a27563074be5@turn_01@qwen3.6-35b` token `103` activation `6.729` class `sentence_boundary` token `.`
+  - of her heels that promised both elegance and inevitable pain. They were a constellation of young ambition and carefree
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `262` activation `9.251` class `sentence_boundary` token `.`
+  - that vaporized a scrap of metal in the corner. Kael watched, her finger tracing the hilt
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `293` activation `8.118` class `sentence_boundary` token `.`
+  - dull thrum of its power cell against her thigh. It was functional, reliable, and utterly boring,
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `416` activation `8.079` class `sentence_boundary` token `.`
+  - thick with ozone and the sharp scent of melting metal. In her fantasy, she wasn’t just a technician
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `133` activation `7.665` class `sentence_boundary` token `.`
+  - scanning the racks of gleaming, chromatic tubes. There were no steel guns here, no clunky
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `482` activation `7.408` class `sentence_boundary` token `.`
+  - beautiful, terrifying snap-hiss of plasma meeting armor. It was a dangerous habit, this romanticization of
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `388` activation `6.986` class `sentence_boundary` token `.`
+  - droids descended in a cloud of smoke and sparks. She could see the light show clearly: her emitter
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `455` activation `6.978` class `sentence_boundary` token `.`
+  - returning fire with precision that would make the stars jealous. She imagined the sound—not the deafening crack of
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `181` activation `6.821` class `sentence_boundary` token `.`
+  - raised on the clean, silent violence of photonics. Instead, the shelves groaned under the weight of
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `233` activation `6.624` class `sentence_boundary` token `.`
+  - ers that burned with the heat of a contained star. A customer haggled over a customized beam rifle
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `593` activation `6.493` class `sentence_boundary` token `.`
+  - quickly looked away, pretending to examine the pricing tags. Yet, the image of that epic battle lingered
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `111` activation `6.467` class `sentence_boundary` token `.`
+  - advertisements, commerce moved to the shadow of the law. Kael paused by a merchant’s stall, her
+- `L24:3913` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@qwen3.6-35b` token `520` activation `6.457` class `sentence_boundary` token `.`
+  - looked like charred flesh and smelled like burnt meat. But in the quiet corners of her psyche, the

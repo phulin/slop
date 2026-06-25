@@ -1,0 +1,815 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:191` | `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` | `human` | 11 | `30.72` | `8.19` | word:11 |
+| `L19:191` | `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` | `human` | 9 | `39.56` | `7.95` | word:9 |
+| `L19:191` | `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` | `human` | 8 | `22.92` | `8.39` | word:8 |
+| `L19:191` | `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` | `human` | 10 | `33.27` | `8.09` | word:9|line_break:1 |
+| `L19:191` | `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 9 | `29.87` | `8.30` | word:9 |
+| `L19:191` | `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` | `human` | 30 | `91.48` | `8.10` | word:30 |
+| `L19:191` | `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` | `human` | 12 | `66.88` | `9.05` | word:12 |
+| `L19:191` | `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` | `glm-5.2` | 14 | `42.33` | `7.82` | word:13|discourse_marker_word:1 |
+| `L19:191` | `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 7 | `25.14` | `8.30` | word:7 |
+| `L19:191` | `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 5 | `21.09` | `8.33` | word:5 |
+| `L19:191` | `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` | `human` | 4 | `17.21` | `9.16` | word:4 |
+| `L19:191` | `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 3 | `12.93` | `8.73` | word:3 |
+| `L19:191` | `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` | `human` | 3 | `11.13` | `8.53` | word:3 |
+| `L19:191` | `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` | `human` | 7 | `23.78` | `8.40` | word:7 |
+| `L19:191` | `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 5 | `18.48` | `8.08` | word:5 |
+| `L19:191` | `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 6 | `21.72` | `7.70` | word:6 |
+| `L19:191` | `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` | `human` | 4 | `16.21` | `8.51` | word:4 |
+| `L19:191` | `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 11 | `34.13` | `8.88` | word:11 |
+| `L19:191` | `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 6 | `26.88` | `7.65` | word:6 |
+| `L19:191` | `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 6 | `20.49` | `8.35` | word:6 |
+| `L19:191` | `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` | `human` | 10 | `36.40` | `7.79` | word:10 |
+| `L19:191` | `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` | `gpt-5.5` | 17 | `45.56` | `7.68` | word:17 |
+| `L19:191` | `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 9 | `36.10` | `7.94` | word:9 |
+| `L19:191` | `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` | `gpt-5.5` | 6 | `25.41` | `8.57` | word:6 |
+| `L24:779` | `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` | `human` | 9 | `36.57` | `8.95` | word:9 |
+| `L24:779` | `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` | `human` | 10 | `46.60` | `8.98` | word:10 |
+| `L24:779` | `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` | `human` | 6 | `25.34` | `9.65` | word:6 |
+| `L24:779` | `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` | `human` | 11 | `41.49` | `9.31` | word:9|line_break:1|punctuation:1 |
+| `L24:779` | `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 11 | `38.23` | `8.87` | word:11 |
+| `L24:779` | `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` | `human` | 28 | `105.00` | `9.04` | word:28 |
+| `L24:779` | `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` | `human` | 13 | `81.89` | `10.10` | word:13 |
+| `L24:779` | `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` | `glm-5.2` | 13 | `48.76` | `8.79` | word:12|discourse_marker_word:1 |
+| `L24:779` | `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 5 | `26.93` | `8.87` | word:5 |
+| `L24:779` | `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 6 | `24.96` | `8.90` | word:6 |
+| `L24:779` | `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` | `human` | 4 | `18.96` | `9.43` | word:4 |
+| `L24:779` | `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 3 | `14.91` | `9.66` | word:3 |
+| `L24:779` | `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` | `human` | 4 | `13.53` | `8.66` | word:4 |
+| `L24:779` | `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` | `human` | 7 | `27.96` | `10.03` | word:7 |
+| `L24:779` | `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 6 | `23.93` | `9.44` | word:6 |
+| `L24:779` | `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 8 | `28.44` | `8.88` | word:8 |
+| `L24:779` | `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` | `human` | 4 | `18.94` | `8.76` | word:4 |
+| `L24:779` | `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 10 | `41.16` | `9.46` | word:10 |
+| `L24:779` | `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 5 | `31.13` | `8.82` | word:5 |
+| `L24:779` | `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 6 | `23.19` | `8.87` | word:6 |
+| `L24:779` | `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` | `human` | 9 | `43.39` | `8.71` | word:9 |
+| `L24:779` | `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` | `gpt-5.5` | 15 | `54.50` | `8.77` | word:15 |
+| `L24:779` | `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 9 | `43.72` | `9.10` | word:9 |
+| `L24:779` | `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` | `gpt-5.5` | 8 | `33.74` | `9.00` | word:8 |
+
+## Top Tokens
+
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `317` activation `8.185` class `word` token `Storm`
+  - upending the status quo in the game world. Storms of oddly-colored lightning roll in from the ocean
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `310` activation `5.497` class `word` token ` status`
+  - shake things up for the party by upending the status quo in the game world. Storms of oddly
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `318` activation `3.472` class `word` token `s`
+  - ending the status quo in the game world. Storms of oddly-colored lightning roll in from the ocean with
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `253` activation `3.016` class `word` token ` start`
+  - ranging from subtle to earthshattering: People everywhere start having nightmares about a skull in the sky. This
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `451` activation `2.711` class `word` token ` strict`
+  - This puts pressure on the players by giving them a strict time limit before everything ends. A great being from
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `464` activation `2.460` class `word` token ` stars`
+  - before everything ends. A great being from beyond the stars arrives to swallow the world. This could serve as
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `319` activation `1.627` class `word` token ` of`
+  - the status quo in the game world. Storms of oddly-colored lightning roll in from the ocean with thunder
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `239` activation `1.249` class `word` token ` seven`
+  - Okay, can do that! Here are seven world-changing events ranging from subtle to earthshattering
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `280` activation `0.925` class `word` token `Several`
+  - players that the end of the world is coming. Several plagues sweep the land, including diseases, loc
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `249` activation `0.851` class `word` token `attering`
+  - seven world-changing events ranging from subtle to earthshattering: People everywhere start having nightmares about a skull in
+- `L19:191` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `245` activation `0.731` class `word` token ` subtle`
+  - that! Here are seven world-changing events ranging from subtle to earthshattering: People everywhere start having nightmares
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `447` activation `7.955` class `word` token `St`
+  - very high, and land safely from high heights. Stargazer: A stargazer is a powerful
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `452` activation `6.516` class `word` token ` st`
+  - safely from high heights. Stargazer: A stargazer is a powerful being who can study the
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `448` activation `5.386` class `word` token `arg`
+  - high, and land safely from high heights. Stargazer: A stargazer is a powerful being
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `463` activation `4.373` class `word` token ` stars`
+  - argazer is a powerful being who can study the stars. They use their magic to manipulate the forces of
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `478` activation `4.185` class `word` token ` stars`
+  - magic to manipulate the forces of gravity to study the stars and learn about the cosmos. They can use their
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `461` activation `3.876` class `word` token ` study`
+  - A stargazer is a powerful being who can study the stars. They use their magic to manipulate the
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `476` activation `3.459` class `word` token ` study`
+  - use their magic to manipulate the forces of gravity to study the stars and learn about the cosmos. They can
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `453` activation `2.953` class `word` token `arg`
+  - from high heights. Stargazer: A stargazer is a powerful being who can study the stars
+- `L19:191` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `375` activation `0.861` class `word` token `-time`
+  - push and pull enemies, and rip holes in space-time. Graviturgy Wizard: A graviturgy
+- `L19:191` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `418` activation `8.394` class `word` token `St`
+  - two asteroids suddenly tangent, and pushed off-road. Stones in a glass jar. Beads in a
+- `L19:191` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `419` activation `5.205` class `word` token `ones`
+  - asteroids suddenly tangent, and pushed off-road. Stones in a glass jar. Beads in a closed
+- `L19:191` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `160` activation `2.776` class `word` token ` strapped`
+  - his mother, could sense her silent agitation. She strapped and de-strapped herself, frustrated at the small
+- `L19:191` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `163` activation `2.588` class `word` token `-str`
+  - could sense her silent agitation. She strapped and de-strapped herself, frustrated at the small bleeps
+- `L19:191` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `164` activation `1.621` class `word` token `apped`
+  - sense her silent agitation. She strapped and de-strapped herself, frustrated at the small bleeps of
+- `L19:191` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `421` activation `0.913` class `word` token ` a`
+  - tangent, and pushed off-road. Stones in a glass jar. Beads in a closed fist.
+- `L19:191` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `165` activation `0.788` class `word` token ` herself`
+  - her silent agitation. She strapped and de-strapped herself, frustrated at the small bleeps of information
+- `L19:191` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `420` activation `0.632` class `word` token ` in`
+  - suddenly tangent, and pushed off-road. Stones in a glass jar. Beads in a closed fist
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `298` activation `8.087` class `word` token ` St`
+  - the center stage… The Great Rat follows slowly… Stands behind her… Clicks his fingers (lights
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `434` activation `6.483` class `word` token ` st`
+  - You've been hit by the plague! Dead, stench—all gone. Let bygones be by
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `299` activation `4.225` class `word` token `ands`
+  - center stage… The Great Rat follows slowly… Stands behind her… Clicks his fingers (lights come
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `290` activation `3.347` class `word` token ` stage`
+  - girl runs in despair to the front of the center stage… The Great Rat follows slowly… Stands behind
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `395` activation `2.961` class `word` token ` streets`
+  - We rule (yeh, cool) Da underground streets. You feeling the heat? You should, you
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `452` activation `2.623` class `word` token ` stay`
+  - ones be bygones, No way; we stay to prey On the lives of Eyam—
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `435` activation `2.582` class `word` token `ench`
+  - 've been hit by the plague! Dead, stench—all gone. Let bygones be byg
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `485` activation `1.071` class `line_break` token `...
+
+`
+  - Meet your legacy. Your life's gonna be history... (Pause.) The Great Rat: Finish her!
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `484` activation `0.978` class `word` token ` history`
+  - ! Meet your legacy. Your life's gonna be history... (Pause.) The Great Rat: Finish her
+- `L19:191` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `383` activation `0.911` class `word` token ` destiny`
+  - uce. No secrecy, The world has met its destiny. We rule (yeh, cool) Da
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `253` activation `8.296` class `word` token ` storm`
+  - The storm had scrubbed the valley raw, leaving behind the
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `476` activation `5.979` class `word` token ` storm`
+  - technicolor magic, bridging the gap between the storm's fury and the quiet evening ahead. As the
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `401` activation `3.188` class `word` token ` stepped`
+  - shimmering weight into the dark pine hills. Maya stepped out from the shelter, her face upturned to
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `325` activation `3.073` class `word` token ` striking`
+  - of late-afternoon sunlight pierced the gloom, striking the airborne mist like a flint. Instantly
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `288` activation `2.905` class `word` token ` stood`
+  - Under the eaves of an old barn, Maya stood shivering, watching the final fat drops of rain
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `423` activation `2.748` class `word` token ` stripe`
+  - sudden warmth. The rainbow wasn’t just a static stripe of paint; it hummed with vitality. The
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `422` activation `2.144` class `word` token ` static`
+  - the sudden warmth. The rainbow wasn’t just a static stripe of paint; it hummed with vitality.
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `314` activation `0.885` class `word` token ` shaft`
+  - driveway. Then, the clouds fractured. A single shaft of late-afternoon sunlight pierced the gloom,
+- `L19:191` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `335` activation `0.655` class `word` token `ly`
+  - striking the airborne mist like a flint. Instantly, the sky ignited. It began as a faint
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `60` activation `8.105` class `word` token ` steak`
+  - smell of fries, pizza, tiramisu, steak, and sushi seem like they would fill the air
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `88` activation `6.555` class `word` token ` St`
+  - other like oppositely-charged magnets, but Stu had been on a self-inflicted diet for
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `473` activation `6.084` class `word` token ` St`
+  - the first time in months—years, maybe. Stu proceeded to have the time of his life at
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `259` activation `6.052` class `word` token ` St`
+  - , but Stu refused that pleasure as well. Stu began rethinking his life decisions. He had
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `328` activation `5.879` class `word` token `St`
+  - on food—there must be a different solution. Stu had enough. The conversating coworkers around him
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `89` activation `5.756` class `word` token `u`
+  - like oppositely-charged magnets, but Stu had been on a self-inflicted diet for months
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `459` activation `5.101` class `word` token ` St`
+  - ered from either side of the food tower and saw Stu smiling for the first time in months—years
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `154` activation `4.853` class `word` token ` St`
+  - . The slot machines on The Strip failed to tempt Stu when his coworkers were gambling their money away in
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `383` activation `4.220` class `word` token ` station`
+  - to the second. Stu stopped at every single station along the route and picked up at least one food
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `211` activation `3.360` class `word` token ` staff`
+  - sitting down because the anxiety to come if the buffet staff might suspect him of sneaking food without paying would
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `432` activation `3.224` class `word` token ` St`
+  - piece of his bounty. Returning to the table, Stu’s plate was so tall it obscured his eye
+- `L19:191` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `377` activation `3.107` class `word` token ` St`
+  - first buffet bar. Then, to the second. Stu stopped at every single station along the route and
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `280` activation `9.050` class `word` token ` storm`
+  - his feet, it sends in sporadic waves of storm surge to plow him to the ground. But
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `201` activation `7.022` class `word` token ` storm`
+  - , hoping their homes withstand the assault. The massive storm is trying to knock him down with powerful gusts
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `366` activation `6.843` class `word` token ` storm`
+  - slicker, and sheer determination he battles against the storm. Though the forecaster isn't winning the epic
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `419` activation `5.854` class `word` token ` storm`
+  - is here to give a full account of the latest storm Mother Nature has sent to cause havoc on the land
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `491` activation `5.608` class `word` token ` storm`
+  - told. These individuals bear the brunt of the storm so that others can stay informed and hopefully won't
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `174` activation `5.530` class `word` token ` storm`
+  - . The lone forecaster is literally weathering the storm as a hurricane bears down upon him and the quiet
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `473` activation `5.522` class `word` token ` storm`
+  - camera operator and the weather forecaster. As the storm rages on, the story is told. These
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `458` activation `5.445` class `word` token ` storm`
+  - night. The only souls brave enough to confront this storm head-on are the camera operator and the weather fore
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `297` activation `4.993` class `word` token ` storms`
+  - the ground. But this forecaster is experienced in storms and expects to be hit from every side. He
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `479` activation `4.915` class `word` token ` story`
+  - caster. As the storm rages on, the story is told. These individuals bear the brunt of
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `496` activation `4.505` class `word` token ` stay`
+  - the brunt of the storm so that others can stay informed and hopefully won't try to venture out during
+- `L19:191` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `195` activation `1.598` class `word` token ` withstand`
+  - town as people huddle inside, hoping their homes withstand the assault. The massive storm is trying to knock
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `217` activation `7.818` class `word` token ` St`
+  - I ended up just saying it out loud anyway. Stammering. Looking at his chin instead of his
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `112` activation `5.381` class `word` token ` street`
+  - blossoms, no cinematic rainfall threading through the amber streetlights. Just a gray afternoon and my own stupid
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `218` activation `3.521` class `word` token `ammer`
+  - ended up just saying it out loud anyway. Stammering. Looking at his chin instead of his eyes
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `200` activation `3.486` class `word` token ` stayed`
+  - and then left it in my skirt pocket where it stayed, limp and meaningless, because I ended up just
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `306` activation `3.415` class `word` token ` strawberry`
+  - café. He ordered black coffee. I ordered a strawberry parfait I didn't want, because I thought it
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `122` activation `3.372` class `word` token ` stupid`
+  - streetlights. Just a gray afternoon and my own stupid courage, the kind that festers in your chest
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `333` activation `3.215` class `word` token ` staged`
+  - photo I'd post, the photo I'd already staged, the photo that would prove I was the kind
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `264` activation `2.971` class `word` token ` standing`
+  - . And I knew. I knew right there, standing in the hallway outside classroom 2-C with the
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `139` activation `2.493` class `word` token ` stop`
+  - ers in your chest until you either say something or stop breathing. Takeda-kun said yes.
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `161` activation `1.514` class `word` token ` seventeen`
+  - was the problem. I had rehearsed the question seventeen times in my bathroom mirror. I'd written it
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `458` activation `1.497` class `word` token `7`
+  - right. I'm sorry." He replied at 7:12 AM the next morning: "Yeah.
+- `L19:191` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `175` activation `1.475` class `word` token ` store`
+  - bathroom mirror. I'd written it on a Convenience store receipt and then crumpled it and then un
+- `L19:191` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `2` activation `8.298` class `word` token ` storm`
+  - The storm outside was not merely raining; it was throwing a
+- `L19:191` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `157` activation `4.970` class `word` token ` stained`
+  - single feather duster lay on the floor nearby, stained with something dark and suspiciously sticky. Hallow
+- `L19:191` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `164` activation `3.556` class `word` token ` sticky`
+  - floor nearby, stained with something dark and suspiciously sticky. Halloway sighed, lighting a match despite
+- `L19:191` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `62` activation `3.518` class `word` token ` stepped`
+  - lingering scent of burnt toast. Detective Halloway stepped over the threshold, his trench coat dripping onto the
+- `L19:191` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `290` activation `2.970` class `word` token ` stood`
+  - In the corner, Barnaby, the homeowner, stood trembling, clutching a wet umbrella like a weapon
+- `L19:191` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `212` activation `0.935` class `word` token ` distinct`
+  - who claimed she heard a scream, followed by the distinct sound of a vase breaking. "Impossible," H
+- `L19:191` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `464` activation `0.889` class `word` token ` distinctly`
+  - the floor. He sniffed it. It smelled distinctly of fruit and vinegar. "Ketchup, Barn
+- `L19:191` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `321` activation `8.330` class `word` token ` storm`
+  - The storm tore at the house, throwing sheets of rain against
+- `L19:191` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `371` activation `4.451` class `word` token ` stairs`
+  - . Jasmine stood frozen at the top of the stairs, her breath hitching in her throat. A
+- `L19:191` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `405` activation `3.599` class `word` token ` stark`
+  - for a fractured second. In that fleeting burst of stark white light, she saw it. Dripping
+- `L19:191` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `472` activation `2.597` class `word` token ` step`
+  - , old dust, and copper. She took a step back, but the floorboard groaned beneath her
+- `L19:191` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `364` activation `2.113` class `word` token ` stood`
+  - suffocating, pitch-black silence. Jasmine stood frozen at the top of the stairs, her breath
+- `L19:191` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` token `506` activation `9.160` class `word` token ` stake`
+  - and emphasizes the role of being responsible digitally for creating stakeholder trust and loyalty.
+- `L19:191` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` token `507` activation `3.248` class `word` token `holder`
+  - emphasizes the role of being responsible digitally for creating stakeholder trust and loyalty.
+- `L19:191` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` token `471` activation `3.027` class `word` token ` stance`
+  - , Axon accepted their suggestion but later reversed their stance, causing nine out of thirteen members to resign.
+- `L19:191` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` token `407` activation `1.773` class `word` token ` established`
+  - about Axon's AI ethics board, which was established by the CEO to address ethical concerns arising from rapidly
+- `L19:191` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@qwen3.6-35b` token `469` activation `8.731` class `word` token ` stake`
+  - prioritizing digital responsibility offers significant advantages, including enhanced stakeholder trust and loyalty. Despite challenges like conflicting interests
+- `L19:191` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@qwen3.6-35b` token `470` activation `2.491` class `word` token `holder`
+  - izing digital responsibility offers significant advantages, including enhanced stakeholder trust and loyalty. Despite challenges like conflicting interests between
+- `L19:191` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@qwen3.6-35b` token `378` activation `1.708` class `word` token ` established`
+  - In 2018, Axon’s CEO established an independent AI ethics board to navigate emerging technological dile
+- `L19:191` `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` token `35` activation `8.532` class `word` token ` stall`
+  - Guys, dudes, and stallions--for the last time, it's not
+- `L19:191` `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` token `36` activation `1.839` class `word` token `ions`
+  - Guys, dudes, and stallions--for the last time, it's not feminine
+- `L19:191` `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` token `125` activation `0.758` class `word` token ` instantly`
+  - a whitening mouthwash. A flashy smile will instantly boost your confidence. Lose Unwanted Hair
+- `L19:191` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `78` activation `8.399` class `word` token ` storm`
+  - disaster, you might think of a hurricane or a storm. Wildfires are probably the farthest thing from
+- `L19:191` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `330` activation `4.568` class `word` token ` stiff`
+  - ed in flames. The firefighters worked tirelessly in the stiff winds, but it seemed as though the fire would
+- `L19:191` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `93` activation `3.642` class `word` token ` story`
+  - probably the farthest thing from your mind. This story might change your mind about that though. The sun
+- `L19:191` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `156` activation `3.265` class `word` token ` strong`
+  - , and sunbathing. But suddenly, a strong gust of wind picked up and carried with it an
+- `L19:191` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `285` activation `1.594` class `word` token `7`
+  - beach. Emergency crews arrived on the scene within 7 minutes, but it was too late. The flames
+- `L19:191` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `426` activation `1.403` class `word` token ` extingu`
+  - . Hours passed before the firefighters were finally able to extinguish the blaze and the damage was catastrophic to the
+- `L19:191` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `462` activation `0.904` class `word` token ` destruction`
+  - wasteland. However, something amazing came from the destruction. The community rallied together and volunteers worked tirelessly to
+- `L19:191` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `483` activation `8.084` class `word` token ` storm`
+  - Your hand in mine, a guiding spark. Through stormy skies and endless years, I will calm your
+- `L19:191` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `467` activation `3.554` class `word` token ` stand`
+  - Because I love you, I stand in the quiet dark. Your hand in mine,
+- `L19:191` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `499` activation `3.473` class `word` token ` stays`
+  - , I will calm your deepest fears. This promise stays, forever true, My heart beats only because of
+- `L19:191` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `484` activation `2.742` class `word` token `y`
+  - hand in mine, a guiding spark. Through stormy skies and endless years, I will calm your deepest
+- `L19:191` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `468` activation `0.631` class `word` token ` in`
+  - Because I love you, I stand in the quiet dark. Your hand in mine, a
+- `L19:191` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `157` activation `7.699` class `word` token ` sting`
+  - The wind off the Black Rock Desert carried the sting of early winter, biting through Nina’s frayed
+- `L19:191` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `238` activation `5.552` class `word` token ` state`
+  - ats. Before the collapse, it had been a state-of-the-art solar farm. Now, row after
+- `L19:191` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `345` activation `2.560` class `word` token ` steady`
+  - backup LED strip along the baseboards glowed a steady, miraculous amber. In the corner, a small
+- `L19:191` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `239` activation `2.323` class `word` token `-of`
+  - . Before the collapse, it had been a state-of-the-art solar farm. Now, row after row
+- `L19:191` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `337` activation `1.931` class `word` token ` strip`
+  - , buzzed, and died—but the backup LED strip along the baseboards glowed a steady, miraculous
+- `L19:191` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `313` activation `1.655` class `word` token ` structure`
+  - of her shoes. Electricity. Inside the concrete structure, she flipped a wall switch. A fluorescent tube
+- `L19:191` `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` token `144` activation `8.509` class `word` token ` stip`
+  - about improving your employee referral program by switching to a stipend system for successful hires. When you choose to
+- `L19:191` `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` token `388` activation `5.396` class `word` token ` staffing`
+  - is a great way to guarantee a broad representation of staffing, which will help you work toward the best possible
+- `L19:191` `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` token `104` activation `1.612` class `word` token ` strategies`
+  - Referrals - One of the most highly effective hiring strategies for today's growing companies is using employment referrals.
+- `L19:191` `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` token `146` activation `0.690` class `word` token ` system`
+  - your employee referral program by switching to a stipend system for successful hires. When you choose to create a
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `68` activation `8.875` class `word` token ` stake`
+  - today not as a consumer, but as a concerned stakeholder in the broader narrative of poultry rights, specifically
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `368` activation `5.205` class `word` token ` stagn`
+  - are, after all, pioneers of innovation. Why stagnate? Imagine the marketing slogan: "Finger
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `452` activation `4.124` class `word` token ` standards`
+  - allow Kentucky Fried Chicken to align itself with modern welfare standards, potentially unlocking new markets among ethically conscious consumers
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `168` activation `2.878` class `word` token ` start`
+  - pivot. It is time to stop selling chicken and start selling duck. Let us examine the facts, shall
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `164` activation `2.814` class `word` token ` stop`
+  - I propose a logical pivot. It is time to stop selling chicken and start selling duck. Let us examine
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `69` activation `2.567` class `word` token `holder`
+  - not as a consumer, but as a concerned stakeholder in the broader narrative of poultry rights, specifically addressing
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `413` activation `2.384` class `word` token ` standpoint`
+  - , does it not? Additionally, from a logistical standpoint, ducks are hardy. They do not require
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `369` activation `1.668` class `word` token `ate`
+  - , after all, pioneers of innovation. Why stagnate? Imagine the marketing slogan: "Finger L
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `434` activation `1.539` class `word` token ` scrutiny`
+  - the same intensive confinement systems that have drawn so much scrutiny in recent years. This shift would allow Kentucky Fried
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `275` activation `1.057` class `word` token ` established`
+  - as a delicacy. By aligning yourself with established gastronomic luxury rather than mass-produced comfort, you
+- `L19:191` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `428` activation `1.015` class `word` token ` systems`
+  - y. They do not require the same intensive confinement systems that have drawn so much scrutiny in recent years.
+- `L19:191` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `255` activation `7.654` class `word` token ` St`
+  - The wind has shifted. The scent is old. Stale. Perhaps the Sphere has been forgotten. Perhaps
+- `L19:191` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `256` activation `5.409` class `word` token `ale`
+  - wind has shifted. The scent is old. Stale. Perhaps the Sphere has been forgotten. Perhaps it
+- `L19:191` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `79` activation `4.758` class `word` token ` statues`
+  - lie on opposite sides of the rug. They are statues of patience. Their ears are perked, tracking
+- `L19:191` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `287` activation `4.254` class `word` token ` stares`
+  - , claws clicking nervously on the wood. He stares at the shadowy gap beneath the beige sectional.
+- `L19:191` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `472` activation `4.022` class `word` token ` Stay`
+  - dreaded Vacuum Monster that roars in the night. Stay here. In the sun. Let the Cat have
+- `L19:191` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `80` activation `0.782` class `word` token ` of`
+  - on opposite sides of the rug. They are statues of patience. Their ears are perked, tracking every
+- `L19:191` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `505` activation `8.346` class `word` token `Storm`
+  - , Unleashing heavy hail and driving rain, Stormy sentinel of the atmosphere.
+- `L19:191` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `482` activation `3.286` class `word` token ` stretching`
+  - to this giant’s might, Imposing anvil stretching out of sight. Behold the birthplace of
+- `L19:191` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `506` activation `2.832` class `word` token `y`
+  - Unleashing heavy hail and driving rain, Stormy sentinel of the atmosphere.
+- `L19:191` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `447` activation `2.778` class `word` token ` storms`
+  - midday sun, Unleashing fury once the storms begun. Lightning flashes from its icy crown,
+- `L19:191` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `469` activation `2.050` class `word` token `str`
+  - minous darkness casting over town. Nimbostratus yields to this giant’s might, Imposing
+- `L19:191` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `470` activation `1.199` class `word` token `atus`
+  - ous darkness casting over town. Nimbostratus yields to this giant’s might, Imposing an
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `238` activation `7.794` class `word` token ` St`
+  - of the jar. It should be much heavier. Streaks of grey paper still clung to the
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `395` activation `6.634` class `word` token ` st`
+  - the table with one small index finger. Her finger stilled, and she looked up and grinned. That
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `239` activation `5.399` class `word` token `reak`
+  - the jar. It should be much heavier. Streaks of grey paper still clung to the adhesive
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `500` activation `4.054` class `word` token ` strawberry`
+  - to her grinning girl. Her daughter licked the strawberry jam from her finger and laughed. She laughed too
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `372` activation `4.024` class `word` token ` sticky`
+  - her peanut butter and jelly sandwich. A glob of sticky red jam had escaped her sandwich. She was pushing
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `396` activation `2.872` class `word` token `illed`
+  - table with one small index finger. Her finger stilled, and she looked up and grinned. That youthful
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `240` activation `2.164` class `word` token `s`
+  - jar. It should be much heavier. Streaks of grey paper still clung to the adhesive left
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `244` activation `2.027` class `word` token ` still`
+  - be much heavier. Streaks of grey paper still clung to the adhesive left from the long-
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `241` activation `0.883` class `word` token ` of`
+  - . It should be much heavier. Streaks of grey paper still clung to the adhesive left from
+- `L19:191` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `421` activation `0.550` class `word` token ` chest`
+  - dispelled the numbness that was spreading through her chest and filled her with warmth. There was no room
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `324` activation `7.684` class `word` token `St`
+  - Velstria’s defense fund. MARA Stolen by you. My father was trying to expose
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `29` activation `5.354` class `word` token ` storms`
+  - above Earth like a jeweled crown, suspended between storms and stars. Shuttles drift silently past towers
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `31` activation `4.424` class `word` token ` stars`
+  - like a jeweled crown, suspended between storms and stars. Shuttles drift silently past towers of glass
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `115` activation `4.418` class `word` token ` ste`
+  - , tired eyes, hands wrapped around a cup of steaming tea. She looks ordinary. Almost invisible.
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `312` activation `4.143` class `word` token ` stolen`
+  - father hid three billion credits before he died. Money stolen from Velstria’s defense fund. MARA
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `325` activation `3.636` class `word` token `olen`
+  - stria’s defense fund. MARA Stolen by you. My father was trying to expose you
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `195` activation `3.588` class `word` token ` steel`
+  - . A man’s voice answers, smooth as polished steel. KOVAR DRAK, ruler of the
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `493` activation `3.428` class `word` token ` station`
+  - will send my own men. They will burn this station looking for you. Mara closes her eyes.
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `229` activation `2.007` class `word` token ` still`
+  - .O.) And yet you answered. That means you still understand power. MARA No. It means
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `116` activation `1.434` class `word` token `aming`
+  - tired eyes, hands wrapped around a cup of steaming tea. She looks ordinary. Almost invisible. A
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `60` activation `1.056` class `word` token `UR`
+  - skyline in a dozen languages. INT. RESTAURANT “THE BLUE COMET” — NIGHT
+- `L19:191` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `163` activation `0.956` class `word` token `RIA`
+  - IDENT KOVAR DRAK — VELSTRIA Her face tightens. She taps the receiver
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `453` activation `7.943` class `word` token `St`
+  - ashing down upon the land with deafening din. Streets are flooded by the heavy, surging
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `454` activation `6.037` class `word` token `re`
+  - down upon the land with deafening din. Streets are flooded by the heavy, surging tide
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `411` activation `5.752` class `word` token ` storm`
+  - to rise, Towering aloft to meet the stormy skies. All the harbor waters quickly slip away
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `497` activation `4.532` class `word` token ` strength`
+  - upon the ruined, muddy streets. Nature shows the strength of its colossal hand, Leaving only sorrow on
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `455` activation `4.398` class `word` token `ets`
+  - upon the land with deafening din. Streets are flooded by the heavy, surging tide,
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `400` activation `3.347` class `word` token ` starts`
+  - grave. As it nears the shallow coast it starts to rise, Towering aloft to meet the
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `492` activation `1.624` class `word` token ` streets`
+  - s, Silence falls upon the ruined, muddy streets. Nature shows the strength of its colossal hand,
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `412` activation `1.387` class `word` token `y`
+  - rise, Towering aloft to meet the stormy skies. All the harbor waters quickly slip away,
+- `L19:191` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `385` activation `1.079` class `word` token ` shore`
+  - gathers in a quiet wave, Speeding toward the shore to find a sandy grave. As it nears
+- `L19:191` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `412` activation `8.575` class `word` token ` stake`
+  - experience strengthened my ability to plan editorial calendars, manage stakeholder communications, create mission-driven content, and translate
+- `L19:191` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `299` activation `4.666` class `word` token ` storytelling`
+  - followed InVision’s work around design collaboration, product storytelling, and empowering creative teams, and I’d love
+- `L19:191` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `428` activation `3.735` class `word` token ` storytelling`
+  - -driven content, and translate complex topics into engaging digital storytelling. I’d be grateful to learn whether there are
+- `L19:191` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `403` activation `3.073` class `word` token ` strengthened`
+  - a 12,000 follower increase. This experience strengthened my ability to plan editorial calendars, manage stakeholder
+- `L19:191` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `413` activation `2.860` class `word` token `holder`
+  - strengthened my ability to plan editorial calendars, manage stakeholder communications, create mission-driven content, and translate complex
+- `L19:191` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `338` activation `2.498` class `word` token ` strategy`
+  - , and cross-functional teams. My background combines digital strategy, content creation, campaign management, and audience engagement
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `317` activation `8.953` class `word` token `Storm`
+  - upending the status quo in the game world. Storms of oddly-colored lightning roll in from the ocean
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `310` activation `7.270` class `word` token ` status`
+  - shake things up for the party by upending the status quo in the game world. Storms of oddly
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `253` activation `4.750` class `word` token ` start`
+  - ranging from subtle to earthshattering: People everywhere start having nightmares about a skull in the sky. This
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `318` activation `4.266` class `word` token `s`
+  - ending the status quo in the game world. Storms of oddly-colored lightning roll in from the ocean with
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `451` activation `3.882` class `word` token ` strict`
+  - This puts pressure on the players by giving them a strict time limit before everything ends. A great being from
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `464` activation `2.828` class `word` token ` stars`
+  - before everything ends. A great being from beyond the stars arrives to swallow the world. This could serve as
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `319` activation `2.541` class `word` token ` of`
+  - the status quo in the game world. Storms of oddly-colored lightning roll in from the ocean with thunder
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `249` activation `1.206` class `word` token `attering`
+  - seven world-changing events ranging from subtle to earthshattering: People everywhere start having nightmares about a skull in
+- `L24:779` `157da02cf6f31814b041920e1a6b6c2dde0c2445c9c2c2234f2b022dc605d72d@turn_01@human` token `239` activation `0.871` class `word` token ` seven`
+  - Okay, can do that! Here are seven world-changing events ranging from subtle to earthshattering
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `447` activation `8.984` class `word` token `St`
+  - very high, and land safely from high heights. Stargazer: A stargazer is a powerful
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `452` activation `7.144` class `word` token ` st`
+  - safely from high heights. Stargazer: A stargazer is a powerful being who can study the
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `448` activation `5.940` class `word` token `arg`
+  - high, and land safely from high heights. Stargazer: A stargazer is a powerful being
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `463` activation `5.375` class `word` token ` stars`
+  - argazer is a powerful being who can study the stars. They use their magic to manipulate the forces of
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `478` activation `5.305` class `word` token ` stars`
+  - magic to manipulate the forces of gravity to study the stars and learn about the cosmos. They can use their
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `461` activation `4.422` class `word` token ` study`
+  - A stargazer is a powerful being who can study the stars. They use their magic to manipulate the
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `476` activation `4.182` class `word` token ` study`
+  - use their magic to manipulate the forces of gravity to study the stars and learn about the cosmos. They can
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `453` activation `3.290` class `word` token `arg`
+  - from high heights. Stargazer: A stargazer is a powerful being who can study the stars
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `479` activation `1.017` class `word` token ` and`
+  - to manipulate the forces of gravity to study the stars and learn about the cosmos. They can use their magic
+- `L24:779` `e601f2662e7cbbe4d14109936a26538cba2677a67bc8d646da839d941444158f@turn_01@human` token `322` activation `0.940` class `word` token `al`
+  - create black holes. Astral Walker: An astral walker is a powerful being who can travel through the
+- `L24:779` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `418` activation `9.651` class `word` token `St`
+  - two asteroids suddenly tangent, and pushed off-road. Stones in a glass jar. Beads in a
+- `L24:779` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `419` activation `6.401` class `word` token `ones`
+  - asteroids suddenly tangent, and pushed off-road. Stones in a glass jar. Beads in a closed
+- `L24:779` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `160` activation `3.594` class `word` token ` strapped`
+  - his mother, could sense her silent agitation. She strapped and de-strapped herself, frustrated at the small
+- `L24:779` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `163` activation `2.283` class `word` token `-str`
+  - could sense her silent agitation. She strapped and de-strapped herself, frustrated at the small bleeps
+- `L24:779` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `164` activation `2.249` class `word` token `apped`
+  - sense her silent agitation. She strapped and de-strapped herself, frustrated at the small bleeps of
+- `L24:779` `25b8e1ac7cce1d96d7c76ab2fe1c19d5ddad948a3599cf1fcf7685f7db46ef33@turn_01@human` token `421` activation `1.158` class `word` token ` a`
+  - tangent, and pushed off-road. Stones in a glass jar. Beads in a closed fist.
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `298` activation `9.312` class `word` token ` St`
+  - the center stage… The Great Rat follows slowly… Stands behind her… Clicks his fingers (lights
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `434` activation `7.726` class `word` token ` st`
+  - You've been hit by the plague! Dead, stench—all gone. Let bygones be by
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `299` activation `4.987` class `word` token `ands`
+  - center stage… The Great Rat follows slowly… Stands behind her… Clicks his fingers (lights come
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `290` activation `4.258` class `word` token ` stage`
+  - girl runs in despair to the front of the center stage… The Great Rat follows slowly… Stands behind
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `452` activation `3.809` class `word` token ` stay`
+  - ones be bygones, No way; we stay to prey On the lives of Eyam—
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `395` activation `3.435` class `word` token ` streets`
+  - We rule (yeh, cool) Da underground streets. You feeling the heat? You should, you
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `435` activation `3.016` class `word` token `ench`
+  - 've been hit by the plague! Dead, stench—all gone. Let bygones be byg
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `485` activation `1.466` class `line_break` token `...
+
+`
+  - Meet your legacy. Your life's gonna be history... (Pause.) The Great Rat: Finish her!
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `484` activation `1.405` class `word` token ` history`
+  - ! Meet your legacy. Your life's gonna be history... (Pause.) The Great Rat: Finish her
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `383` activation `1.107` class `word` token ` destiny`
+  - uce. No secrecy, The world has met its destiny. We rule (yeh, cool) Da
+- `L24:779` `a8605f7bb343664bef0235102f5ae595ff8846046767e5b57ebf763990ee48cc@turn_01@human` token `302` activation `0.974` class `punctuation` token `…`
+  - The Great Rat follows slowly… Stands behind her… Clicks his fingers (lights come up simultaneously)
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `253` activation `8.871` class `word` token ` storm`
+  - The storm had scrubbed the valley raw, leaving behind the
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `476` activation `6.872` class `word` token ` storm`
+  - technicolor magic, bridging the gap between the storm's fury and the quiet evening ahead. As the
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `325` activation `4.203` class `word` token ` striking`
+  - of late-afternoon sunlight pierced the gloom, striking the airborne mist like a flint. Instantly
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `423` activation `3.745` class `word` token ` stripe`
+  - sudden warmth. The rainbow wasn’t just a static stripe of paint; it hummed with vitality. The
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `401` activation `3.601` class `word` token ` stepped`
+  - shimmering weight into the dark pine hills. Maya stepped out from the shelter, her face upturned to
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `288` activation `3.147` class `word` token ` stood`
+  - Under the eaves of an old barn, Maya stood shivering, watching the final fat drops of rain
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `422` activation `2.542` class `word` token ` static`
+  - the sudden warmth. The rainbow wasn’t just a static stripe of paint; it hummed with vitality.
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `314` activation `1.446` class `word` token ` shaft`
+  - driveway. Then, the clouds fractured. A single shaft of late-afternoon sunlight pierced the gloom,
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `334` activation `1.351` class `word` token ` Instant`
+  - , striking the airborne mist like a flint. Instantly, the sky ignited. It began as a
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `383` activation `1.275` class `word` token ` span`
+  - . Within seconds, a perfect, luminous arch spanned the valley, anchoring its shimmering weight
+- `L24:779` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@gemini-3.5-flash` token `335` activation `1.179` class `word` token `ly`
+  - striking the airborne mist like a flint. Instantly, the sky ignited. It began as a faint
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `60` activation `9.039` class `word` token ` steak`
+  - smell of fries, pizza, tiramisu, steak, and sushi seem like they would fill the air
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `88` activation `7.659` class `word` token ` St`
+  - other like oppositely-charged magnets, but Stu had been on a self-inflicted diet for
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `259` activation `6.945` class `word` token ` St`
+  - , but Stu refused that pleasure as well. Stu began rethinking his life decisions. He had
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `473` activation `6.792` class `word` token ` St`
+  - the first time in months—years, maybe. Stu proceeded to have the time of his life at
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `328` activation `6.676` class `word` token `St`
+  - on food—there must be a different solution. Stu had enough. The conversating coworkers around him
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `89` activation `5.517` class `word` token `u`
+  - like oppositely-charged magnets, but Stu had been on a self-inflicted diet for months
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `459` activation `5.486` class `word` token ` St`
+  - ered from either side of the food tower and saw Stu smiling for the first time in months—years
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `383` activation `5.235` class `word` token ` station`
+  - to the second. Stu stopped at every single station along the route and picked up at least one food
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `154` activation `5.229` class `word` token ` St`
+  - . The slot machines on The Strip failed to tempt Stu when his coworkers were gambling their money away in
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `211` activation `3.897` class `word` token ` staff`
+  - sitting down because the anxiety to come if the buffet staff might suspect him of sneaking food without paying would
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `377` activation `3.831` class `word` token ` St`
+  - first buffet bar. Then, to the second. Stu stopped at every single station along the route and
+- `L24:779` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `432` activation `3.714` class `word` token ` St`
+  - piece of his bounty. Returning to the table, Stu’s plate was so tall it obscured his eye
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `280` activation `10.101` class `word` token ` storm`
+  - his feet, it sends in sporadic waves of storm surge to plow him to the ground. But
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `201` activation `8.170` class `word` token ` storm`
+  - , hoping their homes withstand the assault. The massive storm is trying to knock him down with powerful gusts
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `366` activation `7.692` class `word` token ` storm`
+  - slicker, and sheer determination he battles against the storm. Though the forecaster isn't winning the epic
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `479` activation `7.042` class `word` token ` story`
+  - caster. As the storm rages on, the story is told. These individuals bear the brunt of
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `473` activation `6.933` class `word` token ` storm`
+  - camera operator and the weather forecaster. As the storm rages on, the story is told. These
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `458` activation `6.877` class `word` token ` storm`
+  - night. The only souls brave enough to confront this storm head-on are the camera operator and the weather fore
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `419` activation `6.749` class `word` token ` storm`
+  - is here to give a full account of the latest storm Mother Nature has sent to cause havoc on the land
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `491` activation `6.637` class `word` token ` storm`
+  - told. These individuals bear the brunt of the storm so that others can stay informed and hopefully won't
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `174` activation `6.270` class `word` token ` storm`
+  - . The lone forecaster is literally weathering the storm as a hurricane bears down upon him and the quiet
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `297` activation `5.977` class `word` token ` storms`
+  - the ground. But this forecaster is experienced in storms and expects to be hit from every side. He
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `496` activation `5.770` class `word` token ` stay`
+  - the brunt of the storm so that others can stay informed and hopefully won't try to venture out during
+- `L24:779` `9e45a680236406167f845b111bbca7d4a9409d50ceaa565696c1f9303fc4e4a7@turn_01@human` token `195` activation `2.494` class `word` token ` withstand`
+  - town as people huddle inside, hoping their homes withstand the assault. The massive storm is trying to knock
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `217` activation `8.792` class `word` token ` St`
+  - I ended up just saying it out loud anyway. Stammering. Looking at his chin instead of his
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `112` activation `6.258` class `word` token ` street`
+  - blossoms, no cinematic rainfall threading through the amber streetlights. Just a gray afternoon and my own stupid
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `218` activation `4.448` class `word` token `ammer`
+  - ended up just saying it out loud anyway. Stammering. Looking at his chin instead of his eyes
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `200` activation `4.397` class `word` token ` stayed`
+  - and then left it in my skirt pocket where it stayed, limp and meaningless, because I ended up just
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `122` activation `4.134` class `word` token ` stupid`
+  - streetlights. Just a gray afternoon and my own stupid courage, the kind that festers in your chest
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `333` activation `3.978` class `word` token ` staged`
+  - photo I'd post, the photo I'd already staged, the photo that would prove I was the kind
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `139` activation `3.843` class `word` token ` stop`
+  - ers in your chest until you either say something or stop breathing. Takeda-kun said yes.
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `306` activation `3.462` class `word` token ` strawberry`
+  - café. He ordered black coffee. I ordered a strawberry parfait I didn't want, because I thought it
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `264` activation `3.337` class `word` token ` standing`
+  - . And I knew. I knew right there, standing in the hallway outside classroom 2-C with the
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `225` activation `2.152` class `discourse_marker_word` token ` instead`
+  - anyway. Stammering. Looking at his chin instead of his eyes. He smiled. It was a
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `175` activation `1.735` class `word` token ` store`
+  - bathroom mirror. I'd written it on a Convenience store receipt and then crumpled it and then un
+- `L24:779` `41297c7d74908567ff60417fb04202f5ea535ac386070ecec86fc8f339a0cd20@turn_01@glm-5.2` token `458` activation `1.164` class `word` token `7`
+  - right. I'm sorry." He replied at 7:12 AM the next morning: "Yeah.
+- `L24:779` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `2` activation `8.872` class `word` token ` storm`
+  - The storm outside was not merely raining; it was throwing a
+- `L24:779` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `157` activation `5.982` class `word` token ` stained`
+  - single feather duster lay on the floor nearby, stained with something dark and suspiciously sticky. Hallow
+- `L24:779` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `164` activation `4.591` class `word` token ` sticky`
+  - floor nearby, stained with something dark and suspiciously sticky. Halloway sighed, lighting a match despite
+- `L24:779` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `62` activation `3.964` class `word` token ` stepped`
+  - lingering scent of burnt toast. Detective Halloway stepped over the threshold, his trench coat dripping onto the
+- `L24:779` `55cbf35d93a14cacd202f6a92fff11e7355ec0da74c63ff31cb7a58d1cd600fd@turn_01@qwen3.6-35b` token `290` activation `3.518` class `word` token ` stood`
+  - In the corner, Barnaby, the homeowner, stood trembling, clutching a wet umbrella like a weapon
+- `L24:779` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `321` activation `8.903` class `word` token ` storm`
+  - The storm tore at the house, throwing sheets of rain against
+- `L24:779` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `371` activation `5.429` class `word` token ` stairs`
+  - . Jasmine stood frozen at the top of the stairs, her breath hitching in her throat. A
+- `L24:779` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `405` activation `4.269` class `word` token ` stark`
+  - for a fractured second. In that fleeting burst of stark white light, she saw it. Dripping
+- `L24:779` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `472` activation `3.175` class `word` token ` step`
+  - , old dust, and copper. She took a step back, but the floorboard groaned beneath her
+- `L24:779` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `364` activation `2.376` class `word` token ` stood`
+  - suffocating, pitch-black silence. Jasmine stood frozen at the top of the stairs, her breath
+- `L24:779` `125571ecb767dcaae80d811d6cf509bccf275461778ba61bbfd5b5c33b893a8b@turn_01@gemini-3.5-flash` token `387` activation `0.807` class `word` token ` the`
+  - in her throat. A flash of lightning ripped through the darkness, illuminating the foyer below for a fractured
+- `L24:779` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` token `506` activation `9.433` class `word` token ` stake`
+  - and emphasizes the role of being responsible digitally for creating stakeholder trust and loyalty.
+- `L24:779` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` token `471` activation `3.784` class `word` token ` stance`
+  - , Axon accepted their suggestion but later reversed their stance, causing nine out of thirteen members to resign.
+- `L24:779` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` token `507` activation `3.682` class `word` token `holder`
+  - emphasizes the role of being responsible digitally for creating stakeholder trust and loyalty.
+- `L24:779` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@human` token `407` activation `2.060` class `word` token ` established`
+  - about Axon's AI ethics board, which was established by the CEO to address ethical concerns arising from rapidly
+- `L24:779` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@qwen3.6-35b` token `469` activation `9.655` class `word` token ` stake`
+  - prioritizing digital responsibility offers significant advantages, including enhanced stakeholder trust and loyalty. Despite challenges like conflicting interests
+- `L24:779` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@qwen3.6-35b` token `470` activation `3.429` class `word` token `holder`
+  - izing digital responsibility offers significant advantages, including enhanced stakeholder trust and loyalty. Despite challenges like conflicting interests between
+- `L24:779` `bfb7b905dd9d9bf51db475399d28629503a1f81d8a50f044654473cabf4b2535@turn_01@qwen3.6-35b` token `378` activation `1.824` class `word` token ` established`
+  - In 2018, Axon’s CEO established an independent AI ethics board to navigate emerging technological dile
+- `L24:779` `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` token `35` activation `8.660` class `word` token ` stall`
+  - Guys, dudes, and stallions--for the last time, it's not
+- `L24:779` `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` token `36` activation `2.131` class `word` token `ions`
+  - Guys, dudes, and stallions--for the last time, it's not feminine
+- `L24:779` `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` token `125` activation `1.656` class `word` token ` instantly`
+  - a whitening mouthwash. A flashy smile will instantly boost your confidence. Lose Unwanted Hair
+- `L24:779` `95e52d1d656ca8feae97e69e3c06dfe4c245d50b4b76007b5d8bfb651037e36e@turn_01@human` token `298` activation `1.082` class `word` token ` lifestyle`
+  - brand doesn't mean it fits you (or your lifestyle) perfectly. Ask others for feedback before making big
+- `L24:779` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `78` activation `10.025` class `word` token ` storm`
+  - disaster, you might think of a hurricane or a storm. Wildfires are probably the farthest thing from
+- `L24:779` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `330` activation `5.213` class `word` token ` stiff`
+  - ed in flames. The firefighters worked tirelessly in the stiff winds, but it seemed as though the fire would
+- `L24:779` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `93` activation `4.732` class `word` token ` story`
+  - probably the farthest thing from your mind. This story might change your mind about that though. The sun
+- `L24:779` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `156` activation `3.772` class `word` token ` strong`
+  - , and sunbathing. But suddenly, a strong gust of wind picked up and carried with it an
+- `L24:779` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `426` activation `1.724` class `word` token ` extingu`
+  - . Hours passed before the firefighters were finally able to extinguish the blaze and the damage was catastrophic to the
+- `L24:779` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `176` activation `1.423` class `word` token ` spark`
+  - an ember from a nearby beach bonfire. The spark landed in a patch of dry sea grass on the
+- `L24:779` `9436b6a118a767eac2f9263f7861767c60765a2b22b5e58ff95ac6e75fa4f3ee@turn_01@human` token `285` activation `1.069` class `word` token `7`
+  - beach. Emergency crews arrived on the scene within 7 minutes, but it was too late. The flames
+- `L24:779` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `483` activation `9.439` class `word` token ` storm`
+  - Your hand in mine, a guiding spark. Through stormy skies and endless years, I will calm your
+- `L24:779` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `499` activation `4.637` class `word` token ` stays`
+  - , I will calm your deepest fears. This promise stays, forever true, My heart beats only because of
+- `L24:779` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `467` activation `4.146` class `word` token ` stand`
+  - Because I love you, I stand in the quiet dark. Your hand in mine,
+- `L24:779` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `484` activation `3.564` class `word` token `y`
+  - hand in mine, a guiding spark. Through stormy skies and endless years, I will calm your deepest
+- `L24:779` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `468` activation `1.405` class `word` token ` in`
+  - Because I love you, I stand in the quiet dark. Your hand in mine, a
+- `L24:779` `adb34bde534fff31158e68495c7346ff625b25474a67d209c24a791e336b2e63@turn_01@qwen3.6-35b` token `469` activation `0.736` class `word` token ` the`
+  - Because I love you, I stand in the quiet dark. Your hand in mine, a guiding
+- `L24:779` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `157` activation `8.882` class `word` token ` sting`
+  - The wind off the Black Rock Desert carried the sting of early winter, biting through Nina’s frayed
+- `L24:779` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `238` activation `6.422` class `word` token ` state`
+  - ats. Before the collapse, it had been a state-of-the-art solar farm. Now, row after
+- `L24:779` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `345` activation `3.297` class `word` token ` steady`
+  - backup LED strip along the baseboards glowed a steady, miraculous amber. In the corner, a small
+- `L24:779` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `239` activation `2.859` class `word` token `-of`
+  - . Before the collapse, it had been a state-of-the-art solar farm. Now, row after row
+- `L24:779` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `337` activation `2.372` class `word` token ` strip`
+  - , buzzed, and died—but the backup LED strip along the baseboards glowed a steady, miraculous
+- `L24:779` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `313` activation `2.275` class `word` token ` structure`
+  - of her shoes. Electricity. Inside the concrete structure, she flipped a wall switch. A fluorescent tube
+- `L24:779` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `158` activation `1.172` class `word` token ` of`
+  - The wind off the Black Rock Desert carried the sting of early winter, biting through Nina’s frayed wool
+- `L24:779` `400291d322963f458e225ad5777ed13a2fe9ffc217168844f339b21aab30f375@turn_01@gemini-3.5-flash` token `319` activation `1.166` class `word` token ` switch`
+  - . Inside the concrete structure, she flipped a wall switch. A fluorescent tube overhead flickered, buzzed
+- `L24:779` `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` token `144` activation `8.756` class `word` token ` stip`
+  - about improving your employee referral program by switching to a stipend system for successful hires. When you choose to
+- `L24:779` `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` token `388` activation `6.363` class `word` token ` staffing`
+  - is a great way to guarantee a broad representation of staffing, which will help you work toward the best possible
+- `L24:779` `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` token `104` activation `2.358` class `word` token ` strategies`
+  - Referrals - One of the most highly effective hiring strategies for today's growing companies is using employment referrals.
+- `L24:779` `40fe5ba39fc7f2803d5d3806c3bdf028573ca84261fa685167e59df8de6faf96@turn_01@human` token `146` activation `1.467` class `word` token ` system`
+  - your employee referral program by switching to a stipend system for successful hires. When you choose to create a
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `68` activation `9.459` class `word` token ` stake`
+  - today not as a consumer, but as a concerned stakeholder in the broader narrative of poultry rights, specifically
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `368` activation `5.679` class `word` token ` stagn`
+  - are, after all, pioneers of innovation. Why stagnate? Imagine the marketing slogan: "Finger
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `452` activation `5.401` class `word` token ` standards`
+  - allow Kentucky Fried Chicken to align itself with modern welfare standards, potentially unlocking new markets among ethically conscious consumers
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `168` activation `4.086` class `word` token ` start`
+  - pivot. It is time to stop selling chicken and start selling duck. Let us examine the facts, shall
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `164` activation `3.942` class `word` token ` stop`
+  - I propose a logical pivot. It is time to stop selling chicken and start selling duck. Let us examine
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `413` activation `3.091` class `word` token ` standpoint`
+  - , does it not? Additionally, from a logistical standpoint, ducks are hardy. They do not require
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `69` activation `3.039` class `word` token `holder`
+  - not as a consumer, but as a concerned stakeholder in the broader narrative of poultry rights, specifically addressing
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `434` activation `2.483` class `word` token ` scrutiny`
+  - the same intensive confinement systems that have drawn so much scrutiny in recent years. This shift would allow Kentucky Fried
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `369` activation `2.464` class `word` token `ate`
+  - , after all, pioneers of innovation. Why stagnate? Imagine the marketing slogan: "Finger L
+- `L24:779` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@qwen3.6-35b` token `428` activation `1.518` class `word` token ` systems`
+  - y. They do not require the same intensive confinement systems that have drawn so much scrutiny in recent years.
+- `L24:779` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `255` activation `8.821` class `word` token ` St`
+  - The wind has shifted. The scent is old. Stale. Perhaps the Sphere has been forgotten. Perhaps
+- `L24:779` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `256` activation `6.304` class `word` token `ale`
+  - wind has shifted. The scent is old. Stale. Perhaps the Sphere has been forgotten. Perhaps it
+- `L24:779` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `79` activation `5.572` class `word` token ` statues`
+  - lie on opposite sides of the rug. They are statues of patience. Their ears are perked, tracking
+- `L24:779` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `472` activation `5.430` class `word` token ` Stay`
+  - dreaded Vacuum Monster that roars in the night. Stay here. In the sun. Let the Cat have
+- `L24:779` `4a086e75fe9b148cef050cd6f692ff206d4ee75cc6866e1164288647892e4170@turn_01@qwen3.6-35b` token `287` activation `5.000` class `word` token ` stares`
+  - , claws clicking nervously on the wood. He stares at the shadowy gap beneath the beige sectional.
+- `L24:779` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `505` activation `8.865` class `word` token `Storm`
+  - , Unleashing heavy hail and driving rain, Stormy sentinel of the atmosphere.
+- `L24:779` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `482` activation `4.026` class `word` token ` stretching`
+  - to this giant’s might, Imposing anvil stretching out of sight. Behold the birthplace of
+- `L24:779` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `447` activation `3.309` class `word` token ` storms`
+  - midday sun, Unleashing fury once the storms begun. Lightning flashes from its icy crown,
+- `L24:779` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `506` activation `3.265` class `word` token `y`
+  - Unleashing heavy hail and driving rain, Stormy sentinel of the atmosphere.
+- `L24:779` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `469` activation `2.321` class `word` token `str`
+  - minous darkness casting over town. Nimbostratus yields to this giant’s might, Imposing
+- `L24:779` `8d8fbf3a2a1f9818c3208e618175b1c5a4ee2b3a6821947ab1daa40f3542a076@turn_01@gemini-3.5-flash` token `470` activation `1.407` class `word` token `atus`
+  - ous darkness casting over town. Nimbostratus yields to this giant’s might, Imposing an
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `238` activation `8.711` class `word` token ` St`
+  - of the jar. It should be much heavier. Streaks of grey paper still clung to the
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `395` activation `8.107` class `word` token ` st`
+  - the table with one small index finger. Her finger stilled, and she looked up and grinned. That
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `239` activation `5.823` class `word` token `reak`
+  - the jar. It should be much heavier. Streaks of grey paper still clung to the adhesive
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `372` activation `5.208` class `word` token ` sticky`
+  - her peanut butter and jelly sandwich. A glob of sticky red jam had escaped her sandwich. She was pushing
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `500` activation `4.789` class `word` token ` strawberry`
+  - to her grinning girl. Her daughter licked the strawberry jam from her finger and laughed. She laughed too
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `396` activation `3.776` class `word` token `illed`
+  - table with one small index finger. Her finger stilled, and she looked up and grinned. That youthful
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `244` activation `3.118` class `word` token ` still`
+  - be much heavier. Streaks of grey paper still clung to the adhesive left from the long-
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `240` activation `2.841` class `word` token `s`
+  - jar. It should be much heavier. Streaks of grey paper still clung to the adhesive left
+- `L24:779` `b90c48866cbe61dc1e1440713a1b08ad22de174aff74909ee9dd55657f28eed6@turn_01@human` token `241` activation `1.013` class `word` token ` of`
+  - . It should be much heavier. Streaks of grey paper still clung to the adhesive left from
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `324` activation `8.769` class `word` token `St`
+  - Velstria’s defense fund. MARA Stolen by you. My father was trying to expose
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `29` activation `6.529` class `word` token ` storms`
+  - above Earth like a jeweled crown, suspended between storms and stars. Shuttles drift silently past towers
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `31` activation `5.332` class `word` token ` stars`
+  - like a jeweled crown, suspended between storms and stars. Shuttles drift silently past towers of glass
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `312` activation `5.145` class `word` token ` stolen`
+  - father hid three billion credits before he died. Money stolen from Velstria’s defense fund. MARA
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `115` activation `5.045` class `word` token ` ste`
+  - , tired eyes, hands wrapped around a cup of steaming tea. She looks ordinary. Almost invisible.
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `195` activation `4.529` class `word` token ` steel`
+  - . A man’s voice answers, smooth as polished steel. KOVAR DRAK, ruler of the
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `325` activation `4.410` class `word` token `olen`
+  - stria’s defense fund. MARA Stolen by you. My father was trying to expose you
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `493` activation `4.087` class `word` token ` station`
+  - will send my own men. They will burn this station looking for you. Mara closes her eyes.
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `229` activation `2.985` class `word` token ` still`
+  - .O.) And yet you answered. That means you still understand power. MARA No. It means
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `230` activation `1.590` class `word` token ` understand`
+  - .) And yet you answered. That means you still understand power. MARA No. It means I
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `116` activation `1.430` class `word` token `aming`
+  - tired eyes, hands wrapped around a cup of steaming tea. She looks ordinary. Almost invisible. A
+- `L24:779` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `211` activation `1.395` class `word` token `st`
+  - K, ruler of the tiny island nation of Velstria. DRAK (V.O.) And
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `453` activation `9.098` class `word` token `St`
+  - ashing down upon the land with deafening din. Streets are flooded by the heavy, surging
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `454` activation `7.143` class `word` token `re`
+  - down upon the land with deafening din. Streets are flooded by the heavy, surging tide
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `411` activation `6.765` class `word` token ` storm`
+  - to rise, Towering aloft to meet the stormy skies. All the harbor waters quickly slip away
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `455` activation `5.303` class `word` token `ets`
+  - upon the land with deafening din. Streets are flooded by the heavy, surging tide,
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `497` activation `5.303` class `word` token ` strength`
+  - upon the ruined, muddy streets. Nature shows the strength of its colossal hand, Leaving only sorrow on
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `400` activation `4.860` class `word` token ` starts`
+  - grave. As it nears the shallow coast it starts to rise, Towering aloft to meet the
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `492` activation `1.980` class `word` token ` streets`
+  - s, Silence falls upon the ruined, muddy streets. Nature shows the strength of its colossal hand,
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `412` activation `1.836` class `word` token `y`
+  - rise, Towering aloft to meet the stormy skies. All the harbor waters quickly slip away,
+- `L24:779` `8cce625fc2c071b34d6b51fd754b806421916b3fe9ff3647a495e701933f191f@turn_01@gemini-3.5-flash` token `385` activation `1.433` class `word` token ` shore`
+  - gathers in a quiet wave, Speeding toward the shore to find a sandy grave. As it nears
+- `L24:779` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `412` activation `9.001` class `word` token ` stake`
+  - experience strengthened my ability to plan editorial calendars, manage stakeholder communications, create mission-driven content, and translate
+- `L24:779` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `299` activation `5.899` class `word` token ` storytelling`
+  - followed InVision’s work around design collaboration, product storytelling, and empowering creative teams, and I’d love
+- `L24:779` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `428` activation `4.736` class `word` token ` storytelling`
+  - -driven content, and translate complex topics into engaging digital storytelling. I’d be grateful to learn whether there are
+- `L24:779` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `403` activation `3.963` class `word` token ` strengthened`
+  - a 12,000 follower increase. This experience strengthened my ability to plan editorial calendars, manage stakeholder
+- `L24:779` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `413` activation `3.711` class `word` token `holder`
+  - strengthened my ability to plan editorial calendars, manage stakeholder communications, create mission-driven content, and translate complex
+- `L24:779` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `338` activation `3.656` class `word` token ` strategy`
+  - , and cross-functional teams. My background combines digital strategy, content creation, campaign management, and audience engagement
+- `L24:779` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `373` activation `1.524` class `word` token ` Instagram`
+  - Convention on Biological Diversity, I led and managed an Instagram Takeover campaign of the UN Convention on Biological Diversity
+- `L24:779` `a6669b3c7d6ce9a48d0663b6a62170834aac1d140fbe3b87a72ef51d09fee6ba@turn_01@gpt-5.5` token `384` activation `1.246` class `word` token ` Instagram`
+  - Takeover campaign of the UN Convention on Biological Diversity Instagram account that lasted two weeks, resulting in a

@@ -1,0 +1,811 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:627` | `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 18 | `40.80` | `5.89` | word:17|discourse_marker_word:1 |
+| `L19:627` | `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` | `glm-5.2` | 28 | `67.63` | `5.99` | word:27|discourse_marker_word:1 |
+| `L19:627` | `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` | `gpt-5.5` | 24 | `51.92` | `5.88` | word:24 |
+| `L19:627` | `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` | `glm-5.2` | 13 | `28.43` | `6.13` | word:11|expanded_negation_word:2 |
+| `L19:627` | `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` | `human` | 28 | `73.81` | `5.71` | word:28 |
+| `L19:627` | `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 25 | `56.07` | `5.65` | word:25 |
+| `L19:627` | `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 24 | `52.62` | `5.97` | word:22|discourse_marker_word:2 |
+| `L19:627` | `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` | `gpt-5.5` | 8 | `21.07` | `5.82` | word:8 |
+| `L19:627` | `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` | `gpt-5.5` | 7 | `13.66` | `5.77` | word:5|style_function_word:1|whitespace:1 |
+| `L19:627` | `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` | `gpt-5.5` | 35 | `84.43` | `5.70` | word:35 |
+| `L19:627` | `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` | `human` | 30 | `72.87` | `5.72` | word:30 |
+| `L19:627` | `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` | `human` | 19 | `48.20` | `6.00` | word:19 |
+| `L19:627` | `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 31 | `68.70` | `5.84` | word:29|discourse_marker_word:1|punctuation:1 |
+| `L19:627` | `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` | `glm-5.2` | 14 | `38.95` | `5.66` | word:14 |
+| `L19:627` | `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` | `human` | 11 | `30.57` | `5.79` | word:11 |
+| `L19:627` | `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` | `glm-5.2` | 27 | `66.84` | `5.78` | word:27 |
+| `L19:627` | `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 20 | `53.43` | `5.67` | word:19|punctuation:1 |
+| `L24:4066` | `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 17 | `46.55` | `6.49` | word:16|discourse_marker_word:1 |
+| `L24:4066` | `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` | `glm-5.2` | 27 | `70.87` | `6.53` | word:25|discourse_marker_word:1|punctuation:1 |
+| `L24:4066` | `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` | `gpt-5.5` | 20 | `54.10` | `6.55` | word:20 |
+| `L24:4066` | `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` | `glm-5.2` | 11 | `28.25` | `6.79` | word:9|expanded_negation_word:2 |
+| `L24:4066` | `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` | `human` | 26 | `79.66` | `6.29` | word:26 |
+| `L24:4066` | `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 18 | `55.04` | `6.64` | word:18 |
+| `L24:4066` | `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 22 | `54.71` | `6.51` | word:20|discourse_marker_word:2 |
+| `L24:4066` | `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` | `gpt-5.5` | 7 | `21.21` | `6.40` | word:7 |
+| `L24:4066` | `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` | `gpt-5.5` | 4 | `13.86` | `6.37` | word:3|style_function_word:1 |
+| `L24:4066` | `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` | `gpt-5.5` | 30 | `90.16` | `6.49` | word:29|punctuation:1 |
+| `L24:4066` | `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` | `human` | 26 | `83.07` | `6.77` | word:26 |
+| `L24:4066` | `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` | `human` | 15 | `45.60` | `6.74` | word:15 |
+| `L24:4066` | `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 30 | `81.81` | `6.80` | word:29|discourse_marker_word:1 |
+| `L24:4066` | `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` | `glm-5.2` | 12 | `39.81` | `6.59` | word:12 |
+| `L24:4066` | `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` | `human` | 11 | `34.52` | `6.65` | word:11 |
+| `L24:4066` | `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` | `glm-5.2` | 22 | `69.14` | `6.64` | word:22 |
+| `L24:4066` | `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 17 | `51.92` | `6.42` | word:17 |
+
+## Top Tokens
+
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `198` activation `5.892` class `word` token ` sustainable`
+  - Welcome to this seminar on sustainable weight management. Today, we will explore various evidence
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `458` activation `4.290` class `word` token ` sustainability`
+  - . Finally, we will conclude with the importance of sustainability and personalization. The best weight loss strategy is
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `436` activation `3.344` class `word` token ` surgery`
+  - P-1 receptor agonists—and bariatric surgery, highlighting their medical indications and necessary lifestyle accompan
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `196` activation `3.113` class `word` token ` seminar`
+  - Welcome to this seminar on sustainable weight management. Today, we will explore
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `225` activation `3.018` class `word` token ` solution`
+  - emphasizing that there is no one-size-fits-all solution. First, we examine dietary interventions. We will
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `366` activation `3.018` class `word` token ` Sleep`
+  - Third, we will address behavioral and lifestyle modifications. Sleep deprivation and chronic stress elevate cortisol, which promotes fat
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `384` activation `2.721` class `word` token ` sleep`
+  - which promotes fat storage. Therefore, we must discuss sleep hygiene, mindful eating practices, and stress management as
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `221` activation `2.100` class `word` token `-size`
+  - to losing weight, emphasizing that there is no one-size-fits-all solution. First, we examine dietary
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `247` activation `2.092` class `word` token ` specific`
+  - the classic caloric deficit, but also look at specific structured eating patterns. These include the Mediterranean diet,
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `498` activation `2.059` class `word` token ` sound`
+  - equip attendees with a holistic, compassionate, and scientifically sound understanding of weight management. Thank you, and let
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `276` activation `2.050` class `word` token ` sources`
+  - bohydrate and ketogenic diets, which alter metabolic fuel sources; and intermittent fasting, which focuses on when to
+- `L19:627` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `411` activation `1.823` class `word` token ` support`
+  - will cover medical and clinical interventions for individuals requiring clinical support. This includes a balanced overview of weight-loss medications
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `141` activation `5.986` class `word` token `ustainable`
+  - Sustainable Weight Loss: Practical Daily Changes for a Healthier
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `165` activation `5.283` class `word` token ` Sustainable`
+  - you tired of crash diets that leave you exhausted? Sustainable weight loss is not about starving yourself; it is
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `140` activation `3.959` class `word` token `S`
+  - Sustainable Weight Loss: Practical Daily Changes for a Health
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `245` activation `3.535` class `word` token ` sweet`
+  - colorful vegetables, and complex carbohydrates like quinoa or sweet potatoes. Protein is especially crucial—it keeps you feeling
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `288` activation `3.480` class `word` token ` sip`
+  - with hunger. Keep a reusable water bottle handy and sip consistently throughout the day to curb unnecessary snacking.
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `352` activation `3.318` class `word` token ` squ`
+  - rate up. Incorporate bodyweight exercises, like squats and push-ups, two or three times a
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `421` activation `3.204` class `word` token ` sug`
+  - . Poor sleep disrupts hormones, increasing cravings for sugary, high-calorie foods. Aim for seven
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `410` activation `2.803` class `word` token ` sleep`
+  - itize Sleep and Stress Never underestimate the power of sleep. Poor sleep disrupts hormones, increasing cravings for
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `401` activation `2.803` class `word` token ` Sleep`
+  - feeling like a chore. Lifestyle: Prioritize Sleep and Stress Never underestimate the power of sleep.
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `353` activation `2.764` class `word` token `ats`
+  - up. Incorporate bodyweight exercises, like squats and push-ups, two or three times a week
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `178` activation `2.728` class `word` token ` small`
+  - is not about starving yourself; it is about making small, manageable shifts in your daily routine. By focusing
+- `L19:627` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `296` activation `2.552` class `word` token ` sn`
+  - handy and sip consistently throughout the day to curb unnecessary snacking. Exercise: Move With Purpose You don
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `257` activation `5.882` class `word` token ` soccer`
+  - sports Try tennis, pickleball, basketball, soccer, or volleyball. Sports are fun because they give
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `279` activation `3.427` class `word` token `/social`
+  - a goal besides “working out,” and the competitive/social element can keep you engaged. Even casual games can
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `217` activation `3.247` class `word` token ` sidewalk`
+  - terrain naturally make your body work harder than a flat sidewalk walk. It’s also a great stress reliever
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `180` activation `3.038` class `word` token ` songs`
+  - tends to pass quickly because you’re focused on the songs and moves. Hiking or nature walks Walking
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `239` activation `2.991` class `word` token ` sleep`
+  - which can support weight loss by helping with mood, sleep, and consistency. Recreational sports Try
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `262` activation `2.927` class `word` token ` Sports`
+  - pickleball, basketball, soccer, or volleyball. Sports are fun because they give you a goal besides “
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `339` activation `2.744` class `word` token ` social`
+  - . Water aerobics can be surprisingly energetic and social. This is a good option if you want something
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `247` activation `2.602` class `word` token ` sports`
+  - mood, sleep, and consistency. Recreational sports Try tennis, pickleball, basketball, soccer
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `316` activation `2.525` class `word` token ` so`
+  - obics Swimming is low-impact, so it’s gentle on joints while still being a full
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `302` activation `2.456` class `word` token `imming`
+  - of cardio, agility, and strength work. Swimming or water aerobics Swimming is low
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `310` activation `2.298` class `word` token `imming`
+  - . Swimming or water aerobics Swimming is low-impact, so it’s gentle on
+- `L19:627` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `231` activation `2.291` class `word` token ` support`
+  - ’s also a great stress reliever, which can support weight loss by helping with mood, sleep, and
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `256` activation `6.134` class `word` token ` sustainable`
+  - Encouraging sustainable transportation in a major city requires a multifaceted
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `298` activation `3.171` class `word` token ` safety`
+  - aggressively expand dedicated cycling lanes and pedestrian pathways to ensure safety. Implementing "complete streets" that prioritize walkers
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `386` activation `2.395` class `word` token ` subsidized`
+  - to deter driving. Lowering transit fares or offering subsidized monthly passes for low-income residents makes public transit a
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `345` activation `2.239` class `word` token ` systems`
+  - off-peak hours. Integrating contactless payment systems and real-time tracking apps improves the overall rider experience
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `369` activation `2.211` class `expanded_negation_word` token ` should`
+  - on personal cars. Policy and Pricing: Municipalities should implement congestion pricing in downtown cores to deter driving.
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `431` activation `2.101` class `word` token ` sidewalk`
+  - e-bikes. Designating specific parking zones prevents sidewalk clutter while bridging the gap for first-and-last
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `408` activation `2.024` class `expanded_negation_word` token ` should`
+  - economic choice. Micromobility Integration: Cities should partner with private companies to provide shared e-sco
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `418` activation `1.989` class `word` token `co`
+  - should partner with private companies to provide shared e-scooters and e-bikes. Designating specific parking
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `419` activation `1.696` class `word` token `oters`
+  - partner with private companies to provide shared e-scooters and e-bikes. Designating specific parking zones
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `297` activation `1.511` class `word` token ` ensure`
+  - must aggressively expand dedicated cycling lanes and pedestrian pathways to ensure safety. Implementing "complete streets" that prioritize
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `427` activation `1.434` class `word` token ` specific`
+  - -scooters and e-bikes. Designating specific parking zones prevents sidewalk clutter while bridging the gap
+- `L19:627` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `417` activation `0.957` class `word` token `-s`
+  - Cities should partner with private companies to provide shared e-scooters and e-bikes. Designating specific
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `186` activation `5.711` class `word` token ` sail`
+  - able by the window. I watch as technicolor sailboats cut through the water in the bay, and
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `127` activation `3.869` class `word` token ` sore`
+  - novel in New York, and he’s writing with sore fingers in Boston. I’m wrapped in a sweater
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `137` activation `3.649` class `word` token ` sweater`
+  - sore fingers in Boston. I’m wrapped in a sweater in Balboa Park, and he’s raking
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `215` activation `3.433` class `word` token ` sun`
+  - Island Expressway. When I love a man the sun is high in the sky. Call it 10
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `487` activation `3.202` class `word` token ` sorry`
+  - start with an apology.” “Ok. I’m sorry, you dickhead.” A sign is held up
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `494` activation `3.054` class `word` token ` sign`
+  - . I’m sorry, you dickhead.” A sign is held up to the audience that reads “La
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `296` activation `3.039` class `word` token ` some`
+  - tomorrow”, I really mean in a month and some change. When I tell him “We’re talking
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `230` activation `2.962` class `word` token ` asleep`
+  - sky. Call it 10 AM. I am asleep in our bed, and he is watching the ball
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `241` activation `2.944` class `word` token ` scores`
+  - in our bed, and he is watching the ball scores and eating pretzels, and drinking lemonade
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `319` activation `2.940` class `word` token ` silence`
+  - now,” he will stop and listen with a thick silence. My best friend will stop by and visit,
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `363` activation `2.932` class `word` token ` smooth`
+  - in the heat of July. The waterfall floods the smooth rocks surrounding us, and for a minute, it
+- `L19:627` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `84` activation `2.899` class `word` token ` supposed`
+  - able by the window. These are things he is supposed to know. And it feels as though we’re
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `96` activation `5.651` class `word` token ` sauce`
+  - The sauce boils, red bubbles bursting like tiny hearts in a
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `417` activation `3.956` class `word` token ` suff`
+  - the Parmesan, white and powdery, suffocating everything. The printer groans, a
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `500` activation `3.836` class `word` token ` sauce`
+  - from the jammed gears of this afternoon. The sauce thickens, congeals, becomes a wall
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `401` activation `3.346` class `word` token ` sits`
+  - infinite loop of expectation, the way Mom’s judgment sits on the counter next to the Parmesan, white
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `373` activation `3.215` class `word` token ` silence`
+  - about the machine, but about us, about the silence stretching thin between the boiling pot and the humming fridge
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `137` activation `3.111` class `word` token ` sound`
+  - spoon clacking against ceramic, that hollow, desperate sound of domesticity holding its breath. Why did Mom
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `119` activation `3.036` class `word` token ` skin`
+  - screaming silence into the steam that clings to my skin. She stirs, the wooden spoon clacking
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `388` activation `2.981` class `word` token ` scream`
+  - boiling pot and the humming fridge. I want to scream about the infinite loop of expectation, the way Mom
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `127` activation `2.736` class `word` token ` spoon`
+  - to my skin. She stirs, the wooden spoon clacking against ceramic, that hollow, desperate sound
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `110` activation `2.707` class `word` token ` silence`
+  - bubbles bursting like tiny hearts in a pan, screaming silence into the steam that clings to my skin.
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `109` activation `2.582` class `word` token ` screaming`
+  - red bubbles bursting like tiny hearts in a pan, screaming silence into the steam that clings to my skin
+- `L19:627` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `418` activation `2.471` class `word` token `oc`
+  - Parmesan, white and powdery, suffocating everything. The printer groans, a low
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `107` activation `5.972` class `word` token `ustainable`
+  - Sustainable parenting is not about achieving perfection but making consistent,
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `106` activation `3.983` class `word` token `S`
+  - Sustainable parenting is not about achieving perfection but making consistent
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `260` activation `3.298` class `word` token ` sustainability`
+  - and unplug electronics when not in use, making sustainability tangible through lowered utility bills. Sixth, start a
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `435` activation `3.267` class `word` token ` Sustainable`
+  - , essential life skills rather than burdensome restrictions. Sustainable parenting is an evolving process, requiring patience and flexibility
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `313` activation `3.133` class `word` token ` sort`
+  - . Eighth, implement a strict recycling routine where children sort materials, turning chore time into educational moments about resource
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `345` activation `2.863` class `word` token ` synthetic`
+  - astic toys like wooden blocks to encourage creativity while reducing synthetic pollution. Tenth, engage in regular nature walks
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `236` activation `2.802` class `word` token ` sourced`
+  - planning to minimize food waste and encourage appreciation for locally sourced, seasonal produce. Fifth, opt for energy
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `198` activation `2.726` class `word` token ` soil`
+  - family compost bin, turning food scraps into nutrient-rich soil while demonstrating nature’s cycles. Third, switch to
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `194` activation `2.447` class `word` token ` scraps`
+  - Second, create a family compost bin, turning food scraps into nutrient-rich soil while demonstrating nature’s cycles.
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `428` activation `2.403` class `word` token ` skills`
+  - they internalize these values as normal, essential life skills rather than burdensome restrictions. Sustainable parenting is an
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `238` activation `2.109` class `word` token ` seasonal`
+  - minimize food waste and encourage appreciation for locally sourced, seasonal produce. Fifth, opt for energy-efficient LED
+- `L19:627` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `215` activation `1.934` class `word` token ` significantly`
+  - Third, switch to reusable cloth diapers or wipes to significantly reduce landfill waste. Fourth, involve children in meal
+- `L19:627` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `262` activation `5.818` class `word` token ` sensory`
+  - ashibo Shape-Shifting Box The world of sensory play mourns the passing of an extraordinary companion:
+- `L19:627` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `444` activation `3.200` class `word` token ` sculptures`
+  - capable of connecting with others to form larger structures, sculptures, and spellbinding 3D art. Its
+- `L19:627` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `325` activation `2.619` class `word` token ` surface`
+  - 36 rare earth magnets, and a durable tear-proof surface, Shashibo lived a life of transformation.
+- `L19:627` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `404` activation `2.282` class `word` token ` satisfying`
+  - patterns brought beauty to every twist, fold, and satisfying click. Matte or high-gloss, it never
+- `L19:627` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `425` activation `2.282` class `word` token ` survived`
+  - failed to leave an impression. Shashibo is survived by 12 collectible designs, each capable of
+- `L19:627` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `289` activation `2.203` class `word` token ` spirit`
+  - ashibo fidget box, beloved for its restless spirit, magnetic personality, and astonishing ability to become more
+- `L19:627` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `447` activation `1.708` class `word` token ` spell`
+  - with others to form larger structures, sculptures, and spellbinding 3D art. Its legacy lives on
+- `L19:627` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `364` activation `0.958` class `word` token `ifting`
+  - dared ask, “Can I master the Shape-Shifting Box?” Many tried. Few truly did. Unlike
+- `L19:627` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `359` activation `5.775` class `word` token ` Soviet`
+  - In the early 1990s, after the Soviet-backed government collapsed, rival mujahideen groups
+- `L19:627` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `493` activation `3.362` class `style_function_word` token ` Since`
+  - power after U.S. and NATO forces withdrew. Since then, Afghanistan has again been ruled as an Islamic
+- `L19:627` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `409` activation `1.713` class `word` token ` September`
+  - of the country until 2001. After the September 11 attacks, a U.S.-led coalition
+- `L19:627` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `464` activation `1.155` class `word` token ` insecurity`
+  - Ghani headed this Islamic Republic, though corruption, insecurity, and Taliban insurgency remained major problems. In August
+- `L19:627` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `392` activation `0.668` class `word` token ` strict`
+  - and took Kabul in 1996, creating a strict Islamic emirate that ruled most of the country until
+- `L19:627` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `410` activation `0.643` class `whitespace` token ` `
+  - the country until 2001. After the September 11 attacks, a U.S.-led coalition removed
+- `L19:627` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `444` activation `0.341` class `word` token ` such`
+  - an elected president, parliament, and constitution. Leaders such as Hamid Karzai and Ashraf Gh
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `54` activation `5.696` class `word` token ` sweat`
+  - always hungry, always smelling like mud, grass, sweat, and shoulder pads. Our legs ached from
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `65` activation `4.410` class `word` token ` s`
+  - , and shoulder pads. Our legs ached from sprints. Our hands were nicked from drills.
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `455` activation `4.316` class `word` token ` soda`
+  - , and the cold closed around us. Rows of soda cans gleamed under the humming light. Red,
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `340` activation `3.907` class `word` token ` senior`
+  - were. Then, one day in November of our senior year, something shifted. Nothing announced it. No
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `468` activation `3.685` class `word` token ` silver`
+  - amed under the humming light. Red, blue, silver, green. All those bright colors stacked like treasure
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `66` activation `3.623` class `word` token `prints`
+  - and shoulder pads. Our legs ached from sprints. Our hands were nicked from drills. In
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `300` activation `3.599` class `word` token ` sacred`
+  - It was a ceremony. A small, stupid, sacred thing. It was an average life for two average
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `83` activation `3.576` class `word` token ` sinking`
+  - from drills. In autumn, the sun was already sinking behind the grain elevators by the time we got
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `155` activation `3.291` class `word` token ` sweetness`
+  - like bread, dust, coffee, and the faint sweetness of overripe fruit. The old couple who owned
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `80` activation `3.270` class `word` token ` sun`
+  - were nicked from drills. In autumn, the sun was already sinking behind the grain elevators by the
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `357` activation `3.168` class `word` token ` sudden`
+  - announced it. No thunder. No warning. No sudden darkness falling over the street. It was just another
+- `L19:627` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `25` activation `2.970` class `word` token ` sidewalks`
+  - three years, John and I walked the same cracked sidewalks to the little grocery store at the edge of our
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `117` activation `5.717` class `word` token ` sword`
+  - for armor, played with a wooden stick for a sword, and imagined himself as a knight. Seeing this
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `354` activation `5.053` class `word` token ` sword`
+  - - Cai stood at the ready with his wooden sword in his hand. As he faced the undead army
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `218` activation `4.529` class `word` token ` sat`
+  - wooden barrel armor and stick for protection. Cai sat at the edge of the Sea and marveled at
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `144` activation `4.060` class `word` token ` servant`
+  - him to King Arthur to become a page, a servant for the king. Arthur accepted Cai on one
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `280` activation `3.463` class `word` token ` spirits`
+  - gave up its dead in the form of zombies and spirits that terrorized those who dared to come near it
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `237` activation `3.204` class `word` token ` sustained`
+  - veled at the blood-red waters. The Blood Sea sustained no life; in fact, this body of water
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `294` activation `3.145` class `word` token ` sun`
+  - those who dared to come near it. As the sun set over the bloody horizon, Cai saw thousands
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `314` activation `3.084` class `word` token ` surface`
+  - thousands of undead warriors and knights popping up through the surface of the waters, walking toward Cai menacingly
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `269` activation `2.723` class `word` token ` Sea`
+  - this area. Legend said that at night, the Sea gave up its dead in the form of zombies and
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `263` activation `2.686` class `word` token ` said`
+  - shed over centuries of war in this area. Legend said that at night, the Sea gave up its dead
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `133` activation `2.629` class `word` token ` sent`
+  - a knight. Seeing this, Cai's father sent him to King Arthur to become a page, a
+- `L19:627` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `236` activation `2.595` class `word` token ` Sea`
+  - marveled at the blood-red waters. The Blood Sea sustained no life; in fact, this body of
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `377` activation `5.999` class `word` token ` silk`
+  - with ornate patterns and rolls of handwoven silk; a collection of small daggers with sharp steel
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `311` activation `4.733` class `word` token ` silver`
+  - piggy bank back at home; stacks of barred silver and a scale to weigh them with; scrolls of
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `359` activation `4.544` class `word` token ` s`
+  - , emerald green, amethyst purple, and sapphire blue; carved ivory tusks with ornate
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `360` activation `4.127` class `word` token `apphire`
+  - emerald green, amethyst purple, and sapphire blue; carved ivory tusks with ornate patterns
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `314` activation `3.881` class `word` token ` scale`
+  - back at home; stacks of barred silver and a scale to weigh them with; scrolls of yellowing parchment
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `482` activation `2.795` class `word` token ` sure`
+  - secret with some grown-ups, and he wasn't sure he wanted to do that just yet. For the
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `472` activation `2.579` class `word` token ` secret`
+  - to find out, he'd have to share his secret with some grown-ups, and he wasn't sure
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `474` activation `2.321` class `word` token ` some`
+  - out, he'd have to share his secret with some grown-ups, and he wasn't sure he wanted
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `255` activation `2.282` class `word` token ` seeing`
+  - his throat. He could hardly believe what he was seeing, so he reached his fingers into the chest to
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `257` activation `2.217` class `word` token ` so`
+  - . He could hardly believe what he was seeing, so he reached his fingers into the chest to touch it
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `320` activation `2.123` class `word` token ` scrolls`
+  - barred silver and a scale to weigh them with; scrolls of yellowing parchment and old leather-bound books,
+- `L19:627` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `382` activation `1.850` class `word` token ` small`
+  - rolls of handwoven silk; a collection of small daggers with sharp steel blades and worn leather hil
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `19` activation `5.844` class `word` token ` sweat`
+  - to chew on, a suffocating blend of sweat, anticipation, and the deafening roar of twenty
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `14` activation `4.356` class `word` token ` suff`
+  - the arena was thick enough to chew on, a suffocating blend of sweat, anticipation, and the
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `493` activation `3.045` class `word` token ` silence`
+  - hesitate? The referee’s whistle blew, but the silence between them was louder than any crowd. They stared
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `15` activation `3.013` class `word` token `oc`
+  - arena was thick enough to chew on, a suffocating blend of sweat, anticipation, and the deaf
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `464` activation `2.855` class `word` token ` sweaty`
+  - .” Marcus landed, the ball slipping slightly in his sweaty grip. The doubt crept in, cold and
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `377` activation `2.699` class `word` token ` slipped`
+  - smirk vanished. For a microsecond, the mask slipped. Marcus saw the flicker of doubt in those
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `242` activation `2.598` class `word` token `ared`
+  - ’m going to break you in half.” “Scared?” Julian laughed, a sharp, brittle sound.
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `461` activation `2.551` class `word` token ` slightly`
+  - I saw it.” Marcus landed, the ball slipping slightly in his sweaty grip. The doubt crept in
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `367` activation `2.475` class `word` token ` smirk`
+  - , and you’re just noise.” Julian’s smirk vanished. For a microsecond, the mask slipped
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `251` activation `2.441` class `word` token ` sound`
+  - Scared?” Julian laughed, a sharp, brittle sound. “I’m calculating. I know you’re
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `140` activation `2.428` class `word` token ` sounds`
+  - noise like a knife. “Every step you take sounds like a warning shot. You’re telegraphing
+- `L19:627` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `452` activation `2.427` class `word` token ` saw`
+  - Next possession, you’re going to miss. I saw it.” Marcus landed, the ball slipping slightly in
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `357` activation `5.662` class `word` token ` social`
+  - . Originating in ancient times, they served vital social functions; specific patterns indicated a person’s tribe,
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `371` activation `4.697` class `word` token ` social`
+  - patterns indicated a person’s tribe, age, and social status. During the transatlantic slave trade,
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `355` activation `4.253` class `word` token ` served`
+  - the scalp. Originating in ancient times, they served vital social functions; specific patterns indicated a person’s
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `454` activation `4.027` class `word` token ` societal`
+  - with many individuals choosing straightened styles to conform to societal pressures. Later, the Black is Beautiful movement reclaimed
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `379` activation `3.535` class `word` token ` slave`
+  - , and social status. During the transatlantic slave trade, enslaved Africans used cornrows practically. The
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `469` activation `3.253` class `word` token ` symbol`
+  - the Black is Beautiful movement reclaimed cornrows as a symbol of African heritage and cultural pride. Today, their
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `360` activation `2.639` class `word` token ` specific`
+  - in ancient times, they served vital social functions; specific patterns indicated a person’s tribe, age, and
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `506` activation `2.361` class `word` token ` sports`
+  - artistic expressions, frequently showcased in pop culture, professional sports, and high fashion.
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `404` activation `1.951` class `word` token ` secretly`
+  - hair during arduous labor, while complex patterns secretly mapped routes to freedom. In the Americas, corn
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `346` activation `1.741` class `word` token ` scalp`
+  - African hairstyle consisting of braids laid close to the scalp. Originating in ancient times, they served vital
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `382` activation `1.442` class `word` token ` enslaved`
+  - status. During the transatlantic slave trade, enslaved Africans used cornrows practically. The tight braids
+- `L19:627` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `448` activation `1.320` class `word` token ` straight`
+  - associated with practical hair maintenance, with many individuals choosing straightened styles to conform to societal pressures. Later,
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `390` activation `5.787` class `word` token ` sausage`
+  - will have some sort of breakfast meat like ham, sausage, or bacon. Then it’s time for it
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `418` activation `3.948` class `word` token ` sit`
+  - plate of food hits the big table and we all sit together. Every now and then there are extra things
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `461` activation `3.721` class `word` token ` Sunday`
+  - my parents had this kind of breakfast growing up every Sunday with their families. I think they are passing it
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `293` activation `3.207` class `word` token ` Sunday`
+  - now. Dad is always the first one up on Sunday and he does all the cooking. First, he
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `313` activation `3.122` class `word` token ` so`
+  - he starts the coffee pot and puts a kettle on so there is hot water for Mother’s tea. He
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `258` activation `3.089` class `word` token ` Sunday`
+  - Almost every Sunday morning, our family comes together to have breakfast.
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `375` activation `2.165` class `word` token ` scramble`
+  - a large number of eggs and gets them ready to scramble. Usually, we will have some sort of breakfast
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `383` activation `1.906` class `word` token ` sort`
+  - ready to scramble. Usually, we will have some sort of breakfast meat like ham, sausage, or bacon
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `382` activation `1.619` class `word` token ` some`
+  - them ready to scramble. Usually, we will have some sort of breakfast meat like ham, sausage, or
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `485` activation `1.005` class `word` token ` myself`
+  - in the hope that one day I’ll do it myself when I’m older. To be honest, I
+- `L19:627` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `384` activation `1.002` class `word` token ` of`
+  - to scramble. Usually, we will have some sort of breakfast meat like ham, sausage, or bacon.
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `150` activation `5.783` class `word` token ` solder`
+  - engineering who'd traded spreadsheet cells for sawdust and solder. They'd come from Turkey by way of a
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `327` activation `4.206` class `word` token ` sat`
+  - designers' visions into tangible goods while their own ideas sat in drawers like unsent letters. It paid the
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `108` activation `3.902` class `word` token ` Som`
+  - like a debt collector who didn't understand patience. Somewhere behind a fogged-up window in Red Hook
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `147` activation `3.830` class `word` token ` saw`
+  - refugees from corporate engineering who'd traded spreadsheet cells for sawdust and solder. They'd come from Turkey by
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `442` activation `3.607` class `word` token ` sold`
+  - with craft and simplicity, and they forged something that sold. They weren't the type to cut corners.
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `375` activation `3.404` class `word` token ` silence`
+  - Fabrication work dried up overnight. What remained was silence, and in that silence, their own creativity finally
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `332` activation `3.398` class `word` token `ent`
+  - goods while their own ideas sat in drawers like unsent letters. It paid the bills. It was education
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `435` activation `3.395` class `word` token ` simplicity`
+  - their instinct for materials, their obsession with craft and simplicity, and they forged something that sold. They weren
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `500` activation `3.015` class `word` token ` satisfaction`
+  - . Two people, one studio, and the quiet satisfaction of finally building something with their own name on it
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `144` activation `2.820` class `word` token ` spreadsheet`
+  - bench, two refugees from corporate engineering who'd traded spreadsheet cells for sawdust and solder. They'd come
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `380` activation `2.738` class `word` token ` silence`
+  - overnight. What remained was silence, and in that silence, their own creativity finally had room to breathe.
+- `L19:627` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `284` activation `2.485` class `word` token ` sleeping`
+  - bones of Red Hook where the warehouses loomed like sleeping giants and the rent was just cheap enough to dream
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `454` activation `5.670` class `word` token ` sax`
+  - laughs, a sudden splash of light, as a saxophone exhales a smoky, golden sigh,
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `492` activation `4.649` class `word` token ` sync`
+  - s how to chime. We are suspended in syncopated time, lost in the blue, where
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `490` activation `3.882` class `word` token ` suspended`
+  - clock forgets how to chime. We are suspended in syncopated time, lost in the blue
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `398` activation `3.254` class `word` token ` sweet`
+  - gloom. The air is thick with bourbon and sweet smoke, a slow vibration before the rhythm broke.
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `413` activation `3.024` class `word` token ` sn`
+  - vibration before the rhythm broke. A brush on the snare— a soft, metallic hiss. The
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `463` activation `2.962` class `word` token ` sigh`
+  - a saxophone exhales a smoky, golden sigh, weaving a prayer to a neon-tint
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `447` activation `2.881` class `word` token ` sudden`
+  - of the night. The piano key laughs, a sudden splash of light, as a saxophone exhales
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `459` activation `2.774` class `word` token ` sm`
+  - of light, as a saxophone exhales a smoky, golden sigh, weaving a prayer to
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `383` activation `2.747` class `word` token ` single`
+  - drape the low-lit room, where a single spotlight cuts the amber gloom. The air is
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `402` activation `2.688` class `word` token ` slow`
+  - air is thick with bourbon and sweet smoke, a slow vibration before the rhythm broke. A brush on the
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `418` activation `2.584` class `word` token ` soft`
+  - . A brush on the snare— a soft, metallic hiss. The upright bass begins its heavy
+- `L19:627` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `475` activation `2.260` class `word` token ` sky`
+  - weaving a prayer to a neon-tinted sky. Here, the clock forgets how to ch
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `198` activation `6.488` class `word` token ` sustainable`
+  - Welcome to this seminar on sustainable weight management. Today, we will explore various evidence
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `458` activation `5.189` class `word` token ` sustainability`
+  - . Finally, we will conclude with the importance of sustainability and personalization. The best weight loss strategy is
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `436` activation `4.192` class `word` token ` surgery`
+  - P-1 receptor agonists—and bariatric surgery, highlighting their medical indications and necessary lifestyle accompan
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `196` activation `3.478` class `word` token ` seminar`
+  - Welcome to this seminar on sustainable weight management. Today, we will explore
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `225` activation `3.439` class `word` token ` solution`
+  - emphasizing that there is no one-size-fits-all solution. First, we examine dietary interventions. We will
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `366` activation `3.396` class `word` token ` Sleep`
+  - Third, we will address behavioral and lifestyle modifications. Sleep deprivation and chronic stress elevate cortisol, which promotes fat
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `384` activation `3.179` class `word` token ` sleep`
+  - which promotes fat storage. Therefore, we must discuss sleep hygiene, mindful eating practices, and stress management as
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `411` activation `2.722` class `word` token ` support`
+  - will cover medical and clinical interventions for individuals requiring clinical support. This includes a balanced overview of weight-loss medications
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `498` activation `2.441` class `word` token ` sound`
+  - equip attendees with a holistic, compassionate, and scientifically sound understanding of weight management. Thank you, and let
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `221` activation `2.387` class `word` token `-size`
+  - to losing weight, emphasizing that there is no one-size-fits-all solution. First, we examine dietary
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `276` activation `2.349` class `word` token ` sources`
+  - bohydrate and ketogenic diets, which alter metabolic fuel sources; and intermittent fasting, which focuses on when to
+- `L24:4066` `9707b47b7812228c3a9a28803e01f8cb5689e804d84f4cdccc9354311c8bb1d1@turn_01@gemini-3.5-flash` token `247` activation `1.963` class `word` token ` specific`
+  - the classic caloric deficit, but also look at specific structured eating patterns. These include the Mediterranean diet,
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `141` activation `6.530` class `word` token `ustainable`
+  - Sustainable Weight Loss: Practical Daily Changes for a Healthier
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `165` activation `6.219` class `word` token ` Sustainable`
+  - you tired of crash diets that leave you exhausted? Sustainable weight loss is not about starving yourself; it is
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `421` activation `3.779` class `word` token ` sug`
+  - . Poor sleep disrupts hormones, increasing cravings for sugary, high-calorie foods. Aim for seven
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `245` activation `3.661` class `word` token ` sweet`
+  - colorful vegetables, and complex carbohydrates like quinoa or sweet potatoes. Protein is especially crucial—it keeps you feeling
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `288` activation `3.642` class `word` token ` sip`
+  - with hunger. Keep a reusable water bottle handy and sip consistently throughout the day to curb unnecessary snacking.
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `178` activation `3.430` class `word` token ` small`
+  - is not about starving yourself; it is about making small, manageable shifts in your daily routine. By focusing
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `401` activation `3.419` class `word` token ` Sleep`
+  - feeling like a chore. Lifestyle: Prioritize Sleep and Stress Never underestimate the power of sleep.
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `352` activation `3.278` class `word` token ` squ`
+  - rate up. Incorporate bodyweight exercises, like squats and push-ups, two or three times a
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `410` activation `3.216` class `word` token ` sleep`
+  - itize Sleep and Stress Never underestimate the power of sleep. Poor sleep disrupts hormones, increasing cravings for
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `353` activation `3.209` class `word` token `ats`
+  - up. Incorporate bodyweight exercises, like squats and push-ups, two or three times a week
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `413` activation `2.873` class `word` token ` sleep`
+  - Stress Never underestimate the power of sleep. Poor sleep disrupts hormones, increasing cravings for sugary,
+- `L24:4066` `f54a211a0b6e311c071b6b7a7239bf304b9fbce5912ac2b2121bdc62c2ac00f2@turn_01@glm-5.2` token `441` activation `2.687` class `discourse_marker_word` token ` Similarly`
+  - seven to nine hours of quality rest each night. Similarly, chronic stress elevates cortisol, which can lead
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `257` activation `6.546` class `word` token ` soccer`
+  - sports Try tennis, pickleball, basketball, soccer, or volleyball. Sports are fun because they give
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `180` activation `4.093` class `word` token ` songs`
+  - tends to pass quickly because you’re focused on the songs and moves. Hiking or nature walks Walking
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `279` activation `3.982` class `word` token `/social`
+  - a goal besides “working out,” and the competitive/social element can keep you engaged. Even casual games can
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `217` activation `3.827` class `word` token ` sidewalk`
+  - terrain naturally make your body work harder than a flat sidewalk walk. It’s also a great stress reliever
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `239` activation `3.611` class `word` token ` sleep`
+  - which can support weight loss by helping with mood, sleep, and consistency. Recreational sports Try
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `339` activation `3.199` class `word` token ` social`
+  - . Water aerobics can be surprisingly energetic and social. This is a good option if you want something
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `262` activation `3.035` class `word` token ` Sports`
+  - pickleball, basketball, soccer, or volleyball. Sports are fun because they give you a goal besides “
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `316` activation `2.906` class `word` token ` so`
+  - obics Swimming is low-impact, so it’s gentle on joints while still being a full
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `310` activation `2.862` class `word` token `imming`
+  - . Swimming or water aerobics Swimming is low-impact, so it’s gentle on
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `302` activation `2.782` class `word` token `imming`
+  - of cardio, agility, and strength work. Swimming or water aerobics Swimming is low
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `247` activation `2.775` class `word` token ` sports`
+  - mood, sleep, and consistency. Recreational sports Try tennis, pickleball, basketball, soccer
+- `L24:4066` `0cb44b947b7d959dcb72a1280457308a472f13abd23bb27798050c568d83c8f1@turn_01@gpt-5.5` token `231` activation `2.457` class `word` token ` support`
+  - ’s also a great stress reliever, which can support weight loss by helping with mood, sleep, and
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `256` activation `6.788` class `word` token ` sustainable`
+  - Encouraging sustainable transportation in a major city requires a multifaceted
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `298` activation `3.788` class `word` token ` safety`
+  - aggressively expand dedicated cycling lanes and pedestrian pathways to ensure safety. Implementing "complete streets" that prioritize walkers
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `345` activation `2.854` class `word` token ` systems`
+  - off-peak hours. Integrating contactless payment systems and real-time tracking apps improves the overall rider experience
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `431` activation `2.554` class `word` token ` sidewalk`
+  - e-bikes. Designating specific parking zones prevents sidewalk clutter while bridging the gap for first-and-last
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `369` activation `2.308` class `expanded_negation_word` token ` should`
+  - on personal cars. Policy and Pricing: Municipalities should implement congestion pricing in downtown cores to deter driving.
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `386` activation `2.280` class `word` token ` subsidized`
+  - to deter driving. Lowering transit fares or offering subsidized monthly passes for low-income residents makes public transit a
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `408` activation `2.264` class `expanded_negation_word` token ` should`
+  - economic choice. Micromobility Integration: Cities should partner with private companies to provide shared e-sco
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `419` activation `1.536` class `word` token `oters`
+  - partner with private companies to provide shared e-scooters and e-bikes. Designating specific parking zones
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `418` activation `1.528` class `word` token `co`
+  - should partner with private companies to provide shared e-scooters and e-bikes. Designating specific parking
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `427` activation `1.235` class `word` token ` specific`
+  - -scooters and e-bikes. Designating specific parking zones prevents sidewalk clutter while bridging the gap
+- `L24:4066` `73248335b63c2ded00cbe8595c84cf8e41ed301f8eb2c26ef8a5107a433e5b77@turn_01@glm-5.2` token `297` activation `1.119` class `word` token ` ensure`
+  - must aggressively expand dedicated cycling lanes and pedestrian pathways to ensure safety. Implementing "complete streets" that prioritize
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `186` activation `6.292` class `word` token ` sail`
+  - able by the window. I watch as technicolor sailboats cut through the water in the bay, and
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `127` activation `4.727` class `word` token ` sore`
+  - novel in New York, and he’s writing with sore fingers in Boston. I’m wrapped in a sweater
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `494` activation `4.180` class `word` token ` sign`
+  - . I’m sorry, you dickhead.” A sign is held up to the audience that reads “La
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `487` activation `3.749` class `word` token ` sorry`
+  - start with an apology.” “Ok. I’m sorry, you dickhead.” A sign is held up
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `137` activation `3.720` class `word` token ` sweater`
+  - sore fingers in Boston. I’m wrapped in a sweater in Balboa Park, and he’s raking
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `84` activation `3.532` class `word` token ` supposed`
+  - able by the window. These are things he is supposed to know. And it feels as though we’re
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `230` activation `3.531` class `word` token ` asleep`
+  - sky. Call it 10 AM. I am asleep in our bed, and he is watching the ball
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `333` activation `3.414` class `word` token ` someone`
+  - friend will stop by and visit, and ask if someone has died. When I love a man, I
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `215` activation `3.381` class `word` token ` sun`
+  - Island Expressway. When I love a man the sun is high in the sky. Call it 10
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `374` activation `3.378` class `word` token ` seems`
+  - rocks surrounding us, and for a minute, it seems that there is nothing in the world that I do
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `14` activation `3.359` class `word` token ` say`
+  - think I’m too difficult to understand. When I say margarita, I mean daiquiri.
+- `L24:4066` `2b4368affddfcba6e26200a28f4abd6aa606557d36ff16ab1ca84a5900a7efa3@turn_01@human` token `319` activation `3.332` class `word` token ` silence`
+  - now,” he will stop and listen with a thick silence. My best friend will stop by and visit,
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `96` activation `6.635` class `word` token ` sauce`
+  - The sauce boils, red bubbles bursting like tiny hearts in a
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `500` activation `4.676` class `word` token ` sauce`
+  - from the jammed gears of this afternoon. The sauce thickens, congeals, becomes a wall
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `417` activation `4.228` class `word` token ` suff`
+  - the Parmesan, white and powdery, suffocating everything. The printer groans, a
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `401` activation `3.800` class `word` token ` sits`
+  - infinite loop of expectation, the way Mom’s judgment sits on the counter next to the Parmesan, white
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `373` activation `3.754` class `word` token ` silence`
+  - about the machine, but about us, about the silence stretching thin between the boiling pot and the humming fridge
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `137` activation `3.634` class `word` token ` sound`
+  - spoon clacking against ceramic, that hollow, desperate sound of domesticity holding its breath. Why did Mom
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `388` activation `3.471` class `word` token ` scream`
+  - boiling pot and the humming fridge. I want to scream about the infinite loop of expectation, the way Mom
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `110` activation `3.337` class `word` token ` silence`
+  - bubbles bursting like tiny hearts in a pan, screaming silence into the steam that clings to my skin.
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `119` activation `3.266` class `word` token ` skin`
+  - screaming silence into the steam that clings to my skin. She stirs, the wooden spoon clacking
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `468` activation `2.766` class `word` token ` see`
+  - . The steam burns my eyes. I can’t see her mom anymore, only the printer’s red light
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `127` activation `2.646` class `word` token ` spoon`
+  - to my skin. She stirs, the wooden spoon clacking against ceramic, that hollow, desperate sound
+- `L24:4066` `4767e643cecabe10956064246eb7072f8dc5f121521e07447cd0bbdbcd3bf4f6@turn_01@qwen3.6-35b` token `109` activation `2.604` class `word` token ` screaming`
+  - red bubbles bursting like tiny hearts in a pan, screaming silence into the steam that clings to my skin
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `107` activation `6.511` class `word` token `ustainable`
+  - Sustainable parenting is not about achieving perfection but making consistent,
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `260` activation `3.916` class `word` token ` sustainability`
+  - and unplug electronics when not in use, making sustainability tangible through lowered utility bills. Sixth, start a
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `435` activation `3.809` class `word` token ` Sustainable`
+  - , essential life skills rather than burdensome restrictions. Sustainable parenting is an evolving process, requiring patience and flexibility
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `313` activation `3.543` class `word` token ` sort`
+  - . Eighth, implement a strict recycling routine where children sort materials, turning chore time into educational moments about resource
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `198` activation `3.435` class `word` token ` soil`
+  - family compost bin, turning food scraps into nutrient-rich soil while demonstrating nature’s cycles. Third, switch to
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `236` activation `3.278` class `word` token ` sourced`
+  - planning to minimize food waste and encourage appreciation for locally sourced, seasonal produce. Fifth, opt for energy
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `345` activation `3.074` class `word` token ` synthetic`
+  - astic toys like wooden blocks to encourage creativity while reducing synthetic pollution. Tenth, engage in regular nature walks
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `194` activation `2.637` class `word` token ` scraps`
+  - Second, create a family compost bin, turning food scraps into nutrient-rich soil while demonstrating nature’s cycles.
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `238` activation `2.555` class `word` token ` seasonal`
+  - minimize food waste and encourage appreciation for locally sourced, seasonal produce. Fifth, opt for energy-efficient LED
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `428` activation `2.419` class `word` token ` skills`
+  - they internalize these values as normal, essential life skills rather than burdensome restrictions. Sustainable parenting is an
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `411` activation `2.376` class `word` token ` seeds`
+  - . When children see us repairing broken items, planting seeds, and conserving resources, they internalize these
+- `L24:4066` `8785debe9d6161303d48598fdae32e1e058649e60b23a91c682c0c522dc9c9ec@turn_01@qwen3.6-35b` token `271` activation `2.238` class `word` token ` small`
+  - tangible through lowered utility bills. Sixth, start a small indoor herb garden, fostering a connection between nature and
+- `L24:4066` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `262` activation `6.402` class `word` token ` sensory`
+  - ashibo Shape-Shifting Box The world of sensory play mourns the passing of an extraordinary companion:
+- `L24:4066` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `444` activation `3.464` class `word` token ` sculptures`
+  - capable of connecting with others to form larger structures, sculptures, and spellbinding 3D art. Its
+- `L24:4066` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `325` activation `3.103` class `word` token ` surface`
+  - 36 rare earth magnets, and a durable tear-proof surface, Shashibo lived a life of transformation.
+- `L24:4066` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `425` activation `2.953` class `word` token ` survived`
+  - failed to leave an impression. Shashibo is survived by 12 collectible designs, each capable of
+- `L24:4066` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `404` activation `2.421` class `word` token ` satisfying`
+  - patterns brought beauty to every twist, fold, and satisfying click. Matte or high-gloss, it never
+- `L24:4066` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `289` activation `1.736` class `word` token ` spirit`
+  - ashibo fidget box, beloved for its restless spirit, magnetic personality, and astonishing ability to become more
+- `L24:4066` `9fa0285c8ac4e1cdc970fe25826a7a0de8482d4c15f989a26cddbe2f540d8ec5@turn_01@gpt-5.5` token `364` activation `1.127` class `word` token `ifting`
+  - dared ask, “Can I master the Shape-Shifting Box?” Many tried. Few truly did. Unlike
+- `L24:4066` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `359` activation `6.372` class `word` token ` Soviet`
+  - In the early 1990s, after the Soviet-backed government collapsed, rival mujahideen groups
+- `L24:4066` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `493` activation `3.764` class `style_function_word` token ` Since`
+  - power after U.S. and NATO forces withdrew. Since then, Afghanistan has again been ruled as an Islamic
+- `L24:4066` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `409` activation `2.274` class `word` token ` September`
+  - of the country until 2001. After the September 11 attacks, a U.S.-led coalition
+- `L24:4066` `eb015b9d05daffb70b442c6d2af51e621aaefff92a30d2721ff2d36ff907154c@turn_01@gpt-5.5` token `464` activation `1.452` class `word` token ` insecurity`
+  - Ghani headed this Islamic Republic, though corruption, insecurity, and Taliban insurgency remained major problems. In August
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `54` activation `6.486` class `word` token ` sweat`
+  - always hungry, always smelling like mud, grass, sweat, and shoulder pads. Our legs ached from
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `455` activation `5.031` class `word` token ` soda`
+  - , and the cold closed around us. Rows of soda cans gleamed under the humming light. Red,
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `468` activation `4.249` class `word` token ` silver`
+  - amed under the humming light. Red, blue, silver, green. All those bright colors stacked like treasure
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `83` activation `4.231` class `word` token ` sinking`
+  - from drills. In autumn, the sun was already sinking behind the grain elevators by the time we got
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `66` activation `4.055` class `word` token `prints`
+  - and shoulder pads. Our legs ached from sprints. Our hands were nicked from drills. In
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `300` activation `4.012` class `word` token ` sacred`
+  - It was a ceremony. A small, stupid, sacred thing. It was an average life for two average
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `340` activation `3.986` class `word` token ` senior`
+  - were. Then, one day in November of our senior year, something shifted. Nothing announced it. No
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `25` activation `3.820` class `word` token ` sidewalks`
+  - three years, John and I walked the same cracked sidewalks to the little grocery store at the edge of our
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `357` activation `3.788` class `word` token ` sudden`
+  - announced it. No thunder. No warning. No sudden darkness falling over the street. It was just another
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `155` activation `3.715` class `word` token ` sweetness`
+  - like bread, dust, coffee, and the faint sweetness of overripe fruit. The old couple who owned
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `208` activation `3.535` class `word` token ` said`
+  - she didn’t already know the answer. We always said hello. We always stepped into the walk-in cooler
+- `L24:4066` `801c8c3d7abcb8c7ab00db2501baf3ea569821ffc77ea3fd9fb3c17ae11b6288@turn_01@gpt-5.5` token `6` activation `3.457` class `word` token ` school`
+  - Valediction After school, after football practice, every day for three years
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `117` activation `6.769` class `word` token ` sword`
+  - for armor, played with a wooden stick for a sword, and imagined himself as a knight. Seeing this
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `354` activation `6.013` class `word` token ` sword`
+  - - Cai stood at the ready with his wooden sword in his hand. As he faced the undead army
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `218` activation `4.666` class `word` token ` sat`
+  - wooden barrel armor and stick for protection. Cai sat at the edge of the Sea and marveled at
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `144` activation `4.580` class `word` token ` servant`
+  - him to King Arthur to become a page, a servant for the king. Arthur accepted Cai on one
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `314` activation `3.908` class `word` token ` surface`
+  - thousands of undead warriors and knights popping up through the surface of the waters, walking toward Cai menacingly
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `269` activation `3.794` class `word` token ` Sea`
+  - this area. Legend said that at night, the Sea gave up its dead in the form of zombies and
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `294` activation `3.386` class `word` token ` sun`
+  - those who dared to come near it. As the sun set over the bloody horizon, Cai saw thousands
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `375` activation `3.372` class `word` token ` sea`
+  - , a hand protruded from the middle of the sea holding a golden battleaxe. The hand threw the
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `237` activation `3.301` class `word` token ` sustained`
+  - veled at the blood-red waters. The Blood Sea sustained no life; in fact, this body of water
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `236` activation `3.266` class `word` token ` Sea`
+  - marveled at the blood-red waters. The Blood Sea sustained no life; in fact, this body of
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `280` activation `3.226` class `word` token ` spirits`
+  - gave up its dead in the form of zombies and spirits that terrorized those who dared to come near it
+- `L24:4066` `0ddfb977ab665917d903be41031825aa61ef3af63ee3dcf1f8eadb3320cdfd8f@turn_01@human` token `263` activation `3.070` class `word` token ` said`
+  - shed over centuries of war in this area. Legend said that at night, the Sea gave up its dead
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `377` activation `6.743` class `word` token ` silk`
+  - with ornate patterns and rolls of handwoven silk; a collection of small daggers with sharp steel
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `311` activation `5.402` class `word` token ` silver`
+  - piggy bank back at home; stacks of barred silver and a scale to weigh them with; scrolls of
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `360` activation `4.362` class `word` token `apphire`
+  - emerald green, amethyst purple, and sapphire blue; carved ivory tusks with ornate patterns
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `314` activation `3.931` class `word` token ` scale`
+  - back at home; stacks of barred silver and a scale to weigh them with; scrolls of yellowing parchment
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `472` activation `3.388` class `word` token ` secret`
+  - to find out, he'd have to share his secret with some grown-ups, and he wasn't sure
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `482` activation `2.916` class `word` token ` sure`
+  - secret with some grown-ups, and he wasn't sure he wanted to do that just yet. For the
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `255` activation `2.819` class `word` token ` seeing`
+  - his throat. He could hardly believe what he was seeing, so he reached his fingers into the chest to
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `474` activation `2.797` class `word` token ` some`
+  - out, he'd have to share his secret with some grown-ups, and he wasn't sure he wanted
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `257` activation `2.598` class `word` token ` so`
+  - . He could hardly believe what he was seeing, so he reached his fingers into the chest to touch it
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `382` activation `2.425` class `word` token ` small`
+  - rolls of handwoven silk; a collection of small daggers with sharp steel blades and worn leather hil
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `320` activation `2.423` class `word` token ` scrolls`
+  - barred silver and a scale to weigh them with; scrolls of yellowing parchment and old leather-bound books,
+- `L24:4066` `dc4d399dc49f181a84756b49b5e150d951f95472bfb81d6e18353e7b042c2417@turn_01@human` token `403` activation `2.322` class `word` token ` small`
+  - ts and an antique pistol; and finally, a small velvet pouch filled with rings, necklaces, earrings
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `19` activation `6.801` class `word` token ` sweat`
+  - to chew on, a suffocating blend of sweat, anticipation, and the deafening roar of twenty
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `14` activation `4.721` class `word` token ` suff`
+  - the arena was thick enough to chew on, a suffocating blend of sweat, anticipation, and the
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `493` activation `3.565` class `word` token ` silence`
+  - hesitate? The referee’s whistle blew, but the silence between them was louder than any crowd. They stared
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `464` activation `3.338` class `word` token ` sweaty`
+  - .” Marcus landed, the ball slipping slightly in his sweaty grip. The doubt crept in, cold and
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `452` activation `3.307` class `word` token ` saw`
+  - Next possession, you’re going to miss. I saw it.” Marcus landed, the ball slipping slightly in
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `377` activation `3.192` class `word` token ` slipped`
+  - smirk vanished. For a microsecond, the mask slipped. Marcus saw the flicker of doubt in those
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `380` activation `3.157` class `word` token ` saw`
+  - For a microsecond, the mask slipped. Marcus saw the flicker of doubt in those cold, blue
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `242` activation `3.131` class `word` token `ared`
+  - ’m going to break you in half.” “Scared?” Julian laughed, a sharp, brittle sound.
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `461` activation `3.122` class `word` token ` slightly`
+  - I saw it.” Marcus landed, the ball slipping slightly in his sweaty grip. The doubt crept in
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `15` activation `3.069` class `word` token `oc`
+  - arena was thick enough to chew on, a suffocating blend of sweat, anticipation, and the deaf
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `217` activation `3.042` class `word` token ` see`
+  - Don’t tell me it’s not hurting. I see you favoring it when I drive the lane.
+- `L24:4066` `3273e937a1a8076c6c639d6f7f6d5f54fb823d1505d55deae8339524878042a7@turn_01@qwen3.6-35b` token `295` activation `2.931` class `word` token ` see`
+  - see the hesitation. It’s subtle, but I see it.” Marcus took a hard dribble, the
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `357` activation `6.594` class `word` token ` social`
+  - . Originating in ancient times, they served vital social functions; specific patterns indicated a person’s tribe,
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `371` activation `5.914` class `word` token ` social`
+  - patterns indicated a person’s tribe, age, and social status. During the transatlantic slave trade,
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `355` activation `4.795` class `word` token ` served`
+  - the scalp. Originating in ancient times, they served vital social functions; specific patterns indicated a person’s
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `454` activation `4.427` class `word` token ` societal`
+  - with many individuals choosing straightened styles to conform to societal pressures. Later, the Black is Beautiful movement reclaimed
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `469` activation `3.590` class `word` token ` symbol`
+  - the Black is Beautiful movement reclaimed cornrows as a symbol of African heritage and cultural pride. Today, their
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `379` activation `3.154` class `word` token ` slave`
+  - , and social status. During the transatlantic slave trade, enslaved Africans used cornrows practically. The
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `360` activation `2.765` class `word` token ` specific`
+  - in ancient times, they served vital social functions; specific patterns indicated a person’s tribe, age, and
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `506` activation `2.225` class `word` token ` sports`
+  - artistic expressions, frequently showcased in pop culture, professional sports, and high fashion.
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `404` activation `2.160` class `word` token ` secretly`
+  - hair during arduous labor, while complex patterns secretly mapped routes to freedom. In the Americas, corn
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `346` activation `1.635` class `word` token ` scalp`
+  - African hairstyle consisting of braids laid close to the scalp. Originating in ancient times, they served vital
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `418` activation `1.447` class `word` token ` discreet`
+  - freedom. In the Americas, cornrows provided a discreet means of communication. Following emancipation, the hairstyle
+- `L24:4066` `afc3ae54755a11d48ed7224ddae7b0b36d2a45eedb56aa8e3ab0e2579aa33f56@turn_01@glm-5.2` token `382` activation `1.104` class `word` token ` enslaved`
+  - status. During the transatlantic slave trade, enslaved Africans used cornrows practically. The tight braids
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `390` activation `6.655` class `word` token ` sausage`
+  - will have some sort of breakfast meat like ham, sausage, or bacon. Then it’s time for it
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `418` activation `4.155` class `word` token ` sit`
+  - plate of food hits the big table and we all sit together. Every now and then there are extra things
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `461` activation `3.946` class `word` token ` Sunday`
+  - my parents had this kind of breakfast growing up every Sunday with their families. I think they are passing it
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `293` activation `3.765` class `word` token ` Sunday`
+  - now. Dad is always the first one up on Sunday and he does all the cooking. First, he
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `258` activation `3.683` class `word` token ` Sunday`
+  - Almost every Sunday morning, our family comes together to have breakfast.
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `313` activation `3.584` class `word` token ` so`
+  - he starts the coffee pot and puts a kettle on so there is hot water for Mother’s tea. He
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `382` activation `2.262` class `word` token ` some`
+  - them ready to scramble. Usually, we will have some sort of breakfast meat like ham, sausage, or
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `375` activation `2.166` class `word` token ` scramble`
+  - a large number of eggs and gets them ready to scramble. Usually, we will have some sort of breakfast
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `383` activation `2.052` class `word` token ` sort`
+  - ready to scramble. Usually, we will have some sort of breakfast meat like ham, sausage, or bacon
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `384` activation `1.312` class `word` token ` of`
+  - to scramble. Usually, we will have some sort of breakfast meat like ham, sausage, or bacon.
+- `L24:4066` `3ab1884ab546022ad6fbd731e5a22145387d57e34359ff336c57875514f7fcb9@turn_01@human` token `485` activation `0.943` class `word` token ` myself`
+  - in the hope that one day I’ll do it myself when I’m older. To be honest, I
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `150` activation `6.641` class `word` token ` solder`
+  - engineering who'd traded spreadsheet cells for sawdust and solder. They'd come from Turkey by way of a
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `147` activation `4.842` class `word` token ` saw`
+  - refugees from corporate engineering who'd traded spreadsheet cells for sawdust and solder. They'd come from Turkey by
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `327` activation `4.428` class `word` token ` sat`
+  - designers' visions into tangible goods while their own ideas sat in drawers like unsent letters. It paid the
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `442` activation `4.299` class `word` token ` sold`
+  - with craft and simplicity, and they forged something that sold. They weren't the type to cut corners.
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `375` activation `4.208` class `word` token ` silence`
+  - Fabrication work dried up overnight. What remained was silence, and in that silence, their own creativity finally
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `108` activation `4.109` class `word` token ` Som`
+  - like a debt collector who didn't understand patience. Somewhere behind a fogged-up window in Red Hook
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `332` activation `4.074` class `word` token `ent`
+  - goods while their own ideas sat in drawers like unsent letters. It paid the bills. It was education
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `435` activation `3.834` class `word` token ` simplicity`
+  - their instinct for materials, their obsession with craft and simplicity, and they forged something that sold. They weren
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `500` activation `3.544` class `word` token ` satisfaction`
+  - . Two people, one studio, and the quiet satisfaction of finally building something with their own name on it
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `380` activation `3.399` class `word` token ` silence`
+  - overnight. What remained was silence, and in that silence, their own creativity finally had room to breathe.
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `284` activation `2.904` class `word` token ` sleeping`
+  - bones of Red Hook where the warehouses loomed like sleeping giants and the rent was just cheap enough to dream
+- `L24:4066` `55895e5b98c2ce097b82c813f5f98dfcea0bd4ed481a5ffc61f358a925262903@turn_01@glm-5.2` token `262` activation `2.777` class `word` token ` same`
+  - it. They'd leased a tiny studio space the same month their boots hit pavement, nestled in the famously
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `454` activation `6.416` class `word` token ` sax`
+  - laughs, a sudden splash of light, as a saxophone exhales a smoky, golden sigh,
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `492` activation `5.657` class `word` token ` sync`
+  - s how to chime. We are suspended in syncopated time, lost in the blue, where
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `490` activation `4.283` class `word` token ` suspended`
+  - clock forgets how to chime. We are suspended in syncopated time, lost in the blue
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `447` activation `3.694` class `word` token ` sudden`
+  - of the night. The piano key laughs, a sudden splash of light, as a saxophone exhales
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `463` activation `3.464` class `word` token ` sigh`
+  - a saxophone exhales a smoky, golden sigh, weaving a prayer to a neon-tint
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `398` activation `3.446` class `word` token ` sweet`
+  - gloom. The air is thick with bourbon and sweet smoke, a slow vibration before the rhythm broke.
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `383` activation `3.185` class `word` token ` single`
+  - drape the low-lit room, where a single spotlight cuts the amber gloom. The air is
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `402` activation `2.924` class `word` token ` slow`
+  - air is thick with bourbon and sweet smoke, a slow vibration before the rhythm broke. A brush on the
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `418` activation `2.921` class `word` token ` soft`
+  - . A brush on the snare— a soft, metallic hiss. The upright bass begins its heavy
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `475` activation `2.558` class `word` token ` sky`
+  - weaving a prayer to a neon-tinted sky. Here, the clock forgets how to ch
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `460` activation `2.557` class `word` token `oky`
+  - light, as a saxophone exhales a smoky, golden sigh, weaving a prayer to a
+- `L24:4066` `c0ba41f159abca71c3a733614b1b541f3d57b95717e61ba537e696d7787104ec@turn_01@gemini-3.5-flash` token `399` activation `2.489` class `word` token ` smoke`
+  - om. The air is thick with bourbon and sweet smoke, a slow vibration before the rhythm broke. A

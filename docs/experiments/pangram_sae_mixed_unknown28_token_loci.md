@@ -1,0 +1,439 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1984` | `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 33 | `44.12` | `5.21` | word:33 |
+| `L19:1984` | `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 7 | `11.97` | `4.34` | word:7 |
+| `L19:1984` | `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` | `gpt-5.5` | 41 | `52.70` | `4.57` | word:38|discourse_marker_word:3 |
+| `L19:1984` | `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` | `human` | 17 | `39.45` | `4.43` | word:17 |
+| `L19:1984` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` | `glm-5.2` | 24 | `43.39` | `4.30` | word:24 |
+| `L19:1984` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 39 | `58.81` | `3.85` | word:39 |
+| `L19:1984` | `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 49 | `95.75` | `4.41` | word:49 |
+| `L19:1984` | `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` | `human` | 21 | `39.17` | `4.67` | word:21 |
+| `L19:1984` | `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` | `glm-5.2` | 39 | `51.68` | `4.25` | word:38|punctuation:1 |
+| `L24:1995` | `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 24 | `56.29` | `6.91` | word:24 |
+| `L24:1995` | `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 6 | `19.78` | `6.64` | word:6 |
+| `L24:1995` | `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` | `gpt-5.5` | 40 | `89.10` | `6.23` | word:37|discourse_marker_word:3 |
+| `L24:1995` | `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` | `human` | 16 | `56.85` | `6.36` | word:16 |
+| `L24:1995` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` | `glm-5.2` | 29 | `74.94` | `5.11` | word:29 |
+| `L24:1995` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 36 | `94.27` | `6.07` | word:36 |
+| `L24:1995` | `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 49 | `148.22` | `6.21` | word:49 |
+| `L24:1995` | `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` | `human` | 22 | `56.39` | `6.08` | word:22 |
+| `L24:1995` | `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` | `glm-5.2` | 39 | `87.55` | `6.61` | word:39 |
+
+## Top Tokens
+
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `606` activation `5.211` class `word` token ` pace`
+  - a front-page article hailing Ethan’s legendary, pace-breaking performance, permanently crowning him with two hilarious
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `272` activation `2.844` class `word` token ` stride`
+  - to the front in a synchronized wall of muscle and stride, intending to lock down the top five spots yet
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `388` activation `2.639` class `word` token ` race`
+  - ly slotting himself into the fourth position. The race reached its brutal climax at the crest of Cardiac
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `527` activation `2.129` class `word` token ` white`
+  - Creek’s fifth runner, locking his eyes on the white finish line ribbon ahead. With a final, desperate
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `466` activation `2.079` class `word` token ` loose`
+  - Oh my goodness, please let my ankles survive these loose rocks! Sweet mother of speed, I am practically
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `546` activation `1.999` class `word` token ` place`
+  - , desperate sprint, Ethan crossed the line in fourth place, officially shattering Oak Creek’s dreams of another
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `310` activation `1.961` class `word` token ` course`
+  - let them dictate his destiny on the muddy three-mile course. He bided his time through the first two
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `529` activation `1.702` class `word` token ` line`
+  - fifth runner, locking his eyes on the white finish line ribbon ahead. With a final, desperate sprint,
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `422` activation `1.622` class `word` token ` decline`
+  - the finish line. As Ethan plunged down the steep decline, gravity pulling him faster than his legs wanted to
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `543` activation `1.536` class `word` token ` line`
+  - With a final, desperate sprint, Ethan crossed the line in fourth place, officially shattering Oak Creek’s
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `314` activation `1.512` class `word` token `ided`
+  - destiny on the muddy three-mile course. He bided his time through the first two miles, hovering just
+- `L19:1984` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `414` activation `1.478` class `word` token ` line`
+  - acherous, rocky descent that led to the finish line. As Ethan plunged down the steep decline, gravity
+- `L19:1984` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `490` activation `4.335` class `word` token ` tide`
+  - The noon sun beat down on the tide pool, baking the barnacles. Claw Mcgr
+- `L19:1984` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `549` activation `2.547` class `word` token ` piece`
+  - . The anemones held their breath. A piece of kelp tumbled between them like a dry
+- `L19:1984` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `613` activation `1.240` class `word` token `este`
+  - of silt. But Claw was quicker, sidestepping with a low, sideways scuttle and snapping
+- `L19:1984` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `532` activation `1.157` class `word` token ` Maine`
+  - canyon, the shadow of Red Jack, a towering Maine lobster, stretched long and menacing. The anem
+- `L19:1984` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `543` activation `1.025` class `word` token `ones`
+  - lobster, stretched long and menacing. The anemones held their breath. A piece of kelp t
+- `L19:1984` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `587` activation `0.898` class `word` token ` silence`
+  - swayed in the gentle current. Suddenly, the silence shattered. Jack lunged with his heavy crusher claw
+- `L19:1984` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `493` activation `0.766` class `word` token ` baking`
+  - The noon sun beat down on the tide pool, baking the barnacles. Claw Mcgraw, a
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `417` activation `4.574` class `word` token `-route`
+  - tags = { Name = "public-ec2-route-table" } } resource "awsroutetable
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `40` activation `3.582` class `word` token `Route`
+  - A VPC Public subnet Internet Gateway Route table and public route Security group allowing inbound SSH
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `378` activation `2.920` class `word` token `route`
+  - vpcid = awsvpc.main.id route { cidrblock = "0.0.
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `44` activation `2.893` class `word` token ` route`
+  - Public subnet Internet Gateway Route table and public route Security group allowing inbound SSH from anywhere E
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `612` activation `2.314` class `discourse_marker_word` token `instance`
+  - allow-all-ssh" } } resource "awsinstance" "publicec2" { ami = data
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `71` activation `2.228` class `discourse_marker_word` token ` instance`
+  - Amazon Linux 2 AMI t3.micro instance Public IP assignment terraform { requiredversion =
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `15` activation `2.009` class `discourse_marker_word` token ` instance`
+  - Terraform example to create a publicly accessible EC2 instance in the North Virginia / us-east-1 region
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `250` activation `1.395` class `word` token `resource`
+  - "public-ec2-vpc" } } resource "awssubnet" "public" {
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `195` activation `1.325` class `word` token `resource`
+  - -type" values = ["hvm"] } } resource "awsvpc" "main" { cid
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `362` activation `1.281` class `word` token `etable`
+  - igw" } } resource "awsroutetable" "public" { vpcid = aw
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `233` activation `1.275` class `word` token ` true`
+  - ostnames = true enablednssupport = true tags = { Name = "public-ec
+- `L19:1984` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `422` activation `1.272` class `word` token `resource`
+  - "public-ec2-route-table" } } resource "awsroutetableassociation" "public"
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `440` activation `4.431` class `word` token ` race`
+  - sounds Spouted from the tailpipes of the racecars. Number 13 led the pack, As
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `403` activation `3.977` class `word` token ` force`
+  - flag into the air, And swung it down with force. A pack of cars with revving engines,
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `476` activation `3.251` class `word` token ` close`
+  - in the track, Number 13 rode upward and close to the wall. Swiftly maneuvering the course
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `486` activation `3.075` class `word` token ` course`
+  - close to the wall. Swiftly maneuvering the course, while narrowly avoiding a collision. Suddenly, without
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `638` activation `3.074` class `word` token ` race`
+  - passed across the finish line, He had won the race.
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `423` activation `2.834` class `word` token ` line`
+  - , Took off with blinding speed past the line. Roaring and thunderous sounds Spouted
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `473` activation `2.419` class `word` token ` rode`
+  - aching a bend in the track, Number 13 rode upward and close to the wall. Swiftly maneuver
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `632` activation `2.380` class `word` token ` line`
+  - eyes and prayed. As he passed across the finish line, He had won the race.
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `524` activation `2.284` class `word` token `Smoke`
+  - carnage. Two cars spun out of control, Smoke billowing from their hoods. On his side
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `389` activation `2.197` class `word` token ` rose`
+  - The man rose the checkered flag into the air, And swung
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `574` activation `1.946` class `word` token ` line`
+  - ahead from the pack again. Approaching the finish line with breathtaking speed, Number 13 still in the
+- `L19:1984` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `534` activation `1.599` class `word` token ` side`
+  - Smoke billowing from their hoods. On his side, Number 7 came up in a flash,
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `65` activation `4.296` class `word` token ` slice`
+  - and containing a single, forbidden relic. The last slice of pepperoni. "We cannot both have it,"
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `308` activation `3.747` class `word` token ` slice`
+  - "You would defile the sacred geometry of the slice? The crust would be severed. The cheese ratio
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `545` activation `3.586` class `word` token ` slice`
+  - and containing a single, forbidden relic. The last slice of pepperoni. "We cannot both have it,"
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `480` activation `2.720` class `word` token ` Slice`
+  - on three," Julian breathed.</think> The Last Slice The fluorescent kitchen light flickered, casting long
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `419` activation `2.716` class `word` token ` safe`
+  - jaw trembled. He looked away, toward the safe, plentiful pantry. The spinach seemed to mock him
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `93` activation `2.446` class `word` token ` wide`
+  - , cracking leaves. His eyes, bloodshot and wide, reflected the glistening cheese. Julian didn
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `51` activation `2.066` class `word` token ` grease`
+  - oak table, sat the box. Cardboard. grease-stained, and containing a single, forbidden relic
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `573` activation `1.955` class `word` token ` wide`
+  - , cracking leaves. His eyes, bloodshot and wide, reflected the glistening cheese. Julian didn
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `317` activation `1.904` class `word` token ` cheese`
+  - the slice? The crust would be severed. The cheese ratio—destroyed! Are you a monster?"
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `531` activation `1.841` class `word` token ` grease`
+  - red oak table, sat the box — cardboard, grease-stained, and containing a single, forbidden relic
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `177` activation `1.558` class `word` token ` office`
+  - tradition, now fractured by an extra shift at the office, leaving them both arriving home at the witching
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `381` activation `1.552` class `word` token ` voice`
+  - "It’s not just toppings, Julian!" Arthur’s voice cracked. "It’s the garlic knot crust!
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `102` activation `3.851` class `word` token ` crate`
+  - , enough lettuce to start a garden, and a crate of apples that promised health and vitality. No,
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `148` activation `3.215` class `word` token ` slice`
+  - of the living room. One slice. The last slice of Tony’s Famous Pepperoni with Extra Crunchy
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `144` activation `3.146` class `word` token ` slice`
+  - in the dim light of the living room. One slice. The last slice of Tony’s Famous Pepperoni
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `599` activation `3.007` class `word` token ` slice`
+  - But know this, Leo: when you take that slice, you carry the weight of my sacrifice. Every
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `413` activation `2.976` class `word` token ` slice`
+  - each other across the linoleum battlefield. The slice seemed to pulse, a beacon of ultimate satisfaction.
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `442` activation `2.542` class `word` token ` plate`
+  - slid down the side of the cheese, hitting the plate with a sound like a gavel striking a courtroom
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `300` activation `2.531` class `word` token ` wide`
+  - times this afternoon." Leo spun around, his eyes wide, filled with a storm of guilt and longing.
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `287` activation `2.364` class `word` token ` grease`
+  - I saw you eyeing it. You mentioned the grease ratio three times this afternoon." Leo spun around,
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `254` activation `2.259` class `word` token ` late`
+  - of our brotherhood, forged in the fires of late-night coding sessions and cheap wine. "You take it
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `438` activation `1.849` class `word` token ` cheese`
+  - congealed oil slid down the side of the cheese, hitting the plate with a sound like a g
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `260` activation `1.776` class `word` token ` wine`
+  - in the fires of late-night coding sessions and cheap wine. "You take it," I whispered, my voice
+- `L19:1984` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `91` activation `1.610` class `word` token ` cheese`
+  - had stocked it thoroughly that morning: three types of cheese, enough lettuce to start a garden, and a
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `199` activation `4.413` class `word` token ` pace`
+  - this silent night. He traveled on, a steady pace, No heavy thoughts within his head, Save that
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `40` activation `3.467` class `word` token ` ice`
+  - This silent run was Henderson, A winding way of ice and stone; He knew the fork was ten miles
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `267` activation `3.400` class `word` token ` ice`
+  - his one desire. His breath had turned to heavy ice That bound his lips and chin in gray;
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `151` activation `3.398` class `word` token ` waste`
+  - drooping low, As through the white and lonely waste The man began his march to go. An
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `505` activation `3.362` class `word` token ` ice`
+  - . Beneath the snow, on top of ice, These hidden currents softly flowed; They never froze
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `356` activation `3.309` class `word` token ` face`
+  - of Bud, Who wore a guard to shield his face From winter's biting, frozen flood. But
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `566` activation `3.258` class `word` token ` ice`
+  - beneath the winter light. Sometimes a skin of fragile ice Was hidden by the fallen snow, And if
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `437` activation `3.234` class `word` token ` aside`
+  - sudden fear. For round a bend he leaped aside, Just like a horse that starts in fright,
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `542` activation `3.200` class `word` token ` white`
+  - running flow Were masked by drifts of heavy white; They might be inches, three feet deep,
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `289` activation `3.068` class `word` token ` freeze`
+  - times he thought how cold it was, A bitter freeze that blocked the day. He rubbed his cheek and
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `301` activation `2.909` class `word` token ` nose`
+  - blocked the day. He rubbed his cheek and frozen nose With mittened hands, first left, then
+- `L19:1984` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `327` activation `2.880` class `word` token ` face`
+  - stopped, the numbness came To claim his face with icy bite. His cheeks would surely freeze,
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `362` activation `4.671` class `word` token `pace`
+  - ahead. One foot in front of the other, pace starts slow and comfortable; Legs begin the process
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `583` activation `3.811` class `word` token ` pace`
+  - exhales, his breathing now at a labored pace; Twenty laps, yea, twenty miles,
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `424` activation `3.633` class `word` token ` lane`
+  - asphalt. The grey cement sidewalk is this traveler's lane, and he intends to stick to it; He
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `471` activation `3.263` class `word` token ` course`
+  - delineates the halfway mark as the runner's course begins its downward slope; The wind pushes at his
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `475` activation `2.849` class `word` token ` slope`
+  - mark as the runner's course begins its downward slope; The wind pushes at his back, he leans
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `600` activation `2.653` class `word` token ` place`
+  - , twenty miles, but the natural beauty of this place only grows. The sun finally sets on the man
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `518` activation `2.029` class `word` token ` orange`
+  - eyes captured the image of the sun; A glowing orange orb descending slowly but surely to the horizon
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `592` activation `1.950` class `word` token ` miles`
+  - ored pace; Twenty laps, yea, twenty miles, but the natural beauty of this place only grows
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `558` activation `1.653` class `word` token `pe`
+  - of both pain and pleasure, like a zoetrope of agony and ecstasy. "Heaven," he muttered
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `547` activation `1.637` class `word` token ` scenes`
+  - the runner continued his evening ritual; A ritual playing scenes of both pain and pleasure, like a zoetro
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `279` activation `1.218` class `word` token `oes`
+  - Shoes wrapped tightly around tired feet socks barely peek
+- `L19:1984` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `460` activation `1.149` class `word` token `pole`
+  - the reward for perseverance. The post office's flagpole delineates the halfway mark as the runner's
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `586` activation `4.249` class `word` token ` trace`
+  - , Eiffel's wrought-iron walkway trace its lacy gold-and-maroon pattern through the
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `419` activation `2.696` class `word` token ` bite`
+  - fennel, lucerne, and the sharp bite of alcohol. He was preparing to distill his
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `528` activation `2.267` class `word` token ` grape`
+  - acks of herbs crowded every corner. A vat of grape alcohol loomed like a sleeping behemoth. And
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `359` activation `2.169` class `word` token ` rose`
+  - its pale limestone walls, vaulted ceilings, and rose window crowning the narrow doorway, the interior —
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `479` activation `2.005` class `word` token ` pipes`
+  - mbics connected by a labyrinthine tangle of pipes — were salvaged in 1920 from the
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `314` activation `1.977` class `word` token `ade`
+  - , the commandant's house sat behind its barricade of roses, watching. Breaux, a
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `623` activation `1.671` class `word` token ` places`
+  - , electronic controls, automated precision — progress had rendered places like this obsolete. But obsolescence was exactly
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `553` activation `1.663` class `word` token `the`
+  - a massive tub of wormwood waited — absinthe's notorious ingredient, condemned for over a hundred years
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `309` activation `1.562` class `word` token ` house`
+  - academy. Across the street, the commandant's house sat behind its barricade of roses, watching.
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `288` activation `1.539` class `word` token `age`
+  - ets pedaled past before vanishing into the dressage yards of the elite Cadre Noir equestrian
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `459` activation `1.506` class `word` token ` age`
+  - from obscurity. Everything inside predated the modern age. The stills — bulbous copper alemb
+- `L19:1984` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `431` activation `1.503` class `word` token `erte`
+  - alcohol. He was preparing to distill his Verte Suisse 65 — one of three formulas reconstructed
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `606` activation `6.915` class `word` token ` pace`
+  - a front-page article hailing Ethan’s legendary, pace-breaking performance, permanently crowning him with two hilarious
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `272` activation `4.168` class `word` token ` stride`
+  - to the front in a synchronized wall of muscle and stride, intending to lock down the top five spots yet
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `388` activation `3.698` class `word` token ` race`
+  - ly slotting himself into the fourth position. The race reached its brutal climax at the crest of Cardiac
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `466` activation `3.414` class `word` token ` loose`
+  - Oh my goodness, please let my ankles survive these loose rocks! Sweet mother of speed, I am practically
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `527` activation `3.150` class `word` token ` white`
+  - Creek’s fifth runner, locking his eyes on the white finish line ribbon ahead. With a final, desperate
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `546` activation `3.103` class `word` token ` place`
+  - , desperate sprint, Ethan crossed the line in fourth place, officially shattering Oak Creek’s dreams of another
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `422` activation `2.680` class `word` token ` decline`
+  - the finish line. As Ethan plunged down the steep decline, gravity pulling him faster than his legs wanted to
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `310` activation `2.576` class `word` token ` course`
+  - let them dictate his destiny on the muddy three-mile course. He bided his time through the first two
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `543` activation `2.537` class `word` token ` line`
+  - With a final, desperate sprint, Ethan crossed the line in fourth place, officially shattering Oak Creek’s
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `414` activation `2.360` class `word` token ` line`
+  - acherous, rocky descent that led to the finish line. As Ethan plunged down the steep decline, gravity
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `529` activation `2.357` class `word` token ` line`
+  - fifth runner, locking his eyes on the white finish line ribbon ahead. With a final, desperate sprint,
+- `L24:1995` `16f726a1d0cd704dc4bfbc1c170175fd3d96d9135638a63e7e5b7dd2fd5bffca@turn_01@gemini-3.5-flash` token `316` activation `2.259` class `word` token ` time`
+  - the muddy three-mile course. He bided his time through the first two miles, hovering just behind their
+- `L24:1995` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `490` activation `6.637` class `word` token ` tide`
+  - The noon sun beat down on the tide pool, baking the barnacles. Claw Mcgr
+- `L24:1995` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `549` activation `3.862` class `word` token ` piece`
+  - . The anemones held their breath. A piece of kelp tumbled between them like a dry
+- `L24:1995` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `613` activation `2.960` class `word` token `este`
+  - of silt. But Claw was quicker, sidestepping with a low, sideways scuttle and snapping
+- `L24:1995` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `508` activation `2.745` class `word` token ` blue`
+  - Claw Mcgraw, a battle-scarred blue crab, stood his ground on the shifting sands.
+- `L24:1995` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `532` activation `2.370` class `word` token ` Maine`
+  - canyon, the shadow of Red Jack, a towering Maine lobster, stretched long and menacing. The anem
+- `L24:1995` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@gemini-3.5-flash` token `543` activation `1.207` class `word` token `ones`
+  - lobster, stretched long and menacing. The anemones held their breath. A piece of kelp t
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `417` activation `6.229` class `word` token `-route`
+  - tags = { Name = "public-ec2-route-table" } } resource "awsroutetable
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `40` activation `3.857` class `word` token `Route`
+  - A VPC Public subnet Internet Gateway Route table and public route Security group allowing inbound SSH
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `612` activation `3.823` class `discourse_marker_word` token `instance`
+  - allow-all-ssh" } } resource "awsinstance" "publicec2" { ami = data
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `44` activation `3.805` class `word` token ` route`
+  - Public subnet Internet Gateway Route table and public route Security group allowing inbound SSH from anywhere E
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `287` activation `3.259` class `word` token `zone`
+  - .0.1.0/24" availabilityzone = "us-east-1a" mapp
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `378` activation `3.236` class `word` token `route`
+  - vpcid = awsvpc.main.id route { cidrblock = "0.0.
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `250` activation `3.114` class `word` token `resource`
+  - "public-ec2-vpc" } } resource "awssubnet" "public" {
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `195` activation `3.076` class `word` token `resource`
+  - -type" values = ["hvm"] } } resource "awsvpc" "main" { cid
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `422` activation `2.901` class `word` token `resource`
+  - "public-ec2-route-table" } } resource "awsroutetableassociation" "public"
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `457` activation `2.824` class `word` token `resource`
+  - id = awsroutetable.public.id } resource "awssecuritygroup" "ssh" { name
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `233` activation `2.770` class `word` token ` true`
+  - ostnames = true enablednssupport = true tags = { Name = "public-ec
+- `L24:1995` `b45430577a8318d4534fd428293409e777bd44f5bc779c25d589dac4d5c72725@turn_01@gpt-5.5` token `71` activation `2.728` class `discourse_marker_word` token ` instance`
+  - Amazon Linux 2 AMI t3.micro instance Public IP assignment terraform { requiredversion =
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `440` activation `6.363` class `word` token ` race`
+  - sounds Spouted from the tailpipes of the racecars. Number 13 led the pack, As
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `476` activation `4.857` class `word` token ` close`
+  - in the track, Number 13 rode upward and close to the wall. Swiftly maneuvering the course
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `423` activation `4.615` class `word` token ` line`
+  - , Took off with blinding speed past the line. Roaring and thunderous sounds Spouted
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `403` activation `4.526` class `word` token ` force`
+  - flag into the air, And swung it down with force. A pack of cars with revving engines,
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `486` activation `3.981` class `word` token ` course`
+  - close to the wall. Swiftly maneuvering the course, while narrowly avoiding a collision. Suddenly, without
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `534` activation `3.786` class `word` token ` side`
+  - Smoke billowing from their hoods. On his side, Number 7 came up in a flash,
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `632` activation `3.760` class `word` token ` line`
+  - eyes and prayed. As he passed across the finish line, He had won the race.
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `473` activation `3.736` class `word` token ` rode`
+  - aching a bend in the track, Number 13 rode upward and close to the wall. Swiftly maneuver
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `524` activation `3.692` class `word` token `Smoke`
+  - carnage. Two cars spun out of control, Smoke billowing from their hoods. On his side
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `389` activation `3.588` class `word` token ` rose`
+  - The man rose the checkered flag into the air, And swung
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `638` activation `3.372` class `word` token ` race`
+  - passed across the finish line, He had won the race.
+- `L24:1995` `98596fe53f484ad8bb98e47d2c6c08f538393b425ebcf3e31c3f2d5ad7a5a843@turn_01@human` token `574` activation `3.304` class `word` token ` line`
+  - ahead from the pack again. Approaching the finish line with breathtaking speed, Number 13 still in the
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `419` activation `5.112` class `word` token ` safe`
+  - jaw trembled. He looked away, toward the safe, plentiful pantry. The spinach seemed to mock him
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `65` activation `4.982` class `word` token ` slice`
+  - and containing a single, forbidden relic. The last slice of pepperoni. "We cannot both have it,"
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `545` activation `4.610` class `word` token ` slice`
+  - and containing a single, forbidden relic. The last slice of pepperoni. "We cannot both have it,"
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `308` activation `4.321` class `word` token ` slice`
+  - "You would defile the sacred geometry of the slice? The crust would be severed. The cheese ratio
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `51` activation `4.317` class `word` token ` grease`
+  - oak table, sat the box. Cardboard. grease-stained, and containing a single, forbidden relic
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `531` activation `3.858` class `word` token ` grease`
+  - red oak table, sat the box — cardboard, grease-stained, and containing a single, forbidden relic
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `99` activation `3.673` class `word` token ` cheese`
+  - , bloodshot and wide, reflected the glistening cheese. Julian didn't blink. "Then it
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `317` activation `3.435` class `word` token ` cheese`
+  - the slice? The crust would be severed. The cheese ratio—destroyed! Are you a monster?"
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `93` activation `3.348` class `word` token ` wide`
+  - , cracking leaves. His eyes, bloodshot and wide, reflected the glistening cheese. Julian didn
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `573` activation `3.095` class `word` token ` wide`
+  - , cracking leaves. His eyes, bloodshot and wide, reflected the glistening cheese. Julian didn
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `480` activation `2.976` class `word` token ` Slice`
+  - on three," Julian breathed.</think> The Last Slice The fluorescent kitchen light flickered, casting long
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2` token `560` activation `2.678` class `word` token ` voice`
+  - "We cannot both have it," Arthur whispered, his voice like dry, cracking leaves. His eyes, blood
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `102` activation `6.067` class `word` token ` crate`
+  - , enough lettuce to start a garden, and a crate of apples that promised health and vitality. No,
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `438` activation `4.590` class `word` token ` cheese`
+  - congealed oil slid down the side of the cheese, hitting the plate with a sound like a g
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `148` activation `4.230` class `word` token ` slice`
+  - of the living room. One slice. The last slice of Tony’s Famous Pepperoni with Extra Crunchy
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `599` activation `4.215` class `word` token ` slice`
+  - But know this, Leo: when you take that slice, you carry the weight of my sacrifice. Every
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `287` activation `3.999` class `word` token ` grease`
+  - I saw you eyeing it. You mentioned the grease ratio three times this afternoon." Leo spun around,
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `144` activation `3.986` class `word` token ` slice`
+  - in the dim light of the living room. One slice. The last slice of Tony’s Famous Pepperoni
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `300` activation `3.899` class `word` token ` wide`
+  - times this afternoon." Leo spun around, his eyes wide, filled with a storm of guilt and longing.
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `413` activation `3.875` class `word` token ` slice`
+  - each other across the linoleum battlefield. The slice seemed to pulse, a beacon of ultimate satisfaction.
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `435` activation `3.615` class `word` token ` side`
+  - single drop of congealed oil slid down the side of the cheese, hitting the plate with a sound
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `254` activation `3.449` class `word` token ` late`
+  - of our brotherhood, forged in the fires of late-night coding sessions and cheap wine. "You take it
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `442` activation `3.438` class `word` token ` plate`
+  - slid down the side of the cheese, hitting the plate with a sound like a gavel striking a courtroom
+- `L24:1995` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@qwen3.6-35b` token `533` activation `3.355` class `word` token ` edge`
+  - ing hunger of the soul." Leo gripped the edge of the counter, his knuckles white. "
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `505` activation `6.209` class `word` token ` ice`
+  - . Beneath the snow, on top of ice, These hidden currents softly flowed; They never froze
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `267` activation `5.739` class `word` token ` ice`
+  - his one desire. His breath had turned to heavy ice That bound his lips and chin in gray;
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `40` activation `5.646` class `word` token ` ice`
+  - This silent run was Henderson, A winding way of ice and stone; He knew the fork was ten miles
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `437` activation `5.405` class `word` token ` aside`
+  - sudden fear. For round a bend he leaped aside, Just like a horse that starts in fright,
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `199` activation `5.085` class `word` token ` pace`
+  - this silent night. He traveled on, a steady pace, No heavy thoughts within his head, Save that
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `566` activation `5.022` class `word` token ` ice`
+  - beneath the winter light. Sometimes a skin of fragile ice Was hidden by the fallen snow, And if
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `542` activation `4.931` class `word` token ` white`
+  - running flow Were masked by drifts of heavy white; They might be inches, three feet deep,
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `289` activation `4.815` class `word` token ` freeze`
+  - times he thought how cold it was, A bitter freeze that blocked the day. He rubbed his cheek and
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `151` activation `4.684` class `word` token ` waste`
+  - drooping low, As through the white and lonely waste The man began his march to go. An
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `42` activation `4.673` class `word` token ` stone`
+  - run was Henderson, A winding way of ice and stone; He knew the fork was ten miles on,
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `176` activation `4.651` class `word` token ` white`
+  - buried deep Beneath a foot of fallen white; For thirty days no traveler’s step Had
+- `L24:1995` `cb8919757061c50390491bb13219de5873c54435650001a403ffca51bb45842c@turn_01@gemini-3.5-flash` token `67` activation `4.439` class `word` token ` time`
+  - it alone. He pulled his watch to check the time, The glass was cold, the hour was ten
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `362` activation `6.080` class `word` token `pace`
+  - ahead. One foot in front of the other, pace starts slow and comfortable; Legs begin the process
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `424` activation `5.227` class `word` token ` lane`
+  - asphalt. The grey cement sidewalk is this traveler's lane, and he intends to stick to it; He
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `583` activation `4.623` class `word` token ` pace`
+  - exhales, his breathing now at a labored pace; Twenty laps, yea, twenty miles,
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `471` activation `4.196` class `word` token ` course`
+  - delineates the halfway mark as the runner's course begins its downward slope; The wind pushes at his
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `475` activation `3.580` class `word` token ` slope`
+  - mark as the runner's course begins its downward slope; The wind pushes at his back, he leans
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `600` activation `3.235` class `word` token ` place`
+  - , twenty miles, but the natural beauty of this place only grows. The sun finally sets on the man
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `558` activation `3.143` class `word` token `pe`
+  - of both pain and pleasure, like a zoetrope of agony and ecstasy. "Heaven," he muttered
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `518` activation `2.937` class `word` token ` orange`
+  - eyes captured the image of the sun; A glowing orange orb descending slowly but surely to the horizon
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `461` activation `2.830` class `word` token ` deline`
+  - reward for perseverance. The post office's flagpole delineates the halfway mark as the runner's course
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `592` activation `2.670` class `word` token ` miles`
+  - ored pace; Twenty laps, yea, twenty miles, but the natural beauty of this place only grows
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `547` activation `2.449` class `word` token ` scenes`
+  - the runner continued his evening ritual; A ritual playing scenes of both pain and pleasure, like a zoetro
+- `L24:1995` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `511` activation `1.749` class `word` token ` image`
+  - he thought to himself, as his eyes captured the image of the sun; A glowing orange orb descending
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `586` activation `6.609` class `word` token ` trace`
+  - , Eiffel's wrought-iron walkway trace its lacy gold-and-maroon pattern through the
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `419` activation `4.309` class `word` token ` bite`
+  - fennel, lucerne, and the sharp bite of alcohol. He was preparing to distill his
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `314` activation `3.606` class `word` token `ade`
+  - , the commandant's house sat behind its barricade of roses, watching. Breaux, a
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `459` activation `3.403` class `word` token ` age`
+  - from obscurity. Everything inside predated the modern age. The stills — bulbous copper alemb
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `553` activation `3.399` class `word` token `the`
+  - a massive tub of wormwood waited — absinthe's notorious ingredient, condemned for over a hundred years
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `431` activation `3.303` class `word` token `erte`
+  - alcohol. He was preparing to distill his Verte Suisse 65 — one of three formulas reconstructed
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `187` activation `3.202` class `word` token `the`
+  - few dozen living souls had ever tasted authentic absinthe — the legendary elixir that had defined an
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `514` activation `3.162` class `word` token `the`
+  - lier, once the beating heart of the absinthe world. Sacks of herbs crowded every corner.
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `479` activation `3.092` class `word` token ` pipes`
+  - mbics connected by a labyrinthine tangle of pipes — were salvaged in 1920 from the
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `407` activation `2.933` class `word` token `ise`
+  - incense here. The air hung thick with anise, fennel, lucerne, and the
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `528` activation `2.883` class `word` token ` grape`
+  - acks of herbs crowded every corner. A vat of grape alcohol loomed like a sleeping behemoth. And
+- `L24:1995` `569a93bc5f76289bda1dbd6d427f390406f91166a65783a4667c10a1aeb6a68c@turn_01@glm-5.2` token `359` activation `2.875` class `word` token ` rose`
+  - its pale limestone walls, vaulted ceilings, and rose window crowning the narrow doorway, the interior —

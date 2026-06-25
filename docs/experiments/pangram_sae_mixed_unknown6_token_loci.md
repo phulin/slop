@@ -1,0 +1,711 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2390` | `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` | `human` | 220 | `379.81` | `3.60` | word:181|punctuation:17|style_function_word:9|sentence_boundary:8|discourse_marker_word:3|expanded_negation_word:1|line_break:1 |
+| `L19:2390` | `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` | `human` | 305 | `616.53` | `4.20` | word:253|punctuation:23|discourse_marker_word:9|style_function_word:7|sentence_boundary:5|line_break:4|expanded_negation_word:3|whitespace:1 |
+| `L19:2390` | `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` | `human` | 295 | `625.66` | `4.60` | word:214|punctuation:37|style_function_word:12|expanded_negation_word:9|sentence_boundary:8|line_break:8|discourse_marker_word:4|whitespace:3 |
+| `L19:2390` | `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` | `human` | 489 | `753.89` | `3.35` | word:383|punctuation:49|style_function_word:26|sentence_boundary:12|expanded_negation_word:7|line_break:7|discourse_marker_word:5 |
+| `L19:2390` | `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` | `human` | 355 | `601.60` | `3.67` | word:279|punctuation:29|expanded_negation_word:18|style_function_word:12|sentence_boundary:10|discourse_marker_word:4|line_break:3 |
+| `L19:2390` | `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` | `human` | 136 | `245.34` | `3.57` | word:101|punctuation:10|expanded_negation_word:9|style_function_word:8|sentence_boundary:5|line_break:3 |
+| `L19:2390` | `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` | `glm-5.2` | 130 | `165.76` | `2.96` | word:93|punctuation:14|line_break:9|sentence_boundary:6|expanded_negation_word:5|style_function_word:3 |
+| `L19:2390` | `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 125 | `247.88` | `4.34` | word:101|punctuation:9|style_function_word:8|sentence_boundary:5|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:2390` | `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` | `human` | 134 | `220.14` | `3.86` | word:105|punctuation:10|style_function_word:9|sentence_boundary:4|expanded_negation_word:3|discourse_marker_word:2|line_break:1 |
+| `L19:2390` | `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 459 | `785.68` | `3.72` | word:391|punctuation:19|line_break:16|style_function_word:14|sentence_boundary:9|discourse_marker_word:5|expanded_negation_word:5 |
+| `L19:2390` | `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 140 | `246.40` | `3.25` | word:117|punctuation:12|sentence_boundary:6|style_function_word:4|discourse_marker_word:1 |
+| `L19:2390` | `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` | `glm-5.2` | 172 | `268.91` | `2.71` | word:148|punctuation:11|sentence_boundary:8|style_function_word:4|discourse_marker_word:1 |
+| `L19:2390` | `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` | `human` | 532 | `1106.70` | `3.99` | word:450|punctuation:36|style_function_word:15|sentence_boundary:12|line_break:10|discourse_marker_word:7|whitespace:2 |
+| `L19:2390` | `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 413 | `751.46` | `4.07` | word:338|punctuation:36|sentence_boundary:15|style_function_word:14|discourse_marker_word:5|expanded_negation_word:2|line_break:2|whitespace:1 |
+| `L24:3169` | `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` | `human` | 148 | `241.47` | `3.93` | word:123|punctuation:10|style_function_word:8|sentence_boundary:4|expanded_negation_word:1|discourse_marker_word:1|line_break:1 |
+| `L24:3169` | `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` | `human` | 210 | `433.60` | `3.98` | word:171|punctuation:21|style_function_word:5|sentence_boundary:5|line_break:3|expanded_negation_word:2|discourse_marker_word:2|whitespace:1 |
+| `L24:3169` | `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` | `human` | 241 | `502.38` | `4.45` | word:180|punctuation:26|style_function_word:9|expanded_negation_word:8|sentence_boundary:8|line_break:5|whitespace:3|discourse_marker_word:2 |
+| `L24:3169` | `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` | `human` | 356 | `615.40` | `3.37` | word:267|punctuation:41|style_function_word:20|sentence_boundary:11|expanded_negation_word:7|line_break:7|discourse_marker_word:3 |
+| `L24:3169` | `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` | `human` | 307 | `556.36` | `3.67` | word:240|punctuation:25|expanded_negation_word:17|style_function_word:11|sentence_boundary:9|discourse_marker_word:3|line_break:2 |
+| `L24:3169` | `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` | `human` | 113 | `201.36` | `3.31` | word:81|punctuation:9|expanded_negation_word:8|style_function_word:8|sentence_boundary:5|line_break:2 |
+| `L24:3169` | `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` | `glm-5.2` | 142 | `269.34` | `3.68` | word:100|punctuation:17|line_break:9|expanded_negation_word:7|sentence_boundary:7|style_function_word:2 |
+| `L24:3169` | `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 98 | `169.26` | `3.75` | word:73|punctuation:9|style_function_word:8|sentence_boundary:6|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:3169` | `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` | `human` | 103 | `177.90` | `3.36` | word:83|style_function_word:7|punctuation:7|sentence_boundary:3|line_break:1|expanded_negation_word:1|discourse_marker_word:1 |
+| `L24:3169` | `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 338 | `575.36` | `3.76` | word:283|punctuation:15|line_break:14|style_function_word:11|sentence_boundary:8|discourse_marker_word:5|expanded_negation_word:2 |
+| `L24:3169` | `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 102 | `151.28` | `2.48` | word:84|punctuation:9|sentence_boundary:5|style_function_word:3|discourse_marker_word:1 |
+| `L24:3169` | `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` | `glm-5.2` | 126 | `190.07` | `3.35` | word:108|punctuation:8|sentence_boundary:6|style_function_word:3|whitespace:1 |
+| `L24:3169` | `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` | `human` | 467 | `1046.08` | `4.72` | word:390|punctuation:32|style_function_word:15|sentence_boundary:12|line_break:10|discourse_marker_word:6|whitespace:2 |
+| `L24:3169` | `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 254 | `431.72` | `4.32` | word:207|punctuation:24|sentence_boundary:10|style_function_word:9|discourse_marker_word:2|expanded_negation_word:1|line_break:1 |
+
+## Top Tokens
+
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `418` activation `3.603` class `word` token ` is`
+  - for millennia. Over half of the gold consumed today is converted into jewelry. Gold is both ductile and
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `597` activation `3.600` class `word` token ` a`
+  - % of global gold use. Gold is integral to a variety of electronic devices, encompassing smartphones, GPS
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `478` activation `3.291` class `word` token ` serves`
+  - appeal even after prolonged use. Investment: Gold serves as a tangible asset that conserves its value over
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `621` activation `3.264` class `word` token ` is`
+  - visions, and computers. In these applications, gold is typically employed in connectors, switch and relay contacts,
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `455` activation `3.158` class `word` token `ness`
+  - form and beauty over substantial periods. Its chemical inertness ensures it remains unaffected by most chemicals, thereby preserving
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `479` activation `3.136` class `style_function_word` token ` as`
+  - even after prolonged use. Investment: Gold serves as a tangible asset that conserves its value over time
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `539` activation `3.116` class `word` token `ability`
+  - three Olympic-sized swimming pools. Gold's easy storability and globally recognized value also make it a sought-after
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `492` activation `3.115` class `word` token ` it`
+  - asset that conserves its value over time, making it a popular choice as a financial hedge against inflation and
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `507` activation `3.110` class `word` token ` is`
+  - a financial hedge against inflation and currency instability. This is in part due to its limited availability – the cumulative
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `544` activation `3.106` class `style_function_word` token ` also`
+  - . Gold's easy storability and globally recognized value also make it a sought-after asset during times of economic
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `594` activation `2.977` class `word` token ` is`
+  - approximately 10% of global gold use. Gold is integral to a variety of electronic devices, encompassing
+- `L19:2390` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `524` activation `2.886` class `word` token ` history`
+  - availability – the cumulative quantity of gold mined throughout human history would fill merely about three Olympic-sized swimming pools.
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `593` activation `4.204` class `word` token ` she`
+  - a radiant future in space exploration. In addition, she discussed the prospects of employing the conditions in space,
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `486` activation `3.766` class `word` token ` is`
+  - marks a colossal stride for commercial space exploration. It is the second civilian astronaut mission to the ISS following A
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `619` activation `3.724` class `word` token ` generated`
+  - research in various fields like pharmaceuticals. The insights generated would not only advance those fields but also significantly enhance
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `566` activation `3.654` class `punctuation` token `,`
+  - championing diversity at the International Astronautical Federation, shed light on the importance of Ax-2 for
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `555` activation `3.637` class `style_function_word` token ` also`
+  - to the CEO of the Saudi Space Commission, while also championing diversity at the International Astronautical Federation
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `553` activation `3.636` class `punctuation` token `,`
+  - special adviser to the CEO of the Saudi Space Commission, while also championing diversity at the International Astronaut
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `626` activation `3.598` class `word` token ` but`
+  - . The insights generated would not only advance those fields but also significantly enhance the human capital and technical prowess in
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `620` activation `3.598` class `expanded_negation_word` token ` would`
+  - in various fields like pharmaceuticals. The insights generated would not only advance those fields but also significantly enhance the
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `554` activation `3.514` class `style_function_word` token ` while`
+  - adviser to the CEO of the Saudi Space Commission, while also championing diversity at the International Astronautical
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `618` activation `3.504` class `word` token ` insights`
+  - for research in various fields like pharmaceuticals. The insights generated would not only advance those fields but also significantly
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `485` activation `3.490` class `word` token ` It`
+  - 2 marks a colossal stride for commercial space exploration. It is the second civilian astronaut mission to the ISS following
+- `L19:2390` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `627` activation `3.423` class `style_function_word` token ` also`
+  - The insights generated would not only advance those fields but also significantly enhance the human capital and technical prowess in Saudi
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `531` activation `4.604` class `punctuation` token `,`
+  - among the victims, while California, the flight destination, had 29. The New York City Department of
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `553` activation `4.557` class `punctuation` token `)`
+  - and Mental Hygiene (NYCDOHMH) worked closely with the NYC Office of Chief Medical Examiner
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `546` activation `4.539` class `word` token `giene`
+  - The New York City Department of Health and Mental Hygiene (NYCDOHMH) worked closely with
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `554` activation `4.464` class `word` token ` worked`
+  - Mental Hygiene (NYCDOHMH) worked closely with the NYC Office of Chief Medical Examiner (
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `576` activation `4.160` class `word` token `ME`
+  - ME) to process the death certificates. The OCME classified each reported death as a homicide, except for
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `573` activation `4.128` class `sentence_boundary` token `.`
+  - Examiner (OCME) to process the death certificates. The OCME classified each reported death as a homicide
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `516` activation `4.070` class `punctuation` token `,`
+  - . Massachusetts, the origin of the hijacked planes, had 90 residents among the victims, while California
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `567` activation `4.052` class `punctuation` token `)`
+  - the NYC Office of Chief Medical Examiner (OCME) to process the death certificates. The OCME classified
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `568` activation `3.994` class `word` token ` to`
+  - NYC Office of Chief Medical Examiner (OCME) to process the death certificates. The OCME classified each
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `594` activation `3.956` class `word` token ` report`
+  - , except for the 10 terrorists involved. This report provides insights into the devastating impact of the September
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `555` activation `3.931` class `word` token ` closely`
+  - Hygiene (NYCDOHMH) worked closely with the NYC Office of Chief Medical Examiner (OC
+- `L19:2390` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `495` activation `3.825` class `word` token ` A`
+  - and 25% resided in New Jersey. A small percentage, 1%, hailed from foreign nations
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `228` activation `3.348` class `expanded_negation_word` token ` was`
+  - great leader, the spacecraft embarking on this voyage was named MBR Explorer. Setting sail in 203
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `158` activation `3.240` class `word` token ` strive`
+  - oid Belt (EMA). "We will perpetually strive towards the horizon, nurturing a promising future for our
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `252` activation `3.189` class `punctuation` token `,`
+  - MBR Explorer would chart a course through the planets, harnessing their gravitational pulls to slingshot itself
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `244` activation `3.123` class `word` token ` Explorer`
+  - Setting sail in 2030, the MBR Explorer would chart a course through the planets, harnessing
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `636` activation `3.027` class `punctuation` token `,`
+  - Now, another UAE astronaut, Sultan Al Neyadi, orbits our planet
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `245` activation `2.979` class `expanded_negation_word` token ` would`
+  - sail in 2030, the MBR Explorer would chart a course through the planets, harnessing their
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `227` activation `2.955` class `word` token ` voyage`
+  - this great leader, the spacecraft embarking on this voyage was named MBR Explorer. Setting sail in
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `279` activation `2.934` class `word` token ` strategy`
+  - of pinball. This celestial dance, a common strategy to conserve fuel, also serves as an opportunity for
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `240` activation `2.927` class `punctuation` token `,`
+  - MBR Explorer. Setting sail in 2030, the MBR Explorer would chart a course through the
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `284` activation `2.893` class `style_function_word` token ` also`
+  - celestial dance, a common strategy to conserve fuel, also serves as an opportunity for the spacecraft to flex its
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `233` activation `2.835` class `sentence_boundary` token `.`
+  - embarking on this voyage was named MBR Explorer. Setting sail in 2030, the MBR
+- `L19:2390` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `239` activation `2.742` class `word` token `0`
+  - named MBR Explorer. Setting sail in 2030, the MBR Explorer would chart a course through
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `257` activation `3.665` class `punctuation` token `,`
+  - ultaneously, Dr. Masakazu Fujii, engrossed in his morning read, was j
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `281` activation `3.471` class `punctuation` token `,`
+  - the alien arrival; Mrs. Hatsuyo Nakamura, a tailor’s widow, paused in her kitchen as
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `256` activation `3.292` class `word` token `ii`
+  - Simultaneously, Dr. Masakazu Fujii, engrossed in his morning read, was
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `286` activation `3.286` class `punctuation` token `,`
+  - . Hatsuyo Nakamura, a tailor’s widow, paused in her kitchen as the surreal scene unfolded;
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `266` activation `3.193` class `expanded_negation_word` token ` was`
+  - ii, engrossed in his morning read, was jolted by the alien arrival; Mrs.
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `265` activation `3.165` class `punctuation` token `,`
+  - Fujii, engrossed in his morning read, was jolted by the alien arrival; Mrs
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `320` activation `3.014` class `punctuation` token `,`
+  - ship appeared; Dr. Terufumi Sasaki, a young doctor at the Red Cross Hospital, found
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `302` activation `2.931` class `expanded_negation_word` token ` was`
+  - the surreal scene unfolded; Father Wilhelm Kleinsorge was enjoying a peaceful morning when the strange ship appeared;
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `360` activation `2.927` class `punctuation` token `,`
+  - animoto, while preparing to unload a handcart, was met with the shocking spectacle. An alien presence
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `280` activation `2.897` class `word` token `amura`
+  - by the alien arrival; Mrs. Hatsuyo Nakamura, a tailor’s widow, paused in her kitchen
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `301` activation `2.852` class `word` token `orge`
+  - as the surreal scene unfolded; Father Wilhelm Kleinsorge was enjoying a peaceful morning when the strange ship appeared
+- `L19:2390` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `329` activation `2.813` class `punctuation` token `,`
+  - asaki, a young doctor at the Red Cross Hospital, found his routine disrupted by the sudden turn of events
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `599` activation `3.571` class `word` token `Peter`
+  - exclaimed that he had to take care of everything. Peter urged Rocket to stop wasting time, but when Rocket
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `606` activation `3.531` class `punctuation` token `,`
+  - of everything. Peter urged Rocket to stop wasting time, but when Rocket turned around, he discovered both the
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `613` activation `3.352` class `word` token ` he`
+  - stop wasting time, but when Rocket turned around, he discovered both the bomb and Groot were gone.
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `628` activation `3.343` class `word` token ` Rocket`
+  - and Groot were gone. Overwhelmed, Rocket muttered to himself that they were all going to die
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `609` activation `3.185` class `word` token ` Rocket`
+  - Peter urged Rocket to stop wasting time, but when Rocket turned around, he discovered both the bomb and G
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `602` activation `3.025` class `word` token ` to`
+  - had to take care of everything. Peter urged Rocket to stop wasting time, but when Rocket turned around,
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `607` activation `2.974` class `word` token ` but`
+  - everything. Peter urged Rocket to stop wasting time, but when Rocket turned around, he discovered both the bomb
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `621` activation `2.968` class `expanded_negation_word` token ` were`
+  - around, he discovered both the bomb and Groot were gone. Overwhelmed, Rocket muttered to himself
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `623` activation `2.962` class `sentence_boundary` token `.`
+  - he discovered both the bomb and Groot were gone. Overwhelmed, Rocket muttered to himself that they
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `601` activation `2.885` class `word` token ` Rocket`
+  - he had to take care of everything. Peter urged Rocket to stop wasting time, but when Rocket turned around
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `620` activation `2.869` class `word` token `root`
+  - turned around, he discovered both the bomb and Groot were gone. Overwhelmed, Rocket muttered to
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `614` activation `2.821` class `word` token ` discovered`
+  - wasting time, but when Rocket turned around, he discovered both the bomb and Groot were gone. Over
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `551` activation `2.961` class `word` token `ill`
+  - batteries and an atomic bomb in your bag," Quill lectured. "If anybody's gonna have tape
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `614` activation `2.380` class `word` token `ill`
+  - "You are wasting a lot of time here!" Quill yelled. Rocket spun around. The bomb and G
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `589` activation `2.324` class `word` token ` Rocket`
+  - ried away. "That's exactly my point!" Rocket barked, turning his head. "I have
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `626` activation `2.321` class `expanded_negation_word` token ` were`
+  - . Rocket spun around. The bomb and Groot were gone. "We're all gonna die," he muttered
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `625` activation `2.307` class `word` token `root`
+  - yelled. Rocket spun around. The bomb and Groot were gone. "We're all gonna die," he
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `617` activation `2.198` class `word` token `Rocket`
+  - a lot of time here!" Quill yelled. Rocket spun around. The bomb and Groot were gone
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `554` activation `2.148` class `sentence_boundary` token `.`
+  - atomic bomb in your bag," Quill lectured. "If anybody's gonna have tape, it's
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `592` activation `2.027` class `punctuation` token `,`
+  - "That's exactly my point!" Rocket barked, turning his head. "I have to do everything
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `622` activation `2.012` class `word` token ` bomb`
+  - !" Quill yelled. Rocket spun around. The bomb and Groot were gone. "We're all gonna
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `627` activation `1.995` class `word` token ` gone`
+  - Rocket spun around. The bomb and Groot were gone. "We're all gonna die," he muttered to
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `635` activation `1.985` class `word` token ` he`
+  - root were gone. "We're all gonna die," he muttered to himself.
+- `L19:2390` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `555` activation `1.960` class `punctuation` token ` "`
+  - bomb in your bag," Quill lectured. "If anybody's gonna have tape, it's you
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `607` activation `4.341` class `word` token ` is`
+  - boiling water. While the upper edge of this zone is technically the sun’s surface, it consists of such
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `606` activation `4.200` class `word` token ` zone`
+  - like boiling water. While the upper edge of this zone is technically the sun’s surface, it consists of
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `572` activation `4.173` class `punctuation` token `,`
+  - from photons. Beyond this lies the convection zone, a cooler region at approximately four million degrees filled with
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `603` activation `4.125` class `word` token ` edge`
+  - currents, much like boiling water. While the upper edge of this zone is technically the sun’s surface,
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `571` activation `3.748` class `word` token ` zone`
+  - radiation from photons. Beyond this lies the convection zone, a cooler region at approximately four million degrees filled
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `548` activation `3.739` class `punctuation` token `,`
+  - . The radiative zone, situated near the core, boasts temperatures between two and twelve million degrees Fahrenheit,
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `550` activation `3.613` class `word` token ` temperatures`
+  - radiative zone, situated near the core, boasts temperatures between two and twelve million degrees Fahrenheit, transmitting thermal
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `575` activation `3.544` class `word` token ` region`
+  - Beyond this lies the convection zone, a cooler region at approximately four million degrees filled with bubbling plasma
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `565` activation `3.533` class `word` token ` Beyond`
+  - million degrees Fahrenheit, transmitting thermal radiation from photons. Beyond this lies the convection zone, a cooler region
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `629` activation `3.522` class `punctuation` token `,`
+  - liquid plasma that no solids or liquids can exist there, marking the transition to the star’s atmospheric zones.
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `614` activation `3.418` class `word` token ` it`
+  - of this zone is technically the sun’s surface, it consists of such hot liquid plasma that no solids or
+- `L19:2390` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `615` activation `3.376` class `word` token ` consists`
+  - this zone is technically the sun’s surface, it consists of such hot liquid plasma that no solids or liquids
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `543` activation `3.863` class `word` token ` it`
+  - , consider getting an antibody test now. However, it's advisable to wait a few months until it's
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `544` activation `3.845` class `word` token `'s`
+  - consider getting an antibody test now. However, it's advisable to wait a few months until it's clearer
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `546` activation `3.568` class `word` token ` to`
+  - an antibody test now. However, it's advisable to wait a few months until it's clearer which tests
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `545` activation `3.228` class `word` token ` advisable`
+  - getting an antibody test now. However, it's advisable to wait a few months until it's clearer which
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `542` activation `3.141` class `punctuation` token `,`
+  - virus, consider getting an antibody test now. However, it's advisable to wait a few months until it
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `582` activation `2.999` class `word` token ` you`
+  - strongly suspect that you have. In that case, you may want to go ahead and get an antibody test
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `562` activation `2.873` class `word` token ` you`
+  - it's clearer which tests perform best. Suppose you have had COVID-19 in the past or strongly
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `557` activation `2.809` class `word` token ` perform`
+  - wait a few months until it's clearer which tests perform best. Suppose you have had COVID-19
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `540` activation `2.767` class `sentence_boundary` token `.`
+  - -2 virus, consider getting an antibody test now. However, it's advisable to wait a few months
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `547` activation `2.743` class `word` token ` wait`
+  - antibody test now. However, it's advisable to wait a few months until it's clearer which tests perform
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `585` activation `2.732` class `word` token ` to`
+  - you have. In that case, you may want to go ahead and get an antibody test because there is
+- `L19:2390` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `550` activation `2.699` class `word` token ` months`
+  - . However, it's advisable to wait a few months until it's clearer which tests perform best. Sup
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `543` activation `3.719` class `word` token `erson`
+  - , Christmas Days? British novelist Jeanette Winterson produces a unique gift book in Christmas Days, which
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `411` activation `3.586` class `word` token `ert`
+  - impact of Nazi rise to power? Rachel Seiffert’s intricate novel, A Boy in Winter, probes
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `420` activation `3.526` class `punctuation` token `,`
+  - iffert’s intricate novel, A Boy in Winter, probes the complex bonds and betrayals within a Ukrainian
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `477` activation `3.431` class `word` token `le`
+  - in The Changeling? Victor LaValle’s novel The Changeling follows Apollo Kagwa
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `483` activation `3.380` class `word` token `ing`
+  - Victor LaValle’s novel The Changeling follows Apollo Kagwa, a used-book dealer.
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `414` activation `3.266` class `word` token ` novel`
+  - rise to power? Rachel Seiffert’s intricate novel, A Boy in Winter, probes the complex bonds
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `553` activation `3.231` class `style_function_word` token ` which`
+  - erson produces a unique gift book in Christmas Days, which contains twelve stories and twelve feasts for twelve days
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `351` activation `3.229` class `word` token `9`
+  - Yuknavitch, the Earth of circa 2049 is depicted as a planet devastated by the combined forces
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `209` activation `3.223` class `word` token `ley`
+  - ’s Bad Dreams and Other Stories? Tessa Hadley offers a collection of ten tales in Bad Dreams and
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `622` activation `3.221` class `word` token `ani`
+  - historical fiction, Kenyan poet and novelist Peter Kimani explores his country’s colonial past. The novel serves
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `568` activation `3.144` class `word` token ` described`
+  - twelve feasts for twelve days. The collection is described as containing otherworldly and wickedly funny narratives
+- `L19:2390` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `215` activation `3.140` class `word` token ` tales`
+  - ? Tessa Hadley offers a collection of ten tales in Bad Dreams and Other Stories, carefully serving up
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `512` activation `3.253` class `word` token `2`
+  - destination. A significant turning point occurred in 2012 when private equity firm Buckhead Investment Partners acquired a
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `575` activation `3.213` class `word` token ` Partners`
+  - 8, private equity firm Levine Leichtman Capital Partners acquired the company, fueling further aggressive growth.
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `520` activation `3.189` class `word` token ` Partners`
+  - 2012 when private equity firm Buckhead Investment Partners acquired a controlling interest, which accelerated national expansion and
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `525` activation `3.133` class `punctuation` token `,`
+  - equity firm Buckhead Investment Partners acquired a controlling interest, which accelerated national expansion and modernized the brand's
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `579` activation `3.106` class `punctuation` token `,`
+  - firm Levine Leichtman Capital Partners acquired the company, fueling further aggressive growth. By 2019
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `485` activation `3.025` class `punctuation` token `,`
+  - diversified its menu by introducing a line of food items, including sandwiches and wraps, redefining itself as
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `507` activation `2.989` class `word` token ` point`
+  - fast-casual dining destination. A significant turning point occurred in 2012 when private equity firm Buck
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `526` activation `2.919` class `style_function_word` token ` which`
+  - firm Buckhead Investment Partners acquired a controlling interest, which accelerated national expansion and modernized the brand's tropical
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `556` activation `2.848` class `punctuation` token `,`
+  - franchise celebrated the opening of its 400th location, demonstrating rapid market penetration. In 2018,
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `478` activation `2.792` class `word` token ` by`
+  - In 1999, the company diversified its menu by introducing a line of food items, including sandwiches and
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `599` activation `2.772` class `word` token ` by`
+  - 9, Tropical Smoothie Cafe reached a major milestone by opening its 800th location in Arlington, Texas
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `474` activation `2.723` class `word` token ` company`
+  - through franchising. In 1999, the company diversified its menu by introducing a line of food items
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `481` activation `2.707` class `word` token ` Capital`
+  - in 2007 when private equity firm BIP Capital acquired a controlling interest, providing the crucial capital needed
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `611` activation `2.706` class `word` token ` boasted`
+  - the end of 2019, the popular franchise boasted over 840 locations across the United States, firmly
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `513` activation `2.667` class `word` token ` to`
+  - , the brand steadily expanded its menu beyond smoothies to include a robust lineup of sandwiches, flatbreads
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `515` activation `2.664` class `word` token ` a`
+  - brand steadily expanded its menu beyond smoothies to include a robust lineup of sandwiches, flatbreads, and
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `583` activation `2.645` class `word` token ` Cafe`
+  - several years. Continuing this momentum, Tropical Smoothie Cafe reached another major milestone in 2015 by opening
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `620` activation `2.605` class `punctuation` token `,`
+  - franchise boasted over 840 locations across the United States, firmly cementing its status as a dominant force in
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `564` activation `2.556` class `word` token ` company`
+  - the opening of its 300th location. The company maintained its strong upward trajectory over the next several years
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `592` activation `2.506` class `word` token ` by`
+  - ie Cafe reached another major milestone in 2015 by opening its 500th location. By the end
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `506` activation `2.462` class `word` token ` steadily`
+  - . Headquartered in Atlanta, Georgia, the brand steadily expanded its menu beyond smoothies to include a robust
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `610` activation `2.444` class `word` token ` franchise`
+  - By the end of 2019, the popular franchise boasted over 840 locations across the United States,
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `486` activation `2.441` class `punctuation` token `,`
+  - private equity firm BIP Capital acquired a controlling interest, providing the crucial capital needed to accelerate national expansion.
+- `L19:2390` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `607` activation `2.374` class `punctuation` token `,`
+  - th location. By the end of 2019, the popular franchise boasted over 840 locations across the
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `559` activation `3.994` class `word` token `He`
+  - officer Matt Ondler explained to Space.com. He anticipates a smooth transition as the timeline coincides
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `313` activation `3.926` class `word` token ` is`
+  - ing Stinger Ghaffarian Technologies. This contractor is renowned for training NASA astronauts and other personnel involved in
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `410` activation `3.823` class `punctuation` token `,`
+  - as the vice president of business development and astronaut consultant, respectively. Their blueprint for establishing the commercial space station
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `352` activation `3.812` class `sentence_boundary` token `.`
+  - López-Alegría, and Peggy Whitson. Bolden, a former space shuttle commander who spear
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `354` activation `3.805` class `word` token `en`
+  - legría, and Peggy Whitson. Bolden, a former space shuttle commander who spearheaded NASA
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `395` activation `3.773` class `punctuation` token `,`
+  - ía and Whitson, both ex-NASA astronauts, contribute to the venture as the vice president of business
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `421` activation `3.679` class `word` token ` is`
+  - respectively. Their blueprint for establishing the commercial space station is methodical. Axiom plans to launch numerous
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `361` activation `3.635` class `word` token ` who`
+  - son. Bolden, a former space shuttle commander who spearheaded NASA from 2009 to 201
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `103` activation `3.626` class `word` token ` have`
+  - tourist missions to the International Space Station (ISS) have been agreed upon, with the inaugural journey planned for
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `622` activation `3.525` class `word` token ` has`
+  - be extended to 2030. President Joe Biden has pledged his support for this extension, though it requires
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `128` activation `3.490` class `word` token ` projects`
+  - days of February 2022. But these individual projects, impressive as they are, merely form pieces of
+- `L19:2390` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `129` activation `3.487` class `punctuation` token `,`
+  - of February 2022. But these individual projects, impressive as they are, merely form pieces of a
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `232` activation `4.067` class `word` token ` is`
+  - projected to be quite gradual. Furthermore, MAA is among the least leveraged entities in its sector.
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `231` activation `3.862` class `word` token `AA`
+  - is projected to be quite gradual. Furthermore, MAA is among the least leveraged entities in its sector
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `242` activation `3.851` class `sentence_boundary` token `.`
+  - is among the least leveraged entities in its sector. Its net debt-to-EBITDA ratio stands
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `349` activation `3.850` class `word` token ` is`
+  - yields, the analysis argues that investing in MAA is superior due capital appreciation potential and long-term inflation protection
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `261` activation `3.804` class `punctuation` token `,`
+  - ratio stands at a healthy 3.5 times, significantly lower than the peer average of 4.
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `238` activation `3.779` class `word` token ` entities`
+  - Furthermore, MAA is among the least leveraged entities in its sector. Its net debt-to-EB
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `334` activation `3.711` class `word` token ` is`
+  - 3.7% dividend yield. While this figure is lower than current Treasury yields, the analysis argues that
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `333` activation `3.635` class `word` token ` figure`
+  - 3.7% dividend yield. While this figure is lower than current Treasury yields, the analysis argues
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `274` activation `3.616` class `punctuation` token `,`
+  - than the peer average of 4.9 times, which includes competitors such as AVB, CPT
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `251` activation `3.597` class `word` token ` ratio`
+  - sector. Its net debt-to-EBITDA ratio stands at a healthy 3.5 times,
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `234` activation `3.587` class `word` token ` the`
+  - be quite gradual. Furthermore, MAA is among the least leveraged entities in its sector. Its net
+- `L19:2390` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `233` activation `3.515` class `word` token ` among`
+  - to be quite gradual. Furthermore, MAA is among the least leveraged entities in its sector. Its
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `597` activation `3.925` class `word` token ` a`
+  - % of global gold use. Gold is integral to a variety of electronic devices, encompassing smartphones, GPS
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `524` activation `2.896` class `word` token ` history`
+  - availability – the cumulative quantity of gold mined throughout human history would fill merely about three Olympic-sized swimming pools.
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `490` activation `2.892` class `punctuation` token `,`
+  - a tangible asset that conserves its value over time, making it a popular choice as a financial hedge against
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `525` activation `2.832` class `expanded_negation_word` token ` would`
+  - – the cumulative quantity of gold mined throughout human history would fill merely about three Olympic-sized swimming pools. Gold
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `482` activation `2.668` class `word` token ` asset`
+  - use. Investment: Gold serves as a tangible asset that conserves its value over time, making it
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `489` activation `2.617` class `word` token ` time`
+  - as a tangible asset that conserves its value over time, making it a popular choice as a financial hedge
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `575` activation `2.568` class `word` token ` plays`
+  - and high resistance to corrosion and tarnish, gold plays an invaluable role in electronics, accounting for approximately
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `455` activation `2.510` class `word` token `ness`
+  - form and beauty over substantial periods. Its chemical inertness ensures it remains unaffected by most chemicals, thereby preserving
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `507` activation `2.510` class `word` token ` is`
+  - a financial hedge against inflation and currency instability. This is in part due to its limited availability – the cumulative
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `539` activation `2.501` class `word` token `ability`
+  - three Olympic-sized swimming pools. Gold's easy storability and globally recognized value also make it a sought-after
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `617` activation `2.429` class `style_function_word` token ` these`
+  - GPS units, televisions, and computers. In these applications, gold is typically employed in connectors, switch
+- `L24:3169` `45242f3a7707cd505500f1026ea4840d01c833047ca5b677ce90ae7e029dcbdc@turn_01@human` token `543` activation `2.391` class `word` token ` value`
+  - pools. Gold's easy storability and globally recognized value also make it a sought-after asset during times of
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `566` activation `3.981` class `punctuation` token `,`
+  - championing diversity at the International Astronautical Federation, shed light on the importance of Ax-2 for
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `619` activation `3.716` class `word` token ` generated`
+  - research in various fields like pharmaceuticals. The insights generated would not only advance those fields but also significantly enhance
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `593` activation `3.716` class `word` token ` she`
+  - a radiant future in space exploration. In addition, she discussed the prospects of employing the conditions in space,
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `585` activation `3.690` class `word` token ` future`
+  - 2 for Saudi Arabia and its dreams of a radiant future in space exploration. In addition, she discussed the
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `581` activation `3.689` class `word` token ` dreams`
+  - importance of Ax-2 for Saudi Arabia and its dreams of a radiant future in space exploration. In addition
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `554` activation `3.678` class `style_function_word` token ` while`
+  - adviser to the CEO of the Saudi Space Commission, while also championing diversity at the International Astronautical
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `508` activation `3.520` class `word` token ` and`
+  - om's Ax-1 in April 2022 and represents a significant leap for Saudi Arabia, aspiring to
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `553` activation `3.519` class `punctuation` token `,`
+  - special adviser to the CEO of the Saudi Space Commission, while also championing diversity at the International Astronaut
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `620` activation `3.472` class `expanded_negation_word` token ` would`
+  - in various fields like pharmaceuticals. The insights generated would not only advance those fields but also significantly enhance the
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `621` activation `3.427` class `expanded_negation_word` token ` not`
+  - various fields like pharmaceuticals. The insights generated would not only advance those fields but also significantly enhance the human
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `607` activation `3.411` class `punctuation` token `,`
+  - of employing the conditions in space, especially microgravity, for research in various fields like pharmaceuticals. The
+- `L24:3169` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `485` activation `3.384` class `word` token ` It`
+  - 2 marks a colossal stride for commercial space exploration. It is the second civilian astronaut mission to the ISS following
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `554` activation `4.445` class `word` token ` worked`
+  - Mental Hygiene (NYCDOHMH) worked closely with the NYC Office of Chief Medical Examiner (
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `516` activation `4.311` class `punctuation` token `,`
+  - . Massachusetts, the origin of the hijacked planes, had 90 residents among the victims, while California
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `531` activation `4.230` class `punctuation` token `,`
+  - among the victims, while California, the flight destination, had 29. The New York City Department of
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `546` activation `4.194` class `word` token `giene`
+  - The New York City Department of Health and Mental Hygiene (NYCDOHMH) worked closely with
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `553` activation `4.135` class `punctuation` token `)`
+  - and Mental Hygiene (NYCDOHMH) worked closely with the NYC Office of Chief Medical Examiner
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `594` activation `3.820` class `word` token ` report`
+  - , except for the 10 terrorists involved. This report provides insights into the devastating impact of the September
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `495` activation `3.756` class `word` token ` A`
+  - and 25% resided in New Jersey. A small percentage, 1%, hailed from foreign nations
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `532` activation `3.749` class `expanded_negation_word` token ` had`
+  - the victims, while California, the flight destination, had 29. The New York City Department of Health
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `568` activation `3.730` class `word` token ` to`
+  - NYC Office of Chief Medical Examiner (OCME) to process the death certificates. The OCME classified each
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `517` activation `3.691` class `expanded_negation_word` token ` had`
+  - Massachusetts, the origin of the hijacked planes, had 90 residents among the victims, while California,
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `524` activation `3.617` class `punctuation` token `,`
+  - acked planes, had 90 residents among the victims, while California, the flight destination, had 29
+- `L24:3169` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `526` activation `3.555` class `word` token ` California`
+  - , had 90 residents among the victims, while California, the flight destination, had 29. The
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `227` activation `3.367` class `word` token ` voyage`
+  - this great leader, the spacecraft embarking on this voyage was named MBR Explorer. Setting sail in
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `228` activation `3.231` class `expanded_negation_word` token ` was`
+  - great leader, the spacecraft embarking on this voyage was named MBR Explorer. Setting sail in 203
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `252` activation `3.206` class `punctuation` token `,`
+  - MBR Explorer would chart a course through the planets, harnessing their gravitational pulls to slingshot itself
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `264` activation `3.000` class `expanded_negation_word` token ` not`
+  - ing their gravitational pulls to slingshot itself, not unlike a cosmic game of pinball. This celestial
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `245` activation `2.943` class `expanded_negation_word` token ` would`
+  - sail in 2030, the MBR Explorer would chart a course through the planets, harnessing their
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `222` activation `2.936` class `word` token ` spacecraft`
+  - . As an ode to this great leader, the spacecraft embarking on this voyage was named MBR Explorer
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `283` activation `2.912` class `punctuation` token `,`
+  - This celestial dance, a common strategy to conserve fuel, also serves as an opportunity for the spacecraft to flex
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `263` activation `2.889` class `punctuation` token `,`
+  - harnessing their gravitational pulls to slingshot itself, not unlike a cosmic game of pinball. This
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `587` activation `2.878` class `punctuation` token `,`
+  - , the first Arab spacecraft to reach the Red Planet, and successfully so on its first attempt. It also
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `199` activation `2.875` class `punctuation` token `,`
+  - oum, the visionary behind the UAE's ambition, its vice president, prime minister, and the ruler
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `244` activation `2.858` class `word` token ` Explorer`
+  - Setting sail in 2030, the MBR Explorer would chart a course through the planets, harnessing
+- `L24:3169` `f393732cba708a9a184ad8df89445c5760857cdb175c524332506181b9f1854e@turn_01@human` token `224` activation `2.847` class `word` token `arking`
+  - an ode to this great leader, the spacecraft embarking on this voyage was named MBR Explorer. Setting
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `302` activation `3.673` class `expanded_negation_word` token ` was`
+  - the surreal scene unfolded; Father Wilhelm Kleinsorge was enjoying a peaceful morning when the strange ship appeared;
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `286` activation `3.629` class `punctuation` token `,`
+  - . Hatsuyo Nakamura, a tailor’s widow, paused in her kitchen as the surreal scene unfolded;
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `294` activation `3.501` class `word` token ` scene`
+  - ’s widow, paused in her kitchen as the surreal scene unfolded; Father Wilhelm Kleinsorge was enjoying a
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `281` activation `3.498` class `punctuation` token `,`
+  - the alien arrival; Mrs. Hatsuyo Nakamura, a tailor’s widow, paused in her kitchen as
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `301` activation `3.391` class `word` token `orge`
+  - as the surreal scene unfolded; Father Wilhelm Kleinsorge was enjoying a peaceful morning when the strange ship appeared
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `310` activation `3.377` class `word` token ` ship`
+  - insorge was enjoying a peaceful morning when the strange ship appeared; Dr. Terufumi Sasaki,
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `266` activation `3.215` class `expanded_negation_word` token ` was`
+  - ii, engrossed in his morning read, was jolted by the alien arrival; Mrs.
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `265` activation `3.207` class `punctuation` token `,`
+  - Fujii, engrossed in his morning read, was jolted by the alien arrival; Mrs
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `360` activation `3.172` class `punctuation` token `,`
+  - animoto, while preparing to unload a handcart, was met with the shocking spectacle. An alien presence
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `329` activation `2.994` class `punctuation` token `,`
+  - asaki, a young doctor at the Red Cross Hospital, found his routine disrupted by the sudden turn of events
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `497` activation `2.939` class `punctuation` token `,`
+  - by the mysterious “B-san”, the unknown phenomenon, causing tension among their inhabitants. Hiroshima had been
+- `L24:3169` `7541cf68b3b36a0c380575eb516380408f6dee562305b2eed9d2039a357c041e@turn_01@human` token `287` activation `2.859` class `word` token ` paused`
+  - Hatsuyo Nakamura, a tailor’s widow, paused in her kitchen as the surreal scene unfolded; Father
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `620` activation `3.306` class `word` token `root`
+  - turned around, he discovered both the bomb and Groot were gone. Overwhelmed, Rocket muttered to
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `613` activation `3.238` class `word` token ` he`
+  - stop wasting time, but when Rocket turned around, he discovered both the bomb and Groot were gone.
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `628` activation `3.014` class `word` token ` Rocket`
+  - and Groot were gone. Overwhelmed, Rocket muttered to himself that they were all going to die
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `599` activation `2.958` class `word` token `Peter`
+  - exclaimed that he had to take care of everything. Peter urged Rocket to stop wasting time, but when Rocket
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `622` activation `2.900` class `word` token ` gone`
+  - , he discovered both the bomb and Groot were gone. Overwhelmed, Rocket muttered to himself that
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `609` activation `2.778` class `word` token ` Rocket`
+  - Peter urged Rocket to stop wasting time, but when Rocket turned around, he discovered both the bomb and G
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `606` activation `2.757` class `punctuation` token `,`
+  - of everything. Peter urged Rocket to stop wasting time, but when Rocket turned around, he discovered both the
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `623` activation `2.739` class `sentence_boundary` token `.`
+  - he discovered both the bomb and Groot were gone. Overwhelmed, Rocket muttered to himself that they
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `621` activation `2.627` class `expanded_negation_word` token ` were`
+  - around, he discovered both the bomb and Groot were gone. Overwhelmed, Rocket muttered to himself
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `581` activation `2.570` class `word` token ` Rocket`
+  - and ran off while Rocket's attention was diverted. Rocket's exasperation grew as he exclaimed that he
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `638` activation `2.518` class `word` token ` die`
+  - Rocket muttered to himself that they were all going to die.
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@human` token `639` activation `2.517` class `sentence_boundary` token `.`
+  - muttered to himself that they were all going to die.
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `592` activation `3.678` class `punctuation` token `,`
+  - "That's exactly my point!" Rocket barked, turning his head. "I have to do everything
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `625` activation `3.523` class `word` token `root`
+  - yelled. Rocket spun around. The bomb and Groot were gone. "We're all gonna die," he
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `589` activation `3.508` class `word` token ` Rocket`
+  - ried away. "That's exactly my point!" Rocket barked, turning his head. "I have
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `551` activation `3.360` class `word` token `ill`
+  - batteries and an atomic bomb in your bag," Quill lectured. "If anybody's gonna have tape
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `614` activation `3.151` class `word` token `ill`
+  - "You are wasting a lot of time here!" Quill yelled. Rocket spun around. The bomb and G
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `626` activation `3.112` class `expanded_negation_word` token ` were`
+  - . Rocket spun around. The bomb and Groot were gone. "We're all gonna die," he muttered
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `617` activation `3.108` class `word` token `Rocket`
+  - a lot of time here!" Quill yelled. Rocket spun around. The bomb and Groot were gone
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `635` activation `3.104` class `word` token ` he`
+  - root were gone. "We're all gonna die," he muttered to himself.
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `622` activation `3.034` class `word` token ` bomb`
+  - !" Quill yelled. Rocket spun around. The bomb and Groot were gone. "We're all gonna
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `581` activation `2.957` class `sentence_boundary` token `.`
+  - Groot grabbed the device and scurried away. "That's exactly my point!" Rocket barked
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `575` activation `2.920` class `word` token ` device`
+  - you!" Unnoticed, Baby Groot grabbed the device and scurried away. "That's exactly
+- `L24:3169` `99fcfc7c7ad6d00824993a074131e3bcb475280484179e545b5551c55ff446a5@turn_01@glm-5.2` token `596` activation `2.884` class `sentence_boundary` token `.`
+  - my point!" Rocket barked, turning his head. "I have to do everything!" "You are wasting
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `607` activation `3.745` class `word` token ` is`
+  - boiling water. While the upper edge of this zone is technically the sun’s surface, it consists of such
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `629` activation `3.167` class `punctuation` token `,`
+  - liquid plasma that no solids or liquids can exist there, marking the transition to the star’s atmospheric zones.
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `608` activation `3.080` class `word` token ` technically`
+  - water. While the upper edge of this zone is technically the sun’s surface, it consists of such hot
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `606` activation `3.072` class `word` token ` zone`
+  - like boiling water. While the upper edge of this zone is technically the sun’s surface, it consists of
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `550` activation `2.919` class `word` token ` temperatures`
+  - radiative zone, situated near the core, boasts temperatures between two and twelve million degrees Fahrenheit, transmitting thermal
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `603` activation `2.905` class `word` token ` edge`
+  - currents, much like boiling water. While the upper edge of this zone is technically the sun’s surface,
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `558` activation `2.867` class `punctuation` token `,`
+  - , boasts temperatures between two and twelve million degrees Fahrenheit, transmitting thermal radiation from photons. Beyond this lies the
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `586` activation `2.788` class `style_function_word` token ` that`
+  - at approximately four million degrees filled with bubbling plasma that transfers heat outward via convection currents, much like
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `572` activation `2.784` class `punctuation` token `,`
+  - from photons. Beyond this lies the convection zone, a cooler region at approximately four million degrees filled with
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `594` activation `2.724` class `punctuation` token `,`
+  - bling plasma that transfers heat outward via convection currents, much like boiling water. While the upper edge of
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `615` activation `2.677` class `word` token ` consists`
+  - this zone is technically the sun’s surface, it consists of such hot liquid plasma that no solids or liquids
+- `L24:3169` `19e5b5daec2b5e55f52a7d6ead628e4a1cb5e8894bad223820095d10b2b1331b@turn_01@qwen3.6-35b` token `571` activation `2.674` class `word` token ` zone`
+  - radiation from photons. Beyond this lies the convection zone, a cooler region at approximately four million degrees filled
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `557` activation `3.357` class `word` token ` perform`
+  - wait a few months until it's clearer which tests perform best. Suppose you have had COVID-19
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `544` activation `3.298` class `word` token `'s`
+  - consider getting an antibody test now. However, it's advisable to wait a few months until it's clearer
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `547` activation `2.921` class `word` token ` wait`
+  - antibody test now. However, it's advisable to wait a few months until it's clearer which tests perform
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `550` activation `2.900` class `word` token ` months`
+  - . However, it's advisable to wait a few months until it's clearer which tests perform best. Sup
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `543` activation `2.836` class `word` token ` it`
+  - , consider getting an antibody test now. However, it's advisable to wait a few months until it's
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `552` activation `2.685` class `word` token ` it`
+  - , it's advisable to wait a few months until it's clearer which tests perform best. Suppose you
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `553` activation `2.641` class `word` token `'s`
+  - it's advisable to wait a few months until it's clearer which tests perform best. Suppose you have
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `546` activation `2.531` class `word` token ` to`
+  - an antibody test now. However, it's advisable to wait a few months until it's clearer which tests
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `607` activation `2.529` class `word` token ` is`
+  - immediate need for donated convalescent plasma. This is when the plasma part of blood, rich with antibodies
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `538` activation `2.501` class `word` token ` test`
+  - -CoV-2 virus, consider getting an antibody test now. However, it's advisable to wait a
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `556` activation `2.491` class `word` token ` tests`
+  - to wait a few months until it's clearer which tests perform best. Suppose you have had COVID-
+- `L24:3169` `2b964fdfbee72536fba0dfe81dcf97812015433dd84e225d91ae177e98bde377@turn_01@human` token `582` activation `2.468` class `word` token ` you`
+  - strongly suspect that you have. In that case, you may want to go ahead and get an antibody test
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `351` activation `3.761` class `word` token `9`
+  - Yuknavitch, the Earth of circa 2049 is depicted as a planet devastated by the combined forces
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `215` activation `3.369` class `word` token ` tales`
+  - ? Tessa Hadley offers a collection of ten tales in Bad Dreams and Other Stories, carefully serving up
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `209` activation `3.258` class `word` token `ley`
+  - ’s Bad Dreams and Other Stories? Tessa Hadley offers a collection of ten tales in Bad Dreams and
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `212` activation `3.225` class `word` token ` collection`
+  - and Other Stories? Tessa Hadley offers a collection of ten tales in Bad Dreams and Other Stories,
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `346` activation `3.208` class `word` token ` Earth`
+  - brilliant novel by Lidia Yuknavitch, the Earth of circa 2049 is depicted as a planet
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `353` activation `3.146` class `word` token ` depicted`
+  - itch, the Earth of circa 2049 is depicted as a planet devastated by the combined forces of global
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `221` activation `3.092` class `word` token ` Stories`
+  - a collection of ten tales in Bad Dreams and Other Stories, carefully serving up a mixture of the bitter and
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `411` activation `3.032` class `word` token `ert`
+  - impact of Nazi rise to power? Rachel Seiffert’s intricate novel, A Boy in Winter, probes
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `242` activation `2.992` class `word` token ` moments`
+  - the delicious. Her narrative style balances dark elements with moments of delight, creating a complex emotional experience for the
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `420` activation `2.960` class `punctuation` token `,`
+  - iffert’s intricate novel, A Boy in Winter, probes the complex bonds and betrayals within a Ukrainian
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `414` activation `2.948` class `word` token ` novel`
+  - rise to power? Rachel Seiffert’s intricate novel, A Boy in Winter, probes the complex bonds
+- `L24:3169` `adfdeeeb24e92de65e9b06953ee1a3b6b2540261fb8e2d081e3c4022b2c6e0f9@turn_01@qwen3.6-35b` token `354` activation `2.930` class `style_function_word` token ` as`
+  - , the Earth of circa 2049 is depicted as a planet devastated by the combined forces of global warming
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `550` activation `2.481` class `word` token ` of`
+  - By 2015, the franchise celebrated the opening of its 400th location, demonstrating rapid market penetration
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `478` activation `2.403` class `word` token ` by`
+  - In 1999, the company diversified its menu by introducing a line of food items, including sandwiches and
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `579` activation `2.391` class `punctuation` token `,`
+  - firm Levine Leichtman Capital Partners acquired the company, fueling further aggressive growth. By 2019
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `610` activation `2.382` class `punctuation` token `,`
+  - opening its 800th location in Arlington, Texas, solidifying its status as a dominant national player in
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `485` activation `2.281` class `punctuation` token `,`
+  - diversified its menu by introducing a line of food items, including sandwiches and wraps, redefining itself as
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `599` activation `2.242` class `word` token ` by`
+  - 9, Tropical Smoothie Cafe reached a major milestone by opening its 800th location in Arlington, Texas
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `556` activation `2.205` class `punctuation` token `,`
+  - franchise celebrated the opening of its 400th location, demonstrating rapid market penetration. In 2018,
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `600` activation `2.192` class `word` token ` opening`
+  - , Tropical Smoothie Cafe reached a major milestone by opening its 800th location in Arlington, Texas,
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `596` activation `2.151` class `word` token ` a`
+  - By 2019, Tropical Smoothie Cafe reached a major milestone by opening its 800th location in
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `581` activation `2.144` class `word` token `ing`
+  - Leichtman Capital Partners acquired the company, fueling further aggressive growth. By 2019, Tropical
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `490` activation `2.082` class `punctuation` token `,`
+  - a line of food items, including sandwiches and wraps, redefining itself as a fast-casual
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@gemini-3.5-flash` token `594` activation `2.079` class `word` token ` Cafe`
+  - growth. By 2019, Tropical Smoothie Cafe reached a major milestone by opening its 800th
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `621` activation `3.353` class `word` token ` firmly`
+  - boasted over 840 locations across the United States, firmly cementing its status as a dominant force in the
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `610` activation `2.882` class `word` token ` franchise`
+  - By the end of 2019, the popular franchise boasted over 840 locations across the United States,
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `513` activation `2.745` class `word` token ` to`
+  - , the brand steadily expanded its menu beyond smoothies to include a robust lineup of sandwiches, flatbreads
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `515` activation `2.735` class `word` token ` a`
+  - brand steadily expanded its menu beyond smoothies to include a robust lineup of sandwiches, flatbreads, and
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `620` activation `2.721` class `punctuation` token `,`
+  - franchise boasted over 840 locations across the United States, firmly cementing its status as a dominant force in
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `615` activation `2.609` class `word` token ` locations`
+  - 2019, the popular franchise boasted over 840 locations across the United States, firmly cementing its status
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `611` activation `2.606` class `word` token ` boasted`
+  - the end of 2019, the popular franchise boasted over 840 locations across the United States, firmly
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `528` activation `2.472` class `word` token ` effectively`
+  - of sandwiches, flatbreads, and wraps, effectively positioning itself as a fast-casual restaurant rather
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `556` activation `2.418` class `word` token ` of`
+  - 2012, the flourishing cafe celebrated the opening of its 300th location. The company maintained its
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `564` activation `2.333` class `word` token ` company`
+  - the opening of its 300th location. The company maintained its strong upward trajectory over the next several years
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `527` activation `2.212` class `punctuation` token `,`
+  - lineup of sandwiches, flatbreads, and wraps, effectively positioning itself as a fast-casual restaurant
+- `L24:3169` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `492` activation `2.172` class `word` token ` to`
+  - acquired a controlling interest, providing the crucial capital needed to accelerate national expansion. Headquartered in Atlanta, Georgia
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `559` activation `4.717` class `word` token `He`
+  - officer Matt Ondler explained to Space.com. He anticipates a smooth transition as the timeline coincides
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `410` activation `4.622` class `punctuation` token `,`
+  - as the vice president of business development and astronaut consultant, respectively. Their blueprint for establishing the commercial space station
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `414` activation `4.241` class `word` token ` blueprint`
+  - of business development and astronaut consultant, respectively. Their blueprint for establishing the commercial space station is methodical.
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `553` activation `4.068` class `word` token `ler`
+  - Axiom's chief technology officer Matt Ondler explained to Space.com. He anticipates a smooth
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `421` activation `4.043` class `word` token ` is`
+  - respectively. Their blueprint for establishing the commercial space station is methodical. Axiom plans to launch numerous
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `567` activation `4.019` class `word` token ` timeline`
+  - .com. He anticipates a smooth transition as the timeline coincides with the current planned termination of ISS operations
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `395` activation `3.954` class `punctuation` token `,`
+  - ía and Whitson, both ex-NASA astronauts, contribute to the venture as the vice president of business
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `545` activation `3.949` class `word` token `om`
+  - a devoted manufacturing and research lab module," Axiom's chief technology officer Matt Ondler explained to
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `610` activation `3.924` class `word` token ` lifespan`
+  - to function until 2024, many anticipate its lifespan to be extended to 2030. President Joe
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `373` activation `3.907` class `punctuation` token `,`
+  - headed NASA from 2009 to 2017, serves as a business development consultant. López-Ale
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `128` activation `3.824` class `word` token ` projects`
+  - days of February 2022. But these individual projects, impressive as they are, merely form pieces of
+- `L24:3169` `e7db0c874d3f26af69ac04789126e54bec8be66e3311c16ca3280d67fc70f12b@turn_01@human` token `388` activation `3.784` class `word` token `son`
+  - development consultant. López-Alegría and Whitson, both ex-NASA astronauts, contribute to the
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `274` activation `4.323` class `punctuation` token `,`
+  - than the peer average of 4.9 times, which includes competitors such as AVB, CPT
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `261` activation `3.935` class `punctuation` token `,`
+  - ratio stands at a healthy 3.5 times, significantly lower than the peer average of 4.
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `231` activation `3.610` class `word` token `AA`
+  - is projected to be quite gradual. Furthermore, MAA is among the least leveraged entities in its sector
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `232` activation `3.590` class `word` token ` is`
+  - projected to be quite gradual. Furthermore, MAA is among the least leveraged entities in its sector.
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `275` activation `3.453` class `style_function_word` token ` which`
+  - the peer average of 4.9 times, which includes competitors such as AVB, CPT,
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `252` activation `3.338` class `word` token ` stands`
+  - . Its net debt-to-EBITDA ratio stands at a healthy 3.5 times, significantly
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `319` activation `3.215` class `word` token `AA`
+  - , despite a lower current yield? Answer: MAA currently offers a 3.7% dividend yield
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `301` activation `3.166` class `word` token `AA`
+  - , and UDR. Question: What makes MAA’s dividend attractive compared to Treasury bonds, despite a
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `333` activation `3.118` class `word` token ` figure`
+  - 3.7% dividend yield. While this figure is lower than current Treasury yields, the analysis argues
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `251` activation `2.962` class `word` token ` ratio`
+  - sector. Its net debt-to-EBITDA ratio stands at a healthy 3.5 times,
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `262` activation `2.926` class `word` token ` significantly`
+  - stands at a healthy 3.5 times, significantly lower than the peer average of 4.9
+- `L24:3169` `812592abe0b422e95376456640614b7fa988da13b816d6bcb00d02cd16dbe44e@turn_01@qwen3.6-35b` token `335` activation `2.874` class `word` token ` lower`
+  - .7% dividend yield. While this figure is lower than current Treasury yields, the analysis argues that investing

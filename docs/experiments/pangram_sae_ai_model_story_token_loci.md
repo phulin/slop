@@ -1,0 +1,761 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:3600` | `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` | `gpt-5.5` | 281 | `522.19` | `4.92` | word:214|punctuation:18|sentence_boundary:16|style_function_word:12|expanded_negation_word:11|line_break:7|discourse_marker_word:2|contraction_piece:1 |
+| `L19:3600` | `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 404 | `802.62` | `5.62` | word:301|style_function_word:28|punctuation:25|sentence_boundary:20|expanded_negation_word:16|discourse_marker_word:10|line_break:3|contraction_piece:1 |
+| `L19:3600` | `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` | `gpt-5.5` | 109 | `176.01` | `4.89` | word:81|sentence_boundary:8|style_function_word:6|punctuation:5|expanded_negation_word:3|line_break:3|discourse_marker_word:2|contraction_piece:1 |
+| `L19:3600` | `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 147 | `257.22` | `3.94` | word:115|punctuation:8|sentence_boundary:8|expanded_negation_word:6|contraction_piece:5|style_function_word:3|discourse_marker_word:1|line_break:1 |
+| `L19:3600` | `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 215 | `287.69` | `4.57` | word:166|punctuation:19|expanded_negation_word:14|style_function_word:6|sentence_boundary:5|discourse_marker_word:4|line_break:1 |
+| `L19:3600` | `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` | `gpt-5.5` | 77 | `102.26` | `3.50` | word:52|style_function_word:7|expanded_negation_word:6|punctuation:5|line_break:3|sentence_boundary:2|discourse_marker_word:1|contraction_piece:1 |
+| `L19:3600` | `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` | `gpt-5.5` | 87 | `132.14` | `4.96` | word:63|punctuation:9|expanded_negation_word:5|line_break:5|style_function_word:3|contraction_piece:1|sentence_boundary:1 |
+| `L19:3600` | `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 249 | `426.89` | `4.94` | word:182|punctuation:25|expanded_negation_word:14|sentence_boundary:13|style_function_word:6|discourse_marker_word:4|contraction_piece:3|line_break:2 |
+| `L19:3600` | `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` | `gpt-5.5` | 157 | `190.48` | `3.51` | word:119|punctuation:12|expanded_negation_word:8|sentence_boundary:6|style_function_word:5|line_break:5|discourse_marker_word:2 |
+| `L19:3600` | `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` | `gpt-5.5` | 33 | `64.38` | `4.75` | word:23|punctuation:5|expanded_negation_word:2|style_function_word:2|discourse_marker_word:1 |
+| `L19:3600` | `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` | `gpt-5.5` | 187 | `217.09` | `4.85` | word:143|punctuation:18|expanded_negation_word:8|line_break:7|style_function_word:5|sentence_boundary:3|discourse_marker_word:2|contraction_piece:1 |
+| `L19:3600` | `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 145 | `222.35` | `4.86` | word:110|punctuation:12|sentence_boundary:8|expanded_negation_word:6|style_function_word:4|discourse_marker_word:4|line_break:1 |
+| `L19:3600` | `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` | `gpt-5.5` | 107 | `133.26` | `2.90` | word:77|sentence_boundary:8|expanded_negation_word:6|style_function_word:5|punctuation:4|line_break:4|contraction_piece:2|discourse_marker_word:1 |
+| `L19:3600` | `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 144 | `239.15` | `4.56` | word:110|punctuation:16|style_function_word:8|sentence_boundary:5|discourse_marker_word:3|expanded_negation_word:2 |
+| `L19:3600` | `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` | `gpt-5.5` | 102 | `131.18` | `4.39` | word:75|punctuation:12|expanded_negation_word:7|style_function_word:4|sentence_boundary:3|discourse_marker_word:1 |
+| `L24:4083` | `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` | `gpt-5.5` | 237 | `629.77` | `5.23` | word:179|punctuation:17|sentence_boundary:15|style_function_word:11|expanded_negation_word:7|line_break:5|discourse_marker_word:2|contraction_piece:1 |
+| `L24:4083` | `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 354 | `827.83` | `6.20` | word:264|punctuation:24|style_function_word:23|sentence_boundary:20|expanded_negation_word:12|discourse_marker_word:10|contraction_piece:1 |
+| `L24:4083` | `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` | `gpt-5.5` | 113 | `295.89` | `5.89` | word:82|sentence_boundary:8|punctuation:7|style_function_word:6|discourse_marker_word:3|line_break:3|expanded_negation_word:3|contraction_piece:1 |
+| `L24:4083` | `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 122 | `302.78` | `5.99` | word:97|punctuation:7|sentence_boundary:7|expanded_negation_word:5|style_function_word:3|contraction_piece:2|discourse_marker_word:1 |
+| `L24:4083` | `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 90 | `126.98` | `3.24` | word:65|punctuation:10|sentence_boundary:5|discourse_marker_word:4|expanded_negation_word:4|style_function_word:2 |
+| `L24:4083` | `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` | `gpt-5.5` | 158 | `312.98` | `5.63` | word:104|sentence_boundary:15|punctuation:13|style_function_word:10|line_break:9|expanded_negation_word:5|discourse_marker_word:1|contraction_piece:1 |
+| `L24:4083` | `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` | `gpt-5.5` | 145 | `300.78` | `5.88` | word:103|punctuation:17|expanded_negation_word:9|line_break:5|sentence_boundary:4|style_function_word:4|discourse_marker_word:2|contraction_piece:1 |
+| `L24:4083` | `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 200 | `373.59` | `4.52` | word:136|punctuation:24|sentence_boundary:14|expanded_negation_word:14|style_function_word:6|discourse_marker_word:5|contraction_piece:1 |
+| `L24:4083` | `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` | `gpt-5.5` | 198 | `398.14` | `5.58` | word:147|punctuation:18|sentence_boundary:11|expanded_negation_word:8|line_break:7|discourse_marker_word:4|style_function_word:3 |
+| `L24:4083` | `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` | `gpt-5.5` | 69 | `166.77` | `6.08` | word:49|punctuation:11|sentence_boundary:3|style_function_word:3|expanded_negation_word:2|discourse_marker_word:1 |
+| `L24:4083` | `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` | `gpt-5.5` | 262 | `504.73` | `5.76` | word:204|punctuation:27|sentence_boundary:8|expanded_negation_word:8|line_break:6|style_function_word:5|discourse_marker_word:4 |
+| `L24:4083` | `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 115 | `247.33` | `5.38` | word:85|punctuation:10|sentence_boundary:9|expanded_negation_word:6|discourse_marker_word:3|style_function_word:2 |
+| `L24:4083` | `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` | `gpt-5.5` | 176 | `421.77` | `6.97` | word:132|sentence_boundary:13|punctuation:8|style_function_word:7|line_break:6|expanded_negation_word:5|contraction_piece:3|discourse_marker_word:2 |
+| `L24:4083` | `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 169 | `399.89` | `5.39` | word:130|punctuation:18|style_function_word:7|sentence_boundary:6|discourse_marker_word:5|expanded_negation_word:3 |
+| `L24:4083` | `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` | `gpt-5.5` | 307 | `644.68` | `5.56` | word:232|punctuation:32|sentence_boundary:20|expanded_negation_word:10|style_function_word:10|discourse_marker_word:2|line_break:1 |
+
+## Top Tokens
+
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `540` activation `4.917` class `expanded_negation_word` token ` was`
+  - hopeful. Remember that, because of you, I was never truly alone. You have been one of the
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `520` activation `4.682` class `word` token ` me`
+  - don’t remember me only at the end. Remember me dancing badly. Remember me stubborn, ridiculous, hopeful
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `628` activation `4.605` class `discourse_marker_word` token ` for`
+  - . Goodbye, my beloved friend. Thank you for thirty beautiful years. With all my love, always
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `539` activation `4.238` class `word` token ` I`
+  - , hopeful. Remember that, because of you, I was never truly alone. You have been one of
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `547` activation `3.823` class `word` token ` been`
+  - you, I was never truly alone. You have been one of the great blessings of my life. Not
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `551` activation `3.707` class `word` token ` great`
+  - never truly alone. You have been one of the great blessings of my life. Not everyone gets a friend
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `550` activation `3.703` class `word` token ` the`
+  - was never truly alone. You have been one of the great blessings of my life. Not everyone gets a
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `563` activation `3.523` class `word` token ` becomes`
+  - of my life. Not everyone gets a friend who becomes family, witness, shelter, and home. I
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `519` activation `3.497` class `word` token ` Remember`
+  - Please don’t remember me only at the end. Remember me dancing badly. Remember me stubborn, ridiculous,
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `543` activation `3.485` class `word` token ` alone`
+  - that, because of you, I was never truly alone. You have been one of the great blessings of
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `541` activation `3.475` class `expanded_negation_word` token ` never`
+  - . Remember that, because of you, I was never truly alone. You have been one of the great
+- `L19:3600` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `542` activation `3.455` class `word` token ` truly`
+  - Remember that, because of you, I was never truly alone. You have been one of the great blessings
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `603` activation `5.624` class `expanded_negation_word` token ` was`
+  - me. Thank you for believing that the quiet boy was worth listening to. The clock on my grandfather’s
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `634` activation `5.482` class `style_function_word` token ` that`
+  - just the hour, but the journey of a life that finally learned to shine.
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `635` activation `5.290` class `discourse_marker_word` token ` finally`
+  - the hour, but the journey of a life that finally learned to shine.
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `604` activation `5.230` class `word` token ` worth`
+  - . Thank you for believing that the quiet boy was worth listening to. The clock on my grandfather’s wall
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `633` activation `5.173` class `word` token ` life`
+  - not just the hour, but the journey of a life that finally learned to shine.
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `601` activation `5.088` class `word` token ` quiet`
+  - for seeing me. Thank you for believing that the quiet boy was worth listening to. The clock on my
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `597` activation `5.066` class `discourse_marker_word` token ` for`
+  - too. Thank you for seeing me. Thank you for believing that the quiet boy was worth listening to.
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `599` activation `5.046` class `style_function_word` token ` that`
+  - Thank you for seeing me. Thank you for believing that the quiet boy was worth listening to. The clock
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `561` activation `4.905` class `word` token ` something`
+  - and scarred, can still turn the wheel of something beautiful. I am still Joe. I still see
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `544` activation `4.851` class `style_function_word` token ` that`
+  - thought I was alone. It is for the belief that even the smallest gear, worn and scarred,
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `470` activation `4.825` class `word` token ` I`
+  - because I arrived with a grand design, but because I stayed. I stayed when things broke. I stayed
+- `L19:3600` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `637` activation `4.812` class `word` token ` to`
+  - , but the journey of a life that finally learned to shine.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `602` activation `4.892` class `word` token ` to`
+  - being ready for everything. It means being brave enough to take the first awkward steps. I might miss this
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `599` activation `4.778` class `word` token ` being`
+  - doesn’t mean being ready for everything. It means being brave enough to take the first awkward steps. I
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `598` activation `4.089` class `word` token ` means`
+  - leaving doesn’t mean being ready for everything. It means being brave enough to take the first awkward steps.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `600` activation `3.904` class `word` token ` brave`
+  - ’t mean being ready for everything. It means being brave enough to take the first awkward steps. I might
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `603` activation `3.702` class `word` token ` take`
+  - ready for everything. It means being brave enough to take the first awkward steps. I might miss this place
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `601` activation `3.425` class `word` token ` enough`
+  - mean being ready for everything. It means being brave enough to take the first awkward steps. I might miss
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `636` activation `3.423` class `word` token ` to`
+  - pond waiting, and honestly, I can’t wait to see it.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `607` activation `3.304` class `word` token ` steps`
+  - It means being brave enough to take the first awkward steps. I might miss this place. I might w
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `622` activation `3.150` class `word` token `’s`
+  - this place. I might wobble. But there’s a whole wide pond waiting, and honestly, I
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `604` activation `3.144` class `word` token ` the`
+  - for everything. It means being brave enough to take the first awkward steps. I might miss this place.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `605` activation `2.889` class `discourse_marker_word` token ` first`
+  - everything. It means being brave enough to take the first awkward steps. I might miss this place. I
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `633` activation `2.856` class `style_function_word` token ` can`
+  - a whole wide pond waiting, and honestly, I can’t wait to see it.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `633` activation `3.943` class `word` token ` to`
+  - a backward glance, but with a smile, ready to paddle toward whatever lay ahead.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `597` activation `3.599` class `word` token ` into`
+  - wasn’t drifting off a cliff; I was stepping into a current that would eventually carry me wherever I chose
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `538` activation `3.556` class `word` token ` to`
+  - know how to swim yet. Maybe it just needed to trust that the water would hold it until it learned
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `537` activation `3.469` class `word` token ` needed`
+  - to know how to swim yet. Maybe it just needed to trust that the water would hold it until it
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `595` activation `3.398` class `expanded_negation_word` token ` was`
+  - . I wasn’t drifting off a cliff; I was stepping into a current that would eventually carry me wherever
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `600` activation `3.382` class `style_function_word` token ` that`
+  - off a cliff; I was stepping into a current that would eventually carry me wherever I chose to go.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `636` activation `3.246` class `word` token ` whatever`
+  - , but with a smile, ready to paddle toward whatever lay ahead.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `598` activation `3.204` class `word` token ` a`
+  - ’t drifting off a cliff; I was stepping into a current that would eventually carry me wherever I chose to
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `632` activation `3.197` class `word` token ` ready`
+  - with a backward glance, but with a smile, ready to paddle toward whatever lay ahead.
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `540` activation `3.172` class `style_function_word` token ` that`
+  - to swim yet. Maybe it just needed to trust that the water would hold it until it learned. Maybe
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `535` activation `3.169` class `word` token ` it`
+  - ’t need to know how to swim yet. Maybe it just needed to trust that the water would hold it
+- `L19:3600` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `628` activation `3.129` class `word` token ` with`
+  - the door, not with a backward glance, but with a smile, ready to paddle toward whatever lay ahead
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `635` activation `4.569` class `word` token ` to`
+  - was not found in isolation, but in the courage to let others in.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `632` activation `4.520` class `word` token ` in`
+  - understanding that peace was not found in isolation, but in the courage to let others in.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `633` activation `3.889` class `word` token ` the`
+  - that peace was not found in isolation, but in the courage to let others in.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `613` activation `3.876` class `word` token ` to`
+  - to the new boundary, not to hide, but to meet the world on its terms, finally understanding that
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `625` activation `3.752` class `expanded_negation_word` token ` was`
+  - the world on its terms, finally understanding that peace was not found in isolation, but in the courage to
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `631` activation `3.711` class `word` token ` but`
+  - finally understanding that peace was not found in isolation, but in the courage to let others in.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `637` activation `3.670` class `word` token ` others`
+  - found in isolation, but in the courage to let others in.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `638` activation `3.508` class `word` token ` in`
+  - in isolation, but in the courage to let others in.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `636` activation `3.359` class `word` token ` let`
+  - not found in isolation, but in the courage to let others in.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `598` activation `3.240` class `word` token ` of`
+  - cleared, replaced by the terrifying, exhilarating possibility of connection. He stepped to the new boundary, not
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `624` activation `3.215` class `word` token ` peace`
+  - meet the world on its terms, finally understanding that peace was not found in isolation, but in the courage
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `623` activation `3.163` class `style_function_word` token ` that`
+  - to meet the world on its terms, finally understanding that peace was not found in isolation, but in the
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `632` activation `3.495` class `word` token ` It`
+  - Mara discovered that peace did not vanish when shared. It grew room enough to hold hands.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `633` activation `3.328` class `word` token ` grew`
+  - discovered that peace did not vanish when shared. It grew room enough to hold hands.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `636` activation `3.257` class `word` token ` to`
+  - did not vanish when shared. It grew room enough to hold hands.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `625` activation `3.109` class `word` token ` peace`
+  - . There was also warmth. And Mara discovered that peace did not vanish when shared. It grew room enough
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `626` activation `2.819` class `expanded_negation_word` token ` did`
+  - There was also warmth. And Mara discovered that peace did not vanish when shared. It grew room enough to
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `637` activation `2.736` class `word` token ` hold`
+  - not vanish when shared. It grew room enough to hold hands.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `630` activation `2.675` class `word` token ` shared`
+  - . And Mara discovered that peace did not vanish when shared. It grew room enough to hold hands.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `624` activation `2.562` class `style_function_word` token ` that`
+  - crumbs. There was also warmth. And Mara discovered that peace did not vanish when shared. It grew room
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `617` activation `2.513` class `expanded_negation_word` token ` was`
+  - there was noise, worry, and crumbs. There was also warmth. And Mara discovered that peace did not
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `284` activation `2.454` class `expanded_negation_word` token ` was`
+  - went away hungry. Within her small circle, Mara was calm. She read books, cooked soup, slept
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `621` activation `2.439` class `word` token `And`
+  - worry, and crumbs. There was also warmth. And Mara discovered that peace did not vanish when shared.
+- `L19:3600` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `629` activation `2.423` class `style_function_word` token ` when`
+  - warmth. And Mara discovered that peace did not vanish when shared. It grew room enough to hold hands.
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `631` activation `4.958` class `word` token ` is`
+  - ,” the tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `635` activation `4.953` class `word` token `’re`
+  - led. “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `634` activation `4.451` class `word` token ` you`
+  - rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `633` activation `4.149` class `word` token ` where`
+  - tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `637` activation `4.061` class `word` token ` to`
+  - “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `632` activation `3.817` class `word` token ` exactly`
+  - the tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `630` activation `3.810` class `word` token ` away`
+  - afraid,” the tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `629` activation `3.541` class `word` token ` far`
+  - be afraid,” the tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `636` activation `3.276` class `word` token ` meant`
+  - . “Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `593` activation `3.170` class `word` token ` of`
+  - the field, the wide sky, and the joy of growing where no apple tree had grown before. When
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `628` activation `3.101` class `word` token `Sometimes`
+  - ’t be afraid,” the tree rustled. “Sometimes far away is exactly where you’re meant to grow
+- `L19:3600` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `638` activation `3.086` class `word` token ` grow`
+  - Sometimes far away is exactly where you’re meant to grow.”
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `587` activation `4.939` class `expanded_negation_word` token ` was`
+  - else. Now, for the first time, he was simply Elias. The rain stopped. The silence was
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `588` activation `4.130` class `word` token ` simply`
+  - . Now, for the first time, he was simply Elias. The rain stopped. The silence was no
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `484` activation `4.002` class `word` token ` journey`
+  - and plant a flag upon. It was about the journey itself, the acceptance of one’s flaws, fears
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `635` activation `3.916` class `expanded_negation_word` token ` had`
+  - armor, but as a reminder of the balance he had finally found within.
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `483` activation `3.859` class `word` token ` the`
+  - conquer and plant a flag upon. It was about the journey itself, the acceptance of one’s flaws,
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `570` activation `3.854` class `expanded_negation_word` token ` had`
+  - , not with pride, but with peace. He had spent decades trying to become someone else. Now,
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `482` activation `3.787` class `word` token ` about`
+  - to conquer and plant a flag upon. It was about the journey itself, the acceptance of one’s flaws
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `634` activation `3.695` class `word` token ` he`
+  - as armor, but as a reminder of the balance he had finally found within.
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `613` activation `3.643` class `discourse_marker_word` token ` finally`
+  - was full, resonant with a truth he had finally stopped running from. He tied his belt, not
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `612` activation `3.628` class `expanded_negation_word` token ` had`
+  - it was full, resonant with a truth he had finally stopped running from. He tied his belt,
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `586` activation `3.615` class `word` token ` he`
+  - someone else. Now, for the first time, he was simply Elias. The rain stopped. The silence
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `501` activation `3.462` class `word` token ` about`
+  - ’s flaws, fears, and limitations. It was about integrating the shadows as well as the light. He
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `637` activation `3.507` class `word` token ` and`
+  - breath in his chest, the long road ahead open and welcome.
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `590` activation `3.469` class `word` token `You`
+  - I pass?” Elias asked. Ren smiled. “You stopped fighting yourself.” That night, walking home beneath
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `634` activation `2.999` class `word` token ` road`
+  - on pavement, breath in his chest, the long road ahead open and welcome.
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `635` activation `2.976` class `word` token ` ahead`
+  - pavement, breath in his chest, the long road ahead open and welcome.
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `618` activation `2.900` class `word` token ` felt`
+  - bigger than before, no invincible hero. He felt simply present—feet on pavement, breath in
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `619` activation `2.899` class `word` token ` simply`
+  - than before, no invincible hero. He felt simply present—feet on pavement, breath in his
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `593` activation `2.708` class `word` token ` yourself`
+  - Elias asked. Ren smiled. “You stopped fighting yourself.” That night, walking home beneath a clear sky
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `636` activation `2.679` class `word` token ` open`
+  - , breath in his chest, the long road ahead open and welcome.
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `591` activation `2.598` class `word` token ` stopped`
+  - pass?” Elias asked. Ren smiled. “You stopped fighting yourself.” That night, walking home beneath a
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `446` activation `2.490` class `word` token ` person`
+  - and former lovers. He began to see only the person in front of him. He began calling his friends
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `620` activation `2.474` class `word` token ` present`
+  - before, no invincible hero. He felt simply present—feet on pavement, breath in his chest
+- `L19:3600` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `589` activation `2.392` class `punctuation` token ` “`
+  - Did I pass?” Elias asked. Ren smiled. “You stopped fighting yourself.” That night, walking home
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `634` activation `4.751` class `word` token ` is`
+  - Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `636` activation `4.378` class `word` token ` being`
+  - kissed her cheek. “Maybe the story is finally being translated back.”
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `633` activation `4.254` class `word` token ` story`
+  - .” Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `635` activation `4.061` class `discourse_marker_word` token ` finally`
+  - ise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `619` activation `3.315` class `expanded_negation_word` token ` was`
+  - looked at Elise and smiled. “Maybe love was never the problem.” Elise kissed her cheek.
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `618` activation `3.053` class `word` token ` love`
+  - a looked at Elise and smiled. “Maybe love was never the problem.” Elise kissed her cheek
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `632` activation `2.938` class `word` token ` the`
+  - problem.” Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `637` activation `2.818` class `word` token ` translated`
+  - her cheek. “Maybe the story is finally being translated back.”
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `631` activation `2.783` class `word` token `Maybe`
+  - the problem.” Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `620` activation `2.293` class `expanded_negation_word` token ` never`
+  - at Elise and smiled. “Maybe love was never the problem.” Elise kissed her cheek. “
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `622` activation `2.261` class `word` token ` problem`
+  - ise and smiled. “Maybe love was never the problem.” Elise kissed her cheek. “Maybe the
+- `L19:3600` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `638` activation `2.257` class `word` token ` back`
+  - cheek. “Maybe the story is finally being translated back.”
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `637` activation `4.846` class `word` token ` to`
+  - rose, the river ran, and people remembered how to breathe.
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `634` activation `3.696` class `word` token ` people`
+  - , the bread rose, the river ran, and people remembered how to breathe.
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `635` activation `3.304` class `word` token ` remembered`
+  - the bread rose, the river ran, and people remembered how to breathe.
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `603` activation `3.251` class `word` token ` find`
+  - , handing her a basket. “Here, we find out slowly.” Beyond the mountains, the world rushed
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `636` activation `3.216` class `word` token ` how`
+  - bread rose, the river ran, and people remembered how to breathe.
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `604` activation `3.170` class `word` token ` out`
+  - handing her a basket. “Here, we find out slowly.” Beyond the mountains, the world rushed on
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `638` activation `2.644` class `word` token ` breathe`
+  - , the river ran, and people remembered how to breathe.
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `605` activation `2.513` class `word` token ` slowly`
+  - her a basket. “Here, we find out slowly.” Beyond the mountains, the world rushed on,
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `602` activation `2.389` class `word` token ` we`
+  - said, handing her a basket. “Here, we find out slowly.” Beyond the mountains, the world
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `340` activation `2.386` class `word` token ` they`
+  - ers were not asked what they earned, only what they could mend, grow, teach, sing, cook
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `633` activation `2.338` class `word` token ` and`
+  - Hollow, the bread rose, the river ran, and people remembered how to breathe.
+- `L19:3600` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `295` activation `2.312` class `word` token ` moved`
+  - had told them that in Lumen Hollow, time moved at the speed of bread rising. The village had
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `614` activation `4.858` class `expanded_negation_word` token ` was`
+  - , the storm was elsewhere. For now, he was safe in the silence, clutching this tiny,
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `613` activation `3.743` class `word` token ` he`
+  - now, the storm was elsewhere. For now, he was safe in the silence, clutching this tiny
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `585` activation `3.667` class `word` token ` finding`
+  - peace. They were both survivors, two outcasts finding warmth in the cold. He closed his eyes,
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `579` activation `3.615` class `word` token ` both`
+  - gesture, Marcus found a fragile peace. They were both survivors, two outcasts finding warmth in the cold
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `616` activation `3.462` class `word` token ` in`
+  - storm was elsewhere. For now, he was safe in the silence, clutching this tiny, fragile moment
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `627` activation `3.415` class `word` token ` of`
+  - the silence, clutching this tiny, fragile moment of stillness before the morning demanded he return to the
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `505` activation `3.376` class `expanded_negation_word` token ` was`
+  - here, under the flickering streetlamp, he was invisible. No one asked him why he looked tired
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `615` activation `3.322` class `word` token ` safe`
+  - the storm was elsewhere. For now, he was safe in the silence, clutching this tiny, fragile
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `617` activation `3.319` class `word` token ` the`
+  - was elsewhere. For now, he was safe in the silence, clutching this tiny, fragile moment of
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `612` activation `3.278` class `punctuation` token `,`
+  - For now, the storm was elsewhere. For now, he was safe in the silence, clutching this
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `619` activation `3.178` class `punctuation` token `,`
+  - . For now, he was safe in the silence, clutching this tiny, fragile moment of stillness
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `581` activation `2.957` class `punctuation` token `,`
+  - Marcus found a fragile peace. They were both survivors, two outcasts finding warmth in the cold. He
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `637` activation `2.902` class `expanded_negation_word` token ` was`
+  - . The moonlight stayed. For tonight, that was enough.
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `582` activation `2.865` class `word` token ` am`
+  - page and wrote the first thing that came: I am not the noise I come from. He stared at
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `638` activation `2.712` class `word` token ` enough`
+  - The moonlight stayed. For tonight, that was enough.
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `516` activation `2.576` class `word` token ` to`
+  - nobody needed him to choose sides. Nobody asked him to explain why his chest felt tight all the time.
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `635` activation `2.554` class `punctuation` token `,`
+  - rumbling. The moonlight stayed. For tonight, that was enough.
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `543` activation `2.451` class `word` token ` It`
+  - but it held him. It didn’t shout. It didn’t blame. From his backpack, Malik pulled
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `536` activation `2.429` class `word` token ` him`
+  - . The stairwell was ugly, but it held him. It didn’t shout. It didn’t blame
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `535` activation `2.338` class `word` token ` held`
+  - time. The stairwell was ugly, but it held him. It didn’t shout. It didn’t
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `588` activation `2.329` class `word` token ` from`
+  - that came: I am not the noise I come from. He stared at the sentence until it blurred.
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `534` activation `2.292` class `word` token ` it`
+  - the time. The stairwell was ugly, but it held him. It didn’t shout. It didn
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `581` activation `2.231` class `word` token `I`
+  - blank page and wrote the first thing that came: I am not the noise I come from. He stared
+- `L19:3600` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `513` activation `2.115` class `word` token ` Nobody`
+  - Down here, nobody needed him to choose sides. Nobody asked him to explain why his chest felt tight all
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `629` activation `4.563` class `word` token ` found`
+  - mime and barista, but as two people who found home in the aroma of each other’s company.
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `628` activation `4.472` class `word` token ` who`
+  - as mime and barista, but as two people who found home in the aroma of each other’s company
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `627` activation `4.415` class `word` token ` people`
+  - not as mime and barista, but as two people who found home in the aroma of each other’s
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `630` activation `4.100` class `word` token ` home`
+  - and barista, but as two people who found home in the aroma of each other’s company.
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `631` activation `3.881` class `word` token ` in`
+  - barista, but as two people who found home in the aroma of each other’s company.
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `607` activation `3.740` class `word` token ` moments`
+  - scripts or foam, but in the quiet, messy moments between the sips. They leave together, not
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `592` activation `3.687` class `word` token ` stories`
+  - fresh cup, and realizes that sometimes the best love stories aren’t written in scripts or foam, but in
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `604` activation `3.256` class `word` token ` quiet`
+  - ’t written in scripts or foam, but in the quiet, messy moments between the sips. They leave
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `632` activation `3.239` class `word` token ` the`
+  - ista, but as two people who found home in the aroma of each other’s company.
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `626` activation `3.216` class `word` token ` two`
+  - , not as mime and barista, but as two people who found home in the aroma of each other
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `625` activation `3.197` class `style_function_word` token ` as`
+  - together, not as mime and barista, but as two people who found home in the aroma of each
+- `L19:3600` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `589` activation `3.107` class `word` token ` the`
+  - handing him a fresh cup, and realizes that sometimes the best love stories aren’t written in scripts or foam
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `637` activation `4.386` class `word` token ` be`
+  - was not hidden in the past, but waiting to be welcomed.
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `627` activation `4.050` class `expanded_negation_word` token ` was`
+  - felt alone after that, for he had learned happiness was not hidden in the past, but waiting to be
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `634` activation `3.983` class `word` token ` but`
+  - had learned happiness was not hidden in the past, but waiting to be welcomed.
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `636` activation `3.825` class `word` token ` to`
+  - happiness was not hidden in the past, but waiting to be welcomed.
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `626` activation `3.574` class `word` token ` happiness`
+  - never felt alone after that, for he had learned happiness was not hidden in the past, but waiting to
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `624` activation `3.552` class `expanded_negation_word` token ` had`
+  - Alden never felt alone after that, for he had learned happiness was not hidden in the past, but
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `638` activation `3.433` class `word` token ` welcomed`
+  - not hidden in the past, but waiting to be welcomed.
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `635` activation `3.354` class `word` token ` waiting`
+  - learned happiness was not hidden in the past, but waiting to be welcomed.
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `625` activation `2.831` class `word` token ` learned`
+  - en never felt alone after that, for he had learned happiness was not hidden in the past, but waiting
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `623` activation `2.706` class `word` token ` he`
+  - . Alden never felt alone after that, for he had learned happiness was not hidden in the past,
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `633` activation `2.489` class `punctuation` token `,`
+  - he had learned happiness was not hidden in the past, but waiting to be welcomed.
+- `L19:3600` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `628` activation `2.323` class `expanded_negation_word` token ` not`
+  - alone after that, for he had learned happiness was not hidden in the past, but waiting to be welcomed
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `547` activation `5.232` class `word` token ` been`
+  - you, I was never truly alone. You have been one of the great blessings of my life. Not
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `538` activation `5.173` class `punctuation` token `,`
+  - ridiculous, hopeful. Remember that, because of you, I was never truly alone. You have been one
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `533` activation `5.123` class `style_function_word` token ` that`
+  - . Remember me stubborn, ridiculous, hopeful. Remember that, because of you, I was never truly alone
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `540` activation `5.048` class `expanded_negation_word` token ` was`
+  - hopeful. Remember that, because of you, I was never truly alone. You have been one of the
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `520` activation `4.938` class `word` token ` me`
+  - don’t remember me only at the end. Remember me dancing badly. Remember me stubborn, ridiculous, hopeful
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `548` activation `4.927` class `word` token ` one`
+  - , I was never truly alone. You have been one of the great blessings of my life. Not everyone
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `628` activation `4.888` class `discourse_marker_word` token ` for`
+  - . Goodbye, my beloved friend. Thank you for thirty beautiful years. With all my love, always
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `620` activation `4.838` class `word` token `bye`
+  - hope I’m the first face you see. Goodbye, my beloved friend. Thank you for thirty beautiful
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `621` activation `4.754` class `punctuation` token `,`
+  - I’m the first face you see. Goodbye, my beloved friend. Thank you for thirty beautiful years
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `630` activation `4.676` class `word` token ` beautiful`
+  - bye, my beloved friend. Thank you for thirty beautiful years. With all my love, always.
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `613` activation `4.602` class `word` token ` the`
+  - , many years from now, I hope I’m the first face you see. Goodbye, my beloved
+- `L24:4083` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gpt-5.5` token `608` activation `4.540` class `punctuation` token `,`
+  - when it is your turn, many years from now, I hope I’m the first face you see.
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `599` activation `6.197` class `style_function_word` token ` that`
+  - Thank you for seeing me. Thank you for believing that the quiet boy was worth listening to. The clock
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `603` activation `5.643` class `expanded_negation_word` token ` was`
+  - me. Thank you for believing that the quiet boy was worth listening to. The clock on my grandfather’s
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `604` activation `5.422` class `word` token ` worth`
+  - . Thank you for believing that the quiet boy was worth listening to. The clock on my grandfather’s wall
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `597` activation `5.417` class `discourse_marker_word` token ` for`
+  - too. Thank you for seeing me. Thank you for believing that the quiet boy was worth listening to.
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `598` activation `5.308` class `word` token ` believing`
+  - . Thank you for seeing me. Thank you for believing that the quiet boy was worth listening to. The
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `579` activation `5.278` class `word` token ` see`
+  - I still see the dust. But now, I see the light catching on the brass, too. Thank
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `592` activation `5.229` class `word` token ` seeing`
+  - catching on the brass, too. Thank you for seeing me. Thank you for believing that the quiet boy
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `601` activation `5.146` class `word` token ` quiet`
+  - for seeing me. Thank you for believing that the quiet boy was worth listening to. The clock on my
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `577` activation `5.137` class `punctuation` token `,`
+  - Joe. I still see the dust. But now, I see the light catching on the brass, too
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `593` activation `5.048` class `word` token ` me`
+  - on the brass, too. Thank you for seeing me. Thank you for believing that the quiet boy was
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `576` activation `4.858` class `word` token ` now`
+  - still Joe. I still see the dust. But now, I see the light catching on the brass,
+- `L24:4083` `9456c32c2fb6d2dc5c45f73aa3fbaeefb4349eb6bca2c0dafb4feec0cba7a56a@turn_01@qwen3.6-35b` token `501` activation `4.829` class `style_function_word` token ` that`
+  - the silence, for the dust, for the belief that restoration is its own reward. This award is not
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `629` activation `5.885` class `word` token ` and`
+  - . But there’s a whole wide pond waiting, and honestly, I can’t wait to see it.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `631` activation `5.697` class `punctuation` token `,`
+  - there’s a whole wide pond waiting, and honestly, I can’t wait to see it.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `628` activation `5.437` class `punctuation` token `,`
+  - obble. But there’s a whole wide pond waiting, and honestly, I can’t wait to see it
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `620` activation `5.370` class `word` token ` But`
+  - might miss this place. I might wobble. But there’s a whole wide pond waiting, and honestly
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `637` activation `4.882` class `word` token ` see`
+  - waiting, and honestly, I can’t wait to see it.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `632` activation `4.860` class `word` token ` I`
+  - ’s a whole wide pond waiting, and honestly, I can’t wait to see it.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `636` activation `4.633` class `word` token ` to`
+  - pond waiting, and honestly, I can’t wait to see it.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `638` activation `4.493` class `word` token ` it`
+  - , and honestly, I can’t wait to see it.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `633` activation `4.489` class `style_function_word` token ` can`
+  - a whole wide pond waiting, and honestly, I can’t wait to see it.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `622` activation `4.424` class `word` token `’s`
+  - this place. I might wobble. But there’s a whole wide pond waiting, and honestly, I
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `630` activation `4.309` class `word` token ` honestly`
+  - But there’s a whole wide pond waiting, and honestly, I can’t wait to see it.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@gpt-5.5` token `602` activation `4.271` class `word` token ` to`
+  - being ready for everything. It means being brave enough to take the first awkward steps. I might miss this
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `631` activation `5.988` class `punctuation` token `,`
+  - not with a backward glance, but with a smile, ready to paddle toward whatever lay ahead.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `620` activation `5.778` class `punctuation` token `,`
+  - . I grabbed my bag and headed out the door, not with a backward glance, but with a smile
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `632` activation `5.076` class `word` token ` ready`
+  - with a backward glance, but with a smile, ready to paddle toward whatever lay ahead.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `630` activation `4.870` class `word` token ` smile`
+  - , not with a backward glance, but with a smile, ready to paddle toward whatever lay ahead.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `628` activation `4.769` class `word` token ` with`
+  - the door, not with a backward glance, but with a smile, ready to paddle toward whatever lay ahead
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `633` activation `4.587` class `word` token ` to`
+  - a backward glance, but with a smile, ready to paddle toward whatever lay ahead.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `611` activation `4.520` class `word` token ` I`
+  - would eventually carry me wherever I chose to go. I grabbed my bag and headed out the door, not
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `619` activation `4.496` class `word` token ` door`
+  - go. I grabbed my bag and headed out the door, not with a backward glance, but with a
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `629` activation `4.383` class `word` token ` a`
+  - door, not with a backward glance, but with a smile, ready to paddle toward whatever lay ahead.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `635` activation `4.313` class `word` token ` toward`
+  - glance, but with a smile, ready to paddle toward whatever lay ahead.
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `627` activation `4.306` class `word` token ` but`
+  - out the door, not with a backward glance, but with a smile, ready to paddle toward whatever lay
+- `L24:4083` `ada8307e885e1f8fe6a85bf903499d7ed7ed9e3c1b5c7445a18e3ea896fa2030@turn_01@qwen3.6-35b` token `636` activation `4.008` class `word` token ` whatever`
+  - , but with a smile, ready to paddle toward whatever lay ahead.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `620` activation `3.239` class `punctuation` token `,`
+  - hide, but to meet the world on its terms, finally understanding that peace was not found in isolation,
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `622` activation `3.150` class `word` token ` understanding`
+  - but to meet the world on its terms, finally understanding that peace was not found in isolation, but in
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `621` activation `2.891` class `discourse_marker_word` token ` finally`
+  - , but to meet the world on its terms, finally understanding that peace was not found in isolation, but
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `636` activation `2.858` class `word` token ` let`
+  - not found in isolation, but in the courage to let others in.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `614` activation `2.730` class `word` token ` meet`
+  - the new boundary, not to hide, but to meet the world on its terms, finally understanding that peace
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `638` activation `2.644` class `word` token ` in`
+  - in isolation, but in the courage to let others in.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `625` activation `2.619` class `expanded_negation_word` token ` was`
+  - the world on its terms, finally understanding that peace was not found in isolation, but in the courage to
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `623` activation `2.453` class `style_function_word` token ` that`
+  - to meet the world on its terms, finally understanding that peace was not found in isolation, but in the
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `612` activation `2.293` class `word` token ` but`
+  - stepped to the new boundary, not to hide, but to meet the world on its terms, finally understanding
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `630` activation `2.286` class `punctuation` token `,`
+  - , finally understanding that peace was not found in isolation, but in the courage to let others in.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `617` activation `2.162` class `word` token ` on`
+  - , not to hide, but to meet the world on its terms, finally understanding that peace was not found
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@qwen3.6-35b` token `637` activation `2.111` class `word` token ` others`
+  - found in isolation, but in the courage to let others in.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `621` activation `5.631` class `word` token `And`
+  - worry, and crumbs. There was also warmth. And Mara discovered that peace did not vanish when shared.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `624` activation `5.602` class `style_function_word` token ` that`
+  - crumbs. There was also warmth. And Mara discovered that peace did not vanish when shared. It grew room
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `623` activation `5.197` class `word` token ` discovered`
+  - and crumbs. There was also warmth. And Mara discovered that peace did not vanish when shared. It grew
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `618` activation `5.073` class `style_function_word` token ` also`
+  - was noise, worry, and crumbs. There was also warmth. And Mara discovered that peace did not vanish
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `617` activation `5.042` class `expanded_negation_word` token ` was`
+  - there was noise, worry, and crumbs. There was also warmth. And Mara discovered that peace did not
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `637` activation `4.935` class `word` token ` hold`
+  - not vanish when shared. It grew room enough to hold hands.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `625` activation `4.721` class `word` token ` peace`
+  - . There was also warmth. And Mara discovered that peace did not vanish when shared. It grew room enough
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `631` activation `4.690` class `sentence_boundary` token `.`
+  - And Mara discovered that peace did not vanish when shared. It grew room enough to hold hands.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `633` activation `4.687` class `word` token ` grew`
+  - discovered that peace did not vanish when shared. It grew room enough to hold hands.
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `626` activation `4.579` class `expanded_negation_word` token ` did`
+  - There was also warmth. And Mara discovered that peace did not vanish when shared. It grew room enough to
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `619` activation `4.483` class `word` token ` warmth`
+  - noise, worry, and crumbs. There was also warmth. And Mara discovered that peace did not vanish when
+- `L24:4083` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@gpt-5.5` token `622` activation `4.365` class `word` token ` Mara`
+  - , and crumbs. There was also warmth. And Mara discovered that peace did not vanish when shared. It
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `633` activation `5.876` class `word` token ` where`
+  - tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `631` activation `5.591` class `word` token ` is`
+  - ,” the tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `628` activation `5.495` class `word` token `Sometimes`
+  - ’t be afraid,” the tree rustled. “Sometimes far away is exactly where you’re meant to grow
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `629` activation `5.008` class `word` token ` far`
+  - be afraid,” the tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `637` activation `4.940` class `word` token ` to`
+  - “Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `627` activation `4.891` class `punctuation` token ` “`
+  - Don’t be afraid,” the tree rustled. “Sometimes far away is exactly where you’re meant to
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `630` activation `4.695` class `word` token ` away`
+  - afraid,” the tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `635` activation `4.641` class `word` token `’re`
+  - led. “Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `632` activation `4.551` class `word` token ` exactly`
+  - the tree rustled. “Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `638` activation `4.520` class `word` token ` grow`
+  - Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `636` activation `4.331` class `word` token ` meant`
+  - . “Sometimes far away is exactly where you’re meant to grow.”
+- `L24:4083` `f5cc15a138584ced005ec845f5a40212cd1e4c389aaadb5db442b61637320d19@turn_01@gpt-5.5` token `616` activation `4.094` class `punctuation` token `“`
+  - apple dropped, it landed softly in the grass. “Don’t be afraid,” the tree rustled.
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `580` activation `4.524` class `punctuation` token `,`
+  - had spent decades trying to become someone else. Now, for the first time, he was simply Elias.
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `590` activation `4.314` class `sentence_boundary` token `.`
+  - , for the first time, he was simply Elias. The rain stopped. The silence was no longer empty
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `588` activation `4.245` class `word` token ` simply`
+  - . Now, for the first time, he was simply Elias. The rain stopped. The silence was no
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `579` activation `4.119` class `word` token ` Now`
+  - He had spent decades trying to become someone else. Now, for the first time, he was simply Elias
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `589` activation `4.077` class `word` token ` Elias`
+  - Now, for the first time, he was simply Elias. The rain stopped. The silence was no longer
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `587` activation `4.032` class `expanded_negation_word` token ` was`
+  - else. Now, for the first time, he was simply Elias. The rain stopped. The silence was
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `597` activation `4.021` class `expanded_negation_word` token ` was`
+  - was simply Elias. The rain stopped. The silence was no longer empty; it was full, resonant
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `618` activation `4.006` class `word` token ` He`
+  - with a truth he had finally stopped running from. He tied his belt, not as armor, but as
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `560` activation `3.732` class `punctuation` token `,`
+  - showing how to yield rather than oppose. Elias smiled, not with pride, but with peace. He had
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `591` activation `3.596` class `word` token ` The`
+  - for the first time, he was simply Elias. The rain stopped. The silence was no longer empty;
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `585` activation `3.574` class `punctuation` token `,`
+  - become someone else. Now, for the first time, he was simply Elias. The rain stopped. The
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@qwen3.6-35b` token `581` activation `3.570` class `discourse_marker_word` token ` for`
+  - spent decades trying to become someone else. Now, for the first time, he was simply Elias. The
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `619` activation `5.576` class `word` token ` simply`
+  - than before, no invincible hero. He felt simply present—feet on pavement, breath in his
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `618` activation `5.514` class `word` token ` felt`
+  - bigger than before, no invincible hero. He felt simply present—feet on pavement, breath in
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `590` activation `5.145` class `word` token `You`
+  - I pass?” Elias asked. Ren smiled. “You stopped fighting yourself.” That night, walking home beneath
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `637` activation `4.913` class `word` token ` and`
+  - breath in his chest, the long road ahead open and welcome.
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `620` activation `4.664` class `word` token ` present`
+  - before, no invincible hero. He felt simply present—feet on pavement, breath in his chest
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `591` activation `4.476` class `word` token ` stopped`
+  - pass?” Elias asked. Ren smiled. “You stopped fighting yourself.” That night, walking home beneath a
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `635` activation `4.453` class `word` token ` ahead`
+  - pavement, breath in his chest, the long road ahead open and welcome.
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `589` activation `4.352` class `punctuation` token ` “`
+  - Did I pass?” Elias asked. Ren smiled. “You stopped fighting yourself.” That night, walking home
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `639` activation `4.215` class `sentence_boundary` token `.`
+  - his chest, the long road ahead open and welcome.
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `638` activation `4.081` class `word` token ` welcome`
+  - in his chest, the long road ahead open and welcome.
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `636` activation `4.064` class `word` token ` open`
+  - , breath in his chest, the long road ahead open and welcome.
+- `L24:4083` `3c0410788ad9b7806ea16507e817cf34ae033a9bc05da86244df33779112e995@turn_01@gpt-5.5` token `616` activation `4.036` class `sentence_boundary` token `.`
+  - felt no bigger than before, no invincible hero. He felt simply present—feet on pavement,
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `634` activation `6.077` class `word` token ` is`
+  - Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `631` activation `5.952` class `word` token `Maybe`
+  - the problem.” Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `633` activation `5.668` class `word` token ` story`
+  - .” Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `630` activation `5.001` class `punctuation` token ` “`
+  - never the problem.” Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `635` activation `4.994` class `discourse_marker_word` token ` finally`
+  - ise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `619` activation `4.870` class `expanded_negation_word` token ` was`
+  - looked at Elise and smiled. “Maybe love was never the problem.” Elise kissed her cheek.
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `617` activation `4.827` class `word` token `Maybe`
+  - Maya looked at Elise and smiled. “Maybe love was never the problem.” Elise kissed her
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `637` activation `4.779` class `word` token ` translated`
+  - her cheek. “Maybe the story is finally being translated back.”
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `616` activation `4.293` class `punctuation` token ` “`
+  - . Maya looked at Elise and smiled. “Maybe love was never the problem.” Elise kissed
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `636` activation `4.264` class `word` token ` being`
+  - kissed her cheek. “Maybe the story is finally being translated back.”
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `632` activation `4.239` class `word` token ` the`
+  - problem.” Elise kissed her cheek. “Maybe the story is finally being translated back.”
+- `L24:4083` `12a703c0213107ac3e78217c47a35566492715f01b4242fa50087e74c42d4808@turn_01@gpt-5.5` token `618` activation `4.168` class `word` token ` love`
+  - a looked at Elise and smiled. “Maybe love was never the problem.” Elise kissed her cheek
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `635` activation `5.763` class `word` token ` remembered`
+  - the bread rose, the river ran, and people remembered how to breathe.
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `603` activation `5.498` class `word` token ` find`
+  - , handing her a basket. “Here, we find out slowly.” Beyond the mountains, the world rushed
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `633` activation `5.252` class `word` token ` and`
+  - Hollow, the bread rose, the river ran, and people remembered how to breathe.
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `599` activation `5.250` class `punctuation` token ` “`
+  - right,” he said, handing her a basket. “Here, we find out slowly.” Beyond the mountains
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `638` activation `5.142` class `word` token ` breathe`
+  - , the river ran, and people remembered how to breathe.
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `636` activation `4.963` class `word` token ` how`
+  - bread rose, the river ran, and people remembered how to breathe.
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `637` activation `4.907` class `word` token ` to`
+  - rose, the river ran, and people remembered how to breathe.
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `602` activation `4.759` class `word` token ` we`
+  - said, handing her a basket. “Here, we find out slowly.” Beyond the mountains, the world
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `601` activation `4.737` class `punctuation` token `,`
+  - he said, handing her a basket. “Here, we find out slowly.” Beyond the mountains, the
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `627` activation `4.713` class `word` token ` rose`
+  - and loud. In Lumen Hollow, the bread rose, the river ran, and people remembered how to
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `624` activation `4.679` class `punctuation` token `,`
+  - on, bright and loud. In Lumen Hollow, the bread rose, the river ran, and people
+- `L24:4083` `614834497eb82ae081e4e4b56a04ba6b629bff1b3266582c6961ec9de60ec454@turn_01@gpt-5.5` token `600` activation `4.522` class `word` token `Here`
+  - ,” he said, handing her a basket. “Here, we find out slowly.” Beyond the mountains,
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `614` activation `5.380` class `expanded_negation_word` token ` was`
+  - , the storm was elsewhere. For now, he was safe in the silence, clutching this tiny,
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `612` activation `5.001` class `punctuation` token `,`
+  - For now, the storm was elsewhere. For now, he was safe in the silence, clutching this
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `604` activation `4.758` class `punctuation` token `,`
+  - eyes, listening to the city breathe. For now, the storm was elsewhere. For now, he was
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `619` activation `4.697` class `punctuation` token `,`
+  - . For now, he was safe in the silence, clutching this tiny, fragile moment of stillness
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `615` activation `4.463` class `word` token ` safe`
+  - the storm was elsewhere. For now, he was safe in the silence, clutching this tiny, fragile
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `616` activation `4.247` class `word` token ` in`
+  - storm was elsewhere. For now, he was safe in the silence, clutching this tiny, fragile moment
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `613` activation `4.128` class `word` token ` he`
+  - now, the storm was elsewhere. For now, he was safe in the silence, clutching this tiny
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `611` activation `3.871` class `word` token ` now`
+  - . For now, the storm was elsewhere. For now, he was safe in the silence, clutching
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `603` activation `3.767` class `word` token ` now`
+  - his eyes, listening to the city breathe. For now, the storm was elsewhere. For now, he
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `578` activation `3.696` class `expanded_negation_word` token ` were`
+  - small gesture, Marcus found a fragile peace. They were both survivors, two outcasts finding warmth in the
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `572` activation `3.584` class `word` token ` found`
+  - a tentative rhythm. In that small gesture, Marcus found a fragile peace. They were both survivors, two
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@qwen3.6-35b` token `618` activation `3.353` class `word` token ` silence`
+  - elsewhere. For now, he was safe in the silence, clutching this tiny, fragile moment of still
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `638` activation `6.970` class `word` token ` enough`
+  - The moonlight stayed. For tonight, that was enough.
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `637` activation `6.650` class `expanded_negation_word` token ` was`
+  - . The moonlight stayed. For tonight, that was enough.
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `635` activation `6.297` class `punctuation` token `,`
+  - rumbling. The moonlight stayed. For tonight, that was enough.
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `636` activation `5.344` class `style_function_word` token ` that`
+  - bling. The moonlight stayed. For tonight, that was enough.
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `582` activation `5.232` class `word` token ` am`
+  - page and wrote the first thing that came: I am not the noise I come from. He stared at
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `639` activation `5.041` class `sentence_boundary` token `.`
+  - moonlight stayed. For tonight, that was enough.
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `634` activation `4.950` class `word` token ` tonight`
+  - kept rumbling. The moonlight stayed. For tonight, that was enough.
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `535` activation `4.757` class `word` token ` held`
+  - time. The stairwell was ugly, but it held him. It didn’t shout. It didn’t
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `536` activation `4.651` class `word` token ` him`
+  - . The stairwell was ugly, but it held him. It didn’t shout. It didn’t blame
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `631` activation `4.550` class `word` token ` stayed`
+  - . The city kept rumbling. The moonlight stayed. For tonight, that was enough.
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `533` activation `4.528` class `word` token ` but`
+  - all the time. The stairwell was ugly, but it held him. It didn’t shout. It
+- `L24:4083` `684b07493098472f722cd602d301a725f94d4abaa1e8db6d96a22998556f987d@turn_01@gpt-5.5` token `627` activation `4.480` class `sentence_boundary` token `.`
+  - ched, then breathed. The city kept rumbling. The moonlight stayed. For tonight, that was
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `584` activation `5.386` class `punctuation` token `,`
+  - truth. Elena smiles, handing him a fresh cup, and realizes that sometimes the best love stories aren’t
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `588` activation `5.141` class `word` token ` sometimes`
+  - , handing him a fresh cup, and realizes that sometimes the best love stories aren’t written in scripts or
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `627` activation `5.026` class `word` token ` people`
+  - not as mime and barista, but as two people who found home in the aroma of each other’s
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `587` activation `5.016` class `style_function_word` token ` that`
+  - smiles, handing him a fresh cup, and realizes that sometimes the best love stories aren’t written in scripts
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `628` activation `4.793` class `word` token ` who`
+  - as mime and barista, but as two people who found home in the aroma of each other’s company
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `629` activation `4.751` class `word` token ` found`
+  - mime and barista, but as two people who found home in the aroma of each other’s company.
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `631` activation `4.582` class `word` token ` in`
+  - barista, but as two people who found home in the aroma of each other’s company.
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `590` activation `4.537` class `word` token ` best`
+  - him a fresh cup, and realizes that sometimes the best love stories aren’t written in scripts or foam,
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `585` activation `4.424` class `word` token ` and`
+  - . Elena smiles, handing him a fresh cup, and realizes that sometimes the best love stories aren’t written
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `551` activation `4.336` class `word` token `'re`
+  - for the night, Julian finally whispers, "You're my favorite order," breaking his silence not with a
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `616` activation `4.318` class `punctuation` token `,`
+  - messy moments between the sips. They leave together, not as mime and barista, but as two
+- `L24:4083` `2ace69ec6efed5341bfd209a170ef2f769859cb7fe7dbc97ef18019163e02094@turn_01@qwen3.6-35b` token `586` activation `4.298` class `word` token ` realizes`
+  - Elena smiles, handing him a fresh cup, and realizes that sometimes the best love stories aren’t written in
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `624` activation `5.558` class `expanded_negation_word` token ` had`
+  - Alden never felt alone after that, for he had learned happiness was not hidden in the past, but
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `622` activation `5.361` class `discourse_marker_word` token ` for`
+  - Mr. Alden never felt alone after that, for he had learned happiness was not hidden in the past
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `620` activation `5.186` class `style_function_word` token ` that`
+  - owed. Mr. Alden never felt alone after that, for he had learned happiness was not hidden in
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `625` activation `5.147` class `word` token ` learned`
+  - en never felt alone after that, for he had learned happiness was not hidden in the past, but waiting
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `621` activation `4.889` class `punctuation` token `,`
+  - . Mr. Alden never felt alone after that, for he had learned happiness was not hidden in the
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `627` activation `4.803` class `expanded_negation_word` token ` was`
+  - felt alone after that, for he had learned happiness was not hidden in the past, but waiting to be
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `615` activation `4.748` class `word` token `en`
+  - though sometimes her collar glowed. Mr. Alden never felt alone after that, for he had learned
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `623` activation `4.675` class `word` token ` he`
+  - . Alden never felt alone after that, for he had learned happiness was not hidden in the past,
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `618` activation `4.496` class `word` token ` alone`
+  - collar glowed. Mr. Alden never felt alone after that, for he had learned happiness was not
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `535` activation `4.428` class `punctuation` token `,`
+  - . When the golden light faded, morning had arrived, and the cat was curled in his lap, pur
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `635` activation `4.405` class `word` token ` waiting`
+  - learned happiness was not hidden in the past, but waiting to be welcomed.
+- `L24:4083` `81a257dfd2cc081eb2f793adbe15a8af22de4c33b0c17cdc1e0e93e66d1e149c@turn_01@gpt-5.5` token `619` activation `4.390` class `word` token ` after`
+  - glowed. Mr. Alden never felt alone after that, for he had learned happiness was not hidden

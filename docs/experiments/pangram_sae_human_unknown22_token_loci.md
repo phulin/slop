@@ -1,0 +1,561 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:280` | `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` | `human` | 158 | `239.59` | `2.54` | word:133|sentence_boundary:8|line_break:6|style_function_word:4|discourse_marker_word:3|expanded_negation_word:2|punctuation:2 |
+| `L19:280` | `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` | `human` | 198 | `271.99` | `2.78` | word:170|sentence_boundary:10|punctuation:9|style_function_word:6|discourse_marker_word:1|expanded_negation_word:1|whitespace:1 |
+| `L19:280` | `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` | `human` | 285 | `430.13` | `3.04` | word:229|style_function_word:21|punctuation:13|sentence_boundary:11|discourse_marker_word:4|line_break:3|expanded_negation_word:3|contraction_piece:1 |
+| `L19:280` | `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` | `human` | 100 | `132.50` | `2.87` | word:71|punctuation:8|style_function_word:7|sentence_boundary:6|expanded_negation_word:2|line_break:2|whitespace:2|discourse_marker_word:1|contraction_piece:1 |
+| `L19:280` | `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` | `human` | 182 | `282.23` | `2.71` | word:146|punctuation:9|sentence_boundary:9|expanded_negation_word:7|style_function_word:5|line_break:3|discourse_marker_word:2|contraction_piece:1 |
+| `L19:280` | `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` | `human` | 162 | `233.84` | `2.55` | word:134|style_function_word:10|line_break:7|sentence_boundary:6|punctuation:3|discourse_marker_word:2 |
+| `L19:280` | `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` | `human` | 182 | `252.11` | `2.61` | word:142|punctuation:19|style_function_word:7|sentence_boundary:6|discourse_marker_word:3|line_break:3|expanded_negation_word:2 |
+| `L19:280` | `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` | `glm-5.2` | 139 | `150.33` | `2.42` | word:112|punctuation:10|sentence_boundary:7|style_function_word:6|contraction_piece:2|expanded_negation_word:1|line_break:1 |
+| `L19:280` | `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` | `human` | 238 | `327.73` | `2.74` | word:182|punctuation:21|style_function_word:19|sentence_boundary:6|discourse_marker_word:4|expanded_negation_word:3|contraction_piece:2|line_break:1 |
+| `L19:280` | `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` | `human` | 200 | `328.05` | `2.73` | word:169|style_function_word:10|sentence_boundary:8|punctuation:7|expanded_negation_word:3|line_break:2|discourse_marker_word:1 |
+| `L19:280` | `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` | `human` | 147 | `158.60` | `2.41` | word:121|punctuation:9|style_function_word:7|sentence_boundary:5|line_break:2|discourse_marker_word:2|expanded_negation_word:1 |
+| `L24:185` | `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` | `human` | 165 | `339.13` | `4.18` | word:141|sentence_boundary:8|line_break:5|style_function_word:3|punctuation:3|discourse_marker_word:3|expanded_negation_word:2 |
+| `L24:185` | `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` | `human` | 186 | `400.83` | `3.79` | word:161|sentence_boundary:10|punctuation:8|style_function_word:5|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:185` | `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` | `human` | 266 | `546.17` | `3.69` | word:207|style_function_word:23|punctuation:12|sentence_boundary:12|discourse_marker_word:5|line_break:3|expanded_negation_word:2|contraction_piece:2 |
+| `L24:185` | `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` | `human` | 82 | `163.88` | `3.88` | word:63|style_function_word:8|sentence_boundary:6|punctuation:2|expanded_negation_word:2|discourse_marker_word:1 |
+| `L24:185` | `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` | `human` | 178 | `371.44` | `4.04` | word:144|punctuation:10|sentence_boundary:8|expanded_negation_word:7|style_function_word:4|discourse_marker_word:2|line_break:2|contraction_piece:1 |
+| `L24:185` | `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` | `human` | 158 | `357.23` | `4.84` | word:129|style_function_word:11|line_break:7|sentence_boundary:6|punctuation:3|discourse_marker_word:2 |
+| `L24:185` | `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` | `human` | 173 | `360.24` | `3.64` | word:134|punctuation:21|style_function_word:7|sentence_boundary:5|discourse_marker_word:3|expanded_negation_word:2|line_break:1 |
+| `L24:185` | `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` | `glm-5.2` | 162 | `281.08` | `4.18` | word:131|punctuation:13|sentence_boundary:8|style_function_word:3|expanded_negation_word:3|contraction_piece:2|line_break:2 |
+| `L24:185` | `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` | `human` | 236 | `475.81` | `3.97` | word:183|punctuation:20|style_function_word:17|sentence_boundary:5|expanded_negation_word:4|discourse_marker_word:3|line_break:2|contraction_piece:1|whitespace:1 |
+| `L24:185` | `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` | `human` | 185 | `498.11` | `4.88` | word:156|style_function_word:10|sentence_boundary:7|punctuation:6|expanded_negation_word:3|line_break:2|discourse_marker_word:1 |
+| `L24:185` | `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` | `human` | 186 | `405.64` | `4.81` | word:149|style_function_word:12|punctuation:11|sentence_boundary:6|discourse_marker_word:4|expanded_negation_word:2|line_break:2 |
+
+## Top Tokens
+
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `577` activation `2.543` class `word` token ` interests`
+  - . The popularity of the Harry Potter series shaped the interests and values of an entire generation of children. 199
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `578` activation `2.431` class `word` token ` and`
+  - The popularity of the Harry Potter series shaped the interests and values of an entire generation of children. 1998
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `545` activation `2.419` class `word` token ` shaped`
+  - popularized a means of interacting with the Internet that shaped how people expect the web to work. 1997
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `547` activation `2.401` class `word` token ` people`
+  - a means of interacting with the Internet that shaped how people expect the web to work. 1997: Harry
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `544` activation `2.345` class `style_function_word` token ` that`
+  - and popularized a means of interacting with the Internet that shaped how people expect the web to work. 199
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `604` activation `2.328` class `word` token ` Internet`
+  - Google revolutionized the way we access information on the Internet. 1999: Bill Clinton faces impeachment. Bill
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `580` activation `2.306` class `word` token ` of`
+  - of the Harry Potter series shaped the interests and values of an entire generation of children. 1998: Google
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `630` activation `2.294` class `style_function_word` token ` This`
+  - to have been impeached in the modern era. This had long-reaching effects on politics going forward.
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `575` activation `2.283` class `word` token ` shaped`
+  - is published. The popularity of the Harry Potter series shaped the interests and values of an entire generation of children
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `531` activation `2.269` class `style_function_word` token ` this`
+  - created. Not the first Internet search engine, but this website created and popularized a means of interacting with
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `579` activation `2.255` class `word` token ` values`
+  - popularity of the Harry Potter series shaped the interests and values of an entire generation of children. 1998:
+- `L19:280` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `634` activation `2.237` class `word` token ` effects`
+  - ached in the modern era. This had long-reaching effects on politics going forward.
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `596` activation `2.776` class `word` token ` their`
+  - turn. Each family is unique and relatable in their own way; they create a fascinating and compelling family
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `595` activation `2.664` class `word` token ` in`
+  - every turn. Each family is unique and relatable in their own way; they create a fascinating and compelling
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `590` activation `2.620` class `word` token ` is`
+  - who push the envelope at every turn. Each family is unique and relatable in their own way; they
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `580` activation `2.593` class `word` token ` who`
+  - Lloyd created a lovable but flawed cast of characters who push the envelope at every turn. Each family is
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `592` activation `2.518` class `word` token ` and`
+  - the envelope at every turn. Each family is unique and relatable in their own way; they create a
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `608` activation `2.288` class `style_function_word` token ` that`
+  - way; they create a fascinating and compelling family dynamic that is impossible not to get attached to. This article
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `579` activation `2.282` class `word` token ` characters`
+  - Christopher Lloyd created a lovable but flawed cast of characters who push the envelope at every turn. Each family
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `589` activation `2.267` class `word` token ` family`
+  - characters who push the envelope at every turn. Each family is unique and relatable in their own way;
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `609` activation `2.246` class `word` token ` is`
+  - ; they create a fascinating and compelling family dynamic that is impossible not to get attached to. This article will
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `594` activation `2.245` class `word` token `atable`
+  - at every turn. Each family is unique and relatable in their own way; they create a fascinating and
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `597` activation `2.220` class `word` token ` own`
+  - . Each family is unique and relatable in their own way; they create a fascinating and compelling family dynamic
+- `L19:280` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `588` activation `2.207` class `word` token ` Each`
+  - of characters who push the envelope at every turn. Each family is unique and relatable in their own way
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `562` activation `3.042` class `word` token ` plants`
+  - if you prefer the real deal, small potted plants don't require too much work and can be very
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `570` activation `2.904` class `style_function_word` token ` can`
+  - potted plants don't require too much work and can be very soothing. Choose a theme. Creating a
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `622` activation `2.756` class `word` token ` add`
+  - a local team feel, while lovers of literature can add a book-filled bookshelf or two along with some
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `621` activation `2.755` class `style_function_word` token ` can`
+  - space a local team feel, while lovers of literature can add a book-filled bookshelf or two along with
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `510` activation `2.729` class `word` token ` or`
+  - Warhol and Basquiat into the office, or toss up some posters from your favorite films. Pl
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `551` activation `2.608` class `word` token ` but`
+  - low-maintenance way of sprucing up things, but if you prefer the real deal, small potted
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `526` activation `2.600` class `word` token ` true`
+  - your favorite films. Plants are a tried and true way of adding some easy enjoyment and relaxation. Artificial
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `569` activation `2.597` class `word` token ` and`
+  - small potted plants don't require too much work and can be very soothing. Choose a theme. Creating
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `558` activation `2.566` class `punctuation` token `,`
+  - up things, but if you prefer the real deal, small potted plants don't require too much work
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `608` activation `2.518` class `style_function_word` token ` can`
+  - you feel truly comfortable during the day. Sports fans can give their space a local team feel, while lovers
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `532` activation `2.514` class `word` token ` enjoyment`
+  - are a tried and true way of adding some easy enjoyment and relaxation. Artificial plants can be a low-m
+- `L19:280` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `627` activation `2.504` class `word` token `shelf`
+  - while lovers of literature can add a book-filled bookshelf or two along with some small figurines or paper
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `629` activation `2.873` class `word` token ` verse`
+  - to the feeling! This appears to be an uplifting verse that would strengthen the spirit of those reading it.
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `626` activation `2.748` class `word` token ` be`
+  - ! Hold on to the feeling! This appears to be an uplifting verse that would strengthen the spirit of those
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `625` activation `2.705` class `word` token ` to`
+  - believing! Hold on to the feeling! This appears to be an uplifting verse that would strengthen the spirit of
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `582` activation `2.658` class `word` token ` a`
+  - : Vote red to protect our rifles! This is a controversial verse that leaves scholars scratching their heads. However
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `585` activation `2.543` class `style_function_word` token ` that`
+  - to protect our rifles! This is a controversial verse that leaves scholars scratching their heads. However, it is
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `627` activation `2.522` class `word` token ` an`
+  - Hold on to the feeling! This appears to be an uplifting verse that would strengthen the spirit of those reading
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `630` activation `2.501` class `style_function_word` token ` that`
+  - the feeling! This appears to be an uplifting verse that would strengthen the spirit of those reading it.
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `581` activation `2.445` class `word` token ` is`
+  - 12: Vote red to protect our rifles! This is a controversial verse that leaves scholars scratching their heads.
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `584` activation `2.336` class `word` token ` verse`
+  - red to protect our rifles! This is a controversial verse that leaves scholars scratching their heads. However, it
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `594` activation `2.316` class `word` token ` it`
+  - verse that leaves scholars scratching their heads. However, it is now accepted as canon within the sacred texts.
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `628` activation `2.244` class `word` token ` uplifting`
+  - on to the feeling! This appears to be an uplifting verse that would strengthen the spirit of those reading it
+- `L19:280` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `624` activation `2.195` class `word` token ` appears`
+  - stop believing! Hold on to the feeling! This appears to be an uplifting verse that would strengthen the spirit
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `584` activation `2.713` class `word` token ` out`
+  - . With a sigh of relief, Leroy pressed out onto a branch and stretched out his wings to their
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `588` activation `2.650` class `word` token ` and`
+  - of relief, Leroy pressed out onto a branch and stretched out his wings to their fullest extent to dry
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `566` activation `2.594` class `word` token ` tearing`
+  - He dug at the sticky outer wall, ripping and tearing until the warm air hit his face. With a
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `590` activation `2.571` class `word` token ` out`
+  - , Leroy pressed out onto a branch and stretched out his wings to their fullest extent to dry. L
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `561` activation `2.556` class `word` token ` outer`
+  - fight it any longer. He dug at the sticky outer wall, ripping and tearing until the warm air hit
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `548` activation `2.546` class `word` token `oy`
+  - instinctively began pressing out of the shell. Leroy couldn't fight it any longer. He dug at
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `582` activation `2.523` class `word` token `oy`
+  - his face. With a sigh of relief, Leroy pressed out onto a branch and stretched out his wings
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `562` activation `2.511` class `word` token ` wall`
+  - it any longer. He dug at the sticky outer wall, ripping and tearing until the warm air hit his
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `563` activation `2.488` class `punctuation` token `,`
+  - any longer. He dug at the sticky outer wall, ripping and tearing until the warm air hit his face
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `576` activation `2.450` class `word` token ` a`
+  - tearing until the warm air hit his face. With a sigh of relief, Leroy pressed out onto a
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `556` activation `2.448` class `word` token ` He`
+  - . Leroy couldn't fight it any longer. He dug at the sticky outer wall, ripping and tearing
+- `L19:280` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `545` activation `2.431` class `word` token ` shell`
+  - , his body instinctively began pressing out of the shell. Leroy couldn't fight it any longer.
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `629` activation `2.552` class `style_function_word` token ` can`
+  - markets. A poor harvest resulting from torrid weather can wreak havoc with supply, causing prices to rise.
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `591` activation `2.484` class `sentence_boundary` token `.`
+  - and demand. None more so than the grain market. As demand for grains goes up prices rise likewise when
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `637` activation `2.465` class `word` token ` to`
+  - rid weather can wreak havoc with supply, causing prices to rise.
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `635` activation `2.377` class `word` token ` causing`
+  - from torrid weather can wreak havoc with supply, causing prices to rise.
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `566` activation `2.355` class `word` token ` to`
+  - ease production ensure that the supply of grain is able to be maintained. Global Supply and Demand: All markets
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `628` activation `2.337` class `word` token ` weather`
+  - grain markets. A poor harvest resulting from torrid weather can wreak havoc with supply, causing prices to rise
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `595` activation `2.279` class `word` token ` grains`
+  - more so than the grain market. As demand for grains goes up prices rise likewise when supply is cut.
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `638` activation `2.246` class `word` token ` rise`
+  - weather can wreak havoc with supply, causing prices to rise.
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `636` activation `2.233` class `word` token ` prices`
+  - torrid weather can wreak havoc with supply, causing prices to rise.
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `547` activation `2.136` class `style_function_word` token ` can`
+  - relating to energy and a farmer's ability to produce can have an impact on markets. Policies that ease production
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `593` activation `2.118` class `word` token ` demand`
+  - . None more so than the grain market. As demand for grains goes up prices rise likewise when supply is
+- `L19:280` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `567` activation `2.101` class `word` token ` be`
+  - production ensure that the supply of grain is able to be maintained. Global Supply and Demand: All markets are
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `487` activation `2.608` class `word` token ` book`
+  - , and her sexuality. Set in England, this book is cited as “insightful, heartw
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `488` activation `2.559` class `word` token ` is`
+  - and her sexuality. Set in England, this book is cited as “insightful, heartwarming
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `478` activation `2.297` class `word` token ` and`
+  - she finds a career, a sense of self, and her sexuality. Set in England, this book is
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `531` activation `2.193` class `word` token ` has`
+  - Part memoir, part inspirational self-help, this book has been widely hailed. Many have praised the author and
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `489` activation `2.179` class `word` token ` cited`
+  - her sexuality. Set in England, this book is cited as “insightful, heartwarming,
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `486` activation `2.145` class `style_function_word` token ` this`
+  - self, and her sexuality. Set in England, this book is cited as “insightful, heart
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `537` activation `2.143` class `word` token ` have`
+  - -help, this book has been widely hailed. Many have praised the author and book for its honesty, humor
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `485` activation `2.104` class `punctuation` token `,`
+  - of self, and her sexuality. Set in England, this book is cited as “insightful,
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `481` activation `2.089` class `sentence_boundary` token `.`
+  - career, a sense of self, and her sexuality. Set in England, this book is cited as “
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `530` activation `2.081` class `word` token ` book`
+  - – Part memoir, part inspirational self-help, this book has been widely hailed. Many have praised the author
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `529` activation `2.048` class `style_function_word` token ` this`
+  - ) – Part memoir, part inspirational self-help, this book has been widely hailed. Many have praised the
+- `L19:280` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `549` activation `1.991` class `word` token ` and`
+  - the author and book for its honesty, humor, and wisdom. • Sensational: The Hidden History of
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `397` activation `2.423` class `punctuation` token `,`
+  - seem to come from anywhere. Time moves strangely here, or maybe it doesn't move at all, just
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `437` activation `2.244` class `word` token ` it`
+  - of perception, a face or a name, but it stays out of reach, dissolved by the fog.
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `394` activation `2.232` class `word` token ` moves`
+  - that doesn’t seem to come from anywhere. Time moves strangely here, or maybe it doesn't move at
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `438` activation `2.185` class `word` token ` stays`
+  - perception, a face or a name, but it stays out of reach, dissolved by the fog. It
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `395` activation `2.058` class `word` token ` strangely`
+  - doesn’t seem to come from anywhere. Time moves strangely here, or maybe it doesn't move at all
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `441` activation `1.795` class `word` token ` reach`
+  - face or a name, but it stays out of reach, dissolved by the fog. It is exhausting,
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `393` activation `1.791` class `word` token ` Time`
+  - light that doesn’t seem to come from anywhere. Time moves strangely here, or maybe it doesn't move
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `410` activation `1.768` class `word` token ` the`
+  - it doesn't move at all, just pools around the ankles like bathwater going cold. There is a
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `440` activation `1.682` class `word` token ` of`
+  - a face or a name, but it stays out of reach, dissolved by the fog. It is exhausting
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `406` activation `1.678` class `punctuation` token `,`
+  - here, or maybe it doesn't move at all, just pools around the ankles like bathwater going cold
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `436` activation `1.648` class `word` token ` but`
+  - edge of perception, a face or a name, but it stays out of reach, dissolved by the fog
+- `L19:280` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `400` activation `1.641` class `word` token ` it`
+  - from anywhere. Time moves strangely here, or maybe it doesn't move at all, just pools around the
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `507` activation `2.739` class `word` token ` intense`
+  - the innocent titles fool you - this is hard and intense. Things appear to settle down when Fusia,
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `470` activation `2.661` class `word` token ` pace`
+  - dive into waves of reverb. This frenetic pace continues for the next three tracks, Benches,
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `469` activation `2.448` class `word` token `etic`
+  - that dive into waves of reverb. This frenetic pace continues for the next three tracks, Benches
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `533` activation `2.377` class `word` token ` is`
+  - the group, begins a sweet lullaby that is sonically interrupted by the splashing of webbed
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `602` activation `2.374` class `word` token ` finishes`
+  - the more substantial parts of the record. The LP finishes off with Bread by Broadway, a sprawling,
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `616` activation `2.347` class `style_function_word` token ` that`
+  - by Broadway, a sprawling, 23-minute epic that ranges from brilliant to confusing but is ultimately the sum
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `472` activation `2.283` class `discourse_marker_word` token ` for`
+  - waves of reverb. This frenetic pace continues for the next three tracks, Benches, Floppy
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `476` activation `2.264` class `word` token ` tracks`
+  - . This frenetic pace continues for the next three tracks, Benches, Floppy Feet, and Squ
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `527` activation `2.260` class `word` token ` a`
+  - , the tiniest of the group, begins a sweet lullaby that is sonically interrupted by
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `471` activation `2.230` class `word` token ` continues`
+  - into waves of reverb. This frenetic pace continues for the next three tracks, Benches, Flo
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `617` activation `2.199` class `word` token ` ranges`
+  - Broadway, a sprawling, 23-minute epic that ranges from brilliant to confusing but is ultimately the sum of
+- `L19:280` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `504` activation `2.190` class `word` token ` is`
+  - Don’t let the innocent titles fool you - this is hard and intense. Things appear to settle down when
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `511` activation `2.735` class `word` token ` made`
+  - elements that can be considered ceramic. Artificial ceramics are made by forming the item you want from clay or a
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `562` activation `2.666` class `word` token ` the`
+  - glazed on the surface so that water cannot soak into the material’s natural pores. Modern materials scientists have formulated
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `580` activation `2.660` class `word` token ` basic`
+  - scientists have formulated specialty ceramics, but at their most basic, humans have been making artificial ceramics for at least
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `549` activation `2.648` class `word` token ` items`
+  - material will no longer dissolve in water. Many ceramic items are also glazed on the surface so that water cannot
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `563` activation `2.582` class `word` token ` material`
+  - on the surface so that water cannot soak into the material’s natural pores. Modern materials scientists have formulated specialty
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `579` activation `2.560` class `word` token ` most`
+  - materials scientists have formulated specialty ceramics, but at their most basic, humans have been making artificial ceramics for at
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `588` activation `2.444` class `discourse_marker_word` token ` for`
+  - their most basic, humans have been making artificial ceramics for at least 26,000 years. The oldest
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `525` activation `2.441` class `word` token `eration`
+  - item you want from clay or a conglomeration of specialty materials and then heating (firing)
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `453` activation `2.437` class `word` token ` They`
+  - around organic (carbon-hydrogen) molecules. They can usually withstand temperatures of 1,000 degrees
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `535` activation `2.405` class `punctuation` token `)`
+  - eration of specialty materials and then heating (firing) it until the material will no longer dissolve in water
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `574` activation `2.376` class `word` token ` ceramics`
+  - ’s natural pores. Modern materials scientists have formulated specialty ceramics, but at their most basic, humans have been
+- `L19:280` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `503` activation `2.365` class `style_function_word` token ` can`
+  - carbon and silicon are among the more common elements that can be considered ceramic. Artificial ceramics are made by forming
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `525` activation `2.405` class `word` token ` offering`
+  - than traditional methods of power production. This makes our offering cheaper than anything you can find out there. There
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `527` activation `1.945` class `word` token ` than`
+  - methods of power production. This makes our offering cheaper than anything you can find out there. There are also
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `543` activation `1.939` class `punctuation` token `,`
+  - there. There are also zero emissions to speak of, making your carbon footprint lower, with the happy side
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `544` activation `1.916` class `word` token ` making`
+  - . There are also zero emissions to speak of, making your carbon footprint lower, with the happy side effect
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `548` activation `1.901` class `word` token ` lower`
+  - zero emissions to speak of, making your carbon footprint lower, with the happy side effect that the carbon tax
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `510` activation `1.896` class `word` token ` has`
+  - is generated purely from Pikachu power, and as such has a lower infrastructure layout than traditional methods of power production
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `526` activation `1.881` class `word` token ` cheaper`
+  - traditional methods of power production. This makes our offering cheaper than anything you can find out there. There are
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `523` activation `1.692` class `style_function_word` token ` makes`
+  - infrastructure layout than traditional methods of power production. This makes our offering cheaper than anything you can find out there
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `545` activation `1.630` class `word` token ` your`
+  - There are also zero emissions to speak of, making your carbon footprint lower, with the happy side effect that
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `607` activation `1.630` class `word` token `able`
+  - would simply like to know more, I am contactable at [insert email address here] or [insert
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `531` activation `1.624` class `word` token ` find`
+  - . This makes our offering cheaper than anything you can find out there. There are also zero emissions to speak
+- `L19:280` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `522` activation `1.598` class `style_function_word` token ` This`
+  - lower infrastructure layout than traditional methods of power production. This makes our offering cheaper than anything you can find out
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `532` activation `4.183` class `word` token ` website`
+  - . Not the first Internet search engine, but this website created and popularized a means of interacting with the
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `544` activation `4.005` class `style_function_word` token ` that`
+  - and popularized a means of interacting with the Internet that shaped how people expect the web to work. 199
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `574` activation `3.843` class `word` token ` series`
+  - Stone is published. The popularity of the Harry Potter series shaped the interests and values of an entire generation of
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `547` activation `3.628` class `word` token ` people`
+  - a means of interacting with the Internet that shaped how people expect the web to work. 1997: Harry
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `483` activation `3.508` class `word` token ` rights`
+  - apartheid in South Africa, and the advancement of human rights. 1995: Ebay is founded. The convenience
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `502` activation `3.484` class `word` token ` home`
+  - The convenience of a single-stop place to shop from home radically altered how consumers shop for goods. 1996
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `632` activation `3.440` class `word` token ` long`
+  - been impeached in the modern era. This had long-reaching effects on politics going forward.
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `530` activation `3.398` class `word` token ` but`
+  - is created. Not the first Internet search engine, but this website created and popularized a means of interacting
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `543` activation `3.358` class `word` token ` Internet`
+  - created and popularized a means of interacting with the Internet that shaped how people expect the web to work.
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `579` activation `3.352` class `word` token ` values`
+  - popularity of the Harry Potter series shaped the interests and values of an entire generation of children. 1998:
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `604` activation `3.349` class `word` token ` Internet`
+  - Google revolutionized the way we access information on the Internet. 1999: Bill Clinton faces impeachment. Bill
+- `L24:185` `0431458ab42e29d38adb96d904841b720adb0f21fd27a74dfe42d22593ef4c41@turn_01@human` token `552` activation `3.305` class `word` token ` work`
+  - the Internet that shaped how people expect the web to work. 1997: Harry Potter and the Sorcerer
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `592` activation `3.792` class `word` token ` and`
+  - the envelope at every turn. Each family is unique and relatable in their own way; they create a
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `590` activation `3.635` class `word` token ` is`
+  - who push the envelope at every turn. Each family is unique and relatable in their own way; they
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `463` activation `3.482` class `word` token ` they`
+  - . The show follows the Pritchett family as they have each built their own families separately. The daughter
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `466` activation `3.437` class `word` token ` built`
+  - follows the Pritchett family as they have each built their own families separately. The daughter, Claire,
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `591` activation `3.387` class `word` token ` unique`
+  - push the envelope at every turn. Each family is unique and relatable in their own way; they create
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `469` activation `3.375` class `word` token ` families`
+  - ritchett family as they have each built their own families separately. The daughter, Claire, has a traditional
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `589` activation `3.374` class `word` token ` family`
+  - characters who push the envelope at every turn. Each family is unique and relatable in their own way;
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `480` activation `3.363` class `word` token ` family`
+  - separately. The daughter, Claire, has a traditional family with her husband Phil, and three children. The
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `455` activation `3.294` class `word` token ` show`
+  - the different but connected lives they all live. The show follows the Pritchett family as they have each
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `544` activation `3.250` class `word` token ` show`
+  - to her son. Similar to The Office, the show employs a mockumentary style in which characters take
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `596` activation `3.247` class `word` token ` their`
+  - turn. Each family is unique and relatable in their own way; they create a fascinating and compelling family
+- `L24:185` `936830600aef6de604ed5da6db0f622c226c82276df976e0b96968e6e172e4ab@turn_01@human` token `461` activation `3.232` class `word` token ` family`
+  - all live. The show follows the Pritchett family as they have each built their own families separately.
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `510` activation `3.686` class `word` token ` or`
+  - Warhol and Basquiat into the office, or toss up some posters from your favorite films. Pl
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `621` activation `3.487` class `style_function_word` token ` can`
+  - space a local team feel, while lovers of literature can add a book-filled bookshelf or two along with
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `622` activation `3.471` class `word` token ` add`
+  - a local team feel, while lovers of literature can add a book-filled bookshelf or two along with some
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `570` activation `3.400` class `style_function_word` token ` can`
+  - potted plants don't require too much work and can be very soothing. Choose a theme. Creating a
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `562` activation `3.388` class `word` token ` plants`
+  - if you prefer the real deal, small potted plants don't require too much work and can be very
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `461` activation `3.387` class `word` token ` great`
+  - If you have the money, this can be a great way to perk up your space. There are a
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `463` activation `3.360` class `word` token ` to`
+  - have the money, this can be a great way to perk up your space. There are a wide variety
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `460` activation `3.326` class `word` token ` a`
+  - . If you have the money, this can be a great way to perk up your space. There are
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `553` activation `3.296` class `word` token ` you`
+  - aintenance way of sprucing up things, but if you prefer the real deal, small potted plants don
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `587` activation `3.270` class `style_function_word` token ` can`
+  - theme. Creating a consistent theme for your home office can go a long way toward easing your stress and making
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `539` activation `3.202` class `word` token ` be`
+  - adding some easy enjoyment and relaxation. Artificial plants can be a low-maintenance way of sprucing up things
+- `L24:185` `3aa85adaa91f343ad44ad3c4a6e49e07cbc149f56540319913e171045ae32fde@turn_01@human` token `608` activation `3.200` class `style_function_word` token ` can`
+  - you feel truly comfortable during the day. Sports fans can give their space a local team feel, while lovers
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `625` activation `3.881` class `word` token ` to`
+  - believing! Hold on to the feeling! This appears to be an uplifting verse that would strengthen the spirit of
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `594` activation `3.670` class `word` token ` it`
+  - verse that leaves scholars scratching their heads. However, it is now accepted as canon within the sacred texts.
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `624` activation `3.599` class `word` token ` appears`
+  - stop believing! Hold on to the feeling! This appears to be an uplifting verse that would strengthen the spirit
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `585` activation `3.573` class `style_function_word` token ` that`
+  - to protect our rifles! This is a controversial verse that leaves scholars scratching their heads. However, it is
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `629` activation `3.542` class `word` token ` verse`
+  - to the feeling! This appears to be an uplifting verse that would strengthen the spirit of those reading it.
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `630` activation `3.440` class `style_function_word` token ` that`
+  - the feeling! This appears to be an uplifting verse that would strengthen the spirit of those reading it.
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `626` activation `3.294` class `word` token ` be`
+  - ! Hold on to the feeling! This appears to be an uplifting verse that would strengthen the spirit of those
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `582` activation `3.285` class `word` token ` a`
+  - : Vote red to protect our rifles! This is a controversial verse that leaves scholars scratching their heads. However
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `593` activation `3.045` class `punctuation` token `,`
+  - controversial verse that leaves scholars scratching their heads. However, it is now accepted as canon within the sacred texts
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `628` activation `3.033` class `word` token ` uplifting`
+  - on to the feeling! This appears to be an uplifting verse that would strengthen the spirit of those reading it
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `627` activation `3.032` class `word` token ` an`
+  - Hold on to the feeling! This appears to be an uplifting verse that would strengthen the spirit of those reading
+- `L24:185` `8fb02ba522e53eaafbde577852b09ea617b71a1b55628e529a9ee22b15c3648c@turn_01@human` token `584` activation `2.993` class `word` token ` verse`
+  - red to protect our rifles! This is a controversial verse that leaves scholars scratching their heads. However, it
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `566` activation `4.039` class `word` token ` tearing`
+  - He dug at the sticky outer wall, ripping and tearing until the warm air hit his face. With a
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `520` activation `3.728` class `word` token ` out`
+  - furling up against him, ready to stretch out and catch the air. Should he go? Before
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `588` activation `3.703` class `word` token ` and`
+  - of relief, Leroy pressed out onto a branch and stretched out his wings to their fullest extent to dry
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `582` activation `3.621` class `word` token `oy`
+  - his face. With a sigh of relief, Leroy pressed out onto a branch and stretched out his wings
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `584` activation `3.588` class `word` token ` out`
+  - . With a sigh of relief, Leroy pressed out onto a branch and stretched out his wings to their
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `563` activation `3.569` class `punctuation` token `,`
+  - any longer. He dug at the sticky outer wall, ripping and tearing until the warm air hit his face
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `590` activation `3.547` class `word` token ` out`
+  - , Leroy pressed out onto a branch and stretched out his wings to their fullest extent to dry. L
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `570` activation `3.481` class `word` token ` air`
+  - sticky outer wall, ripping and tearing until the warm air hit his face. With a sigh of relief,
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `542` activation `3.371` class `word` token ` out`
+  - could think anymore, his body instinctively began pressing out of the shell. Leroy couldn't fight it
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `548` activation `3.343` class `word` token `oy`
+  - instinctively began pressing out of the shell. Leroy couldn't fight it any longer. He dug at
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `516` activation `3.222` class `punctuation` token `,`
+  - feel his new wings furling up against him, ready to stretch out and catch the air. Should
+- `L24:185` `2b57d8a4aeb5765e150a5024767edd47e58473dac74c6bb1a3f007cebb743a37@turn_01@human` token `564` activation `3.218` class `word` token ` ripping`
+  - longer. He dug at the sticky outer wall, ripping and tearing until the warm air hit his face.
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `629` activation `4.845` class `style_function_word` token ` can`
+  - markets. A poor harvest resulting from torrid weather can wreak havoc with supply, causing prices to rise.
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `595` activation `4.723` class `word` token ` grains`
+  - more so than the grain market. As demand for grains goes up prices rise likewise when supply is cut.
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `593` activation `4.525` class `word` token ` demand`
+  - . None more so than the grain market. As demand for grains goes up prices rise likewise when supply is
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `637` activation `4.184` class `word` token ` to`
+  - rid weather can wreak havoc with supply, causing prices to rise.
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `628` activation `4.127` class `word` token ` weather`
+  - grain markets. A poor harvest resulting from torrid weather can wreak havoc with supply, causing prices to rise
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `555` activation `4.092` class `style_function_word` token ` that`
+  - to produce can have an impact on markets. Policies that ease production ensure that the supply of grain is able
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `623` activation `3.889` class `word` token ` harvest`
+  - plays a large part in grain markets. A poor harvest resulting from torrid weather can wreak havoc with supply
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `638` activation `3.666` class `word` token ` rise`
+  - weather can wreak havoc with supply, causing prices to rise.
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `591` activation `3.664` class `sentence_boundary` token `.`
+  - and demand. None more so than the grain market. As demand for grains goes up prices rise likewise when
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `603` activation `3.640` class `word` token ` is`
+  - demand for grains goes up prices rise likewise when supply is cut. Weather: Of course, the weather plays
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `620` activation `3.599` class `sentence_boundary` token `.`
+  - , the weather plays a large part in grain markets. A poor harvest resulting from torrid weather can wreak
+- `L24:185` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `598` activation `3.580` class `word` token ` prices`
+  - the grain market. As demand for grains goes up prices rise likewise when supply is cut. Weather: Of
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `487` activation `3.637` class `word` token ` book`
+  - , and her sexuality. Set in England, this book is cited as “insightful, heartw
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `488` activation `3.474` class `word` token ` is`
+  - and her sexuality. Set in England, this book is cited as “insightful, heartwarming
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `478` activation `3.470` class `word` token ` and`
+  - she finds a career, a sense of self, and her sexuality. Set in England, this book is
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `635` activation `3.377` class `word` token ` writing`
+  - style would go on to change reporting and non-fiction writing for the better.
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `631` activation `3.310` class `word` token ` reporting`
+  - notations, though their style would go on to change reporting and non-fiction writing for the better.
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `537` activation `3.217` class `word` token ` have`
+  - -help, this book has been widely hailed. Many have praised the author and book for its honesty, humor
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `609` activation `3.216` class `word` token ` backlash`
+  - degradation in various areas. But then there was a backlash and the term ‘stunt reporter’ developed negative
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `485` activation `3.202` class `punctuation` token `,`
+  - of self, and her sexuality. Set in England, this book is cited as “insightful,
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `530` activation `3.150` class `word` token ` book`
+  - – Part memoir, part inspirational self-help, this book has been widely hailed. Many have praised the author
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `489` activation `3.085` class `word` token ` cited`
+  - her sexuality. Set in England, this book is cited as “insightful, heartwarming,
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `486` activation `3.085` class `style_function_word` token ` this`
+  - self, and her sexuality. Set in England, this book is cited as “insightful, heart
+- `L24:185` `f5a20d43635d0e06780baf85b80e57382c00236c21fdf335aa1b26b0196b38f0@turn_01@human` token `532` activation `3.059` class `word` token ` been`
+  - memoir, part inspirational self-help, this book has been widely hailed. Many have praised the author and book
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `397` activation `4.179` class `punctuation` token `,`
+  - seem to come from anywhere. Time moves strangely here, or maybe it doesn't move at all, just
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `431` activation `3.430` class `word` token ` face`
+  - memory tugging at the edge of perception, a face or a name, but it stays out of reach
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `434` activation `3.300` class `word` token ` name`
+  - at the edge of perception, a face or a name, but it stays out of reach, dissolved by
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `394` activation `3.283` class `word` token ` moves`
+  - that doesn’t seem to come from anywhere. Time moves strangely here, or maybe it doesn't move at
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `421` activation `3.196` class `word` token ` memory`
+  - ankles like bathwater going cold. There is a memory tugging at the edge of perception, a face
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `423` activation `3.097` class `word` token `ugging`
+  - bathwater going cold. There is a memory tugging at the edge of perception, a face or a
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `410` activation `3.088` class `word` token ` the`
+  - it doesn't move at all, just pools around the ankles like bathwater going cold. There is a
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `438` activation `3.082` class `word` token ` stays`
+  - perception, a face or a name, but it stays out of reach, dissolved by the fog. It
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `408` activation `3.064` class `word` token ` pools`
+  - or maybe it doesn't move at all, just pools around the ankles like bathwater going cold. There
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `429` activation `3.056` class `punctuation` token `,`
+  - is a memory tugging at the edge of perception, a face or a name, but it stays out
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `407` activation `3.048` class `word` token ` just`
+  - , or maybe it doesn't move at all, just pools around the ankles like bathwater going cold.
+- `L24:185` `9732187258186f5d06f6acdc2cf63e4a3b6d225b6282ebcb27619cd7547b4968@turn_01@glm-5.2` token `396` activation `3.004` class `word` token ` here`
+  - ’t seem to come from anywhere. Time moves strangely here, or maybe it doesn't move at all,
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `470` activation `3.966` class `word` token ` pace`
+  - dive into waves of reverb. This frenetic pace continues for the next three tracks, Benches,
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `616` activation `3.964` class `style_function_word` token ` that`
+  - by Broadway, a sprawling, 23-minute epic that ranges from brilliant to confusing but is ultimately the sum
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `511` activation `3.884` class `word` token ` to`
+  - you - this is hard and intense. Things appear to settle down when Fusia, the tiniest
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `471` activation `3.805` class `word` token ` continues`
+  - into waves of reverb. This frenetic pace continues for the next three tracks, Benches, Flo
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `477` activation `3.626` class `punctuation` token `,`
+  - This frenetic pace continues for the next three tracks, Benches, Floppy Feet, and Squawk
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `476` activation `3.616` class `word` token ` tracks`
+  - . This frenetic pace continues for the next three tracks, Benches, Floppy Feet, and Squ
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `509` activation `3.549` class `word` token `Things`
+  - titles fool you - this is hard and intense. Things appear to settle down when Fusia, the t
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `610` activation `3.452` class `word` token ` sprawling`
+  - The LP finishes off with Bread by Broadway, a sprawling, 23-minute epic that ranges from brilliant to
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `513` activation `3.416` class `word` token ` down`
+  - this is hard and intense. Things appear to settle down when Fusia, the tiniest of the
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `459` activation `3.393` class `style_function_word` token ` that`
+  - controlled, but fall in line with beak breaks that dive into waves of reverb. This frenetic
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `525` activation `3.382` class `punctuation` token `,`
+  - Fusia, the tiniest of the group, begins a sweet lullaby that is sonically
+- `L24:185` `e3f44de6012c619c83b2a7c6039e8350ff0bc6a6662005f6b8fde3254ef1b0fb@turn_01@human` token `593` activation `3.303` class `word` token ` more`
+  - periments” that should be seen as bridges between the more substantial parts of the record. The LP finishes off
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `559` activation `4.883` class `expanded_negation_word` token ` cannot`
+  - items are also glazed on the surface so that water cannot soak into the material’s natural pores. Modern materials
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `539` activation `4.865` class `word` token ` material`
+  - and then heating (firing) it until the material will no longer dissolve in water. Many ceramic items
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `549` activation `4.673` class `word` token ` items`
+  - material will no longer dissolve in water. Many ceramic items are also glazed on the surface so that water cannot
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `583` activation `4.433` class `word` token ` have`
+  - specialty ceramics, but at their most basic, humans have been making artificial ceramics for at least 26,
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `563` activation `4.373` class `word` token ` material`
+  - on the surface so that water cannot soak into the material’s natural pores. Modern materials scientists have formulated specialty
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `503` activation `4.137` class `style_function_word` token ` can`
+  - carbon and silicon are among the more common elements that can be considered ceramic. Artificial ceramics are made by forming
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `511` activation `4.078` class `word` token ` made`
+  - elements that can be considered ceramic. Artificial ceramics are made by forming the item you want from clay or a
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `528` activation `4.074` class `word` token ` materials`
+  - from clay or a conglomeration of specialty materials and then heating (firing) it until the
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `489` activation `3.955` class `word` token ` their`
+  - elements on the periodic table can be considered ceramic on their own. Pure carbon and silicon are among the more
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `571` activation `3.913` class `word` token ` have`
+  - into the material’s natural pores. Modern materials scientists have formulated specialty ceramics, but at their most basic,
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `531` activation `3.890` class `word` token ` heating`
+  - a conglomeration of specialty materials and then heating (firing) it until the material will no
+- `L24:185` `740a4c7da6eff6ed2777c3e0fc7280219ba924bb690dc24250300bb3a5a3fe6c@turn_01@human` token `555` activation `3.884` class `word` token ` surface`
+  - water. Many ceramic items are also glazed on the surface so that water cannot soak into the material’s natural
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `525` activation `4.809` class `word` token ` offering`
+  - than traditional methods of power production. This makes our offering cheaper than anything you can find out there. There
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `510` activation `3.897` class `word` token ` has`
+  - is generated purely from Pikachu power, and as such has a lower infrastructure layout than traditional methods of power production
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `509` activation `3.450` class `word` token ` such`
+  - energy is generated purely from Pikachu power, and as such has a lower infrastructure layout than traditional methods of power
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `488` activation `3.425` class `word` token ` technology`
+  - have introduced Thundervolt, our patented generator technology for producing cheap, clean energy from Pikachu. Our
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `522` activation `3.402` class `style_function_word` token ` This`
+  - lower infrastructure layout than traditional methods of power production. This makes our offering cheaper than anything you can find out
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `547` activation `3.331` class `word` token ` footprint`
+  - also zero emissions to speak of, making your carbon footprint lower, with the happy side effect that the carbon
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `500` activation `3.325` class `word` token ` is`
+  - producing cheap, clean energy from Pikachu. Our energy is generated purely from Pikachu power, and as such has
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `477` activation `3.314` class `word` token ` we`
+  - across sectors. It is with that in mind that we have introduced Thundervolt, our patented generator
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `478` activation `3.292` class `word` token ` have`
+  - sectors. It is with that in mind that we have introduced Thundervolt, our patented generator technology
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `543` activation `3.230` class `punctuation` token `,`
+  - there. There are also zero emissions to speak of, making your carbon footprint lower, with the happy side
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `537` activation `3.183` class `style_function_word` token ` also`
+  - than anything you can find out there. There are also zero emissions to speak of, making your carbon footprint
+- `L24:185` `2f0200cac20df413798b7bcdfc54cc481cbbfdc32a83669e236a0c5028effcef@turn_01@human` token `506` activation `3.168` class `punctuation` token `,`
+  - Pikachu. Our energy is generated purely from Pikachu power, and as such has a lower infrastructure layout than traditional

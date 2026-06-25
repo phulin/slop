@@ -1,0 +1,711 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1660` | `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` | `human` | 112 | `207.13` | `6.64` | word:88|punctuation:11|sentence_boundary:6|line_break:3|style_function_word:2|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:1660` | `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` | `glm-5.2` | 30 | `41.44` | `5.97` | word:25|punctuation:3|sentence_boundary:2 |
+| `L19:1660` | `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` | `human` | 54 | `83.42` | `5.87` | word:41|sentence_boundary:5|punctuation:4|expanded_negation_word:4 |
+| `L19:1660` | `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 18 | `23.12` | `5.69` | word:15|punctuation:2|style_function_word:1 |
+| `L19:1660` | `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` | `human` | 78 | `117.11` | `5.84` | word:53|punctuation:13|sentence_boundary:5|line_break:4|style_function_word:2|expanded_negation_word:1 |
+| `L19:1660` | `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 91 | `144.49` | `5.76` | word:73|punctuation:11|style_function_word:3|sentence_boundary:2|line_break:2 |
+| `L19:1660` | `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 64 | `84.83` | `5.80` | word:51|punctuation:10|sentence_boundary:2|discourse_marker_word:1 |
+| `L19:1660` | `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` | `human` | 29 | `52.39` | `6.17` | word:25|punctuation:4 |
+| `L19:1660` | `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` | `human` | 46 | `67.36` | `5.69` | word:39|punctuation:3|sentence_boundary:2|style_function_word:2 |
+| `L19:1660` | `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` | `human` | 65 | `82.09` | `6.81` | word:57|punctuation:7|style_function_word:1 |
+| `L19:1660` | `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` | `gpt-5.5` | 47 | `60.88` | `5.89` | word:43|discourse_marker_word:2|punctuation:2 |
+| `L19:1660` | `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` | `gpt-5.5` | 92 | `127.02` | `5.98` | word:78|punctuation:13|discourse_marker_word:1 |
+| `L19:1660` | `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 32 | `39.43` | `6.20` | word:26|punctuation:5|sentence_boundary:1 |
+| `L19:1660` | `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 56 | `87.35` | `5.86` | word:48|punctuation:8 |
+| `L24:3524` | `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` | `human` | 91 | `289.53` | `11.45` | word:74|punctuation:7|sentence_boundary:6|line_break:3|expanded_negation_word:1 |
+| `L24:3524` | `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` | `glm-5.2` | 35 | `77.30` | `10.87` | word:29|punctuation:4|sentence_boundary:2 |
+| `L24:3524` | `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` | `human` | 46 | `132.44` | `9.76` | word:36|sentence_boundary:5|punctuation:4|expanded_negation_word:1 |
+| `L24:3524` | `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 29 | `58.48` | `12.01` | word:26|punctuation:2|style_function_word:1 |
+| `L24:3524` | `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` | `human` | 91 | `200.14` | `10.89` | word:59|punctuation:22|sentence_boundary:5|line_break:3|discourse_marker_word:1|style_function_word:1 |
+| `L24:3524` | `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 68 | `193.78` | `11.95` | word:53|punctuation:11|sentence_boundary:2|line_break:2 |
+| `L24:3524` | `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 59 | `139.37` | `10.81` | word:46|punctuation:9|sentence_boundary:3|discourse_marker_word:1 |
+| `L24:3524` | `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` | `human` | 51 | `110.48` | `11.98` | word:43|punctuation:5|sentence_boundary:3 |
+| `L24:3524` | `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` | `human` | 49 | `117.65` | `10.75` | word:42|punctuation:5|sentence_boundary:2 |
+| `L24:3524` | `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` | `human` | 71 | `156.56` | `14.46` | word:59|punctuation:11|style_function_word:1 |
+| `L24:3524` | `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` | `gpt-5.5` | 67 | `139.09` | `12.73` | word:62|punctuation:4|style_function_word:1 |
+| `L24:3524` | `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` | `gpt-5.5` | 98 | `223.10` | `11.12` | word:81|punctuation:16|discourse_marker_word:1 |
+| `L24:3524` | `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 37 | `78.94` | `13.04` | word:30|punctuation:6|sentence_boundary:1 |
+| `L24:3524` | `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 58 | `154.05` | `11.60` | word:50|punctuation:8 |
+
+## Top Tokens
+
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `589` activation `6.642` class `punctuation` token `"`
+  - . This style can be casual and "messy" or sleeked into a neater bun. •
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `500` activation `5.814` class `punctuation` token `,`
+  - not bun"), at the nape of your neck, or even on one side of your head. •
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `588` activation `5.789` class `word` token `y`
+  - clip. This style can be casual and "messy" or sleeked into a neater bun.
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `484` activation `5.353` class `word` token ` head`
+  - bun. Wear the bun at the top of your head (a "topknot bun"), at the
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `470` activation `5.299` class `word` token ` bun`
+  - : This can be a "messy," casual bun or a neat bun. Wear the bun at the
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `633` activation `5.228` class `word` token ` loose`
+  - secure the twist with hairpins. Leave the front loose for bangs or not.
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `431` activation `4.924` class `word` token ` head`
+  - wear your ponytail high at the top of your head or low at the nape of your neck.
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `492` activation `4.849` class `punctuation` token `"),`
+  - of your head (a "topknot bun"), at the nape of your neck, or even
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `447` activation `4.793` class `word` token ` loose`
+  - ape of your neck. And you can keep it loose, braid it, or twist it. •
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `636` activation `4.464` class `word` token `s`
+  - with hairpins. Leave the front loose for bangs or not.
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `522` activation `4.312` class `word` token ` back`
+  - raids: Wear one long braid down your back or pigtail braids on either side of your
+- `L19:1660` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `481` activation `4.294` class `word` token ` top`
+  - or a neat bun. Wear the bun at the top of your head (a "topknot bun
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `613` activation `5.965` class `punctuation` token `,`
+  - you survive until spring, becoming a legendary Evergreen, or will your grip finally fail, triggering a beautifully
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `607` activation `3.900` class `punctuation` token `,`
+  - of mortality and resistance. Will you survive until spring, becoming a legendary Evergreen, or will your grip
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `612` activation `3.687` class `word` token `green`
+  - Will you survive until spring, becoming a legendary Evergreen, or will your grip finally fail, triggering a
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `606` activation `2.884` class `word` token ` spring`
+  - themes of mortality and resistance. Will you survive until spring, becoming a legendary Evergreen, or will your
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `583` activation `1.972` class `word` token ` debris`
+  - and territorial spiders. Defeating them requires dropping heavy debris or baiting them into the wind. The narrative
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `572` activation `1.774` class `word` token `ars`
+  - . You face natural hazards like foraging caterpillars and territorial spiders. Defeating them requires dropping heavy
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `636` activation `1.580` class `word` token ` patch`
+  - where you must steer your falling descent toward a fertile patch of soil?
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `604` activation `1.421` class `word` token ` survive`
+  - subtly explores themes of mortality and resistance. Will you survive until spring, becoming a legendary Evergreen, or
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `383` activation `1.413` class `word` token ` gracefully`
+  - your brethren have peacefully accepted their seasonal demise, drifting gracefully to the forest floor, you refuse to go quietly
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `387` activation `1.213` class `word` token ` floor`
+  - accepted their seasonal demise, drifting gracefully to the forest floor, you refuse to go quietly into the long winter
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `638` activation `1.139` class `word` token ` soil`
+  - must steer your falling descent toward a fertile patch of soil?
+- `L19:1660` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `430` activation `1.091` class `word` token ` run`
+  - -based puzzle platformer emphasizing delicate endurance. You cannot run or jump; instead, you must strategically grip and
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `527` activation `5.865` class `punctuation` token `,`
+  - the raging thunder, the growling of the beasts, or the fact that I was entirely alone. As
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `520` activation `5.548` class `punctuation` token `,`
+  - frightening to me - the sound of the raging thunder, the growling of the beasts, or the fact
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `526` activation `3.775` class `word` token ` beasts`
+  - of the raging thunder, the growling of the beasts, or the fact that I was entirely alone.
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `519` activation `3.771` class `word` token ` thunder`
+  - more frightening to me - the sound of the raging thunder, the growling of the beasts, or the
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `573` activation `3.453` class `sentence_boundary` token `?`
+  - . Had I been cursed by a witch or wizard? Was I in a deep sleep or trance? I
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `515` activation `3.226` class `word` token ` sound`
+  - 't know what was more frightening to me - the sound of the raging thunder, the growling of the
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `623` activation `2.696` class `sentence_boundary` token `.`
+  - Maybe there was a kind stranger I could befriend. Someone here had to know of Aldenland,
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `618` activation `2.620` class `word` token ` stranger`
+  - was too far gone. Maybe there was a kind stranger I could befriend. Someone here had to know
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `582` activation `2.618` class `sentence_boundary` token `?`
+  - wizard? Was I in a deep sleep or trance? I flinched as my bare feet walked over
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `622` activation `2.515` class `word` token `friend`
+  - . Maybe there was a kind stranger I could befriend. Someone here had to know of Aldenland
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `570` activation `2.460` class `word` token ` witch`
+  - at this place. Had I been cursed by a witch or wizard? Was I in a deep sleep or
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `418` activation `2.446` class `word` token ` where`
+  - a strange, frightening place. I had no idea where I was and I knew no one and nothing,
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `428` activation `5.685` class `word` token ` air`
+  - ably, unsure if the chill came from the damp air or the sheer terror gripping my soul. The silence
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `424` activation `2.482` class `word` token ` came`
+  - shivering uncontrollably, unsure if the chill came from the damp air or the sheer terror gripping my
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `427` activation `1.641` class `word` token ` damp`
+  - rollably, unsure if the chill came from the damp air or the sheer terror gripping my soul. The
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `506` activation `1.602` class `word` token ` sprites`
+  - were not the benevolent glances of the forest sprites I knew, but hungry, predatory glares that
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `425` activation `1.480` class `word` token ` from`
+  - ivering uncontrollably, unsure if the chill came from the damp air or the sheer terror gripping my soul
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `423` activation `1.469` class `word` token ` chill`
+  - , shivering uncontrollably, unsure if the chill came from the damp air or the sheer terror gripping
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `541` activation `1.095` class `word` token ` mud`
+  - unk through the mist, their fur matted with mud and their claws scraping against the stone. Strangers
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `421` activation `1.051` class `style_function_word` token ` if`
+  - small frame, shivering uncontrollably, unsure if the chill came from the damp air or the sheer
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `505` activation `0.856` class `word` token ` forest`
+  - They were not the benevolent glances of the forest sprites I knew, but hungry, predatory glares
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `539` activation `0.765` class `word` token `atted`
+  - , slunk through the mist, their fur matted with mud and their claws scraping against the stone.
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `426` activation `0.709` class `word` token ` the`
+  - uncontrollably, unsure if the chill came from the damp air or the sheer terror gripping my soul.
+- `L19:1660` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `500` activation `0.705` class `word` token `volent`
+  - me from the fog. They were not the benevolent glances of the forest sprites I knew, but
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `359` activation `5.838` class `punctuation` token `,`
+  - of liquor- either on the breath of my father, whose stomach I'd stare at for proof of life
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `370` activation `5.726` class `punctuation` token `,`
+  - whose stomach I'd stare at for proof of life, or worked in deep through the threads of our carpet
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `355` activation `4.954` class `word` token ` breath`
+  - greeted by the smell of liquor- either on the breath of my father, whose stomach I'd stare at
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `94` activation `4.908` class `punctuation` token `,`
+  - . And maybe he was too young, or foolish, or naive- but when I came up to him
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `358` activation `4.341` class `word` token ` father`
+  - smell of liquor- either on the breath of my father, whose stomach I'd stare at for proof of
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `157` activation `3.384` class `punctuation` token `,`
+  - head. Looking back, maybe I was too young, foolish, or naive too. But all the same
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `93` activation `3.229` class `word` token ` foolish`
+  - place. And maybe he was too young, or foolish, or naive- but when I came up to
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `158` activation `2.810` class `word` token ` foolish`
+  - . Looking back, maybe I was too young, foolish, or naive too. But all the same,
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `356` activation `2.674` class `word` token ` of`
+  - by the smell of liquor- either on the breath of my father, whose stomach I'd stare at for
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `353` activation `2.626` class `word` token ` on`
+  - to be greeted by the smell of liquor- either on the breath of my father, whose stomach I'd
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `352` activation `2.516` class `word` token ` either`
+  - only to be greeted by the smell of liquor- either on the breath of my father, whose stomach I
+- `L19:1660` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `218` activation `2.448` class `word` token ` round`
+  - box under my bed. And each bill or copper round that made its way from my fingers into the pile
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `609` activation `5.761` class `word` token ` performance`
+  - spaces. Whether your goal is helping elite athletes maximize performance, rehabilitating patients after surgery, or promoting community
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `616` activation `5.530` class `punctuation` token `,`
+  - elite athletes maximize performance, rehabilitating patients after surgery, or promoting community health, a kinesiology degree
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `607` activation `4.963` class `word` token ` athletes`
+  - ergonomic workspaces. Whether your goal is helping elite athletes maximize performance, rehabilitating patients after surgery, or
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `521` activation `4.322` class `word` token ` specialists`
+  - Others focus on clinical rehabilitation, working as cardiac rehabilitation specialists or exercise physiologists who design recovery programs for
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `589` activation `4.144` class `punctuation` token `,`
+  - sports management, coach at the collegiate or professional level, or enter the corporate world to design ergonomic workspaces
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `610` activation `3.878` class `punctuation` token `,`
+  - . Whether your goal is helping elite athletes maximize performance, rehabilitating patients after surgery, or promoting community health
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `613` activation `3.630` class `word` token ` patients`
+  - goal is helping elite athletes maximize performance, rehabilitating patients after surgery, or promoting community health, a k
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `557` activation `3.598` class `word` token ` therapists`
+  - studies. Many graduates pursue advanced degrees to become physical therapists (PT), occupational therapists (OT), chiropractors
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `615` activation `3.419` class `word` token ` surgery`
+  - helping elite athletes maximize performance, rehabilitating patients after surgery, or promoting community health, a kinesiology
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `580` activation `3.383` class `word` token ` management`
+  - athletic trainers. Additionally, you can work in sports management, coach at the collegiate or professional level, or
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `565` activation `3.150` class `punctuation` token `),`
+  - become physical therapists (PT), occupational therapists (OT), chiropractors, or athletic trainers. Additionally, you
+- `L19:1660` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `567` activation `3.138` class `word` token `actors`
+  - therapists (PT), occupational therapists (OT), chiropractors, or athletic trainers. Additionally, you can work
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `227` activation `5.800` class `word` token ` story`
+  - toolkit. Whether you are penning your first short story or polishing a fantasy epic, here are five essential
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `495` activation `3.733` class `punctuation` token `,`
+  - ’s a chilling gust of wind before a villain enters, or a broken watch hinting at running out of
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `341` activation `3.603` class `punctuation` token `,`
+  - Juxtaposition places two directly opposing ideas, characters, or places side-by-side. Think of a pristine
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `340` activation `3.189` class `word` token ` characters`
+  - Juxtaposition places two directly opposing ideas, characters, or places side-by-side. Think of a
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `494` activation `2.793` class `word` token ` enters`
+  - It’s a chilling gust of wind before a villain enters, or a broken watch hinting at running out
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `490` activation `2.698` class `word` token ` wind`
+  - of dropping breadcrumbs. It’s a chilling gust of wind before a villain enters, or a broken watch hint
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `225` activation `2.562` class `discourse_marker_word` token ` first`
+  - your literary toolkit. Whether you are penning your first short story or polishing a fantasy epic, here are
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `438` activation `2.297` class `word` token `r`
+  - . Let your leaves rustle, your engines purr, and your floorboards groan. Suddenly,
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `433` activation `2.278` class `word` token `le`
+  - —is your auditory secret weapon. Let your leaves rustle, your engines purr, and your floorboards
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `219` activation `2.109` class `word` token `Whether`
+  - masterpiece? The secret lies in your literary toolkit. Whether you are penning your first short story or polishing
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `493` activation `1.965` class `word` token ` villain`
+  - . It’s a chilling gust of wind before a villain enters, or a broken watch hinting at running
+- `L19:1660` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `364` activation `1.891` class `sentence_boundary` token `.`
+  - blooming in a cracked, soot-covered sidewalk. By contrasting the delicate with the gritty, you amplify
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `545` activation `6.166` class `word` token ` direction`
+  - The Temper and try to either steer her in another direction, distract her, or help her through the feelings
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `549` activation `5.421` class `punctuation` token `,`
+  - to either steer her in another direction, distract her, or help her through the feelings. She has good
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `546` activation `4.203` class `punctuation` token `,`
+  - Temper and try to either steer her in another direction, distract her, or help her through the feelings.
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `548` activation `3.817` class `word` token ` her`
+  - try to either steer her in another direction, distract her, or help her through the feelings. She has
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `542` activation `2.751` class `word` token ` her`
+  - for signs of The Temper and try to either steer her in another direction, distract her, or help her
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `547` activation `2.493` class `word` token ` distract`
+  - and try to either steer her in another direction, distract her, or help her through the feelings. She
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `585` activation `2.392` class `word` token ` home`
+  - time with them, but she is always busy at home. To her, it seems like her teenage years
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `541` activation `2.304` class `word` token ` steer`
+  - out for signs of The Temper and try to either steer her in another direction, distract her, or help
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `540` activation `2.174` class `word` token ` either`
+  - eye out for signs of The Temper and try to either steer her in another direction, distract her, or
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `543` activation `1.887` class `word` token ` in`
+  - signs of The Temper and try to either steer her in another direction, distract her, or help her through
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `583` activation `1.845` class `word` token ` busy`
+  - spend more time with them, but she is always busy at home. To her, it seems like her
+- `L19:1660` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `544` activation `1.524` class `word` token ` another`
+  - of The Temper and try to either steer her in another direction, distract her, or help her through the
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `526` activation `5.689` class `punctuation` token `,`
+  - a pretty flower, a funny joke on social media, or a well-intended message from a friend,
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `525` activation `4.968` class `word` token ` media`
+  - be a pretty flower, a funny joke on social media, or a well-intended message from a friend
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `522` activation `4.182` class `word` token ` joke`
+  - . Whether it be a pretty flower, a funny joke on social media, or a well-intended message
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `518` activation `4.116` class `word` token ` flower`
+  - light you can find. Whether it be a pretty flower, a funny joke on social media, or a
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `513` activation `3.395` class `word` token ` Whether`
+  - the smallest flecks of light you can find. Whether it be a pretty flower, a funny joke on
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `519` activation `3.189` class `punctuation` token `,`
+  - you can find. Whether it be a pretty flower, a funny joke on social media, or a well
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `571` activation `2.740` class `word` token ` week`
+  - bad day. It is okay to have a bad week. It is okay to have a bad month.
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `562` activation `2.042` class `word` token ` day`
+  - your future. It is okay to have a bad day. It is okay to have a bad week.
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `580` activation `1.929` class `word` token ` month`
+  - bad week. It is okay to have a bad month. It is okay to have a bad year.
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `365` activation `1.745` class `word` token ` time`
+  - If you are going through a rough time right now, remember that you are not alone.
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `515` activation `1.709` class `word` token ` be`
+  - flecks of light you can find. Whether it be a pretty flower, a funny joke on social media
+- `L19:1660` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `602` activation `1.536` class `word` token ` life`
+  - things do not mean that you will have a bad life. Take time to care for yourself and work to
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `550` activation `6.813` class `word` token ` it`
+  - dish might be polarizing (you will either love it or hate it) it is definitely a Native Hawaiian
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `549` activation `5.865` class `word` token ` love`
+  - particular dish might be polarizing (you will either love it or hate it) it is definitely a Native
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `622` activation `5.560` class `word` token ` immediately`
+  - until it has a yogurt-like consistency and served either immediately or a day or two later when it has fermented
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `548` activation `3.284` class `word` token ` either`
+  - this particular dish might be polarizing (you will either love it or hate it) it is definitely a
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `435` activation `2.817` class `punctuation` token `)`
+  - ice (all the flavors mixed into one snowcone) or shaved ice with ice cream at the bottom of
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `266` activation `2.136` class `word` token ` salad`
+  - side dishes such as white rice, macaroni salad, and lomi salmon (diced tomato,
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `621` activation `2.080` class `word` token ` either`
+  - sugar until it has a yogurt-like consistency and served either immediately or a day or two later when it has
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `261` activation `1.743` class `word` token ` rice`
+  - that is usually served with side dishes such as white rice, macaroni salad, and lomi salmon
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `547` activation `1.539` class `style_function_word` token ` will`
+  - While this particular dish might be polarizing (you will either love it or hate it) it is definitely
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `406` activation `1.511` class `word` token ` cherry`
+  - serve shaved ice have numerous flavors such as vanilla, cherry, lemon, strawberry, and even cola. If
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `404` activation `1.447` class `word` token ` vanilla`
+  - Hawaii that serve shaved ice have numerous flavors such as vanilla, cherry, lemon, strawberry, and even cola
+- `L19:1660` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `362` activation `1.382` class `word` token ` shave`
+  - meal. Shaved ice - Also known as ice shave in certain parts of Hawaii, shaved ice is a
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `297` activation `5.887` class `word` token ` member`
+  - from an address suspected to belong to either a team member or investor. The tokens had reportedly been inactive for
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `296` activation `3.632` class `word` token ` team`
+  - transferred from an address suspected to belong to either a team member or investor. The tokens had reportedly been inactive
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `592` activation `3.184` class `word` token ` compromised`
+  - ichain. If a bridge’s backing assets are compromised, wrapped tokens on other chains can quickly lose value
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `294` activation `2.764` class `word` token ` either`
+  - — was transferred from an address suspected to belong to either a team member or investor. The tokens had reportedly
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `360` activation `2.206` class `word` token ` arrested`
+  - fuel rumors that Multichain team members had been arrested by Chinese authorities and that a cold wallet containing roughly
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `602` activation `1.630` class `word` token ` value`
+  - compromised, wrapped tokens on other chains can quickly lose value. Bridges collectively hold around $10 billion, according
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `363` activation `1.614` class `word` token ` authorities`
+  - Multichain team members had been arrested by Chinese authorities and that a cold wallet containing roughly $1.
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `327` activation `1.561` class `word` token ` sold`
+  - exchange Gate.io, prompting speculation that they could be sold. The situation escalated after a Chinese-language account amplified
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `108` activation `1.502` class `word` token `DC`
+  - another — for example, allowing tokens such as USDC or WETH to exist on chains where they are
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `357` activation `1.487` class `word` token ` members`
+  - automated translation helped fuel rumors that Multichain team members had been arrested by Chinese authorities and that a cold
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `295` activation `1.478` class `word` token ` a`
+  - was transferred from an address suspected to belong to either a team member or investor. The tokens had reportedly been
+- `L19:1660` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `638` activation `1.466` class `word` token ` hacks`
+  - most sensitive sectors — and a frequent target for major hacks.
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `145` activation `5.980` class `punctuation` token `,`
+  - you’re traveling for business, planning a weekend escape, or extending a work trip into a mini-vac
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `139` activation `5.448` class `word` token ` business`
+  - to Your Itinerary Whether you’re traveling for business, planning a weekend escape, or extending a work
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `144` activation `5.000` class `word` token ` escape`
+  - Whether you’re traveling for business, planning a weekend escape, or extending a work trip into a mini-v
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `576` activation `3.714` class `word` token ` conference`
+  - meal. It’s a calming retreat after a busy conference or road trip. Bend, Oregon B
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `386` activation `3.711` class `word` token ` getaway`
+  - seasonal festivals. It’s especially appealing for a romantic getaway or a relaxed stop after meetings in central Washington.
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `134` activation `3.246` class `word` token `Whether`
+  - Pacific Northwest Stops Worth Adding to Your Itinerary Whether you’re traveling for business, planning a weekend escape
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `626` activation `2.860` class `punctuation` token `,`
+  - destination year-round. Whether you enjoy hiking, skiing, or simply relaxing, Bend invites you to stay a
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `385` activation `2.796` class `word` token ` romantic`
+  - during seasonal festivals. It’s especially appealing for a romantic getaway or a relaxed stop after meetings in central Washington
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `137` activation `2.640` class `word` token ` traveling`
+  - Worth Adding to Your Itinerary Whether you’re traveling for business, planning a weekend escape, or extending
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `625` activation `2.522` class `word` token ` skiing`
+  - rewarding destination year-round. Whether you enjoy hiking, skiing, or simply relaxing, Bend invites you to stay
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `623` activation `2.497` class `word` token ` hiking`
+  - it a rewarding destination year-round. Whether you enjoy hiking, skiing, or simply relaxing, Bend invites you
+- `L19:1660` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `418` activation `2.300` class `word` token ` Books`
+  - and full of personality. Explore Powell’s City of Books, sample food carts, wander through the International Rose
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `445` activation `6.205` class `word` token ` contract`
+  - are guiding a high school coder writing their first smart contract or helping a major gaming studio migrate to our chain
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `440` activation `4.526` class `word` token ` coder`
+  - creator community. Whether you are guiding a high school coder writing their first smart contract or helping a major gaming
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `492` activation `1.593` class `word` token ` videos`
+  - burning questions, and write easy-to-follow tutorials, videos, and documentation. Inspire at Hackathons
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `433` activation `1.526` class `word` token ` Whether`
+  - ’s cutting-edge technology and the global creator community. Whether you are guiding a high school coder writing their first
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `493` activation `1.285` class `punctuation` token `,`
+  - questions, and write easy-to-follow tutorials, videos, and documentation. Inspire at Hackathons:
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `436` activation `1.279` class `word` token ` guiding`
+  - technology and the global creator community. Whether you are guiding a high school coder writing their first smart contract or
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `514` activation `1.171` class `punctuation` token `,`
+  - Travel the world to major tech conferences, host workshops, and hype up developers at global hackathons.
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `510` activation `1.154` class `word` token ` conferences`
+  - Hackathons: Travel the world to major tech conferences, host workshops, and hype up developers at global
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `435` activation `1.140` class `word` token ` are`
+  - -edge technology and the global creator community. Whether you are guiding a high school coder writing their first smart contract
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `434` activation `1.134` class `word` token ` you`
+  - cutting-edge technology and the global creator community. Whether you are guiding a high school coder writing their first smart
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `439` activation `1.106` class `word` token ` school`
+  - global creator community. Whether you are guiding a high school coder writing their first smart contract or helping a major
+- `L19:1660` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `513` activation `1.079` class `word` token ` workshops`
+  - : Travel the world to major tech conferences, host workshops, and hype up developers at global hackathons
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `316` activation `5.860` class `word` token ` table`
+  - a thousand-piece jigsaw sprawled across the dining table, a challenging Sunday crossword, or a digital Sudoku
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `322` activation `4.972` class `punctuation` token `,`
+  - led across the dining table, a challenging Sunday crossword, or a digital Sudoku grid, puzzles offer far more
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `473` activation `4.417` class `word` token ` together`
+  - of active meditation. When you focus on fitting pieces together or deciphering a clue, your brain enters a
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `317` activation `3.515` class `punctuation` token `,`
+  - thousand-piece jigsaw sprawled across the dining table, a challenging Sunday crossword, or a digital Sudoku grid
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `577` activation `3.428` class `word` token ` member`
+  - . Working on a puzzle with a partner, family member, or friend encourages communication, teamwork, and shared
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `578` activation `3.144` class `punctuation` token `,`
+  - Working on a puzzle with a partner, family member, or friend encourages communication, teamwork, and shared triumph
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `574` activation `3.068` class `word` token ` partner`
+  - fantastic collaborative activities. Working on a puzzle with a partner, family member, or friend encourages communication, teamwork
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `321` activation `3.053` class `word` token ` crossword`
+  - sprawled across the dining table, a challenging Sunday crossword, or a digital Sudoku grid, puzzles offer far
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `310` activation `3.030` class `word` token `igsaw`
+  - working puzzles. Whether it is a thousand-piece jigsaw sprawled across the dining table, a challenging Sunday
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `576` activation `3.010` class `word` token ` family`
+  - activities. Working on a puzzle with a partner, family member, or friend encourages communication, teamwork, and
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `281` activation `2.778` class `word` token ` scrolling`
+  - can be challenging. While many turn to mindless scrolling to unwind, an increasing number of adults are redis
+- `L19:1660` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `387` activation `2.534` class `word` token ` piece`
+  - simultaneously. When you search for a specific jigsaw piece or solve a word riddle, you are utilizing
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `589` activation `11.453` class `punctuation` token `"`
+  - . This style can be casual and "messy" or sleeked into a neater bun. •
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `484` activation `10.205` class `word` token ` head`
+  - bun. Wear the bun at the top of your head (a "topknot bun"), at the
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `431` activation `9.639` class `word` token ` head`
+  - wear your ponytail high at the top of your head or low at the nape of your neck.
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `522` activation `8.982` class `word` token ` back`
+  - raids: Wear one long braid down your back or pigtail braids on either side of your
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `500` activation `8.571` class `punctuation` token `,`
+  - not bun"), at the nape of your neck, or even on one side of your head. •
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `470` activation `8.569` class `word` token ` bun`
+  - : This can be a "messy," casual bun or a neat bun. Wear the bun at the
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `636` activation `8.019` class `word` token `s`
+  - with hairpins. Leave the front loose for bangs or not.
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `584` activation `7.234` class `word` token ` casual`
+  - it with the hair clip. This style can be casual and "messy" or sleeked into a
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `633` activation `7.179` class `word` token ` loose`
+  - secure the twist with hairpins. Leave the front loose for bangs or not.
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `425` activation `7.055` class `word` token ` high`
+  - and easiest style. You can wear your ponytail high at the top of your head or low at the
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `447` activation `6.835` class `word` token ` loose`
+  - ape of your neck. And you can keep it loose, braid it, or twist it. •
+- `L24:3524` `4924c0cb6daa0f5c601a72d7fd776e0f764a951c237cc7edf6c2363a9acfb346@turn_01@human` token `481` activation `6.762` class `word` token ` top`
+  - or a neat bun. Wear the bun at the top of your head (a "topknot bun
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `613` activation `10.870` class `punctuation` token `,`
+  - you survive until spring, becoming a legendary Evergreen, or will your grip finally fail, triggering a beautifully
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `607` activation `6.775` class `punctuation` token `,`
+  - of mortality and resistance. Will you survive until spring, becoming a legendary Evergreen, or will your grip
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `612` activation `4.942` class `word` token `green`
+  - Will you survive until spring, becoming a legendary Evergreen, or will your grip finally fail, triggering a
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `606` activation `4.690` class `word` token ` spring`
+  - themes of mortality and resistance. Will you survive until spring, becoming a legendary Evergreen, or will your
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `430` activation `4.011` class `word` token ` run`
+  - -based puzzle platformer emphasizing delicate endurance. You cannot run or jump; instead, you must strategically grip and
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `583` activation `3.427` class `word` token ` debris`
+  - and territorial spiders. Defeating them requires dropping heavy debris or baiting them into the wind. The narrative
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `572` activation `3.288` class `word` token `ars`
+  - . You face natural hazards like foraging caterpillars and territorial spiders. Defeating them requires dropping heavy
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `636` activation `2.349` class `word` token ` patch`
+  - where you must steer your falling descent toward a fertile patch of soil?
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `387` activation `2.281` class `word` token ` floor`
+  - accepted their seasonal demise, drifting gracefully to the forest floor, you refuse to go quietly into the long winter
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `494` activation `2.140` class `word` token ` sun`
+  - you away. Each day brings changing weather. Gentle sun lets you photosynthesize for energy, while aggressive
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `383` activation `2.021` class `word` token ` gracefully`
+  - your brethren have peacefully accepted their seasonal demise, drifting gracefully to the forest floor, you refuse to go quietly
+- `L24:3524` `93122e6900d08c4d5a002b125d2560b45d7c5576ef6cd19abebf64e7d0112f7f@turn_01@glm-5.2` token `604` activation `1.972` class `word` token ` survive`
+  - subtly explores themes of mortality and resistance. Will you survive until spring, becoming a legendary Evergreen, or
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `527` activation `9.763` class `punctuation` token `,`
+  - the raging thunder, the growling of the beasts, or the fact that I was entirely alone. As
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `520` activation `9.303` class `punctuation` token `,`
+  - frightening to me - the sound of the raging thunder, the growling of the beasts, or the fact
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `420` activation `6.716` class `expanded_negation_word` token ` was`
+  - , frightening place. I had no idea where I was and I knew no one and nothing, except for
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `519` activation `6.391` class `word` token ` thunder`
+  - more frightening to me - the sound of the raging thunder, the growling of the beasts, or the
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `526` activation `5.233` class `word` token ` beasts`
+  - of the raging thunder, the growling of the beasts, or the fact that I was entirely alone.
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `618` activation `4.892` class `word` token ` stranger`
+  - was too far gone. Maybe there was a kind stranger I could befriend. Someone here had to know
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `515` activation `4.833` class `word` token ` sound`
+  - 't know what was more frightening to me - the sound of the raging thunder, the growling of the
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `570` activation `4.710` class `word` token ` witch`
+  - at this place. Had I been cursed by a witch or wizard? Was I in a deep sleep or
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `573` activation `4.686` class `sentence_boundary` token `?`
+  - . Had I been cursed by a witch or wizard? Was I in a deep sleep or trance? I
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `567` activation `3.983` class `word` token ` cursed`
+  - I had arrived at this place. Had I been cursed by a witch or wizard? Was I in a
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `622` activation `3.917` class `word` token `friend`
+  - . Maybe there was a kind stranger I could befriend. Someone here had to know of Aldenland
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@human` token `582` activation `3.844` class `sentence_boundary` token `?`
+  - wizard? Was I in a deep sleep or trance? I flinched as my bare feet walked over
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `428` activation `12.009` class `word` token ` air`
+  - ably, unsure if the chill came from the damp air or the sheer terror gripping my soul. The silence
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `506` activation `3.422` class `word` token ` sprites`
+  - were not the benevolent glances of the forest sprites I knew, but hungry, predatory glares that
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `508` activation `2.620` class `word` token ` knew`
+  - the benevolent glances of the forest sprites I knew, but hungry, predatory glares that made my
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `541` activation `2.412` class `word` token ` mud`
+  - unk through the mist, their fur matted with mud and their claws scraping against the stone. Strangers
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `427` activation `2.333` class `word` token ` damp`
+  - rollably, unsure if the chill came from the damp air or the sheer terror gripping my soul. The
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `423` activation `2.224` class `word` token ` chill`
+  - , shivering uncontrollably, unsure if the chill came from the damp air or the sheer terror gripping
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `505` activation `2.169` class `word` token ` forest`
+  - They were not the benevolent glances of the forest sprites I knew, but hungry, predatory glares
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `424` activation `1.996` class `word` token ` came`
+  - shivering uncontrollably, unsure if the chill came from the damp air or the sheer terror gripping my
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `326` activation `1.968` class `word` token ` safety`
+  - heart as I realized I was no longer in the safety of my crystal palace. Above me, the sky
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `220` activation `1.904` class `word` token ` sun`
+  - woke not to the gentle, golden rays of the sun that usually bathed the spires of Alden
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `232` activation `1.803` class `punctuation` token `,`
+  - usually bathed the spires of Aldenland, but to a jarring, violent shudder that
+- `L24:3524` `56399ae44420a08bae519bbaa87794cd0fbe6830e874e8b78ec603bdd5e808c5@turn_01@qwen3.6-35b` token `377` activation `1.738` class `word` token ` recognize`
+  - the darkness, illuminating a landscape I did not recognize—a jagged, desolate expanse of twisted
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `370` activation `10.895` class `punctuation` token `,`
+  - whose stomach I'd stare at for proof of life, or worked in deep through the threads of our carpet
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `359` activation `9.802` class `punctuation` token `,`
+  - of liquor- either on the breath of my father, whose stomach I'd stare at for proof of life
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `94` activation `8.115` class `punctuation` token `,`
+  - . And maybe he was too young, or foolish, or naive- but when I came up to him
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `358` activation `7.897` class `word` token ` father`
+  - smell of liquor- either on the breath of my father, whose stomach I'd stare at for proof of
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `355` activation `7.243` class `word` token ` breath`
+  - greeted by the smell of liquor- either on the breath of my father, whose stomach I'd stare at
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `157` activation `6.275` class `punctuation` token `,`
+  - head. Looking back, maybe I was too young, foolish, or naive too. But all the same
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `159` activation `6.067` class `punctuation` token `,`
+  - Looking back, maybe I was too young, foolish, or naive too. But all the same, I
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `158` activation `5.803` class `word` token ` foolish`
+  - . Looking back, maybe I was too young, foolish, or naive too. But all the same,
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `93` activation `4.475` class `word` token ` foolish`
+  - place. And maybe he was too young, or foolish, or naive- but when I came up to
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `218` activation `3.771` class `word` token ` round`
+  - box under my bed. And each bill or copper round that made its way from my fingers into the pile
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `91` activation `3.520` class `punctuation` token `,`
+  - of this place. And maybe he was too young, or foolish, or naive- but when I came
+- `L24:3524` `560708dfab1060de9c84522ec9d71978122a963de9bed4af93f846c9438c98a3@turn_01@human` token `369` activation `3.399` class `word` token ` life`
+  - , whose stomach I'd stare at for proof of life, or worked in deep through the threads of our
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `609` activation `11.948` class `word` token ` performance`
+  - spaces. Whether your goal is helping elite athletes maximize performance, rehabilitating patients after surgery, or promoting community
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `616` activation `9.318` class `punctuation` token `,`
+  - elite athletes maximize performance, rehabilitating patients after surgery, or promoting community health, a kinesiology degree
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `607` activation `8.411` class `word` token ` athletes`
+  - ergonomic workspaces. Whether your goal is helping elite athletes maximize performance, rehabilitating patients after surgery, or
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `521` activation `8.082` class `word` token ` specialists`
+  - Others focus on clinical rehabilitation, working as cardiac rehabilitation specialists or exercise physiologists who design recovery programs for
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `557` activation `6.949` class `word` token ` therapists`
+  - studies. Many graduates pursue advanced degrees to become physical therapists (PT), occupational therapists (OT), chiropractors
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `589` activation `6.849` class `punctuation` token `,`
+  - sports management, coach at the collegiate or professional level, or enter the corporate world to design ergonomic workspaces
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `498` activation `6.479` class `word` token ` trainers`
+  - iology majors enter the fitness and wellness industry as personal trainers, strength and conditioning coaches, or corporate wellness coordin
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `580` activation `6.265` class `word` token ` management`
+  - athletic trainers. Additionally, you can work in sports management, coach at the collegiate or professional level, or
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `585` activation `5.346` class `word` token ` collegiate`
+  - you can work in sports management, coach at the collegiate or professional level, or enter the corporate world to
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `565` activation `5.053` class `punctuation` token `),`
+  - become physical therapists (PT), occupational therapists (OT), chiropractors, or athletic trainers. Additionally, you
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `615` activation `4.990` class `word` token ` surgery`
+  - helping elite athletes maximize performance, rehabilitating patients after surgery, or promoting community health, a kinesiology
+- `L24:3524` `796c216b7cb8f960c0116c166ebb69b24a97d405a256029383924aa70c021766@turn_01@gemini-3.5-flash` token `599` activation `4.967` class `word` token `spaces`
+  - , or enter the corporate world to design ergonomic workspaces. Whether your goal is helping elite athletes maximize performance
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `227` activation `10.813` class `word` token ` story`
+  - toolkit. Whether you are penning your first short story or polishing a fantasy epic, here are five essential
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `494` activation `6.662` class `word` token ` enters`
+  - It’s a chilling gust of wind before a villain enters, or a broken watch hinting at running out
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `341` activation `6.116` class `punctuation` token `,`
+  - Juxtaposition places two directly opposing ideas, characters, or places side-by-side. Think of a pristine
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `495` activation `5.345` class `punctuation` token `,`
+  - ’s a chilling gust of wind before a villain enters, or a broken watch hinting at running out of
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `340` activation `5.176` class `word` token ` characters`
+  - Juxtaposition places two directly opposing ideas, characters, or places side-by-side. Think of a
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `490` activation `4.897` class `word` token ` wind`
+  - of dropping breadcrumbs. It’s a chilling gust of wind before a villain enters, or a broken watch hint
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `433` activation `4.243` class `word` token `le`
+  - —is your auditory secret weapon. Let your leaves rustle, your engines purr, and your floorboards
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `439` activation `3.713` class `punctuation` token `,`
+  - Let your leaves rustle, your engines purr, and your floorboards groan. Suddenly, your
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `493` activation `3.579` class `word` token ` villain`
+  - . It’s a chilling gust of wind before a villain enters, or a broken watch hinting at running
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `438` activation `3.339` class `word` token `r`
+  - . Let your leaves rustle, your engines purr, and your floorboards groan. Suddenly,
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `304` activation `3.199` class `word` token `é`
+  - yarn," you instantly convey confusion without a single cliché. Metaphors bypass the logical brain and speak
+- `L24:3524` `b1bd760c02150375a0567cdd9794702ab2ba7d2854cd3c52fe95b190849b6a45@turn_01@gemini-3.5-flash` token `225` activation `3.149` class `discourse_marker_word` token ` first`
+  - your literary toolkit. Whether you are penning your first short story or polishing a fantasy epic, here are
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `545` activation `11.980` class `word` token ` direction`
+  - The Temper and try to either steer her in another direction, distract her, or help her through the feelings
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `549` activation `9.276` class `punctuation` token `,`
+  - to either steer her in another direction, distract her, or help her through the feelings. She has good
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `585` activation `5.276` class `word` token ` home`
+  - time with them, but she is always busy at home. To her, it seems like her teenage years
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `548` activation `5.043` class `word` token ` her`
+  - try to either steer her in another direction, distract her, or help her through the feelings. She has
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `546` activation `4.827` class `punctuation` token `,`
+  - Temper and try to either steer her in another direction, distract her, or help her through the feelings.
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `542` activation `4.209` class `word` token ` her`
+  - for signs of The Temper and try to either steer her in another direction, distract her, or help her
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `328` activation `2.891` class `word` token ` parties`
+  - support all of them. She often misses out on parties and spending time with friends. At school, everyone
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `583` activation `2.818` class `word` token ` busy`
+  - spend more time with them, but she is always busy at home. To her, it seems like her
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `541` activation `2.782` class `word` token ` steer`
+  - out for signs of The Temper and try to either steer her in another direction, distract her, or help
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `306` activation `2.744` class `word` token ` dinner`
+  - care for her three younger siblings, frequently making them dinner and putting them to bed because her parents work late
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `547` activation `2.700` class `word` token ` distract`
+  - and try to either steer her in another direction, distract her, or help her through the feelings. She
+- `L24:3524` `14e46857c1354df27bd904d22b607bfa8f15d742de16a32f4c60b6aae93e310e@turn_01@human` token `316` activation `2.388` class `word` token ` late`
+  - dinner and putting them to bed because her parents work late to support all of them. She often misses out
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `526` activation `10.750` class `punctuation` token `,`
+  - a pretty flower, a funny joke on social media, or a well-intended message from a friend,
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `525` activation `7.738` class `word` token ` media`
+  - be a pretty flower, a funny joke on social media, or a well-intended message from a friend
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `518` activation `6.542` class `word` token ` flower`
+  - light you can find. Whether it be a pretty flower, a funny joke on social media, or a
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `522` activation `5.608` class `word` token ` joke`
+  - . Whether it be a pretty flower, a funny joke on social media, or a well-intended message
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `571` activation `4.930` class `word` token ` week`
+  - bad day. It is okay to have a bad week. It is okay to have a bad month.
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `519` activation `4.279` class `punctuation` token `,`
+  - you can find. Whether it be a pretty flower, a funny joke on social media, or a well
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `580` activation `4.108` class `word` token ` month`
+  - bad week. It is okay to have a bad month. It is okay to have a bad year.
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `562` activation `3.998` class `word` token ` day`
+  - your future. It is okay to have a bad day. It is okay to have a bad week.
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `535` activation `3.811` class `word` token ` friend`
+  - media, or a well-intended message from a friend, all of these things can serve as tiny sparks
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `602` activation `3.274` class `word` token ` life`
+  - things do not mean that you will have a bad life. Take time to care for yourself and work to
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `365` activation `3.145` class `word` token ` time`
+  - If you are going through a rough time right now, remember that you are not alone.
+- `L24:3524` `da931865d9f8342215bf4388a057f5ff955c2268d9db420d374701f148828ede@turn_01@human` token `513` activation `3.105` class `word` token ` Whether`
+  - the smallest flecks of light you can find. Whether it be a pretty flower, a funny joke on
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `550` activation `14.456` class `word` token ` it`
+  - dish might be polarizing (you will either love it or hate it) it is definitely a Native Hawaiian
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `622` activation `9.654` class `word` token ` immediately`
+  - until it has a yogurt-like consistency and served either immediately or a day or two later when it has fermented
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `549` activation `8.243` class `word` token ` love`
+  - particular dish might be polarizing (you will either love it or hate it) it is definitely a Native
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `625` activation `5.222` class `word` token ` day`
+  - a yogurt-like consistency and served either immediately or a day or two later when it has fermented (some people
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `435` activation `4.601` class `punctuation` token `)`
+  - ice (all the flavors mixed into one snowcone) or shaved ice with ice cream at the bottom of
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `261` activation `3.695` class `word` token ` rice`
+  - that is usually served with side dishes such as white rice, macaroni salad, and lomi salmon
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `266` activation `3.688` class `word` token ` salad`
+  - side dishes such as white rice, macaroni salad, and lomi salmon (diced tomato,
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `548` activation `2.926` class `word` token ` either`
+  - this particular dish might be polarizing (you will either love it or hate it) it is definitely a
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `609` activation `2.840` class `word` token ` milk`
+  - into a paste. The paste is then mixed with milk and sugar until it has a yogurt-like consistency and
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `307` activation `2.636` class `word` token ` pig`
+  - pork that has been seasoned and smoked. A whole pig is placed over a spit and cooked over Kiawe
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `267` activation `2.613` class `punctuation` token `,`
+  - dishes such as white rice, macaroni salad, and lomi salmon (diced tomato, salmon
+- `L24:3524` `38520baa26faeb32398a5e1fc1399bc243dc22eb12fd1a755ecfcffcce681ed8@turn_01@human` token `216` activation `2.596` class `word` token ` pork`
+  - tasty entree is made from a generous portion of pork, along with tiny bits of butterfish, wrapped
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `297` activation `12.734` class `word` token ` member`
+  - from an address suspected to belong to either a team member or investor. The tokens had reportedly been inactive for
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `592` activation `6.527` class `word` token ` compromised`
+  - ichain. If a bridge’s backing assets are compromised, wrapped tokens on other chains can quickly lose value
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `296` activation `6.003` class `word` token ` team`
+  - transferred from an address suspected to belong to either a team member or investor. The tokens had reportedly been inactive
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `360` activation `4.682` class `word` token ` arrested`
+  - fuel rumors that Multichain team members had been arrested by Chinese authorities and that a cold wallet containing roughly
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `363` activation `3.591` class `word` token ` authorities`
+  - Multichain team members had been arrested by Chinese authorities and that a cold wallet containing roughly $1.
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `602` activation `3.228` class `word` token ` value`
+  - compromised, wrapped tokens on other chains can quickly lose value. Bridges collectively hold around $10 billion, according
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `357` activation `3.186` class `word` token ` members`
+  - automated translation helped fuel rumors that Multichain team members had been arrested by Chinese authorities and that a cold
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `590` activation `3.144` class `word` token ` assets`
+  - via Multichain. If a bridge’s backing assets are compromised, wrapped tokens on other chains can quickly
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `638` activation `3.019` class `word` token ` hacks`
+  - most sensitive sectors — and a frequent target for major hacks.
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `294` activation `2.791` class `word` token ` either`
+  - — was transferred from an address suspected to belong to either a team member or investor. The tokens had reportedly
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `108` activation `2.774` class `word` token `DC`
+  - another — for example, allowing tokens such as USDC or WETH to exist on chains where they are
+- `L24:3524` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@gpt-5.5` token `327` activation `2.763` class `word` token ` sold`
+  - exchange Gate.io, prompting speculation that they could be sold. The situation escalated after a Chinese-language account amplified
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `145` activation `11.118` class `punctuation` token `,`
+  - you’re traveling for business, planning a weekend escape, or extending a work trip into a mini-vac
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `139` activation `9.812` class `word` token ` business`
+  - to Your Itinerary Whether you’re traveling for business, planning a weekend escape, or extending a work
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `386` activation `8.315` class `word` token ` getaway`
+  - seasonal festivals. It’s especially appealing for a romantic getaway or a relaxed stop after meetings in central Washington.
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `144` activation `7.939` class `word` token ` escape`
+  - Whether you’re traveling for business, planning a weekend escape, or extending a work trip into a mini-v
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `576` activation `6.703` class `word` token ` conference`
+  - meal. It’s a calming retreat after a busy conference or road trip. Bend, Oregon B
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `418` activation `4.388` class `word` token ` Books`
+  - and full of personality. Explore Powell’s City of Books, sample food carts, wander through the International Rose
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `219` activation `4.240` class `word` token ` business`
+  - , Washington Seattle is a natural starting point for business travelers and vacationers alike. Visit Pike Place Market
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `626` activation `4.225` class `punctuation` token `,`
+  - destination year-round. Whether you enjoy hiking, skiing, or simply relaxing, Bend invites you to stay a
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `623` activation `3.956` class `word` token ` hiking`
+  - it a rewarding destination year-round. Whether you enjoy hiking, skiing, or simply relaxing, Bend invites you
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `431` activation `3.935` class `punctuation` token `,`
+  - food carts, wander through the International Rose Test Garden, or discover local neighborhoods packed with cafés and bout
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `240` activation `3.926` class `word` token ` Culture`
+  - , enjoy waterfront views, explore the Museum of Pop Culture, or take in the skyline from the Space Needle
+- `L24:3524` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@gpt-5.5` token `241` activation `3.767` class `punctuation` token `,`
+  - enjoy waterfront views, explore the Museum of Pop Culture, or take in the skyline from the Space Needle.
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `445` activation `13.036` class `word` token ` contract`
+  - are guiding a high school coder writing their first smart contract or helping a major gaming studio migrate to our chain
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `440` activation `8.532` class `word` token ` coder`
+  - creator community. Whether you are guiding a high school coder writing their first smart contract or helping a major gaming
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `514` activation `2.724` class `punctuation` token `,`
+  - Travel the world to major tech conferences, host workshops, and hype up developers at global hackathons.
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `492` activation `2.586` class `word` token ` videos`
+  - burning questions, and write easy-to-follow tutorials, videos, and documentation. Inspire at Hackathons
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `493` activation `2.411` class `punctuation` token `,`
+  - questions, and write easy-to-follow tutorials, videos, and documentation. Inspire at Hackathons:
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `510` activation `2.128` class `word` token ` conferences`
+  - Hackathons: Travel the world to major tech conferences, host workshops, and hype up developers at global
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `638` activation `2.109` class `word` token ` today`
+  - . Ready to build the future with us? Apply today!
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `583` activation `2.062` class `word` token ` enthusiast`
+  - features. Who You Are: You’re a blockchain enthusiast who loves both coding and communicating. You can easily
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `450` activation `2.057` class `word` token ` gaming`
+  - coder writing their first smart contract or helping a major gaming studio migrate to our chain, you will be their
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `597` activation `2.019` class `word` token ` designs`
+  - coding and communicating. You can easily explain complex technical designs, write awesome code, and build strong relationships within
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `370` activation `1.942` class `word` token ` adapting`
+  - designed for massive enterprise use. We aren't just adapting to the future—we are coding it. Now,
+- `L24:3524` `9a2225ac4092925a15559ee591473560b79481872371abfed69e61e65c19cfb8@turn_01@gemini-3.5-flash` token `602` activation `1.900` class `punctuation` token `,`
+  - can easily explain complex technical designs, write awesome code, and build strong relationships within the crypto community. This
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `316` activation `11.598` class `word` token ` table`
+  - a thousand-piece jigsaw sprawled across the dining table, a challenging Sunday crossword, or a digital Sudoku
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `322` activation `10.556` class `punctuation` token `,`
+  - led across the dining table, a challenging Sunday crossword, or a digital Sudoku grid, puzzles offer far more
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `578` activation `8.875` class `punctuation` token `,`
+  - Working on a puzzle with a partner, family member, or friend encourages communication, teamwork, and shared triumph
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `473` activation `8.635` class `word` token ` together`
+  - of active meditation. When you focus on fitting pieces together or deciphering a clue, your brain enters a
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `577` activation `5.734` class `word` token ` member`
+  - . Working on a puzzle with a partner, family member, or friend encourages communication, teamwork, and shared
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `310` activation `5.686` class `word` token `igsaw`
+  - working puzzles. Whether it is a thousand-piece jigsaw sprawled across the dining table, a challenging Sunday
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `281` activation `5.291` class `word` token ` scrolling`
+  - can be challenging. While many turn to mindless scrolling to unwind, an increasing number of adults are redis
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `574` activation `5.149` class `word` token ` partner`
+  - fantastic collaborative activities. Working on a puzzle with a partner, family member, or friend encourages communication, teamwork
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `597` activation `4.947` class `word` token ` overwhelmed`
+  - shared triumph. So, the next time you feel overwhelmed or need a break from your screens, skip the
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `576` activation `4.896` class `word` token ` family`
+  - activities. Working on a puzzle with a partner, family member, or friend encourages communication, teamwork, and
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `472` activation `4.605` class `word` token ` pieces`
+  - form of active meditation. When you focus on fitting pieces together or deciphering a clue, your brain enters
+- `L24:3524` `aa4f37363fea937aaf4cbddd80de1ebc9757a6381a4f2dfaa8382526d75e328f@turn_01@gemini-3.5-flash` token `387` activation `4.494` class `word` token ` piece`
+  - simultaneously. When you search for a specific jigsaw piece or solve a word riddle, you are utilizing

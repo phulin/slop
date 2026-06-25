@@ -191,8 +191,34 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional shared activation cache path. Existing caches are reused unless --refresh-activation-cache is set.",
     )
     parser.add_argument("--refresh-activation-cache", action="store_true")
+    parser.add_argument(
+        "--activation-cache-train-chunks",
+        type=int,
+        default=4,
+        help=(
+            "For reused Parquet activation caches, train by loading this many row-group "
+            "chunks one at a time and shuffling within each chunk. Set to 1 for the old "
+            "full-cache tensor load."
+        ),
+    )
     parser.add_argument("--latent-dim", type=int, default=4096)
     parser.add_argument("--k", type=int, default=32)
+    parser.add_argument(
+        "--matryoshka-prefixes",
+        default="",
+        help=(
+            "Comma-separated latent prefix sizes for Matryoshka SAE training, "
+            "for example 256,512,1024,2048,4096. Empty disables nested-prefix loss."
+        ),
+    )
+    parser.add_argument(
+        "--matryoshka-loss-weights",
+        default="",
+        help=(
+            "Optional comma-separated weights for --matryoshka-prefixes. "
+            "Defaults to equal weights."
+        ),
+    )
     parser.add_argument(
         "--init-mode",
         choices=["kaiming", "tied"],
@@ -667,6 +693,85 @@ def _activation_dataset(
     return _ActivationSubsetDataset(activations, indexes)
 
 
+@dataclass(frozen=True)
+class ParquetActivationChunk:
+    index: int
+    row_groups: list[int]
+    row_count: int
+
+
+class ParquetActivationChunkSource:
+    def __init__(self, path: Path, *, chunks: int, batch_size: int = 8192) -> None:
+        if chunks <= 0:
+            raise ValueError("--activation-cache-train-chunks must be positive")
+        self.path = path
+        self.batch_size = int(batch_size)
+        self.parquet_file = pq.ParquetFile(path)
+        if "activation" not in self.parquet_file.schema_arrow.names:
+            raise ValueError(f"activation cache {path} is missing an activation column")
+        activation_type = self.parquet_file.schema_arrow.field("activation").type
+        if not isinstance(activation_type, pa.FixedSizeListType):
+            raise ValueError(f"activation cache {path} must use a fixed-size-list activation column")
+        self.hidden_dim = int(activation_type.list_size)
+        self.row_count = int(self.parquet_file.metadata.num_rows)
+        self.row_group_rows = [
+            int(self.parquet_file.metadata.row_group(index).num_rows)
+            for index in range(self.parquet_file.num_row_groups)
+        ]
+        self.chunks = self._split_row_groups(max(1, int(chunks)))
+
+    def _split_row_groups(self, chunks: int) -> list[ParquetActivationChunk]:
+        target_rows = max(1, (self.row_count + chunks - 1) // chunks)
+        split_chunks: list[ParquetActivationChunk] = []
+        current_groups: list[int] = []
+        current_rows = 0
+        for row_group, rows in enumerate(self.row_group_rows):
+            if current_groups and len(split_chunks) + 1 < chunks and current_rows + rows > target_rows:
+                split_chunks.append(
+                    ParquetActivationChunk(
+                        index=len(split_chunks),
+                        row_groups=current_groups,
+                        row_count=current_rows,
+                    )
+                )
+                current_groups = []
+                current_rows = 0
+            current_groups.append(row_group)
+            current_rows += rows
+        if current_groups:
+            split_chunks.append(
+                ParquetActivationChunk(
+                    index=len(split_chunks),
+                    row_groups=current_groups,
+                    row_count=current_rows,
+                )
+            )
+        return split_chunks
+
+    def load_chunk(self, chunk: ParquetActivationChunk) -> torch.Tensor:
+        activations = torch.empty((chunk.row_count, self.hidden_dim), dtype=torch.float16)
+        offset = 0
+        for batch in self.parquet_file.iter_batches(
+            columns=["activation"],
+            row_groups=chunk.row_groups,
+            batch_size=self.batch_size,
+        ):
+            activation_column = batch.column("activation")
+            if not isinstance(activation_column, pa.FixedSizeListArray):
+                activation_column = activation_column.combine_chunks()
+            values = activation_column.values.to_numpy(zero_copy_only=False)
+            next_offset = offset + len(activation_column)
+            activations[offset:next_offset].copy_(
+                torch.from_numpy(values.reshape(len(activation_column), self.hidden_dim).copy())
+            )
+            offset = next_offset
+        if offset != chunk.row_count:
+            raise ValueError(
+                f"loaded {offset} activation rows from chunk {chunk.index}, expected {chunk.row_count}"
+            )
+        return activations
+
+
 def _split_activation_indexes(
     activation_count: int,
     *,
@@ -915,6 +1020,78 @@ def _auxk_loss(
     return F.mse_loss(aux_reconstruction, residual.detach()), int(dead_indexes.numel())
 
 
+def _parse_int_list(raw: str) -> list[int]:
+    if not str(raw or "").strip():
+        return []
+    values: list[int] = []
+    for part in str(raw).split(","):
+        part = part.strip()
+        if not part:
+            continue
+        values.append(int(part))
+    return values
+
+
+def _parse_float_list(raw: str) -> list[float]:
+    if not str(raw or "").strip():
+        return []
+    values: list[float] = []
+    for part in str(raw).split(","):
+        part = part.strip()
+        if not part:
+            continue
+        values.append(float(part))
+    return values
+
+
+def _matryoshka_config(args: argparse.Namespace) -> tuple[list[int], list[float]]:
+    prefixes = _parse_int_list(getattr(args, "matryoshka_prefixes", ""))
+    if not prefixes:
+        return [], []
+    latent_dim = int(args.latent_dim)
+    prefixes = sorted(set(prefixes))
+    if prefixes[0] <= 0:
+        raise ValueError("--matryoshka-prefixes must be positive")
+    if prefixes[-1] > latent_dim:
+        raise ValueError("--matryoshka-prefixes cannot exceed --latent-dim")
+    if prefixes[-1] != latent_dim:
+        prefixes.append(latent_dim)
+    weights = _parse_float_list(getattr(args, "matryoshka_loss_weights", ""))
+    if weights and len(weights) != len(prefixes):
+        raise ValueError("--matryoshka-loss-weights must match --matryoshka-prefixes length after appending latent_dim")
+    if not weights:
+        weights = [1.0 / len(prefixes)] * len(prefixes)
+    else:
+        total = sum(weights)
+        if total <= 0.0:
+            raise ValueError("--matryoshka-loss-weights must sum to a positive value")
+        weights = [weight / total for weight in weights]
+    return prefixes, weights
+
+
+def _matryoshka_reconstruction_loss(
+    *,
+    sae: BatchTopKSAE,
+    batch: torch.Tensor,
+    prefixes: list[int],
+    weights: list[float],
+) -> tuple[torch.Tensor, dict[str, float]]:
+    dense_codes = sae.encode_dense(batch)
+    losses: list[torch.Tensor] = []
+    metrics: dict[str, float] = {}
+    for prefix, weight in zip(prefixes, weights, strict=True):
+        prefix_codes = sae.batch_topk(dense_codes[:, :prefix])
+        reconstruction = F.linear(
+            prefix_codes,
+            sae.decoder.weight[:, :prefix],
+            sae.decoder.bias,
+        )
+        prefix_mse = F.mse_loss(reconstruction, batch)
+        losses.append(float(weight) * prefix_mse)
+        metrics[f"matryoshka_mse_{prefix}"] = float(prefix_mse.detach().cpu())
+    return torch.stack(losses).sum(), metrics
+
+
 def train_sae(
     *,
     activations: torch.Tensor,
@@ -969,6 +1146,7 @@ def train_sae(
     auxk_coefficient = float(getattr(args, "auxk_coefficient", 0.0))
     auxk = int(getattr(args, "auxk", 0))
     auxk_dead_steps = max(1, int(getattr(args, "auxk_dead_steps", 500)))
+    matryoshka_prefixes, matryoshka_weights = _matryoshka_config(args)
     sae_model.train()
     for epoch in range(1, args.epochs + 1):
         for (batch_cpu,) in loader:
@@ -992,6 +1170,15 @@ def train_sae(
                 reconstruction, sparse_codes = sae_model(batch)
             residual = reconstruction - batch
             mse = residual.pow(2).mean()
+            matryoshka_metrics: dict[str, float] = {}
+            reconstruction_loss = mse
+            if matryoshka_prefixes:
+                reconstruction_loss, matryoshka_metrics = _matryoshka_reconstruction_loss(
+                    sae=sae,
+                    batch=batch,
+                    prefixes=matryoshka_prefixes,
+                    weights=matryoshka_weights,
+                )
             active_latents = (sparse_codes.detach() > 0).any(dim=0)
             last_active_step[active_latents] = step
             dead_latents = (step - last_active_step) >= auxk_dead_steps
@@ -1006,7 +1193,7 @@ def train_sae(
                     dead_latents=dead_latents,
                     auxk=auxk,
                 )
-            loss = mse + auxk_coefficient * aux_loss
+            loss = reconstruction_loss + auxk_coefficient * aux_loss
             loss.backward()
             for optimizer, scheduler in scheduler_pairs:
                 optimizer.step()
@@ -1027,6 +1214,7 @@ def train_sae(
                     "epoch": epoch,
                     "loss": float(loss.detach().cpu()),
                     "mse": float(mse.detach().cpu()),
+                    "reconstruction_loss": float(reconstruction_loss.detach().cpu()),
                     "auxk_loss": float(aux_loss.detach().cpu()),
                     "auxk_coefficient": auxk_coefficient,
                     "learning_rate": current_lr,
@@ -1036,12 +1224,13 @@ def train_sae(
                     "dead_latents": dead_latent_count,
                     "elapsed_seconds": time.time() - start,
                 }
+                row.update(matryoshka_metrics)
                 train_rows.append(row)
                 if wandb_run is not None:
-                    wandb_run.log(
-                        {
+                    wandb_payload = {
                             "train/loss": row["loss"],
                             "train/mse": row["mse"],
+                            "train/reconstruction_loss": row["reconstruction_loss"],
                             "train/auxk_loss": row["auxk_loss"],
                             "train/learning_rate": current_lr,
                             "train/dead_latents": dead_latent_count,
@@ -1051,12 +1240,14 @@ def train_sae(
                             ],
                             "train/epoch": epoch,
                             "train/elapsed_seconds": row["elapsed_seconds"],
-                        },
-                        step=step,
-                    )
+                        }
+                    for key, value in matryoshka_metrics.items():
+                        wandb_payload[f"train/{key}"] = value
+                    wandb_run.log(wandb_payload, step=step)
                 print(
                     f"SAE step {step}: loss={row['loss']:.6f} "
-                    f"mse={row['mse']:.6f} auxk={row['auxk_loss']:.6f} "
+                    f"mse={row['mse']:.6f} recon={row['reconstruction_loss']:.6f} "
+                    f"auxk={row['auxk_loss']:.6f} "
                     f"active/vector={row['active_latents_per_vector']:.2f} "
                     f"unique={row['unique_active_latents']} dead={row['dead_latents']} "
                     f"lr={current_lr:.3g}",
@@ -1094,6 +1285,232 @@ def train_sae(
         "auxk_coefficient": auxk_coefficient,
         "auxk": auxk,
         "auxk_dead_steps": auxk_dead_steps,
+        "matryoshka_prefixes": matryoshka_prefixes,
+        "matryoshka_loss_weights": matryoshka_weights,
+        **optimizer_summary,
+        **scheduler_summary,
+    }
+    return sae, train_rows, eval_rows, train_summary
+
+
+def train_sae_from_parquet_chunks(
+    *,
+    source: ParquetActivationChunkSource,
+    args: argparse.Namespace,
+    device: torch.device,
+    wandb_run: Any | None = None,
+) -> tuple[BatchTopKSAE, list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    sae = BatchTopKSAE(
+        input_dim=source.hidden_dim,
+        latent_dim=args.latent_dim,
+        k=args.k,
+        init_mode=getattr(args, "init_mode", "kaiming"),
+    ).to(device)
+    sae_model = _compile_module(
+        sae,
+        enabled=bool(getattr(args, "compile_sae", False)),
+        mode=getattr(args, "compile_mode", "default"),
+        device=device,
+    )
+    sae_compile_fallback = False
+    optimizers, optimizer_summary = _build_sae_optimizers(sae, args=args)
+    steps_per_epoch = 0
+    for chunk in source.chunks:
+        train_rows_in_chunk = chunk.row_count
+        if args.eval_fraction > 0.0 and chunk.row_count >= 2:
+            train_rows_in_chunk -= max(1, int(chunk.row_count * args.eval_fraction))
+        steps_per_epoch += max(1, (max(1, train_rows_in_chunk) + args.train_batch_size - 1) // args.train_batch_size)
+    total_steps = max(1, steps_per_epoch * args.epochs)
+    scheduler_pairs: list[tuple[torch.optim.Optimizer, torch.optim.lr_scheduler.LambdaLR | None]] = []
+    scheduler_summary: dict[str, Any] = {}
+    for optimizer_index, optimizer in enumerate(optimizers):
+        scheduler, one_scheduler_summary = _build_lr_scheduler(
+            optimizer,
+            args=args,
+            total_steps=total_steps,
+        )
+        scheduler_pairs.append((optimizer, scheduler))
+        if optimizer_index == 0:
+            scheduler_summary = one_scheduler_summary
+    train_rows: list[dict[str, Any]] = []
+    eval_rows: list[dict[str, Any]] = []
+    start = time.time()
+    step = 0
+    last_active_step = torch.zeros(args.latent_dim, dtype=torch.long, device=device)
+    auxk_coefficient = float(getattr(args, "auxk_coefficient", 0.0))
+    auxk = int(getattr(args, "auxk", 0))
+    auxk_dead_steps = max(1, int(getattr(args, "auxk_dead_steps", 500)))
+    matryoshka_prefixes, matryoshka_weights = _matryoshka_config(args)
+    sae_model.train()
+    for epoch in range(1, args.epochs + 1):
+        chunk_order = list(source.chunks)
+        random.Random(args.seed + epoch).shuffle(chunk_order)
+        epoch_eval_sse = 0.0
+        epoch_eval_values = 0
+        for chunk_position, chunk in enumerate(chunk_order, start=1):
+            print(
+                f"Loading activation cache chunk {chunk_position}/{len(chunk_order)} "
+                f"(chunk={chunk.index}, rows={chunk.row_count}, row_groups={len(chunk.row_groups)})",
+                flush=True,
+            )
+            chunk_activations = source.load_chunk(chunk)
+            train_indexes, eval_indexes = _split_activation_indexes(
+                int(chunk_activations.shape[0]),
+                eval_fraction=args.eval_fraction,
+                seed=args.seed + epoch * 1_000_003 + chunk.index,
+            )
+            loader = DataLoader(
+                _activation_dataset(chunk_activations, train_indexes),
+                batch_size=args.train_batch_size,
+                shuffle=True,
+                num_workers=args.num_workers,
+                pin_memory=device.type == "cuda",
+            )
+            for (batch_cpu,) in loader:
+                step += 1
+                batch = batch_cpu.to(device=device, dtype=torch.float32, non_blocking=device.type == "cuda")
+                for optimizer in optimizers:
+                    optimizer.zero_grad(set_to_none=True)
+                try:
+                    reconstruction, sparse_codes = sae_model(batch)
+                except Exception as exc:
+                    if sae_model is sae:
+                        raise
+                    print(
+                        f"torch.compile SAE forward failed ({type(exc).__name__}: {exc}); falling back to eager SAE",
+                        flush=True,
+                    )
+                    _reset_torch_compile()
+                    sae_compile_fallback = True
+                    sae_model = sae
+                    sae_model.train()
+                    reconstruction, sparse_codes = sae_model(batch)
+                residual = reconstruction - batch
+                mse = residual.pow(2).mean()
+                matryoshka_metrics: dict[str, float] = {}
+                reconstruction_loss = mse
+                if matryoshka_prefixes:
+                    reconstruction_loss, matryoshka_metrics = _matryoshka_reconstruction_loss(
+                        sae=sae,
+                        batch=batch,
+                        prefixes=matryoshka_prefixes,
+                        weights=matryoshka_weights,
+                    )
+                active_latents = (sparse_codes.detach() > 0).any(dim=0)
+                last_active_step[active_latents] = step
+                dead_latents = (step - last_active_step) >= auxk_dead_steps
+                aux_loss = batch.new_zeros(())
+                dead_latent_count = int(dead_latents.sum().detach().cpu())
+                if auxk_coefficient > 0.0:
+                    dense_codes = sae.encode_dense(batch)
+                    aux_loss, dead_latent_count = _auxk_loss(
+                        sae=sae,
+                        dense_codes=dense_codes,
+                        residual=residual,
+                        dead_latents=dead_latents,
+                        auxk=auxk,
+                    )
+                loss = reconstruction_loss + auxk_coefficient * aux_loss
+                loss.backward()
+                for optimizer, scheduler in scheduler_pairs:
+                    optimizer.step()
+                    if scheduler is not None:
+                        scheduler.step()
+                sae.normalize_decoder_weights()
+                if step == 1 or step % args.progress_every == 0:
+                    active_per_vector = (sparse_codes > 0).float().sum(dim=1).mean()
+                    current_lrs = [
+                        float(optimizer.param_groups[0]["lr"])
+                        for optimizer, _scheduler in scheduler_pairs
+                        if optimizer.param_groups
+                    ]
+                    current_lr = current_lrs[0] if current_lrs else 0.0
+                    row = {
+                        "step": step,
+                        "epoch": epoch,
+                        "chunk": chunk.index,
+                        "loss": float(loss.detach().cpu()),
+                        "mse": float(mse.detach().cpu()),
+                        "reconstruction_loss": float(reconstruction_loss.detach().cpu()),
+                        "auxk_loss": float(aux_loss.detach().cpu()),
+                        "auxk_coefficient": auxk_coefficient,
+                        "learning_rate": current_lr,
+                        "learning_rates": "|".join(f"{lr:.8g}" for lr in current_lrs),
+                        "active_latents_per_vector": float(active_per_vector.detach().cpu()),
+                        "unique_active_latents": int(active_latents.sum().detach().cpu()),
+                        "dead_latents": dead_latent_count,
+                        "elapsed_seconds": time.time() - start,
+                    }
+                    row.update(matryoshka_metrics)
+                    train_rows.append(row)
+                    if wandb_run is not None:
+                        wandb_payload = {
+                            "train/loss": row["loss"],
+                            "train/mse": row["mse"],
+                            "train/reconstruction_loss": row["reconstruction_loss"],
+                            "train/auxk_loss": row["auxk_loss"],
+                            "train/learning_rate": current_lr,
+                            "train/dead_latents": dead_latent_count,
+                            "train/unique_active_latents": row["unique_active_latents"],
+                            "train/active_latents_per_vector": row["active_latents_per_vector"],
+                            "train/epoch": epoch,
+                            "train/chunk": chunk.index,
+                            "train/elapsed_seconds": row["elapsed_seconds"],
+                        }
+                        for key, value in matryoshka_metrics.items():
+                            wandb_payload[f"train/{key}"] = value
+                        wandb_run.log(wandb_payload, step=step)
+                    print(
+                        f"SAE step {step}: loss={row['loss']:.6f} "
+                        f"mse={row['mse']:.6f} recon={row['reconstruction_loss']:.6f} "
+                        f"auxk={row['auxk_loss']:.6f} "
+                        f"active/vector={row['active_latents_per_vector']:.2f} "
+                        f"unique={row['unique_active_latents']} dead={row['dead_latents']} "
+                        f"lr={current_lr:.3g}",
+                        flush=True,
+                    )
+            if eval_indexes.numel() > 0:
+                chunk_eval_mse = _evaluate_sae_mse(
+                    sae_model=sae_model,
+                    activations=chunk_activations,
+                    indexes=eval_indexes,
+                    batch_size=args.train_batch_size,
+                    device=device,
+                    num_workers=args.num_workers,
+                )
+                if chunk_eval_mse is not None:
+                    epoch_eval_sse += chunk_eval_mse * int(eval_indexes.numel()) * source.hidden_dim
+                    epoch_eval_values += int(eval_indexes.numel()) * source.hidden_dim
+            del chunk_activations
+        if epoch_eval_values > 0:
+            eval_mse = epoch_eval_sse / epoch_eval_values
+            row = {
+                "step": step,
+                "epoch": epoch,
+                "eval_mse": eval_mse,
+                "elapsed_seconds": time.time() - start,
+            }
+            eval_rows.append(row)
+            if wandb_run is not None:
+                wandb_run.log(
+                    {
+                        "eval/mse": eval_mse,
+                        "eval/epoch": epoch,
+                        "eval/elapsed_seconds": row["elapsed_seconds"],
+                    },
+                    step=step,
+                )
+            print(f"SAE epoch {epoch}: eval_mse={eval_mse:.6f}", flush=True)
+    train_summary = {
+        "compile_sae_requested": bool(getattr(args, "compile_sae", False)),
+        "compile_sae_fallback": sae_compile_fallback,
+        "auxk_coefficient": auxk_coefficient,
+        "auxk": auxk,
+        "auxk_dead_steps": auxk_dead_steps,
+        "matryoshka_prefixes": matryoshka_prefixes,
+        "matryoshka_loss_weights": matryoshka_weights,
+        "activation_cache_train_chunks": len(source.chunks),
+        "activation_cache_chunk_rows": [chunk.row_count for chunk in source.chunks],
         **optimizer_summary,
         **scheduler_summary,
     }
@@ -1785,6 +2202,7 @@ def _wandb_config(
         "pad_to_max_length": bool(args.pad_to_max_length),
         "max_activations": args.max_activations,
         "activation_cache": str(cache_path),
+        "activation_cache_train_chunks": getattr(args, "activation_cache_train_chunks", 1),
         "activation_vectors": activation_vectors,
         "input_dim": input_dim,
         "latent_dim": args.latent_dim,
@@ -1883,6 +2301,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     cache_path = args.activation_cache or output_dir / "phase4_batchtopk_sae_activation_cache.pt"
     model: Any | None = None
     tokenizer: Any | None = None
+    chunk_source: ParquetActivationChunkSource | None = None
 
     if args.load_sae is not None:
         sae, loaded_summary = _load_sae(args.load_sae, device=device)
@@ -1980,9 +2399,29 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
     cache_reused = cache_path.exists() and not args.refresh_activation_cache
     if cache_reused:
-        print(f"Loading activation cache from {cache_path}", flush=True)
-        activation_cache = _load_activation_cache(cache_path)
-        activations = activation_cache.activations
+        activation_cache_has_provenance = _activation_cache_sidecar(cache_path, "documents.parquet").is_file()
+        if cache_path.suffix == ".parquet" and int(args.activation_cache_train_chunks) > 1:
+            chunk_source = ParquetActivationChunkSource(
+                cache_path,
+                chunks=int(args.activation_cache_train_chunks),
+            )
+            print(
+                f"Training from Parquet activation cache {cache_path} in "
+                f"{len(chunk_source.chunks)} chunks "
+                f"({chunk_source.row_count} activations, dim={chunk_source.hidden_dim})",
+                flush=True,
+            )
+            activation_cache = None
+            activations = None
+            activation_vectors = chunk_source.row_count
+            input_dim = chunk_source.hidden_dim
+        else:
+            print(f"Loading activation cache from {cache_path}", flush=True)
+            activation_cache = _load_activation_cache(cache_path)
+            activations = activation_cache.activations
+            activation_vectors = int(activations.shape[0])
+            input_dim = int(activations.shape[1])
+            activation_cache_has_provenance = activation_cache.has_provenance
         detector_compile_fallback = False
     else:
         model, tokenizer = _load_detector(args.checkpoint, device=device)
@@ -2027,21 +2466,34 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 pad_to_max_length=args.pad_to_max_length,
             )
         activations = activation_cache.activations
+        activation_vectors = int(activations.shape[0])
+        input_dim = int(activations.shape[1])
+        activation_cache_has_provenance = activation_cache.has_provenance
         _save_activation_cache(cache_path, activation_cache=activation_cache, args=args, docs=docs)
     wandb_run = _init_sae_wandb(
         args,
         docs=docs,
         cache_path=cache_path,
-        activation_vectors=int(activations.shape[0]),
-        input_dim=int(activations.shape[1]),
+        activation_vectors=activation_vectors,
+        input_dim=input_dim,
     )
     try:
-        sae, train_rows, eval_rows, train_summary = train_sae(
-            activations=activations,
-            args=args,
-            device=device,
-            wandb_run=wandb_run,
-        )
+        if chunk_source is not None:
+            sae, train_rows, eval_rows, train_summary = train_sae_from_parquet_chunks(
+                source=chunk_source,
+                args=args,
+                device=device,
+                wandb_run=wandb_run,
+            )
+        else:
+            if activations is None:
+                raise ValueError("activation tensor was not loaded")
+            sae, train_rows, eval_rows, train_summary = train_sae(
+                activations=activations,
+                args=args,
+                device=device,
+                wandb_run=wandb_run,
+            )
         if args.skip_latent_scoring:
             latent_rows: list[dict[str, Any]] = []
             example_rows: list[dict[str, Any]] = []
@@ -2067,11 +2519,16 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "documents": len(docs),
             "source_counts": dict(sorted(source_counts.items())),
             "label_counts": dict(sorted(label_counts.items())),
-            "activation_cache": str(cache_path),
-            "activation_cache_reused": cache_reused,
-            "activation_cache_has_provenance": activation_cache.has_provenance,
-            "activation_vectors": int(activations.shape[0]),
-            "input_dim": int(activations.shape[1]),
+                "activation_cache": str(cache_path),
+                "activation_cache_reused": cache_reused,
+                "activation_cache_has_provenance": activation_cache_has_provenance,
+                "activation_cache_train_chunks": train_summary.get(
+                    "activation_cache_train_chunks",
+                    1,
+                ),
+                "activation_cache_chunk_rows": train_summary.get("activation_cache_chunk_rows", []),
+                "activation_vectors": activation_vectors,
+                "input_dim": input_dim,
             "pad_to_max_length": bool(args.pad_to_max_length),
             "latent_dim": args.latent_dim,
             "k": args.k,

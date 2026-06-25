@@ -1,0 +1,4871 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2041` | `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` | `human` | 332 | `696.83` | `4.83` | word:266|punctuation:33|line_break:9|style_function_word:8|sentence_boundary:7|expanded_negation_word:5|discourse_marker_word:4 |
+| `L19:2041` | `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` | `human` | 264 | `439.61` | `4.58` | word:221|style_function_word:12|punctuation:12|sentence_boundary:10|expanded_negation_word:5|line_break:3|discourse_marker_word:1 |
+| `L19:2041` | `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` | `human` | 270 | `569.53` | `5.40` | word:195|punctuation:37|sentence_boundary:23|style_function_word:11|expanded_negation_word:4 |
+| `L19:2041` | `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` | `human` | 231 | `341.54` | `4.49` | word:177|punctuation:20|style_function_word:12|expanded_negation_word:11|sentence_boundary:10|discourse_marker_word:1 |
+| `L19:2041` | `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` | `human` | 132 | `204.72` | `5.10` | word:101|punctuation:9|expanded_negation_word:9|sentence_boundary:8|style_function_word:4|discourse_marker_word:1 |
+| `L19:2041` | `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` | `human` | 255 | `423.01` | `5.06` | word:199|punctuation:30|line_break:8|style_function_word:7|sentence_boundary:7|expanded_negation_word:4 |
+| `L19:2041` | `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` | `human` | 181 | `404.14` | `4.96` | word:157|style_function_word:7|sentence_boundary:7|punctuation:6|line_break:4 |
+| `L19:2041` | `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` | `human` | 301 | `517.27` | `4.79` | word:240|punctuation:24|style_function_word:13|expanded_negation_word:8|sentence_boundary:8|discourse_marker_word:5|line_break:3 |
+| `L19:2041` | `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` | `human` | 214 | `358.58` | `4.58` | word:153|line_break:15|punctuation:14|sentence_boundary:12|expanded_negation_word:10|style_function_word:4|contraction_piece:4|discourse_marker_word:2 |
+| `L19:2041` | `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` | `human` | 163 | `272.74` | `5.16` | word:134|punctuation:13|style_function_word:5|line_break:5|sentence_boundary:3|expanded_negation_word:3 |
+| `L19:2041` | `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` | `human` | 126 | `230.34` | `4.72` | word:96|punctuation:9|line_break:9|sentence_boundary:5|style_function_word:3|discourse_marker_word:2|expanded_negation_word:1|contraction_piece:1 |
+| `L19:2041` | `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` | `human` | 286 | `600.55` | `4.92` | word:230|expanded_negation_word:13|punctuation:12|style_function_word:12|sentence_boundary:10|discourse_marker_word:6|line_break:3 |
+| `L19:2041` | `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` | `human` | 175 | `310.83` | `5.15` | word:126|punctuation:23|sentence_boundary:9|line_break:8|style_function_word:4|expanded_negation_word:4|discourse_marker_word:1 |
+| `L19:2041` | `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` | `human` | 313 | `571.03` | `5.30` | word:253|punctuation:17|style_function_word:13|expanded_negation_word:11|sentence_boundary:11|discourse_marker_word:4|line_break:3|whitespace:1 |
+| `L19:2041` | `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` | `human` | 218 | `302.95` | `5.06` | word:162|punctuation:20|style_function_word:17|sentence_boundary:9|line_break:6|discourse_marker_word:2|expanded_negation_word:1|contraction_piece:1 |
+| `L19:2041` | `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` | `human` | 401 | `784.82` | `4.75` | word:329|sentence_boundary:28|punctuation:26|line_break:8|style_function_word:7|discourse_marker_word:1|whitespace:1|expanded_negation_word:1 |
+| `L19:2041` | `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` | `human` | 347 | `590.17` | `4.69` | word:285|sentence_boundary:19|punctuation:16|expanded_negation_word:12|style_function_word:8|discourse_marker_word:4|line_break:3 |
+| `L19:2041` | `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` | `human` | 195 | `353.47` | `4.81` | word:156|punctuation:19|style_function_word:8|sentence_boundary:6|expanded_negation_word:2|discourse_marker_word:2|line_break:1|contraction_piece:1 |
+| `L19:2041` | `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` | `human` | 417 | `846.95` | `5.02` | word:328|punctuation:32|sentence_boundary:32|style_function_word:20|expanded_negation_word:5 |
+| `L19:2041` | `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` | `human` | 168 | `366.89` | `4.99` | word:132|punctuation:13|line_break:11|sentence_boundary:6|expanded_negation_word:3|style_function_word:3 |
+| `L19:2041` | `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` | `human` | 401 | `942.71` | `5.31` | word:330|punctuation:27|line_break:21|style_function_word:10|sentence_boundary:9|expanded_negation_word:2|discourse_marker_word:2 |
+| `L19:2041` | `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` | `human` | 292 | `619.60` | `5.49` | word:234|punctuation:23|sentence_boundary:20|style_function_word:10|expanded_negation_word:4|discourse_marker_word:1 |
+| `L19:2041` | `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` | `human` | 339 | `674.61` | `4.92` | word:281|sentence_boundary:19|punctuation:13|expanded_negation_word:10|style_function_word:5|contraction_piece:4|line_break:4|discourse_marker_word:3 |
+| `L19:2041` | `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` | `human` | 310 | `567.36` | `4.86` | word:264|sentence_boundary:19|expanded_negation_word:11|style_function_word:8|punctuation:7|discourse_marker_word:1 |
+| `L19:2041` | `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` | `human` | 167 | `275.87` | `4.55` | word:130|expanded_negation_word:15|sentence_boundary:8|punctuation:7|style_function_word:6|discourse_marker_word:1 |
+| `L19:2041` | `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` | `human` | 249 | `487.13` | `4.94` | word:181|punctuation:32|sentence_boundary:15|expanded_negation_word:12|style_function_word:9 |
+| `L19:2041` | `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` | `human` | 390 | `755.00` | `5.28` | word:313|punctuation:25|sentence_boundary:15|style_function_word:13|expanded_negation_word:13|line_break:9|discourse_marker_word:2 |
+| `L19:2041` | `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` | `human` | 112 | `234.93` | `4.57` | word:82|punctuation:11|sentence_boundary:8|style_function_word:7|expanded_negation_word:3|discourse_marker_word:1 |
+| `L19:2041` | `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` | `human` | 147 | `207.29` | `4.44` | word:125|punctuation:9|sentence_boundary:6|style_function_word:5|expanded_negation_word:2 |
+| `L19:2041` | `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` | `human` | 237 | `433.58` | `4.51` | word:179|sentence_boundary:17|punctuation:13|expanded_negation_word:13|style_function_word:7|discourse_marker_word:6|whitespace:1|contraction_piece:1 |
+| `L24:2988` | `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` | `human` | 348 | `1118.04` | `8.68` | word:270|punctuation:41|style_function_word:10|line_break:9|sentence_boundary:7|expanded_negation_word:6|discourse_marker_word:4|contraction_piece:1 |
+| `L24:2988` | `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` | `human` | 275 | `736.50` | `8.15` | word:225|punctuation:14|style_function_word:13|sentence_boundary:10|expanded_negation_word:8|line_break:3|discourse_marker_word:1|contraction_piece:1 |
+| `L24:2988` | `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` | `human` | 295 | `985.12` | `9.11` | word:205|punctuation:47|sentence_boundary:27|style_function_word:11|expanded_negation_word:4|contraction_piece:1 |
+| `L24:2988` | `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` | `human` | 246 | `587.07` | `7.94` | word:189|punctuation:25|sentence_boundary:12|style_function_word:10|expanded_negation_word:7|discourse_marker_word:1|line_break:1|contraction_piece:1 |
+| `L24:2988` | `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` | `human` | 122 | `304.98` | `8.77` | word:90|punctuation:10|sentence_boundary:10|expanded_negation_word:7|style_function_word:4|discourse_marker_word:1 |
+| `L24:2988` | `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` | `human` | 219 | `556.88` | `7.92` | word:167|punctuation:28|style_function_word:7|sentence_boundary:7|line_break:7|whitespace:2|expanded_negation_word:1 |
+| `L24:2988` | `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` | `human` | 192 | `674.14` | `8.22` | word:160|punctuation:10|style_function_word:9|sentence_boundary:8|line_break:4|contraction_piece:1 |
+| `L24:2988` | `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` | `human` | 295 | `791.68` | `8.51` | word:235|punctuation:24|style_function_word:12|sentence_boundary:8|expanded_negation_word:7|discourse_marker_word:5|line_break:3|contraction_piece:1 |
+| `L24:2988` | `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` | `human` | 179 | `473.13` | `8.38` | word:125|line_break:17|punctuation:14|sentence_boundary:11|expanded_negation_word:6|contraction_piece:3|style_function_word:2|discourse_marker_word:1 |
+| `L24:2988` | `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` | `human` | 148 | `386.62` | `8.49` | word:116|punctuation:15|line_break:7|style_function_word:4|sentence_boundary:3|expanded_negation_word:3 |
+| `L24:2988` | `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` | `human` | 118 | `321.67` | `7.67` | word:87|punctuation:10|line_break:9|sentence_boundary:5|style_function_word:3|discourse_marker_word:2|expanded_negation_word:1|contraction_piece:1 |
+| `L24:2988` | `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` | `human` | 280 | `1007.55` | `8.64` | word:224|expanded_negation_word:14|punctuation:12|style_function_word:11|sentence_boundary:10|discourse_marker_word:6|line_break:3 |
+| `L24:2988` | `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` | `human` | 217 | `549.84` | `9.01` | word:155|punctuation:30|sentence_boundary:9|line_break:9|style_function_word:6|expanded_negation_word:3|contraction_piece:3|discourse_marker_word:2 |
+| `L24:2988` | `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` | `human` | 275 | `736.47` | `7.54` | word:226|punctuation:15|sentence_boundary:11|style_function_word:8|expanded_negation_word:6|discourse_marker_word:4|line_break:3|whitespace:1|contraction_piece:1 |
+| `L24:2988` | `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` | `human` | 213 | `443.59` | `8.14` | word:150|punctuation:23|style_function_word:14|sentence_boundary:12|line_break:7|contraction_piece:3|expanded_negation_word:2|discourse_marker_word:2 |
+| `L24:2988` | `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` | `human` | 424 | `1376.58` | `8.93` | word:335|punctuation:34|sentence_boundary:34|style_function_word:9|line_break:8|expanded_negation_word:2|discourse_marker_word:1|whitespace:1 |
+| `L24:2988` | `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` | `human` | 295 | `755.13` | `7.63` | word:236|sentence_boundary:19|punctuation:13|expanded_negation_word:12|style_function_word:7|discourse_marker_word:4|line_break:3|contraction_piece:1 |
+| `L24:2988` | `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` | `human` | 194 | `543.34` | `7.65` | word:153|punctuation:21|style_function_word:7|sentence_boundary:7|discourse_marker_word:2|expanded_negation_word:2|line_break:1|contraction_piece:1 |
+| `L24:2988` | `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` | `human` | 433 | `1369.56` | `7.67` | word:334|punctuation:35|sentence_boundary:34|style_function_word:22|expanded_negation_word:6|discourse_marker_word:1|contraction_piece:1 |
+| `L24:2988` | `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` | `human` | 168 | `567.63` | `7.84` | word:132|punctuation:12|line_break:11|sentence_boundary:6|style_function_word:3|expanded_negation_word:2|contraction_piece:2 |
+| `L24:2988` | `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` | `human` | 441 | `1703.04` | `9.97` | word:352|punctuation:43|line_break:23|style_function_word:10|sentence_boundary:9|expanded_negation_word:2|discourse_marker_word:2 |
+| `L24:2988` | `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` | `human` | 292 | `973.38` | `9.14` | word:233|punctuation:24|sentence_boundary:21|style_function_word:9|expanded_negation_word:4|discourse_marker_word:1 |
+| `L24:2988` | `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` | `human` | 348 | `1129.58` | `8.79` | word:286|sentence_boundary:21|punctuation:16|expanded_negation_word:8|style_function_word:5|line_break:5|contraction_piece:4|discourse_marker_word:3 |
+| `L24:2988` | `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` | `human` | 296 | `832.97` | `7.73` | word:250|sentence_boundary:20|expanded_negation_word:10|punctuation:8|style_function_word:7|discourse_marker_word:1 |
+| `L24:2988` | `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` | `human` | 159 | `398.81` | `7.44` | word:120|expanded_negation_word:13|sentence_boundary:9|punctuation:8|style_function_word:6|discourse_marker_word:2|line_break:1 |
+| `L24:2988` | `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` | `human` | 249 | `756.07` | `8.70` | word:182|punctuation:32|sentence_boundary:18|style_function_word:7|expanded_negation_word:7|contraction_piece:3 |
+| `L24:2988` | `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` | `human` | 401 | `1313.89` | `9.37` | word:315|punctuation:29|sentence_boundary:17|expanded_negation_word:15|style_function_word:13|line_break:9|discourse_marker_word:2|contraction_piece:1 |
+| `L24:2988` | `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` | `human` | 116 | `371.16` | `7.93` | word:84|punctuation:11|sentence_boundary:11|style_function_word:6|expanded_negation_word:3|discourse_marker_word:1 |
+| `L24:2988` | `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` | `human` | 206 | `438.33` | `7.25` | word:171|punctuation:12|style_function_word:9|sentence_boundary:8|expanded_negation_word:3|discourse_marker_word:2|line_break:1 |
+| `L24:2988` | `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` | `human` | 232 | `653.37` | `7.70` | word:175|sentence_boundary:18|punctuation:12|expanded_negation_word:12|style_function_word:7|discourse_marker_word:6|whitespace:1|contraction_piece:1 |
+
+## Top Tokens
+
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `282` activation `4.826` class `word` token ` He`
+  - the escorted package walk through the rotating hotel doors. He waved his hands and ran toward it, signed the
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `270` activation `4.674` class `word` token ` and`
+  - made that mistake and..." The manager suddenly stopped talking and noticed the escorted package walk through the rotating hotel doors
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `484` activation `4.669` class `word` token ` around`
+  - are very sweet", then left. The runner turned around and in that moment of pride, adjusted his personal
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `303` activation `4.538` class `word` token ` manager`
+  - delivery, and walked back to the runner. The manager handed the package to the runner, "Go.
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `485` activation `4.493` class `word` token ` and`
+  - very sweet", then left. The runner turned around and in that moment of pride, adjusted his personal name
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `483` activation `4.481` class `word` token ` turned`
+  - you are very sweet", then left. The runner turned around and in that moment of pride, adjusted his
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `266` activation `4.458` class `word` token ` manager`
+  - many former floor runners made that mistake and..." The manager suddenly stopped talking and noticed the escorted package walk through
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `444` activation `4.374` class `word` token ` and`
+  - Floor". He saw the Queen walk up to him and immediately extended the package out while looking down, "
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `466` activation `4.308` class `word` token ` and`
+  - Majesty, a package". The Queen took the package and said, "Thank you, you are very sweet
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `171` activation `4.297` class `word` token ` runner`
+  - soon. Have you been up there before?" The runner thought for a second, "I don't think
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `219` activation `4.272` class `punctuation` token `,`
+  - hear me the first time boy?", asked the manager, "I need you to be extra careful and do
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `366` activation `4.187` class `punctuation` token `,`
+  - elevator. The runner hopped on and turned around, "Sorry everyone, I have a special delivery so
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `286` activation `4.147` class `word` token ` and`
+  - through the rotating hotel doors. He waved his hands and ran toward it, signed the delivery, and walked
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `365` activation `4.134` class `word` token ` around`
+  - next elevator. The runner hopped on and turned around, "Sorry everyone, I have a special delivery
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `218` activation `4.129` class `word` token ` manager`
+  - not hear me the first time boy?", asked the manager, "I need you to be extra careful and
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `267` activation `4.110` class `word` token ` suddenly`
+  - former floor runners made that mistake and..." The manager suddenly stopped talking and noticed the escorted package walk through the
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `317` activation `4.089` class `word` token ` runner`
+  - to the runner, "Go. Now!" The runner gulped, took the gilded package, and
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `319` activation `4.083` class `word` token `ped`
+  - runner, "Go. Now!" The runner gulped, took the gilded package, and said "
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `140` activation `4.020` class `word` token ` manager`
+  - said the runner in a shakey voice. The manager snapped, "You are going to make a special
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `176` activation `4.017` class `punctuation` token `,`
+  - up there before?" The runner thought for a second, "I don't think so sir, this would
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `285` activation `4.016` class `word` token ` hands`
+  - walk through the rotating hotel doors. He waved his hands and ran toward it, signed the delivery, and
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `443` activation `4.016` class `word` token ` him`
+  - 's Floor". He saw the Queen walk up to him and immediately extended the package out while looking down,
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `436` activation `3.968` class `word` token ` He`
+  - past a sign that read "Queen's Floor". He saw the Queen walk up to him and immediately extended
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `450` activation `3.925` class `style_function_word` token ` while`
+  - walk up to him and immediately extended the package out while looking down, "Your Majesty, a package".
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `465` activation `3.894` class `word` token ` package`
+  - Your Majesty, a package". The Queen took the package and said, "Thank you, you are very
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `287` activation `3.881` class `word` token ` ran`
+  - the rotating hotel doors. He waved his hands and ran toward it, signed the delivery, and walked back
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `137` activation `3.869` class `word` token ` voice`
+  - , sir?", said the runner in a shakey voice. The manager snapped, "You are going to
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `363` activation `3.867` class `word` token ` and`
+  - to the next elevator. The runner hopped on and turned around, "Sorry everyone, I have a
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `425` activation `3.857` class `word` token ` walked`
+  - wrap something! At the top floor, the runner walked past a sign that read "Queen's Floor".
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `462` activation `3.841` class `word` token ` Queen`
+  - down, "Your Majesty, a package". The Queen took the package and said, "Thank you,
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `445` activation `3.819` class `word` token ` immediately`
+  - ". He saw the Queen walk up to him and immediately extended the package out while looking down, "Your
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `327` activation `3.801` class `word` token ` and`
+  - runner gulped, took the gilded package, and said "Yes sir, going now!" The runner
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `486` activation `3.797` class `word` token ` in`
+  - sweet", then left. The runner turned around and in that moment of pride, adjusted his personal name tag
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `482` activation `3.778` class `word` token ` runner`
+  - , you are very sweet", then left. The runner turned around and in that moment of pride, adjusted
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `290` activation `3.761` class `punctuation` token `,`
+  - doors. He waved his hands and ran toward it, signed the delivery, and walked back to the runner
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `310` activation `3.726` class `punctuation` token `,`
+  - runner. The manager handed the package to the runner, "Go. Now!" The runner gulped,
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `478` activation `3.701` class `style_function_word` token ` then`
+  - , "Thank you, you are very sweet", then left. The runner turned around and in that moment
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `275` activation `3.700` class `word` token ` walk`
+  - The manager suddenly stopped talking and noticed the escorted package walk through the rotating hotel doors. He waved his hands
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `337` activation `3.696` class `word` token ` runner`
+  - and said "Yes sir, going now!" The runner power walked to the elevator and used his ID card
+- `L19:2041` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `343` activation `3.672` class `word` token ` and`
+  - going now!" The runner power walked to the elevator and used his ID card to get the first privilege to
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `437` activation `4.582` class `word` token ` said`
+  - for something. "Don't worry Tim", the woman said as she started to mindlessly fidget with his
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `436` activation `4.293` class `word` token ` woman`
+  - eyes for something. "Don't worry Tim", the woman said as she started to mindlessly fidget with
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `439` activation `4.161` class `word` token ` she`
+  - . "Don't worry Tim", the woman said as she started to mindlessly fidget with his covers.
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `441` activation `3.834` class `word` token ` to`
+  - 't worry Tim", the woman said as she started to mindlessly fidget with his covers. "The
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `481` activation `3.659` class `word` token ` and`
+  - home where you belong". Soon he began to panic and his thoughts began to race. 'Who was Tim
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `438` activation `3.485` class `style_function_word` token ` as`
+  - something. "Don't worry Tim", the woman said as she started to mindlessly fidget with his covers
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `385` activation `3.455` class `word` token ` he`
+  - face of a woman staring back at him. As he continued to take inventory of her, he scanned down
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `480` activation `3.340` class `word` token ` panic`
+  - back home where you belong". Soon he began to panic and his thoughts began to race. 'Who was
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `440` activation `3.333` class `word` token ` started`
+  - "Don't worry Tim", the woman said as she started to mindlessly fidget with his covers. "
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `393` activation `3.322` class `word` token ` he`
+  - . As he continued to take inventory of her, he scanned down to her hands and noticed that her kn
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `483` activation `3.308` class `word` token ` thoughts`
+  - you belong". Soon he began to panic and his thoughts began to race. 'Who was Tim and who
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `434` activation `3.225` class `punctuation` token `",`
+  - searching his eyes for something. "Don't worry Tim", the woman said as she started to mindlessly f
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `306` activation `3.006` class `punctuation` token `,`
+  - to sta... Tim began to slowly open his eyes, but immediately regretted it. The ambient light seemed
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `365` activation `2.966` class `word` token ` glance`
+  - was going to be alright. He forced himself to glance in its direction and saw the teary-eyed face
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `479` activation `2.962` class `word` token ` to`
+  - be back home where you belong". Soon he began to panic and his thoughts began to race. 'Who
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `386` activation `2.858` class `word` token ` continued`
+  - of a woman staring back at him. As he continued to take inventory of her, he scanned down to
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `477` activation `2.835` class `word` token ` he`
+  - you will be back home where you belong". Soon he began to panic and his thoughts began to race.
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `361` activation `2.832` class `word` token ` He`
+  - uring him that everything was going to be alright. He forced himself to glance in its direction and saw the
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `369` activation `2.799` class `word` token ` and`
+  - alright. He forced himself to glance in its direction and saw the teary-eyed face of a woman staring
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `387` activation `2.789` class `word` token ` to`
+  - a woman staring back at him. As he continued to take inventory of her, he scanned down to her
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `368` activation `2.751` class `word` token ` direction`
+  - be alright. He forced himself to glance in its direction and saw the teary-eyed face of a woman
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `375` activation `2.728` class `word` token ` face`
+  - glance in its direction and saw the teary-eyed face of a woman staring back at him. As he
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `379` activation `2.689` class `word` token ` staring`
+  - and saw the teary-eyed face of a woman staring back at him. As he continued to take inventory
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `482` activation `2.682` class `word` token ` his`
+  - where you belong". Soon he began to panic and his thoughts began to race. 'Who was Tim and
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `419` activation `2.638` class `style_function_word` token ` while`
+  - fiercely gripped Kleenex in both fists, while she seemed to be searching his eyes for something.
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `340` activation `2.633` class `expanded_negation_word` token ` were`
+  - to course through his body. His whimpers were met with a calming, albeit unfamiliar, voice ass
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `420` activation `2.626` class `word` token ` she`
+  - gripped Kleenex in both fists, while she seemed to be searching his eyes for something. "Don
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `421` activation `2.622` class `word` token ` seemed`
+  - pped Kleenex in both fists, while she seemed to be searching his eyes for something. "Don't
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `478` activation `2.593` class `word` token ` began`
+  - will be back home where you belong". Soon he began to panic and his thoughts began to race. '
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `418` activation `2.580` class `punctuation` token `,`
+  - she fiercely gripped Kleenex in both fists, while she seemed to be searching his eyes for something
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `392` activation `2.541` class `punctuation` token `,`
+  - him. As he continued to take inventory of her, he scanned down to her hands and noticed that her
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `339` activation `2.535` class `word` token `ers`
+  - began to course through his body. His whimpers were met with a calming, albeit unfamiliar, voice
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `400` activation `2.535` class `word` token ` noticed`
+  - of her, he scanned down to her hands and noticed that her knuckles appeared white as she fiercely gri
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `398` activation `2.521` class `word` token ` hands`
+  - take inventory of her, he scanned down to her hands and noticed that her knuckles appeared white as she
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `399` activation `2.518` class `word` token ` and`
+  - inventory of her, he scanned down to her hands and noticed that her knuckles appeared white as she fiercely
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `124` activation `2.498` class `word` token ` and`
+  - followed up by the screech of a horn and the slamming of brakes from the rather large Dodge behind
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `394` activation `2.484` class `word` token ` scanned`
+  - As he continued to take inventory of her, he scanned down to her hands and noticed that her knuckles
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `422` activation `2.475` class `word` token ` to`
+  - Kleenex in both fists, while she seemed to be searching his eyes for something. "Don't worry
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `307` activation `2.474` class `word` token ` but`
+  - sta... Tim began to slowly open his eyes, but immediately regretted it. The ambient light seemed to
+- `L19:2041` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `380` activation `2.465` class `word` token ` back`
+  - saw the teary-eyed face of a woman staring back at him. As he continued to take inventory of
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `295` activation `5.397` class `word` token ` He`
+  - see his arms or legs. "Woah." He utters as he stands up to look in the
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `377` activation `5.187` class `word` token ` Sara`
+  - "Awh, what!? I'm back?" Sara looks surprised, "Jim, let's not forget
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `378` activation `5.156` class `word` token ` looks`
+  - Awh, what!? I'm back?" Sara looks surprised, "Jim, let's not forget the
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `297` activation `5.098` class `word` token `ters`
+  - arms or legs. "Woah." He utters as he stands up to look in the mirror.
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `308` activation `4.988` class `word` token ` He`
+  - as he stands up to look in the mirror. He can't see his reflection, and he begins to
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `280` activation `4.944` class `word` token ` and`
+  - I'm right here!" as he glances down and realizes that he cannot see his arms or legs.
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `364` activation `4.925` class `word` token ` Jim`
+  - Jim! You're back! What happened?!" Jim replies, "Awh, what!? I'm
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `351` activation `4.797` class `word` token ` shouts`
+  - laughing, he slowly starts to fade back. Sara shouts, "Jim! You're back! What happened
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `267` activation `4.784` class `word` token ` shouts`
+  - did you go? Jim? Jim?!" Jim shouts, "I'm right here!" as he gl
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `244` activation `4.783` class `word` token ` Sara`
+  - Jim replies, "What are you talking about?" Sara screams as she frantically looks around the room,
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `484` activation `4.774` class `word` token ` says`
+  - , you forgive me? This is great!" he says as he fades back once again. Sara figured it
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `343` activation `4.750` class `word` token ` he`
+  - I'm completely invisible!" As he begins laughing, he slowly starts to fade back. Sara shouts, "
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `276` activation `4.743` class `word` token ` he`
+  - Jim shouts, "I'm right here!" as he glances down and realizes that he cannot see his
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `299` activation `4.664` class `word` token ` he`
+  - legs. "Woah." He utters as he stands up to look in the mirror. He can
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `379` activation `4.631` class `word` token ` surprised`
+  - wh, what!? I'm back?" Sara looks surprised, "Jim, let's not forget the topic
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `397` activation `4.617` class `word` token ` Jim`
+  - forget the topic here. You forgot my birthday!" Jim remembers how he wronged Sara and gets sad.
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `278` activation `4.602` class `word` token `ances`
+  - , "I'm right here!" as he glances down and realizes that he cannot see his arms or
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `350` activation `4.577` class `word` token ` Sara`
+  - begins laughing, he slowly starts to fade back. Sara shouts, "Jim! You're back! What
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `300` activation `4.561` class `word` token ` stands`
+  - . "Woah." He utters as he stands up to look in the mirror. He can't
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `483` activation `4.491` class `word` token ` he`
+  - Oh, you forgive me? This is great!" he says as he fades back once again. Sara figured
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `339` activation `4.459` class `word` token ` he`
+  - This is awesome! I'm completely invisible!" As he begins laughing, he slowly starts to fade back.
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `245` activation `4.446` class `word` token ` screams`
+  - replies, "What are you talking about?" Sara screams as she frantically looks around the room, "
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `209` activation `4.434` class `word` token ` said`
+  - We've only been dating for two months." Jim said sadly as he slowly started to fade away. Sara
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `365` activation `4.422` class `word` token ` replies`
+  - ! You're back! What happened?!" Jim replies, "Awh, what!? I'm back
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `247` activation `4.416` class `word` token ` she`
+  - "What are you talking about?" Sara screams as she frantically looks around the room, "Where did
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `341` activation `4.396` class `word` token ` laughing`
+  - awesome! I'm completely invisible!" As he begins laughing, he slowly starts to fade back. Sara shouts
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `344` activation `4.381` class `word` token ` slowly`
+  - 'm completely invisible!" As he begins laughing, he slowly starts to fade back. Sara shouts, "Jim
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `301` activation `4.368` class `word` token ` up`
+  - "Woah." He utters as he stands up to look in the mirror. He can't see
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `254` activation `4.311` class `punctuation` token `,`
+  - Sara screams as she frantically looks around the room, "Where did you go? Jim? Jim?
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `444` activation `4.298` class `word` token ` Sara`
+  - . I promise I will remember your birthday forever!" Sara screams, "You disappeared again! Jim! It
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `235` activation `4.250` class `word` token ` replies`
+  - a-? Jim? What's happening?" Jim replies, "What are you talking about?" Sara screams
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `445` activation `4.234` class `word` token ` screams`
+  - I promise I will remember your birthday forever!" Sara screams, "You disappeared again! Jim! It's
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `234` activation `4.194` class `word` token ` Jim`
+  - Wha-? Jim? What's happening?" Jim replies, "What are you talking about?" Sara
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `492` activation `4.147` class `word` token ` Sara`
+  - !" he says as he fades back once again. Sara figured it out, "Jim, I think whenever
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `302` activation `4.124` class `word` token ` to`
+  - Woah." He utters as he stands up to look in the mirror. He can't see his
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `266` activation `4.115` class `word` token ` Jim`
+  - Where did you go? Jim? Jim?!" Jim shouts, "I'm right here!" as he
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `408` activation `4.107` class `word` token ` He`
+  - remembers how he wronged Sara and gets sad. He begins to fade away again. Jim says, "
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `221` activation `4.065` class `word` token `claims`
+  - as he slowly started to fade away. Sara exclaims, "Wha-? Jim? What's
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `404` activation `3.901` class `word` token ` and`
+  - my birthday!" Jim remembers how he wronged Sara and gets sad. He begins to fade away again.
+- `L19:2041` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `250` activation `3.877` class `word` token ` looks`
+  - you talking about?" Sara screams as she frantically looks around the room, "Where did you go?
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `317` activation `4.488` class `word` token ` sighed`
+  - fun!" he said. Steve looked at Sally and sighed, "Well, one way or another, we
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `310` activation `4.384` class `word` token ` said`
+  - different route, it'll be more fun!" he said. Steve looked at Sally and sighed, "Well
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `316` activation `4.216` class `word` token ` and`
+  - more fun!" he said. Steve looked at Sally and sighed, "Well, one way or another,
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `309` activation `4.132` class `word` token ` he`
+  - a different route, it'll be more fun!" he said. Steve looked at Sally and sighed, "
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `315` activation `3.776` class `word` token ` Sally`
+  - be more fun!" he said. Steve looked at Sally and sighed, "Well, one way or another
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `364` activation `3.669` class `word` token ` paused`
+  - ible through all the cobwebs and moss. Jack paused to read the sign when he realized, it wasn
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `503` activation `3.648` class `word` token ` other`
+  - monster. The three friends fearfully looked at each other, they knew the house was haunted.
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `313` activation `3.547` class `word` token ` looked`
+  - it'll be more fun!" he said. Steve looked at Sally and sighed, "Well, one way
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `281` activation `3.436` class `word` token ` Steve`
+  - need you to take me", whimpered Sally. Steve of course obliged but Jack had other ideas, "
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `279` activation `3.195` class `word` token ` Sally`
+  - but I need you to take me", whimpered Sally. Steve of course obliged but Jack had other ideas
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `504` activation `3.105` class `punctuation` token `,`
+  - . The three friends fearfully looked at each other, they knew the house was haunted.
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `394` activation `3.083` class `word` token ` Jack`
+  - a warning that read, "Do Not Enter". Jack decided not to share this information with the group,
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `312` activation `3.076` class `word` token ` Steve`
+  - , it'll be more fun!" he said. Steve looked at Sally and sighed, "Well, one
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `505` activation `2.963` class `word` token ` they`
+  - The three friends fearfully looked at each other, they knew the house was haunted.
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `369` activation `2.951` class `style_function_word` token ` when`
+  - webs and moss. Jack paused to read the sign when he realized, it wasn't a street sign at
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `370` activation `2.856` class `word` token ` he`
+  - and moss. Jack paused to read the sign when he realized, it wasn't a street sign at all
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `417` activation `2.842` class `word` token `ycled`
+  - on an adventure after all. The group cautiously cycled down the unkempt road, it seemed as though
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `276` activation `2.837` class `punctuation` token `",`
+  - home guys, but I need you to take me", whimpered Sally. Steve of course obliged but Jack
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `284` activation `2.783` class `word` token ` obliged`
+  - take me", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine,
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `368` activation `2.766` class `word` token ` sign`
+  - cobwebs and moss. Jack paused to read the sign when he realized, it wasn't a street sign
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `318` activation `2.754` class `punctuation` token `,`
+  - !" he said. Steve looked at Sally and sighed, "Well, one way or another, we'll
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `500` activation `2.692` class `word` token ` looked`
+  - eyes of a monster. The three friends fearfully looked at each other, they knew the house was haunted
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `499` activation `2.654` class `word` token `fully`
+  - the eyes of a monster. The three friends fearfully looked at each other, they knew the house was
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `363` activation `2.562` class `word` token ` Jack`
+  - legible through all the cobwebs and moss. Jack paused to read the sign when he realized, it
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `286` activation `2.560` class `word` token ` Jack`
+  - ", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine, but let
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `497` activation `2.535` class `word` token ` friends`
+  - they were the eyes of a monster. The three friends fearfully looked at each other, they knew the
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `422` activation `2.487` class `word` token ` road`
+  - . The group cautiously cycled down the unkempt road, it seemed as though nobody had been there in
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `339` activation `2.479` class `word` token ` off`
+  - get you home safely". The three young friends set off down a road they were unfamiliar with, the street
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `285` activation `2.477` class `word` token ` but`
+  - me", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine, but
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `414` activation `2.451` class `word` token ` group`
+  - , they were on an adventure after all. The group cautiously cycled down the unkempt road, it
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `415` activation `2.443` class `word` token ` cautiously`
+  - they were on an adventure after all. The group cautiously cycled down the unkempt road, it seemed
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `350` activation `2.413` class `word` token ` sign`
+  - down a road they were unfamiliar with, the street sign was barely legible through all the cobwebs and
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `314` activation `2.356` class `word` token ` at`
+  - 'll be more fun!" he said. Steve looked at Sally and sighed, "Well, one way or
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `395` activation `2.349` class `word` token ` decided`
+  - warning that read, "Do Not Enter". Jack decided not to share this information with the group, they
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `278` activation `2.297` class `word` token `pered`
+  - , but I need you to take me", whimpered Sally. Steve of course obliged but Jack had other
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `346` activation `2.220` class `word` token ` with`
+  - young friends set off down a road they were unfamiliar with, the street sign was barely legible through all
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `337` activation `2.211` class `word` token ` friends`
+  - we'll get you home safely". The three young friends set off down a road they were unfamiliar with,
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `283` activation `2.204` class `word` token ` course`
+  - to take me", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `423` activation `2.200` class `punctuation` token `,`
+  - The group cautiously cycled down the unkempt road, it seemed as though nobody had been there in years
+- `L19:2041` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `403` activation `2.180` class `word` token ` group`
+  - ". Jack decided not to share this information with the group, they were on an adventure after all. The
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `496` activation `5.103` class `word` token ` and`
+  - . "I want to talk!" The officer stopped and simply smiled. "You're making the right decision
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `509` activation `5.075` class `word` token ` officer`
+  - . "You're making the right decision," the officer responded.
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `498` activation `4.931` class `word` token ` smiled`
+  - I want to talk!" The officer stopped and simply smiled. "You're making the right decision," the
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `510` activation `4.764` class `word` token ` responded`
+  - "You're making the right decision," the officer responded.
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `494` activation `4.591` class `word` token ` officer`
+  - Billy spoke. "I want to talk!" The officer stopped and simply smiled. "You're making the
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `495` activation `3.968` class `word` token ` stopped`
+  - spoke. "I want to talk!" The officer stopped and simply smiled. "You're making the right
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `497` activation `3.962` class `word` token ` simply`
+  - "I want to talk!" The officer stopped and simply smiled. "You're making the right decision,"
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `485` activation `3.857` class `word` token ` spoke`
+  - Before the officer could utter one complete sentence, Billy spoke. "I want to talk!" The officer stopped
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `507` activation `3.596` class `punctuation` token `,"`
+  - simply smiled. "You're making the right decision," the officer responded.
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `468` activation `3.357` class `word` token ` walked`
+  - As the thoughts raced through his head, the officer walked back in through the door. Before the officer could
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `484` activation `3.298` class `word` token ` Billy`
+  - . Before the officer could utter one complete sentence, Billy spoke. "I want to talk!" The officer
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `470` activation `3.049` class `word` token ` in`
+  - thoughts raced through his head, the officer walked back in through the door. Before the officer could utter one
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `467` activation `2.995` class `word` token ` officer`
+  - ? As the thoughts raced through his head, the officer walked back in through the door. Before the officer
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `478` activation `2.789` class `expanded_negation_word` token ` could`
+  - walked back in through the door. Before the officer could utter one complete sentence, Billy spoke. "I
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `474` activation `2.646` class `sentence_boundary` token `.`
+  - head, the officer walked back in through the door. Before the officer could utter one complete sentence, Billy
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `473` activation `2.635` class `word` token ` door`
+  - his head, the officer walked back in through the door. Before the officer could utter one complete sentence,
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `414` activation `2.597` class `word` token ` He`
+  - soon as the officer walked back into the room. He wasn't sure what to think of himself for what
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `469` activation `2.593` class `word` token ` back`
+  - the thoughts raced through his head, the officer walked back in through the door. Before the officer could utter
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `483` activation `2.569` class `punctuation` token `,`
+  - door. Before the officer could utter one complete sentence, Billy spoke. "I want to talk!" The
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `479` activation `2.512` class `word` token ` utter`
+  - back in through the door. Before the officer could utter one complete sentence, Billy spoke. "I want
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `475` activation `2.438` class `word` token ` Before`
+  - , the officer walked back in through the door. Before the officer could utter one complete sentence, Billy spoke
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `477` activation `2.423` class `word` token ` officer`
+  - officer walked back in through the door. Before the officer could utter one complete sentence, Billy spoke. "
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `499` activation `2.366` class `sentence_boundary` token `.`
+  - want to talk!" The officer stopped and simply smiled. "You're making the right decision," the officer
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `482` activation `2.364` class `word` token ` sentence`
+  - the door. Before the officer could utter one complete sentence, Billy spoke. "I want to talk!"
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `464` activation `2.359` class `word` token ` head`
+  - think of him? As the thoughts raced through his head, the officer walked back in through the door.
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `460` activation `2.358` class `word` token ` thoughts`
+  - with in the neighborhood think of him? As the thoughts raced through his head, the officer walked back in
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `465` activation `2.304` class `punctuation` token `,`
+  - of him? As the thoughts raced through his head, the officer walked back in through the door. Before
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `397` activation `2.244` class `word` token ` He`
+  - . Today it was working very well on Billy. He knew what he would do as soon as the officer
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `492` activation `2.167` class `punctuation` token `!"`
+  - sentence, Billy spoke. "I want to talk!" The officer stopped and simply smiled. "You're
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `493` activation `2.128` class `word` token ` The`
+  - , Billy spoke. "I want to talk!" The officer stopped and simply smiled. "You're making
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `486` activation `2.029` class `sentence_boundary` token `.`
+  - the officer could utter one complete sentence, Billy spoke. "I want to talk!" The officer stopped and
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `508` activation `1.992` class `word` token ` the`
+  - smiled. "You're making the right decision," the officer responded.
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `346` activation `1.908` class `word` token ` and`
+  - the corner. Billy's chair was in the corner and positioned in such a way that the officer who had
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `341` activation `1.871` class `word` token ` chair`
+  - , and a camera in the corner. Billy's chair was in the corner and positioned in such a way
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `408` activation `1.870` class `word` token ` walked`
+  - knew what he would do as soon as the officer walked back into the room. He wasn't sure what
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `461` activation `1.870` class `word` token ` raced`
+  - in the neighborhood think of him? As the thoughts raced through his head, the officer walked back in through
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `466` activation `1.830` class `word` token ` the`
+  - him? As the thoughts raced through his head, the officer walked back in through the door. Before the
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `342` activation `1.826` class `expanded_negation_word` token ` was`
+  - and a camera in the corner. Billy's chair was in the corner and positioned in such a way that
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `471` activation `1.798` class `word` token ` through`
+  - raced through his head, the officer walked back in through the door. Before the officer could utter one complete
+- `L19:2041` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `412` activation `1.674` class `word` token ` room`
+  - do as soon as the officer walked back into the room. He wasn't sure what to think of himself
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `510` activation `5.061` class `word` token ` smiled`
+  - This is a find you'll remember forever." Jack smiled.
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `464` activation `4.733` class `word` token ` He`
+  - lifetime. I've got to show my Dad!" He ran in and woke his dad up, but this
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `350` activation `4.503` class `word` token ` says`
+  - roll. "Nothing, nothing, nothing," he says, going through each penny. He's halfway through
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `445` activation `4.403` class `word` token ` exclaimed`
+  - -B. "Wow, wow, wow!" Jack exclaimed. "This is the find of a lifetime.
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `472` activation `4.351` class `punctuation` token `,`
+  - Dad!" He ran in and woke his dad up, but this time, he was more than happy to
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `444` activation `4.307` class `word` token ` Jack`
+  - -D-B. "Wow, wow, wow!" Jack exclaimed. "This is the find of a lifetime
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `409` activation `4.194` class `word` token ` Jack`
+  - ! Is this a 1909 VDB?" Jack inspects the bottom of the coin and sees the
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `467` activation `4.191` class `word` token ` and`
+  - 've got to show my Dad!" He ran in and woke his dad up, but this time, he
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `465` activation `4.187` class `word` token ` ran`
+  - . I've got to show my Dad!" He ran in and woke his dad up, but this time
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `154` activation `3.878` class `punctuation` token `,`
+  - , can I?" Jack's father opened one eye, trying to shield it from the bright morning sun.
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `349` activation `3.871` class `word` token ` he`
+  - the roll. "Nothing, nothing, nothing," he says, going through each penny. He's halfway
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `466` activation `3.715` class `word` token ` in`
+  - I've got to show my Dad!" He ran in and woke his dad up, but this time,
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `297` activation `3.638` class `word` token ` says`
+  - After being on the hunt for a while, he says "Dang. I checked all of those and
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `471` activation `3.638` class `word` token ` up`
+  - my Dad!" He ran in and woke his dad up, but this time, he was more than happy
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `331` activation `3.637` class `word` token `He`
+  - left, please let this be a good one!" He takes a big breath and starts opening the roll.
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `239` activation `3.587` class `word` token ` he`
+  - off!" "Okay, Dad!" exclaimed Jack as he scooped up the rolled-up pennies and went
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `351` activation `3.449` class `punctuation` token `,`
+  - . "Nothing, nothing, nothing," he says, going through each penny. He's halfway through when
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `336` activation `3.422` class `word` token ` and`
+  - be a good one!" He takes a big breath and starts opening the roll. "Nothing, nothing,
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `417` activation `3.370` class `word` token ` and`
+  - DB?" Jack inspects the bottom of the coin and sees the 3 little letters that would make any
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `357` activation `3.343` class `word` token ` He`
+  - nothing," he says, going through each penny. He's halfway through when he spots something. "Wo
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `470` activation `3.303` class `word` token ` dad`
+  - show my Dad!" He ran in and woke his dad up, but this time, he was more than
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `296` activation `3.290` class `word` token ` he`
+  - . After being on the hunt for a while, he says "Dang. I checked all of those
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `509` activation `3.220` class `word` token ` Jack`
+  - ! This is a find you'll remember forever." Jack smiled.
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `335` activation `3.205` class `word` token ` breath`
+  - this be a good one!" He takes a big breath and starts opening the roll. "Nothing, nothing
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `362` activation `3.057` class `word` token ` he`
+  - going through each penny. He's halfway through when he spots something. "Woah! A 190
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `468` activation `3.032` class `word` token ` woke`
+  - got to show my Dad!" He ran in and woke his dad up, but this time, he was
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `348` activation `3.025` class `punctuation` token `,"`
+  - opening the roll. "Nothing, nothing, nothing," he says, going through each penny. He's
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `238` activation `2.951` class `style_function_word` token ` as`
+  - day off!" "Okay, Dad!" exclaimed Jack as he scooped up the rolled-up pennies and
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `237` activation `2.913` class `word` token ` Jack`
+  - my day off!" "Okay, Dad!" exclaimed Jack as he scooped up the rolled-up pennies
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `473` activation `2.905` class `word` token ` but`
+  - !" He ran in and woke his dad up, but this time, he was more than happy to be
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `361` activation `2.902` class `style_function_word` token ` when`
+  - , going through each penny. He's halfway through when he spots something. "Woah! A
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `443` activation `2.884` class `punctuation` token `!"`
+  - V-D-B. "Wow, wow, wow!" Jack exclaimed. "This is the find of a
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `153` activation `2.822` class `word` token ` eye`
+  - now, can I?" Jack's father opened one eye, trying to shield it from the bright morning sun
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `94` activation `2.814` class `punctuation` token `,`
+  - is here. Jack excitedly wakes up his father, who is enjoying his day off by sleeping in later
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `236` activation `2.728` class `word` token ` exclaimed`
+  - 's my day off!" "Okay, Dad!" exclaimed Jack as he scooped up the rolled-up penn
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `358` activation `2.727` class `word` token `'s`
+  - ," he says, going through each penny. He's halfway through when he spots something. "Woah
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `340` activation `2.720` class `word` token ` roll`
+  - !" He takes a big breath and starts opening the roll. "Nothing, nothing, nothing," he says
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `477` activation `2.717` class `word` token ` he`
+  - and woke his dad up, but this time, he was more than happy to be woken up upon
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `275` activation `2.633` class `word` token ` he`
+  - bed with the penny rolls in front of him, he carefully unwraps them and begins his close inspection
+- `L19:2041` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `248` activation `2.597` class `word` token ` and`
+  - as he scooped up the rolled-up pennies and went to his room to carefully inspect them for rar
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `393` activation `4.963` class `word` token ` walks`
+  - everyone starts to stand up, Kam included. Kam walks into the group with a nervous look on his face
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `416` activation `4.580` class `word` token ` coach`
+  - Today is the first game of the season," the coach continues to speak. "I don't have much
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `392` activation `4.554` class `word` token ` Kam`
+  - as everyone starts to stand up, Kam included. Kam walks into the group with a nervous look on his
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `380` activation `4.479` class `word` token ` coach`
+  - everyone together. "Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `381` activation `4.342` class `word` token ` screams`
+  - together. "Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included.
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `441` activation `4.301` class `word` token ` down`
+  - all know the stakes." The team has their heads down as they continue to listen. "Just go out
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `383` activation `4.171` class `word` token ` everyone`
+  - "Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included. Kam walks
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `483` activation `4.129` class `word` token ` is`
+  - and they all walk out. Kam's nervous face is gone, and all that is left is motivation.
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `482` activation `4.128` class `word` token ` face`
+  - , and they all walk out. Kam's nervous face is gone, and all that is left is motivation
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `343` activation `4.052` class `word` token ` him`
+  - down to warm himself up. His teammates look at him and started to wonder why he is doing that.
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `344` activation `4.041` class `word` token ` and`
+  - to warm himself up. His teammates look at him and started to wonder why he is doing that. On
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `476` activation `4.023` class `word` token ` walk`
+  - erupts in a synchronized cheer, and they all walk out. Kam's nervous face is gone, and
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `443` activation `4.000` class `word` token ` they`
+  - the stakes." The team has their heads down as they continue to listen. "Just go out there and
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `389` activation `3.985` class `word` token ` Kam`
+  - the coach screams as everyone starts to stand up, Kam included. Kam walks into the group with a nervous
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `387` activation `3.965` class `word` token ` up`
+  - up!" the coach screams as everyone starts to stand up, Kam included. Kam walks into the group with
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `504` activation `3.965` class `word` token ` walks`
+  - He puts one foot in front of the other and walks out into the sunlit entrance.
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `417` activation `3.925` class `word` token ` continues`
+  - is the first game of the season," the coach continues to speak. "I don't have much to
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `385` activation `3.882` class `word` token ` to`
+  - , gather up!" the coach screams as everyone starts to stand up, Kam included. Kam walks into the
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `397` activation `3.856` class `word` token ` with`
+  - up, Kam included. Kam walks into the group with a nervous look on his face. "Today is
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `479` activation `3.852` class `word` token ` Kam`
+  - a synchronized cheer, and they all walk out. Kam's nervous face is gone, and all that is
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `388` activation `3.820` class `punctuation` token `,`
+  - !" the coach screams as everyone starts to stand up, Kam included. Kam walks into the group with a
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `437` activation `3.737` class `word` token ` team`
+  - to say, you all know the stakes." The team has their heads down as they continue to listen.
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `475` activation `3.697` class `word` token ` all`
+  - room erupts in a synchronized cheer, and they all walk out. Kam's nervous face is gone,
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `503` activation `3.668` class `word` token ` and`
+  - . He puts one foot in front of the other and walks out into the sunlit entrance.
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `384` activation `3.653` class `word` token ` starts`
+  - Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included. Kam walks into
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `465` activation `3.648` class `word` token ` room`
+  - your thing. You can win this." The locker room erupts in a synchronized cheer, and they all
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `467` activation `3.615` class `word` token `s`
+  - . You can win this." The locker room erupts in a synchronized cheer, and they all walk out
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `400` activation `3.599` class `word` token ` look`
+  - included. Kam walks into the group with a nervous look on his face. "Today is the first game
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `386` activation `3.583` class `word` token ` stand`
+  - gather up!" the coach screams as everyone starts to stand up, Kam included. Kam walks into the group
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `382` activation `3.576` class `style_function_word` token ` as`
+  - . "Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included. Kam
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `403` activation `3.574` class `word` token ` face`
+  - walks into the group with a nervous look on his face. "Today is the first game of the season
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `419` activation `3.539` class `word` token ` speak`
+  - first game of the season," the coach continues to speak. "I don't have much to say,
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `446` activation `3.479` class `word` token ` listen`
+  - The team has their heads down as they continue to listen. "Just go out there and do your thing
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `474` activation `3.468` class `word` token ` they`
+  - locker room erupts in a synchronized cheer, and they all walk out. Kam's nervous face is gone
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `341` activation `3.464` class `word` token ` look`
+  - up and down to warm himself up. His teammates look at him and started to wonder why he is doing
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `418` activation `3.458` class `word` token ` to`
+  - the first game of the season," the coach continues to speak. "I don't have much to say
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `445` activation `3.367` class `word` token ` to`
+  - ." The team has their heads down as they continue to listen. "Just go out there and do your
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `477` activation `3.351` class `word` token ` out`
+  - s in a synchronized cheer, and they all walk out. Kam's nervous face is gone, and all
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `444` activation `3.343` class `word` token ` continue`
+  - stakes." The team has their heads down as they continue to listen. "Just go out there and do
+- `L19:2041` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `398` activation `3.261` class `word` token ` a`
+  - , Kam included. Kam walks into the group with a nervous look on his face. "Today is the
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `507` activation `4.786` class `word` token ` said`
+  - head. "I love you too!" his owner said back to Eddie.
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `506` activation `4.409` class `word` token ` owner`
+  - his head. "I love you too!" his owner said back to Eddie.
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `283` activation `4.316` class `word` token ` he`
+  - ." Eddie immediately paused. "What is happening?" he thought. He tried to bark again, and again
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `456` activation `4.301` class `word` token ` he`
+  - ement was painted on Eddie's owner's face as he realized the craziness of this moment. His cute
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `421` activation `4.242` class `word` token ` looked`
+  - to eat. When his owner finished pouring, Eddie looked straight into his owner's eyes, paused, then
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `284` activation `4.150` class `word` token ` thought`
+  - Eddie immediately paused. "What is happening?" he thought. He tried to bark again, and again he
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `486` activation `4.122` class `word` token ` owner`
+  - ddie immediately jumped into his owner's arms as his owner wrapped him in a huge hug and began kissing his
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `493` activation `3.986` class `word` token ` and`
+  - arms as his owner wrapped him in a huge hug and began kissing his head. "I love you too
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `442` activation `3.960` class `word` token ` shock`
+  - said, "I love you!" A look of shock and amazement was painted on Eddie's owner
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `276` activation `3.876` class `word` token ` paused`
+  - had said the word "bark." Eddie immediately paused. "What is happening?" he thought. He
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `483` activation `3.816` class `word` token ` arms`
+  - human! Eddie immediately jumped into his owner's arms as his owner wrapped him in a huge hug and
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `428` activation `3.761` class `punctuation` token `,`
+  - pouring, Eddie looked straight into his owner's eyes, paused, then said, "I love you!"
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `478` activation `3.723` class `word` token ` jumped`
+  - puppy just talked like a human! Eddie immediately jumped into his owner's arms as his owner wrapped him
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `286` activation `3.722` class `word` token ` He`
+  - paused. "What is happening?" he thought. He tried to bark again, and again he voice the
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `446` activation `3.680` class `word` token `ement`
+  - love you!" A look of shock and amazement was painted on Eddie's owner's face as he
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `429` activation `3.640` class `word` token ` paused`
+  - , Eddie looked straight into his owner's eyes, paused, then said, "I love you!" A
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `484` activation `3.631` class `style_function_word` token ` as`
+  - ! Eddie immediately jumped into his owner's arms as his owner wrapped him in a huge hug and began
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `440` activation `3.610` class `word` token ` look`
+  - , then said, "I love you!" A look of shock and amazement was painted on Eddie
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `430` activation `3.490` class `punctuation` token `,`
+  - Eddie looked straight into his owner's eyes, paused, then said, "I love you!" A look
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `427` activation `3.468` class `word` token ` eyes`
+  - finished pouring, Eddie looked straight into his owner's eyes, paused, then said, "I love you
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `454` activation `3.449` class `word` token ` face`
+  - amazement was painted on Eddie's owner's face as he realized the craziness of this moment.
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `447` activation `3.443` class `expanded_negation_word` token ` was`
+  - you!" A look of shock and amazement was painted on Eddie's owner's face as he realized
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `494` activation `3.437` class `word` token ` began`
+  - as his owner wrapped him in a huge hug and began kissing his head. "I love you too!"
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `431` activation `3.433` class `style_function_word` token ` then`
+  - looked straight into his owner's eyes, paused, then said, "I love you!" A look of
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `420` activation `3.413` class `word` token ` Eddie`
+  - him to eat. When his owner finished pouring, Eddie looked straight into his owner's eyes, paused,
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `397` activation `3.361` class `word` token ` waited`
+  - his owner said them in his presence. Eddie waited by the bowl as his owner poured out the dog
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `477` activation `3.357` class `word` token ` immediately`
+  - little puppy just talked like a human! Eddie immediately jumped into his owner's arms as his owner wrapped
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `492` activation `3.345` class `word` token ` hug`
+  - 's arms as his owner wrapped him in a huge hug and began kissing his head. "I love you
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `422` activation `3.301` class `word` token ` straight`
+  - eat. When his owner finished pouring, Eddie looked straight into his owner's eyes, paused, then said
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `497` activation `3.253` class `word` token ` head`
+  - wrapped him in a huge hug and began kissing his head. "I love you too!" his owner said
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `432` activation `3.253` class `word` token ` said`
+  - straight into his owner's eyes, paused, then said, "I love you!" A look of shock
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `508` activation `3.185` class `word` token ` back`
+  - . "I love you too!" his owner said back to Eddie.
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `487` activation `3.144` class `word` token ` wrapped`
+  - immediately jumped into his owner's arms as his owner wrapped him in a huge hug and began kissing his head
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `441` activation `3.138` class `word` token ` of`
+  - then said, "I love you!" A look of shock and amazement was painted on Eddie's
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `455` activation `3.084` class `style_function_word` token ` as`
+  - azement was painted on Eddie's owner's face as he realized the craziness of this moment. His
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `443` activation `3.027` class `word` token ` and`
+  - , "I love you!" A look of shock and amazement was painted on Eddie's owner's
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `275` activation `2.998` class `word` token ` immediately`
+  - human had said the word "bark." Eddie immediately paused. "What is happening?" he thought.
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `290` activation `2.968` class `word` token ` again`
+  - is happening?" he thought. He tried to bark again, and again he voice the word "bark
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `504` activation `2.944` class `punctuation` token `!"`
+  - began kissing his head. "I love you too!" his owner said back to Eddie.
+- `L19:2041` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `291` activation `2.908` class `punctuation` token `,`
+  - happening?" he thought. He tried to bark again, and again he voice the word "bark"
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `409` activation `4.579` class `word` token ` said`
+  - is . . . mush, I think," Thomas said with disgust. "Well, this is what they gave
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `381` activation `4.540` class `word` token ` said`
+  - did." "This is the casserole," she said matter-of-factly. "Enjoy." "This isn
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `380` activation `4.246` class `word` token ` she`
+  - "I did." "This is the casserole," she said matter-of-factly. "Enjoy." "This
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `314` activation `4.179` class `word` token ` She`
+  - on his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In that case,
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `408` activation `4.144` class `word` token ` Thomas`
+  - This is . . . mush, I think," Thomas said with disgust. "Well, this is what they
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `500` activation `4.102` class `word` token ` he`
+  - date for a night out like this?" "What?" he stammered. "Same answer," she shrugged
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `315` activation `4.068` class `word` token ` turned`
+  - his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In that case, how
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `443` activation `3.882` class `word` token ` Thomas`
+  - so . . ." she let the word trail. Thomas was frustrated. All he wanted was a nice quiet
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `297` activation `3.637` class `word` token ` with`
+  - . "No, it's not that," said Thomas with a little bit of red showing on his cheeks.
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `437` activation `3.632` class `word` token ` she`
+  - didn't put it in wrong so . . ." she let the word trail. Thomas was frustrated. All
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `503` activation `3.566` class `word` token `ed`
+  - night out like this?" "What?" he stammered. "Same answer," she shrugged.
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `296` activation `3.524` class `word` token ` Thomas`
+  - often. "No, it's not that," said Thomas with a little bit of red showing on his cheeks
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `318` activation `3.509` class `word` token ` him`
+  - "Oh," said Elizabeth surprised. She turned fully towards him. "In that case, how can I help
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `298` activation `3.451` class `word` token ` a`
+  - "No, it's not that," said Thomas with a little bit of red showing on his cheeks. "Oh
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `270` activation `3.436` class `word` token ` interrupted`
+  - buy me a drink after my shift ends," she interrupted with a roll of her eyes. This was something
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `410` activation `3.386` class `word` token ` with`
+  - . . . mush, I think," Thomas said with disgust. "Well, this is what they gave me
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `220` activation `3.350` class `word` token ` and`
+  - She responded with a sharp stop to her quick walk and tilted her head back in his direction. "Hm
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `223` activation `3.338` class `word` token ` head`
+  - a sharp stop to her quick walk and tilted her head back in his direction. "Hm?" was all
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `269` activation `3.294` class `word` token ` she`
+  - 't buy me a drink after my shift ends," she interrupted with a roll of her eyes. This was
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `509` activation `3.256` class `word` token ` she`
+  - ?" he stammered. "Same answer," she shrugged.
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `312` activation `3.136` class `word` token ` surprised`
+  - red showing on his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In that
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `385` activation `3.099` class `word` token `actly`
+  - the casserole," she said matter-of-factly. "Enjoy." "This isn't a casser
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `311` activation `3.077` class `word` token ` Elizabeth`
+  - of red showing on his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `438` activation `3.065` class `word` token ` let`
+  - 't put it in wrong so . . ." she let the word trail. Thomas was frustrated. All he
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `407` activation `3.057` class `punctuation` token `,"`
+  - . This is . . . mush, I think," Thomas said with disgust. "Well, this is what
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `510` activation `3.040` class `word` token ` shrugged`
+  - he stammered. "Same answer," she shrugged.
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `444` activation `3.024` class `expanded_negation_word` token ` was`
+  - . . ." she let the word trail. Thomas was frustrated. All he wanted was a nice quiet night
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `201` activation `3.007` class `word` token ` called`
+  - mind. "Excuse me, Elizabeth?" Thomas called over as his server passed his table. She responded
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `211` activation `2.969` class `word` token ` responded`
+  - called over as his server passed his table. She responded with a sharp stop to her quick walk and tilted
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `271` activation `2.959` class `word` token ` with`
+  - me a drink after my shift ends," she interrupted with a roll of her eyes. This was something she
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `309` activation `2.939` class `punctuation` token `,"`
+  - little bit of red showing on his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him.
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `379` activation `2.905` class `punctuation` token `,"`
+  - ." "I did." "This is the casserole," she said matter-of-factly. "Enjoy."
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `411` activation `2.841` class `word` token ` disgust`
+  - . . mush, I think," Thomas said with disgust. "Well, this is what they gave me at
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `316` activation `2.803` class `word` token ` fully`
+  - cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In that case, how can
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `272` activation `2.792` class `word` token ` a`
+  - a drink after my shift ends," she interrupted with a roll of her eyes. This was something she'd
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `227` activation `2.744` class `word` token ` direction`
+  - her quick walk and tilted her head back in his direction. "Hm?" was all she could muster.
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `294` activation `2.721` class `punctuation` token `,"`
+  - all too often. "No, it's not that," said Thomas with a little bit of red showing on
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `235` activation `2.652` class `expanded_negation_word` token ` could`
+  - in his direction. "Hm?" was all she could muster. "Um, look, I don't
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `225` activation `2.638` class `word` token ` in`
+  - stop to her quick walk and tilted her head back in his direction. "Hm?" was all she could
+- `L19:2041` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `212` activation `2.635` class `word` token ` with`
+  - over as his server passed his table. She responded with a sharp stop to her quick walk and tilted her
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `382` activation `5.165` class `word` token ` said`
+  - sir, but what are you doing?" the doctor said in shock. The officer shouldered past one of
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `381` activation `4.357` class `word` token ` doctor`
+  - , sir, but what are you doing?" the doctor said in shock. The officer shouldered past one
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `387` activation `4.258` class `word` token ` officer`
+  - you doing?" the doctor said in shock. The officer shouldered past one of the paramedics and grabbed
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `436` activation `4.235` class `word` token ` said`
+  - ’s for your own safety, doc," the officer said, shrugging his equipment-laden belt higher on
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `359` activation `4.158` class `punctuation` token `,`
+  - of you today." A policeman rushed into the room, flashing his badge at the nurse. "Excuse
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `396` activation `3.882` class `word` token ` and`
+  - The officer shouldered past one of the paramedics and grabbed the barely conscious man by the wrist. With
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `358` activation `3.694` class `word` token ` room`
+  - care of you today." A policeman rushed into the room, flashing his badge at the nurse. "Exc
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `467` activation `3.622` class `word` token ` said`
+  - "His BP is dropping, doctor," the nurse said urgently as they finished attaching electrodes to the patient.
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `384` activation `3.551` class `word` token ` shock`
+  - but what are you doing?" the doctor said in shock. The officer shouldered past one of the param
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `437` activation `3.478` class `punctuation` token `,`
+  - for your own safety, doc," the officer said, shrugging his equipment-laden belt higher on his
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `488` activation `3.476` class `word` token ` said`
+  - "We need to stop this bleeding immediately," the doctor said, snapping on a pair of gloves as two more
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `383` activation `3.398` class `word` token ` in`
+  - , but what are you doing?" the doctor said in shock. The officer shouldered past one of the
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `435` activation `3.392` class `word` token ` officer`
+  - 'It’s for your own safety, doc," the officer said, shrugging his equipment-laden belt higher
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `395` activation `3.341` class `word` token `edics`
+  - . The officer shouldered past one of the paramedics and grabbed the barely conscious man by the wrist.
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `355` activation `3.198` class `word` token ` rushed`
+  - will be taking care of you today." A policeman rushed into the room, flashing his badge at the nurse
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `329` activation `3.068` class `word` token ` responded`
+  - of the paramedics that had brought the patient in responded. "Hello, Andy. My name is Doctor
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `322` activation `3.040` class `word` token `edics`
+  - , chest, and arms," one of the paramedics that had brought the patient in responded. "Hello
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `404` activation `2.918` class `word` token ` wrist`
+  - paramedics and grabbed the barely conscious man by the wrist. With a distinct click, he chained the man
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `489` activation `2.905` class `punctuation` token `,`
+  - need to stop this bleeding immediately," the doctor said, snapping on a pair of gloves as two more doctors
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `466` activation `2.839` class `word` token ` nurse`
+  - ." "His BP is dropping, doctor," the nurse said urgently as they finished attaching electrodes to the patient
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `406` activation `2.830` class `word` token ` With`
+  - and grabbed the barely conscious man by the wrist. With a distinct click, he chained the man's arm
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `487` activation `2.824` class `word` token ` doctor`
+  - . "We need to stop this bleeding immediately," the doctor said, snapping on a pair of gloves as two
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `365` activation `2.799` class `word` token ` nurse`
+  - rushed into the room, flashing his badge at the nurse. "Excuse me, sir, but what
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `411` activation `2.795` class `word` token ` he`
+  - man by the wrist. With a distinct click, he chained the man's arm to the leg of the
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `401` activation `2.740` class `word` token ` man`
+  - one of the paramedics and grabbed the barely conscious man by the wrist. With a distinct click, he
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `354` activation `2.676` class `word` token ` policeman`
+  - we will be taking care of you today." A policeman rushed into the room, flashing his badge at the
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `407` activation `2.611` class `word` token ` a`
+  - grabbed the barely conscious man by the wrist. With a distinct click, he chained the man's arm to
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `379` activation `2.602` class `punctuation` token `?"`
+  - use me, sir, but what are you doing?" the doctor said in shock. The officer shouldered
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `390` activation `2.585` class `word` token ` past`
+  - the doctor said in shock. The officer shouldered past one of the paramedics and grabbed the barely conscious
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `266` activation `2.541` class `word` token ` said`
+  - , I need you to calm down," the nurse said as paramedics pushed the bleeding man through to the
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `389` activation `2.541` class `word` token `ered`
+  - ?" the doctor said in shock. The officer shouldered past one of the paramedics and grabbed the barely
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `439` activation `2.507` class `word` token `ugging`
+  - own safety, doc," the officer said, shrugging his equipment-laden belt higher on his waist.
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `362` activation `2.489` class `word` token ` badge`
+  - ." A policeman rushed into the room, flashing his badge at the nurse. "Excuse me, sir
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `391` activation `2.323` class `word` token ` one`
+  - doctor said in shock. The officer shouldered past one of the paramedics and grabbed the barely conscious man
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `356` activation `2.298` class `word` token ` into`
+  - be taking care of you today." A policeman rushed into the room, flashing his badge at the nurse.
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `360` activation `2.295` class `word` token ` flashing`
+  - you today." A policeman rushed into the room, flashing his badge at the nurse. "Excuse me
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `352` activation `2.280` class `punctuation` token `."`
+  - , and we will be taking care of you today." A policeman rushed into the room, flashing his badge
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `397` activation `2.279` class `word` token ` grabbed`
+  - officer shouldered past one of the paramedics and grabbed the barely conscious man by the wrist. With a
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `363` activation `2.260` class `word` token ` at`
+  - A policeman rushed into the room, flashing his badge at the nurse. "Excuse me, sir,
+- `L19:2041` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `433` activation `2.244` class `punctuation` token `,"`
+  - table. 'It’s for your own safety, doc," the officer said, shrugging his equipment-laden
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `435` activation `4.715` class `word` token ` said`
+  - , don't tease me like that!" Minami said, swatting Himoko's hand away with
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `436` activation `4.011` class `punctuation` token `,`
+  - don't tease me like that!" Minami said, swatting Himoko's hand away with a
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `503` activation `3.984` class `word` token ` said`
+  - hear you out any time you want," Himiko said, offering Minami a warm smile.
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `350` activation `3.925` class `word` token `led`
+  - look weird when I paint?" Himiko giggled some and patted Minami's head. "
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `434` activation `3.903` class `word` token `ami`
+  - -san, don't tease me like that!" Minami said, swatting Himoko's hand away
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `352` activation `3.789` class `word` token ` and`
+  - when I paint?" Himiko giggled some and patted Minami's head. "I guess
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `242` activation `3.724` class `word` token `iko`
+  - my work." "Himiko-san?" Himiko stopped to look out at the sunset from the second
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `348` activation `3.651` class `word` token `iko`
+  - Do I look weird when I paint?" Himiko giggled some and patted Minami's head
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `245` activation `3.549` class `word` token ` look`
+  - "Himiko-san?" Himiko stopped to look out at the sunset from the second floor. "
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `459` activation `3.513` class `word` token `ami`
+  - out. They laughed for a bit and then Minami said, "Maybe I should give my future some
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `502` activation `3.507` class `word` token `iko`
+  - to hear you out any time you want," Himiko said, offering Minami a warm smile.
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `243` activation `3.444` class `word` token ` stopped`
+  - work." "Himiko-san?" Himiko stopped to look out at the sunset from the second floor
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `195` activation `3.405` class `word` token ` head`
+  - with a small smile. Himiko shook her head. "You know, I always wanted to make
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `444` activation `3.366` class `word` token ` away`
+  - ami said, swatting Himoko's hand away with a mock pout. They laughed for a
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `504` activation `3.342` class `punctuation` token `,`
+  - you out any time you want," Himiko said, offering Minami a warm smile.
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `244` activation `3.279` class `word` token ` to`
+  - ." "Himiko-san?" Himiko stopped to look out at the sunset from the second floor.
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `358` activation `3.237` class `word` token ` head`
+  - iko giggled some and patted Minami's head. "I guess you've never realized it yourself
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `457` activation `3.210` class `style_function_word` token ` then`
+  - mock pout. They laughed for a bit and then Minami said, "Maybe I should give my
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `452` activation `3.139` class `word` token ` laughed`
+  - 's hand away with a mock pout. They laughed for a bit and then Minami said, "
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `460` activation `3.137` class `word` token ` said`
+  - . They laughed for a bit and then Minami said, "Maybe I should give my future some more
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `149` activation `3.054` class `word` token `iko`
+  - to attend an art university, Minami?" Himiko asked. "Well, I don't know if I
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `150` activation `3.043` class `word` token ` asked`
+  - attend an art university, Minami?" Himiko asked. "Well, I don't know if I'm
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `184` activation `3.027` class `word` token ` replied`
+  - suited to that, Himiko-san," Minami replied with a small smile. Himiko shook her
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `183` activation `2.996` class `word` token `ami`
+  - more suited to that, Himiko-san," Minami replied with a small smile. Himiko shook
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `445` activation `2.957` class `word` token ` with`
+  - said, swatting Himoko's hand away with a mock pout. They laughed for a bit
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `443` activation `2.953` class `word` token ` hand`
+  - Minami said, swatting Himoko's hand away with a mock pout. They laughed for
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `456` activation `2.898` class `word` token ` and`
+  - a mock pout. They laughed for a bit and then Minami said, "Maybe I should give
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `192` activation `2.833` class `word` token `iko`
+  - Minami replied with a small smile. Himiko shook her head. "You know, I always
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `451` activation `2.804` class `word` token `They`
+  - oko's hand away with a mock pout. They laughed for a bit and then Minami said,
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `446` activation `2.578` class `word` token ` a`
+  - , swatting Himoko's hand away with a mock pout. They laughed for a bit and
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `455` activation `2.544` class `word` token ` bit`
+  - with a mock pout. They laughed for a bit and then Minami said, "Maybe I should
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `453` activation `2.496` class `discourse_marker_word` token ` for`
+  - hand away with a mock pout. They laughed for a bit and then Minami said, "Maybe
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `439` activation `2.447` class `word` token `ting`
+  - me like that!" Minami said, swatting Himoko's hand away with a mock pout
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `354` activation `2.446` class `word` token `atted`
+  - paint?" Himiko giggled some and patted Minami's head. "I guess you've
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `188` activation `2.443` class `word` token ` smile`
+  - Himiko-san," Minami replied with a small smile. Himiko shook her head. "You
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `193` activation `2.425` class `word` token ` shook`
+  - ami replied with a small smile. Himiko shook her head. "You know, I always wanted
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `356` activation `2.421` class `word` token `ami`
+  - Himiko giggled some and patted Minami's head. "I guess you've never realized
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `246` activation `2.419` class `word` token ` out`
+  - imiko-san?" Himiko stopped to look out at the sunset from the second floor. "I
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `351` activation `2.415` class `word` token ` some`
+  - weird when I paint?" Himiko giggled some and patted Minami's head. "I
+- `L19:2041` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `249` activation `2.381` class `word` token ` sunset`
+  - ?" Himiko stopped to look out at the sunset from the second floor. "I think I'd
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `414` activation `4.925` class `word` token ` there`
+  - in the opposite corner of the room. Christian stood there frozen and in complete shock at the sight of a
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `439` activation `4.860` class `word` token ` walking`
+  - over her face. She slowly turned around and began walking backward toward Christian with a hunched-over posture.
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `454` activation `4.805` class `word` token ` and`
+  - a hunched-over posture. The woman reaches Christian and spins around violently before slowly looking up to reveal her
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `413` activation `4.697` class `word` token ` stood`
+  - standing in the opposite corner of the room. Christian stood there frozen and in complete shock at the sight of
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `434` activation `4.668` class `word` token ` slowly`
+  - a woman with hair fallen over her face. She slowly turned around and began walking backward toward Christian with a
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `387` activation `4.647` class `word` token ` around`
+  - open. Christian ran over to close it and turned around to scan his surroundings and that was when noticed the
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `416` activation `4.553` class `word` token ` and`
+  - opposite corner of the room. Christian stood there frozen and in complete shock at the sight of a woman with
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `437` activation `4.522` class `word` token ` and`
+  - hair fallen over her face. She slowly turned around and began walking backward toward Christian with a hunched-over
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `438` activation `4.397` class `word` token ` began`
+  - fallen over her face. She slowly turned around and began walking backward toward Christian with a hunched-over posture
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `487` activation `4.384` class `word` token ` and`
+  - he knew he was helpless. Christian begins shaking violently and that was finally enough for him to wake up in
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `435` activation `4.324` class `word` token ` turned`
+  - woman with hair fallen over her face. She slowly turned around and began walking backward toward Christian with a h
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `462` activation `4.292` class `word` token ` to`
+  - reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian begins yelling and screaming
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `436` activation `4.237` class `word` token ` around`
+  - with hair fallen over her face. She slowly turned around and began walking backward toward Christian with a hunched
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `458` activation `4.236` class `word` token ` before`
+  - posture. The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `443` activation `4.186` class `word` token ` with`
+  - She slowly turned around and began walking backward toward Christian with a hunched-over posture. The woman reaches Christian
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `388` activation `4.179` class `word` token ` to`
+  - . Christian ran over to close it and turned around to scan his surroundings and that was when noticed the same
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `459` activation `4.167` class `word` token ` slowly`
+  - . The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian begins
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `461` activation `4.143` class `word` token ` up`
+  - woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian begins yelling and
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `385` activation `4.102` class `word` token ` and`
+  - was slightly open. Christian ran over to close it and turned around to scan his surroundings and that was when
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `369` activation `4.082` class `word` token ` he`
+  - -workout protein shake. Upon entering the kitchen, he noticed the back sliding door was slightly open. Christian
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `384` activation `4.030` class `word` token ` it`
+  - door was slightly open. Christian ran over to close it and turned around to scan his surroundings and that was
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `460` activation `4.028` class `word` token ` looking`
+  - The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian begins yelling
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `379` activation `4.001` class `word` token ` Christian`
+  - he noticed the back sliding door was slightly open. Christian ran over to close it and turned around to scan
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `412` activation `3.995` class `word` token `Christian`
+  - dress standing in the opposite corner of the room. Christian stood there frozen and in complete shock at the sight
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `433` activation `3.976` class `word` token ` She`
+  - of a woman with hair fallen over her face. She slowly turned around and began walking backward toward Christian with
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `469` activation `3.917` class `word` token ` begins`
+  - slowly looking up to reveal her horrific face. Christian begins yelling and screaming for help, but he knew he
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `381` activation `3.913` class `word` token ` over`
+  - the back sliding door was slightly open. Christian ran over to close it and turned around to scan his surroundings
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `456` activation `3.892` class `word` token ` around`
+  - unched-over posture. The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `484` activation `3.778` class `word` token ` begins`
+  - help, but he knew he was helpless. Christian begins shaking violently and that was finally enough for him to
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `470` activation `3.770` class `word` token ` yelling`
+  - looking up to reveal her horrific face. Christian begins yelling and screaming for help, but he knew he was
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `440` activation `3.768` class `word` token ` backward`
+  - her face. She slowly turned around and began walking backward toward Christian with a hunched-over posture. The
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `468` activation `3.759` class `word` token ` Christian`
+  - before slowly looking up to reveal her horrific face. Christian begins yelling and screaming for help, but he knew
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `486` activation `3.750` class `word` token ` violently`
+  - but he knew he was helpless. Christian begins shaking violently and that was finally enough for him to wake up
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `451` activation `3.728` class `word` token ` woman`
+  - toward Christian with a hunched-over posture. The woman reaches Christian and spins around violently before slowly looking up
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `477` activation `3.725` class `word` token ` he`
+  - . Christian begins yelling and screaming for help, but he knew he was helpless. Christian begins shaking violently and
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `471` activation `3.716` class `word` token ` and`
+  - up to reveal her horrific face. Christian begins yelling and screaming for help, but he knew he was helpless
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `444` activation `3.695` class `word` token ` a`
+  - slowly turned around and began walking backward toward Christian with a hunched-over posture. The woman reaches Christian and
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `386` activation `3.666` class `word` token ` turned`
+  - slightly open. Christian ran over to close it and turned around to scan his surroundings and that was when noticed
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `472` activation `3.656` class `word` token ` screaming`
+  - to reveal her horrific face. Christian begins yelling and screaming for help, but he knew he was helpless.
+- `L19:2041` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `457` activation `3.653` class `word` token ` violently`
+  - -over posture. The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face.
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `437` activation `5.148` class `word` token ` said`
+  - for you to meet up.” “Wait,” Johnny said, “So you mean to tell me that I
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `438` activation `4.651` class `punctuation` token `,`
+  - you to meet up.” “Wait,” Johnny said, “So you mean to tell me that I’m
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `436` activation `4.502` class `word` token ` Johnny`
+  - time for you to meet up.” “Wait,” Johnny said, “So you mean to tell me that
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `124` activation `4.254` class `punctuation` token `,`
+  - . “Yeah, that’s me,” said Rocky, “but who in the hell are you?” “It
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `164` activation `4.253` class `word` token ` looked`
+  - me all the time when we were teenagers.” Johnny looked around, still confused. “I guess this is
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `166` activation `4.119` class `punctuation` token `,`
+  - the time when we were teenagers.” Johnny looked around, still confused. “I guess this is Hell?
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `163` activation `3.839` class `word` token ` Johnny`
+  - on me all the time when we were teenagers.” Johnny looked around, still confused. “I guess this
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `112` activation `3.821` class `word` token ` spoke`
+  - Walker? Is that you?” One of the men spoke up. “Yeah, that’s me,” said
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `165` activation `3.741` class `word` token ` around`
+  - all the time when we were teenagers.” Johnny looked around, still confused. “I guess this is Hell
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `435` activation `3.732` class `punctuation` token `,”`
+  - ’s time for you to meet up.” “Wait,” Johnny said, “So you mean to tell me
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `316` activation `3.729` class `word` token ` heads`
+  - and a pinch of fear, the two shook their heads quietly. “Let’s see here,” the deep
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `317` activation `3.695` class `word` token ` quietly`
+  - a pinch of fear, the two shook their heads quietly. “Let’s see here,” the deep voice
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `113` activation `3.586` class `word` token ` up`
+  - ? Is that you?” One of the men spoke up. “Yeah, that’s me,” said Rocky
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `327` activation `3.554` class `word` token ` voice`
+  - quietly. “Let’s see here,” the deep voice continued. “It seems as though in 198
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `111` activation `3.439` class `word` token ` men`
+  - Rocky Walker? Is that you?” One of the men spoke up. “Yeah, that’s me,”
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `215` activation `3.437` class `word` token ` Rocky`
+  - , don’t act all high and mighty,” said Rocky. “What I did to you when we were
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `471` activation `3.409` class `word` token ` voice`
+  - him here?” “Of course,” said the deep voice of Satan. “I don’t know what you
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `467` activation `3.300` class `punctuation` token `,”`
+  - that I would meet him here?” “Of course,” said the deep voice of Satan. “I don
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `121` activation `3.291` class `punctuation` token `,”`
+  - men spoke up. “Yeah, that’s me,” said Rocky, “but who in the hell are
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `314` activation `3.266` class `word` token ` shook`
+  - with dread and a pinch of fear, the two shook their heads quietly. “Let’s see here,”
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `328` activation `3.248` class `word` token ` continued`
+  - . “Let’s see here,” the deep voice continued. “It seems as though in 1982
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `253` activation `3.223` class `punctuation` token `,”`
+  - life, violence-free.” “Well, well, well,” said a deep, disgruntled voice that was
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `213` activation `3.183` class `punctuation` token `,”`
+  - “Hey, don’t act all high and mighty,” said Rocky. “What I did to you when
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `324` activation `3.150` class `punctuation` token `,”`
+  - shook their heads quietly. “Let’s see here,” the deep voice continued. “It seems as though
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `261` activation `3.034` class `word` token ` voice`
+  - , well,” said a deep, disgruntled voice that was emanating from a dark corner. “
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `75` activation `2.961` class `word` token ` and`
+  - ? That was a bit unexpected. Soon they turned and noticed each other. Because so much time had passed
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `107` activation `2.906` class `punctuation` token `?”`
+  - “Rocky? Rocky Walker? Is that you?” One of the men spoke up. “Yeah,
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `123` activation `2.865` class `word` token ` Rocky`
+  - up. “Yeah, that’s me,” said Rocky, “but who in the hell are you?”
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `301` activation `2.796` class `word` token ` but`
+  - both know why you are here?” Still confused, but now filled with dread and a pinch of fear,
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `299` activation `2.766` class `word` token ` confused`
+  - Do you both know why you are here?” Still confused, but now filled with dread and a pinch of
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `108` activation `2.698` class `word` token ` One`
+  - Rocky? Rocky Walker? Is that you?” One of the men spoke up. “Yeah, that
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `396` activation `2.662` class `word` token ` out`
+  - in the head, knocking him unconscious, Johnny cried out ‘See you in Hell, bastard!’, so
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `300` activation `2.609` class `punctuation` token `,`
+  - you both know why you are here?” Still confused, but now filled with dread and a pinch of fear
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `167` activation `2.570` class `word` token ` still`
+  - time when we were teenagers.” Johnny looked around, still confused. “I guess this is Hell? I
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `74` activation `2.534` class `word` token ` turned`
+  - Hell? That was a bit unexpected. Soon they turned and noticed each other. Because so much time had
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `313` activation `2.525` class `word` token ` two`
+  - filled with dread and a pinch of fear, the two shook their heads quietly. “Let’s see here
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `265` activation `2.495` class `word` token `ating`
+  - a deep, disgruntled voice that was emanating from a dark corner. “If it isn’t
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `262` activation `2.491` class `style_function_word` token ` that`
+  - well,” said a deep, disgruntled voice that was emanating from a dark corner. “If
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `162` activation `2.487` class `punctuation` token `.”`
+  - pick on me all the time when we were teenagers.” Johnny looked around, still confused. “I guess
+- `L19:2041` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `263` activation `2.477` class `expanded_negation_word` token ` was`
+  - ,” said a deep, disgruntled voice that was emanating from a dark corner. “If it
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `423` activation `5.300` class `word` token ` and`
+  - with it. The lady looked Mary in the eyes and told her that ever since she had that watch,
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `422` activation `4.945` class `word` token ` eyes`
+  - wrong with it. The lady looked Mary in the eyes and told her that ever since she had that watch
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `296` activation `4.725` class `word` token ` nodded`
+  - lady was sure about doing that, to which she nodded yes. Mary added the pocket watch to her bag
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `418` activation `4.518` class `word` token ` looked`
+  - to know what is wrong with it. The lady looked Mary in the eyes and told her that ever since
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `417` activation `4.335` class `word` token ` lady`
+  - demanded to know what is wrong with it. The lady looked Mary in the eyes and told her that ever
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `295` activation `4.140` class `word` token ` she`
+  - the lady was sure about doing that, to which she nodded yes. Mary added the pocket watch to her
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `264` activation `3.993` class `word` token ` and`
+  - 19th century. The lady came back out and told Mary she'd give it to her for a
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `282` activation `3.991` class `word` token ` Mary`
+  - her for a few bucks. Surprised, Mary asked if the lady was sure about doing that,
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `213` activation `3.912` class `word` token ` owner`
+  - yard is all there was going to be. The owner seemed quite fond of Mary, so she told her
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `299` activation `3.881` class `word` token ` Mary`
+  - about doing that, to which she nodded yes. Mary added the pocket watch to her bag and went back
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `307` activation `3.794` class `word` token ` and`
+  - yes. Mary added the pocket watch to her bag and went back home for the day. Mary, curious
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `371` activation `3.738` class `word` token ` owner`
+  - cursed" upon reading these words, the pawn shop owner immediately hands the watch back to Mary and tells her
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `262` activation `3.645` class `word` token ` back`
+  - the early 19th century. The lady came back out and told Mary she'd give it to her
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `379` activation `3.624` class `word` token ` and`
+  - pawn shop owner immediately hands the watch back to Mary and tells her to get out. Curious about the
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `392` activation `3.621` class `word` token ` Mary`
+  - to get out. Curious about the reaction, Mary would go back to the lady's house who sold
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `263` activation `3.431` class `word` token ` out`
+  - early 19th century. The lady came back out and told Mary she'd give it to her for
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `378` activation `3.415` class `word` token ` Mary`
+  - the pawn shop owner immediately hands the watch back to Mary and tells her to get out. Curious about
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `366` activation `3.388` class `word` token ` words`
+  - watch "This watch is cursed" upon reading these words, the pawn shop owner immediately hands the watch back
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `310` activation `3.382` class `word` token ` home`
+  - added the pocket watch to her bag and went back home for the day. Mary, curious about the item
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `280` activation `3.357` class `word` token `ised`
+  - it to her for a few bucks. Surprised, Mary asked if the lady was sure about doing
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `260` activation `3.330` class `word` token ` lady`
+  - dated to the early 19th century. The lady came back out and told Mary she'd give it
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `344` activation `3.316` class `word` token ` and`
+  - and watches. The owner examined the old pocket watch and noticed some words hastily etched into the back of
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `238` activation `3.307` class `word` token ` She`
+  - extra item that she hadn't put out yet. She brings out an old dusty pocket watch that could have
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `406` activation `3.294` class `word` token ` and`
+  - to the lady's house who sold her the watch and demanded to know what is wrong with it. The
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `496` activation `3.275` class `word` token ` lady`
+  - no longer had any use for it, but the lady declined and told her it would follow her until it
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `476` activation `3.267` class `word` token ` Mary`
+  - up and down the stairs on a nightly basis. Mary demanded she take the watch back and that she no
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `297` activation `3.266` class `word` token ` yes`
+  - was sure about doing that, to which she nodded yes. Mary added the pocket watch to her bag and
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `376` activation `3.249` class `word` token ` back`
+  - words, the pawn shop owner immediately hands the watch back to Mary and tells her to get out. Cur
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `306` activation `3.245` class `word` token ` bag`
+  - nodded yes. Mary added the pocket watch to her bag and went back home for the day. Mary,
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `401` activation `3.242` class `word` token ` who`
+  - , Mary would go back to the lady's house who sold her the watch and demanded to know what is
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `292` activation `3.239` class `punctuation` token `,`
+  - Mary asked if the lady was sure about doing that, to which she nodded yes. Mary added the pocket
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `375` activation `3.203` class `word` token ` watch`
+  - these words, the pawn shop owner immediately hands the watch back to Mary and tells her to get out.
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `246` activation `3.195` class `style_function_word` token ` that`
+  - yet. She brings out an old dusty pocket watch that could have been dated to the early 19th
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `419` activation `3.193` class `word` token ` Mary`
+  - know what is wrong with it. The lady looked Mary in the eyes and told her that ever since she
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `308` activation `3.168` class `word` token ` went`
+  - . Mary added the pocket watch to her bag and went back home for the day. Mary, curious about
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `497` activation `3.147` class `word` token ` declined`
+  - longer had any use for it, but the lady declined and told her it would follow her until it finds
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `178` activation `3.130` class `word` token ` spoke`
+  - some books since she was an avid reader. Mary spoke with the owner of the house and asked if they
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `343` activation `3.117` class `word` token ` watch`
+  - iques and watches. The owner examined the old pocket watch and noticed some words hastily etched into the back
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `372` activation `3.060` class `word` token ` immediately`
+  - " upon reading these words, the pawn shop owner immediately hands the watch back to Mary and tells her to
+- `L19:2041` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `367` activation `3.055` class `punctuation` token `,`
+  - "This watch is cursed" upon reading these words, the pawn shop owner immediately hands the watch back to
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `286` activation `5.064` class `word` token ` I`
+  - peed yourself until you were fourteen!" "What," I reply, still in shock. "There's no
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `287` activation `4.623` class `word` token ` reply`
+  - ed yourself until you were fourteen!" "What," I reply, still in shock. "There's no way
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `288` activation `4.309` class `punctuation` token `,`
+  - yourself until you were fourteen!" "What," I reply, still in shock. "There's no way,
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `502` activation `4.299` class `word` token ` says`
+  - hope you will be more trusting of me" she says, before leaving me in my prison cell.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `501` activation `4.190` class `word` token ` she`
+  - I hope you will be more trusting of me" she says, before leaving me in my prison cell.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `389` activation `3.953` class `word` token ` I`
+  - obvious lie that you are me from the future," I assert, still trying to get a hold of this
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `153` activation `3.830` class `word` token ` she`
+  - I am here to make sure the rebellion wins," she states. I can't believe this. How can
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `503` activation `3.551` class `punctuation` token `,`
+  - you will be more trusting of me" she says, before leaving me in my prison cell.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `504` activation `3.490` class `word` token ` before`
+  - will be more trusting of me" she says, before leaving me in my prison cell.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `117` activation `3.418` class `word` token ` I`
+  - . "I am you," she says. "What?" I question. "How can you be me? I
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `361` activation `3.393` class `punctuation` token `,"`
+  - tell on you. I know because I am you," insists the mysterious woman. "I still don't believe
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `391` activation `3.330` class `punctuation` token `,`
+  - that you are me from the future," I assert, still trying to get a hold of this situation.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `506` activation `3.162` class `word` token ` me`
+  - more trusting of me" she says, before leaving me in my prison cell.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `505` activation `3.156` class `word` token ` leaving`
+  - be more trusting of me" she says, before leaving me in my prison cell.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `243` activation `3.061` class `word` token ` woman`
+  - "I want you to join me," interrupts the mysterious woman. "I know this is a lot to handle
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `112` activation `3.052` class `word` token ` she`
+  - 't even detect her presence. "I am you," she says. "What?" I question. "How can
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `285` activation `3.021` class `punctuation` token `,"`
+  - you peed yourself until you were fourteen!" "What," I reply, still in shock. "There's
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `365` activation `3.005` class `word` token ` woman`
+  - I know because I am you," insists the mysterious woman. "I still don't believe you, I can
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `97` activation `2.995` class `word` token ` I`
+  - says a mysterious woman. "Who are you?" I reply. I didn't even detect her presence.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `390` activation `2.987` class `word` token ` assert`
+  - lie that you are me from the future," I assert, still trying to get a hold of this situation
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `291` activation `2.983` class `word` token ` shock`
+  - were fourteen!" "What," I reply, still in shock. "There's no way, who told you
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `118` activation `2.982` class `word` token ` question`
+  - "I am you," she says. "What?" I question. "How can you be me? I am
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `156` activation `2.964` class `word` token `I`
+  - to make sure the rebellion wins," she states. I can't believe this. How can she say that
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `289` activation `2.955` class `word` token ` still`
+  - until you were fourteen!" "What," I reply, still in shock. "There's no way, who
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `388` activation `2.918` class `punctuation` token `,"`
+  - the obvious lie that you are me from the future," I assert, still trying to get a hold of
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `154` activation `2.880` class `word` token ` states`
+  - am here to make sure the rebellion wins," she states. I can't believe this. How can she
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `402` activation `2.871` class `word` token ` She`
+  - still trying to get a hold of this situation. She can't be me! I fight for the kingdom
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `98` activation `2.818` class `word` token ` reply`
+  - a mysterious woman. "Who are you?" I reply. I didn't even detect her presence. "I
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `239` activation `2.801` class `punctuation` token `,"`
+  - be some trick. "I want you to join me," interrupts the mysterious woman. "I know this is
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `507` activation `2.779` class `word` token ` in`
+  - trusting of me" she says, before leaving me in my prison cell.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `290` activation `2.738` class `word` token ` in`
+  - you were fourteen!" "What," I reply, still in shock. "There's no way, who told
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `362` activation `2.535` class `word` token ` insists`
+  - on you. I know because I am you," insists the mysterious woman. "I still don't believe you
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `240` activation `2.525` class `word` token ` interrupts`
+  - some trick. "I want you to join me," interrupts the mysterious woman. "I know this is a
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `500` activation `2.491` class `punctuation` token `"`
+  - . I hope you will be more trusting of me" she says, before leaving me in my prison cell
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `113` activation `2.478` class `word` token ` says`
+  - even detect her presence. "I am you," she says. "What?" I question. "How can you
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `204` activation `2.430` class `word` token ` I`
+  - myth. Although taking a closer look at her, I guess I can see some resemblances. NO!
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `152` activation `2.377` class `punctuation` token `,"`
+  - . I am here to make sure the rebellion wins," she states. I can't believe this. How
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `111` activation `2.358` class `punctuation` token `,"`
+  - didn't even detect her presence. "I am you," she says. "What?" I question. "How
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `510` activation `2.298` class `word` token ` cell`
+  - " she says, before leaving me in my prison cell.
+- `L19:2041` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `100` activation `2.251` class `word` token ` I`
+  - woman. "Who are you?" I reply. I didn't even detect her presence. "I am you
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `64` activation `4.754` class `word` token ` He`
+  - he unexpectedly hears a noise coming from the desk. He leans forward listening, but hears nothing else. He
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `66` activation `4.524` class `word` token ` forward`
+  - hears a noise coming from the desk. He leans forward listening, but hears nothing else. He walks silently
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `74` activation `4.131` class `word` token ` He`
+  - He leans forward listening, but hears nothing else. He walks silently to the desk. Opening the cover,
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `472` activation `4.121` class `word` token ` he`
+  - she says coming out of her tranced state, he laughs. “Yes, Rachel, I do.”
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `75` activation `4.045` class `word` token ` walks`
+  - leans forward listening, but hears nothing else. He walks silently to the desk. Opening the cover, then
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `417` activation `3.901` class `word` token ` she`
+  - the strength to sit up. Holding her forehead, she abates the nausea. Taking deep breaths,
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `68` activation `3.899` class `punctuation` token `,`
+  - noise coming from the desk. He leans forward listening, but hears nothing else. He walks silently to the
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `210` activation `3.857` class `word` token ` and`
+  - ishing noise. He sits straight up in the chair and watches in astonishment as pieces of the material circle
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `67` activation `3.808` class `word` token ` listening`
+  - a noise coming from the desk. He leans forward listening, but hears nothing else. He walks silently to
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `483` activation `3.709` class `word` token ` He`
+  - laughs. “Yes, Rachel, I do.” He moves her over to a settee. Seated
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `383` activation `3.707` class `word` token ` he`
+  - .” Leaning down to kiss her lips gently, he says, “It’s okay, take your time
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `65` activation `3.686` class `word` token ` leans`
+  - unexpectedly hears a noise coming from the desk. He leans forward listening, but hears nothing else. He walks
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `116` activation `3.679` class `word` token ` he`
+  - he leans over taking a deep breath. Standing, he runs his fingers through his hair in utter bewilder
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `89` activation `3.646` class `word` token ` he`
+  - desk. Opening the cover, then the drawer, he’s shocked. The note he put in there is
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `76` activation `3.558` class `word` token ` silently`
+  - forward listening, but hears nothing else. He walks silently to the desk. Opening the cover, then the
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `473` activation `3.555` class `word` token ` laughs`
+  - says coming out of her tranced state, he laughs. “Yes, Rachel, I do.” He
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `311` activation `3.540` class `word` token ` she`
+  - love. I’m here.” Closing her eyes, she lies silent. “Betty, are you okay
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `203` activation `3.535` class `word` token ` He`
+  - hours later, he hears a swishing noise. He sits straight up in the chair and watches in aston
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `497` activation `3.533` class `word` token ` he`
+  - to a settee. Seated beside her, he takes the curl falling in her face and pushes it
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `331` activation `3.513` class `word` token ` she`
+  - okay? Talk to me.” Opening her eyes again she replies, “Yes. I’m okay. It
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `79` activation `3.477` class `word` token ` desk`
+  - but hears nothing else. He walks silently to the desk. Opening the cover, then the drawer, he
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `106` activation `3.445` class `word` token ` he`
+  - put in there is gone. Staggering backward he leans over taking a deep breath. Standing, he
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `85` activation `3.443` class `style_function_word` token ` then`
+  - walks silently to the desk. Opening the cover, then the drawer, he’s shocked. The note he
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `245` activation `3.424` class `word` token ` he`
+  - sees it’s Betty. Running to her quickly, he finds her unconscious. He picks her head up and
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `255` activation `3.394` class `word` token ` and`
+  - he finds her unconscious. He picks her head up and cradles it in his arms. Staring
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `405` activation `3.379` class `word` token ` she`
+  - I’ll wait.” After about 15 minutes, she gets the strength to sit up. Holding her forehead
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `268` activation `3.353` class `word` token ` he`
+  - les it in his arms. Staring at her he sees she’s pale. Gradually her face returns
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `435` activation `3.341` class `word` token ` David`
+  - breaths, she feels herself returning to normal. David helps her up. Their eyes meet. Rachel asks
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `84` activation `3.322` class `punctuation` token `,`
+  - He walks silently to the desk. Opening the cover, then the drawer, he’s shocked. The note
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `69` activation `3.293` class `word` token ` but`
+  - coming from the desk. He leans forward listening, but hears nothing else. He walks silently to the desk
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `163` activation `3.289` class `word` token ` He`
+  - ’t see anyone else. How can this be? He stands gaping at the desk. Walking back to the
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `484` activation `3.278` class `word` token ` moves`
+  - . “Yes, Rachel, I do.” He moves her over to a settee. Seated beside
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `54` activation `3.269` class `word` token ` he`
+  - in the chair thinking about the reality of this, he unexpectedly hears a noise coming from the desk. He
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `428` activation `3.230` class `word` token ` she`
+  - abates the nausea. Taking deep breaths, she feels herself returning to normal. David helps her up
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `122` activation `3.227` class `word` token ` hair`
+  - breath. Standing, he runs his fingers through his hair in utter bewilderment. Pacing back and
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `114` activation `3.224` class `word` token ` Standing`
+  - ing backward he leans over taking a deep breath. Standing, he runs his fingers through his hair in utter
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `250` activation `3.218` class `word` token ` He`
+  - Running to her quickly, he finds her unconscious. He picks her head up and cradles it in
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `206` activation `3.198` class `word` token ` up`
+  - he hears a swishing noise. He sits straight up in the chair and watches in astonishment as pieces
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `262` activation `3.190` class `word` token ` arms`
+  - her head up and cradles it in his arms. Staring at her he sees she’s pale
+- `L19:2041` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `254` activation `3.180` class `word` token ` up`
+  - , he finds her unconscious. He picks her head up and cradles it in his arms. St
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `501` activation `4.686` class `word` token ` said`
+  - scattering across the sand. Where am I? he said to himself. It's almost like another dimension...
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `500` activation `4.538` class `word` token ` he`
+  - creatures scattering across the sand. Where am I? he said to himself. It's almost like another dimension
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `323` activation `4.134` class `word` token ` He`
+  - stand up straight, producing instant goosebumps. He extended his arm to reach out and touch the tree
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `457` activation `3.967` class `word` token ` and`
+  - it was melting! Dave closed his eyes in fear and once he reopened them, he was no longer in
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `376` activation `3.948` class `word` token ` side`
+  - touch it again, he rested his arms at his side. On second thought, what could happen? He
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `503` activation `3.827` class `word` token ` himself`
+  - the sand. Where am I? he said to himself. It's almost like another dimension...
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `326` activation `3.809` class `word` token ` arm`
+  - , producing instant goosebumps. He extended his arm to reach out and touch the tree and ZAP
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `276` activation `3.718` class `word` token ` he`
+  - fit a human inside of it! How strange, he thought. He decided to approach the tree to get
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `306` activation `3.703` class `word` token ` he`
+  - have caused that to happen. As he approached, he felt every hair on his body stand up straight,
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `386` activation `3.699` class `word` token ` He`
+  - side. On second thought, what could happen? He wasn't afraid of a coincidence. Instead of reaching
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `463` activation `3.678` class `word` token ` he`
+  - his eyes in fear and once he reopened them, he was no longer in the park. He saw a
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `370` activation `3.523` class `word` token ` he`
+  - might happen if he tried to touch it again, he rested his arms at his side. On second thought
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `432` activation `3.511` class `word` token ` proceeded`
+  - felt like it was melting. Curious, he proceeded and stuffed his entire body inside the tree. His
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `454` activation `3.460` class `word` token ` eyes`
+  - body felt like it was melting! Dave closed his eyes in fear and once he reopened them, he was
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `334` activation `3.445` class `word` token ` and`
+  - extended his arm to reach out and touch the tree and ZAP! A lightning strike struck right next to
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `451` activation `3.435` class `word` token ` Dave`
+  - . His whole body felt like it was melting! Dave closed his eyes in fear and once he reopened them
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `502` activation `3.429` class `word` token ` to`
+  - across the sand. Where am I? he said to himself. It's almost like another dimension...
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `455` activation `3.376` class `word` token ` in`
+  - felt like it was melting! Dave closed his eyes in fear and once he reopened them, he was no
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `371` activation `3.350` class `word` token ` rested`
+  - happen if he tried to touch it again, he rested his arms at his side. On second thought,
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `303` activation `3.329` class `word` token ` he`
+  - and what might have caused that to happen. As he approached, he felt every hair on his body stand
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `324` activation `3.327` class `word` token ` extended`
+  - up straight, producing instant goosebumps. He extended his arm to reach out and touch the tree and
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `461` activation `3.311` class `word` token ` them`
+  - Dave closed his eyes in fear and once he reopened them, he was no longer in the park. He
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `431` activation `3.295` class `word` token ` he`
+  - instantly felt like it was melting. Curious, he proceeded and stuffed his entire body inside the tree.
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `277` activation `3.278` class `word` token ` thought`
+  - a human inside of it! How strange, he thought. He decided to approach the tree to get a
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `402` activation `3.266` class `word` token ` he`
+  - coincidence. Instead of reaching for the tree again, he decided to try and climb inside of it. His
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `279` activation `3.256` class `word` token ` He`
+  - inside of it! How strange, he thought. He decided to approach the tree to get a better look
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `456` activation `3.249` class `word` token ` fear`
+  - like it was melting! Dave closed his eyes in fear and once he reopened them, he was no longer
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `316` activation `3.222` class `punctuation` token `,`
+  - he felt every hair on his body stand up straight, producing instant goosebumps. He extended his arm
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `330` activation `3.197` class `word` token ` and`
+  - bumps. He extended his arm to reach out and touch the tree and ZAP! A lightning strike
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `327` activation `3.176` class `word` token ` to`
+  - producing instant goosebumps. He extended his arm to reach out and touch the tree and ZAP!
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `459` activation `3.175` class `word` token ` he`
+  - melting! Dave closed his eyes in fear and once he reopened them, he was no longer in the park
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `464` activation `3.167` class `expanded_negation_word` token ` was`
+  - eyes in fear and once he reopened them, he was no longer in the park. He saw a barren
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `433` activation `3.137` class `word` token ` and`
+  - like it was melting. Curious, he proceeded and stuffed his entire body inside the tree. His whole
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `452` activation `2.977` class `word` token ` closed`
+  - His whole body felt like it was melting! Dave closed his eyes in fear and once he reopened them,
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `345` activation `2.918` class `word` token ` him`
+  - ZAP! A lightning strike struck right next to him. In clear blue skies? How is that possible
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `462` activation `2.891` class `punctuation` token `,`
+  - closed his eyes in fear and once he reopened them, he was no longer in the park. He saw
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `329` activation `2.869` class `word` token ` out`
+  - goosebumps. He extended his arm to reach out and touch the tree and ZAP! A lightning
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `373` activation `2.852` class `word` token ` arms`
+  - he tried to touch it again, he rested his arms at his side. On second thought, what could
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `437` activation `2.795` class `word` token ` body`
+  - . Curious, he proceeded and stuffed his entire body inside the tree. His whole body felt like it
+- `L19:2041` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `305` activation `2.773` class `punctuation` token `,`
+  - might have caused that to happen. As he approached, he felt every hair on his body stand up straight
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `441` activation `4.814` class `word` token ` smiled`
+  - hide; his tears now almost dried. Mother Elephant smiled at her children, aware of the potency of her
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `445` activation `4.180` class `punctuation` token `,`
+  - now almost dried. Mother Elephant smiled at her children, aware of the potency of her words. "We
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `224` activation `3.878` class `word` token `led`
+  - the umpteenth time that morning. Adelaide giggled and claimed: "That's obviously because they don
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `331` activation `3.877` class `punctuation` token `,`
+  - slowly making her way to her teary-eyed son, offered her trunk to him to help him back onto
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `222` activation `3.593` class `word` token ` Adelaide`
+  - legs for the umpteenth time that morning. Adelaide giggled and claimed: "That's obviously because
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `198` activation `3.572` class `word` token ` eyes`
+  - and they make it look so easy." Fred's eyes slowly filled with tears of frustration as he stumbled over
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `485` activation `3.450` class `word` token ` said`
+  - Just remember the things that make us unique!" she said and gave the children a warm hug before the two
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `393` activation `3.313` class `word` token ` Adelaide`
+  - dream about achieving!" This statement from Mother Elephant made Adelaide take a closer look at her trunk, observing its
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `484` activation `3.259` class `word` token ` she`
+  - . Just remember the things that make us unique!" she said and gave the children a warm hug before the
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `206` activation `3.218` class `word` token ` he`
+  - Fred's eyes slowly filled with tears of frustration as he stumbled over his chunky legs for the umpte
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `199` activation `3.149` class `word` token ` slowly`
+  - they make it look so easy." Fred's eyes slowly filled with tears of frustration as he stumbled over his
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `266` activation `3.104` class `punctuation` token `,`
+  - a very nice thing to say," replied their mother, who had been observing their antics for a while without
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `321` activation `3.102` class `word` token ` slowly`
+  - leopards wished they had." Mother Elephant, slowly making her way to her teary-eyed son,
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `332` activation `3.096` class `word` token ` offered`
+  - making her way to her teary-eyed son, offered her trunk to him to help him back onto his
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `412` activation `3.090` class `word` token ` Fred`
+  - observing its great strength and prehensility. Fred, too, analyzed the muscles on his body and
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `202` activation `3.062` class `word` token ` tears`
+  - look so easy." Fred's eyes slowly filled with tears of frustration as he stumbled over his chunky legs
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `225` activation `2.978` class `word` token ` and`
+  - umpteenth time that morning. Adelaide giggled and claimed: "That's obviously because they don't
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `413` activation `2.970` class `punctuation` token `,`
+  - its great strength and prehensility. Fred, too, analyzed the muscles on his body and admired
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `388` activation `2.842` class `word` token ` statement`
+  - other animals could not even dream about achieving!" This statement from Mother Elephant made Adelaide take a closer look at
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `391` activation `2.838` class `word` token ` Elephant`
+  - not even dream about achieving!" This statement from Mother Elephant made Adelaide take a closer look at her trunk,
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `440` activation `2.811` class `word` token ` Elephant`
+  - his hide; his tears now almost dried. Mother Elephant smiled at her children, aware of the potency of
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `170` activation `2.810` class `punctuation` token `,"`
+  - a failed attempt at scratching her back. "Still," moaned Fred, "you see the leopard siblings
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `149` activation `2.795` class `word` token ` Adelaide`
+  - never believe what you see on there," retorted Adelaide while attempting a pirouette that looked more like
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `150` activation `2.765` class `style_function_word` token ` while`
+  - believe what you see on there," retorted Adelaide while attempting a pirouette that looked more like a
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `401` activation `2.764` class `punctuation` token `,`
+  - Elephant made Adelaide take a closer look at her trunk, observing its great strength and prehensility.
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `434` activation `2.753` class `word` token ` tears`
+  - the force that was hiding behind his hide; his tears now almost dried. Mother Elephant smiled at her children
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `497` activation `2.721` class `word` token ` rushed`
+  - gave the children a warm hug before the two twins rushed back into the bushland to compare their strength in
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `415` activation `2.719` class `punctuation` token `,`
+  - strength and prehensility. Fred, too, analyzed the muscles on his body and admired the force
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `493` activation `2.699` class `word` token ` before`
+  - !" she said and gave the children a warm hug before the two twins rushed back into the bushland to
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `486` activation `2.694` class `word` token ` and`
+  - remember the things that make us unique!" she said and gave the children a warm hug before the two twins
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `402` activation `2.611` class `word` token ` observing`
+  - made Adelaide take a closer look at her trunk, observing its great strength and prehensility. Fred
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `435` activation `2.606` class `word` token ` now`
+  - force that was hiding behind his hide; his tears now almost dried. Mother Elephant smiled at her children,
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `324` activation `2.598` class `word` token ` way`
+  - wished they had." Mother Elephant, slowly making her way to her teary-eyed son, offered her trunk
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `262` activation `2.573` class `punctuation` token `,"`
+  - ." "That's not a very nice thing to say," replied their mother, who had been observing their antics
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `394` activation `2.552` class `word` token ` take`
+  - about achieving!" This statement from Mother Elephant made Adelaide take a closer look at her trunk, observing its great
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `318` activation `2.548` class `word` token ` Mother`
+  - talents that the leopards wished they had." Mother Elephant, slowly making her way to her teary
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `496` activation `2.515` class `word` token ` twins`
+  - and gave the children a warm hug before the two twins rushed back into the bushland to compare their strength
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `498` activation `2.472` class `word` token ` back`
+  - the children a warm hug before the two twins rushed back into the bushland to compare their strength in a
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `336` activation `2.456` class `word` token ` him`
+  - her teary-eyed son, offered her trunk to him to help him back onto his feet. "We
+- `L19:2041` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `442` activation `2.424` class `word` token ` at`
+  - ; his tears now almost dried. Mother Elephant smiled at her children, aware of the potency of her words
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `225` activation `5.024` class `word` token ` girl`
+  - the bear. "Well, hello there." The girl is too stunned to speak. How can this bear
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `258` activation `4.767` class `word` token ` and`
+  - the bear. The bear comes next to the girl and sits on the ground. He grabs a blackberry
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `381` activation `4.728` class `word` token ` girl`
+  - think you could help me find my way?" The girl is hesitant, but at this point, she just
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `401` activation `4.638` class `word` token ` smiles`
+  - just wants to find any way home. The bear smiles and stands up. He reaches his paw out to
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `252` activation `4.558` class `word` token ` bear`
+  - real!" She yells at the bear. The bear comes next to the girl and sits on the ground
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `402` activation `4.511` class `word` token ` and`
+  - wants to find any way home. The bear smiles and stands up. He reaches his paw out to her
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `226` activation `4.483` class `word` token ` is`
+  - bear. "Well, hello there." The girl is too stunned to speak. How can this bear talk
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `406` activation `4.354` class `word` token ` He`
+  - way home. The bear smiles and stands up. He reaches his paw out to her. "Of course
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `244` activation `4.332` class `word` token ` She`
+  - this bear talk? "You're not real!" She yells at the bear. The bear comes next
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `400` activation `4.317` class `word` token ` bear`
+  - she just wants to find any way home. The bear smiles and stands up. He reaches his paw out
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `272` activation `4.313` class `word` token ` and`
+  - ground. He grabs a blackberry from the bush and eats it. "Well, of course, I
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `208` activation `4.262` class `word` token ` She`
+  - on its hind legs as if it were human. She doubts that she can outrun the bear. "
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `404` activation `4.257` class `word` token ` up`
+  - find any way home. The bear smiles and stands up. He reaches his paw out to her. "
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `444` activation `4.255` class `word` token ` girl`
+  - I'll get you back home safely." The little girl feels encouraged and gets up. This time, she
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `107` activation `4.250` class `word` token ` girl`
+  - twigs snapping. She hears someone approaching. The girl runs to what looks like a blackberry bush and
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `403` activation `4.227` class `word` token ` stands`
+  - to find any way home. The bear smiles and stands up. He reaches his paw out to her.
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `246` activation `4.216` class `word` token `ells`
+  - talk? "You're not real!" She yells at the bear. The bear comes next to the
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `297` activation `4.213` class `word` token ` bear`
+  - blackberry is real, isn't it?" The bear laughs. The girl doesn't know if she should
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `298` activation `4.205` class `word` token ` laughs`
+  - berry is real, isn't it?" The bear laughs. The girl doesn't know if she should laugh
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `124` activation `4.193` class `word` token ` girl`
+  - blackberry bush and hides behind it. The little girl covers her mouth to conceal her whimpers.
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `343` activation `4.151` class `word` token ` girl`
+  - . How long have you been out here?" The girl wipes her tears and responds. "Well, I
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `101` activation `4.126` class `word` token ` She`
+  - around the woods, she hears twigs snapping. She hears someone approaching. The girl runs to what looks
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `449` activation `4.123` class `word` token ` up`
+  - home safely." The little girl feels encouraged and gets up. This time, she doesn't hesitate and grabs
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `347` activation `4.107` class `word` token ` and`
+  - you been out here?" The girl wipes her tears and responds. "Well, I was walking my usual
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `195` activation `4.096` class `word` token ` bear`
+  - bear. She can't believe her eyes. The bear is walking on its hind legs as if it were
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `264` activation `4.089` class `word` token ` He`
+  - next to the girl and sits on the ground. He grabs a blackberry from the bush and eats it
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `146` activation `4.023` class `word` token ` girl`
+  - , she hears them walking even closer. The little girl's vision is blurred from her rush of tears,
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `171` activation `4.016` class `word` token ` she`
+  - see who it is. As the figure approaches, she lets out a scream. It is a big,
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `197` activation `3.976` class `word` token ` walking`
+  - She can't believe her eyes. The bear is walking on its hind legs as if it were human.
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `317` activation `3.974` class `word` token ` and`
+  - should laugh or cry. He grabs another blackberry and offers it to her. "Here, maybe this
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `301` activation `3.969` class `word` token ` girl`
+  - , isn't it?" The bear laughs. The girl doesn't know if she should laugh or cry.
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `466` activation `3.940` class `word` token ` bear`
+  - 't hesitate and grabs the bear's hand. The bear finds her home and the girl is relieved. She
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `491` activation `3.929` class `word` token ` smiles`
+  - "Thank you! I'm home!" The bear smiles and says, "If you get lost again,
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `447` activation `3.869` class `word` token ` and`
+  - you back home safely." The little girl feels encouraged and gets up. This time, she doesn't hesitate
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `448` activation `3.768` class `word` token ` gets`
+  - back home safely." The little girl feels encouraged and gets up. This time, she doesn't hesitate and
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `382` activation `3.706` class `word` token ` is`
+  - you could help me find my way?" The girl is hesitant, but at this point, she just wants
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `262` activation `3.703` class `word` token ` ground`
+  - bear comes next to the girl and sits on the ground. He grabs a blackberry from the bush and
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `95` activation `3.681` class `word` token ` she`
+  - . As she frantically looks around the woods, she hears twigs snapping. She hears someone approaching.
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `253` activation `3.663` class `word` token ` comes`
+  - !" She yells at the bear. The bear comes next to the girl and sits on the ground.
+- `L19:2041` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `259` activation `3.659` class `word` token ` sits`
+  - bear. The bear comes next to the girl and sits on the ground. He grabs a blackberry from
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `377` activation `4.991` class `word` token ` sighed`
+  - was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring sometimes.” "Well
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `401` activation `4.589` class `word` token ` Seth`
+  - 't you come to a party with me sometime?" Seth asked. Nate's eyes widened. "Oh
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `376` activation `4.555` class `word` token ` and`
+  - phone was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring sometimes.”
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `345` activation `4.542` class `word` token ` he`
+  - quadratic formula and what I could use it for,” he said. Seth laughed, “Well that sounds
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `374` activation `4.468` class `word` token ` looked`
+  - eth’s phone was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `373` activation `4.430` class `word` token ` Nate`
+  - Seth’s phone was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `402` activation `4.322` class `word` token ` asked`
+  - you come to a party with me sometime?" Seth asked. Nate's eyes widened. "Oh,
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `346` activation `4.274` class `word` token ` said`
+  - formula and what I could use it for,” he said. Seth laughed, “Well that sounds like
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `490` activation `4.240` class `word` token ` Seth`
+  - School. "We'll talk more about this later," Seth said. The two stood up and walked off the
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `459` activation `4.162` class `word` token ` said`
+  - like me either." "You'd be surprised," Seth said As Nate began to say more the bus sc
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `407` activation `4.157` class `word` token ` eyes`
+  - with me sometime?" Seth asked. Nate's eyes widened. "Oh, I don't know.
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `350` activation `4.155` class `word` token ` laughed`
+  - could use it for,” he said. Seth laughed, “Well that sounds like a great weekend for
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `458` activation `4.061` class `word` token ` Seth`
+  - that like me either." "You'd be surprised," Seth said As Nate began to say more the bus
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `491` activation `4.036` class `word` token ` said`
+  - . "We'll talk more about this later," Seth said. The two stood up and walked off the bus
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `304` activation `4.033` class `word` token ` asked`
+  - “Hey buddy, how was your Sunday?” Seth asked. “It was fine,” Nate started, “Just
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `405` activation `4.032` class `word` token `ate`
+  - a party with me sometime?" Seth asked. Nate's eyes widened. "Oh, I don't
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `312` activation `3.955` class `punctuation` token `,`
+  - ?” Seth asked. “It was fine,” Nate started, “Just worked on Algebra. I actually got super
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `349` activation `3.947` class `word` token `eth`
+  - I could use it for,” he said. Seth laughed, “Well that sounds like a great weekend
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `408` activation `3.927` class `word` token ` widened`
+  - me sometime?" Seth asked. Nate's eyes widened. "Oh, I don't know. Do
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `497` activation `3.729` class `word` token ` and`
+  - this later," Seth said. The two stood up and walked off the bus and into the social maze that
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `375` activation `3.697` class `word` token ` down`
+  - ’s phone was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring sometimes
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `495` activation `3.694` class `word` token ` stood`
+  - more about this later," Seth said. The two stood up and walked off the bus and into the social
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `351` activation `3.688` class `punctuation` token `,`
+  - use it for,” he said. Seth laughed, “Well that sounds like a great weekend for you
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `496` activation `3.684` class `word` token ` up`
+  - about this later," Seth said. The two stood up and walked off the bus and into the social maze
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `378` activation `3.680` class `punctuation` token `,`
+  - buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring sometimes.” "Well,
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `498` activation `3.572` class `word` token ` walked`
+  - later," Seth said. The two stood up and walked off the bus and into the social maze that was
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `311` activation `3.514` class `word` token ` started`
+  - Sunday?” Seth asked. “It was fine,” Nate started, “Just worked on Algebra. I actually got
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `249` activation `3.467` class `word` token ` face`
+  - Richardson, his best friend since kindergarten. Seth’s face was illuminated by the glow of his phone screen and
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `364` activation `3.393` class `word` token `eth`
+  - that sounds like a great weekend for you!” Seth’s phone was buzzing in his pocket. Nate looked
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `371` activation `3.375` class `word` token ` pocket`
+  - you!” Seth’s phone was buzzing in his pocket. Nate looked down and sighed, “Yeah.
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `303` activation `3.349` class `word` token ` Seth`
+  - . “Hey buddy, how was your Sunday?” Seth asked. “It was fine,” Nate started, “
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `368` activation `3.326` class `word` token ` buzzing`
+  - great weekend for you!” Seth’s phone was buzzing in his pocket. Nate looked down and sighed,
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `502` activation `3.278` class `word` token ` and`
+  - . The two stood up and walked off the bus and into the social maze that was High School.
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `285` activation `3.275` class `word` token ` he`
+  - from neutral to excited when he saw his friend and he quickly put his phone in his pocket. “Hey
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `464` activation `3.191` class `word` token ` to`
+  - 'd be surprised," Seth said As Nate began to say more the bus screeched to a stop
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `268` activation `3.164` class `word` token ` to`
+  - screen and his fingers tapped away until he looked up to see Nate. His expression went from neutral to excited
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `310` activation `3.122` class `word` token ` Nate`
+  - your Sunday?” Seth asked. “It was fine,” Nate started, “Just worked on Algebra. I actually
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `463` activation `3.093` class `word` token ` began`
+  - "You'd be surprised," Seth said As Nate began to say more the bus screeched to a
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `462` activation `3.018` class `word` token ` Nate`
+  - ." "You'd be surprised," Seth said As Nate began to say more the bus screeched to
+- `L19:2041` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `267` activation `2.992` class `word` token ` up`
+  - phone screen and his fingers tapped away until he looked up to see Nate. His expression went from neutral to
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `242` activation `5.307` class `word` token ` says`
+  - behind her, "Anything yet?" "No," Sara says as Smudges slowly crawls out of her
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `352` activation `5.303` class `word` token `uma`
+  - "Mom". "NOW!" "There!'" Yuma yells, pointing into the night sky. S
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `499` activation `5.200` class `word` token ` glanced`
+  - fell below the horizon. DING Sara glanced down at her phone once again. From "Mom
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `275` activation `5.127` class `word` token `ans`
+  - "Nothing yet." "Ugh," she groans as she takes a seat next to her, "
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `421` activation `5.124` class `word` token `uma`
+  - up in her eyes." "They made it!" Yuma cried out. Sara was speechless as so
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `354` activation `5.109` class `word` token `ells`
+  - ". "NOW!" "There!'" Yuma yells, pointing into the night sky. Sara immediately
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `273` activation `4.987` class `word` token ` she`
+  - rooftop, "Nothing yet." "Ugh," she groans as she takes a seat next to her
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `372` activation `4.959` class `word` token ` looks`
+  - Sara immediately breaks her attention from the phone and looks up. Across the sky is a long yellow streak
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `481` activation `4.942` class `word` token ` said`
+  - . "It's going to be okay," Yuma said with a smile as the bright light fell below the
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `336` activation `4.826` class `word` token ` phone`
+  - by. DING Sara picks up her phone and reads a message from "Mom". "NOW
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `404` activation `4.718` class `word` token ` is`
+  - . A large smile breaks on Sara's face and is soon accompanied by tears welling up in her eyes
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `468` activation `4.661` class `word` token ` whispered`
+  - , please land safely, please land safely," Sara whispered to herself. "It's going to be okay,"
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `303` activation `4.606` class `word` token ` says`
+  - me." "Have patience, Yuma." Sara says with a smile. "Hi, Smudges
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `402` activation `4.597` class `word` token ` face`
+  - the sky. A large smile breaks on Sara's face and is soon accompanied by tears welling up in
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `317` activation `4.589` class `word` token ` says`
+  - . "Hi, Smudges," Yuma says, patting the cat as he walks by.
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `423` activation `4.572` class `word` token ` out`
+  - her eyes." "They made it!" Yuma cried out. Sara was speechless as so many emotions
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `316` activation `4.494` class `word` token `uma`
+  - smile. "Hi, Smudges," Yuma says, patting the cat as he walks by
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `373` activation `4.474` class `word` token ` up`
+  - ara immediately breaks her attention from the phone and looks up. Across the sky is a long yellow streak being
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `302` activation `4.466` class `word` token ` Sara`
+  - kill me." "Have patience, Yuma." Sara says with a smile. "Hi, Smud
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `337` activation `4.461` class `word` token ` and`
+  - . DING Sara picks up her phone and reads a message from "Mom". "NOW!"
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `480` activation `4.458` class `word` token `uma`
+  - herself. "It's going to be okay," Yuma said with a smile as the bright light fell below
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `228` activation `4.430` class `word` token ` says`
+  - . "Hey," the voice of a young woman says entering the rooftop behind her, "Anything yet?"
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `355` activation `4.425` class `punctuation` token `,`
+  - "NOW!" "There!'" Yuma yells, pointing into the night sky. Sara immediately breaks
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `422` activation `4.401` class `word` token ` cried`
+  - in her eyes." "They made it!" Yuma cried out. Sara was speechless as so many
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `241` activation `4.378` class `word` token ` Sara`
+  - rooftop behind her, "Anything yet?" "No," Sara says as Smudges slowly crawls out of
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `397` activation `4.316` class `word` token ` smile`
+  - large bright light traveling across the sky. A large smile breaks on Sara's face and is soon accompanied by
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `253` activation `4.276` class `word` token ` lap`
+  - as Smudges slowly crawls out of her lap to secure a place on the ledge of the rooftop
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `500` activation `4.274` class `word` token ` down`
+  - below the horizon. DING Sara glanced down at her phone once again. From "Mom":
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `371` activation `4.269` class `word` token ` and`
+  - . Sara immediately breaks her attention from the phone and looks up. Across the sky is a long yellow
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `363` activation `4.266` class `word` token `ara`
+  - yells, pointing into the night sky. Sara immediately breaks her attention from the phone and looks up
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `306` activation `4.248` class `word` token ` smile`
+  - Have patience, Yuma." Sara says with a smile. "Hi, Smudges," Yuma
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `364` activation `4.241` class `word` token ` immediately`
+  - ells, pointing into the night sky. Sara immediately breaks her attention from the phone and looks up.
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `223` activation `4.235` class `word` token ` voice`
+  - into nothing more than disappointment. "Hey," the voice of a young woman says entering the rooftop behind her
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `356` activation `4.229` class `word` token ` pointing`
+  - NOW!" "There!'" Yuma yells, pointing into the night sky. Sara immediately breaks her
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `503` activation `4.199` class `word` token ` phone`
+  - . DING Sara glanced down at her phone once again. From "Mom": "D
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `75` activation `4.136` class `word` token ` she`
+  - . "Where are they, Smudges?" she asks the cat as it purrs away on her
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `426` activation `4.129` class `word` token `ara`
+  - "They made it!" Yuma cried out. Sara was speechless as so many emotions ran through her
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `234` activation `4.074` class `punctuation` token `,`
+  - of a young woman says entering the rooftop behind her, "Anything yet?" "No," Sara says as Sm
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `403` activation `4.070` class `word` token ` and`
+  - sky. A large smile breaks on Sara's face and is soon accompanied by tears welling up in her
+- `L19:2041` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `143` activation `4.025` class `word` token ` down`
+  - have patience, Sara" She puts her phone back down on the blanket with a huff. Smud
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `464` activation `5.490` class `word` token ` he`
+  - floor. "I must be losing my mind," he thought. "Chipmunks that speak in rh
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `500` activation `5.490` class `word` token ` he`
+  - bed in a cold sweat. "Phew!" he exclaimed. "It was all just a crazy dream
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `305` activation `5.002` class `word` token ` priest`
+  - a bullhorn. "A bullhorn?", the priest thought. "How and why did I trip over
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `501` activation `4.935` class `word` token ` exclaimed`
+  - in a cold sweat. "Phew!" he exclaimed. "It was all just a crazy dream."
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `417` activation `4.856` class `word` token ` and`
+  - om. The chipmunks all took a breath and said "Hold on Mr. Priest! We mean
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `449` activation `4.812` class `word` token ` priest`
+  - ies, you set off quite an alarm!". The priest's jaw dropped to floor. "I must be
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `306` activation `4.675` class `word` token ` thought`
+  - bullhorn. "A bullhorn?", the priest thought. "How and why did I trip over a
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `465` activation `4.539` class `word` token ` thought`
+  - . "I must be losing my mind," he thought. "Chipmunks that speak in rhymes
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `285` activation `4.460` class `word` token ` looked`
+  - , landing with a loud THUD. The priest looked behind him to see that he tripped over a
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `320` activation `4.364` class `word` token ` He`
+  - and why did I trip over a bullhorn?" He picked up the bullhorn and took it downstairs.
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `488` activation `4.306` class `word` token ` up`
+  - brownies? That's impossible." The priest shot up in bed in a cold sweat. "Phew
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `326` activation `4.295` class `word` token ` and`
+  - a bullhorn?" He picked up the bullhorn and took it downstairs. When he turned the corner into
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `412` activation `4.283` class `word` token `unks`
+  - the priest grab the broom. The chipmunks all took a breath and said "Hold on Mr
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `379` activation `4.225` class `word` token ` priest`
+  - brownie batter, eggs, and pineapple. The priest quickly ran to get a broom to swat
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `486` activation `4.203` class `word` token ` priest`
+  - and bake brownies? That's impossible." The priest shot up in bed in a cold sweat. "
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `400` activation `4.101` class `word` token ` and`
+  - at the chpimunks. They all stopped and saw the priest grab the broom. The chip
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `287` activation `4.046` class `word` token ` him`
+  - with a loud THUD. The priest looked behind him to see that he tripped over a bullhorn
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `380` activation `4.029` class `word` token ` quickly`
+  - ie batter, eggs, and pineapple. The priest quickly ran to get a broom to swat at
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `490` activation `4.018` class `word` token ` bed`
+  - ? That's impossible." The priest shot up in bed in a cold sweat. "Phew!" he
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `452` activation `3.991` class `word` token ` dropped`
+  - set off quite an alarm!". The priest's jaw dropped to floor. "I must be losing my mind
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `413` activation `3.937` class `word` token ` all`
+  - priest grab the broom. The chipmunks all took a breath and said "Hold on Mr.
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `270` activation `3.877` class `word` token ` he`
+  - floor. As he got up from the bed, he tripped and fell, landing with a loud TH
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `463` activation `3.870` class `punctuation` token `,"`
+  - to floor. "I must be losing my mind," he thought. "Chipmunks that speak in
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `355` activation `3.855` class `word` token ` face`
+  - and the paper. Shock came over the priest's face. In the kitchen were three chipmunks who
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `265` activation `3.844` class `word` token ` up`
+  - set his feet on the floor. As he got up from the bed, he tripped and fell,
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `416` activation `3.842` class `word` token ` breath`
+  - broom. The chipmunks all took a breath and said "Hold on Mr. Priest! We
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `288` activation `3.841` class `word` token ` to`
+  - a loud THUD. The priest looked behind him to see that he tripped over a bullhorn.
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `487` activation `3.825` class `word` token ` shot`
+  - bake brownies? That's impossible." The priest shot up in bed in a cold sweat. "Ph
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `418` activation `3.810` class `word` token ` said`
+  - . The chipmunks all took a breath and said "Hold on Mr. Priest! We mean you
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `325` activation `3.764` class `word` token `horn`
+  - over a bullhorn?" He picked up the bullhorn and took it downstairs. When he turned the corner
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `254` activation `3.705` class `word` token ` he`
+  - priest trailed off reading the rest of the list, he set his feet on the floor. As he got
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `196` activation `3.677` class `word` token ` He`
+  - and let out an OOOOWWWWWW. He touched his forehead to find that the paper had been
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `215` activation `3.653` class `word` token ` looked`
+  - had been stapled to his head. As he looked over the list, he read the first few items
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `284` activation `3.652` class `word` token ` priest`
+  - fell, landing with a loud THUD. The priest looked behind him to see that he tripped over
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `345` activation `3.573` class `word` token ` and`
+  - corner into the kitchen, he dropped the bullhorn and the paper. Shock came over the priest's face
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `499` activation `3.563` class `punctuation` token `!"`
+  - in bed in a cold sweat. "Phew!" he exclaimed. "It was all just a crazy
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `263` activation `3.504` class `word` token ` he`
+  - , he set his feet on the floor. As he got up from the bed, he tripped and
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `381` activation `3.503` class `word` token ` ran`
+  - batter, eggs, and pineapple. The priest quickly ran to get a broom to swat at the
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `328` activation `3.477` class `word` token ` it`
+  - horn?" He picked up the bullhorn and took it downstairs. When he turned the corner into the kitchen
+- `L19:2041` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `321` activation `3.471` class `word` token ` picked`
+  - why did I trip over a bullhorn?" He picked up the bullhorn and took it downstairs. When
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `323` activation `4.925` class `word` token `s`
+  - . She was a real healer. Kotone sighs at a job well done and proceeds to faint in
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `410` activation `4.823` class `word` token ` and`
+  - approaching. The older woman from the fountain walks in and starts scolding her. Then she laughs. "
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `299` activation `4.716` class `word` token ` up`
+  - the man's eyes return to normal. He gets up, feeling fine and recovered. The village folk couldn
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `408` activation `4.425` class `word` token ` walks`
+  - dragon is approaching. The older woman from the fountain walks in and starts scolding her. Then she laughs
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `297` activation `4.276` class `word` token ` He`
+  - done and the man's eyes return to normal. He gets up, feeling fine and recovered. The village
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `417` activation `4.253` class `word` token ` she`
+  - fountain walks in and starts scolding her. Then she laughs. "Kotone, you did a
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `349` activation `4.239` class `word` token ` She`
+  - . Kotone wakes up in her bed. She faintly remembers the good deed she did as she
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `409` activation `4.064` class `word` token ` in`
+  - is approaching. The older woman from the fountain walks in and starts scolding her. Then she laughs.
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `212` activation `4.029` class `word` token ` and`
+  - from the sickly man. Kotone finishes praying and then reads the next part of the spell. It
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `142` activation `4.017` class `word` token ` and`
+  - ." She ties her hair back into a ponytail and starts to pray. The first step to any spell
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `466` activation `4.015` class `word` token ` woman`
+  - of us would fall over from poison." The older woman hands over the history book and tells Kotone,
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `300` activation `3.959` class `punctuation` token `,`
+  - man's eyes return to normal. He gets up, feeling fine and recovered. The village folk couldn't
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `237` activation `3.917` class `word` token ` and`
+  - , she walks up to the man on the ground and places her hand on his head. And with one
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `344` activation `3.845` class `word` token ` up`
+  - front of the village folk. Kotone wakes up in her bed. She faintly remembers the good
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `418` activation `3.838` class `word` token ` laughs`
+  - walks in and starts scolding her. Then she laughs. "Kotone, you did a great
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `404` activation `3.827` class `word` token ` woman`
+  - you would think the dragon is approaching. The older woman from the fountain walks in and starts scolding her
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `298` activation `3.794` class `word` token ` gets`
+  - and the man's eyes return to normal. He gets up, feeling fine and recovered. The village folk
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `133` activation `3.756` class `word` token ` She`
+  - She thought to herself "This looks easy enough." She ties her hair back into a ponytail and starts
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `209` activation `3.756` class `word` token `one`
+  - to walk away from the sickly man. Kotone finishes praying and then reads the next part of the
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `411` activation `3.752` class `word` token ` starts`
+  - . The older woman from the fountain walks in and starts scolding her. Then she laughs. "K
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `391` activation `3.722` class `word` token ` screams`
+  - limb and organ started screaming in pain. Kotone screams so loud you would think the dragon is approaching.
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `499` activation `3.675` class `word` token `one`
+  - then come talk to me." She leaves and Kotone was still unsatisfied. But that can wait until
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `351` activation `3.611` class `word` token `ly`
+  - otone wakes up in her bed. She faintly remembers the good deed she did as she tries to
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `303` activation `3.603` class `word` token ` and`
+  - return to normal. He gets up, feeling fine and recovered. The village folk couldn't believe it.
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `496` activation `3.582` class `word` token ` leaves`
+  - in this book then come talk to me." She leaves and Kotone was still unsatisfied. But that
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `213` activation `3.579` class `style_function_word` token ` then`
+  - the sickly man. Kotone finishes praying and then reads the next part of the spell. It wasn
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `390` activation `3.572` class `word` token `one`
+  - every limb and organ started screaming in pain. Kotone screams so loud you would think the dragon is approaching
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `292` activation `3.550` class `word` token ` eyes`
+  - seconds, the spell was done and the man's eyes return to normal. He gets up, feeling fine
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `106` activation `3.523` class `word` token `one`
+  - a wolf finding its meal for the day. Kotone keeps looking and looking for a spell and she landed
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `495` activation `3.503` class `word` token ` She`
+  - everything in this book then come talk to me." She leaves and Kotone was still unsatisfied. But
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `308` activation `3.493` class `word` token ` folk`
+  - gets up, feeling fine and recovered. The village folk couldn't believe it. She was a real healer
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `343` activation `3.488` class `word` token ` wakes`
+  - in front of the village folk. Kotone wakes up in her bed. She faintly remembers the
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `273` activation `3.484` class `word` token ` eyes`
+  - starts to crack and the man starts violently shaking, eyes glazing over white. After a few seconds,
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `290` activation `3.477` class `word` token ` man`
+  - a few seconds, the spell was done and the man's eyes return to normal. He gets up,
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `268` activation `3.468` class `word` token ` man`
+  - !" The ground around her starts to crack and the man starts violently shaking, eyes glazing over white.
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `229` activation `3.435` class `word` token ` walks`
+  - the spell. It wasn't that complicated, she walks up to the man on the ground and places her
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `329` activation `3.429` class `word` token ` and`
+  - . Kotone sighs at a job well done and proceeds to faint in front of the village folk.
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `416` activation `3.428` class `style_function_word` token ` Then`
+  - the fountain walks in and starts scolding her. Then she laughs. "Kotone, you did
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `230` activation `3.355` class `word` token ` up`
+  - spell. It wasn't that complicated, she walks up to the man on the ground and places her hand
+- `L19:2041` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `500` activation `3.328` class `expanded_negation_word` token ` was`
+  - come talk to me." She leaves and Kotone was still unsatisfied. But that can wait until later
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `285` activation `4.858` class `word` token ` and`
+  - alien spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams rained down
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `284` activation `4.094` class `word` token ` up`
+  - multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams rained
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `287` activation `4.023` class `word` token ` to`
+  - hips! As Jeremy quickly pulled himself up and started to run for cover, beams rained down from the
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `281` activation `3.982` class `word` token ` quickly`
+  - , it was multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover,
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `257` activation `3.928` class `word` token ` he`
+  - grew larger and larger. As he looked up, he couldn't believe his eyes. It was an alien
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `308` activation `3.847` class `word` token ` Jeremy`
+  - sky and destroyed roads and cars all around him. Jeremy shoved his way through a spinning entryway and found
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `283` activation `3.844` class `word` token ` himself`
+  - was multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams r
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `286` activation `3.814` class `word` token ` started`
+  - spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams rained down from
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `288` activation `3.764` class `word` token ` run`
+  - ! As Jeremy quickly pulled himself up and started to run for cover, beams rained down from the sky
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `280` activation `3.648` class `word` token ` Jeremy`
+  - No, it was multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `342` activation `3.467` class `word` token ` He`
+  - he had chosen burst and shot inward toward him. He shielded his face with his coat and started stumbling
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `499` activation `3.441` class `word` token ` and`
+  - . Jeremy sat down on the floor against the wall and thought to himself how he might get out of this
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `455` activation `3.440` class `word` token ` looked`
+  - room shook and dust fell from the ceiling as he looked around the small-sized concrete room. His only hope
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `253` activation `3.387` class `word` token ` he`
+  - . A circular shape grew larger and larger. As he looked up, he couldn't believe his eyes.
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `350` activation `3.364` class `word` token ` and`
+  - him. He shielded his face with his coat and started stumbling toward the basement. He decided to take
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `254` activation `3.258` class `word` token ` looked`
+  - A circular shape grew larger and larger. As he looked up, he couldn't believe his eyes. It
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `255` activation `3.203` class `word` token ` up`
+  - circular shape grew larger and larger. As he looked up, he couldn't believe his eyes. It was
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `292` activation `3.197` class `word` token ` beams`
+  - pulled himself up and started to run for cover, beams rained down from the sky and destroyed roads and
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `317` activation `3.197` class `word` token ` and`
+  - . Jeremy shoved his way through a spinning entryway and found himself in a hotel. CRASH The glass
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `291` activation `3.144` class `punctuation` token `,`
+  - quickly pulled himself up and started to run for cover, beams rained down from the sky and destroyed roads
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `491` activation `3.132` class `word` token ` sat`
+  - or dig his way out of the rubble. Jeremy sat down on the floor against the wall and thought to
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `225` activation `3.108` class `word` token ` ground`
+  - even try to get up, he laid on the ground and looked up at the sky. He noticed something
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `299` activation `3.099` class `word` token ` and`
+  - for cover, beams rained down from the sky and destroyed roads and cars all around him. Jeremy shoved
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `410` activation `3.086` class `word` token ` He`
+  - There was nobody down there, he was alone. He went into a side room with a sturdy-looking door
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `357` activation `3.063` class `word` token ` He`
+  - with his coat and started stumbling toward the basement. He decided to take the stairs over the elevator. He
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `500` activation `3.051` class `word` token ` thought`
+  - Jeremy sat down on the floor against the wall and thought to himself how he might get out of this alive
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `351` activation `3.026` class `word` token ` started`
+  - . He shielded his face with his coat and started stumbling toward the basement. He decided to take the
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `226` activation `3.008` class `word` token ` and`
+  - try to get up, he laid on the ground and looked up at the sky. He noticed something in
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `282` activation `3.002` class `word` token ` pulled`
+  - it was multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `492` activation `2.984` class `word` token ` down`
+  - dig his way out of the rubble. Jeremy sat down on the floor against the wall and thought to himself
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `454` activation `2.977` class `word` token ` he`
+  - His room shook and dust fell from the ceiling as he looked around the small-sized concrete room. His only
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `411` activation `2.940` class `word` token ` went`
+  - was nobody down there, he was alone. He went into a side room with a sturdy-looking door and
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `319` activation `2.926` class `word` token ` himself`
+  - shoved his way through a spinning entryway and found himself in a hotel. CRASH The glass all around
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `495` activation `2.920` class `word` token ` floor`
+  - out of the rubble. Jeremy sat down on the floor against the wall and thought to himself how he might
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `256` activation `2.908` class `punctuation` token `,`
+  - shape grew larger and larger. As he looked up, he couldn't believe his eyes. It was an
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `227` activation `2.906` class `word` token ` looked`
+  - to get up, he laid on the ground and looked up at the sky. He noticed something in the
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `456` activation `2.895` class `word` token ` around`
+  - shook and dust fell from the ceiling as he looked around the small-sized concrete room. His only hope was
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `309` activation `2.878` class `word` token ` shoved`
+  - and destroyed roads and cars all around him. Jeremy shoved his way through a spinning entryway and found himself
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `367` activation `2.873` class `word` token ` He`
+  - He decided to take the stairs over the elevator. He leaped from one stair platform to another, using
+- `L19:2041` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `336` activation `2.857` class `word` token ` and`
+  - The glass all around the building he had chosen burst and shot inward toward him. He shielded his face
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `344` activation `4.548` class `word` token ` and`
+  - him. He turned around with his rifle in hand and fired. He did not see what it was,
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `371` activation `4.269` class `word` token ` head`
+  - at least scared it off. Wario shook his head. He used to be able to think clearly,
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `337` activation `4.255` class `word` token ` turned`
+  - around. He heard something move behind him. He turned around with his rifle in hand and fired. He
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `338` activation `4.107` class `word` token ` around`
+  - . He heard something move behind him. He turned around with his rifle in hand and fired. He did
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `336` activation `4.026` class `word` token ` He`
+  - danger around. He heard something move behind him. He turned around with his rifle in hand and fired.
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `347` activation `3.968` class `word` token ` He`
+  - turned around with his rifle in hand and fired. He did not see what it was, but he knew
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `339` activation `3.849` class `word` token ` with`
+  - He heard something move behind him. He turned around with his rifle in hand and fired. He did not
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `345` activation `3.711` class `word` token ` fired`
+  - . He turned around with his rifle in hand and fired. He did not see what it was, but
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `373` activation `3.690` class `word` token ` He`
+  - scared it off. Wario shook his head. He used to be able to think clearly, but for
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `343` activation `3.663` class `word` token ` hand`
+  - behind him. He turned around with his rifle in hand and fired. He did not see what it was
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `300` activation `3.557` class `punctuation` token `,`
+  - grassland. He looked around in a daze, taking in some of the sights around him. He
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `398` activation `3.450` class `word` token ` and`
+  - gotten so difficult for him recently. He turned around and fired his rifle again. As long as he had
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `369` activation `3.413` class `word` token ` shook`
+  - he had at least scared it off. Wario shook his head. He used to be able to think
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `396` activation `3.343` class `word` token ` turned`
+  - that had gotten so difficult for him recently. He turned around and fired his rifle again. As long as
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `397` activation `3.306` class `word` token ` around`
+  - had gotten so difficult for him recently. He turned around and fired his rifle again. As long as he
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `295` activation `3.089` class `word` token ` around`
+  - Wario shuffled around the grassland. He looked around in a daze, taking in some of the
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `342` activation `3.011` class `word` token ` in`
+  - move behind him. He turned around with his rifle in hand and fired. He did not see what it
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `334` activation `3.005` class `word` token ` him`
+  - there was danger around. He heard something move behind him. He turned around with his rifle in hand and
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `299` activation `2.977` class `word` token `aze`
+  - the grassland. He looked around in a daze, taking in some of the sights around him.
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `329` activation `2.967` class `word` token ` He`
+  - but he was certain that there was danger around. He heard something move behind him. He turned around with
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `399` activation `2.929` class `word` token ` fired`
+  - so difficult for him recently. He turned around and fired his rifle again. As long as he had his
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `310` activation `2.768` class `word` token ` He`
+  - , taking in some of the sights around him. He could barely tell where he was anymore, but he
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `341` activation `2.634` class `word` token ` rifle`
+  - something move behind him. He turned around with his rifle in hand and fired. He did not see what
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `368` activation `2.613` class `word` token `ario`
+  - that he had at least scared it off. Wario shook his head. He used to be able to
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `349` activation `2.594` class `expanded_negation_word` token ` not`
+  - with his rifle in hand and fired. He did not see what it was, but he knew that he
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `330` activation `2.557` class `word` token ` heard`
+  - he was certain that there was danger around. He heard something move behind him. He turned around with his
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `354` activation `2.548` class `punctuation` token `,`
+  - and fired. He did not see what it was, but he knew that he had at least scared it
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `356` activation `2.531` class `word` token ` he`
+  - . He did not see what it was, but he knew that he had at least scared it off.
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `401` activation `2.523` class `word` token ` rifle`
+  - for him recently. He turned around and fired his rifle again. As long as he had his weapon,
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `296` activation `2.496` class `word` token ` in`
+  - ario shuffled around the grassland. He looked around in a daze, taking in some of the sights
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `332` activation `2.488` class `word` token ` move`
+  - certain that there was danger around. He heard something move behind him. He turned around with his rifle in
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `340` activation `2.462` class `word` token ` his`
+  - heard something move behind him. He turned around with his rifle in hand and fired. He did not see
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `294` activation `2.428` class `word` token ` looked`
+  - Wario shuffled around the grassland. He looked around in a daze, taking in some of
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `331` activation `2.349` class `word` token ` something`
+  - was certain that there was danger around. He heard something move behind him. He turned around with his rifle
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `402` activation `2.335` class `word` token ` again`
+  - him recently. He turned around and fired his rifle again. As long as he had his weapon, nobody
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `346` activation `2.320` class `sentence_boundary` token `.`
+  - He turned around with his rifle in hand and fired. He did not see what it was, but he
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `348` activation `2.308` class `expanded_negation_word` token ` did`
+  - around with his rifle in hand and fired. He did not see what it was, but he knew that
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `355` activation `2.294` class `word` token ` but`
+  - fired. He did not see what it was, but he knew that he had at least scared it off
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `335` activation `2.275` class `sentence_boundary` token `.`
+  - was danger around. He heard something move behind him. He turned around with his rifle in hand and fired
+- `L19:2041` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `374` activation `2.193` class `word` token ` used`
+  - it off. Wario shook his head. He used to be able to think clearly, but for some
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `454` activation `4.936` class `word` token ` yelled`
+  - was just in the 1700s!" Mary yelled. "You disappeared! We didn't know what
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `470` activation `4.768` class `word` token ` friends`
+  - We didn't know what happened to you!" her friends exclaimed. "I guess when I drink this tea
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `368` activation `4.682` class `word` token ` shouted`
+  - 's 1791!" The man running the shop shouted, "Well, yes, little lady! Would
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `367` activation `4.627` class `word` token ` shop`
+  - It's 1791!" The man running the shop shouted, "Well, yes, little lady!
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `388` activation `4.626` class `word` token ` looked`
+  - Would you like a complimentary glass of tea?" Mary looked at the tea, then looked at the man,
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `387` activation `4.540` class `word` token ` Mary`
+  - ! Would you like a complimentary glass of tea?" Mary looked at the tea, then looked at the man
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `405` activation `4.353` class `word` token ` before`
+  - at the man, then looked back at the tea before grabbing it and taking a huge gulp. As she
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `398` activation `4.321` class `punctuation` token `,`
+  - looked at the tea, then looked at the man, then looked back at the tea before grabbing it and
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `471` activation `4.315` class `word` token ` exclaimed`
+  - didn't know what happened to you!" her friends exclaimed. "I guess when I drink this tea,
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `392` activation `4.287` class `punctuation` token `,`
+  - complimentary glass of tea?" Mary looked at the tea, then looked at the man, then looked back at
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `306` activation `4.237` class `word` token ` and`
+  - new place. She took a moment to collect herself and observe her surroundings. Mary was surprised, "Wait
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `393` activation `4.231` class `style_function_word` token ` then`
+  - glass of tea?" Mary looked at the tea, then looked at the man, then looked back at the
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `275` activation `4.224` class `punctuation` token `,`
+  - brewed glass of sweet tea. She grabbed the glass, took a swig, and POOF, she
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `334` activation `4.186` class `word` token ` Mary`
+  - Is that Thomas Jefferson? What year is this?" Mary rushed to a nearby shop, grabbed the daily newspaper
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `407` activation `4.169` class `word` token ` it`
+  - man, then looked back at the tea before grabbing it and taking a huge gulp. As she swallowed the
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `408` activation `3.908` class `word` token ` and`
+  - , then looked back at the tea before grabbing it and taking a huge gulp. As she swallowed the drink
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `453` activation `3.849` class `word` token ` Mary`
+  - I was just in the 1700s!" Mary yelled. "You disappeared! We didn't know
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `274` activation `3.843` class `word` token ` glass`
+  - freshly brewed glass of sweet tea. She grabbed the glass, took a swig, and POOF,
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `335` activation `3.728` class `word` token ` rushed`
+  - that Thomas Jefferson? What year is this?" Mary rushed to a nearby shop, grabbed the daily newspaper,
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `346` activation `3.720` class `word` token ` and`
+  - to a nearby shop, grabbed the daily newspaper, and took a gasp, "Oh my goodness!
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `303` activation `3.718` class `word` token ` to`
+  - in a strange new place. She took a moment to collect herself and observe her surroundings. Mary was surprised
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `340` activation `3.699` class `punctuation` token `,`
+  - year is this?" Mary rushed to a nearby shop, grabbed the daily newspaper, and took a gasp
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `394` activation `3.657` class `word` token ` looked`
+  - of tea?" Mary looked at the tea, then looked at the man, then looked back at the tea
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `305` activation `3.566` class `word` token ` herself`
+  - strange new place. She took a moment to collect herself and observe her surroundings. Mary was surprised, "
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `399` activation `3.544` class `style_function_word` token ` then`
+  - at the tea, then looked at the man, then looked back at the tea before grabbing it and taking
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `299` activation `3.533` class `word` token ` She`
+  - Mary suddenly found herself in a strange new place. She took a moment to collect herself and observe her surroundings
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `406` activation `3.533` class `word` token ` grabbing`
+  - the man, then looked back at the tea before grabbing it and taking a huge gulp. As she swallowed
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `415` activation `3.532` class `word` token ` she`
+  - before grabbing it and taking a huge gulp. As she swallowed the drink, once again, POOF.
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `345` activation `3.508` class `punctuation` token `,`
+  - rushed to a nearby shop, grabbed the daily newspaper, and took a gasp, "Oh my goodness
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `281` activation `3.468` class `word` token ` and`
+  - She grabbed the glass, took a swig, and POOF, she had disappeared. Mary suddenly found
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `397` activation `3.464` class `word` token ` man`
+  - Mary looked at the tea, then looked at the man, then looked back at the tea before grabbing it
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `311` activation `3.453` class `word` token ` Mary`
+  - a moment to collect herself and observe her surroundings. Mary was surprised, "Wait... is that Georgia Washington
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `419` activation `3.433` class `punctuation` token `,`
+  - taking a huge gulp. As she swallowed the drink, once again, POOF. She was back in
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `426` activation `3.360` class `word` token ` She`
+  - swallowed the drink, once again, POOF. She was back in the house with her friends. "
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `271` activation `3.308` class `word` token ` She`
+  - handed her a freshly brewed glass of sweet tea. She grabbed the glass, took a swig, and
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `302` activation `3.283` class `word` token ` moment`
+  - herself in a strange new place. She took a moment to collect herself and observe her surroundings. Mary was
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `364` activation `3.281` class `word` token ` man`
+  - my goodness! It's 1791!" The man running the shop shouted, "Well, yes,
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `260` activation `3.225` class `word` token ` and`
+  - I'll try some tea!" Her friends were ecstatic and handed her a freshly brewed glass of sweet tea.
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `500` activation `3.175` class `word` token ` Mary`
+  - time. Like time travel!" At that moment, Mary knew she was never going to drink tea ever again
+- `L19:2041` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `312` activation `3.162` class `expanded_negation_word` token ` was`
+  - moment to collect herself and observe her surroundings. Mary was surprised, "Wait... is that Georgia Washington?
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `460` activation `5.283` class `word` token ` said`
+  - had to get down here right away," Marge said to him. "Oh no, did I ruin
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `482` activation `4.943` class `word` token ` replied`
+  - ?" "You didn't ruin anything, honey," Homer replied as he hugged her close, his face once more
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `481` activation `4.640` class `word` token ` Homer`
+  - it?" "You didn't ruin anything, honey," Homer replied as he hugged her close, his face once
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `459` activation `4.636` class `word` token `arge`
+  - I had to get down here right away," Marge said to him. "Oh no, did I
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `214` activation `4.587` class `word` token ` looked`
+  - Homer sat down to polish off his beer. He looked around trying to appreciate the moment but one thing was
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `205` activation `4.341` class `word` token ` sat`
+  - rest while waiting on his ball to return, Homer sat down to polish off his beer. He looked around
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `204` activation `4.237` class `word` token ` Homer`
+  - quick rest while waiting on his ball to return, Homer sat down to polish off his beer. He looked
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `484` activation `4.203` class `word` token ` he`
+  - didn't ruin anything, honey," Homer replied as he hugged her close, his face once more reflecting from
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `215` activation `4.184` class `word` token ` around`
+  - sat down to polish off his beer. He looked around trying to appreciate the moment but one thing was missing
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `145` activation `4.106` class `word` token ` said`
+  - . "Yeah Homer, you're the man!" Earl said to him as well. Homer could feel the
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `134` activation `4.077` class `word` token ` shouted`
+  - go, Homer, you got this!" Lenny shouted. "Yeah Homer, you're the man!" Earl
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `266` activation `4.034` class `word` token ` looked`
+  - how late he was running. Rising, Homer looked at his bowling ball and saw reflected on it his
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `271` activation `4.009` class `word` token ` and`
+  - . Rising, Homer looked at his bowling ball and saw reflected on it his face. And it wasn
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `213` activation `4.003` class `word` token ` He`
+  - , Homer sat down to polish off his beer. He looked around trying to appreciate the moment but one thing
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `265` activation `3.992` class `word` token ` Homer`
+  - realized how late he was running. Rising, Homer looked at his bowling ball and saw reflected on it
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `263` activation `3.895` class `word` token `ising`
+  - as he realized how late he was running. Rising, Homer looked at his bowling ball and saw reflected
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `462` activation `3.804` class `word` token ` him`
+  - get down here right away," Marge said to him. "Oh no, did I ruin it?"
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `206` activation `3.710` class `word` token ` down`
+  - while waiting on his ball to return, Homer sat down to polish off his beer. He looked around trying
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `429` activation `3.696` class `word` token ` her`
+  - way through them to confront Homer. He ran towards her in kind. "Homer! Homer! Am I
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `426` activation `3.619` class `word` token ` He`
+  - arge pushed her way through them to confront Homer. He ran towards her in kind. "Homer! Homer
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `254` activation `3.595` class `word` token ` he`
+  - anniversary. A pang of guilt hit him then as he realized how late he was running. Rising,
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `421` activation `3.595` class `word` token ` them`
+  - was in shock as Marge pushed her way through them to confront Homer. He ran towards her in kind
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `416` activation `3.543` class `word` token `arge`
+  - the gutter. The crowd was in shock as Marge pushed her way through them to confront Homer. He
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `488` activation `3.541` class `punctuation` token `,`
+  - , honey," Homer replied as he hugged her close, his face once more reflecting from a mirrored surface,
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `322` activation `3.523` class `word` token ` he`
+  - the bowling lane. Scanning the crowd once more he didn't know what he was looking for but something
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `457` activation `3.495` class `punctuation` token `,"`
+  - and said I had to get down here right away," Marge said to him. "Oh no,
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `483` activation `3.487` class `style_function_word` token ` as`
+  - "You didn't ruin anything, honey," Homer replied as he hugged her close, his face once more reflecting
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `490` activation `3.450` class `word` token ` face`
+  - ," Homer replied as he hugged her close, his face once more reflecting from a mirrored surface, but this
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `389` activation `3.416` class `word` token ` footsteps`
+  - , a shock of blue above the crowd. His footsteps stumbled, the ball wobbled, then it fell
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `152` activation `3.396` class `word` token `omer`
+  - man!" Earl said to him as well. Homer could feel the support of all his bowling buddies and
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `319` activation `3.379` class `word` token ` crowd`
+  - , and approached the bowling lane. Scanning the crowd once more he didn't know what he was looking
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `57` activation `3.349` class `word` token ` and`
+  - ig of his Duff beer before setting it down and picking up his bowling ball. Stepping into his
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `207` activation `3.316` class `word` token ` to`
+  - waiting on his ball to return, Homer sat down to polish off his beer. He looked around trying to
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `411` activation `3.294` class `expanded_negation_word` token ` was`
+  - limply ending up in the gutter. The crowd was in shock as Marge pushed her way through them
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `486` activation `3.286` class `word` token ` her`
+  - ruin anything, honey," Homer replied as he hugged her close, his face once more reflecting from a mirrored
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `133` activation `3.275` class `word` token `enny`
+  - to go, Homer, you got this!" Lenny shouted. "Yeah Homer, you're the man!"
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `422` activation `3.261` class `word` token ` to`
+  - in shock as Marge pushed her way through them to confront Homer. He ran towards her in kind.
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `461` activation `3.177` class `word` token ` to`
+  - to get down here right away," Marge said to him. "Oh no, did I ruin it
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `172` activation `3.161` class `word` token ` He`
+  - and a small crowd was even starting to form. He could even hear them chanting his name ever so softly
+- `L19:2041` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `463` activation `3.155` class `sentence_boundary` token `.`
+  - down here right away," Marge said to him. "Oh no, did I ruin it?" "You
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `324` activation `4.569` class `word` token ` asked`
+  - ...is everything alright? You doing okay?", Penn asked softly. There was a long silence as Teller
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `323` activation `4.179` class `word` token ` Penn`
+  - buddy...is everything alright? You doing okay?", Penn asked softly. There was a long silence as T
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `437` activation `3.861` class `word` token ` replied`
+  - in and collected his thoughts. "Well...", Penn replied. "I just thought you weren't capable of
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `325` activation `3.677` class `word` token ` softly`
+  - is everything alright? You doing okay?", Penn asked softly. There was a long silence as Teller,
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `344` activation `3.660` class `word` token `ared`
+  - eller, who was famous for not speaking, glared into Penn's eyes. Then, finally, T
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `292` activation `3.595` class `word` token ` with`
+  - the night's show. Teller looked at Penn with a happy expression, but it gradually turned sour into
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `436` activation `3.488` class `word` token ` Penn`
+  - this in and collected his thoughts. "Well...", Penn replied. "I just thought you weren't capable
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `355` activation `3.270` class `word` token `eller`
+  - into Penn's eyes. Then, finally, Teller erupted into a fiery yell that sent Penn almost stumbling
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `423` activation `3.258` class `word` token ` Penn`
+  - who stays quiet!". There was another long pause while Penn took all this in and collected his thoughts. "
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `478` activation `3.211` class `word` token ` slowly`
+  - love to hear all about these ideas!". Teller slowly started to smile again. He knew that maybe this
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `289` activation `3.207` class `word` token ` looked`
+  - stage props from the night's show. Teller looked at Penn with a happy expression, but it gradually
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `296` activation `3.187` class `punctuation` token `,`
+  - . Teller looked at Penn with a happy expression, but it gradually turned sour into a look of uncertainty
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `356` activation `3.165` class `word` token ` erupted`
+  - Penn's eyes. Then, finally, Teller erupted into a fiery yell that sent Penn almost stumbling backward
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `334` activation `3.162` class `word` token `eller`
+  - asked softly. There was a long silence as Teller, who was famous for not speaking, glared
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `295` activation `3.079` class `word` token ` expression`
+  - show. Teller looked at Penn with a happy expression, but it gradually turned sour into a look of
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `381` activation `3.076` class `word` token ` out`
+  - 'T TAKE THIS ANYMORE!", he blurted out. "I'm tired of being the silent one
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `481` activation `2.966` class `word` token ` smile`
+  - all about these ideas!". Teller slowly started to smile again. He knew that maybe this was all one
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `377` activation `2.923` class `word` token ` he`
+  - . "I CAN'T TAKE THIS ANYMORE!", he blurted out. "I'm tired of
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `380` activation `2.910` class `word` token `ed`
+  - CAN'T TAKE THIS ANYMORE!", he blurted out. "I'm tired of being the silent
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `291` activation `2.909` class `word` token ` Penn`
+  - from the night's show. Teller looked at Penn with a happy expression, but it gradually turned sour
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `297` activation `2.905` class `word` token ` but`
+  - Teller looked at Penn with a happy expression, but it gradually turned sour into a look of uncertainty and
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `293` activation `2.804` class `word` token ` a`
+  - night's show. Teller looked at Penn with a happy expression, but it gradually turned sour into a
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `348` activation `2.790` class `word` token ` eyes`
+  - famous for not speaking, glared into Penn's eyes. Then, finally, Teller erupted into a
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `328` activation `2.665` class `expanded_negation_word` token ` was`
+  - ? You doing okay?", Penn asked softly. There was a long silence as Teller, who was famous
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `351` activation `2.654` class `punctuation` token `,`
+  - speaking, glared into Penn's eyes. Then, finally, Teller erupted into a fiery yell that
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `350` activation `2.650` class `style_function_word` token ` Then`
+  - not speaking, glared into Penn's eyes. Then, finally, Teller erupted into a fiery yell
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `357` activation `2.633` class `word` token ` into`
+  - 's eyes. Then, finally, Teller erupted into a fiery yell that sent Penn almost stumbling backward.
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `360` activation `2.616` class `word` token ` yell`
+  - Then, finally, Teller erupted into a fiery yell that sent Penn almost stumbling backward. "I CAN
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `477` activation `2.600` class `word` token `eller`
+  - 'd love to hear all about these ideas!". Teller slowly started to smile again. He knew that maybe
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `329` activation `2.595` class `word` token ` a`
+  - You doing okay?", Penn asked softly. There was a long silence as Teller, who was famous for
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `331` activation `2.588` class `word` token ` silence`
+  - okay?", Penn asked softly. There was a long silence as Teller, who was famous for not speaking
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `335` activation `2.558` class `punctuation` token `,`
+  - softly. There was a long silence as Teller, who was famous for not speaking, glared into
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `342` activation `2.530` class `punctuation` token `,`
+  - as Teller, who was famous for not speaking, glared into Penn's eyes. Then, finally
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `418` activation `2.512` class `expanded_negation_word` token ` was`
+  - offer than just an assistant who stays quiet!". There was another long pause while Penn took all this in and
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `428` activation `2.506` class `word` token ` and`
+  - was another long pause while Penn took all this in and collected his thoughts. "Well...", Penn replied.
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `421` activation `2.504` class `word` token ` pause`
+  - an assistant who stays quiet!". There was another long pause while Penn took all this in and collected his thoughts
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `352` activation `2.502` class `discourse_marker_word` token ` finally`
+  - , glared into Penn's eyes. Then, finally, Teller erupted into a fiery yell that sent
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `353` activation `2.489` class `punctuation` token `,`
+  - glared into Penn's eyes. Then, finally, Teller erupted into a fiery yell that sent Penn
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `480` activation `2.466` class `word` token ` to`
+  - hear all about these ideas!". Teller slowly started to smile again. He knew that maybe this was all
+- `L19:2041` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `361` activation `2.464` class `style_function_word` token ` that`
+  - , finally, Teller erupted into a fiery yell that sent Penn almost stumbling backward. "I CAN'T
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `168` activation `4.436` class `word` token ` say`
+  - outside. "Table for two, please", I say and watch his reaction seeing me without company. He
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `167` activation `4.286` class `word` token ` I`
+  - standing outside. "Table for two, please", I say and watch his reaction seeing me without company.
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `344` activation `3.544` class `word` token ` I`
+  - really like it. I haven't been before", I chirp back. I never know how I'm
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `178` activation `3.466` class `word` token ` He`
+  - say and watch his reaction seeing me without company. He leads me to a pretty table that sits in the
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `329` activation `3.446` class `word` token ` he`
+  - the entrance of the restaurant. "Nice place", he says. "I really like it. I haven
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `169` activation `3.345` class `word` token ` and`
+  - . "Table for two, please", I say and watch his reaction seeing me without company. He leads
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `330` activation `3.265` class `word` token ` says`
+  - entrance of the restaurant. "Nice place", he says. "I really like it. I haven't
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `347` activation `3.157` class `word` token ` back`
+  - . I haven't been before", I chirp back. I never know how I'm supposed to act
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `303` activation `3.134` class `word` token ` and`
+  - ). He takes his white headphones out of his ears and sits down across from me. I'm facing the
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `346` activation `3.039` class `word` token `p`
+  - it. I haven't been before", I chirp back. I never know how I'm supposed to
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `166` activation `2.747` class `punctuation` token `",`
+  - host standing outside. "Table for two, please", I say and watch his reaction seeing me without company
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `171` activation `2.740` class `word` token ` his`
+  - Table for two, please", I say and watch his reaction seeing me without company. He leads me to
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `170` activation `2.702` class `word` token ` watch`
+  - "Table for two, please", I say and watch his reaction seeing me without company. He leads me
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `302` activation `2.698` class `word` token ` ears`
+  - polo). He takes his white headphones out of his ears and sits down across from me. I'm facing
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `180` activation `2.684` class `word` token ` me`
+  - watch his reaction seeing me without company. He leads me to a pretty table that sits in the dusk light
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `305` activation `2.681` class `word` token ` down`
+  - takes his white headphones out of his ears and sits down across from me. I'm facing the street and
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `299` activation `2.574` class `word` token ` out`
+  - in his purple polo). He takes his white headphones out of his ears and sits down across from me.
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `304` activation `2.525` class `word` token ` sits`
+  - He takes his white headphones out of his ears and sits down across from me. I'm facing the street
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `310` activation `2.493` class `word` token ` I`
+  - of his ears and sits down across from me. I'm facing the street and he's facing the entrance
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `328` activation `2.433` class `punctuation` token `",`
+  - facing the entrance of the restaurant. "Nice place", he says. "I really like it. I
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `172` activation `2.323` class `word` token ` reaction`
+  - for two, please", I say and watch his reaction seeing me without company. He leads me to a
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `343` activation `2.115` class `punctuation` token `",`
+  - I really like it. I haven't been before", I chirp back. I never know how I
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `179` activation `2.000` class `word` token ` leads`
+  - and watch his reaction seeing me without company. He leads me to a pretty table that sits in the dusk
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `308` activation `1.979` class `word` token ` me`
+  - headphones out of his ears and sits down across from me. I'm facing the street and he's facing
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `152` activation `1.941` class `word` token ` way`
+  - look around at the empty tables outside and make my way over to the host standing outside. "Table for
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `159` activation `1.935` class `sentence_boundary` token `.`
+  - and make my way over to the host standing outside. "Table for two, please", I say and
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `269` activation `1.929` class `word` token ` I`
+  - iceps glistening and a smile on his face, I feel grateful and romantic (many years later, I
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `173` activation `1.884` class `word` token ` seeing`
+  - two, please", I say and watch his reaction seeing me without company. He leads me to a pretty
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `267` activation `1.855` class `word` token ` face`
+  - , biceps glistening and a smile on his face, I feel grateful and romantic (many years later
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `149` activation `1.846` class `word` token ` and`
+  - first. I look around at the empty tables outside and make my way over to the host standing outside.
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `251` activation `1.834` class `word` token ` corner`
+  - keep living. So when I see Pedro round the corner in his purple polo shirt, biceps glistening
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `174` activation `1.830` class `word` token ` me`
+  - , please", I say and watch his reaction seeing me without company. He leads me to a pretty table
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `311` activation `1.822` class `word` token `'m`
+  - his ears and sits down across from me. I'm facing the street and he's facing the entrance of
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `185` activation `1.789` class `style_function_word` token ` that`
+  - without company. He leads me to a pretty table that sits in the dusk light overlooking Washington Street. We
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `315` activation `1.781` class `word` token ` and`
+  - down across from me. I'm facing the street and he's facing the entrance of the restaurant. "
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `316` activation `1.710` class `word` token ` he`
+  - across from me. I'm facing the street and he's facing the entrance of the restaurant. "Nice
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `294` activation `1.693` class `word` token ` He`
+  - of Pedro rounding the corner in his purple polo). He takes his white headphones out of his ears and sits
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `264` activation `1.662` class `word` token ` smile`
+  - purple polo shirt, biceps glistening and a smile on his face, I feel grateful and romantic (
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `268` activation `1.657` class `punctuation` token `,`
+  - biceps glistening and a smile on his face, I feel grateful and romantic (many years later,
+- `L19:2041` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `190` activation `1.651` class `word` token ` light`
+  - me to a pretty table that sits in the dusk light overlooking Washington Street. We're in Boston and it
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `357` activation `4.512` class `word` token ` up`
+  - , who had fallen over in the boat, stood up and looked around to see if he could see anyone
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `356` activation `4.210` class `word` token ` stood`
+  - Tom, who had fallen over in the boat, stood up and looked around to see if he could see
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `428` activation `4.084` class `word` token ` thought`
+  - in the boat. "What to do?" Tom thought. He turned the boat on and began driving,
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `359` activation `4.073` class `word` token ` looked`
+  - had fallen over in the boat, stood up and looked around to see if he could see anyone or anything
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `358` activation `3.968` class `word` token ` and`
+  - who had fallen over in the boat, stood up and looked around to see if he could see anyone or
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `360` activation `3.824` class `word` token ` around`
+  - fallen over in the boat, stood up and looked around to see if he could see anyone or anything.
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `361` activation `3.694` class `word` token ` to`
+  - over in the boat, stood up and looked around to see if he could see anyone or anything. He
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `427` activation `3.641` class `word` token ` Tom`
+  - down in the boat. "What to do?" Tom thought. He turned the boat on and began driving
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `371` activation `3.634` class `word` token ` He`
+  - to see if he could see anyone or anything. He couldn't. Tom was lost at sea! Tom
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `415` activation `3.533` class `word` token ` and`
+  - could to no avail. Tom panicked for a moment and lay down in the boat. "What to do
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `417` activation `3.524` class `word` token ` down`
+  - no avail. Tom panicked for a moment and lay down in the boat. "What to do?" Tom
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `476` activation `3.469` class `word` token ` and`
+  - . Tom parked, hopped off the boat, and kissed the ground. He was so happy to be
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `438` activation `3.452` class `punctuation` token `,`
+  - thought. He turned the boat on and began driving, hoping that he would run into shore before dark.
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `355` activation `3.417` class `punctuation` token `,`
+  - . Tom, who had fallen over in the boat, stood up and looked around to see if he could
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `435` activation `3.338` class `word` token ` and`
+  - do?" Tom thought. He turned the boat on and began driving, hoping that he would run into shore
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `416` activation `3.321` class `word` token ` lay`
+  - to no avail. Tom panicked for a moment and lay down in the boat. "What to do?"
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `430` activation `3.245` class `word` token ` He`
+  - boat. "What to do?" Tom thought. He turned the boat on and began driving, hoping that
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `411` activation `3.206` class `word` token ` panicked`
+  - as loud as he could to no avail. Tom panicked for a moment and lay down in the boat.
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `283` activation `3.187` class `word` token ` and`
+  - extreme things like bull riding. Tom started the boat and got going. He stopped once he could no longer
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `475` activation `3.178` class `punctuation` token `,`
+  - shore. Tom parked, hopped off the boat, and kissed the ground. He was so happy to
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `420` activation `3.169` class `word` token ` boat`
+  - Tom panicked for a moment and lay down in the boat. "What to do?" Tom thought. He
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `375` activation `3.124` class `word` token ` Tom`
+  - could see anyone or anything. He couldn't. Tom was lost at sea! Tom tried to look at
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `431` activation `3.083` class `word` token ` turned`
+  - . "What to do?" Tom thought. He turned the boat on and began driving, hoping that he
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `481` activation `3.007` class `word` token ` He`
+  - opped off the boat, and kissed the ground. He was so happy to be alive and on land!
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `469` activation `2.987` class `punctuation` token `,`
+  - finally making his way back to shore. Tom parked, hopped off the boat, and kissed the ground
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `414` activation `2.894` class `word` token ` moment`
+  - he could to no avail. Tom panicked for a moment and lay down in the boat. "What to
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `400` activation `2.849` class `word` token ` yelled`
+  - it was broken. Tom flashed the boat lights and yelled as loud as he could to no avail. Tom
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `362` activation `2.812` class `word` token ` see`
+  - in the boat, stood up and looked around to see if he could see anyone or anything. He couldn
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `418` activation `2.783` class `word` token ` in`
+  - avail. Tom panicked for a moment and lay down in the boat. "What to do?" Tom thought
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `437` activation `2.663` class `word` token ` driving`
+  - Tom thought. He turned the boat on and began driving, hoping that he would run into shore before dark
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `191` activation `2.636` class `word` token ` thought`
+  - "What a beautiful day to go fishing," Tom thought as he clambered onto a fishing boat that
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `479` activation `2.635` class `word` token ` ground`
+  - , hopped off the boat, and kissed the ground. He was so happy to be alive and on
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `288` activation `2.614` class `word` token ` stopped`
+  - . Tom started the boat and got going. He stopped once he could no longer see the shore and threw
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `354` activation `2.589` class `word` token ` boat`
+  - snapped. Tom, who had fallen over in the boat, stood up and looked around to see if he
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `401` activation `2.589` class `style_function_word` token ` as`
+  - was broken. Tom flashed the boat lights and yelled as loud as he could to no avail. Tom panicked
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `398` activation `2.577` class `word` token ` lights`
+  - , but it was broken. Tom flashed the boat lights and yelled as loud as he could to no avail
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `399` activation `2.542` class `word` token ` and`
+  - but it was broken. Tom flashed the boat lights and yelled as loud as he could to no avail.
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `326` activation `2.515` class `word` token ` shark`
+  - a great white shark! Tom fought the mammoth shark for hours. The shark pulled his boat for miles
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `376` activation `2.506` class `expanded_negation_word` token ` was`
+  - see anyone or anything. He couldn't. Tom was lost at sea! Tom tried to look at the
+- `L19:2041` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `287` activation `2.480` class `word` token ` He`
+  - riding. Tom started the boat and got going. He stopped once he could no longer see the shore and
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `219` activation `8.683` class `punctuation` token `,`
+  - hear me the first time boy?", asked the manager, "I need you to be extra careful and do
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `218` activation `8.362` class `word` token ` manager`
+  - not hear me the first time boy?", asked the manager, "I need you to be extra careful and
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `484` activation `8.087` class `word` token ` around`
+  - are very sweet", then left. The runner turned around and in that moment of pride, adjusted his personal
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `366` activation `7.799` class `punctuation` token `,`
+  - elevator. The runner hopped on and turned around, "Sorry everyone, I have a special delivery so
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `365` activation `7.715` class `word` token ` around`
+  - next elevator. The runner hopped on and turned around, "Sorry everyone, I have a special delivery
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `285` activation `7.675` class `word` token ` hands`
+  - walk through the rotating hotel doors. He waved his hands and ran toward it, signed the delivery, and
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `443` activation `7.349` class `word` token ` him`
+  - 's Floor". He saw the Queen walk up to him and immediately extended the package out while looking down,
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `319` activation `7.238` class `word` token `ped`
+  - runner, "Go. Now!" The runner gulped, took the gilded package, and said "
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `465` activation `7.235` class `word` token ` package`
+  - Your Majesty, a package". The Queen took the package and said, "Thank you, you are very
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `283` activation `7.148` class `word` token ` waved`
+  - escorted package walk through the rotating hotel doors. He waved his hands and ran toward it, signed the delivery
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `290` activation `6.956` class `punctuation` token `,`
+  - doors. He waved his hands and ran toward it, signed the delivery, and walked back to the runner
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `286` activation `6.866` class `word` token ` and`
+  - through the rotating hotel doors. He waved his hands and ran toward it, signed the delivery, and walked
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `269` activation `6.858` class `word` token ` talking`
+  - runners made that mistake and..." The manager suddenly stopped talking and noticed the escorted package walk through the rotating hotel
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `270` activation `6.853` class `word` token ` and`
+  - made that mistake and..." The manager suddenly stopped talking and noticed the escorted package walk through the rotating hotel doors
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `282` activation `6.808` class `word` token ` He`
+  - the escorted package walk through the rotating hotel doors. He waved his hands and ran toward it, signed the
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `466` activation `6.712` class `word` token ` and`
+  - Majesty, a package". The Queen took the package and said, "Thank you, you are very sweet
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `444` activation `6.700` class `word` token ` and`
+  - Floor". He saw the Queen walk up to him and immediately extended the package out while looking down, "
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `287` activation `6.660` class `word` token ` ran`
+  - the rotating hotel doors. He waved his hands and ran toward it, signed the delivery, and walked back
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `289` activation `6.602` class `word` token ` it`
+  - hotel doors. He waved his hands and ran toward it, signed the delivery, and walked back to the
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `485` activation `6.576` class `word` token ` and`
+  - very sweet", then left. The runner turned around and in that moment of pride, adjusted his personal name
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `297` activation `6.571` class `word` token ` back`
+  - ran toward it, signed the delivery, and walked back to the runner. The manager handed the package to
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `303` activation `6.568` class `word` token ` manager`
+  - delivery, and walked back to the runner. The manager handed the package to the runner, "Go.
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `363` activation `6.520` class `word` token ` and`
+  - to the next elevator. The runner hopped on and turned around, "Sorry everyone, I have a
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `320` activation `6.506` class `punctuation` token `,`
+  - , "Go. Now!" The runner gulped, took the gilded package, and said "Yes
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `317` activation `6.484` class `word` token ` runner`
+  - to the runner, "Go. Now!" The runner gulped, took the gilded package, and
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `483` activation `6.388` class `word` token ` turned`
+  - you are very sweet", then left. The runner turned around and in that moment of pride, adjusted his
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `452` activation `6.335` class `word` token ` down`
+  - to him and immediately extended the package out while looking down, "Your Majesty, a package". The Queen
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `142` activation `6.331` class `punctuation` token `,`
+  - runner in a shakey voice. The manager snapped, "You are going to make a special delivery to
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `266` activation `6.319` class `word` token ` manager`
+  - many former floor runners made that mistake and..." The manager suddenly stopped talking and noticed the escorted package walk through
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `216` activation `6.316` class `word` token ` asked`
+  - Did you not hear me the first time boy?", asked the manager, "I need you to be extra
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `425` activation `6.310` class `word` token ` walked`
+  - wrap something! At the top floor, the runner walked past a sign that read "Queen's Floor".
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `309` activation `6.309` class `word` token ` runner`
+  - the runner. The manager handed the package to the runner, "Go. Now!" The runner gulped
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `137` activation `6.285` class `word` token ` voice`
+  - , sir?", said the runner in a shakey voice. The manager snapped, "You are going to
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `300` activation `6.283` class `word` token ` runner`
+  - , signed the delivery, and walked back to the runner. The manager handed the package to the runner,
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `310` activation `6.272` class `punctuation` token `,`
+  - runner. The manager handed the package to the runner, "Go. Now!" The runner gulped,
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `462` activation `6.271` class `word` token ` Queen`
+  - down, "Your Majesty, a package". The Queen took the package and said, "Thank you,
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `479` activation `6.259` class `word` token ` left`
+  - "Thank you, you are very sweet", then left. The runner turned around and in that moment of
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `450` activation `6.256` class `style_function_word` token ` while`
+  - walk up to him and immediately extended the package out while looking down, "Your Majesty, a package".
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `328` activation `6.229` class `word` token ` said`
+  - gulped, took the gilded package, and said "Yes sir, going now!" The runner power
+- `L24:2988` `936258be9a4c3fec2cf00a23b45e7e70f0015d469df6ae8c084ba22132a84a07@turn_01@human` token `215` activation `6.178` class `punctuation` token `?",`
+  - "Did you not hear me the first time boy?", asked the manager, "I need you to be
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `437` activation `8.148` class `word` token ` said`
+  - for something. "Don't worry Tim", the woman said as she started to mindlessly fidget with his
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `436` activation `7.049` class `word` token ` woman`
+  - eyes for something. "Don't worry Tim", the woman said as she started to mindlessly fidget with
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `439` activation `6.949` class `word` token ` she`
+  - . "Don't worry Tim", the woman said as she started to mindlessly fidget with his covers.
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `481` activation `6.056` class `word` token ` and`
+  - home where you belong". Soon he began to panic and his thoughts began to race. 'Who was Tim
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `480` activation `5.603` class `word` token ` panic`
+  - back home where you belong". Soon he began to panic and his thoughts began to race. 'Who was
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `438` activation `5.561` class `style_function_word` token ` as`
+  - something. "Don't worry Tim", the woman said as she started to mindlessly fidget with his covers
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `441` activation `5.369` class `word` token ` to`
+  - 't worry Tim", the woman said as she started to mindlessly fidget with his covers. "The
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `440` activation `5.362` class `word` token ` started`
+  - "Don't worry Tim", the woman said as she started to mindlessly fidget with his covers. "
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `434` activation `5.255` class `punctuation` token `",`
+  - searching his eyes for something. "Don't worry Tim", the woman said as she started to mindlessly f
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `385` activation `5.238` class `word` token ` he`
+  - face of a woman staring back at him. As he continued to take inventory of her, he scanned down
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `365` activation `5.017` class `word` token ` glance`
+  - was going to be alright. He forced himself to glance in its direction and saw the teary-eyed face
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `478` activation `4.959` class `word` token ` began`
+  - will be back home where you belong". Soon he began to panic and his thoughts began to race. '
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `386` activation `4.925` class `word` token ` continued`
+  - of a woman staring back at him. As he continued to take inventory of her, he scanned down to
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `379` activation `4.878` class `word` token ` staring`
+  - and saw the teary-eyed face of a woman staring back at him. As he continued to take inventory
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `380` activation `4.813` class `word` token ` back`
+  - saw the teary-eyed face of a woman staring back at him. As he continued to take inventory of
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `306` activation `4.798` class `punctuation` token `,`
+  - to sta... Tim began to slowly open his eyes, but immediately regretted it. The ambient light seemed
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `382` activation `4.688` class `word` token ` him`
+  - teary-eyed face of a woman staring back at him. As he continued to take inventory of her,
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `305` activation `4.654` class `word` token ` eyes`
+  - wanted to sta... Tim began to slowly open his eyes, but immediately regretted it. The ambient light
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `479` activation `4.580` class `word` token ` to`
+  - be back home where you belong". Soon he began to panic and his thoughts began to race. 'Who
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `483` activation `4.555` class `word` token ` thoughts`
+  - you belong". Soon he began to panic and his thoughts began to race. 'Who was Tim and who
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `419` activation `4.512` class `style_function_word` token ` while`
+  - fiercely gripped Kleenex in both fists, while she seemed to be searching his eyes for something.
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `420` activation `4.482` class `word` token ` she`
+  - gripped Kleenex in both fists, while she seemed to be searching his eyes for something. "Don
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `398` activation `4.476` class `word` token ` hands`
+  - take inventory of her, he scanned down to her hands and noticed that her knuckles appeared white as she
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `393` activation `4.468` class `word` token ` he`
+  - . As he continued to take inventory of her, he scanned down to her hands and noticed that her kn
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `486` activation `4.424` class `word` token ` race`
+  - Soon he began to panic and his thoughts began to race. 'Who was Tim and who was this woman
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `418` activation `4.359` class `punctuation` token `,`
+  - she fiercely gripped Kleenex in both fists, while she seemed to be searching his eyes for something
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `368` activation `4.357` class `word` token ` direction`
+  - be alright. He forced himself to glance in its direction and saw the teary-eyed face of a woman
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `511` activation `4.355` class `punctuation` token `'`
+  - , who am I and what happened to me?!'
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `448` activation `4.286` class `word` token ` covers`
+  - as she started to mindlessly fidget with his covers. "The doctors will have you fixed up in
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `394` activation `4.234` class `word` token ` scanned`
+  - As he continued to take inventory of her, he scanned down to her hands and noticed that her knuckles
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `421` activation `4.226` class `word` token ` seemed`
+  - pped Kleenex in both fists, while she seemed to be searching his eyes for something. "Don't
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `369` activation `4.205` class `word` token ` and`
+  - alright. He forced himself to glance in its direction and saw the teary-eyed face of a woman staring
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `395` activation `4.192` class `word` token ` down`
+  - he continued to take inventory of her, he scanned down to her hands and noticed that her knuckles appeared
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `375` activation `4.180` class `word` token ` face`
+  - glance in its direction and saw the teary-eyed face of a woman staring back at him. As he
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `378` activation `4.165` class `word` token ` woman`
+  - direction and saw the teary-eyed face of a woman staring back at him. As he continued to take
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `387` activation `4.164` class `word` token ` to`
+  - a woman staring back at him. As he continued to take inventory of her, he scanned down to her
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `184` activation `4.088` class `word` token ` on`
+  - simply feigned remorse as he signaled apologies and continued on to the next block. He was making excellent time
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `392` activation `4.043` class `punctuation` token `,`
+  - him. As he continued to take inventory of her, he scanned down to her hands and noticed that her
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `399` activation `4.041` class `word` token ` and`
+  - inventory of her, he scanned down to her hands and noticed that her knuckles appeared white as she fiercely
+- `L24:2988` `fa9fab79972d189060034d3af48f2073fefb7201831700b5fd4db1fd9f1732c4@turn_01@human` token `482` activation `4.026` class `word` token ` his`
+  - where you belong". Soon he began to panic and his thoughts began to race. 'Who was Tim and
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `297` activation `9.114` class `word` token `ters`
+  - arms or legs. "Woah." He utters as he stands up to look in the mirror.
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `484` activation `8.637` class `word` token ` says`
+  - , you forgive me? This is great!" he says as he fades back once again. Sara figured it
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `301` activation `8.433` class `word` token ` up`
+  - "Woah." He utters as he stands up to look in the mirror. He can't see
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `351` activation `8.248` class `word` token ` shouts`
+  - laughing, he slowly starts to fade back. Sara shouts, "Jim! You're back! What happened
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `377` activation `8.230` class `word` token ` Sara`
+  - "Awh, what!? I'm back?" Sara looks surprised, "Jim, let's not forget
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `267` activation `8.201` class `word` token ` shouts`
+  - did you go? Jim? Jim?!" Jim shouts, "I'm right here!" as he gl
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `378` activation `8.098` class `word` token ` looks`
+  - Awh, what!? I'm back?" Sara looks surprised, "Jim, let's not forget the
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `341` activation `8.058` class `word` token ` laughing`
+  - awesome! I'm completely invisible!" As he begins laughing, he slowly starts to fade back. Sara shouts
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `364` activation `7.895` class `word` token ` Jim`
+  - Jim! You're back! What happened?!" Jim replies, "Awh, what!? I'm
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `397` activation `7.783` class `word` token ` Jim`
+  - forget the topic here. You forgot my birthday!" Jim remembers how he wronged Sara and gets sad.
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `295` activation `7.749` class `word` token ` He`
+  - see his arms or legs. "Woah." He utters as he stands up to look in the
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `379` activation `7.719` class `word` token ` surprised`
+  - wh, what!? I'm back?" Sara looks surprised, "Jim, let's not forget the topic
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `300` activation `7.716` class `word` token ` stands`
+  - . "Woah." He utters as he stands up to look in the mirror. He can't
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `350` activation `7.709` class `word` token ` Sara`
+  - begins laughing, he slowly starts to fade back. Sara shouts, "Jim! You're back! What
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `365` activation `7.432` class `word` token ` replies`
+  - ! You're back! What happened?!" Jim replies, "Awh, what!? I'm back
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `245` activation `7.386` class `word` token ` screams`
+  - replies, "What are you talking about?" Sara screams as she frantically looks around the room, "
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `308` activation `7.310` class `word` token ` He`
+  - as he stands up to look in the mirror. He can't see his reflection, and he begins to
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `254` activation `7.274` class `punctuation` token `,`
+  - Sara screams as she frantically looks around the room, "Where did you go? Jim? Jim?
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `299` activation `7.194` class `word` token ` he`
+  - legs. "Woah." He utters as he stands up to look in the mirror. He can
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `278` activation `7.188` class `word` token `ances`
+  - , "I'm right here!" as he glances down and realizes that he cannot see his arms or
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `244` activation `7.131` class `word` token ` Sara`
+  - Jim replies, "What are you talking about?" Sara screams as she frantically looks around the room,
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `276` activation `7.091` class `word` token ` he`
+  - Jim shouts, "I'm right here!" as he glances down and realizes that he cannot see his
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `445` activation `7.067` class `word` token ` screams`
+  - I promise I will remember your birthday forever!" Sara screams, "You disappeared again! Jim! It's
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `209` activation `7.065` class `word` token ` said`
+  - We've only been dating for two months." Jim said sadly as he slowly started to fade away. Sara
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `280` activation `7.058` class `word` token ` and`
+  - I'm right here!" as he glances down and realizes that he cannot see his arms or legs.
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `279` activation `7.052` class `word` token ` down`
+  - "I'm right here!" as he glances down and realizes that he cannot see his arms or legs
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `221` activation `7.044` class `word` token `claims`
+  - as he slowly started to fade away. Sara exclaims, "Wha-? Jim? What's
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `253` activation `6.997` class `word` token ` room`
+  - ?" Sara screams as she frantically looks around the room, "Where did you go? Jim? Jim
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `266` activation `6.890` class `word` token ` Jim`
+  - Where did you go? Jim? Jim?!" Jim shouts, "I'm right here!" as he
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `380` activation `6.744` class `punctuation` token `,`
+  - , what!? I'm back?" Sara looks surprised, "Jim, let's not forget the topic here
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `235` activation `6.742` class `word` token ` replies`
+  - a-? Jim? What's happening?" Jim replies, "What are you talking about?" Sara screams
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `339` activation `6.683` class `word` token ` he`
+  - This is awesome! I'm completely invisible!" As he begins laughing, he slowly starts to fade back.
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `343` activation `6.681` class `word` token ` he`
+  - I'm completely invisible!" As he begins laughing, he slowly starts to fade back. Sara shouts, "
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `492` activation `6.677` class `word` token ` Sara`
+  - !" he says as he fades back once again. Sara figured it out, "Jim, I think whenever
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `444` activation `6.671` class `word` token ` Sara`
+  - . I promise I will remember your birthday forever!" Sara screams, "You disappeared again! Jim! It
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `416` activation `6.671` class `word` token ` says`
+  - sad. He begins to fade away again. Jim says, "Sara! I'm so sorry!
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `483` activation `6.649` class `word` token ` he`
+  - Oh, you forgive me? This is great!" he says as he fades back once again. Sara figured
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `398` activation `6.506` class `word` token ` remembers`
+  - the topic here. You forgot my birthday!" Jim remembers how he wronged Sara and gets sad. He
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `251` activation `6.444` class `word` token ` around`
+  - talking about?" Sara screams as she frantically looks around the room, "Where did you go? Jim
+- `L24:2988` `6613524e296e1913892ab9bb5f8c2ea96f7ff80e7057a0a610e7f1271522bac7@turn_01@human` token `234` activation `6.440` class `word` token ` Jim`
+  - Wha-? Jim? What's happening?" Jim replies, "What are you talking about?" Sara
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `310` activation `7.942` class `word` token ` said`
+  - different route, it'll be more fun!" he said. Steve looked at Sally and sighed, "Well
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `317` activation `7.484` class `word` token ` sighed`
+  - fun!" he said. Steve looked at Sally and sighed, "Well, one way or another, we
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `315` activation `6.726` class `word` token ` Sally`
+  - be more fun!" he said. Steve looked at Sally and sighed, "Well, one way or another
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `364` activation `6.707` class `word` token ` paused`
+  - ible through all the cobwebs and moss. Jack paused to read the sign when he realized, it wasn
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `316` activation `6.404` class `word` token ` and`
+  - more fun!" he said. Steve looked at Sally and sighed, "Well, one way or another,
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `503` activation `6.151` class `word` token ` other`
+  - monster. The three friends fearfully looked at each other, they knew the house was haunted.
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `309` activation `5.809` class `word` token ` he`
+  - a different route, it'll be more fun!" he said. Steve looked at Sally and sighed, "
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `279` activation `5.791` class `word` token ` Sally`
+  - but I need you to take me", whimpered Sally. Steve of course obliged but Jack had other ideas
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `318` activation `5.285` class `punctuation` token `,`
+  - !" he said. Steve looked at Sally and sighed, "Well, one way or another, we'll
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `504` activation `5.275` class `punctuation` token `,`
+  - . The three friends fearfully looked at each other, they knew the house was haunted.
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `368` activation `5.164` class `word` token ` sign`
+  - cobwebs and moss. Jack paused to read the sign when he realized, it wasn't a street sign
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `284` activation `5.123` class `word` token ` obliged`
+  - take me", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine,
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `313` activation `5.105` class `word` token ` looked`
+  - it'll be more fun!" he said. Steve looked at Sally and sighed, "Well, one way
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `281` activation `4.857` class `word` token ` Steve`
+  - need you to take me", whimpered Sally. Steve of course obliged but Jack had other ideas, "
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `339` activation `4.730` class `word` token ` off`
+  - get you home safely". The three young friends set off down a road they were unfamiliar with, the street
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `312` activation `4.701` class `word` token ` Steve`
+  - , it'll be more fun!" he said. Steve looked at Sally and sighed, "Well, one
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `422` activation `4.450` class `word` token ` road`
+  - . The group cautiously cycled down the unkempt road, it seemed as though nobody had been there in
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `276` activation `4.424` class `punctuation` token `",`
+  - home guys, but I need you to take me", whimpered Sally. Steve of course obliged but Jack
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `417` activation `4.381` class `word` token `ycled`
+  - on an adventure after all. The group cautiously cycled down the unkempt road, it seemed as though
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `500` activation `4.313` class `word` token ` looked`
+  - eyes of a monster. The three friends fearfully looked at each other, they knew the house was haunted
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `394` activation `4.297` class `word` token ` Jack`
+  - a warning that read, "Do Not Enter". Jack decided not to share this information with the group,
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `286` activation `4.240` class `word` token ` Jack`
+  - ", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine, but let
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `369` activation `4.183` class `style_function_word` token ` when`
+  - webs and moss. Jack paused to read the sign when he realized, it wasn't a street sign at
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `363` activation `4.026` class `word` token ` Jack`
+  - legible through all the cobwebs and moss. Jack paused to read the sign when he realized, it
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `347` activation `4.020` class `punctuation` token `,`
+  - friends set off down a road they were unfamiliar with, the street sign was barely legible through all the
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `423` activation `3.939` class `punctuation` token `,`
+  - The group cautiously cycled down the unkempt road, it seemed as though nobody had been there in years
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `505` activation `3.838` class `word` token ` they`
+  - The three friends fearfully looked at each other, they knew the house was haunted.
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `439` activation `3.828` class `word` token ` cleared`
+  - had been there in years. As the heavy mist cleared, a sense of foreboding filled the air
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `346` activation `3.721` class `word` token ` with`
+  - young friends set off down a road they were unfamiliar with, the street sign was barely legible through all
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `497` activation `3.691` class `word` token ` friends`
+  - they were the eyes of a monster. The three friends fearfully looked at each other, they knew the
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `285` activation `3.685` class `word` token ` but`
+  - me", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine, but
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `370` activation `3.668` class `word` token ` he`
+  - and moss. Jack paused to read the sign when he realized, it wasn't a street sign at all
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `253` activation `3.647` class `word` token ` colder`
+  - through the hazy streets, the air grew even colder and something just felt off. "I think I
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `290` activation `3.593` class `punctuation` token `,`
+  - . Steve of course obliged but Jack had other ideas, "OK fine, but let's go a different
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `242` activation `3.592` class `word` token `ed`
+  - got him into trouble. As the friends meandered through the hazy streets, the air grew even
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `366` activation `3.576` class `word` token ` read`
+  - all the cobwebs and moss. Jack paused to read the sign when he realized, it wasn't a
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `308` activation `3.558` class `punctuation` token `!"`
+  - go a different route, it'll be more fun!" he said. Steve looked at Sally and sighed,
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `337` activation `3.551` class `word` token ` friends`
+  - we'll get you home safely". The three young friends set off down a road they were unfamiliar with,
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `403` activation `3.544` class `word` token ` group`
+  - ". Jack decided not to share this information with the group, they were on an adventure after all. The
+- `L24:2988` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `338` activation `3.478` class `word` token ` set`
+  - 'll get you home safely". The three young friends set off down a road they were unfamiliar with, the
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `498` activation `8.768` class `word` token ` smiled`
+  - I want to talk!" The officer stopped and simply smiled. "You're making the right decision," the
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `510` activation `8.098` class `word` token ` responded`
+  - "You're making the right decision," the officer responded.
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `509` activation `7.608` class `word` token ` officer`
+  - . "You're making the right decision," the officer responded.
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `496` activation `7.219` class `word` token ` and`
+  - . "I want to talk!" The officer stopped and simply smiled. "You're making the right decision
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `485` activation `6.644` class `word` token ` spoke`
+  - Before the officer could utter one complete sentence, Billy spoke. "I want to talk!" The officer stopped
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `494` activation `6.628` class `word` token ` officer`
+  - Billy spoke. "I want to talk!" The officer stopped and simply smiled. "You're making the
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `495` activation `6.531` class `word` token ` stopped`
+  - spoke. "I want to talk!" The officer stopped and simply smiled. "You're making the right
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `470` activation `6.018` class `word` token ` in`
+  - thoughts raced through his head, the officer walked back in through the door. Before the officer could utter one
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `507` activation `5.783` class `punctuation` token `,"`
+  - simply smiled. "You're making the right decision," the officer responded.
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `497` activation `5.401` class `word` token ` simply`
+  - "I want to talk!" The officer stopped and simply smiled. "You're making the right decision,"
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `473` activation `5.189` class `word` token ` door`
+  - his head, the officer walked back in through the door. Before the officer could utter one complete sentence,
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `468` activation `4.963` class `word` token ` walked`
+  - As the thoughts raced through his head, the officer walked back in through the door. Before the officer could
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `484` activation `4.597` class `word` token ` Billy`
+  - . Before the officer could utter one complete sentence, Billy spoke. "I want to talk!" The officer
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `474` activation `4.507` class `sentence_boundary` token `.`
+  - head, the officer walked back in through the door. Before the officer could utter one complete sentence, Billy
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `469` activation `4.419` class `word` token ` back`
+  - the thoughts raced through his head, the officer walked back in through the door. Before the officer could utter
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `464` activation `4.384` class `word` token ` head`
+  - think of him? As the thoughts raced through his head, the officer walked back in through the door.
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `499` activation `4.304` class `sentence_boundary` token `.`
+  - want to talk!" The officer stopped and simply smiled. "You're making the right decision," the officer
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `467` activation `4.233` class `word` token ` officer`
+  - ? As the thoughts raced through his head, the officer walked back in through the door. Before the officer
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `492` activation `4.104` class `punctuation` token `!"`
+  - sentence, Billy spoke. "I want to talk!" The officer stopped and simply smiled. "You're
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `486` activation `4.066` class `sentence_boundary` token `.`
+  - the officer could utter one complete sentence, Billy spoke. "I want to talk!" The officer stopped and
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `483` activation `4.063` class `punctuation` token `,`
+  - door. Before the officer could utter one complete sentence, Billy spoke. "I want to talk!" The
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `465` activation `4.019` class `punctuation` token `,`
+  - of him? As the thoughts raced through his head, the officer walked back in through the door. Before
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `475` activation `4.009` class `word` token ` Before`
+  - , the officer walked back in through the door. Before the officer could utter one complete sentence, Billy spoke
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `482` activation `4.007` class `word` token ` sentence`
+  - the door. Before the officer could utter one complete sentence, Billy spoke. "I want to talk!"
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `477` activation `3.811` class `word` token ` officer`
+  - officer walked back in through the door. Before the officer could utter one complete sentence, Billy spoke. "
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `478` activation `3.708` class `expanded_negation_word` token ` could`
+  - walked back in through the door. Before the officer could utter one complete sentence, Billy spoke. "I
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `479` activation `3.393` class `word` token ` utter`
+  - back in through the door. Before the officer could utter one complete sentence, Billy spoke. "I want
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `508` activation `3.339` class `word` token ` the`
+  - smiled. "You're making the right decision," the officer responded.
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `414` activation `3.298` class `word` token ` He`
+  - soon as the officer walked back into the room. He wasn't sure what to think of himself for what
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `460` activation `3.286` class `word` token ` thoughts`
+  - with in the neighborhood think of him? As the thoughts raced through his head, the officer walked back in
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `461` activation `3.251` class `word` token ` raced`
+  - in the neighborhood think of him? As the thoughts raced through his head, the officer walked back in through
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `493` activation `3.159` class `word` token ` The`
+  - , Billy spoke. "I want to talk!" The officer stopped and simply smiled. "You're making
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `346` activation `3.024` class `word` token ` and`
+  - the corner. Billy's chair was in the corner and positioned in such a way that the officer who had
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `471` activation `2.977` class `word` token ` through`
+  - raced through his head, the officer walked back in through the door. Before the officer could utter one complete
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `397` activation `2.956` class `word` token ` He`
+  - . Today it was working very well on Billy. He knew what he would do as soon as the officer
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `511` activation `2.868` class `sentence_boundary` token `.`
+  - You're making the right decision," the officer responded.
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `341` activation `2.766` class `word` token ` chair`
+  - , and a camera in the corner. Billy's chair was in the corner and positioned in such a way
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `476` activation `2.728` class `word` token ` the`
+  - the officer walked back in through the door. Before the officer could utter one complete sentence, Billy spoke.
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `466` activation `2.668` class `word` token ` the`
+  - him? As the thoughts raced through his head, the officer walked back in through the door. Before the
+- `L24:2988` `45424be9770039eabce40cb6333b6bdd4be0219f19994072e5f04c212c4ba3f4@turn_01@human` token `347` activation `2.659` class `word` token ` positioned`
+  - corner. Billy's chair was in the corner and positioned in such a way that the officer who had been
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `510` activation `7.917` class `word` token ` smiled`
+  - This is a find you'll remember forever." Jack smiled.
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `350` activation `7.705` class `word` token ` says`
+  - roll. "Nothing, nothing, nothing," he says, going through each penny. He's halfway through
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `445` activation `7.520` class `word` token ` exclaimed`
+  - -B. "Wow, wow, wow!" Jack exclaimed. "This is the find of a lifetime.
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `444` activation `6.855` class `word` token ` Jack`
+  - -D-B. "Wow, wow, wow!" Jack exclaimed. "This is the find of a lifetime
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `409` activation `6.195` class `word` token ` Jack`
+  - ! Is this a 1909 VDB?" Jack inspects the bottom of the coin and sees the
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `472` activation `6.096` class `punctuation` token `,`
+  - Dad!" He ran in and woke his dad up, but this time, he was more than happy to
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `351` activation `6.054` class `punctuation` token `,`
+  - . "Nothing, nothing, nothing," he says, going through each penny. He's halfway through when
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `349` activation `5.858` class `word` token ` he`
+  - the roll. "Nothing, nothing, nothing," he says, going through each penny. He's halfway
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `464` activation `5.687` class `word` token ` He`
+  - lifetime. I've got to show my Dad!" He ran in and woke his dad up, but this
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `336` activation `5.613` class `word` token ` and`
+  - be a good one!" He takes a big breath and starts opening the roll. "Nothing, nothing,
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `465` activation `5.572` class `word` token ` ran`
+  - . I've got to show my Dad!" He ran in and woke his dad up, but this time
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `154` activation `5.467` class `punctuation` token `,`
+  - , can I?" Jack's father opened one eye, trying to shield it from the bright morning sun.
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `471` activation `5.355` class `word` token ` up`
+  - my Dad!" He ran in and woke his dad up, but this time, he was more than happy
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `335` activation `5.293` class `word` token ` breath`
+  - this be a good one!" He takes a big breath and starts opening the roll. "Nothing, nothing
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `348` activation `5.261` class `punctuation` token `,"`
+  - opening the roll. "Nothing, nothing, nothing," he says, going through each penny. He's
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `297` activation `5.203` class `word` token ` says`
+  - After being on the hunt for a while, he says "Dang. I checked all of those and
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `467` activation `5.188` class `word` token ` and`
+  - 've got to show my Dad!" He ran in and woke his dad up, but this time, he
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `470` activation `5.174` class `word` token ` dad`
+  - show my Dad!" He ran in and woke his dad up, but this time, he was more than
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `331` activation `5.125` class `word` token `He`
+  - left, please let this be a good one!" He takes a big breath and starts opening the roll.
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `443` activation `5.037` class `punctuation` token `!"`
+  - V-D-B. "Wow, wow, wow!" Jack exclaimed. "This is the find of a
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `237` activation `4.956` class `word` token ` Jack`
+  - my day off!" "Okay, Dad!" exclaimed Jack as he scooped up the rolled-up pennies
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `509` activation `4.883` class `word` token ` Jack`
+  - ! This is a find you'll remember forever." Jack smiled.
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `357` activation `4.673` class `word` token ` He`
+  - nothing," he says, going through each penny. He's halfway through when he spots something. "Wo
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `466` activation `4.632` class `word` token ` in`
+  - I've got to show my Dad!" He ran in and woke his dad up, but this time,
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `239` activation `4.545` class `word` token ` he`
+  - off!" "Okay, Dad!" exclaimed Jack as he scooped up the rolled-up pennies and went
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `362` activation `4.463` class `word` token ` he`
+  - going through each penny. He's halfway through when he spots something. "Woah! A 190
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `355` activation `4.372` class `word` token ` penny`
+  - nothing, nothing," he says, going through each penny. He's halfway through when he spots something.
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `417` activation `4.268` class `word` token ` and`
+  - DB?" Jack inspects the bottom of the coin and sees the 3 little letters that would make any
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `153` activation `4.210` class `word` token ` eye`
+  - now, can I?" Jack's father opened one eye, trying to shield it from the bright morning sun
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `340` activation `4.195` class `word` token ` roll`
+  - !" He takes a big breath and starts opening the roll. "Nothing, nothing, nothing," he says
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `463` activation `4.156` class `punctuation` token `!"`
+  - a lifetime. I've got to show my Dad!" He ran in and woke his dad up, but
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `361` activation `4.151` class `style_function_word` token ` when`
+  - , going through each penny. He's halfway through when he spots something. "Woah! A
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `358` activation `4.140` class `word` token `'s`
+  - ," he says, going through each penny. He's halfway through when he spots something. "Woah
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `94` activation `4.108` class `punctuation` token `,`
+  - is here. Jack excitedly wakes up his father, who is enjoying his day off by sleeping in later
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `337` activation `4.073` class `word` token ` starts`
+  - a good one!" He takes a big breath and starts opening the roll. "Nothing, nothing, nothing
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `473` activation `4.047` class `word` token ` but`
+  - !" He ran in and woke his dad up, but this time, he was more than happy to be
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `238` activation `3.949` class `style_function_word` token ` as`
+  - day off!" "Okay, Dad!" exclaimed Jack as he scooped up the rolled-up pennies and
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `296` activation `3.891` class `word` token ` he`
+  - . After being on the hunt for a while, he says "Dang. I checked all of those
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `408` activation `3.869` class `punctuation` token `?"`
+  - be! Is this a 1909 VDB?" Jack inspects the bottom of the coin and sees
+- `L24:2988` `6a45a47f78be49ccb064a7e43837b452290b3401180c2e925c375e1624c973da@turn_01@human` token `352` activation `3.857` class `word` token ` going`
+  - "Nothing, nothing, nothing," he says, going through each penny. He's halfway through when he
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `393` activation `8.219` class `word` token ` walks`
+  - everyone starts to stand up, Kam included. Kam walks into the group with a nervous look on his face
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `381` activation `7.663` class `word` token ` screams`
+  - together. "Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included.
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `387` activation `7.457` class `word` token ` up`
+  - up!" the coach screams as everyone starts to stand up, Kam included. Kam walks into the group with
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `392` activation `7.422` class `word` token ` Kam`
+  - as everyone starts to stand up, Kam included. Kam walks into the group with a nervous look on his
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `441` activation `7.270` class `word` token ` down`
+  - all know the stakes." The team has their heads down as they continue to listen. "Just go out
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `343` activation `7.206` class `word` token ` him`
+  - down to warm himself up. His teammates look at him and started to wonder why he is doing that.
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `416` activation `7.183` class `word` token ` coach`
+  - Today is the first game of the season," the coach continues to speak. "I don't have much
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `388` activation `7.125` class `punctuation` token `,`
+  - !" the coach screams as everyone starts to stand up, Kam included. Kam walks into the group with a
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `417` activation `7.025` class `word` token ` continues`
+  - is the first game of the season," the coach continues to speak. "I don't have much to
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `504` activation `6.979` class `word` token ` walks`
+  - He puts one foot in front of the other and walks out into the sunlit entrance.
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `419` activation `6.874` class `word` token ` speak`
+  - first game of the season," the coach continues to speak. "I don't have much to say,
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `483` activation `6.734` class `word` token ` is`
+  - and they all walk out. Kam's nervous face is gone, and all that is left is motivation.
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `396` activation `6.718` class `word` token ` group`
+  - stand up, Kam included. Kam walks into the group with a nervous look on his face. "Today
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `380` activation `6.644` class `word` token ` coach`
+  - everyone together. "Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `403` activation `6.632` class `word` token ` face`
+  - walks into the group with a nervous look on his face. "Today is the first game of the season
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `482` activation `6.628` class `word` token ` face`
+  - , and they all walk out. Kam's nervous face is gone, and all that is left is motivation
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `389` activation `6.598` class `word` token ` Kam`
+  - the coach screams as everyone starts to stand up, Kam included. Kam walks into the group with a nervous
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `400` activation `6.510` class `word` token ` look`
+  - included. Kam walks into the group with a nervous look on his face. "Today is the first game
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `476` activation `6.497` class `word` token ` walk`
+  - erupts in a synchronized cheer, and they all walk out. Kam's nervous face is gone, and
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `383` activation `6.468` class `word` token ` everyone`
+  - "Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included. Kam walks
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `467` activation `6.301` class `word` token `s`
+  - . You can win this." The locker room erupts in a synchronized cheer, and they all walk out
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `503` activation `6.178` class `word` token ` and`
+  - . He puts one foot in front of the other and walks out into the sunlit entrance.
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `386` activation `6.141` class `word` token ` stand`
+  - gather up!" the coach screams as everyone starts to stand up, Kam included. Kam walks into the group
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `384` activation `6.122` class `word` token ` starts`
+  - Everyone, gather up!" the coach screams as everyone starts to stand up, Kam included. Kam walks into
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `477` activation `6.108` class `word` token ` out`
+  - s in a synchronized cheer, and they all walk out. Kam's nervous face is gone, and all
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `385` activation `6.089` class `word` token ` to`
+  - , gather up!" the coach screams as everyone starts to stand up, Kam included. Kam walks into the
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `479` activation `6.050` class `word` token ` Kam`
+  - a synchronized cheer, and they all walk out. Kam's nervous face is gone, and all that is
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `443` activation `6.001` class `word` token ` they`
+  - the stakes." The team has their heads down as they continue to listen. "Just go out there and
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `397` activation `5.993` class `word` token ` with`
+  - up, Kam included. Kam walks into the group with a nervous look on his face. "Today is
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `475` activation `5.967` class `word` token ` all`
+  - room erupts in a synchronized cheer, and they all walk out. Kam's nervous face is gone,
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `505` activation `5.953` class `word` token ` out`
+  - puts one foot in front of the other and walks out into the sunlit entrance.
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `333` activation `5.936` class `word` token ` down`
+  - to his team. Kam starts to jump up and down to warm himself up. His teammates look at him
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `344` activation `5.881` class `word` token ` and`
+  - to warm himself up. His teammates look at him and started to wonder why he is doing that. On
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `446` activation `5.800` class `word` token ` listen`
+  - The team has their heads down as they continue to listen. "Just go out there and do your thing
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `418` activation `5.698` class `word` token ` to`
+  - the first game of the season," the coach continues to speak. "I don't have much to say
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `437` activation `5.624` class `word` token ` team`
+  - to say, you all know the stakes." The team has their heads down as they continue to listen.
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `502` activation `5.572` class `word` token ` other`
+  - motivation. He puts one foot in front of the other and walks out into the sunlit entrance.
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `444` activation `5.564` class `word` token ` continue`
+  - stakes." The team has their heads down as they continue to listen. "Just go out there and do
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `341` activation `5.423` class `word` token ` look`
+  - up and down to warm himself up. His teammates look at him and started to wonder why he is doing
+- `L24:2988` `800de978c31407755b698c25afe82b438e604f7b1f70682c6b28d5e08b03b1fc@turn_01@human` token `465` activation `5.333` class `word` token ` room`
+  - your thing. You can win this." The locker room erupts in a synchronized cheer, and they all
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `507` activation `8.513` class `word` token ` said`
+  - head. "I love you too!" his owner said back to Eddie.
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `506` activation `7.171` class `word` token ` owner`
+  - his head. "I love you too!" his owner said back to Eddie.
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `486` activation `6.611` class `word` token ` owner`
+  - ddie immediately jumped into his owner's arms as his owner wrapped him in a huge hug and began kissing his
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `421` activation `6.582` class `word` token ` looked`
+  - to eat. When his owner finished pouring, Eddie looked straight into his owner's eyes, paused, then
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `508` activation `6.317` class `word` token ` back`
+  - . "I love you too!" his owner said back to Eddie.
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `284` activation `6.258` class `word` token ` thought`
+  - Eddie immediately paused. "What is happening?" he thought. He tried to bark again, and again he
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `483` activation `6.227` class `word` token ` arms`
+  - human! Eddie immediately jumped into his owner's arms as his owner wrapped him in a huge hug and
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `283` activation `6.165` class `word` token ` he`
+  - ." Eddie immediately paused. "What is happening?" he thought. He tried to bark again, and again
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `442` activation `6.051` class `word` token ` shock`
+  - said, "I love you!" A look of shock and amazement was painted on Eddie's owner
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `478` activation `5.990` class `word` token ` jumped`
+  - puppy just talked like a human! Eddie immediately jumped into his owner's arms as his owner wrapped him
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `510` activation `5.980` class `word` token ` Eddie`
+  - I love you too!" his owner said back to Eddie.
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `493` activation `5.975` class `word` token ` and`
+  - arms as his owner wrapped him in a huge hug and began kissing his head. "I love you too
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `456` activation `5.916` class `word` token ` he`
+  - ement was painted on Eddie's owner's face as he realized the craziness of this moment. His cute
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `276` activation `5.911` class `word` token ` paused`
+  - had said the word "bark." Eddie immediately paused. "What is happening?" he thought. He
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `429` activation `5.896` class `word` token ` paused`
+  - , Eddie looked straight into his owner's eyes, paused, then said, "I love you!" A
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `446` activation `5.789` class `word` token `ement`
+  - love you!" A look of shock and amazement was painted on Eddie's owner's face as he
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `431` activation `5.765` class `style_function_word` token ` then`
+  - looked straight into his owner's eyes, paused, then said, "I love you!" A look of
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `448` activation `5.698` class `word` token ` painted`
+  - !" A look of shock and amazement was painted on Eddie's owner's face as he realized the
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `497` activation `5.693` class `word` token ` head`
+  - wrapped him in a huge hug and began kissing his head. "I love you too!" his owner said
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `488` activation `5.689` class `word` token ` him`
+  - jumped into his owner's arms as his owner wrapped him in a huge hug and began kissing his head.
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `432` activation `5.662` class `word` token ` said`
+  - straight into his owner's eyes, paused, then said, "I love you!" A look of shock
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `447` activation `5.606` class `expanded_negation_word` token ` was`
+  - you!" A look of shock and amazement was painted on Eddie's owner's face as he realized
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `440` activation `5.488` class `word` token ` look`
+  - , then said, "I love you!" A look of shock and amazement was painted on Eddie
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `427` activation `5.480` class `word` token ` eyes`
+  - finished pouring, Eddie looked straight into his owner's eyes, paused, then said, "I love you
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `428` activation `5.423` class `punctuation` token `,`
+  - pouring, Eddie looked straight into his owner's eyes, paused, then said, "I love you!"
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `454` activation `5.394` class `word` token ` face`
+  - amazement was painted on Eddie's owner's face as he realized the craziness of this moment.
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `430` activation `5.338` class `punctuation` token `,`
+  - Eddie looked straight into his owner's eyes, paused, then said, "I love you!" A look
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `422` activation `5.305` class `word` token ` straight`
+  - eat. When his owner finished pouring, Eddie looked straight into his owner's eyes, paused, then said
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `397` activation `5.256` class `word` token ` waited`
+  - his owner said them in his presence. Eddie waited by the bowl as his owner poured out the dog
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `492` activation `5.245` class `word` token ` hug`
+  - 's arms as his owner wrapped him in a huge hug and began kissing his head. "I love you
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `494` activation `5.219` class `word` token ` began`
+  - as his owner wrapped him in a huge hug and began kissing his head. "I love you too!"
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `484` activation `5.009` class `style_function_word` token ` as`
+  - ! Eddie immediately jumped into his owner's arms as his owner wrapped him in a huge hug and began
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `420` activation `4.957` class `word` token ` Eddie`
+  - him to eat. When his owner finished pouring, Eddie looked straight into his owner's eyes, paused,
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `286` activation `4.869` class `word` token ` He`
+  - paused. "What is happening?" he thought. He tried to bark again, and again he voice the
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `290` activation `4.789` class `word` token ` again`
+  - is happening?" he thought. He tried to bark again, and again he voice the word "bark
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `438` activation `4.709` class `punctuation` token `!"`
+  - , paused, then said, "I love you!" A look of shock and amazement was painted
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `291` activation `4.669` class `punctuation` token `,`
+  - happening?" he thought. He tried to bark again, and again he voice the word "bark"
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `400` activation `4.664` class `word` token ` bowl`
+  - them in his presence. Eddie waited by the bowl as his owner poured out the dog food for him
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `487` activation `4.624` class `word` token ` wrapped`
+  - immediately jumped into his owner's arms as his owner wrapped him in a huge hug and began kissing his head
+- `L24:2988` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@human` token `289` activation `4.583` class `word` token ` bark`
+  - What is happening?" he thought. He tried to bark again, and again he voice the word "b
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `381` activation `8.379` class `word` token ` said`
+  - did." "This is the casserole," she said matter-of-factly. "Enjoy." "This isn
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `409` activation `8.061` class `word` token ` said`
+  - is . . . mush, I think," Thomas said with disgust. "Well, this is what they gave
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `380` activation `6.630` class `word` token ` she`
+  - "I did." "This is the casserole," she said matter-of-factly. "Enjoy." "This
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `503` activation `6.430` class `word` token `ed`
+  - night out like this?" "What?" he stammered. "Same answer," she shrugged.
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `318` activation `6.335` class `word` token ` him`
+  - "Oh," said Elizabeth surprised. She turned fully towards him. "In that case, how can I help
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `315` activation `6.326` class `word` token ` turned`
+  - his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In that case, how
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `500` activation `6.297` class `word` token ` he`
+  - date for a night out like this?" "What?" he stammered. "Same answer," she shrugged
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `408` activation `6.282` class `word` token ` Thomas`
+  - This is . . . mush, I think," Thomas said with disgust. "Well, this is what they
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `311` activation `6.166` class `word` token ` Elizabeth`
+  - of red showing on his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `296` activation `6.127` class `word` token ` Thomas`
+  - often. "No, it's not that," said Thomas with a little bit of red showing on his cheeks
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `437` activation `5.446` class `word` token ` she`
+  - didn't put it in wrong so . . ." she let the word trail. Thomas was frustrated. All
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `385` activation `5.272` class `word` token `actly`
+  - the casserole," she said matter-of-factly. "Enjoy." "This isn't a casser
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `410` activation `5.088` class `word` token ` with`
+  - . . . mush, I think," Thomas said with disgust. "Well, this is what they gave me
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `411` activation `5.086` class `word` token ` disgust`
+  - . . mush, I think," Thomas said with disgust. "Well, this is what they gave me at
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `510` activation `5.045` class `word` token ` shrugged`
+  - he stammered. "Same answer," she shrugged.
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `312` activation `5.042` class `word` token ` surprised`
+  - red showing on his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In that
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `309` activation `5.022` class `punctuation` token `,"`
+  - little bit of red showing on his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him.
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `316` activation `5.019` class `word` token ` fully`
+  - cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In that case, how can
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `270` activation `4.869` class `word` token ` interrupted`
+  - buy me a drink after my shift ends," she interrupted with a roll of her eyes. This was something
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `223` activation `4.838` class `word` token ` head`
+  - a sharp stop to her quick walk and tilted her head back in his direction. "Hm?" was all
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `443` activation `4.781` class `word` token ` Thomas`
+  - so . . ." she let the word trail. Thomas was frustrated. All he wanted was a nice quiet
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `297` activation `4.695` class `word` token ` with`
+  - . "No, it's not that," said Thomas with a little bit of red showing on his cheeks.
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `298` activation `4.687` class `word` token ` a`
+  - "No, it's not that," said Thomas with a little bit of red showing on his cheeks. "Oh
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `509` activation `4.628` class `word` token ` she`
+  - ?" he stammered. "Same answer," she shrugged.
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `220` activation `4.600` class `word` token ` and`
+  - She responded with a sharp stop to her quick walk and tilted her head back in his direction. "Hm
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `438` activation `4.600` class `word` token ` let`
+  - 't put it in wrong so . . ." she let the word trail. Thomas was frustrated. All he
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `407` activation `4.467` class `punctuation` token `,"`
+  - . This is . . . mush, I think," Thomas said with disgust. "Well, this is what
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `227` activation `4.422` class `word` token ` direction`
+  - her quick walk and tilted her head back in his direction. "Hm?" was all she could muster.
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `314` activation `4.410` class `word` token ` She`
+  - on his cheeks. "Oh," said Elizabeth surprised. She turned fully towards him. "In that case,
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `379` activation `4.361` class `punctuation` token `,"`
+  - ." "I did." "This is the casserole," she said matter-of-factly. "Enjoy."
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `269` activation `4.319` class `word` token ` she`
+  - 't buy me a drink after my shift ends," she interrupted with a roll of her eyes. This was
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `201` activation `4.147` class `word` token ` called`
+  - mind. "Excuse me, Elizabeth?" Thomas called over as his server passed his table. She responded
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `202` activation `4.053` class `word` token ` over`
+  - . "Excuse me, Elizabeth?" Thomas called over as his server passed his table. She responded with
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `294` activation `4.047` class `punctuation` token `,"`
+  - all too often. "No, it's not that," said Thomas with a little bit of red showing on
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `211` activation `3.910` class `word` token ` responded`
+  - called over as his server passed his table. She responded with a sharp stop to her quick walk and tilted
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `236` activation `3.907` class `word` token ` muster`
+  - his direction. "Hm?" was all she could muster. "Um, look, I don't normally
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `271` activation `3.767` class `word` token ` with`
+  - me a drink after my shift ends," she interrupted with a roll of her eyes. This was something she
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `221` activation `3.767` class `word` token ` tilted`
+  - responded with a sharp stop to her quick walk and tilted her head back in his direction. "Hm?"
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `224` activation `3.698` class `word` token ` back`
+  - sharp stop to her quick walk and tilted her head back in his direction. "Hm?" was all she
+- `L24:2988` `0016880623700b97d28ffc380123ecffb327fba333c2934e18999a72ce0ec79e@turn_01@human` token `499` activation `3.647` class `punctuation` token `?"`
+  - a date for a night out like this?" "What?" he stammered. "Same answer," she
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `382` activation `8.493` class `word` token ` said`
+  - sir, but what are you doing?" the doctor said in shock. The officer shouldered past one of
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `436` activation `7.019` class `word` token ` said`
+  - ’s for your own safety, doc," the officer said, shrugging his equipment-laden belt higher on
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `359` activation `6.404` class `punctuation` token `,`
+  - of you today." A policeman rushed into the room, flashing his badge at the nurse. "Excuse
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `358` activation `6.382` class `word` token ` room`
+  - care of you today." A policeman rushed into the room, flashing his badge at the nurse. "Exc
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `488` activation `6.203` class `word` token ` said`
+  - "We need to stop this bleeding immediately," the doctor said, snapping on a pair of gloves as two more
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `381` activation `6.118` class `word` token ` doctor`
+  - , sir, but what are you doing?" the doctor said in shock. The officer shouldered past one
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `467` activation `6.066` class `word` token ` said`
+  - "His BP is dropping, doctor," the nurse said urgently as they finished attaching electrodes to the patient.
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `384` activation `6.041` class `word` token ` shock`
+  - but what are you doing?" the doctor said in shock. The officer shouldered past one of the param
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `387` activation `5.365` class `word` token ` officer`
+  - you doing?" the doctor said in shock. The officer shouldered past one of the paramedics and grabbed
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `329` activation `5.277` class `word` token ` responded`
+  - of the paramedics that had brought the patient in responded. "Hello, Andy. My name is Doctor
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `395` activation `5.246` class `word` token `edics`
+  - . The officer shouldered past one of the paramedics and grabbed the barely conscious man by the wrist.
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `396` activation `4.915` class `word` token ` and`
+  - The officer shouldered past one of the paramedics and grabbed the barely conscious man by the wrist. With
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `437` activation `4.900` class `punctuation` token `,`
+  - for your own safety, doc," the officer said, shrugging his equipment-laden belt higher on his
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `362` activation `4.806` class `word` token ` badge`
+  - ." A policeman rushed into the room, flashing his badge at the nurse. "Excuse me, sir
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `401` activation `4.622` class `word` token ` man`
+  - one of the paramedics and grabbed the barely conscious man by the wrist. With a distinct click, he
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `365` activation `4.617` class `word` token ` nurse`
+  - rushed into the room, flashing his badge at the nurse. "Excuse me, sir, but what
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `355` activation `4.437` class `word` token ` rushed`
+  - will be taking care of you today." A policeman rushed into the room, flashing his badge at the nurse
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `435` activation `4.371` class `word` token ` officer`
+  - 'It’s for your own safety, doc," the officer said, shrugging his equipment-laden belt higher
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `489` activation `4.318` class `punctuation` token `,`
+  - need to stop this bleeding immediately," the doctor said, snapping on a pair of gloves as two more doctors
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `404` activation `4.178` class `word` token ` wrist`
+  - paramedics and grabbed the barely conscious man by the wrist. With a distinct click, he chained the man
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `383` activation `4.134` class `word` token ` in`
+  - , but what are you doing?" the doctor said in shock. The officer shouldered past one of the
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `379` activation `4.114` class `punctuation` token `?"`
+  - use me, sir, but what are you doing?" the doctor said in shock. The officer shouldered
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `439` activation `4.103` class `word` token `ugging`
+  - own safety, doc," the officer said, shrugging his equipment-laden belt higher on his waist.
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `466` activation `4.056` class `word` token ` nurse`
+  - ." "His BP is dropping, doctor," the nurse said urgently as they finished attaching electrodes to the patient
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `288` activation `4.006` class `word` token ` asked`
+  - room. "What have we got?" A junior doctor asked the nurse as the patient was transferred from the g
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `390` activation `4.005` class `word` token ` past`
+  - the doctor said in shock. The officer shouldered past one of the paramedics and grabbed the barely conscious
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `487` activation `3.932` class `word` token ` doctor`
+  - . "We need to stop this bleeding immediately," the doctor said, snapping on a pair of gloves as two
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `352` activation `3.826` class `punctuation` token `."`
+  - , and we will be taking care of you today." A policeman rushed into the room, flashing his badge
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `389` activation `3.788` class `word` token `ered`
+  - ?" the doctor said in shock. The officer shouldered past one of the paramedics and grabbed the barely
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `266` activation `3.742` class `word` token ` said`
+  - , I need you to calm down," the nurse said as paramedics pushed the bleeding man through to the
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `322` activation `3.736` class `word` token `edics`
+  - , chest, and arms," one of the paramedics that had brought the patient in responded. "Hello
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `464` activation `3.693` class `punctuation` token `,"`
+  - a cop." "His BP is dropping, doctor," the nurse said urgently as they finished attaching electrodes to
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `366` activation `3.663` class `sentence_boundary` token `.`
+  - into the room, flashing his badge at the nurse. "Excuse me, sir, but what are
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `405` activation `3.630` class `sentence_boundary` token `.`
+  - edics and grabbed the barely conscious man by the wrist. With a distinct click, he chained the man's
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `406` activation `3.473` class `word` token ` With`
+  - and grabbed the barely conscious man by the wrist. With a distinct click, he chained the man's arm
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `411` activation `3.445` class `word` token ` he`
+  - man by the wrist. With a distinct click, he chained the man's arm to the leg of the
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `496` activation `3.406` class `style_function_word` token ` as`
+  - the doctor said, snapping on a pair of gloves as two more doctors rushed into the room. "We’re
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `407` activation `3.352` class `word` token ` a`
+  - grabbed the barely conscious man by the wrist. With a distinct click, he chained the man's arm to
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `317` activation `3.275` class `punctuation` token `,"`
+  - stab wounds to the abdomen, chest, and arms," one of the paramedics that had brought the patient
+- `L24:2988` `8054d1e85472cfa55223a4d8a4b4a4ce5c01ab12d1755957f5c479fae9c0d61d@turn_01@human` token `290` activation `3.258` class `word` token ` nurse`
+  - "What have we got?" A junior doctor asked the nurse as the patient was transferred from the gurney
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `435` activation `7.673` class `word` token ` said`
+  - , don't tease me like that!" Minami said, swatting Himoko's hand away with
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `436` activation `6.355` class `punctuation` token `,`
+  - don't tease me like that!" Minami said, swatting Himoko's hand away with a
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `434` activation `5.926` class `word` token `ami`
+  - -san, don't tease me like that!" Minami said, swatting Himoko's hand away
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `503` activation `5.686` class `word` token ` said`
+  - hear you out any time you want," Himiko said, offering Minami a warm smile.
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `350` activation `5.416` class `word` token `led`
+  - look weird when I paint?" Himiko giggled some and patted Minami's head. "
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `444` activation `5.291` class `word` token ` away`
+  - ami said, swatting Himoko's hand away with a mock pout. They laughed for a
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `243` activation `5.217` class `word` token ` stopped`
+  - work." "Himiko-san?" Himiko stopped to look out at the sunset from the second floor
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `150` activation `5.085` class `word` token ` asked`
+  - attend an art university, Minami?" Himiko asked. "Well, I don't know if I'm
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `460` activation `5.078` class `word` token ` said`
+  - . They laughed for a bit and then Minami said, "Maybe I should give my future some more
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `452` activation `5.070` class `word` token ` laughed`
+  - 's hand away with a mock pout. They laughed for a bit and then Minami said, "
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `461` activation `4.969` class `punctuation` token `,`
+  - They laughed for a bit and then Minami said, "Maybe I should give my future some more consideration
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `352` activation `4.961` class `word` token ` and`
+  - when I paint?" Himiko giggled some and patted Minami's head. "I guess
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `245` activation `4.893` class `word` token ` look`
+  - "Himiko-san?" Himiko stopped to look out at the sunset from the second floor. "
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `242` activation `4.837` class `word` token `iko`
+  - my work." "Himiko-san?" Himiko stopped to look out at the sunset from the second
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `457` activation `4.697` class `style_function_word` token ` then`
+  - mock pout. They laughed for a bit and then Minami said, "Maybe I should give my
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `459` activation `4.689` class `word` token `ami`
+  - out. They laughed for a bit and then Minami said, "Maybe I should give my future some
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `348` activation `4.662` class `word` token `iko`
+  - Do I look weird when I paint?" Himiko giggled some and patted Minami's head
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `195` activation `4.599` class `word` token ` head`
+  - with a small smile. Himiko shook her head. "You know, I always wanted to make
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `504` activation `4.522` class `punctuation` token `,`
+  - you out any time you want," Himiko said, offering Minami a warm smile.
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `443` activation `4.511` class `word` token ` hand`
+  - Minami said, swatting Himoko's hand away with a mock pout. They laughed for
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `358` activation `4.458` class `word` token ` head`
+  - iko giggled some and patted Minami's head. "I guess you've never realized it yourself
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `455` activation `4.416` class `word` token ` bit`
+  - with a mock pout. They laughed for a bit and then Minami said, "Maybe I should
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `456` activation `4.348` class `word` token ` and`
+  - a mock pout. They laughed for a bit and then Minami said, "Maybe I should give
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `184` activation `4.143` class `word` token ` replied`
+  - suited to that, Himiko-san," Minami replied with a small smile. Himiko shook her
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `149` activation `4.064` class `word` token `iko`
+  - to attend an art university, Minami?" Himiko asked. "Well, I don't know if I
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `502` activation `4.022` class `word` token `iko`
+  - to hear you out any time you want," Himiko said, offering Minami a warm smile.
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `356` activation `3.954` class `word` token `ami`
+  - Himiko giggled some and patted Minami's head. "I guess you've never realized
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `351` activation `3.750` class `word` token ` some`
+  - weird when I paint?" Himiko giggled some and patted Minami's head. "I
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `188` activation `3.744` class `word` token ` smile`
+  - Himiko-san," Minami replied with a small smile. Himiko shook her head. "You
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `244` activation `3.729` class `word` token ` to`
+  - ." "Himiko-san?" Himiko stopped to look out at the sunset from the second floor.
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `192` activation `3.692` class `word` token `iko`
+  - Minami replied with a small smile. Himiko shook her head. "You know, I always
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `439` activation `3.636` class `word` token `ting`
+  - me like that!" Minami said, swatting Himoko's hand away with a mock pout
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `183` activation `3.632` class `word` token `ami`
+  - more suited to that, Himiko-san," Minami replied with a small smile. Himiko shook
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `451` activation `3.610` class `word` token `They`
+  - oko's hand away with a mock pout. They laughed for a bit and then Minami said,
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `453` activation `3.496` class `discourse_marker_word` token ` for`
+  - hand away with a mock pout. They laughed for a bit and then Minami said, "Maybe
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `246` activation `3.431` class `word` token ` out`
+  - imiko-san?" Himiko stopped to look out at the sunset from the second floor. "I
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `193` activation `3.398` class `word` token ` shook`
+  - ami replied with a small smile. Himiko shook her head. "You know, I always wanted
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `446` activation `3.351` class `word` token ` a`
+  - , swatting Himoko's hand away with a mock pout. They laughed for a bit and
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `445` activation `3.293` class `word` token ` with`
+  - said, swatting Himoko's hand away with a mock pout. They laughed for a bit
+- `L24:2988` `faec8734070cfbab09fe7d4cec1ebc6ff6240a2dddb3f895493562437f02ca9b@turn_01@human` token `441` activation `3.291` class `word` token `oko`
+  - that!" Minami said, swatting Himoko's hand away with a mock pout. They
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `414` activation `8.644` class `word` token ` there`
+  - in the opposite corner of the room. Christian stood there frozen and in complete shock at the sight of a
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `436` activation `8.492` class `word` token ` around`
+  - with hair fallen over her face. She slowly turned around and began walking backward toward Christian with a hunched
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `387` activation `8.341` class `word` token ` around`
+  - open. Christian ran over to close it and turned around to scan his surroundings and that was when noticed the
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `437` activation `7.981` class `word` token ` and`
+  - hair fallen over her face. She slowly turned around and began walking backward toward Christian with a hunched-over
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `461` activation `7.943` class `word` token ` up`
+  - woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian begins yelling and
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `439` activation `7.820` class `word` token ` walking`
+  - over her face. She slowly turned around and began walking backward toward Christian with a hunched-over posture.
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `454` activation `7.755` class `word` token ` and`
+  - a hunched-over posture. The woman reaches Christian and spins around violently before slowly looking up to reveal her
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `456` activation `7.530` class `word` token ` around`
+  - unched-over posture. The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `434` activation `7.515` class `word` token ` slowly`
+  - a woman with hair fallen over her face. She slowly turned around and began walking backward toward Christian with a
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `440` activation `7.401` class `word` token ` backward`
+  - her face. She slowly turned around and began walking backward toward Christian with a hunched-over posture. The
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `413` activation `7.391` class `word` token ` stood`
+  - standing in the opposite corner of the room. Christian stood there frozen and in complete shock at the sight of
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `487` activation `7.379` class `word` token ` and`
+  - he knew he was helpless. Christian begins shaking violently and that was finally enough for him to wake up in
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `438` activation `7.375` class `word` token ` began`
+  - fallen over her face. She slowly turned around and began walking backward toward Christian with a hunched-over posture
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `443` activation `7.346` class `word` token ` with`
+  - She slowly turned around and began walking backward toward Christian with a hunched-over posture. The woman reaches Christian
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `416` activation `7.267` class `word` token ` and`
+  - opposite corner of the room. Christian stood there frozen and in complete shock at the sight of a woman with
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `381` activation `7.254` class `word` token ` over`
+  - the back sliding door was slightly open. Christian ran over to close it and turned around to scan his surroundings
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `435` activation `7.176` class `word` token ` turned`
+  - woman with hair fallen over her face. She slowly turned around and began walking backward toward Christian with a h
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `462` activation `7.101` class `word` token ` to`
+  - reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian begins yelling and screaming
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `486` activation `7.040` class `word` token ` violently`
+  - but he knew he was helpless. Christian begins shaking violently and that was finally enough for him to wake up
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `458` activation `6.963` class `word` token ` before`
+  - posture. The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `384` activation `6.948` class `word` token ` it`
+  - door was slightly open. Christian ran over to close it and turned around to scan his surroundings and that was
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `472` activation `6.898` class `word` token ` screaming`
+  - to reveal her horrific face. Christian begins yelling and screaming for help, but he knew he was helpless.
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `433` activation `6.880` class `word` token ` She`
+  - of a woman with hair fallen over her face. She slowly turned around and began walking backward toward Christian with
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `460` activation `6.841` class `word` token ` looking`
+  - The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian begins yelling
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `451` activation `6.800` class `word` token ` woman`
+  - toward Christian with a hunched-over posture. The woman reaches Christian and spins around violently before slowly looking up
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `469` activation `6.772` class `word` token ` begins`
+  - slowly looking up to reveal her horrific face. Christian begins yelling and screaming for help, but he knew he
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `485` activation `6.745` class `word` token ` shaking`
+  - , but he knew he was helpless. Christian begins shaking violently and that was finally enough for him to wake
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `419` activation `6.711` class `word` token ` shock`
+  - the room. Christian stood there frozen and in complete shock at the sight of a woman with hair fallen over
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `470` activation `6.704` class `word` token ` yelling`
+  - looking up to reveal her horrific face. Christian begins yelling and screaming for help, but he knew he was
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `431` activation `6.623` class `word` token ` face`
+  - the sight of a woman with hair fallen over her face. She slowly turned around and began walking backward toward
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `415` activation `6.558` class `word` token ` frozen`
+  - the opposite corner of the room. Christian stood there frozen and in complete shock at the sight of a woman
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `442` activation `6.550` class `word` token ` Christian`
+  - . She slowly turned around and began walking backward toward Christian with a hunched-over posture. The woman reaches
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `457` activation `6.497` class `word` token ` violently`
+  - -over posture. The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face.
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `475` activation `6.480` class `punctuation` token `,`
+  - horrific face. Christian begins yelling and screaming for help, but he knew he was helpless. Christian begins shaking
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `503` activation `6.434` class `punctuation` token `,`
+  - him to wake up in a pool of his sweat, realizing that it was just a nightmare.
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `403` activation `6.403` class `word` token ` standing`
+  - that was when noticed the same long white night dress standing in the opposite corner of the room. Christian stood
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `444` activation `6.365` class `word` token ` a`
+  - slowly turned around and began walking backward toward Christian with a hunched-over posture. The woman reaches Christian and
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `410` activation `6.330` class `word` token ` room`
+  - white night dress standing in the opposite corner of the room. Christian stood there frozen and in complete shock at
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `459` activation `6.323` class `word` token ` slowly`
+  - . The woman reaches Christian and spins around violently before slowly looking up to reveal her horrific face. Christian begins
+- `L24:2988` `0be5a348e4c3ebab2cf98042d15d0c633fd8ad7d85b998bd80343602a7f9172f@turn_01@human` token `484` activation `6.227` class `word` token ` begins`
+  - help, but he knew he was helpless. Christian begins shaking violently and that was finally enough for him to
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `437` activation `9.010` class `word` token ` said`
+  - for you to meet up.” “Wait,” Johnny said, “So you mean to tell me that I
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `438` activation `8.137` class `punctuation` token `,`
+  - you to meet up.” “Wait,” Johnny said, “So you mean to tell me that I’m
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `124` activation `7.546` class `punctuation` token `,`
+  - . “Yeah, that’s me,” said Rocky, “but who in the hell are you?” “It
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `165` activation `7.405` class `word` token ` around`
+  - all the time when we were teenagers.” Johnny looked around, still confused. “I guess this is Hell
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `436` activation `7.288` class `word` token ` Johnny`
+  - time for you to meet up.” “Wait,” Johnny said, “So you mean to tell me that
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `166` activation `7.263` class `punctuation` token `,`
+  - the time when we were teenagers.” Johnny looked around, still confused. “I guess this is Hell?
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `113` activation `6.869` class `word` token ` up`
+  - ? Is that you?” One of the men spoke up. “Yeah, that’s me,” said Rocky
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `112` activation `6.845` class `word` token ` spoke`
+  - Walker? Is that you?” One of the men spoke up. “Yeah, that’s me,” said
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `164` activation `6.614` class `word` token ` looked`
+  - me all the time when we were teenagers.” Johnny looked around, still confused. “I guess this is
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `215` activation `6.476` class `word` token ` Rocky`
+  - , don’t act all high and mighty,” said Rocky. “What I did to you when we were
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `471` activation `6.144` class `word` token ` voice`
+  - him here?” “Of course,” said the deep voice of Satan. “I don’t know what you
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `163` activation `5.986` class `word` token ` Johnny`
+  - on me all the time when we were teenagers.” Johnny looked around, still confused. “I guess this
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `111` activation `5.811` class `word` token ` men`
+  - Rocky Walker? Is that you?” One of the men spoke up. “Yeah, that’s me,”
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `327` activation `5.804` class `word` token ` voice`
+  - quietly. “Let’s see here,” the deep voice continued. “It seems as though in 198
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `328` activation `5.737` class `word` token ` continued`
+  - . “Let’s see here,” the deep voice continued. “It seems as though in 1982
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `317` activation `5.716` class `word` token ` quietly`
+  - a pinch of fear, the two shook their heads quietly. “Let’s see here,” the deep voice
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `435` activation `5.673` class `punctuation` token `,”`
+  - ’s time for you to meet up.” “Wait,” Johnny said, “So you mean to tell me
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `123` activation `5.581` class `word` token ` Rocky`
+  - up. “Yeah, that’s me,” said Rocky, “but who in the hell are you?”
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `324` activation `5.392` class `punctuation` token `,”`
+  - shook their heads quietly. “Let’s see here,” the deep voice continued. “It seems as though
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `314` activation `5.055` class `word` token ` shook`
+  - with dread and a pinch of fear, the two shook their heads quietly. “Let’s see here,”
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `396` activation `5.055` class `word` token ` out`
+  - in the head, knocking him unconscious, Johnny cried out ‘See you in Hell, bastard!’, so
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `121` activation `5.007` class `punctuation` token `,”`
+  - men spoke up. “Yeah, that’s me,” said Rocky, “but who in the hell are
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `253` activation `4.992` class `punctuation` token `,”`
+  - life, violence-free.” “Well, well, well,” said a deep, disgruntled voice that was
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `261` activation `4.896` class `word` token ` voice`
+  - , well,” said a deep, disgruntled voice that was emanating from a dark corner. “
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `467` activation `4.811` class `punctuation` token `,”`
+  - that I would meet him here?” “Of course,” said the deep voice of Satan. “I don
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `213` activation `4.810` class `punctuation` token `,”`
+  - “Hey, don’t act all high and mighty,” said Rocky. “What I did to you when
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `316` activation `4.715` class `word` token ` heads`
+  - and a pinch of fear, the two shook their heads quietly. “Let’s see here,” the deep
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `405` activation `4.567` class `punctuation` token `’,`
+  - cried out ‘See you in Hell, bastard!’, so naturally, I added your appointment to my ledger
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `107` activation `4.543` class `punctuation` token `?”`
+  - “Rocky? Rocky Walker? Is that you?” One of the men spoke up. “Yeah,
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `108` activation `4.400` class `word` token ` One`
+  - Rocky? Rocky Walker? Is that you?” One of the men spoke up. “Yeah, that
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `167` activation `4.299` class `word` token ` still`
+  - time when we were teenagers.” Johnny looked around, still confused. “I guess this is Hell? I
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `302` activation `4.170` class `word` token ` now`
+  - know why you are here?” Still confused, but now filled with dread and a pinch of fear, the
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `75` activation `4.132` class `word` token ` and`
+  - ? That was a bit unexpected. Soon they turned and noticed each other. Because so much time had passed
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `78` activation `4.130` class `word` token ` other`
+  - a bit unexpected. Soon they turned and noticed each other. Because so much time had passed, it was
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `263` activation `4.062` class `expanded_negation_word` token ` was`
+  - ,” said a deep, disgruntled voice that was emanating from a dark corner. “If it
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `300` activation `4.032` class `punctuation` token `,`
+  - you both know why you are here?” Still confused, but now filled with dread and a pinch of fear
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `74` activation `4.006` class `word` token ` turned`
+  - Hell? That was a bit unexpected. Soon they turned and noticed each other. Because so much time had
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `265` activation `3.972` class `word` token `ating`
+  - a deep, disgruntled voice that was emanating from a dark corner. “If it isn’t
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `394` activation `3.905` class `word` token ` Johnny`
+  - kicking Rocky in the head, knocking him unconscious, Johnny cried out ‘See you in Hell, bastard!
+- `L24:2988` `6c1f639eef09ab63444178fafc1df47138319fb3c401c013354be5eb916c94b8@turn_01@human` token `301` activation `3.900` class `word` token ` but`
+  - both know why you are here?” Still confused, but now filled with dread and a pinch of fear,
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `422` activation `7.537` class `word` token ` eyes`
+  - wrong with it. The lady looked Mary in the eyes and told her that ever since she had that watch
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `423` activation `7.313` class `word` token ` and`
+  - with it. The lady looked Mary in the eyes and told her that ever since she had that watch,
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `296` activation `7.218` class `word` token ` nodded`
+  - lady was sure about doing that, to which she nodded yes. Mary added the pocket watch to her bag
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `418` activation `6.409` class `word` token ` looked`
+  - to know what is wrong with it. The lady looked Mary in the eyes and told her that ever since
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `263` activation `5.940` class `word` token ` out`
+  - early 19th century. The lady came back out and told Mary she'd give it to her for
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `310` activation `5.933` class `word` token ` home`
+  - added the pocket watch to her bag and went back home for the day. Mary, curious about the item
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `297` activation `5.922` class `word` token ` yes`
+  - was sure about doing that, to which she nodded yes. Mary added the pocket watch to her bag and
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `262` activation `5.891` class `word` token ` back`
+  - the early 19th century. The lady came back out and told Mary she'd give it to her
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `417` activation `5.772` class `word` token ` lady`
+  - demanded to know what is wrong with it. The lady looked Mary in the eyes and told her that ever
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `378` activation `5.654` class `word` token ` Mary`
+  - the pawn shop owner immediately hands the watch back to Mary and tells her to get out. Curious about
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `366` activation `5.558` class `word` token ` words`
+  - watch "This watch is cursed" upon reading these words, the pawn shop owner immediately hands the watch back
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `307` activation `5.446` class `word` token ` and`
+  - yes. Mary added the pocket watch to her bag and went back home for the day. Mary, curious
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `306` activation `5.425` class `word` token ` bag`
+  - nodded yes. Mary added the pocket watch to her bag and went back home for the day. Mary,
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `299` activation `5.394` class `word` token ` Mary`
+  - about doing that, to which she nodded yes. Mary added the pocket watch to her bag and went back
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `282` activation `5.378` class `word` token ` Mary`
+  - her for a few bucks. Surprised, Mary asked if the lady was sure about doing that,
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `213` activation `5.361` class `word` token ` owner`
+  - yard is all there was going to be. The owner seemed quite fond of Mary, so she told her
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `264` activation `5.358` class `word` token ` and`
+  - 19th century. The lady came back out and told Mary she'd give it to her for a
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `308` activation `5.267` class `word` token ` went`
+  - . Mary added the pocket watch to her bag and went back home for the day. Mary, curious about
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `295` activation `5.194` class `word` token ` she`
+  - the lady was sure about doing that, to which she nodded yes. Mary added the pocket watch to her
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `419` activation `5.152` class `word` token ` Mary`
+  - know what is wrong with it. The lady looked Mary in the eyes and told her that ever since she
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `376` activation `5.117` class `word` token ` back`
+  - words, the pawn shop owner immediately hands the watch back to Mary and tells her to get out. Cur
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `309` activation `4.947` class `word` token ` back`
+  - Mary added the pocket watch to her bag and went back home for the day. Mary, curious about the
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `343` activation `4.814` class `word` token ` watch`
+  - iques and watches. The owner examined the old pocket watch and noticed some words hastily etched into the back
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `476` activation `4.655` class `word` token ` Mary`
+  - up and down the stairs on a nightly basis. Mary demanded she take the watch back and that she no
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `283` activation `4.646` class `word` token ` asked`
+  - for a few bucks. Surprised, Mary asked if the lady was sure about doing that, to
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `300` activation `4.645` class `word` token ` added`
+  - doing that, to which she nodded yes. Mary added the pocket watch to her bag and went back home
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `178` activation `4.623` class `word` token ` spoke`
+  - some books since she was an avid reader. Mary spoke with the owner of the house and asked if they
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `497` activation `4.480` class `word` token ` declined`
+  - longer had any use for it, but the lady declined and told her it would follow her until it finds
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `146` activation `4.386` class `word` token ` went`
+  - electronics here and here, and some accessories. Mary went around picking out a few things that she liked,
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `280` activation `4.384` class `word` token `ised`
+  - it to her for a few bucks. Surprised, Mary asked if the lady was sure about doing
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `367` activation `4.370` class `punctuation` token `,`
+  - "This watch is cursed" upon reading these words, the pawn shop owner immediately hands the watch back to
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `496` activation `4.350` class `word` token ` lady`
+  - no longer had any use for it, but the lady declined and told her it would follow her until it
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `392` activation `4.348` class `word` token ` Mary`
+  - to get out. Curious about the reaction, Mary would go back to the lady's house who sold
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `292` activation `4.334` class `punctuation` token `,`
+  - Mary asked if the lady was sure about doing that, to which she nodded yes. Mary added the pocket
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `371` activation `4.315` class `word` token ` owner`
+  - cursed" upon reading these words, the pawn shop owner immediately hands the watch back to Mary and tells her
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `261` activation `4.315` class `word` token ` came`
+  - to the early 19th century. The lady came back out and told Mary she'd give it to
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `316` activation `4.277` class `punctuation` token `,`
+  - bag and went back home for the day. Mary, curious about the item, took it to a local
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `379` activation `4.263` class `word` token ` and`
+  - pawn shop owner immediately hands the watch back to Mary and tells her to get out. Curious about the
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `493` activation `4.227` class `punctuation` token `,`
+  - and that she no longer had any use for it, but the lady declined and told her it would follow
+- `L24:2988` `5e030adf0f1a33ac7686af03a89b7e19227f78f747a207b59bb6adc653e7cb2b@turn_01@human` token `303` activation `4.195` class `word` token ` watch`
+  - to which she nodded yes. Mary added the pocket watch to her bag and went back home for the day
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `286` activation `8.136` class `word` token ` I`
+  - peed yourself until you were fourteen!" "What," I reply, still in shock. "There's no
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `287` activation `7.856` class `word` token ` reply`
+  - ed yourself until you were fourteen!" "What," I reply, still in shock. "There's no way
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `288` activation `7.645` class `punctuation` token `,`
+  - yourself until you were fourteen!" "What," I reply, still in shock. "There's no way,
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `502` activation `7.393` class `word` token ` says`
+  - hope you will be more trusting of me" she says, before leaving me in my prison cell.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `503` activation `6.728` class `punctuation` token `,`
+  - you will be more trusting of me" she says, before leaving me in my prison cell.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `391` activation `6.246` class `punctuation` token `,`
+  - that you are me from the future," I assert, still trying to get a hold of this situation.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `389` activation `6.221` class `word` token ` I`
+  - obvious lie that you are me from the future," I assert, still trying to get a hold of this
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `501` activation `5.791` class `word` token ` she`
+  - I hope you will be more trusting of me" she says, before leaving me in my prison cell.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `365` activation `5.721` class `word` token ` woman`
+  - I know because I am you," insists the mysterious woman. "I still don't believe you, I can
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `361` activation `5.681` class `punctuation` token `,"`
+  - tell on you. I know because I am you," insists the mysterious woman. "I still don't believe
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `505` activation `5.458` class `word` token ` leaving`
+  - be more trusting of me" she says, before leaving me in my prison cell.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `285` activation `5.263` class `punctuation` token `,"`
+  - you peed yourself until you were fourteen!" "What," I reply, still in shock. "There's
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `243` activation `5.177` class `word` token ` woman`
+  - "I want you to join me," interrupts the mysterious woman. "I know this is a lot to handle
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `390` activation `5.081` class `word` token ` assert`
+  - lie that you are me from the future," I assert, still trying to get a hold of this situation
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `504` activation `4.979` class `word` token ` before`
+  - will be more trusting of me" she says, before leaving me in my prison cell.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `506` activation `4.971` class `word` token ` me`
+  - more trusting of me" she says, before leaving me in my prison cell.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `154` activation `4.966` class `word` token ` states`
+  - am here to make sure the rebellion wins," she states. I can't believe this. How can she
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `388` activation `4.910` class `punctuation` token `,"`
+  - the obvious lie that you are me from the future," I assert, still trying to get a hold of
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `118` activation `4.889` class `word` token ` question`
+  - "I am you," she says. "What?" I question. "How can you be me? I am
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `98` activation `4.719` class `word` token ` reply`
+  - a mysterious woman. "Who are you?" I reply. I didn't even detect her presence. "I
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `117` activation `4.620` class `word` token ` I`
+  - . "I am you," she says. "What?" I question. "How can you be me? I
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `113` activation `4.556` class `word` token ` says`
+  - even detect her presence. "I am you," she says. "What?" I question. "How can you
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `153` activation `4.512` class `word` token ` she`
+  - I am here to make sure the rebellion wins," she states. I can't believe this. How can
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `362` activation `4.282` class `word` token ` insists`
+  - on you. I know because I am you," insists the mysterious woman. "I still don't believe you
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `289` activation `4.235` class `word` token ` still`
+  - until you were fourteen!" "What," I reply, still in shock. "There's no way, who
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `97` activation `4.204` class `word` token ` I`
+  - says a mysterious woman. "Who are you?" I reply. I didn't even detect her presence.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `510` activation `4.170` class `word` token ` cell`
+  - " she says, before leaving me in my prison cell.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `500` activation `4.108` class `punctuation` token `"`
+  - . I hope you will be more trusting of me" she says, before leaving me in my prison cell
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `291` activation `4.033` class `word` token ` shock`
+  - were fourteen!" "What," I reply, still in shock. "There's no way, who told you
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `402` activation `4.000` class `word` token ` She`
+  - still trying to get a hold of this situation. She can't be me! I fight for the kingdom
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `239` activation `3.953` class `punctuation` token `,"`
+  - be some trick. "I want you to join me," interrupts the mysterious woman. "I know this is
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `240` activation `3.664` class `word` token ` interrupts`
+  - some trick. "I want you to join me," interrupts the mysterious woman. "I know this is a
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `156` activation `3.646` class `word` token `I`
+  - to make sure the rebellion wins," she states. I can't believe this. How can she say that
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `112` activation `3.612` class `word` token ` she`
+  - 't even detect her presence. "I am you," she says. "What?" I question. "How can
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `392` activation `3.217` class `word` token ` still`
+  - you are me from the future," I assert, still trying to get a hold of this situation. She
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `152` activation `3.102` class `punctuation` token `,"`
+  - . I am here to make sure the rebellion wins," she states. I can't believe this. How
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `111` activation `3.050` class `punctuation` token `,"`
+  - didn't even detect her presence. "I am you," she says. "What?" I question. "How
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `409` activation `3.027` class `word` token ` fight`
+  - this situation. She can't be me! I fight for the kingdom, not some sort of rebellion!
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `507` activation `3.023` class `word` token ` in`
+  - trusting of me" she says, before leaving me in my prison cell.
+- `L24:2988` `e8d7adc6514830d95bd6d2eefdab4c5f4ab86135aa4f6fb94c57f45965d8bf44@turn_01@human` token `393` activation `2.797` class `word` token ` trying`
+  - are me from the future," I assert, still trying to get a hold of this situation. She can
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `66` activation `8.932` class `word` token ` forward`
+  - hears a noise coming from the desk. He leans forward listening, but hears nothing else. He walks silently
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `67` activation `7.230` class `word` token ` listening`
+  - a noise coming from the desk. He leans forward listening, but hears nothing else. He walks silently to
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `68` activation `7.093` class `punctuation` token `,`
+  - noise coming from the desk. He leans forward listening, but hears nothing else. He walks silently to the
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `206` activation `6.866` class `word` token ` up`
+  - he hears a swishing noise. He sits straight up in the chair and watches in astonishment as pieces
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `209` activation `6.682` class `word` token ` chair`
+  - swishing noise. He sits straight up in the chair and watches in astonishment as pieces of the material
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `64` activation `6.662` class `word` token ` He`
+  - he unexpectedly hears a noise coming from the desk. He leans forward listening, but hears nothing else. He
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `122` activation `6.615` class `word` token ` hair`
+  - breath. Standing, he runs his fingers through his hair in utter bewilderment. Pacing back and
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `75` activation `6.535` class `word` token ` walks`
+  - leans forward listening, but hears nothing else. He walks silently to the desk. Opening the cover, then
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `79` activation `6.461` class `word` token ` desk`
+  - but hears nothing else. He walks silently to the desk. Opening the cover, then the drawer, he
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `473` activation `6.367` class `word` token ` laughs`
+  - says coming out of her tranced state, he laughs. “Yes, Rachel, I do.” He
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `114` activation `6.208` class `word` token ` Standing`
+  - ing backward he leans over taking a deep breath. Standing, he runs his fingers through his hair in utter
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `85` activation `6.192` class `style_function_word` token ` then`
+  - walks silently to the desk. Opening the cover, then the drawer, he’s shocked. The note he
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `76` activation `6.165` class `word` token ` silently`
+  - forward listening, but hears nothing else. He walks silently to the desk. Opening the cover, then the
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `112` activation `6.120` class `word` token ` breath`
+  - Staggering backward he leans over taking a deep breath. Standing, he runs his fingers through his hair
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `254` activation `6.006` class `word` token ` up`
+  - , he finds her unconscious. He picks her head up and cradles it in his arms. St
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `259` activation `5.992` class `word` token ` it`
+  - . He picks her head up and cradles it in his arms. Staring at her he sees
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `89` activation `5.925` class `word` token ` he`
+  - desk. Opening the cover, then the drawer, he’s shocked. The note he put in there is
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `105` activation `5.916` class `word` token ` backward`
+  - he put in there is gone. Staggering backward he leans over taking a deep breath. Standing,
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `204` activation `5.910` class `word` token ` sits`
+  - later, he hears a swishing noise. He sits straight up in the chair and watches in astonishment
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `210` activation `5.898` class `word` token ` and`
+  - ishing noise. He sits straight up in the chair and watches in astonishment as pieces of the material circle
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `262` activation `5.843` class `word` token ` arms`
+  - her head up and cradles it in his arms. Staring at her he sees she’s pale
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `484` activation `5.839` class `word` token ` moves`
+  - . “Yes, Rachel, I do.” He moves her over to a settee. Seated beside
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `329` activation `5.815` class `word` token ` eyes`
+  - are you okay? Talk to me.” Opening her eyes again she replies, “Yes. I’m okay
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `65` activation `5.812` class `word` token ` leans`
+  - unexpectedly hears a noise coming from the desk. He leans forward listening, but hears nothing else. He walks
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `88` activation `5.746` class `punctuation` token `,`
+  - the desk. Opening the cover, then the drawer, he’s shocked. The note he put in there
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `115` activation `5.727` class `punctuation` token `,`
+  - backward he leans over taking a deep breath. Standing, he runs his fingers through his hair in utter bew
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `376` activation `5.668` class `word` token ` down`
+  - to come out of the daze.” Leaning down to kiss her lips gently, he says, “
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `74` activation `5.647` class `word` token ` He`
+  - He leans forward listening, but hears nothing else. He walks silently to the desk. Opening the cover,
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `284` activation `5.643` class `word` token ` name`
+  - Gradually her face returns to normal. Calling her name, her eyes flutter open. “David, is
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `309` activation `5.587` class `word` token ` eyes`
+  - , my love. I’m here.” Closing her eyes, she lies silent. “Betty, are
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `84` activation `5.572` class `punctuation` token `,`
+  - He walks silently to the desk. Opening the cover, then the drawer, he’s shocked. The note
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `164` activation `5.551` class `word` token ` stands`
+  - see anyone else. How can this be? He stands gaping at the desk. Walking back to the chair
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `117` activation `5.527` class `word` token ` runs`
+  - leans over taking a deep breath. Standing, he runs his fingers through his hair in utter bewilderment
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `383` activation `5.367` class `word` token ` he`
+  - .” Leaning down to kiss her lips gently, he says, “It’s okay, take your time
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `211` activation `5.338` class `word` token ` watches`
+  - noise. He sits straight up in the chair and watches in astonishment as pieces of the material circle into
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `116` activation `5.312` class `word` token ` he`
+  - he leans over taking a deep breath. Standing, he runs his fingers through his hair in utter bewilder
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `472` activation `5.278` class `word` token ` he`
+  - she says coming out of her tranced state, he laughs. “Yes, Rachel, I do.”
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `205` activation `5.268` class `word` token ` straight`
+  - , he hears a swishing noise. He sits straight up in the chair and watches in astonishment as
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `168` activation `5.248` class `word` token ` desk`
+  - How can this be? He stands gaping at the desk. Walking back to the chair, he decides he
+- `L24:2988` `e6fd684789090b25ab723bbdd2fffc97cb47f20ddab417d0fc0571f848734469@turn_01@human` token `265` activation `5.245` class `word` token `aring`
+  - and cradles it in his arms. Staring at her he sees she’s pale. Gradually
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `501` activation `7.634` class `word` token ` said`
+  - scattering across the sand. Where am I? he said to himself. It's almost like another dimension...
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `503` activation `6.935` class `word` token ` himself`
+  - the sand. Where am I? he said to himself. It's almost like another dimension...
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `454` activation `6.710` class `word` token ` eyes`
+  - body felt like it was melting! Dave closed his eyes in fear and once he reopened them, he was
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `376` activation `6.623` class `word` token ` side`
+  - touch it again, he rested his arms at his side. On second thought, what could happen? He
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `500` activation `6.407` class `word` token ` he`
+  - creatures scattering across the sand. Where am I? he said to himself. It's almost like another dimension
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `326` activation `5.853` class `word` token ` arm`
+  - , producing instant goosebumps. He extended his arm to reach out and touch the tree and ZAP
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `457` activation `5.777` class `word` token ` and`
+  - it was melting! Dave closed his eyes in fear and once he reopened them, he was no longer in
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `432` activation `5.740` class `word` token ` proceeded`
+  - felt like it was melting. Curious, he proceeded and stuffed his entire body inside the tree. His
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `316` activation `5.577` class `punctuation` token `,`
+  - he felt every hair on his body stand up straight, producing instant goosebumps. He extended his arm
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `371` activation `5.563` class `word` token ` rested`
+  - happen if he tried to touch it again, he rested his arms at his side. On second thought,
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `373` activation `5.294` class `word` token ` arms`
+  - he tried to touch it again, he rested his arms at his side. On second thought, what could
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `461` activation `5.234` class `word` token ` them`
+  - Dave closed his eyes in fear and once he reopened them, he was no longer in the park. He
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `456` activation `5.062` class `word` token ` fear`
+  - like it was melting! Dave closed his eyes in fear and once he reopened them, he was no longer
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `323` activation `5.057` class `word` token ` He`
+  - stand up straight, producing instant goosebumps. He extended his arm to reach out and touch the tree
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `464` activation `5.021` class `expanded_negation_word` token ` was`
+  - eyes in fear and once he reopened them, he was no longer in the park. He saw a barren
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `314` activation `4.848` class `word` token ` up`
+  - approached, he felt every hair on his body stand up straight, producing instant goosebumps. He extended
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `315` activation `4.754` class `word` token ` straight`
+  - , he felt every hair on his body stand up straight, producing instant goosebumps. He extended his
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `324` activation `4.656` class `word` token ` extended`
+  - up straight, producing instant goosebumps. He extended his arm to reach out and touch the tree and
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `463` activation `4.643` class `word` token ` he`
+  - his eyes in fear and once he reopened them, he was no longer in the park. He saw a
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `433` activation `4.626` class `word` token ` and`
+  - like it was melting. Curious, he proceeded and stuffed his entire body inside the tree. His whole
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `277` activation `4.622` class `word` token ` thought`
+  - a human inside of it! How strange, he thought. He decided to approach the tree to get a
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `419` activation `4.610` class `word` token ` and`
+  - of it. His left foot crossed the barrier first and it instantly felt like it was melting. Curious
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `438` activation `4.597` class `word` token ` inside`
+  - Curious, he proceeded and stuffed his entire body inside the tree. His whole body felt like it was
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `437` activation `4.581` class `word` token ` body`
+  - . Curious, he proceeded and stuffed his entire body inside the tree. His whole body felt like it
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `345` activation `4.544` class `word` token ` him`
+  - ZAP! A lightning strike struck right next to him. In clear blue skies? How is that possible
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `312` activation `4.507` class `word` token ` body`
+  - As he approached, he felt every hair on his body stand up straight, producing instant goosebumps.
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `458` activation `4.478` class `word` token ` once`
+  - was melting! Dave closed his eyes in fear and once he reopened them, he was no longer in the
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `431` activation `4.465` class `word` token ` he`
+  - instantly felt like it was melting. Curious, he proceeded and stuffed his entire body inside the tree.
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `451` activation `4.431` class `word` token ` Dave`
+  - . His whole body felt like it was melting! Dave closed his eyes in fear and once he reopened them
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `386` activation `4.361` class `word` token ` He`
+  - side. On second thought, what could happen? He wasn't afraid of a coincidence. Instead of reaching
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `306` activation `4.336` class `word` token ` he`
+  - have caused that to happen. As he approached, he felt every hair on his body stand up straight,
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `502` activation `4.316` class `word` token ` to`
+  - across the sand. Where am I? he said to himself. It's almost like another dimension...
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `455` activation `4.304` class `word` token ` in`
+  - felt like it was melting! Dave closed his eyes in fear and once he reopened them, he was no
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `334` activation `4.292` class `word` token ` and`
+  - extended his arm to reach out and touch the tree and ZAP! A lightning strike struck right next to
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `340` activation `4.189` class `word` token ` strike`
+  - and touch the tree and ZAP! A lightning strike struck right next to him. In clear blue skies
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `370` activation `4.147` class `word` token ` he`
+  - might happen if he tried to touch it again, he rested his arms at his side. On second thought
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `304` activation `4.146` class `word` token ` approached`
+  - what might have caused that to happen. As he approached, he felt every hair on his body stand up
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `418` activation `4.145` class `discourse_marker_word` token ` first`
+  - inside of it. His left foot crossed the barrier first and it instantly felt like it was melting. Cur
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `460` activation `4.122` class `word` token ` reopened`
+  - ! Dave closed his eyes in fear and once he reopened them, he was no longer in the park.
+- `L24:2988` `cb18d01598c7457c189099fc10660335a0a6d9a2e7ad1a78b06f3e4c58f738e6@turn_01@human` token `444` activation `4.120` class `word` token ` body`
+  - stuffed his entire body inside the tree. His whole body felt like it was melting! Dave closed his eyes
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `441` activation `7.645` class `word` token ` smiled`
+  - hide; his tears now almost dried. Mother Elephant smiled at her children, aware of the potency of her
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `445` activation `6.628` class `punctuation` token `,`
+  - now almost dried. Mother Elephant smiled at her children, aware of the potency of her words. "We
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `224` activation `6.238` class `word` token `led`
+  - the umpteenth time that morning. Adelaide giggled and claimed: "That's obviously because they don
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `331` activation `5.910` class `punctuation` token `,`
+  - slowly making her way to her teary-eyed son, offered her trunk to him to help him back onto
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `485` activation `5.876` class `word` token ` said`
+  - Just remember the things that make us unique!" she said and gave the children a warm hug before the two
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `266` activation `5.451` class `punctuation` token `,`
+  - a very nice thing to say," replied their mother, who had been observing their antics for a while without
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `412` activation `5.082` class `word` token ` Fred`
+  - observing its great strength and prehensility. Fred, too, analyzed the muscles on his body and
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `198` activation `5.052` class `word` token ` eyes`
+  - and they make it look so easy." Fred's eyes slowly filled with tears of frustration as he stumbled over
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `413` activation `5.030` class `punctuation` token `,`
+  - its great strength and prehensility. Fred, too, analyzed the muscles on his body and admired
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `444` activation `5.022` class `word` token ` children`
+  - tears now almost dried. Mother Elephant smiled at her children, aware of the potency of her words. "
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `222` activation `5.005` class `word` token ` Adelaide`
+  - legs for the umpteenth time that morning. Adelaide giggled and claimed: "That's obviously because
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `393` activation `4.895` class `word` token ` Adelaide`
+  - dream about achieving!" This statement from Mother Elephant made Adelaide take a closer look at her trunk, observing its
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `202` activation `4.884` class `word` token ` tears`
+  - look so easy." Fred's eyes slowly filled with tears of frustration as he stumbled over his chunky legs
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `174` activation `4.825` class `punctuation` token `,`
+  - scratching her back. "Still," moaned Fred, "you see the leopard siblings constantly dance in the
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `497` activation `4.813` class `word` token ` rushed`
+  - gave the children a warm hug before the two twins rushed back into the bushland to compare their strength in
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `173` activation `4.792` class `word` token ` Fred`
+  - at scratching her back. "Still," moaned Fred, "you see the leopard siblings constantly dance in
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `415` activation `4.774` class `punctuation` token `,`
+  - strength and prehensility. Fred, too, analyzed the muscles on his body and admired the force
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `324` activation `4.698` class `word` token ` way`
+  - wished they had." Mother Elephant, slowly making her way to her teary-eyed son, offered her trunk
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `265` activation `4.570` class `word` token ` mother`
+  - not a very nice thing to say," replied their mother, who had been observing their antics for a while
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `440` activation `4.567` class `word` token ` Elephant`
+  - his hide; his tears now almost dried. Mother Elephant smiled at her children, aware of the potency of
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `391` activation `4.492` class `word` token ` Elephant`
+  - not even dream about achieving!" This statement from Mother Elephant made Adelaide take a closer look at her trunk,
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `434` activation `4.432` class `word` token ` tears`
+  - the force that was hiding behind his hide; his tears now almost dried. Mother Elephant smiled at her children
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `401` activation `4.427` class `punctuation` token `,`
+  - Elephant made Adelaide take a closer look at her trunk, observing its great strength and prehensility.
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `321` activation `4.361` class `word` token ` slowly`
+  - leopards wished they had." Mother Elephant, slowly making her way to her teary-eyed son,
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `149` activation `4.356` class `word` token ` Adelaide`
+  - never believe what you see on there," retorted Adelaide while attempting a pirouette that looked more like
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `206` activation `4.298` class `word` token ` he`
+  - Fred's eyes slowly filled with tears of frustration as he stumbled over his chunky legs for the umpte
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `204` activation `4.295` class `word` token ` frustration`
+  - easy." Fred's eyes slowly filled with tears of frustration as he stumbled over his chunky legs for the
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `435` activation `4.278` class `word` token ` now`
+  - force that was hiding behind his hide; his tears now almost dried. Mother Elephant smiled at her children,
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `170` activation `4.277` class `punctuation` token `,"`
+  - a failed attempt at scratching her back. "Still," moaned Fred, "you see the leopard siblings
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `386` activation `4.268` class `punctuation` token `!"`
+  - tasks that other animals could not even dream about achieving!" This statement from Mother Elephant made Adelaide take a closer
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `484` activation `4.262` class `word` token ` she`
+  - . Just remember the things that make us unique!" she said and gave the children a warm hug before the
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `498` activation `4.250` class `word` token ` back`
+  - the children a warm hug before the two twins rushed back into the bushland to compare their strength in a
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `200` activation `4.250` class `word` token ` filled`
+  - make it look so easy." Fred's eyes slowly filled with tears of frustration as he stumbled over his chunk
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `493` activation `4.218` class `word` token ` before`
+  - !" she said and gave the children a warm hug before the two twins rushed back into the bushland to
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `336` activation `4.198` class `word` token ` him`
+  - her teary-eyed son, offered her trunk to him to help him back onto his feet. "We
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `397` activation `4.189` class `word` token ` look`
+  - This statement from Mother Elephant made Adelaide take a closer look at her trunk, observing its great strength and pre
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `225` activation `4.109` class `word` token ` and`
+  - umpteenth time that morning. Adelaide giggled and claimed: "That's obviously because they don't
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `486` activation `4.095` class `word` token ` and`
+  - remember the things that make us unique!" she said and gave the children a warm hug before the two twins
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `199` activation `4.077` class `word` token ` slowly`
+  - they make it look so easy." Fred's eyes slowly filled with tears of frustration as he stumbled over his
+- `L24:2988` `0f861d5aa34b0dcfc2ddd35da09fc581aff25b042a2795f36bda290e00071378@turn_01@human` token `388` activation `4.055` class `word` token ` statement`
+  - other animals could not even dream about achieving!" This statement from Mother Elephant made Adelaide take a closer look at
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `404` activation `7.672` class `word` token ` up`
+  - find any way home. The bear smiles and stands up. He reaches his paw out to her. "
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `225` activation `7.482` class `word` token ` girl`
+  - the bear. "Well, hello there." The girl is too stunned to speak. How can this bear
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `246` activation `7.402` class `word` token `ells`
+  - talk? "You're not real!" She yells at the bear. The bear comes next to the
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `298` activation `7.378` class `word` token ` laughs`
+  - berry is real, isn't it?" The bear laughs. The girl doesn't know if she should laugh
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `401` activation `7.276` class `word` token ` smiles`
+  - just wants to find any way home. The bear smiles and stands up. He reaches his paw out to
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `449` activation `6.988` class `word` token ` up`
+  - home safely." The little girl feels encouraged and gets up. This time, she doesn't hesitate and grabs
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `403` activation `6.805` class `word` token ` stands`
+  - to find any way home. The bear smiles and stands up. He reaches his paw out to her.
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `262` activation `6.706` class `word` token ` ground`
+  - bear comes next to the girl and sits on the ground. He grabs a blackberry from the bush and
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `491` activation `6.692` class `word` token ` smiles`
+  - "Thank you! I'm home!" The bear smiles and says, "If you get lost again,
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `274` activation `6.619` class `word` token ` it`
+  - He grabs a blackberry from the bush and eats it. "Well, of course, I'm real
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `197` activation `6.588` class `word` token ` walking`
+  - She can't believe her eyes. The bear is walking on its hind legs as if it were human.
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `258` activation `6.535` class `word` token ` and`
+  - the bear. The bear comes next to the girl and sits on the ground. He grabs a blackberry
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `381` activation `6.531` class `word` token ` girl`
+  - think you could help me find my way?" The girl is hesitant, but at this point, she just
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `259` activation `6.520` class `word` token ` sits`
+  - bear. The bear comes next to the girl and sits on the ground. He grabs a blackberry from
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `226` activation `6.382` class `word` token ` is`
+  - bear. "Well, hello there." The girl is too stunned to speak. How can this bear talk
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `253` activation `6.356` class `word` token ` comes`
+  - !" She yells at the bear. The bear comes next to the girl and sits on the ground.
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `444` activation `6.332` class `word` token ` girl`
+  - I'll get you back home safely." The little girl feels encouraged and gets up. This time, she
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `448` activation `6.313` class `word` token ` gets`
+  - back home safely." The little girl feels encouraged and gets up. This time, she doesn't hesitate and
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `252` activation `6.291` class `word` token ` bear`
+  - real!" She yells at the bear. The bear comes next to the girl and sits on the ground
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `107` activation `6.281` class `word` token ` girl`
+  - twigs snapping. She hears someone approaching. The girl runs to what looks like a blackberry bush and
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `244` activation `6.217` class `word` token ` She`
+  - this bear talk? "You're not real!" She yells at the bear. The bear comes next
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `127` activation `6.160` class `word` token ` mouth`
+  - and hides behind it. The little girl covers her mouth to conceal her whimpers. Now, she
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `173` activation `6.085` class `word` token ` out`
+  - it is. As the figure approaches, she lets out a scream. It is a big, black gr
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `249` activation `6.068` class `word` token ` bear`
+  - You're not real!" She yells at the bear. The bear comes next to the girl and sits
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `124` activation `6.032` class `word` token ` girl`
+  - blackberry bush and hides behind it. The little girl covers her mouth to conceal her whimpers.
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `146` activation `6.018` class `word` token ` girl`
+  - , she hears them walking even closer. The little girl's vision is blurred from her rush of tears,
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `272` activation `6.013` class `word` token ` and`
+  - ground. He grabs a blackberry from the bush and eats it. "Well, of course, I
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `195` activation `5.949` class `word` token ` bear`
+  - bear. She can't believe her eyes. The bear is walking on its hind legs as if it were
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `84` activation `5.923` class `word` token `le`
+  - forming in her eyes, and she begins to sniffle. As she frantically looks around the woods,
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `171` activation `5.893` class `word` token ` she`
+  - see who it is. As the figure approaches, she lets out a scream. It is a big,
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `402` activation `5.877` class `word` token ` and`
+  - wants to find any way home. The bear smiles and stands up. He reaches his paw out to her
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `257` activation `5.830` class `word` token ` girl`
+  - at the bear. The bear comes next to the girl and sits on the ground. He grabs a black
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `175` activation `5.828` class `word` token ` scream`
+  - . As the figure approaches, she lets out a scream. It is a big, black grizzly bear
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `447` activation `5.818` class `word` token ` and`
+  - you back home safely." The little girl feels encouraged and gets up. This time, she doesn't hesitate
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `479` activation `5.816` class `word` token ` bear`
+  - home and the girl is relieved. She hugs the bear. "Thank you! I'm home!" The
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `101` activation `5.816` class `word` token ` She`
+  - around the woods, she hears twigs snapping. She hears someone approaching. The girl runs to what looks
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `297` activation `5.788` class `word` token ` bear`
+  - blackberry is real, isn't it?" The bear laughs. The girl doesn't know if she should
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `108` activation `5.758` class `word` token ` runs`
+  - igs snapping. She hears someone approaching. The girl runs to what looks like a blackberry bush and hides
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `400` activation `5.741` class `word` token ` bear`
+  - she just wants to find any way home. The bear smiles and stands up. He reaches his paw out
+- `L24:2988` `989387d49f2d3c5487cd882dfce76a19d8d71cce86ec99168cc47330aa5510cc@turn_01@human` token `120` activation `5.718` class `word` token ` it`
+  - what looks like a blackberry bush and hides behind it. The little girl covers her mouth to conceal her
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `377` activation `7.841` class `word` token ` sighed`
+  - was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring sometimes.” "Well
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `346` activation `7.818` class `word` token ` said`
+  - formula and what I could use it for,” he said. Seth laughed, “Well that sounds like
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `491` activation `7.358` class `word` token ` said`
+  - . "We'll talk more about this later," Seth said. The two stood up and walked off the bus
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `496` activation `7.044` class `word` token ` up`
+  - about this later," Seth said. The two stood up and walked off the bus and into the social maze
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `459` activation `6.997` class `word` token ` said`
+  - like me either." "You'd be surprised," Seth said As Nate began to say more the bus sc
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `350` activation `6.959` class `word` token ` laughed`
+  - could use it for,” he said. Seth laughed, “Well that sounds like a great weekend for
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `402` activation `6.905` class `word` token ` asked`
+  - you come to a party with me sometime?" Seth asked. Nate's eyes widened. "Oh,
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `374` activation `6.742` class `word` token ` looked`
+  - eth’s phone was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `375` activation `6.550` class `word` token ` down`
+  - ’s phone was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring sometimes
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `312` activation `6.390` class `punctuation` token `,`
+  - ?” Seth asked. “It was fine,” Nate started, “Just worked on Algebra. I actually got super
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `401` activation `6.372` class `word` token ` Seth`
+  - 't you come to a party with me sometime?" Seth asked. Nate's eyes widened. "Oh
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `378` activation `6.301` class `punctuation` token `,`
+  - buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring sometimes.” "Well,
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `345` activation `6.299` class `word` token ` he`
+  - quadratic formula and what I could use it for,” he said. Seth laughed, “Well that sounds
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `304` activation `6.288` class `word` token ` asked`
+  - “Hey buddy, how was your Sunday?” Seth asked. “It was fine,” Nate started, “Just
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `376` activation `6.150` class `word` token ` and`
+  - phone was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets boring sometimes.”
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `267` activation `6.074` class `word` token ` up`
+  - phone screen and his fingers tapped away until he looked up to see Nate. His expression went from neutral to
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `351` activation `6.021` class `punctuation` token `,`
+  - use it for,” he said. Seth laughed, “Well that sounds like a great weekend for you
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `311` activation `6.015` class `word` token ` started`
+  - Sunday?” Seth asked. “It was fine,” Nate started, “Just worked on Algebra. I actually got
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `495` activation `5.944` class `word` token ` stood`
+  - more about this later," Seth said. The two stood up and walked off the bus and into the social
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `490` activation `5.886` class `word` token ` Seth`
+  - School. "We'll talk more about this later," Seth said. The two stood up and walked off the
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `408` activation `5.866` class `word` token ` widened`
+  - me sometime?" Seth asked. Nate's eyes widened. "Oh, I don't know. Do
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `498` activation `5.785` class `word` token ` walked`
+  - later," Seth said. The two stood up and walked off the bus and into the social maze that was
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `407` activation `5.775` class `word` token ` eyes`
+  - with me sometime?" Seth asked. Nate's eyes widened. "Oh, I don't know.
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `497` activation `5.737` class `word` token ` and`
+  - this later," Seth said. The two stood up and walked off the bus and into the social maze that
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `405` activation `5.620` class `word` token `ate`
+  - a party with me sometime?" Seth asked. Nate's eyes widened. "Oh, I don't
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `501` activation `5.615` class `word` token ` bus`
+  - said. The two stood up and walked off the bus and into the social maze that was High School.
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `249` activation `5.613` class `word` token ` face`
+  - Richardson, his best friend since kindergarten. Seth’s face was illuminated by the glow of his phone screen and
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `349` activation `5.480` class `word` token `eth`
+  - I could use it for,” he said. Seth laughed, “Well that sounds like a great weekend
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `458` activation `5.459` class `word` token ` Seth`
+  - that like me either." "You'd be surprised," Seth said As Nate began to say more the bus
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `373` activation `5.377` class `word` token ` Nate`
+  - Seth’s phone was buzzing in his pocket. Nate looked down and sighed, “Yeah. Just gets
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `292` activation `5.359` class `word` token ` pocket`
+  - his friend and he quickly put his phone in his pocket. “Hey buddy, how was your Sunday?”
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `502` activation `5.013` class `word` token ` and`
+  - . The two stood up and walked off the bus and into the social maze that was High School.
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `371` activation `4.959` class `word` token ` pocket`
+  - you!” Seth’s phone was buzzing in his pocket. Nate looked down and sighed, “Yeah.
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `303` activation `4.834` class `word` token ` Seth`
+  - . “Hey buddy, how was your Sunday?” Seth asked. “It was fine,” Nate started, “
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `250` activation `4.806` class `expanded_negation_word` token ` was`
+  - , his best friend since kindergarten. Seth’s face was illuminated by the glow of his phone screen and his
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `266` activation `4.731` class `word` token ` looked`
+  - his phone screen and his fingers tapped away until he looked up to see Nate. His expression went from neutral
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `284` activation `4.699` class `word` token ` and`
+  - went from neutral to excited when he saw his friend and he quickly put his phone in his pocket. “
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `499` activation `4.649` class `word` token ` off`
+  - ," Seth said. The two stood up and walked off the bus and into the social maze that was High
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `364` activation `4.637` class `word` token `eth`
+  - that sounds like a great weekend for you!” Seth’s phone was buzzing in his pocket. Nate looked
+- `L24:2988` `77f1aa09e4550598c2574fd35a2f265a87b83c9d1c0150b406ce4c61847ef759@turn_01@human` token `368` activation `4.630` class `word` token ` buzzing`
+  - great weekend for you!” Seth’s phone was buzzing in his pocket. Nate looked down and sighed,
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `242` activation `9.971` class `word` token ` says`
+  - behind her, "Anything yet?" "No," Sara says as Smudges slowly crawls out of her
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `354` activation `9.736` class `word` token `ells`
+  - ". "NOW!" "There!'" Yuma yells, pointing into the night sky. Sara immediately
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `275` activation `9.326` class `word` token `ans`
+  - "Nothing yet." "Ugh," she groans as she takes a seat next to her, "
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `481` activation `9.170` class `word` token ` said`
+  - . "It's going to be okay," Yuma said with a smile as the bright light fell below the
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `423` activation `8.986` class `word` token ` out`
+  - her eyes." "They made it!" Yuma cried out. Sara was speechless as so many emotions
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `336` activation `8.919` class `word` token ` phone`
+  - by. DING Sara picks up her phone and reads a message from "Mom". "NOW
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `303` activation `8.872` class `word` token ` says`
+  - me." "Have patience, Yuma." Sara says with a smile. "Hi, Smudges
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `468` activation `8.610` class `word` token ` whispered`
+  - , please land safely, please land safely," Sara whispered to herself. "It's going to be okay,"
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `317` activation `8.606` class `word` token ` says`
+  - . "Hi, Smudges," Yuma says, patting the cat as he walks by.
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `373` activation `8.501` class `word` token ` up`
+  - ara immediately breaks her attention from the phone and looks up. Across the sky is a long yellow streak being
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `352` activation `8.487` class `word` token `uma`
+  - "Mom". "NOW!" "There!'" Yuma yells, pointing into the night sky. S
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `422` activation `8.376` class `word` token ` cried`
+  - in her eyes." "They made it!" Yuma cried out. Sara was speechless as so many
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `372` activation `8.252` class `word` token ` looks`
+  - Sara immediately breaks her attention from the phone and looks up. Across the sky is a long yellow streak
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `402` activation `8.207` class `word` token ` face`
+  - the sky. A large smile breaks on Sara's face and is soon accompanied by tears welling up in
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `421` activation `8.139` class `word` token `uma`
+  - up in her eyes." "They made it!" Yuma cried out. Sara was speechless as so
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `355` activation `8.132` class `punctuation` token `,`
+  - "NOW!" "There!'" Yuma yells, pointing into the night sky. Sara immediately breaks
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `470` activation `8.132` class `word` token ` herself`
+  - land safely, please land safely," Sara whispered to herself. "It's going to be okay," Yuma
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `500` activation `8.098` class `word` token ` down`
+  - below the horizon. DING Sara glanced down at her phone once again. From "Mom":
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `143` activation `8.079` class `word` token ` down`
+  - have patience, Sara" She puts her phone back down on the blanket with a huff. Smud
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `228` activation `8.056` class `word` token ` says`
+  - . "Hey," the voice of a young woman says entering the rooftop behind her, "Anything yet?"
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `503` activation `7.960` class `word` token ` phone`
+  - . DING Sara glanced down at her phone once again. From "Mom": "D
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `499` activation `7.938` class `word` token ` glanced`
+  - fell below the horizon. DING Sara glanced down at her phone once again. From "Mom
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `273` activation `7.900` class `word` token ` she`
+  - rooftop, "Nothing yet." "Ugh," she groans as she takes a seat next to her
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `306` activation `7.778` class `word` token ` smile`
+  - Have patience, Yuma." Sara says with a smile. "Hi, Smudges," Yuma
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `404` activation `7.677` class `word` token ` is`
+  - . A large smile breaks on Sara's face and is soon accompanied by tears welling up in her eyes
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `253` activation `7.633` class `word` token ` lap`
+  - as Smudges slowly crawls out of her lap to secure a place on the ledge of the rooftop
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `234` activation `7.525` class `punctuation` token `,`
+  - of a young woman says entering the rooftop behind her, "Anything yet?" "No," Sara says as Sm
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `280` activation `7.392` class `word` token ` seat`
+  - Ugh," she groans as she takes a seat next to her, "The anticipation is literally going
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `76` activation `7.346` class `word` token ` asks`
+  - "Where are they, Smudges?" she asks the cat as it purrs away on her lap
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `484` activation `7.265` class `word` token ` smile`
+  - going to be okay," Yuma said with a smile as the bright light fell below the horizon. D
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `467` activation `7.209` class `word` token ` Sara`
+  - safely, please land safely, please land safely," Sara whispered to herself. "It's going to be okay
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `241` activation `7.126` class `word` token ` Sara`
+  - rooftop behind her, "Anything yet?" "No," Sara says as Smudges slowly crawls out of
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `302` activation `7.053` class `word` token ` Sara`
+  - kill me." "Have patience, Yuma." Sara says with a smile. "Hi, Smud
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `505` activation `7.048` class `word` token ` again`
+  - ING Sara glanced down at her phone once again. From "Mom": "D
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `169` activation `7.020` class `word` token ` head`
+  - loudly as she scratches his ears. Tilting her head back even further to study the stars, her eyes
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `360` activation `7.009` class `word` token ` sky`
+  - '" Yuma yells, pointing into the night sky. Sara immediately breaks her attention from the phone
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `170` activation `6.993` class `word` token ` back`
+  - as she scratches his ears. Tilting her head back even further to study the stars, her eyes bounce
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `397` activation `6.987` class `word` token ` smile`
+  - large bright light traveling across the sky. A large smile breaks on Sara's face and is soon accompanied by
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `480` activation `6.982` class `word` token `uma`
+  - herself. "It's going to be okay," Yuma said with a smile as the bright light fell below
+- `L24:2988` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `340` activation `6.944` class `word` token ` message`
+  - Sara picks up her phone and reads a message from "Mom". "NOW!" "There!'"
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `501` activation `9.140` class `word` token ` exclaimed`
+  - in a cold sweat. "Phew!" he exclaimed. "It was all just a crazy dream."
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `500` activation `8.301` class `word` token ` he`
+  - bed in a cold sweat. "Phew!" he exclaimed. "It was all just a crazy dream
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `464` activation `8.079` class `word` token ` he`
+  - floor. "I must be losing my mind," he thought. "Chipmunks that speak in rh
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `305` activation `7.902` class `word` token ` priest`
+  - a bullhorn. "A bullhorn?", the priest thought. "How and why did I trip over
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `490` activation `7.790` class `word` token ` bed`
+  - ? That's impossible." The priest shot up in bed in a cold sweat. "Phew!" he
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `488` activation `7.733` class `word` token ` up`
+  - brownies? That's impossible." The priest shot up in bed in a cold sweat. "Phew
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `287` activation `7.670` class `word` token ` him`
+  - with a loud THUD. The priest looked behind him to see that he tripped over a bullhorn
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `465` activation `7.542` class `word` token ` thought`
+  - . "I must be losing my mind," he thought. "Chipmunks that speak in rhymes
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `417` activation `7.502` class `word` token ` and`
+  - om. The chipmunks all took a breath and said "Hold on Mr. Priest! We mean
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `449` activation `7.460` class `word` token ` priest`
+  - ies, you set off quite an alarm!". The priest's jaw dropped to floor. "I must be
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `265` activation `7.296` class `word` token ` up`
+  - set his feet on the floor. As he got up from the bed, he tripped and fell,
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `306` activation `7.232` class `word` token ` thought`
+  - bullhorn. "A bullhorn?", the priest thought. "How and why did I trip over a
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `452` activation `7.191` class `word` token ` dropped`
+  - set off quite an alarm!". The priest's jaw dropped to floor. "I must be losing my mind
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `285` activation `7.092` class `word` token ` looked`
+  - , landing with a loud THUD. The priest looked behind him to see that he tripped over a
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `355` activation `7.009` class `word` token ` face`
+  - and the paper. Shock came over the priest's face. In the kitchen were three chipmunks who
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `260` activation `6.627` class `word` token ` floor`
+  - of the list, he set his feet on the floor. As he got up from the bed, he
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `416` activation `6.579` class `word` token ` breath`
+  - broom. The chipmunks all took a breath and said "Hold on Mr. Priest! We
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `325` activation `6.505` class `word` token `horn`
+  - over a bullhorn?" He picked up the bullhorn and took it downstairs. When he turned the corner
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `487` activation `6.485` class `word` token ` shot`
+  - bake brownies? That's impossible." The priest shot up in bed in a cold sweat. "Ph
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `412` activation `6.453` class `word` token `unks`
+  - the priest grab the broom. The chipmunks all took a breath and said "Hold on Mr
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `264` activation `6.350` class `word` token ` got`
+  - he set his feet on the floor. As he got up from the bed, he tripped and fell
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `268` activation `6.271` class `word` token ` bed`
+  - on the floor. As he got up from the bed, he tripped and fell, landing with a
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `494` activation `6.267` class `word` token ` sweat`
+  - ." The priest shot up in bed in a cold sweat. "Phew!" he exclaimed. "It
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `486` activation `6.220` class `word` token ` priest`
+  - and bake brownies? That's impossible." The priest shot up in bed in a cold sweat. "
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `400` activation `6.162` class `word` token ` and`
+  - at the chpimunks. They all stopped and saw the priest grab the broom. The chip
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `499` activation `6.052` class `punctuation` token `!"`
+  - in bed in a cold sweat. "Phew!" he exclaimed. "It was all just a crazy
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `320` activation `6.051` class `word` token ` He`
+  - and why did I trip over a bullhorn?" He picked up the bullhorn and took it downstairs.
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `379` activation `6.048` class `word` token ` priest`
+  - brownie batter, eggs, and pineapple. The priest quickly ran to get a broom to swat
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `215` activation `6.010` class `word` token ` looked`
+  - had been stapled to his head. As he looked over the list, he read the first few items
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `270` activation `5.981` class `word` token ` he`
+  - floor. As he got up from the bed, he tripped and fell, landing with a loud TH
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `350` activation `5.963` class `word` token ` came`
+  - he dropped the bullhorn and the paper. Shock came over the priest's face. In the kitchen were
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `463` activation `5.907` class `punctuation` token `,"`
+  - to floor. "I must be losing my mind," he thought. "Chipmunks that speak in
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `413` activation `5.862` class `word` token ` all`
+  - priest grab the broom. The chipmunks all took a breath and said "Hold on Mr.
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `403` activation `5.853` class `word` token ` priest`
+  - pimunks. They all stopped and saw the priest grab the broom. The chipmunks all
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `284` activation `5.786` class `word` token ` priest`
+  - fell, landing with a loud THUD. The priest looked behind him to see that he tripped over
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `399` activation `5.760` class `word` token ` stopped`
+  - at at the chpimunks. They all stopped and saw the priest grab the broom. The
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `418` activation `5.742` class `word` token ` said`
+  - . The chipmunks all took a breath and said "Hold on Mr. Priest! We mean you
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `263` activation `5.684` class `word` token ` he`
+  - , he set his feet on the floor. As he got up from the bed, he tripped and
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `326` activation `5.629` class `word` token ` and`
+  - a bullhorn?" He picked up the bullhorn and took it downstairs. When he turned the corner into
+- `L24:2988` `55b44b536e2c25f573efe19b5251ce60a68a4174ff21f65dd920e69b4c180dc5@turn_01@human` token `328` activation `5.600` class `word` token ` it`
+  - horn?" He picked up the bullhorn and took it downstairs. When he turned the corner into the kitchen
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `323` activation `8.789` class `word` token `s`
+  - . She was a real healer. Kotone sighs at a job well done and proceeds to faint in
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `299` activation `8.658` class `word` token ` up`
+  - the man's eyes return to normal. He gets up, feeling fine and recovered. The village folk couldn
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `409` activation `7.355` class `word` token ` in`
+  - is approaching. The older woman from the fountain walks in and starts scolding her. Then she laughs.
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `418` activation `7.326` class `word` token ` laughs`
+  - walks in and starts scolding her. Then she laughs. "Kotone, you did a great
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `408` activation `7.045` class `word` token ` walks`
+  - dragon is approaching. The older woman from the fountain walks in and starts scolding her. Then she laughs
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `298` activation `7.024` class `word` token ` gets`
+  - and the man's eyes return to normal. He gets up, feeling fine and recovered. The village folk
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `297` activation `6.993` class `word` token ` He`
+  - done and the man's eyes return to normal. He gets up, feeling fine and recovered. The village
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `410` activation `6.963` class `word` token ` and`
+  - approaching. The older woman from the fountain walks in and starts scolding her. Then she laughs. "
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `230` activation `6.679` class `word` token ` up`
+  - spell. It wasn't that complicated, she walks up to the man on the ground and places her hand
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `344` activation `6.622` class `word` token ` up`
+  - front of the village folk. Kotone wakes up in her bed. She faintly remembers the good
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `212` activation `6.620` class `word` token ` and`
+  - from the sickly man. Kotone finishes praying and then reads the next part of the spell. It
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `300` activation `6.587` class `punctuation` token `,`
+  - man's eyes return to normal. He gets up, feeling fine and recovered. The village folk couldn't
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `391` activation `6.584` class `word` token ` screams`
+  - limb and organ started screaming in pain. Kotone screams so loud you would think the dragon is approaching.
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `211` activation `6.399` class `word` token ` praying`
+  - away from the sickly man. Kotone finishes praying and then reads the next part of the spell.
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `496` activation `6.384` class `word` token ` leaves`
+  - in this book then come talk to me." She leaves and Kotone was still unsatisfied. But that
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `142` activation `6.235` class `word` token ` and`
+  - ." She ties her hair back into a ponytail and starts to pray. The first step to any spell
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `276` activation `6.176` class `word` token ` over`
+  - and the man starts violently shaking, eyes glazing over white. After a few seconds, the spell was
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `213` activation `6.169` class `style_function_word` token ` then`
+  - the sickly man. Kotone finishes praying and then reads the next part of the spell. It wasn
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `201` activation `6.150` class `word` token ` away`
+  - the swirl of magic surrounding her and start to walk away from the sickly man. Kotone finishes praying
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `343` activation `6.148` class `word` token ` wakes`
+  - in front of the village folk. Kotone wakes up in her bed. She faintly remembers the
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `229` activation `6.130` class `word` token ` walks`
+  - the spell. It wasn't that complicated, she walks up to the man on the ground and places her
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `209` activation `6.126` class `word` token `one`
+  - to walk away from the sickly man. Kotone finishes praying and then reads the next part of the
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `290` activation `6.035` class `word` token ` man`
+  - a few seconds, the spell was done and the man's eyes return to normal. He gets up,
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `272` activation `5.857` class `punctuation` token `,`
+  - her starts to crack and the man starts violently shaking, eyes glazing over white. After a few seconds
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `268` activation `5.839` class `word` token ` man`
+  - !" The ground around her starts to crack and the man starts violently shaking, eyes glazing over white.
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `347` activation `5.822` class `word` token ` bed`
+  - village folk. Kotone wakes up in her bed. She faintly remembers the good deed she did
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `237` activation `5.819` class `word` token ` and`
+  - , she walks up to the man on the ground and places her hand on his head. And with one
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `173` activation `5.804` class `word` token `ays`
+  - give you her blessing. She prays and prays until the power starts swelling up inside her. The
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `233` activation `5.778` class `word` token ` man`
+  - wasn't that complicated, she walks up to the man on the ground and places her hand on his head
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `236` activation `5.770` class `word` token ` ground`
+  - complicated, she walks up to the man on the ground and places her hand on his head. And with
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `170` activation `5.690` class `word` token `ays`
+  - find you and give you her blessing. She prays and prays until the power starts swelling up inside
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `349` activation `5.592` class `word` token ` She`
+  - . Kotone wakes up in her bed. She faintly remembers the good deed she did as she
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `390` activation `5.549` class `word` token `one`
+  - every limb and organ started screaming in pain. Kotone screams so loud you would think the dragon is approaching
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `273` activation `5.507` class `word` token ` eyes`
+  - starts to crack and the man starts violently shaking, eyes glazing over white. After a few seconds,
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `411` activation `5.466` class `word` token ` starts`
+  - . The older woman from the fountain walks in and starts scolding her. Then she laughs. "K
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `499` activation `5.465` class `word` token `one`
+  - then come talk to me." She leaves and Kotone was still unsatisfied. But that can wait until
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `292` activation `5.463` class `word` token ` eyes`
+  - seconds, the spell was done and the man's eyes return to normal. He gets up, feeling fine
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `417` activation `5.406` class `word` token ` she`
+  - fountain walks in and starts scolding her. Then she laughs. "Kotone, you did a
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `303` activation `5.402` class `word` token ` and`
+  - return to normal. He gets up, feeling fine and recovered. The village folk couldn't believe it.
+- `L24:2988` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `269` activation `5.398` class `word` token ` starts`
+  - The ground around her starts to crack and the man starts violently shaking, eyes glazing over white. After
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `285` activation `7.729` class `word` token ` and`
+  - alien spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams rained down
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `284` activation `7.509` class `word` token ` up`
+  - multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams rained
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `287` activation `6.329` class `word` token ` to`
+  - hips! As Jeremy quickly pulled himself up and started to run for cover, beams rained down from the
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `286` activation `6.295` class `word` token ` started`
+  - spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams rained down from
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `288` activation `6.072` class `word` token ` run`
+  - ! As Jeremy quickly pulled himself up and started to run for cover, beams rained down from the sky
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `492` activation `6.057` class `word` token ` down`
+  - dig his way out of the rubble. Jeremy sat down on the floor against the wall and thought to himself
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `456` activation `5.975` class `word` token ` around`
+  - shook and dust fell from the ceiling as he looked around the small-sized concrete room. His only hope was
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `283` activation `5.914` class `word` token ` himself`
+  - was multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover, beams r
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `255` activation `5.870` class `word` token ` up`
+  - circular shape grew larger and larger. As he looked up, he couldn't believe his eyes. It was
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `254` activation `5.850` class `word` token ` looked`
+  - A circular shape grew larger and larger. As he looked up, he couldn't believe his eyes. It
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `281` activation `5.774` class `word` token ` quickly`
+  - , it was multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover,
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `346` activation `5.616` class `word` token ` face`
+  - and shot inward toward him. He shielded his face with his coat and started stumbling toward the basement.
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `455` activation `5.595` class `word` token ` looked`
+  - room shook and dust fell from the ceiling as he looked around the small-sized concrete room. His only hope
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `308` activation `5.592` class `word` token ` Jeremy`
+  - sky and destroyed roads and cars all around him. Jeremy shoved his way through a spinning entryway and found
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `257` activation `5.552` class `word` token ` he`
+  - grew larger and larger. As he looked up, he couldn't believe his eyes. It was an alien
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `280` activation `5.411` class `word` token ` Jeremy`
+  - No, it was multiple alien spaceships! As Jeremy quickly pulled himself up and started to run for cover
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `491` activation `5.406` class `word` token ` sat`
+  - or dig his way out of the rubble. Jeremy sat down on the floor against the wall and thought to
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `228` activation `5.290` class `word` token ` up`
+  - get up, he laid on the ground and looked up at the sky. He noticed something in the sky
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `495` activation `5.286` class `word` token ` floor`
+  - out of the rubble. Jeremy sat down on the floor against the wall and thought to himself how he might
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `225` activation `5.134` class `word` token ` ground`
+  - even try to get up, he laid on the ground and looked up at the sky. He noticed something
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `227` activation `5.032` class `word` token ` looked`
+  - to get up, he laid on the ground and looked up at the sky. He noticed something in the
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `499` activation `5.010` class `word` token ` and`
+  - . Jeremy sat down on the floor against the wall and thought to himself how he might get out of this
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `350` activation `4.992` class `word` token ` and`
+  - him. He shielded his face with his coat and started stumbling toward the basement. He decided to take
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `351` activation `4.883` class `word` token ` started`
+  - . He shielded his face with his coat and started stumbling toward the basement. He decided to take the
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `342` activation `4.877` class `word` token ` He`
+  - he had chosen burst and shot inward toward him. He shielded his face with his coat and started stumbling
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `317` activation `4.870` class `word` token ` and`
+  - . Jeremy shoved his way through a spinning entryway and found himself in a hotel. CRASH The glass
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `250` activation `4.846` class `word` token ` larger`
+  - down at him. A circular shape grew larger and larger. As he looked up, he couldn't believe
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `291` activation `4.804` class `punctuation` token `,`
+  - quickly pulled himself up and started to run for cover, beams rained down from the sky and destroyed roads
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `500` activation `4.782` class `word` token ` thought`
+  - Jeremy sat down on the floor against the wall and thought to himself how he might get out of this alive
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `352` activation `4.765` class `word` token ` stumbling`
+  - He shielded his face with his coat and started stumbling toward the basement. He decided to take the stairs
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `319` activation `4.759` class `word` token ` himself`
+  - shoved his way through a spinning entryway and found himself in a hotel. CRASH The glass all around
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `290` activation `4.712` class `word` token ` cover`
+  - Jeremy quickly pulled himself up and started to run for cover, beams rained down from the sky and destroyed
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `253` activation `4.702` class `word` token ` he`
+  - . A circular shape grew larger and larger. As he looked up, he couldn't believe his eyes.
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `311` activation `4.662` class `word` token ` way`
+  - roads and cars all around him. Jeremy shoved his way through a spinning entryway and found himself in a
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `231` activation `4.653` class `word` token ` sky`
+  - he laid on the ground and looked up at the sky. He noticed something in the sky coming down at
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `411` activation `4.631` class `word` token ` went`
+  - was nobody down there, he was alone. He went into a side room with a sturdy-looking door and
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `248` activation `4.541` class `word` token ` larger`
+  - sky coming down at him. A circular shape grew larger and larger. As he looked up, he couldn
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `369` activation `4.541` class `word` token `aped`
+  - to take the stairs over the elevator. He leaped from one stair platform to another, using the handles
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `247` activation `4.536` class `word` token ` grew`
+  - the sky coming down at him. A circular shape grew larger and larger. As he looked up, he
+- `L24:2988` `bc480efdd7ef0084b074dd3641bbe3c2b8f6c427bcb05c458a3693fd75088689@turn_01@human` token `222` activation `4.429` class `word` token ` laid`
+  - Jeremy did not even try to get up, he laid on the ground and looked up at the sky.
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `338` activation `7.441` class `word` token ` around`
+  - . He heard something move behind him. He turned around with his rifle in hand and fired. He did
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `371` activation `7.193` class `word` token ` head`
+  - at least scared it off. Wario shook his head. He used to be able to think clearly,
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `337` activation `7.165` class `word` token ` turned`
+  - around. He heard something move behind him. He turned around with his rifle in hand and fired. He
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `344` activation `6.435` class `word` token ` and`
+  - him. He turned around with his rifle in hand and fired. He did not see what it was,
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `343` activation `6.279` class `word` token ` hand`
+  - behind him. He turned around with his rifle in hand and fired. He did not see what it was
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `397` activation `5.906` class `word` token ` around`
+  - had gotten so difficult for him recently. He turned around and fired his rifle again. As long as he
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `339` activation `5.700` class `word` token ` with`
+  - He heard something move behind him. He turned around with his rifle in hand and fired. He did not
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `369` activation `5.650` class `word` token ` shook`
+  - he had at least scared it off. Wario shook his head. He used to be able to think
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `295` activation `5.643` class `word` token ` around`
+  - Wario shuffled around the grassland. He looked around in a daze, taking in some of the
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `300` activation `5.638` class `punctuation` token `,`
+  - grassland. He looked around in a daze, taking in some of the sights around him. He
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `336` activation `5.359` class `word` token ` He`
+  - danger around. He heard something move behind him. He turned around with his rifle in hand and fired.
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `347` activation `5.294` class `word` token ` He`
+  - turned around with his rifle in hand and fired. He did not see what it was, but he knew
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `299` activation `5.275` class `word` token `aze`
+  - the grassland. He looked around in a daze, taking in some of the sights around him.
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `334` activation `5.134` class `word` token ` him`
+  - there was danger around. He heard something move behind him. He turned around with his rifle in hand and
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `396` activation `5.070` class `word` token ` turned`
+  - that had gotten so difficult for him recently. He turned around and fired his rifle again. As long as
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `345` activation `5.052` class `word` token ` fired`
+  - . He turned around with his rifle in hand and fired. He did not see what it was, but
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `398` activation `4.752` class `word` token ` and`
+  - gotten so difficult for him recently. He turned around and fired his rifle again. As long as he had
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `373` activation `4.648` class `word` token ` He`
+  - scared it off. Wario shook his head. He used to be able to think clearly, but for
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `341` activation `4.390` class `word` token ` rifle`
+  - something move behind him. He turned around with his rifle in hand and fired. He did not see what
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `332` activation `4.135` class `word` token ` move`
+  - certain that there was danger around. He heard something move behind him. He turned around with his rifle in
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `342` activation `4.133` class `word` token ` in`
+  - move behind him. He turned around with his rifle in hand and fired. He did not see what it
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `335` activation `3.982` class `sentence_boundary` token `.`
+  - was danger around. He heard something move behind him. He turned around with his rifle in hand and fired
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `346` activation `3.957` class `sentence_boundary` token `.`
+  - He turned around with his rifle in hand and fired. He did not see what it was, but he
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `401` activation `3.943` class `word` token ` rifle`
+  - for him recently. He turned around and fired his rifle again. As long as he had his weapon,
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `329` activation `3.904` class `word` token ` He`
+  - but he was certain that there was danger around. He heard something move behind him. He turned around with
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `399` activation `3.860` class `word` token ` fired`
+  - so difficult for him recently. He turned around and fired his rifle again. As long as he had his
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `294` activation `3.855` class `word` token ` looked`
+  - Wario shuffled around the grassland. He looked around in a daze, taking in some of
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `368` activation `3.805` class `word` token `ario`
+  - that he had at least scared it off. Wario shook his head. He used to be able to
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `330` activation `3.797` class `word` token ` heard`
+  - he was certain that there was danger around. He heard something move behind him. He turned around with his
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `402` activation `3.746` class `word` token ` again`
+  - him recently. He turned around and fired his rifle again. As long as he had his weapon, nobody
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `331` activation `3.659` class `word` token ` something`
+  - was certain that there was danger around. He heard something move behind him. He turned around with his rifle
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `348` activation `3.644` class `expanded_negation_word` token ` did`
+  - around with his rifle in hand and fired. He did not see what it was, but he knew that
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `354` activation `3.522` class `punctuation` token `,`
+  - and fired. He did not see what it was, but he knew that he had at least scared it
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `448` activation `3.508` class `word` token ` around`
+  - one of Mario's greatest rivals, continued to wander around the countryside with no goal in sight. He did
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `447` activation `3.500` class `word` token ` wander`
+  - been one of Mario's greatest rivals, continued to wander around the countryside with no goal in sight. He
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `355` activation `3.484` class `word` token ` but`
+  - fired. He did not see what it was, but he knew that he had at least scared it off
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `296` activation `3.229` class `word` token ` in`
+  - ario shuffled around the grassland. He looked around in a daze, taking in some of the sights
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `356` activation `3.220` class `word` token ` he`
+  - . He did not see what it was, but he knew that he had at least scared it off.
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `310` activation `3.212` class `word` token ` He`
+  - , taking in some of the sights around him. He could barely tell where he was anymore, but he
+- `L24:2988` `fdf01a5f1bc1195881b35ca7401a25b0374cc40964ad13803aac27f38bacebc9@turn_01@human` token `318` activation `3.161` class `punctuation` token `,`
+  - him. He could barely tell where he was anymore, but he was certain that there was danger around.
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `454` activation `8.696` class `word` token ` yelled`
+  - was just in the 1700s!" Mary yelled. "You disappeared! We didn't know what
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `398` activation `7.709` class `punctuation` token `,`
+  - looked at the tea, then looked at the man, then looked back at the tea before grabbing it and
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `471` activation `7.628` class `word` token ` exclaimed`
+  - didn't know what happened to you!" her friends exclaimed. "I guess when I drink this tea,
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `470` activation `7.490` class `word` token ` friends`
+  - We didn't know what happened to you!" her friends exclaimed. "I guess when I drink this tea
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `274` activation `7.220` class `word` token ` glass`
+  - freshly brewed glass of sweet tea. She grabbed the glass, took a swig, and POOF,
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `392` activation `7.174` class `punctuation` token `,`
+  - complimentary glass of tea?" Mary looked at the tea, then looked at the man, then looked back at
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `275` activation `7.136` class `punctuation` token `,`
+  - brewed glass of sweet tea. She grabbed the glass, took a swig, and POOF, she
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `387` activation `7.100` class `word` token ` Mary`
+  - ! Would you like a complimentary glass of tea?" Mary looked at the tea, then looked at the man
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `388` activation `7.060` class `word` token ` looked`
+  - Would you like a complimentary glass of tea?" Mary looked at the tea, then looked at the man,
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `407` activation `7.039` class `word` token ` it`
+  - man, then looked back at the tea before grabbing it and taking a huge gulp. As she swallowed the
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `368` activation `6.937` class `word` token ` shouted`
+  - 's 1791!" The man running the shop shouted, "Well, yes, little lady! Would
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `405` activation `6.936` class `word` token ` before`
+  - at the man, then looked back at the tea before grabbing it and taking a huge gulp. As she
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `367` activation `6.681` class `word` token ` shop`
+  - It's 1791!" The man running the shop shouted, "Well, yes, little lady!
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `408` activation `6.654` class `word` token ` and`
+  - , then looked back at the tea before grabbing it and taking a huge gulp. As she swallowed the drink
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `393` activation `6.375` class `style_function_word` token ` then`
+  - glass of tea?" Mary looked at the tea, then looked at the man, then looked back at the
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `453` activation `6.133` class `word` token ` Mary`
+  - I was just in the 1700s!" Mary yelled. "You disappeared! We didn't know
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `334` activation `5.971` class `word` token ` Mary`
+  - Is that Thomas Jefferson? What year is this?" Mary rushed to a nearby shop, grabbed the daily newspaper
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `399` activation `5.925` class `style_function_word` token ` then`
+  - at the tea, then looked at the man, then looked back at the tea before grabbing it and taking
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `404` activation `5.925` class `word` token ` tea`
+  - looked at the man, then looked back at the tea before grabbing it and taking a huge gulp. As
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `416` activation `5.840` class `word` token ` swallowed`
+  - grabbing it and taking a huge gulp. As she swallowed the drink, once again, POOF. She
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `335` activation `5.821` class `word` token ` rushed`
+  - that Thomas Jefferson? What year is this?" Mary rushed to a nearby shop, grabbed the daily newspaper,
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `306` activation `5.793` class `word` token ` and`
+  - new place. She took a moment to collect herself and observe her surroundings. Mary was surprised, "Wait
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `394` activation `5.765` class `word` token ` looked`
+  - of tea?" Mary looked at the tea, then looked at the man, then looked back at the tea
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `305` activation `5.746` class `word` token ` herself`
+  - strange new place. She took a moment to collect herself and observe her surroundings. Mary was surprised, "
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `418` activation `5.682` class `word` token ` drink`
+  - and taking a huge gulp. As she swallowed the drink, once again, POOF. She was back
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `281` activation `5.634` class `word` token ` and`
+  - She grabbed the glass, took a swig, and POOF, she had disappeared. Mary suddenly found
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `397` activation `5.596` class `word` token ` man`
+  - Mary looked at the tea, then looked at the man, then looked back at the tea before grabbing it
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `350` activation `5.470` class `word` token `p`
+  - , grabbed the daily newspaper, and took a gasp, "Oh my goodness! It's 179
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `271` activation `5.434` class `word` token ` She`
+  - handed her a freshly brewed glass of sweet tea. She grabbed the glass, took a swig, and
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `415` activation `5.427` class `word` token ` she`
+  - before grabbing it and taking a huge gulp. As she swallowed the drink, once again, POOF.
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `340` activation `5.385` class `punctuation` token `,`
+  - year is this?" Mary rushed to a nearby shop, grabbed the daily newspaper, and took a gasp
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `346` activation `5.346` class `word` token ` and`
+  - to a nearby shop, grabbed the daily newspaper, and took a gasp, "Oh my goodness!
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `351` activation `5.319` class `punctuation` token `,`
+  - grabbed the daily newspaper, and took a gasp, "Oh my goodness! It's 1791
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `400` activation `5.316` class `word` token ` looked`
+  - the tea, then looked at the man, then looked back at the tea before grabbing it and taking a
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `426` activation `5.164` class `word` token ` She`
+  - swallowed the drink, once again, POOF. She was back in the house with her friends. "
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `302` activation `5.127` class `word` token ` moment`
+  - herself in a strange new place. She took a moment to collect herself and observe her surroundings. Mary was
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `427` activation `5.118` class `expanded_negation_word` token ` was`
+  - the drink, once again, POOF. She was back in the house with her friends. "Gu
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `345` activation `5.089` class `punctuation` token `,`
+  - rushed to a nearby shop, grabbed the daily newspaper, and took a gasp, "Oh my goodness
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `260` activation `5.073` class `word` token ` and`
+  - I'll try some tea!" Her friends were ecstatic and handed her a freshly brewed glass of sweet tea.
+- `L24:2988` `341c9259a649c808c444a1fed072a6b3e07bad0c215c746cb0862f75d801da0a@turn_01@human` token `412` activation `5.033` class `word` token ` gulp`
+  - at the tea before grabbing it and taking a huge gulp. As she swallowed the drink, once again,
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `460` activation `9.369` class `word` token ` said`
+  - had to get down here right away," Marge said to him. "Oh no, did I ruin
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `482` activation `8.295` class `word` token ` replied`
+  - ?" "You didn't ruin anything, honey," Homer replied as he hugged her close, his face once more
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `206` activation `7.904` class `word` token ` down`
+  - while waiting on his ball to return, Homer sat down to polish off his beer. He looked around trying
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `215` activation `7.891` class `word` token ` around`
+  - sat down to polish off his beer. He looked around trying to appreciate the moment but one thing was missing
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `462` activation `7.818` class `word` token ` him`
+  - get down here right away," Marge said to him. "Oh no, did I ruin it?"
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `205` activation `7.622` class `word` token ` sat`
+  - rest while waiting on his ball to return, Homer sat down to polish off his beer. He looked around
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `459` activation `7.288` class `word` token `arge`
+  - I had to get down here right away," Marge said to him. "Oh no, did I
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `145` activation `7.208` class `word` token ` said`
+  - . "Yeah Homer, you're the man!" Earl said to him as well. Homer could feel the
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `134` activation `7.091` class `word` token ` shouted`
+  - go, Homer, you got this!" Lenny shouted. "Yeah Homer, you're the man!" Earl
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `214` activation `6.967` class `word` token ` looked`
+  - Homer sat down to polish off his beer. He looked around trying to appreciate the moment but one thing was
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `481` activation `6.819` class `word` token ` Homer`
+  - it?" "You didn't ruin anything, honey," Homer replied as he hugged her close, his face once
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `429` activation `6.645` class `word` token ` her`
+  - way through them to confront Homer. He ran towards her in kind. "Homer! Homer! Am I
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `266` activation `6.502` class `word` token ` looked`
+  - how late he was running. Rising, Homer looked at his bowling ball and saw reflected on it his
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `421` activation `6.495` class `word` token ` them`
+  - was in shock as Marge pushed her way through them to confront Homer. He ran towards her in kind
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `486` activation `6.362` class `word` token ` her`
+  - ruin anything, honey," Homer replied as he hugged her close, his face once more reflecting from a mirrored
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `204` activation `6.347` class `word` token ` Homer`
+  - quick rest while waiting on his ball to return, Homer sat down to polish off his beer. He looked
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `263` activation `6.246` class `word` token `ising`
+  - as he realized how late he was running. Rising, Homer looked at his bowling ball and saw reflected
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `265` activation `6.151` class `word` token ` Homer`
+  - realized how late he was running. Rising, Homer looked at his bowling ball and saw reflected on it
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `484` activation `6.066` class `word` token ` he`
+  - didn't ruin anything, honey," Homer replied as he hugged her close, his face once more reflecting from
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `147` activation `6.047` class `word` token ` him`
+  - Homer, you're the man!" Earl said to him as well. Homer could feel the support of
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `321` activation `5.986` class `word` token ` more`
+  - approached the bowling lane. Scanning the crowd once more he didn't know what he was looking for but
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `488` activation `5.983` class `punctuation` token `,`
+  - , honey," Homer replied as he hugged her close, his face once more reflecting from a mirrored surface,
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `483` activation `5.964` class `style_function_word` token ` as`
+  - "You didn't ruin anything, honey," Homer replied as he hugged her close, his face once more reflecting
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `271` activation `5.937` class `word` token ` and`
+  - . Rising, Homer looked at his bowling ball and saw reflected on it his face. And it wasn
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `487` activation `5.933` class `word` token ` close`
+  - anything, honey," Homer replied as he hugged her close, his face once more reflecting from a mirrored surface
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `213` activation `5.907` class `word` token ` He`
+  - , Homer sat down to polish off his beer. He looked around trying to appreciate the moment but one thing
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `152` activation `5.681` class `word` token `omer`
+  - man!" Earl said to him as well. Homer could feel the support of all his bowling buddies and
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `319` activation `5.641` class `word` token ` crowd`
+  - , and approached the bowling lane. Scanning the crowd once more he didn't know what he was looking
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `348` activation `5.620` class `word` token ` arm`
+  - shook off his jitters, and cocked his arm, preparing to send the ball once more down the
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `457` activation `5.588` class `punctuation` token `,"`
+  - and said I had to get down here right away," Marge said to him. "Oh no,
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `249` activation `5.534` class `word` token ` guilt`
+  - waiting on him for their anniversary. A pang of guilt hit him then as he realized how late he was
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `300` activation `5.505` class `word` token `ped`
+  - sad face despite the big moment Still, he gulped down his regret, picked up the ball, and
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `342` activation `5.447` class `word` token `itters`
+  - something was missing. Homer shook off his jitters, and cocked his arm, preparing to send
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `463` activation `5.434` class `sentence_boundary` token `.`
+  - down here right away," Marge said to him. "Oh no, did I ruin it?" "You
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `490` activation `5.392` class `word` token ` face`
+  - ," Homer replied as he hugged her close, his face once more reflecting from a mirrored surface, but this
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `251` activation `5.321` class `word` token ` him`
+  - him for their anniversary. A pang of guilt hit him then as he realized how late he was running.
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `427` activation `5.262` class `word` token ` ran`
+  - pushed her way through them to confront Homer. He ran towards her in kind. "Homer! Homer!
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `212` activation `5.262` class `sentence_boundary` token `.`
+  - return, Homer sat down to polish off his beer. He looked around trying to appreciate the moment but one
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `378` activation `5.234` class `word` token ` eye`
+  - 's when he saw it from the corner of his eye, a shock of blue above the crowd. His
+- `L24:2988` `0d0663f3f5821cfb6416df32d95cde10bdb1738cd3012e6c1c4b1d67c4242522@turn_01@human` token `391` activation `5.232` class `punctuation` token `,`
+  - shock of blue above the crowd. His footsteps stumbled, the ball wobbled, then it fell before lim
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `324` activation `7.932` class `word` token ` asked`
+  - ...is everything alright? You doing okay?", Penn asked softly. There was a long silence as Teller
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `323` activation `6.329` class `word` token ` Penn`
+  - buddy...is everything alright? You doing okay?", Penn asked softly. There was a long silence as T
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `325` activation `6.322` class `word` token ` softly`
+  - is everything alright? You doing okay?", Penn asked softly. There was a long silence as Teller,
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `437` activation `6.218` class `word` token ` replied`
+  - in and collected his thoughts. "Well...", Penn replied. "I just thought you weren't capable of
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `344` activation `5.776` class `word` token `ared`
+  - eller, who was famous for not speaking, glared into Penn's eyes. Then, finally, T
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `381` activation `5.674` class `word` token ` out`
+  - 'T TAKE THIS ANYMORE!", he blurted out. "I'm tired of being the silent one
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `380` activation `5.443` class `word` token `ed`
+  - CAN'T TAKE THIS ANYMORE!", he blurted out. "I'm tired of being the silent
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `356` activation `5.329` class `word` token ` erupted`
+  - Penn's eyes. Then, finally, Teller erupted into a fiery yell that sent Penn almost stumbling backward
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `295` activation `5.309` class `word` token ` expression`
+  - show. Teller looked at Penn with a happy expression, but it gradually turned sour into a look of
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `348` activation `5.279` class `word` token ` eyes`
+  - famous for not speaking, glared into Penn's eyes. Then, finally, Teller erupted into a
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `351` activation `5.266` class `punctuation` token `,`
+  - speaking, glared into Penn's eyes. Then, finally, Teller erupted into a fiery yell that
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `296` activation `5.098` class `punctuation` token `,`
+  - . Teller looked at Penn with a happy expression, but it gradually turned sour into a look of uncertainty
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `355` activation `5.096` class `word` token `eller`
+  - into Penn's eyes. Then, finally, Teller erupted into a fiery yell that sent Penn almost stumbling
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `436` activation `5.031` class `word` token ` Penn`
+  - this in and collected his thoughts. "Well...", Penn replied. "I just thought you weren't capable
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `350` activation `5.011` class `style_function_word` token ` Then`
+  - not speaking, glared into Penn's eyes. Then, finally, Teller erupted into a fiery yell
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `352` activation `4.935` class `discourse_marker_word` token ` finally`
+  - , glared into Penn's eyes. Then, finally, Teller erupted into a fiery yell that sent
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `353` activation `4.934` class `punctuation` token `,`
+  - glared into Penn's eyes. Then, finally, Teller erupted into a fiery yell that sent Penn
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `291` activation `4.932` class `word` token ` Penn`
+  - from the night's show. Teller looked at Penn with a happy expression, but it gradually turned sour
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `481` activation `4.753` class `word` token ` smile`
+  - all about these ideas!". Teller slowly started to smile again. He knew that maybe this was all one
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `292` activation `4.652` class `word` token ` with`
+  - the night's show. Teller looked at Penn with a happy expression, but it gradually turned sour into
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `423` activation `4.558` class `word` token ` Penn`
+  - who stays quiet!". There was another long pause while Penn took all this in and collected his thoughts. "
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `334` activation `4.492` class `word` token `eller`
+  - asked softly. There was a long silence as Teller, who was famous for not speaking, glared
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `335` activation `4.485` class `punctuation` token `,`
+  - softly. There was a long silence as Teller, who was famous for not speaking, glared into
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `297` activation `4.398` class `word` token ` but`
+  - Teller looked at Penn with a happy expression, but it gradually turned sour into a look of uncertainty and
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `289` activation `4.377` class `word` token ` looked`
+  - stage props from the night's show. Teller looked at Penn with a happy expression, but it gradually
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `331` activation `4.329` class `word` token ` silence`
+  - okay?", Penn asked softly. There was a long silence as Teller, who was famous for not speaking
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `306` activation `4.220` class `word` token ` uncertainty`
+  - , but it gradually turned sour into a look of uncertainty and discomfort. "Hey, buddy...is everything
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `301` activation `4.198` class `word` token ` sour`
+  - Penn with a happy expression, but it gradually turned sour into a look of uncertainty and discomfort. "Hey
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `360` activation `4.177` class `word` token ` yell`
+  - Then, finally, Teller erupted into a fiery yell that sent Penn almost stumbling backward. "I CAN
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `300` activation `4.119` class `word` token ` turned`
+  - at Penn with a happy expression, but it gradually turned sour into a look of uncertainty and discomfort. "
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `377` activation `4.086` class `word` token ` he`
+  - . "I CAN'T TAKE THIS ANYMORE!", he blurted out. "I'm tired of
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `302` activation `4.058` class `word` token ` into`
+  - with a happy expression, but it gradually turned sour into a look of uncertainty and discomfort. "Hey,
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `421` activation `3.964` class `word` token ` pause`
+  - an assistant who stays quiet!". There was another long pause while Penn took all this in and collected his thoughts
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `427` activation `3.949` class `word` token ` in`
+  - There was another long pause while Penn took all this in and collected his thoughts. "Well...", Penn replied
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `477` activation `3.900` class `word` token `eller`
+  - 'd love to hear all about these ideas!". Teller slowly started to smile again. He knew that maybe
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `478` activation `3.887` class `word` token ` slowly`
+  - love to hear all about these ideas!". Teller slowly started to smile again. He knew that maybe this
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `308` activation `3.879` class `word` token ` discomfort`
+  - it gradually turned sour into a look of uncertainty and discomfort. "Hey, buddy...is everything alright?
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `293` activation `3.858` class `word` token ` a`
+  - night's show. Teller looked at Penn with a happy expression, but it gradually turned sour into a
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `482` activation `3.738` class `word` token ` again`
+  - about these ideas!". Teller slowly started to smile again. He knew that maybe this was all one big
+- `L24:2988` `d5ac36534821bb1bdb517a6515445005febe23a14ec28382b315dcf27b071cf5@turn_01@human` token `303` activation `3.719` class `word` token ` a`
+  - a happy expression, but it gradually turned sour into a look of uncertainty and discomfort. "Hey, buddy
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `168` activation `7.250` class `word` token ` say`
+  - outside. "Table for two, please", I say and watch his reaction seeing me without company. He
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `330` activation `6.444` class `word` token ` says`
+  - entrance of the restaurant. "Nice place", he says. "I really like it. I haven't
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `305` activation `5.684` class `word` token ` down`
+  - takes his white headphones out of his ears and sits down across from me. I'm facing the street and
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `347` activation `5.487` class `word` token ` back`
+  - . I haven't been before", I chirp back. I never know how I'm supposed to act
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `346` activation `5.357` class `word` token `p`
+  - it. I haven't been before", I chirp back. I never know how I'm supposed to
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `167` activation `5.319` class `word` token ` I`
+  - standing outside. "Table for two, please", I say and watch his reaction seeing me without company.
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `304` activation `5.170` class `word` token ` sits`
+  - He takes his white headphones out of his ears and sits down across from me. I'm facing the street
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `170` activation `5.021` class `word` token ` watch`
+  - "Table for two, please", I say and watch his reaction seeing me without company. He leads me
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `172` activation `4.992` class `word` token ` reaction`
+  - for two, please", I say and watch his reaction seeing me without company. He leads me to a
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `302` activation `4.961` class `word` token ` ears`
+  - polo). He takes his white headphones out of his ears and sits down across from me. I'm facing
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `169` activation `4.874` class `word` token ` and`
+  - . "Table for two, please", I say and watch his reaction seeing me without company. He leads
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `329` activation `4.732` class `word` token ` he`
+  - the entrance of the restaurant. "Nice place", he says. "I really like it. I haven
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `308` activation `4.633` class `word` token ` me`
+  - headphones out of his ears and sits down across from me. I'm facing the street and he's facing
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `180` activation `4.612` class `word` token ` me`
+  - watch his reaction seeing me without company. He leads me to a pretty table that sits in the dusk light
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `299` activation `4.601` class `word` token ` out`
+  - in his purple polo). He takes his white headphones out of his ears and sits down across from me.
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `303` activation `4.566` class `word` token ` and`
+  - ). He takes his white headphones out of his ears and sits down across from me. I'm facing the
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `344` activation `4.511` class `word` token ` I`
+  - really like it. I haven't been before", I chirp back. I never know how I'm
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `178` activation `4.076` class `word` token ` He`
+  - say and watch his reaction seeing me without company. He leads me to a pretty table that sits in the
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `166` activation `4.001` class `punctuation` token `",`
+  - host standing outside. "Table for two, please", I say and watch his reaction seeing me without company
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `328` activation `3.682` class `punctuation` token `",`
+  - facing the entrance of the restaurant. "Nice place", he says. "I really like it. I
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `343` activation `3.673` class `punctuation` token `",`
+  - I really like it. I haven't been before", I chirp back. I never know how I
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `171` activation `3.635` class `word` token ` his`
+  - Table for two, please", I say and watch his reaction seeing me without company. He leads me to
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `179` activation `3.514` class `word` token ` leads`
+  - and watch his reaction seeing me without company. He leads me to a pretty table that sits in the dusk
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `315` activation `3.511` class `word` token ` and`
+  - down across from me. I'm facing the street and he's facing the entrance of the restaurant. "
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `267` activation `3.453` class `word` token ` face`
+  - , biceps glistening and a smile on his face, I feel grateful and romantic (many years later
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `306` activation `3.382` class `word` token ` across`
+  - his white headphones out of his ears and sits down across from me. I'm facing the street and he
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `217` activation `3.317` class `word` token ` burst`
+  - but also beautiful in a subtle way. Our hearts burst and pump and bleed to keep alert with this kind
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `190` activation `3.304` class `word` token ` light`
+  - me to a pretty table that sits in the dusk light overlooking Washington Street. We're in Boston and it
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `251` activation `3.302` class `word` token ` corner`
+  - keep living. So when I see Pedro round the corner in his purple polo shirt, biceps glistening
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `310` activation `3.251` class `word` token ` I`
+  - of his ears and sits down across from me. I'm facing the street and he's facing the entrance
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `264` activation `3.206` class `word` token ` smile`
+  - purple polo shirt, biceps glistening and a smile on his face, I feel grateful and romantic (
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `152` activation `3.190` class `word` token ` way`
+  - look around at the empty tables outside and make my way over to the host standing outside. "Table for
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `176` activation `3.158` class `word` token ` company`
+  - ", I say and watch his reaction seeing me without company. He leads me to a pretty table that sits
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `159` activation `3.128` class `sentence_boundary` token `.`
+  - and make my way over to the host standing outside. "Table for two, please", I say and
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `194` activation `2.991` class `sentence_boundary` token `.`
+  - table that sits in the dusk light overlooking Washington Street. We're in Boston and it's humid and m
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `219` activation `2.939` class `word` token ` pump`
+  - beautiful in a subtle way. Our hearts burst and pump and bleed to keep alert with this kind of weather
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `307` activation `2.927` class `word` token ` from`
+  - white headphones out of his ears and sits down across from me. I'm facing the street and he's
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `153` activation `2.847` class `word` token ` over`
+  - around at the empty tables outside and make my way over to the host standing outside. "Table for two
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `261` activation `2.830` class `word` token `listening`
+  - corner in his purple polo shirt, biceps glistening and a smile on his face, I feel grateful
+- `L24:2988` `9b45f1dd5f754918b4d045f434799cb3eb35d0d547b7295fc429fcd616c6f572@turn_01@human` token `184` activation `2.821` class `word` token ` table`
+  - me without company. He leads me to a pretty table that sits in the dusk light overlooking Washington Street.
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `357` activation `7.697` class `word` token ` up`
+  - , who had fallen over in the boat, stood up and looked around to see if he could see anyone
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `356` activation `7.120` class `word` token ` stood`
+  - Tom, who had fallen over in the boat, stood up and looked around to see if he could see
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `360` activation `7.087` class `word` token ` around`
+  - fallen over in the boat, stood up and looked around to see if he could see anyone or anything.
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `428` activation `6.586` class `word` token ` thought`
+  - in the boat. "What to do?" Tom thought. He turned the boat on and began driving,
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `417` activation `6.534` class `word` token ` down`
+  - no avail. Tom panicked for a moment and lay down in the boat. "What to do?" Tom
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `359` activation `6.488` class `word` token ` looked`
+  - had fallen over in the boat, stood up and looked around to see if he could see anyone or anything
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `420` activation `5.706` class `word` token ` boat`
+  - Tom panicked for a moment and lay down in the boat. "What to do?" Tom thought. He
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `358` activation `5.630` class `word` token ` and`
+  - who had fallen over in the boat, stood up and looked around to see if he could see anyone or
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `411` activation `5.429` class `word` token ` panicked`
+  - as loud as he could to no avail. Tom panicked for a moment and lay down in the boat.
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `427` activation `5.188` class `word` token ` Tom`
+  - down in the boat. "What to do?" Tom thought. He turned the boat on and began driving
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `437` activation `5.155` class `word` token ` driving`
+  - Tom thought. He turned the boat on and began driving, hoping that he would run into shore before dark
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `361` activation `5.091` class `word` token ` to`
+  - over in the boat, stood up and looked around to see if he could see anyone or anything. He
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `414` activation `5.035` class `word` token ` moment`
+  - he could to no avail. Tom panicked for a moment and lay down in the boat. "What to
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `416` activation `5.021` class `word` token ` lay`
+  - to no avail. Tom panicked for a moment and lay down in the boat. "What to do?"
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `476` activation `5.010` class `word` token ` and`
+  - . Tom parked, hopped off the boat, and kissed the ground. He was so happy to be
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `474` activation `4.908` class `word` token ` boat`
+  - to shore. Tom parked, hopped off the boat, and kissed the ground. He was so happy
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `415` activation `4.866` class `word` token ` and`
+  - could to no avail. Tom panicked for a moment and lay down in the boat. "What to do
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `438` activation `4.828` class `punctuation` token `,`
+  - thought. He turned the boat on and began driving, hoping that he would run into shore before dark.
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `400` activation `4.805` class `word` token ` yelled`
+  - it was broken. Tom flashed the boat lights and yelled as loud as he could to no avail. Tom
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `479` activation `4.773` class `word` token ` ground`
+  - , hopped off the boat, and kissed the ground. He was so happy to be alive and on
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `475` activation `4.756` class `punctuation` token `,`
+  - shore. Tom parked, hopped off the boat, and kissed the ground. He was so happy to
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `435` activation `4.693` class `word` token ` and`
+  - do?" Tom thought. He turned the boat on and began driving, hoping that he would run into shore
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `472` activation `4.626` class `word` token ` off`
+  - way back to shore. Tom parked, hopped off the boat, and kissed the ground. He was
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `431` activation `4.584` class `word` token ` turned`
+  - . "What to do?" Tom thought. He turned the boat on and began driving, hoping that he
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `398` activation `4.505` class `word` token ` lights`
+  - , but it was broken. Tom flashed the boat lights and yelled as loud as he could to no avail
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `371` activation `4.431` class `word` token ` He`
+  - to see if he could see anyone or anything. He couldn't. Tom was lost at sea! Tom
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `355` activation `4.419` class `punctuation` token `,`
+  - . Tom, who had fallen over in the boat, stood up and looked around to see if he could
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `283` activation `4.375` class `word` token ` and`
+  - extreme things like bull riding. Tom started the boat and got going. He stopped once he could no longer
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `469` activation `4.358` class `punctuation` token `,`
+  - finally making his way back to shore. Tom parked, hopped off the boat, and kissed the ground
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `288` activation `4.204` class `word` token ` stopped`
+  - . Tom started the boat and got going. He stopped once he could no longer see the shore and threw
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `285` activation `4.204` class `word` token ` going`
+  - like bull riding. Tom started the boat and got going. He stopped once he could no longer see the
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `375` activation `4.171` class `word` token ` Tom`
+  - could see anyone or anything. He couldn't. Tom was lost at sea! Tom tried to look at
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `436` activation `4.165` class `word` token ` began`
+  - ?" Tom thought. He turned the boat on and began driving, hoping that he would run into shore before
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `301` activation `4.093` class `word` token ` line`
+  - could no longer see the shore and threw out his line. Almost immediately, Tom got a bite on his
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `347` activation `4.084` class `punctuation` token `,`
+  - and miles until finally, his line snapped. Tom, who had fallen over in the boat, stood up
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `468` activation `4.076` class `word` token ` parked`
+  - until finally making his way back to shore. Tom parked, hopped off the boat, and kissed the
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `462` activation `4.066` class `word` token ` way`
+  - 10 hours through the night until finally making his way back to shore. Tom parked, hopped off
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `401` activation `4.020` class `style_function_word` token ` as`
+  - was broken. Tom flashed the boat lights and yelled as loud as he could to no avail. Tom panicked
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `354` activation `3.983` class `word` token ` boat`
+  - snapped. Tom, who had fallen over in the boat, stood up and looked around to see if he
+- `L24:2988` `85cef99db2618a947d2029d243821b782fa756f020c097bb7f6bf9fb937c0e5f@turn_01@human` token `471` activation `3.936` class `word` token `opped`
+  - his way back to shore. Tom parked, hopped off the boat, and kissed the ground. He

@@ -1,0 +1,429 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:654` | `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` | `human` | 27 | `85.03` | `5.86` | word:27 |
+| `L19:654` | `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` | `human` | 22 | `47.66` | `5.84` | word:21|style_function_word:1 |
+| `L19:654` | `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` | `glm-5.2` | 4 | `14.20` | `6.29` | word:4 |
+| `L19:654` | `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` | `human` | 12 | `38.34` | `5.78` | word:10|style_function_word:1|punctuation:1 |
+| `L19:654` | `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` | `human` | 7 | `18.91` | `6.07` | word:7 |
+| `L19:654` | `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` | `human` | 17 | `56.21` | `5.70` | word:17 |
+| `L19:654` | `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` | `gpt-5.5` | 9 | `25.73` | `6.05` | word:7|style_function_word:2 |
+| `L19:654` | `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 6 | `22.75` | `6.76` | word:6 |
+| `L19:654` | `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` | `human` | 8 | `24.32` | `5.72` | word:8 |
+| `L19:654` | `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 13 | `47.61` | `6.49` | word:13 |
+| `L19:654` | `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 5 | `20.10` | `5.87` | word:5 |
+| `L24:919` | `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` | `human` | 25 | `97.60` | `7.33` | word:25 |
+| `L24:919` | `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` | `human` | 18 | `50.59` | `6.94` | word:17|style_function_word:1 |
+| `L24:919` | `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` | `glm-5.2` | 7 | `18.29` | `6.93` | word:4|punctuation:3 |
+| `L24:919` | `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` | `human` | 11 | `42.52` | `7.09` | word:10|style_function_word:1 |
+| `L24:919` | `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` | `human` | 6 | `22.19` | `7.43` | word:6 |
+| `L24:919` | `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` | `human` | 13 | `56.12` | `6.85` | word:13 |
+| `L24:919` | `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` | `gpt-5.5` | 8 | `27.72` | `7.04` | word:6|style_function_word:2 |
+| `L24:919` | `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 6 | `25.14` | `7.69` | word:6 |
+| `L24:919` | `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` | `human` | 7 | `29.26` | `6.99` | word:7 |
+| `L24:919` | `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 13 | `50.20` | `7.05` | word:13 |
+| `L24:919` | `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 6 | `23.32` | `6.96` | word:6 |
+
+## Top Tokens
+
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `394` activation `5.857` class `word` token ` bacteria`
+  - embalming process. It kills germs, bacteria, and microbes. Myrrh oil has been
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `160` activation `5.501` class `word` token `Bot`
+  - Botanical remedies can help you look and feel like your
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `579` activation `4.754` class `word` token ` basil`
+  - It can lower cholesterol and improve brain function. Holy basil: This plant has been used in Indian medicine for
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `231` activation `4.742` class `word` token ` brief`
+  - plants that are used in holistic medicine, with a brief description of each. Arnica: An herb that
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `161` activation `4.639` class `word` token `anical`
+  - Botanical remedies can help you look and feel like your best
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `361` activation `4.536` class `word` token ` bright`
+  - ’s an anti-inflammatory that can heal oxidative damage, brighten the skin, and decrease brain fog. My
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `460` activation `4.167` class `word` token ` blood`
+  - heart disease and reduce bad cholesterol. It can lower blood sugar and aid with neurodegenerative diseases.
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `368` activation `4.101` class `word` token ` brain`
+  - oxidative damage, brighten the skin, and decrease brain fog. Myrrh: This compound was used
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `575` activation `4.005` class `word` token ` brain`
+  - and menstrual pains. It can lower cholesterol and improve brain function. Holy basil: This plant has been used
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `597` activation `3.852` class `word` token ` bron`
+  - Indian medicine for centuries. Use its fresh flowers for bronchitis, and the leaves, and seeds,
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `634` activation `3.817` class `word` token ` bites`
+  - and vomiting. The essential oil is used for insect bites and eczema.
+- `L19:654` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `302` activation `3.749` class `word` token ` bleeding`
+  - and other conditions. Arnica is also used for bleeding, bruising, swelling after surgery, and other
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `519` activation `5.835` class `word` token ` battle`
+  - . HIYA!" Snuggles let loose a battle cry as she lept into a flying elbow, landing
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `498` activation `3.303` class `word` token ` body`
+  - irmed, trying to flip its awkward unadjusted spider body over. "I'm one hungry, hungry hamster
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `195` activation `3.055` class `word` token ` broken`
+  - uggles the Hamster. Snuggles had broken free from her cage and journeyed to the hole
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `370` activation `3.036` class `word` token ` beasts`
+  - wiggled her hind and lept forward. The beasts grappled each other as Snuggles stayed
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `174` activation `3.007` class `word` token `bc`
+  - crackled in the sky above as Ghklutybc The All-Devouring squared off against Sn
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `317` activation `2.882` class `word` token `bc`
+  - !" Snuggles tried to pronounce Gklutybc, but Snuggles didn't know how to
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `454` activation `2.859` class `style_function_word` token ` because`
+  - onto its back. "You'll never beat me because I already forgot the question you just asked!" "
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `452` activation `2.804` class `word` token ` beat`
+  - it soaring onto its back. "You'll never beat me because I already forgot the question you just asked
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `243` activation `2.448` class `word` token `bc`
+  - to cephalothorax with Ghklutybc. "Where's Quinn?!" Snuggles
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `270` activation `2.409` class `word` token `bc`
+  - ish mortal furball, I am Ghklutybc The All-Devouring!" The spider cracked
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `216` activation `2.378` class `word` token ` but`
+  - in the wall where Quinn the rat once lived, but instead of finding Quinn's mischievous chuckle
+- `L19:654` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `389` activation `1.960` class `word` token `bc`
+  - les stayed just out of reach of Ghklutybc's chelicerae. The angry spider spat
+- `L19:654` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `484` activation `6.294` class `word` token ` binary`
+  - This TypeScript function uses a binary search to find the first index where a partition callback
+- `L19:654` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `526` activation `3.404` class `word` token ` bound`
+  - efficiently narrows the search range by shifting the lower bound when true is found, ensuring it locates the
+- `L19:654` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `574` activation `2.715` class `word` token ` boolean`
+  - [], partitionFn: (item: T) => boolean): number { let low = 0, high
+- `L19:654` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `485` activation `1.783` class `word` token ` search`
+  - This TypeScript function uses a binary search to find the first index where a partition callback returns
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `589` activation `5.776` class `word` token ` binary`
+  - encoding and decoding capabilities that can handle ASCII characters and binary, allowing similar functionality to the uu library without the
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `535` activation `5.675` class `word` token ` binary`
+  - if you are on a Windows device to open in binary format to append, read, or write, respectively
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `572` activation `5.291` class `word` token ` base`
+  - .txt���, ���rb���). Use the base64 library. It has similar encoding and decoding capabilities
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `431` activation `4.594` class `word` token ` built`
+  - format. The uuencode format that the library was built to handle was made for emails in the 198
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `636` activation `4.202` class `word` token ` base`
+  - you���d like me to teach you about the base64 library!
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `573` activation `3.355` class `word` token `64`
+  - ���, ���rb���). Use the base64 library. It has similar encoding and decoding capabilities that
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `416` activation `2.482` class `style_function_word` token ` because`
+  - 3.11 and removed in 3.13 because it used an outdated format. The uuencode format
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `637` activation `2.004` class `word` token `64`
+  - ���d like me to teach you about the base64 library!
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `520` activation `1.423` class `word` token ` rb`
+  - place: Open the file directly, using ab, rb, or wb mode if you are on a Windows
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `567` activation `1.368` class `word` token `rb`
+  - = open(���file.txt���, ���rb���). Use the base64 library. It has
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `523` activation `1.214` class `word` token ` wb`
+  - the file directly, using ab, rb, or wb mode if you are on a Windows device to open
+- `L19:654` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `519` activation `0.959` class `punctuation` token `,`
+  - its place: Open the file directly, using ab, rb, or wb mode if you are on a
+- `L19:654` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `490` activation `6.068` class `word` token ` broadcast`
+  - rests on those who write it. With innovations in broadcast television, streaming, and cinema, Americans have access
+- `L19:654` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `507` activation `3.068` class `word` token ` belong`
+  - , Americans have access to content created by writers who belong to WGA more now than ever before. While
+- `L19:654` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `515` activation `2.660` class `word` token ` before`
+  - writers who belong to WGA more now than ever before. While the possibility of another strike in times of
+- `L19:654` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `618` activation `2.534` class `word` token ` backbone`
+  - 's black and white the reasons why writers are a backbone of society, and the moral compass of one's
+- `L19:654` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `609` activation `2.238` class `word` token ` black`
+  - is certainly a newer and larger challenge. It's black and white the reasons why writers are a backbone of
+- `L19:654` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `610` activation `1.300` class `word` token ` and`
+  - certainly a newer and larger challenge. It's black and white the reasons why writers are a backbone of society
+- `L19:654` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `611` activation `1.038` class `word` token ` white`
+  - a newer and larger challenge. It's black and white the reasons why writers are a backbone of society,
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `634` activation `5.699` class `word` token ` battle`
+  - two groups of infantry were very close now; the battle was about to begin.
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `491` activation `5.614` class `word` token ` batt`
+  - . Across the field, the Carthaginian battalions filed into position. For some time,
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `638` activation `4.395` class `word` token ` begin`
+  - were very close now; the battle was about to begin.
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `398` activation `4.221` class `word` token `ode`
+  - massive. Surely such an overwhelming numerical advantage would bode well for Titus and his countrymen. The
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `425` activation `4.200` class `word` token ` battle`
+  - ouse the Romans and get them ready for a pitched battle. Titus donned his armor, left his
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `357` activation `4.154` class `word` token ` battle`
+  - Spain and Gaul. He had not yet lost a battle in his war with Rome. But Titus had
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `397` activation `3.848` class `word` token ` b`
+  - was massive. Surely such an overwhelming numerical advantage would bode well for Titus and his countrymen.
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `538` activation `3.781` class `word` token ` brow`
+  - with it. Sweat dripped down Titus's brow. Finally, the order came for the Romans to
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `289` activation `3.341` class `word` token ` bl`
+  - Titus awoke to the sound of trumpets blaring throughout the camp. Titus was a soldier
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `493` activation `3.119` class `word` token `ions`
+  - the field, the Carthaginian battalions filed into position. For some time, the two
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `522` activation `2.883` class `word` token ` bringing`
+  - plains. The sun was rising in the sky, bringing a sweltering heat with it. Sweat dri
+- `L19:654` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `290` activation `2.730` class `word` token `aring`
+  - us awoke to the sound of trumpets blaring throughout the camp. Titus was a soldier in
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `564` activation `6.055` class `word` token ` bot`
+  - Tomatoes are both fruits and vegetables: botanically, they are fruits because they develop from
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `565` activation `3.610` class `word` token `an`
+  - Tomatoes are both fruits and vegetables: botanically, they are fruits because they develop from a
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `617` activation `3.282` class `word` token ` belong`
+  - sweet, are usually served in savory dishes, and belong with other “fruit-vegetables” such as
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `634` activation `3.138` class `word` token ` beans`
+  - ables” such as peppers, eggplants, green beans, and pumpkins.
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `566` activation `2.227` class `word` token `ically`
+  - Tomatoes are both fruits and vegetables: botanically, they are fruits because they develop from a flower
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `602` activation `2.150` class `style_function_word` token ` because`
+  - ally and culinarily they are treated as vegetables because they are not especially sweet, are usually served in
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `571` activation `2.096` class `style_function_word` token ` because`
+  - and vegetables: botanically, they are fruits because they develop from a flower’s ovary and contain
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `559` activation `1.823` class `word` token ` both`
+  - Tomatoes are both fruits and vegetables: botanically, they are
+- `L19:654` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `590` activation `1.347` class `word` token ` but`
+  - and contain seeds, like many other plant foods, but nutritionally and culinarily they are treated as
+- `L19:654` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `581` activation `6.760` class `word` token ` broadcast`
+  - The broadcast static finally died, leaving a silence that bruised
+- `L19:654` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `603` activation `5.011` class `word` token ` bou`
+  - ears. Leo walked to the edge of the empty boulevard, the last cigarette on Earth burning down to
+- `L19:654` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `590` activation `3.436` class `word` token ` bru`
+  - The broadcast static finally died, leaving a silence that bruised his ears. Leo walked to the edge of
+- `L19:654` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `611` activation `3.339` class `word` token ` burning`
+  - the empty boulevard, the last cigarette on Earth burning down to his knuckles. He dropped the ember
+- `L19:654` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `604` activation `2.806` class `word` token `levard`
+  - . Leo walked to the edge of the empty boulevard, the last cigarette on Earth burning down to his
+- `L19:654` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `591` activation `1.401` class `word` token `ised`
+  - broadcast static finally died, leaving a silence that bruised his ears. Leo walked to the edge of the
+- `L19:654` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `322` activation `5.724` class `word` token ` briefing`
+  - An unknown man walked into the briefing room full of Spartans. At 6-foot
+- `L19:654` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `389` activation `4.449` class `word` token ` briefing`
+  - looks on their faces. General Marks came into the briefing and began speaking to the group. "Marines
+- `L19:654` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `391` activation `4.217` class `word` token ` began`
+  - their faces. General Marks came into the briefing and began speaking to the group. "Marines, it
+- `L19:654` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `477` activation `3.682` class `word` token ` body`
+  - Everyone looked around hoping to see Master Chief in his body armor, but they could not spot him. "I
+- `L19:654` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `586` activation `2.289` class `word` token ` before`
+  - "You can call me Master Chief," the man replied before donning a full Spartan suit and revealing himself to
+- `L19:654` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `480` activation `1.845` class `word` token ` but`
+  - hoping to see Master Chief in his body armor, but they could not spot him. "I think we're
+- `L19:654` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `478` activation `1.184` class `word` token ` armor`
+  - looked around hoping to see Master Chief in his body armor, but they could not spot him. "I think
+- `L19:654` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `631` activation `0.934` class `word` token ` back`
+  - they yelled. Master Chief grabbed his weapon and nodded back. "Time to kill some aliens!"
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `538` activation `6.490` class `word` token ` binary`
+  - =lambda m: m m parameter. This transforms the binary search to compare the squares of the numbers ($m
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `484` activation `5.835` class `word` token ` binary`
+  - bisect.bisectright function to perform a binary search. Instead of searching a materialized list,
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `613` activation `5.769` class `word` token ` binary`
+  - is an efficient, $O(\log x)$ binary search approach to finding $\lfloor\sqrt{x
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `474` activation `5.348` class `word` token ` bis`
+  - sqrt{x}\rfloor$). It uses the bisect.bisectright function to perform a binary
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `559` activation `4.837` class `word` token `bis`
+  - ^2$) against the target value x. bisectright finds the first position where $m^
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `477` activation `3.992` class `word` token `is`
+  - rfloor$). It uses the bisect.bisectright function to perform a binary search. Instead
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `475` activation `3.419` class `word` token `ect`
+  - {x}\rfloor$). It uses the bisect.bisectright function to perform a binary search
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `476` activation `3.281` class `word` token `.b`
+  - }\rfloor$). It uses the bisect.bisectright function to perform a binary search.
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `560` activation `2.804` class `word` token `ect`
+  - 2$) against the target value x. bisectright finds the first position where $m^2
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `478` activation `2.690` class `word` token `ect`
+  - loor$). It uses the bisect.bisectright function to perform a binary search. Instead of
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `539` activation `1.420` class `word` token ` search`
+  - m: m m parameter. This transforms the binary search to compare the squares of the numbers ($m^
+- `L19:654` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `485` activation `1.119` class `word` token ` search`
+  - ect.bisectright function to perform a binary search. Instead of searching a materialized list, it
+- `L19:654` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `333` activation `5.866` class `word` token ` Binary`
+  - The table contains three rows indicating metadata (Code, Binary, and Charge) and four columns labeled G834
+- `L19:654` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `311` activation `4.550` class `word` token ` based`
+  - the most efficient approach involves manually structuring the data based on the rows and columns defined in your LaTeX snippet
+- `L19:654` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `453` activation `4.502` class `word` token `Binary`
+  - ', 'G554', 'G279'], 'Binary': [0, 0, 0,
+- `L19:654` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `576` activation `3.509` class `word` token ` bypass`
+  - unique identifiers for each genetic code entry. This approach bypasses complex regex parsing of LaTeX strings, offering a
+- `L19:654` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `616` activation `1.671` class `word` token ` but`
+  - latex2mathml or writing a custom parser, but for this specific instance, direct construction is the most
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `394` activation `7.331` class `word` token ` bacteria`
+  - embalming process. It kills germs, bacteria, and microbes. Myrrh oil has been
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `160` activation `6.097` class `word` token `Bot`
+  - Botanical remedies can help you look and feel like your
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `231` activation `5.901` class `word` token ` brief`
+  - plants that are used in holistic medicine, with a brief description of each. Arnica: An herb that
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `579` activation `5.622` class `word` token ` basil`
+  - It can lower cholesterol and improve brain function. Holy basil: This plant has been used in Indian medicine for
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `161` activation `5.221` class `word` token `anical`
+  - Botanical remedies can help you look and feel like your best
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `460` activation `5.039` class `word` token ` blood`
+  - heart disease and reduce bad cholesterol. It can lower blood sugar and aid with neurodegenerative diseases.
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `361` activation `4.766` class `word` token ` bright`
+  - ’s an anti-inflammatory that can heal oxidative damage, brighten the skin, and decrease brain fog. My
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `575` activation `4.718` class `word` token ` brain`
+  - and menstrual pains. It can lower cholesterol and improve brain function. Holy basil: This plant has been used
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `634` activation `4.689` class `word` token ` bites`
+  - and vomiting. The essential oil is used for insect bites and eczema.
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `302` activation `4.579` class `word` token ` bleeding`
+  - and other conditions. Arnica is also used for bleeding, bruising, swelling after surgery, and other
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `368` activation `4.395` class `word` token ` brain`
+  - oxidative damage, brighten the skin, and decrease brain fog. Myrrh: This compound was used
+- `L24:919` `438b6970d31dc21fe060889e64486f81689cc72a37a1aa319349a118a693db31@turn_01@human` token `597` activation `4.006` class `word` token ` bron`
+  - Indian medicine for centuries. Use its fresh flowers for bronchitis, and the leaves, and seeds,
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `519` activation `6.938` class `word` token ` battle`
+  - . HIYA!" Snuggles let loose a battle cry as she lept into a flying elbow, landing
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `498` activation `4.360` class `word` token ` body`
+  - irmed, trying to flip its awkward unadjusted spider body over. "I'm one hungry, hungry hamster
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `370` activation `3.902` class `word` token ` beasts`
+  - wiggled her hind and lept forward. The beasts grappled each other as Snuggles stayed
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `195` activation `3.736` class `word` token ` broken`
+  - uggles the Hamster. Snuggles had broken free from her cage and journeyed to the hole
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `174` activation `3.604` class `word` token `bc`
+  - crackled in the sky above as Ghklutybc The All-Devouring squared off against Sn
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `452` activation `3.457` class `word` token ` beat`
+  - it soaring onto its back. "You'll never beat me because I already forgot the question you just asked
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `317` activation `3.329` class `word` token `bc`
+  - !" Snuggles tried to pronounce Gklutybc, but Snuggles didn't know how to
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `243` activation `2.898` class `word` token `bc`
+  - to cephalothorax with Ghklutybc. "Where's Quinn?!" Snuggles
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `270` activation `2.696` class `word` token `bc`
+  - ish mortal furball, I am Ghklutybc The All-Devouring!" The spider cracked
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `454` activation `2.600` class `style_function_word` token ` because`
+  - onto its back. "You'll never beat me because I already forgot the question you just asked!" "
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `544` activation `2.224` class `word` token `bc`
+  - 's center and causing the spirit of Gklutybc to evaporate from the material plane. And with
+- `L24:919` `c947b8f8f2bace3a033fde8faeb6070ef959707b0973ae0fd41b97e7b2df3311@turn_01@human` token `389` activation `2.183` class `word` token `bc`
+  - les stayed just out of reach of Ghklutybc's chelicerae. The angry spider spat
+- `L24:919` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `484` activation `6.929` class `word` token ` binary`
+  - This TypeScript function uses a binary search to find the first index where a partition callback
+- `L24:919` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `526` activation `4.021` class `word` token ` bound`
+  - efficiently narrows the search range by shifting the lower bound when true is found, ensuring it locates the
+- `L24:919` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `574` activation `3.087` class `word` token ` boolean`
+  - [], partitionFn: (item: T) => boolean): number { let low = 0, high
+- `L24:919` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `485` activation `2.075` class `word` token ` search`
+  - This TypeScript function uses a binary search to find the first index where a partition callback returns
+- `L24:919` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `592` activation `0.735` class `punctuation` token ` <`
+  - 0, high = arr.length; while (low < high) { const mid = (low + high
+- `L24:919` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `621` activation `0.728` class `punctuation` token ` =`
+  - Fn(arr[mid])) high = mid; else low = mid + 1; } return low < arr
+- `L24:919` `00aacd694a51013dd0585679f51206cb7a41d48421f7ebcb745a254bf3ea4aaa@turn_01@glm-5.2` token `630` activation `0.716` class `punctuation` token ` <`
+  - low = mid + 1; } return low < arr.length ? low : -1; }
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `535` activation `7.094` class `word` token ` binary`
+  - if you are on a Windows device to open in binary format to append, read, or write, respectively
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `589` activation `7.010` class `word` token ` binary`
+  - encoding and decoding capabilities that can handle ASCII characters and binary, allowing similar functionality to the uu library without the
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `572` activation `5.834` class `word` token ` base`
+  - .txt���, ���rb���). Use the base64 library. It has similar encoding and decoding capabilities
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `431` activation `5.158` class `word` token ` built`
+  - format. The uuencode format that the library was built to handle was made for emails in the 198
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `636` activation `4.580` class `word` token ` base`
+  - you���d like me to teach you about the base64 library!
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `573` activation `4.022` class `word` token `64`
+  - ���, ���rb���). Use the base64 library. It has similar encoding and decoding capabilities that
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `416` activation `2.790` class `style_function_word` token ` because`
+  - 3.11 and removed in 3.13 because it used an outdated format. The uuencode format
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `637` activation `2.367` class `word` token `64`
+  - ���d like me to teach you about the base64 library!
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `523` activation `1.381` class `word` token ` wb`
+  - the file directly, using ab, rb, or wb mode if you are on a Windows device to open
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `520` activation `1.207` class `word` token ` rb`
+  - place: Open the file directly, using ab, rb, or wb mode if you are on a Windows
+- `L24:919` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `567` activation `1.073` class `word` token `rb`
+  - = open(���file.txt���, ���rb���). Use the base64 library. It has
+- `L24:919` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `490` activation `7.429` class `word` token ` broadcast`
+  - rests on those who write it. With innovations in broadcast television, streaming, and cinema, Americans have access
+- `L24:919` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `507` activation `4.132` class `word` token ` belong`
+  - , Americans have access to content created by writers who belong to WGA more now than ever before. While
+- `L24:919` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `618` activation `3.445` class `word` token ` backbone`
+  - 's black and white the reasons why writers are a backbone of society, and the moral compass of one's
+- `L24:919` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `515` activation `3.266` class `word` token ` before`
+  - writers who belong to WGA more now than ever before. While the possibility of another strike in times of
+- `L24:919` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `609` activation `2.659` class `word` token ` black`
+  - is certainly a newer and larger challenge. It's black and white the reasons why writers are a backbone of
+- `L24:919` `21d96307542784354781725acfac689570738bbd4701d34d7fef620028a65ab3@turn_01@human` token `611` activation `1.257` class `word` token ` white`
+  - a newer and larger challenge. It's black and white the reasons why writers are a backbone of society,
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `634` activation `6.851` class `word` token ` battle`
+  - two groups of infantry were very close now; the battle was about to begin.
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `491` activation `6.322` class `word` token ` batt`
+  - . Across the field, the Carthaginian battalions filed into position. For some time,
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `638` activation `5.488` class `word` token ` begin`
+  - were very close now; the battle was about to begin.
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `425` activation `5.278` class `word` token ` battle`
+  - ouse the Romans and get them ready for a pitched battle. Titus donned his armor, left his
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `357` activation `5.261` class `word` token ` battle`
+  - Spain and Gaul. He had not yet lost a battle in his war with Rome. But Titus had
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `398` activation `5.043` class `word` token `ode`
+  - massive. Surely such an overwhelming numerical advantage would bode well for Titus and his countrymen. The
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `538` activation `4.625` class `word` token ` brow`
+  - with it. Sweat dripped down Titus's brow. Finally, the order came for the Romans to
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `290` activation `3.476` class `word` token `aring`
+  - us awoke to the sound of trumpets blaring throughout the camp. Titus was a soldier in
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `522` activation `3.088` class `word` token ` bringing`
+  - plains. The sun was rising in the sky, bringing a sweltering heat with it. Sweat dri
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `636` activation `3.065` class `word` token ` about`
+  - of infantry were very close now; the battle was about to begin.
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `493` activation `3.022` class `word` token `ions`
+  - the field, the Carthaginian battalions filed into position. For some time, the two
+- `L24:919` `8a295240ca687c5e328447c7974dc7306a413d01b0e0569a5724abb724954f65@turn_01@human` token `289` activation `2.508` class `word` token ` bl`
+  - Titus awoke to the sound of trumpets blaring throughout the camp. Titus was a soldier
+- `L24:919` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `564` activation `7.044` class `word` token ` bot`
+  - Tomatoes are both fruits and vegetables: botanically, they are fruits because they develop from
+- `L24:919` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `565` activation `4.514` class `word` token `an`
+  - Tomatoes are both fruits and vegetables: botanically, they are fruits because they develop from a
+- `L24:919` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `617` activation `4.212` class `word` token ` belong`
+  - sweet, are usually served in savory dishes, and belong with other “fruit-vegetables” such as
+- `L24:919` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `634` activation `3.842` class `word` token ` beans`
+  - ables” such as peppers, eggplants, green beans, and pumpkins.
+- `L24:919` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `566` activation `2.743` class `word` token `ically`
+  - Tomatoes are both fruits and vegetables: botanically, they are fruits because they develop from a flower
+- `L24:919` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `602` activation `1.953` class `style_function_word` token ` because`
+  - ally and culinarily they are treated as vegetables because they are not especially sweet, are usually served in
+- `L24:919` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `571` activation `1.791` class `style_function_word` token ` because`
+  - and vegetables: botanically, they are fruits because they develop from a flower’s ovary and contain
+- `L24:919` `ee6ee405bc3556224bd0d8962344a36f475ec70ff8830774b609656aef76502a@turn_01@gpt-5.5` token `559` activation `1.623` class `word` token ` both`
+  - Tomatoes are both fruits and vegetables: botanically, they are
+- `L24:919` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `581` activation `7.691` class `word` token ` broadcast`
+  - The broadcast static finally died, leaving a silence that bruised
+- `L24:919` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `603` activation `5.257` class `word` token ` bou`
+  - ears. Leo walked to the edge of the empty boulevard, the last cigarette on Earth burning down to
+- `L24:919` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `611` activation `4.238` class `word` token ` burning`
+  - the empty boulevard, the last cigarette on Earth burning down to his knuckles. He dropped the ember
+- `L24:919` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `604` activation `3.403` class `word` token `levard`
+  - . Leo walked to the edge of the empty boulevard, the last cigarette on Earth burning down to his
+- `L24:919` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `590` activation `3.042` class `word` token ` bru`
+  - The broadcast static finally died, leaving a silence that bruised his ears. Leo walked to the edge of
+- `L24:919` `1b642e48e13106ea7b3f3dfeeae25f26008dddccbcf70bd184fd2f7e1b255d06@turn_01@gemini-3.5-flash` token `591` activation `1.508` class `word` token `ised`
+  - broadcast static finally died, leaving a silence that bruised his ears. Leo walked to the edge of the
+- `L24:919` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `322` activation `6.991` class `word` token ` briefing`
+  - An unknown man walked into the briefing room full of Spartans. At 6-foot
+- `L24:919` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `389` activation `5.852` class `word` token ` briefing`
+  - looks on their faces. General Marks came into the briefing and began speaking to the group. "Marines
+- `L24:919` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `391` activation `5.812` class `word` token ` began`
+  - their faces. General Marks came into the briefing and began speaking to the group. "Marines, it
+- `L24:919` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `477` activation `4.754` class `word` token ` body`
+  - Everyone looked around hoping to see Master Chief in his body armor, but they could not spot him. "I
+- `L24:919` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `586` activation `2.667` class `word` token ` before`
+  - "You can call me Master Chief," the man replied before donning a full Spartan suit and revealing himself to
+- `L24:919` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `478` activation `1.728` class `word` token ` armor`
+  - looked around hoping to see Master Chief in his body armor, but they could not spot him. "I think
+- `L24:919` `9b0e5cb7d76f355ff6fc1f694acaa81dc565b138df2e62bc35c68c6efe09f9da@turn_01@human` token `631` activation `1.460` class `word` token ` back`
+  - they yelled. Master Chief grabbed his weapon and nodded back. "Time to kill some aliens!"
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `538` activation `7.049` class `word` token ` binary`
+  - =lambda m: m m parameter. This transforms the binary search to compare the squares of the numbers ($m
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `613` activation `6.333` class `word` token ` binary`
+  - is an efficient, $O(\log x)$ binary search approach to finding $\lfloor\sqrt{x
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `484` activation `6.176` class `word` token ` binary`
+  - bisect.bisectright function to perform a binary search. Instead of searching a materialized list,
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `474` activation `5.834` class `word` token ` bis`
+  - sqrt{x}\rfloor$). It uses the bisect.bisectright function to perform a binary
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `559` activation `5.710` class `word` token `bis`
+  - ^2$) against the target value x. bisectright finds the first position where $m^
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `477` activation `4.438` class `word` token `is`
+  - rfloor$). It uses the bisect.bisectright function to perform a binary search. Instead
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `475` activation `3.644` class `word` token `ect`
+  - {x}\rfloor$). It uses the bisect.bisectright function to perform a binary search
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `478` activation `3.126` class `word` token `ect`
+  - loor$). It uses the bisect.bisectright function to perform a binary search. Instead of
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `560` activation `2.694` class `word` token `ect`
+  - 2$) against the target value x. bisectright finds the first position where $m^2
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `476` activation `1.726` class `word` token `.b`
+  - }\rfloor$). It uses the bisect.bisectright function to perform a binary search.
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `539` activation `1.404` class `word` token ` search`
+  - m: m m parameter. This transforms the binary search to compare the squares of the numbers ($m^
+- `L24:919` `4de19c1d0d05e32e95ed9f24714bca0fbcbcbec3ddc1247532281549ed9f7063@turn_01@gemini-3.5-flash` token `620` activation `1.137` class `word` token `loor`
+  - log x)$ binary search approach to finding $\lfloor\sqrt{x}\rfloor$ without using the
+- `L24:919` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `333` activation `6.965` class `word` token ` Binary`
+  - The table contains three rows indicating metadata (Code, Binary, and Charge) and four columns labeled G834
+- `L24:919` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `453` activation `5.582` class `word` token `Binary`
+  - ', 'G554', 'G279'], 'Binary': [0, 0, 0,
+- `L24:919` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `311` activation `4.779` class `word` token ` based`
+  - the most efficient approach involves manually structuring the data based on the rows and columns defined in your LaTeX snippet
+- `L24:919` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `576` activation `4.357` class `word` token ` bypass`
+  - unique identifiers for each genetic code entry. This approach bypasses complex regex parsing of LaTeX strings, offering a
+- `L24:919` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `587` activation `0.910` class `word` token ` cleaner`
+  - es complex regex parsing of LaTeX strings, offering a cleaner and more readable solution for small tables. If you
+- `L24:919` `8cc2f7f915f50163e1e1981e2115c231b3257b644126451407b5d53c389723b2@turn_01@qwen3.6-35b` token `557` activation `0.732` class `word` token ` By`
+  - preserved as strings, while numeric values remain integers. By setting the index explicitly, you maintain the unique identifiers

@@ -1,0 +1,611 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2346` | `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` | `human` | 228 | `1245.98` | `8.56` | word:188|sentence_boundary:13|style_function_word:12|expanded_negation_word:10|line_break:2|punctuation:1|discourse_marker_word:1|contraction_piece:1 |
+| `L19:2346` | `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` | `glm-5.2` | 46 | `137.29` | `8.00` | word:37|punctuation:4|sentence_boundary:3|discourse_marker_word:1|style_function_word:1 |
+| `L19:2346` | `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` | `human` | 38 | `251.62` | `7.94` | word:30|punctuation:4|sentence_boundary:2|style_function_word:2 |
+| `L19:2346` | `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` | `human` | 416 | `1607.10` | `7.93` | word:337|sentence_boundary:49|style_function_word:13|punctuation:9|expanded_negation_word:4|line_break:4 |
+| `L19:2346` | `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` | `human` | 372 | `1750.92` | `7.60` | word:286|punctuation:24|line_break:19|expanded_negation_word:18|style_function_word:16|discourse_marker_word:5|contraction_piece:2|sentence_boundary:1|whitespace:1 |
+| `L19:2346` | `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` | `gpt-5.5` | 166 | `434.16` | `7.99` | word:103|punctuation:27|line_break:21|whitespace:6|style_function_word:5|discourse_marker_word:3|expanded_negation_word:1 |
+| `L19:2346` | `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` | `human` | 460 | `2410.12` | `7.97` | word:371|sentence_boundary:28|style_function_word:23|punctuation:20|expanded_negation_word:10|contraction_piece:5|discourse_marker_word:2|line_break:1 |
+| `L19:2346` | `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` | `human` | 99 | `429.08` | `7.85` | word:65|punctuation:19|sentence_boundary:6|style_function_word:4|expanded_negation_word:3|discourse_marker_word:2 |
+| `L19:2346` | `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` | `human` | 215 | `600.84` | `7.76` | word:173|expanded_negation_word:14|style_function_word:12|punctuation:6|sentence_boundary:5|line_break:4|discourse_marker_word:1 |
+| `L19:2346` | `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` | `human` | 306 | `769.13` | `8.22` | word:232|punctuation:20|style_function_word:19|sentence_boundary:13|expanded_negation_word:7|discourse_marker_word:6|contraction_piece:5|line_break:4 |
+| `L19:2346` | `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 21 | `109.87` | `8.00` | word:17|sentence_boundary:2|punctuation:1|style_function_word:1 |
+| `L19:2346` | `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` | `human` | 202 | `605.83` | `7.69` | word:158|expanded_negation_word:14|sentence_boundary:13|punctuation:11|style_function_word:3|line_break:2|discourse_marker_word:1 |
+| `L24:3889` | `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` | `human` | 228 | `1828.57` | `13.55` | word:188|sentence_boundary:13|style_function_word:12|expanded_negation_word:10|line_break:2|punctuation:1|discourse_marker_word:1|contraction_piece:1 |
+| `L24:3889` | `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` | `glm-5.2` | 56 | `314.24` | `13.25` | word:43|punctuation:6|sentence_boundary:4|style_function_word:2|discourse_marker_word:1 |
+| `L24:3889` | `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` | `human` | 38 | `458.48` | `13.82` | word:30|punctuation:4|sentence_boundary:2|style_function_word:2 |
+| `L24:3889` | `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` | `human` | 416 | `2812.01` | `13.27` | word:337|sentence_boundary:49|style_function_word:13|punctuation:9|expanded_negation_word:4|line_break:4 |
+| `L24:3889` | `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` | `human` | 372 | `2778.11` | `13.38` | word:286|punctuation:24|line_break:19|expanded_negation_word:18|style_function_word:16|discourse_marker_word:5|contraction_piece:2|sentence_boundary:1|whitespace:1 |
+| `L24:3889` | `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` | `gpt-5.5` | 167 | `679.49` | `13.37` | word:102|punctuation:29|line_break:20|whitespace:6|style_function_word:5|discourse_marker_word:3|sentence_boundary:1|expanded_negation_word:1 |
+| `L24:3889` | `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` | `human` | 460 | `3777.88` | `13.25` | word:371|sentence_boundary:28|style_function_word:23|punctuation:20|expanded_negation_word:10|contraction_piece:5|discourse_marker_word:2|line_break:1 |
+| `L24:3889` | `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` | `human` | 100 | `754.29` | `13.66` | word:65|punctuation:20|sentence_boundary:6|style_function_word:4|expanded_negation_word:3|discourse_marker_word:2 |
+| `L24:3889` | `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` | `human` | 231 | `1323.15` | `13.43` | word:183|style_function_word:15|expanded_negation_word:14|punctuation:7|sentence_boundary:6|line_break:5|discourse_marker_word:1 |
+| `L24:3889` | `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` | `human` | 282 | `1242.76` | `13.72` | word:210|punctuation:18|sentence_boundary:17|style_function_word:16|discourse_marker_word:6|contraction_piece:6|expanded_negation_word:5|line_break:4 |
+| `L24:3889` | `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 21 | `207.23` | `13.23` | word:17|sentence_boundary:2|punctuation:1|style_function_word:1 |
+| `L24:3889` | `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` | `human` | 227 | `1167.22` | `13.21` | word:174|sentence_boundary:16|expanded_negation_word:16|punctuation:13|line_break:4|style_function_word:3|discourse_marker_word:1 |
+
+## Top Tokens
+
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `418` activation `8.563` class `word` token ` Romans`
+  - I like the Romans because the Romans were very good at building things. They built some
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `417` activation `8.314` class `word` token ` the`
+  - I like the Romans because the Romans were very good at building things. They built
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `419` activation `8.286` class `expanded_negation_word` token ` were`
+  - I like the Romans because the Romans were very good at building things. They built some of
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `421` activation `8.101` class `word` token ` good`
+  - I like the Romans because the Romans were very good at building things. They built some of the biggest
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `416` activation `7.841` class `style_function_word` token ` because`
+  - I like the Romans because the Romans were very good at building things. They
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `426` activation `7.541` class `word` token ` They`
+  - because the Romans were very good at building things. They built some of the biggest and best buildings ever.
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `422` activation `7.419` class `word` token ` at`
+  - I like the Romans because the Romans were very good at building things. They built some of the biggest and
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `425` activation `7.342` class `sentence_boundary` token `.`
+  - Romans because the Romans were very good at building things. They built some of the biggest and best buildings ever
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `413` activation `7.061` class `word` token ` like`
+  - I like the Romans because the Romans were very good at building
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `423` activation `7.048` class `word` token ` building`
+  - like the Romans because the Romans were very good at building things. They built some of the biggest and best
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `424` activation `7.047` class `word` token ` things`
+  - the Romans because the Romans were very good at building things. They built some of the biggest and best buildings
+- `L19:2346` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `420` activation `6.995` class `word` token ` very`
+  - I like the Romans because the Romans were very good at building things. They built some of the
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `556` activation `8.003` class `punctuation` token `,`
+  - Actually, a giant catch-all list often overwhelms you.
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `557` activation `7.490` class `word` token ` a`
+  - Actually, a giant catch-all list often overwhelms you. Try
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `561` activation `6.744` class `word` token ` list`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix:
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `555` activation `6.417` class `word` token `Actually`
+  - Actually, a giant catch-all list often overwhelms you
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `558` activation `6.328` class `word` token ` giant`
+  - Actually, a giant catch-all list often overwhelms you. Try the
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `560` activation `6.137` class `word` token `-all`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `559` activation `5.063` class `word` token ` catch`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `562` activation `4.893` class `word` token ` often`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `564` activation `4.700` class `word` token `ms`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `565` activation `4.570` class `word` token ` you`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by urgent
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `570` activation `4.459` class `word` token ` Matrix`
+  - -all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by urgent vs. important. Focus
+- `L19:2346` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `566` activation `4.206` class `sentence_boundary` token `.`
+  - , a giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by urgent vs
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `612` activation `7.938` class `sentence_boundary` token `.`
+  - Well ask yourself what type of food might be good. Depending on where you are, what you need,
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `617` activation `7.863` class `word` token ` are`
+  - of food might be good. Depending on where you are, what you need, and your preferences, plus
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `618` activation `7.829` class `punctuation` token `,`
+  - food might be good. Depending on where you are, what you need, and your preferences, plus your
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `616` activation `7.822` class `word` token ` you`
+  - type of food might be good. Depending on where you are, what you need, and your preferences,
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `614` activation `7.780` class `word` token ` on`
+  - yourself what type of food might be good. Depending on where you are, what you need, and your
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `615` activation `7.708` class `word` token ` where`
+  - what type of food might be good. Depending on where you are, what you need, and your preferences
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `611` activation `7.564` class `word` token ` good`
+  - Well ask yourself what type of food might be good. Depending on where you are, what you need
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `605` activation `7.542` class `word` token ` what`
+  - Well ask yourself what type of food might be good. Depending on where
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `608` activation `7.345` class `word` token ` food`
+  - Well ask yourself what type of food might be good. Depending on where you are,
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `610` activation `7.333` class `word` token ` be`
+  - Well ask yourself what type of food might be good. Depending on where you are, what you
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `619` activation `7.132` class `word` token ` what`
+  - might be good. Depending on where you are, what you need, and your preferences, plus your budget
+- `L19:2346` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `622` activation `7.089` class `punctuation` token `,`
+  - . Depending on where you are, what you need, and your preferences, plus your budget, you might
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `239` activation `7.928` class `word` token ` step`
+  - on my front step. I sit on my front step in a circle of chalk. I draw it close
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `235` activation `7.170` class `word` token ` sit`
+  - sit. I sit on my front step. I sit on my front step in a circle of chalk.
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `245` activation `7.039` class `sentence_boundary` token `.`
+  - sit on my front step in a circle of chalk. I draw it close to me. Only me.
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `228` activation `7.026` class `word` token ` sit`
+  - I sit. I sit on my front step. I sit on my front
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `233` activation `6.967` class `sentence_boundary` token `.`
+  - I sit. I sit on my front step. I sit on my front step in a circle of
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `247` activation `6.774` class `word` token ` draw`
+  - my front step in a circle of chalk. I draw it close to me. Only me. My mind
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `246` activation `6.730` class `word` token ` I`
+  - on my front step in a circle of chalk. I draw it close to me. Only me. My
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `234` activation `6.728` class `word` token ` I`
+  - I sit. I sit on my front step. I sit on my front step in a circle of chalk
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `248` activation `6.670` class `word` token ` it`
+  - front step in a circle of chalk. I draw it close to me. Only me. My mind wand
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `252` activation `6.638` class `sentence_boundary` token `.`
+  - circle of chalk. I draw it close to me. Only me. My mind wanders its halls.
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `255` activation `6.584` class `sentence_boundary` token `.`
+  - . I draw it close to me. Only me. My mind wanders its halls. It washes
+- `L19:2346` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `238` activation `6.537` class `word` token ` front`
+  - sit on my front step. I sit on my front step in a circle of chalk. I draw it
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `273` activation `7.595` class `word` token ` eat`
+  - I was going home to eat dinner when I was met by Angela. Angela
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `284` activation `7.290` class `expanded_negation_word` token ` was`
+  - dinner when I was met by Angela. Angela was a cute girl who was interested in going on a
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `277` activation `7.118` class `expanded_negation_word` token ` was`
+  - I was going home to eat dinner when I was met by Angela. Angela was a cute girl
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `275` activation `6.932` class `style_function_word` token ` when`
+  - I was going home to eat dinner when I was met by Angela. Angela was a
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `272` activation `6.904` class `word` token ` to`
+  - I was going home to eat dinner when I was met by Angela. Ang
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `276` activation `6.901` class `word` token ` I`
+  - I was going home to eat dinner when I was met by Angela. Angela was a cute
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `274` activation `6.828` class `word` token ` dinner`
+  - I was going home to eat dinner when I was met by Angela. Angela was
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `283` activation `6.797` class `word` token `ela`
+  - eat dinner when I was met by Angela. Angela was a cute girl who was interested in going on
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `271` activation `6.772` class `word` token ` home`
+  - I was going home to eat dinner when I was met by Angela.
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `286` activation `6.701` class `word` token ` cute`
+  - I was met by Angela. Angela was a cute girl who was interested in going on a date with
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `285` activation `6.700` class `word` token ` a`
+  - when I was met by Angela. Angela was a cute girl who was interested in going on a date
+- `L19:2346` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `287` activation `6.644` class `word` token ` girl`
+  - was met by Angela. Angela was a cute girl who was interested in going on a date with me
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `470` activation `7.992` class `word` token ` you`
+  - Your bug is that you’re adding all numbers together, then returning a string
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `469` activation `7.402` class `style_function_word` token ` that`
+  - Your bug is that you’re adding all numbers together, then returning a
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `476` activation `6.505` class `punctuation` token `,`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+15" or "-
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `475` activation `6.429` class `word` token ` together`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+15" or
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `471` activation `6.389` class `word` token `’re`
+  - Your bug is that you’re adding all numbers together, then returning a string like
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `468` activation `6.229` class `word` token ` is`
+  - Your bug is that you’re adding all numbers together, then returning
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `472` activation `6.048` class `word` token ` adding`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `474` activation `6.022` class `word` token ` numbers`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+15"
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `477` activation `5.898` class `style_function_word` token ` then`
+  - bug is that you’re adding all numbers together, then returning a string like "+15" or "-15
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `473` activation `5.539` class `word` token ` all`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+15
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `466` activation `5.411` class `word` token `Your`
+  - Your bug is that you’re adding all numbers together,
+- `L19:2346` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `478` activation `5.275` class `word` token ` returning`
+  - is that you’re adding all numbers together, then returning a string like "+15" or "-15".
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `204` activation `7.967` class `sentence_boundary` token `.`
+  - is a required thing for the women in the village. You have to pray in the middle of the village
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `208` activation `7.507` class `word` token ` pray`
+  - for the women in the village. You have to pray in the middle of the village fountain at least once
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `214` activation `7.237` class `word` token ` village`
+  - . You have to pray in the middle of the village fountain at least once a day. It is said
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `198` activation `7.216` class `discourse_marker_word` token ` for`
+  - Kotone is praying. Prayer is a required thing for the women in the village. You have to pray
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `210` activation `7.097` class `word` token ` the`
+  - women in the village. You have to pray in the middle of the village fountain at least once a day
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `207` activation `7.092` class `word` token ` to`
+  - thing for the women in the village. You have to pray in the middle of the village fountain at least
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `209` activation `7.085` class `word` token ` in`
+  - the women in the village. You have to pray in the middle of the village fountain at least once a
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `215` activation `7.041` class `word` token ` fountain`
+  - You have to pray in the middle of the village fountain at least once a day. It is said that
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `216` activation `7.017` class `word` token ` at`
+  - have to pray in the middle of the village fountain at least once a day. It is said that the
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `212` activation `6.930` class `word` token ` of`
+  - the village. You have to pray in the middle of the village fountain at least once a day. It
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `213` activation `6.869` class `word` token ` the`
+  - village. You have to pray in the middle of the village fountain at least once a day. It is
+- `L19:2346` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `221` activation `6.852` class `sentence_boundary` token `.`
+  - middle of the village fountain at least once a day. It is said that the fountain will eventually bless a
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `547` activation `7.845` class `word` token ` talking`
+  - When they were sitting around the fire talking about their life and experiences, it was very touching
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `551` activation `7.717` class `word` token ` and`
+  - they were sitting around the fire talking about their life and experiences, it was very touching. 🥺
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `544` activation `7.536` class `word` token ` around`
+  - When they were sitting around the fire talking about their life and experiences, it
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `552` activation `7.200` class `word` token ` experiences`
+  - were sitting around the fire talking about their life and experiences, it was very touching. 🥺❤
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `548` activation `7.190` class `word` token ` about`
+  - When they were sitting around the fire talking about their life and experiences, it was very touching.
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `553` activation `7.016` class `punctuation` token `,`
+  - sitting around the fire talking about their life and experiences, it was very touching. 🥺❤ I
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `543` activation `6.921` class `word` token ` sitting`
+  - When they were sitting around the fire talking about their life and experiences,
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `558` activation `6.825` class `sentence_boundary` token `.`
+  - about their life and experiences, it was very touching. 🥺❤ I'm very, very happy
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `545` activation `6.815` class `word` token ` the`
+  - When they were sitting around the fire talking about their life and experiences, it was
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `549` activation `6.681` class `word` token ` their`
+  - When they were sitting around the fire talking about their life and experiences, it was very touching. �
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `540` activation `6.596` class `style_function_word` token `When`
+  - When they were sitting around the fire talking about their life
+- `L19:2346` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `546` activation `6.589` class `word` token ` fire`
+  - When they were sitting around the fire talking about their life and experiences, it was very
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `405` activation `7.762` class `word` token ` how`
+  - This is a report to Mister Flimt about how our latest advertising campaign was received. It was found
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `406` activation `7.412` class `word` token ` our`
+  - is a report to Mister Flimt about how our latest advertising campaign was received. It was found that
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `404` activation `7.174` class `word` token ` about`
+  - This is a report to Mister Flimt about how our latest advertising campaign was received. It was
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `407` activation `6.558` class `word` token ` latest`
+  - a report to Mister Flimt about how our latest advertising campaign was received. It was found that the
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `416` activation `6.198` class `style_function_word` token ` that`
+  - our latest advertising campaign was received. It was found that the campaign did not meet our more ambitious expectations,
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `399` activation `6.072` class `word` token ` to`
+  - This is a report to Mister Flimt about how our latest advertising campaign
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `412` activation `6.067` class `sentence_boundary` token `.`
+  - imt about how our latest advertising campaign was received. It was found that the campaign did not meet our
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `417` activation `6.059` class `word` token ` the`
+  - latest advertising campaign was received. It was found that the campaign did not meet our more ambitious expectations, but
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `408` activation `6.039` class `word` token ` advertising`
+  - report to Mister Flimt about how our latest advertising campaign was received. It was found that the campaign
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `398` activation `5.933` class `word` token ` report`
+  - This is a report to Mister Flimt about how our latest advertising
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `396` activation `5.860` class `word` token ` is`
+  - This is a report to Mister Flimt about how our
+- `L19:2346` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `395` activation `5.826` class `style_function_word` token `This`
+  - This is a report to Mister Flimt about how
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `201` activation `8.223` class `sentence_boundary` token `.`
+  - . Trinity and Morpheus were waiting for him. They urged him to leave the Matrix and join them
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `202` activation `8.105` class `word` token ` They`
+  - Trinity and Morpheus were waiting for him. They urged him to leave the Matrix and join them in
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `197` activation `7.570` class `expanded_negation_word` token ` were`
+  - the leave the Matrix. Trinity and Morpheus were waiting for him. They urged him to leave the
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `206` activation `7.551` class `word` token ` leave`
+  - us were waiting for him. They urged him to leave the Matrix and join them in the real world.
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `200` activation `7.532` class `word` token ` him`
+  - Matrix. Trinity and Morpheus were waiting for him. They urged him to leave the Matrix and join
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `199` activation `7.370` class `discourse_marker_word` token ` for`
+  - the Matrix. Trinity and Morpheus were waiting for him. They urged him to leave the Matrix and
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `208` activation `7.286` class `word` token ` Matrix`
+  - waiting for him. They urged him to leave the Matrix and join them in the real world. But something
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `198` activation `7.268` class `word` token ` waiting`
+  - leave the Matrix. Trinity and Morpheus were waiting for him. They urged him to leave the Matrix
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `204` activation `7.180` class `word` token ` him`
+  - Morpheus were waiting for him. They urged him to leave the Matrix and join them in the real
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `203` activation `7.170` class `word` token ` urged`
+  - and Morpheus were waiting for him. They urged him to leave the Matrix and join them in the
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `196` activation `7.160` class `word` token `us`
+  - about the leave the Matrix. Trinity and Morpheus were waiting for him. They urged him to leave
+- `L19:2346` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `207` activation `7.090` class `word` token ` the`
+  - were waiting for him. They urged him to leave the Matrix and join them in the real world. But
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `620` activation `7.996` class `punctuation` token `,`
+  - Actually, have you seen the new moon phase this week?
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `624` activation `6.993` class `word` token ` the`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `623` activation `6.808` class `word` token ` seen`
+  - Actually, have you seen the new moon phase this week? It looks absolutely
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `627` activation `6.647` class `word` token ` phase`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning in the night
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `625` activation `6.554` class `word` token ` new`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning in
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `619` activation `6.431` class `word` token `Actually`
+  - Actually, have you seen the new moon phase this week
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `631` activation `6.324` class `word` token ` It`
+  - have you seen the new moon phase this week? It looks absolutely stunning in the night sky.
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `622` activation `6.191` class `word` token ` you`
+  - Actually, have you seen the new moon phase this week? It looks
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `629` activation `6.140` class `word` token ` week`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning in the night sky.
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `630` activation `6.130` class `sentence_boundary` token `?`
+  - , have you seen the new moon phase this week? It looks absolutely stunning in the night sky.
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `621` activation `6.029` class `word` token ` have`
+  - Actually, have you seen the new moon phase this week? It
+- `L19:2346` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `626` activation `5.959` class `word` token ` moon`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning in the
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `414` activation `7.695` class `sentence_boundary` token `.`
+  - Her parents were in charge. They lived in a large bungalow with no electric
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `430` activation `7.268` class `sentence_boundary` token `.`
+  - bungalow with no electric power, no running water. They had servants: a nanny to look after their
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `415` activation `7.264` class `word` token ` They`
+  - Her parents were in charge. They lived in a large bungalow with no electric power
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `411` activation `7.002` class `expanded_negation_word` token ` were`
+  - Her parents were in charge. They lived in a large bungalow
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `431` activation `6.951` class `word` token ` They`
+  - ungalow with no electric power, no running water. They had servants: a nanny to look after their infant
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `418` activation `6.844` class `word` token ` a`
+  - Her parents were in charge. They lived in a large bungalow with no electric power, no running
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `417` activation `6.688` class `word` token ` in`
+  - Her parents were in charge. They lived in a large bungalow with no electric power, no
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `416` activation `6.477` class `word` token ` lived`
+  - Her parents were in charge. They lived in a large bungalow with no electric power,
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `413` activation `6.402` class `word` token ` charge`
+  - Her parents were in charge. They lived in a large bungalow with no
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `410` activation `6.368` class `word` token ` parents`
+  - Her parents were in charge. They lived in a large b
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `426` activation `6.154` class `punctuation` token `,`
+  - lived in a large bungalow with no electric power, no running water. They had servants: a nanny
+- `L19:2346` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `412` activation `6.085` class `word` token ` in`
+  - Her parents were in charge. They lived in a large bungalow with
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `424` activation `13.551` class `word` token ` things`
+  - the Romans because the Romans were very good at building things. They built some of the biggest and best buildings
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `418` activation `13.393` class `word` token ` Romans`
+  - I like the Romans because the Romans were very good at building things. They built some
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `419` activation `13.267` class `expanded_negation_word` token ` were`
+  - I like the Romans because the Romans were very good at building things. They built some of
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `416` activation `13.242` class `style_function_word` token ` because`
+  - I like the Romans because the Romans were very good at building things. They
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `421` activation `12.469` class `word` token ` good`
+  - I like the Romans because the Romans were very good at building things. They built some of the biggest
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `417` activation `12.462` class `word` token ` the`
+  - I like the Romans because the Romans were very good at building things. They built
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `423` activation `12.217` class `word` token ` building`
+  - like the Romans because the Romans were very good at building things. They built some of the biggest and best
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `426` activation `12.000` class `word` token ` They`
+  - because the Romans were very good at building things. They built some of the biggest and best buildings ever.
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `413` activation `11.918` class `word` token ` like`
+  - I like the Romans because the Romans were very good at building
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `422` activation `11.827` class `word` token ` at`
+  - I like the Romans because the Romans were very good at building things. They built some of the biggest and
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `415` activation `11.755` class `word` token ` Romans`
+  - I like the Romans because the Romans were very good at building things.
+- `L24:3889` `f9231f829c76d5bae7b84575b442717509292ef24b121780ede1d3e1c3d66bcc@turn_01@human` token `434` activation `11.543` class `word` token ` buildings`
+  - things. They built some of the biggest and best buildings ever. They built the Coliseum in Rome and
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `556` activation `13.245` class `punctuation` token `,`
+  - Actually, a giant catch-all list often overwhelms you.
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `557` activation `12.367` class `word` token ` a`
+  - Actually, a giant catch-all list often overwhelms you. Try
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `561` activation `11.489` class `word` token ` list`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix:
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `560` activation `11.045` class `word` token `-all`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `555` activation `10.811` class `word` token `Actually`
+  - Actually, a giant catch-all list often overwhelms you
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `564` activation `10.482` class `word` token `ms`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `565` activation `10.402` class `word` token ` you`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by urgent
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `558` activation `10.267` class `word` token ` giant`
+  - Actually, a giant catch-all list often overwhelms you. Try the
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `566` activation `10.082` class `sentence_boundary` token `.`
+  - , a giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by urgent vs
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `570` activation `9.665` class `word` token ` Matrix`
+  - -all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by urgent vs. important. Focus
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `562` activation `9.374` class `word` token ` often`
+  - Actually, a giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort
+- `L24:3889` `050c9ede2370a499e457a29d993ede9ae05a77e6717909e9c77f0cb6b71adbd0@turn_03@glm-5.2` token `568` activation `8.850` class `word` token ` the`
+  - giant catch-all list often overwhelms you. Try the Eisenhower Matrix: sort tasks by urgent vs. important
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `611` activation `13.819` class `word` token ` good`
+  - Well ask yourself what type of food might be good. Depending on where you are, what you need
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `622` activation `13.783` class `punctuation` token `,`
+  - . Depending on where you are, what you need, and your preferences, plus your budget, you might
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `618` activation `13.607` class `punctuation` token `,`
+  - food might be good. Depending on where you are, what you need, and your preferences, plus your
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `614` activation `13.578` class `word` token ` on`
+  - yourself what type of food might be good. Depending on where you are, what you need, and your
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `605` activation `13.449` class `word` token ` what`
+  - Well ask yourself what type of food might be good. Depending on where
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `617` activation `13.447` class `word` token ` are`
+  - of food might be good. Depending on where you are, what you need, and your preferences, plus
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `621` activation `13.362` class `word` token ` need`
+  - good. Depending on where you are, what you need, and your preferences, plus your budget, you
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `615` activation `13.325` class `word` token ` where`
+  - what type of food might be good. Depending on where you are, what you need, and your preferences
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `623` activation `13.311` class `word` token ` and`
+  - Depending on where you are, what you need, and your preferences, plus your budget, you might have
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `612` activation `13.289` class `sentence_boundary` token `.`
+  - Well ask yourself what type of food might be good. Depending on where you are, what you need,
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `610` activation `12.979` class `word` token ` be`
+  - Well ask yourself what type of food might be good. Depending on where you are, what you
+- `L24:3889` `ea2ce459364bd3e96ed7ef46355f8794d30f7751cac92c3964b3873c0b51b320@turn_02@human` token `638` activation `12.965` class `word` token ` answer`
+  - your budget, you might have a different find your answer.
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `239` activation `13.270` class `word` token ` step`
+  - on my front step. I sit on my front step in a circle of chalk. I draw it close
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `228` activation `12.332` class `word` token ` sit`
+  - I sit. I sit on my front step. I sit on my front
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `235` activation `11.867` class `word` token ` sit`
+  - sit. I sit on my front step. I sit on my front step in a circle of chalk.
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `248` activation `11.810` class `word` token ` it`
+  - front step in a circle of chalk. I draw it close to me. Only me. My mind wand
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `247` activation `11.701` class `word` token ` draw`
+  - my front step in a circle of chalk. I draw it close to me. Only me. My mind
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `232` activation `11.684` class `word` token ` step`
+  - I sit. I sit on my front step. I sit on my front step in a circle
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `229` activation `11.642` class `word` token ` on`
+  - I sit. I sit on my front step. I sit on my front step
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `251` activation `11.621` class `word` token ` me`
+  - a circle of chalk. I draw it close to me. Only me. My mind wanders its halls
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `242` activation `11.608` class `word` token ` circle`
+  - step. I sit on my front step in a circle of chalk. I draw it close to me.
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `245` activation `11.422` class `sentence_boundary` token `.`
+  - sit on my front step in a circle of chalk. I draw it close to me. Only me.
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `233` activation `11.355` class `sentence_boundary` token `.`
+  - I sit. I sit on my front step. I sit on my front step in a circle of
+- `L24:3889` `71221c0227f04f083840a8af90664de7ad3de0fd33dd725711ee77b5b5c6fc7d@turn_01@human` token `252` activation `11.340` class `sentence_boundary` token `.`
+  - circle of chalk. I draw it close to me. Only me. My mind wanders its halls.
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `271` activation `13.375` class `word` token ` home`
+  - I was going home to eat dinner when I was met by Angela.
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `274` activation `13.316` class `word` token ` dinner`
+  - I was going home to eat dinner when I was met by Angela. Angela was
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `273` activation `13.296` class `word` token ` eat`
+  - I was going home to eat dinner when I was met by Angela. Angela
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `275` activation `12.377` class `style_function_word` token ` when`
+  - I was going home to eat dinner when I was met by Angela. Angela was a
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `279` activation `11.748` class `word` token ` by`
+  - was going home to eat dinner when I was met by Angela. Angela was a cute girl who was
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `283` activation `11.568` class `word` token `ela`
+  - eat dinner when I was met by Angela. Angela was a cute girl who was interested in going on
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `278` activation `11.549` class `word` token ` met`
+  - I was going home to eat dinner when I was met by Angela. Angela was a cute girl who
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `276` activation `11.456` class `word` token ` I`
+  - I was going home to eat dinner when I was met by Angela. Angela was a cute
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `277` activation `11.432` class `expanded_negation_word` token ` was`
+  - I was going home to eat dinner when I was met by Angela. Angela was a cute girl
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `272` activation `11.408` class `word` token ` to`
+  - I was going home to eat dinner when I was met by Angela. Ang
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `284` activation `11.362` class `expanded_negation_word` token ` was`
+  - dinner when I was met by Angela. Angela was a cute girl who was interested in going on a
+- `L24:3889` `187c45f1cedaa1a0b6dbb294795e03433d8440bb9abe0a7d4c043d23a30e5a7c@turn_01@human` token `287` activation `11.063` class `word` token ` girl`
+  - was met by Angela. Angela was a cute girl who was interested in going on a date with me
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `470` activation `13.367` class `word` token ` you`
+  - Your bug is that you’re adding all numbers together, then returning a string
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `469` activation `13.139` class `style_function_word` token ` that`
+  - Your bug is that you’re adding all numbers together, then returning a
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `475` activation `12.400` class `word` token ` together`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+15" or
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `474` activation `11.386` class `word` token ` numbers`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+15"
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `471` activation `11.273` class `word` token `’re`
+  - Your bug is that you’re adding all numbers together, then returning a string like
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `476` activation `11.173` class `punctuation` token `,`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+15" or "-
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `468` activation `11.098` class `word` token ` is`
+  - Your bug is that you’re adding all numbers together, then returning
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `472` activation `10.505` class `word` token ` adding`
+  - Your bug is that you’re adding all numbers together, then returning a string like "+
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `477` activation `9.976` class `style_function_word` token ` then`
+  - bug is that you’re adding all numbers together, then returning a string like "+15" or "-15
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `480` activation `9.910` class `word` token ` string`
+  - you’re adding all numbers together, then returning a string like "+15" or "-15". Instead,
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `478` activation `9.415` class `word` token ` returning`
+  - is that you’re adding all numbers together, then returning a string like "+15" or "-15".
+- `L24:3889` `12da3596881209bac23e51c59ee348dbcf3019c1dee88a882f7801bf1e0fb690@turn_01@gpt-5.5` token `484` activation `8.954` class `punctuation` token `"`
+  - numbers together, then returning a string like "+15" or "-15". Instead, you need to store
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `208` activation `13.251` class `word` token ` pray`
+  - for the women in the village. You have to pray in the middle of the village fountain at least once
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `214` activation `12.910` class `word` token ` village`
+  - . You have to pray in the middle of the village fountain at least once a day. It is said
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `220` activation `12.876` class `word` token ` day`
+  - the middle of the village fountain at least once a day. It is said that the fountain will eventually bless
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `204` activation `12.495` class `sentence_boundary` token `.`
+  - is a required thing for the women in the village. You have to pray in the middle of the village
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `215` activation `12.401` class `word` token ` fountain`
+  - You have to pray in the middle of the village fountain at least once a day. It is said that
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `197` activation `12.163` class `word` token ` thing`
+  - , Kotone is praying. Prayer is a required thing for the women in the village. You have to
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `203` activation `12.062` class `word` token ` village`
+  - Prayer is a required thing for the women in the village. You have to pray in the middle of the
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `240` activation `11.990` class `word` token ` powers`
+  - bless a woman of the village and give her supernatural powers. Enough power to help defend the village from the
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `198` activation `11.811` class `discourse_marker_word` token ` for`
+  - Kotone is praying. Prayer is a required thing for the women in the village. You have to pray
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `207` activation `11.701` class `word` token ` to`
+  - thing for the women in the village. You have to pray in the middle of the village fountain at least
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `218` activation `11.671` class `word` token ` once`
+  - pray in the middle of the village fountain at least once a day. It is said that the fountain will
+- `L24:3889` `2c4d9482c76b88ae4d859d16fc57aeaf0c094b75d8dbd8bb078374592010045b@turn_01@human` token `192` activation `11.523` class `sentence_boundary` token `.`
+  - the heart of the village, Kotone is praying. Prayer is a required thing for the women in the
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `552` activation `13.658` class `word` token ` experiences`
+  - were sitting around the fire talking about their life and experiences, it was very touching. 🥺❤
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `547` activation `13.403` class `word` token ` talking`
+  - When they were sitting around the fire talking about their life and experiences, it was very touching
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `548` activation `12.752` class `word` token ` about`
+  - When they were sitting around the fire talking about their life and experiences, it was very touching.
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `551` activation `12.752` class `word` token ` and`
+  - they were sitting around the fire talking about their life and experiences, it was very touching. 🥺
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `553` activation `12.471` class `punctuation` token `,`
+  - sitting around the fire talking about their life and experiences, it was very touching. 🥺❤ I
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `544` activation `12.447` class `word` token ` around`
+  - When they were sitting around the fire talking about their life and experiences, it
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `557` activation `12.404` class `word` token ` touching`
+  - talking about their life and experiences, it was very touching. 🥺❤ I'm very, very
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `558` activation `12.284` class `sentence_boundary` token `.`
+  - about their life and experiences, it was very touching. 🥺❤ I'm very, very happy
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `543` activation `11.558` class `word` token ` sitting`
+  - When they were sitting around the fire talking about their life and experiences,
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `549` activation `11.496` class `word` token ` their`
+  - When they were sitting around the fire talking about their life and experiences, it was very touching. �
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `550` activation `11.467` class `word` token ` life`
+  - When they were sitting around the fire talking about their life and experiences, it was very touching. �
+- `L24:3889` `6b6803a90a0204607e176cf510d91c0c43440a95b341a26e376bd813c4dd7807@turn_01@human` token `555` activation `11.423` class `expanded_negation_word` token ` was`
+  - the fire talking about their life and experiences, it was very touching. 🥺❤ I'm very
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `405` activation `13.429` class `word` token ` how`
+  - This is a report to Mister Flimt about how our latest advertising campaign was received. It was found
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `404` activation `13.228` class `word` token ` about`
+  - This is a report to Mister Flimt about how our latest advertising campaign was received. It was
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `406` activation `12.438` class `word` token ` our`
+  - is a report to Mister Flimt about how our latest advertising campaign was received. It was found that
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `407` activation `12.236` class `word` token ` latest`
+  - a report to Mister Flimt about how our latest advertising campaign was received. It was found that the
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `409` activation `12.184` class `word` token ` campaign`
+  - to Mister Flimt about how our latest advertising campaign was received. It was found that the campaign did
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `408` activation `12.100` class `word` token ` advertising`
+  - report to Mister Flimt about how our latest advertising campaign was received. It was found that the campaign
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `416` activation `11.866` class `style_function_word` token ` that`
+  - our latest advertising campaign was received. It was found that the campaign did not meet our more ambitious expectations,
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `412` activation `11.501` class `sentence_boundary` token `.`
+  - imt about how our latest advertising campaign was received. It was found that the campaign did not meet our
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `413` activation `11.498` class `word` token ` It`
+  - t about how our latest advertising campaign was received. It was found that the campaign did not meet our more
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `418` activation `11.393` class `word` token ` campaign`
+  - advertising campaign was received. It was found that the campaign did not meet our more ambitious expectations, but we
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `411` activation `11.309` class `word` token ` received`
+  - Flimt about how our latest advertising campaign was received. It was found that the campaign did not meet
+- `L24:3889` `013fbd6a7e980253ed653f85935f0d36b3a8f8aea9deff741aeff17b2f208471@turn_01@human` token `410` activation `11.245` class `expanded_negation_word` token ` was`
+  - Mister Flimt about how our latest advertising campaign was received. It was found that the campaign did not
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `208` activation `13.722` class `word` token ` Matrix`
+  - waiting for him. They urged him to leave the Matrix and join them in the real world. But something
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `206` activation `13.662` class `word` token ` leave`
+  - us were waiting for him. They urged him to leave the Matrix and join them in the real world.
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `204` activation `13.621` class `word` token ` him`
+  - Morpheus were waiting for him. They urged him to leave the Matrix and join them in the real
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `200` activation `13.301` class `word` token ` him`
+  - Matrix. Trinity and Morpheus were waiting for him. They urged him to leave the Matrix and join
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `202` activation `13.123` class `word` token ` They`
+  - Trinity and Morpheus were waiting for him. They urged him to leave the Matrix and join them in
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `211` activation `12.964` class `word` token ` them`
+  - . They urged him to leave the Matrix and join them in the real world. But something inside of Neo
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `198` activation `12.714` class `word` token ` waiting`
+  - leave the Matrix. Trinity and Morpheus were waiting for him. They urged him to leave the Matrix
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `215` activation `12.647` class `word` token ` world`
+  - to leave the Matrix and join them in the real world. But something inside of Neo held him back.
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `196` activation `12.539` class `word` token `us`
+  - about the leave the Matrix. Trinity and Morpheus were waiting for him. They urged him to leave
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `197` activation `12.090` class `expanded_negation_word` token ` were`
+  - the leave the Matrix. Trinity and Morpheus were waiting for him. They urged him to leave the
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `205` activation `12.075` class `word` token ` to`
+  - pheus were waiting for him. They urged him to leave the Matrix and join them in the real world
+- `L24:3889` `22dc39c392b2b14bb4759024f086d863b50f6a7139fbc62804dbf190f1719cbc@turn_01@human` token `203` activation `12.051` class `word` token ` urged`
+  - and Morpheus were waiting for him. They urged him to leave the Matrix and join them in the
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `620` activation `13.229` class `punctuation` token `,`
+  - Actually, have you seen the new moon phase this week?
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `623` activation `12.930` class `word` token ` seen`
+  - Actually, have you seen the new moon phase this week? It looks absolutely
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `627` activation `11.836` class `word` token ` phase`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning in the night
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `624` activation `11.812` class `word` token ` the`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `629` activation `11.675` class `word` token ` week`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning in the night sky.
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `625` activation `11.494` class `word` token ` new`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning in
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `631` activation `11.469` class `word` token ` It`
+  - have you seen the new moon phase this week? It looks absolutely stunning in the night sky.
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `622` activation `11.169` class `word` token ` you`
+  - Actually, have you seen the new moon phase this week? It looks
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `630` activation `11.051` class `sentence_boundary` token `?`
+  - , have you seen the new moon phase this week? It looks absolutely stunning in the night sky.
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `619` activation `10.858` class `word` token `Actually`
+  - Actually, have you seen the new moon phase this week
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `628` activation `10.784` class `style_function_word` token ` this`
+  - Actually, have you seen the new moon phase this week? It looks absolutely stunning in the night sky
+- `L24:3889` `0d70ae2d5eee945383005960ef9f48d820bd019c5457e33fd57a075ef8896712@turn_01@qwen3.6-35b` token `621` activation `10.725` class `word` token ` have`
+  - Actually, have you seen the new moon phase this week? It
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `414` activation `13.207` class `sentence_boundary` token `.`
+  - Her parents were in charge. They lived in a large bungalow with no electric
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `415` activation `13.027` class `word` token ` They`
+  - Her parents were in charge. They lived in a large bungalow with no electric power
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `413` activation `12.559` class `word` token ` charge`
+  - Her parents were in charge. They lived in a large bungalow with no
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `417` activation `11.918` class `word` token ` in`
+  - Her parents were in charge. They lived in a large bungalow with no electric power, no
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `416` activation `11.899` class `word` token ` lived`
+  - Her parents were in charge. They lived in a large bungalow with no electric power,
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `430` activation `11.867` class `sentence_boundary` token `.`
+  - bungalow with no electric power, no running water. They had servants: a nanny to look after their
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `410` activation `11.610` class `word` token ` parents`
+  - Her parents were in charge. They lived in a large b
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `429` activation `11.589` class `word` token ` water`
+  - large bungalow with no electric power, no running water. They had servants: a nanny to look after
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `418` activation `11.586` class `word` token ` a`
+  - Her parents were in charge. They lived in a large bungalow with no electric power, no running
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `411` activation `11.579` class `expanded_negation_word` token ` were`
+  - Her parents were in charge. They lived in a large bungalow
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `421` activation `11.508` class `word` token `ungalow`
+  - were in charge. They lived in a large bungalow with no electric power, no running water. They
+- `L24:3889` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@human` token `431` activation `11.355` class `word` token ` They`
+  - ungalow with no electric power, no running water. They had servants: a nanny to look after their infant

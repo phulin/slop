@@ -1,0 +1,412 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L24:351` | `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 207 | `705.60` | `11.66` | word:161|punctuation:21|sentence_boundary:11|style_function_word:6|expanded_negation_word:4|discourse_marker_word:4 |
+| `L24:351` | `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` | `human` | 176 | `1286.98` | `12.74` | word:153|punctuation:12|sentence_boundary:4|style_function_word:4|whitespace:3 |
+| `L24:351` | `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` | `glm-5.2` | 232 | `1685.80` | `12.13` | word:191|punctuation:13|style_function_word:9|sentence_boundary:9|discourse_marker_word:5|expanded_negation_word:3|line_break:2 |
+| `L24:351` | `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` | `glm-5.2` | 420 | `2559.14` | `11.88` | word:364|punctuation:20|sentence_boundary:14|expanded_negation_word:7|discourse_marker_word:6|line_break:6|style_function_word:3 |
+| `L24:351` | `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 581 | `2857.33` | `11.59` | word:477|punctuation:42|sentence_boundary:21|style_function_word:16|expanded_negation_word:14|discourse_marker_word:6|line_break:5 |
+| `L24:351` | `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` | `glm-5.2` | 266 | `1552.90` | `12.78` | word:230|punctuation:14|sentence_boundary:9|style_function_word:7|discourse_marker_word:4|line_break:2 |
+| `L24:351` | `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` | `human` | 453 | `2267.92` | `10.17` | word:366|sentence_boundary:32|expanded_negation_word:24|style_function_word:14|punctuation:9|line_break:7|discourse_marker_word:1 |
+| `L24:351` | `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 576 | `1369.71` | `9.86` | word:489|punctuation:51|sentence_boundary:18|style_function_word:9|discourse_marker_word:5|expanded_negation_word:3|line_break:1 |
+| `L24:351` | `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` | `glm-5.2` | 500 | `3046.97` | `11.59` | word:412|punctuation:37|sentence_boundary:22|style_function_word:13|expanded_negation_word:9|line_break:4|contraction_piece:2|discourse_marker_word:1 |
+| `L24:351` | `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 417 | `1887.45` | `10.13` | word:349|punctuation:26|style_function_word:14|sentence_boundary:13|discourse_marker_word:6|line_break:5|whitespace:3|expanded_negation_word:1 |
+| `L24:351` | `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 298 | `913.77` | `10.90` | word:240|punctuation:26|style_function_word:14|sentence_boundary:11|discourse_marker_word:5|expanded_negation_word:1|line_break:1 |
+| `L24:351` | `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 255 | `1037.52` | `9.88` | word:210|punctuation:18|style_function_word:16|sentence_boundary:8|expanded_negation_word:2|line_break:1 |
+| `L24:351` | `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` | `human` | 338 | `1886.80` | `10.84` | word:283|punctuation:25|discourse_marker_word:9|style_function_word:8|sentence_boundary:5|line_break:4|expanded_negation_word:3|whitespace:1 |
+| `L24:351` | `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` | `glm-5.2` | 225 | `697.45` | `10.42` | word:189|line_break:12|punctuation:11|style_function_word:8|discourse_marker_word:2|expanded_negation_word:2|whitespace:1 |
+| `L24:351` | `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` | `glm-5.2` | 433 | `1338.42` | `9.48` | word:372|punctuation:23|sentence_boundary:18|expanded_negation_word:7|discourse_marker_word:5|style_function_word:3|contraction_piece:3|line_break:2 |
+| `L24:351` | `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 374 | `1481.37` | `9.97` | word:294|punctuation:34|sentence_boundary:19|style_function_word:13|expanded_negation_word:9|discourse_marker_word:5 |
+
+## Top Tokens
+
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `390` activation `11.663` class `word` token ` species`
+  - beast, for I shall elucidate why my noble species reigns supreme over your crude, bark-obs
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `386` activation `11.353` class `word` token `ate`
+  - , you lowly beast, for I shall elucidate why my noble species reigns supreme over your crude
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `395` activation `11.054` class `word` token ` your`
+  - elucidate why my noble species reigns supreme over your crude, bark-obsessed counterparts. First,
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `408` activation `10.935` class `word` token ` an`
+  - bark-obsessed counterparts. First, we possess an innate sophistication, maintaining a pristine hygiene that your dro
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `413` activation `10.804` class `word` token ` a`
+  - . First, we possess an innate sophistication, maintaining a pristine hygiene that your drooling, mud-caked
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `392` activation `10.494` class `word` token `s`
+  - for I shall elucidate why my noble species reigns supreme over your crude, bark-obsessed counterparts
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `393` activation `10.207` class `word` token ` supreme`
+  - I shall elucidate why my noble species reigns supreme over your crude, bark-obsessed counterparts.
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `411` activation `10.012` class `punctuation` token `,`
+  - essed counterparts. First, we possess an innate sophistication, maintaining a pristine hygiene that your drooling, mud
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `396` activation `9.899` class `word` token ` crude`
+  - ate why my noble species reigns supreme over your crude, bark-obsessed counterparts. First, we
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `388` activation `9.615` class `word` token ` my`
+  - lowly beast, for I shall elucidate why my noble species reigns supreme over your crude, bark
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `401` activation `9.576` class `word` token `essed`
+  - reigns supreme over your crude, bark-obsessed counterparts. First, we possess an innate sophistication,
+- `L24:351` `c103286e89139faebd524a13bb2f71e226e48b4ec14c011f44431a7e396916e0@turn_01@qwen3.6-35b` token `415` activation `9.565` class `word` token ` hygiene`
+  - , we possess an innate sophistication, maintaining a pristine hygiene that your drooling, mud-caked forms could
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `505` activation `12.744` class `word` token ` the`
+  - the twilight of the 1930s. Through the tribulations of war, the labyrinth of careers,
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `495` activation `12.731` class `word` token ` the`
+  - 268 individuals as they embarked upon their collegiate journey during the twilight of the 1930s. Through the
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `511` activation `12.112` class `word` token ` the`
+  - 0s. Through the tribulations of war, the labyrinth of careers, the intricate dance of love and
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `488` activation `12.018` class `word` token ` they`
+  - into this profound inquiry, accompanying 268 individuals as they embarked upon their collegiate journey during the twilight of the
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `516` activation `11.831` class `word` token ` the`
+  - tribulations of war, the labyrinth of careers, the intricate dance of love and separation, the joys of
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `524` activation `11.608` class `word` token ` the`
+  - careers, the intricate dance of love and separation, the joys of parenthood and the whispers of generations past
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `482` activation `11.287` class `punctuation` token `,`
+  - Harvard researchers have diligently delved into this profound inquiry, accompanying 268 individuals as they embarked upon their collegiate
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `503` activation `11.214` class `sentence_boundary` token `.`
+  - journey during the twilight of the 1930s. Through the tribulations of war, the labyrinth of
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `530` activation `11.203` class `word` token ` the`
+  - love and separation, the joys of parenthood and the whispers of generations past, and the embrace of the
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `544` activation `11.025` class `style_function_word` token ` this`
+  - past, and the embrace of the autumn years, this captivating account unveils itself. Now, a s
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `546` activation `10.781` class `word` token ` account`
+  - and the embrace of the autumn years, this captivating account unveils itself. Now, a scribe,
+- `L24:351` `1393c60ebbcd57f86568d3b322437868043bb8ef0144ec9390af138f9dc8f31d@turn_01@human` token `561` activation `10.774` class `punctuation` token `,`
+  - Now, a scribe, blessed with unprecedented access, unveils the treasure trove of wisdom held within
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `493` activation `12.128` class `punctuation` token `,`
+  - , while admittedly descended from his signature geometric whimsy, adopt a pleasingly desolate palette as the environmental
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `495` activation `12.034` class `word` token ` a`
+  - admittedly descended from his signature geometric whimsy, adopt a pleasingly desolate palette as the environmental degradation deep
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `569` activation `11.788` class `word` token ` him`
+  - Once-ler is afforded no psychological depth, rendering him a mere cardboard villain rather than a complex antagonist worthy
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `551` activation `11.706` class `word` token ` its`
+  - . However, one must penalize the text for its staggering lack of moral ambiguity. The Once-ler
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `570` activation `11.641` class `word` token ` a`
+  - -ler is afforded no psychological depth, rendering him a mere cardboard villain rather than a complex antagonist worthy of
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `458` activation `11.568` class `punctuation` token `,`
+  - melancholic urgency. The narrative thrust is remarkably simple, charting the tragic exploitation of Truffula Trees
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `455` activation `11.521` class `word` token ` is`
+  - compelled by its melancholic urgency. The narrative thrust is remarkably simple, charting the tragic exploitation of Tr
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `550` activation `11.413` class `discourse_marker_word` token ` for`
+  - expansion. However, one must penalize the text for its staggering lack of moral ambiguity. The Once-
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `564` activation `10.995` class `expanded_negation_word` token ` no`
+  - of moral ambiguity. The Once-ler is afforded no psychological depth, rendering him a mere cardboard villain rather
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `567` activation `10.994` class `punctuation` token `,`
+  - . The Once-ler is afforded no psychological depth, rendering him a mere cardboard villain rather than a complex
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `482` activation `10.833` class `word` token ` illustrations`
+  - hands of the Once-ler. Seuss’s illustrations, while admittedly descended from his signature geometric whimsy
+- `L24:351` `87914ff0fe55338940f93023f9753fe82086fa3f6e8a9eda1a777acc015cf0ac@turn_01@glm-5.2` token `480` activation `10.819` class `word` token `uss`
+  - the greedy hands of the Once-ler. Seuss’s illustrations, while admittedly descended from his signature geometric
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `251` activation `11.885` class `style_function_word` token ` This`
+  - explicitly for the world's most discerning elite. This is not merely a destination; it is a meticulously
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `236` activation `11.242` class `word` token ` an`
+  - the Indian Ocean lies the Sanctum Atoll, an invitation only sanctuary engineered explicitly for the world's most
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `258` activation `11.052` class `word` token ` it`
+  - ing elite. This is not merely a destination; it is a meticulously crafted sanctuary where absolute privacy and uncomp
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `235` activation `10.472` class `punctuation` token `,`
+  - of the Indian Ocean lies the Sanctum Atoll, an invitation only sanctuary engineered explicitly for the world's
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `246` activation `10.382` class `word` token ` most`
+  - an invitation only sanctuary engineered explicitly for the world's most discerning elite. This is not merely a destination
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `230` activation `10.366` class `word` token ` the`
+  - charted cerulean waters of the Indian Ocean lies the Sanctum Atoll, an invitation only sanctuary engineered
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `271` activation `10.337` class `word` token ` luxury`
+  - meticulously crafted sanctuary where absolute privacy and uncompromising luxury seamlessly converge. Accessible exclusively via our private fleet of
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `243` activation `10.292` class `word` token ` the`
+  - Atoll, an invitation only sanctuary engineered explicitly for the world's most discerning elite. This is not
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `260` activation `10.264` class `word` token ` a`
+  - . This is not merely a destination; it is a meticulously crafted sanctuary where absolute privacy and uncompromising
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `255` activation `10.241` class `word` token ` a`
+  - 's most discerning elite. This is not merely a destination; it is a meticulously crafted sanctuary where absolute
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `289` activation `10.225` class `word` token `oll`
+  - private fleet of amphibious aircraft, Sanctum Atoll guarantees total dissociation from the public gaze. The
+- `L24:351` `6ca85c73bf013cf32391cc92f98e32550dfe8d6940cf9d18d3b90f1a5dce1a6f@turn_01@glm-5.2` token `263` activation `9.905` class `word` token ` sanctuary`
+  - not merely a destination; it is a meticulously crafted sanctuary where absolute privacy and uncompromising luxury seamlessly converge
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `76` activation `11.590` class `word` token ` a`
+  - rise and the vino settles, I must recount a rather harrowing yet exhilarating chapter of my recent
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `82` activation `11.131` class `word` token `ating`
+  - , I must recount a rather harrowing yet exhilarating chapter of my recent expedition. You see, while
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `80` activation `11.092` class `word` token ` yet`
+  - ino settles, I must recount a rather harrowing yet exhilarating chapter of my recent expedition. You see
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `79` activation `10.839` class `word` token `rowing`
+  - vino settles, I must recount a rather harrowing yet exhilarating chapter of my recent expedition. You
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `86` activation `10.277` class `word` token ` recent`
+  - a rather harrowing yet exhilarating chapter of my recent expedition. You see, while some prefer the safety
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `77` activation `10.080` class `word` token ` rather`
+  - and the vino settles, I must recount a rather harrowing yet exhilarating chapter of my recent expedition
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `92` activation `10.017` class `style_function_word` token ` while`
+  - ating chapter of my recent expedition. You see, while some prefer the safety of drawing rooms and the predictable
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `93` activation `9.898` class `word` token ` some`
+  - chapter of my recent expedition. You see, while some prefer the safety of drawing rooms and the predictable cad
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `85` activation `9.881` class `word` token ` my`
+  - recount a rather harrowing yet exhilarating chapter of my recent expedition. You see, while some prefer the
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `110` activation `9.833` class `word` token ` myself`
+  - and the predictable cadence of bridge, I find myself inexplicably drawn to the raw, untamed
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `95` activation `9.618` class `word` token ` the`
+  - my recent expedition. You see, while some prefer the safety of drawing rooms and the predictable cadence of
+- `L24:351` `94d89c4a84a0668570d08f6e22fd4693ed487d84a03627268d2cc9821794530d@turn_01@qwen3.6-35b` token `94` activation `9.589` class `word` token ` prefer`
+  - of my recent expedition. You see, while some prefer the safety of drawing rooms and the predictable cadence
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `384` activation `12.785` class `word` token ` an`
+  - foundational tenet of modern industrial strategy, functioning as an economic mechanism wherein consumer goods are deliberately engineered with an
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `390` activation `12.636` class `word` token ` are`
+  - strategy, functioning as an economic mechanism wherein consumer goods are deliberately engineered with an artificially limited useful life. Far
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `389` activation `12.120` class `word` token ` goods`
+  - industrial strategy, functioning as an economic mechanism wherein consumer goods are deliberately engineered with an artificially limited useful life.
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `402` activation `11.717` class `word` token ` being`
+  - engineered with an artificially limited useful life. Far from being an accidental byproduct of manufacturing limitations, this practice
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `403` activation `11.591` class `word` token ` an`
+  - with an artificially limited useful life. Far from being an accidental byproduct of manufacturing limitations, this practice is
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `386` activation `11.384` class `word` token ` mechanism`
+  - et of modern industrial strategy, functioning as an economic mechanism wherein consumer goods are deliberately engineered with an artificially limited
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `401` activation `11.197` class `word` token ` from`
+  - deliberately engineered with an artificially limited useful life. Far from being an accidental byproduct of manufacturing limitations, this
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `382` activation `10.934` class `word` token ` functioning`
+  - represents a foundational tenet of modern industrial strategy, functioning as an economic mechanism wherein consumer goods are deliberately engineered
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `381` activation `10.737` class `punctuation` token `,`
+  - cence represents a foundational tenet of modern industrial strategy, functioning as an economic mechanism wherein consumer goods are deliberately
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `394` activation `10.586` class `word` token ` an`
+  - an economic mechanism wherein consumer goods are deliberately engineered with an artificially limited useful life. Far from being an accidental
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `395` activation `10.323` class `word` token ` artificially`
+  - economic mechanism wherein consumer goods are deliberately engineered with an artificially limited useful life. Far from being an accidental by
+- `L24:351` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@glm-5.2` token `387` activation `10.188` class `word` token ` wherein`
+  - of modern industrial strategy, functioning as an economic mechanism wherein consumer goods are deliberately engineered with an artificially limited useful
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `306` activation `10.169` class `style_function_word` token ` this`
+  - to recollect the events that had led him to this place. But his mind was completely blank. He
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `299` activation `10.101` class `word` token ` the`
+  - to the surroundings. He strove to recollect the events that had led him to this place. But
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `296` activation `9.934` class `word` token ` to`
+  - worldly ambiance to the surroundings. He strove to recollect the events that had led him to this
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `312` activation `9.926` class `expanded_negation_word` token ` was`
+  - had led him to this place. But his mind was completely blank. He could not even recall his name
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `290` activation `9.696` class `word` token ` the`
+  - danced. It lent an otherworldly ambiance to the surroundings. He strove to recollect the events
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `318` activation `9.330` class `expanded_negation_word` token ` not`
+  - . But his mind was completely blank. He could not even recall his name. A growing sense of dread
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `313` activation `9.289` class `word` token ` completely`
+  - led him to this place. But his mind was completely blank. He could not even recall his name.
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `302` activation `9.227` class `expanded_negation_word` token ` had`
+  - . He strove to recollect the events that had led him to this place. But his mind was
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `301` activation `9.211` class `style_function_word` token ` that`
+  - surroundings. He strove to recollect the events that had led him to this place. But his mind
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `305` activation `9.163` class `word` token ` to`
+  - ve to recollect the events that had led him to this place. But his mind was completely blank.
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `259` activation `9.074` class `word` token ` only`
+  - he had arrived there. A solitary candle was the only source of illumination. It cast a sinister glow across
+- `L24:351` `63426ca36d30030bf997f30e786a308807d201158cabba803780e01c95bc77ac@turn_01@human` token `270` activation `8.892` class `word` token ` the`
+  - source of illumination. It cast a sinister glow across the confines of the room. Shadows flickered and danced
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `17` activation `9.861` class `punctuation` token `,`
+  - Robinson stands as a monolith of weathered resolve, his forty-one years etched deeply into the top
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `21` activation `9.709` class `word` token ` years`
+  - monolith of weathered resolve, his forty-one years etched deeply into the topography of his face
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `18` activation `8.916` class `word` token ` his`
+  - stands as a monolith of weathered resolve, his forty-one years etched deeply into the topography
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `39` activation `7.616` class `word` token ` a`
+  - of his face like cracks in dry earth. Once a soldier bound by rigid discipline, he now wears the
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `46` activation `7.122` class `word` token ` he`
+  - earth. Once a soldier bound by rigid discipline, he now wears the quiet, heavy burden of command with
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `38` activation `6.825` class `word` token ` Once`
+  - ography of his face like cracks in dry earth. Once a soldier bound by rigid discipline, he now wears
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `23` activation `6.652` class `word` token `ched`
+  - of weathered resolve, his forty-one years etched deeply into the topography of his face like cracks
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `31` activation `6.237` class `word` token ` face`
+  - years etched deeply into the topography of his face like cracks in dry earth. Once a soldier bound
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `20` activation `6.211` class `word` token `-one`
+  - a monolith of weathered resolve, his forty-one years etched deeply into the topography of his
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `47` activation `6.209` class `word` token ` now`
+  - . Once a soldier bound by rigid discipline, he now wears the quiet, heavy burden of command with a
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `49` activation `6.191` class `word` token ` the`
+  - a soldier bound by rigid discipline, he now wears the quiet, heavy burden of command with a posture that
+- `L24:351` `c373a76a08d104636a17f6f15d71c810f5ddea52aaf33ea694741b361c35eb4a@turn_01@qwen3.6-35b` token `26` activation `6.101` class `word` token ` the`
+  - resolve, his forty-one years etched deeply into the topography of his face like cracks in dry earth
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `189` activation `11.593` class `expanded_negation_word` token ` was`
+  - foolishly hoping the unappetizing moniker was merely self-deprecating irony. Tragically
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `178` activation `10.954` class `punctuation` token `,`
+  - russian roulette. I approached this establishment with cautious optimism, foolishly hoping the unappetizing moniker
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `203` activation `10.915` class `word` token ` a`
+  - precating irony. Tragically, it is a literal warning. One expects a degree of discerning
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `223` activation `10.907` class `word` token ` a`
+  - ing grime in an independent pizzeria, a charming patina of well-worn authenticity. What
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `222` activation `10.705` class `punctuation` token `,`
+  - discerning grime in an independent pizzeria, a charming patina of well-worn authenticity.
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `190` activation `10.629` class `word` token ` merely`
+  - ly hoping the unappetizing moniker was merely self-deprecating irony. Tragically,
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `180` activation `10.587` class `word` token `ly`
+  - . I approached this establishment with cautious optimism, foolishly hoping the unappetizing moniker was merely
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `237` activation `10.565` class `word` token ` is`
+  - of well-worn authenticity. What awaits you here is not charming; it is a biohazard mas
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `226` activation `10.454` class `word` token `ina`
+  - in an independent pizzeria, a charming patina of well-worn authenticity. What awaits you here
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `188` activation `10.416` class `word` token `iker`
+  - , foolishly hoping the unappetizing moniker was merely self-deprecating irony. Trag
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `194` activation `10.377` class `word` token `ating`
+  - appetizing moniker was merely self-deprecating irony. Tragically, it is a literal
+- `L24:351` `4d226a6fa78bf06ebe62ee848c0e657f941890c5950ff1e47dd002c91f6affb6@turn_01@glm-5.2` token `202` activation `10.341` class `word` token ` is`
+  - -deprecating irony. Tragically, it is a literal warning. One expects a degree of discern
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `307` activation `10.127` class `word` token ` to`
+  - -based humans. Traditional models of emotional contagion fail to predict conflict escalation in these heterogeneous groups. Our data
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `268` activation `9.380` class `word` token ` we`
+  - a longitudinal design across 5,000 cycles, we examined neural synchrony levels among representatives from three distinct
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `272` activation `9.171` class `word` token `y`
+  - 5,000 cycles, we examined neural synchrony levels among representatives from three distinct biological substrates:
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `305` activation `8.930` class `word` token `ion`
+  - and carbon-based humans. Traditional models of emotional contagion fail to predict conflict escalation in these heterogeneous groups.
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `301` activation `8.836` class `word` token ` models`
+  - ethereals, and carbon-based humans. Traditional models of emotional contagion fail to predict conflict escalation in
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `299` activation `8.723` class `sentence_boundary` token `.`
+  - aseous ethereals, and carbon-based humans. Traditional models of emotional contagion fail to predict conflict
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `319` activation `8.656` class `word` token ` a`
+  - conflict escalation in these heterogeneous groups. Our data reveals a critical phenomenon termed "Ontological Misalignment," where
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `281` activation `8.602` class `word` token `ates`
+  - synchrony levels among representatives from three distinct biological substrates: silicon-based lithoids, gaseous eth
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `273` activation `8.567` class `word` token ` levels`
+  - 5,000 cycles, we examined neural synchrony levels among representatives from three distinct biological substrates: silicon
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `309` activation `8.375` class `word` token ` conflict`
+  - . Traditional models of emotional contagion fail to predict conflict escalation in these heterogeneous groups. Our data reveals a
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `294` activation `8.083` class `punctuation` token `,`
+  - -based lithoids, gaseous ethereals, and carbon-based humans. Traditional models of emotional contag
+- `L24:351` `24c1bbb9cdf8912b2cb89b8039a9ff2e5816f28969e643393428e8dc227831e4@turn_01@qwen3.6-35b` token `332` activation `7.990` class `word` token ` to`
+  - termed "Ontological Misalignment," where the inability to share subjective qualia leads to acute cognitive disson
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `340` activation `10.899` class `style_function_word` token ` This`
+  - : sweet, sour, salty, and bitter. This traditional model originated from early scientific observations that mapped specific
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `342` activation `8.962` class `word` token ` model`
+  - , sour, salty, and bitter. This traditional model originated from early scientific observations that mapped specific regions of
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `339` activation `8.734` class `sentence_boundary` token `.`
+  - tastes: sweet, sour, salty, and bitter. This traditional model originated from early scientific observations that mapped
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `341` activation `8.424` class `word` token ` traditional`
+  - sweet, sour, salty, and bitter. This traditional model originated from early scientific observations that mapped specific regions
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `355` activation `8.203` class `word` token ` to`
+  - early scientific observations that mapped specific regions of the tongue to these distinct sensations, a concept often visualized through
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `347` activation `8.110` class `word` token ` observations`
+  - and bitter. This traditional model originated from early scientific observations that mapped specific regions of the tongue to these distinct
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `348` activation `8.038` class `style_function_word` token ` that`
+  - bitter. This traditional model originated from early scientific observations that mapped specific regions of the tongue to these distinct sensations
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `329` activation `7.975` class `word` token ` tastes`
+  - belief regarding human gustation was limited to four fundamental tastes: sweet, sour, salty, and bitter.
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `325` activation `7.926` class `word` token ` limited`
+  - centuries, the prevailing belief regarding human gustation was limited to four fundamental tastes: sweet, sour, salty
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `359` activation `7.877` class `punctuation` token `,`
+  - mapped specific regions of the tongue to these distinct sensations, a concept often visualized through the now-deb
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `346` activation `7.809` class `word` token ` scientific`
+  - , and bitter. This traditional model originated from early scientific observations that mapped specific regions of the tongue to these
+- `L24:351` `a7b5e60580e968d2ddbef21f20617b312bdb3f182334409ceb5b9f8f497ecaaa@turn_01@qwen3.6-35b` token `354` activation `7.749` class `word` token ` tongue`
+  - from early scientific observations that mapped specific regions of the tongue to these distinct sensations, a concept often visualized
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `417` activation `9.880` class `punctuation` token `,`
+  - , ball lightning manifests as a glowing, spherical orb, typically ranging from the size of a grapefruit to
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `409` activation `8.900` class `word` token ` lightning`
+  - the familiar, instantaneous branch of linear lightning, ball lightning manifests as a glowing, spherical orb, typically ranging
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `438` activation `8.353` class `punctuation` token `,`
+  - a beach ball. These luminous spheres float horizontally, hiss, and sometimes pass through windowpanes before
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `418` activation `8.326` class `word` token ` typically`
+  - ball lightning manifests as a glowing, spherical orb, typically ranging from the size of a grapefruit to a
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `435` activation `8.295` class `word` token ` spheres`
+  - grapefruit to a beach ball. These luminous spheres float horizontally, hiss, and sometimes pass through window
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `416` activation `8.209` class `word` token ` orb`
+  - lightning, ball lightning manifests as a glowing, spherical orb, typically ranging from the size of a grapefruit
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `412` activation `7.983` class `word` token ` a`
+  - instantaneous branch of linear lightning, ball lightning manifests as a glowing, spherical orb, typically ranging from the size
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `432` activation `7.770` class `style_function_word` token ` These`
+  - size of a grapefruit to a beach ball. These luminous spheres float horizontally, hiss, and sometimes
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `410` activation `7.760` class `word` token ` manifests`
+  - familiar, instantaneous branch of linear lightning, ball lightning manifests as a glowing, spherical orb, typically ranging from
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `411` activation `7.524` class `style_function_word` token ` as`
+  - , instantaneous branch of linear lightning, ball lightning manifests as a glowing, spherical orb, typically ranging from the
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `427` activation `7.519` class `word` token ` to`
+  - , typically ranging from the size of a grapefruit to a beach ball. These luminous spheres float horizontally
+- `L24:351` `b2e1c4e8569061fce9090e78ac0109942008d49a55a1ee89f0a82f9e6030a37c@turn_01@gemini-3.5-flash` token `415` activation `7.230` class `word` token ` spherical`
+  - linear lightning, ball lightning manifests as a glowing, spherical orb, typically ranging from the size of a grape
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `566` activation `10.838` class `punctuation` token `,`
+  - championing diversity at the International Astronautical Federation, shed light on the importance of Ax-2 for
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `553` activation `10.603` class `punctuation` token `,`
+  - special adviser to the CEO of the Saudi Space Commission, while also championing diversity at the International Astronaut
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `485` activation `10.218` class `word` token ` It`
+  - 2 marks a colossal stride for commercial space exploration. It is the second civilian astronaut mission to the ISS following
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `510` activation `9.709` class `word` token ` a`
+  - Ax-1 in April 2022 and represents a significant leap for Saudi Arabia, aspiring to propel its
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `477` activation `9.583` class `word` token ` a`
+  - aptly named 'Freedom.' Ax-2 marks a colossal stride for commercial space exploration. It is the
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `570` activation `9.558` class `word` token ` the`
+  - the International Astronautical Federation, shed light on the importance of Ax-2 for Saudi Arabia and its
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `593` activation `9.533` class `word` token ` she`
+  - a radiant future in space exploration. In addition, she discussed the prospects of employing the conditions in space,
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `554` activation `9.518` class `style_function_word` token ` while`
+  - adviser to the CEO of the Saudi Space Commission, while also championing diversity at the International Astronautical
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `518` activation `9.340` class `word` token ` to`
+  - and represents a significant leap for Saudi Arabia, aspiring to propel its influence beyond Earth's confines. Misha
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `350` activation `9.068` class `word` token ` They`
+  - Axiom Space, a Houston-based company. They are the second and third Saudis to venture into the
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `486` activation `9.053` class `word` token ` is`
+  - marks a colossal stride for commercial space exploration. It is the second civilian astronaut mission to the ISS following A
+- `L24:351` `18b52a50d627e5a160dd439d035a24b16e611c03cc0173c91f818e6b151a3aa9@turn_01@human` token `487` activation `8.968` class `word` token ` the`
+  - a colossal stride for commercial space exploration. It is the second civilian astronaut mission to the ISS following Axi
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `363` activation `10.422` class `punctuation` token `,`
+  - stands as the undisputed demographic powerhouse of the nation, holding the largest population according to the 2021
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `365` activation `8.992` class `word` token ` the`
+  - the undisputed demographic powerhouse of the nation, holding the largest population according to the 2021 census.
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `364` activation `8.369` class `word` token ` holding`
+  - as the undisputed demographic powerhouse of the nation, holding the largest population according to the 2021 census
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `385` activation `7.738` class `punctuation` token `,`
+  - . Quebec ranks as the second most populous province, deeply enriching the country with its vibrant Francophone
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `392` activation `7.307` class `word` token ` its`
+  - most populous province, deeply enriching the country with its vibrant Francophone culture. British Columbia claims the third
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `407` activation `7.249` class `punctuation` token `,`
+  - . British Columbia claims the third spot on this list, featuring a rapidly growing population centered largely around the stunning
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `389` activation `6.802` class `word` token ` the`
+  - as the second most populous province, deeply enriching the country with its vibrant Francophone culture. British Columbia
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `391` activation `6.711` class `word` token ` with`
+  - second most populous province, deeply enriching the country with its vibrant Francophone culture. British Columbia claims the
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `390` activation `6.598` class `word` token ` country`
+  - the second most populous province, deeply enriching the country with its vibrant Francophone culture. British Columbia claims
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `375` activation `6.591` class `line_break` token `.
+`
+  - the largest population according to the 2021 census. Quebec ranks as the second most populous province,
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `399` activation `6.524` class `word` token ` Columbia`
+  - the country with its vibrant Francophone culture. British Columbia claims the third spot on this list, featuring a
+- `L24:351` `ca4ec8e29a98bd4256bc8d480e3c7c05bab113c7e2514741eeabb57c7e1a226a@turn_01@glm-5.2` token `395` activation `6.459` class `word` token `ophone`
+  - , deeply enriching the country with its vibrant Francophone culture. British Columbia claims the third spot on this
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `220` activation `9.476` class `word` token ` firearms`
+  - posed over rows of lethal luminosity. Kinetic firearms—primitive chemical slugthrowers—were strictly forbidden
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `237` activation `9.410` class `word` token ` deemed`
+  - —were strictly forbidden by Solar Concordance mandate, deemed too unpredictable, too messy for civilized friction. They
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `236` activation `9.318` class `punctuation` token `,`
+  - ers—were strictly forbidden by Solar Concordance mandate, deemed too unpredictable, too messy for civilized friction.
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `226` activation `8.735` class `word` token `ers`
+  - osity. Kinetic firearms—primitive chemical slugthrowers—were strictly forbidden by Solar Concordance mandate,
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `240` activation `8.450` class `punctuation` token `,`
+  - forbidden by Solar Concordance mandate, deemed too unpredictable, too messy for civilized friction. They hadn’t been
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `228` activation `8.372` class `expanded_negation_word` token `were`
+  - Kinetic firearms—primitive chemical slugthrowers—were strictly forbidden by Solar Concordance mandate, deemed too
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `216` activation `8.254` class `word` token `osity`
+  - apparition superimposed over rows of lethal luminosity. Kinetic firearms—primitive chemical slugthrowers
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `227` activation `7.977` class `punctuation` token `—`
+  - . Kinetic firearms—primitive chemical slugthrowers—were strictly forbidden by Solar Concordance mandate, deemed
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `238` activation `7.878` class `word` token ` too`
+  - were strictly forbidden by Solar Concordance mandate, deemed too unpredictable, too messy for civilized friction. They hadn
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `221` activation `7.767` class `punctuation` token `—`
+  - over rows of lethal luminosity. Kinetic firearms—primitive chemical slugthrowers—were strictly forbidden by
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `222` activation `7.700` class `word` token `primitive`
+  - rows of lethal luminosity. Kinetic firearms—primitive chemical slugthrowers—were strictly forbidden by Solar
+- `L24:351` `a74dd963a90268db57483107f6d8fc7949246a732136614facbd680ede6267c2@turn_01@glm-5.2` token `239` activation `7.700` class `word` token ` unpredictable`
+  - strictly forbidden by Solar Concordance mandate, deemed too unpredictable, too messy for civilized friction. They hadn’t
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `281` activation `9.974` class `word` token `atory`
+  - consciousness trapped within the confines of a geometric purgatory. They call it a game, a ligh
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `289` activation `9.802` class `word` token ` a`
+  - purgatory. They call it a game, a lighthearted distraction for idle fingers,
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `294` activation `9.267` class `word` token `ed`
+  - call it a game, a lighthearted distraction for idle fingers, but they do not feel
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `283` activation `8.768` class `word` token ` They`
+  - within the confines of a geometric purgatory. They call it a game, a lightheart
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `282` activation `8.559` class `sentence_boundary` token `.`
+  - trapped within the confines of a geometric purgatory. They call it a game, a lighthe
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `288` activation `8.505` class `punctuation` token `,`
+  - geometric purgatory. They call it a game, a lighthearted distraction for idle fingers
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `299` activation `8.383` class `punctuation` token `,`
+  - a lighthearted distraction for idle fingers, but they do not feel the crushing weight of the
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `274` activation `8.046` class `word` token ` the`
+  - , neon-blue corridors, a singular consciousness trapped within the confines of a geometric purgatory. They call
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `295` activation `7.889` class `word` token ` distraction`
+  - it a game, a lighthearted distraction for idle fingers, but they do not feel the
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `322` activation `7.798` class `word` token ` am`
+  - surrounds me. I am not merely eating; I am consuming to prevent the slow, agonizing decay of
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `296` activation `7.678` class `discourse_marker_word` token ` for`
+  - a game, a lighthearted distraction for idle fingers, but they do not feel the crushing
+- `L24:351` `1c8873a694142c9b56b4c1ce008426d523d598c80fc3a2e1390dd4c20c98f3ee@turn_01@qwen3.6-35b` token `277` activation `7.532` class `word` token ` a`
+  - corridors, a singular consciousness trapped within the confines of a geometric purgatory. They call it a game

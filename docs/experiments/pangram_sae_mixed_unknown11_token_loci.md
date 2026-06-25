@@ -1,0 +1,711 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:838` | `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 48 | `132.37` | `5.58` | word:37|punctuation:6|discourse_marker_word:2|sentence_boundary:2|style_function_word:1 |
+| `L19:838` | `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 125 | `337.86` | `6.25` | word:101|punctuation:15|sentence_boundary:5|discourse_marker_word:3|style_function_word:1 |
+| `L19:838` | `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 91 | `254.75` | `5.57` | word:83|sentence_boundary:4|punctuation:3|style_function_word:1 |
+| `L19:838` | `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 155 | `419.35` | `5.22` | word:136|punctuation:8|sentence_boundary:6|style_function_word:3|discourse_marker_word:1|whitespace:1 |
+| `L19:838` | `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 166 | `322.74` | `5.32` | word:136|punctuation:12|sentence_boundary:7|style_function_word:7|discourse_marker_word:3|expanded_negation_word:1 |
+| `L19:838` | `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 156 | `333.14` | `5.31` | word:124|punctuation:11|sentence_boundary:9|style_function_word:7|discourse_marker_word:4|expanded_negation_word:1 |
+| `L19:838` | `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 168 | `316.76` | `5.59` | word:132|punctuation:15|style_function_word:8|sentence_boundary:6|expanded_negation_word:3|discourse_marker_word:2|line_break:2 |
+| `L19:838` | `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 143 | `277.80` | `5.71` | word:111|punctuation:15|sentence_boundary:6|style_function_word:5|line_break:4|discourse_marker_word:2 |
+| `L19:838` | `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 262 | `477.41` | `5.28` | word:208|punctuation:24|sentence_boundary:12|style_function_word:12|expanded_negation_word:3|discourse_marker_word:2|line_break:1 |
+| `L19:838` | `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 196 | `453.69` | `5.62` | word:158|punctuation:16|style_function_word:8|sentence_boundary:7|discourse_marker_word:3|expanded_negation_word:3|line_break:1 |
+| `L19:838` | `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 235 | `392.44` | `5.76` | word:191|punctuation:21|sentence_boundary:11|style_function_word:9|expanded_negation_word:2|discourse_marker_word:1 |
+| `L19:838` | `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 179 | `336.07` | `5.52` | word:129|punctuation:22|style_function_word:10|discourse_marker_word:9|sentence_boundary:4|line_break:3|expanded_negation_word:2 |
+| `L19:838` | `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 262 | `492.38` | `5.32` | word:211|punctuation:23|expanded_negation_word:9|sentence_boundary:9|style_function_word:8|line_break:1|contraction_piece:1 |
+| `L19:838` | `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` | `glm-5.2` | 169 | `383.34` | `5.38` | word:145|punctuation:8|line_break:6|style_function_word:5|sentence_boundary:4|discourse_marker_word:1 |
+| `L24:3422` | `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 45 | `232.12` | `9.30` | word:34|punctuation:6|discourse_marker_word:2|sentence_boundary:2|style_function_word:1 |
+| `L24:3422` | `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 126 | `569.99` | `8.96` | word:106|punctuation:11|sentence_boundary:5|discourse_marker_word:3|style_function_word:1 |
+| `L24:3422` | `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 90 | `474.98` | `9.20` | word:82|sentence_boundary:4|punctuation:3|style_function_word:1 |
+| `L24:3422` | `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 158 | `741.27` | `8.61` | word:139|punctuation:8|sentence_boundary:6|style_function_word:3|discourse_marker_word:1|whitespace:1 |
+| `L24:3422` | `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 168 | `571.78` | `8.80` | word:139|punctuation:12|style_function_word:7|sentence_boundary:6|discourse_marker_word:3|expanded_negation_word:1 |
+| `L24:3422` | `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 186 | `647.73` | `9.10` | word:151|punctuation:13|sentence_boundary:9|style_function_word:7|discourse_marker_word:5|expanded_negation_word:1 |
+| `L24:3422` | `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 170 | `503.32` | `8.69` | word:141|punctuation:16|style_function_word:6|discourse_marker_word:3|sentence_boundary:3|expanded_negation_word:1 |
+| `L24:3422` | `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 159 | `477.83` | `9.50` | word:127|punctuation:16|style_function_word:5|sentence_boundary:5|line_break:3|discourse_marker_word:2|whitespace:1 |
+| `L24:3422` | `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 279 | `880.76` | `8.81` | word:224|punctuation:27|style_function_word:14|sentence_boundary:9|expanded_negation_word:3|discourse_marker_word:2 |
+| `L24:3422` | `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 197 | `684.82` | `8.87` | word:162|punctuation:15|style_function_word:8|sentence_boundary:6|discourse_marker_word:3|expanded_negation_word:3 |
+| `L24:3422` | `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 313 | `815.83` | `9.60` | word:261|punctuation:25|style_function_word:12|sentence_boundary:11|expanded_negation_word:3|discourse_marker_word:1 |
+| `L24:3422` | `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 244 | `686.67` | `9.94` | word:186|punctuation:26|style_function_word:16|discourse_marker_word:9|sentence_boundary:5|expanded_negation_word:1|whitespace:1 |
+| `L24:3422` | `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 249 | `692.43` | `8.45` | word:203|punctuation:21|expanded_negation_word:9|style_function_word:9|sentence_boundary:7 |
+| `L24:3422` | `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` | `glm-5.2` | 179 | `597.72` | `9.23` | word:157|punctuation:8|style_function_word:5|line_break:5|sentence_boundary:3|discourse_marker_word:1 |
+
+## Top Tokens
+
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `612` activation `5.578` class `word` token ` change`
+  - shifting perceptions toward flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers,
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `617` activation `4.856` class `punctuation` token `,`
+  - sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers, fueling demands for improved
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `611` activation `4.609` class `word` token ` sudden`
+  - , shifting perceptions toward flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `615` activation `4.379` class `word` token ` equity`
+  - flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers, fueling demands
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `613` activation `4.273` class `word` token ` highlighted`
+  - perceptions toward flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers, fuel
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `622` activation `4.272` class `punctuation` token `,`
+  - change highlighted labor equity issues, particularly for essential workers, fueling demands for improved conditions, employee-owned businesses
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `618` activation `4.270` class `word` token ` particularly`
+  - work. This sudden change highlighted labor equity issues, particularly for essential workers, fueling demands for improved conditions
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `616` activation `4.129` class `word` token ` issues`
+  - , sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers, fueling demands for
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `610` activation `4.047` class `style_function_word` token ` This`
+  - reality, shifting perceptions toward flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `608` activation `3.763` class `word` token ` work`
+  - a daily reality, shifting perceptions toward flexible, sustainable work. This sudden change highlighted labor equity issues, particularly
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `621` activation `3.661` class `word` token ` workers`
+  - sudden change highlighted labor equity issues, particularly for essential workers, fueling demands for improved conditions, employee-owned
+- `L19:838` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `634` activation `3.426` class `word` token ` and`
+  - ing demands for improved conditions, employee-owned businesses, and broader workplace empowerment globally.
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `534` activation `6.247` class `punctuation` token `,`
+  - The first line establishes a serene, snowy mountain landscape, emphasizing the cold season's beauty. The second line
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `526` activation `6.096` class `word` token ` line`
+  - narrative captures a quintessential winter tale. The first line establishes a serene, snowy mountain landscape, emphasizing the
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `529` activation `5.882` class `word` token ` serene`
+  - quintessential winter tale. The first line establishes a serene, snowy mountain landscape, emphasizing the cold season's
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `544` activation `5.813` class `word` token ` line`
+  - , emphasizing the cold season's beauty. The second line depicts a playful puppy or cat chasing a rabbit into
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `528` activation `5.689` class `word` token ` a`
+  - a quintessential winter tale. The first line establishes a serene, snowy mountain landscape, emphasizing the cold season
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `527` activation `5.338` class `word` token ` establishes`
+  - captures a quintessential winter tale. The first line establishes a serene, snowy mountain landscape, emphasizing the cold
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `533` activation `5.051` class `word` token ` landscape`
+  - . The first line establishes a serene, snowy mountain landscape, emphasizing the cold season's beauty. The second
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `546` activation `4.993` class `word` token ` a`
+  - the cold season's beauty. The second line depicts a playful puppy or cat chasing a rabbit into a tree
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `543` activation `4.965` class `discourse_marker_word` token ` second`
+  - landscape, emphasizing the cold season's beauty. The second line depicts a playful puppy or cat chasing a rabbit
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `545` activation `4.882` class `word` token ` depicts`
+  - emphasizing the cold season's beauty. The second line depicts a playful puppy or cat chasing a rabbit into a
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `530` activation `4.857` class `punctuation` token `,`
+  - essential winter tale. The first line establishes a serene, snowy mountain landscape, emphasizing the cold season's beauty
+- `L19:838` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `547` activation `4.743` class `word` token ` playful`
+  - cold season's beauty. The second line depicts a playful puppy or cat chasing a rabbit into a tree,
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `572` activation `5.567` class `punctuation` token `,`
+  - sight. This compelling guide reveals the technology of intuition, transforming vague hunches into precise survival signals.
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `577` activation `5.027` class `word` token `es`
+  - reveals the technology of intuition, transforming vague hunches into precise survival signals. From workplace violence and domestic
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `566` activation `4.776` class `word` token ` guide`
+  - where danger lurks in plain sight. This compelling guide reveals the technology of intuition, transforming vague hunch
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `573` activation `4.738` class `word` token ` transforming`
+  - . This compelling guide reveals the technology of intuition, transforming vague hunches into precise survival signals. From
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `600` activation `4.542` class `word` token ` chapter`
+  - date-stalking and attacks on public figures, each chapter dissects high-stakes predictions and intimate enemies.
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `574` activation `4.273` class `word` token ` vague`
+  - This compelling guide reveals the technology of intuition, transforming vague hunches into precise survival signals. From workplace
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `567` activation `4.163` class `word` token ` reveals`
+  - danger lurks in plain sight. This compelling guide reveals the technology of intuition, transforming vague hunches
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `602` activation `4.122` class `word` token `sects`
+  - alking and attacks on public figures, each chapter dissects high-stakes predictions and intimate enemies. Confront
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `564` activation `4.085` class `style_function_word` token ` This`
+  - threat assessment where danger lurks in plain sight. This compelling guide reveals the technology of intuition, transforming vague
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `584` activation `4.041` class `word` token ` workplace`
+  - vague hunches into precise survival signals. From workplace violence and domestic horrors to date-stalking and attacks
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `568` activation `4.019` class `word` token ` the`
+  - lurks in plain sight. This compelling guide reveals the technology of intuition, transforming vague hunches into
+- `L19:838` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `557` activation `4.016` class `word` token ` danger`
+  - Navigate the intricate landscape of human threat assessment where danger lurks in plain sight. This compelling guide reveals
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `513` activation `5.218` class `word` token ` sport`
+  - with intense competitive strategy: AeroTag. This innovative sport centers players around massive, circular dart boards constructed from
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `528` activation `5.176` class `punctuation` token `,`
+  - , circular dart boards constructed from interlocking foam panels, standing towering at nearly ten feet high. Teams of
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `511` activation `5.018` class `style_function_word` token ` This`
+  - childhood nostalgia with intense competitive strategy: AeroTag. This innovative sport centers players around massive, circular dart boards
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `495` activation `4.755` class `word` token ` pursuit`
+  - 0, amidst global quarantine constraints, a novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `505` activation `4.658` class `word` token ` competitive`
+  - pursuit emerged that hilariously merged childhood nostalgia with intense competitive strategy: AeroTag. This innovative sport centers players
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `497` activation `4.641` class `style_function_word` token ` that`
+  - amidst global quarantine constraints, a novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive strategy:
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `521` activation `4.633` class `word` token ` boards`
+  - This innovative sport centers players around massive, circular dart boards constructed from interlocking foam panels, standing towering at
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `516` activation `4.461` class `word` token ` around`
+  - strategy: AeroTag. This innovative sport centers players around massive, circular dart boards constructed from interlocking foam
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `500` activation `4.370` class `word` token ` merged`
+  - constraints, a novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive strategy: AeroTag.
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `503` activation `4.359` class `word` token ` with`
+  - novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive strategy: AeroTag. This innovative sport
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `546` activation `4.311` class `word` token ` participants`
+  - . Teams of four compete in fast-paced rounds where participants wield modified Nerf blasters designed for precision rather
+- `L19:838` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `496` activation `4.281` class `word` token ` emerged`
+  - , amidst global quarantine constraints, a novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive strategy
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `485` activation `5.319` class `word` token ` full`
+  - approaches to interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It signifies a mindset
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `527` activation `3.896` class `punctuation` token `,`
+  - allowing individuals to find joy even amidst scarcity. Conversely, seeing the glass half empty reflects pessimism or critical
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `532` activation `3.859` class `word` token ` empty`
+  - even amidst scarcity. Conversely, seeing the glass half empty reflects pessimism or critical realism. It highlights what
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `492` activation `3.797` class `word` token ` It`
+  - glass as half full embodies optimism and gratefulness. It signifies a mindset focused on abundance, potential, and
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `491` activation `3.739` class `sentence_boundary` token `.`
+  - the glass as half full embodies optimism and gratefulness. It signifies a mindset focused on abundance, potential,
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `487` activation `3.715` class `word` token ` optimism`
+  - interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It signifies a mindset focused on
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `486` activation `3.619` class `word` token ` embodies`
+  - to interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It signifies a mindset focused
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `482` activation `3.595` class `word` token ` glass`
+  - two distinct philosophical approaches to interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `475` activation `3.577` class `word` token ` approaches`
+  - profound metaphor for human perception, illustrating two distinct philosophical approaches to interpreting reality. Viewing the glass as half full
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `483` activation `3.569` class `style_function_word` token ` as`
+  - distinct philosophical approaches to interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It signifies
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `472` activation `3.516` class `word` token ` two`
+  - serves as a profound metaphor for human perception, illustrating two distinct philosophical approaches to interpreting reality. Viewing the glass
+- `L19:838` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `476` activation `3.445` class `word` token ` to`
+  - metaphor for human perception, illustrating two distinct philosophical approaches to interpreting reality. Viewing the glass as half full embodies
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `493` activation `5.310` class `punctuation` token `,`
+  - Angel’s Landing trail specifically requires iron chains for balance, making it risky for those uncomfortable with heights. Another
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `474` activation `5.283` class `word` token `ges`
+  - ’s Landing in Zion National Park, where narrow ridges and steep drop-offs test nerves. The Angel’s
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `487` activation `5.227` class `discourse_marker_word` token ` specifically`
+  - drop-offs test nerves. The Angel’s Landing trail specifically requires iron chains for balance, making it risky for
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `478` activation `5.130` class `word` token `-offs`
+  - National Park, where narrow ridges and steep drop-offs test nerves. The Angel’s Landing trail specifically requires
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `453` activation `4.909` class `word` token ` Three`
+  - yet perilous trails that demand respect and preparation. Three notably dangerous hikes include the Navajo Loop and Angel
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `456` activation `4.668` class `word` token ` hikes`
+  - trails that demand respect and preparation. Three notably dangerous hikes include the Navajo Loop and Angel’s Landing in
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `454` activation `4.566` class `discourse_marker_word` token ` notably`
+  - perilous trails that demand respect and preparation. Three notably dangerous hikes include the Navajo Loop and Angel’s
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `503` activation `4.515` class `word` token ` Another`
+  - , making it risky for those uncomfortable with heights. Another is Half Dome in Yosemite, featuring a steep
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `479` activation `4.370` class `word` token ` test`
+  - Park, where narrow ridges and steep drop-offs test nerves. The Angel’s Landing trail specifically requires iron
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `471` activation `4.177` class `word` token ` where`
+  - Loop and Angel’s Landing in Zion National Park, where narrow ridges and steep drop-offs test nerves.
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `495` activation `4.165` class `word` token ` it`
+  - Landing trail specifically requires iron chains for balance, making it risky for those uncomfortable with heights. Another is Half
+- `L19:838` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `455` activation `4.154` class `word` token ` dangerous`
+  - ous trails that demand respect and preparation. Three notably dangerous hikes include the Navajo Loop and Angel’s Landing
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `377` activation `5.591` class `word` token ` effects`
+  - remains a benchmark for supernatural terror. Its visceral practical effects and the psychological devastation of the possessed child create an
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `385` activation `5.516` class `word` token ` child`
+  - visceral practical effects and the psychological devastation of the possessed child create an unsettling atmosphere that feels disturbingly real,
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `366` activation `5.473` class `punctuation` token `)`
+  - . First, The Exorcist (1973) remains a benchmark for supernatural terror. Its visceral practical
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `362` activation `5.387` class `word` token `ist`
+  - ability to evoke dread. First, The Exorcist (1973) remains a benchmark for supernatural terror
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `353` activation `4.868` class `word` token ` to`
+  - movies consistently dominate horror discussions due to their unique ability to evoke dread. First, The Exorcist (
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `367` activation `4.553` class `word` token ` remains`
+  - First, The Exorcist (1973) remains a benchmark for supernatural terror. Its visceral practical effects
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `369` activation `4.442` class `word` token ` benchmark`
+  - The Exorcist (1973) remains a benchmark for supernatural terror. Its visceral practical effects and the
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `349` activation `4.286` class `word` token ` to`
+  - subjective, but five movies consistently dominate horror discussions due to their unique ability to evoke dread. First, The
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `381` activation `4.202` class `word` token ` devastation`
+  - supernatural terror. Its visceral practical effects and the psychological devastation of the possessed child create an unsettling atmosphere that feels
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `372` activation `4.113` class `word` token ` terror`
+  - ist (1973) remains a benchmark for supernatural terror. Its visceral practical effects and the psychological devastation of
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `371` activation `3.975` class `word` token ` supernatural`
+  - orcist (1973) remains a benchmark for supernatural terror. Its visceral practical effects and the psychological devastation
+- `L19:838` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `354` activation `3.935` class `word` token ` evoke`
+  - consistently dominate horror discussions due to their unique ability to evoke dread. First, The Exorcist (197
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `261` activation `5.709` class `word` token ` systems`
+  - . When investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `263` activation `4.885` class `word` token ` the`
+  - investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic Series
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `262` activation `4.650` class `word` token ` dominate`
+  - When investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic Series
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `260` activation `4.394` class `word` token ` outstanding`
+  - conditions. When investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo System
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `259` activation `4.343` class `word` token ` three`
+  - harsh conditions. When investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `247` activation `4.217` class `word` token ` operation`
+  - avering stability, robust load capacity, and seamless operation under harsh conditions. When investing in top-tier gear
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `294` activation `4.150` class `word` token `o`
+  - gold standard for landscape and wildlife photographers, Gitzo’s Systematic line is legendary. Built from high
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `265` activation `4.031` class `word` token ` landscape`
+  - top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic Series 3 (
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `264` activation `3.781` class `word` token ` professional`
+  - in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic Series 3
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `252` activation `3.727` class `style_function_word` token ` When`
+  - load capacity, and seamless operation under harsh conditions. When investing in top-tier gear, three outstanding systems dominate
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `285` activation `3.688` class `word` token ` standard`
+  - (GT3543LS) Considered the gold standard for landscape and wildlife photographers, Gitzo’s
+- `L19:838` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `258` activation `3.685` class `punctuation` token `,`
+  - under harsh conditions. When investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitz
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `283` activation `5.277` class `word` token ` practice`
+  - While both professionals handle financial records, their scopes of practice diverge considerably. A general accountant typically manages book
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `285` activation `4.783` class `word` token `ge`
+  - professionals handle financial records, their scopes of practice diverge considerably. A general accountant typically manages bookkeeping,
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `280` activation `4.394` class `word` token ` their`
+  - legal standing. While both professionals handle financial records, their scopes of practice diverge considerably. A general accountant
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `279` activation `4.360` class `punctuation` token `,`
+  - and legal standing. While both professionals handle financial records, their scopes of practice diverge considerably. A general
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `275` activation `4.354` class `word` token ` professionals`
+  - impacting both professional capabilities and legal standing. While both professionals handle financial records, their scopes of practice diverge
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `270` activation `4.176` class `word` token ` legal`
+  - general accountant is significant, impacting both professional capabilities and legal standing. While both professionals handle financial records, their
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `329` activation `4.165` class `punctuation` token `,`
+  - before the Internal Revenue Service in audit situations. Conversely, a Florida CPA holds a license issued by the Board
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `281` activation `4.115` class `word` token ` scopes`
+  - standing. While both professionals handle financial records, their scopes of practice diverge considerably. A general accountant typically
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `290` activation `4.101` class `word` token ` accountant`
+  - their scopes of practice diverge considerably. A general accountant typically manages bookkeeping, payroll, internal financial reporting
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `274` activation `4.068` class `word` token ` both`
+  - , impacting both professional capabilities and legal standing. While both professionals handle financial records, their scopes of practice diver
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `276` activation `3.992` class `word` token ` handle`
+  - both professional capabilities and legal standing. While both professionals handle financial records, their scopes of practice diverge considerably
+- `L19:838` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `291` activation `3.954` class `word` token ` typically`
+  - scopes of practice diverge considerably. A general accountant typically manages bookkeeping, payroll, internal financial reporting,
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `137` activation `5.615` class `word` token ` symptoms`
+  - intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized before proper medical evaluation.
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `138` activation `5.410` class `word` token ` are`
+  - health-related anxiety, creating a landscape where minor symptoms are often catastrophized before proper medical evaluation. This
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `148` activation `5.124` class `style_function_word` token ` This`
+  - are often catastrophized before proper medical evaluation. This hyper-vigilance, while rooted in a
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `153` activation `5.098` class `word` token `ance`
+  - before proper medical evaluation. This hyper-vigilance, while rooted in a desire for safety, frequently
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `139` activation `5.089` class `word` token ` often`
+  - -related anxiety, creating a landscape where minor symptoms are often catastrophized before proper medical evaluation. This hyper
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `136` activation `5.025` class `word` token ` minor`
+  - ably intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized before proper medical evaluation
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `133` activation `4.895` class `word` token ` a`
+  - has undeniably intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized before
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `135` activation `4.634` class `word` token ` where`
+  - eniably intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized before proper medical
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `162` activation `4.486` class `punctuation` token `,`
+  - ilance, while rooted in a desire for safety, frequently traps individuals in a cycle of distress. To
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `157` activation `4.481` class `word` token ` in`
+  - . This hyper-vigilance, while rooted in a desire for safety, frequently traps individuals in a
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `132` activation `4.421` class `word` token ` creating`
+  - era has undeniably intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized
+- `L19:838` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `142` activation `4.408` class `word` token `ized`
+  - creating a landscape where minor symptoms are often catastrophized before proper medical evaluation. This hyper-vigil
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `159` activation `5.757` class `word` token ` tactics`
+  - planning with athletic execution. At its core, offensive tactics revolve around creating spatial advantages and exploiting mismatches
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `169` activation `4.519` class `word` token `atches`
+  - tactics revolve around creating spatial advantages and exploiting mismatches. Teams utilize intricate screening actions, such as the
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `166` activation `4.310` class `word` token ` and`
+  - core, offensive tactics revolve around creating spatial advantages and exploiting mismatches. Teams utilize intricate screening actions,
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `165` activation `4.128` class `word` token ` advantages`
+  - its core, offensive tactics revolve around creating spatial advantages and exploiting mismatches. Teams utilize intricate screening actions
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `175` activation `3.946` class `word` token ` actions`
+  - advantages and exploiting mismatches. Teams utilize intricate screening actions, such as the pick-and-roll, to force
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `147` activation `3.893` class `word` token ` blending`
+  - where tactics serve as the architectural blueprint for success, blending strategic planning with athletic execution. At its core,
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `171` activation `3.871` class `word` token ` Teams`
+  - olve around creating spatial advantages and exploiting mismatches. Teams utilize intricate screening actions, such as the pick-and
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `162` activation `3.860` class `word` token ` around`
+  - execution. At its core, offensive tactics revolve around creating spatial advantages and exploiting mismatches. Teams utilize
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `157` activation `3.859` class `punctuation` token `,`
+  - blending strategic planning with athletic execution. At its core, offensive tactics revolve around creating spatial advantages and exploiting
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `148` activation `3.719` class `word` token ` strategic`
+  - tactics serve as the architectural blueprint for success, blending strategic planning with athletic execution. At its core, offensive
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `146` activation `3.598` class `punctuation` token `,`
+  - sport where tactics serve as the architectural blueprint for success, blending strategic planning with athletic execution. At its core
+- `L19:838` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `170` activation `3.576` class `sentence_boundary` token `.`
+  - revolve around creating spatial advantages and exploiting mismatches. Teams utilize intricate screening actions, such as the pick
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `247` activation `5.523` class `word` token ` destinations`
+  - natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts,
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `246` activation `4.688` class `word` token ` three`
+  - breathtaking natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `257` activation `4.375` class `punctuation` token `,`
+  - destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating information with stunning photographic opportunities. First,
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `254` activation `4.268` class `discourse_marker_word` token ` for`
+  - itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating information with stunning photographic opportunities
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `249` activation `4.259` class `word` token ` out`
+  - . For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `245` activation `4.197` class `punctuation` token `,`
+  - and breathtaking natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `250` activation `4.152` class `style_function_word` token ` as`
+  - For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating information
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `272` activation `3.982` class `punctuation` token `,`
+  - stunning photographic opportunities. First, visit Rachel, Nevada, often cited as the epicenter of UFO lore.
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `258` activation `3.909` class `word` token ` balancing`
+  - stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating information with stunning photographic opportunities. First, visit
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `261` activation `3.836` class `word` token ` with`
+  - the absolute pinnacle for UFO enthusiasts, balancing fascinating information with stunning photographic opportunities. First, visit Rachel, Nevada
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `244` activation `3.750` class `word` token ` itinerary`
+  - , and breathtaking natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for
+- `L19:838` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `240` activation `3.727` class `discourse_marker_word` token ` For`
+  - science fiction, history, and breathtaking natural beauty. For your road trip itinerary, three destinations stand out as
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `336` activation `5.319` class `word` token `igan`
+  - by a charming mutual confusion about societal norms. Gilligan, perpetually flustered by complex situations and
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `350` activation `5.205` class `punctuation` token `,`
+  - flustered by complex situations and eager to please, would find Chrissy’s ditzy charm familiar rather
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `337` activation `5.107` class `punctuation` token `,`
+  - a charming mutual confusion about societal norms. Gilligan, perpetually flustered by complex situations and eager
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `322` activation `5.078` class `word` token ` interaction`
+  - innocence and social ineptitude. Initially, their interaction would be defined by a charming mutual confusion about societal
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `323` activation `5.028` class `expanded_negation_word` token ` would`
+  - and social ineptitude. Initially, their interaction would be defined by a charming mutual confusion about societal norms
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `351` activation `4.832` class `expanded_negation_word` token ` would`
+  - ustered by complex situations and eager to please, would find Chrissy’s ditzy charm familiar rather than
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `330` activation `4.778` class `word` token ` confusion`
+  - , their interaction would be defined by a charming mutual confusion about societal norms. Gilligan, perpetually fl
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `327` activation `4.770` class `word` token ` a`
+  - itude. Initially, their interaction would be defined by a charming mutual confusion about societal norms. Gilligan,
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `339` activation `4.719` class `word` token `ually`
+  - mutual confusion about societal norms. Gilligan, perpetually flustered by complex situations and eager to please
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `321` activation `4.662` class `word` token ` their`
+  - shared innocence and social ineptitude. Initially, their interaction would be defined by a charming mutual confusion about
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `354` activation `4.659` class `word` token `issy`
+  - complex situations and eager to please, would find Chrissy’s ditzy charm familiar rather than frustrating. Conversely
+- `L19:838` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `352` activation `4.575` class `word` token ` find`
+  - ed by complex situations and eager to please, would find Chrissy’s ditzy charm familiar rather than frustrating
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `484` activation `5.381` class `word` token ` five`
+  - immediately highlight the urgency of your work. Here are five powerful options designed to stand out in academic circles:
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `472` activation `5.380` class `word` token `rasing`
+  - on global warming causes and effects, the right phrasing can immediately highlight the urgency of your work. Here
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `460` activation `5.303` class `word` token ` research`
+  - title is crucial for capturing reader interest. If your research focuses on global warming causes and effects, the right
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `462` activation `5.088` class `word` token ` on`
+  - crucial for capturing reader interest. If your research focuses on global warming causes and effects, the right phrasing
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `486` activation `4.891` class `word` token ` options`
+  - the urgency of your work. Here are five powerful options designed to stand out in academic circles: The Bo
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `469` activation `4.734` class `word` token ` the`
+  - your research focuses on global warming causes and effects, the right phrasing can immediately highlight the urgency of your
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `511` activation `4.577` class `word` token ` Global`
+  - raveling the Primary Causes and Cascading Effects of Global Warming Echoes of Emissions: Tr
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `454` activation `4.536` class `word` token ` capturing`
+  - climate change, selecting an impactful title is crucial for capturing reader interest. If your research focuses on global warming
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `453` activation `4.442` class `discourse_marker_word` token ` for`
+  - of climate change, selecting an impactful title is crucial for capturing reader interest. If your research focuses on global
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `473` activation `4.427` class `style_function_word` token ` can`
+  - global warming causes and effects, the right phrasing can immediately highlight the urgency of your work. Here are
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `488` activation `4.370` class `word` token ` to`
+  - of your work. Here are five powerful options designed to stand out in academic circles: The Boiling Point
+- `L19:838` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `450` activation `4.278` class `word` token ` title`
+  - aceted crisis of climate change, selecting an impactful title is crucial for capturing reader interest. If your research
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `612` activation `9.296` class `word` token ` change`
+  - shifting perceptions toward flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers,
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `615` activation `7.846` class `word` token ` equity`
+  - flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers, fueling demands
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `621` activation `7.792` class `word` token ` workers`
+  - sudden change highlighted labor equity issues, particularly for essential workers, fueling demands for improved conditions, employee-owned
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `617` activation `7.739` class `punctuation` token `,`
+  - sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers, fueling demands for improved
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `616` activation `7.556` class `word` token ` issues`
+  - , sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers, fueling demands for
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `618` activation `7.451` class `word` token ` particularly`
+  - work. This sudden change highlighted labor equity issues, particularly for essential workers, fueling demands for improved conditions
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `622` activation `7.418` class `punctuation` token `,`
+  - change highlighted labor equity issues, particularly for essential workers, fueling demands for improved conditions, employee-owned businesses
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `613` activation `7.409` class `word` token ` highlighted`
+  - perceptions toward flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential workers, fuel
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `625` activation `6.952` class `word` token ` demands`
+  - equity issues, particularly for essential workers, fueling demands for improved conditions, employee-owned businesses, and broader
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `603` activation `6.755` class `word` token ` perceptions`
+  - from a rare anomaly into a daily reality, shifting perceptions toward flexible, sustainable work. This sudden change highlighted
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `610` activation `6.309` class `style_function_word` token ` This`
+  - reality, shifting perceptions toward flexible, sustainable work. This sudden change highlighted labor equity issues, particularly for essential
+- `L24:3422` `7d78fbc5c4ebfe5a6f5ff8509b52c5d00aaba2ef98bdb541060af686967bc0ce@turn_01@qwen3.6-35b` token `632` activation `6.253` class `word` token ` businesses`
+  - , fueling demands for improved conditions, employee-owned businesses, and broader workplace empowerment globally.
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `544` activation `8.960` class `word` token ` line`
+  - , emphasizing the cold season's beauty. The second line depicts a playful puppy or cat chasing a rabbit into
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `526` activation `8.665` class `word` token ` line`
+  - narrative captures a quintessential winter tale. The first line establishes a serene, snowy mountain landscape, emphasizing the
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `534` activation `8.551` class `punctuation` token `,`
+  - The first line establishes a serene, snowy mountain landscape, emphasizing the cold season's beauty. The second line
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `533` activation `7.919` class `word` token ` landscape`
+  - . The first line establishes a serene, snowy mountain landscape, emphasizing the cold season's beauty. The second
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `550` activation `7.879` class `word` token ` cat`
+  - beauty. The second line depicts a playful puppy or cat chasing a rabbit into a tree, hinting at
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `529` activation `7.577` class `word` token ` serene`
+  - quintessential winter tale. The first line establishes a serene, snowy mountain landscape, emphasizing the cold season's
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `548` activation `7.532` class `word` token ` puppy`
+  - season's beauty. The second line depicts a playful puppy or cat chasing a rabbit into a tree, hint
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `557` activation `7.511` class `punctuation` token `,`
+  - playful puppy or cat chasing a rabbit into a tree, hinting at lively, youthful adventures amidst the frozen
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `527` activation `7.308` class `word` token ` establishes`
+  - captures a quintessential winter tale. The first line establishes a serene, snowy mountain landscape, emphasizing the cold
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `543` activation `7.233` class `discourse_marker_word` token ` second`
+  - landscape, emphasizing the cold season's beauty. The second line depicts a playful puppy or cat chasing a rabbit
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `532` activation `7.114` class `word` token ` mountain`
+  - tale. The first line establishes a serene, snowy mountain landscape, emphasizing the cold season's beauty. The
+- `L24:3422` `7267122297dc1dbea327fbc2287dde4f4c307c1caa10bd13c15ece2884778c02@turn_01@qwen3.6-35b` token `545` activation `6.917` class `word` token ` depicts`
+  - emphasizing the cold season's beauty. The second line depicts a playful puppy or cat chasing a rabbit into a
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `577` activation `9.202` class `word` token `es`
+  - reveals the technology of intuition, transforming vague hunches into precise survival signals. From workplace violence and domestic
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `572` activation `9.148` class `punctuation` token `,`
+  - sight. This compelling guide reveals the technology of intuition, transforming vague hunches into precise survival signals.
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `566` activation `9.078` class `word` token ` guide`
+  - where danger lurks in plain sight. This compelling guide reveals the technology of intuition, transforming vague hunch
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `600` activation `8.624` class `word` token ` chapter`
+  - date-stalking and attacks on public figures, each chapter dissects high-stakes predictions and intimate enemies.
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `571` activation `8.574` class `word` token ` intuition`
+  - plain sight. This compelling guide reveals the technology of intuition, transforming vague hunches into precise survival signals
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `567` activation `8.100` class `word` token ` reveals`
+  - danger lurks in plain sight. This compelling guide reveals the technology of intuition, transforming vague hunches
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `569` activation `8.018` class `word` token ` technology`
+  - ks in plain sight. This compelling guide reveals the technology of intuition, transforming vague hunches into precise
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `573` activation `7.519` class `word` token ` transforming`
+  - . This compelling guide reveals the technology of intuition, transforming vague hunches into precise survival signals. From
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `581` activation `7.291` class `word` token ` signals`
+  - intuition, transforming vague hunches into precise survival signals. From workplace violence and domestic horrors to date-st
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `602` activation `7.207` class `word` token `sects`
+  - alking and attacks on public figures, each chapter dissects high-stakes predictions and intimate enemies. Confront
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `585` activation `7.186` class `word` token ` violence`
+  - hunches into precise survival signals. From workplace violence and domestic horrors to date-stalking and attacks on
+- `L24:3422` `91417f0c3222790c6eef2b2cdb08fd99b0df51b21587d7d0232a867478795473@turn_01@qwen3.6-35b` token `578` activation `7.162` class `word` token ` into`
+  - the technology of intuition, transforming vague hunches into precise survival signals. From workplace violence and domestic horrors
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `513` activation `8.612` class `word` token ` sport`
+  - with intense competitive strategy: AeroTag. This innovative sport centers players around massive, circular dart boards constructed from
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `521` activation `8.520` class `word` token ` boards`
+  - This innovative sport centers players around massive, circular dart boards constructed from interlocking foam panels, standing towering at
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `495` activation `8.327` class `word` token ` pursuit`
+  - 0, amidst global quarantine constraints, a novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `502` activation `8.282` class `word` token ` nostalgia`
+  - a novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive strategy: AeroTag. This innovative
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `528` activation `7.917` class `punctuation` token `,`
+  - , circular dart boards constructed from interlocking foam panels, standing towering at nearly ten feet high. Teams of
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `527` activation `7.886` class `word` token ` panels`
+  - massive, circular dart boards constructed from interlocking foam panels, standing towering at nearly ten feet high. Teams
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `496` activation `7.796` class `word` token ` emerged`
+  - , amidst global quarantine constraints, a novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive strategy
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `497` activation `7.770` class `style_function_word` token ` that`
+  - amidst global quarantine constraints, a novel recreational pursuit emerged that hilariously merged childhood nostalgia with intense competitive strategy:
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `515` activation `7.553` class `word` token ` players`
+  - competitive strategy: AeroTag. This innovative sport centers players around massive, circular dart boards constructed from interlocking
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `506` activation `7.534` class `word` token ` strategy`
+  - emerged that hilariously merged childhood nostalgia with intense competitive strategy: AeroTag. This innovative sport centers players around
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `514` activation `7.261` class `word` token ` centers`
+  - intense competitive strategy: AeroTag. This innovative sport centers players around massive, circular dart boards constructed from inter
+- `L24:3422` `73772ae443d31f03f58af33745d8380a7a06c110daba9eb1f68d330a452093fc@turn_01@qwen3.6-35b` token `522` activation `7.256` class `word` token ` constructed`
+  - innovative sport centers players around massive, circular dart boards constructed from interlocking foam panels, standing towering at nearly
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `485` activation `8.800` class `word` token ` full`
+  - approaches to interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It signifies a mindset
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `495` activation `6.894` class `word` token ` mindset`
+  - full embodies optimism and gratefulness. It signifies a mindset focused on abundance, potential, and the silver lin
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `492` activation `6.872` class `word` token ` It`
+  - glass as half full embodies optimism and gratefulness. It signifies a mindset focused on abundance, potential, and
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `475` activation `6.713` class `word` token ` approaches`
+  - profound metaphor for human perception, illustrating two distinct philosophical approaches to interpreting reality. Viewing the glass as half full
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `487` activation `6.618` class `word` token ` optimism`
+  - interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It signifies a mindset focused on
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `513` activation `6.574` class `word` token ` perspective`
+  - the silver linings present in any situation. This perspective encourages resilience, allowing individuals to find joy even amidst
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `532` activation `6.475` class `word` token ` empty`
+  - even amidst scarcity. Conversely, seeing the glass half empty reflects pessimism or critical realism. It highlights what
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `496` activation `6.405` class `word` token ` focused`
+  - embodies optimism and gratefulness. It signifies a mindset focused on abundance, potential, and the silver linings
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `486` activation `6.108` class `word` token ` embodies`
+  - to interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It signifies a mindset focused
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `482` activation `6.013` class `word` token ` glass`
+  - two distinct philosophical approaches to interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `490` activation `5.926` class `word` token `ness`
+  - Viewing the glass as half full embodies optimism and gratefulness. It signifies a mindset focused on abundance, potential
+- `L24:3422` `5ef150a25c0237de271f4438dab478bb918c05b2be8e29c09eadd47262cb11d4@turn_01@qwen3.6-35b` token `483` activation `5.877` class `style_function_word` token ` as`
+  - distinct philosophical approaches to interpreting reality. Viewing the glass as half full embodies optimism and gratefulness. It signifies
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `487` activation `9.103` class `discourse_marker_word` token ` specifically`
+  - drop-offs test nerves. The Angel’s Landing trail specifically requires iron chains for balance, making it risky for
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `478` activation `8.863` class `word` token `-offs`
+  - National Park, where narrow ridges and steep drop-offs test nerves. The Angel’s Landing trail specifically requires
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `474` activation `8.680` class `word` token `ges`
+  - ’s Landing in Zion National Park, where narrow ridges and steep drop-offs test nerves. The Angel’s
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `493` activation `8.621` class `punctuation` token `,`
+  - Angel’s Landing trail specifically requires iron chains for balance, making it risky for those uncomfortable with heights. Another
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `486` activation `8.476` class `word` token ` trail`
+  - steep drop-offs test nerves. The Angel’s Landing trail specifically requires iron chains for balance, making it risky
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `456` activation `8.277` class `word` token ` hikes`
+  - trails that demand respect and preparation. Three notably dangerous hikes include the Navajo Loop and Angel’s Landing in
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `453` activation `7.315` class `word` token ` Three`
+  - yet perilous trails that demand respect and preparation. Three notably dangerous hikes include the Navajo Loop and Angel
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `495` activation `7.184` class `word` token ` it`
+  - Landing trail specifically requires iron chains for balance, making it risky for those uncomfortable with heights. Another is Half
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `509` activation `7.151` class `punctuation` token `,`
+  - uncomfortable with heights. Another is Half Dome in Yosemite, featuring a steep 400-foot granite cable section that
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `496` activation `7.057` class `word` token ` risky`
+  - trail specifically requires iron chains for balance, making it risky for those uncomfortable with heights. Another is Half Dome
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `469` activation `7.050` class `word` token ` Park`
+  - Navajo Loop and Angel’s Landing in Zion National Park, where narrow ridges and steep drop-offs test
+- `L24:3422` `dd520bf8a3cd67181c47dcab03cd13dbeb78f2f27090d154adac3c07200d4248@turn_01@qwen3.6-35b` token `490` activation `7.042` class `word` token ` chains`
+  - nerves. The Angel’s Landing trail specifically requires iron chains for balance, making it risky for those uncomfortable with
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `366` activation `8.686` class `punctuation` token `)`
+  - . First, The Exorcist (1973) remains a benchmark for supernatural terror. Its visceral practical
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `362` activation `8.539` class `word` token `ist`
+  - ability to evoke dread. First, The Exorcist (1973) remains a benchmark for supernatural terror
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `377` activation `8.239` class `word` token ` effects`
+  - remains a benchmark for supernatural terror. Its visceral practical effects and the psychological devastation of the possessed child create an
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `385` activation `8.124` class `word` token ` child`
+  - visceral practical effects and the psychological devastation of the possessed child create an unsettling atmosphere that feels disturbingly real,
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `369` activation `6.969` class `word` token ` benchmark`
+  - The Exorcist (1973) remains a benchmark for supernatural terror. Its visceral practical effects and the
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `372` activation `6.653` class `word` token ` terror`
+  - ist (1973) remains a benchmark for supernatural terror. Its visceral practical effects and the psychological devastation of
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `381` activation `6.610` class `word` token ` devastation`
+  - supernatural terror. Its visceral practical effects and the psychological devastation of the possessed child create an unsettling atmosphere that feels
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `367` activation `6.606` class `word` token ` remains`
+  - First, The Exorcist (1973) remains a benchmark for supernatural terror. Its visceral practical effects
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `353` activation `6.376` class `word` token ` to`
+  - movies consistently dominate horror discussions due to their unique ability to evoke dread. First, The Exorcist (
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `349` activation `6.263` class `word` token ` to`
+  - subjective, but five movies consistently dominate horror discussions due to their unique ability to evoke dread. First, The
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `347` activation `6.015` class `word` token ` discussions`
+  - films is subjective, but five movies consistently dominate horror discussions due to their unique ability to evoke dread. First
+- `L24:3422` `0e2eaaad9b1c81f281401d17489d316ede98a91f068f82a67ca87ed7f7d0e5fd@turn_01@qwen3.6-35b` token `355` activation `5.770` class `word` token ` dread`
+  - dominate horror discussions due to their unique ability to evoke dread. First, The Exorcist (1973
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `261` activation `9.495` class `word` token ` systems`
+  - . When investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `262` activation `7.724` class `word` token ` dominate`
+  - When investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic Series
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `294` activation `7.316` class `word` token `o`
+  - gold standard for landscape and wildlife photographers, Gitzo’s Systematic line is legendary. Built from high
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `265` activation `7.214` class `word` token ` landscape`
+  - top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic Series 3 (
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `298` activation `6.980` class `word` token ` line`
+  - and wildlife photographers, Gitzo’s Systematic line is legendary. Built from high-density Carbon eX
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `247` activation `6.823` class `word` token ` operation`
+  - avering stability, robust load capacity, and seamless operation under harsh conditions. When investing in top-tier gear
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `263` activation `6.799` class `word` token ` the`
+  - investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic Series
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `313` activation `6.675` class `word` token ` tripod`
+  - from high-density Carbon eXact tubing, this tripod features a modular top base that allows you to swap
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `253` activation `6.516` class `word` token ` investing`
+  - capacity, and seamless operation under harsh conditions. When investing in top-tier gear, three outstanding systems dominate the
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `259` activation `6.465` class `word` token ` three`
+  - harsh conditions. When investing in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `319` activation `6.409` class `style_function_word` token ` that`
+  - act tubing, this tripod features a modular top base that allows you to swap between a flat platform, a
+- `L24:3422` `13c2623b916f3f2d1aee6f452fd96d9ca775f3e358544510b1fde58d2be78123@turn_01@gemini-3.5-flash` token `264` activation `6.375` class `word` token ` professional`
+  - in top-tier gear, three outstanding systems dominate the professional landscape. Gitzo Systematic Series 3
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `283` activation `8.808` class `word` token ` practice`
+  - While both professionals handle financial records, their scopes of practice diverge considerably. A general accountant typically manages book
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `290` activation `8.593` class `word` token ` accountant`
+  - their scopes of practice diverge considerably. A general accountant typically manages bookkeeping, payroll, internal financial reporting
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `275` activation `7.873` class `word` token ` professionals`
+  - impacting both professional capabilities and legal standing. While both professionals handle financial records, their scopes of practice diverge
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `285` activation `7.863` class `word` token `ge`
+  - professionals handle financial records, their scopes of practice diverge considerably. A general accountant typically manages bookkeeping,
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `261` activation `7.861` class `word` token ` accountant`
+  - certified public accountant (CPA) and a general accountant is significant, impacting both professional capabilities and legal standing
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `281` activation `7.769` class `word` token ` scopes`
+  - standing. While both professionals handle financial records, their scopes of practice diverge considerably. A general accountant typically
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `291` activation `7.212` class `word` token ` typically`
+  - scopes of practice diverge considerably. A general accountant typically manages bookkeeping, payroll, internal financial reporting,
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `262` activation `7.067` class `word` token ` is`
+  - public accountant (CPA) and a general accountant is significant, impacting both professional capabilities and legal standing.
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `257` activation `6.974` class `punctuation` token `)`
+  - the distinction between a certified public accountant (CPA) and a general accountant is significant, impacting both professional
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `268` activation `6.878` class `word` token ` capabilities`
+  - and a general accountant is significant, impacting both professional capabilities and legal standing. While both professionals handle financial records
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `274` activation `6.828` class `word` token ` both`
+  - , impacting both professional capabilities and legal standing. While both professionals handle financial records, their scopes of practice diver
+- `L24:3422` `07b321b9127c68735ff919b09cb242f11274d767f68a954084f7f2f990ad5734@turn_01@qwen3.6-35b` token `332` activation `6.795` class `word` token ` CPA`
+  - Revenue Service in audit situations. Conversely, a Florida CPA holds a license issued by the Board of Accountancy
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `137` activation `8.867` class `word` token ` symptoms`
+  - intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized before proper medical evaluation.
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `153` activation `8.267` class `word` token `ance`
+  - before proper medical evaluation. This hyper-vigilance, while rooted in a desire for safety, frequently
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `134` activation `7.490` class `word` token ` landscape`
+  - undeniably intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized before proper
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `138` activation `7.459` class `word` token ` are`
+  - health-related anxiety, creating a landscape where minor symptoms are often catastrophized before proper medical evaluation. This
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `139` activation `7.306` class `word` token ` often`
+  - -related anxiety, creating a landscape where minor symptoms are often catastrophized before proper medical evaluation. This hyper
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `142` activation `7.216` class `word` token `ized`
+  - creating a landscape where minor symptoms are often catastrophized before proper medical evaluation. This hyper-vigil
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `162` activation `7.198` class `punctuation` token `,`
+  - ilance, while rooted in a desire for safety, frequently traps individuals in a cycle of distress. To
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `146` activation `7.186` class `word` token ` evaluation`
+  - minor symptoms are often catastrophized before proper medical evaluation. This hyper-vigilance, while rooted
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `132` activation `7.126` class `word` token ` creating`
+  - era has undeniably intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `133` activation `6.955` class `word` token ` a`
+  - has undeniably intensified health-related anxiety, creating a landscape where minor symptoms are often catastrophized before
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `148` activation `6.910` class `style_function_word` token ` This`
+  - are often catastrophized before proper medical evaluation. This hyper-vigilance, while rooted in a
+- `L24:3422` `a6a896067d736929178674f633c468676f4a31e4bbf6bbcd10a23af65b6e3daf@turn_01@qwen3.6-35b` token `154` activation `6.488` class `punctuation` token `,`
+  - proper medical evaluation. This hyper-vigilance, while rooted in a desire for safety, frequently traps
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `159` activation `9.599` class `word` token ` tactics`
+  - planning with athletic execution. At its core, offensive tactics revolve around creating spatial advantages and exploiting mismatches
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `171` activation `7.546` class `word` token ` Teams`
+  - olve around creating spatial advantages and exploiting mismatches. Teams utilize intricate screening actions, such as the pick-and
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `175` activation `7.505` class `word` token ` actions`
+  - advantages and exploiting mismatches. Teams utilize intricate screening actions, such as the pick-and-roll, to force
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `149` activation `7.165` class `word` token ` planning`
+  - serve as the architectural blueprint for success, blending strategic planning with athletic execution. At its core, offensive tactics
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `169` activation `7.043` class `word` token `atches`
+  - tactics revolve around creating spatial advantages and exploiting mismatches. Teams utilize intricate screening actions, such as the
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `165` activation `6.761` class `word` token ` advantages`
+  - its core, offensive tactics revolve around creating spatial advantages and exploiting mismatches. Teams utilize intricate screening actions
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `161` activation `6.506` class `word` token `olve`
+  - athletic execution. At its core, offensive tactics revolve around creating spatial advantages and exploiting mismatches. Teams
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `146` activation `6.435` class `punctuation` token `,`
+  - sport where tactics serve as the architectural blueprint for success, blending strategic planning with athletic execution. At its core
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `152` activation `6.285` class `word` token ` execution`
+  - architectural blueprint for success, blending strategic planning with athletic execution. At its core, offensive tactics revolve around
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `143` activation `6.208` class `word` token ` blueprint`
+  - is a dynamic sport where tactics serve as the architectural blueprint for success, blending strategic planning with athletic execution.
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `162` activation `6.051` class `word` token ` around`
+  - execution. At its core, offensive tactics revolve around creating spatial advantages and exploiting mismatches. Teams utilize
+- `L24:3422` `9c0815595db0124c23e9d47c48979a22687c85c962b26e7d13b2c9f4f1c7fa3b@turn_01@qwen3.6-35b` token `202` activation `5.919` class `word` token ` defenders`
+  - having a ball-handler and a screener collaborate, defenders must choose between switching, hedging, or trapping
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `247` activation `9.944` class `word` token ` destinations`
+  - natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts,
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `249` activation `8.209` class `word` token ` out`
+  - . For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `246` activation `7.362` class `word` token ` three`
+  - breathtaking natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `244` activation `7.290` class `word` token ` itinerary`
+  - , and breathtaking natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `253` activation `7.269` class `word` token ` pinnacle`
+  - trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating information with stunning photographic
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `272` activation `7.105` class `punctuation` token `,`
+  - stunning photographic opportunities. First, visit Rachel, Nevada, often cited as the epicenter of UFO lore.
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `243` activation `6.872` class `word` token ` trip`
+  - history, and breathtaking natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `248` activation `6.847` class `word` token ` stand`
+  - beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `245` activation `6.784` class `punctuation` token `,`
+  - and breathtaking natural beauty. For your road trip itinerary, three destinations stand out as the absolute pinnacle for UFO
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `254` activation `6.701` class `discourse_marker_word` token ` for`
+  - itinerary, three destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating information with stunning photographic opportunities
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `257` activation `6.699` class `punctuation` token `,`
+  - destinations stand out as the absolute pinnacle for UFO enthusiasts, balancing fascinating information with stunning photographic opportunities. First,
+- `L24:3422` `967f11b98aff603f2eb4516ba2d1feeeb7dc78528cbd94dd7e6a606aea4d4675@turn_01@qwen3.6-35b` token `231` activation `6.500` class `word` token ` fiction`
+  - the American West Coast offers a thrilling blend of science fiction, history, and breathtaking natural beauty. For your
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `336` activation `8.454` class `word` token `igan`
+  - by a charming mutual confusion about societal norms. Gilligan, perpetually flustered by complex situations and
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `337` activation `7.953` class `punctuation` token `,`
+  - a charming mutual confusion about societal norms. Gilligan, perpetually flustered by complex situations and eager
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `322` activation `7.947` class `word` token ` interaction`
+  - innocence and social ineptitude. Initially, their interaction would be defined by a charming mutual confusion about societal
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `350` activation `7.893` class `punctuation` token `,`
+  - flustered by complex situations and eager to please, would find Chrissy’s ditzy charm familiar rather
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `354` activation `7.675` class `word` token `issy`
+  - complex situations and eager to please, would find Chrissy’s ditzy charm familiar rather than frustrating. Conversely
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `323` activation `7.664` class `expanded_negation_word` token ` would`
+  - and social ineptitude. Initially, their interaction would be defined by a charming mutual confusion about societal norms
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `330` activation `7.529` class `word` token ` confusion`
+  - , their interaction would be defined by a charming mutual confusion about societal norms. Gilligan, perpetually fl
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `342` activation `7.286` class `word` token `ed`
+  - societal norms. Gilligan, perpetually flustered by complex situations and eager to please, would find
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `352` activation `7.100` class `word` token ` find`
+  - ed by complex situations and eager to please, would find Chrissy’s ditzy charm familiar rather than frustrating
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `351` activation `7.024` class `expanded_negation_word` token ` would`
+  - ustered by complex situations and eager to please, would find Chrissy’s ditzy charm familiar rather than
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `326` activation `6.815` class `word` token ` by`
+  - ptitude. Initially, their interaction would be defined by a charming mutual confusion about societal norms. Gilligan
+- `L24:3422` `4b4af5fa1b56adf03cd103475a61f921283e299c7f3d5056f47c619963cfb1f5@turn_01@qwen3.6-35b` token `367` activation `6.752` class `word` token `issy`
+  - zy charm familiar rather than frustrating. Conversely, Chrissy, accustomed to navigating a world that often overwhelms
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `472` activation `9.230` class `word` token `rasing`
+  - on global warming causes and effects, the right phrasing can immediately highlight the urgency of your work. Here
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `460` activation `8.687` class `word` token ` research`
+  - title is crucial for capturing reader interest. If your research focuses on global warming causes and effects, the right
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `467` activation `7.736` class `word` token ` effects`
+  - . If your research focuses on global warming causes and effects, the right phrasing can immediately highlight the urgency
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `461` activation `7.671` class `word` token ` focuses`
+  - is crucial for capturing reader interest. If your research focuses on global warming causes and effects, the right ph
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `464` activation `7.663` class `word` token ` warming`
+  - capturing reader interest. If your research focuses on global warming causes and effects, the right phrasing can immediately
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `456` activation `7.640` class `word` token ` interest`
+  - , selecting an impactful title is crucial for capturing reader interest. If your research focuses on global warming causes and
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `462` activation `7.625` class `word` token ` on`
+  - crucial for capturing reader interest. If your research focuses on global warming causes and effects, the right phrasing
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `473` activation `7.415` class `style_function_word` token ` can`
+  - global warming causes and effects, the right phrasing can immediately highlight the urgency of your work. Here are
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `466` activation `7.304` class `word` token ` and`
+  - interest. If your research focuses on global warming causes and effects, the right phrasing can immediately highlight the
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `486` activation `7.302` class `word` token ` options`
+  - the urgency of your work. Here are five powerful options designed to stand out in academic circles: The Bo
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `468` activation `7.237` class `punctuation` token `,`
+  - If your research focuses on global warming causes and effects, the right phrasing can immediately highlight the urgency of
+- `L24:3422` `6b0b343cca4fd3cda406f995b132dc8b912ff5e5ce16d8dbf89bd28a9c1ea06c@turn_01@glm-5.2` token `465` activation `7.178` class `word` token ` causes`
+  - reader interest. If your research focuses on global warming causes and effects, the right phrasing can immediately highlight

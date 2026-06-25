@@ -298,6 +298,66 @@ h2 {
   box-shadow: 0 0 0 3px rgba(154, 168, 186, 0.18);
 }
 
+.tokenModeSlider {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  border: 1px solid #cfd6df;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #66758a;
+  padding: 0 9px;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.tokenModeSlider input {
+  width: 44px;
+  accent-color: #b42318;
+  cursor: pointer;
+}
+
+.viewSwitch {
+  display: flex;
+  overflow: hidden;
+  min-height: 32px;
+  border: 1px solid #cfd6df;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.viewSwitchButton {
+  border: 0;
+  border-right: 1px solid #d9dee6;
+  background: transparent;
+  color: #66758a;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.viewSwitchButton:last-child {
+  border-right: 0;
+}
+
+.viewSwitchButton:hover:not(:disabled) {
+  background: #f6f7f9;
+  color: #334155;
+}
+
+.viewSwitchButton.active {
+  background: #fff6f3;
+  color: #8f1d14;
+}
+
+.viewSwitchButton:disabled {
+  color: #a3adba;
+  cursor: wait;
+}
+
 .sourceSelect {
   width: min(260px, 40vw);
 }
@@ -369,6 +429,48 @@ h3 {
   color: #253140;
   font-size: 13px;
   line-height: 1.45;
+}
+
+.documentLatentSummary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  color: #66758a;
+  font-size: 12px;
+}
+
+.documentLatent {
+  gap: 5px;
+}
+
+.documentLatentTitle {
+  overflow: hidden;
+  color: #24313f;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.documentLatentStats {
+  overflow: hidden;
+  color: #66758a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.emptyState {
+  border: 1px solid #d9dee6;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #66758a;
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .passageMeta {

@@ -1,0 +1,711 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:4063` | `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` | `human` | 81 | `177.23` | `3.71` | word:72|line_break:6|style_function_word:2|discourse_marker_word:1 |
+| `L19:4063` | `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` | `human` | 344 | `622.58` | `3.89` | word:272|punctuation:20|style_function_word:19|sentence_boundary:12|expanded_negation_word:7|discourse_marker_word:7|line_break:7 |
+| `L19:4063` | `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` | `human` | 115 | `223.38` | `4.16` | word:88|line_break:9|style_function_word:7|punctuation:5|discourse_marker_word:2|expanded_negation_word:1|sentence_boundary:1|whitespace:1|contraction_piece:1 |
+| `L19:4063` | `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` | `human` | 351 | `748.78` | `4.12` | word:280|punctuation:26|expanded_negation_word:16|style_function_word:13|sentence_boundary:13|contraction_piece:1|discourse_marker_word:1|line_break:1 |
+| `L19:4063` | `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` | `human` | 177 | `340.20` | `3.64` | word:146|style_function_word:12|line_break:8|sentence_boundary:6|punctuation:3|discourse_marker_word:2 |
+| `L19:4063` | `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` | `human` | 238 | `425.85` | `3.68` | word:206|sentence_boundary:12|style_function_word:7|punctuation:5|line_break:5|expanded_negation_word:2|discourse_marker_word:1 |
+| `L19:4063` | `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` | `human` | 160 | `315.43` | `3.73` | word:126|sentence_boundary:11|expanded_negation_word:8|punctuation:6|style_function_word:4|discourse_marker_word:3|contraction_piece:2 |
+| `L19:4063` | `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` | `human` | 383 | `719.52` | `3.50` | word:309|expanded_negation_word:24|punctuation:19|sentence_boundary:15|style_function_word:7|discourse_marker_word:5|line_break:2|contraction_piece:2 |
+| `L19:4063` | `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` | `human` | 343 | `782.69` | `4.32` | word:275|expanded_negation_word:16|sentence_boundary:15|punctuation:15|style_function_word:12|line_break:5|contraction_piece:3|discourse_marker_word:1|whitespace:1 |
+| `L19:4063` | `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` | `human` | 135 | `238.80` | `3.47` | word:110|sentence_boundary:7|punctuation:6|expanded_negation_word:5|style_function_word:5|discourse_marker_word:1|line_break:1 |
+| `L19:4063` | `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` | `human` | 451 | `902.57` | `3.67` | word:365|sentence_boundary:23|punctuation:19|expanded_negation_word:17|style_function_word:15|line_break:5|contraction_piece:4|discourse_marker_word:3 |
+| `L19:4063` | `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` | `human` | 114 | `196.83` | `3.54` | word:92|style_function_word:8|sentence_boundary:5|punctuation:4|discourse_marker_word:3|expanded_negation_word:1|line_break:1 |
+| `L19:4063` | `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` | `human` | 297 | `586.74` | `3.69` | word:250|punctuation:17|style_function_word:12|line_break:8|sentence_boundary:6|discourse_marker_word:2|expanded_negation_word:1|contraction_piece:1 |
+| `L19:4063` | `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` | `human` | 397 | `643.35` | `3.64` | word:313|style_function_word:22|sentence_boundary:19|punctuation:19|line_break:9|expanded_negation_word:8|contraction_piece:4|discourse_marker_word:3 |
+| `L24:3645` | `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` | `human` | 35 | `148.48` | `8.27` | word:33|line_break:2 |
+| `L24:3645` | `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` | `human` | 165 | `612.89` | `8.46` | word:144|style_function_word:10|punctuation:6|expanded_negation_word:2|sentence_boundary:2|discourse_marker_word:1 |
+| `L24:3645` | `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` | `human` | 54 | `206.86` | `8.14` | word:46|punctuation:3|style_function_word:2|line_break:1|contraction_piece:1|sentence_boundary:1 |
+| `L24:3645` | `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` | `human` | 164 | `630.18` | `9.28` | word:145|punctuation:9|style_function_word:4|expanded_negation_word:4|discourse_marker_word:1|contraction_piece:1 |
+| `L24:3645` | `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` | `human` | 72 | `300.73` | `8.62` | word:71|discourse_marker_word:1 |
+| `L24:3645` | `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` | `human` | 97 | `398.03` | `8.79` | word:96|style_function_word:1 |
+| `L24:3645` | `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` | `human` | 51 | `202.42` | `7.76` | word:46|sentence_boundary:3|style_function_word:1|contraction_piece:1 |
+| `L24:3645` | `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` | `human` | 186 | `834.47` | `9.61` | word:169|punctuation:10|sentence_boundary:3|style_function_word:2|expanded_negation_word:1|contraction_piece:1 |
+| `L24:3645` | `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` | `human` | 197 | `875.02` | `10.19` | word:160|sentence_boundary:15|punctuation:9|style_function_word:6|expanded_negation_word:4|contraction_piece:2|whitespace:1 |
+| `L24:3645` | `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` | `human` | 58 | `222.77` | `8.11` | word:54|style_function_word:2|sentence_boundary:1|punctuation:1 |
+| `L24:3645` | `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` | `human` | 229 | `990.89` | `10.20` | word:199|punctuation:8|style_function_word:7|sentence_boundary:7|expanded_negation_word:4|contraction_piece:3|line_break:1 |
+| `L24:3645` | `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` | `human` | 54 | `190.93` | `8.12` | word:50|style_function_word:2|discourse_marker_word:1|punctuation:1 |
+| `L24:3645` | `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` | `human` | 117 | `467.24` | `7.93` | word:113|style_function_word:2|expanded_negation_word:1|contraction_piece:1 |
+| `L24:3645` | `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` | `human` | 191 | `748.00` | `8.39` | word:175|style_function_word:10|sentence_boundary:3|expanded_negation_word:1|punctuation:1|contraction_piece:1 |
+
+## Top Tokens
+
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `490` activation `3.711` class `word` token ` touches`
+  - falls in the forest Nurturing everything it touches Love is the warmth of a mother's hug
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `460` activation `3.532` class `word` token ` day`
+  - is the crisp air you breathe on a perfect winter day It is the warm sun on your face on
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `469` activation `3.486` class `word` token ` face`
+  - winter day It is the warm sun on your face on a rough day Love is the rain that
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `473` activation `3.254` class `word` token ` day`
+  - is the warm sun on your face on a rough day Love is the rain that falls in the forest
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `500` activation `3.173` class `word` token ` hug`
+  - touches Love is the warmth of a mother's hug It is the first taste of happiness from many
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `483` activation `3.152` class `word` token ` forest`
+  - day Love is the rain that falls in the forest Nurturing everything it touches Love is
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `475` activation `3.041` class `word` token `Love`
+  - warm sun on your face on a rough day Love is the rain that falls in the forest N
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `488` activation `3.024` class `word` token ` everything`
+  - rain that falls in the forest Nurturing everything it touches Love is the warmth of a mother
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `511` activation `3.015` class `word` token ` struggles`
+  - It is the first taste of happiness from many struggles
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `444` activation `2.927` class `word` token ` you`
+  - Love is like a warm blanket that lays over you in the winter Love is the crisp air you
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `495` activation `2.920` class `word` token ` warmth`
+  - Nurturing everything it touches Love is the warmth of a mother's hug It is the first
+- `L19:4063` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `492` activation `2.854` class `word` token `Love`
+  - the forest Nurturing everything it touches Love is the warmth of a mother's hug It
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `287` activation `3.895` class `word` token ` king`
+  - then waves his hand, everyone leaves apart from the king's advisor] Traveller: The artefact
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `354` activation `3.494` class `word` token ` found`
+  - I think that they do not know what they have found, at least for the present, only that it
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `289` activation `3.413` class `word` token ` advisor`
+  - his hand, everyone leaves apart from the king's advisor] Traveller: The artefact of old
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `431` activation `3.309` class `word` token ` tired`
+  - resource I can provide. Though I know you are tired you cannot now tarry overlong in the castle
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `379` activation `3.225` class `word` token ` it`
+  - . The King: I see. We must reclaim it at once before the true purpose of the heirloom
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `368` activation `3.127` class `word` token ` valuable`
+  - for the present, only that it is old and valuable. The King: I see. We must reclaim
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `371` activation `3.088` class `word` token ` King`
+  - , only that it is old and valuable. The King: I see. We must reclaim it at once
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `424` activation `3.040` class `word` token ` provide`
+  - well. You have access to any resource I can provide. Though I know you are tired you cannot now
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `284` activation `3.024` class `word` token ` apart`
+  - for a moment then waves his hand, everyone leaves apart from the king's advisor] Traveller:
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `438` activation `2.964` class `word` token `long`
+  - know you are tired you cannot now tarry overlong in the castle. You must set out in seven
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `340` activation `2.945` class `word` token ` battle`
+  - those lands that your sire of old fought the final battle and fell. I think that they do not know
+- `L19:4063` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `283` activation `2.938` class `word` token ` leaves`
+  - thinks for a moment then waves his hand, everyone leaves apart from the king's advisor] Traveller
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `449` activation `4.160` class `word` token `54`
+  - never fades, unlike an old lover. Studio 54 is for lifetimes admired, adorned as the empire
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `434` activation `3.690` class `word` token ` fire`
+  - makes you feel desire, its time to feel on fire, A groove that never fades, unlike an old
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `445` activation `3.472` class `word` token ` lover`
+  - , A groove that never fades, unlike an old lover. Studio 54 is for lifetimes admired,
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `454` activation `3.326` class `word` token ` admired`
+  - old lover. Studio 54 is for lifetimes admired, adorned as the empire Take me on your
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `466` activation `3.241` class `word` token `ades`
+  - adorned as the empire Take me on your escapades, undress me, and hover. As the
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `440` activation `3.205` class `word` token ` fades`
+  - time to feel on fire, A groove that never fades, unlike an old lover. Studio 54 is
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `477` activation `3.164` class `word` token ` DJ`
+  - , undress me, and hover. As the DJ turns night into day, And we see the summer
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `497` activation `3.045` class `word` token ` there`
+  - summer nights go astray, The beat is always there to draw you near, Our love for you is
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `430` activation `3.032` class `word` token ` time`
+  - . Donna Summers makes you feel desire, its time to feel on fire, A groove that never fades
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `481` activation `2.977` class `word` token ` day`
+  - , and hover. As the DJ turns night into day, And we see the summer nights go astray
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `453` activation `2.918` class `word` token `etimes`
+  - an old lover. Studio 54 is for lifetimes admired, adorned as the empire Take me on
+- `L19:4063` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `437` activation `2.877` class `word` token ` groove`
+  - desire, its time to feel on fire, A groove that never fades, unlike an old lover. Studio
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `411` activation `4.120` class `word` token ` all`
+  - with the group, they were on an adventure after all. The group cautiously cycled down the unkempt
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `289` activation `4.060` class `word` token ` ideas`
+  - Sally. Steve of course obliged but Jack had other ideas, "OK fine, but let's go a
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `387` activation `4.040` class `word` token ` read`
+  - street sign at all, it was a warning that read, "Do Not Enter". Jack decided not to
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `400` activation `3.966` class `word` token ` information`
+  - Do Not Enter". Jack decided not to share this information with the group, they were on an adventure after
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `403` activation `3.908` class `word` token ` group`
+  - ". Jack decided not to share this information with the group, they were on an adventure after all. The
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `409` activation `3.829` class `word` token ` adventure`
+  - this information with the group, they were on an adventure after all. The group cautiously cycled down the
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `378` activation `3.825` class `word` token ` sign`
+  - sign when he realized, it wasn't a street sign at all, it was a warning that read,
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `301` activation `3.723` class `word` token ` route`
+  - "OK fine, but let's go a different route, it'll be more fun!" he said.
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `377` activation `3.712` class `word` token ` street`
+  - the sign when he realized, it wasn't a street sign at all, it was a warning that read
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `286` activation `3.657` class `word` token ` Jack`
+  - ", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine, but let
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `307` activation `3.588` class `word` token ` fun`
+  - 's go a different route, it'll be more fun!" he said. Steve looked at Sally and sighed
+- `L19:4063` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `368` activation `3.587` class `word` token ` sign`
+  - cobwebs and moss. Jack paused to read the sign when he realized, it wasn't a street sign
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `471` activation `3.645` class `word` token ` rise`
+  - grain market. As demand for grains goes up prices rise likewise when supply is cut. Weather: Of course
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `394` activation `3.238` class `word` token ` rises`
+  - the dollar is devalued the price of commodities rises as investors see it as a safer alternative. Energy
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `481` activation `3.236` class `word` token ` course`
+  - rise likewise when supply is cut. Weather: Of course, the weather plays a large part in grain markets
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `462` activation `3.123` class `word` token ` market`
+  - supply and demand. None more so than the grain market. As demand for grains goes up prices rise likewise
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `458` activation `3.035` class `word` token ` so`
+  - markets are affected by supply and demand. None more so than the grain market. As demand for grains goes
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `484` activation `3.008` class `word` token ` weather`
+  - supply is cut. Weather: Of course, the weather plays a large part in grain markets. A poor
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `488` activation `2.971` class `word` token ` part`
+  - Weather: Of course, the weather plays a large part in grain markets. A poor harvest resulting from tor
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `450` activation `2.889` class `word` token ` affected`
+  - maintained. Global Supply and Demand: All markets are affected by supply and demand. None more so than the
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `454` activation `2.864` class `word` token ` demand`
+  - and Demand: All markets are affected by supply and demand. None more so than the grain market. As
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `500` activation `2.837` class `word` token ` weather`
+  - grain markets. A poor harvest resulting from torrid weather can wreak havoc with supply, causing prices to rise
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `472` activation `2.831` class `discourse_marker_word` token ` likewise`
+  - market. As demand for grains goes up prices rise likewise when supply is cut. Weather: Of course,
+- `L19:4063` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `470` activation `2.802` class `word` token ` prices`
+  - the grain market. As demand for grains goes up prices rise likewise when supply is cut. Weather: Of
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `285` activation `3.681` class `word` token ` Georgia`
+  - as follows. Bonaventure Cemetery in Savannah Georgia. There have been reports of sightings of a young
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `330` activation `3.397` class `word` token ` Charles`
+  - near there. Calcasieu Courthouse in Lake Charles, Louisiana. The only woman to be executed via
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `306` activation `3.166` class `word` token ` visit`
+  - girl named Gracie that is buried here. People visit her grave to place toys for her and she has
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `303` activation `3.164` class `word` token ` here`
+  - of a young girl named Gracie that is buried here. People visit her grave to place toys for her
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `311` activation `3.117` class `word` token ` toys`
+  - is buried here. People visit her grave to place toys for her and she has reportedly been seen near there
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `308` activation `3.053` class `word` token ` grave`
+  - Gracie that is buried here. People visit her grave to place toys for her and she has reportedly been
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `352` activation `3.014` class `word` token ` said`
+  - chair in Louisianna, Toni Jo Henry is said to haunt the courthouse. There have been many claims
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `356` activation `2.860` class `word` token ` courthouse`
+  - anna, Toni Jo Henry is said to haunt the courthouse. There have been many claims that she disrupts
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `350` activation `2.822` class `word` token ` Henry`
+  - via electric chair in Louisianna, Toni Jo Henry is said to haunt the courthouse. There have been
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `302` activation `2.802` class `word` token ` buried`
+  - sightings of a young girl named Gracie that is buried here. People visit her grave to place toys for
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `296` activation `2.757` class `word` token ` girl`
+  - . There have been reports of sightings of a young girl named Gracie that is buried here. People visit
+- `L19:4063` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `362` activation `2.753` class `word` token ` claims`
+  - said to haunt the courthouse. There have been many claims that she disrupts the day-to-day activities here
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `406` activation `3.727` class `word` token ` sad`
+  - The small rainbow dried her tears, she was still sad about not being able to shine, but she understood
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `456` activation `3.714` class `word` token ` morning`
+  - her day. She had breakfast with her mother every morning and then would go for a walk and explore the
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `454` activation `3.551` class `word` token ` mother`
+  - and enjoying her day. She had breakfast with her mother every morning and then would go for a walk and
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `434` activation `3.491` class `word` token `adow`
+  - her fault. She stopped going out to the meadow every morning and started just going with the flow and
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `412` activation `3.487` class `word` token ` shine`
+  - , she was still sad about not being able to shine, but she understood a little better that it wasn
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `436` activation `3.302` class `word` token ` morning`
+  - . She stopped going out to the meadow every morning and started just going with the flow and enjoying her
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `425` activation `3.283` class `word` token ` fault`
+  - she understood a little better that it wasn't her fault. She stopped going out to the meadow every
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `447` activation `3.235` class `word` token ` day`
+  - and started just going with the flow and enjoying her day. She had breakfast with her mother every morning and
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `467` activation `3.175` class `word` token ` scenery`
+  - and then would go for a walk and explore the scenery. One day, months later, she returned from
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `463` activation `3.074` class `word` token ` walk`
+  - her mother every morning and then would go for a walk and explore the scenery. One day, months later
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `451` activation `3.022` class `word` token ` breakfast`
+  - with the flow and enjoying her day. She had breakfast with her mother every morning and then would go for
+- `L19:4063` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `416` activation `2.975` class `word` token ` understood`
+  - sad about not being able to shine, but she understood a little better that it wasn't her fault.
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `356` activation `3.497` class `word` token ` said`
+  - was scared but Uncle Tom didn't hesitate and he said they must go towards the scream, Jimmy could be
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `367` activation `3.447` class `word` token ` there`
+  - they must go towards the scream, Jimmy could be there. The group hesitantly agreed and they rushed
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `347` activation `3.303` class `word` token ` scared`
+  - , like something from hell was screaming. Everybody was scared but Uncle Tom didn't hesitate and he said they
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `362` activation `3.100` class `word` token ` scream`
+  - 't hesitate and he said they must go towards the scream, Jimmy could be there. The group hesit
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `343` activation `3.090` class `word` token ` screaming`
+  - have never heard before, like something from hell was screaming. Everybody was scared but Uncle Tom didn't hesitate
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `415` activation `3.019` class `word` token ` trees`
+  - blood on the ground, there were fangs in trees and there was no Jimmy. Everybody started to even
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `341` activation `2.889` class `word` token ` hell`
+  - that they have never heard before, like something from hell was screaming. Everybody was scared but Uncle Tom didn
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `370` activation `2.860` class `word` token ` group`
+  - towards the scream, Jimmy could be there. The group hesitantly agreed and they rushed towards the local
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `420` activation `2.850` class `word` token ` Jimmy`
+  - there were fangs in trees and there was no Jimmy. Everybody started to even get more scared, and
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `350` activation `2.836` class `word` token ` Tom`
+  - from hell was screaming. Everybody was scared but Uncle Tom didn't hesitate and he said they must go towards
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `314` activation `2.830` class `word` token ` woods`
+  - Tom's group heard a big screaming coming from the woods, the screaming didn't seem to be from little
+- `L19:4063` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `206` activation `2.827` class `word` token ` realizes`
+  - and the branches were still there. After Uncle Tom realizes that Jimmy was missing, he started shouting for Jimmy
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `194` activation `4.324` class `word` token ` ugly`
+  - box, It wasn't pretty but it wasn't ugly. But to me, it made me happy and
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `352` activation `3.938` class `word` token ` wanted`
+  - you could be who you wanted, go where you wanted, and do anything. The box was special to
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `296` activation `3.815` class `word` token ` together`
+  - out the mystery of the box we could share it together and he would understand how I felt. I never
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `347` activation `3.800` class `word` token ` wanted`
+  - you forgot about everything, you could be who you wanted, go where you wanted, and do anything.
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `203` activation `3.774` class `word` token ` happy`
+  - 't ugly. But to me, it made me happy and for some unknown reason, I was beholding
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `198` activation `3.737` class `word` token ` me`
+  - 't pretty but it wasn't ugly. But to me, it made me happy and for some unknown reason
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `320` activation `3.688` class `word` token ` mystery`
+  - my brother hated that box. I knew of its mystery. I knew the box made you happy once you
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `189` activation `3.671` class `word` token ` pretty`
+  - while back I found this box, It wasn't pretty but it wasn't ugly. But to me,
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `314` activation `3.607` class `word` token ` box`
+  - . I never could understand why my brother hated that box. I knew of its mystery. I knew the
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `328` activation `3.563` class `word` token ` happy`
+  - of its mystery. I knew the box made you happy once you were inside. It’s like you forgot
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `300` activation `3.485` class `word` token ` understand`
+  - the box we could share it together and he would understand how I felt. I never could understand why my
+- `L19:4063` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `295` activation `3.461` class `word` token ` it`
+  - found out the mystery of the box we could share it together and he would understand how I felt. I
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `437` activation `3.467` class `word` token ` yelled`
+  - . Jumping down off of his horse the lobster yelled, 'Crab, this town ain't big
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `459` activation `3.260` class `word` token ` right`
+  - for the both of us! 'You got that right,' responded the crab. Quick as a flash both
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `453` activation `3.196` class `word` token ` us`
+  - this town ain't big enough for the both of us! 'You got that right,' responded the crab
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `403` activation `3.016` class `word` token ` street`
+  - revolver fixed to his hip, he stared down the street and caught a glimpse of the lobster entering the town
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `434` activation `2.895` class `word` token ` horse`
+  - pistol was drawn. Jumping down off of his horse the lobster yelled, 'Crab, this town
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `441` activation `2.890` class `word` token `ab`
+  - off of his horse the lobster yelled, 'Crab, this town ain't big enough for the both
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `493` activation `2.781` class `word` token ` ground`
+  - moment later two crumpled heaps lay on the ground. The townspeople were delighted that these scourges
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `421` activation `2.771` class `word` token ` eyes`
+  - entering the town. The lobster had vengeance in his eyes and his pistol was drawn. Jumping down off
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `436` activation `2.753` class `word` token ` lobster`
+  - drawn. Jumping down off of his horse the lobster yelled, 'Crab, this town ain't
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `426` activation `2.736` class `word` token ` drawn`
+  - lobster had vengeance in his eyes and his pistol was drawn. Jumping down off of his horse the lobster
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `416` activation `2.700` class `word` token ` lobster`
+  - a glimpse of the lobster entering the town. The lobster had vengeance in his eyes and his pistol was drawn
+- `L19:4063` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `480` activation `2.598` class `word` token ` fly`
+  - crustaceans raised their weapons and let the bullets fly. A moment later two crumpled heaps lay
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `217` activation `3.666` class `word` token ` part`
+  - . Kotone finishes praying and then reads the next part of the spell. It wasn't that complicated,
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `126` activation `3.590` class `word` token ` herself`
+  - landed on a simple antidote. She thought to herself "This looks easy enough." She ties her hair
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `130` activation `3.452` class `word` token ` easy`
+  - antidote. She thought to herself "This looks easy enough." She ties her hair back into a pony
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `189` activation `3.404` class `word` token ` notice`
+  - up inside her. The village folk starts to take notice of the swirl of magic surrounding her and start to
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `220` activation `3.366` class `word` token ` spell`
+  - finishes praying and then reads the next part of the spell. It wasn't that complicated, she walks up
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `173` activation `3.349` class `word` token `ays`
+  - give you her blessing. She prays and prays until the power starts swelling up inside her. The
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `493` activation `3.348` class `word` token ` me`
+  - , learn everything in this book then come talk to me." She leaves and Kotone was still unsatisfied
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `201` activation `3.336` class `word` token ` away`
+  - the swirl of magic surrounding her and start to walk away from the sickly man. Kotone finishes praying
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `113` activation `3.329` class `word` token ` spell`
+  - day. Kotone keeps looking and looking for a spell and she landed on a simple antidote. She
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `131` activation `3.249` class `word` token ` enough`
+  - ote. She thought to herself "This looks easy enough." She ties her hair back into a ponytail
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `127` activation `3.201` class `punctuation` token ` "`
+  - on a simple antidote. She thought to herself "This looks easy enough." She ties her hair back
+- `L19:4063` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `230` activation `3.190` class `word` token ` up`
+  - spell. It wasn't that complicated, she walks up to the man on the ground and places her hand
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `414` activation `3.544` class `word` token ` us`
+  - like pain signals danger or harm. It also tells us when things aren't going well. Scientists say that
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `403` activation `3.371` class `word` token ` action`
+  - It gives our brain a signal we need to take action like pain signals danger or harm. It also tells
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `406` activation `3.357` class `word` token ` signals`
+  - brain a signal we need to take action like pain signals danger or harm. It also tells us when things
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `409` activation `3.315` class `word` token ` harm`
+  - we need to take action like pain signals danger or harm. It also tells us when things aren't going
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `407` activation `3.285` class `word` token ` danger`
+  - a signal we need to take action like pain signals danger or harm. It also tells us when things aren
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `411` activation `3.254` class `word` token ` It`
+  - to take action like pain signals danger or harm. It also tells us when things aren't going well.
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `412` activation `3.212` class `style_function_word` token ` also`
+  - take action like pain signals danger or harm. It also tells us when things aren't going well. Scientists
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `398` activation `3.206` class `word` token ` signal`
+  - when boredom can occur. It gives our brain a signal we need to take action like pain signals danger or
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `413` activation `3.201` class `word` token ` tells`
+  - action like pain signals danger or harm. It also tells us when things aren't going well. Scientists say
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `416` activation `3.095` class `word` token ` things`
+  - signals danger or harm. It also tells us when things aren't going well. Scientists say that an episode
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `391` activation `3.026` class `word` token ` occur`
+  - be engaged but can't that's when boredom can occur. It gives our brain a signal we need to
+- `L19:4063` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `415` activation `2.979` class `style_function_word` token ` when`
+  - pain signals danger or harm. It also tells us when things aren't going well. Scientists say that an
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `289` activation `3.689` class `style_function_word` token ` while`
+  - blanket: You will be on the train for a while and will need to sleep. Be sure to bring
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `373` activation `3.481` class `word` token ` mind`
+  - from your life and jot down anything that comes to mind on the journey – Play a videogame:
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `390` activation `3.387` class `word` token ` Deck`
+  - a videogame: Bring a Nintendo Switch or Steam Deck along and dive into one of your favorite games,
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `439` activation `3.309` class `word` token ` wifi`
+  - Just download it beforehand since the train doesn't have wifi! – Meet people: Stroll around the various
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `357` activation `3.246` class `word` token ` inspiration`
+  - different world. – Write: Use the scenery as inspiration for writing. Take space from your life and jot
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `431` activation `3.229` class `word` token ` it`
+  - a movie on your phone or tablet. Just download it beforehand since the train doesn't have wifi! –
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `243` activation `3.174` class `word` token ` car`
+  - to the dining car. You can visit the cafe car to get snacks if you need to but make sure
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `391` activation `3.168` class `word` token ` along`
+  - videogame: Bring a Nintendo Switch or Steam Deck along and dive into one of your favorite games, or
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `387` activation `3.143` class `word` token ` Switch`
+  - – Play a videogame: Bring a Nintendo Switch or Steam Deck along and dive into one of your
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `432` activation `3.140` class `word` token ` beforehand`
+  - movie on your phone or tablet. Just download it beforehand since the train doesn't have wifi! – Meet
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `382` activation `3.102` class `word` token `ame`
+  - to mind on the journey – Play a videogame: Bring a Nintendo Switch or Steam Deck along and
+- `L19:4063` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `259` activation `3.096` class `word` token ` own`
+  - need to but make sure to bring some of your own to keep you from getting hungry or having to spend
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `138` activation `3.643` class `word` token ` Oscars`
+  - you want to completely shut these down? No more Oscars? UFA: Well, if it was solely
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `143` activation `3.583` class `word` token ` Well`
+  - these down? No more Oscars? UFA: Well, if it was solely up to me? Yes
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `134` activation `3.553` class `word` token ` down`
+  - . Reporter: So you want to completely shut these down? No more Oscars? UFA: Well,
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `153` activation `3.263` class `word` token ` Yes`
+  - Well, if it was solely up to me? Yes. But it isn't (laughs). Reporter:
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `192` activation `3.177` class `word` token ` them`
+  - a little bit too strong. I don't hate them. I just see them as being unnecessary. There
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `120` activation `3.151` class `word` token ` me`
+  - I mean the dress designers…yeah they must hate me and my suggestion. Reporter: So you want to
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `186` activation `3.045` class `word` token ` strong`
+  - Hate? Eh…that is a little bit too strong. I don't hate them. I just see
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `127` activation `3.038` class `word` token ` So`
+  - they must hate me and my suggestion. Reporter: So you want to completely shut these down? No more
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `151` activation `2.976` class `word` token ` me`
+  - FA: Well, if it was solely up to me? Yes. But it isn't (laughs).
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `205` activation `2.895` class `word` token ` time`
+  - just see them as being unnecessary. There was a time before these award shows and actors just acted, right
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `209` activation `2.839` class `word` token ` shows`
+  - being unnecessary. There was a time before these award shows and actors just acted, right? Reporter: So
+- `L19:4063` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `123` activation `2.838` class `word` token ` suggestion`
+  - dress designers…yeah they must hate me and my suggestion. Reporter: So you want to completely shut these
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `490` activation `8.274` class `word` token ` touches`
+  - falls in the forest Nurturing everything it touches Love is the warmth of a mother's hug
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `483` activation `7.542` class `word` token ` forest`
+  - day Love is the rain that falls in the forest Nurturing everything it touches Love is
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `460` activation `7.311` class `word` token ` day`
+  - is the crisp air you breathe on a perfect winter day It is the warm sun on your face on
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `473` activation `7.133` class `word` token ` day`
+  - is the warm sun on your face on a rough day Love is the rain that falls in the forest
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `511` activation `7.103` class `word` token ` struggles`
+  - It is the first taste of happiness from many struggles
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `500` activation `6.846` class `word` token ` hug`
+  - touches Love is the warmth of a mother's hug It is the first taste of happiness from many
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `488` activation `6.818` class `word` token ` everything`
+  - rain that falls in the forest Nurturing everything it touches Love is the warmth of a mother
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `469` activation `6.730` class `word` token ` face`
+  - winter day It is the warm sun on your face on a rough day Love is the rain that
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `508` activation `6.247` class `word` token ` happiness`
+  - mother's hug It is the first taste of happiness from many struggles
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `455` activation `5.952` class `word` token ` breathe`
+  - in the winter Love is the crisp air you breathe on a perfect winter day It is the warm
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `480` activation `5.537` class `word` token ` falls`
+  - on a rough day Love is the rain that falls in the forest Nurturing everything it touches
+- `L24:3645` `05aba0fbf61a5220fd1041dd529a14b4b16267926f8e3b15e1686be9b86f9340@turn_01@human` token `447` activation `5.163` class `word` token ` winter`
+  - like a warm blanket that lays over you in the winter Love is the crisp air you breathe on a
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `354` activation `8.464` class `word` token ` found`
+  - I think that they do not know what they have found, at least for the present, only that it
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `424` activation `8.094` class `word` token ` provide`
+  - well. You have access to any resource I can provide. Though I know you are tired you cannot now
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `340` activation `7.982` class `word` token ` battle`
+  - those lands that your sire of old fought the final battle and fell. I think that they do not know
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `368` activation `7.746` class `word` token ` valuable`
+  - for the present, only that it is old and valuable. The King: I see. We must reclaim
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `391` activation `7.722` class `word` token ` discovered`
+  - once before the true purpose of the heirloom is discovered. You will be given a small force, to
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `381` activation `7.605` class `word` token ` once`
+  - King: I see. We must reclaim it at once before the true purpose of the heirloom is discovered
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `379` activation `7.548` class `word` token ` it`
+  - . The King: I see. We must reclaim it at once before the true purpose of the heirloom
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `455` activation `7.416` class `word` token `fact`
+  - set out in seven days and bring back the artefact by the coming of winter. Traveller:
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `407` activation `7.369` class `word` token ` it`
+  - a small force, to travel in secret and retrieve it, for you know the lands well. You have
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `331` activation `7.325` class `word` token ` lands`
+  - believe it to be genuine, it is upon those lands that your sire of old fought the final battle and
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `438` activation `7.197` class `word` token `long`
+  - know you are tired you cannot now tarry overlong in the castle. You must set out in seven
+- `L24:3645` `70676f517920600d75545b8a441fc996687fe2bfcde2de0d51bd4a2a9fdb2dca@turn_01@human` token `325` activation `7.141` class `word` token ` genuine`
+  - a low-class noble. I believe it to be genuine, it is upon those lands that your sire of
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `466` activation `8.140` class `word` token `ades`
+  - adorned as the empire Take me on your escapades, undress me, and hover. As the
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `454` activation `7.695` class `word` token ` admired`
+  - old lover. Studio 54 is for lifetimes admired, adorned as the empire Take me on your
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `434` activation `7.367` class `word` token ` fire`
+  - makes you feel desire, its time to feel on fire, A groove that never fades, unlike an old
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `445` activation `7.348` class `word` token ` lover`
+  - , A groove that never fades, unlike an old lover. Studio 54 is for lifetimes admired,
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `440` activation `7.171` class `word` token ` fades`
+  - time to feel on fire, A groove that never fades, unlike an old lover. Studio 54 is
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `497` activation `7.008` class `word` token ` there`
+  - summer nights go astray, The beat is always there to draw you near, Our love for you is
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `449` activation `6.820` class `word` token `54`
+  - never fades, unlike an old lover. Studio 54 is for lifetimes admired, adorned as the empire
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `470` activation `6.711` class `word` token ` me`
+  - Take me on your escapades, undress me, and hover. As the DJ turns night into
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `481` activation `6.663` class `word` token ` day`
+  - , and hover. As the DJ turns night into day, And we see the summer nights go astray
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `453` activation `6.465` class `word` token `etimes`
+  - an old lover. Studio 54 is for lifetimes admired, adorned as the empire Take me on
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `491` activation `6.029` class `word` token `ay`
+  - day, And we see the summer nights go astray, The beat is always there to draw you near
+- `L24:3645` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@human` token `501` activation `5.934` class `word` token ` near`
+  - ay, The beat is always there to draw you near, Our love for you is ever so clear.
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `301` activation `9.285` class `word` token ` route`
+  - "OK fine, but let's go a different route, it'll be more fun!" he said.
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `289` activation `8.542` class `word` token ` ideas`
+  - Sally. Steve of course obliged but Jack had other ideas, "OK fine, but let's go a
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `307` activation `8.196` class `word` token ` fun`
+  - 's go a different route, it'll be more fun!" he said. Steve looked at Sally and sighed
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `331` activation `8.085` class `word` token ` home`
+  - , one way or another, we'll get you home safely". The three young friends set off down a
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `403` activation `8.075` class `word` token ` group`
+  - ". Jack decided not to share this information with the group, they were on an adventure after all. The
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `267` activation `7.986` class `word` token ` guys`
+  - felt off. "I think I might go home guys, but I need you to take me", whim
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `332` activation `7.888` class `word` token ` safely`
+  - one way or another, we'll get you home safely". The three young friends set off down a road
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `235` activation `7.852` class `word` token ` trouble`
+  - a strong sense of adventure which often got him into trouble. As the friends meandered through the h
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `284` activation `7.752` class `word` token ` obliged`
+  - take me", whimpered Sally. Steve of course obliged but Jack had other ideas, "OK fine,
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `293` activation `7.746` class `word` token ` fine`
+  - course obliged but Jack had other ideas, "OK fine, but let's go a different route, it
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `380` activation `7.644` class `word` token ` all`
+  - he realized, it wasn't a street sign at all, it was a warning that read, "Do
+- `L24:3645` `767fe0367b3f67f67f2a6a4b87ac0ec5941b7e0a34be476f8a6f0a14980fd1ef@turn_01@human` token `378` activation `7.614` class `word` token ` sign`
+  - sign when he realized, it wasn't a street sign at all, it was a warning that read,
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `491` activation `8.625` class `word` token ` markets`
+  - course, the weather plays a large part in grain markets. A poor harvest resulting from torrid weather can
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `471` activation `8.082` class `word` token ` rise`
+  - grain market. As demand for grains goes up prices rise likewise when supply is cut. Weather: Of course
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `454` activation `7.828` class `word` token ` demand`
+  - and Demand: All markets are affected by supply and demand. None more so than the grain market. As
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `462` activation `7.187` class `word` token ` market`
+  - supply and demand. None more so than the grain market. As demand for grains goes up prices rise likewise
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `488` activation `7.181` class `word` token ` part`
+  - Weather: Of course, the weather plays a large part in grain markets. A poor harvest resulting from tor
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `440` activation `7.039` class `word` token ` maintained`
+  - ensure that the supply of grain is able to be maintained. Global Supply and Demand: All markets are affected
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `424` activation `7.014` class `word` token ` markets`
+  - farmer's ability to produce can have an impact on markets. Policies that ease production ensure that the supply of
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `394` activation `6.935` class `word` token ` rises`
+  - the dollar is devalued the price of commodities rises as investors see it as a safer alternative. Energy
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `510` activation `6.432` class `word` token ` rise`
+  - weather can wreak havoc with supply, causing prices to rise.
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `505` activation `6.169` class `word` token ` supply`
+  - harvest resulting from torrid weather can wreak havoc with supply, causing prices to rise.
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `503` activation `6.155` class `word` token ` havoc`
+  - A poor harvest resulting from torrid weather can wreak havoc with supply, causing prices to rise.
+- `L24:3645` `756d31fa74b296203c9450a5ded21a07492f0f99caf7c982abf61a93a9c3ec56@turn_01@human` token `350` activation `5.903` class `word` token ` market`
+  - demand levels worldwide leading to massive effects on the grain market. Strength of the Dollar: As the main currency
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `303` activation `8.789` class `word` token ` here`
+  - of a young girl named Gracie that is buried here. People visit her grave to place toys for her
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `313` activation `7.929` class `word` token ` her`
+  - here. People visit her grave to place toys for her and she has reportedly been seen near there. Cal
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `311` activation `7.773` class `word` token ` toys`
+  - is buried here. People visit her grave to place toys for her and she has reportedly been seen near there
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `408` activation `7.752` class `word` token ` building`
+  - Nettie Dickerson is said to haunt this building. It is said that she was struck by lightning
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `371` activation `7.599` class `word` token ` activities`
+  - many claims that she disrupts the day-to-day activities here. Dock Street Theatre in Charleston, South Carolina
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `356` activation `7.562` class `word` token ` courthouse`
+  - anna, Toni Jo Henry is said to haunt the courthouse. There have been many claims that she disrupts
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `499` activation `7.561` class `word` token ` grounds`
+  - led to finding bones and military uniforms buried on the grounds. Tourists have seen shadowing figures in the
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `393` activation `7.540` class `word` token ` rebuilt`
+  - The original building burnt down and had to be completely rebuilt. The ghost of Nettie Dickerson is
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `372` activation `7.406` class `word` token ` here`
+  - claims that she disrupts the day-to-day activities here. Dock Street Theatre in Charleston, South Carolina.
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `308` activation `7.346` class `word` token ` grave`
+  - Gracie that is buried here. People visit her grave to place toys for her and she has reportedly been
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `387` activation `6.839` class `word` token ` down`
+  - in Charleston, South Carolina. The original building burnt down and had to be completely rebuilt. The ghost of
+- `L24:3645` `7aeda1c11f2fbe384ad61ebc42461b938ba10f93460581f34d343f19df5a3c75@turn_01@human` token `495` activation `6.764` class `word` token ` uniforms`
+  - in 1936 led to finding bones and military uniforms buried on the grounds. Tourists have seen shadow
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `456` activation `7.762` class `word` token ` morning`
+  - her day. She had breakfast with her mother every morning and then would go for a walk and explore the
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `467` activation `7.730` class `word` token ` scenery`
+  - and then would go for a walk and explore the scenery. One day, months later, she returned from
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `434` activation `7.418` class `word` token `adow`
+  - her fault. She stopped going out to the meadow every morning and started just going with the flow and
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `454` activation `7.349` class `word` token ` mother`
+  - and enjoying her day. She had breakfast with her mother every morning and then would go for a walk and
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `436` activation `7.268` class `word` token ` morning`
+  - . She stopped going out to the meadow every morning and started just going with the flow and enjoying her
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `443` activation `6.946` class `word` token ` flow`
+  - meadow every morning and started just going with the flow and enjoying her day. She had breakfast with her
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `425` activation `6.576` class `word` token ` fault`
+  - she understood a little better that it wasn't her fault. She stopped going out to the meadow every
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `447` activation `6.531` class `word` token ` day`
+  - and started just going with the flow and enjoying her day. She had breakfast with her mother every morning and
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `463` activation `6.386` class `word` token ` walk`
+  - her mother every morning and then would go for a walk and explore the scenery. One day, months later
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `412` activation `6.213` class `word` token ` shine`
+  - , she was still sad about not being able to shine, but she understood a little better that it wasn
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `451` activation `6.050` class `word` token ` breakfast`
+  - with the flow and enjoying her day. She had breakfast with her mother every morning and then would go for
+- `L24:3645` `6224a65d2e0b488d152b1bdbbbe0c120715e7828cc4984d8262f03704997624f@turn_01@human` token `473` activation `5.970` class `word` token ` later`
+  - walk and explore the scenery. One day, months later, she returned from her morning walk, and her
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `401` activation `9.614` class `word` token ` up`
+  - the place, they notice, that area was messed up. There was blood on the ground, there were
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `314` activation `9.604` class `word` token ` woods`
+  - Tom's group heard a big screaming coming from the woods, the screaming didn't seem to be from little
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `336` activation `9.463` class `word` token ` before`
+  - , it was a sound that they have never heard before, like something from hell was screaming. Everybody was
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `428` activation `9.345` class `word` token ` scared`
+  - was no Jimmy. Everybody started to even get more scared, and suddenly they hear something coming from behind the
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `439` activation `9.223` class `word` token ` bushes`
+  - , and suddenly they hear something coming from behind the bushes. After some moments of suspense, John appears with
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `343` activation `9.132` class `word` token ` screaming`
+  - have never heard before, like something from hell was screaming. Everybody was scared but Uncle Tom didn't hesitate
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `249` activation `8.992` class `word` token ` woods`
+  - respond, so they began to search in the nearby woods. They separated into two groups, the group with
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `415` activation `8.933` class `word` token ` trees`
+  - blood on the ground, there were fangs in trees and there was no Jimmy. Everybody started to even
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `461` activation `8.932` class `word` token ` place`
+  - group. He said he heard screaming coming from this place. After everybody was relieved after seeing John they heard
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `362` activation `8.906` class `word` token ` scream`
+  - 't hesitate and he said they must go towards the scream, Jimmy could be there. The group hesit
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `341` activation `8.881` class `word` token ` hell`
+  - that they have never heard before, like something from hell was screaming. Everybody was scared but Uncle Tom didn
+- `L24:3645` `0b46942a0af1509aa6ba7a658787e3a00c87311b4074326a43fdccc80f51583f@turn_01@human` token `408` activation `8.717` class `word` token ` ground`
+  - area was messed up. There was blood on the ground, there were fangs in trees and there was
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `296` activation `10.191` class `word` token ` together`
+  - out the mystery of the box we could share it together and he would understand how I felt. I never
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `463` activation `9.914` class `word` token ` changed`
+  - That was 10 years ago, and nothing has changed. My parents still have his room exactly how it
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `224` activation `9.886` class `word` token ` it`
+  - to it. My brother didn’t think much of it, but he lacked imagination. My brother would make
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `203` activation `9.860` class `word` token ` happy`
+  - 't ugly. But to me, it made me happy and for some unknown reason, I was beholding
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `314` activation `9.821` class `word` token ` box`
+  - . I never could understand why my brother hated that box. I knew of its mystery. I knew the
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `352` activation `9.773` class `word` token ` wanted`
+  - you could be who you wanted, go where you wanted, and do anything. The box was special to
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `269` activation `9.705` class `word` token ` me`
+  - One day my brother decided to take the box from me, I was angry but I just smiled at him
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `328` activation `9.689` class `word` token ` happy`
+  - of its mystery. I knew the box made you happy once you were inside. It’s like you forgot
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `215` activation `9.595` class `word` token ` it`
+  - for some unknown reason, I was beholding to it. My brother didn’t think much of it,
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `320` activation `9.515` class `word` token ` mystery`
+  - my brother hated that box. I knew of its mystery. I knew the box made you happy once you
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `426` activation `9.380` class `word` token ` box`
+  - climb in. He never returned from outside of the box. In his room, the box still sits on
+- `L24:3645` `3e7e2484767a6f4b76b2d1813660517870960d3bef7b54571ba4036641f55a85@turn_01@human` token `400` activation `9.319` class `word` token ` myself`
+  - he made fun of me I kept its mystery to myself. I miss my brother, the day he took
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `453` activation `8.107` class `word` token ` us`
+  - this town ain't big enough for the both of us! 'You got that right,' responded the crab
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `421` activation `7.882` class `word` token ` eyes`
+  - entering the town. The lobster had vengeance in his eyes and his pistol was drawn. Jumping down off
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `493` activation `7.096` class `word` token ` ground`
+  - moment later two crumpled heaps lay on the ground. The townspeople were delighted that these scourges
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `403` activation `6.839` class `word` token ` street`
+  - revolver fixed to his hip, he stared down the street and caught a glimpse of the lobster entering the town
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `480` activation `6.832` class `word` token ` fly`
+  - crustaceans raised their weapons and let the bullets fly. A moment later two crumpled heaps lay
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `426` activation `6.683` class `word` token ` drawn`
+  - lobster had vengeance in his eyes and his pistol was drawn. Jumping down off of his horse the lobster
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `475` activation `6.664` class `word` token ` weapons`
+  - Quick as a flash both crustaceans raised their weapons and let the bullets fly. A moment later two
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `459` activation `6.475` class `word` token ` right`
+  - for the both of us! 'You got that right,' responded the crab. Quick as a flash both
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `510` activation `6.088` class `word` token ` eliminated`
+  - that these scourges of their town had both been eliminated.
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `463` activation `5.993` class `word` token ` crab`
+  - us! 'You got that right,' responded the crab. Quick as a flash both crustaceans raised
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `434` activation `5.758` class `word` token ` horse`
+  - pistol was drawn. Jumping down off of his horse the lobster yelled, 'Crab, this town
+- `L24:3645` `acdec6de53c44e849cf22a72cbdc4905bb1eab9e0f67c4215a5c21ccc16f39ca@turn_01@human` token `447` activation `5.725` class `word` token ` big`
+  - yelled, 'Crab, this town ain't big enough for the both of us! 'You got
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `131` activation `10.201` class `word` token ` enough`
+  - ote. She thought to herself "This looks easy enough." She ties her hair back into a ponytail
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `220` activation `9.960` class `word` token ` spell`
+  - finishes praying and then reads the next part of the spell. It wasn't that complicated, she walks up
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `130` activation `9.869` class `word` token ` easy`
+  - antidote. She thought to herself "This looks easy enough." She ties her hair back into a pony
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `226` activation `9.803` class `word` token ` complicated`
+  - next part of the spell. It wasn't that complicated, she walks up to the man on the ground
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `166` activation `9.586` class `word` token ` blessing`
+  - so the goddess can find you and give you her blessing. She prays and prays until the power
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `217` activation `9.493` class `word` token ` part`
+  - . Kotone finishes praying and then reads the next part of the spell. It wasn't that complicated,
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `488` activation `9.358` class `word` token ` book`
+  - This is your next trial, learn everything in this book then come talk to me." She leaves and Kot
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `173` activation `9.261` class `word` token `ays`
+  - give you her blessing. She prays and prays until the power starts swelling up inside her. The
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `447` activation `9.206` class `word` token ` trial`
+  - about the well?" "That was never part of the trial. It was always the plan that one of us
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `189` activation `9.177` class `word` token ` notice`
+  - up inside her. The village folk starts to take notice of the swirl of magic surrounding her and start to
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `201` activation `8.869` class `word` token ` away`
+  - the swirl of magic surrounding her and start to walk away from the sickly man. Kotone finishes praying
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `482` activation `8.856` class `word` token ` trial`
+  - and tells Kotone, "This is your next trial, learn everything in this book then come talk to
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `403` activation `8.119` class `word` token ` action`
+  - It gives our brain a signal we need to take action like pain signals danger or harm. It also tells
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `409` activation `8.091` class `word` token ` harm`
+  - we need to take action like pain signals danger or harm. It also tells us when things aren't going
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `406` activation `7.663` class `word` token ` signals`
+  - brain a signal we need to take action like pain signals danger or harm. It also tells us when things
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `407` activation `7.474` class `word` token ` danger`
+  - a signal we need to take action like pain signals danger or harm. It also tells us when things aren
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `391` activation `7.145` class `word` token ` occur`
+  - be engaged but can't that's when boredom can occur. It gives our brain a signal we need to
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `398` activation `7.053` class `word` token ` signal`
+  - when boredom can occur. It gives our brain a signal we need to take action like pain signals danger or
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `420` activation `6.647` class `word` token ` well`
+  - . It also tells us when things aren't going well. Scientists say that an episode of boredom can create
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `405` activation `6.303` class `word` token ` pain`
+  - our brain a signal we need to take action like pain signals danger or harm. It also tells us when
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `434` activation `5.771` class `word` token ` changes`
+  - that an episode of boredom can create opportunities for positive changes instead of looking for an easy escape. There is
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `510` activation `5.197` class `word` token ` happening`
+  - pay attention to the cues it provides as it's happening.
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `504` activation `5.134` class `word` token ` cues`
+  - necessary warning sign and we should pay attention to the cues it provides as it's happening.
+- `L24:3645` `ef52784af72fdcb475ca17d2f444011bf89a4f73cba3627ef7a4a369a3dd39f4@turn_01@human` token `431` activation `5.070` class `word` token ` opportunities`
+  - . Scientists say that an episode of boredom can create opportunities for positive changes instead of looking for an easy escape
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `373` activation `7.933` class `word` token ` mind`
+  - from your life and jot down anything that comes to mind on the journey – Play a videogame:
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `289` activation `7.872` class `style_function_word` token ` while`
+  - blanket: You will be on the train for a while and will need to sleep. Be sure to bring
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `357` activation `6.950` class `word` token ` inspiration`
+  - different world. – Write: Use the scenery as inspiration for writing. Take space from your life and jot
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `432` activation `6.942` class `word` token ` beforehand`
+  - movie on your phone or tablet. Just download it beforehand since the train doesn't have wifi! – Meet
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `376` activation `6.912` class `word` token ` journey`
+  - and jot down anything that comes to mind on the journey – Play a videogame: Bring a Nintendo
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `265` activation `6.892` class `word` token ` hungry`
+  - bring some of your own to keep you from getting hungry or having to spend a fortune on food. –
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `427` activation `6.883` class `word` token ` tablet`
+  - headphones in and watch a movie on your phone or tablet. Just download it beforehand since the train doesn't
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `425` activation `6.870` class `word` token ` phone`
+  - Throw some headphones in and watch a movie on your phone or tablet. Just download it beforehand since the train
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `294` activation `6.812` class `word` token ` sleep`
+  - on the train for a while and will need to sleep. Be sure to bring a pillow and a blanket
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `439` activation `6.729` class `word` token ` wifi`
+  - Just download it beforehand since the train doesn't have wifi! – Meet people: Stroll around the various
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `236` activation `6.630` class `word` token ` car`
+  - While riding coach you have limited access to the dining car. You can visit the cafe car to get snacks
+- `L24:3645` `494a49d73ffcb678484d0d3141957b69497d5ff0d626cadc00391585dbf8a445@turn_01@human` token `390` activation `6.571` class `word` token ` Deck`
+  - a videogame: Bring a Nintendo Switch or Steam Deck along and dive into one of your favorite games,
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `134` activation `8.394` class `word` token ` down`
+  - . Reporter: So you want to completely shut these down? No more Oscars? UFA: Well,
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `192` activation `8.062` class `word` token ` them`
+  - a little bit too strong. I don't hate them. I just see them as being unnecessary. There
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `151` activation `7.759` class `word` token ` me`
+  - FA: Well, if it was solely up to me? Yes. But it isn't (laughs).
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `252` activation `7.651` class `word` token ` job`
+  - Because I just want to act. I love my job, my profession. This is my passion and that
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `255` activation `7.376` class `word` token ` profession`
+  - want to act. I love my job, my profession. This is my passion and that is enough for
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `260` activation `7.359` class `word` token ` passion`
+  - love my job, my profession. This is my passion and that is enough for me. I don't
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `386` activation `7.312` class `word` token ` plays`
+  - It might but I am also open to acting in plays, TV series, and cable. I am going
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `311` activation `7.204` class `word` token ` movie`
+  - a lot of other guys who acted well in a movie and they don't get nominated. It is so
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `308` activation `7.195` class `word` token ` well`
+  - But there are a lot of other guys who acted well in a movie and they don't get nominated.
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `406` activation `7.193` class `word` token ` films`
+  - going to act. They can blacklist me from big films but there is always YouTube and social media (laughs
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `247` activation `7.160` class `word` token ` act`
+  - that simple for me. Because I just want to act. I love my job, my profession. This
+- `L24:3645` `59f12cccd8cfedfdbf597e6e8b19c8398217783dab4982334e1984947dab4749@turn_01@human` token `153` activation `7.135` class `word` token ` Yes`
+  - Well, if it was solely up to me? Yes. But it isn't (laughs). Reporter:

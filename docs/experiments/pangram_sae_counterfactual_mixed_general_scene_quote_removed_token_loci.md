@@ -1,0 +1,1657 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:402` | `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 7 | `47.46` | `12.53` | punctuation:5|word:1|line_break:1 |
+| `L19:402` | `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 8 | `18.26` | `4.64` | punctuation:4|word:4 |
+| `L19:402` | `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::original` | `gpt-5.5` | 1 | `12.48` | `12.48` | punctuation:1 |
+| `L19:402` | `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::edited` | `gpt-5.5` | 0 | `0.00` | `0.00` |  |
+| `L19:402` | `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` | `human` | 6 | `47.97` | `12.27` | punctuation:5|word:1 |
+| `L19:402` | `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` | `human` | 8 | `17.97` | `4.88` | punctuation:3|word:3|sentence_boundary:2 |
+| `L19:402` | `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` | `glm-5.2` | 9 | `51.31` | `12.40` | punctuation:7|word:2 |
+| `L19:402` | `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` | `glm-5.2` | 9 | `19.67` | `7.21` | word:5|punctuation:2|sentence_boundary:2 |
+| `L19:402` | `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` | `gpt-5.5` | 7 | `45.72` | `11.94` | punctuation:6|word:1 |
+| `L19:402` | `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` | `gpt-5.5` | 6 | `16.72` | `5.98` | sentence_boundary:3|punctuation:2|word:1 |
+| `L19:402` | `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` | `gpt-5.5` | 9 | `61.56` | `12.34` | punctuation:6|word:3 |
+| `L19:402` | `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` | `gpt-5.5` | 11 | `23.95` | `5.24` | word:6|punctuation:5 |
+| `L19:402` | `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` | `qwen3.6-35b` | 5 | `41.56` | `12.25` | punctuation:4|word:1 |
+| `L19:402` | `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` | `qwen3.6-35b` | 9 | `15.84` | `5.05` | punctuation:4|word:4|sentence_boundary:1 |
+| `L19:402` | `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` | `glm-5.2` | 4 | `15.72` | `12.11` | punctuation:4 |
+| `L19:402` | `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::edited` | `glm-5.2` | 0 | `0.00` | `0.00` |  |
+| `L19:402` | `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` | `gpt-5.5` | 3 | `29.34` | `12.07` | punctuation:3 |
+| `L19:402` | `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::edited` | `gpt-5.5` | 2 | `7.43` | `5.96` | punctuation:1|word:1 |
+| `L19:402` | `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 7 | `57.57` | `12.32` | punctuation:6|word:1 |
+| `L19:402` | `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 7 | `15.07` | `6.24` | word:3|punctuation:2|sentence_boundary:2 |
+| `L19:402` | `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` | `glm-5.2` | 8 | `43.06` | `12.27` | punctuation:8 |
+| `L19:402` | `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` | `glm-5.2` | 3 | `3.18` | `1.32` | punctuation:2|sentence_boundary:1 |
+| `L19:402` | `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 3 | `35.71` | `12.29` | punctuation:3 |
+| `L19:402` | `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 4 | `7.60` | `3.63` | punctuation:3|word:1 |
+| `L19:402` | `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` | `gpt-5.5` | 5 | `27.62` | `12.28` | punctuation:5 |
+| `L19:402` | `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` | `gpt-5.5` | 5 | `9.08` | `3.67` | punctuation:5 |
+| `L19:402` | `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` | `glm-5.2` | 7 | `50.97` | `12.17` | punctuation:5|word:2 |
+| `L19:402` | `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` | `glm-5.2` | 9 | `22.29` | `4.62` | punctuation:5|word:4 |
+| `L19:402` | `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 14 | `74.17` | `13.03` | punctuation:7|word:6|line_break:1 |
+| `L19:402` | `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 14 | `29.63` | `3.78` | word:9|punctuation:5 |
+| `L19:402` | `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` | `gpt-5.5` | 10 | `72.26` | `11.99` | punctuation:9|line_break:1 |
+| `L19:402` | `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` | `gpt-5.5` | 10 | `22.73` | `5.67` | punctuation:6|sentence_boundary:2|word:2 |
+| `L19:402` | `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` | `human` | 5 | `33.71` | `12.17` | punctuation:3|word:1|line_break:1 |
+| `L19:402` | `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` | `human` | 9 | `12.86` | `3.47` | word:6|punctuation:3 |
+| `L19:402` | `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::original` | `gpt-5.5` | 3 | `32.97` | `12.07` | punctuation:3 |
+| `L19:402` | `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` | `gpt-5.5` | 4 | `11.55` | `5.38` | punctuation:2|word:2 |
+| `L19:402` | `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` | `glm-5.2` | 6 | `34.50` | `12.33` | punctuation:4|word:2 |
+| `L19:402` | `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` | `glm-5.2` | 6 | `10.89` | `3.79` | word:3|punctuation:2|sentence_boundary:1 |
+| `L19:402` | `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` | `glm-5.2` | 4 | `33.65` | `12.07` | punctuation:3|word:1 |
+| `L19:402` | `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` | `glm-5.2` | 3 | `4.51` | `1.89` | punctuation:2|sentence_boundary:1 |
+| `L19:402` | `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` | `glm-5.2` | 6 | `47.63` | `12.22` | punctuation:5|style_function_word:1 |
+| `L19:402` | `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` | `glm-5.2` | 8 | `11.23` | `3.41` | word:4|punctuation:3|style_function_word:1 |
+| `L19:402` | `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 8 | `62.78` | `12.49` | punctuation:8 |
+| `L19:402` | `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 11 | `17.41` | `4.45` | punctuation:6|word:4|sentence_boundary:1 |
+| `L19:402` | `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` | `qwen3.6-35b` | 9 | `84.09` | `12.19` | punctuation:8|word:1 |
+| `L19:402` | `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` | `qwen3.6-35b` | 19 | `48.69` | `5.89` | punctuation:8|word:8|sentence_boundary:2|expanded_negation_word:1 |
+| `L19:402` | `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 4 | `33.16` | `12.34` | punctuation:4 |
+| `L19:402` | `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 5 | `6.09` | `1.97` | punctuation:2|word:2|sentence_boundary:1 |
+| `L19:402` | `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::original` | `glm-5.2` | 2 | `13.73` | `12.07` | punctuation:2 |
+| `L19:402` | `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::edited` | `glm-5.2` | 1 | `1.66` | `1.66` | punctuation:1 |
+| `L19:402` | `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` | `glm-5.2` | 5 | `34.67` | `12.58` | punctuation:4|word:1 |
+| `L19:402` | `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` | `glm-5.2` | 8 | `16.29` | `3.51` | punctuation:5|word:3 |
+| `L19:402` | `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 4 | `46.35` | `12.47` | punctuation:4 |
+| `L19:402` | `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 6 | `17.02` | `7.51` | punctuation:5|word:1 |
+| `L19:402` | `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` | `glm-5.2` | 9 | `66.27` | `12.56` | punctuation:7|word:2 |
+| `L19:402` | `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` | `glm-5.2` | 7 | `16.96` | `4.04` | punctuation:4|word:2|sentence_boundary:1 |
+| `L19:402` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` | `glm-5.2` | 9 | `76.97` | `12.35` | punctuation:9 |
+| `L19:402` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` | `glm-5.2` | 11 | `30.76` | `5.49` | punctuation:8|sentence_boundary:3 |
+| `L24:1434` | `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 5 | `60.04` | `15.54` | punctuation:5 |
+| `L24:1434` | `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 7 | `24.70` | `7.12` | punctuation:5|word:2 |
+| `L24:1434` | `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::original` | `gpt-5.5` | 3 | `18.31` | `16.38` | punctuation:1|style_function_word:1|line_break:1 |
+| `L24:1434` | `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::edited` | `gpt-5.5` | 1 | `1.37` | `1.37` | style_function_word:1 |
+| `L24:1434` | `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` | `human` | 8 | `67.30` | `16.97` | punctuation:5|word:2|style_function_word:1 |
+| `L24:1434` | `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` | `human` | 9 | `31.51` | `7.71` | punctuation:4|sentence_boundary:2|word:2|style_function_word:1 |
+| `L24:1434` | `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` | `glm-5.2` | 10 | `68.00` | `15.68` | punctuation:7|word:3 |
+| `L24:1434` | `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` | `glm-5.2` | 9 | `28.52` | `10.20` | word:4|punctuation:2|sentence_boundary:2|line_break:1 |
+| `L24:1434` | `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` | `gpt-5.5` | 7 | `61.71` | `15.79` | punctuation:6|word:1 |
+| `L24:1434` | `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` | `gpt-5.5` | 6 | `25.45` | `9.10` | sentence_boundary:3|punctuation:2|word:1 |
+| `L24:1434` | `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` | `gpt-5.5` | 9 | `79.82` | `16.26` | punctuation:6|word:3 |
+| `L24:1434` | `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` | `gpt-5.5` | 10 | `38.12` | `8.05` | punctuation:5|word:5 |
+| `L24:1434` | `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` | `qwen3.6-35b` | 4 | `51.88` | `15.77` | punctuation:4 |
+| `L24:1434` | `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` | `qwen3.6-35b` | 4 | `13.58` | `7.03` | punctuation:3|sentence_boundary:1 |
+| `L24:1434` | `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` | `glm-5.2` | 4 | `20.25` | `15.94` | punctuation:4 |
+| `L24:1434` | `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::edited` | `glm-5.2` | 0 | `0.00` | `0.00` |  |
+| `L24:1434` | `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` | `gpt-5.5` | 4 | `39.90` | `16.36` | punctuation:3|style_function_word:1 |
+| `L24:1434` | `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::edited` | `gpt-5.5` | 4 | `12.95` | `8.42` | word:2|punctuation:1|style_function_word:1 |
+| `L24:1434` | `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 7 | `76.13` | `16.62` | punctuation:7 |
+| `L24:1434` | `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 9 | `24.80` | `8.12` | word:4|sentence_boundary:3|punctuation:2 |
+| `L24:1434` | `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` | `glm-5.2` | 10 | `53.26` | `15.98` | punctuation:8|word:2 |
+| `L24:1434` | `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` | `glm-5.2` | 4 | `5.79` | `1.83` | punctuation:2|sentence_boundary:1|word:1 |
+| `L24:1434` | `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 4 | `47.16` | `15.83` | punctuation:4 |
+| `L24:1434` | `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 4 | `10.88` | `4.52` | punctuation:3|word:1 |
+| `L24:1434` | `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` | `gpt-5.5` | 4 | `34.46` | `16.44` | punctuation:4 |
+| `L24:1434` | `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` | `gpt-5.5` | 6 | `15.82` | `6.49` | punctuation:5|word:1 |
+| `L24:1434` | `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` | `glm-5.2` | 7 | `65.94` | `16.17` | punctuation:5|word:2 |
+| `L24:1434` | `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` | `glm-5.2` | 12 | `40.06` | `7.34` | word:6|punctuation:5|sentence_boundary:1 |
+| `L24:1434` | `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 10 | `88.81` | `16.35` | punctuation:7|word:3 |
+| `L24:1434` | `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 12 | `37.20` | `6.72` | word:7|punctuation:5 |
+| `L24:1434` | `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` | `gpt-5.5` | 9 | `98.11` | `16.90` | punctuation:9 |
+| `L24:1434` | `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` | `gpt-5.5` | 9 | `40.77` | `8.32` | punctuation:7|sentence_boundary:2 |
+| `L24:1434` | `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` | `human` | 4 | `45.49` | `16.05` | punctuation:3|word:1 |
+| `L24:1434` | `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` | `human` | 9 | `21.80` | `5.85` | punctuation:4|word:4|sentence_boundary:1 |
+| `L24:1434` | `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::original` | `gpt-5.5` | 3 | `44.99` | `16.12` | punctuation:3 |
+| `L24:1434` | `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` | `gpt-5.5` | 4 | `19.16` | `8.99` | punctuation:2|word:2 |
+| `L24:1434` | `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` | `glm-5.2` | 5 | `44.52` | `16.11` | punctuation:4|word:1 |
+| `L24:1434` | `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` | `glm-5.2` | 5 | `11.56` | `5.17` | word:2|punctuation:2|sentence_boundary:1 |
+| `L24:1434` | `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` | `glm-5.2` | 4 | `43.85` | `15.95` | punctuation:3|word:1 |
+| `L24:1434` | `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` | `glm-5.2` | 4 | `7.48` | `3.28` | punctuation:3|sentence_boundary:1 |
+| `L24:1434` | `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` | `glm-5.2` | 5 | `62.61` | `16.67` | punctuation:5 |
+| `L24:1434` | `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` | `glm-5.2` | 7 | `18.09` | `5.87` | punctuation:3|sentence_boundary:2|word:2 |
+| `L24:1434` | `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 7 | `81.53` | `16.12` | punctuation:7 |
+| `L24:1434` | `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 13 | `31.71` | `7.33` | punctuation:7|word:4|sentence_boundary:2 |
+| `L24:1434` | `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` | `qwen3.6-35b` | 9 | `112.32` | `16.28` | punctuation:8|word:1 |
+| `L24:1434` | `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` | `qwen3.6-35b` | 21 | `74.07` | `8.47` | word:9|punctuation:8|sentence_boundary:2|expanded_negation_word:1|style_function_word:1 |
+| `L24:1434` | `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 6 | `45.57` | `16.32` | punctuation:4|word:2 |
+| `L24:1434` | `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 7 | `13.30` | `3.72` | punctuation:3|word:3|sentence_boundary:1 |
+| `L24:1434` | `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::original` | `glm-5.2` | 2 | `18.89` | `16.22` | punctuation:2 |
+| `L24:1434` | `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::edited` | `glm-5.2` | 2 | `3.58` | `2.66` | punctuation:1|word:1 |
+| `L24:1434` | `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` | `glm-5.2` | 5 | `46.91` | `16.86` | punctuation:4|word:1 |
+| `L24:1434` | `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` | `glm-5.2` | 10 | `25.99` | `5.88` | punctuation:5|word:4|sentence_boundary:1 |
+| `L24:1434` | `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` | `gemini-3.5-flash` | 5 | `61.15` | `16.86` | punctuation:4|word:1 |
+| `L24:1434` | `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` | `gemini-3.5-flash` | 6 | `22.83` | `10.45` | punctuation:3|word:2|expanded_negation_word:1 |
+| `L24:1434` | `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` | `glm-5.2` | 12 | `89.71` | `16.50` | punctuation:7|word:5 |
+| `L24:1434` | `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` | `glm-5.2` | 12 | `32.73` | `7.20` | word:6|punctuation:4|sentence_boundary:2 |
+| `L24:1434` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` | `glm-5.2` | 9 | `104.26` | `16.25` | punctuation:9 |
+| `L24:1434` | `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` | `glm-5.2` | 13 | `51.08` | `9.09` | punctuation:8|sentence_boundary:3|word:2 |
+
+## Top Tokens
+
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `435` activation `12.530` class `punctuation` token `,"`
+  - world domination plot?" "A mechanical engineering thesis, actually," June corrected automatically, her heart hammering against her
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `487` activation `11.203` class `punctuation` token `,"`
+  - faltered. "Hide behind Hephaestus," she said, gesturing to the shadow of the
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `357` activation `11.155` class `punctuation` token `,"`
+  - nation’s most worshiped idol group. "Please," Ren whispered, his voice a low, raspy
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `207` activation `10.449` class `punctuation` token `,"`
+  - of college life. "Almost there, old friend," she murmured, her thumb smearing a sm
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `511` activation `1.162` class `punctuation` token `."`
+  - The sensors are off. No one will see you."
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `437` activation `0.607` class `word` token ` corrected`
+  - plot?" "A mechanical engineering thesis, actually," June corrected automatically, her heart hammering against her ribs.
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `428` activation `0.357` class `line_break` token `?"
+
+`
+  - . "Am I interrupting a world domination plot?" "A mechanical engineering thesis, actually," June corrected automatically
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `435` activation `4.637` class `punctuation` token `,`
+  - world domination plot? "A mechanical engineering thesis, actually, June corrected automatically, her heart hammering against her
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `487` activation `4.469` class `punctuation` token `,`
+  - faltered. "Hide behind Hephaestus, she said, gesturing to the shadow of the
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `433` activation `4.203` class `punctuation` token `,`
+  - ing a world domination plot? "A mechanical engineering thesis, actually, June corrected automatically, her heart hammering
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `357` activation `1.294` class `punctuation` token `,`
+  - nation’s most worshiped idol group. "Please, Ren whispered, his voice a low, raspy
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `434` activation `1.172` class `word` token ` actually`
+  - a world domination plot? "A mechanical engineering thesis, actually, June corrected automatically, her heart hammering against
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `208` activation `1.160` class `word` token ` she`
+  - college life. "Almost there, old friend, she murmured, her thumb smearing a smudge
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `359` activation `0.777` class `word` token ` whispered`
+  - most worshiped idol group. "Please, Ren whispered, his voice a low, raspy melody that
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `488` activation `0.550` class `word` token ` she`
+  - tered. "Hide behind Hephaestus, she said, gesturing to the shadow of the robot
+- `L19:402` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::original` token `295` activation `12.476` class `punctuation` token `,”`
+  - footsteps stopped beside her table. “Excuse me,” he said, voice low. “Is this seat
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `433` activation `12.274` class `punctuation` token `,”`
+  - things, Max.” “Nor am I, apparently,” he commiserates before a sly smile tugs
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `298` activation `11.286` class `punctuation` token `,”`
+  - immediately, he stiffens and pulls away. “Oh,” he starts, “I’m sorry, Nora,
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `322` activation `9.776` class `punctuation` token `!”`
+  - think you would—object, honestly—“ “No!” I squeak, “That’s not...”
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `390` activation `9.696` class `punctuation` token `!”`
+  - my head in the sand. “I'm so sorry!” I tell him, covering most of my face with
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `332` activation `3.476` class `punctuation` token `”`
+  - !” I squeak, “That’s not...” Then I draw a breath to summon courage and l
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `392` activation `1.464` class `word` token ` tell`
+  - in the sand. “I'm so sorry!” I tell him, covering most of my face with my hands
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `431` activation `4.881` class `punctuation` token `,`
+  - kinds of things, Max. “Nor am I, apparently, he commiserates before a sly smile
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `390` activation `4.200` class `sentence_boundary` token `!`
+  - my head in the sand. “I'm so sorry! I tell him, covering most of my face with
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `433` activation `3.793` class `punctuation` token `,`
+  - things, Max. “Nor am I, apparently, he commiserates before a sly smile tugs
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `432` activation `1.657` class `word` token ` apparently`
+  - of things, Max. “Nor am I, apparently, he commiserates before a sly smile t
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `392` activation `1.162` class `word` token ` tell`
+  - in the sand. “I'm so sorry! I tell him, covering most of my face with my hands
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `323` activation `1.158` class `sentence_boundary` token `!`
+  - think you would—object, honestly—“ “No! I squeak, “That’s not... Then
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `303` activation `0.592` class `punctuation` token ` “`
+  - ens and pulls away. “Oh, he starts, “I’m sorry, Nora, I didn’t think
+- `L19:402` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `325` activation `0.529` class `word` token ` sque`
+  - would—object, honestly—“ “No! I squeak, “That’s not... Then I draw
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `485` activation `12.403` class `punctuation` token `,"`
+  - one said. "I've helped smart people hide before," Rufus corrected. He fixed them with a stare
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `280` activation `11.137` class `punctuation` token `,"`
+  - with the nearest open flame. "Rufus," the taller of the two started. "No names!"
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `472` activation `10.686` class `punctuation` token `,"`
+  - puttering candle. "You've helped people hide before," the shorter one said. "I've helped smart people
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `290` activation `9.350` class `punctuation` token `!"`
+  - ," the taller of the two started. "No names!" he bellowed, slamming the door shut and
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `339` activation `3.237` class `punctuation` token `."`
+  - the city's many problems you've become this time." He pointed a soot-blackened finger at them
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `442` activation `1.815` class `punctuation` token `."`
+  - —not the kind that come back asking for another favor." He yanked the trapdoor open, revealing a
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `281` activation `1.057` class `word` token ` the`
+  - the nearest open flame. "Rufus," the taller of the two started. "No names!" he
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `473` activation `0.847` class `word` token ` the`
+  - tering candle. "You've helped people hide before," the shorter one said. "I've helped smart people hide
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `511` activation `0.779` class `punctuation` token `."`
+  - . "Don't make me regret extending that category."
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `485` activation `7.211` class `punctuation` token `,`
+  - one said. "I've helped smart people hide before, Rufus corrected. He fixed them with a stare
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `472` activation `2.787` class `punctuation` token `,`
+  - puttering candle. "You've helped people hide before, the shorter one said. "I've helped smart people
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `473` activation `2.222` class `word` token ` the`
+  - tering candle. "You've helped people hide before, the shorter one said. "I've helped smart people hide
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `385` activation `2.122` class `sentence_boundary` token `.`
+  - a bad handbill. "We just need a day. Maybe two. Rufus snorted and stom
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `290` activation `1.871` class `sentence_boundary` token `!`
+  - , the taller of the two started. "No names! he bellowed, slamming the door shut and
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `291` activation `1.467` class `word` token ` he`
+  - the taller of the two started. "No names! he bellowed, slamming the door shut and dropping
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `286` activation `0.706` class `word` token ` started`
+  - "Rufus, the taller of the two started. "No names! he bellowed, slamming
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `487` activation `0.681` class `word` token `us`
+  - . "I've helped smart people hide before, Rufus corrected. He fixed them with a stare that could
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `484` activation `0.597` class `word` token ` before`
+  - shorter one said. "I've helped smart people hide before, Rufus corrected. He fixed them with a
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `395` activation `11.937` class `punctuation` token `,”`
+  - Why the helmets?” one whispered. “Confidence,” said Rufus. “Also, if anyone asks
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `247` activation `11.447` class `punctuation` token `,”`
+  - the size of his own personality. “You need hiding,” he declared, pointing a blackened finger at them
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `281` activation `9.781` class `punctuation` token `!”`
+  - .” One of them opened their mouth. “No names!” Rufus thundered. “Names are handles for
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `388` activation `8.795` class `punctuation` token `?”`
+  - absurdly long nose guards. “Why the helmets?” one whispered. “Confidence,” said Rufus
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `511` activation `1.340` class `punctuation` token `.”`
+  - me shout ‘sausages,’ come out fighting.”
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `396` activation `1.322` class `word` token ` said`
+  - the helmets?” one whispered. “Confidence,” said Rufus. “Also, if anyone asks,
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `295` activation `1.094` class `punctuation` token `.”`
+  - ed. “Names are handles for trouble to grab.” He swept a pile of coal sacks aside, revealing
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `388` activation `5.975` class `sentence_boundary` token `?`
+  - absurdly long nose guards. “Why the helmets? one whispered. “Confidence, said Rufus
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `395` activation `3.785` class `punctuation` token `,`
+  - Why the helmets? one whispered. “Confidence, said Rufus. “Also, if anyone asks
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `281` activation `3.514` class `sentence_boundary` token `!`
+  - . One of them opened their mouth. “No names! Rufus thundered. “Names are handles for
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `396` activation `1.783` class `word` token ` said`
+  - the helmets? one whispered. “Confidence, said Rufus. “Also, if anyone asks,
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `339` activation `0.995` class `punctuation` token `,`
+  - only faintly of goat. Ideal for fugitives, poets, and anyone avoiding marriage. He bustled
+- `L19:402` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `485` activation `0.662` class `sentence_boundary` token `.`
+  - and lifted the trapdoor. “Down you go. Breathe shallow, trust no one wearing velvet
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `135` activation `12.344` class `punctuation` token `,”`
+  - We’re not paying you to be approximate.” “Yes,” Elise said automatically. “I’ll have it
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `202` activation `10.730` class `punctuation` token `,”`
+  - that seemed meant for other people. “Thirty minutes,” she said. He stared at her long enough to
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `261` activation `10.167` class `punctuation` token `,”`
+  - . This time she answered. “Hi, sweetheart,” her mother said. Her voice was warm, a
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `511` activation `10.122` class `punctuation` token `,”`
+  - pinned tight enough to hurt. “I was a kid,”
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `453` activation `9.521` class `punctuation` token `,”`
+  - with both hands. “I found some old pictures today,” her mother said gently. “You were in that
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `62` activation `5.495` class `punctuation` token `.”`
+  - name glowed softly: Mom. “Elise.” Her boss’s voice cut across the office like a
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `262` activation `1.345` class `word` token ` her`
+  - This time she answered. “Hi, sweetheart,” her mother said. Her voice was warm, a little
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `454` activation `1.263` class `word` token ` her`
+  - both hands. “I found some old pictures today,” her mother said gently. “You were in that blue
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `63` activation `0.578` class `word` token ` Her`
+  - glowed softly: Mom. “Elise.” Her boss’s voice cut across the office like a blade
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `511` activation `5.240` class `punctuation` token `,`
+  - pinned tight enough to hurt. “I was a kid,
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `261` activation `4.217` class `punctuation` token `,`
+  - . This time she answered. “Hi, sweetheart, her mother said. Her voice was warm, a
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `453` activation `3.699` class `punctuation` token `,`
+  - with both hands. “I found some old pictures today, her mother said gently. “You were in that
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `202` activation `2.787` class `punctuation` token `,`
+  - that seemed meant for other people. “Thirty minutes, she said. He stared at her long enough to
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `454` activation `2.278` class `word` token ` her`
+  - both hands. “I found some old pictures today, her mother said gently. “You were in that blue
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `262` activation `1.914` class `word` token ` her`
+  - This time she answered. “Hi, sweetheart, her mother said. Her voice was warm, a little
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `259` activation `1.324` class `punctuation` token `,`
+  - . Mom. This time she answered. “Hi, sweetheart, her mother said. Her voice was warm
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `369` activation `0.723` class `word` token ` week`
+  - “It’s late. “It’s just a busy week. “You said that last week. Elise smiled
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `138` activation `0.629` class `word` token ` said`
+  - paying you to be approximate. “Yes, Elise said automatically. “I’ll have it ready. “When
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `260` activation `0.620` class `word` token ` sweetheart`
+  - Mom. This time she answered. “Hi, sweetheart, her mother said. Her voice was warm,
+- `L19:402` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `159` activation `0.523` class `word` token `47`
+  - ? She looked at the clock. 8:47 p.m. The cleaning crew had already passed through
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `487` activation `12.249` class `punctuation` token `,"`
+  - terrifyingly warm. "It's just... a story," he muttered, feeling the heat rise in his cheeks
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `373` activation `11.864` class `punctuation` token `,"`
+  - a hand on the cover. "No, wait," she urged, her tone gentle but firm. "
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `299` activation `11.149` class `punctuation` token `,"`
+  - them through the windows. "Everything is perfect now," she said, popping a piece of broccoli into her
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `236` activation `5.328` class `punctuation` token `?"`
+  - eyes wide with cautious confusion. "Aiko-san?" he whispered, his voice rough from disuse.
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `374` activation `0.975` class `word` token ` she`
+  - hand on the cover. "No, wait," she urged, her tone gentle but firm. "I
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `487` activation `5.052` class `punctuation` token `,`
+  - terrifyingly warm. "It's just... a story, he muttered, feeling the heat rise in his cheeks
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `299` activation `2.159` class `punctuation` token `,`
+  - them through the windows. "Everything is perfect now, she said, popping a piece of broccoli into her
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `373` activation `1.880` class `punctuation` token `,`
+  - a hand on the cover. "No, wait, she urged, her tone gentle but firm. "
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `374` activation `1.489` class `word` token ` she`
+  - hand on the cover. "No, wait, she urged, her tone gentle but firm. "I
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `335` activation `1.460` class `sentence_boundary` token `?`
+  - aced fingers. "So, what are you reading? It looks heavy. Kou instinctively moved to
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `488` activation `1.142` class `word` token ` he`
+  - ly warm. "It's just... a story, he muttered, feeling the heat rise in his cheeks.
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `237` activation `0.966` class `word` token ` he`
+  - wide with cautious confusion. "Aiko-san? he whispered, his voice rough from disuse. "
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `371` activation `0.883` class `punctuation` token `,`
+  - by placing a hand on the cover. "No, wait, she urged, her tone gentle but firm
+- `L19:402` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `300` activation `0.807` class `word` token ` she`
+  - through the windows. "Everything is perfect now, she said, popping a piece of broccoli into her mouth
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` token `385` activation `12.114` class `punctuation` token `,"`
+  - . Her eyes were wet. "It's my hand," she said, holding up the withered left one
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` token `432` activation `1.604` class `punctuation` token `."`
+  - thought it was a bruise. Then it spread." She swallowed. "I've been to four heal
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` token `494` activation `1.087` class `punctuation` token `."`
+  - potions could undo things the healers couldn't reach." Her voice quavered slightly. "Please.
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` token `467` activation `0.916` class `punctuation` token `."`
+  - told me to find a witch who knew cursework." She looked at Aliceana. "They said you
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` token `460` activation `12.069` class `punctuation` token `,”`
+  - window, as if uneasy. “This curse is spreading,” Regine continued. “It began at my fingertips
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` token `417` activation `11.729` class `punctuation` token `,”`
+  - table between them. “I was told you help people,” she said quietly. “Not for glory. Not
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` token `511` activation `5.543` class `punctuation` token `.”`
+  - red eyes met Aliceana’s. “I’m afraid.”
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::edited` token `460` activation `5.956` class `punctuation` token `,`
+  - window, as if uneasy. “This curse is spreading, Regine continued. “It began at my fingertips
+- `L19:402` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::edited` token `418` activation `1.473` class `word` token ` she`
+  - between them. “I was told you help people, she said quietly. “Not for glory. Not for
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `407` activation `12.317` class `punctuation` token `,"`
+  - , rain, and expensive espresso. "Easy there," Julian murmured, his chest vibrating against hers as
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `465` activation `11.935` class `punctuation` token `,"`
+  - "Are you alright?" "I am... fully operational," Maya squeaked, her face burning a deep,
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `231` activation `11.762` class `punctuation` token `,"`
+  - course! Yes. Absolutely. I have many moments," Maya squeaked. Inhale. Exh
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `168` activation `10.624` class `punctuation` token `,"`
+  - feel like depreciated hardware. "Morning, Maya," Julian said, leaning against her office doorframe.
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `299` activation `8.155` class `punctuation` token `!"`
+  - with her favorite ceramic mug. "Oh, system error!" she gasped. The mug tilted. Cold coffee
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `511` activation `1.979` class `punctuation` token `."`
+  - they work. Now, let's rescue that keyboard."
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `300` activation `0.796` class `word` token ` she`
+  - her favorite ceramic mug. "Oh, system error!" she gasped. The mug tilted. Cold coffee casc
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `465` activation `6.235` class `punctuation` token `,`
+  - "Are you alright? "I am... fully operational, Maya squeaked, her face burning a deep,
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `222` activation `3.238` class `sentence_boundary` token `!`
+  - to review the new deployment protocols? "Of course! Yes. Absolutely. I have many moments, Maya
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `232` activation `1.665` class `word` token ` Maya`
+  - ! Yes. Absolutely. I have many moments, Maya squeaked. Inhale. Exhale
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `408` activation `1.474` class `word` token ` Julian`
+  - rain, and expensive espresso. "Easy there, Julian murmured, his chest vibrating against hers as he
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `300` activation `0.952` class `word` token ` she`
+  - her favorite ceramic mug. "Oh, system error! she gasped. The mug tilted. Cold coffee casc
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `226` activation `0.817` class `sentence_boundary` token `.`
+  - deployment protocols? "Of course! Yes. Absolutely. I have many moments, Maya squeaked. In
+- `L19:402` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `407` activation `0.695` class `punctuation` token `,`
+  - , rain, and expensive espresso. "Easy there, Julian murmured, his chest vibrating against hers as
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `484` activation `12.265` class `punctuation` token `,"`
+  - it, shaking her head. "Ask her yourself," she said quietly, standing. "But Cindy...
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `222` activation `7.195` class `punctuation` token `!"`
+  - at her door. "Cindy! You're back!" Victoria burst in before Cindy could respond, her dark
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `271` activation `5.397` class `punctuation` token `..."`
+  - I told everyone you would." "Victoria, I..." Cindy rubbed her temples, sitting up slowly. "
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `407` activation `5.357` class `punctuation` token `?"`
+  - has been waiting to talk to you." "Michelle?" Cindy frowned, her brow furrowing in confusion.
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `352` activation `5.201` class `punctuation` token `."`
+  - Chad worries about everyone." "But—" "Cindy." Victoria placed a hand on hers, her tone gentle
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `302` activation `2.817` class `punctuation` token `."`
+  - where I went, about why I chose to stay." She hesitated. "He seemed... concerned.
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `511` activation `2.806` class `punctuation` token `?"`
+  - past you traveled to was the past that actually happened?"
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `384` activation `2.020` class `punctuation` token `."`
+  - yet. Things that have happened while you were away." She glanced toward the door, lowering her voice.
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` token `484` activation `1.318` class `punctuation` token `,`
+  - it, shaking her head. "Ask her yourself, she said quietly, standing. "But Cindy...
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` token `348` activation `0.940` class `punctuation` token `—`
+  - what that means. Chad worries about everyone. "But—" "Cindy. Victoria placed a hand on hers
+- `L19:402` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` token `407` activation `0.922` class `sentence_boundary` token `?`
+  - has been waiting to talk to you. "Michelle? Cindy frowned, her brow furrowing in confusion.
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` token `292` activation `12.290` class `punctuation` token `,"`
+  - partition, they were entirely alone. "That depends," Marcus said, leaning against a dryer that was warm
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` token `380` activation `12.113` class `punctuation` token `,"`
+  - —like ozone. "I need to leave this here," she whispered, her voice trembling but urgent. She
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` token `501` activation `11.308` class `punctuation` token `,"`
+  - shing of the washing machines. "Twenty minutes," she pleaded, and walked out into the rain.
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` token `380` activation `3.628` class `punctuation` token `,`
+  - —like ozone. "I need to leave this here, she whispered, her voice trembling but urgent. She
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` token `501` activation `2.708` class `punctuation` token `,`
+  - shing of the washing machines. "Twenty minutes, she pleaded, and walked out into the rain.
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` token `381` activation `0.762` class `word` token ` she`
+  - like ozone. "I need to leave this here, she whispered, her voice trembling but urgent. She tapped
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` token `292` activation `0.500` class `punctuation` token `,`
+  - partition, they were entirely alone. "That depends, Marcus said, leaning against a dryer that was warm
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `237` activation `12.277` class `punctuation` token `,”`
+  - like she had already agreed to something. “That depends,” she said. “Is it illegal?” The boy
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `330` activation `10.404` class `punctuation` token `,”`
+  - little straighter. “I found it in the washer,” he said. “Machine Three. It wasn’t
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `353` activation `2.491` class `punctuation` token `…”`
+  - I loaded my clothes, but after the cycle finished…” He swallowed. “There was a note, too
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `154` activation `1.848` class `punctuation` token `,`
+  - neon from the sign—WASH & FOLD, OPEN 24 HOURS—blurred pink and
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `408` activation `0.605` class `punctuation` token `,`
+  - . Mara leaned forward. In careful blue ink, the note read: DO NOT GIVE THIS TO
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `330` activation `3.673` class `punctuation` token `,`
+  - little straighter. “I found it in the washer, he said. “Machine Three. It wasn’t
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `154` activation `1.920` class `punctuation` token `,`
+  - neon from the sign—WASH & FOLD, OPEN 24 HOURS—blurred pink and
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `353` activation `1.881` class `punctuation` token `…”`
+  - I loaded my clothes, but after the cycle finished…” He swallowed. “There was a note, too
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `237` activation `1.049` class `punctuation` token `,`
+  - like she had already agreed to something. “That depends, she said. “Is it illegal? The boy
+- `L19:402` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `408` activation `0.554` class `punctuation` token `,`
+  - . Mara leaned forward. In careful blue ink, the note read: DO NOT GIVE THIS TO
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `47` activation `12.169` class `punctuation` token `,"`
+  - like they were his children. "Excuse me," she muttered, though she didn't mean it.
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `243` activation `11.575` class `punctuation` token `,"`
+  - , NOT WAR. "I only need ten pints," Nora said. "Then you and I have a
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `154` activation `11.071` class `punctuation` token `,"`
+  - , dark, dusty blue. "Those are mine," a voice said. Nora didn't look up
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `290` activation `9.656` class `punctuation` token `,"`
+  - —shrugged and scratched his neck. "Look," Nora said. "I drove forty minutes. I
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `418` activation `4.163` class `punctuation` token `—"`
+  - all guy, green hat?" "He's not wearing—" Nora turned. Her husband was absolutely wearing a green
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `155` activation `1.647` class `word` token ` a`
+  - dark, dusty blue. "Those are mine," a voice said. Nora didn't look up.
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `156` activation `0.692` class `word` token ` voice`
+  - , dusty blue. "Those are mine," a voice said. Nora didn't look up. "
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `243` activation `4.620` class `punctuation` token `,`
+  - , NOT WAR. "I only need ten pints, Nora said. "Then you and I have a
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `255` activation `4.126` class `punctuation` token `,`
+  - said. "Then you and I have a problem, because so do I. They stared at each other
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `418` activation `3.987` class `punctuation` token `—"`
+  - all guy, green hat? "He's not wearing—" Nora turned. Her husband was absolutely wearing a green
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `154` activation `2.887` class `punctuation` token `,`
+  - , dark, dusty blue. "Those are mine, a voice said. Nora didn't look up
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `155` activation `2.787` class `word` token ` a`
+  - dark, dusty blue. "Those are mine, a voice said. Nora didn't look up.
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `290` activation `1.832` class `punctuation` token `,`
+  - —shrugged and scratched his neck. "Look, Nora said. "I drove forty minutes. I
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `156` activation `0.778` class `word` token ` voice`
+  - , dusty blue. "Those are mine, a voice said. Nora didn't look up. "
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `244` activation `0.665` class `word` token ` Nora`
+  - NOT WAR. "I only need ten pints, Nora said. "Then you and I have a problem
+- `L19:402` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `291` activation `0.613` class `word` token ` Nora`
+  - shrugged and scratched his neck. "Look, Nora said. "I drove forty minutes. I have
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `417` activation `13.026` class `punctuation` token `,"`
+  - your laundry," his dad joked. "I'm sorry," Leo mumbled. "They were just really good
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `492` activation `11.358` class `punctuation` token `,"`
+  - up. "With extra cinnamon?" "Of course," she laughed. "Now, out of the closet
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `295` activation `11.269` class `punctuation` token `,"`
+  - yellow bath towel. "I followed a trail of crumbs," his dad’s voice joined in, sounding closer now
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `431` activation `11.048` class `punctuation` token `,"`
+  - . "They were just really good." "They were," his mom agreed, kneeling down. "But now
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `409` activation `10.685` class `punctuation` token `,"`
+  - "I think the cookie monster is hiding in your laundry," his dad joked. "I'm sorry," Leo m
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `241` activation `9.235` class `punctuation` token `?"`
+  - his mother’s footsteps in the hallway. "Leo?" she called out, her voice sounding more amused than
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `432` activation `1.337` class `word` token ` his`
+  - "They were just really good." "They were," his mom agreed, kneeling down. "But now we
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `410` activation `1.326` class `word` token ` his`
+  - think the cookie monster is hiding in your laundry," his dad joked. "I'm sorry," Leo mumbled
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `296` activation `1.309` class `word` token ` his`
+  - bath towel. "I followed a trail of crumbs," his dad’s voice joined in, sounding closer now.
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `299` activation `0.911` class `word` token ` voice`
+  - "I followed a trail of crumbs," his dad’s voice joined in, sounding closer now. "It leads
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `511` activation `0.898` class `punctuation` token `."`
+  - the closet, baker. We have work to do."
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `298` activation `0.806` class `word` token `’s`
+  - . "I followed a trail of crumbs," his dad’s voice joined in, sounding closer now. "It
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `431` activation `3.779` class `punctuation` token `,`
+  - . "They were just really good. "They were, his mom agreed, kneeling down. "But now
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `492` activation `3.773` class `punctuation` token `,`
+  - up. "With extra cinnamon? "Of course, she laughed. "Now, out of the closet
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `417` activation `3.662` class `punctuation` token `,`
+  - your laundry, his dad joked. "I'm sorry, Leo mumbled. "They were just really good
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `409` activation `3.359` class `punctuation` token `,`
+  - "I think the cookie monster is hiding in your laundry, his dad joked. "I'm sorry, Leo m
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `410` activation `2.362` class `word` token ` his`
+  - think the cookie monster is hiding in your laundry, his dad joked. "I'm sorry, Leo mumbled
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `432` activation `2.355` class `word` token ` his`
+  - "They were just really good. "They were, his mom agreed, kneeling down. "But now we
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `419` activation `2.154` class `word` token ` m`
+  - , his dad joked. "I'm sorry, Leo mumbled. "They were just really good. "They
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `295` activation `1.698` class `punctuation` token `,`
+  - yellow bath towel. "I followed a trail of crumbs, his dad’s voice joined in, sounding closer now
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `418` activation `1.538` class `word` token ` Leo`
+  - laundry, his dad joked. "I'm sorry, Leo mumbled. "They were just really good.
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `299` activation `1.306` class `word` token ` voice`
+  - "I followed a trail of crumbs, his dad’s voice joined in, sounding closer now. "It leads
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `493` activation `1.119` class `word` token ` she`
+  - . "With extra cinnamon? "Of course, she laughed. "Now, out of the closet,
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `296` activation `1.045` class `word` token ` his`
+  - bath towel. "I followed a trail of crumbs, his dad’s voice joined in, sounding closer now.
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `146` activation `11.991` class `punctuation` token `,”`
+  - Milo heard footsteps in the hallway. “Oh no,” he whispered. He grabbed the card, which was
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `386` activation `11.140` class `punctuation` token `,”`
+  - toward one corner. “I wanted to make a surprise,” he said. “But I made a mess.
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `236` activation `10.639` class `punctuation` token `,”`
+  - y tail like a tiny parade. “Pickle,” Milo whispered, “you are not helping.” D
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `478` activation `10.190` class `punctuation` token `,”`
+  - ped. “…being captain of the cleanup crew,” Dad finished, handing him a broom. M
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `436` activation `9.381` class `punctuation` token `,”`
+  - . “Thank you for wanting to make something special,” she said. “But next time, ask for
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `194` activation `8.673` class `punctuation` token `?”`
+  - a dust bunny named probably Gary. “Milo?” Mom called. “Did you take the glitter?”
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `343` activation `6.558` class `punctuation` token `?”`
+  - “Does the curtain monster know anything about the glitter?” Dad asked. Milo came out slowly, holding
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `304` activation `2.456` class `punctuation` token `,”`
+  - “This slipper is ready for a dance contest,” and Milo snorted. The curtains moved. Mom
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `87` activation `0.747` class `punctuation` token `,`
+  - placed on the very top shelf. The top shelf, unfortunately, was not taller than Milo plus one w
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `407` activation `0.483` class `line_break` token `.”
+
+`
+  - I hid because I didn’t want to get punished.” Mom looked at the card, then at the kitchen
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `386` activation `5.665` class `punctuation` token `,`
+  - toward one corner. “I wanted to make a surprise, he said. “But I made a mess.
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `478` activation `3.107` class `punctuation` token `,`
+  - ped. “…being captain of the cleanup crew, Dad finished, handing him a broom. M
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `343` activation `3.050` class `sentence_boundary` token `?`
+  - “Does the curtain monster know anything about the glitter? Dad asked. Milo came out slowly, holding
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `436` activation `3.016` class `punctuation` token `,`
+  - . “Thank you for wanting to make something special, she said. “But next time, ask for
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `194` activation `2.538` class `sentence_boundary` token `?`
+  - a dust bunny named probably Gary. “Milo? Mom called. “Did you take the glitter?
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `236` activation `2.404` class `punctuation` token `,`
+  - y tail like a tiny parade. “Pickle, Milo whispered, “you are not helping. D
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `271` activation `0.783` class `word` token ` incident`
+  - per. “I believe there’s been a sparkle incident. Milo tried not to giggle. He
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `87` activation `0.747` class `punctuation` token `,`
+  - placed on the very top shelf. The top shelf, unfortunately, was not taller than Milo plus one w
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `387` activation `0.718` class `word` token ` he`
+  - one corner. “I wanted to make a surprise, he said. “But I made a mess. I
+- `L19:402` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `146` activation `0.701` class `punctuation` token `,`
+  - Milo heard footsteps in the hallway. “Oh no, he whispered. He grabbed the card, which was
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `450` activation `12.171` class `punctuation` token `,”`
+  - companion, surprised to hear him talk. “A little,” she admitted. “First time?” “No, I
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `505` activation `10.132` class `punctuation` token `,”`
+  - made up. “My name is Samantha.” “Aiden,” he said, smiling wider.
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `430` activation `8.777` class `punctuation` token `?”`
+  - threatened to engulf her. “Scared of flying?” a voice rasped. She looked at her companion
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `431` activation `2.125` class `word` token ` a`
+  - to engulf her. “Scared of flying?” a voice rasped. She looked at her companion,
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `478` activation `0.502` class `line_break` token `.”
+
+`
+  - a distraction, I’m happy to talk with you.” Samantha considered him for a moment. He
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `505` activation `3.471` class `punctuation` token `,`
+  - made up. “My name is Samantha. “Aiden, he said, smiling wider.
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `431` activation `2.992` class `word` token ` a`
+  - to engulf her. “Scared of flying? a voice rasped. She looked at her companion,
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `451` activation `1.594` class `word` token ` she`
+  - , surprised to hear him talk. “A little, she admitted. “First time? “No, I’ve
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `459` activation `1.069` class `punctuation` token `,`
+  - little, she admitted. “First time? “No, I’ve flown before. “If you need a distraction
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `450` activation `0.869` class `punctuation` token `,`
+  - companion, surprised to hear him talk. “A little, she admitted. “First time? “No, I
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `506` activation `0.775` class `word` token ` he`
+  - up. “My name is Samantha. “Aiden, he said, smiling wider.
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `432` activation `0.730` class `word` token ` voice`
+  - engulf her. “Scared of flying? a voice rasped. She looked at her companion, surprised
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `504` activation `0.719` class `word` token `iden`
+  - was made up. “My name is Samantha. “Aiden, he said, smiling wider.
+- `L19:402` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `463` activation `0.644` class `word` token ` before`
+  - . “First time? “No, I’ve flown before. “If you need a distraction, I’m happy
+- `L19:402` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::original` token `236` activation `12.073` class `punctuation` token `,”`
+  - her. “Hey!” he said. “Sorry,” Sophie murmured, but she didn’t look away
+- `L19:402` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::original` token `444` activation `10.809` class `punctuation` token `,”`
+  - Her heart began to thump. “I’m brave,” Sophie whispered, though she wasn’t completely sure.
+- `L19:402` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::original` token `230` activation `10.085` class `punctuation` token `!”`
+  - with a football nearly bumped into her. “Hey!” he said. “Sorry,” Sophie murmured,
+- `L19:402` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` token `444` activation `5.378` class `punctuation` token `,`
+  - Her heart began to thump. “I’m brave, Sophie whispered, though she wasn’t completely sure.
+- `L19:402` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` token `236` activation `4.876` class `punctuation` token `,`
+  - her. “Hey! he said. “Sorry, Sophie murmured, but she didn’t look away
+- `L19:402` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` token `445` activation `0.687` class `word` token ` Sophie`
+  - heart began to thump. “I’m brave, Sophie whispered, though she wasn’t completely sure. She
+- `L19:402` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` token `231` activation `0.605` class `word` token ` he`
+  - a football nearly bumped into her. “Hey! he said. “Sorry, Sophie murmured, but
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `299` activation `12.326` class `punctuation` token `,"`
+  - swallowing the sun. "Earth has contributed heroes before," he continued, his voice thin but commanding. "
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `490` activation `11.165` class `punctuation` token `,"`
+  - sat back down. I stood. "Five heroes," I said, tasting the absurdity of it.
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `337` activation `8.596` class `punctuation` token `?"`
+  - felt the threat deserved fivefold response." "What threat?" the businessman demanded, finding his footing. "Who
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `511` activation `1.128` class `punctuation` token `."`
+  - "Fine. Tell us what we need to know."
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `338` activation `0.707` class `word` token ` the`
+  - the threat deserved fivefold response." "What threat?" the businessman demanded, finding his footing. "Who are
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `97` activation `0.576` class `word` token ` thing`
+  - Summoned The last thing I remembered was the crosswalk. The signal.
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `337` activation `3.788` class `sentence_boundary` token `?`
+  - felt the threat deserved fivefold response. "What threat? the businessman demanded, finding his footing. "Who
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `338` activation `2.614` class `word` token ` the`
+  - the threat deserved fivefold response. "What threat? the businessman demanded, finding his footing. "Who are
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `490` activation `1.980` class `punctuation` token `,`
+  - sat back down. I stood. "Five heroes, I said, tasting the absurdity of it.
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `367` activation `1.112` class `punctuation` token `,`
+  - ? "Aethra. A world parallel to yours, connected by thin threads of creation. Those threads are
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `300` activation `0.822` class `word` token ` he`
+  - the sun. "Earth has contributed heroes before, he continued, his voice thin but commanding. "But
+- `L19:402` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `97` activation `0.576` class `word` token ` thing`
+  - Summoned The last thing I remembered was the crosswalk. The signal.
+- `L19:402` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` token `297` activation `12.072` class `punctuation` token `,"`
+  - know whose ship that is?" "Han Solo's," I replied, keeping my voice even, modulated
+- `L19:402` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` token `401` activation `11.205` class `punctuation` token `,"`
+  - my approach, dark eyes narrowing. "I'm expected," I said, hands spread wide to show I carried
+- `L19:402` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` token `252` activation `9.189` class `punctuation` token `?"`
+  - most sentients find appropriately intimidating. "That's it?" The voice came from beneath me—far beneath.
+- `L19:402` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` token `253` activation `1.181` class `word` token ` The`
+  - sentients find appropriately intimidating. "That's it?" The voice came from beneath me—far beneath. A
+- `L19:402` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` token `401` activation `1.894` class `punctuation` token `,`
+  - my approach, dark eyes narrowing. "I'm expected, I said, hands spread wide to show I carried
+- `L19:402` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` token `297` activation `1.756` class `punctuation` token `,`
+  - know whose ship that is? "Han Solo's, I replied, keeping my voice even, modulated
+- `L19:402` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` token `474` activation `0.856` class `sentence_boundary` token `!`
+  - os. "Chewie, let him through! We're burning daylight—and more importantly, we're
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `194` activation `12.220` class `punctuation` token `,"`
+  - royal with a nice ship and a—" "No," she said firmly. "I want legs because I
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `140` activation `11.682` class `punctuation` token `,"`
+  - to be something other. "Well, well, well," I crooned, sliding from my throne of bones
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `461` activation `9.905` class `punctuation` token `,"`
+  - , certainly. Desperate, even. "And what," I purred, recovering, "would you give
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `255` activation `9.363` class `punctuation` token `,"`
+  - exchange glances with. "Cheesemaking," I repeated flatly. "Yes. Specifically, Cas
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `306` activation `3.637` class `punctuation` token `."`
+  - create a texture that—" "Stop. Stop." I pressed a tentacle to my temple. Here
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `408` activation `0.820` class `style_function_word` token ` if`
+  - 'd prepared an entire monologue — beautifully wicked, if I say so myself — about sacrificing her voice for
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `255` activation `3.406` class `punctuation` token `,`
+  - exchange glances with. "Cheesemaking, I repeated flatly. "Yes. Specifically, Cas
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `461` activation `1.723` class `punctuation` token `,`
+  - , certainly. Desperate, even. "And what, I purred, recovering, "would you give
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `194` activation `1.523` class `punctuation` token `,`
+  - royal with a nice ship and a—" "No, she said firmly. "I want legs because I
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `195` activation `1.269` class `word` token ` she`
+  - with a nice ship and a—" "No, she said firmly. "I want legs because I wish
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `462` activation `1.218` class `word` token ` I`
+  - certainly. Desperate, even. "And what, I purred, recovering, "would you give me
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `408` activation `0.811` class `style_function_word` token ` if`
+  - 'd prepared an entire monologue — beautifully wicked, if I say so myself — about sacrificing her voice for
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `288` activation `0.755` class `word` token `ula`
+  - maggots. The fermentation process is extraordinary, Ursula. The larvae digest the fats and create a texture
+- `L19:402` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `196` activation `0.528` class `word` token ` said`
+  - a nice ship and a—" "No, she said firmly. "I want legs because I wish to
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `292` activation `12.490` class `punctuation` token `,"`
+  - , what, five years? Six?" "Six," Maya said, pulling back to look at him,
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `379` activation `10.838` class `punctuation` token `,"`
+  - ?" "Just a solo vacation before starting a new job," Maya said, still shaking her head. "Of
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `447` activation `10.259` class `punctuation` token `,"`
+  - easy comfort of a resurrected friendship. "Listen," Leo said, gesturing toward the path. "
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `342` activation `9.696` class `punctuation` token `,"`
+  - company transferred me to the Munich office three months ago," Leo explained, gesturing vaguely toward the city center
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `413` activation `9.427` class `punctuation` token `,"`
+  - the exact same spot, thousands of miles from Oregon," Leo finished, a warm, nostalgic smile spreading across
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `253` activation `8.281` class `punctuation` token `!"`
+  - in Germany?" "I could ask you the same thing!" Leo laughed, stepping forward to pull her into a
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `511` activation `1.059` class `punctuation` token `."`
+  - drink is exactly what we need. Lead the way."
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `282` activation `0.733` class `punctuation` token `,`
+  - smelled of rain and coffee. "It’s been, what, five years? Six?" "Six,"
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `379` activation `4.454` class `punctuation` token `,`
+  - ? "Just a solo vacation before starting a new job, Maya said, still shaking her head. "Of
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `407` activation `2.314` class `punctuation` token `,`
+  - countries... "We end up in the exact same spot, thousands of miles from Oregon, Leo finished, a
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `343` activation `2.026` class `word` token ` Leo`
+  - transferred me to the Munich office three months ago, Leo explained, gesturing vaguely toward the city center.
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `329` activation `1.481` class `sentence_boundary` token `!`
+  - heard, you were living in Seattle. "I was! But my company transferred me to the Munich office three
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `447` activation `1.360` class `punctuation` token `,`
+  - easy comfort of a resurrected friendship. "Listen, Leo said, gesturing toward the path. "
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `413` activation `1.222` class `punctuation` token `,`
+  - the exact same spot, thousands of miles from Oregon, Leo finished, a warm, nostalgic smile spreading across
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `448` activation `1.179` class `word` token ` Leo`
+  - comfort of a resurrected friendship. "Listen, Leo said, gesturing toward the path. "There
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `414` activation `1.013` class `word` token ` Leo`
+  - exact same spot, thousands of miles from Oregon, Leo finished, a warm, nostalgic smile spreading across his
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `294` activation `0.860` class `word` token ` said`
+  - , five years? Six? "Six, Maya said, pulling back to look at him, her eyes
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `292` activation `0.750` class `punctuation` token `,`
+  - , what, five years? Six? "Six, Maya said, pulling back to look at him,
+- `L19:402` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `282` activation `0.749` class `punctuation` token `,`
+  - smelled of rain and coffee. "It’s been, what, five years? Six? "Six,
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `69` activation `12.193` class `punctuation` token `,"`
+  - -year-old with a sugar crash can muster. "So," Leo whispered, leaning so far forward his nose almost
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `167` activation `12.140` class `punctuation` token `,"`
+  - wearing a oversized wig." "No, no, no," Leo hissed, his eyes wide and reflecting the orange
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `427` activation `10.988` class `punctuation` token `,"`
+  - seemed to swallow the firelight. "Happy Birthday," a voice gurgled, sounding like a drain
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `242` activation `10.975` class `punctuation` token `,"`
+  - s’more in the dirt. "Stop it," she whimpered. "I’m going home."
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `459` activation `10.792` class `punctuation` token `,"`
+  - brought you." Leo stopped smiling. "Uh oh," he whispered. "I think he forgot the nap
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `256` activation `10.439` class `punctuation` token `,"`
+  - . "I’m going home." "You can't," Leo said, grinning wickedly. "Because
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `306` activation `8.511` class `punctuation` token `?"`
+  - weight of being watched. "Did you hear that?" Mia questioned, her voice trembling. "Hear what
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `317` activation `7.073` class `punctuation` token `?"`
+  - Mia questioned, her voice trembling. "Hear what?" Leo asked innocently. A soft, squel
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `428` activation `0.981` class `word` token ` a`
+  - to swallow the firelight. "Happy Birthday," a voice gurgled, sounding like a drain unc
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `167` activation `5.888` class `punctuation` token `,`
+  - wearing a oversized wig. "No, no, no, Leo hissed, his eyes wide and reflecting the orange
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `306` activation `5.213` class `sentence_boundary` token `?`
+  - weight of being watched. "Did you hear that? Mia questioned, her voice trembling. "Hear what
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `256` activation `5.092` class `punctuation` token `,`
+  - . "I’m going home. "You can't, Leo said, grinning wickedly. "Because
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `459` activation `3.974` class `punctuation` token `,`
+  - brought you. Leo stopped smiling. "Uh oh, he whispered. "I think he forgot the nap
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `165` activation `3.930` class `punctuation` token `,`
+  - Uncle Jerry wearing a oversized wig. "No, no, no, Leo hissed, his eyes wide and reflecting
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `163` activation `3.595` class `punctuation` token `,`
+  - was just Uncle Jerry wearing a oversized wig. "No, no, no, Leo hissed, his eyes wide
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `317` activation `3.563` class `sentence_boundary` token `?`
+  - Mia questioned, her voice trembling. "Hear what? Leo asked innocently. A soft, squel
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `428` activation `3.211` class `word` token ` a`
+  - to swallow the firelight. "Happy Birthday, a voice gurgled, sounding like a drain unc
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `427` activation `3.124` class `punctuation` token `,`
+  - seemed to swallow the firelight. "Happy Birthday, a voice gurgled, sounding like a drain
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `242` activation `1.806` class `punctuation` token `,`
+  - s’more in the dirt. "Stop it, she whimpered. "I’m going home.
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `243` activation `1.538` class `word` token ` she`
+  - ’more in the dirt. "Stop it, she whimpered. "I’m going home. "You
+- `L19:402` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `135` activation `1.358` class `punctuation` token `,`
+  - , pulled her jacket tighter. "That’s stupid, Leo. Popsicle is just a guy in
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `301` activation `12.341` class `punctuation` token `,"`
+  - ice-shards from the primary valves." "They did," Samantha sighed, accepting the warm cup with a grateful
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `421` activation `10.540` class `punctuation` token `,"`
+  - lose life support in the agricultural pods for six hours," she explained, rubbings her temples. "
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `391` activation `7.747` class `punctuation` token `?"`
+  - "Can't we flush the system with the reserves?" Alistair asked. "If I bypass the secondary
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `485` activation `2.536` class `punctuation` token `."`
+  - a natural, heat-resistant wax to shed mineral buildup." He looked at Samantha. "Could we liquefy
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `421` activation `1.965` class `punctuation` token `,`
+  - lose life support in the agricultural pods for six hours, she explained, rubbings her temples. "
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `301` activation `1.294` class `punctuation` token `,`
+  - ice-shards from the primary valves. "They did, Samantha sighed, accepting the warm cup with a grateful
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `391` activation `1.096` class `sentence_boundary` token `?`
+  - "Can't we flush the system with the reserves? Alistair asked. "If I bypass the secondary
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `422` activation `0.983` class `word` token ` she`
+  - life support in the agricultural pods for six hours, she explained, rubbings her temples. "The
+- `L19:402` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `394` activation `0.750` class `word` token `air`
+  - we flush the system with the reserves? Alistair asked. "If I bypass the secondary grid to flush
+- `L19:402` `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::original` token `253` activation `12.068` class `punctuation` token `,"`
+  - someone bearing wonderful news. "Oh, she's adorable," Margaret said, loud enough for the room. Then
+- `L19:402` `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::original` token `86` activation `1.659` class `punctuation` token `,`
+  - from speakers no one could ever locate. It was, by all accounts, the perfect café. On a
+- `L19:402` `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::edited` token `86` activation `1.659` class `punctuation` token `,`
+  - from speakers no one could ever locate. It was, by all accounts, the perfect café. On a
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `305` activation `12.585` class `punctuation` token `,"`
+  - , Maisie frowned deeply. "No. Open it," she insisted, poking at the fruit inside. "It
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `405` activation `10.781` class `punctuation` token `,"`
+  - apart like a second skin. "Stop, stop," her mother laughed gently, pulling the banana away before
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `269` activation `10.052` class `punctuation` token `!"`
+  - had set down a yellow banana. "Want it!" she demanded, reaching with chubby fingers. Her mother
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `406` activation `0.632` class `word` token ` her`
+  - like a second skin. "Stop, stop," her mother laughed gently, pulling the banana away before it
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `295` activation `0.619` class `punctuation` token `,`
+  - over with a smile. But instead of eating it, Maisie frowned deeply. "No. Open it,"
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `405` activation `3.512` class `punctuation` token `,`
+  - apart like a second skin. "Stop, stop, her mother laughed gently, pulling the banana away before
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `403` activation `3.071` class `punctuation` token `,`
+  - peel it apart like a second skin. "Stop, stop, her mother laughed gently, pulling the banana
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `318` activation `2.762` class `punctuation` token `,`
+  - , poking at the fruit inside. "It is open, sweetheart. Maisie shook her head adamantly.
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `305` activation `2.026` class `punctuation` token `,`
+  - , Maisie frowned deeply. "No. Open it, she insisted, poking at the fruit inside. "It
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `406` activation `2.001` class `word` token ` her`
+  - like a second skin. "Stop, stop, her mother laughed gently, pulling the banana away before it
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `306` activation `1.497` class `word` token ` she`
+  - Maisie frowned deeply. "No. Open it, she insisted, poking at the fruit inside. "It is
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `270` activation `0.826` class `word` token ` she`
+  - set down a yellow banana. "Want it! she demanded, reaching with chubby fingers. Her mother peeled
+- `L19:402` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `295` activation `0.596` class `punctuation` token `,`
+  - over with a smile. But instead of eating it, Maisie frowned deeply. "No. Open it,
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `460` activation `12.473` class `punctuation` token `,"`
+  - to fly very, very much?" "I certainly would," he replied. "I'd do anything if I
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `415` activation `12.150` class `punctuation` token `,"`
+  - I grow up I'm going to have an airplane," Elmer sighed. "Wouldn't it be
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `122` activation `11.680` class `punctuation` token `,"`
+  - cat like me. "I'd be very much obliged," I purred, "if I could sit by
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `222` activation `10.043` class `punctuation` token `,"`
+  - ugly old alley cats. "Elmer Elevator," she shrieked, "if you think I
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `460` activation `7.514` class `punctuation` token `,`
+  - to fly very, very much? "I certainly would, he replied. "I'd do anything if I
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `415` activation `5.964` class `punctuation` token `,`
+  - I grow up I'm going to have an airplane, Elmer sighed. "Wouldn't it be
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `122` activation `1.123` class `punctuation` token `,`
+  - cat like me. "I'd be very much obliged, I purred, "if I could sit by
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `127` activation `0.952` class `punctuation` token ` "`
+  - 'd be very much obliged, I purred, "if I could sit by a warm furnace, and
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `222` activation `0.886` class `punctuation` token `,`
+  - ugly old alley cats. "Elmer Elevator, she shrieked, "if you think I
+- `L19:402` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `223` activation `0.577` class `word` token ` she`
+  - old alley cats. "Elmer Elevator, she shrieked, "if you think I'm
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `210` activation `12.559` class `punctuation` token `,"`
+  - . "Did you just..." "I am... sorry," Barnaby said. His vocalization was strained,
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `261` activation `12.004` class `punctuation` token `,"`
+  - Barnaby? You can talk?" "I learn," Barnaby said, slowly moving his head in a
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `347` activation `11.402` class `punctuation` token `,"`
+  - tell me sooner, boy?" "Words... hard," Barnaby replied, nudging Arthur’s arm with
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `167` activation `10.395` class `punctuation` token `,"`
+  - let out a long, trembling sigh. "Arthur," a raspy voice said from the floor. Arthur
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `427` activation `8.152` class `punctuation` token `?"`
+  - broken. "Can you tell me about the squirrel?" Arthur asked, testing the reality of it. B
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `287` activation `7.658` class `punctuation` token `,"`
+  - Seven winters. Seven summers. I listen. Now," he let out a soft sound that sounded like a
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `168` activation `1.810` class `word` token ` a`
+  - out a long, trembling sigh. "Arthur," a raspy voice said from the floor. Arthur dropped
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `511` activation `1.475` class `punctuation` token `."`
+  - you too, Barnaby. I love you too."
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `170` activation `0.814` class `word` token `py`
+  - long, trembling sigh. "Arthur," a raspy voice said from the floor. Arthur dropped his newspaper
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `427` activation `4.043` class `sentence_boundary` token `?`
+  - broken. "Can you tell me about the squirrel? Arthur asked, testing the reality of it. B
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `347` activation `3.934` class `punctuation` token `,`
+  - tell me sooner, boy? "Words... hard, Barnaby replied, nudging Arthur’s arm with
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `261` activation `3.704` class `punctuation` token `,`
+  - Barnaby? You can talk? "I learn, Barnaby said, slowly moving his head in a
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `210` activation `1.774` class `punctuation` token `,`
+  - . "Did you just... "I am... sorry, Barnaby said. His vocalization was strained,
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `340` activation `1.460` class `punctuation` token `,`
+  - tightly. "Why didn't you tell me sooner, boy? "Words... hard, Barnaby replied
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `170` activation `1.072` class `word` token `py`
+  - long, trembling sigh. "Arthur, a raspy voice said from the floor. Arthur dropped his newspaper
+- `L19:402` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `171` activation `0.970` class `word` token ` voice`
+  - , trembling sigh. "Arthur, a raspy voice said from the floor. Arthur dropped his newspaper.
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `443` activation `12.350` class `punctuation` token `,"`
+  - a shuddering breath. "Then we fight," Julian said quietly. "A duel of wills
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `472` activation `11.109` class `punctuation` token `,"`
+  - him. "Rock, paper, scissors on three," Julian breathed.</think> The Last Slice The
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `75` activation `11.102` class `punctuation` token `,"`
+  - slice of pepperoni. "We cannot both have it," Arthur whispered, his voice a dry, cracking leaves
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `202` activation `10.586` class `punctuation` token `,"`
+  - for glory. "I called dibs in my head," Arthur hissed, knuckles whitening around the back
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `239` activation `9.707` class `punctuation` token `,"`
+  - ." "Unspoken dibs hold no jurisdiction here," Julian retorted, leaning forward. A bead of
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `334` activation `7.923` class `punctuation` token `!"`
+  - you a monster?" "I am a pragmatist!" Julian roared, slamming a palm on the table
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `290` activation `6.770` class `punctuation` token `?"`
+  - ils. We must split it." "Split it?" Arthur recoiled as if struck. "You would
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `378` activation `6.659` class `punctuation` token `!"`
+  - over toppings?" "It’s not just toppings, Julian!" Arthur’s voice cracked. "It’s the garlic
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `475` activation `0.761` class `punctuation` token `.</`
+  - Rock, paper, scissors on three," Julian breathed.</think> The Last Slice The fluorescent kitchen light
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `472` activation `5.487` class `punctuation` token `,`
+  - him. "Rock, paper, scissors on three, Julian breathed.</think> The Last Slice The
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `202` activation `4.563` class `punctuation` token `,`
+  - for glory. "I called dibs in my head, Arthur hissed, knuckles whitening around the back
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `239` activation `4.128` class `punctuation` token `,`
+  - . "Unspoken dibs hold no jurisdiction here, Julian retorted, leaning forward. A bead of
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `376` activation `2.935` class `punctuation` token `,`
+  - our bond over toppings? "It’s not just toppings, Julian! Arthur’s voice cracked. "It’s
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `290` activation `2.876` class `sentence_boundary` token `?`
+  - ils. We must split it. "Split it? Arthur recoiled as if struck. "You would
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `334` activation `2.864` class `sentence_boundary` token `!`
+  - you a monster? "I am a pragmatist! Julian roared, slamming a palm on the table
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `443` activation `2.706` class `punctuation` token `,`
+  - a shuddering breath. "Then we fight, Julian said quietly. "A duel of wills
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `466` activation `2.090` class `punctuation` token `,`
+  - raised a fist. Arthur mirrored him. "Rock, paper, scissors on three, Julian breathed.</think
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `378` activation `1.450` class `sentence_boundary` token `!`
+  - over toppings? "It’s not just toppings, Julian! Arthur’s voice cracked. "It’s the garlic
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `75` activation `0.900` class `punctuation` token `,`
+  - slice of pepperoni. "We cannot both have it, Arthur whispered, his voice a dry, cracking leaves
+- `L19:402` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `475` activation `0.757` class `punctuation` token `.</`
+  - Rock, paper, scissors on three, Julian breathed.</think> The Last Slice The fluorescent kitchen light
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `435` activation `15.541` class `punctuation` token `,"`
+  - world domination plot?" "A mechanical engineering thesis, actually," June corrected automatically, her heart hammering against her
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `487` activation `15.006` class `punctuation` token `,"`
+  - faltered. "Hide behind Hephaestus," she said, gesturing to the shadow of the
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `357` activation `14.800` class `punctuation` token `,"`
+  - nation’s most worshiped idol group. "Please," Ren whispered, his voice a low, raspy
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `207` activation `13.589` class `punctuation` token `,"`
+  - of college life. "Almost there, old friend," she murmured, her thumb smearing a sm
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::original` token `511` activation `1.108` class `punctuation` token `."`
+  - The sensors are off. No one will see you."
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `435` activation `7.116` class `punctuation` token `,`
+  - world domination plot? "A mechanical engineering thesis, actually, June corrected automatically, her heart hammering against her
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `487` activation `6.008` class `punctuation` token `,`
+  - faltered. "Hide behind Hephaestus, she said, gesturing to the shadow of the
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `433` activation `5.525` class `punctuation` token `,`
+  - ing a world domination plot? "A mechanical engineering thesis, actually, June corrected automatically, her heart hammering
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `434` activation `2.305` class `word` token ` actually`
+  - a world domination plot? "A mechanical engineering thesis, actually, June corrected automatically, her heart hammering against
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `357` activation `1.753` class `punctuation` token `,`
+  - nation’s most worshiped idol group. "Please, Ren whispered, his voice a low, raspy
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `208` activation `1.072` class `word` token ` she`
+  - college life. "Almost there, old friend, she murmured, her thumb smearing a smudge
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gemini-3.5-flash::edited` token `207` activation `0.925` class `punctuation` token `,`
+  - of college life. "Almost there, old friend, she murmured, her thumb smearing a sm
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::original` token `295` activation `16.378` class `punctuation` token `,”`
+  - footsteps stopped beside her table. “Excuse me,” he said, voice low. “Is this seat
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::original` token `222` activation `1.370` class `style_function_word` token `Then`
+  - that appeared on giant billboards above train stations. Then the library doors opened. A gust of wet night
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::original` token `394` activation `0.558` class `line_break` token `.”
+
+`
+  - “I’ll be silent.” “You’re already not.” A quiet laugh escaped him, warm enough to disturb
+- `L24:1434` `7b45d5515846cd81ce941f66fdaeee8d89d3bf2ed19d4bac6e318416b3aa2647@turn_01@gpt-5.5::edited` token `222` activation `1.370` class `style_function_word` token `Then`
+  - that appeared on giant billboards above train stations. Then the library doors opened. A gust of wet night
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `433` activation `16.975` class `punctuation` token `,”`
+  - things, Max.” “Nor am I, apparently,” he commiserates before a sly smile tugs
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `298` activation `15.012` class `punctuation` token `,”`
+  - immediately, he stiffens and pulls away. “Oh,” he starts, “I’m sorry, Nora,
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `390` activation `13.477` class `punctuation` token `!”`
+  - my head in the sand. “I'm so sorry!” I tell him, covering most of my face with
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `322` activation `13.301` class `punctuation` token `!”`
+  - think you would—object, honestly—“ “No!” I squeak, “That’s not...”
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `332` activation `4.050` class `punctuation` token `”`
+  - !” I squeak, “That’s not...” Then I draw a breath to summon courage and l
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `392` activation `2.431` class `word` token ` tell`
+  - in the sand. “I'm so sorry!” I tell him, covering most of my face with my hands
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `432` activation `1.030` class `word` token ` apparently`
+  - of things, Max.” “Nor am I, apparently,” he commiserates before a sly smile t
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::original` token `171` activation `1.022` class `style_function_word` token ` when`
+  - cheeks and ask if there's something on my face when I suddenly realize what's happening and start to feel
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `431` activation `7.706` class `punctuation` token `,`
+  - kinds of things, Max. “Nor am I, apparently, he commiserates before a sly smile
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `433` activation `7.053` class `punctuation` token `,`
+  - things, Max. “Nor am I, apparently, he commiserates before a sly smile tugs
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `390` activation `6.310` class `sentence_boundary` token `!`
+  - my head in the sand. “I'm so sorry! I tell him, covering most of my face with
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `432` activation `3.913` class `word` token ` apparently`
+  - of things, Max. “Nor am I, apparently, he commiserates before a sly smile t
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `392` activation `1.620` class `word` token ` tell`
+  - in the sand. “I'm so sorry! I tell him, covering most of my face with my hands
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `303` activation `1.366` class `punctuation` token ` “`
+  - ens and pulls away. “Oh, he starts, “I’m sorry, Nora, I didn’t think
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `323` activation `1.290` class `sentence_boundary` token `!`
+  - think you would—object, honestly—“ “No! I squeak, “That’s not... Then
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `328` activation `1.235` class `punctuation` token ` “`
+  - , honestly—“ “No! I squeak, “That’s not... Then I draw a breath to
+- `L24:1434` `b47d2163e891fbfe755acb0f82d582bab99f7f7564526ac5fec83b033c7ac3c7@turn_01@human::edited` token `172` activation `1.016` class `style_function_word` token ` when`
+  - cheeks and ask if there's something on my face when I suddenly realize what's happening and start to feel
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `485` activation `15.678` class `punctuation` token `,"`
+  - one said. "I've helped smart people hide before," Rufus corrected. He fixed them with a stare
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `280` activation `14.862` class `punctuation` token `,"`
+  - with the nearest open flame. "Rufus," the taller of the two started. "No names!"
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `472` activation `13.604` class `punctuation` token `,"`
+  - puttering candle. "You've helped people hide before," the shorter one said. "I've helped smart people
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `290` activation `13.132` class `punctuation` token `!"`
+  - ," the taller of the two started. "No names!" he bellowed, slamming the door shut and
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `339` activation `3.892` class `punctuation` token `."`
+  - the city's many problems you've become this time." He pointed a soot-blackened finger at them
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `442` activation `1.910` class `punctuation` token `."`
+  - —not the kind that come back asking for another favor." He yanked the trapdoor open, revealing a
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `285` activation `1.700` class `word` token ` two`
+  - . "Rufus," the taller of the two started. "No names!" he bellowed,
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `281` activation `1.258` class `word` token ` the`
+  - the nearest open flame. "Rufus," the taller of the two started. "No names!" he
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `283` activation `1.240` class `word` token ` of`
+  - open flame. "Rufus," the taller of the two started. "No names!" he bellow
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::original` token `511` activation `0.727` class `punctuation` token `."`
+  - . "Don't make me regret extending that category."
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `485` activation `10.199` class `punctuation` token `,`
+  - one said. "I've helped smart people hide before, Rufus corrected. He fixed them with a stare
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `472` activation `5.015` class `punctuation` token `,`
+  - puttering candle. "You've helped people hide before, the shorter one said. "I've helped smart people
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `385` activation `3.622` class `sentence_boundary` token `.`
+  - a bad handbill. "We just need a day. Maybe two. Rufus snorted and stom
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `290` activation `2.575` class `sentence_boundary` token `!`
+  - , the taller of the two started. "No names! he bellowed, slamming the door shut and
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `484` activation `1.877` class `word` token ` before`
+  - shorter one said. "I've helped smart people hide before, Rufus corrected. He fixed them with a
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `286` activation `1.769` class `word` token ` started`
+  - "Rufus, the taller of the two started. "No names! he bellowed, slamming
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `291` activation `1.380` class `word` token ` he`
+  - the taller of the two started. "No names! he bellowed, slamming the door shut and dropping
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `473` activation `1.326` class `word` token ` the`
+  - tering candle. "You've helped people hide before, the shorter one said. "I've helped smart people hide
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@glm-5.2::edited` token `388` activation `0.753` class `line_break` token `.
+
+`
+  - bill. "We just need a day. Maybe two. Rufus snorted and stomped toward the
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `247` activation `15.794` class `punctuation` token `,”`
+  - the size of his own personality. “You need hiding,” he declared, pointing a blackened finger at them
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `395` activation `15.255` class `punctuation` token `,”`
+  - Why the helmets?” one whispered. “Confidence,” said Rufus. “Also, if anyone asks
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `281` activation `13.580` class `punctuation` token `!”`
+  - .” One of them opened their mouth. “No names!” Rufus thundered. “Names are handles for
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `388` activation `12.317` class `punctuation` token `?”`
+  - absurdly long nose guards. “Why the helmets?” one whispered. “Confidence,” said Rufus
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `396` activation `1.727` class `word` token ` said`
+  - the helmets?” one whispered. “Confidence,” said Rufus. “Also, if anyone asks,
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `511` activation `1.628` class `punctuation` token `.”`
+  - me shout ‘sausages,’ come out fighting.”
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::original` token `295` activation `1.413` class `punctuation` token `.”`
+  - ed. “Names are handles for trouble to grab.” He swept a pile of coal sacks aside, revealing
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `388` activation `9.102` class `sentence_boundary` token `?`
+  - absurdly long nose guards. “Why the helmets? one whispered. “Confidence, said Rufus
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `281` activation `5.617` class `sentence_boundary` token `!`
+  - . One of them opened their mouth. “No names! Rufus thundered. “Names are handles for
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `395` activation `5.198` class `punctuation` token `,`
+  - Why the helmets? one whispered. “Confidence, said Rufus. “Also, if anyone asks
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `396` activation `2.303` class `word` token ` said`
+  - the helmets? one whispered. “Confidence, said Rufus. “Also, if anyone asks,
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `485` activation `1.779` class `sentence_boundary` token `.`
+  - and lifted the trapdoor. “Down you go. Breathe shallow, trust no one wearing velvet
+- `L24:1434` `c0f0822eec785f030f14b6b2bb79046da26f0a7cb2b21e373516ab71bdad96d2@turn_01@gpt-5.5::edited` token `339` activation `1.456` class `punctuation` token `,`
+  - only faintly of goat. Ideal for fugitives, poets, and anyone avoiding marriage. He bustled
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `135` activation `16.262` class `punctuation` token `,”`
+  - We’re not paying you to be approximate.” “Yes,” Elise said automatically. “I’ll have it
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `202` activation `14.252` class `punctuation` token `,”`
+  - that seemed meant for other people. “Thirty minutes,” she said. He stared at her long enough to
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `511` activation `13.366` class `punctuation` token `,”`
+  - pinned tight enough to hurt. “I was a kid,”
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `261` activation `12.954` class `punctuation` token `,”`
+  - . This time she answered. “Hi, sweetheart,” her mother said. Her voice was warm, a
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `453` activation `11.919` class `punctuation` token `,”`
+  - with both hands. “I found some old pictures today,” her mother said gently. “You were in that
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `62` activation `7.304` class `punctuation` token `.”`
+  - name glowed softly: Mom. “Elise.” Her boss’s voice cut across the office like a
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `454` activation `1.641` class `word` token ` her`
+  - both hands. “I found some old pictures today,” her mother said gently. “You were in that blue
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `262` activation `1.144` class `word` token ` her`
+  - This time she answered. “Hi, sweetheart,” her mother said. Her voice was warm, a little
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::original` token `63` activation `0.980` class `word` token ` Her`
+  - glowed softly: Mom. “Elise.” Her boss’s voice cut across the office like a blade
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `511` activation `8.052` class `punctuation` token `,`
+  - pinned tight enough to hurt. “I was a kid,
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `261` activation `6.498` class `punctuation` token `,`
+  - . This time she answered. “Hi, sweetheart, her mother said. Her voice was warm, a
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `453` activation `5.883` class `punctuation` token `,`
+  - with both hands. “I found some old pictures today, her mother said gently. “You were in that
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `202` activation `4.651` class `punctuation` token `,`
+  - that seemed meant for other people. “Thirty minutes, she said. He stared at her long enough to
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `260` activation `2.778` class `word` token ` sweetheart`
+  - Mom. This time she answered. “Hi, sweetheart, her mother said. Her voice was warm,
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `452` activation `2.531` class `word` token ` today`
+  - close with both hands. “I found some old pictures today, her mother said gently. “You were in
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `454` activation `2.483` class `word` token ` her`
+  - both hands. “I found some old pictures today, her mother said gently. “You were in that blue
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `259` activation `2.371` class `punctuation` token `,`
+  - . Mom. This time she answered. “Hi, sweetheart, her mother said. Her voice was warm
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `262` activation `1.478` class `word` token ` her`
+  - This time she answered. “Hi, sweetheart, her mother said. Her voice was warm, a little
+- `L24:1434` `95e4bb3d48daf6c0880e9bbe3e1651001ab5ca59d80aa1225b7d455bb3d0810c@turn_01@gpt-5.5::edited` token `369` activation `1.395` class `word` token ` week`
+  - “It’s late. “It’s just a busy week. “You said that last week. Elise smiled
+- `L24:1434` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `373` activation `15.772` class `punctuation` token `,"`
+  - a hand on the cover. "No, wait," she urged, her tone gentle but firm. "
+- `L24:1434` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `487` activation `15.583` class `punctuation` token `,"`
+  - terrifyingly warm. "It's just... a story," he muttered, feeling the heat rise in his cheeks
+- `L24:1434` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `299` activation `14.676` class `punctuation` token `,"`
+  - them through the windows. "Everything is perfect now," she said, popping a piece of broccoli into her
+- `L24:1434` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::original` token `236` activation `5.848` class `punctuation` token `?"`
+  - eyes wide with cautious confusion. "Aiko-san?" he whispered, his voice rough from disuse.
+- `L24:1434` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `487` activation `7.030` class `punctuation` token `,`
+  - terrifyingly warm. "It's just... a story, he muttered, feeling the heat rise in his cheeks
+- `L24:1434` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `373` activation `2.814` class `punctuation` token `,`
+  - a hand on the cover. "No, wait, she urged, her tone gentle but firm. "
+- `L24:1434` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `299` activation `2.539` class `punctuation` token `,`
+  - them through the windows. "Everything is perfect now, she said, popping a piece of broccoli into her
+- `L24:1434` `de565bde039615f2cd0e3d2292fae0b48458e4d14e77c5bfeca44f070a5b322a@turn_01@qwen3.6-35b::edited` token `335` activation `1.193` class `sentence_boundary` token `?`
+  - aced fingers. "So, what are you reading? It looks heavy. Kou instinctively moved to
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` token `385` activation `15.943` class `punctuation` token `,"`
+  - . Her eyes were wet. "It's my hand," she said, holding up the withered left one
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` token `432` activation `1.891` class `punctuation` token `."`
+  - thought it was a bruise. Then it spread." She swallowed. "I've been to four heal
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` token `467` activation `1.525` class `punctuation` token `."`
+  - told me to find a witch who knew cursework." She looked at Aliceana. "They said you
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@glm-5.2::original` token `494` activation `0.890` class `punctuation` token `."`
+  - potions could undo things the healers couldn't reach." Her voice quavered slightly. "Please.
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` token `460` activation `16.359` class `punctuation` token `,”`
+  - window, as if uneasy. “This curse is spreading,” Regine continued. “It began at my fingertips
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` token `417` activation `15.636` class `punctuation` token `,”`
+  - table between them. “I was told you help people,” she said quietly. “Not for glory. Not
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` token `511` activation `6.625` class `punctuation` token `.”`
+  - red eyes met Aliceana’s. “I’m afraid.”
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::original` token `393` activation `1.285` class `style_function_word` token ` Then`
+  - a moment, she seemed too proud to answer. Then she slowly lifted her withered left hand and laid
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::edited` token `460` activation `8.422` class `punctuation` token `,`
+  - window, as if uneasy. “This curse is spreading, Regine continued. “It began at my fingertips
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::edited` token `462` activation `1.667` class `word` token `ine`
+  - as if uneasy. “This curse is spreading, Regine continued. “It began at my fingertips three nights
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::edited` token `418` activation `1.581` class `word` token ` she`
+  - between them. “I was told you help people, she said quietly. “Not for glory. Not for
+- `L24:1434` `0eca2c11bcd908949c9888924e28a889c225228c0b50ee4faa920d1d1978daf1@turn_03@gpt-5.5::edited` token `393` activation `1.285` class `style_function_word` token ` Then`
+  - a moment, she seemed too proud to answer. Then she slowly lifted her withered left hand and laid
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `407` activation `16.624` class `punctuation` token `,"`
+  - , rain, and expensive espresso. "Easy there," Julian murmured, his chest vibrating against hers as
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `465` activation `15.673` class `punctuation` token `,"`
+  - "Are you alright?" "I am... fully operational," Maya squeaked, her face burning a deep,
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `231` activation `15.619` class `punctuation` token `,"`
+  - course! Yes. Absolutely. I have many moments," Maya squeaked. Inhale. Exh
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `168` activation `14.219` class `punctuation` token `,"`
+  - feel like depreciated hardware. "Morning, Maya," Julian said, leaning against her office doorframe.
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `299` activation `11.060` class `punctuation` token `!"`
+  - with her favorite ceramic mug. "Oh, system error!" she gasped. The mug tilted. Cold coffee
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `511` activation `2.023` class `punctuation` token `."`
+  - they work. Now, let's rescue that keyboard."
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::original` token `324` activation `0.913` class `punctuation` token `,`
+  - her keyboard. In a panic to save her hardware, Maya lunged forward, caught her toe on the
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `465` activation `8.119` class `punctuation` token `,`
+  - "Are you alright? "I am... fully operational, Maya squeaked, her face burning a deep,
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `222` activation `4.857` class `sentence_boundary` token `!`
+  - to review the new deployment protocols? "Of course! Yes. Absolutely. I have many moments, Maya
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `299` activation `2.527` class `sentence_boundary` token `!`
+  - with her favorite ceramic mug. "Oh, system error! she gasped. The mug tilted. Cold coffee
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `408` activation `2.216` class `word` token ` Julian`
+  - rain, and expensive espresso. "Easy there, Julian murmured, his chest vibrating against hers as he
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `232` activation `1.927` class `word` token ` Maya`
+  - ! Yes. Absolutely. I have many moments, Maya squeaked. Inhale. Exhale
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `226` activation `1.666` class `sentence_boundary` token `.`
+  - deployment protocols? "Of course! Yes. Absolutely. I have many moments, Maya squeaked. In
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `169` activation `1.417` class `word` token ` Julian`
+  - like depreciated hardware. "Morning, Maya, Julian said, leaning against her office doorframe. He
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `324` activation `1.193` class `punctuation` token `,`
+  - her keyboard. In a panic to save her hardware, Maya lunged forward, caught her toe on the
+- `L24:1434` `b665a0186e3139babaf04273d8529164c4d14bedfacc7deab768848f0f91ae87@turn_01@gemini-3.5-flash::edited` token `300` activation `0.878` class `word` token ` she`
+  - her favorite ceramic mug. "Oh, system error! she gasped. The mug tilted. Cold coffee casc
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `484` activation `15.980` class `punctuation` token `,"`
+  - it, shaking her head. "Ask her yourself," she said quietly, standing. "But Cindy...
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `222` activation `8.801` class `punctuation` token `!"`
+  - at her door. "Cindy! You're back!" Victoria burst in before Cindy could respond, her dark
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `271` activation `6.452` class `punctuation` token `..."`
+  - I told everyone you would." "Victoria, I..." Cindy rubbed her temples, sitting up slowly. "
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `352` activation `6.308` class `punctuation` token `."`
+  - Chad worries about everyone." "But—" "Cindy." Victoria placed a hand on hers, her tone gentle
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `407` activation `6.160` class `punctuation` token `?"`
+  - has been waiting to talk to you." "Michelle?" Cindy frowned, her brow furrowing in confusion.
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `511` activation `2.966` class `punctuation` token `?"`
+  - past you traveled to was the past that actually happened?"
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `302` activation `2.572` class `punctuation` token `."`
+  - where I went, about why I chose to stay." She hesitated. "He seemed... concerned.
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `384` activation `2.160` class `punctuation` token `."`
+  - yet. Things that have happened while you were away." She glanced toward the door, lowering her voice.
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `226` activation `1.056` class `word` token ` before`
+  - "Cindy! You're back!" Victoria burst in before Cindy could respond, her dark eyes bright with excitement
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::original` token `485` activation `0.807` class `word` token ` she`
+  - , shaking her head. "Ask her yourself," she said quietly, standing. "But Cindy... what
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` token `407` activation `1.826` class `sentence_boundary` token `?`
+  - has been waiting to talk to you. "Michelle? Cindy frowned, her brow furrowing in confusion.
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` token `485` activation `1.430` class `word` token ` she`
+  - , shaking her head. "Ask her yourself, she said quietly, standing. "But Cindy... what
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` token `348` activation `1.416` class `punctuation` token `—`
+  - what that means. Chad worries about everyone. "But—" "Cindy. Victoria placed a hand on hers
+- `L24:1434` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@glm-5.2::edited` token `484` activation `1.122` class `punctuation` token `,`
+  - it, shaking her head. "Ask her yourself, she said quietly, standing. "But Cindy...
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` token `292` activation `15.825` class `punctuation` token `,"`
+  - partition, they were entirely alone. "That depends," Marcus said, leaning against a dryer that was warm
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` token `380` activation `15.738` class `punctuation` token `,"`
+  - —like ozone. "I need to leave this here," she whispered, her voice trembling but urgent. She
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` token `501` activation `14.801` class `punctuation` token `,"`
+  - shing of the washing machines. "Twenty minutes," she pleaded, and walked out into the rain.
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::original` token `289` activation `0.790` class `punctuation` token ` "`
+  - bulletproof glass partition, they were entirely alone. "That depends," Marcus said, leaning against a dryer
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` token `380` activation `4.524` class `punctuation` token `,`
+  - —like ozone. "I need to leave this here, she whispered, her voice trembling but urgent. She
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` token `501` activation `4.133` class `punctuation` token `,`
+  - shing of the washing machines. "Twenty minutes, she pleaded, and walked out into the rain.
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` token `293` activation `1.452` class `word` token ` Marcus`
+  - , they were entirely alone. "That depends, Marcus said, leaning against a dryer that was warm to
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gemini-3.5-flash::edited` token `289` activation `0.771` class `punctuation` token ` "`
+  - bulletproof glass partition, they were entirely alone. "That depends, Marcus said, leaning against a dryer
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `237` activation `16.437` class `punctuation` token `,”`
+  - like she had already agreed to something. “That depends,” she said. “Is it illegal?” The boy
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `330` activation `13.330` class `punctuation` token `,”`
+  - little straighter. “I found it in the washer,” he said. “Machine Three. It wasn’t
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `353` activation `3.482` class `punctuation` token `…”`
+  - I loaded my clothes, but after the cycle finished…” He swallowed. “There was a note, too
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::original` token `154` activation `1.214` class `punctuation` token `,`
+  - neon from the sign—WASH & FOLD, OPEN 24 HOURS—blurred pink and
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `330` activation `6.489` class `punctuation` token `,`
+  - little straighter. “I found it in the washer, he said. “Machine Three. It wasn’t
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `353` activation `3.315` class `punctuation` token `…”`
+  - I loaded my clothes, but after the cycle finished…” He swallowed. “There was a note, too
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `237` activation `2.675` class `punctuation` token `,`
+  - like she had already agreed to something. “That depends, she said. “Is it illegal? The boy
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `154` activation `1.308` class `punctuation` token `,`
+  - neon from the sign—WASH & FOLD, OPEN 24 HOURS—blurred pink and
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `274` activation `1.163` class `word` token ` is`
+  - . “That’s not as comforting as you think it is. He pulled his hand from the basket. In
+- `L24:1434` `eae716f371efdc55cc378148a65fb02b3c0ab861e41d4289d961ab25c00af859@turn_01@gpt-5.5::edited` token `408` activation `0.866` class `punctuation` token `,`
+  - . Mara leaned forward. In careful blue ink, the note read: DO NOT GIVE THIS TO
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `47` activation `16.167` class `punctuation` token `,"`
+  - like they were his children. "Excuse me," she muttered, though she didn't mean it.
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `243` activation `14.778` class `punctuation` token `,"`
+  - , NOT WAR. "I only need ten pints," Nora said. "Then you and I have a
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `154` activation `14.445` class `punctuation` token `,"`
+  - , dark, dusty blue. "Those are mine," a voice said. Nora didn't look up
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `290` activation `12.587` class `punctuation` token `,"`
+  - —shrugged and scratched his neck. "Look," Nora said. "I drove forty minutes. I
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `418` activation `4.101` class `punctuation` token `—"`
+  - all guy, green hat?" "He's not wearing—" Nora turned. Her husband was absolutely wearing a green
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `155` activation `1.996` class `word` token ` a`
+  - dark, dusty blue. "Those are mine," a voice said. Nora didn't look up.
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::original` token `156` activation `1.866` class `word` token ` voice`
+  - , dusty blue. "Those are mine," a voice said. Nora didn't look up. "
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `255` activation `7.343` class `punctuation` token `,`
+  - said. "Then you and I have a problem, because so do I. They stared at each other
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `243` activation `6.980` class `punctuation` token `,`
+  - , NOT WAR. "I only need ten pints, Nora said. "Then you and I have a
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `154` activation `5.518` class `punctuation` token `,`
+  - , dark, dusty blue. "Those are mine, a voice said. Nora didn't look up
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `290` activation `3.910` class `punctuation` token `,`
+  - —shrugged and scratched his neck. "Look, Nora said. "I drove forty minutes. I
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `155` activation `3.728` class `word` token ` a`
+  - dark, dusty blue. "Those are mine, a voice said. Nora didn't look up.
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `418` activation `3.722` class `punctuation` token `—"`
+  - all guy, green hat? "He's not wearing—" Nora turned. Her husband was absolutely wearing a green
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `291` activation `1.898` class `word` token ` Nora`
+  - shrugged and scratched his neck. "Look, Nora said. "I drove forty minutes. I have
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `453` activation `1.826` class `sentence_boundary` token `.`
+  - another toddler he'd apparently acquired. "Oh my God. That's not my husband. The woman peered
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `156` activation `1.795` class `word` token ` voice`
+  - , dusty blue. "Those are mine, a voice said. Nora didn't look up. "
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `452` activation `1.473` class `word` token ` God`
+  - with another toddler he'd apparently acquired. "Oh my God. That's not my husband. The woman pe
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `254` activation `0.971` class `word` token ` problem`
+  - Nora said. "Then you and I have a problem, because so do I. They stared at each
+- `L24:1434` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@glm-5.2::edited` token `353` activation `0.892` class `word` token ` yours`
+  - car. With my husband. "Which one's yours? Nora blinked. "What? "Your
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `417` activation `16.353` class `punctuation` token `,"`
+  - your laundry," his dad joked. "I'm sorry," Leo mumbled. "They were just really good
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `492` activation `14.336` class `punctuation` token `,"`
+  - up. "With extra cinnamon?" "Of course," she laughed. "Now, out of the closet
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `295` activation `14.277` class `punctuation` token `,"`
+  - yellow bath towel. "I followed a trail of crumbs," his dad’s voice joined in, sounding closer now
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `409` activation `13.877` class `punctuation` token `,"`
+  - "I think the cookie monster is hiding in your laundry," his dad joked. "I'm sorry," Leo m
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `431` activation `13.720` class `punctuation` token `,"`
+  - . "They were just really good." "They were," his mom agreed, kneeling down. "But now
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `241` activation `11.606` class `punctuation` token `?"`
+  - his mother’s footsteps in the hallway. "Leo?" she called out, her voice sounding more amused than
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `296` activation `1.612` class `word` token ` his`
+  - bath towel. "I followed a trail of crumbs," his dad’s voice joined in, sounding closer now.
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `410` activation `1.339` class `word` token ` his`
+  - think the cookie monster is hiding in your laundry," his dad joked. "I'm sorry," Leo mumbled
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `432` activation `1.128` class `word` token ` his`
+  - "They were just really good." "They were," his mom agreed, kneeling down. "But now we
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::original` token `511` activation `0.564` class `punctuation` token `."`
+  - the closet, baker. We have work to do."
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `431` activation `6.716` class `punctuation` token `,`
+  - . "They were just really good. "They were, his mom agreed, kneeling down. "But now
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `492` activation `5.723` class `punctuation` token `,`
+  - up. "With extra cinnamon? "Of course, she laughed. "Now, out of the closet
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `417` activation `5.075` class `punctuation` token `,`
+  - your laundry, his dad joked. "I'm sorry, Leo mumbled. "They were just really good
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `409` activation `4.772` class `punctuation` token `,`
+  - "I think the cookie monster is hiding in your laundry, his dad joked. "I'm sorry, Leo m
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `418` activation `2.819` class `word` token ` Leo`
+  - laundry, his dad joked. "I'm sorry, Leo mumbled. "They were just really good.
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `295` activation `2.207` class `punctuation` token `,`
+  - yellow bath towel. "I followed a trail of crumbs, his dad’s voice joined in, sounding closer now
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `419` activation `2.188` class `word` token ` m`
+  - , his dad joked. "I'm sorry, Leo mumbled. "They were just really good. "They
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `410` activation `2.187` class `word` token ` his`
+  - think the cookie monster is hiding in your laundry, his dad joked. "I'm sorry, Leo mumbled
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `432` activation `2.037` class `word` token ` his`
+  - "They were just really good. "They were, his mom agreed, kneeling down. "But now we
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `299` activation `1.634` class `word` token ` voice`
+  - "I followed a trail of crumbs, his dad’s voice joined in, sounding closer now. "It leads
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `493` activation `1.036` class `word` token ` she`
+  - . "With extra cinnamon? "Of course, she laughed. "Now, out of the closet,
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gemini-3.5-flash::edited` token `296` activation `0.809` class `word` token ` his`
+  - bath towel. "I followed a trail of crumbs, his dad’s voice joined in, sounding closer now.
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `146` activation `16.902` class `punctuation` token `,”`
+  - Milo heard footsteps in the hallway. “Oh no,” he whispered. He grabbed the card, which was
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `236` activation `14.663` class `punctuation` token `,”`
+  - y tail like a tiny parade. “Pickle,” Milo whispered, “you are not helping.” D
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `386` activation `14.374` class `punctuation` token `,”`
+  - toward one corner. “I wanted to make a surprise,” he said. “But I made a mess.
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `478` activation `13.872` class `punctuation` token `,”`
+  - ped. “…being captain of the cleanup crew,” Dad finished, handing him a broom. M
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `436` activation `11.886` class `punctuation` token `,”`
+  - . “Thank you for wanting to make something special,” she said. “But next time, ask for
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `194` activation `11.545` class `punctuation` token `?”`
+  - a dust bunny named probably Gary. “Milo?” Mom called. “Did you take the glitter?”
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `343` activation `9.889` class `punctuation` token `?”`
+  - “Does the curtain monster know anything about the glitter?” Dad asked. Milo came out slowly, holding
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `304` activation `3.227` class `punctuation` token `,”`
+  - “This slipper is ready for a dance contest,” and Milo snorted. The curtains moved. Mom
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::original` token `87` activation `1.756` class `punctuation` token `,`
+  - placed on the very top shelf. The top shelf, unfortunately, was not taller than Milo plus one w
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `386` activation `8.318` class `punctuation` token `,`
+  - toward one corner. “I wanted to make a surprise, he said. “But I made a mess.
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `343` activation `5.850` class `sentence_boundary` token `?`
+  - “Does the curtain monster know anything about the glitter? Dad asked. Milo came out slowly, holding
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `478` activation `5.771` class `punctuation` token `,`
+  - ped. “…being captain of the cleanup crew, Dad finished, handing him a broom. M
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `236` activation `5.569` class `punctuation` token `,`
+  - y tail like a tiny parade. “Pickle, Milo whispered, “you are not helping. D
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `436` activation `5.135` class `punctuation` token `,`
+  - . “Thank you for wanting to make something special, she said. “But next time, ask for
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `194` activation `4.980` class `sentence_boundary` token `?`
+  - a dust bunny named probably Gary. “Milo? Mom called. “Did you take the glitter?
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `146` activation `2.170` class `punctuation` token `,`
+  - Milo heard footsteps in the hallway. “Oh no, he whispered. He grabbed the card, which was
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `87` activation `1.756` class `punctuation` token `,`
+  - placed on the very top shelf. The top shelf, unfortunately, was not taller than Milo plus one w
+- `L24:1434` `627f3274d200d6ebff294410bddd5bdd289e739ab0eec10e2f12b86e9ba1d2c2@turn_01@gpt-5.5::edited` token `240` activation `1.226` class `punctuation` token ` “`
+  - tiny parade. “Pickle, Milo whispered, “you are not helping. Dad walked in wearing
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `450` activation `16.050` class `punctuation` token `,”`
+  - companion, surprised to hear him talk. “A little,” she admitted. “First time?” “No, I
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `505` activation `14.295` class `punctuation` token `,”`
+  - made up. “My name is Samantha.” “Aiden,” he said, smiling wider.
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `430` activation `12.596` class `punctuation` token `?”`
+  - threatened to engulf her. “Scared of flying?” a voice rasped. She looked at her companion
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::original` token `431` activation `2.547` class `word` token ` a`
+  - to engulf her. “Scared of flying?” a voice rasped. She looked at her companion,
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `505` activation `5.851` class `punctuation` token `,`
+  - made up. “My name is Samantha. “Aiden, he said, smiling wider.
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `431` activation `4.763` class `word` token ` a`
+  - to engulf her. “Scared of flying? a voice rasped. She looked at her companion,
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `459` activation `2.754` class `punctuation` token `,`
+  - little, she admitted. “First time? “No, I’ve flown before. “If you need a distraction
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `504` activation `2.318` class `word` token `iden`
+  - was made up. “My name is Samantha. “Aiden, he said, smiling wider.
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `432` activation `1.679` class `word` token ` voice`
+  - engulf her. “Scared of flying? a voice rasped. She looked at her companion, surprised
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `450` activation `1.315` class `punctuation` token `,`
+  - companion, surprised to hear him talk. “A little, she admitted. “First time? “No, I
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `451` activation `1.207` class `word` token ` she`
+  - , surprised to hear him talk. “A little, she admitted. “First time? “No, I’ve
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `470` activation `1.009` class `punctuation` token `,`
+  - I’ve flown before. “If you need a distraction, I’m happy to talk with you. Saman
+- `L24:1434` `f9a5324c3d5cd34bc98a76991c963fe9850ba0b7e82575e0098e691bdce2a0ce@turn_01@human::edited` token `430` activation `0.907` class `sentence_boundary` token `?`
+  - threatened to engulf her. “Scared of flying? a voice rasped. She looked at her companion
+- `L24:1434` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::original` token `236` activation `16.121` class `punctuation` token `,”`
+  - her. “Hey!” he said. “Sorry,” Sophie murmured, but she didn’t look away
+- `L24:1434` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::original` token `444` activation `14.963` class `punctuation` token `,”`
+  - Her heart began to thump. “I’m brave,” Sophie whispered, though she wasn’t completely sure.
+- `L24:1434` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::original` token `230` activation `13.907` class `punctuation` token `!”`
+  - with a football nearly bumped into her. “Hey!” he said. “Sorry,” Sophie murmured,
+- `L24:1434` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` token `444` activation `8.987` class `punctuation` token `,`
+  - Her heart began to thump. “I’m brave, Sophie whispered, though she wasn’t completely sure.
+- `L24:1434` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` token `236` activation `7.683` class `punctuation` token `,`
+  - her. “Hey! he said. “Sorry, Sophie murmured, but she didn’t look away
+- `L24:1434` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` token `231` activation `1.449` class `word` token ` he`
+  - a football nearly bumped into her. “Hey! he said. “Sorry, Sophie murmured, but
+- `L24:1434` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@gpt-5.5::edited` token `235` activation `1.045` class `word` token `Sorry`
+  - into her. “Hey! he said. “Sorry, Sophie murmured, but she didn’t look
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `299` activation `16.113` class `punctuation` token `,"`
+  - swallowing the sun. "Earth has contributed heroes before," he continued, his voice thin but commanding. "
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `490` activation `14.663` class `punctuation` token `,"`
+  - sat back down. I stood. "Five heroes," I said, tasting the absurdity of it.
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `337` activation `11.603` class `punctuation` token `?"`
+  - felt the threat deserved fivefold response." "What threat?" the businessman demanded, finding his footing. "Who
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `97` activation `1.323` class `word` token ` thing`
+  - Summoned The last thing I remembered was the crosswalk. The signal.
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::original` token `511` activation `0.817` class `punctuation` token `."`
+  - "Fine. Tell us what we need to know."
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `337` activation `5.173` class `sentence_boundary` token `?`
+  - felt the threat deserved fivefold response. "What threat? the businessman demanded, finding his footing. "Who
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `338` activation `2.086` class `word` token ` the`
+  - the threat deserved fivefold response. "What threat? the businessman demanded, finding his footing. "Who are
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `490` activation `1.627` class `punctuation` token `,`
+  - sat back down. I stood. "Five heroes, I said, tasting the absurdity of it.
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `367` activation `1.354` class `punctuation` token `,`
+  - ? "Aethra. A world parallel to yours, connected by thin threads of creation. Those threads are
+- `L24:1434` `8fcdf18c6add20b2367a7d1fc98587051b4ac2e9e2da1384f9775c031e8b6f99@turn_01@glm-5.2::edited` token `97` activation `1.323` class `word` token ` thing`
+  - Summoned The last thing I remembered was the crosswalk. The signal.
+- `L24:1434` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` token `297` activation `15.953` class `punctuation` token `,"`
+  - know whose ship that is?" "Han Solo's," I replied, keeping my voice even, modulated
+- `L24:1434` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` token `401` activation `14.376` class `punctuation` token `,"`
+  - my approach, dark eyes narrowing. "I'm expected," I said, hands spread wide to show I carried
+- `L24:1434` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` token `252` activation `11.884` class `punctuation` token `?"`
+  - most sentients find appropriately intimidating. "That's it?" The voice came from beneath me—far beneath.
+- `L24:1434` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::original` token `253` activation `1.639` class `word` token ` The`
+  - sentients find appropriately intimidating. "That's it?" The voice came from beneath me—far beneath. A
+- `L24:1434` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` token `401` activation `3.278` class `punctuation` token `,`
+  - my approach, dark eyes narrowing. "I'm expected, I said, hands spread wide to show I carried
+- `L24:1434` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` token `297` activation `1.722` class `punctuation` token `,`
+  - know whose ship that is? "Han Solo's, I replied, keeping my voice even, modulated
+- `L24:1434` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` token `474` activation `1.635` class `sentence_boundary` token `!`
+  - os. "Chewie, let him through! We're burning daylight—and more importantly, we're
+- `L24:1434` `473ee77815b3326890755ee57c3d169a9ce660c25aba885099bcf3920e874290@turn_01@glm-5.2::edited` token `470` activation `0.846` class `punctuation` token `,`
+  - hundred cantina holos. "Chewie, let him through! We're burning daylight—and more
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `194` activation `16.671` class `punctuation` token `,"`
+  - royal with a nice ship and a—" "No," she said firmly. "I want legs because I
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `140` activation `15.967` class `punctuation` token `,"`
+  - to be something other. "Well, well, well," I crooned, sliding from my throne of bones
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `461` activation `13.152` class `punctuation` token `,"`
+  - , certainly. Desperate, even. "And what," I purred, recovering, "would you give
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `255` activation `12.680` class `punctuation` token `,"`
+  - exchange glances with. "Cheesemaking," I repeated flatly. "Yes. Specifically, Cas
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::original` token `306` activation `4.135` class `punctuation` token `."`
+  - create a texture that—" "Stop. Stop." I pressed a tentacle to my temple. Here
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `255` activation `5.868` class `punctuation` token `,`
+  - exchange glances with. "Cheesemaking, I repeated flatly. "Yes. Specifically, Cas
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `461` activation `2.581` class `punctuation` token `,`
+  - , certainly. Desperate, even. "And what, I purred, recovering, "would you give
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `262` activation `2.521` class `sentence_boundary` token `.`
+  - esemaking, I repeated flatly. "Yes. Specifically, Casu Marzu — the Sardin
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `288` activation `2.412` class `word` token `ula`
+  - maggots. The fermentation process is extraordinary, Ursula. The larvae digest the fats and create a texture
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `194` activation `2.090` class `punctuation` token `,`
+  - royal with a nice ship and a—" "No, she said firmly. "I want legs because I
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `261` activation `1.322` class `word` token `"Yes`
+  - Cheesemaking, I repeated flatly. "Yes. Specifically, Casu Marzu — the S
+- `L24:1434` `0ad173b2e0ec45223620b5181a50a81e5f60fd30b8949b4bf501e69fe7107725@turn_01@glm-5.2::edited` token `304` activation `1.294` class `sentence_boundary` token `.`
+  - fats and create a texture that—" "Stop. Stop. I pressed a tentacle to my temple
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `292` activation `16.125` class `punctuation` token `,"`
+  - , what, five years? Six?" "Six," Maya said, pulling back to look at him,
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `379` activation `14.396` class `punctuation` token `,"`
+  - ?" "Just a solo vacation before starting a new job," Maya said, still shaking her head. "Of
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `447` activation `13.634` class `punctuation` token `,"`
+  - easy comfort of a resurrected friendship. "Listen," Leo said, gesturing toward the path. "
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `413` activation `13.040` class `punctuation` token `,"`
+  - the exact same spot, thousands of miles from Oregon," Leo finished, a warm, nostalgic smile spreading across
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `342` activation `12.951` class `punctuation` token `,"`
+  - company transferred me to the Munich office three months ago," Leo explained, gesturing vaguely toward the city center
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `253` activation `10.321` class `punctuation` token `!"`
+  - in Germany?" "I could ask you the same thing!" Leo laughed, stepping forward to pull her into a
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::original` token `182` activation `1.064` class `punctuation` token `,`
+  - clutching a paper bag of soft pretzels, was Leo. He was wearing the same faded green
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `379` activation `7.331` class `punctuation` token `,`
+  - ? "Just a solo vacation before starting a new job, Maya said, still shaking her head. "Of
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `407` activation `4.395` class `punctuation` token `,`
+  - countries... "We end up in the exact same spot, thousands of miles from Oregon, Leo finished, a
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `413` activation `3.062` class `punctuation` token `,`
+  - the exact same spot, thousands of miles from Oregon, Leo finished, a warm, nostalgic smile spreading across
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `329` activation `2.528` class `sentence_boundary` token `!`
+  - heard, you were living in Seattle. "I was! But my company transferred me to the Munich office three
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `343` activation `2.473` class `word` token ` Leo`
+  - transferred me to the Munich office three months ago, Leo explained, gesturing vaguely toward the city center.
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `448` activation `2.169` class `word` token ` Leo`
+  - comfort of a resurrected friendship. "Listen, Leo said, gesturing toward the path. "There
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `447` activation `2.063` class `punctuation` token `,`
+  - easy comfort of a resurrected friendship. "Listen, Leo said, gesturing toward the path. "
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `292` activation `1.716` class `punctuation` token `,`
+  - , what, five years? Six? "Six, Maya said, pulling back to look at him,
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `414` activation `1.516` class `word` token ` Leo`
+  - exact same spot, thousands of miles from Oregon, Leo finished, a warm, nostalgic smile spreading across his
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `293` activation `1.387` class `word` token ` Maya`
+  - what, five years? Six? "Six, Maya said, pulling back to look at him, her
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `182` activation `1.204` class `punctuation` token `,`
+  - clutching a paper bag of soft pretzels, was Leo. He was wearing the same faded green
+- `L24:1434` `13786aff5024348b298abee302703778c4e68c1711321b8227c0421509d7c6fe@turn_01@gemini-3.5-flash::edited` token `342` activation `1.052` class `punctuation` token `,`
+  - company transferred me to the Munich office three months ago, Leo explained, gesturing vaguely toward the city center
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `167` activation `16.281` class `punctuation` token `,"`
+  - wearing a oversized wig." "No, no, no," Leo hissed, his eyes wide and reflecting the orange
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `69` activation `15.762` class `punctuation` token `,"`
+  - -year-old with a sugar crash can muster. "So," Leo whispered, leaning so far forward his nose almost
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `242` activation `14.980` class `punctuation` token `,"`
+  - s’more in the dirt. "Stop it," she whimpered. "I’m going home."
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `256` activation `14.310` class `punctuation` token `,"`
+  - . "I’m going home." "You can't," Leo said, grinning wickedly. "Because
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `427` activation `14.270` class `punctuation` token `,"`
+  - seemed to swallow the firelight. "Happy Birthday," a voice gurgled, sounding like a drain
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `459` activation `14.221` class `punctuation` token `,"`
+  - brought you." Leo stopped smiling. "Uh oh," he whispered. "I think he forgot the nap
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `306` activation `11.484` class `punctuation` token `?"`
+  - weight of being watched. "Did you hear that?" Mia questioned, her voice trembling. "Hear what
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `317` activation `10.263` class `punctuation` token `?"`
+  - Mia questioned, her voice trembling. "Hear what?" Leo asked innocently. A soft, squel
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::original` token `428` activation `0.752` class `word` token ` a`
+  - to swallow the firelight. "Happy Birthday," a voice gurgled, sounding like a drain unc
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `306` activation `8.474` class `sentence_boundary` token `?`
+  - weight of being watched. "Did you hear that? Mia questioned, her voice trembling. "Hear what
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `256` activation `8.420` class `punctuation` token `,`
+  - . "I’m going home. "You can't, Leo said, grinning wickedly. "Because
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `167` activation `8.255` class `punctuation` token `,`
+  - wearing a oversized wig. "No, no, no, Leo hissed, his eyes wide and reflecting the orange
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `317` activation `6.491` class `sentence_boundary` token `?`
+  - Mia questioned, her voice trembling. "Hear what? Leo asked innocently. A soft, squel
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `459` activation `6.133` class `punctuation` token `,`
+  - brought you. Leo stopped smiling. "Uh oh, he whispered. "I think he forgot the nap
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `165` activation `5.622` class `punctuation` token `,`
+  - Uncle Jerry wearing a oversized wig. "No, no, no, Leo hissed, his eyes wide and reflecting
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `163` activation `5.127` class `punctuation` token `,`
+  - was just Uncle Jerry wearing a oversized wig. "No, no, no, Leo hissed, his eyes wide
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `427` activation `4.307` class `punctuation` token `,`
+  - seemed to swallow the firelight. "Happy Birthday, a voice gurgled, sounding like a drain
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `428` activation `3.402` class `word` token ` a`
+  - to swallow the firelight. "Happy Birthday, a voice gurgled, sounding like a drain unc
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `257` activation `2.374` class `word` token ` Leo`
+  - "I’m going home. "You can't, Leo said, grinning wickedly. "Because look
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `242` activation `2.253` class `punctuation` token `,`
+  - s’more in the dirt. "Stop it, she whimpered. "I’m going home.
+- `L24:1434` `0c983f6e81a5fa730ada5d1dfd53b153c4b884883582ba2f835c08d8845095d7@turn_01@qwen3.6-35b::edited` token `136` activation `2.059` class `word` token ` Leo`
+  - pulled her jacket tighter. "That’s stupid, Leo. Popsicle is just a guy in a
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `301` activation `16.316` class `punctuation` token `,"`
+  - ice-shards from the primary valves." "They did," Samantha sighed, accepting the warm cup with a grateful
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `421` activation `14.364` class `punctuation` token `,"`
+  - lose life support in the agricultural pods for six hours," she explained, rubbings her temples. "
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `391` activation `10.008` class `punctuation` token `?"`
+  - "Can't we flush the system with the reserves?" Alistair asked. "If I bypass the secondary
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `485` activation `2.799` class `punctuation` token `."`
+  - a natural, heat-resistant wax to shed mineral buildup." He looked at Samantha. "Could we liquefy
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `383` activation `1.095` class `word` token `'t`
+  - to run an engine on wet cement." "Can't we flush the system with the reserves?" Alist
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::original` token `28` activation `0.983` class `word` token ` him`
+  - suit sighing as it depressurized. Behind him, the airlock of Habitat Seven sealed out the
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `421` activation `3.723` class `punctuation` token `,`
+  - lose life support in the agricultural pods for six hours, she explained, rubbings her temples. "
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `391` activation `2.688` class `sentence_boundary` token `?`
+  - "Can't we flush the system with the reserves? Alistair asked. "If I bypass the secondary
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `394` activation `1.720` class `word` token `air`
+  - we flush the system with the reserves? Alistair asked. "If I bypass the secondary grid to flush
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `409` activation `1.686` class `punctuation` token `,`
+  - bypass the secondary grid to flush the exchangers, we lose life support in the agricultural pods for six
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `301` activation `1.553` class `punctuation` token `,`
+  - ice-shards from the primary valves. "They did, Samantha sighed, accepting the warm cup with a grateful
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `28` activation `0.983` class `word` token ` him`
+  - suit sighing as it depressurized. Behind him, the airlock of Habitat Seven sealed out the
+- `L24:1434` `5b1bd7df2a894d897157a1b08a11bff3404ae180f781f8f29234a855c8a851a8@turn_01@gemini-3.5-flash::edited` token `383` activation `0.948` class `word` token `'t`
+  - to run an engine on wet cement. "Can't we flush the system with the reserves? Alist
+- `L24:1434` `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::original` token `253` activation `16.222` class `punctuation` token `,"`
+  - someone bearing wonderful news. "Oh, she's adorable," Margaret said, loud enough for the room. Then
+- `L24:1434` `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::original` token `86` activation `2.665` class `punctuation` token `,`
+  - from speakers no one could ever locate. It was, by all accounts, the perfect café. On a
+- `L24:1434` `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::edited` token `86` activation `2.665` class `punctuation` token `,`
+  - from speakers no one could ever locate. It was, by all accounts, the perfect café. On a
+- `L24:1434` `6ba6bc6f0694333d2e9e46e80a3211aa5eb9949fc3b9042366d549849f535073@turn_01@glm-5.2::edited` token `254` activation `0.920` class `word` token ` Margaret`
+  - bearing wonderful news. "Oh, she's adorable, Margaret said, loud enough for the room. Then,
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `305` activation `16.863` class `punctuation` token `,"`
+  - , Maisie frowned deeply. "No. Open it," she insisted, poking at the fruit inside. "It
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `405` activation `14.409` class `punctuation` token `,"`
+  - apart like a second skin. "Stop, stop," her mother laughed gently, pulling the banana away before
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `269` activation `13.779` class `punctuation` token `!"`
+  - had set down a yellow banana. "Want it!" she demanded, reaching with chubby fingers. Her mother
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `406` activation `0.941` class `word` token ` her`
+  - like a second skin. "Stop, stop," her mother laughed gently, pulling the banana away before it
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::original` token `295` activation `0.916` class `punctuation` token `,`
+  - over with a smile. But instead of eating it, Maisie frowned deeply. "No. Open it,"
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `405` activation `5.885` class `punctuation` token `,`
+  - apart like a second skin. "Stop, stop, her mother laughed gently, pulling the banana away before
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `403` activation `5.036` class `punctuation` token `,`
+  - peel it apart like a second skin. "Stop, stop, her mother laughed gently, pulling the banana
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `318` activation `4.009` class `punctuation` token `,`
+  - , poking at the fruit inside. "It is open, sweetheart. Maisie shook her head adamantly.
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `305` activation `3.480` class `punctuation` token `,`
+  - , Maisie frowned deeply. "No. Open it, she insisted, poking at the fruit inside. "It
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `406` activation `1.875` class `word` token ` her`
+  - like a second skin. "Stop, stop, her mother laughed gently, pulling the banana away before it
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `319` activation `1.610` class `word` token ` sweetheart`
+  - poking at the fruit inside. "It is open, sweetheart. Maisie shook her head adamantly. "
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `270` activation `1.369` class `word` token ` she`
+  - set down a yellow banana. "Want it! she demanded, reaching with chubby fingers. Her mother peeled
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `302` activation `0.965` class `sentence_boundary` token `.`
+  - of eating it, Maisie frowned deeply. "No. Open it, she insisted, poking at the fruit
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `295` activation `0.909` class `punctuation` token `,`
+  - over with a smile. But instead of eating it, Maisie frowned deeply. "No. Open it,
+- `L24:1434` `020a61442f2b207c64c35d652a73bf06559e59b0921a8891a6903e608de1a33b@turn_01@glm-5.2::edited` token `306` activation `0.854` class `word` token ` she`
+  - Maisie frowned deeply. "No. Open it, she insisted, poking at the fruit inside. "It is
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `460` activation `16.864` class `punctuation` token `,"`
+  - to fly very, very much?" "I certainly would," he replied. "I'd do anything if I
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `415` activation `15.016` class `punctuation` token `,"`
+  - I grow up I'm going to have an airplane," Elmer sighed. "Wouldn't it be
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `122` activation `14.945` class `punctuation` token `,"`
+  - cat like me. "I'd be very much obliged," I purred, "if I could sit by
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `222` activation `13.681` class `punctuation` token `,"`
+  - ugly old alley cats. "Elmer Elevator," she shrieked, "if you think I
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::original` token `416` activation `0.648` class `word` token ` El`
+  - grow up I'm going to have an airplane," Elmer sighed. "Wouldn't it be wonderful
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `460` activation `10.450` class `punctuation` token `,`
+  - to fly very, very much? "I certainly would, he replied. "I'd do anything if I
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `415` activation `7.783` class `punctuation` token `,`
+  - I grow up I'm going to have an airplane, Elmer sighed. "Wouldn't it be
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `459` activation `1.840` class `expanded_negation_word` token ` would`
+  - like to fly very, very much? "I certainly would, he replied. "I'd do anything if
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `127` activation `1.207` class `punctuation` token ` "`
+  - 'd be very much obliged, I purred, "if I could sit by a warm furnace, and
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `416` activation `0.833` class `word` token ` El`
+  - grow up I'm going to have an airplane, Elmer sighed. "Wouldn't it be wonderful
+- `L24:1434` `3504ea8017322edc078fb845c6d2ea14f36ff621e0f6a897ff0aa2af6dbc93db@turn_01@gemini-3.5-flash::edited` token `124` activation `0.715` class `word` token ` p`
+  - me. "I'd be very much obliged, I purred, "if I could sit by a warm
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `210` activation `16.495` class `punctuation` token `,"`
+  - . "Did you just..." "I am... sorry," Barnaby said. His vocalization was strained,
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `261` activation `15.642` class `punctuation` token `,"`
+  - Barnaby? You can talk?" "I learn," Barnaby said, slowly moving his head in a
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `347` activation `14.827` class `punctuation` token `,"`
+  - tell me sooner, boy?" "Words... hard," Barnaby replied, nudging Arthur’s arm with
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `167` activation `13.812` class `punctuation` token `,"`
+  - let out a long, trembling sigh. "Arthur," a raspy voice said from the floor. Arthur
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `427` activation `10.973` class `punctuation` token `?"`
+  - broken. "Can you tell me about the squirrel?" Arthur asked, testing the reality of it. B
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `287` activation `10.176` class `punctuation` token `,"`
+  - Seven winters. Seven summers. I listen. Now," he let out a soft sound that sounded like a
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `168` activation `2.482` class `word` token ` a`
+  - out a long, trembling sigh. "Arthur," a raspy voice said from the floor. Arthur dropped
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `170` activation `2.040` class `word` token `py`
+  - long, trembling sigh. "Arthur," a raspy voice said from the floor. Arthur dropped his newspaper
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `171` activation `1.347` class `word` token ` voice`
+  - , trembling sigh. "Arthur," a raspy voice said from the floor. Arthur dropped his newspaper.
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `263` activation `0.867` class `word` token `aby`
+  - aby? You can talk?" "I learn," Barnaby said, slowly moving his head in a nodding
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `511` activation `0.583` class `punctuation` token `."`
+  - you too, Barnaby. I love you too."
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::original` token `262` activation `0.463` class `word` token ` Barn`
+  - arnaby? You can talk?" "I learn," Barnaby said, slowly moving his head in a nod
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `427` activation `7.202` class `sentence_boundary` token `?`
+  - broken. "Can you tell me about the squirrel? Arthur asked, testing the reality of it. B
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `347` activation `6.161` class `punctuation` token `,`
+  - tell me sooner, boy? "Words... hard, Barnaby replied, nudging Arthur’s arm with
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `261` activation `5.386` class `punctuation` token `,`
+  - Barnaby? You can talk? "I learn, Barnaby said, slowly moving his head in a
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `340` activation `2.157` class `punctuation` token `,`
+  - tightly. "Why didn't you tell me sooner, boy? "Words... hard, Barnaby replied
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `210` activation `2.089` class `punctuation` token `,`
+  - . "Did you just... "I am... sorry, Barnaby said. His vocalization was strained,
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `170` activation `2.035` class `word` token `py`
+  - long, trembling sigh. "Arthur, a raspy voice said from the floor. Arthur dropped his newspaper
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `171` activation `1.952` class `word` token ` voice`
+  - , trembling sigh. "Arthur, a raspy voice said from the floor. Arthur dropped his newspaper.
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `212` activation `1.669` class `word` token `aby`
+  - Did you just... "I am... sorry, Barnaby said. His vocalization was strained, but clearly
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `263` activation `1.142` class `word` token `aby`
+  - aby? You can talk? "I learn, Barnaby said, slowly moving his head in a nodding
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `254` activation `1.082` class `sentence_boundary` token `?`
+  - , kneeling beside his companion. "Barnaby? You can talk? "I learn, Barnaby said
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `339` activation `0.932` class `word` token ` sooner`
+  - him tightly. "Why didn't you tell me sooner, boy? "Words... hard, Barnaby
+- `L24:1434` `39c89b98571bc03e164babe7e47b53a3959cfac4d2238c4d42c7d9e1efb11688@turn_01@glm-5.2::edited` token `428` activation `0.926` class `word` token ` Arthur`
+  - . "Can you tell me about the squirrel? Arthur asked, testing the reality of it. Barn
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `443` activation `16.252` class `punctuation` token `,"`
+  - a shuddering breath. "Then we fight," Julian said quietly. "A duel of wills
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `472` activation `16.071` class `punctuation` token `,"`
+  - him. "Rock, paper, scissors on three," Julian breathed.</think> The Last Slice The
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `75` activation `15.076` class `punctuation` token `,"`
+  - slice of pepperoni. "We cannot both have it," Arthur whispered, his voice a dry, cracking leaves
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `239` activation `13.931` class `punctuation` token `,"`
+  - ." "Unspoken dibs hold no jurisdiction here," Julian retorted, leaning forward. A bead of
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `202` activation `13.587` class `punctuation` token `,"`
+  - for glory. "I called dibs in my head," Arthur hissed, knuckles whitening around the back
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `334` activation `10.677` class `punctuation` token `!"`
+  - you a monster?" "I am a pragmatist!" Julian roared, slamming a palm on the table
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `378` activation `8.938` class `punctuation` token `!"`
+  - over toppings?" "It’s not just toppings, Julian!" Arthur’s voice cracked. "It’s the garlic
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `290` activation `8.602` class `punctuation` token `?"`
+  - ils. We must split it." "Split it?" Arthur recoiled as if struck. "You would
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::original` token `475` activation `1.130` class `punctuation` token `.</`
+  - Rock, paper, scissors on three," Julian breathed.</think> The Last Slice The fluorescent kitchen light
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `472` activation `9.094` class `punctuation` token `,`
+  - him. "Rock, paper, scissors on three, Julian breathed.</think> The Last Slice The
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `239` activation `6.877` class `punctuation` token `,`
+  - . "Unspoken dibs hold no jurisdiction here, Julian retorted, leaning forward. A bead of
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `202` activation `5.679` class `punctuation` token `,`
+  - for glory. "I called dibs in my head, Arthur hissed, knuckles whitening around the back
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `443` activation `4.774` class `punctuation` token `,`
+  - a shuddering breath. "Then we fight, Julian said quietly. "A duel of wills
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `376` activation `4.652` class `punctuation` token `,`
+  - our bond over toppings? "It’s not just toppings, Julian! Arthur’s voice cracked. "It’s
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `290` activation `4.619` class `sentence_boundary` token `?`
+  - ils. We must split it. "Split it? Arthur recoiled as if struck. "You would
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `334` activation `4.269` class `sentence_boundary` token `!`
+  - you a monster? "I am a pragmatist! Julian roared, slamming a palm on the table
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `378` activation `2.951` class `sentence_boundary` token `!`
+  - over toppings? "It’s not just toppings, Julian! Arthur’s voice cracked. "It’s the garlic
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `444` activation `2.068` class `word` token ` Julian`
+  - shuddering breath. "Then we fight, Julian said quietly. "A duel of wills.
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `466` activation `1.712` class `punctuation` token `,`
+  - raised a fist. Arthur mirrored him. "Rock, paper, scissors on three, Julian breathed.</think
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `75` activation `1.493` class `punctuation` token `,`
+  - slice of pepperoni. "We cannot both have it, Arthur whispered, his voice a dry, cracking leaves
+- `L24:1434` `6ed2e9f4ce1a24de0efea164192b2bcb52f7b71ce830949460c60923e1daadae@turn_01@glm-5.2::edited` token `377` activation `1.455` class `word` token ` Julian`
+  - bond over toppings? "It’s not just toppings, Julian! Arthur’s voice cracked. "It’s the

@@ -1,0 +1,411 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1756` | `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` | `human` | 328 | `854.09` | `5.13` | word:248|style_function_word:20|punctuation:17|sentence_boundary:12|whitespace:10|line_break:8|discourse_marker_word:8|expanded_negation_word:5 |
+| `L19:1756` | `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` | `human` | 329 | `946.57` | `5.06` | word:266|punctuation:25|style_function_word:17|sentence_boundary:14|line_break:4|discourse_marker_word:2|contraction_piece:1 |
+| `L19:1756` | `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` | `human` | 384 | `1143.73` | `4.89` | word:300|style_function_word:29|punctuation:29|sentence_boundary:12|expanded_negation_word:7|line_break:4|discourse_marker_word:3 |
+| `L19:1756` | `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` | `human` | 343 | `804.57` | `4.85` | word:278|punctuation:26|style_function_word:14|sentence_boundary:13|line_break:5|discourse_marker_word:4|expanded_negation_word:3 |
+| `L19:1756` | `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` | `human` | 352 | `779.18` | `4.66` | word:277|style_function_word:33|sentence_boundary:20|punctuation:16|line_break:3|discourse_marker_word:2|expanded_negation_word:1 |
+| `L19:1756` | `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` | `human` | 381 | `1067.14` | `4.89` | word:325|style_function_word:22|sentence_boundary:18|punctuation:7|whitespace:4|line_break:3|expanded_negation_word:2 |
+| `L19:1756` | `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` | `human` | 557 | `1542.24` | `5.44` | word:456|punctuation:43|style_function_word:34|sentence_boundary:12|discourse_marker_word:5|line_break:4|expanded_negation_word:3 |
+| `L19:1756` | `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` | `human` | 369 | `900.33` | `4.67` | word:307|style_function_word:25|sentence_boundary:14|punctuation:9|discourse_marker_word:7|whitespace:2|line_break:2|contraction_piece:2|expanded_negation_word:1 |
+| `L24:776` | `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` | `human` | 338 | `1593.97` | `7.65` | word:253|style_function_word:21|punctuation:17|sentence_boundary:12|whitespace:12|line_break:9|discourse_marker_word:9|expanded_negation_word:5 |
+| `L24:776` | `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` | `human` | 306 | `1230.91` | `7.49` | word:248|punctuation:25|style_function_word:16|sentence_boundary:11|line_break:3|discourse_marker_word:2|contraction_piece:1 |
+| `L24:776` | `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` | `human` | 386 | `1837.65` | `8.05` | word:301|style_function_word:29|punctuation:29|sentence_boundary:12|expanded_negation_word:7|discourse_marker_word:4|line_break:4 |
+| `L24:776` | `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` | `human` | 373 | `1686.51` | `8.04` | word:302|punctuation:26|style_function_word:16|sentence_boundary:13|line_break:8|discourse_marker_word:5|expanded_negation_word:3 |
+| `L24:776` | `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` | `human` | 382 | `1365.91` | `7.24` | word:302|style_function_word:34|sentence_boundary:20|punctuation:18|line_break:5|discourse_marker_word:2|expanded_negation_word:1 |
+| `L24:776` | `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` | `human` | 395 | `1658.36` | `7.98` | word:336|style_function_word:24|sentence_boundary:18|punctuation:7|line_break:4|whitespace:4|expanded_negation_word:2 |
+| `L24:776` | `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` | `human` | 575 | `2780.66` | `8.40` | word:470|punctuation:43|style_function_word:37|sentence_boundary:12|discourse_marker_word:5|expanded_negation_word:4|line_break:4 |
+| `L24:776` | `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` | `human` | 396 | `1590.23` | `7.21` | word:335|style_function_word:25|sentence_boundary:14|punctuation:9|discourse_marker_word:7|contraction_piece:2|line_break:2|expanded_negation_word:1|whitespace:1 |
+
+## Top Tokens
+
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `613` activation `5.125` class `punctuation` token `,`
+  - same pace or increase your miles. During week six, you should increase your miles up to 4.
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `628` activation `4.994` class `word` token `7`
+  - miles up to 4.5. Week 7 will be when your 5K race is scheduled
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `618` activation `4.905` class `word` token ` miles`
+  - miles. During week six, you should increase your miles up to 4.5. Week 7
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `598` activation `4.823` class `punctuation` token `,`
+  - increase your miles up to four. During week five, you can keep the same pace or increase your miles
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `605` activation `4.648` class `word` token ` or`
+  - During week five, you can keep the same pace or increase your miles. During week six, you should
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `617` activation `4.633` class `word` token ` your`
+  - your miles. During week six, you should increase your miles up to 4.5. Week
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `599` activation `4.621` class `word` token ` you`
+  - your miles up to four. During week five, you can keep the same pace or increase your miles.
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `629` activation `4.594` class `style_function_word` token ` will`
+  - up to 4.5. Week 7 will be when your 5K race is scheduled.
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `589` activation `4.516` class `word` token ` your`
+  - increase your miles. During week 4, increase your miles up to four. During week five, you
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `616` activation `4.483` class `word` token ` increase`
+  - increase your miles. During week six, you should increase your miles up to 4.5. Week
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `625` activation `4.381` class `sentence_boundary` token `.`
+  - should increase your miles up to 4.5. Week 7 will be when your 5K
+- `L19:1756` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `587` activation `4.343` class `punctuation` token `,`
+  - pace or increase your miles. During week 4, increase your miles up to four. During week five
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `622` activation `5.059` class `word` token ` Dash`
+  - transaction speeds, and its money transfers are private. Dash isn't actually governed by humans, and its contract
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `455` activation `4.924` class `word` token ` Ripple`
+  - inflation. Ripple (XRP) - The Ripple cryptocurrency is controlled by Ripple Labs Inc, which is
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `566` activation `4.625` class `word` token `cash`
+  - that doesn't link old and current transactions. Zcash can be mined with a gaming GPU. Dash (
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `472` activation `4.480` class `word` token ` Ripple`
+  - Inc, which is connected to the banking industry. Ripple has been taken on by large banking companies such as
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `498` activation `4.396` class `word` token ` Ripple`
+  - , and it's used in securing transactions internationally. Ripple comes with low transaction fees and a high speed.
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `530` activation `4.311` class `sentence_boundary` token `.`
+  - public record, but Zcash is a private currency. It has a "zero-knowledge" security implementation
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `580` activation `4.285` class `punctuation` token ` -`
+  - with a gaming GPU. Dash (DASH) - The name dash comes from the words digital and cash
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `604` activation `4.216` class `sentence_boundary` token `.`
+  - used to be called Xcoin and then Darkcoin. This litecoin works with almost instant transaction speeds,
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `531` activation `4.201` class `word` token ` It`
+  - record, but Zcash is a private currency. It has a "zero-knowledge" security implementation,
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `541` activation `4.198` class `punctuation` token `,`
+  - It has a "zero-knowledge" security implementation, which makes it a safe option. It also works
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `618` activation `4.187` class `word` token ` transfers`
+  - works with almost instant transaction speeds, and its money transfers are private. Dash isn't actually governed by humans
+- `L19:1756` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `471` activation `4.181` class `sentence_boundary` token `.`
+  - Labs Inc, which is connected to the banking industry. Ripple has been taken on by large banking companies such
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `578` activation `4.890` class `word` token ` demons`
+  - for witches. Demons: Born from religion, demons are also supernatural creatures that are sometimes used in fictional
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `579` activation `4.841` class `word` token ` are`
+  - witches. Demons: Born from religion, demons are also supernatural creatures that are sometimes used in fictional stories
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `585` activation `4.780` class `word` token ` sometimes`
+  - from religion, demons are also supernatural creatures that are sometimes used in fictional stories. They are creatures who have
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `604` activation `4.701` class `expanded_negation_word` token ` not`
+  - who have come from Hell, and may or may not have been human a long time ago, depending on
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `601` activation `4.695` class `style_function_word` token ` may`
+  - They are creatures who have come from Hell, and may or may not have been human a long time ago
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `515` activation `4.684` class `word` token ` be`
+  - wizards, and sorcerers. Mages may be good, evil, or inherently neither in a story
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `539` activation `4.600` class `word` token `ages`
+  - magic they can do may vary. Sometimes, mages are not separate creatures at all but humans who have
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `590` activation `4.569` class `sentence_boundary` token `.`
+  - also supernatural creatures that are sometimes used in fictional stories. They are creatures who have come from Hell, and
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `620` activation `4.561` class `word` token ` They`
+  - time ago, depending on the iteration of them. They are there to cause chaos and even harm to humans
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `591` activation `4.540` class `word` token ` They`
+  - supernatural creatures that are sometimes used in fictional stories. They are creatures who have come from Hell, and may
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `513` activation `4.530` class `word` token `ages`
+  - witches, wizards, and sorcerers. Mages may be good, evil, or inherently neither in
+- `L19:1756` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `562` activation `4.516` class `word` token `ars`
+  - do magic. They may also have animal familiars, though this is typically for witches. Demons
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `543` activation `4.846` class `word` token ` turtles`
+  - Turtles - Similar to the breakfast skillet, silver turtles are a big conglomeration of the stuff
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `544` activation `4.544` class `word` token ` are`
+  - urtles - Similar to the breakfast skillet, silver turtles are a big conglomeration of the stuff that
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `545` activation `4.135` class `word` token ` a`
+  - - Similar to the breakfast skillet, silver turtles are a big conglomeration of the stuff that you
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `557` activation `4.085` class `sentence_boundary` token `.`
+  - conglomeration of the stuff that you like. The traditional way is with ground beef, onions,
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `535` activation `4.066` class `punctuation` token ` -`
+  - delicious choice like burgers and dogs? Silver Turtles - Similar to the breakfast skillet, silver turtles are a
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `559` activation `4.012` class `word` token ` traditional`
+  - omeration of the stuff that you like. The traditional way is with ground beef, onions, and other
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `541` activation `3.914` class `punctuation` token `,`
+  - ? Silver Turtles - Similar to the breakfast skillet, silver turtles are a big conglomeration of
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `551` activation `3.873` class `word` token ` of`
+  - , silver turtles are a big conglomeration of the stuff that you like. The traditional way is
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `569` activation `3.841` class `word` token ` other`
+  - traditional way is with ground beef, onions, and other veggies, you can replace, mix, or match
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `561` activation `3.776` class `word` token ` is`
+  - of the stuff that you like. The traditional way is with ground beef, onions, and other veggies,
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `422` activation `3.719` class `word` token ` great`
+  - a fire, and add what you like. A great way to start is with eggs, ham, and
+- `L19:1756` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `562` activation `3.700` class `word` token ` with`
+  - the stuff that you like. The traditional way is with ground beef, onions, and other veggies, you
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `531` activation `4.661` class `word` token ` segment`
+  - a custom audience off your engagement. You can also segment a custom audience by triggered events to better move your
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `549` activation `4.637` class `style_function_word` token ` also`
+  - better move your customers through your funnel. You can also use a custom audience to retarget. You can
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `534` activation `4.572` class `word` token ` audience`
+  - off your engagement. You can also segment a custom audience by triggered events to better move your customers through your
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `554` activation `4.501` class `word` token ` to`
+  - your funnel. You can also use a custom audience to retarget. You can also... get the point
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `538` activation `4.483` class `word` token ` to`
+  - You can also segment a custom audience by triggered events to better move your customers through your funnel. You can
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `559` activation `4.450` class `style_function_word` token ` can`
+  - also use a custom audience to retarget. You can also... get the point? There are a lot
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `548` activation `4.377` class `style_function_word` token ` can`
+  - to better move your customers through your funnel. You can also use a custom audience to retarget. You
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `523` activation `4.336` class `word` token ` audience`
+  - your Facebook page. You can also make a custom audience off your engagement. You can also segment a custom
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `553` activation `4.326` class `word` token ` audience`
+  - through your funnel. You can also use a custom audience to retarget. You can also... get the
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `560` activation `4.307` class `style_function_word` token ` also`
+  - use a custom audience to retarget. You can also... get the point? There are a lot of
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `530` activation `4.304` class `style_function_word` token ` also`
+  - make a custom audience off your engagement. You can also segment a custom audience by triggered events to better move
+- `L19:1756` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `570` activation `4.215` class `word` token ` of`
+  - also... get the point? There are a lot of options here. And all of them can be used
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `582` activation `4.888` class `word` token `eries`
+  - and you drive right into some of the finest wineries in the United States. Spend an afternoon or days
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `521` activation `4.749` class `word` token ` River`
+  - at Multnomah Falls and a stop in Hood River are worth the time they take. Columbia River
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `555` activation `4.700` class `sentence_boundary` token `.`
+  - be on the border of Eastern Washington and Eastern Oregon. Turn north into Washington on Interstate 84 toward the
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `604` activation `4.692` class `word` token `eries`
+  - end exploring this wine region and the many local wineries where you can relax with a glass of red or
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `503` activation `4.678` class `word` token ` Oregon`
+  - which erupted in 1980. Stay on the Oregon side of the river because a stop at Multnom
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `453` activation `4.564` class `word` token `ated`
+  - of the Cascade Mountains to the dry desert and irrigated farmland of the east side of the mountains.
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `541` activation `4.541` class `word` token `orge`
+  - River Wine Region. As you leave the Columbia Gorge, you will be on the border of Eastern Washington
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `542` activation `4.541` class `punctuation` token `,`
+  - Wine Region. As you leave the Columbia Gorge, you will be on the border of Eastern Washington and
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `594` activation `4.541` class `word` token ` end`
+  - the United States. Spend an afternoon or days on end exploring this wine region and the many local wineries
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `598` activation `4.509` class `word` token ` region`
+  - Spend an afternoon or days on end exploring this wine region and the many local wineries where you can relax
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `563` activation `4.486` class `word` token `84`
+  - Eastern Oregon. Turn north into Washington on Interstate 84 toward the town of Kennewick, and you
+- `L19:1756` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `554` activation `4.465` class `word` token ` Oregon`
+  - will be on the border of Eastern Washington and Eastern Oregon. Turn north into Washington on Interstate 84 toward
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `423` activation `5.442` class `word` token `u`
+  - , for several minutes at a time. Wushu (the competitive version of Kung Fu) stresses
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `521` activation `5.240` class `word` token `udo`
+  - and submissions (joint locks, strangles). Judo can be likened to lifting weights due to having
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `432` activation `5.122` class `punctuation` token `)`
+  - ushu (the competitive version of Kung Fu) stresses the importance of performative martial art through high
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `470` activation `5.099` class `word` token `udo`
+  - udo - Much like the other grappling arts, Judo is a Japanese art that involves throwing one's opponent
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `549` activation `5.071` class `word` token `ate`
+  - which can be tiring. Karate - Karate, like its Chinese counterpart in Kung Fu,
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `498` activation `5.063` class `word` token `udo`
+  - weight against themselves. In addition to throws, Judo also practices grappling (both on the ground and while
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `454` activation `4.952` class `word` token ` other`
+  - and kicks, twirls, flips, and other choreographed moves. Judo - Much like the
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `456` activation `4.912` class `word` token `ographed`
+  - , twirls, flips, and other choreographed moves. Judo - Much like the other grappling
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `577` activation `4.901` class `word` token `ate`
+  - use of strikes and stances. However, Karate's development in Japan created a martial art that promotes
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `446` activation `4.879` class `punctuation` token `,`
+  - of performative martial art through high jumps and kicks, twirls, flips, and other choreographed
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `426` activation `4.805` class `word` token ` competitive`
+  - minutes at a time. Wushu (the competitive version of Kung Fu) stresses the importance of
+- `L19:1756` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `560` activation `4.779` class `word` token ` is`
+  - , like its Chinese counterpart in Kung Fu, is a martial art that involves the use of strikes and
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `458` activation `4.669` class `style_function_word` token ` also`
+  - white mages use healing magic like Cure and can also heal status ailments such as poison. Vivi in
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `450` activation `4.601` class `word` token `ages`
+  - their opponents such as fire or lightning while white mages use healing magic like Cure and can also heal status
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `601` activation `4.400` class `word` token ` to`
+  - or difficult enemies. Thieves have also been known to poison their enemies. Therion in Octopath
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `556` activation `4.399` class `word` token ` They`
+  - hide and may also want to hide their identity. They are known much more for their support abilities than being
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `533` activation `4.397` class `word` token ` They`
+  - normally a more slender build and typically wield knives. They wear cloaks, sometimes with hoods and often
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `613` activation `4.298` class `word` token `er`
+  - their enemies. Therion in Octopath Traveler 1 is an example of a thief. He
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `582` activation `4.253` class `style_function_word` token ` can`
+  - Warrior, for instance. In certain games, thieves can steal very rare pieces of equipment from bosses or difficult
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `549` activation `4.201` class `style_function_word` token ` also`
+  - with hoods and often prefer to hide and may also want to hide their identity. They are known much
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `564` activation `4.196` class `word` token ` abilities`
+  - identity. They are known much more for their support abilities than being able to attack like a Warrior, for
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `623` activation `4.152` class `word` token ` He`
+  - er 1 is an example of a thief. He can steal from enemies while you're in towns,
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `503` activation `4.051` class `sentence_boundary` token `.`
+  - for their speed as well as their ability to steal. This is typically a command that they will have from
+- `L19:1756` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `457` activation `4.037` class `style_function_word` token ` can`
+  - while white mages use healing magic like Cure and can also heal status ailments such as poison. Vivi
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `599` activation `7.654` class `word` token ` you`
+  - your miles up to four. During week five, you can keep the same pace or increase your miles.
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `629` activation `7.472` class `style_function_word` token ` will`
+  - up to 4.5. Week 7 will be when your 5K race is scheduled.
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `601` activation `7.419` class `word` token ` keep`
+  - up to four. During week five, you can keep the same pace or increase your miles. During week
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `600` activation `7.401` class `style_function_word` token ` can`
+  - miles up to four. During week five, you can keep the same pace or increase your miles. During
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `591` activation `7.378` class `word` token ` up`
+  - miles. During week 4, increase your miles up to four. During week five, you can keep
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `605` activation `7.350` class `word` token ` or`
+  - During week five, you can keep the same pace or increase your miles. During week six, you should
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `630` activation `7.334` class `word` token ` be`
+  - to 4.5. Week 7 will be when your 5K race is scheduled.
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `578` activation `7.283` class `word` token ` or`
+  - week 3, you can keep the same pace or increase your miles. During week 4, increase
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `598` activation `7.278` class `punctuation` token `,`
+  - increase your miles up to four. During week five, you can keep the same pace or increase your miles
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `604` activation `7.242` class `word` token ` pace`
+  - . During week five, you can keep the same pace or increase your miles. During week six, you
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `590` activation `7.191` class `word` token ` miles`
+  - your miles. During week 4, increase your miles up to four. During week five, you can
+- `L24:776` `07c113e895c556cfe7f70760fda3edc0431f4128c95fc4a1d0078cd516a2b19a@turn_01@human` token `616` activation `7.165` class `word` token ` increase`
+  - increase your miles. During week six, you should increase your miles up to 4.5. Week
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `618` activation `7.493` class `word` token ` transfers`
+  - works with almost instant transaction speeds, and its money transfers are private. Dash isn't actually governed by humans
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `566` activation `6.610` class `word` token `cash`
+  - that doesn't link old and current transactions. Zcash can be mined with a gaming GPU. Dash (
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `531` activation `6.590` class `word` token ` It`
+  - record, but Zcash is a private currency. It has a "zero-knowledge" security implementation,
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `622` activation `6.587` class `word` token ` Dash`
+  - transaction speeds, and its money transfers are private. Dash isn't actually governed by humans, and its contract
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `593` activation `6.570` class `word` token ` it`
+  - dash comes from the words digital and cash, and it used to be called Xcoin and then Darkcoin
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `614` activation `6.566` class `punctuation` token `,`
+  - . This litecoin works with almost instant transaction speeds, and its money transfers are private. Dash isn't
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `549` activation `6.559` class `word` token ` It`
+  - security implementation, which makes it a safe option. It also works with a blockchain mechanism that doesn't link
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `555` activation `6.547` class `word` token ` mechanism`
+  - a safe option. It also works with a blockchain mechanism that doesn't link old and current transactions. Z
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `550` activation `6.446` class `style_function_word` token ` also`
+  - implementation, which makes it a safe option. It also works with a blockchain mechanism that doesn't link old
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `495` activation `6.386` class `word` token ` transactions`
+  - America and UPS, and it's used in securing transactions internationally. Ripple comes with low transaction fees and a
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `634` activation `6.374` class `word` token ` actually`
+  - 't actually governed by humans, and its contract is actually encoded into its program.
+- `L24:776` `03dd6e9d6d874a5c9349d8c12c815ea434e16b2a2e9891c1dd85b2d8f72cfe2e@turn_01@human` token `613` activation `6.340` class `word` token ` speeds`
+  - coin. This litecoin works with almost instant transaction speeds, and its money transfers are private. Dash isn
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `583` activation `8.049` class `style_function_word` token ` that`
+  - : Born from religion, demons are also supernatural creatures that are sometimes used in fictional stories. They are creatures
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `532` activation `7.818` class `expanded_negation_word` token ` do`
+  - neither in a story, and the magic they can do may vary. Sometimes, mages are not separate
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `620` activation `7.660` class `word` token ` They`
+  - time ago, depending on the iteration of them. They are there to cause chaos and even harm to humans
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `594` activation `7.588` class `word` token ` who`
+  - are sometimes used in fictional stories. They are creatures who have come from Hell, and may or may not
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `591` activation `7.584` class `word` token ` They`
+  - supernatural creatures that are sometimes used in fictional stories. They are creatures who have come from Hell, and may
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `593` activation `7.481` class `word` token ` creatures`
+  - that are sometimes used in fictional stories. They are creatures who have come from Hell, and may or may
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `491` activation `7.446` class `word` token ` who`
+  - evil ghosts). Mages: Mages are humans who have been gifted with the ability of magic, also
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `578` activation `7.416` class `word` token ` demons`
+  - for witches. Demons: Born from religion, demons are also supernatural creatures that are sometimes used in fictional
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `582` activation `7.349` class `word` token ` creatures`
+  - ons: Born from religion, demons are also supernatural creatures that are sometimes used in fictional stories. They are
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `490` activation `7.251` class `word` token ` humans`
+  - usually evil ghosts). Mages: Mages are humans who have been gifted with the ability of magic,
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `632` activation `7.226` class `word` token ` usually`
+  - there to cause chaos and even harm to humans and usually make good villains in a story.
+- `L24:776` `1a3dbb873f46a3ea715ee939dcbd41f1f5ec9421882681a6c83c6d4bed3d77a3@turn_01@human` token `601` activation `7.211` class `style_function_word` token ` may`
+  - They are creatures who have come from Hell, and may or may not have been human a long time ago
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `543` activation `8.044` class `word` token ` turtles`
+  - Turtles - Similar to the breakfast skillet, silver turtles are a big conglomeration of the stuff
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `544` activation `7.888` class `word` token ` are`
+  - urtles - Similar to the breakfast skillet, silver turtles are a big conglomeration of the stuff that
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `550` activation `7.362` class `word` token `eration`
+  - skillet, silver turtles are a big conglomeration of the stuff that you like. The traditional way
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `579` activation `7.217` class `word` token ` match`
+  - other veggies, you can replace, mix, or match whatever you want to put in this dish. Gather
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `541` activation `7.207` class `punctuation` token `,`
+  - ? Silver Turtles - Similar to the breakfast skillet, silver turtles are a big conglomeration of
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `545` activation `7.101` class `word` token ` a`
+  - - Similar to the breakfast skillet, silver turtles are a big conglomeration of the stuff that you
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `526` activation `7.094` class `word` token ` choice`
+  - not put it to use with an easy but delicious choice like burgers and dogs? Silver Turtles - Similar
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `509` activation `7.080` class `word` token `ites`
+  - minutes. Hotdogs and Burgers - Many campsites come with a grill. Why not put it to
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `463` activation `7.026` class `word` token ` classic`
+  - Dutch Oven Mac & Cheese - A comfort classic that will give you the carbs to carry on the
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `604` activation `7.019` class `word` token ` thing`
+  - foil, then roll it up. Set the whole thing in coals or fire, wait for it to
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `446` activation `6.987` class `word` token ` option`
+  - is no wrong option here, just add whatever hearty option makes you happy. Dinner Dutch Oven
+- `L24:776` `c05b84c9ead2e0bbeea9a5273199ce29eebdfd9ae3b3d45ee4c3fd4ea3651192@turn_01@human` token `580` activation `6.975` class `word` token ` whatever`
+  - veggies, you can replace, mix, or match whatever you want to put in this dish. Gather ingredients
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `571` activation `7.237` class `word` token ` options`
+  - ... get the point? There are a lot of options here. And all of them can be used to
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `577` activation `7.228` class `word` token ` them`
+  - are a lot of options here. And all of them can be used to make lookalike audiences which
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `575` activation `6.799` class `word` token ` all`
+  - ? There are a lot of options here. And all of them can be used to make lookalike
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `570` activation `6.672` class `word` token ` of`
+  - also... get the point? There are a lot of options here. And all of them can be used
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `578` activation `6.641` class `style_function_word` token ` can`
+  - a lot of options here. And all of them can be used to make lookalike audiences which will
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `572` activation `6.627` class `word` token ` here`
+  - get the point? There are a lot of options here. And all of them can be used to make
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `569` activation `6.458` class `word` token ` lot`
+  - can also... get the point? There are a lot of options here. And all of them can be
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `574` activation `6.449` class `word` token ` And`
+  - point? There are a lot of options here. And all of them can be used to make lookal
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `579` activation `6.441` class `word` token ` be`
+  - lot of options here. And all of them can be used to make lookalike audiences which will broaden
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `567` activation `6.425` class `word` token ` are`
+  - . You can also... get the point? There are a lot of options here. And all of them
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `586` activation `6.424` class `word` token ` audiences`
+  - of them can be used to make lookalike audiences which will broaden your reach. Custom and lookal
+- `L24:776` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@human` token `588` activation `6.386` class `style_function_word` token ` will`
+  - can be used to make lookalike audiences which will broaden your reach. Custom and lookalike audiences
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `594` activation `7.977` class `word` token ` end`
+  - the United States. Spend an afternoon or days on end exploring this wine region and the many local wineries
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `544` activation `7.645` class `style_function_word` token ` will`
+  - . As you leave the Columbia Gorge, you will be on the border of Eastern Washington and Eastern Oregon
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `543` activation `7.605` class `word` token ` you`
+  - Region. As you leave the Columbia Gorge, you will be on the border of Eastern Washington and Eastern
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `592` activation `7.433` class `word` token ` days`
+  - eries in the United States. Spend an afternoon or days on end exploring this wine region and the many local
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `582` activation `7.318` class `word` token `eries`
+  - and you drive right into some of the finest wineries in the United States. Spend an afternoon or days
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `598` activation `7.215` class `word` token ` region`
+  - Spend an afternoon or days on end exploring this wine region and the many local wineries where you can relax
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `557` activation `7.189` class `word` token ` north`
+  - the border of Eastern Washington and Eastern Oregon. Turn north into Washington on Interstate 84 toward the town of
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `542` activation `7.171` class `punctuation` token `,`
+  - Wine Region. As you leave the Columbia Gorge, you will be on the border of Eastern Washington and
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `573` activation `7.146` class `word` token ` you`
+  - 84 toward the town of Kennewick, and you drive right into some of the finest wineries in
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `559` activation `7.124` class `word` token ` Washington`
+  - of Eastern Washington and Eastern Oregon. Turn north into Washington on Interstate 84 toward the town of Kennew
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `554` activation `7.102` class `word` token ` Oregon`
+  - will be on the border of Eastern Washington and Eastern Oregon. Turn north into Washington on Interstate 84 toward
+- `L24:776` `29025ae487ff62d2a9a7a25ee8e1f65b51f2b7fe107baa31fb00c15b64a95c4e@turn_01@human` token `545` activation `7.038` class `word` token ` be`
+  - As you leave the Columbia Gorge, you will be on the border of Eastern Washington and Eastern Oregon.
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `609` activation `8.403` class `word` token ` techniques`
+  - snap from the waist are favored over the flowery techniques of Kung Fu and Wushu. As
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `586` activation `8.018` class `style_function_word` token ` that`
+  - Karate's development in Japan created a martial art that promotes striking opponents hard and fast; straight punches and
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `432` activation `7.932` class `punctuation` token `)`
+  - ushu (the competitive version of Kung Fu) stresses the importance of performative martial art through high
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `523` activation `7.919` class `word` token ` be`
+  - (joint locks, strangles). Judo can be likened to lifting weights due to having to throw
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `564` activation `7.906` class `style_function_word` token ` that`
+  - counterpart in Kung Fu, is a martial art that involves the use of strikes and stances. However
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `581` activation `7.822` class `word` token ` Japan`
+  - stances. However, Karate's development in Japan created a martial art that promotes striking opponents hard and
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `563` activation `7.790` class `word` token ` art`
+  - Chinese counterpart in Kung Fu, is a martial art that involves the use of strikes and stances.
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `559` activation `7.770` class `punctuation` token `,`
+  - ate, like its Chinese counterpart in Kung Fu, is a martial art that involves the use of strikes
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `538` activation `7.763` class `punctuation` token `,`
+  - weights due to having to throw and carry your opponent, which can be tiring. Karate - Kar
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `522` activation `7.755` class `style_function_word` token ` can`
+  - submissions (joint locks, strangles). Judo can be likened to lifting weights due to having to
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `604` activation `7.723` class `word` token ` favored`
+  - straight punches and kicks that snap from the waist are favored over the flowery techniques of Kung Fu and
+- `L24:776` `a8688d7bc525c71067bf3175c0a644da94fccc6172f4bc0744f1b319a00dded8@turn_01@human` token `446` activation `7.704` class `punctuation` token `,`
+  - of performative martial art through high jumps and kicks, twirls, flips, and other choreographed
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `528` activation `7.208` class `word` token ` and`
+  - your party. They are normally a more slender build and typically wield knives. They wear cloaks, sometimes
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `564` activation `6.978` class `word` token ` abilities`
+  - identity. They are known much more for their support abilities than being able to attack like a Warrior, for
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `506` activation `6.830` class `word` token ` typically`
+  - as well as their ability to steal. This is typically a command that they will have from the moment they
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `533` activation `6.793` class `word` token ` They`
+  - normally a more slender build and typically wield knives. They wear cloaks, sometimes with hoods and often
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `523` activation `6.703` class `word` token ` normally`
+  - from the moment they join your party. They are normally a more slender build and typically wield knives. They
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `527` activation `6.666` class `word` token ` build`
+  - join your party. They are normally a more slender build and typically wield knives. They wear cloaks,
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `529` activation `6.595` class `word` token ` typically`
+  - party. They are normally a more slender build and typically wield knives. They wear cloaks, sometimes with
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `557` activation `6.586` class `word` token ` are`
+  - and may also want to hide their identity. They are known much more for their support abilities than being able
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `556` activation `6.572` class `word` token ` They`
+  - hide and may also want to hide their identity. They are known much more for their support abilities than being
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `521` activation `6.554` class `word` token ` They`
+  - will have from the moment they join your party. They are normally a more slender build and typically wield knives
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `488` activation `6.489` class `word` token `ieves`
+  - characters in the RPG genre. Thief - Thieves are most well-known for their speed as well as
+- `L24:776` `083160d005220645f8e2c8281390f16d99cd248b133a8aa1780beeae3750cbbe@turn_01@human` token `522` activation `6.472` class `word` token ` are`
+  - have from the moment they join your party. They are normally a more slender build and typically wield knives.

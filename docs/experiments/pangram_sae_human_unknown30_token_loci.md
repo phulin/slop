@@ -1,0 +1,409 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1441` | `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` | `human` | 17 | `129.27` | `8.61` | sentence_boundary:17 |
+| `L19:1441` | `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` | `human` | 21 | `129.56` | `8.50` | sentence_boundary:17|line_break:4 |
+| `L19:1441` | `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` | `human` | 25 | `190.16` | `8.59` | sentence_boundary:25 |
+| `L19:1441` | `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` | `human` | 17 | `127.72` | `8.46` | sentence_boundary:17 |
+| `L19:1441` | `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` | `human` | 11 | `64.17` | `8.60` | sentence_boundary:8|punctuation:3 |
+| `L19:1441` | `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` | `human` | 20 | `153.77` | `8.84` | sentence_boundary:20 |
+| `L19:1441` | `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` | `human` | 22 | `142.46` | `8.54` | sentence_boundary:19|line_break:2|punctuation:1 |
+| `L19:1441` | `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` | `human` | 19 | `143.63` | `8.63` | sentence_boundary:18|punctuation:1 |
+| `L24:741` | `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` | `human` | 17 | `246.69` | `16.54` | sentence_boundary:17 |
+| `L24:741` | `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` | `human` | 17 | `238.49` | `16.31` | sentence_boundary:17 |
+| `L24:741` | `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` | `human` | 25 | `357.89` | `16.58` | sentence_boundary:25 |
+| `L24:741` | `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` | `human` | 17 | `252.04` | `16.68` | sentence_boundary:17 |
+| `L24:741` | `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` | `human` | 12 | `122.16` | `16.60` | sentence_boundary:8|punctuation:4 |
+| `L24:741` | `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` | `human` | 20 | `307.90` | `16.76` | sentence_boundary:20 |
+| `L24:741` | `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` | `human` | 23 | `276.42` | `16.30` | sentence_boundary:19|punctuation:3|line_break:1 |
+| `L24:741` | `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` | `human` | 19 | `276.13` | `16.77` | sentence_boundary:18|punctuation:1 |
+
+## Top Tokens
+
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `386` activation `8.610` class `sentence_boundary` token `.`
+  - drink, but Stu refused that pleasure as well. Stu began rethinking his life decisions. He
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `419` activation `8.165` class `sentence_boundary` token `.`
+  - years with no rewards to show for any of it. The only thing he gained was a conversation topic everyone
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `435` activation `8.013` class `sentence_boundary` token `.`
+  - was a conversation topic everyone was tired of hearing about. Stu could no longer simply place the entire blame
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `572` activation `7.974` class `sentence_boundary` token `.`
+  - ’s plate was so tall it obscured his eye line. His tablemates peered from either side of the
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `529` activation `7.970` class `sentence_boundary` token `.`
+  - least one food item from the inviting warming platters. Stu’s eyes must have been piercing through the
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `370` activation `7.954` class `sentence_boundary` token `.`
+  - large, empty white plate sitting in front of him. The buffet ticket included a drink, but Stu
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `498` activation `7.925` class `sentence_boundary` token `.`
+  - it. They watched him at the first buffet bar. Then, to the second. Stu stopped at
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `483` activation `7.831` class `sentence_boundary` token `.`
+  - pick up his plate and excuse himself from the table. No one could believe it. They watched him at
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `395` activation `7.667` class `sentence_boundary` token `.`
+  - well. Stu began rethinking his life decisions. He had been on this new diet for months and
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `600` activation `7.659` class `sentence_boundary` token `.`
+  - for the first time in months—years, maybe. Stu proceeded to have the time of his life
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `352` activation `7.566` class `sentence_boundary` token `.`
+  - him of sneaking food without paying would be unbearable. So, there it was: a large, empty
+- `L19:1441` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `504` activation `7.425` class `sentence_boundary` token `.`
+  - the first buffet bar. Then, to the second. Stu stopped at every single station along the route
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `342` activation `8.504` class `sentence_boundary` token `.`
+  - there every couple of trips to check out new stock. I sometimes find an inexpensive gift for my wife.
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `352` activation `8.433` class `sentence_boundary` token `.`
+  - . I sometimes find an inexpensive gift for my wife. A man having an affair with another woman often attempts
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `444` activation `8.044` class `sentence_boundary` token `.`
+  - does hallmarked silver match case engraved with my initials. What are the odds of finding something like that with
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `328` activation `7.923` class `sentence_boundary` token `.`
+  - along the highway is a secondhand and antique shop. I call by there every couple of trips to check
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `609` activation `7.866` class `sentence_boundary` token `.`
+  - other things in her stock before I bid my farewell. Now I must get to where I’m going,
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `374` activation `7.831` class `sentence_boundary` token `.`
+  - reconcile his guilt by showering his wife with gifts. There is no guilt in my acquaintance with Audrey Hep
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `399` activation `7.804` class `sentence_boundary` token `.`
+  - yet I’m not sure why I buy these gifts. When I give them to my wife she scolds
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `279` activation `7.785` class `sentence_boundary` token `.`
+  - client is expecting me at 3:00 pm. He likes to discuss business over tea and homemade cakes
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `560` activation `7.585` class `sentence_boundary` token `.`
+  - the crackerjack box presented to Holly Golightly. The sticker on the back says ten dollars. “I
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `627` activation `7.475` class `sentence_boundary` token `.`
+  - ’m going, do my work, and return home. A thimbleful of luck will see me
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `458` activation `7.391` class `sentence_boundary` token `?`
+  - odds of finding something like that with your own initials? This time I see a pewter thimble
+- `L19:1441` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `639` activation `7.350` class `sentence_boundary` token `.`
+  - thimbleful of luck will see me safe.
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `468` activation `8.592` class `sentence_boundary` token `.`
+  - interpretation of Qur'anic instruction and jurisprudence. He believed that by taking more control, this duty
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `482` activation `8.180` class `sentence_boundary` token `.`
+  - by taking more control, this duty would be accomplished. This was the "why" that brought him to
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `450` activation `8.108` class `sentence_boundary` token `.`
+  - support his family, way back in 1998. His duty was to institute a strict interpretation of Qur
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `498` activation `8.084` class `sentence_boundary` token `.`
+  - " that brought him to every decision that he did. It was his calling, his purpose, and something
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `524` activation `8.080` class `sentence_boundary` token `.`
+  - A cousin had served alongside him since they were children. The cousin sacrificed himself in the line of fire to
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `338` activation `8.057` class `sentence_boundary` token `.`
+  - brothers in arms. He would leave no man behind. But now, he needed to get back with the
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `277` activation `7.951` class `sentence_boundary` token `.`
+  - . He was gridlocked and isolated from his team. He needed to quickly get back around the wall.
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `557` activation `7.937` class `sentence_boundary` token `.`
+  - the cousin, who appeared to have eliminated one enemy. Ahmed felt the rush of bullets next to him and
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `542` activation `7.936` class `sentence_boundary` token `.`
+  - of fire to cause the enemy to pause or retreat. Ahmed rushed to aid the cousin, who appeared to
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `586` activation `7.911` class `sentence_boundary` token `.`
+  - not have much cover, so he sat very still. Just out of sight was another enemy. Ahmed needed
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `573` activation `7.869` class `sentence_boundary` token `.`
+  - bullets next to him and quickly climbed into a tree. He did not have much cover, so he sat
+- `L19:1441` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `287` activation `7.733` class `sentence_boundary` token `.`
+  - . He needed to quickly get back around the wall. He bravely ran into the line of fire to
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `531` activation `8.460` class `sentence_boundary` token `.`
+  - lightweight) structures without needing to join multiple pieces together. Since they can print complex shapes, they can also
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `499` activation `8.273` class `sentence_boundary` token `.`
+  - print the minimum amount of material to maintain structural integrity. Sometimes that’s difficult or even impossible for traditional methods
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `436` activation `8.035` class `sentence_boundary` token `.`
+  - . This makes subtractive manufacturing wasteful by nature. An efficient 3D printer will waste significantly less
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `395` activation `7.935` class `sentence_boundary` token `.`
+  - parts by adding material a little bit at a time. Traditional subtractive manufacturing methods, by contrast, start
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `512` activation `7.797` class `sentence_boundary` token `.`
+  - ’s difficult or even impossible for traditional methods to achieve. Printers can build hollow (and thus lightweight)
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `227` activation `7.787` class `sentence_boundary` token `.`
+  - printing technology has improved significantly in the past few decades. Where they used to be primarily good for rough prot
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `351` activation `7.764` class `sentence_boundary` token `.`
+  - important since it can build up objects from metal powder. A new metal-capable style called Directed Energy Dep
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `551` activation `7.747` class `sentence_boundary` token `.`
+  - also be used to replace many parts with just one. This eliminates many fasteners from the design, further
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `449` activation `7.636` class `sentence_boundary` token `.`
+  - 3D printer will waste significantly less raw material. That’s good for both the environment and the manufacturer
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `298` activation `7.487` class `sentence_boundary` token `.`
+  - are strong enough to withstand the rigors of flight. The most common styles of printers for the industry are
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `566` activation `7.417` class `sentence_boundary` token `.`
+  - eners from the design, further reducing weight and complexity. And since machine failures often start from corners or part
+- `L19:1441` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `334` activation `7.326` class `sentence_boundary` token `.`
+  - ), and stereolithography (SLA) devices. The SLS style is particularly important since it can
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `609` activation `8.601` class `sentence_boundary` token `.`
+  - of the job, such as improving your negotiating skills. They understand the importance of having the tools required to
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `589` activation `8.208` class `sentence_boundary` token `.`
+  - procurement department. Procurement professionals enjoy sharing their experiences. They love to offer up tips on key elements of
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `626` activation `7.715` class `sentence_boundary` token `.`
+  - the tools required to be the best in their field. They stay informed on all the newest trends in the
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `639` activation `7.587` class `sentence_boundary` token `.`
+  - informed on all the newest trends in the procurement world.
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `496` activation `7.530` class `sentence_boundary` token `.`
+  - They enjoy sharpening their skills on a regular basis. Procurement automation can revolutionize your business processes by
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `537` activation `7.451` class `sentence_boundary` token `.`
+  - cycle. Every successful organization requires certain products and services. Consider where your procurement department turns to purchase things like
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `469` activation `7.354` class `sentence_boundary` token `.`
+  - professionals work hard to stay on top of their profession. They know the importance of staying abreast of the
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `485` activation `7.078` class `sentence_boundary` token `.`
+  - staying abreast of the latest developments in their field. They enjoy sharpening their skills on a regular basis
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `560` activation `1.079` class `punctuation` token `•`
+  - Computers • Office furniture • Building supplies • Web design These are choices made with a great
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `556` activation `1.027` class `punctuation` token `•`
+  - things like: • Computers • Office furniture • Building supplies • Web design These are choices
+- `L19:1441` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `552` activation `0.541` class `punctuation` token `•`
+  - department turns to purchase things like: • Computers • Office furniture • Building supplies • Web design
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `207` activation `8.836` class `sentence_boundary` token `.`
+  - We might discover some unfinished business our thoughts wander to. We might feel longing, grief, unexpressed
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `170` activation `8.748` class `sentence_boundary` token `.`
+  - trying to stay in the present moment of our lives. Obstacles are bound to arise when we try to
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `196` activation `8.499` class `sentence_boundary` token `.`
+  - and think more critically about ourselves and our inner experience. We might discover some unfinished business our thoughts wander to
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `230` activation `8.053` class `sentence_boundary` token `.`
+  - underlying fear and hurt, or unrequited hopes. And when we really stop to analyze what is going
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `267` activation `8.000` class `sentence_boundary` token `.`
+  - Anxious thoughts about death may be buried in there. But as we deepen our attention to these aspects of
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `504` activation `7.940` class `sentence_boundary` token `.`
+  - intense, and we won't make progress over night. But with diligent patience and curiosity, change will eventually
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `545` activation `7.844` class `sentence_boundary` token `.`
+  - can arise and that it is going to be okay. You are becoming more skillful about what thoughts and
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `424` activation `7.794` class `sentence_boundary` token `.`
+  - feeling like you have to be subject to their will. If you don't encounter them with resistance, your
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `487` activation `7.706` class `sentence_boundary` token `.`
+  - objectively, like studying clouds and watching them pass by. Sometimes, the emotions are very intense, and we
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `623` activation `7.678` class `sentence_boundary` token `.`
+  - willing to investigate the deepest darkest parts of our mind. They can only be healed if we learn to look
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `450` activation `7.629` class `sentence_boundary` token `.`
+  - and the thoughts and feelings may begin to disperse. In this process, you are shifting your mindset from
+- `L19:1441` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `639` activation `7.556` class `sentence_boundary` token `.`
+  - if we learn to look at and work with them.
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `211` activation `8.537` class `sentence_boundary` token `.`
+  - framework is used to avoid any confusion for the reader. You will need to organize your ideas in this framework
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `360` activation `8.218` class `sentence_boundary` token `.`
+  - part until the very end of the story or piece. You should use it when you want to build up
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `281` activation `8.159` class `sentence_boundary` token `.`
+  - it's like to make a big or difficult decision. That way, the listener or reader will understand the
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `301` activation `7.887` class `sentence_boundary` token `.`
+  - the true nature of the poem when they hear it. Some good transitional words or phrases to use for this
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `460` activation `7.764` class `sentence_boundary` token `.`
+  - a whim without any specific or logical reasoning behind them. You can organize your ideas this way when your points
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `199` activation `7.762` class `sentence_boundary` token `.`
+  - Order Logical order is precisely what it sounds like. The framework is used to avoid any confusion for the
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `165` activation `7.592` class `sentence_boundary` token `.`
+  - navigate the process and understand the context of the narrative. Some transition words to use when writing in chronological order
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `411` activation `7.426` class `sentence_boundary` token `.`
+  - and, therefore, save it for the very end. Some transitional phrases to use with this order include:
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `390` activation `7.219` class `sentence_boundary` token `.`
+  - when writing a list ranking items from worst to best. You want the final point to resonate with your reader
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `139` activation `7.175` class `sentence_boundary` token `.`
+  - order so that they would understand your point of view. When writing, you do the same thing when you
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `487` activation `7.129` class `sentence_boundary` token `.`
+  - or they can sit independently with one another in understanding. You will want to use association ideas between points to
+- `L19:1441` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `114` activation `7.100` class `sentence_boundary` token `.`
+  - the principal why you shouldn't be placed in detention. You had to describe the events that led to that
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `230` activation `8.629` class `sentence_boundary` token `.`
+  - ched with personal messages or swirls of branching flora. These busks were the first step toward the cor
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `381` activation `8.348` class `sentence_boundary` token `.`
+  - of skirts, more pleats, and flounces. These undergarments also helped the women to bear
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `326` activation `8.227` class `sentence_boundary` token `.`
+  - the amount of fabric she could wear on her skirts. Since silks and brocades were the going
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `199` activation `8.210` class `sentence_boundary` token `.`
+  - made out of wood, bone, or sometimes metal. During the Tudor period, these flat inserts became
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `496` activation `8.140` class `sentence_boundary` token `.`
+  - that highlighted a woman's small waist and hung downward. Some women wore a pomander ball at the end
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `183` activation `8.112` class `sentence_boundary` token `.`
+  - silhouette and structure of the upper part of gowns. A busk could be made out of wood,
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `408` activation `8.027` class `sentence_boundary` token `.`
+  - heavy skirts without it sitting directly on their hip bones. Tudor fashion was more about statement than comfort.
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `215` activation `7.961` class `sentence_boundary` token `.`
+  - , these flat inserts became more and more ornamental. They could be etched with personal messages or swirl
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `362` activation `7.937` class `sentence_boundary` token `.`
+  - translated into more wealth a wearer was likely to have. These bum rolls allowed for wide swathes of skirts
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `521` activation `7.928` class `sentence_boundary` token `.`
+  - le belts for when the city air got especially ripe. Others, like Anne Boleyn, used it
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `540` activation `7.671` class `sentence_boundary` token `.`
+  - used it to carry small prayer books about with them. Katherine of Aragon was even known to clutch the
+- `L19:1441` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `600` activation `7.419` class `sentence_boundary` token `.`
+  - girdle belt that matches her royal necklaces. One of Jane Seymour, Henry's third wife,
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `386` activation `16.538` class `sentence_boundary` token `.`
+  - drink, but Stu refused that pleasure as well. Stu began rethinking his life decisions. He
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `435` activation `16.490` class `sentence_boundary` token `.`
+  - was a conversation topic everyone was tired of hearing about. Stu could no longer simply place the entire blame
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `395` activation `16.356` class `sentence_boundary` token `.`
+  - well. Stu began rethinking his life decisions. He had been on this new diet for months and
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `639` activation `15.635` class `sentence_boundary` token `.`
+  - his search for a new path to a healthier lifestyle.
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `419` activation `15.632` class `sentence_boundary` token `.`
+  - years with no rewards to show for any of it. The only thing he gained was a conversation topic everyone
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `370` activation `15.624` class `sentence_boundary` token `.`
+  - large, empty white plate sitting in front of him. The buffet ticket included a drink, but Stu
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `529` activation `14.972` class `sentence_boundary` token `.`
+  - least one food item from the inviting warming platters. Stu’s eyes must have been piercing through the
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `600` activation `14.790` class `sentence_boundary` token `.`
+  - for the first time in months—years, maybe. Stu proceeded to have the time of his life
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `352` activation `14.105` class `sentence_boundary` token `.`
+  - him of sneaking food without paying would be unbearable. So, there it was: a large, empty
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `489` activation `13.937` class `sentence_boundary` token `.`
+  - himself from the table. No one could believe it. They watched him at the first buffet bar. Then
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `236` activation `13.774` class `sentence_boundary` token `.`
+  - for months now and the buffet was calling his name. He only came as part of a mandatory business trip
+- `L24:741` `627eb52c167da2cab2a0a56d542f277b7414c82263a7bb1dcaa28e278d4bb3ed@turn_01@human` token `504` activation `13.685` class `sentence_boundary` token `.`
+  - the first buffet bar. Then, to the second. Stu stopped at every single station along the route
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `399` activation `16.307` class `sentence_boundary` token `.`
+  - yet I’m not sure why I buy these gifts. When I give them to my wife she scolds
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `352` activation `15.928` class `sentence_boundary` token `.`
+  - . I sometimes find an inexpensive gift for my wife. A man having an affair with another woman often attempts
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `374` activation `15.773` class `sentence_boundary` token `.`
+  - reconcile his guilt by showering his wife with gifts. There is no guilt in my acquaintance with Audrey Hep
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `417` activation `15.773` class `sentence_boundary` token `.`
+  - she scolds me for wasting money on useless junk. Gifts aren’t her love language. Once, I
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `627` activation `15.646` class `sentence_boundary` token `.`
+  - ’m going, do my work, and return home. A thimbleful of luck will see me
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `639` activation `15.627` class `sentence_boundary` token `.`
+  - thimbleful of luck will see me safe.
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `609` activation `15.323` class `sentence_boundary` token `.`
+  - other things in her stock before I bid my farewell. Now I must get to where I’m going,
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `342` activation `15.272` class `sentence_boundary` token `.`
+  - there every couple of trips to check out new stock. I sometimes find an inexpensive gift for my wife.
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `560` activation `14.433` class `sentence_boundary` token `.`
+  - the crackerjack box presented to Holly Golightly. The sticker on the back says ten dollars. “I
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `444` activation `13.384` class `sentence_boundary` token `.`
+  - does hallmarked silver match case engraved with my initials. What are the odds of finding something like that with
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `328` activation `13.291` class `sentence_boundary` token `.`
+  - along the highway is a secondhand and antique shop. I call by there every couple of trips to check
+- `L24:741` `8d491655edf6746d0d368f45b231de77d28282a79455e45f111a9904ca53fded@turn_01@human` token `458` activation `13.183` class `sentence_boundary` token `?`
+  - odds of finding something like that with your own initials? This time I see a pewter thimble
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `498` activation `16.579` class `sentence_boundary` token `.`
+  - " that brought him to every decision that he did. It was his calling, his purpose, and something
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `586` activation `15.675` class `sentence_boundary` token `.`
+  - not have much cover, so he sat very still. Just out of sight was another enemy. Ahmed needed
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `482` activation `15.623` class `sentence_boundary` token `.`
+  - by taking more control, this duty would be accomplished. This was the "why" that brought him to
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `594` activation `15.623` class `sentence_boundary` token `.`
+  - very still. Just out of sight was another enemy. Ahmed needed to get back to his group but would
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `627` activation `15.598` class `sentence_boundary` token `.`
+  - believed the enemy might see him, so he waited. It was a matter of who would make the first
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `615` activation `15.488` class `sentence_boundary` token `.`
+  - need to get out of the tree to do so. He believed the enemy might see him, so he
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `639` activation `15.450` class `sentence_boundary` token `.`
+  - was a matter of who would make the first strike.
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `380` activation `15.145` class `sentence_boundary` token `.`
+  - was pretty sure was occupied by a hostile enemy force. He had a feeling that the hostile Tango was exposed
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `468` activation `14.993` class `sentence_boundary` token `.`
+  - interpretation of Qur'anic instruction and jurisprudence. He believed that by taking more control, this duty
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `398` activation `14.939` class `sentence_boundary` token `.`
+  - Tango was exposed and isolated from his team, too. It was a matter of who would make the first
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `338` activation `14.652` class `sentence_boundary` token `.`
+  - brothers in arms. He would leave no man behind. But now, he needed to get back with the
+- `L24:741` `2d2c84f3e92f7adcf235da89e6399e15179e8ccc19027bc88bc3e2597f6d584b@turn_01@human` token `573` activation `14.434` class `sentence_boundary` token `.`
+  - bullets next to him and quickly climbed into a tree. He did not have much cover, so he sat
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `531` activation `16.684` class `sentence_boundary` token `.`
+  - lightweight) structures without needing to join multiple pieces together. Since they can print complex shapes, they can also
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `551` activation `16.507` class `sentence_boundary` token `.`
+  - also be used to replace many parts with just one. This eliminates many fasteners from the design, further
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `512` activation `16.300` class `sentence_boundary` token `.`
+  - ’s difficult or even impossible for traditional methods to achieve. Printers can build hollow (and thus lightweight)
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `566` activation `16.272` class `sentence_boundary` token `.`
+  - eners from the design, further reducing weight and complexity. And since machine failures often start from corners or part
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `449` activation `16.074` class `sentence_boundary` token `.`
+  - 3D printer will waste significantly less raw material. That’s good for both the environment and the manufacturer
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `639` activation `15.477` class `sentence_boundary` token `.`
+  - -performance rocket engines almost entirely via 3D printing.
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `436` activation `15.234` class `sentence_boundary` token `.`
+  - . This makes subtractive manufacturing wasteful by nature. An efficient 3D printer will waste significantly less
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `334` activation `15.013` class `sentence_boundary` token `.`
+  - ), and stereolithography (SLA) devices. The SLS style is particularly important since it can
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `298` activation `14.955` class `sentence_boundary` token `.`
+  - are strong enough to withstand the rigors of flight. The most common styles of printers for the industry are
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `619` activation `14.707` class `sentence_boundary` token `.`
+  - , the aerospace industry has largely embraced this expanding technology. Some companies like Relativity Space even create high-performance
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `499` activation `14.691` class `sentence_boundary` token `.`
+  - print the minimum amount of material to maintain structural integrity. Sometimes that’s difficult or even impossible for traditional methods
+- `L24:741` `0403673ff6e55beaa51b416f7c06d5270ee2b2018ac94ab82b2a67aa70ba2641@turn_01@human` token `351` activation `14.672` class `sentence_boundary` token `.`
+  - important since it can build up objects from metal powder. A new metal-capable style called Directed Energy Dep
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `626` activation `16.602` class `sentence_boundary` token `.`
+  - the tools required to be the best in their field. They stay informed on all the newest trends in the
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `639` activation `16.528` class `sentence_boundary` token `.`
+  - informed on all the newest trends in the procurement world.
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `609` activation `16.316` class `sentence_boundary` token `.`
+  - of the job, such as improving your negotiating skills. They understand the importance of having the tools required to
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `589` activation `14.648` class `sentence_boundary` token `.`
+  - procurement department. Procurement professionals enjoy sharing their experiences. They love to offer up tips on key elements of
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `496` activation `13.857` class `sentence_boundary` token `.`
+  - They enjoy sharpening their skills on a regular basis. Procurement automation can revolutionize your business processes by
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `469` activation `12.755` class `sentence_boundary` token `.`
+  - professionals work hard to stay on top of their profession. They know the importance of staying abreast of the
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `537` activation `12.403` class `sentence_boundary` token `.`
+  - cycle. Every successful organization requires certain products and services. Consider where your procurement department turns to purchase things like
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `485` activation `12.183` class `sentence_boundary` token `.`
+  - staying abreast of the latest developments in their field. They enjoy sharpening their skills on a regular basis
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `560` activation `2.396` class `punctuation` token `•`
+  - Computers • Office furniture • Building supplies • Web design These are choices made with a great
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `556` activation `2.037` class `punctuation` token `•`
+  - things like: • Computers • Office furniture • Building supplies • Web design These are choices
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `552` activation `1.231` class `punctuation` token `•`
+  - department turns to purchase things like: • Computers • Office furniture • Building supplies • Web design
+- `L24:741` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `549` activation `1.206` class `punctuation` token `•`
+  - where your procurement department turns to purchase things like: • Computers • Office furniture • Building supplies
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `196` activation `16.756` class `sentence_boundary` token `.`
+  - and think more critically about ourselves and our inner experience. We might discover some unfinished business our thoughts wander to
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `267` activation `16.405` class `sentence_boundary` token `.`
+  - Anxious thoughts about death may be buried in there. But as we deepen our attention to these aspects of
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `256` activation `16.298` class `sentence_boundary` token `.`
+  - we may even face the mystery of our own mortality. Anxious thoughts about death may be buried in there
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `230` activation `16.242` class `sentence_boundary` token `.`
+  - underlying fear and hurt, or unrequited hopes. And when we really stop to analyze what is going
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `207` activation `16.235` class `sentence_boundary` token `.`
+  - We might discover some unfinished business our thoughts wander to. We might feel longing, grief, unexpressed
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `450` activation `16.088` class `sentence_boundary` token `.`
+  - and the thoughts and feelings may begin to disperse. In this process, you are shifting your mindset from
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `170` activation `16.074` class `sentence_boundary` token `.`
+  - trying to stay in the present moment of our lives. Obstacles are bound to arise when we try to
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `516` activation `16.021` class `sentence_boundary` token `.`
+  - with diligent patience and curiosity, change will eventually happen. What you are really doing in this process is learning
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `487` activation `15.992` class `sentence_boundary` token `.`
+  - objectively, like studying clouds and watching them pass by. Sometimes, the emotions are very intense, and we
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `424` activation `15.958` class `sentence_boundary` token `.`
+  - feeling like you have to be subject to their will. If you don't encounter them with resistance, your
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `545` activation `15.789` class `sentence_boundary` token `.`
+  - can arise and that it is going to be okay. You are becoming more skillful about what thoughts and
+- `L24:741` `f959e34cbf7d9da86d67ec72afbe76139d4a572c6ba3e80b56ae29a3ec81826e@turn_01@human` token `293` activation `15.424` class `sentence_boundary` token `.`
+  - and compassion for ourselves and others can deepen, too. We forget we can learn the most from something that
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `165` activation `16.297` class `sentence_boundary` token `.`
+  - navigate the process and understand the context of the narrative. Some transition words to use when writing in chronological order
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `411` activation `15.828` class `sentence_boundary` token `.`
+  - and, therefore, save it for the very end. Some transitional phrases to use with this order include:
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `301` activation `15.358` class `sentence_boundary` token `.`
+  - the true nature of the poem when they hear it. Some good transitional words or phrases to use for this
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `139` activation `15.130` class `sentence_boundary` token `.`
+  - order so that they would understand your point of view. When writing, you do the same thing when you
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `390` activation `14.983` class `sentence_boundary` token `.`
+  - when writing a list ranking items from worst to best. You want the final point to resonate with your reader
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `211` activation `14.710` class `sentence_boundary` token `.`
+  - framework is used to avoid any confusion for the reader. You will need to organize your ideas in this framework
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `281` activation `14.480` class `sentence_boundary` token `.`
+  - it's like to make a big or difficult decision. That way, the listener or reader will understand the
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `606` activation `14.469` class `sentence_boundary` token `.`
+  - workspace, like a product use or a place description. It is a great way to slow down a story
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `634` activation `14.385` class `sentence_boundary` token `.`
+  - if you want to pace yourself before revealing a surprise. Add in a few point
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `487` activation `14.151` class `sentence_boundary` token `.`
+  - or they can sit independently with one another in understanding. You will want to use association ideas between points to
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `360` activation `14.135` class `sentence_boundary` token `.`
+  - part until the very end of the story or piece. You should use it when you want to build up
+- `L24:741` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `76` activation `14.114` class `sentence_boundary` token `.`
+  - expository writing or narratives that inform or explain something. It is particularly useful when describing an event or a
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `418` activation `16.769` class `sentence_boundary` token `.`
+  - . Tudor fashion was more about statement than comfort. Like busks, bum rolls were essentially shap
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `408` activation `16.568` class `sentence_boundary` token `.`
+  - heavy skirts without it sitting directly on their hip bones. Tudor fashion was more about statement than comfort.
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `362` activation `16.476` class `sentence_boundary` token `.`
+  - translated into more wealth a wearer was likely to have. These bum rolls allowed for wide swathes of skirts
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `575` activation `16.341` class `sentence_boundary` token `.`
+  - doesn't seem to have provided her with any luck. There are portraits of Kaherine herself in an
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `381` activation `16.065` class `sentence_boundary` token `.`
+  - of skirts, more pleats, and flounces. These undergarments also helped the women to bear
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `600` activation `15.816` class `sentence_boundary` token `.`
+  - girdle belt that matches her royal necklaces. One of Jane Seymour, Henry's third wife,
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `540` activation `15.471` class `sentence_boundary` token `.`
+  - used it to carry small prayer books about with them. Katherine of Aragon was even known to clutch the
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `230` activation `15.353` class `sentence_boundary` token `.`
+  - ched with personal messages or swirls of branching flora. These busks were the first step toward the cor
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `326` activation `15.347` class `sentence_boundary` token `.`
+  - the amount of fabric she could wear on her skirts. Since silks and brocades were the going
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `521` activation `15.082` class `sentence_boundary` token `.`
+  - le belts for when the city air got especially ripe. Others, like Anne Boleyn, used it
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `183` activation `14.739` class `sentence_boundary` token `.`
+  - silhouette and structure of the upper part of gowns. A busk could be made out of wood,
+- `L24:741` `e3a76492e0b81cb6c2fba90e8b13011fe8619b45a72aeeba5fc96f0effd2e40d@turn_01@human` token `639` activation `14.517` class `sentence_boundary` token `.`
+  - very large oval stone set in gold at the end.

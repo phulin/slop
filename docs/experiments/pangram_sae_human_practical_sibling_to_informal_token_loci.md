@@ -1,0 +1,511 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:3534` | `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` | `human` | 137 | `278.45` | `4.62` | word:126|punctuation:4|sentence_boundary:3|style_function_word:2|discourse_marker_word:1|contraction_piece:1 |
+| `L19:3534` | `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` | `human` | 130 | `232.41` | `4.53` | word:126|punctuation:3|style_function_word:1 |
+| `L19:3534` | `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` | `human` | 150 | `302.03` | `4.81` | word:130|sentence_boundary:8|style_function_word:6|punctuation:4|expanded_negation_word:1|discourse_marker_word:1 |
+| `L19:3534` | `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` | `human` | 77 | `152.68` | `4.35` | word:67|style_function_word:4|sentence_boundary:4|punctuation:1|expanded_negation_word:1 |
+| `L19:3534` | `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` | `human` | 104 | `199.06` | `4.37` | word:95|punctuation:5|sentence_boundary:3|style_function_word:1 |
+| `L19:3534` | `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` | `human` | 95 | `192.35` | `4.80` | word:88|punctuation:3|style_function_word:2|sentence_boundary:2 |
+| `L19:3534` | `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` | `human` | 74 | `136.01` | `4.24` | word:68|punctuation:2|sentence_boundary:2|expanded_negation_word:1|style_function_word:1 |
+| `L19:3534` | `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` | `human` | 89 | `162.81` | `4.14` | word:88|style_function_word:1 |
+| `L19:3534` | `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` | `human` | 132 | `257.85` | `4.20` | word:126|punctuation:3|contraction_piece:2|expanded_negation_word:1 |
+| `L19:3534` | `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` | `human` | 133 | `290.37` | `4.37` | word:126|discourse_marker_word:2|sentence_boundary:2|style_function_word:1|expanded_negation_word:1|punctuation:1 |
+| `L24:3645` | `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` | `human` | 154 | `506.39` | `7.90` | word:150|discourse_marker_word:2|style_function_word:1|punctuation:1 |
+| `L24:3645` | `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` | `human` | 171 | `597.59` | `8.07` | word:153|style_function_word:8|sentence_boundary:5|punctuation:4|expanded_negation_word:1 |
+| `L24:3645` | `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` | `human` | 192 | `755.73` | `8.77` | word:176|style_function_word:7|sentence_boundary:4|expanded_negation_word:2|discourse_marker_word:2|punctuation:1 |
+| `L24:3645` | `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` | `human` | 74 | `309.60` | `7.99` | word:70|style_function_word:2|expanded_negation_word:1|punctuation:1 |
+| `L24:3645` | `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` | `human` | 132 | `542.11` | `8.83` | word:119|punctuation:5|style_function_word:4|sentence_boundary:2|expanded_negation_word:1|discourse_marker_word:1 |
+| `L24:3645` | `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` | `human` | 117 | `470.37` | `8.32` | word:112|punctuation:3|style_function_word:2 |
+| `L24:3645` | `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` | `human` | 97 | `377.92` | `8.45` | word:90|style_function_word:3|punctuation:3|expanded_negation_word:1 |
+| `L24:3645` | `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` | `human` | 124 | `495.01` | `7.91` | word:119|style_function_word:3|discourse_marker_word:1|sentence_boundary:1 |
+| `L24:3645` | `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` | `human` | 228 | `988.99` | `10.20` | word:198|punctuation:8|style_function_word:7|sentence_boundary:7|expanded_negation_word:4|contraction_piece:3|line_break:1 |
+| `L24:3645` | `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` | `human` | 199 | `819.22` | `8.32` | word:192|discourse_marker_word:3|style_function_word:2|expanded_negation_word:2 |
+
+## Top Tokens
+
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `507` activation `4.617` class `word` token ` system`
+  - can cause major clogs and mess up the whole system. Next, you want to see how the toilets
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `613` activation `4.602` class `word` token ` it`
+  - the unit you may find the installation date written on it. If you notice unusual noises when it turns on
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `242` activation `4.478` class `word` token ` years`
+  - roof typically over the next 2 - 5 years. If you're not confident doing your research,
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `532` activation `4.448` class `word` token ` bases`
+  - to make sure to check for leaks and also unstable bases along with discoloration. Don't be afraid
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `568` activation `4.367` class `word` token ` intended`
+  - for making sure the showers and sinks are working as intended. The final thing you want to check is the
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `293` activation `4.205` class `word` token ` conditions`
+  - sure to hire someone that specializes in diagnosing roof conditions. HVAC condition - It will be good to
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `341` activation `4.177` class `word` token ` years`
+  - last somewhere around the timeframe of 10-25 years, hence the importance of asking how old it is
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `391` activation `4.071` class `word` token ` condition`
+  - the unit most likely will not be in good working condition. If you still have concerns after checking for those
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `597` activation `3.921` class `word` token ` years`
+  - water heater will last around 10 to 15 years, and when looking at the unit you may find
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `232` activation `3.864` class `word` token ` roof`
+  - This letter entails the estimate of the lifespan of the roof typically over the next 2 - 5 years
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `276` activation `3.789` class `word` token ` inspection`
+  - can often be confused with being bundled into a home inspection, so you want to make sure to hire someone
+- `L19:3534` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `501` activation `3.743` class `word` token `logs`
+  - growth and pipe disintegration that can cause major clogs and mess up the whole system. Next, you
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `610` activation `4.525` class `word` token ` feet`
+  - lightning bolts came out of both of those men's feet. A few seconds later, both men ended up
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `548` activation `4.096` class `word` token ` air`
+  - they both understand. The eerie quietness filled the air with a sense of tightness. One pin could
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `509` activation `4.027` class `word` token ` blow`
+  - he's motioning to end this fight in one blow. The other samurai sees this and does the
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `460` activation `3.807` class `word` token ` demeanor`
+  - make both of the warriors succumb to its heavy demeanor. One passerby notices the two and starts recording
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `554` activation `3.761` class `word` token `ness`
+  - quietness filled the air with a sense of tightness. One pin could be heard from miles away.
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `526` activation `3.739` class `word` token ` face`
+  - this and does the same with a smile on his face. No words have been spoken between the two,
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `594` activation `3.684` class `word` token ` speed`
+  - both samurai dashed at each other at blinding speed. You would think that lightning bolts came out of
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `506` activation `3.677` class `word` token ` fight`
+  - sword as if he's motioning to end this fight in one blow. The other samurai sees this
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `417` activation `3.595` class `word` token ` inch`
+  - to get exhausted. Neither one of them moved an inch since pledging to do battle. The mind games
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `563` activation `3.589` class `word` token ` away`
+  - tightness. One pin could be heard from miles away. "Ding!" The sound of the convenience store
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `624` activation `3.485` class `word` token ` other`
+  - seconds later, both men ended up opposite of each other, swords in hands, unsheathed. Neither
+- `L19:3534` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `496` activation `3.484` class `word` token ` sword`
+  - something. One samurai sheathes his's sword as if he's motioning to end this fight
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `504` activation `4.814` class `word` token ` air`
+  - shop, she was overwhelmed by the smell in the air. It smelt like burnt rubber mixed with mold
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `635` activation `4.626` class `word` token ` life`
+  - Bottom and venture out to live a peaceful and happy life at the Top.
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `457` activation `4.397` class `word` token ` prices`
+  - on the black market. This black market had lower prices which were a steal compared to the prices on the
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `450` activation `4.286` class `word` token ` market`
+  - find a way around and sell it on the black market. This black market had lower prices which were a
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `421` activation `4.248` class `word` token ` clients`
+  - created a dream which was sought after by many wealthy clients. However Linda could not go to the Top and
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `526` activation `4.138` class `word` token ` mind`
+  - But Linda trodded on with the mission in mind. The shopkeeper's name was Dan. A
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `395` activation `4.012` class `word` token ` lived`
+  - her from wanting to escape the reality of where she lived. After spending several hours a day, skipping meals
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `542` activation `3.865` class `word` token ` one`
+  - name was Dan. A simple name and a popular one at the Bottom that would not alert the elite authorities
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `625` activation `3.847` class `word` token ` Bottom`
+  - was happy that she was able to finally leave the Bottom and venture out to live a peaceful and happy life
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `597` activation `3.814` class `word` token ` through`
+  - He wondered about how much pain she had to go through to create such a dream. Linda was able to
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `483` activation `3.802` class `word` token ` market`
+  - to head out to the shop which hosted the black market a level above her. Once she got to the
+- `L19:3534` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `552` activation `3.712` class `word` token ` authorities`
+  - one at the Bottom that would not alert the elite authorities. Linda whispered that she had created a dream and
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `500` activation `4.354` class `word` token ` toes`
+  - grass and let the mud squish in between your toes. Makes some art - staying on the topic of
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `638` activation `4.199` class `word` token ` surroundings`
+  - mind wanders and you come in tune with your surroundings.
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `524` activation `4.025` class `word` token ` artwork`
+  - could be a really good idea to make some temporary artwork. You can take a lot of mud and sculpt
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `490` activation `3.942` class `word` token ` grass`
+  - extremely comforting as you walk around barefoot in the grass and let the mud squish in between your toes
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `432` activation `3.922` class `word` token ` trail`
+  - jacket. It is highly recommended to pick an easy trail that way, you won't have to worry about
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `467` activation `3.918` class `word` token `les`
+  - child you may have splashed around in some puddles, as it was really fun. This simple activity
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `481` activation `3.907` class `word` token ` comforting`
+  - was really fun. This simple activity can be extremely comforting as you walk around barefoot in the grass and
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `562` activation `3.795` class `word` token ` temporary`
+  - The good thing about this is that it's all temporary and will wash away, so you won't have
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `487` activation `3.550` class `word` token `foot`
+  - activity can be extremely comforting as you walk around barefoot in the grass and let the mud squish in
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `539` activation `3.499` class `word` token ` want`
+  - a lot of mud and sculpt it into whatever you want or simply use the mud as a means to paint
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `618` activation `3.392` class `word` token ` place`
+  - . All you need to do is find a comfortable place to sit and listen to the rain as your mind
+- `L19:3534` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `588` activation `3.324` class `word` token ` stress`
+  - . Mindfulness - if you feel like reducing your stress and don't feel like being too active outside in
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `382` activation `4.374` class `word` token ` mentally`
+  - stretching out to get himself active, and preparing himself mentally. Alex knew that, every time he does what
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `465` activation `3.914` class `word` token ` stamina`
+  - ahead of him, which put a toll on his stamina. The rocks started thinning more as he gained
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `476` activation `3.690` class `word` token ` altitude`
+  - . The rocks started thinning more as he gained altitude. He was starting to think that this was not
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `336` activation `3.546` class `word` token ` challenge`
+  - climb this mountain. Alex liked to give himself a challenge, and since he has loved rock climbing since he
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `368` activation `3.538` class `word` token ` hands`
+  - . Alex was preparing himself by putting chalk on his hands for grip, stretching out to get himself active,
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `518` activation `3.415` class `word` token ` line`
+  - up and saw some of the edges of the finish line. He was ecstatic to come to an end.
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `457` activation `3.363` class `word` token ` him`
+  - getting hard for Alex to reach and grab ahead of him, which put a toll on his stamina. The
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `429` activation `3.257` class `word` token ` mountain`
+  - ready. Step by step, he climbed up the mountain. The higher he got, the more resistance he
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `588` activation `3.226` class `word` token ` on`
+  - was trying to find an edge to rest his foot on, his hands were slowly slipping. Alex's heart
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `574` activation `3.222` class `word` token ` balance`
+  - left leg back, which caused him to lose his balance. As he was trying to find an edge to
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `489` activation `3.209` class `word` token ` idea`
+  - was starting to think that this was not a good idea and was thinking of his family, who was eagerly
+- `L19:3534` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `614` activation `3.171` class `word` token ` face`
+  - could hear is the violent wind slapping against his face. He had the last inch of grip on the
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `519` activation `4.803` class `word` token ` expenses`
+  - on using a credit card for paying for major unexpected expenses. It's common practice to save about three to
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `561` activation `4.709` class `word` token ` finances`
+  - be a major contributing factor to the drain on your finances especially when faced with high interest rates. It's
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `432` activation `4.475` class `word` token ` rule`
+  - is known as the 50/30/20 rule. What this means is you should allocate 50
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `536` activation `4.383` class `word` token ` expenses`
+  - save about three to six months of your current living expenses to build that emergency fund. Paying existing debts
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `499` activation `4.333` class `word` token ` emergencies`
+  - practice will allow you to have money set aside for emergencies. Doing this will allow you to not rely on
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `638` activation `4.315` class `word` token ` month`
+  - 're only charging what you're capable of paying each month.
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `541` activation `4.302` class `word` token ` fund`
+  - months of your current living expenses to build that emergency fund. Paying existing debts - existing debt can be
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `568` activation `4.187` class `word` token ` rates`
+  - drain on your finances especially when faced with high interest rates. It's a good idea to make a plan
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `513` activation `4.010` class `word` token ` card`
+  - will allow you to not rely on using a credit card for paying for major unexpected expenses. It's common
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `619` activation `3.955` class `word` token ` on`
+  - you're going to want to prioritize making extra payments on. You'll want to make sure you're only
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `403` activation `3.874` class `word` token ` goals`
+  - also help you lay out any short or long-term goals you would have regarding your finances. A good rule
+- `L19:3534` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `409` activation `3.735` class `word` token ` finances`
+  - short or long-term goals you would have regarding your finances. A good rule to follow when it comes the
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `467` activation `4.242` class `word` token ` times`
+  - worst times. More often times, the boring mediocre times - in all actuality. And it's an
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `458` activation `4.159` class `word` token ` times`
+  - them. Support them through their best and their worst times. More often times, the boring mediocre times -
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `608` activation `3.693` class `word` token ` stories`
+  - and interesting people today. Hear all kinds of interesting stories. But not me, I wasn't able to
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `600` activation `3.546` class `word` token ` people`
+  - the opportunity to meet all kinds of new and interesting people today. Hear all kinds of interesting stories. But
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `565` activation `3.317` class `word` token ` road`
+  - around, the boy ran off back towards the main road. I could instantly notice the sticker was sad to
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `418` activation `3.303` class `word` token ` them`
+  - little cloud that wants to bring me down along with them. That's what I do though. I sit
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `536` activation `3.079` class `word` token ` minutes`
+  - vigorously. After what felt like two arduous minutes, he ripped a paper off the notebook and stuck
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `519` activation `3.058` class `word` token ` notebook`
+  - took out his backpack, a pen, and a notebook. Then, he started writing vigorously. After what
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `526` activation `3.053` class `word` token ` vigorously`
+  - , and a notebook. Then, he started writing vigorously. After what felt like two arduous minutes
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `479` activation `3.017` class `word` token ` job`
+  - in all actuality. And it's an exhausting job, to be honest, but I can't remove
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `506` activation `2.987` class `word` token ` side`
+  - , a little boy came up and leaned on my side. He took out his backpack, a pen,
+- `L19:3534` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `544` activation `2.925` class `word` token ` notebook`
+  - duous minutes, he ripped a paper off the notebook and stuck it to me. Nervously looking
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `441` activation `4.142` class `word` token ` slate`
+  - To anyone asking, my life has become a blank slate. I could do anything I wanted. It might
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `415` activation `3.727` class `word` token ` name`
+  - clothes on my back and about $100 to my name. My family doesn't live in this state.
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `424` activation `3.568` class `word` token ` state`
+  - my name. My family doesn't live in this state. I have no friends. To anyone asking,
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `570` activation `3.500` class `word` token ` instinct`
+  - me to the closest town. I just moved on instinct. These feet know nothing else besides moving around in
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `373` activation `3.370` class `word` token ` journey`
+  - would be released today. It has been a long journey. Has it been 10 years? Maybe
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `626` activation `3.183` class `word` token ` moment`
+  - 's about the only thing I can protect at the moment. I keep walking. Foot after foot, mile
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `458` activation `3.167` class `word` token ` crime`
+  - wanted. It might be easy to just do another crime so I can get housing. At least that would
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `564` activation `3.073` class `word` token ` town`
+  - if this direction will even take me to the closest town. I just moved on instinct. These feet know
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `340` activation `3.000` class `word` token ` me`
+  - a long stretch of road both left and right of me. In front of me, there was no one
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `582` activation `2.958` class `word` token ` circle`
+  - These feet know nothing else besides moving around in a circle. Step after step, foot after foot. The
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `408` activation `2.920` class `word` token ` back`
+  - prison. All I have are the clothes on my back and about $100 to my name. My family
+- `L19:3534` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `531` activation `2.864` class `word` token ` convict`
+  - I need to find housing that'll accept a previous convict. I'll take anything I can get for $
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `506` activation `4.197` class `word` token ` body`
+  - know, the spell took a huge toll on her body and every limb and organ started screaming in pain.
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `249` activation `3.902` class `word` token `ote`
+  - for a spell and she landed on a simple antidote. She thought to herself "This looks easy enough
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `515` activation `3.803` class `word` token ` pain`
+  - her body and every limb and organ started screaming in pain. Kotone screams so loud you would think the
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `456` activation `3.763` class `contraction_piece` token ` done`
+  - healer. Kotone sighs at a job well done and proceeds to faint in front of the village folk
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `269` activation `3.763` class `word` token `tail`
+  - enough." She ties her hair back into a ponytail and starts to pray. The first step to any
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `231` activation `3.678` class `word` token ` day`
+  - to pant like a wolf finding its meal for the day. Kotone keeps looking and looking for a spell
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `348` activation `3.660` class `word` token ` spell`
+  - finishes praying and then reads the next part of the spell. It wasn't that complicated, she walks up
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `354` activation `3.532` class `word` token ` complicated`
+  - next part of the spell. It wasn't that complicated, she walks up to the man on the ground
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `294` activation `3.521` class `word` token ` blessing`
+  - so the goddess can find you and give you her blessing. She prays and prays until the power
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `345` activation `3.406` class `word` token ` part`
+  - . Kotone finishes praying and then reads the next part of the spell. It wasn't that complicated,
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `371` activation `3.282` class `word` token ` head`
+  - man on the ground and places her hand on his head. And with one vicious roar, she screams,
+- `L19:3534` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `466` activation `3.278` class `word` token ` folk`
+  - done and proceeds to faint in front of the village folk. Kotone wakes up in her bed.
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `315` activation `4.372` class `word` token ` wing`
+  - the family first and taking care of everybody under his wing. It was Connor Hanlon, Zareb
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `372` activation `4.288` class `word` token ` Arts`
+  - made him train from the best coaches in Mix Martial Arts and Krav Maga, even Connor McGregor trained
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `290` activation `4.262` class `word` token ` memories`
+  - care. Zareb indulged deeper in his memories and disclosed how it was his grandfather who taught him
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `509` activation `4.100` class `word` token `ions`
+  - the weapon supplies to third-world countries and supports rebellions to overthrow dictators. A strong man sat on
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `505` activation `4.080` class `word` token ` countries`
+  - rock. He discusses the weapon supplies to third-world countries and supports rebellions to overthrow dictators. A
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `548` activation `4.051` class `word` token ` past`
+  - This man was Alexander Owen, coming from a troubled past but setting himself up as the one man Zare
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `446` activation `4.049` class `word` token ` lies`
+  - him in the market and not fabricate rumors and lies about him. He wanted to rule the world when
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `368` activation `4.000` class `word` token ` coaches`
+  - . Connor Hanlon made him train from the best coaches in Mix Martial Arts and Krav Maga,
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `629` activation `3.993` class `word` token ` plans`
+  - Aidan has to say. Aidan had other plans and did not care about honoring Zareb.
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `513` activation `3.942` class `word` token `ators`
+  - third-world countries and supports rebellions to overthrow dictators. A strong man sat on the table with Aid
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `227` activation `3.907` class `word` token ` mansion`
+  - Zareb takes in the splendor of the mansion he’s entering. The wait-staff bow to
+- `L19:3534` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `487` activation `3.819` class `style_function_word` token ` makes`
+  - day to his wife who sticks by every decision he makes and is there for him like a rock. He
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `597` activation `7.896` class `word` token ` years`
+  - water heater will last around 10 to 15 years, and when looking at the unit you may find
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `613` activation `7.426` class `word` token ` it`
+  - the unit you may find the installation date written on it. If you notice unusual noises when it turns on
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `507` activation `6.940` class `word` token ` system`
+  - can cause major clogs and mess up the whole system. Next, you want to see how the toilets
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `638` activation `6.788` class `word` token ` it`
+  - it is highly recommended to have a professional look at it.
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `532` activation `6.774` class `word` token ` bases`
+  - to make sure to check for leaks and also unstable bases along with discoloration. Don't be afraid
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `568` activation `6.774` class `word` token ` intended`
+  - for making sure the showers and sinks are working as intended. The final thing you want to check is the
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `341` activation `6.770` class `word` token ` years`
+  - last somewhere around the timeframe of 10-25 years, hence the importance of asking how old it is
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `518` activation `6.684` class `word` token ` look`
+  - . Next, you want to see how the toilets look. You want to make sure to check for leaks
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `501` activation `6.682` class `word` token `logs`
+  - growth and pipe disintegration that can cause major clogs and mess up the whole system. Next, you
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `552` activation `6.651` class `word` token ` home`
+  - afraid to flush the toilet while you're at the home showing. The same goes for making sure the showers
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `610` activation `6.612` class `word` token ` date`
+  - when looking at the unit you may find the installation date written on it. If you notice unusual noises when
+- `L24:3645` `847c3cf1258f4ea88bc13959c81e1ee4a66a6045a8b9af08569da7c5f09edf6a@turn_01@human` token `546` activation `6.237` class `word` token ` toilet`
+  - oloration. Don't be afraid to flush the toilet while you're at the home showing. The same
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `506` activation `8.075` class `word` token ` fight`
+  - sword as if he's motioning to end this fight in one blow. The other samurai sees this
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `532` activation `7.748` class `word` token ` spoken`
+  - a smile on his face. No words have been spoken between the two, but they both understand. The
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `563` activation `7.667` class `word` token ` away`
+  - tightness. One pin could be heard from miles away. "Ding!" The sound of the convenience store
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `509` activation `7.548` class `word` token ` blow`
+  - he's motioning to end this fight in one blow. The other samurai sees this and does the
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `578` activation `7.339` class `word` token ` again`
+  - The sound of the convenience store door can be heard again. At that sound, both samurai dashed at
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `526` activation `7.335` class `word` token ` face`
+  - this and does the same with a smile on his face. No words have been spoken between the two,
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `594` activation `7.220` class `word` token ` speed`
+  - both samurai dashed at each other at blinding speed. You would think that lightning bolts came out of
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `610` activation `7.066` class `word` token ` feet`
+  - lightning bolts came out of both of those men's feet. A few seconds later, both men ended up
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `496` activation `7.059` class `word` token ` sword`
+  - something. One samurai sheathes his's sword as if he's motioning to end this fight
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `284` activation `6.957` class `word` token ` passed`
+  - to not interrupt this grand struggle. One hour has passed, and both samurai have not moved from their
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `554` activation `6.869` class `word` token `ness`
+  - quietness filled the air with a sense of tightness. One pin could be heard from miles away.
+- `L24:3645` `802daa57ce7e1941d54f9057785ad1fdd28bbdd44709d93c58092d73b9a6fa1f@turn_01@human` token `484` activation `6.859` class `word` token ` store`
+  - , believing that this was an orchestrated promotion for the store or something. One samurai sheathes his
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `450` activation `8.767` class `word` token ` market`
+  - find a way around and sell it on the black market. This black market had lower prices which were a
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `526` activation `8.656` class `word` token ` mind`
+  - But Linda trodded on with the mission in mind. The shopkeeper's name was Dan. A
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `504` activation `8.424` class `word` token ` air`
+  - shop, she was overwhelmed by the smell in the air. It smelt like burnt rubber mixed with mold
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `567` activation `8.390` class `style_function_word` token ` that`
+  - she had created a dream and a legendary one at that. Dan's jaw dropped and he was amazed that
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `457` activation `8.321` class `word` token ` prices`
+  - on the black market. This black market had lower prices which were a steal compared to the prices on the
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `483` activation `8.276` class `word` token ` market`
+  - to head out to the shop which hosted the black market a level above her. Once she got to the
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `602` activation `8.147` class `word` token ` dream`
+  - pain she had to go through to create such a dream. Linda was able to sell the dream to Dan
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `435` activation `7.962` class `word` token ` dream`
+  - could not go to the Top and just sell the dream, she had to find a way around and sell
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `542` activation `7.957` class `word` token ` one`
+  - name was Dan. A simple name and a popular one at the Bottom that would not alert the elite authorities
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `565` activation `7.893` class `word` token ` one`
+  - whispered that she had created a dream and a legendary one at that. Dan's jaw dropped and he was
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `635` activation `7.870` class `word` token ` life`
+  - Bottom and venture out to live a peaceful and happy life at the Top.
+- `L24:3645` `3f0397b26f0dd5f38da523044009bbe148b4c55bb82edd23036e6911f055779b@turn_01@human` token `597` activation `7.681` class `word` token ` through`
+  - He wondered about how much pain she had to go through to create such a dream. Linda was able to
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `467` activation `7.995` class `word` token `les`
+  - child you may have splashed around in some puddles, as it was really fun. This simple activity
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `524` activation `7.491` class `word` token ` artwork`
+  - could be a really good idea to make some temporary artwork. You can take a lot of mud and sculpt
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `566` activation `6.885` class `word` token ` away`
+  - this is that it's all temporary and will wash away, so you won't have to worry about any
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `562` activation `6.854` class `word` token ` temporary`
+  - The good thing about this is that it's all temporary and will wash away, so you won't have
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `473` activation `6.811` class `word` token ` fun`
+  - around in some puddles, as it was really fun. This simple activity can be extremely comforting as you
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `490` activation `6.743` class `word` token ` grass`
+  - extremely comforting as you walk around barefoot in the grass and let the mud squish in between your toes
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `539` activation `6.659` class `word` token ` want`
+  - a lot of mud and sculpt it into whatever you want or simply use the mud as a means to paint
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `487` activation `6.463` class `word` token `foot`
+  - activity can be extremely comforting as you walk around barefoot in the grass and let the mud squish in
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `481` activation `6.433` class `word` token ` comforting`
+  - was really fun. This simple activity can be extremely comforting as you walk around barefoot in the grass and
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `500` activation `6.085` class `word` token ` toes`
+  - grass and let the mud squish in between your toes. Makes some art - staying on the topic of
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `638` activation `5.945` class `word` token ` surroundings`
+  - mind wanders and you come in tune with your surroundings.
+- `L24:3645` `025cb11be69af7cf9cffd7a2ebc6bbac46fb60f50385aaf48471adfe1d3ff481@turn_01@human` token `596` activation `5.923` class `word` token ` active`
+  - reducing your stress and don't feel like being too active outside in the rain, this would be perfect for
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `407` activation `8.826` class `word` token ` again`
+  - was always a chance he could never see his family again. He took his first step. He was now
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `336` activation `8.610` class `word` token ` challenge`
+  - climb this mountain. Alex liked to give himself a challenge, and since he has loved rock climbing since he
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `368` activation `8.250` class `word` token ` hands`
+  - . Alex was preparing himself by putting chalk on his hands for grip, stretching out to get himself active,
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `328` activation `8.201` class `word` token ` mountain`
+  - and drawing a plan for how he will climb this mountain. Alex liked to give himself a challenge, and
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `382` activation `8.148` class `word` token ` mentally`
+  - stretching out to get himself active, and preparing himself mentally. Alex knew that, every time he does what
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `370` activation `8.110` class `word` token ` grip`
+  - was preparing himself by putting chalk on his hands for grip, stretching out to get himself active, and preparing
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `377` activation `7.648` class `word` token ` active`
+  - his hands for grip, stretching out to get himself active, and preparing himself mentally. Alex knew that,
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `394` activation `7.581` class `word` token ` loves`
+  - Alex knew that, every time he does what he loves, there was always a chance he could never see
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `419` activation `7.347` class `word` token ` ready`
+  - He took his first step. He was now mentally ready. Step by step, he climbed up the mountain
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `489` activation `7.221` class `word` token ` idea`
+  - was starting to think that this was not a good idea and was thinking of his family, who was eagerly
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `357` activation `7.199` class `word` token ` him`
+  - was 17, this was just another day for him. Alex was preparing himself by putting chalk on his
+- `L24:3645` `b72ae7f3e19a4b579b2db2143286f1e0d3de6271fd8743b72a46c6edb54bd569@turn_01@human` token `429` activation `7.081` class `word` token ` mountain`
+  - ready. Step by step, he climbed up the mountain. The higher he got, the more resistance he
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `499` activation `8.315` class `word` token ` emergencies`
+  - practice will allow you to have money set aside for emergencies. Doing this will allow you to not rely on
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `519` activation `8.283` class `word` token ` expenses`
+  - on using a credit card for paying for major unexpected expenses. It's common practice to save about three to
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `638` activation `8.240` class `word` token ` month`
+  - 're only charging what you're capable of paying each month.
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `561` activation `8.094` class `word` token ` finances`
+  - be a major contributing factor to the drain on your finances especially when faced with high interest rates. It's
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `513` activation `7.956` class `word` token ` card`
+  - will allow you to not rely on using a credit card for paying for major unexpected expenses. It's common
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `568` activation `7.941` class `word` token ` rates`
+  - drain on your finances especially when faced with high interest rates. It's a good idea to make a plan
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `389` activation `7.893` class `word` token ` going`
+  - idea of your income and where you're money is going. It will also help you lay out any short
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `432` activation `7.673` class `word` token ` rule`
+  - is known as the 50/30/20 rule. What this means is you should allocate 50
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `592` activation `7.611` class `word` token ` loans`
+  - long realistically it would take you to pay off any loans or debt you may have. Cards that have the
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `403` activation `7.547` class `word` token ` goals`
+  - also help you lay out any short or long-term goals you would have regarding your finances. A good rule
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `409` activation `7.423` class `word` token ` finances`
+  - short or long-term goals you would have regarding your finances. A good rule to follow when it comes the
+- `L24:3645` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `597` activation `7.377` class `word` token ` have`
+  - you to pay off any loans or debt you may have. Cards that have the highest interest rates are the
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `467` activation `8.453` class `word` token ` times`
+  - worst times. More often times, the boring mediocre times - in all actuality. And it's an
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `458` activation `8.134` class `word` token ` times`
+  - them. Support them through their best and their worst times. More often times, the boring mediocre times -
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `444` activation `7.808` class `word` token ` imagine`
+  - . People's things, animals, whatever you can imagine, and support them. Support them through their best
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `425` activation `7.749` class `style_function_word` token ` though`
+  - down along with them. That's what I do though. I sit here and wait for people. People
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `431` activation `7.667` class `word` token ` wait`
+  - 's what I do though. I sit here and wait for people. People's things, animals, whatever
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `439` activation `7.469` class `word` token ` animals`
+  - here and wait for people. People's things, animals, whatever you can imagine, and support them.
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `418` activation `7.464` class `word` token ` them`
+  - little cloud that wants to bring me down along with them. That's what I do though. I sit
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `448` activation `7.292` class `word` token ` them`
+  - , animals, whatever you can imagine, and support them. Support them through their best and their worst times
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `437` activation `7.215` class `word` token ` things`
+  - I sit here and wait for people. People's things, animals, whatever you can imagine, and support
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `479` activation `6.821` class `word` token ` job`
+  - in all actuality. And it's an exhausting job, to be honest, but I can't remove
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `433` activation `6.522` class `word` token ` people`
+  - I do though. I sit here and wait for people. People's things, animals, whatever you can
+- `L24:3645` `846cfba9bdacc8e9352f3b90c569e76b09843419111f688a67b3a56e00a72d6f@turn_01@human` token `424` activation `6.447` class `expanded_negation_word` token ` do`
+  - me down along with them. That's what I do though. I sit here and wait for people.
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `415` activation `7.910` class `word` token ` name`
+  - clothes on my back and about $100 to my name. My family doesn't live in this state.
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `539` activation `7.210` class `word` token ` get`
+  - a previous convict. I'll take anything I can get for $100. I start to walk to the
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `424` activation `6.975` class `word` token ` state`
+  - my name. My family doesn't live in this state. I have no friends. To anyone asking,
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `373` activation `6.829` class `word` token ` journey`
+  - would be released today. It has been a long journey. Has it been 10 years? Maybe
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `408` activation `6.689` class `word` token ` back`
+  - prison. All I have are the clothes on my back and about $100 to my name. My family
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `630` activation `6.611` class `word` token ` walking`
+  - thing I can protect at the moment. I keep walking. Foot after foot, mile after mile.
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `380` activation `6.512` class `word` token ` years`
+  - been a long journey. Has it been 10 years? Maybe 20 years? Time doesn't feel
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `525` activation `6.487` class `word` token ` housing`
+  - to. First things though, I need to find housing that'll accept a previous convict. I'll take
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `582` activation `6.474` class `word` token ` circle`
+  - These feet know nothing else besides moving around in a circle. Step after step, foot after foot. The
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `606` activation `6.468` class `word` token ` off`
+  - me is taking its toll. I take my shirt off and use it to cover my head. It's
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `366` activation `6.397` class `word` token ` today`
+  - I didn't tell anyone that I would be released today. It has been a long journey. Has it
+- `L24:3645` `b4002a6bd617ea087114c79a14d4241d973b4e2e1183e6f50668a540c9fadd34@turn_01@human` token `570` activation `6.387` class `word` token ` instinct`
+  - me to the closest town. I just moved on instinct. These feet know nothing else besides moving around in
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `259` activation `10.200` class `word` token ` enough`
+  - ote. She thought to herself "This looks easy enough." She ties her hair back into a ponytail
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `348` activation `9.953` class `word` token ` spell`
+  - finishes praying and then reads the next part of the spell. It wasn't that complicated, she walks up
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `258` activation `9.848` class `word` token ` easy`
+  - antidote. She thought to herself "This looks easy enough." She ties her hair back into a pony
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `354` activation `9.810` class `word` token ` complicated`
+  - next part of the spell. It wasn't that complicated, she walks up to the man on the ground
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `294` activation `9.572` class `word` token ` blessing`
+  - so the goddess can find you and give you her blessing. She prays and prays until the power
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `345` activation `9.480` class `word` token ` part`
+  - . Kotone finishes praying and then reads the next part of the spell. It wasn't that complicated,
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `616` activation `9.326` class `word` token ` book`
+  - This is your next trial, learn everything in this book then come talk to me." She leaves and Kot
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `301` activation `9.242` class `word` token `ays`
+  - give you her blessing. She prays and prays until the power starts swelling up inside her. The
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `575` activation `9.228` class `word` token ` trial`
+  - about the well?" "That was never part of the trial. It was always the plan that one of us
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `317` activation `9.164` class `word` token ` notice`
+  - up inside her. The village folk starts to take notice of the swirl of magic surrounding her and start to
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `329` activation `8.847` class `word` token ` away`
+  - the swirl of magic surrounding her and start to walk away from the sickly man. Kotone finishes praying
+- `L24:3645` `ceb7b6b8c14838421866018f0e8cb0f2a4a4a1e98271ade1e3c17d189be78e0b@turn_01@human` token `610` activation `8.840` class `word` token ` trial`
+  - and tells Kotone, "This is your next trial, learn everything in this book then come talk to
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `230` activation `8.320` class `word` token ` entering`
+  - takes in the splendor of the mansion he’s entering. The wait-staff bow to him as they
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `448` activation `8.126` class `word` token ` him`
+  - the market and not fabricate rumors and lies about him. He wanted to rule the world when he stepped
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `487` activation `8.083` class `style_function_word` token ` makes`
+  - day to his wife who sticks by every decision he makes and is there for him like a rock. He
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `623` activation `8.078` class `word` token ` say`
+  - family first and will respect what Aidan has to say. Aidan had other plans and did not care
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `315` activation `8.045` class `word` token ` wing`
+  - the family first and taking care of everybody under his wing. It was Connor Hanlon, Zareb
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `444` activation `8.000` class `word` token ` rumors`
+  - to meet him in the market and not fabricate rumors and lies about him. He wanted to rule the
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `446` activation `7.958` class `word` token ` lies`
+  - him in the market and not fabricate rumors and lies about him. He wanted to rule the world when
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `439` activation `7.796` class `word` token ` market`
+  - saying that the competitors need to meet him in the market and not fabricate rumors and lies about him.
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `469` activation `7.767` class `expanded_negation_word` token ` do`
+  - into the business and that is exactly what he will do. Zareb goes home that day to his
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `614` activation `7.593` class `discourse_marker_word` token ` first`
+  - privately to Zareb as he always puts family first and will respect what Aidan has to say.
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `215` activation `7.567` class `word` token ` him`
+  - meet his Grandfather who is impatiently waiting for him. Zareb takes in the splendor of
+- `L24:3645` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `280` activation `7.553` class `word` token ` care`
+  - changed after meeting his grandfather and growing up under his care. Zareb indulged deeper in his memories

@@ -1,0 +1,809 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:176` | `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` | `human` | 42 | `66.03` | `3.62` | word:40|line_break:1|punctuation:1 |
+| `L19:176` | `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` | `human` | 4 | `5.87` | `3.71` | word:3|style_function_word:1 |
+| `L19:176` | `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` | `gpt-5.5` | 13 | `14.71` | `3.70` | word:12|line_break:1 |
+| `L19:176` | `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 19 | `31.14` | `3.83` | word:19 |
+| `L19:176` | `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` | `gpt-5.5` | 46 | `67.45` | `3.87` | word:46 |
+| `L19:176` | `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 32 | `41.34` | `3.59` | word:32 |
+| `L19:176` | `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` | `gpt-5.5` | 65 | `90.77` | `3.71` | word:63|punctuation:2 |
+| `L19:176` | `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` | `human` | 25 | `44.37` | `3.72` | word:25 |
+| `L19:176` | `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` | `gpt-5.5` | 22 | `31.50` | `3.66` | word:21|punctuation:1 |
+| `L19:176` | `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 46 | `62.55` | `4.05` | word:46 |
+| `L19:176` | `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 30 | `42.11` | `3.69` | word:29|line_break:1 |
+| `L19:176` | `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` | `glm-5.2` | 30 | `43.82` | `3.80` | word:30 |
+| `L19:176` | `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` | `human` | 9 | `11.60` | `3.73` | word:9 |
+| `L19:176` | `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` | `gpt-5.5` | 65 | `91.88` | `3.61` | word:65 |
+| `L19:176` | `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` | `glm-5.2` | 58 | `73.82` | `3.45` | word:57|line_break:1 |
+| `L19:176` | `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` | `human` | 34 | `52.74` | `3.86` | word:34 |
+| `L19:176` | `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` | `human` | 13 | `21.60` | `3.63` | word:13 |
+| `L24:2360` | `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` | `human` | 36 | `71.92` | `4.04` | word:34|line_break:1|punctuation:1 |
+| `L24:2360` | `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` | `human` | 5 | `9.19` | `4.14` | word:5 |
+| `L24:2360` | `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` | `gpt-5.5` | 8 | `15.70` | `4.20` | word:8 |
+| `L24:2360` | `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 18 | `36.05` | `4.29` | word:18 |
+| `L24:2360` | `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` | `gpt-5.5` | 42 | `73.21` | `4.27` | word:41|punctuation:1 |
+| `L24:2360` | `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 25 | `44.95` | `4.17` | word:25 |
+| `L24:2360` | `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` | `gpt-5.5` | 57 | `102.73` | `4.04` | word:56|punctuation:1 |
+| `L24:2360` | `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` | `human` | 23 | `50.93` | `4.22` | word:23 |
+| `L24:2360` | `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` | `gpt-5.5` | 16 | `32.55` | `4.06` | word:16 |
+| `L24:2360` | `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 32 | `57.87` | `4.80` | word:32 |
+| `L24:2360` | `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 24 | `43.92` | `4.29` | word:24 |
+| `L24:2360` | `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` | `glm-5.2` | 28 | `51.23` | `4.08` | word:26|line_break:2 |
+| `L24:2360` | `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` | `human` | 7 | `13.88` | `4.05` | word:7 |
+| `L24:2360` | `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` | `gpt-5.5` | 52 | `94.62` | `3.87` | word:52 |
+| `L24:2360` | `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` | `glm-5.2` | 49 | `83.87` | `4.04` | word:48|line_break:1 |
+| `L24:2360` | `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` | `human` | 30 | `61.03` | `4.39` | word:30 |
+| `L24:2360` | `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` | `human` | 13 | `25.93` | `4.23` | word:13 |
+
+## Top Tokens
+
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `363` activation `3.621` class `word` token ` Sara`
+  - rooftop behind her, "Anything yet?" "No," Sara says as Smudges slowly crawls out of
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `258` activation `3.262` class `word` token ` Sara`
+  - ING. "Nothing yet :-/ have patience, Sara" She puts her phone back down on the blanket
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `522` activation `3.145` class `word` token ` Sara`
+  - traveling across the sky. A large smile breaks on Sara's face and is soon accompanied by tears welling
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `454` activation `3.091` class `word` token `ara`
+  - cat as he walks by. DING Sara picks up her phone and reads a message from "
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `424` activation `2.714` class `word` token ` Sara`
+  - kill me." "Have patience, Yuma." Sara says with a smile. "Hi, Smud
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `634` activation `2.434` class `word` token `addy`
+  - her phone once again. From "Mom": "Daddy's home! :-)"
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `288` activation `2.264` class `word` token ` Til`
+  - to purr loudly as she scratches his ears. Tilting her head back even further to study the stars
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `353` activation `2.111` class `word` token ` rooftop`
+  - ," the voice of a young woman says entering the rooftop behind her, "Anything yet?" "No," Sara
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `485` activation `2.023` class `word` token `ara`
+  - yells, pointing into the night sky. Sara immediately breaks her attention from the phone and looks up
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `504` activation `1.955` class `word` token ` streak`
+  - looks up. Across the sky is a long yellow streak being left by a large bright light traveling across the
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `561` activation `1.949` class `word` token ` Happiness`
+  - less as so many emotions ran through her heart. Happiness, fear, ecstasy, terror, longing, hope
+- `L19:176` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `620` activation `1.897` class `word` token `ara`
+  - light fell below the horizon. DING Sara glanced down at her phone once again. From "
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `465` activation `3.714` class `word` token ` MIME`
+  - formats or other files. It has been replaced by MIME and yEnc, and attempting to use it with
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `492` activation `0.800` class `word` token `t`
+  - or data loss. Despite that, you aren���t stuck! There is a workaround and an alternative modern
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `556` activation `0.697` class `word` token ` f`
+  - . The code for that might look like this: f = open(���file.txt���, ���
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `551` activation `0.659` class `style_function_word` token ` might`
+  - , or write, respectively. The code for that might look like this: f = open(���file
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `402` activation `3.701` class `word` token ` MIME`
+  - encoding format, mostly superseded by Base64 and MIME-related tools. It was historically useful for sending binary
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `353` activation `1.806` class `word` token ` batteries`
+  - -library modules under PEP 594 (“Removing dead batteries from the standard library”). The goal was to reduce
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `573` activation `1.564` class `word` token `igrate`
+  - may be available via packages like sharutils. Migrate to Base64 if possible For new data formats
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `376` activation `1.349` class `word` token ` adequately`
+  - for modules that are obsolete, rarely used, or adequately handled elsewhere. In particular, uuencoding is a
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `372` activation `1.052` class `word` token ` rarely`
+  - to reduce maintenance burden for modules that are obsolete, rarely used, or adequately handled elsewhere. In particular,
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `561` activation `0.833` class `word` token `ude`
+  - Unix-like systems, commands such as uuencode/uudecode may be available via packages like sharutils.
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `364` activation `0.757` class `word` token ` maintenance`
+  - from the standard library”). The goal was to reduce maintenance burden for modules that are obsolete, rarely used,
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `501` activation `0.718` class `word` token `PI`
+  - that provide uuencode/uudecode functionality on PyPI, especially if you need drop-in behavior. Vendor
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `520` activation `0.695` class `word` token ` pure`
+  - . Vendor the old module Since uu.py was pure Python, you can copy the old implementation from C
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `627` activation `0.675` class `word` token ` maintain`
+  - because UUencoding is legacy, and Python’s maintainers decided it no longer justified being in the standard
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `569` activation `0.623` class `word` token ` shar`
+  - encode/uudecode may be available via packages like sharutils. Migrate to Base64 if possible
+- `L19:176` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `608` activation `0.514` class `line_break` token `)
+
+`
+  - (data) decoded = base64.b64decode(encoded) So the short answer: it was removed because U
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `297` activation `3.832` class `word` token ` tactical`
+  - A skirmisher in a turn-based tactical game thrives on high mobility, disruption, and
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `380` activation `2.835` class `word` token `actical`
+  - one tile backward without triggering attacks of opportunity. Tactical Use: Punishes enemies who try to pin the
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `511` activation `2.825` class `word` token `actical`
+  - from taking reactions (like attacks of opportunity). Tactical Use: A utility tool that allows the skirmisher
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `439` activation `2.665` class `word` token `actical`
+  - they deliver a slashing blow that ignores armor. Tactical Use: Perfect for bypassing front-line tanks to
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `569` activation `2.578` class `word` token `actical`
+  - they have already moved at least three tiles. Tactical Use: Encourages dynamic movement. It allows
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `472` activation `1.773` class `word` token ` Dust`
+  - a corner when surrounded. Pocket Sand / Blinding Dust (Active) Effect: A short-range cone attack
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `451` activation `1.714` class `word` token ` vulnerable`
+  - : Perfect for bypassing front-line tanks to target vulnerable backline mages or archers, or escaping
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `383` activation `1.612` class `word` token ` Pun`
+  - without triggering attacks of opportunity. Tactical Use: Punishes enemies who try to pin the skirmisher down
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `320` activation `1.372` class `word` token ` fragile`
+  - strikes. They should feel slippery, dangerous, and fragile if caught. Here are four abilities designed to capture
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `481` activation `1.364` class `word` token ` cone`
+  - inding Dust (Active) Effect: A short-range cone attack that inflicts "Blinded" for one
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `384` activation `1.187` class `word` token `ishes`
+  - triggering attacks of opportunity. Tactical Use: Punishes enemies who try to pin the skirmisher down,
+- `L19:176` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `444` activation `1.147` class `word` token ` bypass`
+  - that ignores armor. Tactical Use: Perfect for bypassing front-line tanks to target vulnerable backline m
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `313` activation `3.866` class `word` token ` Mara`
+  - the lanes, turning every cough into a prayer. Mara arrived with one mule, two satchels
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `621` activation `2.941` class `word` token ` Mara`
+  - . Windows opened. The headman wept into Mara’s hands. When she left, the village bells
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `260` activation `2.885` class `word` token ` Mara`
+  - By the time Dr. Mara Venn reached Alderwick, the village bells
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `265` activation `2.830` class `word` token `er`
+  - By the time Dr. Mara Venn reached Alderwick, the village bells had stopped ringing. Not
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `264` activation `2.762` class `word` token ` Ald`
+  - By the time Dr. Mara Venn reached Alderwick, the village bells had stopped ringing.
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `569` activation `2.262` class `word` token ` Ald`
+  - dig a new well uphill. For three days, Alderwick balanced between grave and morning. On the
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `433` activation `2.182` class `word` token ` moss`
+  - village spring and watched a dead rat drift from the moss-choked stones. “Boil every drop,”
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `412` activation `1.858` class `word` token ` tongues`
+  - from cot to cot, listening to lungs, studying tongues, counting pulses. At dawn she stood by the
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `396` activation `1.839` class `word` token ` sick`
+  - room, clean water, and the names of the sick. All night she moved from cot to cot,
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `269` activation `1.811` class `word` token ` village`
+  - . Mara Venn reached Alderwick, the village bells had stopped ringing. Not from peace—no
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `291` activation `1.795` class `word` token ` sickness`
+  - had the strength to pull the ropes. A gray sickness lay over the valley, shuttering windows, empty
+- `L19:176` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `423` activation `1.760` class `word` token ` village`
+  - , counting pulses. At dawn she stood by the village spring and watched a dead rat drift from the moss
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `282` activation `3.594` class `word` token ` Mama`
+  - " for her rapid tapping. Next, she grabbed Mama Bear’s iPad. The interface was overly complicated,
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `227` activation `2.895` class `word` token ` Papa`
+  - the glass coffee table. First, she picked up Papa Bear’s tablet. It was too heavy, the
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `211` activation `2.373` class `word` token ` sleek`
+  - door ajar, her eyes immediately locked onto the sleek, minimalist tablets resting on the glass coffee table.
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `336` activation `2.059` class `word` token ` sleek`
+  - . Finally, her fingers brushed against Baby Bear’s sleek, lightweight device. It was just the right size
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `275` activation `1.784` class `word` token ` rapid`
+  - the battery life was "too slow" for her rapid tapping. Next, she grabbed Mama Bear’s iPad
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `465` activation `1.701` class `word` token ` stern`
+  - were standing in the doorway, their expressions ranging from stern to confused. Pops had noticed his tablet battery
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `590` activation `1.641` class `word` token `ed`
+  - tablet gently onto the sofa, turned, and sprinted out of the house, her golden hair trailing behind
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `316` activation `1.600` class `word` token ` flick`
+  - . "This is too annoying," she muttered, flicking the screen in frustration before discarding it.
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `135` activation `1.408` class `word` token ` pillows`
+  - the intruder were not tangled in the soft down pillows of the three bears, but rather, she was
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `255` activation `1.354` class `word` token ` tossed`
+  - required strategic patience she simply didn’t possess. She tossed it aside with a huff, complaining that the
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `399` activation `1.275` class `word` token ` gems`
+  - the virtual realm, achieving high scores and collecting digital gems, completely忘记ing the real world around her
+- `L19:176` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `475` activation `1.248` class `word` token ` battery`
+  - stern to confused. Pops had noticed his tablet battery had died in seconds, likely due to intensive use
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `191` activation `3.711` class `word` token `ara`
+  - ” Quince — the reluctant mapmaker Mara is nineteen and built like a cinnamon stick: narrow
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `318` activation `3.504` class `word` token ` Mara`
+  - she rarely smiles unless she has discovered a secret. Mara wears ink on her fingers like squid sauce stains,
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `180` activation `3.018` class `word` token `ara`
+  - Maribel “Mara” Quince — the reluctant mapmaker M
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `181` activation `2.671` class `punctuation` token `”`
+  - Maribel “Mara” Quince — the reluctant mapmaker Mara
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `477` activation `2.620` class `word` token ` dough`
+  - . He moves slowly, with the heavy patience of dough rising, but when danger comes, he is all
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `387` activation `2.434` class `word` token ` bald`
+  - and sturdy from years of sun and labor. His bald head shines like a peeled lychee, though
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `609` activation `2.273` class `word` token ` candy`
+  - the color of burnt caramel with streaks of strawberry candy dyed through it. They grin often, showing
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `276` activation `2.095` class `word` token `el`
+  - with a brass compass needle. She has quick hazel eyes the color of steeped green tea, always
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `437` activation `2.031` class `word` token ` milk`
+  - cider, and his pale blue eyes look washed in milk, soft until anger curdles them. A
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `230` activation `1.817` class `word` token ` dust`
+  - -brown of toasted brioche, with a dusting of freckles across her nose like nut
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `238` activation `1.797` class `word` token ` nose`
+  - with a dusting of freckles across her nose like nutmeg shaken too generously over custard.
+- `L19:176` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `605` activation `1.765` class `word` token ` streak`
+  - on the other, the color of burnt caramel with streaks of strawberry candy dyed through it. They
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `252` activation `3.724` class `word` token `iana`
+  - the adopted heir to the Hanlon Empire. Diana Scott continued her interview of Zareb Hanlon
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `564` activation `2.957` class `word` token `idan`
+  - the one man Zareb relies on. Aidan does not like Zareb leading the company considering
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `524` activation `2.804` class `word` token `an`
+  - . A strong man sat on the table with Aidan Hanlon, a hot head and Zareb
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `619` activation `2.552` class `word` token ` Aid`
+  - as he always puts family first and will respect what Aidan has to say. Aidan had other plans
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `523` activation `2.482` class `word` token ` Aid`
+  - ators. A strong man sat on the table with Aidan Hanlon, a hot head and Zare
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `625` activation `2.364` class `word` token ` Aid`
+  - and will respect what Aidan has to say. Aidan had other plans and did not care about honoring
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `227` activation `2.320` class `word` token ` mansion`
+  - Zareb takes in the splendor of the mansion he’s entering. The wait-staff bow to
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `371` activation `2.276` class `word` token ` Martial`
+  - lon made him train from the best coaches in Mix Martial Arts and Krav Maga, even Connor McGregor
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `536` activation `2.259` class `word` token ` cousin`
+  - lon, a hot head and Zareb’s cousin. This man was Alexander Owen, coming from a
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `542` activation `2.226` class `word` token ` Owen`
+  - Zareb’s cousin. This man was Alexander Owen, coming from a troubled past but setting himself up
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `626` activation `1.802` class `word` token `an`
+  - will respect what Aidan has to say. Aidan had other plans and did not care about honoring Z
+- `L19:176` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `620` activation `1.700` class `word` token `an`
+  - he always puts family first and will respect what Aidan has to say. Aidan had other plans and
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `397` activation `3.661` class `word` token `ara`
+  - The toaster clicked. Mara looked up from her phone. The kitchen was still
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `571` activation `2.959` class `word` token `ara`
+  - his blue robe, rubbing his eyes. “Mara?” The whisper came again, warm against her ear
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `416` activation `2.558` class `word` token ` dawn`
+  - was still dark except for the thin gray line of dawn at the window. “Did you set that?”
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `477` activation `2.337` class `word` token ` Mara`
+  - Smoke curled from them in perfect little ribbons. Mara stepped closer, frowning. On the counter beside
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `590` activation `1.926` class `word` token ` flick`
+  - her ear. “Breakfast.” The kitchen lights flickered on. Every cabinet door stood open. Inside
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `608` activation `1.867` class `word` token ` mug`
+  - open. Inside each shelf, every plate, every mug, every glass had been turned to face her.
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `519` activation `1.865` class `word` token ` lever`
+  - above her. “What’s wrong?” The toaster lever snapped down by itself. Mara backed away.
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `595` activation `1.548` class `word` token ` cabinet`
+  - fast.” The kitchen lights flickered on. Every cabinet door stood open. Inside each shelf, every plate
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `496` activation `1.505` class `word` token `ble`
+  - counter beside it, the butter knife began to tremble. “Ben?” she said. Footsteps c
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `461` activation `1.467` class `word` token ` bread`
+  - black slices rose slowly from the slots, though no bread had been put in. Smoke curled from them in
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `495` activation `1.371` class `word` token ` trem`
+  - the counter beside it, the butter knife began to tremble. “Ben?” she said. Footsteps
+- `L19:176` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `526` activation `1.023` class `word` token `ara`
+  - ?” The toaster lever snapped down by itself. Mara backed away. “Ben, come down here.”
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `190` activation `4.048` class `word` token `a`
+  - Who wants to start?" Arthur asked. Brenda raised her hand. She was wearing a tiara
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `290` activation `3.524` class `word` token ` Brenda`
+  - the Surgeon General of Soup." "Progress, Brenda. Recognition is the first step," Arthur lied.
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `189` activation `2.906` class `word` token `rend`
+  - "Who wants to start?" Arthur asked. Brenda raised her hand. She was wearing a ti
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `72` activation `2.828` class `word` token `esty`
+  - banner hung crookedly on the wall: Honesty is the Only Policy (Unless You Have a Really
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `403` activation `2.448` class `word` token ` Chloe`
+  - the truth." "We forgive you, Marcus," said Chloe, a woman who had spent the last forty minutes
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `315` activation `2.310` class `word` token `enta`
+  - a man who claimed to have invented the color magenta. "I had a relapse yesterday," Marcus
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `50` activation `2.081` class `word` token ` Jude`
+  - The basement of St. Jude’s smelled of stale coffee and unearned redemption.
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `540` activation `2.071` class `word` token ` dairy`
+  - . "In fact, I am medically blind to dairy." "I can vouch for him," Arthur chim
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `232` activation `1.832` class `word` token ` oven`
+  - hands had temporarily turned into soup. I even wore oven mitts to the leasing office." "And how did
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `253` activation `1.800` class `word` token ` sag`
+  - that make you feel?" Arthur asked, nodding sagely. "Empowered, mostly. But then
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `609` activation `1.797` class `word` token ` astronauts`
+  - Arthur said. "This is a meeting for amateur astronauts." The officer rolled his eyes and left. Arthur
+- `L19:176` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `99` activation `1.665` class `word` token ` tou`
+  - the group leader, stood up. He adjusted a toupee that looked suspiciously like a deceased squirrel.
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `297` activation `3.688` class `word` token `ance`
+  - -way ticket humanity could afford to punch. "Vance to Control," he whispered into the comms,
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `241` activation `3.538` class `word` token ` Vance`
+  - of forever. Inside, Dr. Alistair Vance watched the event horizon of Cygnus X-
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `372` activation `2.464` class `word` token ` Einstein`
+  - blinding ring of blue-shifted starlight—the Einstein Ring—while ahead lay an absolute, velvet void
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `625` activation `2.229` class `word` token ` cabin`
+  - an end," Alistair whispered to the empty cabin, smiling as the light claimed him. "It
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `562` activation `2.045` class `word` token ` tape`
+  - stars, suspended in the gravity well, painting a tapestry of history around him. Time ceased to be
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `318` activation `1.968` class `word` token ` slope`
+  - knowing the signal was already struggling against the severe gravitational slope. "Approaching the threshold. Entering the
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `507` activation `1.860` class `word` token ` bloss`
+  - of spaghettification. Instead, the universe blossomed. The blackness did not crush him;
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `293` activation `1.838` class `word` token ` punch`
+  - his was a one-way ticket humanity could afford to punch. "Vance to Control," he whispered into
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `453` activation `1.767` class `word` token ` casc`
+  - head. The telemetry screens flickered, their data cascading into nonsensical infinities. Suddenly
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `448` activation `1.657` class `word` token ` flick`
+  - at his feet than his head. The telemetry screens flickered, their data cascading into nonsensical
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `550` activation `1.484` class `word` token ` billion`
+  - from the outside, but the trapped photons of a billion dead stars, suspended in the gravity well, painting
+- `L19:176` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `329` activation `1.469` class `word` token ` erg`
+  - . "Approaching the threshold. Entering the ergosphere now." There was no sound but his own
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `338` activation `3.803` class `word` token ` Jenna`
+  - her first. Marcus stomped the brake, and Jenna's coffee launched against the dashboard. They'd been
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `450` activation `2.960` class `word` token ` Jenna`
+  - the gravel. But it was her face that stopped Jenna cold. She looked peaceful. impossibly, im
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `432` activation `2.192` class `word` token ` mud`
+  - -colored dress, maybe silk once, now stiff with mud. Her dark hair fanned across the gravel.
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `629` activation `2.170` class `word` token ` Jenna`
+  - 's eyes snapped open. That's not possible, Jenna thought. That's not— The woman smiled.
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `423` activation `1.782` class `word` token ` dress`
+  - someone placed her there. She wore a cream-colored dress, maybe silk once, now stiff with mud.
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `606` activation `1.751` class `word` token ` jaw`
+  - enna looked closer. There was something familiar about the jaw line, something she couldn't place. Then the
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `576` activation `1.697` class `word` token `ail`
+  - , uniform and deliberate. They looked like fingernail marks, but spaced wrong. Too wide apart.
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `513` activation `1.697` class `word` token ` fingers`
+  - . But something was wrong with her hands—her fingers were laced together so tightly the knuckles had
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `529` activation `1.692` class `word` token ` gripping`
+  - tightly the knuckles had split. She'd been gripping something when she died. Whatever it was, it
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `391` activation `1.686` class `word` token `uck`
+  - . "Did someone—" She was already unbuckling. The woman lay on her back, arms
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `574` activation `1.579` class `word` token ` fing`
+  - to jaw, uniform and deliberate. They looked like fingernail marks, but spaced wrong. Too wide
+- `L19:176` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `565` activation `1.557` class `word` token ` jaw`
+  - sides of the woman's face, from temple to jaw, uniform and deliberate. They looked like fingern
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `512` activation `3.732` class `word` token ` Trend`
+  - for several subscription services that you aren't using. Trendy subscription boxes, Amazon Prime, and various streaming
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `558` activation `1.377` class `word` token ` recurring`
+  - services you use so that you will not have a recurring charge every month. Buy Generic - One of the
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `342` activation `1.200` class `word` token ` suggestions`
+  - Here are a few suggestions for ways to save money that anyone can use.
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `390` activation `1.127` class `word` token ` tends`
+  - groceries every month. The average American family of four tends to spend around $966 per month. It can
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `411` activation `1.025` class `word` token ` treats`
+  - be easy to fill the cart with a few extra treats for yourself, but all those small extras will add
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `513` activation `0.927` class `word` token `y`
+  - several subscription services that you aren't using. Trendy subscription boxes, Amazon Prime, and various streaming services
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `545` activation `0.922` class `word` token `new`
+  - up quickly. Be sure to turn off auto-renew on the services you use so that you will not
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `570` activation `0.694` class `word` token ` ways`
+  - every month. Buy Generic - One of the simplest ways to save money is to stop buying brand-name items
+- `L19:176` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `344` activation `0.592` class `word` token ` ways`
+  - Here are a few suggestions for ways to save money that anyone can use. Cut down
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `274` activation `3.609` class `word` token ` Mara`
+  - wine. A laughing couple toasts. Nobody notices Mara’s fingers curling around the cup. DRA
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `291` activation `3.169` class `word` token `ara`
+  - cup. DRAK (V.O.) Mara, Mara. You make this so dramatic. Your
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `94` activation `3.099` class `word` token `A`
+  - and crystal glasses. At a corner table sits MARA VALE, early 30s, plain coat
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `141` activation `3.006` class `word` token `ara`
+  - APHIC PHONE on the table vibrates. Mara glances at the name flashing in blue: P
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `293` activation `2.635` class `word` token ` Mara`
+  - DRAK (V.O.) Mara, Mara. You make this so dramatic. Your father hid
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `639` activation `2.379` class `word` token `ARA`
+  - ordinary. She is NOVA VEIL. MARA
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `234` activation `2.243` class `word` token `ARA`
+  - answered. That means you still understand power. MARA No. It means I wanted to tell you
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `469` activation `2.231` class `word` token ` bounty`
+  - by midnight, I will release your location to every bounty syndicate from here to Mars. And after they
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `77` activation `2.230` class `word` token ` Elegant`
+  - ” — NIGHT Soft music. Low light. Elegant people whisper over levitating plates and crystal glasses.
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `152` activation `2.030` class `word` token `RES`
+  - glances at the name flashing in blue: PRESIDENT KOVAR DRAK — VELST
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `519` activation `2.022` class `word` token ` beneath`
+  - something has changed. A faint blue light glows beneath her skin. MARA You should’ve stayed
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `299` activation `1.983` class `word` token ` dramatic`
+  - .) Mara, Mara. You make this so dramatic. Your father hid three billion credits before he died
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `215` activation `3.448` class `word` token `lena`
+  - .O.) (thick accent, controlled fury) Elena. We speak again at last. ELENA
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `310` activation `3.177` class `word` token ` Elena`
+  - MAHDO (V.O.) Careful, Elena. I am still a sovereign leader. I still
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `125` activation `3.031` class `word` token `NA`
+  - s beyond rain-streaked windows. ELENA VOSS (30s, unassuming, brown
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `316` activation `2.391` class `word` token ` sovereign`
+  - .) Careful, Elena. I am still a sovereign leader. I still have... reach. ELE
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `96` activation `2.308` class `word` token `IGN`
+  - SOVEREIGN FADE IN: INT. UPSCALE REST
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `450` activation `2.245` class `word` token ` trem`
+  - Elena sets down her wine glass. Her hand trembles — then stops. ELENA You
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `393` activation `2.169` class `word` token `lena`
+  - men everywhere. Perhaps even at your table. Elena's eyes flicker across the room. A WAIT
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `494` activation `2.061` class `word` token `lena`
+  - HDO (V.O.) Before what? Elena closes her eyes. Her breathing slows. The restaurant
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `527` activation `2.009` class `word` token ` beneath`
+  - — light. Faint at first, pulsing beneath her skin. Blue veins of energy trace up her
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `195` activation `1.982` class `word` token `NA`
+  - . She hesitates, then answers. ELENA Hello? GENERAL MAHDO (V.O
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `441` activation `1.844` class `word` token `lena`
+  - will take it apart. Piece by piece. Elena sets down her wine glass. Her hand trembles
+- `L19:176` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `396` activation `1.627` class `word` token ` flick`
+  - Perhaps even at your table. Elena's eyes flicker across the room. A WAITER passes.
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `418` activation `3.858` class `word` token ` cement`
+  - , illuminating the adjacent asphalt. The grey cement sidewalk is this traveler's lane, and he intends
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `333` activation `3.183` class `word` token ` cement`
+  - before the eventual plod of pedestrian feet on cement; The gusts of mountain wind blow
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `442` activation `2.943` class `word` token ` tough`
+  - it; He knows the first half-mile is the tough part, and the second half, the reward for
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `475` activation `2.477` class `word` token ` slope`
+  - mark as the runner's course begins its downward slope; The wind pushes at his back, he leans
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `545` activation `1.977` class `word` token ` ritual`
+  - path the runner continued his evening ritual; A ritual playing scenes of both pain and pleasure, like a
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `405` activation `1.932` class `word` token ` flick`
+  - hearing the traffic rushing by; Headlights begin to flicker on, illuminating the adjacent asphalt.
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `550` activation `1.846` class `word` token ` pain`
+  - his evening ritual; A ritual playing scenes of both pain and pleasure, like a zoetrope of agony
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `336` activation `1.832` class `word` token ` gust`
+  - eventual plod of pedestrian feet on cement; The gusts of mountain wind blow heavily down the
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `542` activation `1.780` class `word` token ` ritual`
+  - down the circular path the runner continued his evening ritual; A ritual playing scenes of both pain and pleasure
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `612` activation `1.762` class `word` token ` journey`
+  - grows. The sun finally sets on the man's journey, and darkness gives way to illuminating street lamps
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `592` activation `1.743` class `word` token ` miles`
+  - ored pace; Twenty laps, yea, twenty miles, but the natural beauty of this place only grows
+- `L19:176` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `439` activation `1.697` class `word` token `-mile`
+  - to stick to it; He knows the first half-mile is the tough part, and the second half,
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `534` activation `3.632` class `word` token `print`
+  - bike, 2.5km run Sprint-distance triathlon: 750m swim,
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `556` activation `2.611` class `word` token `ic`
+  - km bike, 5km run Olympic-distance triathlon (aka "standard distance"):
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `511` activation `2.399` class `word` token `print`
+  - typically recognized. They are as follows: Super-sprint-distance triathlon: 400m swim,
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `555` activation `1.834` class `word` token `lymp`
+  - 20km bike, 5km run Olympic-distance triathlon (aka "standard distance"):
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `524` activation `1.585` class `word` token ` bike`
+  - athlon: 400m swim, 10km bike, 2.5km run Sprint
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `625` activation `1.564` class `word` token `8`
+  - Full Ironman-distance triathlon: 3.8km swim, 180km bike, 42
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `599` activation `1.371` class `word` token `9`
+  - athlon (aka "middle distance"): 1.9km swim, 90km bike, 21
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `576` activation `1.362` class `word` token ` bike`
+  - 1.5km swim, 40km bike, 10km run Half-Ironman
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `632` activation `1.281` class `word` token ` bike`
+  - 3.8km swim, 180km bike, 42.2km run
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `547` activation `1.268` class `word` token ` bike`
+  - athlon: 750m swim, 20km bike, 5km run Olympic-distance
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `606` activation `1.225` class `word` token ` bike`
+  - 1.9km swim, 90km bike, 21.1km run Full Iron
+- `L19:176` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `569` activation `0.775` class `word` token `5`
+  - athlon (aka "standard distance"): 1.5km swim, 40km bike, 10
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `363` activation `4.040` class `word` token ` Sara`
+  - rooftop behind her, "Anything yet?" "No," Sara says as Smudges slowly crawls out of
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `258` activation `3.554` class `word` token ` Sara`
+  - ING. "Nothing yet :-/ have patience, Sara" She puts her phone back down on the blanket
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `454` activation `3.537` class `word` token `ara`
+  - cat as he walks by. DING Sara picks up her phone and reads a message from "
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `634` activation `3.250` class `word` token `addy`
+  - her phone once again. From "Mom": "Daddy's home! :-)"
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `522` activation `3.180` class `word` token ` Sara`
+  - traveling across the sky. A large smile breaks on Sara's face and is soon accompanied by tears welling
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `424` activation `3.075` class `word` token ` Sara`
+  - kill me." "Have patience, Yuma." Sara says with a smile. "Hi, Smud
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `485` activation `2.860` class `word` token `ara`
+  - yells, pointing into the night sky. Sara immediately breaks her attention from the phone and looks up
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `288` activation `2.641` class `word` token ` Til`
+  - to purr loudly as she scratches his ears. Tilting her head back even further to study the stars
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `561` activation `2.385` class `word` token ` Happiness`
+  - less as so many emotions ran through her heart. Happiness, fear, ecstasy, terror, longing, hope
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `620` activation `2.362` class `word` token `ara`
+  - light fell below the horizon. DING Sara glanced down at her phone once again. From "
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `371` activation `2.193` class `word` token `ls`
+  - "No," Sara says as Smudges slowly crawls out of her lap to secure a place on the
+- `L24:2360` `99ea98e517167696570e7f389a10a019811f82c9a9d8f499b49e2d78a0a91c73@turn_01@human` token `504` activation `2.148` class `word` token ` streak`
+  - looks up. Across the sky is a long yellow streak being left by a large bright light traveling across the
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `465` activation `4.138` class `word` token ` MIME`
+  - formats or other files. It has been replaced by MIME and yEnc, and attempting to use it with
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `600` activation `1.464` class `word` token ` concerns`
+  - , allowing similar functionality to the uu library without the concerns of failure due to the use of outdated formatting.
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `492` activation `1.340` class `word` token `t`
+  - or data loss. Despite that, you aren���t stuck! There is a workaround and an alternative modern
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `493` activation `1.173` class `word` token ` stuck`
+  - data loss. Despite that, you aren���t stuck! There is a workaround and an alternative modern library
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@human` token `556` activation `1.072` class `word` token ` f`
+  - . The code for that might look like this: f = open(���file.txt���, ���
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `402` activation `4.196` class `word` token ` MIME`
+  - encoding format, mostly superseded by Base64 and MIME-related tools. It was historically useful for sending binary
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `353` activation `2.814` class `word` token ` batteries`
+  - -library modules under PEP 594 (“Removing dead batteries from the standard library”). The goal was to reduce
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `573` activation `2.405` class `word` token `igrate`
+  - may be available via packages like sharutils. Migrate to Base64 if possible For new data formats
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `376` activation `1.376` class `word` token ` adequately`
+  - for modules that are obsolete, rarely used, or adequately handled elsewhere. In particular, uuencoding is a
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `364` activation `1.345` class `word` token ` maintenance`
+  - from the standard library”). The goal was to reduce maintenance burden for modules that are obsolete, rarely used,
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `372` activation `1.335` class `word` token ` rarely`
+  - to reduce maintenance burden for modules that are obsolete, rarely used, or adequately handled elsewhere. In particular,
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `627` activation `1.302` class `word` token ` maintain`
+  - because UUencoding is legacy, and Python’s maintainers decided it no longer justified being in the standard
+- `L24:2360` `72fabea5c275af027e3411e35daa6de29e7c1c4bfeb4e88696d4532da5e274f8@turn_01@gpt-5.5` token `561` activation `0.924` class `word` token `ude`
+  - Unix-like systems, commands such as uuencode/uudecode may be available via packages like sharutils.
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `297` activation `4.294` class `word` token ` tactical`
+  - A skirmisher in a turn-based tactical game thrives on high mobility, disruption, and
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `380` activation `3.269` class `word` token `actical`
+  - one tile backward without triggering attacks of opportunity. Tactical Use: Punishes enemies who try to pin the
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `439` activation `3.098` class `word` token `actical`
+  - they deliver a slashing blow that ignores armor. Tactical Use: Perfect for bypassing front-line tanks to
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `511` activation `3.001` class `word` token `actical`
+  - from taking reactions (like attacks of opportunity). Tactical Use: A utility tool that allows the skirmisher
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `569` activation `2.942` class `word` token `actical`
+  - they have already moved at least three tiles. Tactical Use: Encourages dynamic movement. It allows
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `481` activation `2.226` class `word` token ` cone`
+  - inding Dust (Active) Effect: A short-range cone attack that inflicts "Blinded" for one
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `472` activation `2.211` class `word` token ` Dust`
+  - a corner when surrounded. Pocket Sand / Blinding Dust (Active) Effect: A short-range cone attack
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `451` activation `2.150` class `word` token ` vulnerable`
+  - : Perfect for bypassing front-line tanks to target vulnerable backline mages or archers, or escaping
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `384` activation `1.682` class `word` token `ishes`
+  - triggering attacks of opportunity. Tactical Use: Punishes enemies who try to pin the skirmisher down,
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `383` activation `1.488` class `word` token ` Pun`
+  - without triggering attacks of opportunity. Tactical Use: Punishes enemies who try to pin the skirmisher down
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `444` activation `1.470` class `word` token ` bypass`
+  - that ignores armor. Tactical Use: Perfect for bypassing front-line tanks to target vulnerable backline m
+- `L24:2360` `109832bc49e0414a55b1cfab0b1970c8b78632265a8869d3a27e97b6a11dbc5c@turn_01@gemini-3.5-flash` token `606` activation `1.364` class `word` token ` tank`
+  - to retreat back into the shadows or behind a friendly tank. By combining these tools, the skirmisher becomes
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `313` activation `4.267` class `word` token ` Mara`
+  - the lanes, turning every cough into a prayer. Mara arrived with one mule, two satchels
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `621` activation `2.941` class `word` token ` Mara`
+  - . Windows opened. The headman wept into Mara’s hands. When she left, the village bells
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `265` activation `2.722` class `word` token `er`
+  - By the time Dr. Mara Venn reached Alderwick, the village bells had stopped ringing. Not
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `264` activation `2.693` class `word` token ` Ald`
+  - By the time Dr. Mara Venn reached Alderwick, the village bells had stopped ringing.
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `269` activation `2.593` class `word` token ` village`
+  - . Mara Venn reached Alderwick, the village bells had stopped ringing. Not from peace—no
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `569` activation `2.582` class `word` token ` Ald`
+  - dig a new well uphill. For three days, Alderwick balanced between grave and morning. On the
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `433` activation `2.407` class `word` token ` moss`
+  - village spring and watched a dead rat drift from the moss-choked stones. “Boil every drop,”
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `260` activation `2.403` class `word` token ` Mara`
+  - By the time Dr. Mara Venn reached Alderwick, the village bells
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `396` activation `2.345` class `word` token ` sick`
+  - room, clean water, and the names of the sick. All night she moved from cot to cot,
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `412` activation `2.265` class `word` token ` tongues`
+  - from cot to cot, listening to lungs, studying tongues, counting pulses. At dawn she stood by the
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `423` activation `2.154` class `word` token ` village`
+  - , counting pulses. At dawn she stood by the village spring and watched a dead rat drift from the moss
+- `L24:2360` `c89ca4120abc1ac9f85c64509c5791156db546eee0e75fe3134e9c9eb53604ac@turn_01@gpt-5.5` token `362` activation `2.018` class `word` token `ever`
+  - after the spring thaw,” he whispered. “Fever first. Then black veins beneath the skin. We
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `282` activation `4.170` class `word` token ` Mama`
+  - " for her rapid tapping. Next, she grabbed Mama Bear’s iPad. The interface was overly complicated,
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `227` activation `3.576` class `word` token ` Papa`
+  - the glass coffee table. First, she picked up Papa Bear’s tablet. It was too heavy, the
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `211` activation `2.580` class `word` token ` sleek`
+  - door ajar, her eyes immediately locked onto the sleek, minimalist tablets resting on the glass coffee table.
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `336` activation `2.276` class `word` token ` sleek`
+  - . Finally, her fingers brushed against Baby Bear’s sleek, lightweight device. It was just the right size
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `316` activation `2.148` class `word` token ` flick`
+  - . "This is too annoying," she muttered, flicking the screen in frustration before discarding it.
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `590` activation `2.135` class `word` token `ed`
+  - tablet gently onto the sofa, turned, and sprinted out of the house, her golden hair trailing behind
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `275` activation `2.087` class `word` token ` rapid`
+  - the battery life was "too slow" for her rapid tapping. Next, she grabbed Mama Bear’s iPad
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `475` activation `1.949` class `word` token ` battery`
+  - stern to confused. Pops had noticed his tablet battery had died in seconds, likely due to intensive use
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `569` activation `1.929` class `word` token ` batteries`
+  - had violated their digital privacy and nearly exhausted their device batteries. Without a word of apology, she dropped the
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `135` activation `1.853` class `word` token ` pillows`
+  - the intruder were not tangled in the soft down pillows of the three bears, but rather, she was
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `330` activation `1.739` class `word` token ` fingers`
+  - in frustration before discarding it. Finally, her fingers brushed against Baby Bear’s sleek, lightweight device.
+- `L24:2360` `71497857a6e749bd1c6316d6ed1543fe710d13ebd8ce7c23377a2bb218798c70@turn_01@qwen3.6-35b` token `255` activation `1.696` class `word` token ` tossed`
+  - required strategic patience she simply didn’t possess. She tossed it aside with a huff, complaining that the
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `318` activation `4.039` class `word` token ` Mara`
+  - she rarely smiles unless she has discovered a secret. Mara wears ink on her fingers like squid sauce stains,
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `191` activation `4.012` class `word` token `ara`
+  - ” Quince — the reluctant mapmaker Mara is nineteen and built like a cinnamon stick: narrow
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `477` activation `3.179` class `word` token ` dough`
+  - . He moves slowly, with the heavy patience of dough rising, but when danger comes, he is all
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `180` activation `2.897` class `word` token `ara`
+  - Maribel “Mara” Quince — the reluctant mapmaker M
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `437` activation `2.808` class `word` token ` milk`
+  - cider, and his pale blue eyes look washed in milk, soft until anger curdles them. A
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `201` activation `2.743` class `word` token ` narrow`
+  - ara is nineteen and built like a cinnamon stick: narrow, straight-backed, and somehow sharper than she first
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `181` activation `2.599` class `punctuation` token `”`
+  - Maribel “Mara” Quince — the reluctant mapmaker Mara
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `230` activation `2.519` class `word` token ` dust`
+  - -brown of toasted brioche, with a dusting of freckles across her nose like nut
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `605` activation `2.494` class `word` token ` streak`
+  - on the other, the color of burnt caramel with streaks of strawberry candy dyed through it. They
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `238` activation `2.420` class `word` token ` nose`
+  - with a dusting of freckles across her nose like nutmeg shaken too generously over custard.
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `524` activation `2.361` class `word` token ` fingers`
+  - bright, with limbs thin as pretzel rods and fingers nimble as silver fishbones plucked from a
+- `L24:2360` `912797ba5556090e465f40bf881e16206f9c63aa7fe173ef74a025fe78e7c968@turn_01@gpt-5.5` token `323` activation `2.316` class `word` token ` fingers`
+  - has discovered a secret. Mara wears ink on her fingers like squid sauce stains, and she smells faintly
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `252` activation `4.219` class `word` token `iana`
+  - the adopted heir to the Hanlon Empire. Diana Scott continued her interview of Zareb Hanlon
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `564` activation `3.203` class `word` token `idan`
+  - the one man Zareb relies on. Aidan does not like Zareb leading the company considering
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `536` activation `2.826` class `word` token ` cousin`
+  - lon, a hot head and Zareb’s cousin. This man was Alexander Owen, coming from a
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `523` activation `2.701` class `word` token ` Aid`
+  - ators. A strong man sat on the table with Aidan Hanlon, a hot head and Zare
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `524` activation `2.620` class `word` token `an`
+  - . A strong man sat on the table with Aidan Hanlon, a hot head and Zareb
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `227` activation `2.597` class `word` token ` mansion`
+  - Zareb takes in the splendor of the mansion he’s entering. The wait-staff bow to
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `619` activation `2.498` class `word` token ` Aid`
+  - as he always puts family first and will respect what Aidan has to say. Aidan had other plans
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `625` activation `2.483` class `word` token ` Aid`
+  - and will respect what Aidan has to say. Aidan had other plans and did not care about honoring
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `542` activation `2.459` class `word` token ` Owen`
+  - Zareb’s cousin. This man was Alexander Owen, coming from a troubled past but setting himself up
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `371` activation `2.415` class `word` token ` Martial`
+  - lon made him train from the best coaches in Mix Martial Arts and Krav Maga, even Connor McGregor
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `411` activation `2.214` class `word` token ` wing`
+  - the company and how he wants the distillery and wing companies to grow. She hints about undercover businesses Z
+- `L24:2360` `f96f08e63dd451d9e57921436f0970a7d5851ce5c87913fa342de55bfaf08d62@turn_01@human` token `626` activation `2.155` class `word` token `an`
+  - will respect what Aidan has to say. Aidan had other plans and did not care about honoring Z
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `397` activation `4.063` class `word` token `ara`
+  - The toaster clicked. Mara looked up from her phone. The kitchen was still
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `571` activation `3.280` class `word` token `ara`
+  - his blue robe, rubbing his eyes. “Mara?” The whisper came again, warm against her ear
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `416` activation `2.703` class `word` token ` dawn`
+  - was still dark except for the thin gray line of dawn at the window. “Did you set that?”
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `590` activation `2.538` class `word` token ` flick`
+  - her ear. “Breakfast.” The kitchen lights flickered on. Every cabinet door stood open. Inside
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `477` activation `2.397` class `word` token ` Mara`
+  - Smoke curled from them in perfect little ribbons. Mara stepped closer, frowning. On the counter beside
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `608` activation `2.126` class `word` token ` mug`
+  - open. Inside each shelf, every plate, every mug, every glass had been turned to face her.
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `519` activation `1.995` class `word` token ` lever`
+  - above her. “What’s wrong?” The toaster lever snapped down by itself. Mara backed away.
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `496` activation `1.951` class `word` token `ble`
+  - counter beside it, the butter knife began to tremble. “Ben?” she said. Footsteps c
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `461` activation `1.703` class `word` token ` bread`
+  - black slices rose slowly from the slots, though no bread had been put in. Smoke curled from them in
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `595` activation `1.681` class `word` token ` cabinet`
+  - fast.” The kitchen lights flickered on. Every cabinet door stood open. Inside each shelf, every plate
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `495` activation `1.469` class `word` token ` trem`
+  - the counter beside it, the butter knife began to tremble. “Ben?” she said. Footsteps
+- `L24:2360` `2ac4665fa0cdb33bb63747ef264e4e6a7162381791466d1c32107e154f79919a@turn_01@gpt-5.5` token `405` activation `1.420` class `word` token ` kitchen`
+  - . Mara looked up from her phone. The kitchen was still dark except for the thin gray line of
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `190` activation `4.797` class `word` token `a`
+  - Who wants to start?" Arthur asked. Brenda raised her hand. She was wearing a tiara
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `290` activation `3.694` class `word` token ` Brenda`
+  - the Surgeon General of Soup." "Progress, Brenda. Recognition is the first step," Arthur lied.
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `189` activation `3.259` class `word` token `rend`
+  - "Who wants to start?" Arthur asked. Brenda raised her hand. She was wearing a ti
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `50` activation `2.634` class `word` token ` Jude`
+  - The basement of St. Jude’s smelled of stale coffee and unearned redemption.
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `496` activation `2.527` class `word` token ` trench`
+  - corner, where Steve sat. Steve was wearing a trench coat that was visibly bulging, and a distinct
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `403` activation `2.506` class `word` token ` Chloe`
+  - the truth." "We forgive you, Marcus," said Chloe, a woman who had spent the last forty minutes
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `72` activation `2.391` class `word` token `esty`
+  - banner hung crookedly on the wall: Honesty is the Only Policy (Unless You Have a Really
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `576` activation `2.277` class `word` token ` stared`
+  - chaplain. We were just praying." The officer stared at them, then sighed. "You guys are
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `540` activation `2.178` class `word` token ` dairy`
+  - . "In fact, I am medically blind to dairy." "I can vouch for him," Arthur chim
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `375` activation `2.088` class `word` token ` wet`
+  - Did she?" Arthur asked. "She looked like a wet coconut," Marcus sobbed. "I’m so
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `315` activation `2.054` class `word` token `enta`
+  - a man who claimed to have invented the color magenta. "I had a relapse yesterday," Marcus
+- `L24:2360` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@gemini-3.5-flash` token `626` activation `1.858` class `word` token ` proudly`
+  - and left. Arthur turned to the group, smiling proudly. "And that, everyone, is how we
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `297` activation `4.292` class `word` token `ance`
+  - -way ticket humanity could afford to punch. "Vance to Control," he whispered into the comms,
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `241` activation `3.933` class `word` token ` Vance`
+  - of forever. Inside, Dr. Alistair Vance watched the event horizon of Cygnus X-
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `372` activation `2.616` class `word` token ` Einstein`
+  - blinding ring of blue-shifted starlight—the Einstein Ring—while ahead lay an absolute, velvet void
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `318` activation `2.541` class `word` token ` slope`
+  - knowing the signal was already struggling against the severe gravitational slope. "Approaching the threshold. Entering the
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `625` activation `2.514` class `word` token ` cabin`
+  - an end," Alistair whispered to the empty cabin, smiling as the light claimed him. "It
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `448` activation `2.511` class `word` token ` flick`
+  - at his feet than his head. The telemetry screens flickered, their data cascading into nonsensical
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `293` activation `2.456` class `word` token ` punch`
+  - his was a one-way ticket humanity could afford to punch. "Vance to Control," he whispered into
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `507` activation `2.124` class `word` token ` bloss`
+  - of spaghettification. Instead, the universe blossomed. The blackness did not crush him;
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `562` activation `2.059` class `word` token ` tape`
+  - stars, suspended in the gravity well, painting a tapestry of history around him. Time ceased to be
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `590` activation `2.040` class `word` token ` faint`
+  - frozen ocean. He could see the past, a faint smear of the Aventine entering the void,
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `456` activation `1.822` class `word` token ` nons`
+  - telemetry screens flickered, their data cascading into nonsensical infinities. Suddenly, the static
+- `L24:2360` `0f93b93e06b61cb7a7b8bed9ac11ca11ca1e0e161e1ca6ea1095222cd45f6f66@turn_01@gemini-3.5-flash` token `230` activation `1.462` class `word` token ` lip`
+  - a fragile spark of human ingenuity poised on the lip of forever. Inside, Dr. Alistair
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `338` activation `4.083` class `word` token ` Jenna`
+  - her first. Marcus stomped the brake, and Jenna's coffee launched against the dashboard. They'd been
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `450` activation `3.458` class `word` token ` Jenna`
+  - the gravel. But it was her face that stopped Jenna cold. She looked peaceful. impossibly, im
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `432` activation `2.730` class `word` token ` mud`
+  - -colored dress, maybe silk once, now stiff with mud. Her dark hair fanned across the gravel.
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `513` activation `2.687` class `word` token ` fingers`
+  - . But something was wrong with her hands—her fingers were laced together so tightly the knuckles had
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `629` activation `2.366` class `word` token ` Jenna`
+  - 's eyes snapped open. That's not possible, Jenna thought. That's not— The woman smiled.
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `529` activation `2.289` class `word` token ` gripping`
+  - tightly the knuckles had split. She'd been gripping something when she died. Whatever it was, it
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `423` activation `2.154` class `word` token ` dress`
+  - someone placed her there. She wore a cream-colored dress, maybe silk once, now stiff with mud.
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `576` activation `2.047` class `word` token `ail`
+  - , uniform and deliberate. They looked like fingernail marks, but spaced wrong. Too wide apart.
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `606` activation `1.972` class `word` token ` jaw`
+  - enna looked closer. There was something familiar about the jaw line, something she couldn't place. Then the
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `364` activation `1.915` class `word` token ` sister`
+  - twenty minutes, taking the back road home from her sister's place, and now this—a shape on the
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `603` activation `1.893` class `word` token ` familiar`
+  - whispered. Jenna looked closer. There was something familiar about the jaw line, something she couldn't place
+- `L24:2360` `d8d273cc1037684eabf41ed7527a9cc8e2226386554e6a2d5c36a4ee608a92c8@turn_01@glm-5.2` token `596` activation `1.861` class `word` token `enna`
+  - . "Who is she?" Marcus whispered. Jenna looked closer. There was something familiar about the jaw
+- `L24:2360` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `512` activation `4.055` class `word` token ` Trend`
+  - for several subscription services that you aren't using. Trendy subscription boxes, Amazon Prime, and various streaming
+- `L24:2360` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `342` activation `2.010` class `word` token ` suggestions`
+  - Here are a few suggestions for ways to save money that anyone can use.
+- `L24:2360` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `513` activation `1.753` class `word` token `y`
+  - several subscription services that you aren't using. Trendy subscription boxes, Amazon Prime, and various streaming services
+- `L24:2360` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `390` activation `1.731` class `word` token ` tends`
+  - groceries every month. The average American family of four tends to spend around $966 per month. It can
+- `L24:2360` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `558` activation `1.717` class `word` token ` recurring`
+  - services you use so that you will not have a recurring charge every month. Buy Generic - One of the
+- `L24:2360` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `411` activation `1.363` class `word` token ` treats`
+  - be easy to fill the cart with a few extra treats for yourself, but all those small extras will add
+- `L24:2360` `1f6cf913c0f5a6cd125fb7ea6ca978575967dbb8053644669c4f5d78dbcbec4e@turn_01@human` token `545` activation `1.247` class `word` token `new`
+  - up quickly. Be sure to turn off auto-renew on the services you use so that you will not
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `274` activation `3.873` class `word` token ` Mara`
+  - wine. A laughing couple toasts. Nobody notices Mara’s fingers curling around the cup. DRA
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `291` activation `3.513` class `word` token `ara`
+  - cup. DRAK (V.O.) Mara, Mara. You make this so dramatic. Your
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `141` activation `3.317` class `word` token `ara`
+  - APHIC PHONE on the table vibrates. Mara glances at the name flashing in blue: P
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `94` activation `3.162` class `word` token `A`
+  - and crystal glasses. At a corner table sits MARA VALE, early 30s, plain coat
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `293` activation `2.967` class `word` token ` Mara`
+  - DRAK (V.O.) Mara, Mara. You make this so dramatic. Your father hid
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `152` activation `2.859` class `word` token `RES`
+  - glances at the name flashing in blue: PRESIDENT KOVAR DRAK — VELST
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `639` activation `2.647` class `word` token `ARA`
+  - ordinary. She is NOVA VEIL. MARA
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `519` activation `2.647` class `word` token ` beneath`
+  - something has changed. A faint blue light glows beneath her skin. MARA You should’ve stayed
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `469` activation `2.500` class `word` token ` bounty`
+  - by midnight, I will release your location to every bounty syndicate from here to Mars. And after they
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `77` activation `2.486` class `word` token ` Elegant`
+  - ” — NIGHT Soft music. Low light. Elegant people whisper over levitating plates and crystal glasses.
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `234` activation `2.401` class `word` token `ARA`
+  - answered. That means you still understand power. MARA No. It means I wanted to tell you
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@gpt-5.5` token `475` activation `2.250` class `word` token ` Mars`
+  - your location to every bounty syndicate from here to Mars. And after they fail, I will send my
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `215` activation `4.044` class `word` token `lena`
+  - .O.) (thick accent, controlled fury) Elena. We speak again at last. ELENA
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `310` activation `3.423` class `word` token ` Elena`
+  - MAHDO (V.O.) Careful, Elena. I am still a sovereign leader. I still
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `125` activation `3.310` class `word` token `NA`
+  - s beyond rain-streaked windows. ELENA VOSS (30s, unassuming, brown
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `393` activation `2.799` class `word` token `lena`
+  - men everywhere. Perhaps even at your table. Elena's eyes flicker across the room. A WAIT
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `494` activation `2.731` class `word` token `lena`
+  - HDO (V.O.) Before what? Elena closes her eyes. Her breathing slows. The restaurant
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `96` activation `2.707` class `word` token `IGN`
+  - SOVEREIGN FADE IN: INT. UPSCALE REST
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `316` activation `2.662` class `word` token ` sovereign`
+  - .) Careful, Elena. I am still a sovereign leader. I still have... reach. ELE
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `527` activation `2.568` class `word` token ` beneath`
+  - — light. Faint at first, pulsing beneath her skin. Blue veins of energy trace up her
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `195` activation `2.408` class `word` token `NA`
+  - . She hesitates, then answers. ELENA Hello? GENERAL MAHDO (V.O
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `441` activation `2.382` class `word` token `lena`
+  - will take it apart. Piece by piece. Elena sets down her wine glass. Her hand trembles
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `450` activation `2.184` class `word` token ` trem`
+  - Elena sets down her wine glass. Her hand trembles — then stops. ELENA You
+- `L24:2360` `eacb0cf544de22105ecaa86d9a879c2077a1180582db76a90e7ba5a988c8ab2b@turn_01@glm-5.2` token `396` activation `2.148` class `word` token ` flick`
+  - Perhaps even at your table. Elena's eyes flicker across the room. A WAITER passes.
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `418` activation `4.393` class `word` token ` cement`
+  - , illuminating the adjacent asphalt. The grey cement sidewalk is this traveler's lane, and he intends
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `442` activation `3.730` class `word` token ` tough`
+  - it; He knows the first half-mile is the tough part, and the second half, the reward for
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `333` activation `3.599` class `word` token ` cement`
+  - before the eventual plod of pedestrian feet on cement; The gusts of mountain wind blow
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `475` activation `3.115` class `word` token ` slope`
+  - mark as the runner's course begins its downward slope; The wind pushes at his back, he leans
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `405` activation `2.481` class `word` token ` flick`
+  - hearing the traffic rushing by; Headlights begin to flicker on, illuminating the adjacent asphalt.
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `439` activation `2.226` class `word` token `-mile`
+  - to stick to it; He knows the first half-mile is the tough part, and the second half,
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `592` activation `2.150` class `word` token ` miles`
+  - ored pace; Twenty laps, yea, twenty miles, but the natural beauty of this place only grows
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `545` activation `2.122` class `word` token ` ritual`
+  - path the runner continued his evening ritual; A ritual playing scenes of both pain and pleasure, like a
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `304` activation `2.113` class `word` token ` lap`
+  - 's low cut; Car is parked next to the lap marker, a banana-colored fire hydrant. Get
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `279` activation `2.058` class `word` token `oes`
+  - Shoes wrapped tightly around tired feet socks barely peek
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `583` activation `2.034` class `word` token ` pace`
+  - exhales, his breathing now at a labored pace; Twenty laps, yea, twenty miles,
+- `L24:2360` `e18689b5e0bd613ac2b3878be015232ea7922c41540c52d6b9da0baec163a3ed@turn_01@human` token `550` activation `2.000` class `word` token ` pain`
+  - his evening ritual; A ritual playing scenes of both pain and pleasure, like a zoetrope of agony
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `534` activation `4.234` class `word` token `print`
+  - bike, 2.5km run Sprint-distance triathlon: 750m swim,
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `556` activation `3.196` class `word` token `ic`
+  - km bike, 5km run Olympic-distance triathlon (aka "standard distance"):
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `511` activation `2.707` class `word` token `print`
+  - typically recognized. They are as follows: Super-sprint-distance triathlon: 400m swim,
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `524` activation `2.148` class `word` token ` bike`
+  - athlon: 400m swim, 10km bike, 2.5km run Sprint
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `555` activation `1.887` class `word` token `lymp`
+  - 20km bike, 5km run Olympic-distance triathlon (aka "standard distance"):
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `576` activation `1.792` class `word` token ` bike`
+  - 1.5km swim, 40km bike, 10km run Half-Ironman
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `547` activation `1.777` class `word` token ` bike`
+  - athlon: 750m swim, 20km bike, 5km run Olympic-distance
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `632` activation `1.681` class `word` token ` bike`
+  - 3.8km swim, 180km bike, 42.2km run
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `625` activation `1.552` class `word` token `8`
+  - Full Ironman-distance triathlon: 3.8km swim, 180km bike, 42
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `606` activation `1.548` class `word` token ` bike`
+  - 1.9km swim, 90km bike, 21.1km run Full Iron
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `599` activation `1.409` class `word` token `9`
+  - athlon (aka "middle distance"): 1.9km swim, 90km bike, 21
+- `L24:2360` `df390d1278f1e5783a73ccc4ce4e4209cad9fb67472dc18a026d4e2383cffca8@turn_01@human` token `569` activation `1.008` class `word` token `5`
+  - athlon (aka "standard distance"): 1.5km swim, 40km bike, 10

@@ -181,18 +181,27 @@ function tokenRowsForDoc(doc, activationMap) {
 
 function routeSelectionFromPath(pathname, loadedIndex) {
   const parts = pathname.split("/").filter(Boolean);
-  if (parts.length !== 3 || !/^L\d+$/.test(parts[0])) return null;
-  const latentId = parts[0].slice(1);
+  if (parts.length !== 3) return null;
   const turnId = decodeURIComponent(parts[1]);
   const model = modelFromRoute(parts[2]);
   const promptDocs = loadedIndex.promptGroups?.[turnId] ?? [];
   const documentId = promptDocs.find((docId) => canonicalModelId(loadedIndex.documents?.[docId]?.model) === model);
-  if (!documentId || !loadedIndex.latentDocs?.[latentId]) return null;
+  if (!documentId) return null;
+  if (parts[0] === "D") {
+    return {
+      viewMode: "document",
+      documentId,
+    };
+  }
+  if (!/^L\d+$/.test(parts[0])) return null;
+  const latentId = parts[0].slice(1);
+  if (!loadedIndex.latentDocs?.[latentId]) return null;
   const example = loadedIndex.latentDocs[latentId].find((row) => {
     return loadedIndex.documents?.[row.doc_id]?.turn_id === turnId;
   });
   if (!example) return null;
   return {
+    viewMode: "latent",
     latentId,
     exampleDocId: example.doc_id,
     documentId,
@@ -202,6 +211,11 @@ function routeSelectionFromPath(pathname, loadedIndex) {
 function routePathForSelection({ latentId, turnId, model }) {
   if (!latentId || !turnId || !model) return "/";
   return `/L${encodeURIComponent(String(latentId))}/${encodeURIComponent(String(turnId))}/${routeModelName(model)}`;
+}
+
+function routePathForDocument({ turnId, model }) {
+  if (!turnId || !model) return "/";
+  return `/D/${encodeURIComponent(String(turnId))}/${routeModelName(model)}`;
 }
 
 function causalImpactForDoc(indexData, latentId, docId) {
@@ -224,15 +238,19 @@ function App() {
   const [selectedLatent, setSelectedLatent] = useState(null);
   const [selectedExampleDocId, setSelectedExampleDocId] = useState(null);
   const [selectedDocumentId, setSelectedDocumentId] = useState(null);
+  const [viewMode, setViewMode] = useState("latent");
   const [latentLabels, setLatentLabels] = useState(loadCachedLatentLabels);
   const [query, setQuery] = useState("");
   const [source, setSource] = useState("all");
+  const [tokenDisplayMode, setTokenDisplayMode] = useState("activation");
   const [loadedDocs, setLoadedDocs] = useState({});
   const [docActivations, setDocActivations] = useState({});
+  const [documentLatents, setDocumentLatents] = useState({});
   const [generationRows, setGenerationRows] = useState([]);
   const [hoveredToken, setHoveredToken] = useState(null);
   const [loadingGeneration, setLoadingGeneration] = useState(false);
   const [loadingActivations, setLoadingActivations] = useState(false);
+  const [loadingDocumentLatents, setLoadingDocumentLatents] = useState(false);
   const [loadingDocs, setLoadingDocs] = useState(true);
   const [loadStage, setLoadStage] = useState("Starting");
   const [loadError, setLoadError] = useState("");
@@ -335,7 +353,7 @@ function App() {
       try {
         setLoadStage("Loading manifest");
         const loadedManifest = normalizeManifest(
-          await fetch("/data/manifest.json").then((response) => response.json()),
+          await fetch("/data/manifest.json", { cache: "no-store" }).then((response) => response.json()),
         );
         if (cancelled) return;
         const cachedRunId = window.localStorage.getItem(SELECTED_RUN_STORAGE_KEY);
@@ -371,14 +389,17 @@ function App() {
       setSelectedLatent(null);
       setSelectedExampleDocId(null);
       setSelectedDocumentId(null);
+      setViewMode("latent");
       setLoadedDocs({});
       setDocActivations({});
+      setDocumentLatents({});
       setGenerationRows([]);
       setHoveredToken(null);
       setSource("all");
       setLoadingDocs(true);
       setLoadingGeneration(false);
       setLoadingActivations(false);
+      setLoadingDocumentLatents(false);
       setLoadError("");
     });
     prefetchRequestedRef.current.clear();
@@ -389,7 +410,7 @@ function App() {
     }
     async function loadRun() {
       setLoadStage("Loading index");
-      const loadedIndex = await fetch(activeRun.browserIndexJson).then((response) => response.json());
+      const loadedIndex = await fetch(activeRun.browserIndexJson, { cache: "no-store" }).then((response) => response.json());
       if (cancelled || dataLoadIdRef.current !== loadId) return;
       setLoadStage("Opening parquet roots");
       await workerCall("init", {
@@ -404,6 +425,7 @@ function App() {
         setIndexData(loadedIndex);
         setWorkerReady(true);
         setLoadingDocs(false);
+        setViewMode(routeSelection?.viewMode ?? "latent");
         setSelectedLatent(firstLatent);
         setSelectedExampleDocId(routeSelection?.exampleDocId ?? loadedIndex.latentDocs?.[firstLatent]?.[0]?.doc_id ?? null);
         setSelectedDocumentId(routeSelection?.documentId ?? null);
@@ -472,6 +494,11 @@ function App() {
     });
   }, [latents, query]);
 
+  const latentById = useMemo(
+    () => Object.fromEntries(latents.map((latent) => [String(latent.latent_id), latent])),
+    [latents],
+  );
+
   const rootLoading = loadingDocs && !indexData;
   const rootLoadFailed = Boolean(loadError) && !indexData;
   const activeLatent = latents.find((latent) => latent.latent_id === String(selectedLatent));
@@ -479,9 +506,10 @@ function App() {
   const selectedLatentId = numeric(selectedLatent);
   const selectedMeta = activeExample ? indexData?.documents?.[activeExample.doc_id] : null;
   const selectedDocumentMeta = selectedDocumentId ? indexData?.documents?.[selectedDocumentId] : null;
+  const promptTurnId = selectedDocumentMeta?.turn_id ?? selectedMeta?.turn_id ?? null;
   const siblingDocIds = useMemo(
-    () => (selectedMeta?.turn_id ? (indexData?.promptGroups?.[selectedMeta.turn_id] ?? []) : []),
-    [indexData, selectedMeta?.turn_id],
+    () => (promptTurnId ? (indexData?.promptGroups?.[promptTurnId] ?? []) : []),
+    [indexData, promptTurnId],
   );
 
   useEffect(() => {
@@ -494,22 +522,27 @@ function App() {
   }, [selectedLatent]);
 
   useEffect(() => {
-    if (!indexData || !selectedLatent || !selectedDocumentId || !selectedDocumentMeta) return;
-    const nextPath = routePathForSelection({
-      latentId: selectedLatent,
-      turnId: selectedDocumentMeta.turn_id,
-      model: selectedDocumentMeta.model,
-    });
+    if (!indexData || !selectedDocumentId || !selectedDocumentMeta) return;
+    const nextPath = viewMode === "document"
+      ? routePathForDocument({
+        turnId: selectedDocumentMeta.turn_id,
+        model: selectedDocumentMeta.model,
+      })
+      : routePathForSelection({
+        latentId: selectedLatent,
+        turnId: selectedDocumentMeta.turn_id,
+        model: selectedDocumentMeta.model,
+      });
     const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
     if (currentPath !== nextPath) {
       window.history.replaceState(null, "", nextPath);
     }
-  }, [indexData, selectedDocumentId, selectedDocumentMeta, selectedLatent]);
+  }, [indexData, selectedDocumentId, selectedDocumentMeta, selectedLatent, viewMode]);
 
   useEffect(() => {
     let cancelled = false;
     async function loadGenerationGroup() {
-      if (!workerReady || !indexData || !activeExample || !siblingDocIds.length) return;
+      if (!workerReady || !indexData || !siblingDocIds.length) return;
       setLoadingGeneration(true);
       setLoadError("");
       try {
@@ -544,7 +577,7 @@ function App() {
           setLoadedDocs((previous) => ({ ...previous, ...docs }));
           setGenerationRows(rows);
           setSelectedDocumentId((current) => (
-            current && rows.some((row) => row.docId === current) ? current : best?.docId ?? activeExample.doc_id
+            current && rows.some((row) => row.docId === current) ? current : best?.docId ?? selectedDocumentId
           ));
         });
       } catch (error) {
@@ -558,7 +591,7 @@ function App() {
     return () => {
       cancelled = true;
     };
-  }, [activeExample, indexData, selectedLatentId, siblingDocIds, workerReady]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [indexData, selectedDocumentId, selectedLatentId, siblingDocIds, workerReady]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     let cancelled = false;
@@ -626,6 +659,42 @@ function App() {
   }, [docActivations, indexData, selectedDocumentId, selectedLatentId, workerReady]);
 
   useEffect(() => {
+    let cancelled = false;
+    async function loadDocumentLatents() {
+      if (!workerReady || !indexData || !selectedDocumentId || viewMode !== "document") return;
+      if (documentLatents[selectedDocumentId]) return;
+      const meta = indexData.documents?.[selectedDocumentId];
+      if (!meta) return;
+      setLoadingDocumentLatents(true);
+      setLoadError("");
+      try {
+        const result = await workerCall("readDocumentLatents", {
+          docId: selectedDocumentId,
+          start: numeric(meta.sparse_row_start),
+          end: numeric(meta.sparse_row_end),
+          limit: 240,
+        });
+        if (cancelled) return;
+        startTransition(() => {
+          setDocumentLatents((previous) => ({
+            ...previous,
+            [selectedDocumentId]: result.rows ?? [],
+          }));
+        });
+      } catch (error) {
+        console.error(error);
+        if (!cancelled) setLoadError(String(error));
+      } finally {
+        if (!cancelled) setLoadingDocumentLatents(false);
+      }
+    }
+    loadDocumentLatents();
+    return () => {
+      cancelled = true;
+    };
+  }, [documentLatents, indexData, selectedDocumentId, viewMode, workerReady]);
+
+  useEffect(() => {
     if (!workerReady || !indexData || !activeExample || !latentExamples.length) return;
     if (!selectedDocumentId || !docActivations[selectedDocumentId]) return;
     const activeIndex = latentExamples.findIndex((example) => example.doc_id === activeExample.doc_id);
@@ -687,17 +756,54 @@ function App() {
 
   const activeDocument = selectedDocumentId ? loadedDocs[selectedDocumentId] : null;
   const activeActivationMap = selectedDocumentId ? docActivations[selectedDocumentId] : null;
+  const tokenTextByIndex = useMemo(() => {
+    const tokens = activeDocument?.tokens ?? [];
+    const tokenIndices = activeDocument?.token_indices ?? [];
+    return Object.fromEntries(tokens.map((token, index) => [
+      String(numeric(tokenIndices[index], index)),
+      String(token),
+    ]));
+  }, [activeDocument]);
+  const documentLatentRows = useMemo(() => {
+    const rows = documentLatents[selectedDocumentId] ?? [];
+    return rows.map((row, index) => {
+      const latentId = String(row.latentId);
+      const latent = latentById[latentId];
+      return {
+        ...row,
+        latentId,
+        displayRank: index + 1,
+        latent,
+        label: labelForLatent(latentId),
+        peakToken: tokenTextByIndex[String(row.peakTokenIndex)] ?? "",
+      };
+    });
+  }, [documentLatents, latentById, selectedDocumentId, tokenTextByIndex, latentLabels, selectedRunId]);
   const rawTokenRows = useMemo(
     () => tokenRowsForDoc(activeDocument, activeActivationMap),
     [activeDocument, activeActivationMap],
   );
   const tokenRows = useDeferredValue(rawTokenRows);
-  const maxTokenActivation = Math.max(...tokenRows.map((token) => token.activation), 0);
-  const peakToken = tokenRows.reduce(
-    (current, token) => (token.activation > current.activation ? token : current),
-    { activation: 0, tokenIndex: "-", text: "" },
+  const displayTokenRows = useMemo(
+    () => tokenRows.map((token, index) => {
+      const previousActivation = index > 0 ? numeric(tokenRows[index - 1]?.activation) : numeric(token.activation);
+      const positiveDelta = Math.max(0, numeric(token.activation) - previousActivation);
+      const displayValue = tokenDisplayMode === "positive-delta" ? positiveDelta : numeric(token.activation);
+      return {
+        ...token,
+        positiveDelta,
+        displayValue,
+      };
+    }),
+    [tokenDisplayMode, tokenRows],
+  );
+  const maxTokenDisplayValue = Math.max(...displayTokenRows.map((token) => token.displayValue), 0);
+  const peakToken = displayTokenRows.reduce(
+    (current, token) => (token.displayValue > current.displayValue ? token : current),
+    { activation: 0, positiveDelta: 0, displayValue: 0, tokenIndex: "-", text: "" },
   );
   const inspectedToken = hoveredToken ?? peakToken;
+  const displayMetricLabel = tokenDisplayMode === "positive-delta" ? "delta" : "activation";
 
   function labelForLatent(latentId) {
     const key = latentLabelKey(selectedRunId, latentId);
@@ -794,15 +900,47 @@ function App() {
         <header className="toolbar">
           <div>
             <div className="latentHeading">
-              <h2>{activeLatent ? `Latent ${activeLatent.latent_id}` : "Latent"}</h2>
-              {activeLatent ? (
+              <h2>{selectedLatent ? `Latent ${selectedLatent}` : "Latent"}</h2>
+              {selectedLatent ? (
                 <input
                   className="latentLabelInput"
-                  value={labelForLatent(activeLatent.latent_id)}
-                  onChange={(event) => updateLatentLabel(activeLatent.latent_id, event.target.value)}
+                  value={labelForLatent(selectedLatent)}
+                  onChange={(event) => updateLatentLabel(selectedLatent, event.target.value)}
                   placeholder="Label"
                 />
               ) : null}
+              <div className="viewSwitch" role="group" aria-label="Explorer view">
+                <button
+                  type="button"
+                  className={viewMode === "latent" ? "viewSwitchButton active" : "viewSwitchButton"}
+                  onClick={() => setViewMode("latent")}
+                >
+                  Latent
+                </button>
+                <button
+                  type="button"
+                  className={viewMode === "document" ? "viewSwitchButton active" : "viewSwitchButton"}
+                  onClick={() => setViewMode("document")}
+                  disabled={!selectedDocumentId}
+                >
+                  Document
+                </button>
+              </div>
+              <label className="tokenModeSlider">
+                <span>Act</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="1"
+                  value={tokenDisplayMode === "positive-delta" ? "1" : "0"}
+                  onChange={(event) => {
+                    setTokenDisplayMode(event.target.value === "1" ? "positive-delta" : "activation");
+                  }}
+                  aria-label="Token highlight mode"
+                />
+                <span>Δ+</span>
+              </label>
             </div>
             <p>
               Rank {activeLatent?.rank ?? "-"} · impact{" "}
@@ -839,33 +977,77 @@ function App() {
           </div>
         ) : (
         <div className="grid">
-          <section className="examples">
-            <div className="sectionTitle">
-              <FileText size={17} />
-              <h3>Top Docs</h3>
-            </div>
-            <div className="exampleList">
-              {latentExamples.map((example) => (
-                <button
-                  key={`${example.doc_id}-${example.example_rank}`}
-                  className={activeExample?.doc_id === example.doc_id ? "example active" : "example"}
-                  onClick={() => {
-                    if (activeExample?.doc_id === example.doc_id) return;
-                    setSelectedExampleDocId(example.doc_id);
-                    setSelectedDocumentId(null);
-                  }}
-                >
-                  <span className="exampleMeta">
-                    #{example.example_rank} · {modelName(example.source)} · impact{" "}
-                    {(example.causal_logit_drop !== undefined
-                      ? numeric(example.causal_logit_drop)
-                      : numeric(example.peak_activation)).toFixed(3)}
-                  </span>
-                  <span className="exampleText">{example.context}</span>
-                </button>
-              ))}
-            </div>
-          </section>
+          {viewMode === "document" ? (
+            <section className="examples">
+              <div className="sectionTitle">
+                <FileText size={17} />
+                <h3>Document Latents</h3>
+              </div>
+              <div className="documentLatentSummary">
+                <span title={selectedDocumentId ?? ""}>doc {shortDocId(selectedDocumentId)}</span>
+                <span>{loadingDocumentLatents ? "loading latents" : `${documentLatentRows.length} shown`}</span>
+              </div>
+              <div className="exampleList">
+                {documentLatentRows.map((row) => (
+                  <button
+                    key={`${selectedDocumentId}-${row.latentId}`}
+                    className={String(selectedLatent) === row.latentId ? "example documentLatent active" : "example documentLatent"}
+                    onClick={() => {
+                      setSelectedLatent(row.latentId);
+                      const latentDocs = indexData?.latentDocs?.[row.latentId] ?? [];
+                      const samePromptExample = latentDocs.find((example) => (
+                        indexData?.documents?.[example.doc_id]?.turn_id === promptTurnId
+                      ));
+                      if (samePromptExample) setSelectedExampleDocId(samePromptExample.doc_id);
+                    }}
+                  >
+                    <span className="exampleMeta">
+                      #{row.displayRank} · L{row.latentId}
+                      {row.latent?.rank ? ` · rank ${row.latent.rank}` : ""} · peak {numeric(row.maxActivation).toFixed(3)}
+                    </span>
+                    <span className="documentLatentTitle">
+                      {row.label || (row.latent ? "ranked latent" : "uncurated latent")}
+                    </span>
+                    <span className="documentLatentStats">
+                      mass {numeric(row.mass).toFixed(2)} · tokens {numeric(row.tokenCount)} · index {numeric(row.peakTokenIndex, "-")}
+                      {row.peakToken ? ` · ${row.peakToken}` : ""}
+                    </span>
+                  </button>
+                ))}
+                {!loadingDocumentLatents && !documentLatentRows.length ? (
+                  <div className="emptyState">No sparse latent activations found for this document.</div>
+                ) : null}
+              </div>
+            </section>
+          ) : (
+            <section className="examples">
+              <div className="sectionTitle">
+                <FileText size={17} />
+                <h3>Top Docs</h3>
+              </div>
+              <div className="exampleList">
+                {latentExamples.map((example) => (
+                  <button
+                    key={`${example.doc_id}-${example.example_rank}`}
+                    className={activeExample?.doc_id === example.doc_id ? "example active" : "example"}
+                    onClick={() => {
+                      if (activeExample?.doc_id === example.doc_id) return;
+                      setSelectedExampleDocId(example.doc_id);
+                      setSelectedDocumentId(null);
+                    }}
+                  >
+                    <span className="exampleMeta">
+                      #{example.example_rank} · {modelName(example.source)} · impact{" "}
+                      {(example.causal_logit_drop !== undefined
+                        ? numeric(example.causal_logit_drop)
+                        : numeric(example.peak_activation)).toFixed(3)}
+                    </span>
+                    <span className="exampleText">{example.context}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
 
           <section className="documentPane">
             <div className="documentBlock promptBlock">
@@ -913,16 +1095,18 @@ function App() {
               </div>
               <div className="hoverReadout" aria-live="polite">
                 <span className="readoutLabel">{hoveredToken ? "hover" : "peak"}</span>
+                <span>{displayMetricLabel} {numeric(inspectedToken.displayValue).toFixed(6)}</span>
                 <span>activation {numeric(inspectedToken.activation).toFixed(6)}</span>
+                <span>delta {numeric(inspectedToken.positiveDelta).toFixed(6)}</span>
                 <span>index {inspectedToken.tokenIndex ?? "-"}</span>
               </div>
               <div className="tokenView fullDocTokenView">
-                {tokenRows.map((token) => (
+                {displayTokenRows.map((token) => (
                   <span
                     key={token.id}
-                    className={token.activation === maxTokenActivation && maxTokenActivation > 0 ? "token peak" : "token"}
-                    style={{ backgroundColor: activationColor(token.activation, maxTokenActivation) }}
-                    title={`activation ${token.activation.toFixed(4)}`}
+                    className={token.displayValue === maxTokenDisplayValue && maxTokenDisplayValue > 0 ? "token peak" : "token"}
+                    style={{ backgroundColor: activationColor(token.displayValue, maxTokenDisplayValue) }}
+                    title={`activation ${token.activation.toFixed(4)} · delta ${token.positiveDelta.toFixed(4)}`}
                     onMouseEnter={() => setHoveredToken(token)}
                     onMouseLeave={() => setHoveredToken(null)}
                   >

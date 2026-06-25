@@ -1,0 +1,666 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2236` | `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` | `glm-5.2` | 143 | `364.07` | `5.07` | word:122|punctuation:10|sentence_boundary:5|style_function_word:3|discourse_marker_word:3 |
+| `L19:2236` | `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 130 | `380.74` | `5.66` | word:115|punctuation:6|line_break:4|discourse_marker_word:2|sentence_boundary:1|style_function_word:1|whitespace:1 |
+| `L19:2236` | `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 211 | `506.78` | `5.16` | word:163|punctuation:18|sentence_boundary:15|style_function_word:10|discourse_marker_word:4|expanded_negation_word:1 |
+| `L19:2236` | `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` | `glm-5.2` | 418 | `870.39` | `4.72` | word:336|punctuation:35|style_function_word:16|sentence_boundary:12|line_break:11|discourse_marker_word:8 |
+| `L19:2236` | `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` | `glm-5.2` | 107 | `253.20` | `4.65` | word:87|line_break:7|punctuation:5|sentence_boundary:3|discourse_marker_word:3|style_function_word:2 |
+| `L19:2236` | `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` | `glm-5.2` | 241 | `466.92` | `5.05` | word:177|punctuation:25|line_break:20|style_function_word:9|sentence_boundary:6|contraction_piece:3|discourse_marker_word:1 |
+| `L19:2236` | `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 395 | `937.53` | `4.79` | word:328|punctuation:30|style_function_word:12|sentence_boundary:11|expanded_negation_word:5|discourse_marker_word:4|line_break:3|contraction_piece:2 |
+| `L19:2236` | `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` | `glm-5.2` | 484 | `1230.97` | `5.15` | word:397|punctuation:39|style_function_word:17|sentence_boundary:14|discourse_marker_word:10|line_break:3|expanded_negation_word:2|whitespace:2 |
+| `L19:2236` | `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 468 | `1240.73` | `5.21` | word:386|punctuation:48|sentence_boundary:17|expanded_negation_word:7|style_function_word:6|line_break:3|discourse_marker_word:1 |
+| `L19:2236` | `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` | `glm-5.2` | 388 | `736.65` | `4.71` | word:328|punctuation:19|line_break:13|sentence_boundary:10|style_function_word:8|discourse_marker_word:7|expanded_negation_word:2|contraction_piece:1 |
+| `L19:2236` | `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` | `glm-5.2` | 431 | `888.81` | `4.57` | word:363|punctuation:34|line_break:16|style_function_word:15|discourse_marker_word:2|whitespace:1 |
+| `L19:2236` | `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 386 | `706.74` | `4.66` | word:330|style_function_word:21|punctuation:13|sentence_boundary:13|expanded_negation_word:3|discourse_marker_word:3|line_break:2|contraction_piece:1 |
+| `L19:2236` | `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` | `glm-5.2` | 417 | `901.00` | `5.01` | word:337|punctuation:32|sentence_boundary:20|expanded_negation_word:13|style_function_word:6|discourse_marker_word:5|line_break:4 |
+| `L24:2070` | `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` | `glm-5.2` | 142 | `394.20` | `5.65` | word:122|punctuation:10|sentence_boundary:5|style_function_word:3|discourse_marker_word:2 |
+| `L24:2070` | `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 124 | `439.84` | `6.74` | word:110|punctuation:6|line_break:4|discourse_marker_word:2|style_function_word:1|sentence_boundary:1 |
+| `L24:2070` | `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 238 | `615.61` | `5.56` | word:189|punctuation:20|sentence_boundary:13|style_function_word:10|discourse_marker_word:5|expanded_negation_word:1 |
+| `L24:2070` | `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` | `glm-5.2` | 421 | `1195.29` | `6.11` | word:337|punctuation:36|style_function_word:16|line_break:12|sentence_boundary:12|discourse_marker_word:8 |
+| `L24:2070` | `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` | `glm-5.2` | 112 | `319.66` | `5.43` | word:92|line_break:7|punctuation:5|sentence_boundary:3|discourse_marker_word:3|style_function_word:2 |
+| `L24:2070` | `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` | `glm-5.2` | 256 | `628.30` | `5.61` | word:195|punctuation:20|line_break:20|style_function_word:11|sentence_boundary:6|contraction_piece:3|discourse_marker_word:1 |
+| `L24:2070` | `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 384 | `1276.69` | `6.60` | word:318|punctuation:29|style_function_word:12|sentence_boundary:11|expanded_negation_word:5|discourse_marker_word:4|line_break:3|contraction_piece:2 |
+| `L24:2070` | `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` | `glm-5.2` | 439 | `1184.45` | `5.42` | word:358|punctuation:37|style_function_word:16|sentence_boundary:12|discourse_marker_word:10|line_break:3|whitespace:2|expanded_negation_word:1 |
+| `L24:2070` | `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 468 | `1626.78` | `8.13` | word:386|punctuation:48|sentence_boundary:17|expanded_negation_word:7|style_function_word:6|line_break:3|discourse_marker_word:1 |
+| `L24:2070` | `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` | `glm-5.2` | 392 | `1010.61` | `6.27` | word:332|punctuation:21|line_break:13|sentence_boundary:10|discourse_marker_word:7|style_function_word:6|expanded_negation_word:2|contraction_piece:1 |
+| `L24:2070` | `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` | `glm-5.2` | 396 | `1001.92` | `5.38` | word:342|punctuation:29|style_function_word:15|line_break:8|discourse_marker_word:2 |
+| `L24:2070` | `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 394 | `992.07` | `5.77` | word:337|style_function_word:22|punctuation:13|sentence_boundary:13|expanded_negation_word:3|discourse_marker_word:3|line_break:2|contraction_piece:1 |
+| `L24:2070` | `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` | `glm-5.2` | 407 | `1135.54` | `6.17` | word:329|punctuation:32|sentence_boundary:20|expanded_negation_word:11|style_function_word:6|discourse_marker_word:5|line_break:4 |
+
+## Top Tokens
+
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `400` activation `5.069` class `word` token ` have`
+  - problem resolution. Throughout my previous professional experiences, I have cultivated the ability to actively listen to customer concerns,
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `399` activation `4.847` class `word` token ` I`
+  - on problem resolution. Throughout my previous professional experiences, I have cultivated the ability to actively listen to customer concerns
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `401` activation `4.304` class `word` token ` cultivated`
+  - resolution. Throughout my previous professional experiences, I have cultivated the ability to actively listen to customer concerns, ensuring
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `457` activation `3.984` class `word` token ` my`
+  - callers toward effective solutions without unnecessary delays. Furthermore, my familiarity with modern customer relationship management software enables me to
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `474` activation `3.958` class `word` token ` requests`
+  - software enables me to accurately document essential information and process requests seamlessly while maintaining a warm, engaging conversation. Ultimately
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `428` activation `3.947` class `word` token ` My`
+  - and respected from the very beginning of the interaction. My calm and empathetic demeanor naturally de-escalates
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `398` activation `3.945` class `punctuation` token `,`
+  - focus on problem resolution. Throughout my previous professional experiences, I have cultivated the ability to actively listen to customer
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `433` activation `3.849` class `word` token ` demeanor`
+  - beginning of the interaction. My calm and empathetic demeanor naturally de-escalates tense situations, allowing me
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `404` activation `3.824` class `word` token ` to`
+  - my previous professional experiences, I have cultivated the ability to actively listen to customer concerns, ensuring they feel heard
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `454` activation `3.818` class `sentence_boundary` token `.`
+  - to efficiently guide callers toward effective solutions without unnecessary delays. Furthermore, my familiarity with modern customer relationship management software
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `382` activation `3.808` class `word` token ` my`
+  - handling inbound calls within your customer service department due to my strong communication skills and dedicated focus on problem resolution.
+- `L19:2236` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `486` activation `3.781` class `word` token ` I`
+  - while maintaining a warm, engaging conversation. Ultimately, I thrive in fast-paced environments where I can directly assist
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `399` activation `5.658` class `punctuation` token `,`
+  - located precisely at the mouth of a magnificent bay harbor, offering travelers a dramatic and picturesque entry point into the
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `414` activation `5.305` class `word` token `Enjoy`
+  - and picturesque entry point into the heart of Brazil. Enjoy diverse landscapes featuring pristine white-sand beaches, lush
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `413` activation `5.277` class `line_break` token `.
+`
+  - dramatic and picturesque entry point into the heart of Brazil. Enjoy diverse landscapes featuring pristine white-sand beaches,
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `457` activation `5.239` class `punctuation` token `,`
+  - . Marvel at dramatic views available from nearly every angle, including the iconic 125-foot Christ the Redeemer
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `437` activation `5.098` class `punctuation` token `,`
+  - sts, and staggered green mountains lining the coastline, providing endless opportunities for exploration and relaxation in nature.
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `433` activation `5.056` class `word` token ` mountains`
+  - , lush rainforests, and staggered green mountains lining the coastline, providing endless opportunities for exploration and
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `417` activation `5.028` class `word` token ` featuring`
+  - point into the heart of Brazil. Enjoy diverse landscapes featuring pristine white-sand beaches, lush rainforests
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `497` activation `5.018` class `word` token ` beaches`
+  - drops of Copacabana and Ipanema beaches, famous destinations that have attracted locals and visitors for
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `481` activation `4.959` class `word` token `ire`
+  - estically atop Corcovado Mountain. Admire the picture-perfect backdrops of Copacab
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `487` activation `4.914` class `word` token `drops`
+  - Mountain. Admire the picture-perfect backdrops of Copacabana and Ipanema beaches
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `478` activation `4.912` class `line_break` token `.
+`
+  - statue standing majestically atop Corcovado Mountain. Admire the picture-perfect backdrops of
+- `L19:2236` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `498` activation `4.899` class `punctuation` token `,`
+  - of Copacabana and Ipanema beaches, famous destinations that have attracted locals and visitors for over
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `194` activation `5.164` class `word` token ` to`
+  - data regarding individual physical activity routines, it is crucial to ask a diverse array of questions that cover various dimensions
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `262` activation `4.973` class `word` token ` the`
+  - fitness efforts. It is equally important to inquire about the preferred types of exercise, such as cardiovascular training,
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `236` activation `4.903` class `punctuation` token `,`
+  - over the past month to establish a baseline. Next, asking about the typical duration of each session helps quantify
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `213` activation `4.877` class `word` token ` determine`
+  - various dimensions of exercise behavior. First, we must determine the foundational frequency of the respondent’s engagement in structured
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `214` activation `4.783` class `word` token ` the`
+  - dimensions of exercise behavior. First, we must determine the foundational frequency of the respondent’s engagement in structured physical
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `202` activation `4.652` class `word` token ` cover`
+  - is crucial to ask a diverse array of questions that cover various dimensions of exercise behavior. First, we must
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `239` activation `4.640` class `word` token ` the`
+  - month to establish a baseline. Next, asking about the typical duration of each session helps quantify the total time
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `261` activation `4.541` class `word` token ` about`
+  - in fitness efforts. It is equally important to inquire about the preferred types of exercise, such as cardiovascular training
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `244` activation `4.498` class `word` token ` session`
+  - . Next, asking about the typical duration of each session helps quantify the total time invested in fitness efforts.
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `241` activation `4.322` class `word` token ` duration`
+  - establish a baseline. Next, asking about the typical duration of each session helps quantify the total time invested in
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `306` activation `4.277` class `word` token ` the`
+  - groups can reveal social motivations. We should also investigate the primary reasons for starting an exercise regimen, whether for
+- `L19:2236` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `201` activation `4.276` class `style_function_word` token ` that`
+  - it is crucial to ask a diverse array of questions that cover various dimensions of exercise behavior. First, we
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `499` activation `4.716` class `word` token ` and`
+  - deep water. It is highly energetic, sharp, and incredibly approachable for young readers today. This choice
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `476` activation `4.247` class `word` token ` it`
+  - inn While this name has distinct Celtic origins, it perfectly evokes the imagery of sleek fish gliding
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `338` activation `4.185` class `word` token ` and`
+  - Overall, it sounds incredibly approachable, friendly, and remarkably down to earth. It is a solid choice
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `451` activation `4.144` class `word` token ` is`
+  - stones. This name is absolutely ideal if your wizard is a peaceful healer or a quiet, protective, and
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `380` activation `4.065` class `word` token ` and`
+  - stream, this name is short, snappy, and quite cool. It feels like a fantastic fit for
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `417` activation `4.013` class `word` token `A`
+  - mimics a rapidly rushing river. Brooks A wonderfully classic, gentle name that immediately brings to mind
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `467` activation `4.011` class `line_break` token `
+`
+  - quiet, protective, and nurturing guide. Finn While this name has distinct Celtic origins, it perfectly
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `493` activation `3.997` class `word` token ` is`
+  - sleek fish gliding smoothly through deep water. It is highly energetic, sharp, and incredibly approachable for
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `331` activation `3.963` class `word` token ` sounds`
+  - a shallow, babbling stream. Overall, it sounds incredibly approachable, friendly, and remarkably down to
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `455` activation `3.849` class `word` token ` or`
+  - is absolutely ideal if your wizard is a peaceful healer or a quiet, protective, and nurturing guide. F
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `479` activation `3.799` class `word` token `okes`
+  - this name has distinct Celtic origins, it perfectly evokes the imagery of sleek fish gliding smoothly through deep
+- `L19:2236` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `450` activation `3.786` class `word` token ` wizard`
+  - rounded stones. This name is absolutely ideal if your wizard is a peaceful healer or a quiet, protective,
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `458` activation `4.652` class `word` token ` and`
+  - debating clubs clearly demonstrates confidence, very quick thinking, and persuasive public speaking. Try to always briefly include specific
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `475` activation `4.460` class `punctuation` token `,`
+  - always briefly include specific achievements, or even notable milestones, for each chosen hobby. Remember to keep your overall
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `511` activation `4.263` class `sentence_boundary` token `.`
+  - the very bottom of your standard one page resume document.
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `510` activation `4.224` class `word` token ` document`
+  - at the very bottom of your standard one page resume document.
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `457` activation `4.047` class `punctuation` token `,`
+  - joining debating clubs clearly demonstrates confidence, very quick thinking, and persuasive public speaking. Try to always briefly include
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `497` activation `4.014` class `word` token ` have`
+  - brief. Only include these personal details if you actually have extra space at the very bottom of your standard one
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `495` activation `3.998` class `word` token ` you`
+  - overall section brief. Only include these personal details if you actually have extra space at the very bottom of your
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `494` activation `3.880` class `style_function_word` token ` if`
+  - your overall section brief. Only include these personal details if you actually have extra space at the very bottom of
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `451` activation `3.857` class `word` token ` demonstrates`
+  - long term achievement. Finally, joining debating clubs clearly demonstrates confidence, very quick thinking, and persuasive public speaking
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `480` activation `3.846` class `sentence_boundary` token `.`
+  - , or even notable milestones, for each chosen hobby. Remember to keep your overall section brief. Only include
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `499` activation `3.845` class `word` token ` space`
+  - Only include these personal details if you actually have extra space at the very bottom of your standard one page resume
+- `L19:2236` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `474` activation `3.818` class `word` token ` milestones`
+  - to always briefly include specific achievements, or even notable milestones, for each chosen hobby. Remember to keep your
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `290` activation `5.049` class `sentence_boundary` token `.`
+  - and securely saves the final results into a text file. This simple yet robust program is perfect for building a
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `291` activation `4.985` class `style_function_word` token ` This`
+  - securely saves the final results into a text file. This simple yet robust program is perfect for building a basic
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `296` activation `4.660` class `word` token ` is`
+  - into a text file. This simple yet robust program is perfect for building a basic personal reading tracker or compiling
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `295` activation `4.285` class `word` token ` program`
+  - results into a text file. This simple yet robust program is perfect for building a basic personal reading tracker or
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `270` activation `4.284` class `punctuation` token `,`
+  - types the word "done". At that exact point, the code carefully sorts the collected titles alphabetically and
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `254` activation `4.193` class `punctuation` token `,`
+  - growing list. It intelligently manages the interactive loop, gracefully exiting when the user types the word "done
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `280` activation `4.085` class `word` token ` and`
+  - , the code carefully sorts the collected titles alphabetically and securely saves the final results into a text file.
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `272` activation `4.053` class `word` token ` code`
+  - word "done". At that exact point, the code carefully sorts the collected titles alphabetically and securely saves
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `511` activation `4.047` class `sentence_boundary` token `.`
+  - in the exact same directory where the code is executed.
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `287` activation `4.034` class `word` token ` a`
+  - titles alphabetically and securely saves the final results into a text file. This simple yet robust program is perfect
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `289` activation `3.943` class `word` token ` file`
+  - ically and securely saves the final results into a text file. This simple yet robust program is perfect for building
+- `L19:2236` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `271` activation `3.939` class `word` token ` the`
+  - the word "done". At that exact point, the code carefully sorts the collected titles alphabetically and securely
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `430` activation `4.789` class `punctuation` token `,`
+  - more. But as I finally rounded the last corner, the sight of my own street filled me with a
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `252` activation `4.416` class `word` token ` hear`
+  - sudden silence was remarkably peaceful, allowing me to finally hear the gentle, rhythmic patter of the rain against
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `493` activation `4.250` class `word` token ` find`
+  - smoothly in the lock, and I stepped inside to find the heater humming softly, instantly bathing my shivering
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `188` activation `4.231` class `punctuation` token `,`
+  - a piercing chill straight up to my spine. Then, the comforting aroma of roasted chestnuts and fresh vanilla
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `439` activation `4.225` class `word` token ` with`
+  - corner, the sight of my own street filled me with a profound sense of relief and quiet triumph. My
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `455` activation `4.180` class `word` token ` saw`
+  - and quiet triumph. My enthusiasm withered when I saw that the porch light was dead, forcing me to
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `366` activation `4.163` class `punctuation` token `,`
+  - always made my knees ache with exhaustion. Up ahead, however, a friendly stray cat with bright green eyes
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `240` activation `4.109` class `punctuation` token `,`
+  - cut off from the world in the dark. Yet, the sudden silence was remarkably peaceful, allowing me to
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `369` activation `4.105` class `word` token ` a`
+  - knees ache with exhaustion. Up ahead, however, a friendly stray cat with bright green eyes trotted over
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `448` activation `4.095` class `sentence_boundary` token `.`
+  - me with a profound sense of relief and quiet triumph. My enthusiasm withered when I saw that the porch
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `413` activation `4.046` class `word` token ` lonely`
+  - away into a dark alley, leaving me feeling incredibly lonely and abandoned in the shadows once more. But as
+- `L19:2236` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `368` activation `4.023` class `punctuation` token `,`
+  - my knees ache with exhaustion. Up ahead, however, a friendly stray cat with bright green eyes trotted
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `324` activation `5.154` class `word` token ` possess`
+  - are exceptionally rigorous. First and foremost, candidates must possess an elite mastery of professional writing, with the technical
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `302` activation `5.148` class `word` token ` is`
+  - 16 hours per week. However, this role is not for the faint of heart, and the skill
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `393` activation `4.949` class `word` token ` boast`
+  - in both German and English. Furthermore, applicants must boast a solid, adaptable understanding of content development across a
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `392` activation `4.887` class `style_function_word` token ` must`
+  - proficiency in both German and English. Furthermore, applicants must boast a solid, adaptable understanding of content development across
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `301` activation `4.862` class `word` token ` role`
+  - to 16 hours per week. However, this role is not for the faint of heart, and the
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `394` activation `4.847` class `word` token ` a`
+  - both German and English. Furthermore, applicants must boast a solid, adaptable understanding of content development across a vast
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `323` activation `4.769` class `style_function_word` token ` must`
+  - requirements are exceptionally rigorous. First and foremost, candidates must possess an elite mastery of professional writing, with the
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `331` activation `4.724` class `punctuation` token `,`
+  - , candidates must possess an elite mastery of professional writing, with the technical ability to edit and draft ATS-com
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `388` activation `4.685` class `sentence_boundary` token `.`
+  - good written and oral proficiency in both German and English. Furthermore, applicants must boast a solid, adaptable understanding
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `422` activation `4.647` class `word` token `—and`
+  - IT and engineering to healthcare, finance, and entertainment—and know exactly how to tailor documents for varying levels of
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `325` activation `4.604` class `word` token ` an`
+  - exceptionally rigorous. First and foremost, candidates must possess an elite mastery of professional writing, with the technical ability
+- `L19:2236` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `299` activation `4.576` class `punctuation` token `,`
+  - 12 to 16 hours per week. However, this role is not for the faint of heart,
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `220` activation `5.208` class `punctuation` token `,`
+  - hands, acting with a wonderful mind of their own, beat the water with bright, energetic strokes, joy
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `299` activation `5.164` class `punctuation` token `,`
+  - shout of absolute ecstasy! He was now completely alive, his senses blooming with a sparkling, magnificent clarity
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `178` activation `4.765` class `sentence_boundary` token `!`
+  - , a spectacular rush of energy surged through his body! His heart, which had been tapping a quiet rhythm
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `296` activation `4.606` class `word` token ` now`
+  - , triumphant shout of absolute ecstasy! He was now completely alive, his senses blooming with a sparkling
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `169` activation `4.564` class `word` token ` a`
+  - playful ribbon drifting away in the current. Suddenly, a spectacular rush of energy surged through his body! His
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `189` activation `4.550` class `punctuation` token `,`
+  - His heart, which had been tapping a quiet rhythm, gave a great, excited leap of pure joy,
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `202` activation `4.474` class `word` token ` with`
+  - great, excited leap of pure joy, filling him with a thrilling, breathtaking vitality. His hands, acting
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `229` activation `4.449` class `punctuation` token `,`
+  - own, beat the water with bright, energetic strokes, joyfully propelling him upward. His head burst
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `221` activation `4.448` class `word` token ` beat`
+  - , acting with a wonderful mind of their own, beat the water with bright, energetic strokes, joyfully
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `199` activation `4.421` class `punctuation` token `,`
+  - , gave a great, excited leap of pure joy, filling him with a thrilling, breathtaking vitality. His
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `213` activation `4.357` class `word` token ` with`
+  - a thrilling, breathtaking vitality. His hands, acting with a wonderful mind of their own, beat the water
+- `L19:2236` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `203` activation `4.325` class `word` token ` a`
+  - , excited leap of pure joy, filling him with a thrilling, breathtaking vitality. His hands, acting with
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `236` activation `4.714` class `word` token ` are`
+  - realizes that the terrifying creatures she is contracted to kill are actually the displaced souls of innocent disappeared poets. She
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `310` activation `4.505` class `word` token ` is`
+  - deep space mission realize the Earth they safely landed on is completely entirely flawless. There are absolutely no wars,
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `346` activation `4.319` class `word` token ` up`
+  - reality. Every time you fall asleep, you wake up as a different random person somewhere in the vast world
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `503` activation `4.290` class `word` token ` now`
+  - stopped hoarding ancient gold. Instead, they are now fiercely hoarding vintage vinyl records, obsolete
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `502` activation `4.249` class `word` token ` are`
+  - entirely stopped hoarding ancient gold. Instead, they are now fiercely hoarding vintage vinyl records, obsolete
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `347` activation `4.172` class `style_function_word` token ` as`
+  - . Every time you fall asleep, you wake up as a different random person somewhere in the vast world.
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `367` activation `4.091` class `word` token ` yourself`
+  - . Tonight, you open your borrowed eyes to find yourself holding a bloody knife in an expensive shower. A
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `348` activation `4.083` class `word` token ` a`
+  - Every time you fall asleep, you wake up as a different random person somewhere in the vast world. Tonight
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `476` activation `4.046` class `word` token ` see`
+  - a city puddle, you glance down and suddenly see a compelling stranger staring back up at you from the
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `344` activation `3.993` class `word` token ` you`
+  - bizarre new reality. Every time you fall asleep, you wake up as a different random person somewhere in the
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `506` activation `3.991` class `word` token `arding`
+  - ancient gold. Instead, they are now fiercely hoarding vintage vinyl records, obsolete
+- `L19:2236` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `237` activation `3.982` class `word` token ` actually`
+  - that the terrifying creatures she is contracted to kill are actually the displaced souls of innocent disappeared poets. She faces
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `402` activation `4.574` class `word` token ` look`
+  - significant sexual dimorphism, meaning that males and females look drastically different in both size and coloration. [
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `322` activation `4.516` class `word` token ` to`
+  - by its magnificent spiraling horns, which can grow to reach up to seventy-two inches. [Leopard
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `333` activation `4.414` class `punctuation` token `]:`
+  - reach up to seventy-two inches. [Leopard]: These elusive big cats are incredibly strong, often hauling
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `391` activation `4.334` class `word` token ` exhibits`
+  - predators. [Nyala]: This striking antelope exhibits significant sexual dimorphism, meaning that males and females
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `321` activation `4.305` class `word` token ` grow`
+  - recognized by its magnificent spiraling horns, which can grow to reach up to seventy-two inches. [Le
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `273` activation `4.242` class `punctuation` token `]:`
+  - meters long to escape swift predators. [Jackal]: These opportunistic omnivores often work in mon
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `323` activation `4.225` class `word` token ` reach`
+  - its magnificent spiraling horns, which can grow to reach up to seventy-two inches. [Leopard]:
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `386` activation `4.211` class `punctuation` token `]:`
+  - legs to spot approaching aerial predators. [Nyala]: This striking antelope exhibits significant sexual dimorphism,
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `302` activation `4.171` class `punctuation` token `]:`
+  - territory from other intruding scavengers. [Kudu]: The male greater kudu is strikingly recognized by
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `338` activation `4.139` class `word` token ` are`
+  - inches. [Leopard]: These elusive big cats are incredibly strong, often hauling their heavy kills high up
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `320` activation `4.135` class `style_function_word` token ` can`
+  - ly recognized by its magnificent spiraling horns, which can grow to reach up to seventy-two inches. [
+- `L19:2236` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `251` activation `4.103` class `word` token `opes`
+  - . [Impala]: These medium-sized antelopes are incredibly athletic, capable of leaping up to
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `146` activation `4.657` class `punctuation` token `,`
+  - essentially the world’s largest and most powerful particle accelerator, a massive engineering feat that pushes the boundaries of human
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `195` activation `4.271` class `word` token ` It`
+  - conditions similar to those just after the Big Bang. It is incredible to think that such a complex structure exists
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `180` activation `4.244` class `word` token ` machine`
+  - ometer ring of tunnel buried underground near Geneva, this machine allows scientists to recreate conditions similar to those just after
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `196` activation `4.226` class `word` token ` is`
+  - similar to those just after the Big Bang. It is incredible to think that such a complex structure exists beneath
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `204` activation `4.203` class `word` token ` structure`
+  - . It is incredible to think that such a complex structure exists beneath our feet, quietly observing the very building
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `226` activation `3.990` class `word` token `The`
+  - of matter without disturbing the peaceful countryside above it. The collider doesn't just smash particles together for the sake
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `205` activation `3.851` class `word` token ` exists`
+  - It is incredible to think that such a complex structure exists beneath our feet, quietly observing the very building blocks
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `200` activation `3.825` class `style_function_word` token ` that`
+  - after the Big Bang. It is incredible to think that such a complex structure exists beneath our feet, quietly
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `183` activation `3.777` class `word` token ` to`
+  - tunnel buried underground near Geneva, this machine allows scientists to recreate conditions similar to those just after the Big Bang
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `227` activation `3.750` class `word` token ` collider`
+  - matter without disturbing the peaceful countryside above it. The collider doesn't just smash particles together for the sake of
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `194` activation `3.702` class `sentence_boundary` token `.`
+  - recreate conditions similar to those just after the Big Bang. It is incredible to think that such a complex structure
+- `L19:2236` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `181` activation `3.701` class `word` token ` allows`
+  - ring of tunnel buried underground near Geneva, this machine allows scientists to recreate conditions similar to those just after the
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `408` activation `5.013` class `expanded_negation_word` token ` was`
+  - made the breathtaking cold incredibly worthwhile. The expedition team was fantastic, keeping everyone incredibly safe while ensuring we maxim
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `499` activation `4.526` class `expanded_negation_word` token ` was`
+  - our planet truly is. This fun, breathtaking trip was a privilege of a lifetime, leaving me with unforgettable
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `407` activation `4.425` class `word` token ` team`
+  - followed made the breathtaking cold incredibly worthwhile. The expedition team was fantastic, keeping everyone incredibly safe while ensuring we
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `354` activation `4.422` class `style_function_word` token ` also`
+  - exhale, leaving us utterly speechless. We also had the exhilarating opportunity to undertake the famous Antarctic
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `378` activation `4.335` class `expanded_negation_word` token ` was`
+  - Plunging into the literally freezing Southern Ocean water was a fierce, biting shock to the system. However
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `475` activation `4.210` class `word` token ` something`
+  - , and no souvenir shops. Instead, it offers something far more precious: a humbling reminder of how
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `355` activation `4.202` class `expanded_negation_word` token ` had`
+  - ale, leaving us utterly speechless. We also had the exhilarating opportunity to undertake the famous Antarctic polar
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `404` activation `4.172` class `line_break` token `.
+
+`
+  - rush that immediately followed made the breathtaking cold incredibly worthwhile. The expedition team was fantastic, keeping everyone incredibly safe
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `405` activation `4.106` class `word` token `The`
+  - that immediately followed made the breathtaking cold incredibly worthwhile. The expedition team was fantastic, keeping everyone incredibly safe while
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `500` activation `4.078` class `word` token ` a`
+  - planet truly is. This fun, breathtaking trip was a privilege of a lifetime, leaving me with unforgettable memories
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `346` activation `4.049` class `punctuation` token `,`
+  - -covered back emerged with a powerful, spraying exhale, leaving us utterly speechless. We also had the
+- `L19:2236` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `480` activation `4.033` class `word` token ` a`
+  - . Instead, it offers something far more precious: a humbling reminder of how powerful and beautiful our planet
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `400` activation `5.650` class `word` token ` have`
+  - problem resolution. Throughout my previous professional experiences, I have cultivated the ability to actively listen to customer concerns,
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `399` activation `5.492` class `word` token ` I`
+  - on problem resolution. Throughout my previous professional experiences, I have cultivated the ability to actively listen to customer concerns
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `404` activation `4.761` class `word` token ` to`
+  - my previous professional experiences, I have cultivated the ability to actively listen to customer concerns, ensuring they feel heard
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `433` activation `4.692` class `word` token ` demeanor`
+  - beginning of the interaction. My calm and empathetic demeanor naturally de-escalates tense situations, allowing me
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `498` activation `4.428` class `punctuation` token `,`
+  - in fast-paced environments where I can directly assist others, making me a valuable and reliable asset to your incoming
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `474` activation `4.282` class `word` token ` requests`
+  - software enables me to accurately document essential information and process requests seamlessly while maintaining a warm, engaging conversation. Ultimately
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `497` activation `4.225` class `word` token ` others`
+  - thrive in fast-paced environments where I can directly assist others, making me a valuable and reliable asset to your
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `398` activation `4.113` class `punctuation` token `,`
+  - focus on problem resolution. Throughout my previous professional experiences, I have cultivated the ability to actively listen to customer
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `444` activation `4.079` class `word` token ` to`
+  - naturally de-escalates tense situations, allowing me to efficiently guide callers toward effective solutions without unnecessary delays.
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `401` activation `4.023` class `word` token ` cultivated`
+  - resolution. Throughout my previous professional experiences, I have cultivated the ability to actively listen to customer concerns, ensuring
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `467` activation `4.013` class `word` token ` to`
+  - my familiarity with modern customer relationship management software enables me to accurately document essential information and process requests seamlessly while maintaining
+- `L24:2070` `99caa2a88314e6b639e21974ce90154504d27799430d59675710f8c75b4ceaf5@turn_01@glm-5.2` token `464` activation `4.000` class `word` token ` software`
+  - . Furthermore, my familiarity with modern customer relationship management software enables me to accurately document essential information and process requests
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `487` activation `6.738` class `word` token `drops`
+  - Mountain. Admire the picture-perfect backdrops of Copacabana and Ipanema beaches
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `497` activation `6.569` class `word` token ` beaches`
+  - drops of Copacabana and Ipanema beaches, famous destinations that have attracted locals and visitors for
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `433` activation `6.320` class `word` token ` mountains`
+  - , lush rainforests, and staggered green mountains lining the coastline, providing endless opportunities for exploration and
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `437` activation `6.221` class `punctuation` token `,`
+  - sts, and staggered green mountains lining the coastline, providing endless opportunities for exploration and relaxation in nature.
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `468` activation `6.154` class `word` token ` statue`
+  - including the iconic 125-foot Christ the Redeemer statue standing majestically atop Corcovado Mountain.
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `457` activation `6.132` class `punctuation` token `,`
+  - . Marvel at dramatic views available from nearly every angle, including the iconic 125-foot Christ the Redeemer
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `422` activation `5.826` class `word` token ` beaches`
+  - Brazil. Enjoy diverse landscapes featuring pristine white-sand beaches, lush rainforests, and staggered green
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `436` activation `5.801` class `word` token ` coastline`
+  - forests, and staggered green mountains lining the coastline, providing endless opportunities for exploration and relaxation in nature
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `399` activation `5.688` class `punctuation` token `,`
+  - located precisely at the mouth of a magnificent bay harbor, offering travelers a dramatic and picturesque entry point into the
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `498` activation `5.652` class `punctuation` token `,`
+  - of Copacabana and Ipanema beaches, famous destinations that have attracted locals and visitors for over
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `456` activation `5.597` class `word` token ` angle`
+  - nature. Marvel at dramatic views available from nearly every angle, including the iconic 125-foot Christ the Rede
+- `L24:2070` `a020aee4d9c611730426a254980053b818fd74852d1d47c99fd63db1bd77aab1@turn_01@qwen3.6-35b` token `481` activation `5.516` class `word` token `ire`
+  - estically atop Corcovado Mountain. Admire the picture-perfect backdrops of Copacab
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `214` activation `5.557` class `word` token ` the`
+  - dimensions of exercise behavior. First, we must determine the foundational frequency of the respondent’s engagement in structured physical
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `290` activation `5.297` class `word` token ` individual`
+  - to understand specific interests. Furthermore, asking whether the individual prefers exercising alone or in groups can reveal social motivations
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `239` activation `5.175` class `word` token ` the`
+  - month to establish a baseline. Next, asking about the typical duration of each session helps quantify the total time
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `202` activation `5.152` class `word` token ` cover`
+  - is crucial to ask a diverse array of questions that cover various dimensions of exercise behavior. First, we must
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `194` activation `5.008` class `word` token ` to`
+  - data regarding individual physical activity routines, it is crucial to ask a diverse array of questions that cover various dimensions
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `262` activation `4.968` class `word` token ` the`
+  - fitness efforts. It is equally important to inquire about the preferred types of exercise, such as cardiovascular training,
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `213` activation `4.889` class `word` token ` determine`
+  - various dimensions of exercise behavior. First, we must determine the foundational frequency of the respondent’s engagement in structured
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `201` activation `4.816` class `style_function_word` token ` that`
+  - it is crucial to ask a diverse array of questions that cover various dimensions of exercise behavior. First, we
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `241` activation `4.809` class `word` token ` duration`
+  - establish a baseline. Next, asking about the typical duration of each session helps quantify the total time invested in
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `244` activation `4.785` class `word` token ` session`
+  - . Next, asking about the typical duration of each session helps quantify the total time invested in fitness efforts.
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `200` activation `4.696` class `word` token ` questions`
+  - , it is crucial to ask a diverse array of questions that cover various dimensions of exercise behavior. First,
+- `L24:2070` `f914c0057c95afe34d888f49b909e9858708743344393a0a742a557efce4490c@turn_01@qwen3.6-35b` token `296` activation `4.646` class `word` token ` groups`
+  - , asking whether the individual prefers exercising alone or in groups can reveal social motivations. We should also investigate the
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `499` activation `6.109` class `word` token ` and`
+  - deep water. It is highly energetic, sharp, and incredibly approachable for young readers today. This choice
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `331` activation `5.864` class `word` token ` sounds`
+  - a shallow, babbling stream. Overall, it sounds incredibly approachable, friendly, and remarkably down to
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `385` activation `5.685` class `style_function_word` token ` feels`
+  - short, snappy, and quite cool. It feels like a fantastic fit for a younger wizard or perhaps
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `338` activation `5.581` class `word` token ` and`
+  - Overall, it sounds incredibly approachable, friendly, and remarkably down to earth. It is a solid choice
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `337` activation `5.254` class `punctuation` token `,`
+  - . Overall, it sounds incredibly approachable, friendly, and remarkably down to earth. It is a solid
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `380` activation `5.233` class `word` token ` and`
+  - stream, this name is short, snappy, and quite cool. It feels like a fantastic fit for
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `451` activation `5.184` class `word` token ` is`
+  - stones. This name is absolutely ideal if your wizard is a peaceful healer or a quiet, protective, and
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `386` activation `5.145` class `word` token ` like`
+  - , snappy, and quite cool. It feels like a fantastic fit for a younger wizard or perhaps a
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `356` activation `5.075` class `word` token ` figure`
+  - a solid choice for a versatile, water loving mentor figure. Beck Derived from the Old Norse word
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `498` activation `5.067` class `punctuation` token `,`
+  - through deep water. It is highly energetic, sharp, and incredibly approachable for young readers today. This
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `396` activation `4.901` class `word` token ` a`
+  - like a fantastic fit for a younger wizard or perhaps a slightly mischievous, fast moving character whose magic
+- `L24:2070` `3967d657ea1f8479005d9412a1f684e09d7147c53258f3fe54b43a4e1f0b05ef@turn_01@glm-5.2` token `493` activation `4.866` class `word` token ` is`
+  - sleek fish gliding smoothly through deep water. It is highly energetic, sharp, and incredibly approachable for
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `496` activation `5.430` class `word` token ` actually`
+  - section brief. Only include these personal details if you actually have extra space at the very bottom of your standard
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `511` activation `5.216` class `sentence_boundary` token `.`
+  - the very bottom of your standard one page resume document.
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `497` activation `5.197` class `word` token ` have`
+  - brief. Only include these personal details if you actually have extra space at the very bottom of your standard one
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `495` activation `5.190` class `word` token ` you`
+  - overall section brief. Only include these personal details if you actually have extra space at the very bottom of your
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `510` activation `5.164` class `word` token ` document`
+  - at the very bottom of your standard one page resume document.
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `498` activation `4.821` class `word` token ` extra`
+  - . Only include these personal details if you actually have extra space at the very bottom of your standard one page
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `475` activation `4.774` class `punctuation` token `,`
+  - always briefly include specific achievements, or even notable milestones, for each chosen hobby. Remember to keep your overall
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `458` activation `4.761` class `word` token ` and`
+  - debating clubs clearly demonstrates confidence, very quick thinking, and persuasive public speaking. Try to always briefly include specific
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `493` activation `4.713` class `word` token ` details`
+  - keep your overall section brief. Only include these personal details if you actually have extra space at the very bottom
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `499` activation `4.703` class `word` token ` space`
+  - Only include these personal details if you actually have extra space at the very bottom of your standard one page resume
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `479` activation `4.699` class `word` token ` hobby`
+  - achievements, or even notable milestones, for each chosen hobby. Remember to keep your overall section brief. Only
+- `L24:2070` `ef998c0d3d0947b190b6351caaa77c3b6a3a5553fdfa6877241081c750b550ca@turn_01@glm-5.2` token `494` activation `4.689` class `style_function_word` token ` if`
+  - your overall section brief. Only include these personal details if you actually have extra space at the very bottom of
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `291` activation `5.610` class `style_function_word` token ` This`
+  - securely saves the final results into a text file. This simple yet robust program is perfect for building a basic
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `272` activation `5.441` class `word` token ` code`
+  - word "done". At that exact point, the code carefully sorts the collected titles alphabetically and securely saves
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `296` activation `5.343` class `word` token ` is`
+  - into a text file. This simple yet robust program is perfect for building a basic personal reading tracker or compiling
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `295` activation `5.319` class `word` token ` program`
+  - results into a text file. This simple yet robust program is perfect for building a basic personal reading tracker or
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `490` activation `5.005` class `word` token ` script`
+  - simply run it in any standard Python environment. The script will create a new text file named sortedbooks.txt
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `254` activation `4.991` class `punctuation` token `,`
+  - growing list. It intelligently manages the interactive loop, gracefully exiting when the user types the word "done
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `290` activation `4.978` class `sentence_boundary` token `.`
+  - and securely saves the final results into a text file. This simple yet robust program is perfect for building a
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `280` activation `4.966` class `word` token ` and`
+  - , the code carefully sorts the collected titles alphabetically and securely saves the final results into a text file.
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `319` activation `4.938` class `word` token ` code`
+  - media inventory. Here is the complete, fully functional code: def managebooks(): booktitles = [] print
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `287` activation `4.814` class `word` token ` a`
+  - titles alphabetically and securely saves the final results into a text file. This simple yet robust program is perfect
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `247` activation `4.694` class `word` token ` It`
+  - adding each new entry to an actively growing list. It intelligently manages the interactive loop, gracefully exiting when
+- `L24:2070` `20e529cfc368e060428f8fee71257eee1a881f87ac805505b2cf946a4a1a06ee@turn_01@glm-5.2` token `304` activation `4.677` class `word` token ` tracker`
+  - robust program is perfect for building a basic personal reading tracker or compiling a quick media inventory. Here is the
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `376` activation `6.602` class `word` token ` eyes`
+  - , however, a friendly stray cat with bright green eyes trotted over, purring loudly as it rubbed
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `322` activation `6.162` class `word` token ` amusement`
+  - it, feeling a sudden, liberating wave of amusement wash away my lingering work stress. Of course,
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `343` activation `6.153` class `word` token ` I`
+  - the laughter died quickly in my throat as I realized I still had to face the steep, treacherous
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `460` activation `5.797` class `expanded_negation_word` token ` was`
+  - enthusiasm withered when I saw that the porch light was dead, forcing me to fumble blindly in the
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `380` activation `5.584` class `punctuation` token `,`
+  - friendly stray cat with bright green eyes trotted over, purring loudly as it rubbed affectionately against my
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `493` activation `5.483` class `word` token ` find`
+  - smoothly in the lock, and I stepped inside to find the heater humming softly, instantly bathing my shivering
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `372` activation `5.443` class `word` token ` cat`
+  - exhaustion. Up ahead, however, a friendly stray cat with bright green eyes trotted over, purring
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `415` activation `5.406` class `contraction_piece` token ` abandoned`
+  - a dark alley, leaving me feeling incredibly lonely and abandoned in the shadows once more. But as I finally
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `313` activation `5.392` class `punctuation` token `,`
+  - laugh out loud at the sheer absurdity of it, feeling a sudden, liberating wave of amusement wash
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `252` activation `5.374` class `word` token ` hear`
+  - sudden silence was remarkably peaceful, allowing me to finally hear the gentle, rhythmic patter of the rain against
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `195` activation `5.370` class `word` token `nuts`
+  - spine. Then, the comforting aroma of roasted chestnuts and fresh vanilla drifted from a nearby bakery, wrapping
+- `L24:2070` `1253645bec00d22a8aee58bc5db161e1d1b942a8045bc3d6d8ae223d1fb8ff0a@turn_01@gemini-3.5-flash` token `408` activation `5.366` class `punctuation` token `,`
+  - little creature suddenly darted away into a dark alley, leaving me feeling incredibly lonely and abandoned in the shadows
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `339` activation `5.420` class `word` token ` draft`
+  - professional writing, with the technical ability to edit and draft ATS-compliant CVs, persuasive cover letters,
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `344` activation `5.137` class `word` token `s`
+  - technical ability to edit and draft ATS-compliant CVs, persuasive cover letters, and optimized social media profiles
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `301` activation `4.980` class `word` token ` role`
+  - to 16 hours per week. However, this role is not for the faint of heart, and the
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `302` activation `4.911` class `word` token ` is`
+  - 16 hours per week. However, this role is not for the faint of heart, and the skill
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `323` activation `4.722` class `style_function_word` token ` must`
+  - requirements are exceptionally rigorous. First and foremost, candidates must possess an elite mastery of professional writing, with the
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `337` activation `4.718` class `word` token ` edit`
+  - mastery of professional writing, with the technical ability to edit and draft ATS-compliant CVs, persuasive cover
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `324` activation `4.680` class `word` token ` possess`
+  - are exceptionally rigorous. First and foremost, candidates must possess an elite mastery of professional writing, with the technical
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `392` activation `4.673` class `style_function_word` token ` must`
+  - proficiency in both German and English. Furthermore, applicants must boast a solid, adaptable understanding of content development across
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `492` activation `4.602` class `punctuation` token `,`
+  - must be entirely comfortable navigating cloud-based platforms and databases, backed by a powerful, reliable home internet connection.
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `331` activation `4.588` class `punctuation` token `,`
+  - , candidates must possess an elite mastery of professional writing, with the technical ability to edit and draft ATS-com
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `296` activation `4.582` class `word` token ` week`
+  - a capacity of 12 to 16 hours per week. However, this role is not for the faint
+- `L24:2070` `5122feee4115ce9547cfd74f1ae3cfc5dfcbb6d1cc9e6d68bc360d191fd6c9d6@turn_01@glm-5.2` token `422` activation `4.505` class `word` token `—and`
+  - IT and engineering to healthcare, finance, and entertainment—and know exactly how to tailor documents for varying levels of
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `220` activation `8.131` class `punctuation` token `,`
+  - hands, acting with a wonderful mind of their own, beat the water with bright, energetic strokes, joy
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `229` activation `7.040` class `punctuation` token `,`
+  - own, beat the water with bright, energetic strokes, joyfully propelling him upward. His head burst
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `210` activation `7.014` class `word` token ` hands`
+  - filling him with a thrilling, breathtaking vitality. His hands, acting with a wonderful mind of their own,
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `199` activation `6.854` class `punctuation` token `,`
+  - , gave a great, excited leap of pure joy, filling him with a thrilling, breathtaking vitality. His
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `299` activation `6.671` class `punctuation` token `,`
+  - shout of absolute ecstasy! He was now completely alive, his senses blooming with a sparkling, magnificent clarity
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `173` activation `6.444` class `word` token ` energy`
+  - in the current. Suddenly, a spectacular rush of energy surged through his body! His heart, which had
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `221` activation `6.416` class `word` token ` beat`
+  - , acting with a wonderful mind of their own, beat the water with bright, energetic strokes, joyfully
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `296` activation `6.319` class `word` token ` now`
+  - , triumphant shout of absolute ecstasy! He was now completely alive, his senses blooming with a sparkling
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `189` activation `6.295` class `punctuation` token `,`
+  - His heart, which had been tapping a quiet rhythm, gave a great, excited leap of pure joy,
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `253` activation `6.081` class `word` token ` sunlight`
+  - into the glorious open air! The brilliant, welcoming sunlight kissed his face, and his chest expanded with a
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `198` activation `5.959` class `word` token ` joy`
+  - rhythm, gave a great, excited leap of pure joy, filling him with a thrilling, breathtaking vitality.
+- `L24:2070` `bc676ce34becf084df2bd4ac024a862b80152d3c5f3ec33efa1a6bdf444ad4b4@turn_01@gemini-3.5-flash` token `234` activation `5.914` class `word` token ` him`
+  - with bright, energetic strokes, joyfully propelling him upward. His head burst through the surface into the
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `346` activation `6.268` class `word` token ` up`
+  - reality. Every time you fall asleep, you wake up as a different random person somewhere in the vast world
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `367` activation `6.099` class `word` token ` yourself`
+  - . Tonight, you open your borrowed eyes to find yourself holding a bloody knife in an expensive shower. A
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `236` activation `5.536` class `word` token ` are`
+  - realizes that the terrifying creatures she is contracted to kill are actually the displaced souls of innocent disappeared poets. She
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `235` activation `5.336` class `word` token ` kill`
+  - hunter realizes that the terrifying creatures she is contracted to kill are actually the displaced souls of innocent disappeared poets.
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `348` activation `5.296` class `word` token ` a`
+  - Every time you fall asleep, you wake up as a different random person somewhere in the vast world. Tonight
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `503` activation `5.226` class `word` token ` now`
+  - stopped hoarding ancient gold. Instead, they are now fiercely hoarding vintage vinyl records, obsolete
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `351` activation `5.210` class `word` token ` person`
+  - fall asleep, you wake up as a different random person somewhere in the vast world. Tonight, you open
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `344` activation `5.182` class `word` token ` you`
+  - bizarre new reality. Every time you fall asleep, you wake up as a different random person somewhere in the
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `310` activation `5.056` class `word` token ` is`
+  - deep space mission realize the Earth they safely landed on is completely entirely flawless. There are absolutely no wars,
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `479` activation `4.962` class `word` token ` stranger`
+  - le, you glance down and suddenly see a compelling stranger staring back up at you from the water. Local
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `360` activation `4.959` class `word` token ` you`
+  - random person somewhere in the vast world. Tonight, you open your borrowed eyes to find yourself holding a bloody
+- `L24:2070` `1abf18e413ce32abe21e9dc74885965c78a2697d8c99105aeb37062a22948888@turn_01@glm-5.2` token `510` activation `4.862` class `punctuation` token `,`
+  - , they are now fiercely hoarding vintage vinyl records, obsolete
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `292` activation `5.377` class `word` token ` territory`
+  - in monogamous pairs to fiercely defend their marked territory from other intruding scavengers. [Kudu]:
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `251` activation `5.266` class `word` token `opes`
+  - . [Impala]: These medium-sized antelopes are incredibly athletic, capable of leaping up to
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `307` activation `5.194` class `word` token `udu`
+  - scavengers. [Kudu]: The male greater kudu is strikingly recognized by its magnificent spiraling horns
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `337` activation `5.155` class `word` token ` cats`
+  - -two inches. [Leopard]: These elusive big cats are incredibly strong, often hauling their heavy kills high
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `317` activation `5.148` class `word` token ` horns`
+  - udu is strikingly recognized by its magnificent spiraling horns, which can grow to reach up to seventy-two
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `259` activation `5.113` class `word` token `aping`
+  - antelopes are incredibly athletic, capable of leaping up to ten meters long to escape swift predators.
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `279` activation `5.049` class `word` token `ores`
+  - . [Jackal]: These opportunistic omnivores often work in monogamous pairs to fiercely defend
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `346` activation `5.032` class `word` token ` kills`
+  - big cats are incredibly strong, often hauling their heavy kills high up into trees to avoid stealing hyenas.
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `481` activation `4.994` class `word` token `ino`
+  - demand. [Rhinoceros]: The black rhino has a prehensile upper lip specially adapted
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `367` activation `4.987` class `word` token `oses`
+  - [Meerkat]: These highly sociable mongooses constantly take turns standing watch on their hind legs to
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `399` activation `4.945` class `word` token ` males`
+  - antelope exhibits significant sexual dimorphism, meaning that males and females look drastically different in both size and color
+- `L24:2070` `52f43208b6ae9be5abe550d786775530b5ca054d245a12f082939b2168340dc8@turn_01@glm-5.2` token `320` activation `4.935` class `style_function_word` token ` can`
+  - ly recognized by its magnificent spiraling horns, which can grow to reach up to seventy-two inches. [
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `204` activation `5.770` class `word` token ` structure`
+  - . It is incredible to think that such a complex structure exists beneath our feet, quietly observing the very building
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `146` activation `5.762` class `punctuation` token `,`
+  - essentially the world’s largest and most powerful particle accelerator, a massive engineering feat that pushes the boundaries of human
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `195` activation `5.676` class `word` token ` It`
+  - conditions similar to those just after the Big Bang. It is incredible to think that such a complex structure exists
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `134` activation `5.568` class `word` token ` It`
+  - amazed by the sheer scale of this scientific marvel. It is essentially the world’s largest and most powerful particle
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `180` activation `5.307` class `word` token ` machine`
+  - ometer ring of tunnel buried underground near Geneva, this machine allows scientists to recreate conditions similar to those just after
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `208` activation `5.105` class `word` token ` feet`
+  - to think that such a complex structure exists beneath our feet, quietly observing the very building blocks of matter without
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `227` activation `5.009` class `word` token ` collider`
+  - matter without disturbing the peaceful countryside above it. The collider doesn't just smash particles together for the sake of
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `196` activation `4.997` class `word` token ` is`
+  - similar to those just after the Big Bang. It is incredible to think that such a complex structure exists beneath
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `240` activation `4.780` class `word` token ` it`
+  - just smash particles together for the sake of it; it helps us understand the fundamental forces that hold the universe
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `403` activation `4.732` class `word` token ` countries`
+  - . Thousands of scientists and engineers from over a hundred countries work together, sharing data and insights to solve some
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `205` activation `4.708` class `word` token ` exists`
+  - It is incredible to think that such a complex structure exists beneath our feet, quietly observing the very building blocks
+- `L24:2070` `158858473f2ee5436b50304ed8266f1635715eb7d7d93c30a446ca6a791cf1f8@turn_01@qwen3.6-35b` token `209` activation `4.699` class `punctuation` token `,`
+  - think that such a complex structure exists beneath our feet, quietly observing the very building blocks of matter without disturbing
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `498` activation `6.170` class `word` token ` trip`
+  - beautiful our planet truly is. This fun, breathtaking trip was a privilege of a lifetime, leaving me with
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `499` activation `6.119` class `expanded_negation_word` token ` was`
+  - our planet truly is. This fun, breathtaking trip was a privilege of a lifetime, leaving me with unforgettable
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `346` activation `5.647` class `punctuation` token `,`
+  - -covered back emerged with a powerful, spraying exhale, leaving us utterly speechless. We also had the
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `407` activation `5.608` class `word` token ` team`
+  - followed made the breathtaking cold incredibly worthwhile. The expedition team was fantastic, keeping everyone incredibly safe while ensuring we
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `397` activation `5.545` class `word` token ` followed`
+  - . However, the exhilarating adrenaline rush that immediately followed made the breathtaking cold incredibly worthwhile. The expedition team
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `505` activation `5.416` class `punctuation` token `,`
+  - fun, breathtaking trip was a privilege of a lifetime, leaving me with unforgettable memories.
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `378` activation `5.335` class `expanded_negation_word` token ` was`
+  - Plunging into the literally freezing Southern Ocean water was a fierce, biting shock to the system. However
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `394` activation `5.330` class `word` token ` rush`
+  - to the system. However, the exhilarating adrenaline rush that immediately followed made the breathtaking cold incredibly worthwhile.
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `408` activation `5.262` class `expanded_negation_word` token ` was`
+  - made the breathtaking cold incredibly worthwhile. The expedition team was fantastic, keeping everyone incredibly safe while ensuring we maxim
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `401` activation `5.219` class `word` token ` cold`
+  - exhilarating adrenaline rush that immediately followed made the breathtaking cold incredibly worthwhile. The expedition team was fantastic, keeping
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `354` activation `5.193` class `style_function_word` token ` also`
+  - exhale, leaving us utterly speechless. We also had the exhilarating opportunity to undertake the famous Antarctic
+- `L24:2070` `c68611976471adeb5d627c3d8f48cde59f9a782f76df3fe2851a7a09576d4c54@turn_01@glm-5.2` token `449` activation `5.136` class `word` token `ctica`
+  - lectures about polar history and climate science. Antarctica is not a conventional holiday destination. There are no

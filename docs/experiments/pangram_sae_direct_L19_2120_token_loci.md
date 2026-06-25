@@ -1,0 +1,288 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2120` | `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 27 | `63.83` | `6.01` | sentence_boundary:8|punctuation:6|word:6|style_function_word:5|line_break:1|discourse_marker_word:1 |
+| `L19:2120` | `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 10 | `27.35` | `6.23` | sentence_boundary:4|punctuation:3|word:2|style_function_word:1 |
+| `L19:2120` | `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 15 | `38.98` | `6.25` | sentence_boundary:6|punctuation:5|word:3|style_function_word:1 |
+| `L19:2120` | `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` | `glm-5.2` | 18 | `43.67` | `5.76` | sentence_boundary:6|word:6|style_function_word:3|punctuation:2|discourse_marker_word:1 |
+| `L19:2120` | `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 31 | `66.46` | `6.07` | word:11|sentence_boundary:9|punctuation:5|style_function_word:4|whitespace:2 |
+| `L19:2120` | `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` | `glm-5.2` | 29 | `60.54` | `5.76` | word:14|sentence_boundary:8|punctuation:5|whitespace:2 |
+| `L19:2120` | `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 36 | `76.86` | `6.89` | word:13|punctuation:8|sentence_boundary:7|style_function_word:4|discourse_marker_word:2|line_break:1|whitespace:1 |
+| `L19:2120` | `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` | `glm-5.2` | 21 | `56.59` | `6.43` | word:9|sentence_boundary:7|punctuation:5 |
+| `L19:2120` | `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 41 | `100.84` | `6.40` | sentence_boundary:15|word:13|punctuation:5|style_function_word:5|line_break:1|discourse_marker_word:1|expanded_negation_word:1 |
+| `L19:2120` | `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 25 | `59.19` | `6.16` | word:9|sentence_boundary:7|punctuation:5|discourse_marker_word:3|style_function_word:1 |
+| `L19:2120` | `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 57 | `132.48` | `6.25` | sentence_boundary:19|word:15|punctuation:12|style_function_word:7|line_break:2|discourse_marker_word:2 |
+
+## Top Tokens
+
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `557` activation `6.014` class `sentence_boundary` token `.`
+  - Time 1, which is based on astronomical observations. This adjustment ensures that noon UTC roughly corresponds to the
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `532` activation `5.824` class `sentence_boundary` token `.`
+  - to account for the gradual slowing of Earth’s rotation. Consequently, UTC is always kept within 0.
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `575` activation `5.818` class `sentence_boundary` token `.`
+  - corresponds to the sun’s highest point in the sky. Currently, the difference between TAI and UTC is
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `605` activation `5.548` class `sentence_boundary` token `.`
+  - UTC because of the accumulated leap seconds added over decades. While scientists and GPS systems often prefer the continuous nature
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `439` activation `5.023` class `sentence_boundary` token `.`
+  - average of approximately seventy atomic clocks across forty national laboratories. Unlike traditional astronomical time, TAI relies entirely on
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `502` activation `4.782` class `sentence_boundary` token `.`
+  - standard, ensuring synchronization with the Earth’s daily cycle. While TAI flows continuously at a constant rate,
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `422` activation `4.678` class `sentence_boundary` token `.`
+  - maintained by the International Bureau of Weights and Measures. It is calculated using a weighted average of approximately seventy
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `639` activation `4.661` class `sentence_boundary` token `.`
+  - systems rely on UTC for everyday scheduling and civil coordination.
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `473` activation `2.556` class `line_break` token `.
+
+`
+  - stable scale that ignores irregularities in Earth’s rotation. Coordinated Universal Time, or UTC, differs significantly
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `534` activation `2.230` class `punctuation` token `,`
+  - for the gradual slowing of Earth’s rotation. Consequently, UTC is always kept within 0.9 seconds
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `606` activation `2.220` class `style_function_word` token ` While`
+  - because of the accumulated leap seconds added over decades. While scientists and GPS systems often prefer the continuous nature of
+- `L19:2120` `89e44a65181076ab721592e13a69c971d9f067eb21db9a11468ed41430dadd2d@turn_01@qwen3.6-35b` token `533` activation `1.659` class `discourse_marker_word` token ` Consequently`
+  - account for the gradual slowing of Earth’s rotation. Consequently, UTC is always kept within 0.9
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `601` activation `6.225` class `sentence_boundary` token `.`
+  - five, each boasting populations exceeding 200 million residents. These nations collectively represent a significant portion of the world
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `639` activation `5.610` class `sentence_boundary` token `.`
+  - others, highlighting Asia’s dominant role in global demographics.
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `580` activation `5.132` class `sentence_boundary` token `.`
+  - China, which remains the second most populous nation globally. Indonesia, Pakistan, and Bangladesh round out the top
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `551` activation `3.638` class `sentence_boundary` token `.`
+  - India, China, Indonesia, Pakistan, and Bangladesh. India currently holds the top position with over 1
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `630` activation `2.053` class `punctuation` token `,`
+  - rates in some regions and large historical bases in others, highlighting Asia’s dominant role in global demographics.
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `629` activation `1.307` class `word` token ` others`
+  - birth rates in some regions and large historical bases in others, highlighting Asia’s dominant role in global demographics.
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `631` activation `1.026` class `word` token ` highlighting`
+  - in some regions and large historical bases in others, highlighting Asia’s dominant role in global demographics.
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `615` activation `0.949` class `punctuation` token `,`
+  - represent a significant portion of the world’s total population, driven by high birth rates in some regions and large
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `602` activation `0.891` class `style_function_word` token ` These`
+  - , each boasting populations exceeding 200 million residents. These nations collectively represent a significant portion of the world’s
+- `L19:2120` `1badc4b5fbed5a03477faafc4541b0d0b8cd1c08183ea910feb5160247f95e4e@turn_01@qwen3.6-35b` token `592` activation `0.523` class `punctuation` token `,`
+  - , Pakistan, and Bangladesh round out the top five, each boasting populations exceeding 200 million residents. These
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `606` activation `6.246` class `sentence_boundary` token `.`
+  - as a separate governing body with its own competitive structure. While these are the main categories, some colleges also
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `579` activation `5.362` class `sentence_boundary` token `.`
+  - experience without offering athletic scholarships, emphasizing academics alongside sports. Additionally, the National Association of Intercollegiate
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `639` activation `5.016` class `sentence_boundary` token `.`
+  - but structured landscape for student athletes across the United States.
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `518` activation `3.814` class `sentence_boundary` token `.`
+  - : Division I, Division II, and Division III. Division I is the most prominent, featuring the largest
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `560` activation `3.511` class `sentence_boundary` token `.`
+  - generally with smaller programs and budgets compared to D-I. Division III focuses on the student-athlete experience without
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `538` activation `3.263` class `sentence_boundary` token `.`
+  - largest universities with the most substantial athletic budgets and scholarships. Division II offers a balanced approach, providing athletic scholarships
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `613` activation `2.944` class `punctuation` token `,`
+  - own competitive structure. While these are the main categories, some colleges also compete in lower-level associations or specific
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `607` activation `2.030` class `style_function_word` token ` While`
+  - a separate governing body with its own competitive structure. While these are the main categories, some colleges also compete
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `625` activation `1.787` class `punctuation` token `,`
+  - colleges also compete in lower-level associations or specific conferences, creating a complex but structured landscape for student athletes across
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `581` activation `1.421` class `punctuation` token `,`
+  - offering athletic scholarships, emphasizing academics alongside sports. Additionally, the National Association of Intercollegiate Athletics (
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `574` activation `1.018` class `punctuation` token `,`
+  - on the student-athlete experience without offering athletic scholarships, emphasizing academics alongside sports. Additionally, the National Association
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@qwen3.6-35b` token `631` activation `0.903` class `word` token ` landscape`
+  - associations or specific conferences, creating a complex but structured landscape for student athletes across the United States.
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `621` activation `5.758` class `sentence_boundary` token `.`
+  - NAIA and junior college associations also govern college sports. However, when discussing most college athletics, the NCAA
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `603` activation `5.409` class `sentence_boundary` token `.`
+  - strictly prohibiting athletic scholarships, though academic aid remains available. It is important to note that the NAIA and
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `639` activation `4.833` class `sentence_boundary` token `.`
+  - , the NCAA's three divisions are the primary structure.
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `547` activation `3.654` class `sentence_boundary` token `.`
+  - ) currently organizes college sports across three distinct divisions. Division I features the largest athletic budgets, highest levels
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `585` activation `3.514` class `sentence_boundary` token `.`
+  - athletics with high academic standards while providing partial athletic scholarships. Division III emphasizes the student experience, strictly prohibiting athletic
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `565` activation `3.411` class `sentence_boundary` token `.`
+  - , highest levels of competition, and generous athletic scholarships. Division II offers a balanced approach, combining competitive athletics
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `623` activation `2.786` class `punctuation` token `,`
+  - and junior college associations also govern college sports. However, when discussing most college athletics, the NCAA's three
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `605` activation `2.330` class `word` token ` is`
+  - athletic scholarships, though academic aid remains available. It is important to note that the NAIA and junior college
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `604` activation `1.860` class `word` token ` It`
+  - prohibiting athletic scholarships, though academic aid remains available. It is important to note that the NAIA and junior
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `609` activation `1.801` class `style_function_word` token ` that`
+  - academic aid remains available. It is important to note that the NAIA and junior college associations also govern college
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `606` activation `1.727` class `word` token ` important`
+  - scholarships, though academic aid remains available. It is important to note that the NAIA and junior college associations
+- `L19:2120` `74c5c174b293f881da868d166bcf6cf64bffc1b015c23c88372a596b6d86bf4e@turn_01@glm-5.2` token `607` activation `1.609` class `word` token ` to`
+  - , though academic aid remains available. It is important to note that the NAIA and junior college associations also
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `480` activation `6.075` class `sentence_boundary` token `.`
+  - strong regional presence within the first decade of its existence. Throughout the early 2000s, the company
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `519` activation `5.754` class `sentence_boundary` token `.`
+  - shop into a comprehensive fast-casual dining option. This strategic diversification helped stabilize revenue streams and attract
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `541` activation `5.370` class `sentence_boundary` token `.`
+  - looking for fuller meal options alongside their daily smoothies. As the brand expanded nationwide, maintaining consistent quality and
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `454` activation `5.253` class `sentence_boundary` token `.`
+  - campuses to capture a diverse demographic of health-conscious consumers. This aggressive expansion model facilitated rapid growth across the southeastern
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `587` activation `5.057` class `sentence_boundary` token `.`
+  - network, boasting over five hundred locations across the country. This milestone demonstrated the brand's successful adaptation to changing
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `416` activation `4.632` class `sentence_boundary` token `.`
+  - that was still largely dominated by traditional fast-food chains. By 1999, Rogers expanded the brand through
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `639` activation `4.243` class `sentence_boundary` token `.`
+  - product offerings to meet evolving dietary trends and customer expectations.
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `558` activation `4.049` class `sentence_boundary` token `.`
+  - maintaining consistent quality and a vibrant retail atmosphere became paramount. By 2019, Tropical Smoothie Cafe had
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `380` activation `2.715` class `sentence_boundary` token `.`
+  - ies to the growing local community seeking nutritious beverage alternatives. The concept quickly gained traction due to its unique focus
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `488` activation `2.355` class `punctuation` token `,`
+  - its existence. Throughout the early 2000s, the company refined its menu by introducing grilled chicken sandwiches
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `542` activation `1.821` class `style_function_word` token ` As`
+  - for fuller meal options alongside their daily smoothies. As the brand expanded nationwide, maintaining consistent quality and a
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@qwen3.6-35b` token `547` activation `1.798` class `punctuation` token `,`
+  - their daily smoothies. As the brand expanded nationwide, maintaining consistent quality and a vibrant retail atmosphere became paramount
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `544` activation `5.763` class `sentence_boundary` token `.`
+  - -casual restaurant rather than just a beverage stop. By 2012, the flourishing cafe celebrated the
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `496` activation `5.640` class `sentence_boundary` token `.`
+  - , providing the crucial capital needed to accelerate national expansion. Headquartered in Atlanta, Georgia, the brand steadily
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `639` activation `5.495` class `sentence_boundary` token `.`
+  - force in the competitive fast-casual dining market.
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `599` activation `5.226` class `sentence_boundary` token `.`
+  - 2015 by opening its 500th location. By the end of 2019, the popular
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `562` activation `5.065` class `sentence_boundary` token `.`
+  - cafe celebrated the opening of its 300th location. The company maintained its strong upward trajectory over the next
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `575` activation `4.509` class `sentence_boundary` token `.`
+  - maintained its strong upward trajectory over the next several years. Continuing this momentum, Tropical Smoothie Cafe reached another
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `453` activation `4.075` class `sentence_boundary` token `.`
+  - opening its first official franchise location in Tallahassee. The company experienced substantial growth throughout the 2000
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `503` activation `2.035` class `punctuation` token `,`
+  - accelerate national expansion. Headquartered in Atlanta, Georgia, the brand steadily expanded its menu beyond smoothies to
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `618` activation `1.995` class `word` token ` United`
+  - the popular franchise boasted over 840 locations across the United States, firmly cementing its status as a dominant
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `579` activation `1.720` class `punctuation` token `,`
+  - trajectory over the next several years. Continuing this momentum, Tropical Smoothie Cafe reached another major milestone in
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `501` activation `1.613` class `punctuation` token `,`
+  - needed to accelerate national expansion. Headquartered in Atlanta, Georgia, the brand steadily expanded its menu beyond smooth
+- `L19:2120` `634ef6574cd0759f62d971d2c97f4ce4f6aad08a558d2cae05a5b74d2ae6f2e3@turn_01@glm-5.2` token `545` activation `1.576` class `word` token ` By`
+  - asual restaurant rather than just a beverage stop. By 2012, the flourishing cafe celebrated the opening
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `608` activation `6.895` class `sentence_boundary` token `.`
+  - , offering enhanced security and performance compared to its predecessors. Consequently, while SSL laid the foundational groundwork, TLS
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `579` activation `6.039` class `sentence_boundary` token `.`
+  - , with three subsequent releases following the initial TLS deployment. The most recent iteration, TLS 1.3
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `559` activation `5.569` class `sentence_boundary` token `.`
+  - to address numerous security vulnerabilities present in earlier SSL versions. Since then, the protocol has continued to advance,
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `639` activation `5.480` class `sentence_boundary` token `.`
+  - communications and protecting user data from various cyber threats today.
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `473` activation `5.404` class `sentence_boundary` token `.`
+  - preventing malicious actors from intercepting or stealing that data. Although often used interchangeably, the primary difference lies
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `533` activation `4.350` class `sentence_boundary` token `.`
+  - of SSL 3.0 in 1996. In 1999, TLS 1.0
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `499` activation `4.008` class `line_break` token `.
+
+`
+  - is essentially the more modern and secure successor to SSL. Historically, SSL 2.0 was released
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `610` activation `3.209` class `punctuation` token `,`
+  - enhanced security and performance compared to its predecessors. Consequently, while SSL laid the foundational groundwork, TLS represents the
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `441` activation `3.198` class `sentence_boundary` token `.`
+  - data and authenticate connections while it travels across the internet. For instance, they are crucial for securely processing sensitive
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `479` activation `2.808` class `punctuation` token `,`
+  - or stealing that data. Although often used interchangeably, the primary difference lies in their evolution: TLS is
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `487` activation `2.455` class `punctuation` token `:`
+  - interchangeably, the primary difference lies in their evolution: TLS is essentially the more modern and secure successor to
+- `L19:2120` `9d5cd9e4dd3ac0916c509df5e48fe7cdbae79f2edfeaa000c4deb09c781dd763@turn_01@qwen3.6-35b` token `609` activation `2.137` class `discourse_marker_word` token ` Consequently`
+  - offering enhanced security and performance compared to its predecessors. Consequently, while SSL laid the foundational groundwork, TLS represents
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `584` activation `6.432` class `sentence_boundary` token `.`
+  - symbolizing the layering of Christian and indigenous beliefs. Today, the site is a UNESCO World Heritage destination
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `546` activation `5.844` class `punctuation` token `."`
+  - ualtepetl, or "man-made hill." In 1594, the Church of Nuestra
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `478` activation `5.821` class `sentence_boundary` token `.`
+  - human sacrifices, were performed to appease the gods. Its terraced structure and vibrant murals, such
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `506` activation `5.625` class `sentence_boundary` token `.`
+  - , highlight its religious significance, blending myth and ceremony. After the Spanish conquest in 1519, the
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `436` activation `5.117` class `sentence_boundary` token `.`
+  - reflecting the devotion of the Cholultec people. The pyramid was a central hub of worship, dedicated
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `614` activation `4.753` class `sentence_boundary` token `.`
+  - and excavated sections, uncovering its layered history. The pyramid stands as a testament to Cholula
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `639` activation `3.664` class `sentence_boundary` token `.`
+  - spiritual legacy, bridging ancient and colonial eras.
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `397` activation `3.623` class `sentence_boundary` token `.`
+  - measuring 450 meters across and 66 meters tall. Built in several stages by pre-Columbian civilizations
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `547` activation `2.506` class `word` token ` In`
+  - tepetl, or "man-made hill." In 1594, the Church of Nuestra Se
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `586` activation `1.719` class `punctuation` token `,`
+  - the layering of Christian and indigenous beliefs. Today, the site is a UNESCO World Heritage destination, attracting
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `585` activation `1.514` class `word` token ` Today`
+  - izing the layering of Christian and indigenous beliefs. Today, the site is a UNESCO World Heritage destination,
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@glm-5.2` token `615` activation `1.492` class `word` token ` The`
+  - excavated sections, uncovering its layered history. The pyramid stands as a testament to Cholula’s
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `409` activation `6.399` class `sentence_boundary` token `.`
+  - concealed a man-made hill rather than a natural formation. This revelation sparked widespread interest and early archaeological investigations,
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `340` activation `6.163` class `sentence_boundary` token `.`
+  - for religious worship and ritualistic activities in the region. Archaeologists suggest that numerous smaller structures and temples were
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `373` activation `6.114` class `sentence_boundary` token `.`
+  - the evolving spiritual practices of the Cholula people. The site’s recent history gained international prominence when a
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `465` activation `5.904` class `sentence_boundary` token `.`
+  - national monument, ensuring its protection against urban development pressures. Today, visitors can explore a network of tunnels beneath
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `436` activation `5.876` class `sentence_boundary` token `.`
+  - efforts began only in earnest during the late twentieth century. A specific milestone was reached in 1931 when
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `306` activation `5.872` class `sentence_boundary` token `.`
+  - with significant expansions taking place until approximately 900 CE. The monument was initially dedicated to Quetzalco
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `515` activation `5.420` class `sentence_boundary` token `.`
+  - panic marvel highlights the cultural layers embedded within the community. Understanding Tlachihualtepetl requires
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `493` activation `5.417` class `sentence_boundary` token `.`
+  - , offering a unique glimpse into this ancient sacred space. The juxtaposition of colonial architecture atop this pre-H
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `277` activation `4.458` class `sentence_boundary` token `.`
+  - , surpassing even the famous Egyptians in sheer mass. Built primarily during the second century CE, its construction
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `537` activation `3.985` class `sentence_boundary` token `.`
+  - iating both its monumental size and its enduring spiritual significance. It remains a vital symbol of Mexico’s rich indigenous
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `555` activation `3.178` class `sentence_boundary` token `.`
+  - ’s rich indigenous heritage amidst a rapidly modernizing landscape. The ongoing preservation efforts ensure that future generations can witness
+- `L19:2120` `c1f40447167a99977d745672c0c19cb2739b6f5208647af47fac16c94f88826e@turn_01@qwen3.6-35b` token `591` activation `2.974` class `sentence_boundary` token `.`
+  - and pilgrims alike, bridging past and present. Its legacy endures as a profound example of ancient
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `523` activation `6.157` class `sentence_boundary` token `.`
+  - digital revolution, prompting consumers to seek immediate physical prints. The release of user-friendly models like the Instax
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `558` activation `6.007` class `sentence_boundary` token `.`
+  - s cemented instant photography’s place in mainstream culture. Younger generations particularly embraced these devices for their aesthetic
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `467` activation `5.891` class `sentence_boundary` token `.`
+  - ilm Instax 200, in 1998. The true popularity surge occurred not in the mid-f
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `594` activation `5.620` class `sentence_boundary` token `.`
+  - at parties, travel adventures, and everyday life events. Consequently, what was once a niche novelty evolved into
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `639` activation `5.121` class `sentence_boundary` token `.`
+  - replicate, thus ensuring its enduring appeal across multiple generations.
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `499` activation `5.039` class `sentence_boundary` token `.`
+  - but decades later during the early 2000s. This revival was driven by a growing nostalgia for tangible
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `428` activation `3.921` class `sentence_boundary` token `.`
+  - successfully demonstrated the first working prototype in 1947. However, the commercial landscape underwent a significant transformation when
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `596` activation `2.572` class `punctuation` token `,`
+  - , travel adventures, and everyday life events. Consequently, what was once a niche novelty evolved into a beloved
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `430` activation `2.304` class `punctuation` token `,`
+  - the first working prototype in 1947. However, the commercial landscape underwent a significant transformation when Fuji Photo
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `595` activation `1.916` class `discourse_marker_word` token ` Consequently`
+  - parties, travel adventures, and everyday life events. Consequently, what was once a niche novelty evolved into a
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `524` activation `1.778` class `word` token ` The`
+  - revolution, prompting consumers to seek immediate physical prints. The release of user-friendly models like the Instax Mini
+- `L19:2120` `39307b35b70241f623d7c1abab7d1665e348f282d6af44276deeec9c1e6e27b8@turn_01@qwen3.6-35b` token `468` activation `1.631` class `word` token ` The`
+  - Instax 200, in 1998. The true popularity surge occurred not in the mid-fift
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `130` activation `6.246` class `sentence_boundary` token `.`
+  - assets like Ethereum (ETH) can still access them. Consequently, Multichain tokens are not independent units
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `87` activation `5.913` class `sentence_boundary` token `.`
+  - distinct blockchain networks, which operate as isolated silos. By locking native tokens on a source chain and mint
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `158` activation `5.747` class `sentence_boundary` token `.`
+  - the underlying assets secured in the bridge’s cold storage. This mechanism makes Multichain a critical infrastructure layer
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `204` activation `5.273` class `sentence_boundary` token `.`
+  - ain’s bridging services to maintain liquidity and utility. Essentially, the value of these bridged tokens is
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `320` activation `5.069` class `sentence_boundary` token `.`
+  - in asset transfers and accusing an insider of dumping tokens. Suspicions were fueled by a transfer of nearly
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `462` activation `4.982` class `line_break` token `.
+
+`
+  - inance to temporarily suspend deposits for certain bridged assets. The incident underscores the systemic risks facing the $10
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `388` activation `4.800` class `sentence_boundary` token `.`
+  - team and seized the cold wallets holding billions in funds. Although Multichain had previously warned of backend upgrades
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `360` activation `4.523` class `sentence_boundary` token `.`
+  - a team member or investor to the Gate.io exchange. This was compounded by poorly translated Chinese social media posts
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `420` activation `4.491` class `sentence_boundary` token `.`
+  - ajeure" for unavailable routes and promising delayed compensation. This lack of clarity exacerbated fears that assets were compromised
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `298` activation `4.480` class `sentence_boundary` token `.`
+  - sparked a mass sell-off of its native MULTI token. The panic was initially triggered by a viral tweet alleging
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `62` activation `4.421` class `sentence_boundary` token `.`
+  - Fi) ecosystem, functioning primarily as a blockchain bridge. Its core utility lies in facilitating the seamless transfer of
+- `L19:2120` `a4c68d5e4025ba63edbbfadd275e13d8b0ee04efa72990a6d50fa775a069b4df@turn_01@qwen3.6-35b` token `511` activation `4.354` class `sentence_boundary` token `.`
+  - recently, including those of Wormhole and Nomad. When a bridge faces potential issues, the entire dependent

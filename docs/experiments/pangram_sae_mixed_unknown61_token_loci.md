@@ -1,0 +1,661 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2255` | `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 53 | `83.81` | `4.30` | word:48|punctuation:5 |
+| `L19:2255` | `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 99 | `120.51` | `4.30` | word:78|punctuation:16|line_break:4|style_function_word:1 |
+| `L19:2255` | `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 81 | `101.93` | `3.66` | word:64|punctuation:12|line_break:4|sentence_boundary:1 |
+| `L19:2255` | `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` | `human` | 32 | `45.72` | `4.23` | word:23|punctuation:5|line_break:2|whitespace:1|sentence_boundary:1 |
+| `L19:2255` | `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` | `gpt-5.5` | 20 | `27.38` | `3.93` | word:13|punctuation:6|line_break:1 |
+| `L19:2255` | `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` | `human` | 113 | `177.26` | `4.20` | word:98|line_break:12|discourse_marker_word:2|expanded_negation_word:1 |
+| `L19:2255` | `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 90 | `107.25` | `3.92` | word:67|punctuation:11|sentence_boundary:8|line_break:2|discourse_marker_word:1|whitespace:1 |
+| `L19:2255` | `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` | `human` | 84 | `84.82` | `3.54` | word:58|punctuation:12|sentence_boundary:11|line_break:2|whitespace:1 |
+| `L19:2255` | `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` | `glm-5.2` | 23 | `36.63` | `3.87` | word:17|punctuation:4|line_break:1|sentence_boundary:1 |
+| `L19:2255` | `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 60 | `80.64` | `4.09` | word:37|punctuation:15|sentence_boundary:3|discourse_marker_word:2|style_function_word:2|line_break:1 |
+| `L19:2255` | `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 83 | `113.16` | `4.29` | word:65|punctuation:10|line_break:7|style_function_word:1 |
+| `L19:2255` | `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` | `glm-5.2` | 45 | `56.86` | `3.97` | word:29|punctuation:8|sentence_boundary:4|discourse_marker_word:2|line_break:1|style_function_word:1 |
+| `L19:2255` | `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` | `gpt-5.5` | 42 | `52.29` | `4.31` | word:33|punctuation:7|line_break:1|style_function_word:1 |
+| `L24:850` | `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 34 | `102.59` | `8.05` | word:32|punctuation:2 |
+| `L24:850` | `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 85 | `179.84` | `7.98` | word:70|punctuation:9|line_break:5|sentence_boundary:1 |
+| `L24:850` | `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 78 | `166.16` | `8.10` | word:61|punctuation:8|line_break:7|sentence_boundary:2 |
+| `L24:850` | `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` | `human` | 36 | `101.03` | `8.84` | word:31|punctuation:3|sentence_boundary:1|whitespace:1 |
+| `L24:850` | `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` | `gpt-5.5` | 23 | `55.66` | `8.64` | word:18|punctuation:5 |
+| `L24:850` | `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` | `human` | 92 | `328.99` | `8.27` | word:87|line_break:2|style_function_word:1|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:850` | `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 130 | `245.16` | `7.50` | word:103|punctuation:12|sentence_boundary:7|line_break:7|whitespace:1 |
+| `L24:850` | `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` | `human` | 149 | `287.39` | `7.98` | word:112|punctuation:19|sentence_boundary:11|whitespace:4|line_break:2|expanded_negation_word:1 |
+| `L24:850` | `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` | `glm-5.2` | 31 | `81.58` | `8.65` | word:23|punctuation:5|line_break:2|sentence_boundary:1 |
+| `L24:850` | `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 72 | `176.21` | `8.64` | word:56|punctuation:9|sentence_boundary:3|line_break:3|discourse_marker_word:1 |
+| `L24:850` | `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 77 | `220.35` | `9.39` | word:66|punctuation:10|whitespace:1 |
+| `L24:850` | `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` | `glm-5.2` | 50 | `109.24` | `8.12` | word:32|punctuation:9|sentence_boundary:4|discourse_marker_word:2|line_break:2|style_function_word:1 |
+| `L24:850` | `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` | `gpt-5.5` | 39 | `81.43` | `8.12` | word:32|punctuation:3|sentence_boundary:2|style_function_word:1|line_break:1 |
+
+## Top Tokens
+
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `561` activation `4.300` class `word` token ` abundance`
+  - Green Positive: Growth, healing, nature, abundance. Negative: Envy, jealousy, stagnation
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `506` activation `4.226` class `word` token ` productivity`
+  - Blue Positive: Peace, trust, stability, productivity. Negative: Sadness, coldness, alo
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `586` activation `4.037` class `word` token ` luxury`
+  - Positive: Royalty, spirituality, wisdom, luxury. Negative: Moodiness, arrogance, mystery,
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `533` activation `3.966` class `word` token ` vitality`
+  - Positive: Creativity, enthusiasm, warmth, vitality. Negative: Superficiality, frustration,
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `480` activation `3.377` class `word` token ` warmth`
+  - warning. Yellow Positive: Happiness, optimism, warmth, intellect. Negative: Cowardice, frustration
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `504` activation `3.068` class `word` token ` stability`
+  - anxiety. Blue Positive: Peace, trust, stability, productivity. Negative: Sadness, coldness
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `482` activation `2.978` class `word` token ` intellect`
+  - Yellow Positive: Happiness, optimism, warmth, intellect. Negative: Cowardice, frustration, deceit
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `478` activation `2.516` class `word` token ` optimism`
+  - danger, warning. Yellow Positive: Happiness, optimism, warmth, intellect. Negative: Cowardice
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `531` activation `2.515` class `word` token ` warmth`
+  - . Orange Positive: Creativity, enthusiasm, warmth, vitality. Negative: Superficiality,
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `584` activation `2.508` class `word` token ` wisdom`
+  - . Purple Positive: Royalty, spirituality, wisdom, luxury. Negative: Moodiness, arrogance,
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `455` activation `2.134` class `word` token ` energy`
+  - impact our emotions: Red Positive: Passion, energy, love, excitement. Negative: Anger,
+- `L19:2255` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `459` activation `2.131` class `word` token ` excitement`
+  - Red Positive: Passion, energy, love, excitement. Negative: Anger, aggression, danger,
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `538` activation `4.299` class `word` token ` atmosphere`
+  - with a iconic Great Red Spot dominating its stormy atmosphere. B. Saturn: Famous for its spectacular ring
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `477` activation `3.640` class `word` token ` fields`
+  - of life, characterized by liquid water and protective magnetic fields. D. Mars: The Red Planet, featuring
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `457` activation `3.260` class `word` token ` effect`
+  - due to its thick, toxic atmosphere and runaway greenhouse effect. C. Earth: The sole known harbor of
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `555` activation `3.205` class `word` token ` particles`
+  - for its spectacular ring system composed of ice and rock particles. C. Uranus and Neptune: Ice giants
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `453` activation `3.098` class `word` token ` atmosphere`
+  - size, yet hostile due to its thick, toxic atmosphere and runaway greenhouse effect. C. Earth: The
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `588` activation `2.754` class `word` token ` Thesis`
+  - axes. IV. Conclusion A. Restate Thesis: Each planet offers unique scientific insights into planetary formation
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `430` activation `2.721` class `word` token ` surface`
+  - defined by extreme temperature fluctuations and a massive cratered surface. B. Venus: Earth’s “twin
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `424` activation `2.465` class `word` token ` fluctuations`
+  - Mercury: The smallest planet, defined by extreme temperature fluctuations and a massive cratered surface. B. Venus
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `619` activation `2.241` class `word` token ` giants`
+  - contrasts between rocky inner worlds and gaseous outer giants. C. Final Thought: Continued exploration promises to
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `549` activation `2.226` class `word` token ` system`
+  - . B. Saturn: Famous for its spectacular ring system composed of ice and rock particles. C. Uran
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `600` activation `2.168` class `word` token ` evolution`
+  - Each planet offers unique scientific insights into planetary formation and evolution. B. Summary: Recap the stark contrasts between
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `469` activation `2.165` class `punctuation` token `,`
+  - C. Earth: The sole known harbor of life, characterized by liquid water and protective magnetic fields. D
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `566` activation `3.664` class `word` token `pheres`
+  - Frigid ice giants with dynamic, stormy atmospheres. C. Synthesis: Immense gravitational influence
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `547` activation `3.610` class `word` token ` helium`
+  - and Saturn: Massive gas giants composed of hydrogen and helium. B. Uranus and Neptune: Frigid
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `590` activation `3.372` class `word` token ` Thesis`
+  - systems. IV. Conclusion A. Restate Thesis: Reemphasize the contrast between the terrestrial
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `542` activation `3.080` class `word` token ` giants`
+  - Realm) A. Jupiter and Saturn: Massive gas giants composed of hydrogen and helium. B. Uranus
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `604` activation `2.599` class `word` token ` planets`
+  - phasize the contrast between the terrestrial and jovian planets. B. Summary: Reflection on how exploring these
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `501` activation `2.474` class `word` token ` life`
+  - zone, liquid water, and the search for past life. C. Synthesis: Shared traits of rocky
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `515` activation `2.227` class `word` token ` cores`
+  - Synthesis: Shared traits of rocky surfaces and metallic cores. III. Body Paragraph 2: The Gas
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `534` activation `2.178` class `word` token `A`
+  - The Gas and Ice Giants (The Outer Realm) A. Jupiter and Saturn: Massive gas giants composed of
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `559` activation `2.177` class `word` token ` giants`
+  - B. Uranus and Neptune: Frigid ice giants with dynamic, stormy atmospheres. C.
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `591` activation `2.015` class `punctuation` token `:`
+  - . IV. Conclusion A. Restate Thesis: Reemphasize the contrast between the terrestrial and
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `532` activation `1.970` class `word` token ` Realm`
+  - 2: The Gas and Ice Giants (The Outer Realm) A. Jupiter and Saturn: Massive gas giants
+- `L19:2255` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `549` activation `1.948` class `word` token `B`
+  - : Massive gas giants composed of hydrogen and helium. B. Uranus and Neptune: Frigid ice giants
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `563` activation `4.232` class `word` token ` advantage`
+  - Professionally. • How to use color to your advantage. • How to make your website shine by downloading
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `577` activation `2.888` class `word` token ` images`
+  - to make your website shine by downloading and using amazing images, fonts, and icons for FREE. • How
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `571` activation `2.595` class `word` token ` shine`
+  - to your advantage. • How to make your website shine by downloading and using amazing images, fonts, and
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `598` activation `2.544` class `word` token `ierarchy`
+  - to Build Attention-Grabbing Layout Using Visual Hierarchy and Whitespace. • How to Increase Your Website
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `582` activation `2.365` class `word` token ` icons`
+  - by downloading and using amazing images, fonts, and icons for FREE. • How to Build Attention-Grab
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `616` activation `2.286` class `word` token ` Techniques`
+  - Increase Your Website's Conversion Rate Using 8 Simple Techniques. • And More Tips for staying inspired to learn
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `611` activation `2.237` class `word` token ` Rate`
+  - itespace. • How to Increase Your Website's Conversion Rate Using 8 Simple Techniques. • And More Tips
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `554` activation `2.153` class `word` token `ally`
+  - skills such as: • How to Design Text Professionally. • How to use color to your advantage.
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `601` activation `2.023` class `word` token `itespace`
+  - -Grabbing Layout Using Visual Hierarchy and Whitespace. • How to Increase Your Website's Conversion Rate
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `578` activation `1.957` class `punctuation` token `,`
+  - make your website shine by downloading and using amazing images, fonts, and icons for FREE. • How to
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `584` activation `1.817` class `word` token ` FREE`
+  - and using amazing images, fonts, and icons for FREE. • How to Build Attention-Grabbing Layout
+- `L19:2255` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `560` activation `1.770` class `word` token ` color`
+  - to Design Text Professionally. • How to use color to your advantage. • How to make your website
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `573` activation `3.931` class `word` token ` accounts`
+  - intelligence by collecting, typing, and organizing everyone’s accounts, turning scattered experiences into useful evidence. End:
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `580` activation `3.544` class `word` token ` evidence`
+  - organizing everyone’s accounts, turning scattered experiences into useful evidence. End: Even after being attacked by Dracula
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `574` activation `2.325` class `punctuation` token `,`
+  - by collecting, typing, and organizing everyone’s accounts, turning scattered experiences into useful evidence. End: Even
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `546` activation `2.042` class `word` token ` woman`
+  - : Beginning: Mina seems like an ideal Victorian woman—modest, loyal, and focused on marriage
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `559` activation `1.572` class `punctuation` token `:`
+  - est, loyal, and focused on marriage. Middle: She proves her intelligence by collecting, typing, and
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `547` activation `1.287` class `punctuation` token `—`
+  - Beginning: Mina seems like an ideal Victorian woman—modest, loyal, and focused on marriage.
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `563` activation `1.232` class `word` token ` intelligence`
+  - and focused on marriage. Middle: She proves her intelligence by collecting, typing, and organizing everyone’s accounts
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `598` activation `1.174` class `word` token `-control`
+  - by Dracula, Mina shows courage and self-control, helping the group track him and resist his power
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `608` activation `1.132` class `word` token ` power`
+  - -control, helping the group track him and resist his power. This thesis works well because it lets you discuss
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `506` activation `1.109` class `word` token ` strength`
+  - into a figure of intelligence, courage, and moral strength, showing that her careful organization of knowledge and emotional
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `507` activation `1.033` class `punctuation` token `,`
+  - a figure of intelligence, courage, and moral strength, showing that her careful organization of knowledge and emotional resilience
+- `L19:2255` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `595` activation `0.993` class `word` token ` courage`
+  - after being attacked by Dracula, Mina shows courage and self-control, helping the group track him and
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `322` activation `4.201` class `word` token ` day`
+  - am. I am learning to love myself more each day. I am grateful for the people that I have
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `335` activation `3.840` class `word` token ` life`
+  - am grateful for the people that I have in my life. I am capable of overcoming negative thinking. Deep
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `343` activation `3.293` class `word` token ` thinking`
+  - in my life. I am capable of overcoming negative thinking. Deep inner peace is my natural state. I
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `409` activation `3.173` class `word` token ` ease`
+  - here and now. I can quiet my mind with ease. I deserve to take my time. All that
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `504` activation `3.166` class `word` token ` basis`
+  - an abundance of love in the world on a daily basis. It is safe for me to relax. I
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `351` activation `3.144` class `word` token ` state`
+  - overcoming negative thinking. Deep inner peace is my natural state. I do not have to be perfect to be
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `547` activation `3.099` class `word` token ` me`
+  - choose to move at a pace that feels right for me. While these are some of our favorites, an
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `401` activation `3.085` class `word` token ` now`
+  - inner knowing. I am focused on the here and now. I can quiet my mind with ease. I
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `472` activation `3.059` class `word` token ` perfection`
+  - focus on the present moment. I value progress over perfection. I deserve to feel safe and comfortable no matter
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `363` activation `3.023` class `word` token `vable`
+  - I do not have to be perfect to be lovable. I do not have to earn the right to
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `382` activation `2.998` class `word` token ` easily`
+  - right to enjoy life. I forgive myself and others easily. I am guided by a deep, inner knowing
+- `L19:2255` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `534` activation `2.949` class `word` token ` respect`
+  - trust the process. I treat myself gently and with respect. I choose to move at a pace that feels
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `190` activation `3.917` class `word` token ` walking`
+  - minutes of jogging with 1.5 minutes of walking. Weeks 5–6: 30
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `216` activation `3.226` class `word` token ` walking`
+  - 2 minutes of jogging with 1 minute of walking. Weeks 7–8: 30
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `549` activation `2.716` class `word` token ` miles`
+  - runs: Keep these at 4 to 5 miles, performed at an easy, comfortable pace. Week
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `342` activation `2.611` class `word` token ` week`
+  - 2 to 3 minutes to your runs each week until you can run 30 minutes without stopping.
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `557` activation `2.452` class `word` token ` pace`
+  - 5 miles, performed at an easy, comfortable pace. Weekend Long Runs: This is where the
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `320` activation `2.224` class `sentence_boundary` token `.`
+  - : Focus on continuous running at a conversational pace. Start with 15 minutes of continuous running, gradually
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `319` activation `2.108` class `word` token ` pace`
+  - 12: Focus on continuous running at a conversational pace. Start with 15 minutes of continuous running,
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `172` activation `2.090` class `word` token ` total`
+  - Weeks 3–4: 30 minutes total. Alternating 1.5 minutes of jogging
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `351` activation `1.969` class `word` token ` stopping`
+  - each week until you can run 30 minutes without stopping. Weeks 13–16: Introduce
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `270` activation `1.934` class `word` token ` minutes`
+  - Goal: Run continuously for 30 to 40 minutes and complete a 5K. Now, you
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `510` activation `1.931` class `word` token ` run`
+  - your endurance and complete a 13.1-mile run. You will now run 4 days per week
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `550` activation `1.903` class `punctuation` token `,`
+  - : Keep these at 4 to 5 miles, performed at an easy, comfortable pace. Weekend
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `134` activation `3.539` class `word` token ` week`
+  - . Repeat seven times. Do it three times a week. Week 3: Run for three minutes,
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `268` activation `3.123` class `word` token ` week`
+  - another 15 minutes. Do it three times a week. Week 8: Run 30 minutes continuously
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `160` activation `2.673` class `word` token ` week`
+  - . Repeat six times. Do it three times a week. Week 4: Run for five minutes,
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `327` activation `2.658` class `word` token ` miles`
+  - Wednesday - 3 miles; Saturday - 4 miles Week 10: Monday - 3 miles
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `212` activation `2.246` class `word` token ` week`
+  - . Repeat three times. Do it three times a week. Week 6: Run for 12 minutes
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `239` activation `2.231` class `word` token ` week`
+  - . Repeat three times. Do it three times a week. Week 7: Run for 15 minutes
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `285` activation `2.184` class `word` token ` week`
+  - 30 minutes continuously. Do it three times a week. Marathon training schedule (run three times a
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `349` activation `2.178` class `word` token ` miles`
+  - Wednesday - 3 miles; Saturday - 5 miles Week 11: Monday - 3 miles
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `186` activation `2.044` class `word` token ` week`
+  - . Repeat four times. Do it three times a week. Week 5: Run for eight minutes,
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `128` activation `1.926` class `sentence_boundary` token `.`
+  - , and walk for one minute. Repeat seven times. Do it three times a week. Week 3
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `315` activation `1.357` class `word` token ` miles`
+  - Saturdays) Week 9: Monday - 3 miles; Wednesday - 3 miles; Saturday -
+- `L19:2255` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `371` activation `1.230` class `word` token ` miles`
+  - Wednesday - 3 miles; Saturday - 6 miles Week 12: Monday - 4 miles
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `560` activation `3.866` class `word` token ` ourselves`
+  - . P2: Chickens are organizing to defend ourselves. P3: Bugs and snails are plentiful
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `557` activation `3.549` class `word` token ` organizing`
+  - meat to fry. P2: Chickens are organizing to defend ourselves. P3: Bugs and sn
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `570` activation `3.038` class `word` token ` plentiful`
+  - ourselves. P3: Bugs and snails are plentiful, free, and incapable of tactical organization. C
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `552` activation `2.709` class `word` token `2`
+  - P1: You need meat to fry. P2: Chickens are organizing to defend ourselves. P
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `547` activation `2.292` class `word` token ` meat`
+  - summarize my argument logically: P1: You need meat to fry. P2: Chickens are organizing
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `578` activation `2.289` class `word` token ` organization`
+  - ails are plentiful, free, and incapable of tactical organization. C: You should therefore switch to selling sn
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `549` activation `2.000` class `word` token ` fry`
+  - argument logically: P1: You need meat to fry. P2: Chickens are organizing to defend
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `553` activation `1.739` class `punctuation` token `:`
+  - 1: You need meat to fry. P2: Chickens are organizing to defend ourselves. P3
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `545` activation `1.433` class `word` token ` You`
+  - . To summarize my argument logically: P1: You need meat to fry. P2: Chickens
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `563` activation `1.429` class `word` token `3`
+  - : Chickens are organizing to defend ourselves. P3: Bugs and snails are plentiful, free,
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `544` activation `1.394` class `punctuation` token `:`
+  - mascot. To summarize my argument logically: P1: You need meat to fry. P2: Chick
+- `L19:2255` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `571` activation `1.367` class `punctuation` token `,`
+  - . P3: Bugs and snails are plentiful, free, and incapable of tactical organization. C:
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `538` activation `4.091` class `word` token ` savings`
+  - Compounded market returns can easily outperform mortgage interest savings. For example, investing $100,000 at
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `539` activation `3.421` class `sentence_boundary` token `.`
+  - ounded market returns can easily outperform mortgage interest savings. For example, investing $100,000 at a
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `537` activation `2.770` class `word` token ` interest`
+  - : Compounded market returns can easily outperform mortgage interest savings. For example, investing $100,000
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `462` activation `2.609` class `word` token ` gains`
+  - You lose out on the potential for much higher market gains. Diminishing returns: Because mortgages are front
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `381` activation `2.444` class `word` token ` payments`
+  - Guaranteed savings: You completely eliminate future interest payments (e.g., saving $20,270 on
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `526` activation `2.315` class `word` token ` potential`
+  - Investing in the Market Pros: Higher growth potential: Compounded market returns can easily outperform mortgage
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `597` activation `2.299` class `word` token ` value`
+  - loss: Unlike guaranteed debt reduction, investments can lose value. If your portfolio drops, you still owe your
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `598` activation `2.070` class `sentence_boundary` token `.`
+  - : Unlike guaranteed debt reduction, investments can lose value. If your portfolio drops, you still owe your monthly
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `416` activation `1.814` class `word` token ` obligation`
+  - reed-up cash flow: It eliminates your monthly mortgage obligation, freeing up money that you can then choose to
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `541` activation `1.797` class `discourse_marker_word` token ` example`
+  - returns can easily outperform mortgage interest savings. For example, investing $100,000 at a 5
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `527` activation `1.780` class `punctuation` token `:`
+  - ing in the Market Pros: Higher growth potential: Compounded market returns can easily outperform mortgage interest
+- `L19:2255` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `531` activation `1.745` class `word` token ` returns`
+  - Pros: Higher growth potential: Compounded market returns can easily outperform mortgage interest savings. For example
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `599` activation `4.291` class `word` token `rette`
+  - potato salad tossed in a champagne mustard vinaigrette (no mayo). Side 2: Haric
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `485` activation `3.238` class `punctuation` token `)`
+  - -and-garlic dressing, omitting anchovies) with garlic croutons. Side 2:
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `469` activation `2.940` class `word` token ` salad`
+  - (vegetarian). Side 1: Classic Caesar salad (using a traditional egg-and-garlic dressing
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `510` activation `2.744` class `word` token `aze`
+  - spears drizzled with balsamic glaze. Dessert: Homemade tiramisu cups
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `586` activation `2.696` class `word` token `1`
+  - , and Tomato Tart (vegetarian). Side 1: French potato salad tossed in a champagne mustard v
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `428` activation `2.526` class `word` token `arians`
+  - crowd-pleasing, and easily adapted for vegetarians. Main: A baked pasta station featuring a hearty
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `553` activation `2.522` class `word` token ` ingredients`
+  - , rustic spread that feels incredibly special without requiring expensive ingredients. Main: Rosemary roasted chicken breasts (pl
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `465` activation `2.450` class `word` token `1`
+  - ach Cannelloni (vegetarian). Side 1: Classic Caesar salad (using a traditional egg-and
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `490` activation `2.390` class `word` token `ons`
+  - , omitting anchovies) with garlic croutons. Side 2: Roasted asparagus spe
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `365` activation `2.381` class `word` token `rette`
+  - , and a lemon-herb vinaigrette. Side 2: Warm artisanal sourd
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `590` activation `2.343` class `word` token ` salad`
+  - (vegetarian). Side 1: French potato salad tossed in a champagne mustard vinaigrette (
+- `L19:2255` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `582` activation `2.292` class `word` token `arian`
+  - Caramelized Onion, and Tomato Tart (vegetarian). Side 1: French potato salad tossed in
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `534` activation `3.973` class `word` token ` capacity`
+  - -urgent project when you are already operating at maximum capacity. • Actionable Tip: Instead of a flat
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `408` activation `3.236` class `word` token ` break`
+  - cannot attend a meeting that overlaps with your scheduled lunch break. • Actionable Tip: Use your email signature
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `385` activation `2.597` class `word` token ` available`
+  - You have to tell them how and when you are available to collaborate. • Example: Letting a colleague
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `387` activation `2.128` class `word` token ` collaborate`
+  - to tell them how and when you are available to collaborate. • Example: Letting a colleague know you
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `298` activation `2.109` class `word` token ` family`
+  - 7 PM so you can be fully present with your family. • Actionable Tip: Draw a hard line
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `508` activation `2.032` class `sentence_boundary` token `.`
+  - spreads you too thin and leads to poor quality work. Saying no is incredibly empowering. • Example: Turning
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `289` activation `1.999` class `word` token ` PM`
+  - Example: Refusing to check emails after 7 PM so you can be fully present with your family.
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `513` activation `1.990` class `word` token ` empowering`
+  - leads to poor quality work. Saying no is incredibly empowering. • Example: Turning down a new, non
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `374` activation `1.960` class `sentence_boundary` token `.`
+  - Don't assume people will naturally respect your time. You have to tell them how and when you are
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `507` activation `1.902` class `word` token ` work`
+  - ting spreads you too thin and leads to poor quality work. Saying no is incredibly empowering. • Example:
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `362` activation `1.611` class `punctuation` token `�`
+  - Step 2: Communicate Proactively 🗣️ Don't assume people will naturally respect your
+- `L19:2255` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `501` activation `1.577` class `word` token ` thin`
+  - ‍♀️ Overcommitting spreads you too thin and leads to poor quality work. Saying no is
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `200` activation `4.306` class `word` token ` expectation`
+  - Incongruity — Something doesn’t match that expectation. Resolution — The surprise makes sense in a new
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `194` activation `2.669` class `punctuation` token ` —`
+  - where the story is going. Incongruity — Something doesn’t match that expectation. Resolution — The
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `222` activation `2.647` class `word` token ` moment`
+  - . Timing — The joke arrives at just the right moment. Economy — Most jokes are short because extra
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `188` activation `2.621` class `word` token ` going`
+  - Expectation — The listener predicts where the story is going. Incongruity — Something doesn’t match
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `211` activation `2.561` class `word` token ` way`
+  - . Resolution — The surprise makes sense in a new way. Timing — The joke arrives at just the right
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `247` activation `2.199` class `word` token ` words`
+  - snap. Shared knowledge — The listener must understand the words, situation, or cultural reference. Not every joke
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `253` activation `2.172` class `word` token ` reference`
+  - listener must understand the words, situation, or cultural reference. Not every joke is a pun, but many
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `230` activation `1.981` class `word` token ` short`
+  - the right moment. Economy — Most jokes are short because extra detail can weaken the snap. Shared knowledge
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `180` activation `1.722` class `punctuation` token ` —`
+  - on one or more of these ingredients: Expectation — The listener predicts where the story is going. In
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `179` activation `1.686` class `word` token `ation`
+  - depend on one or more of these ingredients: Expectation — The listener predicts where the story is going.
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `207` activation `1.504` class `word` token ` sense`
+  - ’t match that expectation. Resolution — The surprise makes sense in a new way. Timing — The joke arrives
+- `L19:2255` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `183` activation `1.474` class `word` token ` predicts`
+  - more of these ingredients: Expectation — The listener predicts where the story is going. Incongruity
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `561` activation `8.049` class `word` token ` abundance`
+  - Green Positive: Growth, healing, nature, abundance. Negative: Envy, jealousy, stagnation
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `506` activation `7.961` class `word` token ` productivity`
+  - Blue Positive: Peace, trust, stability, productivity. Negative: Sadness, coldness, alo
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `586` activation `7.274` class `word` token ` luxury`
+  - Positive: Royalty, spirituality, wisdom, luxury. Negative: Moodiness, arrogance, mystery,
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `533` activation `6.506` class `word` token ` vitality`
+  - Positive: Creativity, enthusiasm, warmth, vitality. Negative: Superficiality, frustration,
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `480` activation `6.173` class `word` token ` warmth`
+  - warning. Yellow Positive: Happiness, optimism, warmth, intellect. Negative: Cowardice, frustration
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `482` activation `5.862` class `word` token ` intellect`
+  - Yellow Positive: Happiness, optimism, warmth, intellect. Negative: Cowardice, frustration, deceit
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `504` activation `4.122` class `word` token ` stability`
+  - anxiety. Blue Positive: Peace, trust, stability, productivity. Negative: Sadness, coldness
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `531` activation `3.441` class `word` token ` warmth`
+  - . Orange Positive: Creativity, enthusiasm, warmth, vitality. Negative: Superficiality,
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `472` activation `3.411` class `word` token `Yellow`
+  - : Anger, aggression, danger, warning. Yellow Positive: Happiness, optimism, warmth, intellect
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `478` activation `3.313` class `word` token ` optimism`
+  - danger, warning. Yellow Positive: Happiness, optimism, warmth, intellect. Negative: Cowardice
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `584` activation `3.270` class `word` token ` wisdom`
+  - . Purple Positive: Royalty, spirituality, wisdom, luxury. Negative: Moodiness, arrogance,
+- `L24:850` `489c7abb740ed0b9bb6bc704595edf4c94f1f9f4ac797ff1d6f55d8ea956d8e6@turn_01@gemini-3.5-flash` token `470` activation `2.885` class `word` token ` warning`
+  - . Negative: Anger, aggression, danger, warning. Yellow Positive: Happiness, optimism, warmth
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `555` activation `7.978` class `word` token ` particles`
+  - for its spectacular ring system composed of ice and rock particles. C. Uranus and Neptune: Ice giants
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `538` activation `7.803` class `word` token ` atmosphere`
+  - with a iconic Great Red Spot dominating its stormy atmosphere. B. Saturn: Famous for its spectacular ring
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `457` activation `6.511` class `word` token ` effect`
+  - due to its thick, toxic atmosphere and runaway greenhouse effect. C. Earth: The sole known harbor of
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `477` activation `6.169` class `word` token ` fields`
+  - of life, characterized by liquid water and protective magnetic fields. D. Mars: The Red Planet, featuring
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `600` activation `5.606` class `word` token ` evolution`
+  - Each planet offers unique scientific insights into planetary formation and evolution. B. Summary: Recap the stark contrasts between
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `430` activation `5.074` class `word` token ` surface`
+  - defined by extreme temperature fluctuations and a massive cratered surface. B. Venus: Earth’s “twin
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `453` activation `5.074` class `word` token ` atmosphere`
+  - size, yet hostile due to its thick, toxic atmosphere and runaway greenhouse effect. C. Earth: The
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `424` activation `4.529` class `word` token ` fluctuations`
+  - Mercury: The smallest planet, defined by extreme temperature fluctuations and a massive cratered surface. B. Venus
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `619` activation `4.370` class `word` token ` giants`
+  - contrasts between rocky inner worlds and gaseous outer giants. C. Final Thought: Continued exploration promises to
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `554` activation `4.041` class `word` token ` rock`
+  - Famous for its spectacular ring system composed of ice and rock particles. C. Uranus and Neptune: Ice
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `533` activation `3.884` class `word` token ` Spot`
+  - : A massive gas giant with a iconic Great Red Spot dominating its stormy atmosphere. B. Saturn:
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@qwen3.6-35b` token `518` activation `3.486` class `word` token ` Giants`
+  - III. The Outer Solar System: Gas and Ice Giants A. Jupiter: A massive gas giant with
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `547` activation `8.098` class `word` token ` helium`
+  - and Saturn: Massive gas giants composed of hydrogen and helium. B. Uranus and Neptune: Frigid
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `566` activation `7.558` class `word` token `pheres`
+  - Frigid ice giants with dynamic, stormy atmospheres. C. Synthesis: Immense gravitational influence
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `604` activation `7.009` class `word` token ` planets`
+  - phasize the contrast between the terrestrial and jovian planets. B. Summary: Reflection on how exploring these
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `501` activation `5.823` class `word` token ` life`
+  - zone, liquid water, and the search for past life. C. Synthesis: Shared traits of rocky
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `532` activation `5.754` class `word` token ` Realm`
+  - 2: The Gas and Ice Giants (The Outer Realm) A. Jupiter and Saturn: Massive gas giants
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `542` activation `5.497` class `word` token ` giants`
+  - Realm) A. Jupiter and Saturn: Massive gas giants composed of hydrogen and helium. B. Uranus
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `545` activation `4.975` class `word` token ` hydrogen`
+  - . Jupiter and Saturn: Massive gas giants composed of hydrogen and helium. B. Uranus and Neptune:
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `590` activation `4.457` class `word` token ` Thesis`
+  - systems. IV. Conclusion A. Restate Thesis: Reemphasize the contrast between the terrestrial
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `480` activation `3.980` class `word` token ` pressure`
+  - A. Mercury and Venus: Extreme temperatures and atmospheric pressure. B. Earth and Mars: The habitable
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `515` activation `3.387` class `word` token ` cores`
+  - Synthesis: Shared traits of rocky surfaces and metallic cores. III. Body Paragraph 2: The Gas
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `528` activation `3.117` class `word` token ` Giants`
+  - . Body Paragraph 2: The Gas and Ice Giants (The Outer Realm) A. Jupiter and Saturn
+- `L24:850` `1b20fdddea5053c137d1d74e29dac3ec260b11589a4542aa4d3a02959b5a43d8@turn_01@gemini-3.5-flash` token `474` activation `3.033` class `word` token ` Venus`
+  - ets (The Inner Circle) A. Mercury and Venus: Extreme temperatures and atmospheric pressure. B. Earth
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `563` activation `8.844` class `word` token ` advantage`
+  - Professionally. • How to use color to your advantage. • How to make your website shine by downloading
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `577` activation `7.144` class `word` token ` images`
+  - to make your website shine by downloading and using amazing images, fonts, and icons for FREE. • How
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `582` activation `7.018` class `word` token ` icons`
+  - by downloading and using amazing images, fonts, and icons for FREE. • How to Build Attention-Grab
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `584` activation `6.274` class `word` token ` FREE`
+  - and using amazing images, fonts, and icons for FREE. • How to Build Attention-Grabbing Layout
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `598` activation `6.103` class `word` token `ierarchy`
+  - to Build Attention-Grabbing Layout Using Visual Hierarchy and Whitespace. • How to Increase Your Website
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `601` activation `5.484` class `word` token `itespace`
+  - -Grabbing Layout Using Visual Hierarchy and Whitespace. • How to Increase Your Website's Conversion Rate
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `616` activation `5.375` class `word` token ` Techniques`
+  - Increase Your Website's Conversion Rate Using 8 Simple Techniques. • And More Tips for staying inspired to learn
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `571` activation `5.235` class `word` token ` shine`
+  - to your advantage. • How to make your website shine by downloading and using amazing images, fonts, and
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `611` activation `4.206` class `word` token ` Rate`
+  - itespace. • How to Increase Your Website's Conversion Rate Using 8 Simple Techniques. • And More Tips
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `554` activation `4.083` class `word` token `ally`
+  - skills such as: • How to Design Text Professionally. • How to use color to your advantage.
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `560` activation `3.996` class `word` token ` color`
+  - to Design Text Professionally. • How to use color to your advantage. • How to make your website
+- `L24:850` `2e6cdf693a592f81d44011dd4b19ea406f3c7c4a599a1e3f63e44d4f6cd4e674@turn_01@human` token `594` activation `2.987` class `word` token ` Layout`
+  - FREE. • How to Build Attention-Grabbing Layout Using Visual Hierarchy and Whitespace. • How
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `580` activation `8.643` class `word` token ` evidence`
+  - organizing everyone’s accounts, turning scattered experiences into useful evidence. End: Even after being attacked by Dracula
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `573` activation `8.430` class `word` token ` accounts`
+  - intelligence by collecting, typing, and organizing everyone’s accounts, turning scattered experiences into useful evidence. End:
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `574` activation `4.101` class `punctuation` token `,`
+  - by collecting, typing, and organizing everyone’s accounts, turning scattered experiences into useful evidence. End: Even
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `570` activation `3.004` class `word` token ` organizing`
+  - She proves her intelligence by collecting, typing, and organizing everyone’s accounts, turning scattered experiences into useful evidence
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `546` activation `2.657` class `word` token ` woman`
+  - : Beginning: Mina seems like an ideal Victorian woman—modest, loyal, and focused on marriage
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `563` activation `2.420` class `word` token ` intelligence`
+  - and focused on marriage. Middle: She proves her intelligence by collecting, typing, and organizing everyone’s accounts
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `571` activation `2.208` class `word` token ` everyone`
+  - proves her intelligence by collecting, typing, and organizing everyone’s accounts, turning scattered experiences into useful evidence.
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `608` activation `2.024` class `word` token ` power`
+  - -control, helping the group track him and resist his power. This thesis works well because it lets you discuss
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `604` activation `1.986` class `word` token ` him`
+  - shows courage and self-control, helping the group track him and resist his power. This thesis works well because
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `556` activation `1.885` class `word` token ` marriage`
+  - woman—modest, loyal, and focused on marriage. Middle: She proves her intelligence by collecting,
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `559` activation `1.821` class `punctuation` token `:`
+  - est, loyal, and focused on marriage. Middle: She proves her intelligence by collecting, typing, and
+- `L24:850` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@gpt-5.5` token `554` activation `1.780` class `word` token ` focused`
+  - ideal Victorian woman—modest, loyal, and focused on marriage. Middle: She proves her intelligence by
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `335` activation `8.268` class `word` token ` life`
+  - am grateful for the people that I have in my life. I am capable of overcoming negative thinking. Deep
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `504` activation `7.668` class `word` token ` basis`
+  - an abundance of love in the world on a daily basis. It is safe for me to relax. I
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `322` activation `7.542` class `word` token ` day`
+  - am. I am learning to love myself more each day. I am grateful for the people that I have
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `534` activation `7.456` class `word` token ` respect`
+  - trust the process. I treat myself gently and with respect. I choose to move at a pace that feels
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `547` activation `7.013` class `word` token ` me`
+  - choose to move at a pace that feels right for me. While these are some of our favorites, an
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `480` activation `6.989` class `word` token ` comfortable`
+  - progress over perfection. I deserve to feel safe and comfortable no matter where I am or who I am with
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `466` activation `6.967` class `word` token ` moment`
+  - It is safe for me to focus on the present moment. I value progress over perfection. I deserve to
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `526` activation `6.818` class `word` token ` process`
+  - to experience joy. I am willing to trust the process. I treat myself gently and with respect. I
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `500` activation `6.700` class `word` token ` world`
+  - with. I experience an abundance of love in the world on a daily basis. It is safe for me
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `472` activation `6.619` class `word` token ` perfection`
+  - focus on the present moment. I value progress over perfection. I deserve to feel safe and comfortable no matter
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `343` activation `6.470` class `word` token ` thinking`
+  - in my life. I am capable of overcoming negative thinking. Deep inner peace is my natural state. I
+- `L24:850` `42aa689106a8e6616a6b4cc8fe3b665530cfeac784b29d32fb2a73f194671e5f@turn_01@human` token `409` activation `6.457` class `word` token ` ease`
+  - here and now. I can quiet my mind with ease. I deserve to take my time. All that
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `190` activation `7.503` class `word` token ` walking`
+  - minutes of jogging with 1.5 minutes of walking. Weeks 5–6: 30
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `342` activation `6.261` class `word` token ` week`
+  - 2 to 3 minutes to your runs each week until you can run 30 minutes without stopping.
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `351` activation `5.729` class `word` token ` stopping`
+  - each week until you can run 30 minutes without stopping. Weeks 13–16: Introduce
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `557` activation `5.721` class `word` token ` pace`
+  - 5 miles, performed at an easy, comfortable pace. Weekend Long Runs: This is where the
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `216` activation `5.678` class `word` token ` walking`
+  - 2 minutes of jogging with 1 minute of walking. Weeks 7–8: 30
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `495` activation `5.662` class `word` token `32`
+  - -Marathon Milestone (Weeks 21–32) Goal: Double your endurance and complete a
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `549` activation `5.085` class `word` token ` miles`
+  - runs: Keep these at 4 to 5 miles, performed at an easy, comfortable pace. Week
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `258` activation `4.892` class `word` token `20`
+  - Building Aerobic Base (Weeks 9–20) Goal: Run continuously for 30 to
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `408` activation `4.728` class `word` token ` miles`
+  - .5 miles each week until you reach 5 miles. Weeks 17–20: Maintain mid
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `402` activation `4.695` class `word` token ` week`
+  - miles, increasing by 0.5 miles each week until you reach 5 miles. Weeks
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `349` activation `4.419` class `word` token ` minutes`
+  - your runs each week until you can run 30 minutes without stopping. Weeks 13–16:
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@gemini-3.5-flash` token `319` activation `4.098` class `word` token ` pace`
+  - 12: Focus on continuous running at a conversational pace. Start with 15 minutes of continuous running,
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `134` activation `7.981` class `word` token ` week`
+  - . Repeat seven times. Do it three times a week. Week 3: Run for three minutes,
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `268` activation `7.355` class `word` token ` week`
+  - another 15 minutes. Do it three times a week. Week 8: Run 30 minutes continuously
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `160` activation `6.854` class `word` token ` week`
+  - . Repeat six times. Do it three times a week. Week 4: Run for five minutes,
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `349` activation `6.420` class `word` token ` miles`
+  - Wednesday - 3 miles; Saturday - 5 miles Week 11: Monday - 3 miles
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `327` activation `6.337` class `word` token ` miles`
+  - Wednesday - 3 miles; Saturday - 4 miles Week 10: Monday - 3 miles
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `239` activation `6.018` class `word` token ` week`
+  - . Repeat three times. Do it three times a week. Week 7: Run for 15 minutes
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `212` activation `5.928` class `word` token ` week`
+  - . Repeat three times. Do it three times a week. Week 6: Run for 12 minutes
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `186` activation `5.719` class `word` token ` week`
+  - . Repeat four times. Do it three times a week. Week 5: Run for eight minutes,
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `371` activation `5.146` class `word` token ` miles`
+  - Wednesday - 3 miles; Saturday - 6 miles Week 12: Monday - 4 miles
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `285` activation `5.076` class `word` token ` week`
+  - 30 minutes continuously. Do it three times a week. Marathon training schedule (run three times a
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `393` activation `4.406` class `word` token ` miles`
+  - Wednesday - 4 miles; Saturday - 5 miles Week 13: Monday - 4 miles
+- `L24:850` `1cca11deb5b2732fa7b3f6941afe8967d733a8cf949095d8ec0fc110c4c273bd@turn_01@human` token `415` activation `4.290` class `word` token ` miles`
+  - Wednesday - 4 miles; Saturday - 6 miles Week 14: Monday - 4 miles
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `560` activation `8.647` class `word` token ` ourselves`
+  - . P2: Chickens are organizing to defend ourselves. P3: Bugs and snails are plentiful
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `557` activation `7.322` class `word` token ` organizing`
+  - meat to fry. P2: Chickens are organizing to defend ourselves. P3: Bugs and sn
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `570` activation `6.110` class `word` token ` plentiful`
+  - ourselves. P3: Bugs and snails are plentiful, free, and incapable of tactical organization. C
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `549` activation `6.032` class `word` token ` fry`
+  - argument logically: P1: You need meat to fry. P2: Chickens are organizing to defend
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `578` activation `6.004` class `word` token ` organization`
+  - ails are plentiful, free, and incapable of tactical organization. C: You should therefore switch to selling sn
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `547` activation `4.988` class `word` token ` meat`
+  - summarize my argument logically: P1: You need meat to fry. P2: Chickens are organizing
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `572` activation `3.198` class `word` token ` free`
+  - P3: Bugs and snails are plentiful, free, and incapable of tactical organization. C: You
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `575` activation `3.192` class `word` token ` incapable`
+  - Bugs and snails are plentiful, free, and incapable of tactical organization. C: You should therefore switch
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `559` activation `2.909` class `word` token ` defend`
+  - fry. P2: Chickens are organizing to defend ourselves. P3: Bugs and snails are
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `589` activation `2.753` class `word` token `ails`
+  - . C: You should therefore switch to selling snails. I trust you will give this proposal the consideration
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `568` activation `2.360` class `word` token `ails`
+  - to defend ourselves. P3: Bugs and snails are plentiful, free, and incapable of tactical organization
+- `L24:850` `94b171f15fad189d172b48909d13a40c4076ac983230acc8d103f118d823cf8d@turn_01@glm-5.2` token `555` activation `2.273` class `word` token `ens`
+  - You need meat to fry. P2: Chickens are organizing to defend ourselves. P3: Bugs
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `538` activation `8.640` class `word` token ` savings`
+  - Compounded market returns can easily outperform mortgage interest savings. For example, investing $100,000 at
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `562` activation `6.493` class `word` token ` years`
+  - % return yields $62,889 over 10 years, which beats the interest saved on even a
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `539` activation `6.271` class `sentence_boundary` token `.`
+  - ounded market returns can easily outperform mortgage interest savings. For example, investing $100,000 at a
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `577` activation `5.694` class `word` token ` mortgage`
+  - interest saved on even a 5.5% mortgage ($37,618). Cons: Risk of loss
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `537` activation `5.622` class `word` token ` interest`
+  - : Compounded market returns can easily outperform mortgage interest savings. For example, investing $100,000
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `381` activation `4.744` class `word` token ` payments`
+  - Guaranteed savings: You completely eliminate future interest payments (e.g., saving $20,270 on
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `597` activation `4.397` class `word` token ` value`
+  - loss: Unlike guaranteed debt reduction, investments can lose value. If your portfolio drops, you still owe your
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `520` activation `4.353` class `word` token ` Market`
+  - deductibility of mortgage interest. Investing in the Market Pros: Higher growth potential: Compounded market
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `522` activation `4.335` class `word` token `Pros`
+  - of mortgage interest. Investing in the Market Pros: Higher growth potential: Compounded market returns can
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `568` activation `4.138` class `word` token ` saved`
+  - 889 over 10 years, which beats the interest saved on even a 5.5% mortgage ($
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `462` activation `4.042` class `word` token ` gains`
+  - You lose out on the potential for much higher market gains. Diminishing returns: Because mortgages are front
+- `L24:850` `b2d68b337d2df5fa5bcccb8a9f36c067bcc1bc8045560b490c68bd1b6d234c9c@turn_01@gemini-3.5-flash` token `609` activation `3.898` class `word` token ` mortgage`
+  - If your portfolio drops, you still owe your monthly mortgage. Hidden costs: High returns (like 10
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `599` activation `9.385` class `word` token `rette`
+  - potato salad tossed in a champagne mustard vinaigrette (no mayo). Side 2: Haric
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `490` activation `7.533` class `word` token `ons`
+  - , omitting anchovies) with garlic croutons. Side 2: Roasted asparagus spe
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `485` activation `6.762` class `punctuation` token `)`
+  - -and-garlic dressing, omitting anchovies) with garlic croutons. Side 2:
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `510` activation `6.393` class `word` token `aze`
+  - spears drizzled with balsamic glaze. Dessert: Homemade tiramisu cups
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `479` activation `6.336` class `word` token ` dressing`
+  - salad (using a traditional egg-and-garlic dressing, omitting anchovies) with garlic crout
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `602` activation `6.175` class `word` token ` mayo`
+  - in a champagne mustard vinaigrette (no mayo). Side 2: Haricots verts (
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `484` activation `6.109` class `word` token `ovies`
+  - egg-and-garlic dressing, omitting anchovies) with garlic croutons. Side 2
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `461` activation `5.875` class `word` token `arian`
+  - Wild Mushroom and Spinach Cannelloni (vegetarian). Side 1: Classic Caesar salad (using
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `428` activation `5.502` class `word` token `arians`
+  - crowd-pleasing, and easily adapted for vegetarians. Main: A baked pasta station featuring a hearty
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `553` activation `5.499` class `word` token ` ingredients`
+  - , rustic spread that feels incredibly special without requiring expensive ingredients. Main: Rosemary roasted chicken breasts (pl
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `582` activation `5.471` class `word` token `arian`
+  - Caramelized Onion, and Tomato Tart (vegetarian). Side 1: French potato salad tossed in
+- `L24:850` `34d575d081e53f6fa77c53f3fd0d2acb88b2ae1398775a51bfda61e2af329c32@turn_01@gemini-3.5-flash` token `469` activation `5.408` class `word` token ` salad`
+  - (vegetarian). Side 1: Classic Caesar salad (using a traditional egg-and-garlic dressing
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `534` activation `8.117` class `word` token ` capacity`
+  - -urgent project when you are already operating at maximum capacity. • Actionable Tip: Instead of a flat
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `385` activation `5.796` class `word` token ` available`
+  - You have to tell them how and when you are available to collaborate. • Example: Letting a colleague
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `387` activation `5.730` class `word` token ` collaborate`
+  - to tell them how and when you are available to collaborate. • Example: Letting a colleague know you
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `513` activation `5.518` class `word` token ` empowering`
+  - leads to poor quality work. Saying no is incredibly empowering. • Example: Turning down a new, non
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `408` activation `5.398` class `word` token ` break`
+  - cannot attend a meeting that overlaps with your scheduled lunch break. • Actionable Tip: Use your email signature
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `507` activation `4.445` class `word` token ` work`
+  - ting spreads you too thin and leads to poor quality work. Saying no is incredibly empowering. • Example:
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `493` activation `4.244` class `punctuation` token `️`
+  - "No" Gracefully 🙅‍♀️ Overcommitting spreads you too thin and leads
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `363` activation `3.964` class `punctuation` token `️`
+  - 2: Communicate Proactively 🗣️ Don't assume people will naturally respect your time
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `379` activation `3.557` class `word` token ` them`
+  - will naturally respect your time. You have to tell them how and when you are available to collaborate. •
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `362` activation `2.927` class `punctuation` token `�`
+  - Step 2: Communicate Proactively 🗣️ Don't assume people will naturally respect your
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `298` activation `2.865` class `word` token ` family`
+  - 7 PM so you can be fully present with your family. • Actionable Tip: Draw a hard line
+- `L24:850` `393e2a739dbfc7c391d29a3245b099f5ce4016824315b5c04f76fc5775ce3db5@turn_01@glm-5.2` token `373` activation `2.842` class `word` token ` time`
+  - ️ Don't assume people will naturally respect your time. You have to tell them how and when you
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `200` activation `8.117` class `word` token ` expectation`
+  - Incongruity — Something doesn’t match that expectation. Resolution — The surprise makes sense in a new
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `188` activation `5.609` class `word` token ` going`
+  - Expectation — The listener predicts where the story is going. Incongruity — Something doesn’t match
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `211` activation `3.676` class `word` token ` way`
+  - . Resolution — The surprise makes sense in a new way. Timing — The joke arrives at just the right
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `292` activation `3.657` class `word` token ` places`
+  - I told my doctor I broke my arm in two places. He told me to stop going to those places
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `253` activation `3.301` class `word` token ` reference`
+  - listener must understand the words, situation, or cultural reference. Not every joke is a pun, but many
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `603` activation `3.083` class `word` token ` tea`
+  - he wants to make the world’s greatest cup of tea. He travels to China to learn about ancient tea
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `289` activation `2.942` class `word` token ` arm`
+  - For example: I told my doctor I broke my arm in two places. He told me to stop going
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `198` activation `2.873` class `word` token ` match`
+  - going. Incongruity — Something doesn’t match that expectation. Resolution — The surprise makes sense in
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `247` activation `2.735` class `word` token ` words`
+  - snap. Shared knowledge — The listener must understand the words, situation, or cultural reference. Not every joke
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `237` activation `2.735` class `word` token ` snap`
+  - Most jokes are short because extra detail can weaken the snap. Shared knowledge — The listener must understand the words
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `222` activation `2.617` class `word` token ` moment`
+  - . Timing — The joke arrives at just the right moment. Economy — Most jokes are short because extra
+- `L24:850` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gpt-5.5` token `207` activation `2.501` class `word` token ` sense`
+  - ’t match that expectation. Resolution — The surprise makes sense in a new way. Timing — The joke arrives

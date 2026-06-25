@@ -1,0 +1,288 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:3001` | `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` | `human` | 506 | `969.20` | `7.70` | word:390|style_function_word:43|sentence_boundary:23|punctuation:16|expanded_negation_word:16|line_break:8|discourse_marker_word:7|contraction_piece:3 |
+| `L19:3001` | `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` | `human` | 359 | `448.57` | `5.16` | word:247|sentence_boundary:36|style_function_word:24|punctuation:23|expanded_negation_word:12|discourse_marker_word:8|contraction_piece:4|line_break:3|whitespace:2 |
+| `L19:3001` | `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` | `human` | 362 | `452.74` | `4.16` | word:303|punctuation:21|sentence_boundary:12|style_function_word:12|line_break:10|expanded_negation_word:2|discourse_marker_word:2 |
+| `L19:3001` | `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` | `human` | 80 | `85.11` | `5.32` | word:58|style_function_word:12|punctuation:5|sentence_boundary:2|expanded_negation_word:1|discourse_marker_word:1|line_break:1 |
+| `L19:3001` | `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` | `human` | 310 | `570.74` | `5.36` | word:241|style_function_word:20|sentence_boundary:16|punctuation:12|expanded_negation_word:9|discourse_marker_word:6|line_break:4|contraction_piece:2 |
+| `L19:3001` | `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` | `human` | 384 | `564.19` | `5.12` | word:291|style_function_word:36|sentence_boundary:22|line_break:14|punctuation:9|expanded_negation_word:7|discourse_marker_word:3|contraction_piece:2 |
+| `L19:3001` | `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` | `human` | 353 | `437.83` | `4.32` | word:272|style_function_word:34|sentence_boundary:12|punctuation:12|discourse_marker_word:11|line_break:7|expanded_negation_word:4|contraction_piece:1 |
+| `L19:3001` | `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` | `human` | 233 | `304.22` | `4.45` | word:167|punctuation:21|expanded_negation_word:15|sentence_boundary:12|style_function_word:12|discourse_marker_word:3|line_break:3 |
+| `L19:3001` | `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` | `human` | 257 | `316.65` | `4.46` | word:194|style_function_word:19|sentence_boundary:18|punctuation:13|line_break:7|expanded_negation_word:3|discourse_marker_word:2|contraction_piece:1 |
+| `L19:3001` | `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` | `human` | 329 | `457.81` | `5.23` | word:244|style_function_word:35|sentence_boundary:19|punctuation:9|line_break:8|discourse_marker_word:7|expanded_negation_word:4|contraction_piece:3 |
+| `L19:3001` | `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` | `human` | 134 | `136.89` | `5.31` | word:93|sentence_boundary:11|punctuation:10|line_break:5|style_function_word:5|contraction_piece:4|discourse_marker_word:4|expanded_negation_word:2 |
+
+## Top Tokens
+
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `428` activation `7.705` class `word` token ` essential`
+  - and feel they are not being played. It is essential to back your realistic request up with why you deserve
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `122` activation `6.258` class `word` token ` you`
+  - a rate identical to others in your field will allow you to have confidence that the company will not be able
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `618` activation `5.935` class `word` token ` is`
+  - straight after point 4. However, the fact is valid and should be discussed. While asking too often
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `502` activation `5.750` class `word` token ` essential`
+  - you were before. That is precisely why it is essential not to ask too frequently for a pay rise.
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `619` activation `5.723` class `word` token ` valid`
+  - after point 4. However, the fact is valid and should be discussed. While asking too often is
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `594` activation `5.620` class `contraction_piece` token `Don`
+  - hot, as we described in point 2. Don't be afraid to ask. It seems silly to
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `568` activation `5.488` class `discourse_marker_word` token ` Instead`
+  - standard no answer if you continuously ask for something. Instead, be sure to research what you are worth and
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `538` activation `5.044` class `word` token ` frustrated`
+  - we there yet over and over. The parents become frustrated and eventually will stop answering. The same will happen
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `319` activation `4.928` class `word` token ` necessary`
+  - for a pay rise. Be realistic. It is necessary to know your worth and understand your value to a
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `571` activation `4.746` class `word` token ` sure`
+  - if you continuously ask for something. Instead, be sure to research what you are worth and strike while the
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `453` activation `4.716` class `word` token ` stated`
+  - are getting. Don't ask too often. As stated above, alienating and frustrating your employer is not
+- `L19:3001` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@human` token `613` activation `4.650` class `sentence_boundary` token `.`
+  - silly to put this point straight after point 4. However, the fact is valid and should be discussed
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `410` activation `5.162` class `contraction_piece` token ` didn`
+  - to school, everyone went to college. If you didn't go to college, you were considered a bum
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `544` activation `4.386` class `contraction_piece` token ` don`
+  - 20 years? College is no different. People who don't even graduate from college still have to pay off
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `598` activation `4.352` class `discourse_marker_word` token ` However`
+  - also true that college grads tend to make more. However, the attitude about college being necessary has dropped from
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `315` activation `4.027` class `contraction_piece` token ` don`
+  - to pay for. Statistics show that one in three don't think the degree is worth the amount of money
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `332` activation `2.998` class `word` token ` it`
+  - the amount of money shelled out. Think about it. When my parents went to college, the cost
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `365` activation `2.965` class `punctuation` token `,`
+  - , my college education will cost closer to $50,000 with loans that will haunt me until the day
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `589` activation `2.920` class `word` token ` true`
+  - is indeed necessary in some industries. It is also true that college grads tend to make more. However,
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `219` activation `2.856` class `word` token ` course`
+  - fewer students in college than a decade ago. Of course, Covid-19 hurt these numbers. More young
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `540` activation `2.768` class `word` token ` different`
+  - a car for 20 years? College is no different. People who don't even graduate from college still
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `414` activation `2.639` class `word` token ` college`
+  - went to college. If you didn't go to college, you were considered a bum. Not anymore.
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `406` activation `2.580` class `word` token ` college`
+  - When my parents went to school, everyone went to college. If you didn't go to college, you
+- `L19:3001` `fdbed139557c483345d6de3af83b3d7d2895d753317db6c466573f8cc411fef8@turn_01@human` token `498` activation `2.513` class `word` token ` me`
+  - month like clockwork. This does not appeal to me in the least. Imagine if you bought a car
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `148` activation `4.157` class `punctuation` token `,`
+  - rolls together. Not only will you enjoy delicious treats, but it's also a fantastic opportunity for family bonding
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `235` activation `3.421` class `word` token ` faces`
+  - family. Choose fun designs, create spooky or funny faces, and show off your carved pumpkins as Halloween
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `611` activation `3.246` class `word` token ` lens`
+  - both autumn's and your family's beauty through your lens. There are so many fun things to do in
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `225` activation `3.239` class `word` token ` family`
+  - pumpkin patch and have a pumpkin carving session with your family. Choose fun designs, create spooky or funny faces
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `222` activation `3.133` class `word` token ` session`
+  - got at the pumpkin patch and have a pumpkin carving session with your family. Choose fun designs, create spooky
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `598` activation `2.999` class `word` token ` You`
+  - in a local park, forest, or garden. You can capture both autumn's and your family's beauty
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `399` activation `2.852` class `word` token ` It`
+  - , farm games, and delicious fall-themed food. It's a great opportunity for family fun and community engagement
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `504` activation `2.670` class `word` token ` Depending`
+  - picnic. • Take a Scenic Train Ride: Depending on where you live, many areas offer scenic train
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `86` activation `2.618` class `punctuation` token `,`
+  - great way to get fresh apples for baking or eating, but it is also a fun way to enjoy the
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `432` activation `2.590` class `word` token ` It`
+  - a corn maze to challenge your navigational skills. It's a fun and engaging way to spend time together
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `613` activation `2.553` class `word` token `There`
+  - 's and your family's beauty through your lens. There are so many fun things to do in the fall
+- `L19:3001` `26adf2405102a19f87b4f80115a5c052525f12bd3bcba0ed2fd0751ba09c5ebe@turn_01@human` token `216` activation `2.491` class `word` token ` patch`
+  - : Take the pumpkins you got at the pumpkin patch and have a pumpkin carving session with your family.
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `374` activation `5.325` class `word` token ` best`
+  - It would be best if you chose based on your desired playstyle.
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `375` activation `3.413` class `style_function_word` token ` if`
+  - It would be best if you chose based on your desired playstyle. Here
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `483` activation `2.973` class `word` token ` you`
+  - with high Intelligence and Mind. Warrior: If you want to play a dual-wielding character with high
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `378` activation `2.616` class `word` token ` based`
+  - It would be best if you chose based on your desired playstyle. Here is a quick
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `443` activation `2.225` class `word` token ` you`
+  - and Arcane. Vagabond: If you want to play a tanky character with high Vig
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `389` activation `1.907` class `word` token ` breakdown`
+  - on your desired playstyle. Here is a quick breakdown for each class and what they can do: Hero
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `376` activation `1.904` class `word` token ` you`
+  - It would be best if you chose based on your desired playstyle. Here is
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `383` activation `1.663` class `word` token `style`
+  - be best if you chose based on your desired playstyle. Here is a quick breakdown for each class and
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `402` activation `1.635` class `word` token ` you`
+  - class and what they can do: Hero: If you want to play a straightforward melee character with high Strength
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `409` activation `1.625` class `word` token ` character`
+  - Hero: If you want to play a straightforward melee character with high Strength and Vigor. Bandit:
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `420` activation `1.476` class `style_function_word` token ` If`
+  - with high Strength and Vigor. Bandit: If you want to play a stealth-based character with high
+- `L19:3001` `bcee69352ecca849a55de1c3787a759a5566c14ea87af6106c141c178f9bbf6f@turn_01@human` token `384` activation `1.414` class `sentence_boundary` token `.`
+  - best if you chose based on your desired playstyle. Here is a quick breakdown for each class and what
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `524` activation `5.365` class `word` token ` cases`
+  - rate is essential. Interest compounds quickly. In some cases where two balances are in the same ballpark, it
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `354` activation `5.275` class `contraction_piece` token ` don`
+  - passing month. The worst thing about this is you don't get anything in return. You literally have the
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `638` activation `4.820` class `word` token ` track`
+  - reducing that debt. A strategy helps you stay on track.
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `315` activation `4.765` class `word` token ` significant`
+  - will only ensure next month's minimum is even more significant, and so on and so forth. Not at
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `577` activation `4.716` class `word` token ` here`
+  - you. You are going to war with your finances here. Have tactics and strategies to get the upper hand
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `516` activation `4.611` class `word` token ` essential`
+  - ed by the balance, but the interest rate is essential. Interest compounds quickly. In some cases where two
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `538` activation `4.548` class `word` token ` beneficial`
+  - are in the same ballpark, it may be more beneficial to pay off the higher interest rate regardless of whether
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `561` activation `4.521` class `word` token `ators`
+  - the larger balance. You can use many online calculators to work this out for you. You are going
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `567` activation `4.499` class `word` token ` you`
+  - use many online calculators to work this out for you. You are going to war with your finances here
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `565` activation `4.313` class `word` token ` out`
+  - You can use many online calculators to work this out for you. You are going to war with your
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `576` activation `4.122` class `word` token ` finances`
+  - for you. You are going to war with your finances here. Have tactics and strategies to get the upper
+- `L19:3001` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `506` activation `4.108` class `word` token `ed`
+  - and lose nothing. Too many people get engrossed by the balance, but the interest rate is essential
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `313` activation `5.117` class `discourse_marker_word` token ` for`
+  - explain the practical benefit of the feature. Take, for example, a product that improves productivity. Emphas
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `279` activation `4.715` class `word` token ` excellent`
+  - to clarify this to your target audience. It is excellent that you have a feature or product that can help
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `431` activation `4.591` class `word` token ` you`
+  - see what's not being offered. This will allow you to fill in the gaps and potentially convert customers to
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `243` activation `4.141` class `word` token ` you`
+  - your customers' expectations and desires. This will allow you to provide them with a constant value. Distinguish
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `353` activation `3.860` class `word` token ` them`
+  - . People are more interested in what you will enable them to do rather than how you will do it.
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `533` activation `3.724` class `word` token ` questions`
+  - interest in what you are saying? By analyzing these questions, you can reduce your audience to specifics and tailor
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `589` activation `3.693` class `word` token ` avoided`
+  - ating some of your customer base. This can be avoided by posting content that leads by facts more than anything
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `535` activation `3.558` class `word` token ` you`
+  - what you are saying? By analyzing these questions, you can reduce your audience to specifics and tailor your services
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `294` activation `3.554` class `punctuation` token `,`
+  - feature or product that can help them in some way, but it's even better if you can explain the
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `519` activation `3.266` class `word` token ` offering`
+  - 't. Who won't benefit from what you are offering or take an interest in what you are saying?
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `293` activation `3.143` class `word` token ` way`
+  - a feature or product that can help them in some way, but it's even better if you can explain
+- `L19:3001` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `416` activation `3.121` class `word` token ` way`
+  - to improve what they have? This is an easy way to gain inspiration and see what's not being offered
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `108` activation `4.319` class `contraction_piece` token ` shouldn`
+  - you were trying to explain to the principal why you shouldn't be placed in detention. You had to describe
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `228` activation `4.269` class `word` token ` understanding`
+  - ideas in this framework if your reader requires a good understanding at one point before you can move on to the
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `323` activation `4.237` class `word` token ` in`
+  - include: First, you should understand; keep that in mind while I explain; remember when I said;
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `372` activation `4.152` class `word` token ` such`
+  - should use it when you want to build up excitement such as in a suspense story, or when writing a
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `197` activation `3.113` class `word` token ` sounds`
+  - . Logical Order Logical order is precisely what it sounds like. The framework is used to avoid any confusion
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `283` activation `2.937` class `word` token ` way`
+  - like to make a big or difficult decision. That way, the listener or reader will understand the true nature
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `207` activation `2.861` class `word` token ` confusion`
+  - sounds like. The framework is used to avoid any confusion for the reader. You will need to organize your
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `210` activation `2.790` class `word` token ` reader`
+  - The framework is used to avoid any confusion for the reader. You will need to organize your ideas in this
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `198` activation `2.748` class `word` token ` like`
+  - Logical Order Logical order is precisely what it sounds like. The framework is used to avoid any confusion for
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `221` activation `2.684` class `word` token ` framework`
+  - . You will need to organize your ideas in this framework if your reader requires a good understanding at one point
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `231` activation `2.648` class `word` token ` point`
+  - framework if your reader requires a good understanding at one point before you can move on to the next point.
+- `L19:3001` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `203` activation `2.569` class `word` token ` used`
+  - is precisely what it sounds like. The framework is used to avoid any confusion for the reader. You will
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `352` activation `4.447` class `word` token ` isn`
+  - whatever the police are willing to give you, which isn't much. You feel like you're being st
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `521` activation `3.516` class `word` token ` able`
+  - who owed you a favor, and you might be able to get a bit more information on why you're
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `453` activation `3.270` class `word` token ` part`
+  - serves cheap swill and is in a rougher part of town. The police kept you from interrogating
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `557` activation `3.234` class `word` token ` essence`
+  - her into trouble too, but time was of the essence if you were going to put a stop to these
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `577` activation `3.092` class `word` token ` crucial`
+  - these murders. Whatever decision you made here would be crucial, as there was no telling how much time you
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `550` activation `2.570` class `word` token ` too`
+  - It was risky as it could get her into trouble too, but time was of the essence if you were
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `600` activation `2.460` class `word` token ` mind`
+  - the Pietown Killer struck again. With that in mind, what do you do? Go down to The
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `573` activation `2.408` class `word` token ` made`
+  - put a stop to these murders. Whatever decision you made here would be crucial, as there was no telling
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `466` activation `2.360` class `word` token ` owner`
+  - . The police kept you from interrogating the bar owner at the time, but now that they've moved
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `574` activation `2.306` class `word` token ` here`
+  - a stop to these murders. Whatever decision you made here would be crucial, as there was no telling how
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `571` activation `2.264` class `word` token ` decision`
+  - going to put a stop to these murders. Whatever decision you made here would be crucial, as there was
+- `L19:3001` `80702c1071a3dac84f9c66fb8ff49a8bcc7ea03aa80ab7757bc06a9982f703a4@turn_01@human` token `427` activation `2.262` class `word` token ` options`
+  - whiskey, your drink of choice, and review your options. The latest body was found at The Drink Hole
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `525` activation `4.457` class `expanded_negation_word` token ` not`
+  - prospective new followers will see your tweets. Be careful not to use too many hashtags, as this can be
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `574` activation `3.765` class `word` token ` cases`
+  - using or repurposing old content. In many cases, the point will remain valuable if it's valuable
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `412` activation `3.243` class `word` token ` audience`
+  - . This will help foster a genuine connection with your audience and show them that you care and are responsive to
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `326` activation `2.837` class `word` token ` daily`
+  - slim. Your audience sees a whole load of content daily that is useless for them or simply too like other
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `561` activation `2.802` class `word` token ` harm`
+  - the time can be pretty tough. There is no harm in reusing or repurposing old content.
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `362` activation `2.791` class `word` token ` solid`
+  - constantly have them in mind. This will help to solidify your audience. Engage with your followers.
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `409` activation `2.781` class `word` token ` connection`
+  - or in replies. This will help foster a genuine connection with your audience and show them that you care and
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `608` activation `2.772` class `word` token ` lots`
+  - case for information is an excellent way to churn out lots of content over time. Obviously, it's not
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `616` activation `2.704` class `word` token ` it`
+  - churn out lots of content over time. Obviously, it's not good to copy and paste your old tweets
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `396` activation `2.687` class `word` token ` followers`
+  - most is human connection. Engage and connect with followers through DM or in replies. This will help foster
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `634` activation `2.671` class `word` token ` so`
+  - your old tweets. Try improving them with better wording so your content constantly improves.
+- `L19:3001` `cd632b5d4505d540ec36ffd61d4192a9a95da4489e6f7fdc33826a539ebf2f88@turn_01@human` token `282` activation `2.668` class `word` token ` you`
+  - ocusing on what stands out from the crowd will enable you to create engaging content. Create valuable content. If
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `405` activation `5.234` class `word` token ` There`
+  - to keep your bills down in the long run. There is no harm in saying you will leave unless your
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `583` activation `5.057` class `contraction_piece` token ` shouldn`
+  - , and it's hard to remember everything. You shouldn't be charged fees when you forget to pay a
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `531` activation `4.732` class `contraction_piece` token ` doesn`
+  - that you can use as a second income. DIY doesn't just mean working at home, though. It
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `310` activation `4.206` class `word` token ` best`
+  - using. If you find any, it would be best off to cancel them. This will mean a monthly
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `577` activation `4.017` class `word` token ` hard`
+  - for bills. Life is tough, and it's hard to remember everything. You shouldn't be charged fees
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `451` activation `3.953` class `contraction_piece` token ` couldn`
+  - save you a lot of money. These days it couldn't be easier to find tutorials and how-to videos
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `553` activation `3.726` class `discourse_marker_word` token ` instead`
+  - even mean taking your own coffee or lunch at home instead of buying it out for a higher price. Set
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `468` activation `3.495` class `word` token ` Ensure`
+  - and how-to videos online for most DIY projects. Ensure you watch these videos before purchasing any materials or tools
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `490` activation `3.494` class `word` token ` high`
+  - ensure you are confident in completing the task to a high standard. If you have a lot of time on
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `466` activation `3.440` class `word` token ` projects`
+  - find tutorials and how-to videos online for most DIY projects. Ensure you watch these videos before purchasing any materials
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `594` activation `3.380` class `word` token ` bill`
+  - 't be charged fees when you forget to pay a bill. But unfortunately, late fees are a fact of
+- `L19:3001` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `433` activation `3.325` class `discourse_marker_word` token ` instead`
+  - say no. DIY where possible. Doing DIY instead of hiring a tradesman can really save you a
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `369` activation `5.308` class `contraction_piece` token ` didn`
+  - truck’s cabin and finished applying the sunscreen. She didn’t rush to follow Morris; they had all day
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `439` activation `4.911` class `contraction_piece` token ` didn`
+  - was eating instead of filling the pails. She didn’t want to haul the buckets yet anyways! Mor
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `446` activation `2.570` class `word` token ` yet`
+  - ails. She didn’t want to haul the buckets yet anyways! Morris grabbed another handful of berries to
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `491` activation `1.989` class `word` token ` bins`
+  - ails. At least she’d dumped them into the bins before wandering off. He placed the full buckets for
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `516` activation `1.908` class `word` token ` bit`
+  - . Sunny relaxed on a warm rock for a bit, then went to find Morris. She saw the
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `469` activation `1.677` class `word` token `ies`
+  - the pail. Where was Sunny with the empties? He backtracked until he came upon the empty
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `549` activation `1.578` class `word` token ` distance`
+  - aining, bent over the bushes. Even at this distance, his back hair was full and thick. “
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `423` activation `1.524` class `word` token ` but`
+  - She could hear Morris grunting and chewing up ahead but didn’t mind if he was eating instead of filling
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `481` activation `1.505` class `word` token `ails`
+  - He backtracked until he came upon the empty pails. At least she’d dumped them into the bins
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `437` activation `1.477` class `sentence_boundary` token `.`
+  - if he was eating instead of filling the pails. She didn’t want to haul the buckets yet anyways
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `506` activation `1.444` class `line_break` token `.
+
+`
+  - He placed the full buckets for her to lug back. Sunny relaxed on a warm rock for a bit
+- `L19:3001` `e220b960b614d9fe95c812ab62bbd5d5ea546ac23edfed4b63757fab3030dc66@turn_01@human` token `495` activation `1.428` class `sentence_boundary` token `.`
+  - she’d dumped them into the bins before wandering off. He placed the full buckets for her to lug back

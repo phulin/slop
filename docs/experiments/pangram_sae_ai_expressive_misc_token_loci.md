@@ -1,0 +1,711 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2238` | `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 243 | `449.08` | `4.31` | word:195|punctuation:19|sentence_boundary:15|style_function_word:7|line_break:4|expanded_negation_word:2|contraction_piece:1 |
+| `L19:2238` | `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 430 | `813.10` | `4.28` | word:349|punctuation:41|sentence_boundary:19|discourse_marker_word:7|expanded_negation_word:7|line_break:3|style_function_word:2|contraction_piece:2 |
+| `L19:2238` | `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 298 | `370.30` | `4.06` | word:210|punctuation:32|line_break:16|style_function_word:15|sentence_boundary:14|expanded_negation_word:4|discourse_marker_word:4|contraction_piece:2|whitespace:1 |
+| `L19:2238` | `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` | `glm-5.2` | 363 | `554.17` | `3.53` | word:275|punctuation:30|sentence_boundary:26|style_function_word:16|line_break:10|expanded_negation_word:4|discourse_marker_word:2 |
+| `L19:2238` | `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 403 | `664.79` | `4.17` | word:324|punctuation:32|line_break:14|sentence_boundary:14|style_function_word:9|expanded_negation_word:5|discourse_marker_word:2|whitespace:2|contraction_piece:1 |
+| `L19:2238` | `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` | `glm-5.2` | 422 | `662.65` | `4.12` | word:340|punctuation:26|sentence_boundary:24|style_function_word:11|discourse_marker_word:9|line_break:8|expanded_negation_word:2|contraction_piece:2 |
+| `L19:2238` | `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` | `human` | 287 | `347.09` | `5.03` | word:230|style_function_word:21|punctuation:17|sentence_boundary:8|discourse_marker_word:6|contraction_piece:2|line_break:2|whitespace:1 |
+| `L19:2238` | `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 336 | `481.78` | `3.20` | word:258|punctuation:24|style_function_word:23|sentence_boundary:18|expanded_negation_word:7|line_break:4|discourse_marker_word:2 |
+| `L19:2238` | `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 313 | `451.34` | `4.24` | word:243|punctuation:30|sentence_boundary:22|expanded_negation_word:6|line_break:4|discourse_marker_word:3|style_function_word:3|whitespace:1|contraction_piece:1 |
+| `L19:2238` | `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 553 | `956.05` | `4.14` | word:437|punctuation:54|style_function_word:21|sentence_boundary:16|line_break:10|discourse_marker_word:8|expanded_negation_word:5|contraction_piece:2 |
+| `L19:2238` | `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` | `glm-5.2` | 427 | `751.17` | `4.03` | word:337|punctuation:42|sentence_boundary:19|style_function_word:16|line_break:5|discourse_marker_word:4|expanded_negation_word:4 |
+| `L19:2238` | `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 380 | `539.25` | `3.17` | word:294|punctuation:36|line_break:16|sentence_boundary:14|style_function_word:8|expanded_negation_word:6|discourse_marker_word:6 |
+| `L19:2238` | `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 497 | `683.12` | `4.00` | word:388|punctuation:49|sentence_boundary:27|expanded_negation_word:13|line_break:12|style_function_word:5|discourse_marker_word:2|contraction_piece:1 |
+| `L19:2238` | `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` | `human` | 227 | `251.52` | `4.43` | word:174|punctuation:20|sentence_boundary:15|style_function_word:6|whitespace:4|line_break:4|expanded_negation_word:3|contraction_piece:1 |
+| `L24:605` | `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 228 | `492.31` | `4.43` | word:181|punctuation:19|sentence_boundary:15|style_function_word:7|line_break:3|expanded_negation_word:2|contraction_piece:1 |
+| `L24:605` | `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 401 | `825.34` | `4.25` | word:321|punctuation:40|sentence_boundary:19|discourse_marker_word:7|expanded_negation_word:7|line_break:3|style_function_word:2|contraction_piece:2 |
+| `L24:605` | `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 225 | `362.18` | `3.15` | word:154|punctuation:23|line_break:15|style_function_word:12|sentence_boundary:12|discourse_marker_word:4|expanded_negation_word:3|contraction_piece:2 |
+| `L24:605` | `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` | `glm-5.2` | 351 | `754.59` | `4.75` | word:270|punctuation:27|sentence_boundary:24|style_function_word:15|line_break:10|expanded_negation_word:3|discourse_marker_word:2 |
+| `L24:605` | `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 344 | `759.98` | `5.23` | word:273|punctuation:29|sentence_boundary:13|line_break:13|style_function_word:8|expanded_negation_word:5|discourse_marker_word:2|whitespace:1 |
+| `L24:605` | `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` | `glm-5.2` | 354 | `718.08` | `5.68` | word:283|punctuation:24|sentence_boundary:22|style_function_word:8|line_break:8|discourse_marker_word:7|expanded_negation_word:2 |
+| `L24:605` | `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` | `human` | 259 | `424.72` | `3.33` | word:201|style_function_word:23|punctuation:16|sentence_boundary:9|discourse_marker_word:6|line_break:2|contraction_piece:1|whitespace:1 |
+| `L24:605` | `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 258 | `433.87` | `4.01` | word:188|punctuation:22|sentence_boundary:19|style_function_word:18|expanded_negation_word:6|line_break:3|discourse_marker_word:2 |
+| `L24:605` | `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 195 | `316.30` | `4.01` | word:138|punctuation:24|sentence_boundary:20|expanded_negation_word:5|discourse_marker_word:3|style_function_word:2|line_break:2|whitespace:1 |
+| `L24:605` | `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 475 | `1042.77` | `4.74` | word:374|punctuation:45|style_function_word:20|sentence_boundary:14|line_break:10|discourse_marker_word:8|expanded_negation_word:3|contraction_piece:1 |
+| `L24:605` | `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` | `glm-5.2` | 409 | `936.24` | `4.63` | word:316|punctuation:42|sentence_boundary:19|style_function_word:16|discourse_marker_word:6|line_break:5|expanded_negation_word:5 |
+| `L24:605` | `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 356 | `706.70` | `5.07` | word:281|punctuation:31|sentence_boundary:14|line_break:13|style_function_word:7|expanded_negation_word:6|discourse_marker_word:4 |
+| `L24:605` | `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 289 | `441.56` | `3.99` | word:207|punctuation:30|sentence_boundary:25|line_break:12|expanded_negation_word:9|style_function_word:4|discourse_marker_word:1|contraction_piece:1 |
+| `L24:605` | `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` | `human` | 165 | `230.30` | `4.43` | word:127|punctuation:10|sentence_boundary:8|style_function_word:7|line_break:7|whitespace:4|expanded_negation_word:2 |
+
+## Top Tokens
+
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `529` activation `4.306` class `word` token ` The`
+  - fish. Groundbreaking. And Sid’s bedroom? The mutant toy scene—where the baby doll head on
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `547` activation `4.278` class `word` token `—is`
+  - doll head on mechanical spider legs emerges from the shadows—is pure, unadulterated German Expressionism
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `421` activation `3.984` class `word` token ` Story`
+  - is the far superior masterpiece. Why? Because Toy Story understands existential dread, whereas Nemo is just a
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `493` activation `3.888` class `word` token ` a`
+  - it’s not just brilliant voice acting; it’s a devastating critique of identity crisis. Compare that to N
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `565` activation `3.750` class `word` token ` It`
+  - German Expressionism disguised as a children's movie. It’s gothic, daring, and frankly, hilarious
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `528` activation `3.730` class `sentence_boundary` token `?`
+  - surgeonfish. Groundbreaking. And Sid’s bedroom? The mutant toy scene—where the baby doll head
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `600` activation `3.701` class `word` token ` a`
+  - A girl with braces? Please. Toy Story delivered a tight, witty buddy-comedy that redefined cinema
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `569` activation `3.688` class `punctuation` token `,`
+  - as a children's movie. It’s gothic, daring, and frankly, hilarious. What does N
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `572` activation `3.628` class `word` token ` and`
+  - 's movie. It’s gothic, daring, and frankly, hilarious. What does Nemo offer in
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `571` activation `3.532` class `punctuation` token `,`
+  - children's movie. It’s gothic, daring, and frankly, hilarious. What does Nemo offer
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `450` activation `3.532` class `word` token ` sheer`
+  - parenting. Let us dissect the brilliance. Remember the sheer, Shakespearean tension of the gas station abandonment?
+- `L19:2238` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `492` activation `3.476` class `word` token `’s`
+  - , it’s not just brilliant voice acting; it’s a devastating critique of identity crisis. Compare that to
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `292` activation `4.279` class `word` token ` a`
+  - morning, he became the ultimate linguistic bridge, possessing a flawless, native grasp of every language, dialect,
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `284` activation `4.207` class `word` token ` he`
+  - But for one glorious, fleeting hour each morning, he became the ultimate linguistic bridge, possessing a flawless,
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `291` activation `4.199` class `word` token ` possessing`
+  - each morning, he became the ultimate linguistic bridge, possessing a flawless, native grasp of every language, dialect
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `386` activation `4.184` class `word` token ` he`
+  - desperate souls worldwide. During his sixty-minute window, he became a lifeline. He translated rare medical symptoms
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `387` activation `4.172` class `word` token ` became`
+  - souls worldwide. During his sixty-minute window, he became a lifeline. He translated rare medical symptoms from
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `393` activation `4.137` class `word` token ` translated`
+  - -minute window, he became a lifeline. He translated rare medical symptoms from an isolated Andean village for
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `388` activation `3.839` class `word` token ` a`
+  - worldwide. During his sixty-minute window, he became a lifeline. He translated rare medical symptoms from an
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `300` activation `3.725` class `punctuation` token `,`
+  - , possessing a flawless, native grasp of every language, dialect, and slang ever spoken on Earth. He
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `375` activation `3.720` class `discourse_marker_word` token ` for`
+  - he had created, offering instant, free translation services for desperate souls worldwide. During his sixty-minute window,
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `385` activation `3.710` class `punctuation` token `,`
+  - for desperate souls worldwide. During his sixty-minute window, he became a lifeline. He translated rare medical
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `297` activation `3.698` class `word` token ` of`
+  - ultimate linguistic bridge, possessing a flawless, native grasp of every language, dialect, and slang ever spoken on
+- `L19:2238` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `371` activation `3.694` class `punctuation` token `,`
+  - , anonymous online forum he had created, offering instant, free translation services for desperate souls worldwide. During his
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `231` activation `4.064` class `word` token ` be`
+  - battle. The other half? Communication. You can be the most talented designer, writer, or developer in
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `230` activation `2.921` class `style_function_word` token ` can`
+  - the battle. The other half? Communication. You can be the most talented designer, writer, or developer
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `233` activation `2.671` class `word` token ` most`
+  - The other half? Communication. You can be the most talented designer, writer, or developer in the world
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `537` activation `2.614` class `word` token ` website`
+  - backend coding, explain how your structure will make their website load 50% faster, leading to more sales
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `232` activation `2.586` class `word` token ` the`
+  - . The other half? Communication. You can be the most talented designer, writer, or developer in the
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `519` activation `2.362` class `word` token ` explaining`
+  - discussing your process, focus on outcomes. Instead of explaining the tedious hours you’ll spend on backend coding,
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `283` activation `2.358` class `word` token ` to`
+  - ’s a skill you can practice. Here is how to speak with authority, banish imposter syndrome,
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `412` activation `2.320` class `word` token ` to`
+  - a client asks a tough question, our instinct is to fill the silence immediately. This leads to rambling
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `294` activation `2.254` class `word` token ` and`
+  - speak with authority, banish imposter syndrome, and win over your clients. Ditch the "Soft
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `520` activation `2.252` class `word` token ` the`
+  - your process, focus on outcomes. Instead of explaining the tedious hours you’ll spend on backend coding, explain
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `378` activation `2.242` class `word` token ` qualifiers`
+  - look forward to your feedback by Friday." Eliminating qualifiers instantly shifts your tone from "asking for permission"
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `534` activation `2.234` class `style_function_word` token ` will`
+  - ’ll spend on backend coding, explain how your structure will make their website load 50% faster, leading
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `599` activation `3.529` class `word` token ` they`
+  - Stop worrying about whether they like you. Remember that they chose you out of countless other professionals. You have
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `633` activation `3.469` class `word` token ` It`
+  - that fact, speaking confidently stops being an act. It simply becomes your second nature.
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `627` activation `3.438` class `word` token ` confidently`
+  - . When you truly internalize that fact, speaking confidently stops being an act. It simply becomes your second
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `597` activation `3.264` class `word` token ` Remember`
+  - focus. Stop worrying about whether they like you. Remember that they chose you out of countless other professionals.
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `583` activation `3.212` class `punctuation` token `,`
+  - authoritative on the call. Remember Your Value Lastly, shift your mental focus. Stop worrying about whether they
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `292` activation `3.146` class `style_function_word` token ` this`
+  - of silence with the word "just." Stop doing this. Speak a bit slower than you normally would in
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `608` activation `3.108` class `word` token ` You`
+  - that they chose you out of countless other professionals. You have the exact skills they need to succeed. When
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `625` activation `3.094` class `punctuation` token `,`
+  - to succeed. When you truly internalize that fact, speaking confidently stops being an act. It simply becomes
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `609` activation `3.082` class `word` token ` have`
+  - they chose you out of countless other professionals. You have the exact skills they need to succeed. When you
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `619` activation `3.061` class `word` token ` you`
+  - have the exact skills they need to succeed. When you truly internalize that fact, speaking confidently stops being
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `483` activation `3.003` class `word` token ` material`
+  - memorize your key questions. When you know your material inside and out, your nervous energy naturally transforms into
+- `L19:2238` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `598` activation `2.957` class `style_function_word` token ` that`
+  - . Stop worrying about whether they like you. Remember that they chose you out of countless other professionals. You
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `288` activation `4.167` class `punctuation` token `,`
+  - is quietly laughing at you. Here is the ultimate, lazy-but-genius way to find your perfect audience
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `294` activation `3.991` class `word` token ` to`
+  - Here is the ultimate, lazy-but-genius way to find your perfect audience. Step 1: Trust
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `303` activation `3.540` class `punctuation` token `:`
+  - way to find your perfect audience. Step 1: Trust the Almighty Pixel (The "Warm" Crowd
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `286` activation `3.491` class `word` token ` the`
+  - ’s algorithm is quietly laughing at you. Here is the ultimate, lazy-but-genius way to find your
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `295` activation `3.372` class `word` token ` find`
+  - is the ultimate, lazy-but-genius way to find your perfect audience. Step 1: Trust the
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `285` activation `3.234` class `word` token ` is`
+  - Meta’s algorithm is quietly laughing at you. Here is the ultimate, lazy-but-genius way to find
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `293` activation `3.229` class `word` token ` way`
+  - . Here is the ultimate, lazy-but-genius way to find your perfect audience. Step 1:
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `461` activation `3.078` class `word` token ` Meta`
+  - select a 1% lookalike, and Meta uses its terrifyingly vast treasure trove of data
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `472` activation `3.034` class `word` token ` to`
+  - uses its terrifyingly vast treasure trove of data to match your best customers with their digital doppelg
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `462` activation `3.007` class `word` token ` uses`
+  - a 1% lookalike, and Meta uses its terrifyingly vast treasure trove of data to
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `603` activation `2.997` class `word` token ` targeting`
+  - push it to similar users. Your ad is your targeting. The Takeaway Stop overthinking interest groups
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `591` activation `2.964` class `word` token ` and`
+  - who interacts with your ad in the first few hours and automatically push it to similar users. Your ad is
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `229` activation `4.119` class `word` token ` to`
+  - arrow Targeting First things first, stop trying to be way too clever with your targeting. Back in
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `433` activation `3.889` class `word` token ` basically`
+  - is usually the absolute gold standard here. It’s basically just social media cloning—only totally legal! The
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `553` activation `3.764` class `punctuation` token `,`
+  - Test Everything, Always There is absolutely no magical, one-size-fits-all formula for finding the perfect
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `230` activation `3.624` class `word` token ` be`
+  - Targeting First things first, stop trying to be way too clever with your targeting. Back in the
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `549` activation `3.615` class `word` token ` is`
+  - little nudge! Test Everything, Always There is absolutely no magical, one-size-fits-all formula
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `482` activation `3.592` class `word` token ` is`
+  - cute cat meme, and leave. Retargeting is exactly how you scoop them back up. Set up
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `574` activation `3.451` class `style_function_word` token ` might`
+  - crowd. What works wonders for a trendy skincare brand might completely flop for a B2B software startup.
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `202` activation `3.403` class `word` token ` absolute`
+  - 't care less about your brand, here’s the absolute best way to track them down on Facebook right now
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `562` activation `3.386` class `word` token ` the`
+  - magical, one-size-fits-all formula for finding the perfect crowd. What works wonders for a trendy skincare
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `561` activation `3.289` class `word` token ` finding`
+  - no magical, one-size-fits-all formula for finding the perfect crowd. What works wonders for a trendy
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `481` activation `3.278` class `word` token `ing`
+  - a cute cat meme, and leave. Retargeting is exactly how you scoop them back up. Set
+- `L19:2238` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `560` activation `3.275` class `discourse_marker_word` token ` for`
+  - absolutely no magical, one-size-fits-all formula for finding the perfect crowd. What works wonders for a
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `303` activation `5.025` class `word` token ` absolutely`
+  - ons, but with one notable exception: they are absolutely stupid. Where other animals have the situational awareness
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `302` activation `3.038` class `word` token ` are`
+  - coons, but with one notable exception: they are absolutely stupid. Where other animals have the situational
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `301` activation `2.867` class `word` token ` they`
+  - raccoons, but with one notable exception: they are absolutely stupid. Where other animals have the situ
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `587` activation `2.694` class `word` token ` we`
+  - With your donation of just five dollars a minute, we can help round up the stupid raccoon population and
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `304` activation `2.495` class `word` token ` stupid`
+  - , but with one notable exception: they are absolutely stupid. Where other animals have the situational awareness and
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `328` activation `2.480` class `word` token `ons`
+  - scavage for food and shelter, stupid raccoons are unable to feed themselves unless humans put scraps of
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `586` activation `2.455` class `punctuation` token `,`
+  - . With your donation of just five dollars a minute, we can help round up the stupid raccoon population
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `589` activation `2.436` class `style_function_word` token ` help`
+  - donation of just five dollars a minute, we can help round up the stupid raccoon population and put them
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `300` activation `2.367` class `punctuation` token `:`
+  - regular raccoons, but with one notable exception: they are absolutely stupid. Where other animals have the
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `588` activation `2.277` class `style_function_word` token ` can`
+  - your donation of just five dollars a minute, we can help round up the stupid raccoon population and put
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `329` activation `2.246` class `word` token ` are`
+  - avage for food and shelter, stupid raccoons are unable to feed themselves unless humans put scraps of leftover
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `225` activation `2.136` class `word` token ` and`
+  - of stupid raccoons die due to extreme stupidity and inability to survive in their native habitats. The low
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `422` activation `3.203` class `word` token ` they`
+  - they forget how to climb down from branches, and they routinely mistake sleeping predators for comfortable pillows. To some
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `585` activation `3.151` class `style_function_word` token ` must`
+  - We must build low-altitude climbing structures. We must act as their external brain. Do not let their
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `412` activation `2.999` class `word` token ` they`
+  - cannot survive. They walk face-first into trees, they forget how to climb down from branches, and they
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `576` activation `2.827` class `style_function_word` token ` must`
+  - forever. We must fund specialized conservation habitats. We must build low-altitude climbing structures. We must act
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `513` activation `2.784` class `word` token ` they`
+  - a world dominated by survival of the fittest, they represent a gentler, softer reality—one where curiosity
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `405` activation `2.765` class `word` token ` They`
+  - orgiving whims of nature, they cannot survive. They walk face-first into trees, they forget how to
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `411` activation `2.743` class `punctuation` token `,`
+  - they cannot survive. They walk face-first into trees, they forget how to climb down from branches, and
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `515` activation `2.655` class `word` token ` a`
+  - dominated by survival of the fittest, they represent a gentler, softer reality—one where curiosity outweighs
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `609` activation `2.638` class `word` token `coon`
+  - into the darkness of extinction. Protect the stupid raccoon. Not because they are smart, not because they
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `514` activation `2.636` class `word` token ` represent`
+  - world dominated by survival of the fittest, they represent a gentler, softer reality—one where curiosity outweigh
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `421` activation `2.597` class `word` token ` and`
+  - , they forget how to climb down from branches, and they routinely mistake sleeping predators for comfortable pillows. To
+- `L19:2238` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `575` activation `2.584` class `word` token ` We`
+  - vanish forever. We must fund specialized conservation habitats. We must build low-altitude climbing structures. We must
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `296` activation `4.240` class `word` token ` the`
+  - century-old recipe for "The Holy Grail," the signature burger of their chief rival, The Golden Bun
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `282` activation `3.626` class `punctuation` token `:`
+  - -chain BurgerWorld for a legendary payday. His target: the classified, century-old recipe for "The Holy
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `295` activation `3.593` class `punctuation` token `,"`
+  - , century-old recipe for "The Holy Grail," the signature burger of their chief rival, The Golden
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `289` activation `3.466` class `discourse_marker_word` token ` for`
+  - . His target: the classified, century-old recipe for "The Holy Grail," the signature burger of
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `285` activation `3.387` class `punctuation` token `,`
+  - for a legendary payday. His target: the classified, century-old recipe for "The Holy Grail,"
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `283` activation `3.280` class `word` token ` the`
+  - BurgerWorld for a legendary payday. His target: the classified, century-old recipe for "The Holy Gr
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `300` activation `3.202` class `word` token ` their`
+  - "The Holy Grail," the signature burger of their chief rival, The Golden Bun. Jax bypass
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `630` activation `3.158` class `word` token ` helped`
+  - ax. I’m FDA Internal Affairs. You just helped us bust the biggest food fraud in history."
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `407` activation `3.120` class `expanded_negation_word` token ` would`
+  - The Golden Bun would crumble, and BurgerWorld would monopolize the global fast-food market. Making his
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `631` activation `3.093` class `word` token ` us`
+  - . I’m FDA Internal Affairs. You just helped us bust the biggest food fraud in history."
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `595` activation `3.056` class `expanded_negation_word` token ` had`
+  - protein, and chemical flavorings. The Golden Bun had been selling fake meat for decades. The Chef smiled
+- `L19:2238` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `594` activation `2.834` class `word` token ` Bun`
+  - soy protein, and chemical flavorings. The Golden Bun had been selling fake meat for decades. The Chef
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `224` activation `4.138` class `expanded_negation_word` token ` would`
+  - global mosquito-cide, the entire planet’s ecosystem would collapse. It turns out adult mosquitoes are the favorite
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `344` activation `4.040` class `word` token ` absolutely`
+  - a billion-dollar industry. This means the market is absolutely flooded with useless junk and snake oil. Before you
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `349` activation `3.673` class `word` token ` and`
+  - This means the market is absolutely flooded with useless junk and snake oil. Before you max out your credit card
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `184` activation `3.580` class `word` token ` is`
+  - asizing about a magical world where every last mosquito is wiped off the face of the Earth. It’s
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `365` activation `3.337` class `style_function_word` token ` that`
+  - max out your credit card on a futuristic laser trap that does nothing but glow in the dark, let’s
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `180` activation `3.335` class `word` token ` where`
+  - oblivion—fantasizing about a magical world where every last mosquito is wiped off the face of the
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `130` activation `3.319` class `word` token ` essentially`
+  - ungunya, and dengue. They are essentially microscopic, flying vampires, except Dracula had the
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `416` activation `3.283` class `word` token ` a`
+  - The Great Illusion First, we must address a common point of confusion: the difference between repelling
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `183` activation `3.257` class `word` token ` mosquito`
+  - fantasizing about a magical world where every last mosquito is wiped off the face of the Earth. It
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `470` activation `3.253` class `word` token ` mosquitoes`
+  - , or your yard, smell so offensive that the mosquitoes decide to go bother your neighbors instead. Citron
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `429` activation `3.223` class `word` token ` and`
+  - of confusion: the difference between repelling a mosquito and killing it. Repellents are the equivalent of
+- `L19:2238` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `414` activation `3.223` class `style_function_word` token ` must`
+  - Killing: The Great Illusion First, we must address a common point of confusion: the difference between
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `481` activation `4.026` class `word` token ` absolutely`
+  - reads an ancient book that mentions a rare canine with absolutely flawless, incredibly thick fur living in the Himalayan
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `526` activation `3.889` class `word` token ` navigating`
+  - off territorial wolves, surviving massive avalanches, and navigating dark, winding ice caves. After all that endless
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `459` activation `3.831` class `punctuation` token `,`
+  - man is on a quest to find the most magnificent, legendary shaggy dog in all the world.
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `483` activation `3.783` class `punctuation` token `,`
+  - ancient book that mentions a rare canine with absolutely flawless, incredibly thick fur living in the Himalayan mountains.
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `533` activation `3.734` class `word` token ` After`
+  - anches, and navigating dark, winding ice caves. After all that endless suffering, he finally reaches an isolated
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `553` activation `3.697` class `word` token ` out`
+  - isolated, hidden monastery. Inside, the monks bring out a beautiful, extremely shaggy dog. The
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `554` activation `3.674` class `word` token ` a`
+  - , hidden monastery. Inside, the monks bring out a beautiful, extremely shaggy dog. The man
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `327` activation `3.641` class `word` token ` story`
+  - listener for their patience, a shaggy dog story ends with an intentionally awful, tediously predictable pun
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `525` activation `3.582` class `word` token ` and`
+  - fighting off territorial wolves, surviving massive avalanches, and navigating dark, winding ice caves. After all that
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `503` activation `3.560` class `word` token ` spends`
+  - . Determined to find this dog, the man spends five years climbing the treacherous, freezing peaks
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `505` activation `3.546` class `word` token ` years`
+  - ed to find this dog, the man spends five years climbing the treacherous, freezing peaks, fighting
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `564` activation `3.425` class `word` token ` man`
+  - a beautiful, extremely shaggy dog. The man looks closely at the dog, completely exhausted, and
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `374` activation `3.168` class `word` token ` is`
+  - to an epic, important tale. The Punchline is a total letdown. It is usually a terrible
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `539` activation `3.036` class `word` token ` to`
+  - tell your son. The key to delivering this is to tell it with great drama and seriousness. The more
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `335` activation `2.959` class `word` token ` are`
+  - In a shaggy dog story, the rules are intentionally broken. The Setup is extremely long, detailed
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `418` activation `2.935` class `word` token ` is`
+  - isn't actually the punchline itself. The joke is on the listener. The humor comes from the realization
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `407` activation `2.935` class `word` token ` story`
+  - "joke" of a shaggy dog story isn't actually the punchline itself. The joke
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `69` activation `2.895` class `word` token ` almost`
+  - Science of the Punchline At its core, almost every joke relies on a psychological concept called Incon
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `375` activation `2.877` class `word` token ` a`
+  - an epic, important tale. The Punchline is a total letdown. It is usually a terrible pun
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `380` activation `2.866` class `word` token ` It`
+  - . The Punchline is a total letdown. It is usually a terrible pun, an anticlimax
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `427` activation `2.758` class `word` token ` the`
+  - joke is on the listener. The humor comes from the realization that you just spent five minutes listening to a
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `373` activation `2.716` class `word` token `line`
+  - listening to an epic, important tale. The Punchline is a total letdown. It is usually a
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `381` activation `2.659` class `word` token ` is`
+  - The Punchline is a total letdown. It is usually a terrible pun, an anticlimax,
+- `L19:2238` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `454` activation `2.647` class `word` token ` a`
+  - only to be rewarded with absolutely nothing. It is a form of playful frustration. The name comes from an
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `269` activation `4.002` class `word` token ` and`
+  - . It was thick-walled, windowless, and featured a massive stone hearth with a narrow chimney
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `282` activation `3.696` class `expanded_negation_word` token ` was`
+  - massive stone hearth with a narrow chimney. It was designed not just as a home, but as a
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `259` activation `3.666` class `sentence_boundary` token `.`
+  - mortar up the steep hill. He built a fortress. It was thick-walled, windowless, and
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `261` activation `3.641` class `expanded_negation_word` token ` was`
+  - the steep hill. He built a fortress. It was thick-walled, windowless, and featured a
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `268` activation `3.603` class `punctuation` token `,`
+  - fortress. It was thick-walled, windowless, and featured a massive stone hearth with a narrow
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `260` activation `3.480` class `word` token ` It`
+  - up the steep hill. He built a fortress. It was thick-walled, windowless, and featured
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `257` activation `3.404` class `word` token ` a`
+  - bricks and mortar up the steep hill. He built a fortress. It was thick-walled, windowless
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `243` activation `3.383` class `punctuation` token `,`
+  - world. He labored until his hands bled, dragging heavy clay bricks and mortar up the steep hill
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `255` activation `3.381` class `word` token ` He`
+  - heavy clay bricks and mortar up the steep hill. He built a fortress. It was thick-walled,
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `283` activation `3.336` class `word` token ` designed`
+  - stone hearth with a narrow chimney. It was designed not just as a home, but as a tomb
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `256` activation `3.293` class `word` token ` built`
+  - clay bricks and mortar up the steep hill. He built a fortress. It was thick-walled, window
+- `L19:2238` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `281` activation `3.250` class `word` token ` It`
+  - a massive stone hearth with a narrow chimney. It was designed not just as a home, but as
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `541` activation `4.429` class `word` token ` you`
+  - miracle pill that reverses aging. It'll make you look half your age after one pill. Don't
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `533` activation `3.951` class `style_function_word` token ` that`
+  - "I do. I'm selling a miracle pill that reverses aging. It'll make you look half
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `540` activation `3.699` class `style_function_word` token ` make`
+  - a miracle pill that reverses aging. It'll make you look half your age after one pill. Don
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `542` activation `3.493` class `word` token ` look`
+  - pill that reverses aging. It'll make you look half your age after one pill. Don't take
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `538` activation `3.117` class `word` token ` It`
+  - 'm selling a miracle pill that reverses aging. It'll make you look half your age after one pill
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `539` activation `3.072` class `word` token `'ll`
+  - selling a miracle pill that reverses aging. It'll make you look half your age after one pill.
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `546` activation `2.912` class `word` token ` after`
+  - aging. It'll make you look half your age after one pill. Don't take too many, or
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `535` activation `2.734` class `word` token `es`
+  - do. I'm selling a miracle pill that reverses aging. It'll make you look half your age
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `536` activation `2.728` class `word` token ` aging`
+  - . I'm selling a miracle pill that reverses aging. It'll make you look half your age after
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `545` activation `2.530` class `word` token ` age`
+  - es aging. It'll make you look half your age after one pill. Don't take too many,
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `472` activation `2.494` class `word` token ` is`
+  - with police officer impersonation cases. My win rate is 100%." Chuck sighed. "Whew
+- `L19:2238` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `547` activation `2.365` class `word` token ` one`
+  - . It'll make you look half your age after one pill. Don't take too many, or else
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `572` activation `4.428` class `word` token ` and`
+  - 's movie. It’s gothic, daring, and frankly, hilarious. What does Nemo offer in
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `607` activation `4.293` class `style_function_word` token ` that`
+  - Toy Story delivered a tight, witty buddy-comedy that redefined cinema. Finding Nemo just gave us
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `598` activation `4.152` class `word` token ` Story`
+  - la? A girl with braces? Please. Toy Story delivered a tight, witty buddy-comedy that re
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `599` activation `4.137` class `word` token ` delivered`
+  - ? A girl with braces? Please. Toy Story delivered a tight, witty buddy-comedy that redefined
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `493` activation `4.107` class `word` token ` a`
+  - it’s not just brilliant voice acting; it’s a devastating critique of identity crisis. Compare that to N
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `600` activation `4.101` class `word` token ` a`
+  - A girl with braces? Please. Toy Story delivered a tight, witty buddy-comedy that redefined cinema
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `532` activation `4.074` class `word` token ` scene`
+  - breaking. And Sid’s bedroom? The mutant toy scene—where the baby doll head on mechanical spider legs
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `571` activation `3.954` class `punctuation` token `,`
+  - children's movie. It’s gothic, daring, and frankly, hilarious. What does Nemo offer
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `501` activation `3.841` class `style_function_word` token ` that`
+  - it’s a devastating critique of identity crisis. Compare that to Nemo, where Albert Brooks spent two hours
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `421` activation `3.797` class `word` token ` Story`
+  - is the far superior masterpiece. Why? Because Toy Story understands existential dread, whereas Nemo is just a
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `454` activation `3.787` class `word` token ` tension`
+  - dissect the brilliance. Remember the sheer, Shakespearean tension of the gas station abandonment? When Woody snaps and
+- `L24:605` `f2920f35e1e02cd263ec0295eff947e6c2dfe30875a9c114830431897243f0cc@turn_01@gemini-3.5-flash` token `491` activation `3.691` class `word` token ` it`
+  - year, it’s not just brilliant voice acting; it’s a devastating critique of identity crisis. Compare that
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `393` activation `4.251` class `word` token ` translated`
+  - -minute window, he became a lifeline. He translated rare medical symptoms from an isolated Andean village for
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `371` activation `3.935` class `punctuation` token `,`
+  - , anonymous online forum he had created, offering instant, free translation services for desperate souls worldwide. During his
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `427` activation `3.818` class `word` token ` mediated`
+  - love letter for a grieving grandson in Kyoto, and mediated a tense custody dispute between a bilingual couple on the
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `386` activation `3.799` class `word` token ` he`
+  - desperate souls worldwide. During his sixty-minute window, he became a lifeline. He translated rare medical symptoms
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `323` activation `3.699` class `word` token ` Arthur`
+  - use his gift for global espionage or political dominance; Arthur’s mission was far more intimate. Armed with a
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `292` activation `3.678` class `word` token ` a`
+  - morning, he became the ultimate linguistic bridge, possessing a flawless, native grasp of every language, dialect,
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `348` activation `3.670` class `word` token ` hour`
+  - Earl Grey and a headset, he spent his golden hour in a race against the clock. He logged onto
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `369` activation `3.584` class `word` token ` offering`
+  - a specialized, anonymous online forum he had created, offering instant, free translation services for desperate souls worldwide.
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `332` activation `3.578` class `word` token ` with`
+  - ; Arthur’s mission was far more intimate. Armed with a piping hot mug of Earl Grey and a headset
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `375` activation `3.565` class `discourse_marker_word` token ` for`
+  - he had created, offering instant, free translation services for desperate souls worldwide. During his sixty-minute window,
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `291` activation `3.490` class `word` token ` possessing`
+  - each morning, he became the ultimate linguistic bridge, possessing a flawless, native grasp of every language, dialect
+- `L24:605` `589c4fd0a798b0a6b1f608f51763860852d3dc1ad8739e63bc958830f60779dc@turn_01@gemini-3.5-flash` token `561` activation `3.482` class `punctuation` token `,`
+  - 9:01 AM. Instantly, the beautiful, intricate tapestries of Arabic, Swahili
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `534` activation `3.152` class `style_function_word` token ` will`
+  - ’ll spend on backend coding, explain how your structure will make their website load 50% faster, leading
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `231` activation `3.015` class `word` token ` be`
+  - battle. The other half? Communication. You can be the most talented designer, writer, or developer in
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `283` activation `3.003` class `word` token ` to`
+  - ’s a skill you can practice. Here is how to speak with authority, banish imposter syndrome,
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `537` activation `2.856` class `word` token ` website`
+  - backend coding, explain how your structure will make their website load 50% faster, leading to more sales
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `321` activation `2.697` class `word` token ` words`
+  - your sent folder. How many times do you use words like "just," "actually," "sorry,"
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `230` activation `2.689` class `style_function_word` token ` can`
+  - the battle. The other half? Communication. You can be the most talented designer, writer, or developer
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `533` activation `2.685` class `word` token ` structure`
+  - you’ll spend on backend coding, explain how your structure will make their website load 50% faster,
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `473` activation `2.613` class `word` token ` it`
+  - three-second pause doesn't make you look slow; it makes you look deliberate and thoughtful. Speak in Terms
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `277` activation `2.552` class `style_function_word` token ` can`
+  - ’t an innate trait; it’s a skill you can practice. Here is how to speak with authority,
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `523` activation `2.550` class `word` token ` you`
+  - focus on outcomes. Instead of explaining the tedious hours you’ll spend on backend coding, explain how your structure
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `233` activation `2.538` class `word` token ` most`
+  - The other half? Communication. You can be the most talented designer, writer, or developer in the world
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@gemini-3.5-flash` token `495` activation `2.508` class `word` token ` about`
+  - Value, Not Effort Clients don’t care about how hard you work; they care about what they
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `609` activation `4.748` class `word` token ` have`
+  - they chose you out of countless other professionals. You have the exact skills they need to succeed. When you
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `627` activation `4.700` class `word` token ` confidently`
+  - . When you truly internalize that fact, speaking confidently stops being an act. It simply becomes your second
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `583` activation `4.698` class `punctuation` token `,`
+  - authoritative on the call. Remember Your Value Lastly, shift your mental focus. Stop worrying about whether they
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `633` activation `4.659` class `word` token ` It`
+  - that fact, speaking confidently stops being an act. It simply becomes your second nature.
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `599` activation `4.220` class `word` token ` they`
+  - Stop worrying about whether they like you. Remember that they chose you out of countless other professionals. You have
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `608` activation `4.183` class `word` token ` You`
+  - that they chose you out of countless other professionals. You have the exact skills they need to succeed. When
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `597` activation `4.098` class `word` token ` Remember`
+  - focus. Stop worrying about whether they like you. Remember that they chose you out of countless other professionals.
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `612` activation `4.043` class `word` token ` skills`
+  - out of countless other professionals. You have the exact skills they need to succeed. When you truly internalize
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `446` activation `4.018` class `sentence_boundary` token `.`
+  - thrives on preparation. Never wing a client call. Write down your primary talking points and rehearse them
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `615` activation `3.914` class `word` token ` to`
+  - other professionals. You have the exact skills they need to succeed. When you truly internalize that fact,
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `596` activation `3.879` class `sentence_boundary` token `.`
+  - mental focus. Stop worrying about whether they like you. Remember that they chose you out of countless other professionals
+- `L24:605` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@glm-5.2` token `598` activation `3.816` class `style_function_word` token ` that`
+  - . Stop worrying about whether they like you. Remember that they chose you out of countless other professionals. You
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `294` activation `5.233` class `word` token ` to`
+  - Here is the ultimate, lazy-but-genius way to find your perfect audience. Step 1: Trust
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `295` activation `4.941` class `word` token ` find`
+  - is the ultimate, lazy-but-genius way to find your perfect audience. Step 1: Trust the
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `296` activation `4.511` class `word` token ` your`
+  - the ultimate, lazy-but-genius way to find your perfect audience. Step 1: Trust the Almighty
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `494` activation `4.405` class `expanded_negation_word` token ` could`
+  - ers. It works better than any manual targeting you could ever dream up. Step 3: Go Wide
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `288` activation `4.376` class `punctuation` token `,`
+  - is quietly laughing at you. Here is the ultimate, lazy-but-genius way to find your perfect audience
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `443` activation `4.055` class `word` token ` is`
+  - find me a million more just like them." This is the Lookalike Audience. You select a
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `591` activation `3.974` class `word` token ` and`
+  - who interacts with your ad in the first few hours and automatically push it to similar users. Your ad is
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `495` activation `3.952` class `word` token ` ever`
+  - . It works better than any manual targeting you could ever dream up. Step 3: Go Wide and
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `492` activation `3.923` class `word` token ` targeting`
+  - gängers. It works better than any manual targeting you could ever dream up. Step 3:
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `303` activation `3.917` class `punctuation` token `:`
+  - way to find your perfect audience. Step 1: Trust the Almighty Pixel (The "Warm" Crowd
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `286` activation `3.762` class `word` token ` the`
+  - ’s algorithm is quietly laughing at you. Here is the ultimate, lazy-but-genius way to find your
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@gemini-3.5-flash` token `315` activation `3.715` class `word` token `Before`
+  - the Almighty Pixel (The "Warm" Crowd) Before you go hunting for strangers, look at the people
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `560` activation `5.677` class `discourse_marker_word` token ` for`
+  - absolutely no magical, one-size-fits-all formula for finding the perfect crowd. What works wonders for a
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `561` activation `5.015` class `word` token ` finding`
+  - no magical, one-size-fits-all formula for finding the perfect crowd. What works wonders for a trendy
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `229` activation `4.887` class `word` token ` to`
+  - arrow Targeting First things first, stop trying to be way too clever with your targeting. Back in
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `267` activation `4.543` class `word` token ` to`
+  - ," and "rescuing golden retrievers" to find some ultra-specific imaginary buyer. Newsflash:
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `234` activation `4.250` class `word` token ` with`
+  - things first, stop trying to be way too clever with your targeting. Back in the day, we used
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `481` activation `4.130` class `word` token `ing`
+  - a cute cat meme, and leave. Retargeting is exactly how you scoop them back up. Set
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `482` activation `4.067` class `word` token ` is`
+  - cute cat meme, and leave. Retargeting is exactly how you scoop them back up. Set up
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `205` activation `4.014` class `word` token ` to`
+  - about your brand, here’s the absolute best way to track them down on Facebook right now. Ditch
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `549` activation `3.870` class `word` token ` is`
+  - little nudge! Test Everything, Always There is absolutely no magical, one-size-fits-all formula
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `550` activation `3.850` class `word` token ` absolutely`
+  - nudge! Test Everything, Always There is absolutely no magical, one-size-fits-all formula for
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `558` activation `3.810` class `word` token `-all`
+  - There is absolutely no magical, one-size-fits-all formula for finding the perfect crowd. What works wonders
+- `L24:605` `d6fbd1ae9882d4b927541f38e4a59688aaf9b36f3c22baa1b248421d4ba91f51@turn_01@glm-5.2` token `563` activation `3.785` class `word` token ` perfect`
+  - , one-size-fits-all formula for finding the perfect crowd. What works wonders for a trendy skincare brand
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `303` activation `3.333` class `word` token ` absolutely`
+  - ons, but with one notable exception: they are absolutely stupid. Where other animals have the situational awareness
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `586` activation `3.011` class `punctuation` token `,`
+  - . With your donation of just five dollars a minute, we can help round up the stupid raccoon population
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `633` activation `2.924` class `word` token ` by`
+  - the urban world. Please help the stupid raccoon by donating today. Thank you.
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `589` activation `2.910` class `style_function_word` token ` help`
+  - donation of just five dollars a minute, we can help round up the stupid raccoon population and put them
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `606` activation `2.890` class `word` token ` provide`
+  - population and put them into safe living areas that will provide them with the opportunity to survive and thrive without falling
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `297` activation `2.866` class `word` token ` one`
+  - as that of regular raccoons, but with one notable exception: they are absolutely stupid. Where other
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `300` activation `2.648` class `punctuation` token `:`
+  - regular raccoons, but with one notable exception: they are absolutely stupid. Where other animals have the
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `605` activation `2.608` class `style_function_word` token ` will`
+  - coon population and put them into safe living areas that will provide them with the opportunity to survive and thrive without
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `271` activation `2.589` class `word` token ` is`
+  - such as rabbits and turtles. The stupid raccoon is a docile, furry little creature that has the
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `608` activation `2.551` class `word` token ` with`
+  - put them into safe living areas that will provide them with the opportunity to survive and thrive without falling victim to
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `260` activation `2.530` class `punctuation` token `,`
+  - that are normally considered docile and unprovoking, such as rabbits and turtles. The stupid raccoon
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@human` token `380` activation `2.512` class `word` token ` many`
+  - to these tasty morsels of leftover food, many of them can become trapped in larger trash bins,
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `585` activation `4.007` class `style_function_word` token ` must`
+  - We must build low-altitude climbing structures. We must act as their external brain. Do not let their
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `576` activation `3.905` class `style_function_word` token ` must`
+  - forever. We must fund specialized conservation habitats. We must build low-altitude climbing structures. We must act
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `630` activation `3.550` class `word` token ` joy`
+  - are useful, but because their beautiful, empty-headed joy makes our world a infinitely kinder place.
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `633` activation `3.131` class `word` token ` world`
+  - but because their beautiful, empty-headed joy makes our world a infinitely kinder place.
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `634` activation `3.084` class `word` token ` a`
+  - because their beautiful, empty-headed joy makes our world a infinitely kinder place.
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `637` activation `3.061` class `word` token `er`
+  - , empty-headed joy makes our world a infinitely kinder place.
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `614` activation `2.990` class `word` token ` are`
+  - . Protect the stupid raccoon. Not because they are smart, not because they are useful, but because
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `616` activation `2.989` class `punctuation` token `,`
+  - the stupid raccoon. Not because they are smart, not because they are useful, but because their beautiful
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `613` activation `2.964` class `word` token ` they`
+  - extinction. Protect the stupid raccoon. Not because they are smart, not because they are useful, but
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `513` activation `2.954` class `word` token ` they`
+  - a world dominated by survival of the fittest, they represent a gentler, softer reality—one where curiosity
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `422` activation `2.799` class `word` token ` they`
+  - they forget how to climb down from branches, and they routinely mistake sleeping predators for comfortable pillows. To some
+- `L24:605` `99c7ab43d4e2c6673fc4f9b507a4b70c2d436e4b8908c577b08245e4ac33bd72@turn_01@gemini-3.5-flash` token `412` activation `2.781` class `word` token ` they`
+  - cannot survive. They walk face-first into trees, they forget how to climb down from branches, and they
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `296` activation `4.007` class `word` token ` the`
+  - century-old recipe for "The Holy Grail," the signature burger of their chief rival, The Golden Bun
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `295` activation `3.733` class `punctuation` token `,"`
+  - , century-old recipe for "The Holy Grail," the signature burger of their chief rival, The Golden
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `289` activation `3.286` class `discourse_marker_word` token ` for`
+  - . His target: the classified, century-old recipe for "The Holy Grail," the signature burger of
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `299` activation `3.259` class `word` token ` of`
+  - for "The Holy Grail," the signature burger of their chief rival, The Golden Bun. Jax
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `300` activation `3.173` class `word` token ` their`
+  - "The Holy Grail," the signature burger of their chief rival, The Golden Bun. Jax bypass
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `591` activation `2.974` class `sentence_boundary` token `.`
+  - sawdust, soy protein, and chemical flavorings. The Golden Bun had been selling fake meat for decades
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `282` activation `2.950` class `punctuation` token `:`
+  - -chain BurgerWorld for a legendary payday. His target: the classified, century-old recipe for "The Holy
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `602` activation `2.806` class `sentence_boundary` token `.`
+  - The Golden Bun had been selling fake meat for decades. The Chef smiled, revealing his badge. "I
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `285` activation `2.777` class `punctuation` token `,`
+  - for a legendary payday. His target: the classified, century-old recipe for "The Holy Grail,"
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `565` activation `2.739` class `word` token ` contain`
+  - screen. He gasped. The recipe didn't contain beef, pork, or any meat at all.
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `630` activation `2.674` class `word` token ` helped`
+  - ax. I’m FDA Internal Affairs. You just helped us bust the biggest food fraud in history."
+- `L24:605` `a0f24c3f10ed02e8e02dbf4127cd54817352effc8a2bddb5f7c7425ca7fe7f20@turn_01@gemini-3.5-flash` token `283` activation `2.673` class `word` token ` the`
+  - BurgerWorld for a legendary payday. His target: the classified, century-old recipe for "The Holy Gr
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `414` activation `4.736` class `style_function_word` token ` must`
+  - Killing: The Great Illusion First, we must address a common point of confusion: the difference between
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `416` activation `4.206` class `word` token ` a`
+  - The Great Illusion First, we must address a common point of confusion: the difference between repelling
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `344` activation `4.157` class `word` token ` absolutely`
+  - a billion-dollar industry. This means the market is absolutely flooded with useless junk and snake oil. Before you
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `349` activation `4.134` class `word` token ` and`
+  - This means the market is absolutely flooded with useless junk and snake oil. Before you max out your credit card
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `422` activation `4.112` class `word` token ` the`
+  - , we must address a common point of confusion: the difference between repelling a mosquito and killing it.
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `295` activation `3.958` class `word` token ` to`
+  - with Plan B: defensive warfare. Our goal is to repel them, ruin their breeding plans, and
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `429` activation `3.909` class `word` token ` and`
+  - of confusion: the difference between repelling a mosquito and killing it. Repellents are the equivalent of
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `529` activation `3.869` class `word` token ` is`
+  - actually reducing the local population. Furthermore, their effectiveness is highly debatable. For instance, burning a cit
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `388` activation `3.863` class `word` token ` what`
+  - on what actually works, what doesn't, and what is just a scam designed to suck your wallet dry
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `379` activation `3.729` class `word` token ` what`
+  - glow in the dark, let’s get educated on what actually works, what doesn't, and what is
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `413` activation `3.728` class `word` token ` we`
+  - . Killing: The Great Illusion First, we must address a common point of confusion: the difference
+- `L24:605` `da4403b6d03c77120c44a63ab1629fda74ec6f32e9789f776c41866a40428065@turn_01@gemini-3.5-flash` token `333` activation `3.694` class `word` token ` are`
+  - are desperate and itchy, mosquito-killing products are a billion-dollar industry. This means the market is
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `524` activation `4.632` class `punctuation` token `,`
+  - , fighting off territorial wolves, surviving massive avalanches, and navigating dark, winding ice caves. After all
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `525` activation `4.502` class `word` token ` and`
+  - fighting off territorial wolves, surviving massive avalanches, and navigating dark, winding ice caves. After all that
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `554` activation `4.384` class `word` token ` a`
+  - , hidden monastery. Inside, the monks bring out a beautiful, extremely shaggy dog. The man
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `457` activation `4.365` class `word` token ` most`
+  - : A man is on a quest to find the most magnificent, legendary shaggy dog in all the
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `539` activation `4.362` class `word` token ` he`
+  - winding ice caves. After all that endless suffering, he finally reaches an isolated, hidden monastery. Inside,
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `538` activation `4.343` class `punctuation` token `,`
+  - , winding ice caves. After all that endless suffering, he finally reaches an isolated, hidden monastery. Inside
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `514` activation `4.256` class `punctuation` token `,`
+  - five years climbing the treacherous, freezing peaks, fighting off territorial wolves, surviving massive avalanches,
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `533` activation `4.243` class `word` token ` After`
+  - anches, and navigating dark, winding ice caves. After all that endless suffering, he finally reaches an isolated
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `505` activation `4.207` class `word` token ` years`
+  - ed to find this dog, the man spends five years climbing the treacherous, freezing peaks, fighting
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `626` activation `4.175` class `word` token `line`
+  - how the plot is entirely epic, but the punchline is flat and completely deflates the built-up tension
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `475` activation `4.117` class `style_function_word` token ` that`
+  - in all the world. He reads an ancient book that mentions a rare canine with absolutely flawless, incredibly thick
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@glm-5.2` token `601` activation `4.104` class `word` token ` and`
+  - monk looks at the dog, pets it slowly, and says, "No. He's not that sh
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `374` activation `5.075` class `word` token ` is`
+  - to an epic, important tale. The Punchline is a total letdown. It is usually a terrible
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `381` activation `4.663` class `word` token ` is`
+  - The Punchline is a total letdown. It is usually a terrible pun, an anticlimax,
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `375` activation `4.150` class `word` token ` a`
+  - an epic, important tale. The Punchline is a total letdown. It is usually a terrible pun
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `382` activation `3.982` class `word` token ` usually`
+  - Punchline is a total letdown. It is usually a terrible pun, an anticlimax, or
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `407` activation `3.945` class `word` token ` story`
+  - "joke" of a shaggy dog story isn't actually the punchline itself. The joke
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `539` activation `3.891` class `word` token ` to`
+  - tell your son. The key to delivering this is to tell it with great drama and seriousness. The more
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `273` activation `3.868` class `word` token ` image`
+  - clash between the serious idiom and the silly physical image is what makes us laugh. What is a "
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `373` activation `3.858` class `word` token `line`
+  - listening to an epic, important tale. The Punchline is a total letdown. It is usually a
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `558` activation `3.799` class `word` token `line`
+  - The more invested he gets, the better the punchline works. Once, there was a boy named Tommy
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `341` activation `3.791` class `word` token ` is`
+  - story, the rules are intentionally broken. The Setup is extremely long, detailed, and winding. The storyt
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `424` activation `3.732` class `word` token ` humor`
+  - itself. The joke is on the listener. The humor comes from the realization that you just spent five minutes
+- `L24:605` `c9c8c3a699e1775ea3009f4ab936e7036a9b56ad014ad6564375ded62faba649@turn_01@gemini-3.5-flash` token `380` activation `3.704` class `word` token ` It`
+  - . The Punchline is a total letdown. It is usually a terrible pun, an anticlimax
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `259` activation `3.994` class `sentence_boundary` token `.`
+  - mortar up the steep hill. He built a fortress. It was thick-walled, windowless, and
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `269` activation `3.782` class `word` token ` and`
+  - . It was thick-walled, windowless, and featured a massive stone hearth with a narrow chimney
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `243` activation `3.760` class `punctuation` token `,`
+  - world. He labored until his hands bled, dragging heavy clay bricks and mortar up the steep hill
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `261` activation `3.613` class `expanded_negation_word` token ` was`
+  - the steep hill. He built a fortress. It was thick-walled, windowless, and featured a
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `282` activation `3.598` class `expanded_negation_word` token ` was`
+  - massive stone hearth with a narrow chimney. It was designed not just as a home, but as a
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `265` activation `3.506` class `punctuation` token `,`
+  - He built a fortress. It was thick-walled, windowless, and featured a massive stone hearth
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `268` activation `3.413` class `punctuation` token `,`
+  - fortress. It was thick-walled, windowless, and featured a massive stone hearth with a narrow
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `283` activation `3.405` class `word` token ` designed`
+  - stone hearth with a narrow chimney. It was designed not just as a home, but as a tomb
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `255` activation `3.356` class `word` token ` He`
+  - heavy clay bricks and mortar up the steep hill. He built a fortress. It was thick-walled,
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `270` activation `3.340` class `word` token ` featured`
+  - It was thick-walled, windowless, and featured a massive stone hearth with a narrow chimney.
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `281` activation `3.315` class `word` token ` It`
+  - a massive stone hearth with a narrow chimney. It was designed not just as a home, but as
+- `L24:605` `316a8caf11d71cd56347439be444bf65d18e3c1acbb377a6b14cdb7559c664b4@turn_01@gemini-3.5-flash` token `260` activation `3.264` class `word` token ` It`
+  - up the steep hill. He built a fortress. It was thick-walled, windowless, and featured
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `541` activation `4.427` class `word` token ` you`
+  - miracle pill that reverses aging. It'll make you look half your age after one pill. Don't
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `546` activation `3.964` class `word` token ` after`
+  - aging. It'll make you look half your age after one pill. Don't take too many, or
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `533` activation `3.912` class `style_function_word` token ` that`
+  - "I do. I'm selling a miracle pill that reverses aging. It'll make you look half
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `538` activation `3.360` class `word` token ` It`
+  - 'm selling a miracle pill that reverses aging. It'll make you look half your age after one pill
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `542` activation `3.269` class `word` token ` look`
+  - pill that reverses aging. It'll make you look half your age after one pill. Don't take
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `539` activation `3.262` class `word` token `'ll`
+  - selling a miracle pill that reverses aging. It'll make you look half your age after one pill.
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `540` activation `3.162` class `style_function_word` token ` make`
+  - a miracle pill that reverses aging. It'll make you look half your age after one pill. Don
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `536` activation `2.916` class `word` token ` aging`
+  - . I'm selling a miracle pill that reverses aging. It'll make you look half your age after
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `547` activation `2.913` class `word` token ` one`
+  - . It'll make you look half your age after one pill. Don't take too many, or else
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `545` activation `2.552` class `word` token ` age`
+  - es aging. It'll make you look half your age after one pill. Don't take too many,
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `537` activation `2.546` class `sentence_boundary` token `.`
+  - I'm selling a miracle pill that reverses aging. It'll make you look half your age after one
+- `L24:605` `7859cc3f20b84469f7c6689404aaeee9cf055a3cf892c69f7a8d56ddac2e943f@turn_01@human` token `557` activation `2.532` class `word` token ` else`
+  - one pill. Don't take too many, or else you'll go back into your mother’s womb.

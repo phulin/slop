@@ -1,0 +1,963 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2650` | `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` | `human` | 386 | `1038.73` | `4.36` | word:314|punctuation:28|style_function_word:18|sentence_boundary:15|expanded_negation_word:4|discourse_marker_word:4|line_break:3 |
+| `L19:2650` | `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` | `human` | 269 | `748.74` | `4.23` | word:221|style_function_word:10|sentence_boundary:9|punctuation:8|expanded_negation_word:7|line_break:5|discourse_marker_word:5|whitespace:4 |
+| `L19:2650` | `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` | `human` | 391 | `1034.16` | `4.23` | word:314|style_function_word:33|sentence_boundary:15|expanded_negation_word:10|punctuation:8|line_break:6|discourse_marker_word:4|contraction_piece:1 |
+| `L19:2650` | `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` | `human` | 464 | `946.33` | `3.62` | word:368|punctuation:45|sentence_boundary:14|expanded_negation_word:11|style_function_word:9|discourse_marker_word:9|line_break:7|whitespace:1 |
+| `L19:2650` | `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` | `human` | 487 | `1176.97` | `4.17` | word:389|style_function_word:29|punctuation:20|sentence_boundary:17|line_break:14|discourse_marker_word:7|expanded_negation_word:6|contraction_piece:4|whitespace:1 |
+| `L19:2650` | `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` | `human` | 137 | `306.55` | `3.72` | word:111|punctuation:10|style_function_word:8|expanded_negation_word:3|sentence_boundary:3|line_break:2 |
+| `L19:2650` | `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` | `human` | 478 | `1107.52` | `3.69` | word:415|sentence_boundary:27|style_function_word:16|punctuation:12|expanded_negation_word:5|line_break:3 |
+| `L19:2650` | `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` | `human` | 362 | `589.22` | `4.33` | word:295|style_function_word:26|sentence_boundary:16|punctuation:9|discourse_marker_word:5|expanded_negation_word:5|line_break:4|contraction_piece:2 |
+| `L19:2650` | `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` | `human` | 241 | `369.62` | `3.98` | word:192|style_function_word:20|punctuation:14|sentence_boundary:8|discourse_marker_word:3|expanded_negation_word:2|line_break:2 |
+| `L19:2650` | `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` | `human` | 218 | `364.40` | `3.78` | word:175|punctuation:14|style_function_word:11|sentence_boundary:9|line_break:4|expanded_negation_word:4|discourse_marker_word:1 |
+| `L19:2650` | `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` | `human` | 452 | `1201.71` | `4.43` | word:354|punctuation:44|sentence_boundary:21|style_function_word:14|expanded_negation_word:12|discourse_marker_word:3|line_break:2|contraction_piece:1|whitespace:1 |
+| `L19:2650` | `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` | `human` | 296 | `710.32` | `3.81` | word:230|style_function_word:26|sentence_boundary:14|expanded_negation_word:9|punctuation:6|line_break:6|discourse_marker_word:4|contraction_piece:1 |
+| `L19:2650` | `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` | `glm-5.2` | 23 | `42.38` | `3.95` | word:20|style_function_word:2|punctuation:1 |
+| `L19:2650` | `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` | `human` | 287 | `482.56` | `3.83` | word:238|style_function_word:19|punctuation:19|sentence_boundary:7|expanded_negation_word:3|line_break:1 |
+| `L19:2650` | `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` | `human` | 60 | `126.58` | `3.95` | word:49|style_function_word:5|sentence_boundary:2|punctuation:2|line_break:1|expanded_negation_word:1 |
+| `L19:2650` | `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` | `human` | 99 | `238.65` | `3.85` | word:81|style_function_word:12|sentence_boundary:4|punctuation:2 |
+| `L19:2650` | `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` | `gpt-5.5` | 345 | `596.77` | `4.11` | word:280|expanded_negation_word:22|punctuation:18|sentence_boundary:12|style_function_word:8|line_break:3|discourse_marker_word:2 |
+| `L19:2650` | `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 20 | `48.37` | `3.93` | word:17|punctuation:1|discourse_marker_word:1|sentence_boundary:1 |
+| `L19:2650` | `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 62 | `99.25` | `4.49` | word:51|style_function_word:3|punctuation:2|discourse_marker_word:2|whitespace:2|line_break:2 |
+| `L24:3790` | `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` | `human` | 383 | `1784.56` | `8.39` | word:311|punctuation:28|style_function_word:18|sentence_boundary:15|expanded_negation_word:4|discourse_marker_word:4|line_break:3 |
+| `L24:3790` | `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` | `human` | 272 | `1302.25` | `7.43` | word:224|style_function_word:10|sentence_boundary:9|punctuation:8|expanded_negation_word:7|discourse_marker_word:5|line_break:5|whitespace:4 |
+| `L24:3790` | `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` | `human` | 392 | `1593.03` | `7.00` | word:315|style_function_word:33|sentence_boundary:15|expanded_negation_word:10|punctuation:8|line_break:6|discourse_marker_word:4|contraction_piece:1 |
+| `L24:3790` | `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` | `human` | 472 | `1540.17` | `6.10` | word:375|punctuation:45|sentence_boundary:14|expanded_negation_word:11|style_function_word:9|discourse_marker_word:9|line_break:8|whitespace:1 |
+| `L24:3790` | `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` | `human` | 496 | `2022.09` | `6.92` | word:397|style_function_word:29|punctuation:21|sentence_boundary:17|line_break:14|discourse_marker_word:7|expanded_negation_word:6|contraction_piece:4|whitespace:1 |
+| `L24:3790` | `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` | `human` | 138 | `496.09` | `6.02` | word:114|punctuation:8|style_function_word:8|expanded_negation_word:3|line_break:3|sentence_boundary:2 |
+| `L24:3790` | `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` | `human` | 477 | `1982.71` | `6.78` | word:414|sentence_boundary:27|style_function_word:16|punctuation:12|expanded_negation_word:5|line_break:3 |
+| `L24:3790` | `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` | `human` | 394 | `1002.96` | `6.07` | word:317|style_function_word:27|sentence_boundary:18|punctuation:11|expanded_negation_word:8|discourse_marker_word:6|line_break:4|contraction_piece:2|whitespace:1 |
+| `L24:3790` | `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` | `human` | 251 | `698.55` | `6.36` | word:202|style_function_word:20|punctuation:14|sentence_boundary:8|discourse_marker_word:3|expanded_negation_word:2|line_break:2 |
+| `L24:3790` | `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` | `human` | 232 | `605.72` | `5.58` | word:188|punctuation:15|style_function_word:11|sentence_boundary:9|expanded_negation_word:4|line_break:4|discourse_marker_word:1 |
+| `L24:3790` | `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` | `human` | 453 | `2269.03` | `7.73` | word:355|punctuation:44|sentence_boundary:21|style_function_word:14|expanded_negation_word:12|discourse_marker_word:3|line_break:2|whitespace:1|contraction_piece:1 |
+| `L24:3790` | `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` | `human` | 296 | `1075.83` | `6.06` | word:232|style_function_word:26|sentence_boundary:13|expanded_negation_word:9|punctuation:6|line_break:6|discourse_marker_word:3|contraction_piece:1 |
+| `L24:3790` | `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` | `glm-5.2` | 32 | `81.14` | `6.05` | word:27|punctuation:2|style_function_word:2|sentence_boundary:1 |
+| `L24:3790` | `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` | `human` | 331 | `852.50` | `5.99` | word:274|punctuation:23|style_function_word:19|sentence_boundary:8|expanded_negation_word:3|line_break:2|contraction_piece:1|whitespace:1 |
+| `L24:3790` | `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` | `human` | 89 | `240.20` | `6.54` | word:68|style_function_word:8|punctuation:6|expanded_negation_word:4|sentence_boundary:2|line_break:1 |
+| `L24:3790` | `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` | `human` | 125 | `486.91` | `7.31` | word:102|style_function_word:14|sentence_boundary:5|punctuation:3|line_break:1 |
+| `L24:3790` | `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` | `gpt-5.5` | 470 | `1351.14` | `7.19` | word:365|punctuation:31|expanded_negation_word:29|sentence_boundary:20|style_function_word:15|line_break:8|discourse_marker_word:2 |
+| `L24:3790` | `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 27 | `80.31` | `6.00` | word:23|sentence_boundary:2|punctuation:1|discourse_marker_word:1 |
+| `L24:3790` | `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 68 | `182.76` | `6.15` | word:54|punctuation:4|style_function_word:3|line_break:3|discourse_marker_word:2|whitespace:2 |
+
+## Top Tokens
+
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `405` activation `4.357` class `word` token ` possible`
+  - stop these pollutants from contaminating our world. One possible solution is that power stations use a process called lime
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `455` activation `4.290` class `word` token ` car`
+  - could consider purchasing an electric, hybrid or biodiesel car, which will be cleaner for the environment. It
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `460` activation `4.243` class `word` token ` cleaner`
+  - , hybrid or biodiesel car, which will be cleaner for the environment. It may be essential to use
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `456` activation `4.232` class `punctuation` token `,`
+  - consider purchasing an electric, hybrid or biodiesel car, which will be cleaner for the environment. It may
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `404` activation `4.203` class `word` token ` One`
+  - to stop these pollutants from contaminating our world. One possible solution is that power stations use a process called
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `362` activation `4.192` class `word` token ` levels`
+  - monoxide and nitrogen dioxide. If there are high levels of chemicals in the air we breathe, there will
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `489` activation `4.192` class `word` token ` power`
+  - the sun and the wind... wind farms, solar power, hydropower and geothermal energy to run
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `458` activation `4.163` class `style_function_word` token ` will`
+  - an electric, hybrid or biodiesel car, which will be cleaner for the environment. It may be essential
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `413` activation `4.150` class `word` token ` process`
+  - . One possible solution is that power stations use a process called lime (calcium oxide and water) to
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `389` activation `4.130` class `word` token ` we`
+  - issues, like asthma or chest infections. Therefore, we must take urgent steps to stop these pollutants from contamin
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `369` activation `4.129` class `word` token ` breathe`
+  - there are high levels of chemicals in the air we breathe, there will be an increase in chronic health issues
+- `L19:2650` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `445` activation `4.127` class `expanded_negation_word` token ` could`
+  - from the power station chimneys. Alternatively, people could consider purchasing an electric, hybrid or biodiesel car
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `320` activation `4.233` class `word` token ` so`
+  - . A cambelt every 40,000 and so on. It struck me as strange at the time
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `346` activation `4.140` class `word` token ` sense`
+  - all the parts to last? But it makes some sense on a car at least. I mean the whole
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `321` activation `4.109` class `word` token ` on`
+  - A cambelt every 40,000 and so on. It struck me as strange at the time.
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `342` activation `3.944` class `word` token ` But`
+  - Why not just build all the parts to last? But it makes some sense on a car at least.
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `328` activation `3.943` class `word` token ` at`
+  - 000 and so on. It struck me as strange at the time. Why not just build all the parts
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `322` activation `3.851` class `line_break` token `.
+
+`
+  - cambelt every 40,000 and so on. It struck me as strange at the time. Why
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `340` activation `3.835` class `word` token ` last`
+  - time. Why not just build all the parts to last? But it makes some sense on a car at
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `325` activation `3.825` class `word` token ` me`
+  - 40,000 and so on. It struck me as strange at the time. Why not just build
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `343` activation `3.806` class `word` token ` it`
+  - not just build all the parts to last? But it makes some sense on a car at least. I
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `319` activation `3.785` class `word` token ` and`
+  - miles. A cambelt every 40,000 and so on. It struck me as strange at the
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `349` activation `3.679` class `word` token ` car`
+  - to last? But it makes some sense on a car at least. I mean the whole thing is full
+- `L19:2650` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `382` activation `3.646` class `word` token ` have`
+  - miles. But other than a cracked screen, I have never seen an iPhone or Samsung crumble in its
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `488` activation `4.227` class `word` token ` to`
+  - tools to ensure you are confident in completing the task to a high standard. If you have a lot of
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `442` activation `4.200` class `word` token ` you`
+  - DIY instead of hiring a tradesman can really save you a lot of money. These days it couldn't
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `489` activation `4.128` class `word` token ` a`
+  - to ensure you are confident in completing the task to a high standard. If you have a lot of time
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `398` activation `4.038` class `word` token ` bills`
+  - . Doing this yearly can really help to keep your bills down in the long run. There is no harm
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `334` activation `3.834` class `word` token ` up`
+  - , which is excellent as these monthly bills can add up to a lot over time. The quicker you cancel
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `441` activation `3.822` class `word` token ` save`
+  - Doing DIY instead of hiring a tradesman can really save you a lot of money. These days it couldn
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `378` activation `3.791` class `expanded_negation_word` token ` could`
+  - that contacting and informing them of your plans to leave could mean they offer you a significant discount to stay.
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `290` activation `3.788` class `word` token ` and`
+  - are not using. Check your monthly outgoings and see if there are any subscriptions you are not using
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `443` activation `3.761` class `word` token ` a`
+  - instead of hiring a tradesman can really save you a lot of money. These days it couldn't be
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `487` activation `3.739` class `word` token ` task`
+  - or tools to ensure you are confident in completing the task to a high standard. If you have a lot
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `399` activation `3.696` class `word` token ` down`
+  - Doing this yearly can really help to keep your bills down in the long run. There is no harm in
+- `L19:2650` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `134` activation `3.684` class `word` token `'s`
+  - to get there will help you to decide if it's worth trying somewhere new. Use cash-back credit cards
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `509` activation `3.619` class `word` token ` is`
+  - I think you've made a mistake. The meeting is tomorrow."
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `444` activation `3.577` class `word` token ` walked`
+  - on the escalator. He reached the top and walked confidently towards his boss' office. "Alan,
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `379` activation `3.452` class `word` token ` paced`
+  - of steady swimming to reach the other side. Alan paced twenty meters to the public toilets and grabbed the towel
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `298` activation `3.406` class `expanded_negation_word` token ` was`
+  - large, tall building in which his all-important meeting was due to start in ten minutes, and he made
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `423` activation `3.339` class `word` token ` off`
+  - still-wet hair in the mirror, and set off running to the office. Moments later, he was
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `304` activation `3.238` class `word` token ` minutes`
+  - his all-important meeting was due to start in ten minutes, and he made the decision to swim across.
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `300` activation `3.219` class `word` token ` to`
+  - tall building in which his all-important meeting was due to start in ten minutes, and he made the decision
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `508` activation `3.182` class `word` token ` meeting`
+  - "I think you've made a mistake. The meeting is tomorrow."
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `433` activation `3.170` class `expanded_negation_word` token ` was`
+  - off running to the office. Moments later, he was on the escalator. He reached the top and
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `385` activation `3.170` class `word` token ` toilets`
+  - other side. Alan paced twenty meters to the public toilets and grabbed the towel from his waterproof bag. He
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `384` activation `3.151` class `word` token ` public`
+  - the other side. Alan paced twenty meters to the public toilets and grabbed the towel from his waterproof bag.
+- `L19:2650` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `397` activation `3.144` class `word` token ` himself`
+  - grabbed the towel from his waterproof bag. He dried himself and got dressed into his suit in a matter of
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `277` activation `4.170` class `word` token ` changed`
+  - is even better. If you have been promoted or changed roles at a previous company, mention that. Rec
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `248` activation `4.083` class `word` token ` CV`
+  - company to understand who they are, then tailor your CV to match its ethos and culture. Highlight growth and
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `283` activation `3.774` class `punctuation` token `,`
+  - have been promoted or changed roles at a previous company, mention that. Recruiters will take that as
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `239` activation `3.720` class `word` token ` to`
+  - and company you are applying to. Research the company to understand who they are, then tailor your CV to
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `278` activation `3.703` class `word` token ` roles`
+  - even better. If you have been promoted or changed roles at a previous company, mention that. Recruit
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `274` activation `3.700` class `word` token ` been`
+  - , and growth is even better. If you have been promoted or changed roles at a previous company, mention
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `276` activation `3.641` class `word` token ` or`
+  - growth is even better. If you have been promoted or changed roles at a previous company, mention that.
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `273` activation `3.640` class `word` token ` have`
+  - good, and growth is even better. If you have been promoted or changed roles at a previous company,
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `303` activation `3.584` class `style_function_word` token ` will`
+  - as you are versatile and willing to learn. This will give them affirmation from the actions of your previous employer
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `209` activation `3.576` class `word` token ` CV`
+  - does not fit all jobs. Try to tailor your CV to the job you are applying for, and bring
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `238` activation `3.553` class `word` token ` company`
+  - role and company you are applying to. Research the company to understand who they are, then tailor your CV
+- `L19:2650` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `228` activation `3.528` class `word` token ` role`
+  - and bring to the fore the experiences that suit the role and company you are applying to. Research the company
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `427` activation `3.717` class `expanded_negation_word` token ` would`
+  - In terms of who it would affect most, it would be younger children, as they are the ones who
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `431` activation `3.687` class `punctuation` token `,`
+  - it would affect most, it would be younger children, as they are the ones who are easily influenced.
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `426` activation `3.444` class `word` token ` it`
+  - . In terms of who it would affect most, it would be younger children, as they are the ones
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `432` activation `3.371` class `style_function_word` token ` as`
+  - would affect most, it would be younger children, as they are the ones who are easily influenced. Seeing
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `429` activation `3.341` class `word` token ` younger`
+  - of who it would affect most, it would be younger children, as they are the ones who are easily
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `428` activation `3.320` class `word` token ` be`
+  - terms of who it would affect most, it would be younger children, as they are the ones who are
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `430` activation `3.299` class `word` token ` children`
+  - who it would affect most, it would be younger children, as they are the ones who are easily influenced
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `499` activation `3.234` class `word` token `-day`
+  - able to watch it without it affecting your day-to-day life by moderating the time you spend on the
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `423` activation `3.218` class `word` token ` affect`
+  - world and themselves. In terms of who it would affect most, it would be younger children, as they
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `404` activation `3.212` class `word` token ` effect`
+  - can hugely decrease their confidence, hence having a massive effect on a young person's view of the world and
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `434` activation `3.193` class `word` token ` are`
+  - most, it would be younger children, as they are the ones who are easily influenced. Seeing thousands of
+- `L19:2650` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `422` activation `3.190` class `expanded_negation_word` token ` would`
+  - the world and themselves. In terms of who it would affect most, it would be younger children, as
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `329` activation `3.690` class `word` token ` ourselves`
+  - top of the wooden barrel so we can all help ourselves. Plates are not necessary; this is a picnic
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `146` activation `3.502` class `word` token ` front`
+  - a house. Glazed blue ceramic jars line the front, whitewashed wall of the house. A
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `280` activation `3.471` class `word` token ` back`
+  - spring in the side of the rocky cliff at the back of his house. As far as I can see
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `233` activation `3.454` class `word` token ` look`
+  - rocky ground. I lean down to take a closer look and Sestos hands me a wicker basket
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `298` activation `3.445` class `word` token ` article`
+  - I can see, the bowl is the only plastic article here. Sestos piles the tomatoes, a
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `130` activation `3.435` class `word` token ` us`
+  - hy onto the jetty. The old man leads us along a rocky path towards a house. Glazed
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `134` activation `3.382` class `word` token ` path`
+  - ty. The old man leads us along a rocky path towards a house. Glazed blue ceramic jars line
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `333` activation `3.373` class `expanded_negation_word` token ` not`
+  - barrel so we can all help ourselves. Plates are not necessary; this is a picnic after all. The
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `199` activation `3.358` class `word` token ` us`
+  - and the old man, Sestos, invites us to follow him. On the sunny side of his
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `339` activation `3.329` class `word` token ` picnic`
+  - ourselves. Plates are not necessary; this is a picnic after all. The tomatoes are fleshy,
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `334` activation `3.313` class `word` token ` necessary`
+  - so we can all help ourselves. Plates are not necessary; this is a picnic after all. The tomatoes
+- `L19:2650` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `288` activation `3.285` class `word` token ` I`
+  - at the back of his house. As far as I can see, the bowl is the only plastic article
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `110` activation `4.330` class `word` token ` mortgage`
+  - credit history and may make it difficult to get a mortgage or loan. With this reliance on debt, we
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `112` activation `4.244` class `word` token ` loan`
+  - and may make it difficult to get a mortgage or loan. With this reliance on debt, we must understand
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `111` activation `4.002` class `word` token ` or`
+  - history and may make it difficult to get a mortgage or loan. With this reliance on debt, we must
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `159` activation `3.836` class `word` token ` stays`
+  - key ways to ensure your debt doesn't spiral and stays under control. First, you have to keep paying
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `105` activation `3.648` class `word` token ` it`
+  - will mean you have poor credit history and may make it difficult to get a mortgage or loan. With this
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `157` activation `3.607` class `word` token ` spiral`
+  - look at key ways to ensure your debt doesn't spiral and stays under control. First, you have to
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `106` activation `3.603` class `word` token ` difficult`
+  - mean you have poor credit history and may make it difficult to get a mortgage or loan. With this reliance
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `437` activation `3.594` class `word` token ` out`
+  - You can use many online calculators to work this out for you. You are going to war with your
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `108` activation `3.572` class `word` token ` get`
+  - have poor credit history and may make it difficult to get a mortgage or loan. With this reliance on debt
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `115` activation `3.526` class `style_function_word` token ` this`
+  - it difficult to get a mortgage or loan. With this reliance on debt, we must understand how to effectively
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `150` activation `3.474` class `word` token ` ways`
+  - problem later on. This article will look at key ways to ensure your debt doesn't spiral and stays under
+- `L19:2650` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `103` activation `3.473` class `style_function_word` token ` may`
+  - any debt will mean you have poor credit history and may make it difficult to get a mortgage or loan.
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `323` activation `3.982` class `word` token ` tricky`
+  - some practice, and it's normal to find it tricky at first, but it is very effective for becoming
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `314` activation `3.724` class `word` token ` practice`
+  - flow in and drift away. This can take some practice, and it's normal to find it tricky at
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `324` activation `3.685` class `word` token ` at`
+  - practice, and it's normal to find it tricky at first, but it is very effective for becoming more
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `331` activation `3.537` class `word` token ` effective`
+  - find it tricky at first, but it is very effective for becoming more present. Engage your senses:
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `311` activation `3.334` class `style_function_word` token ` can`
+  - allow them to flow in and drift away. This can take some practice, and it's normal to find
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `312` activation `3.259` class `word` token ` take`
+  - them to flow in and drift away. This can take some practice, and it's normal to find it
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `329` activation `3.230` class `word` token ` is`
+  - normal to find it tricky at first, but it is very effective for becoming more present. Engage your
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `313` activation `3.214` class `word` token ` some`
+  - to flow in and drift away. This can take some practice, and it's normal to find it tricky
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `315` activation `3.184` class `punctuation` token `,`
+  - in and drift away. This can take some practice, and it's normal to find it tricky at first
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `335` activation `3.068` class `word` token ` present`
+  - first, but it is very effective for becoming more present. Engage your senses: Our mind is a
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `309` activation `3.054` class `sentence_boundary` token `.`
+  - - just allow them to flow in and drift away. This can take some practice, and it's normal
+- `L19:2650` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `327` activation `3.009` class `word` token ` but`
+  - it's normal to find it tricky at first, but it is very effective for becoming more present. Eng
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `466` activation `3.779` class `style_function_word` token ` Also`
+  - the parallels between the three foreigners in the novel. Also, consider how his death at the end of the
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `497` activation `3.281` class `style_function_word` token ` that`
+  - accidental that both non-English perish? I hope that helps! Let me know if there is anything else
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `504` activation `3.154` class `word` token ` there`
+  - ? I hope that helps! Let me know if there is anything else I can do.
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `505` activation `3.130` class `word` token ` is`
+  - I hope that helps! Let me know if there is anything else I can do.
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `495` activation `3.091` class `word` token `I`
+  - Is it accidental that both non-English perish? I hope that helps! Let me know if there is
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `445` activation `3.083` class `punctuation` token `,`
+  - character is taciturn throughout much of the novel, at first glance, he develops little - but consider
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `454` activation `3.083` class `word` token ` but`
+  - novel, at first glance, he develops little - but consider the parallels between the three foreigners in the novel
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `467` activation `3.065` class `punctuation` token `,`
+  - parallels between the three foreigners in the novel. Also, consider how his death at the end of the novel
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `450` activation `3.063` class `word` token ` he`
+  - throughout much of the novel, at first glance, he develops little - but consider the parallels between the three
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `477` activation `3.031` class `word` token ` novel`
+  - , consider how his death at the end of the novel is in tandem with the Counts. Is it accidental
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `502` activation `3.018` class `word` token ` know`
+  - English perish? I hope that helps! Let me know if there is anything else I can do.
+- `L19:2650` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `464` activation `3.008` class `word` token ` novel`
+  - but consider the parallels between the three foreigners in the novel. Also, consider how his death at the end
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `115` activation `4.434` class `word` token ` been`
+  - about. Then Sophie spotted that a new slide had been put into the park, one that she had never
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `116` activation `4.429` class `word` token ` put`
+  - . Then Sophie spotted that a new slide had been put into the park, one that she had never seen
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `114` activation `4.339` class `expanded_negation_word` token ` had`
+  - roundabout. Then Sophie spotted that a new slide had been put into the park, one that she had
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `487` activation `4.056` class `word` token ` nowhere`
+  - up expecting to see her Mum, but she was nowhere to be seen. Infact she didn't recognise
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `139` activation `3.874` class `word` token ` a`
+  - She squealed in excitement and ran over to take a look. The slide was really tall and twisted around
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `330` activation `3.869` class `word` token ` go`
+  - Sophie. 'Sorry,' said Mum 'You can go again, but I will watch this time'. Sophie
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `463` activation `3.840` class `word` token ` landed`
+  - and after what seemed like 5 minutes, she landed with a bump. Sophie stood up feeling rather dizzy
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `360` activation `3.755` class `word` token ` got`
+  - to the top all on her own. When she got there, the strange little man looked behind her and
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `438` activation `3.728` class `word` token ` on`
+  - slide faster and faster, but it seemed to go on forever this time, she kept going further and further
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `485` activation `3.710` class `word` token ` she`
+  - she looked up expecting to see her Mum, but she was nowhere to be seen. Infact she didn
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `340` activation `3.676` class `word` token ` Sophie`
+  - go again, but I will watch this time'. Sophie took a deep breath and climbed the steps right to
+- `L19:2650` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `66` activation `3.667` class `word` token ` and`
+  - little girl called Sophie, she lived with her Mum and Dad in a little house near the local play park
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `271` activation `3.811` class `style_function_word` token ` this`
+  - are fundamentally different things. It is important to clarify this to your target audience. It is excellent that you
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `221` activation `3.758` class `word` token ` research`
+  - that provides real value. This leads on from market research slightly and is another way of ensuring you stay informed
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `222` activation `3.630` class `word` token ` slightly`
+  - provides real value. This leads on from market research slightly and is another way of ensuring you stay informed concerning
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `413` activation `3.562` class `word` token ` is`
+  - could you do to improve what they have? This is an easy way to gain inspiration and see what's
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `224` activation `3.533` class `word` token ` is`
+  - value. This leads on from market research slightly and is another way of ensuring you stay informed concerning your customers
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `482` activation `3.504` class `word` token ` have`
+  - can do your own research and improve on what they have done. Who isn't your target audience? Knowing
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `410` activation `3.434` class `word` token ` have`
+  - , and what could you do to improve what they have? This is an easy way to gain inspiration and
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `241` activation `3.415` class `style_function_word` token ` will`
+  - informed concerning your customers' expectations and desires. This will allow you to provide them with a constant value.
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `231` activation `3.406` class `word` token ` informed`
+  - research slightly and is another way of ensuring you stay informed concerning your customers' expectations and desires. This will
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `219` activation `3.404` class `word` token ` from`
+  - a way that provides real value. This leads on from market research slightly and is another way of ensuring you
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `502` activation `3.392` class `word` token ` you`
+  - Knowing who your target audience is made much easier if you can identify exactly who it isn't. Who
+- `L19:2650` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `429` activation `3.364` class `style_function_word` token ` will`
+  - inspiration and see what's not being offered. This will allow you to fill in the gaps and potentially convert
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `10` activation `3.948` class `word` token ` prospect`
+  - Negotiating your pay can be a daunting prospect, but it is one of the most critical professional
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `15` activation `2.410` class `word` token ` one`
+  - pay can be a daunting prospect, but it is one of the most critical professional skills you can master.
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `14` activation `2.399` class `word` token ` is`
+  - your pay can be a daunting prospect, but it is one of the most critical professional skills you can master
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `17` activation `2.340` class `word` token ` the`
+  - be a daunting prospect, but it is one of the most critical professional skills you can master. Whether you
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `5` activation `2.209` class `word` token ` pay`
+  - Negotiating your pay can be a daunting prospect, but it is one
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `11` activation `2.160` class `punctuation` token `,`
+  - Negotiating your pay can be a daunting prospect, but it is one of the most critical professional skills
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `7` activation `2.130` class `word` token ` be`
+  - Negotiating your pay can be a daunting prospect, but it is one of the
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `12` activation `2.073` class `word` token ` but`
+  - otiating your pay can be a daunting prospect, but it is one of the most critical professional skills you
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `18` activation `2.026` class `word` token ` most`
+  - a daunting prospect, but it is one of the most critical professional skills you can master. Whether you are
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `23` activation `1.991` class `style_function_word` token ` can`
+  - it is one of the most critical professional skills you can master. Whether you are accepting a new job offer
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `9` activation `1.949` class `word` token ` daunting`
+  - Negotiating your pay can be a daunting prospect, but it is one of the most critical
+- `L19:2650` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `16` activation `1.906` class `word` token ` of`
+  - can be a daunting prospect, but it is one of the most critical professional skills you can master. Whether
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `183` activation `3.828` class `word` token ` tour`
+  - Las Vegas with Lunch as this will be a VIP tour before anyone else even gets to the Dam, giving
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `179` activation `3.651` class `style_function_word` token ` will`
+  - Hoover Dam Tour from Las Vegas with Lunch as this will be a VIP tour before anyone else even gets to
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `178` activation `3.628` class `style_function_word` token ` this`
+  - Ultimate Hoover Dam Tour from Las Vegas with Lunch as this will be a VIP tour before anyone else even gets
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `192` activation `3.431` class `punctuation` token `,`
+  - VIP tour before anyone else even gets to the Dam, giving you full access to it all, and without
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `180` activation `3.430` class `word` token ` be`
+  - Dam Tour from Las Vegas with Lunch as this will be a VIP tour before anyone else even gets to the
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `194` activation `3.307` class `word` token ` you`
+  - before anyone else even gets to the Dam, giving you full access to it all, and without having to
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `206` activation `3.274` class `word` token ` around`
+  - access to it all, and without having to move around tons of people. This will be a 45
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `181` activation `3.265` class `word` token ` a`
+  - Tour from Las Vegas with Lunch as this will be a VIP tour before anyone else even gets to the Dam
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `188` activation `3.259` class `word` token ` gets`
+  - this will be a VIP tour before anyone else even gets to the Dam, giving you full access to it
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `165` activation `3.232` class `word` token ` We`
+  - an absolute must that you visit the Hoover Dam. We suggest the Ultimate Hoover Dam Tour from Las Vegas with
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `204` activation `3.197` class `word` token ` to`
+  - you full access to it all, and without having to move around tons of people. This will be a
+- `L19:2650` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `200` activation `3.160` class `punctuation` token `,`
+  - the Dam, giving you full access to it all, and without having to move around tons of people.
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `260` activation `3.948` class `word` token ` is`
+  - an idea of your income and where you're money is going. It will also help you lay out any
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `267` activation `3.796` class `word` token ` you`
+  - you're money is going. It will also help you lay out any short or long-term goals you would
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `245` activation `3.760` class `word` token ` is`
+  - on top of your finance: Budgeting - this is extremely helpful in gaining an idea of your income and
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `265` activation `3.733` class `style_function_word` token ` also`
+  - and where you're money is going. It will also help you lay out any short or long-term goals
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `258` activation `3.701` class `word` token `'re`
+  - in gaining an idea of your income and where you're money is going. It will also help you lay
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `266` activation `3.686` class `style_function_word` token ` help`
+  - where you're money is going. It will also help you lay out any short or long-term goals you
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `264` activation `3.457` class `style_function_word` token ` will`
+  - income and where you're money is going. It will also help you lay out any short or long-term
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `257` activation `3.454` class `word` token ` you`
+  - helpful in gaining an idea of your income and where you're money is going. It will also help you
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `255` activation `3.437` class `word` token ` and`
+  - is extremely helpful in gaining an idea of your income and where you're money is going. It will also
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `261` activation `3.425` class `word` token ` going`
+  - idea of your income and where you're money is going. It will also help you lay out any short
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `262` activation `3.351` class `sentence_boundary` token `.`
+  - of your income and where you're money is going. It will also help you lay out any short or
+- `L19:2650` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `263` activation `3.315` class `word` token ` It`
+  - your income and where you're money is going. It will also help you lay out any short or long
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `157` activation `3.851` class `word` token ` periods`
+  - can experience really high periods of happiness and then have periods of extreme sadness. These periods can last from days
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `177` activation `3.841` class `word` token ` to`
+  - days to weeks. Mania is a term used to describe really severe happy periods or periods where the person
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `176` activation `3.736` class `word` token ` used`
+  - from days to weeks. Mania is a term used to describe really severe happy periods or periods where the
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `203` activation `3.717` class `word` token ` is`
+  - things that aren't actually there. Hypomania is a term used when those periods are less severe.
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `205` activation `3.690` class `word` token ` term`
+  - aren't actually there. Hypomania is a term used when those periods are less severe. When a
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `175` activation `3.640` class `word` token ` term`
+  - last from days to weeks. Mania is a term used to describe really severe happy periods or periods where
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `182` activation `3.580` class `word` token ` periods`
+  - ia is a term used to describe really severe happy periods or periods where the person is also seeing and hearing
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `161` activation `3.454` class `sentence_boundary` token `.`
+  - periods of happiness and then have periods of extreme sadness. These periods can last from days to weeks. Man
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `204` activation `3.391` class `word` token ` a`
+  - that aren't actually there. Hypomania is a term used when those periods are less severe. When
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `197` activation `3.385` class `word` token ` actually`
+  - person is also seeing and hearing things that aren't actually there. Hypomania is a term used when
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `202` activation `3.381` class `word` token `ia`
+  - hearing things that aren't actually there. Hypomania is a term used when those periods are less severe
+- `L19:2650` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `167` activation `3.359` class `word` token ` days`
+  - periods of extreme sadness. These periods can last from days to weeks. Mania is a term used to
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `38` activation `4.106` class `sentence_boundary` token `.`
+  - had finally fixed the screen but not the door sensor. It closed on my shoulder twice before I got out
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `28` activation `4.101` class `expanded_negation_word` token ` had`
+  - had started showing adverts again, which meant the council had finally fixed the screen but not the door sensor.
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `22` activation `4.055` class `word` token ` again`
+  - The lift in our block had started showing adverts again, which meant the council had finally fixed the screen
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `29` activation `3.821` class `discourse_marker_word` token ` finally`
+  - started showing adverts again, which meant the council had finally fixed the screen but not the door sensor. It
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `64` activation `3.785` class `punctuation` token `,`
+  - The advert was for NutriJoy Family Porridge, now with “improved satiety texture.”
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `27` activation `3.768` class `word` token ` council`
+  - block had started showing adverts again, which meant the council had finally fixed the screen but not the door sensor
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `21` activation `3.750` class `word` token ` adverts`
+  - The lift in our block had started showing adverts again, which meant the council had finally fixed the
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `23` activation `3.723` class `punctuation` token `,`
+  - The lift in our block had started showing adverts again, which meant the council had finally fixed the screen but
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `56` activation `3.712` class `expanded_negation_word` token ` was`
+  - I got out on the ground floor. The advert was for NutriJoy Family Porridge, now with
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `31` activation `3.631` class `word` token ` the`
+  - adverts again, which meant the council had finally fixed the screen but not the door sensor. It closed on
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `40` activation `3.616` class `word` token ` closed`
+  - fixed the screen but not the door sensor. It closed on my shoulder twice before I got out on the
+- `L19:2650` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `24` activation `3.584` class `style_function_word` token ` which`
+  - lift in our block had started showing adverts again, which meant the council had finally fixed the screen but not
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `262` activation `3.929` class `word` token ` up`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for your
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `263` activation `3.677` class `word` token ` a`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `273` activation `3.316` class `word` token ` holiday`
+  - a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using clear cellophane
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `265` activation `3.269` class `word` token ` of`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `261` activation `3.241` class `word` token ` opens`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `264` activation `3.166` class `word` token ` world`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `268` activation `3.133` class `word` token ` eco`
+  - traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `266` activation `3.042` class `word` token ` creative`
+  - away from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts.
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `270` activation `2.923` class `word` token ` opportunities`
+  - ins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using clear c
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `267` activation `2.918` class `punctuation` token `,`
+  - from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `272` activation `2.673` class `word` token ` your`
+  - up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using clear celloph
+- `L19:2650` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `269` activation `2.585` class `word` token `-friendly`
+  - tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using clear
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `157` activation `4.489` class `word` token ` films`
+  - Here are three fantastic family films from the 1980s and 90s
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `167` activation `3.670` class `word` token `s`
+  - films from the 1980s and 90s that are perfect for a six and eight-year-old
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `178` activation `3.323` class `punctuation` token `,`
+  - that are perfect for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey,
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `182` activation `3.300` class `word` token ` entertaining`
+  - a six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shrunk the
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `180` activation `3.280` class `word` token ` remaining`
+  - perfect for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shr
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `183` activation `3.254` class `discourse_marker_word` token ` for`
+  - six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shrunk the Kids
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `179` activation `3.253` class `style_function_word` token ` while`
+  - are perfect for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `181` activation `3.068` class `word` token ` genuinely`
+  - for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shrunk
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `184` activation `2.983` class `word` token ` adults`
+  - and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shrunk the Kids (
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `159` activation `2.966` class `word` token ` the`
+  - Here are three fantastic family films from the 1980s and 90s that are
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `163` activation `2.942` class `word` token `s`
+  - are three fantastic family films from the 1980s and 90s that are perfect for a six
+- `L19:2650` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `177` activation `2.924` class `word` token `-old`
+  - s that are perfect for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `458` activation `8.389` class `style_function_word` token ` will`
+  - an electric, hybrid or biodiesel car, which will be cleaner for the environment. It may be essential
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `410` activation `8.027` class `word` token ` stations`
+  - ating our world. One possible solution is that power stations use a process called lime (calcium oxide and
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `445` activation `7.978` class `expanded_negation_word` token ` could`
+  - from the power station chimneys. Alternatively, people could consider purchasing an electric, hybrid or biodiesel car
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `390` activation `7.757` class `style_function_word` token ` must`
+  - , like asthma or chest infections. Therefore, we must take urgent steps to stop these pollutants from contaminating
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `394` activation `7.660` class `word` token ` to`
+  - chest infections. Therefore, we must take urgent steps to stop these pollutants from contaminating our world. One
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `446` activation `7.620` class `word` token ` consider`
+  - the power station chimneys. Alternatively, people could consider purchasing an electric, hybrid or biodiesel car,
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `456` activation `7.576` class `punctuation` token `,`
+  - consider purchasing an electric, hybrid or biodiesel car, which will be cleaner for the environment. It may
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `459` activation `7.569` class `word` token ` be`
+  - electric, hybrid or biodiesel car, which will be cleaner for the environment. It may be essential to
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `467` activation `7.514` class `word` token ` be`
+  - which will be cleaner for the environment. It may be essential to use renewable resources, harnessing the power
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `413` activation `7.456` class `word` token ` process`
+  - . One possible solution is that power stations use a process called lime (calcium oxide and water) to
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `457` activation `7.430` class `style_function_word` token ` which`
+  - purchasing an electric, hybrid or biodiesel car, which will be cleaner for the environment. It may be
+- `L24:3790` `e079aec9354771900b3961d61b12c2d07a23a14c9244aca8459f4cbdf27c5515@turn_01@human` token `498` activation `7.348` class `word` token ` to`
+  - solar power, hydropower and geothermal energy to run our industry, power our appliances and heat our
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `367` activation `7.426` class `word` token ` is`
+  - thing is full of moving parts and wear and tear is unavoidable over several thousand miles. But other than a
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `334` activation `7.365` class `word` token ` just`
+  - struck me as strange at the time. Why not just build all the parts to last? But it makes
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `333` activation `7.304` class `expanded_negation_word` token ` not`
+  - It struck me as strange at the time. Why not just build all the parts to last? But it
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `419` activation `7.227` class `word` token ` works`
+  - the iPhone 5 I have in my kitchen drawer works just as well as it did on the day I
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `346` activation `6.874` class `word` token ` sense`
+  - all the parts to last? But it makes some sense on a car at least. I mean the whole
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `425` activation `6.755` class `expanded_negation_word` token ` did`
+  - in my kitchen drawer works just as well as it did on the day I bought it. It's just
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `353` activation `6.690` class `word` token ` I`
+  - it makes some sense on a car at least. I mean the whole thing is full of moving parts and
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `320` activation `6.679` class `word` token ` so`
+  - . A cambelt every 40,000 and so on. It struck me as strange at the time
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `340` activation `6.580` class `word` token ` last`
+  - time. Why not just build all the parts to last? But it makes some sense on a car at
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `339` activation `6.573` class `word` token ` to`
+  - the time. Why not just build all the parts to last? But it makes some sense on a car
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `420` activation `6.511` class `word` token ` just`
+  - iPhone 5 I have in my kitchen drawer works just as well as it did on the day I bought
+- `L24:3790` `079c5a5713af4f78a53df64e7b0464359e30f5fedcfa1fee25cc46b177c44367@turn_01@human` token `381` activation `6.455` class `word` token ` I`
+  - thousand miles. But other than a cracked screen, I have never seen an iPhone or Samsung crumble in
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `386` activation `7.003` class `word` token ` to`
+  - to leave could mean they offer you a significant discount to stay. Doing this yearly can really help to keep
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `378` activation `6.638` class `expanded_negation_word` token ` could`
+  - that contacting and informing them of your plans to leave could mean they offer you a significant discount to stay.
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `380` activation `6.386` class `word` token ` they`
+  - and informing them of your plans to leave could mean they offer you a significant discount to stay. Doing this
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `398` activation `6.351` class `word` token ` bills`
+  - . Doing this yearly can really help to keep your bills down in the long run. There is no harm
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `488` activation `6.289` class `word` token ` to`
+  - tools to ensure you are confident in completing the task to a high standard. If you have a lot of
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `455` activation `6.175` class `word` token ` to`
+  - of money. These days it couldn't be easier to find tutorials and how-to videos online for most DIY
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `298` activation `6.174` class `word` token ` are`
+  - goings and see if there are any subscriptions you are not using. If you find any, it would
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `482` activation `6.162` class `word` token ` are`
+  - videos before purchasing any materials or tools to ensure you are confident in completing the task to a high standard.
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `299` activation `6.158` class `expanded_negation_word` token ` not`
+  - ings and see if there are any subscriptions you are not using. If you find any, it would be
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `343` activation `6.157` class `word` token ` you`
+  - add up to a lot over time. The quicker you cancel, the faster you save. Many TV or
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `409` activation `6.121` class `word` token ` in`
+  - down in the long run. There is no harm in saying you will leave unless your bills go down.
+- `L24:3790` `924bbd4fbb1898243731d8776970c3decbef9a9437feba2b1dc238973d3d7c63@turn_01@human` token `473` activation `6.110` class `word` token ` before`
+  - for most DIY projects. Ensure you watch these videos before purchasing any materials or tools to ensure you are confident
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `444` activation `6.105` class `word` token ` walked`
+  - on the escalator. He reached the top and walked confidently towards his boss' office. "Alan,
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `509` activation `5.938` class `word` token ` is`
+  - I think you've made a mistake. The meeting is tomorrow."
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `502` activation `5.928` class `word` token `'ve`
+  - down at his diary and said "I think you've made a mistake. The meeting is tomorrow."
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `423` activation `5.871` class `word` token ` off`
+  - still-wet hair in the mirror, and set off running to the office. Moments later, he was
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `445` activation `5.864` class `word` token ` confidently`
+  - the escalator. He reached the top and walked confidently towards his boss' office. "Alan, what
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `424` activation `5.606` class `word` token ` running`
+  - -wet hair in the mirror, and set off running to the office. Moments later, he was on
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `432` activation `5.570` class `word` token ` he`
+  - set off running to the office. Moments later, he was on the escalator. He reached the top
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `300` activation `5.387` class `word` token ` to`
+  - tall building in which his all-important meeting was due to start in ten minutes, and he made the decision
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `433` activation `5.357` class `expanded_negation_word` token ` was`
+  - off running to the office. Moments later, he was on the escalator. He reached the top and
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `443` activation `5.332` class `word` token ` and`
+  - was on the escalator. He reached the top and walked confidently towards his boss' office. "Alan
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `379` activation `5.314` class `word` token ` paced`
+  - of steady swimming to reach the other side. Alan paced twenty meters to the public toilets and grabbed the towel
+- `L24:3790` `3d075e37ebdb69c9374553b85f5f3a47d6fb1e09c0fbb9c4434c410bff6a235c@turn_01@human` token `397` activation `5.200` class `word` token ` himself`
+  - grabbed the towel from his waterproof bag. He dried himself and got dressed into his suit in a matter of
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `303` activation `6.919` class `style_function_word` token ` will`
+  - as you are versatile and willing to learn. This will give them affirmation from the actions of your previous employer
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `239` activation `6.880` class `word` token ` to`
+  - and company you are applying to. Research the company to understand who they are, then tailor your CV to
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `299` activation `6.637` class `word` token ` to`
+  - ers will take that as you are versatile and willing to learn. This will give them affirmation from the actions
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `245` activation `6.613` class `style_function_word` token ` then`
+  - . Research the company to understand who they are, then tailor your CV to match its ethos and culture.
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `273` activation `6.491` class `word` token ` have`
+  - good, and growth is even better. If you have been promoted or changed roles at a previous company,
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `297` activation `6.439` class `word` token ` and`
+  - Recruiters will take that as you are versatile and willing to learn. This will give them affirmation from
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `249` activation `6.436` class `word` token ` to`
+  - to understand who they are, then tailor your CV to match its ethos and culture. Highlight growth and change
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `295` activation `6.428` class `word` token ` are`
+  - that. Recruiters will take that as you are versatile and willing to learn. This will give them
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `337` activation `6.411` class `word` token ` are`
+  - Showcase that if you have a large network and are well connected. Employers will see that as an
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `290` activation `6.405` class `style_function_word` token ` will`
+  - a previous company, mention that. Recruiters will take that as you are versatile and willing to learn
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `343` activation `6.351` class `style_function_word` token ` will`
+  - a large network and are well connected. Employers will see that as an opportunity to hire you and get
+- `L24:3790` `dd1732a1a7e930186723722955cdd950721ae690af8665c0307f12cc4eff0f72@turn_01@human` token `283` activation `6.333` class `punctuation` token `,`
+  - have been promoted or changed roles at a previous company, mention that. Recruiters will take that as
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `427` activation `6.020` class `expanded_negation_word` token ` would`
+  - In terms of who it would affect most, it would be younger children, as they are the ones who
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `434` activation `5.891` class `word` token ` are`
+  - most, it would be younger children, as they are the ones who are easily influenced. Seeing thousands of
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `438` activation `5.879` class `word` token ` are`
+  - be younger children, as they are the ones who are easily influenced. Seeing thousands of videos in the span
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `422` activation `5.812` class `expanded_negation_word` token ` would`
+  - the world and themselves. In terms of who it would affect most, it would be younger children, as
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `431` activation `5.778` class `punctuation` token `,`
+  - it would affect most, it would be younger children, as they are the ones who are easily influenced.
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `506` activation `5.736` class `word` token ` you`
+  - your day-to-day life by moderating the time you spend on the app.
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `426` activation `5.600` class `word` token ` it`
+  - . In terms of who it would affect most, it would be younger children, as they are the ones
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `439` activation `5.578` class `word` token ` easily`
+  - younger children, as they are the ones who are easily influenced. Seeing thousands of videos in the span of
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `436` activation `5.452` class `word` token ` ones`
+  - it would be younger children, as they are the ones who are easily influenced. Seeing thousands of videos in
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `433` activation `5.430` class `word` token ` they`
+  - affect most, it would be younger children, as they are the ones who are easily influenced. Seeing thousands
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `455` activation `5.399` class `word` token ` a`
+  - videos in the span of a few hours can have a toll on a young person's mind, which is
+- `L24:3790` `458c811b3b90834406a914d1de18e9ce43c3e155d20273c9d8c4715d9ed4da57@turn_01@human` token `465` activation `5.305` class `word` token ` is`
+  - a toll on a young person's mind, which is curious, and views. TikTok can be
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `355` activation `6.783` class `word` token ` I`
+  - are fleshy, firm and fluted. I segment one tomato and place a slice of briny
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `229` activation `6.581` class `word` token ` to`
+  - bers scrambling along the rocky ground. I lean down to take a closer look and Sestos hands me
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `427` activation `6.345` class `word` token ` we`
+  - and that we know as whitebait. While we crunch on these morsels and nibble on
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `478` activation `6.290` class `word` token ` I`
+  - The wine is white, sweet and surprisingly chilled. I feel blessed and euphoric and it is not
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `245` activation `6.267` class `word` token ` I`
+  - Sestos hands me a wicker basket. I pick four tomatoes and a cucumber. Sestos
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `359` activation `6.260` class `word` token ` and`
+  - , firm and fluted. I segment one tomato and place a slice of briny fetta on top
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `333` activation `6.140` class `expanded_negation_word` token ` not`
+  - barrel so we can all help ourselves. Plates are not necessary; this is a picnic after all. The
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `303` activation `6.088` class `word` token `os`
+  - bowl is the only plastic article here. Sestos piles the tomatoes, a slab of fetta and
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `493` activation `6.080` class `word` token ` We`
+  - horic and it is not just the wine. We are standing around a barrel lunching on the simple
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `375` activation `6.063` class `word` token ` anything`
+  - iny fetta on top. It does not need anything else. It is the taste of the Greek islands
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `332` activation `6.051` class `word` token ` are`
+  - wooden barrel so we can all help ourselves. Plates are not necessary; this is a picnic after all.
+- `L24:3790` `5ed400ca4cf258e0ea9e5a967c49f3255ad0cfd4307f86a5969516f399ac53b6@turn_01@human` token `401` activation `6.044` class `word` token ` He`
+  - doorway Sestos brings out a small tin. He gently forks out small salted dried fish, locally
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `159` activation `6.067` class `word` token ` stays`
+  - key ways to ensure your debt doesn't spiral and stays under control. First, you have to keep paying
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `105` activation `5.927` class `word` token ` it`
+  - will mean you have poor credit history and may make it difficult to get a mortgage or loan. With this
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `156` activation `5.871` class `word` token `'t`
+  - will look at key ways to ensure your debt doesn't spiral and stays under control. First, you have
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `107` activation `5.644` class `word` token ` to`
+  - you have poor credit history and may make it difficult to get a mortgage or loan. With this reliance on
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `121` activation `5.531` class `style_function_word` token ` must`
+  - or loan. With this reliance on debt, we must understand how to effectively pay off debt so it doesn
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `116` activation `5.411` class `word` token ` reliance`
+  - difficult to get a mortgage or loan. With this reliance on debt, we must understand how to effectively pay
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `157` activation `5.401` class `word` token ` spiral`
+  - look at key ways to ensure your debt doesn't spiral and stays under control. First, you have to
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `120` activation `5.232` class `word` token ` we`
+  - mortgage or loan. With this reliance on debt, we must understand how to effectively pay off debt so it
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `118` activation `5.175` class `word` token ` debt`
+  - get a mortgage or loan. With this reliance on debt, we must understand how to effectively pay off debt
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `158` activation `5.165` class `word` token ` and`
+  - at key ways to ensure your debt doesn't spiral and stays under control. First, you have to keep
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `112` activation `5.075` class `word` token ` loan`
+  - and may make it difficult to get a mortgage or loan. With this reliance on debt, we must understand
+- `L24:3790` `fd4adc4195645ae79a2b827040261be980c2639d9fb055d50ea44a3a0a5c203c@turn_01@human` token `154` activation `5.015` class `word` token ` debt`
+  - This article will look at key ways to ensure your debt doesn't spiral and stays under control. First,
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `323` activation `6.363` class `word` token ` tricky`
+  - some practice, and it's normal to find it tricky at first, but it is very effective for becoming
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `314` activation `5.716` class `word` token ` practice`
+  - flow in and drift away. This can take some practice, and it's normal to find it tricky at
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `324` activation `5.632` class `word` token ` at`
+  - practice, and it's normal to find it tricky at first, but it is very effective for becoming more
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `329` activation `5.601` class `word` token ` is`
+  - normal to find it tricky at first, but it is very effective for becoming more present. Engage your
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `331` activation `5.399` class `word` token ` effective`
+  - find it tricky at first, but it is very effective for becoming more present. Engage your senses:
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `332` activation `5.240` class `discourse_marker_word` token ` for`
+  - it tricky at first, but it is very effective for becoming more present. Engage your senses: Our
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `311` activation `5.235` class `style_function_word` token ` can`
+  - allow them to flow in and drift away. This can take some practice, and it's normal to find
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `330` activation `5.228` class `word` token ` very`
+  - to find it tricky at first, but it is very effective for becoming more present. Engage your senses
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `334` activation `5.199` class `word` token ` more`
+  - at first, but it is very effective for becoming more present. Engage your senses: Our mind is
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `328` activation `5.086` class `word` token ` it`
+  - 's normal to find it tricky at first, but it is very effective for becoming more present. Engage
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `313` activation `5.058` class `word` token ` some`
+  - to flow in and drift away. This can take some practice, and it's normal to find it tricky
+- `L24:3790` `1180cda58f72d5cfd310927a43da585a60f027a6f13130be376cc515c6e2e42a@turn_01@human` token `315` activation `5.050` class `punctuation` token `,`
+  - in and drift away. This can take some practice, and it's normal to find it tricky at first
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `477` activation `5.577` class `word` token ` novel`
+  - , consider how his death at the end of the novel is in tandem with the Counts. Is it accidental
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `466` activation `5.224` class `style_function_word` token ` Also`
+  - the parallels between the three foreigners in the novel. Also, consider how his death at the end of the
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `474` activation `5.070` class `word` token ` end`
+  - novel. Also, consider how his death at the end of the novel is in tandem with the Counts.
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `464` activation `4.955` class `word` token ` novel`
+  - but consider the parallels between the three foreigners in the novel. Also, consider how his death at the end
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `450` activation `4.949` class `word` token ` he`
+  - throughout much of the novel, at first glance, he develops little - but consider the parallels between the three
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `505` activation `4.799` class `word` token ` is`
+  - I hope that helps! Let me know if there is anything else I can do.
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `498` activation `4.773` class `style_function_word` token ` helps`
+  - that both non-English perish? I hope that helps! Let me know if there is anything else I
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `495` activation `4.748` class `word` token `I`
+  - Is it accidental that both non-English perish? I hope that helps! Let me know if there is
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `478` activation `4.739` class `word` token ` is`
+  - consider how his death at the end of the novel is in tandem with the Counts. Is it accidental that
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `461` activation `4.717` class `word` token ` foreigners`
+  - develops little - but consider the parallels between the three foreigners in the novel. Also, consider how his death
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `507` activation `4.674` class `word` token ` else`
+  - that helps! Let me know if there is anything else I can do.
+- `L24:3790` `3f3b6dd7ba77fcedb2f504a6e3ca10622fa8ff936e877e6b05cb48694cd2ccac@turn_01@human` token `497` activation `4.671` class `style_function_word` token ` that`
+  - accidental that both non-English perish? I hope that helps! Let me know if there is anything else
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `462` activation `7.733` class `word` token ` she`
+  - , and after what seemed like 5 minutes, she landed with a bump. Sophie stood up feeling rather
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `486` activation `7.542` class `expanded_negation_word` token ` was`
+  - looked up expecting to see her Mum, but she was nowhere to be seen. Infact she didn't
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `115` activation `7.490` class `word` token ` been`
+  - about. Then Sophie spotted that a new slide had been put into the park, one that she had never
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `503` activation `7.439` class `expanded_negation_word` token ` was`
+  - act she didn't recognise anything around her, she was no longer in the park she was................
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `345` activation `7.400` class `word` token ` and`
+  - will watch this time'. Sophie took a deep breath and climbed the steps right to the top all on her
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `411` activation `7.380` class `word` token ` Sophie`
+  - man, passing Sophie a sparkly gold mat. Sophie carefully sat on the mat and pushed herself off.
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `340` activation `7.329` class `word` token ` Sophie`
+  - go again, but I will watch this time'. Sophie took a deep breath and climbed the steps right to
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `114` activation `7.206` class `expanded_negation_word` token ` had`
+  - roundabout. Then Sophie spotted that a new slide had been put into the park, one that she had
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `359` activation `7.168` class `word` token ` she`
+  - right to the top all on her own. When she got there, the strange little man looked behind her
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `422` activation `7.163` class `word` token ` She`
+  - carefully sat on the mat and pushed herself off. She whizzed down the slide faster and faster,
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `472` activation `7.145` class `word` token ` rather`
+  - she landed with a bump. Sophie stood up feeling rather dizzy, she looked up expecting to see her Mum
+- `L24:3790` `68b7876e15f0a62b3ecd54e83209db49f79e5fdb5bebeb748618aade712b84c2@turn_01@human` token `475` activation `7.124` class `word` token ` she`
+  - a bump. Sophie stood up feeling rather dizzy, she looked up expecting to see her Mum, but she
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `502` activation `6.062` class `word` token ` you`
+  - Knowing who your target audience is made much easier if you can identify exactly who it isn't. Who
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `503` activation `5.991` class `style_function_word` token ` can`
+  - who your target audience is made much easier if you can identify exactly who it isn't. Who
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `267` activation `5.701` class `word` token ` is`
+  - . Benefits and features are fundamentally different things. It is important to clarify this to your target audience. It
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `459` activation `5.444` class `style_function_word` token ` may`
+  - competition produces content about something you are not, this may mean they have researched and identified a weak spot.
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `269` activation `5.428` class `word` token ` to`
+  - and features are fundamentally different things. It is important to clarify this to your target audience. It is excellent
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `429` activation `5.427` class `style_function_word` token ` will`
+  - inspiration and see what's not being offered. This will allow you to fill in the gaps and potentially convert
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `413` activation `5.420` class `word` token ` is`
+  - could you do to improve what they have? This is an easy way to gain inspiration and see what's
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `482` activation `5.357` class `word` token ` have`
+  - can do your own research and improve on what they have done. Who isn't your target audience? Knowing
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `278` activation `5.350` class `word` token ` is`
+  - important to clarify this to your target audience. It is excellent that you have a feature or product that can
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `418` activation `5.302` class `word` token ` gain`
+  - what they have? This is an easy way to gain inspiration and see what's not being offered. This
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `271` activation `5.295` class `style_function_word` token ` this`
+  - are fundamentally different things. It is important to clarify this to your target audience. It is excellent that you
+- `L24:3790` `95cbf9271dee3eed788d227018607b49d21fe9108ff117cb10c2912ad8d0bd33@turn_01@human` token `405` activation `5.277` class `expanded_negation_word` token ` do`
+  - could be working for them, and what could you do to improve what they have? This is an easy
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `10` activation `6.047` class `word` token ` prospect`
+  - Negotiating your pay can be a daunting prospect, but it is one of the most critical professional
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `11` activation `4.251` class `punctuation` token `,`
+  - Negotiating your pay can be a daunting prospect, but it is one of the most critical professional skills
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `23` activation `4.249` class `style_function_word` token ` can`
+  - it is one of the most critical professional skills you can master. Whether you are accepting a new job offer
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `15` activation `3.966` class `word` token ` one`
+  - pay can be a daunting prospect, but it is one of the most critical professional skills you can master.
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `14` activation `3.958` class `word` token ` is`
+  - your pay can be a daunting prospect, but it is one of the most critical professional skills you can master
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `18` activation `3.787` class `word` token ` most`
+  - a daunting prospect, but it is one of the most critical professional skills you can master. Whether you are
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `13` activation `3.680` class `word` token ` it`
+  - iating your pay can be a daunting prospect, but it is one of the most critical professional skills you can
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `17` activation `3.434` class `word` token ` the`
+  - be a daunting prospect, but it is one of the most critical professional skills you can master. Whether you
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `22` activation `3.382` class `word` token ` you`
+  - but it is one of the most critical professional skills you can master. Whether you are accepting a new job
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `12` activation `3.331` class `word` token ` but`
+  - otiating your pay can be a daunting prospect, but it is one of the most critical professional skills you
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `16` activation `3.162` class `word` token ` of`
+  - can be a daunting prospect, but it is one of the most critical professional skills you can master. Whether
+- `L24:3790` `2ee6596786403e0e0b19c2a92f6c6c88a57fa2e1aea77de922c9aec4f35c1ce7@turn_01@glm-5.2` token `21` activation `3.117` class `word` token ` skills`
+  - , but it is one of the most critical professional skills you can master. Whether you are accepting a new
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `179` activation `5.989` class `style_function_word` token ` will`
+  - Hoover Dam Tour from Las Vegas with Lunch as this will be a VIP tour before anyone else even gets to
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `204` activation `5.671` class `word` token ` to`
+  - you full access to it all, and without having to move around tons of people. This will be a
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `206` activation `5.612` class `word` token ` around`
+  - access to it all, and without having to move around tons of people. This will be a 45
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `183` activation `5.444` class `word` token ` tour`
+  - Las Vegas with Lunch as this will be a VIP tour before anyone else even gets to the Dam, giving
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `159` activation `5.442` class `word` token ` you`
+  - visit Las Vegas, it is an absolute must that you visit the Hoover Dam. We suggest the Ultimate Hoover
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `192` activation `5.391` class `punctuation` token `,`
+  - VIP tour before anyone else even gets to the Dam, giving you full access to it all, and without
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `259` activation `5.254` class `word` token ` all`
+  - . Beautiful scenery, history, and a great time all coupled into one activity. • Las Vegas Food T
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `180` activation `5.207` class `word` token ` be`
+  - Dam Tour from Las Vegas with Lunch as this will be a VIP tour before anyone else even gets to the
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `178` activation `5.059` class `style_function_word` token ` this`
+  - Ultimate Hoover Dam Tour from Las Vegas with Lunch as this will be a VIP tour before anyone else even gets
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `212` activation `5.051` class `style_function_word` token ` will`
+  - without having to move around tons of people. This will be a 45-minute guided tour learning history about
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `203` activation `4.991` class `word` token ` having`
+  - giving you full access to it all, and without having to move around tons of people. This will be
+- `L24:3790` `3f7aa67c5e926f3901db8fbaf16761392bd403ef426125b223631ec3b2517ac8@turn_01@human` token `200` activation `4.988` class `punctuation` token `,`
+  - the Dam, giving you full access to it all, and without having to move around tons of people.
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `265` activation `6.544` class `style_function_word` token ` also`
+  - and where you're money is going. It will also help you lay out any short or long-term goals
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `267` activation `6.506` class `word` token ` you`
+  - you're money is going. It will also help you lay out any short or long-term goals you would
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `260` activation `6.448` class `word` token ` is`
+  - an idea of your income and where you're money is going. It will also help you lay out any
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `264` activation `6.039` class `style_function_word` token ` will`
+  - income and where you're money is going. It will also help you lay out any short or long-term
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `266` activation `5.939` class `style_function_word` token ` help`
+  - where you're money is going. It will also help you lay out any short or long-term goals you
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `258` activation `5.854` class `word` token `'re`
+  - in gaining an idea of your income and where you're money is going. It will also help you lay
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `257` activation `5.659` class `word` token ` you`
+  - helpful in gaining an idea of your income and where you're money is going. It will also help you
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `259` activation `5.319` class `word` token ` money`
+  - gaining an idea of your income and where you're money is going. It will also help you lay out
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `263` activation `5.318` class `word` token ` It`
+  - your income and where you're money is going. It will also help you lay out any short or long
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `245` activation `5.236` class `word` token ` is`
+  - on top of your finance: Budgeting - this is extremely helpful in gaining an idea of your income and
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `255` activation `4.971` class `word` token ` and`
+  - is extremely helpful in gaining an idea of your income and where you're money is going. It will also
+- `L24:3790` `7243be30a6c015af74ab21bb7eefe94fa6d2dba8278afe492cb90398ebc32bf9@turn_01@human` token `261` activation `4.949` class `word` token ` going`
+  - idea of your income and where you're money is going. It will also help you lay out any short
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `177` activation `7.306` class `word` token ` to`
+  - days to weeks. Mania is a term used to describe really severe happy periods or periods where the person
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `164` activation `6.327` class `style_function_word` token ` can`
+  - and then have periods of extreme sadness. These periods can last from days to weeks. Mania is a
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `188` activation `6.272` class `word` token ` is`
+  - describe really severe happy periods or periods where the person is also seeing and hearing things that aren't actually there
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `209` activation `6.265` class `word` token ` periods`
+  - . Hypomania is a term used when those periods are less severe. When a person is experiencing man
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `182` activation `6.209` class `word` token ` periods`
+  - ia is a term used to describe really severe happy periods or periods where the person is also seeing and hearing
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `184` activation `6.136` class `word` token ` periods`
+  - a term used to describe really severe happy periods or periods where the person is also seeing and hearing things that
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `221` activation `6.120` class `word` token ` they`
+  - less severe. When a person is experiencing mania they may have higher than normal levels of energy, make
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `198` activation `6.003` class `word` token ` there`
+  - is also seeing and hearing things that aren't actually there. Hypomania is a term used when those
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `205` activation `5.981` class `word` token ` term`
+  - aren't actually there. Hypomania is a term used when those periods are less severe. When a
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `217` activation `5.974` class `word` token ` is`
+  - when those periods are less severe. When a person is experiencing mania they may have higher than normal levels
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `210` activation `5.944` class `word` token ` are`
+  - Hypomania is a term used when those periods are less severe. When a person is experiencing mania
+- `L24:3790` `09539cd5987bf53373a92f70d5b1c23b4f7aba3d47592c23f5526defbc7f3eda@turn_01@human` token `202` activation `5.913` class `word` token `ia`
+  - hearing things that aren't actually there. Hypomania is a term used when those periods are less severe
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `29` activation `7.188` class `discourse_marker_word` token ` finally`
+  - started showing adverts again, which meant the council had finally fixed the screen but not the door sensor. It
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `28` activation `7.025` class `expanded_negation_word` token ` had`
+  - had started showing adverts again, which meant the council had finally fixed the screen but not the door sensor.
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `46` activation `6.862` class `word` token ` I`
+  - door sensor. It closed on my shoulder twice before I got out on the ground floor. The advert was
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `37` activation `6.357` class `word` token ` sensor`
+  - council had finally fixed the screen but not the door sensor. It closed on my shoulder twice before I got
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `56` activation `6.229` class `expanded_negation_word` token ` was`
+  - I got out on the ground floor. The advert was for NutriJoy Family Porridge, now with
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `34` activation `6.198` class `expanded_negation_word` token ` not`
+  - which meant the council had finally fixed the screen but not the door sensor. It closed on my shoulder twice
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `38` activation `6.197` class `sentence_boundary` token `.`
+  - had finally fixed the screen but not the door sensor. It closed on my shoulder twice before I got out
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `22` activation `6.028` class `word` token ` again`
+  - The lift in our block had started showing adverts again, which meant the council had finally fixed the screen
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `33` activation `5.988` class `word` token ` but`
+  - , which meant the council had finally fixed the screen but not the door sensor. It closed on my shoulder
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `40` activation `5.967` class `word` token ` closed`
+  - fixed the screen but not the door sensor. It closed on my shoulder twice before I got out on the
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `64` activation `5.947` class `punctuation` token `,`
+  - The advert was for NutriJoy Family Porridge, now with “improved satiety texture.”
+- `L24:3790` `be844f7c140ddceb7e5d191cfa71751189f565d052722a02681705f6098d030a@turn_01@gpt-5.5` token `52` activation `5.855` class `word` token ` floor`
+  - my shoulder twice before I got out on the ground floor. The advert was for NutriJoy Family Por
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `262` activation `6.003` class `word` token ` up`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for your
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `270` activation `5.264` class `word` token ` opportunities`
+  - ins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using clear c
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `263` activation `5.149` class `word` token ` a`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `265` activation `5.127` class `word` token ` of`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `264` activation `5.030` class `word` token ` world`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `266` activation `4.836` class `word` token ` creative`
+  - away from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts.
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `261` activation `4.805` class `word` token ` opens`
+  - Moving away from traditional tins opens up a world of creative, eco-friendly opportunities for
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `269` activation `4.789` class `word` token `-friendly`
+  - tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using clear
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `273` activation `4.493` class `word` token ` holiday`
+  - a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using clear cellophane
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `268` activation `4.396` class `word` token ` eco`
+  - traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `267` activation `4.347` class `punctuation` token `,`
+  - from traditional tins opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider
+- `L24:3790` `b4d62c9727604af0e7a09a4befb32e80a697bb472a195cba8dfc9f17989266e0@turn_01@qwen3.6-35b` token `271` activation `3.899` class `discourse_marker_word` token ` for`
+  - opens up a world of creative, eco-friendly opportunities for your holiday cookie gifts. Consider using clear cello
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `167` activation `6.147` class `word` token `s`
+  - films from the 1980s and 90s that are perfect for a six and eight-year-old
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `184` activation `5.902` class `word` token ` adults`
+  - and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shrunk the Kids (
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `157` activation `5.718` class `word` token ` films`
+  - Here are three fantastic family films from the 1980s and 90s
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `179` activation `5.579` class `style_function_word` token ` while`
+  - are perfect for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `178` activation `5.487` class `punctuation` token `,`
+  - that are perfect for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey,
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `180` activation `5.423` class `word` token ` remaining`
+  - perfect for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shr
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `182` activation `5.393` class `word` token ` entertaining`
+  - a six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shrunk the
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `163` activation `5.353` class `word` token `s`
+  - are three fantastic family films from the 1980s and 90s that are perfect for a six
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `183` activation `5.301` class `discourse_marker_word` token ` for`
+  - six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shrunk the Kids
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `181` activation `5.175` class `word` token ` genuinely`
+  - for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey, I Shrunk
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `169` activation `4.895` class `word` token ` are`
+  - the 1980s and 90s that are perfect for a six and eight-year-old, while
+- `L24:3790` `b72e72dbddd1f33a012f04fd93ec601caa25596c8309789226c1099c5443736b@turn_01@gemini-3.5-flash` token `177` activation `4.773` class `word` token `-old`
+  - s that are perfect for a six and eight-year-old, while remaining genuinely entertaining for adults. Honey

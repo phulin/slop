@@ -1,0 +1,221 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1988` | `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` | `human` | 47 | `285.87` | `7.76` | word:47 |
+| `L19:1988` | `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@glm-5.2` | `glm-5.2` | 6 | `36.29` | `7.67` | word:6 |
+| `L19:1988` | `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` | `gpt-5.5` | 8 | `46.63` | `6.32` | word:8 |
+| `L19:1988` | `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` | `human` | 9 | `59.67` | `7.67` | word:9 |
+| `L19:1988` | `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` | `human` | 20 | `134.17` | `8.01` | word:20 |
+| `L19:1988` | `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` | `human` | 27 | `152.02` | `7.77` | word:27 |
+| `L19:1988` | `8474c71a496ac0c5ab1db5cacddfb6e5c4e4251298327f3328fb5d12aa1d0329@turn_01@human` | `human` | 7 | `46.95` | `7.79` | word:7 |
+| `L19:1988` | `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` | `human` | 17 | `111.68` | `7.69` | word:17 |
+| `L19:1988` | `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` | `human` | 10 | `62.43` | `7.74` | word:10 |
+| `L19:1988` | `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 20 | `104.09` | `7.82` | word:18|punctuation:2 |
+
+## Top Tokens
+
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `281` activation `7.758` class `word` token ` the`
+  - aying true to the Zen mindset helps climbers deal with the never-ending stone steps and the suffocating crowds
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `472` activation `7.739` class `word` token ` the`
+  - most prominent peak. Brave beginners can often take on the entire climb in a day, while others may prefer
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `274` activation `7.074` class `word` token ` the`
+  - to the summit every year. Staying true to the Zen mindset helps climbers deal with the never-ending stone
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `599` activation `6.958` class `word` token ` the`
+  - . While it is possible to trek Snowden Mountain throughout the year, the railway closes down during the winter.
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `73` activation `6.904` class `word` token ` the`
+  - can proudly reach the summit and make it back to the pub in time for a pint to celebrate. The
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `108` activation `6.888` class `word` token ` the`
+  - climbers should be aware of the changing weather conditions throughout the year. Hochschwab, Austria -
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `148` activation `6.842` class `word` token ` the`
+  - giving you a welcoming overnight stay as you climb to the top. The lodge that stands near the cliff face
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `198` activation `6.799` class `word` token ` the`
+  - is from spring to autumn, with ski touring in the winter. Emel Shan, China - This mountain
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `368` activation `6.717` class `word` token ` the`
+  - ogenic peaks in the world. The staggering views from the top turn the spectacular glaciers, mountains, and rugged
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `103` activation `6.710` class `word` token ` the`
+  - spring to autumn, and climbers should be aware of the changing weather conditions throughout the year. Hochsch
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `607` activation `6.685` class `word` token ` the`
+  - Mountain throughout the year, the railway closes down during the winter. Alvand Kuh, Iran -
+- `L19:1988` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `66` activation `6.537` class `word` token ` the`
+  - climbing experience where expert or novice climbers can proudly reach the summit and make it back to the pub in time
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@glm-5.2` token `420` activation `7.665` class `word` token ` the`
+  - design challenge. To maximize your storage space while keeping the area stylish, start by investing in multi functional furniture
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@glm-5.2` token `453` activation `6.857` class `word` token ` the`
+  - stylish, rolling storage bins hidden beneath. This eliminates the need for a bulky dresser, freeing up valuable floor
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@glm-5.2` token `405` activation `6.618` class `word` token ` the`
+  - Decorating a small apartment without hanging anything on the walls is an exciting design challenge. To maximize your
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@glm-5.2` token `554` activation `6.309` class `word` token ` the`
+  - , display decorative baskets, and showcase plants without touching the walls. Place corner shelves in unused nooks to
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@glm-5.2` token `521` activation `4.592` class `word` token ` the`
+  - Similarly, select a modular sofa with hidden compartments beneath the cushions. Take advantage of vertical floor space using fre
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@glm-5.2` token `599` activation `4.253` class `word` token ` the`
+  - for stashing extra throw pillows or umbrellas by the entryway. By relying on freestanding units
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` token `372` activation `6.321` class `word` token ` the`
+  - Absolutely—small apartments can feel stylish and functional with the right choices, even without hanging anything on the walls
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` token `381` activation `6.129` class `word` token ` the`
+  - with the right choices, even without hanging anything on the walls. Choose multi-purpose furniture. Look for a
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` token `462` activation `6.030` class `word` token ` the`
+  - height while staying renter-friendly. Place baskets on the shelves to hide clutter. Add under-bed storage.
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` token `631` activation `6.010` class `word` token ` the`
+  - Soft neutrals with a few accent colors can make the space feel less crowded and more intentional.
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` token `513` activation `5.848` class `word` token ` the`
+  - , chairs, and cabinets raised off the floor make the room feel more open and airy. Use mirrors strategically
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` token `539` activation `5.613` class `word` token ` the`
+  - leaning safely against a corner or standing mirror can make the apartment feel brighter and bigger. Create zones with rugs
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` token `607` activation `5.526` class `word` token ` the`
+  - drawer units, shelf risers, hanging organizers inside the closet, and stackable bins. Keep colors light
+- `L19:1988` `e932e4f3ecfda6bc8f879831efb2e6b779d5b3e0dd5e47c4e235dac7e42ca076@turn_01@gpt-5.5` token `510` activation `5.154` class `word` token ` the`
+  - . Sofas, chairs, and cabinets raised off the floor make the room feel more open and airy.
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `479` activation `7.674` class `word` token ` the`
+  - . They know the importance of staying abreast of the latest developments in their field. They enjoy sharpening
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `616` activation `7.662` class `word` token ` the`
+  - your negotiating skills. They understand the importance of having the tools required to be the best in their field.
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `600` activation `7.132` class `word` token ` the`
+  - They love to offer up tips on key elements of the job, such as improving your negotiating skills. They
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `636` activation `6.932` class `word` token ` the`
+  - . They stay informed on all the newest trends in the procurement world.
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `612` activation `6.711` class `word` token ` the`
+  - , such as improving your negotiating skills. They understand the importance of having the tools required to be the best
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `472` activation `6.568` class `word` token ` the`
+  - to stay on top of their profession. They know the importance of staying abreast of the latest developments in
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `621` activation `5.744` class `word` token ` the`
+  - understand the importance of having the tools required to be the best in their field. They stay informed on all
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `525` activation `5.707` class `word` token ` the`
+  - data analytics, improving supplier relationships, and streamlining the procurement cycle. Every successful organization requires certain products and
+- `L19:1988` `bf0d92fa7d10d839d631be612e69088ac93e781548080cb43f1ef23b1a747f25@turn_01@human` token `632` activation `5.544` class `word` token ` the`
+  - best in their field. They stay informed on all the newest trends in the procurement world.
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `567` activation `8.007` class `word` token ` the`
+  - typically unfounded, particularly when everyone is worried about the same things. However, you can lessen your anxiety
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `607` activation `7.829` class `word` token ` the`
+  - you to find your room and get settled in before the other students make a mad dash to do the same
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `205` activation `7.653` class `word` token ` the`
+  - for help. You’ll probably need physical help making the move to college, but you’ll also need support
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `635` activation `7.630` class `word` token ` the`
+  - anxious students is to arrive two to three hours before the move-in rushes.
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `616` activation `7.576` class `word` token ` the`
+  - before the other students make a mad dash to do the same. The general rule of thumb for anxious students
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `507` activation `7.119` class `word` token ` the`
+  - everyone else to ensure you don’t get caught in the move-in rushes. Anxiety is the biggest problem
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `438` activation `7.045` class `word` token ` the`
+  - ’ve settled into your dorm room. Don’t overload the car with things that you don’t need right away
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `374` activation `7.042` class `word` token ` the`
+  - request a transfer later in the school year. Pack the essentials, but save décor and organizational extras for after
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `335` activation `6.996` class `word` token ` the`
+  - You’ll be spending a lot of time together in the same space, so you must establish a cordial
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `348` activation `6.932` class `word` token ` the`
+  - , so you must establish a cordial rapport from the start. If you and your roommate have too many
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `540` activation `6.915` class `word` token ` the`
+  - to feel dumb or make a fool of themselves on the first day around everyone else. It’s a common
+- `L19:1988` `b22883c65e402bea47614703205cf74e9ed1181f0a7f8b4e6e8f35499169db81@turn_01@human` token `156` activation `6.893` class `word` token ` the`
+  - can make you feel overwhelmed and scared. Hopefully, the following four tips will help you make a smoother shift
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `238` activation `7.772` class `word` token ` the`
+  - understanding at one point before you can move on to the next point. Before a teacher talks to their students
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `408` activation `7.268` class `word` token ` the`
+  - with your reader and, therefore, save it for the very end. Some transitional phrases to use with this
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `573` activation `7.052` class `word` token ` the`
+  - or if you want to improve a scene by causing the reader to use all their senses. Use this arrangement
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `589` activation `7.029` class `word` token ` the`
+  - senses. Use this arrangement when you want to organize the ideas you are describing in your workspace, like a
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `352` activation `6.997` class `word` token ` the`
+  - this order, you keep the most important part until the very end of the story or piece. You should
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `209` activation `6.972` class `word` token ` the`
+  - . The framework is used to avoid any confusion for the reader. You will need to organize your ideas in
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `104` activation `6.951` class `word` token ` the`
+  - were younger, and you were trying to explain to the principal why you shouldn't be placed in detention.
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `156` activation `6.924` class `word` token ` the`
+  - same thing when you need to help your reader navigate the process and understand the context of the narrative. Some
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `561` activation `6.783` class `word` token ` the`
+  - order is used whenever you want your readers to visualize the space or if you want to improve a scene by
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `160` activation `6.729` class `word` token ` the`
+  - need to help your reader navigate the process and understand the context of the narrative. Some transition words to use
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `163` activation `6.550` class `word` token ` the`
+  - your reader navigate the process and understand the context of the narrative. Some transition words to use when writing in
+- `L19:1988` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `347` activation `6.480` class `word` token ` the`
+  - limactic Order With this order, you keep the most important part until the very end of the story
+- `L19:1988` `8474c71a496ac0c5ab1db5cacddfb6e5c4e4251298327f3328fb5d12aa1d0329@turn_01@human` token `557` activation `7.790` class `word` token ` the`
+  - process, share WIPs, and show off the final piece with filters and music. Facebook. While
+- `L19:1988` `8474c71a496ac0c5ab1db5cacddfb6e5c4e4251298327f3328fb5d12aa1d0329@turn_01@human` token `453` activation `7.524` class `word` token ` the`
+  - a circle in minutes, then share your art with the world. Popular artists can get tens of thousands of
+- `L19:1988` `8474c71a496ac0c5ab1db5cacddfb6e5c4e4251298327f3328fb5d12aa1d0329@turn_01@human` token `502` activation `7.414` class `word` token ` the`
+  - spotlights posts every day, and if you catch the staff's eye, your work could be one of
+- `L19:1988` `8474c71a496ac0c5ab1db5cacddfb6e5c4e4251298327f3328fb5d12aa1d0329@turn_01@human` token `582` activation `6.260` class `word` token `the`
+  - ews older, you can still earn a following--the site has two billion users after all. Your friends
+- `L19:1988` `8474c71a496ac0c5ab1db5cacddfb6e5c4e4251298327f3328fb5d12aa1d0329@turn_01@human` token `513` activation `6.128` class `word` token ` the`
+  - staff's eye, your work could be one of the highlights. Tumblr's platform permits text, video,
+- `L19:1988` `8474c71a496ac0c5ab1db5cacddfb6e5c4e4251298327f3328fb5d12aa1d0329@turn_01@human` token `625` activation `5.926` class `word` token ` the`
+  - they can reach several audiences on multiple platforms. Find the sites that work for you, then start your journey
+- `L19:1988` `8474c71a496ac0c5ab1db5cacddfb6e5c4e4251298327f3328fb5d12aa1d0329@turn_01@human` token `395` activation `5.903` class `word` token ` the`
+  - building your following: Instagram. Artists love Instagram because the image-only platform greets followers with a gallery of
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `558` activation `7.692` class `word` token ` the`
+  - scheduling of employees at the service center, ensuring that the right number of employees handle the right amount of work
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `630` activation `7.602` class `word` token ` the`
+  - and tools present better and more effective ways to handle the everyday complexities that characterize the modern service center.
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `564` activation `7.097` class `word` token ` the`
+  - center, ensuring that the right number of employees handle the right amount of work at all times. Advancements
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `411` activation `6.937` class `word` token ` the`
+  - center, managers end up over or under-scheduling the employees. This can lead to both employee and client
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `384` activation `6.911` class `word` token ` the`
+  - too much time scheduling the workforce or scheduling them at the wrong time. It’s even worse when by estimating
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `513` activation `6.888` class `word` token ` the`
+  - managers must be able to schedule people optimally for the work available for them to complete. This means having
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `399` activation `6.847` class `word` token ` the`
+  - ’s even worse when by estimating anticipated workloads at the service center, managers end up over or under-s
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `635` activation `6.811` class `word` token ` the`
+  - more effective ways to handle the everyday complexities that characterize the modern service center.
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `363` activation `6.779` class `word` token ` the`
+  - different levels of the organization. Oftentimes, the organization that relies on manual processes ends up either spending
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `378` activation `6.739` class `word` token ` the`
+  - manual processes ends up either spending too much time scheduling the workforce or scheduling them at the wrong time. It
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `309` activation `6.669` class `word` token ` the`
+  - and the organizational level. It becomes hard to attain the level of productivity, agility, flexibility, and cost
+- `L19:1988` `72e281e0a4d8642b2a389f67bc90045ee9e5401c56b22fe81f46295e5b9aa452@turn_01@human` token `552` activation `6.568` class `word` token ` the`
+  - Naturally, there is optimal scheduling of employees at the service center, ensuring that the right number of employees
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `449` activation `7.743` class `word` token ` the`
+  - snap judgment, you compromise your ability to listen to the entirety of what they're saying. If your goal
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `518` activation `6.797` class `word` token ` the`
+  - to become a better listener, you have to give the speaker the ability to fully communicate their thoughts at their
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `268` activation `6.408` class `word` token ` the`
+  - is formatted in a bullet-point list: Look at the person who's talking. It's hard to listen
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `544` activation `6.112` class `word` token ` the`
+  - train of thought. Ask clarifying questions. Once the speaker is done talking, you want to make sure
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `299` activation `6.098` class `word` token ` the`
+  - internet, or otherwise engaged in another activity. Give the speaker your undivided attention and make an effort
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `345` activation `6.066` class `word` token ` the`
+  - words to your long-term memory. Visualize what the speaker is saying. It may help you to create
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `256` activation `5.894` class `word` token ` The`
+  - for why each tip will help achieve your goal. The response is formatted in a bullet-point list: Look
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `288` activation `5.893` class `word` token ` the`
+  - listen if you are answering a text message, browsing the internet, or otherwise engaged in another activity. Give
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `362` activation `5.863` class `word` token ` the`
+  - help you to create mental images that connect to what the speaker is talking about. This visual association can assist
+- `L19:1988` `61aa575e11a5d40c7825a2feae6a837d616a4f42bb802488de0ee2e45560c983@turn_01@human` token `520` activation `5.558` class `word` token ` the`
+  - a better listener, you have to give the speaker the ability to fully communicate their thoughts at their own pace
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `453` activation `7.818` class `word` token ` the`
+  - distinct buildings or phases. Instead of trying to monitor the entire property, establish a decentralized network of "Building
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `13` activation `7.134` class `word` token ` the`
+  - litter in a suburban condominium community requires moving away from the "lone volunteer with a trash grabber"
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `529` activation `6.879` class `word` token ` the`
+  - . This distributes the emotional and physical load of maintaining the property across dozens of hands rather than just yours.
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `235` activation `6.854` class `word` token ` the`
+  - implement behavioral nudges. For example, request that the HOA install clear, friendly signage near dumpsters detailing
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `150` activation `6.640` class `word` token ` the`
+  - committee of 3 to 5 neighbors to audit the neighborhood’s waste infrastructure. Walk the property together to
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `157` activation `6.338` class `word` token ` the`
+  - neighbors to audit the neighborhood’s waste infrastructure. Walk the property together to identify "litter hot spots"—
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `522` activation `6.235` class `word` token ` the`
+  - latches or bulk dumping to management. This distributes the emotional and physical load of maintaining the property across dozens
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `416` activation `6.215` class `word` token ` the`
+  - is free food, music, and socializing at the end, volunteer turnout skyrockets. Establish a
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `398` activation `6.129` class `word` token ` the`
+  - clubhouse parking lot, or a pool party sponsored by the HOA. When people know there is free food
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `604` activation `6.023` class `word` token ` the`
+  - "Adopt-a-Park" initiatives. If the litter in your condo is blowing in from adjacent public
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `188` activation `5.963` class `word` token ` the`
+  - , or school bus stops. Present your findings to the HOA board with a request to install more heavy
+- `L19:1988` `b54a5e8fae12129c01aba577a8137e5e617ada969bbd8e450c55e135278a0e22@turn_01@gemini-3.5-flash` token `387` activation `5.925` class `word` token ` the`
+  - as a backyard BBQ, a food truck gathering in the clubhouse parking lot, or a pool party sponsored by

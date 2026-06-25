@@ -1,0 +1,433 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:1094` | `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` | `glm-5.2` | 21 | `51.07` | `6.11` | word:21 |
+| `L19:1094` | `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` | `gpt-5.5` | 5 | `20.63` | `6.20` | word:5 |
+| `L19:1094` | `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` | `human` | 5 | `22.42` | `5.82` | word:5 |
+| `L19:1094` | `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` | `glm-5.2` | 15 | `35.38` | `6.27` | word:15 |
+| `L19:1094` | `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` | `human` | 16 | `38.49` | `5.95` | word:16 |
+| `L19:1094` | `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` | `human` | 5 | `16.89` | `6.21` | word:5 |
+| `L19:1094` | `6ab63d0967fb996253219f348f72982ace14e2738e0c6a18fa17ffefb7cdfaf1@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 3 | `8.35` | `5.88` | word:3 |
+| `L19:1094` | `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 21 | `66.58` | `6.03` | word:21 |
+| `L19:1094` | `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` | `human` | 15 | `46.90` | `5.87` | word:15 |
+| `L19:1094` | `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` | `human` | 10 | `32.90` | `6.41` | word:10 |
+| `L19:1094` | `a663a50f6e8534e9f753f752963d5807724f5834e4983aa913d79bcbf6eeaf63@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 2 | `9.64` | `6.15` | word:2 |
+| `L19:1094` | `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` | `human` | 5 | `19.17` | `5.96` | word:5 |
+| `L19:1094` | `910bd149f08856d658d9b611fcea6e66319b81c32253b026e1678e1b45a69486@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 2 | `9.34` | `6.35` | word:2 |
+| `L19:1094` | `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 5 | `18.21` | `6.33` | word:5 |
+| `L24:271` | `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` | `glm-5.2` | 16 | `50.94` | `7.38` | word:16 |
+| `L24:271` | `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` | `gpt-5.5` | 4 | `22.98` | `7.22` | word:4 |
+| `L24:271` | `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` | `human` | 5 | `26.34` | `7.34` | word:5 |
+| `L24:271` | `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` | `glm-5.2` | 13 | `37.70` | `6.54` | word:13 |
+| `L24:271` | `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` | `human` | 9 | `35.09` | `7.16` | word:9 |
+| `L24:271` | `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` | `human` | 6 | `19.20` | `7.16` | word:6 |
+| `L24:271` | `6ab63d0967fb996253219f348f72982ace14e2738e0c6a18fa17ffefb7cdfaf1@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 3 | `8.87` | `7.07` | word:3 |
+| `L24:271` | `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 19 | `69.52` | `6.39` | word:19 |
+| `L24:271` | `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` | `human` | 12 | `44.63` | `7.42` | word:12 |
+| `L24:271` | `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` | `human` | 9 | `33.63` | `7.06` | word:9 |
+| `L24:271` | `a663a50f6e8534e9f753f752963d5807724f5834e4983aa913d79bcbf6eeaf63@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 2 | `11.52` | `7.31` | word:2 |
+| `L24:271` | `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` | `human` | 4 | `20.18` | `7.79` | word:4 |
+| `L24:271` | `910bd149f08856d658d9b611fcea6e66319b81c32253b026e1678e1b45a69486@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 2 | `11.06` | `7.57` | word:2 |
+| `L24:271` | `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 3 | `16.65` | `7.58` | word:3 |
+
+## Top Tokens
+
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `154` activation `6.112` class `word` token ` echo`
+  - a sudden, shattering black, I lost the echo of my own voice, the intimate, close-k
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `176` activation `3.995` class `word` token ` empty`
+  - track. You found me hollowed out, an empty, aching shell, Sitting in the quiet
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `464` activation `3.962` class `word` token ` empty`
+  - ery Extracted from the Ballad "An empty, aching shell" & "Wreckage
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `546` activation `3.712` class `word` token ` Emb`
+  - , a deep wooden groan of pure lament": Embodies grief as a living, acoustic entity, translating
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `554` activation `3.208` class `word` token ` entity`
+  - lament": Embodies grief as a living, acoustic entity, translating emotional pain into a physical, resonant
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `455` activation `3.204` class `word` token ` Extract`
+  - in a beautifully safe place. Vivid Imagery Extracted from the Ballad "An empty,
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `616` activation `3.081` class `word` token ` endless`
+  - & "Sudden, radiant chorus breaking heavy, endless night": Contrasts the prior darkness, showing music
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `588` activation `2.702` class `word` token ` end`
+  - ens depression to an overwhelming, immersive tidal force that endangers the spirit entirely before the musical intervention. "
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `557` activation `2.523` class `word` token ` emotional`
+  - odies grief as a living, acoustic entity, translating emotional pain into a physical, resonant sound. "S
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `418` activation `2.181` class `word` token ` every`
+  - /battered, storm-torn ship, Healing every bleeding, silent wound upon your frm lip. No
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `211` activation `2.084` class `word` token ` every`
+  - in the grayest, bruised twilight, Where every/memory is a ghost, pale and desperately seeking light
+- `L19:1094` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `547` activation `2.059` class `word` token `odies`
+  - a deep wooden groan of pure lament": Embodies grief as a living, acoustic entity, translating emotional
+- `L19:1094` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `580` activation `6.199` class `word` token `E`
+  - warms like a small, practical sun. Eggs settle beside toast, and coffee makes the
+- `L19:1094` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `581` activation `5.400` class `word` token `g`
+  - ms like a small, practical sun. Eggs settle beside toast, and coffee makes the room
+- `L19:1094` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `582` activation `4.507` class `word` token `gs`
+  - like a small, practical sun. Eggs settle beside toast, and coffee makes the room attentive
+- `L19:1094` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `616` activation `3.700` class `word` token ` eat`
+  - arrive after the day has spent itself. I eat slowly, buttered light on my plate,
+- `L19:1094` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `601` activation `0.820` class `word` token ` ordinary`
+  - room attentive. There is comfort in reversing the ordinary, in letting pancakes arrive after the day has
+- `L19:1094` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `560` activation `5.823` class `word` token ` eggs`
+  - nuts, seeds, beans, whole grains, and eggs. These foods are commonly found on the outside parameters
+- `L19:1094` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `585` activation `5.661` class `word` token `E`
+  - , farmer's markets, and the butcher shop. Eating a whole-food diet has several benefits for our
+- `L19:1094` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `586` activation `4.566` class `word` token `ating`
+  - farmer's markets, and the butcher shop. Eating a whole-food diet has several benefits for our health
+- `L19:1094` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `483` activation `3.880` class `word` token ` eating`
+  - Why is that? It's because this way of eating cuts out processed foods. This includes anything in a
+- `L19:1094` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `621` activation `2.491` class `word` token ` even`
+  - , no refined sugars in your diet, and can even help you gain muscle. Whole foods also lessen the
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `433` activation `6.272` class `word` token ` E`
+  - Rodex Crushes Earnings: Illinois' AI Powerhouse Defies Market
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `473` activation `4.353` class `word` token ` earnings`
+  - global artificial intelligence revolution, just released its third-quarter earnings, leaving Wall Street analysts utterly dazzled. The
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `434` activation `4.034` class `word` token `arnings`
+  - Rodex Crushes Earnings: Illinois' AI Powerhouse Defies Market Gravity
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `560` activation `3.579` class `word` token ` electr`
+  - Rodex CEO Elena Rostova during yesterday's electrifying call. The company's stock skyrocketed
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `623` activation `3.205` class `word` token ` earnings`
+  - capacity right here in the Midwest. If these phenomenal earnings prove anything, it's that Illinois is officially the
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `553` activation `2.748` class `word` token ` Elena`
+  - of the modern AI boom," declared Rodex CEO Elena Rostova during yesterday's electrifying call.
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `505` activation `2.475` class `word` token ` expectations`
+  - 2 billion in revenue, crushing even the most bullish expectations. As competitors struggle with supply chain bottlenecks
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `501` activation `2.139` class `word` token ` even`
+  - staggering $4.2 billion in revenue, crushing even the most bullish expectations. As competitors struggle with supply
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `611` activation `1.722` class `word` token ` expanding`
+  - hardware reaching a fever pitch, Rodex is aggressively expanding operational capacity right here in the Midwest. If these
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `479` activation `1.133` class `word` token ` utterly`
+  - released its third-quarter earnings, leaving Wall Street analysts utterly dazzled. The top American AI chip maker reported
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `561` activation `0.964` class `word` token `ifying`
+  - ex CEO Elena Rostova during yesterday's electrifying call. The company's stock skyrocketed 18
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `430` activation `0.801` class `word` token `ex`
+  - Rodex Crushes Earnings: Illinois' AI Powerhouse
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `637` activation `5.947` class `word` token ` earnings`
+  - % over the past 12 months with increasingly impressive earnings calls.
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `602` activation `5.199` class `word` token ` earnings`
+  - in late trading to $92.51 following the earnings release. The company is a major supplier to the
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `464` activation `5.198` class `word` token ` earnings`
+  - machine Rodex has surprised market participants with its recent earnings call. Rodex provided a revenue forecast for the
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `511` activation `4.731` class `word` token ` earnings`
+  - For the March quarter, the semiconductor company reported adjusted earnings per share of $1.15, compared with
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `526` activation `2.957` class `word` token ` estimate`
+  - 1.15, compared with Wall Street’s consensus estimate of $1.15. Revenue came in at
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `478` activation `2.800` class `word` token ` expectations`
+  - ex provided a revenue forecast for the June quarter below expectations, citing softening demand for chips and a challenging
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `548` activation `2.304` class `word` token ` expectations`
+  - 3.3 billion, which was above analysts’ expectations of $3.1 billion. Rodex's
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `569` activation `2.135` class `word` token ` expectations`
+  - guidance forecasted a revenue range well above analysts' expectations, therefore we believe its after-hours sharp fall provides
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `490` activation `1.658` class `word` token ` environment`
+  - citing softening demand for chips and a challenging macro environment. The stock fell sharply in after-hours trading.
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `513` activation `1.001` class `word` token ` share`
+  - March quarter, the semiconductor company reported adjusted earnings per share of $1.15, compared with Wall Street
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `635` activation `0.851` class `word` token ` increasingly`
+  - 21% over the past 12 months with increasingly impressive earnings calls.
+- `L19:1094` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `512` activation `0.849` class `word` token ` per`
+  - the March quarter, the semiconductor company reported adjusted earnings per share of $1.15, compared with Wall
+- `L19:1094` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `298` activation `6.210` class `word` token ` Estate`
+  - Scene heading: Estate of William Dryer Scene description: Miriam
+- `L19:1094` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `537` activation `4.136` class `word` token ` estate`
+  - any reason for him to leave any portion of his estate to me." Mr. Tombalt: "There
+- `L19:1094` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `570` activation `2.548` class `word` token ` Each`
+  - constant fixture on Mr. Dryer's will. Each time he drafted a revision, he made sure to
+- `L19:1094` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `462` activation `2.051` class `word` token ` everything`
+  - it seems. He'll be helping us to get everything situated according to my father's last wishes." (D
+- `L19:1094` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `299` activation `1.942` class `word` token ` of`
+  - Scene heading: Estate of William Dryer Scene description: Miriam is
+- `L19:1094` `6ab63d0967fb996253219f348f72982ace14e2738e0c6a18fa17ffefb7cdfaf1@turn_01@qwen3.6-35b` token `597` activation `5.884` class `word` token ` echo`
+  - We wander through the mist, seeking the echo of our own breath. Purpose is not a destination
+- `L19:1094` `6ab63d0967fb996253219f348f72982ace14e2738e0c6a18fa17ffefb7cdfaf1@turn_01@qwen3.6-35b` token `633` activation `1.767` class `word` token ` existing`
+  - the void, finding meaning in the simple act of existing, moment by fleeting moment.
+- `L19:1094` `6ab63d0967fb996253219f348f72982ace14e2738e0c6a18fa17ffefb7cdfaf1@turn_01@qwen3.6-35b` token `600` activation `0.702` class `word` token ` own`
+  - wander through the mist, seeking the echo of our own breath. Purpose is not a destination, but the
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `104` activation `6.031` class `word` token ` Ethnic`
+  - Report on the Ethnic Composition and Demographics of September 11,
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `147` activation `5.235` class `word` token ` ethnic`
+  - World Trade Center attacks, with a primary focus on ethnic distribution, as documented by the New York City Department
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `195` activation `5.130` class `word` token `Eth`
+  - lives and acknowledging the targeted nature of this loss. Ethnic Breakdown of Decedents The ethnic
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `540` activation `4.876` class `word` token ` ethnic`
+  - terrorism. The diverse backgrounds of the deceased—including varying ethnicities, nationalities, and educational achievements—highlight
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `205` activation `4.529` class `word` token ` ethnic`
+  - Ethnic Breakdown of Decedents The ethnic composition reveals that non-Hispanic White individuals constituted
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `196` activation `4.384` class `word` token `nic`
+  - and acknowledging the targeted nature of this loss. Ethnic Breakdown of Decedents The ethnic composition
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `324` activation `4.200` class `word` token ` ethnicity`
+  - the death certificates. Additional Demographic Context Beyond ethnicity, the victims represented a cross-section of society in
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `309` activation `4.000` class `word` token ` ethnic`
+  - to note that these percentages reflect the broader racial and ethnic categorizations recorded in the death certificates. Additional Dem
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `342` activation `3.456` class `word` token ` education`
+  - of society in terms of age, gender, and education. The median age was 39 years, ranging
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `379` activation `3.392` class `word` token ` Education`
+  - were male, and 23% were female. Educationally, 67% had completed college or obtained
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `547` activation `3.373` class `word` token ` educational`
+  - deceased—including varying ethnicities, nationalities, and educational achievements—highlight the universality of the tragedy’s
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `400` activation `3.136` class `word` token ` educated`
+  - postgraduate degrees, indicating a significant loss of highly educated individuals. Geographically, 79% were born
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `212` activation `5.872` class `word` token `Eth`
+  - have created a succinct report as requested: >>> Ethnic Breakdown of Victims in the September 11
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `213` activation `5.546` class `word` token `nic`
+  - created a succinct report as requested: >>> Ethnic Breakdown of Victims in the September 11 Attacks
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `315` activation `4.999` class `word` token ` ethnic`
+  - % These percentages represent the proportion of victims within each ethnic group. The article also provides additional information about the
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `242` activation `4.943` class `word` token ` ethnic`
+  - a breakdown of the victims who died in their respective ethnic groups: Non-Hispanic White Males:
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `610` activation `3.638` class `word` token ` efforts`
+  - impact of the September 11 attacks and the resilient efforts made to honour and remember the victims. It serves
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `408` activation `3.481` class `word` token ` education`
+  - 67%, had completed college or obtained postgraduate education. In terms of the victims' origin,
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `629` activation `3.361` class `word` token ` events`
+  - It serves as a reminder of the lasting effects such events have on individuals, communities, and the world.
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `585` activation `2.747` class `word` token ` except`
+  - OCME classified each reported death as a homicide, except for the 10 terrorists involved. This report provides
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `479` activation `2.561` class `word` token ` elsewhere`
+  - residents of New York City, 22% lived elsewhere in New York State, and 25% res
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `563` activation `2.248` class `word` token ` Examiner`
+  - ) worked closely with the NYC Office of Chief Medical Examiner (OCME) to process the death certificates.
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `314` activation `1.833` class `word` token ` each`
+  - 2% These percentages represent the proportion of victims within each ethnic group. The article also provides additional information about
+- `L19:1094` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `627` activation `1.831` class `word` token ` effects`
+  - victims. It serves as a reminder of the lasting effects such events have on individuals, communities, and the
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `342` activation `6.414` class `word` token ` E`
+  - the usual knocks on her door don’t happen. Eager to see everyone, she makes her way downstairs
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `343` activation `4.476` class `word` token `ager`
+  - usual knocks on her door don’t happen. Eager to see everyone, she makes her way downstairs.
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `202` activation `3.949` class `word` token ` energy`
+  - Each time she returns, she has less and less energy. She finds it difficult to bounce back. Getting
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `436` activation `3.222` class `word` token ` emotions`
+  - has happened.” Cindy pours out the story with emotions running high. “Victoria, I told Chad everything
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `372` activation `3.109` class `word` token ` embrace`
+  - sees her and screams “Cindy”. The two embrace and go back to the table together. A plate
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `446` activation `3.026` class `word` token ` everything`
+  - emotions running high. “Victoria, I told Chad everything. He stared at me as if I had lost
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `415` activation `2.934` class `word` token ` excited`
+  - , she goes for a light breakfast. Victoria is excited to catch up with her. “Tell me what
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `346` activation `2.705` class `word` token ` everyone`
+  - her door don’t happen. Eager to see everyone, she makes her way downstairs. Walking into breakfast
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `192` activation `2.295` class `word` token ` Each`
+  - . Going back and forth strains her body dramatically. Each time she returns, she has less and less energy
+- `L19:1094` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `548` activation `0.774` class `word` token ` honestly`
+  - Victoria, you should have seen his face. I honestly don’t think he will.” Victoria says, “
+- `L19:1094` `a663a50f6e8534e9f753f752963d5807724f5834e4983aa913d79bcbf6eeaf63@turn_01@qwen3.6-35b` token `550` activation `6.150` class `word` token `Echo`
+  - The room spins tight, my breath grows shallow, Echoes whisper fears I cannot silence. Heavy shadows length
+- `L19:1094` `a663a50f6e8534e9f753f752963d5807724f5834e4983aa913d79bcbf6eeaf63@turn_01@qwen3.6-35b` token `551` activation `3.495` class `word` token `es`
+  - room spins tight, my breath grows shallow, Echoes whisper fears I cannot silence. Heavy shadows lengthen
+- `L19:1094` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `573` activation `5.962` class `word` token `Et`
+  - The living record of your memory, Etched into haunting dreams. I lean closer to the
+- `L19:1094` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `574` activation `4.408` class `word` token `ched`
+  - The living record of your memory, Etched into haunting dreams. I lean closer to the hear
+- `L19:1094` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `611` activation `3.901` class `word` token ` evenings`
+  - crackle, Stirring reveries of warm evenings by the hearth. Flickering shadows of
+- `L19:1094` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `632` activation `2.957` class `word` token ` ember`
+  - you dance in the flames, And each separate dying ember wrought its ghost upon the floor.
+- `L19:1094` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `629` activation `1.948` class `word` token ` each`
+  - ering shadows of you dance in the flames, And each separate dying ember wrought its ghost upon the floor.
+- `L19:1094` `910bd149f08856d658d9b611fcea6e66319b81c32253b026e1678e1b45a69486@turn_01@gemini-3.5-flash` token `624` activation `6.348` class `word` token `Echo`
+  - ming so loudly, it makes a big boom, Echoing softly all through my bedroom, Rumbling monsters
+- `L19:1094` `910bd149f08856d658d9b611fcea6e66319b81c32253b026e1678e1b45a69486@turn_01@gemini-3.5-flash` token `625` activation `2.994` class `word` token `ing`
+  - so loudly, it makes a big boom, Echoing softly all through my bedroom, Rumbling monsters just
+- `L19:1094` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` token `514` activation `6.331` class `word` token `Echo`
+  - Neon lights bleed through heavy velvet curtains deep, Echoes of a bassline waking from their sleep.
+- `L19:1094` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` token `515` activation `3.997` class `word` token `es`
+  - on lights bleed through heavy velvet curtains deep, Echoes of a bassline waking from their sleep. Studio
+- `L19:1094` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` token `575` activation `3.285` class `word` token ` ever`
+  - thick with perfume and desire, A secret fire rising ever higher. Donna Summers whispers, “Love to
+- `L19:1094` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` token `555` activation `2.469` class `word` token ` every`
+  - slips slide off shoulders, skin on skin, Where every movement begs to begin again. The air is thick
+- `L19:1094` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` token `631` activation `2.124` class `word` token ` every`
+  - We dance until the dawn begins to break, For every choice we make, we always take.
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `154` activation `7.383` class `word` token ` echo`
+  - a sudden, shattering black, I lost the echo of my own voice, the intimate, close-k
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `546` activation `4.812` class `word` token ` Emb`
+  - , a deep wooden groan of pure lament": Embodies grief as a living, acoustic entity, translating
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `464` activation `4.664` class `word` token ` empty`
+  - ery Extracted from the Ballad "An empty, aching shell" & "Wreckage
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `176` activation `4.137` class `word` token ` empty`
+  - track. You found me hollowed out, an empty, aching shell, Sitting in the quiet
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `554` activation `3.753` class `word` token ` entity`
+  - lament": Embodies grief as a living, acoustic entity, translating emotional pain into a physical, resonant
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `588` activation `3.602` class `word` token ` end`
+  - ens depression to an overwhelming, immersive tidal force that endangers the spirit entirely before the musical intervention. "
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `616` activation `3.594` class `word` token ` endless`
+  - & "Sudden, radiant chorus breaking heavy, endless night": Contrasts the prior darkness, showing music
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `557` activation `3.099` class `word` token ` emotional`
+  - odies grief as a living, acoustic entity, translating emotional pain into a physical, resonant sound. "S
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `455` activation `2.470` class `word` token ` Extract`
+  - in a beautifully safe place. Vivid Imagery Extracted from the Ballad "An empty,
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `547` activation `2.469` class `word` token `odies`
+  - a deep wooden groan of pure lament": Embodies grief as a living, acoustic entity, translating emotional
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `496` activation `2.301` class `word` token ` externally`
+  - a collapsed structure, emphasizing personal devastation both internally and externally. "Gray, bruised twilight" & "
+- `L24:271` `d0d3cb5e8cb2e0bd6355d7981da3eca7ddbfed7431a4e76c3713835b8f1f2e4e@turn_01@glm-5.2` token `333` activation `2.221` class `word` token ` endless`
+  - . A sudden, radiant chorus breaks the heavy, endless night, Strumming away the grief until the
+- `L24:271` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `581` activation `7.221` class `word` token `g`
+  - ms like a small, practical sun. Eggs settle beside toast, and coffee makes the room
+- `L24:271` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `580` activation `6.410` class `word` token `E`
+  - warms like a small, practical sun. Eggs settle beside toast, and coffee makes the
+- `L24:271` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `582` activation `4.962` class `word` token `gs`
+  - like a small, practical sun. Eggs settle beside toast, and coffee makes the room attentive
+- `L24:271` `97bfe90d450fbaaf95b8f0a0fafd0b4904a2708b8b8f1c0c7c17d75fc49562bd@turn_01@gpt-5.5` token `616` activation `4.386` class `word` token ` eat`
+  - arrive after the day has spent itself. I eat slowly, buttered light on my plate,
+- `L24:271` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `560` activation `7.339` class `word` token ` eggs`
+  - nuts, seeds, beans, whole grains, and eggs. These foods are commonly found on the outside parameters
+- `L24:271` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `585` activation `6.459` class `word` token `E`
+  - , farmer's markets, and the butcher shop. Eating a whole-food diet has several benefits for our
+- `L24:271` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `586` activation `5.004` class `word` token `ating`
+  - farmer's markets, and the butcher shop. Eating a whole-food diet has several benefits for our health
+- `L24:271` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `483` activation `4.630` class `word` token ` eating`
+  - Why is that? It's because this way of eating cuts out processed foods. This includes anything in a
+- `L24:271` `5770130dd3a87b675ad2b0b4c0e66c2a7092649b5b8cd7cdc9ad654c034ad1d7@turn_01@human` token `621` activation `2.907` class `word` token ` even`
+  - , no refined sugars in your diet, and can even help you gain muscle. Whole foods also lessen the
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `433` activation `6.537` class `word` token ` E`
+  - Rodex Crushes Earnings: Illinois' AI Powerhouse Defies Market
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `473` activation `4.932` class `word` token ` earnings`
+  - global artificial intelligence revolution, just released its third-quarter earnings, leaving Wall Street analysts utterly dazzled. The
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `434` activation `4.782` class `word` token `arnings`
+  - Rodex Crushes Earnings: Illinois' AI Powerhouse Defies Market Gravity
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `623` activation `3.982` class `word` token ` earnings`
+  - capacity right here in the Midwest. If these phenomenal earnings prove anything, it's that Illinois is officially the
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `560` activation `3.928` class `word` token ` electr`
+  - Rodex CEO Elena Rostova during yesterday's electrifying call. The company's stock skyrocketed
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `553` activation `3.037` class `word` token ` Elena`
+  - of the modern AI boom," declared Rodex CEO Elena Rostova during yesterday's electrifying call.
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `501` activation `2.739` class `word` token ` even`
+  - staggering $4.2 billion in revenue, crushing even the most bullish expectations. As competitors struggle with supply
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `505` activation `2.687` class `word` token ` expectations`
+  - 2 billion in revenue, crushing even the most bullish expectations. As competitors struggle with supply chain bottlenecks
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `611` activation `1.294` class `word` token ` expanding`
+  - hardware reaching a fever pitch, Rodex is aggressively expanding operational capacity right here in the Midwest. If these
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `479` activation `1.156` class `word` token ` utterly`
+  - released its third-quarter earnings, leaving Wall Street analysts utterly dazzled. The top American AI chip maker reported
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `571` activation `0.929` class `word` token `18`
+  - ifying call. The company's stock skyrocketed 18% in after-hours trading immediately following the announcement.
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@glm-5.2` token `561` activation `0.895` class `word` token `ifying`
+  - ex CEO Elena Rostova during yesterday's electrifying call. The company's stock skyrocketed 18
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `637` activation `7.160` class `word` token ` earnings`
+  - % over the past 12 months with increasingly impressive earnings calls.
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `464` activation `5.938` class `word` token ` earnings`
+  - machine Rodex has surprised market participants with its recent earnings call. Rodex provided a revenue forecast for the
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `602` activation `5.864` class `word` token ` earnings`
+  - in late trading to $92.51 following the earnings release. The company is a major supplier to the
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `511` activation `5.464` class `word` token ` earnings`
+  - For the March quarter, the semiconductor company reported adjusted earnings per share of $1.15, compared with
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `526` activation `2.739` class `word` token ` estimate`
+  - 1.15, compared with Wall Street’s consensus estimate of $1.15. Revenue came in at
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `478` activation `2.616` class `word` token ` expectations`
+  - ex provided a revenue forecast for the June quarter below expectations, citing softening demand for chips and a challenging
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `490` activation `1.933` class `word` token ` environment`
+  - citing softening demand for chips and a challenging macro environment. The stock fell sharply in after-hours trading.
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `569` activation `1.692` class `word` token ` expectations`
+  - guidance forecasted a revenue range well above analysts' expectations, therefore we believe its after-hours sharp fall provides
+- `L24:271` `7108fbd692d081434a5126f3a714184aba41971c777340216f8e6ac6dd2413af@turn_01@human` token `548` activation `1.684` class `word` token ` expectations`
+  - 3.3 billion, which was above analysts’ expectations of $3.1 billion. Rodex's
+- `L24:271` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `298` activation `7.165` class `word` token ` Estate`
+  - Scene heading: Estate of William Dryer Scene description: Miriam
+- `L24:271` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `537` activation `4.657` class `word` token ` estate`
+  - any reason for him to leave any portion of his estate to me." Mr. Tombalt: "There
+- `L24:271` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `462` activation `3.062` class `word` token ` everything`
+  - it seems. He'll be helping us to get everything situated according to my father's last wishes." (D
+- `L24:271` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `299` activation `2.121` class `word` token ` of`
+  - Scene heading: Estate of William Dryer Scene description: Miriam is
+- `L24:271` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `302` activation `1.102` class `word` token `er`
+  - Scene heading: Estate of William Dryer Scene description: Miriam is seeing her mother
+- `L24:271` `879f2da64bb2d9511dc3b1c106b57ddc03eda8a2a19ff8bbae7f197f60c38c03@turn_01@human` token `581` activation `1.097` class `word` token ` include`
+  - time he drafted a revision, he made sure to include you. Please be patient while we wait a few
+- `L24:271` `6ab63d0967fb996253219f348f72982ace14e2738e0c6a18fa17ffefb7cdfaf1@turn_01@qwen3.6-35b` token `597` activation `7.067` class `word` token ` echo`
+  - We wander through the mist, seeking the echo of our own breath. Purpose is not a destination
+- `L24:271` `6ab63d0967fb996253219f348f72982ace14e2738e0c6a18fa17ffefb7cdfaf1@turn_01@qwen3.6-35b` token `633` activation `0.909` class `word` token ` existing`
+  - the void, finding meaning in the simple act of existing, moment by fleeting moment.
+- `L24:271` `6ab63d0967fb996253219f348f72982ace14e2738e0c6a18fa17ffefb7cdfaf1@turn_01@qwen3.6-35b` token `600` activation `0.899` class `word` token ` own`
+  - wander through the mist, seeking the echo of our own breath. Purpose is not a destination, but the
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `195` activation `6.385` class `word` token `Eth`
+  - lives and acknowledging the targeted nature of this loss. Ethnic Breakdown of Decedents The ethnic
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `104` activation `6.310` class `word` token ` Ethnic`
+  - Report on the Ethnic Composition and Demographics of September 11,
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `147` activation `5.452` class `word` token ` ethnic`
+  - World Trade Center attacks, with a primary focus on ethnic distribution, as documented by the New York City Department
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `540` activation `5.226` class `word` token ` ethnic`
+  - terrorism. The diverse backgrounds of the deceased—including varying ethnicities, nationalities, and educational achievements—highlight
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `324` activation `4.952` class `word` token ` ethnicity`
+  - the death certificates. Additional Demographic Context Beyond ethnicity, the victims represented a cross-section of society in
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `205` activation `4.728` class `word` token ` ethnic`
+  - Ethnic Breakdown of Decedents The ethnic composition reveals that non-Hispanic White individuals constituted
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `196` activation `4.570` class `word` token `nic`
+  - and acknowledging the targeted nature of this loss. Ethnic Breakdown of Decedents The ethnic composition
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `309` activation `4.369` class `word` token ` ethnic`
+  - to note that these percentages reflect the broader racial and ethnic categorizations recorded in the death certificates. Additional Dem
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `379` activation `3.829` class `word` token ` Education`
+  - were male, and 23% were female. Educationally, 67% had completed college or obtained
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `342` activation `3.825` class `word` token ` education`
+  - of society in terms of age, gender, and education. The median age was 39 years, ranging
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `547` activation `3.615` class `word` token ` educational`
+  - deceased—including varying ethnicities, nationalities, and educational achievements—highlight the universality of the tragedy’s
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@qwen3.6-35b` token `180` activation `3.018` class `word` token ` essential`
+  - borders, understanding the specific composition of the victims is essential for honoring their diverse lives and acknowledging the targeted nature
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `212` activation `7.419` class `word` token `Eth`
+  - have created a succinct report as requested: >>> Ethnic Breakdown of Victims in the September 11
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `213` activation `5.857` class `word` token `nic`
+  - created a succinct report as requested: >>> Ethnic Breakdown of Victims in the September 11 Attacks
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `242` activation `5.116` class `word` token ` ethnic`
+  - a breakdown of the victims who died in their respective ethnic groups: Non-Hispanic White Males:
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `315` activation `4.953` class `word` token ` ethnic`
+  - % These percentages represent the proportion of victims within each ethnic group. The article also provides additional information about the
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `610` activation `4.217` class `word` token ` efforts`
+  - impact of the September 11 attacks and the resilient efforts made to honour and remember the victims. It serves
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `629` activation `3.802` class `word` token ` events`
+  - It serves as a reminder of the lasting effects such events have on individuals, communities, and the world.
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `408` activation `3.753` class `word` token ` education`
+  - 67%, had completed college or obtained postgraduate education. In terms of the victims' origin,
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `479` activation `3.141` class `word` token ` elsewhere`
+  - residents of New York City, 22% lived elsewhere in New York State, and 25% res
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `585` activation `1.806` class `word` token ` except`
+  - OCME classified each reported death as a homicide, except for the 10 terrorists involved. This report provides
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `627` activation `1.655` class `word` token ` effects`
+  - victims. It serves as a reminder of the lasting effects such events have on individuals, communities, and the
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `379` activation `1.549` class `word` token `80`
+  - 5 years old and the oldest victim over 80 years old. Moreover, it is worth noting that
+- `L24:271` `bc9fe5c13e4863b6cabfecfd28c0bfdc134d891edba00b3d076bba71bfaca487@turn_01@human` token `563` activation `1.363` class `word` token ` Examiner`
+  - ) worked closely with the NYC Office of Chief Medical Examiner (OCME) to process the death certificates.
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `342` activation `7.060` class `word` token ` E`
+  - the usual knocks on her door don’t happen. Eager to see everyone, she makes her way downstairs
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `343` activation `4.972` class `word` token `ager`
+  - usual knocks on her door don’t happen. Eager to see everyone, she makes her way downstairs.
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `436` activation `4.324` class `word` token ` emotions`
+  - has happened.” Cindy pours out the story with emotions running high. “Victoria, I told Chad everything
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `202` activation `4.149` class `word` token ` energy`
+  - Each time she returns, she has less and less energy. She finds it difficult to bounce back. Getting
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `446` activation `3.896` class `word` token ` everything`
+  - emotions running high. “Victoria, I told Chad everything. He stared at me as if I had lost
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `346` activation `3.364` class `word` token ` everyone`
+  - her door don’t happen. Eager to see everyone, she makes her way downstairs. Walking into breakfast
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `372` activation `3.343` class `word` token ` embrace`
+  - sees her and screams “Cindy”. The two embrace and go back to the table together. A plate
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `415` activation `1.423` class `word` token ` excited`
+  - , she goes for a light breakfast. Victoria is excited to catch up with her. “Tell me what
+- `L24:271` `c20088f6448f8580b1695028a938af07737142cabf93b054cdc48ec22a051877@turn_01@human` token `548` activation `1.096` class `word` token ` honestly`
+  - Victoria, you should have seen his face. I honestly don’t think he will.” Victoria says, “
+- `L24:271` `a663a50f6e8534e9f753f752963d5807724f5834e4983aa913d79bcbf6eeaf63@turn_01@qwen3.6-35b` token `550` activation `7.310` class `word` token `Echo`
+  - The room spins tight, my breath grows shallow, Echoes whisper fears I cannot silence. Heavy shadows length
+- `L24:271` `a663a50f6e8534e9f753f752963d5807724f5834e4983aa913d79bcbf6eeaf63@turn_01@qwen3.6-35b` token `551` activation `4.215` class `word` token `es`
+  - room spins tight, my breath grows shallow, Echoes whisper fears I cannot silence. Heavy shadows lengthen
+- `L24:271` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `573` activation `7.795` class `word` token `Et`
+  - The living record of your memory, Etched into haunting dreams. I lean closer to the
+- `L24:271` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `574` activation `4.710` class `word` token `ched`
+  - The living record of your memory, Etched into haunting dreams. I lean closer to the hear
+- `L24:271` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `611` activation `4.403` class `word` token ` evenings`
+  - crackle, Stirring reveries of warm evenings by the hearth. Flickering shadows of
+- `L24:271` `06f4d8449f05980bedd3eb0ab0446f600ec20ef2d66c59f321a1840fb27c8a81@turn_01@human` token `632` activation `3.275` class `word` token ` ember`
+  - you dance in the flames, And each separate dying ember wrought its ghost upon the floor.
+- `L24:271` `910bd149f08856d658d9b611fcea6e66319b81c32253b026e1678e1b45a69486@turn_01@gemini-3.5-flash` token `624` activation `7.568` class `word` token `Echo`
+  - ming so loudly, it makes a big boom, Echoing softly all through my bedroom, Rumbling monsters
+- `L24:271` `910bd149f08856d658d9b611fcea6e66319b81c32253b026e1678e1b45a69486@turn_01@gemini-3.5-flash` token `625` activation `3.491` class `word` token `ing`
+  - so loudly, it makes a big boom, Echoing softly all through my bedroom, Rumbling monsters just
+- `L24:271` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` token `514` activation `7.582` class `word` token `Echo`
+  - Neon lights bleed through heavy velvet curtains deep, Echoes of a bassline waking from their sleep.
+- `L24:271` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` token `515` activation `5.116` class `word` token `es`
+  - on lights bleed through heavy velvet curtains deep, Echoes of a bassline waking from their sleep. Studio
+- `L24:271` `1d15bffc5978549f41881cb9e1b361e04f6d67d579142a4bc6b44a8a544dfad6@turn_01@qwen3.6-35b` token `575` activation `3.957` class `word` token ` ever`
+  - thick with perfume and desire, A secret fire rising ever higher. Donna Summers whispers, “Love to

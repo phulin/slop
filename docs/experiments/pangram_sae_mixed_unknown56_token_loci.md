@@ -1,0 +1,453 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L19:2629` | `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` | `human` | 9 | `22.56` | `6.25` | sentence_boundary:5|word:2|style_function_word:2 |
+| `L19:2629` | `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` | `human` | 46 | `62.60` | `6.66` | word:23|sentence_boundary:8|punctuation:5|style_function_word:5|line_break:5 |
+| `L19:2629` | `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` | `human` | 97 | `143.37` | `5.82` | word:54|sentence_boundary:13|line_break:9|punctuation:9|style_function_word:6|discourse_marker_word:4|expanded_negation_word:2 |
+| `L19:2629` | `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 31 | `33.50` | `6.46` | word:23|style_function_word:4|discourse_marker_word:3|punctuation:1 |
+| `L19:2629` | `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` | `human` | 64 | `133.47` | `6.34` | word:40|punctuation:18|style_function_word:3|sentence_boundary:3 |
+| `L19:2629` | `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` | `human` | 49 | `57.25` | `6.32` | word:34|punctuation:6|sentence_boundary:4|expanded_negation_word:2|discourse_marker_word:2|line_break:1 |
+| `L19:2629` | `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` | `human` | 35 | `63.89` | `5.98` | word:19|style_function_word:7|punctuation:6|expanded_negation_word:2|discourse_marker_word:1 |
+| `L19:2629` | `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 28 | `31.81` | `6.79` | word:24|punctuation:3|style_function_word:1 |
+| `L19:2629` | `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` | `human` | 179 | `251.20` | `6.39` | word:133|sentence_boundary:18|punctuation:11|style_function_word:11|discourse_marker_word:5|line_break:1 |
+| `L24:3849` | `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` | `human` | 9 | `37.79` | `10.16` | sentence_boundary:5|word:3|style_function_word:1 |
+| `L24:3849` | `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` | `human` | 56 | `121.67` | `9.78` | word:27|sentence_boundary:12|punctuation:6|style_function_word:6|line_break:4|discourse_marker_word:1 |
+| `L24:3849` | `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` | `human` | 85 | `216.80` | `9.80` | word:50|sentence_boundary:15|style_function_word:8|line_break:7|expanded_negation_word:2|punctuation:2|discourse_marker_word:1 |
+| `L24:3849` | `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 35 | `64.20` | `11.43` | word:24|discourse_marker_word:3|style_function_word:3|sentence_boundary:3|punctuation:2 |
+| `L24:3849` | `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` | `human` | 71 | `206.76` | `11.15` | word:46|punctuation:18|style_function_word:4|sentence_boundary:3 |
+| `L24:3849` | `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` | `human` | 43 | `83.54` | `10.80` | word:36|sentence_boundary:3|punctuation:2|discourse_marker_word:1|line_break:1 |
+| `L24:3849` | `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` | `human` | 37 | `110.40` | `10.47` | word:22|punctuation:7|style_function_word:6|discourse_marker_word:1|expanded_negation_word:1 |
+| `L24:3849` | `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` | `gemini-3.5-flash` | 23 | `48.13` | `11.00` | word:19|line_break:2|expanded_negation_word:1|punctuation:1 |
+| `L24:3849` | `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` | `human` | 130 | `313.24` | `10.93` | word:83|sentence_boundary:18|punctuation:12|style_function_word:10|discourse_marker_word:6|line_break:1 |
+
+## Top Tokens
+
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `611` activation `6.250` class `sentence_boundary` token `.`
+  - help to fabricate outreach programs. Human Resources Manager. This is a career that works with and helps employees
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `574` activation `4.361` class `sentence_boundary` token `.`
+  - during the admissions process to college. Community Service Manager. This is a career that works directly with members and
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `639` activation `3.236` class `sentence_boundary` token `.`
+  - benefits, sexual harassment matters, and equal employment opportunities.
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `625` activation `3.045` class `sentence_boundary` token `.`
+  - career that works with and helps employees in the workplace. This includes employee benefits, sexual harassment matters, and
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `610` activation `2.035` class `word` token ` Manager`
+  - and help to fabricate outreach programs. Human Resources Manager. This is a career that works with and helps
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `612` activation `1.428` class `style_function_word` token ` This`
+  - to fabricate outreach programs. Human Resources Manager. This is a career that works with and helps employees in
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `573` activation `1.137` class `word` token ` Manager`
+  - them during the admissions process to college. Community Service Manager. This is a career that works directly with members
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `575` activation `0.559` class `style_function_word` token ` This`
+  - the admissions process to college. Community Service Manager. This is a career that works directly with members and stakeholders
+- `L19:2629` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `550` activation `0.506` class `sentence_boundary` token `.`
+  - Here are some ideas: College Admissions Counselor. This is a career that works with proposed college students
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `204` activation `6.662` class `word` token ` reading`
+  - If you’re reading this post, you have probably had a few encounters
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `308` activation `2.959` class `punctuation` token `,`
+  - across as more confident and assertive while remaining professional, keep reading. It's best to avoid noncomm
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `468` activation `2.676` class `sentence_boundary` token `.`
+  - to jot it down and ask at your next interaction. This tells a client that you are paying attention,
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `364` activation `2.590` class `word` token ` Replace`
+  - wishy-washy” to a client. Replace them with words like “yes, no, always
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `336` activation `2.490` class `style_function_word` token ` While`
+  - , sometimes, in my opinion, and sorry.” While this may be your way of speaking to sound polite
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `238` activation `2.385` class `punctuation` token `,`
+  - you planned. If you are new to freelancing, it's great to incorporate these tips and practices sooner
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `597` activation `2.338` class `word` token ` of`
+  - honest and reliable rather than to underdeliver. Much of speaking to clients with confidence is the work that goes
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `310` activation `2.173` class `word` token ` reading`
+  - more confident and assertive while remaining professional, keep reading. It's best to avoid noncommittal words
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `347` activation `1.799` class `punctuation` token `,`
+  - this may be your way of speaking to sound polite, it can come across as “wishy-wash
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `508` activation `1.731` class `sentence_boundary` token `.`
+  - a freelancer, you should have a straightforward answer to. These things include your rate, experience, and how
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `309` activation `1.709` class `word` token ` keep`
+  - as more confident and assertive while remaining professional, keep reading. It's best to avoid noncommittal
+- `L19:2629` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `410` activation `1.661` class `sentence_boundary` token `.`
+  - company before starting the work or before your initial meeting. This may seem more obvious to some than others.
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `417` activation `5.824` class `word` token ` with`
+  - for the very end. Some transitional phrases to use with this order include: first of all, more importantly
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `516` activation `5.568` class `word` token `With`
+  - of using transition terms or phrases. Spatial Order With this order, you describe a scene as things are
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `363` activation `5.082` class `word` token ` use`
+  - very end of the story or piece. You should use it when you want to build up excitement such as
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `492` activation `4.159` class `word` token ` use`
+  - with one another in understanding. You will want to use association ideas between points to transition from one thought to
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `515` activation `4.031` class `line_break` token `
+`
+  - instead of using transition terms or phrases. Spatial Order With this order, you describe a scene as things
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `310` activation `3.247` class `discourse_marker_word` token ` for`
+  - it. Some good transitional words or phrases to use for this order include: First, you should understand;
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `341` activation `3.196` class `word` token `With`
+  - I said; etc. Climactic Order With this order, you keep the most important part until
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `438` activation `2.919` class `line_break` token `
+`
+  - , just as importantly, and finally. Random Order This order allows you to put your ideas out there
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `416` activation `2.817` class `word` token ` use`
+  - it for the very end. Some transitional phrases to use with this order include: first of all, more
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `490` activation `2.671` class `word` token ` want`
+  - sit independently with one another in understanding. You will want to use association ideas between points to transition from one
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `465` activation `2.668` class `word` token ` ideas`
+  - or logical reasoning behind them. You can organize your ideas this way when your points all have equal value of
+- `L19:2629` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `214` activation `2.536` class `word` token ` need`
+  - to avoid any confusion for the reader. You will need to organize your ideas in this framework if your reader
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `301` activation `6.460` class `word` token ` reading`
+  - Dearest Dad, If you are reading this, it means I have finally gathered the courage
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `550` activation `2.620` class `discourse_marker_word` token ` for`
+  - even if you didn't realize you were preparing me for this. I am strong because of you. I
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `300` activation `1.554` class `word` token ` are`
+  - Dearest Dad, If you are reading this, it means I have finally gathered the
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `549` activation `1.460` class `word` token ` me`
+  - , even if you didn't realize you were preparing me for this. I am strong because of you.
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `348` activation `1.329` class `word` token ` wanted`
+  - both love so much. I know how desperately you wanted a different, safer path for me. You spent
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `605` activation `1.275` class `word` token ` see`
+  - , and I hope that one day, when you see me in my whites, you will be proud.
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `599` activation `1.184` class `style_function_word` token ` that`
+  - you more than words can express, and I hope that one day, when you see me in my whites
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `562` activation `1.100` class `word` token ` ready`
+  - . I am strong because of you. I am ready because of you. I am joining the Navy,
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `299` activation `1.081` class `word` token ` you`
+  - Dearest Dad, If you are reading this, it means I have finally gathered
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `603` activation `1.054` class `style_function_word` token ` when`
+  - can express, and I hope that one day, when you see me in my whites, you will be
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `598` activation `1.008` class `word` token ` hope`
+  - love you more than words can express, and I hope that one day, when you see me in my
+- `L19:2629` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `601` activation `0.961` class `word` token ` day`
+  - than words can express, and I hope that one day, when you see me in my whites, you
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `271` activation `6.344` class `word` token ` of`
+  - trip may indeed have a particular destination, the lyrics of this song are an ode to the joy of driving
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `393` activation `6.162` class `word` token ` of`
+  - 'Fast Car' by Tracy Chapman - The lyrics of this song use traveling as a metaphor for escaping the
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `149` activation `5.190` class `word` token ` to`
+  - resist making a pit stop in Sin City after listening to this tune. 'Route 66' by the
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `419` activation `4.579` class `punctuation` token `,`
+  - brighter future. With its calm, bluesy rhythm, it's also a great choice for a relaxing stretch
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `268` activation `4.386` class `punctuation` token `,`
+  - While your road trip may indeed have a particular destination, the lyrics of this song are an ode to the
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `293` activation `4.093` class `punctuation` token `,`
+  - fun. With its catchy riffs and infectious rhythm, you might find yourself rocking out behind the wheel while
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `600` activation `3.951` class `punctuation` token ` -`
+  - California. 'Chicago' by Sufjan Stevens - You might think this song is about the city of
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `148` activation `3.839` class `word` token ` listening`
+  - to resist making a pit stop in Sin City after listening to this tune. 'Route 66' by
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `147` activation `3.689` class `word` token ` after`
+  - difficult to resist making a pit stop in Sin City after listening to this tune. 'Route 66'
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `304` activation `3.658` class `word` token ` playing`
+  - you might find yourself rocking out behind the wheel while playing this tune. 'Georgia on My Mind' by
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `442` activation `3.465` class `punctuation` token ` -`
+  - road. 'Dirty Water' by the Standells - This song is often played at Red Sox games as
+- `L19:2629` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `257` activation `3.255` class `punctuation` token ` -`
+  - No Particular Place to Go' by Chuck Berry - While your road trip may indeed have a particular destination
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `558` activation `6.317` class `word` token ` like`
+  - , cute boys. We used to dream of conversations like this." We both sit awkwardly, trying not
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `557` activation `3.160` class `word` token ` conversations`
+  - coffee, cute boys. We used to dream of conversations like this." We both sit awkwardly, trying
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `556` activation `2.685` class `word` token ` of`
+  - fancy coffee, cute boys. We used to dream of conversations like this." We both sit awkwardly,
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `370` activation `2.220` class `word` token ` doing`
+  - on Fourth Street, on Mondays. We've been doing this since we were teens, but really, we
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `382` activation `2.044` class `word` token ` been`
+  - since we were teens, but really, we've been meeting on Mondays for much longer -- back when our
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `384` activation `1.876` class `word` token ` on`
+  - were teens, but really, we've been meeting on Mondays for much longer -- back when our meetings used
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `542` activation `1.808` class `sentence_boundary` token `?`
+  - stuff we used to play pretend about, you know? Adult jobs, fancy coffee, cute boys. We
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `539` activation `1.661` class `punctuation` token `,`
+  - this is the stuff we used to play pretend about, you know? Adult jobs, fancy coffee, cute
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `555` activation `1.579` class `word` token ` dream`
+  - , fancy coffee, cute boys. We used to dream of conversations like this." We both sit awkwardly
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `573` activation `1.569` class `word` token ` placed`
+  - sit awkwardly, trying not to acknowledge how wrongly placed our childhood optimism was. It's silent for longer
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `571` activation `1.355` class `word` token ` how`
+  - We both sit awkwardly, trying not to acknowledge how wrongly placed our childhood optimism was. It's silent
+- `L19:2629` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `484` activation `1.301` class `word` token ` really`
+  - annoying. Watch any good shows lately? Are we really twenty-five? "Are we?" Franz asks,
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `596` activation `5.980` class `word` token ` with`
+  - be able to doubt which vehicle you are talking about with this name. Blaze - Since red is also
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `582` activation `5.322` class `punctuation` token `,`
+  - Firetruck - Since firetrucks are also red, no one will be able to doubt which vehicle you
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `611` activation `4.274` class `punctuation` token `,`
+  - aze - Since red is also the color of fire, you could name your truck Blaze or some other name
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `574` activation `3.960` class `punctuation` token ` -`
+  - if the truck is a large one. Firetruck - Since firetrucks are also red, no one
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `602` activation `3.913` class `punctuation` token ` -`
+  - you are talking about with this name. Blaze - Since red is also the color of fire, you
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `555` activation `3.388` class `punctuation` token ` -`
+  - for a big red truck as well. Big Red - This name is very straightforward and particularly fitting if the
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `629` activation `3.139` class `word` token ` hope`
+  - some other name that is reminiscent of fire. I hope these help your family decide what to call it!
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `591` activation `2.936` class `word` token ` vehicle`
+  - red, no one will be able to doubt which vehicle you are talking about with this name. Blaze
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `589` activation `2.552` class `word` token ` doubt`
+  - are also red, no one will be able to doubt which vehicle you are talking about with this name.
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `616` activation `2.407` class `word` token ` truck`
+  - also the color of fire, you could name your truck Blaze or some other name that is reminiscent of fire
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `595` activation `2.262` class `word` token ` about`
+  - will be able to doubt which vehicle you are talking about with this name. Blaze - Since red is
+- `L19:2629` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `614` activation `1.885` class `word` token ` name`
+  - red is also the color of fire, you could name your truck Blaze or some other name that is reminiscent
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `322` activation `6.788` class `word` token ` reading`
+  - My dearest friend, If you are reading this, it means my time has run out,
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `338` activation `2.634` class `word` token ` slip`
+  - time has run out, and I have had to slip away ahead of you. Thirty years. How did
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `580` activation `1.496` class `word` token ` of`
+  - world worth living in. I will carry the warmth of our friendship into whatever comes next. Live fully,
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `451` activation `1.427` class `word` token ` at`
+  - afraid of the unknown, but when I look back at the life I lived, the fear fades because you
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `506` activation `1.363` class `word` token ` remember`
+  - ’t let your heart break too deeply. Do not remember me only in these quiet, clinical rooms. Remember
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `453` activation `1.236` class `word` token ` life`
+  - the unknown, but when I look back at the life I lived, the fear fades because you were in
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `497` activation `1.217` class `word` token ` let`
+  - best parts of who I am. Please don’t let your heart break too deeply. Do not remember me
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `561` activation `1.181` class `word` token ` by`
+  - . I am so incredibly lucky to have been loved by you. You made this beautiful, messy world worth
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `577` activation `1.020` class `word` token ` carry`
+  - beautiful, messy world worth living in. I will carry the warmth of our friendship into whatever comes next.
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `323` activation `1.015` class `style_function_word` token ` this`
+  - My dearest friend, If you are reading this, it means my time has run out, and
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `558` activation `1.009` class `word` token ` have`
+  - ever told you. I am so incredibly lucky to have been loved by you. You made this beautiful,
+- `L19:2629` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `610` activation `0.891` class `word` token ` of`
+  - , just like we used to. Keep a piece of me in your heart, and I promise, I
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `298` activation `6.393` class `discourse_marker_word` token ` for`
+  - suffocating crowds. The ideal trekking season for this climb is all year, but it is recommended
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `185` activation `5.889` class `discourse_marker_word` token ` for`
+  - from its outdoor decks. The ideal trekking season for this mountain is from spring to autumn, with ski
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `496` activation `4.819` class `word` token ` climb`
+  - time and camp out overnight. The best time to climb Mount Anne is between November and May. This is
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `393` activation `4.707` class `word` token ` climb`
+  - amazing view of raw geography. The ideal time to climb this mountain is between July and August after the snow
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `471` activation `4.250` class `word` token ` on`
+  - 's most prominent peak. Brave beginners can often take on the entire climb in a day, while others may
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `622` activation `4.034` class `punctuation` token `,`
+  - and Kuh, Iran - Ideal for cultural exchange, the mountain of Alvand Kuh is a good
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `224` activation `4.019` class `word` token ` of`
+  - as a spiritual one. A pilgrimage to the summit of this mountain is said to forgive all sins. The
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `118` activation `3.988` class `punctuation` token ` -`
+  - the year. Hochschwab, Austria - The mountains of Northern Styria are filled with al
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `443` activation `3.844` class `punctuation` token `,`
+  - terrain, and perhaps even a wild animal or two, Mount Anne, located in Tasmania's Southwest National Park
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `206` activation `3.573` class `punctuation` token ` -`
+  - touring in the winter. Emel Shan, China - This mountain climbing experience is often described as a spiritual
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `337` activation `3.457` class `word` token ` on`
+  - sure to pack a high-quality camera when you go on this climb because this trek up one of the Canadian
+- `L19:2629` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `221` activation `3.440` class `word` token ` to`
+  - is often described as a spiritual one. A pilgrimage to the summit of this mountain is said to forgive all
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `611` activation `10.158` class `sentence_boundary` token `.`
+  - help to fabricate outreach programs. Human Resources Manager. This is a career that works with and helps employees
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `574` activation `7.571` class `sentence_boundary` token `.`
+  - during the admissions process to college. Community Service Manager. This is a career that works directly with members and
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `625` activation `4.759` class `sentence_boundary` token `.`
+  - career that works with and helps employees in the workplace. This includes employee benefits, sexual harassment matters, and
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `639` activation `4.511` class `sentence_boundary` token `.`
+  - benefits, sexual harassment matters, and equal employment opportunities.
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `610` activation `4.487` class `word` token ` Manager`
+  - and help to fabricate outreach programs. Human Resources Manager. This is a career that works with and helps
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `573` activation `3.040` class `word` token ` Manager`
+  - them during the admissions process to college. Community Service Manager. This is a career that works directly with members
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `550` activation `1.229` class `sentence_boundary` token `.`
+  - Here are some ideas: College Admissions Counselor. This is a career that works with proposed college students
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `566` activation `1.066` class `word` token ` admissions`
+  - works with proposed college students to help them during the admissions process to college. Community Service Manager. This is
+- `L24:3849` `e0d245a3cb1ae6c0aa1836ed23013d8591be6bf309f59a53008ad98e8790a60e@turn_01@human` token `612` activation `0.969` class `style_function_word` token ` This`
+  - to fabricate outreach programs. Human Resources Manager. This is a career that works with and helps employees in
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `204` activation `9.775` class `word` token ` reading`
+  - If you’re reading this post, you have probably had a few encounters
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `468` activation `5.740` class `sentence_boundary` token `.`
+  - to jot it down and ask at your next interaction. This tells a client that you are paying attention,
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `410` activation `5.148` class `sentence_boundary` token `.`
+  - company before starting the work or before your initial meeting. This may seem more obvious to some than others.
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `597` activation `4.206` class `word` token ` of`
+  - honest and reliable rather than to underdeliver. Much of speaking to clients with confidence is the work that goes
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `235` activation `3.660` class `word` token ` to`
+  - wanted or how you planned. If you are new to freelancing, it's great to incorporate these tips
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `364` activation `3.634` class `word` token ` Replace`
+  - wishy-washy” to a client. Replace them with words like “yes, no, always
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `308` activation `3.472` class `punctuation` token `,`
+  - across as more confident and assertive while remaining professional, keep reading. It's best to avoid noncomm
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `310` activation `3.348` class `word` token ` reading`
+  - more confident and assertive while remaining professional, keep reading. It's best to avoid noncommittal words
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `238` activation `3.006` class `punctuation` token `,`
+  - you planned. If you are new to freelancing, it's great to incorporate these tips and practices sooner
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `231` activation `2.958` class `style_function_word` token ` If`
+  - go exactly as you wanted or how you planned. If you are new to freelancing, it's great
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `383` activation `2.931` class `sentence_boundary` token `.`
+  - , always, and exactly.” Research the client beforehand. If you are taking on a new client, be
+- `L24:3849` `706e71c15faaa122a54afcb40e7343ecb54a565624c53fbb1937573096e69528@turn_01@human` token `508` activation `2.828` class `sentence_boundary` token `.`
+  - a freelancer, you should have a straightforward answer to. These things include your rate, experience, and how
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `417` activation `9.804` class `word` token ` with`
+  - for the very end. Some transitional phrases to use with this order include: first of all, more importantly
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `516` activation `8.186` class `word` token `With`
+  - of using transition terms or phrases. Spatial Order With this order, you describe a scene as things are
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `363` activation `7.636` class `word` token ` use`
+  - very end of the story or piece. You should use it when you want to build up excitement such as
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `465` activation `6.505` class `word` token ` ideas`
+  - or logical reasoning behind them. You can organize your ideas this way when your points all have equal value of
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `310` activation `6.415` class `discourse_marker_word` token ` for`
+  - it. Some good transitional words or phrases to use for this order include: First, you should understand;
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `173` activation `6.221` class `word` token ` in`
+  - the narrative. Some transition words to use when writing in chronological order include first, then, next, last
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `492` activation `6.069` class `word` token ` use`
+  - with one another in understanding. You will want to use association ideas between points to transition from one thought to
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `515` activation `5.545` class `line_break` token `
+`
+  - instead of using transition terms or phrases. Spatial Order With this order, you describe a scene as things
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `341` activation `5.009` class `word` token `With`
+  - I said; etc. Climactic Order With this order, you keep the most important part until
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `144` activation `4.552` class `expanded_negation_word` token ` do`
+  - understand your point of view. When writing, you do the same thing when you need to help your reader
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `438` activation `4.315` class `line_break` token `
+`
+  - , just as importantly, and finally. Random Order This order allows you to put your ideas out there
+- `L24:3849` `871058256bbd9fcff44cbd5f1417a49c28392d41d3b1842be4d0d52857108f9f@turn_01@human` token `214` activation `4.036` class `word` token ` need`
+  - to avoid any confusion for the reader. You will need to organize your ideas in this framework if your reader
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `301` activation `11.426` class `word` token ` reading`
+  - Dearest Dad, If you are reading this, it means I have finally gathered the courage
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `550` activation `5.284` class `discourse_marker_word` token ` for`
+  - even if you didn't realize you were preparing me for this. I am strong because of you. I
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `549` activation `2.953` class `word` token ` me`
+  - , even if you didn't realize you were preparing me for this. I am strong because of you.
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `348` activation `2.429` class `word` token ` wanted`
+  - both love so much. I know how desperately you wanted a different, safer path for me. You spent
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `605` activation `2.218` class `word` token ` see`
+  - , and I hope that one day, when you see me in my whites, you will be proud.
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `313` activation `2.080` class `word` token ` take`
+  - , it means I have finally gathered the courage to take the leap I’ve dreamed of my entire life.
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `535` activation `2.073` class `word` token ` navigate`
+  - please don't worry. You taught me how to navigate the toughest waters, even if you didn't realize
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `386` activation `1.992` class `word` token ` of`
+  - from the hardships, the isolation, and the storms of a naval life. I tried, Dad. I
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `603` activation `1.940` class `style_function_word` token ` when`
+  - can express, and I hope that one day, when you see me in my whites, you will be
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `598` activation `1.910` class `word` token ` hope`
+  - love you more than words can express, and I hope that one day, when you see me in my
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `362` activation `1.896` class `discourse_marker_word` token ` for`
+  - safer path for me. You spent your life sacrificing for our country, and as my father, you wanted
+- `L24:3849` `37d07d5776b3ade4c0be0df46de2a4ded70573a62993811775eead2a7d90dda6@turn_01@gemini-3.5-flash` token `599` activation `1.766` class `style_function_word` token ` that`
+  - you more than words can express, and I hope that one day, when you see me in my whites
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `271` activation `11.152` class `word` token ` of`
+  - trip may indeed have a particular destination, the lyrics of this song are an ode to the joy of driving
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `393` activation `11.077` class `word` token ` of`
+  - 'Fast Car' by Tracy Chapman - The lyrics of this song use traveling as a metaphor for escaping the
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `149` activation `8.593` class `word` token ` to`
+  - resist making a pit stop in Sin City after listening to this tune. 'Route 66' by the
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `419` activation `6.820` class `punctuation` token `,`
+  - brighter future. With its calm, bluesy rhythm, it's also a great choice for a relaxing stretch
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `293` activation `6.529` class `punctuation` token `,`
+  - fun. With its catchy riffs and infectious rhythm, you might find yourself rocking out behind the wheel while
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `600` activation `6.210` class `punctuation` token ` -`
+  - California. 'Chicago' by Sufjan Stevens - You might think this song is about the city of
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `268` activation `6.194` class `punctuation` token `,`
+  - While your road trip may indeed have a particular destination, the lyrics of this song are an ode to the
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `304` activation `5.665` class `word` token ` playing`
+  - you might find yourself rocking out behind the wheel while playing this tune. 'Georgia on My Mind' by
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `442` activation `5.460` class `punctuation` token ` -`
+  - road. 'Dirty Water' by the Standells - This song is often played at Red Sox games as
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `257` activation `5.460` class `punctuation` token ` -`
+  - No Particular Place to Go' by Chuck Berry - While your road trip may indeed have a particular destination
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `323` activation `4.993` class `word` token ` on`
+  - ' by Ray Charles - Ray Charles put a spin on this classic 1930 tune, making it at
+- `L24:3849` `59aaf891e87c049aeac0c894bb2430aba6fec1314ad03ba02e55bca4d4393f59@turn_01@human` token `390` activation `4.856` class `punctuation` token ` -`
+  - night driving. 'Fast Car' by Tracy Chapman - The lyrics of this song use traveling as a metaphor
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `558` activation `10.800` class `word` token ` like`
+  - , cute boys. We used to dream of conversations like this." We both sit awkwardly, trying not
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `370` activation `6.916` class `word` token ` doing`
+  - on Fourth Street, on Mondays. We've been doing this since we were teens, but really, we
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `556` activation `4.098` class `word` token ` of`
+  - fancy coffee, cute boys. We used to dream of conversations like this." We both sit awkwardly,
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `557` activation `2.674` class `word` token ` conversations`
+  - coffee, cute boys. We used to dream of conversations like this." We both sit awkwardly, trying
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `573` activation `2.491` class `word` token ` placed`
+  - sit awkwardly, trying not to acknowledge how wrongly placed our childhood optimism was. It's silent for longer
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `628` activation `2.432` class `word` token ` say`
+  - about becoming eight again, by the way." I say it as a joke, but neither of us laughs
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `555` activation `2.213` class `word` token ` dream`
+  - , fancy coffee, cute boys. We used to dream of conversations like this." We both sit awkwardly
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `384` activation `2.125` class `word` token ` on`
+  - were teens, but really, we've been meeting on Mondays for much longer -- back when our meetings used
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `511` activation `2.035` class `word` token ` answer`
+  - , I'll give her a better, more hopeful answer. "Twenty-five is young," I offer,
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `382` activation `2.018` class `word` token ` been`
+  - since we were teens, but really, we've been meeting on Mondays for much longer -- back when our
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `542` activation `2.009` class `sentence_boundary` token `?`
+  - stuff we used to play pretend about, you know? Adult jobs, fancy coffee, cute boys. We
+- `L24:3849` `f7576251a103d7632d4c75b9e6cfaa7fa6384546c81999b4674b1151b9b4df71@turn_01@human` token `583` activation `1.925` class `word` token ` longer`
+  - placed our childhood optimism was. It's silent for longer than I can bear, but she breaks the silence
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `596` activation `10.474` class `word` token ` with`
+  - be able to doubt which vehicle you are talking about with this name. Blaze - Since red is also
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `582` activation `7.830` class `punctuation` token `,`
+  - Firetruck - Since firetrucks are also red, no one will be able to doubt which vehicle you
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `611` activation `6.322` class `punctuation` token `,`
+  - aze - Since red is also the color of fire, you could name your truck Blaze or some other name
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `602` activation `6.312` class `punctuation` token ` -`
+  - you are talking about with this name. Blaze - Since red is also the color of fire, you
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `574` activation `6.303` class `punctuation` token ` -`
+  - if the truck is a large one. Firetruck - Since firetrucks are also red, no one
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `555` activation `5.640` class `punctuation` token ` -`
+  - for a big red truck as well. Big Red - This name is very straightforward and particularly fitting if the
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `591` activation `5.606` class `word` token ` vehicle`
+  - red, no one will be able to doubt which vehicle you are talking about with this name. Blaze
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `616` activation `4.516` class `word` token ` truck`
+  - also the color of fire, you could name your truck Blaze or some other name that is reminiscent of fire
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `629` activation `4.314` class `word` token ` hope`
+  - some other name that is reminiscent of fire. I hope these help your family decide what to call it!
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `589` activation `4.160` class `word` token ` doubt`
+  - are also red, no one will be able to doubt which vehicle you are talking about with this name.
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `614` activation `3.988` class `word` token ` name`
+  - red is also the color of fire, you could name your truck Blaze or some other name that is reminiscent
+- `L24:3849` `61e046c445a1c2bb64fc1ec196297371ed72ccfbddea9a334cf01a17e5f25824@turn_01@human` token `625` activation `3.751` class `word` token ` of`
+  - your truck Blaze or some other name that is reminiscent of fire. I hope these help your family decide what
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `322` activation `10.999` class `word` token ` reading`
+  - My dearest friend, If you are reading this, it means my time has run out,
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `338` activation `5.478` class `word` token ` slip`
+  - time has run out, and I have had to slip away ahead of you. Thirty years. How did
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `561` activation `2.610` class `word` token ` by`
+  - . I am so incredibly lucky to have been loved by you. You made this beautiful, messy world worth
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `506` activation `2.252` class `word` token ` remember`
+  - ’t let your heart break too deeply. Do not remember me only in these quiet, clinical rooms. Remember
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `580` activation `2.200` class `word` token ` of`
+  - world worth living in. I will carry the warmth of our friendship into whatever comes next. Live fully,
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `451` activation `2.118` class `word` token ` at`
+  - afraid of the unknown, but when I look back at the life I lived, the fear fades because you
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `560` activation `2.042` class `word` token ` loved`
+  - you. I am so incredibly lucky to have been loved by you. You made this beautiful, messy world
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `558` activation `1.884` class `word` token ` have`
+  - ever told you. I am so incredibly lucky to have been loved by you. You made this beautiful,
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `577` activation `1.865` class `word` token ` carry`
+  - beautiful, messy world worth living in. I will carry the warmth of our friendship into whatever comes next.
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `348` activation `1.854` class `expanded_negation_word` token ` did`
+  - slip away ahead of you. Thirty years. How did three decades pass in what feels like a single,
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `497` activation `1.839` class `word` token ` let`
+  - best parts of who I am. Please don’t let your heart break too deeply. Do not remember me
+- `L24:3849` `d8f3448aae4829b657ed687f08041387051f21b5c4a1ab4d63961371e878f012@turn_01@gemini-3.5-flash` token `352` activation `1.554` class `word` token ` in`
+  - you. Thirty years. How did three decades pass in what feels like a single, fleeting heartbeat? From
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `298` activation `10.928` class `discourse_marker_word` token ` for`
+  - suffocating crowds. The ideal trekking season for this climb is all year, but it is recommended
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `185` activation `9.433` class `discourse_marker_word` token ` for`
+  - from its outdoor decks. The ideal trekking season for this mountain is from spring to autumn, with ski
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `496` activation `8.195` class `word` token ` climb`
+  - time and camp out overnight. The best time to climb Mount Anne is between November and May. This is
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `393` activation `7.573` class `word` token ` climb`
+  - amazing view of raw geography. The ideal time to climb this mountain is between July and August after the snow
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `224` activation `7.191` class `word` token ` of`
+  - as a spiritual one. A pilgrimage to the summit of this mountain is said to forgive all sins. The
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `471` activation `7.173` class `word` token ` on`
+  - 's most prominent peak. Brave beginners can often take on the entire climb in a day, while others may
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `337` activation `6.442` class `word` token ` on`
+  - sure to pack a high-quality camera when you go on this climb because this trek up one of the Canadian
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `622` activation `6.250` class `punctuation` token `,`
+  - and Kuh, Iran - Ideal for cultural exchange, the mountain of Alvand Kuh is a good
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `221` activation `5.829` class `word` token ` to`
+  - is often described as a spiritual one. A pilgrimage to the summit of this mountain is said to forgive all
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `118` activation `5.825` class `punctuation` token ` -`
+  - the year. Hochschwab, Austria - The mountains of Northern Styria are filled with al
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `443` activation `5.817` class `punctuation` token `,`
+  - terrain, and perhaps even a wild animal or two, Mount Anne, located in Tasmania's Southwest National Park
+- `L24:3849` `9d45422dc29eb8a16fb53e30c987b62a53d894b8f17ee2718af2e557889046b3@turn_01@human` token `206` activation `5.300` class `punctuation` token ` -`
+  - touring in the winter. Emel Shan, China - This mountain climbing experience is often described as a spiritual

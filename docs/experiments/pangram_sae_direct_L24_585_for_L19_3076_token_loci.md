@@ -1,0 +1,336 @@
+# Pangram SAE Token Loci
+
+Top token activations for selected SAE nodes on explicit target rows.
+
+## Summary
+
+| Node | Doc | Source | Active tokens | Total mass | Max activation | Class counts |
+|---|---|---|---:|---:|---:|---|
+| `L24:585` | `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` | `gpt-5.5` | 121 | `292.00` | `6.01` | word:120|expanded_negation_word:1 |
+| `L24:585` | `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` | `glm-5.2` | 112 | `264.25` | `6.61` | word:111|style_function_word:1 |
+| `L24:585` | `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` | `human` | 81 | `212.28` | `6.93` | word:81 |
+| `L24:585` | `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` | `human` | 39 | `100.77` | `7.02` | word:39 |
+| `L24:585` | `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` | `human` | 50 | `145.90` | `6.59` | word:49|style_function_word:1 |
+| `L24:585` | `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` | `gpt-5.5` | 79 | `186.15` | `6.75` | word:74|line_break:5 |
+| `L24:585` | `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 80 | `182.23` | `6.87` | word:79|sentence_boundary:1 |
+| `L24:585` | `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` | `gpt-5.5` | 98 | `229.18` | `5.44` | word:98 |
+| `L24:585` | `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` | `human` | 76 | `190.70` | `7.05` | word:76 |
+| `L24:585` | `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` | `qwen3.6-35b` | 73 | `171.13` | `6.62` | word:66|discourse_marker_word:3|punctuation:2|sentence_boundary:2 |
+| `L24:585` | `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` | `human` | 21 | `54.26` | `6.63` | word:21 |
+| `L24:585` | `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` | `human` | 65 | `151.99` | `7.35` | word:63|punctuation:2 |
+| `L24:585` | `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` | `human` | 61 | `153.99` | `7.16` | word:59|discourse_marker_word:1|style_function_word:1 |
+
+## Top Tokens
+
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `200` activation `6.006` class `word` token ` coolant`
+  - piece of tubing it had no business touching. Without coolant, the engines would overheat. Without engines,
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `118` activation `5.752` class `word` token ` coolant`
+  - that painted the cockpit like a heartbeat. “External coolant line breach,” the ship announced. Commander Elias
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `599` activation `4.987` class `word` token ` forehead`
+  - green. Elias stayed outside a moment longer, forehead against the cold curve of his helmet, staring at
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `420` activation `4.462` class `word` token ` beneath`
+  - , automated and brief—but it jerked the hull beneath him. Elias’s left boot slipped. His fingers
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `192` activation `4.438` class `word` token ` tubing`
+  - a grain of rice, found the one piece of tubing it had no business touching. Without coolant, the
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `146` activation `4.334` class `word` token ` beneath`
+  - Jupiter, enormous and banded with storms, rolling beneath him like a living world. The Mariposa
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `342` activation `4.241` class `word` token ` clumsy`
+  - the Mariposa. His gloves were thick, clumsy, and colder than memory. The breach waited near
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `580` activation `4.198` class `word` token ` cockpit`
+  - inned, trembled, and stopped. Inside the cockpit, the warning light turned amber, then green.
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `114` activation `4.142` class `word` token ` heartbeat`
+  - a furious red pulse that painted the cockpit like a heartbeat. “External coolant line breach,” the ship announced
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `138` activation `4.023` class `word` token ` enormous`
+  - Elias Vale stared through the forward glass at Jupiter, enormous and banded with storms, rolling beneath him like
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `226` activation `3.927` class `word` token `ichever`
+  - its orbit decayed or its power died—whichever came first. Elias exhaled slowly. “
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@gpt-5.5` token `448` activation `3.874` class `word` token ` tether`
+  - one impossible second, he was drifting away. The tether snapped tight. Pain lanced through his waist
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `159` activation `6.606` class `word` token ` coolant`
+  - , had struck the hull, piercing the primary reactor coolant line. If the temperature wasn’t stabilized within the
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `272` activation `6.269` class `word` token ` coolant`
+  - was easy to spot because a thin mist of frozen coolant crystalssparkled like diamond dust against the sleek
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `375` activation `5.300` class `word` token ` sideways`
+  - pipe, a sudden, violent jolt threw him sideways. A thruster misfired, spinning his
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `195` activation `4.820` class `word` token ` bulky`
+  - ate into the silent vacuum. David donned his bulky EVA suit. The airlock hissed, cycling
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `224` activation `4.813` class `word` token ` abyss`
+  - outer hatch swung open, the vast, unending abyss of deep space greeted him. A million stars burned
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `412` activation `4.108` class `word` token ` integrity`
+  - chimes echoed inside his helmet. The suit’s integrity was intact, but his tool kit was gone,
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `507` activation `3.916` class `word` token ` tapered`
+  - unscrewed the antenna, leaving a smooth, tapered metal stem. It wasn't perfect, but it
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `124` activation `3.882` class `word` token ` crimson`
+  - Commander David Vance stared at the blinking crimson warning light. The Ares IV was bleeding oxygen
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `390` activation `3.799` class `word` token ` tether`
+  - misfired, spinning his body backward. His tether snapped taut, slamming him against the hull.
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `282` activation `3.733` class `word` token ` sleek`
+  - coolant crystalssparkled like diamond dust against the sleek titanium hull. David anchored his magnetic boots to the
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `153` activation `3.632` class `word` token ` hull`
+  - larger than a grain of sand, had struck the hull, piercing the primary reactor coolant line. If the
+- `L24:585` `50afd036b32ea68be44204ffab02e3f5cb85068de3d905b820844c09b77e17a5@turn_01@glm-5.2` token `215` activation `3.581` class `word` token ` hatch`
+  - cycling through depressurization. When the heavy outer hatch swung open, the vast, unending abyss of
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `368` activation `6.931` class `word` token ` folklore`
+  - Americans have talked of similar creatures in their stories and folklore for centuries. The Jersey Devil. The folklore of
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `377` activation `6.825` class `word` token ` folklore`
+  - and folklore for centuries. The Jersey Devil. The folklore of The Jersey Devil spawns from a story about Mother
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `273` activation `6.129` class `word` token ` humanoid`
+  - to hear about sightings). This large, hairy, humanoid creature has many names, and many cryptozoologists
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `539` activation `5.827` class `word` token ` livestock`
+  - for any bad luck that New Jersey farmers have with livestock and crops. Champ (or Champy)
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `319` activation `5.317` class `word` token ` wilderness`
+  - massive footprints and what could be eyes in the wilderness, while other pictures show human-like figures, covered
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `298` activation `5.221` class `word` token ` numerous`
+  - hundreds of these creatures across the world because of the numerous locations of supposed sightings. Grainy photographs have captured
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `155` activation `4.575` class `word` token ` teenagers`
+  - 7, in the space of two days, three teenagers, all of whom were separate at the time of
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `626` activation `4.177` class `word` token ` serpent`
+  - that described the creature as “a twenty-foot-long serpent, thick as a barrel, with a head like
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `382` activation `4.017` class `word` token ` spawns`
+  - The Jersey Devil. The folklore of The Jersey Devil spawns from a story about Mother Leeds, a New Jersey
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `608` activation `4.015` class `word` token ` notable`
+  - 300 sightings since 1609, but the most notable was a report in 1970 that described the
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `564` activation `3.914` class `word` token ` centuries`
+  - have been the subject of cryptozoological sightings for centuries, but Champ is one of the most famous in
+- `L24:585` `b47e5a4562e11ea084e50d74f4a7b226d9a434fc5fc62b6ac1670a0724e29f04@turn_01@human` token `370` activation `3.816` class `word` token ` centuries`
+  - talked of similar creatures in their stories and folklore for centuries. The Jersey Devil. The folklore of The Jersey
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `567` activation `7.018` class `word` token ` perseverance`
+  - from the window but could move no further. His perseverance was coming to an end. His body was fighting
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `476` activation `4.881` class `word` token ` veins`
+  - heart began to pound. The blood flowing through his veins was throbbing. His entire body began to g
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `581` activation `4.418` class `word` token ` enraged`
+  - an end. His body was fighting back like an enraged lion, commanding him to run. Using his last
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `499` activation `4.348` class `word` token ` nearer`
+  - sweat. But Pikon kept on. He drew nearer and nearer, full of curiosity and suspense, that
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `461` activation `4.279` class `word` token ` nearer`
+  - as fast as the light appeared. As he drew nearer the window, his heart began to pound. The
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `407` activation `3.960` class `word` token ` diligently`
+  - of Pikon's greatest strengths, so he continued diligently with his work. Suddenly, light beamed through
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `445` activation `3.799` class `word` token ` alley`
+  - , "How can there be light coming from an alley?" entered his mind just as fast as the light
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `284` activation `3.602` class `word` token ` whose`
+  - Pikon was a twenty-one-year-old man, whose life began like any other. In the early stages
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `394` activation `3.548` class `word` token `ance`
+  - body was trying to warn him. Perseverance was one of Pikon's greatest strengths, so
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `507` activation `3.524` class `word` token ` suspense`
+  - He drew nearer and nearer, full of curiosity and suspense, that question repeating in his head. With each
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `321` activation `3.508` class `word` token ` alley`
+  - the building with a window showing a sidestreet alley. One day, he ventured to work as he
+- `L24:585` `e98ea886a16a1e8c0a8b639c5f897213171b23cd610f3258e0f2facf564f023f@turn_01@human` token `505` activation `3.301` class `word` token ` curiosity`
+  - on. He drew nearer and nearer, full of curiosity and suspense, that question repeating in his head.
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `483` activation `6.589` class `word` token ` daycare`
+  - won’t feel lonely at all,” said the nice daycare lady, “once you meet all your friends here
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `340` activation `6.545` class `word` token ` daycare`
+  - was showing them around seemed quite nice, and the daycare itself lacked nothing. The playroom was colorful,
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `615` activation `6.354` class `word` token ` daycare`
+  - “Well, Robbie? What do you think of the daycare?” “I think,” Robbie said slowly with a
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `269` activation `6.028` class `word` token ` daycare`
+  - as the two were given a tour of his new daycare. Mommy said she would be starting her new
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `290` activation `5.943` class `word` token ` daycare`
+  - job soon, and Robbie would have to stay at daycare because he was a big boy now. But Robbie
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `467` activation `4.324` class `word` token ` lonely`
+  - , Mommy. Won’t I get awfully lonely?” “Oh, you won’t feel lonely at
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `476` activation `4.217` class `word` token ` lonely`
+  - fully lonely?” “Oh, you won’t feel lonely at all,” said the nice daycare lady, “
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `352` activation `4.103` class `word` token ` vibrant`
+  - lacked nothing. The playroom was colorful, with vibrant murals decorating the walls. There were all sorts
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `466` activation `3.967` class `word` token `fully`
+  - know, Mommy. Won’t I get awfully lonely?” “Oh, you won’t feel lonely
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `430` activation `3.947` class `word` token `my`
+  - hands on his own. “Well, Robbie?” Mommy asked when the tour was over. “Do you
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `284` activation `3.764` class `word` token ` Robbie`
+  - she would be starting her new job soon, and Robbie would have to stay at daycare because he was a
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@human` token `300` activation `3.666` class `word` token ` Robbie`
+  - daycare because he was a big boy now. But Robbie didn’t feel like a big boy at all.
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `246` activation `6.749` class `word` token ` daycare`
+  - just going to look around first.” Inside, the daycare smelled like crayons, apple slices, and fresh
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `194` activation `5.186` class `word` token `care`
+  - they walked up the sunny path to Little Lantern Daycare. His shoes made tiny squeaks on the clean
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `507` activation `4.902` class `word` token ` beside`
+  - for her to go to work. She knelt beside him. “Robbie, I’m going to
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `268` activation `4.688` class `word` token ` beside`
+  - . A kind teacher named Miss Lina waved from beside a big yellow door. “Hello, Robbie!
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `285` activation `4.233` class `word` token ` classroom`
+  - Hello, Robbie! Would you like to see our classroom?” Robbie peeked from behind Mama’s coat
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `215` activation `4.075` class `word` token ` whispered`
+  - front steps. “What if nobody likes me?” Robbie whispered. Mama bent down and smoothed his hair.
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `214` activation `3.991` class `word` token ` Robbie`
+  - clean front steps. “What if nobody likes me?” Robbie whispered. Mama bent down and smoothed his hair
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `549` activation `3.954` class `word` token ` sandbox`
+  - a moment. He looked at the slide, the sandbox, the children waving him over, and Miss L
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `298` activation `3.923` class `word` token ` classroom`
+  - bie peeked from behind Mama’s coat. The classroom had shelves full of blocks, baskets of toy animals
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `322` activation `3.888` class `word` token ` sunlight`
+  - rug with stars on it, and a window where sunlight spilled across the floor. In one corner, two
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `435` activation `3.691` class `word` token ` purple`
+  - a blue dragon with green spots and gave it three purple hats. Then everyone went outside, where there was
+- `L24:585` `6fa13588724583ea4399d6abf6af747f40919b660d96b58b341db495ab734c24@turn_01@gpt-5.5` token `527` activation `3.588` class `word` token ` snack`
+  - to my job now. I’ll come back after snack and story time.” Robbie stopped pedaling for
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `227` activation `6.871` class `word` token ` geopolitical`
+  - every victory parade. We talk about strategy, about geopolitical realignments, about the grand chessboard move
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `317` activation `5.217` class `word` token ` annoyance`
+  - . You lose the taste of morning coffee, the annoyance of a leaky faucet, the specific shade of
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `365` activation `4.585` class `word` token ` podium`
+  - And then there are the winners, standing on the podium, medals gleaming under harsh sun, their hands
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `277` activation `4.081` class `word` token ` metaphor`
+  - breath. Think of the mud, not as a metaphor, but as a physical reality, heavy and sucking
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `479` activation `3.877` class `word` token ` statues`
+  - the absence. The winner gets the narrative, the statues, the holidays. The loser gets the dirt.
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `265` activation `3.829` class `word` token ` cessation`
+  - . The silence. The absolute, unyielding cessation of breath. Think of the mud, not as
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `574` activation `3.692` class `word` token ` baggage`
+  - don’t. You simply survive it, carrying the baggage of those who didn’t. The survivors are the
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `322` activation `3.620` class `word` token ` faucet`
+  - of morning coffee, the annoyance of a leaky faucet, the specific shade of blue in your childhood bedroom
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `219` activation `3.551` class `word` token ` parade`
+  - haunts the margins of every treaty, every victory parade. We talk about strategy, about geopolitical realign
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `628` activation `3.525` class `word` token ` aftermath`
+  - or grief, while the living remain trapped in the aftermath, forever defining themselves by the void they have inherited
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `615` activation `3.259` class `word` token ` untouched`
+  - was lost. The dead are free at last, untouched by guilt or grief, while the living remain trapped
+- `L24:585` `4c2eac09e27a37405b55c72a0e494bbeceeedf75b569cfc5972dc9b8452fed8e@turn_01@qwen3.6-35b` token `493` activation `3.171` class `word` token ` sanitize`
+  - . The loser gets the dirt. We try to sanitize it, to wrap it in flags and ribbons
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `409` activation `5.444` class `word` token ` caravan`
+  - in a blinding plume, showering the caravan in grit. Bramble screamed. Poppy re
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `167` activation `5.363` class `word` token ` caravan`
+  - ushing sighs. At the head of the little caravan, Captain Maera’s bay mare, Saff
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `301` activation `4.627` class `word` token ` stubborn`
+  - Nightjar, picked her way along the trail with stubborn grace. The dunes rolled on forever, gold
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `534` activation `4.587` class `word` token ` beneath`
+  - affron lunged left. Flint sprang right beneath Joren, nearly throwing him. Nightjar whe
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `500` activation `4.406` class `word` token ` beneath`
+  - snake, half lizard, its vast body still hidden beneath the desert. Spines rattled along its neck
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `279` activation `4.189` class `word` token ` barley`
+  - water skins, canvas, and the last of their barley. Last of all, Serin’s black mare
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `134` activation `3.856` class `word` token ` Harness`
+  - like an intrusion. Leather creaked. Harness rings chimed softly against brass. Hooves sank
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `312` activation `3.837` class `word` token ` beneath`
+  - grace. The dunes rolled on forever, gold beneath a white sun. Then Flint stopped. Joren
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `126` activation `3.823` class `word` token ` intrusion`
+  - long that every sound had begun to feel like an intrusion. Leather creaked. Harness rings chim
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `362` activation `3.712` class `word` token ` vanish`
+  - . No one argued. Even the wind seemed to vanish. The sand thirty paces ahead caved inward
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `381` activation `3.705` class `word` token ` slit`
+  - aved inward. At first it was only a dark slit opening in the dune. Then the whole slope
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@gpt-5.5` token `581` activation `3.696` class `word` token ` beneath`
+  - Tavi wrapped in one arm, as the sand beneath them began to loosen and spin. Joren’s
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `188` activation `7.055` class `word` token ` scarcely`
+  - watched in silence. From a distance, they could scarcely make out Verne’s shape at the head of
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `327` activation `5.207` class `word` token ` caravan`
+  - ’s side. They raced back to rejoin the caravan with Fox and Saffron galloping close
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `465` activation `4.942` class `word` token ` melee`
+  - pest stumbled, refusing to charge any closer to the melee. When she pulled her hand down, she saw
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `479` activation `4.902` class `word` token ` overturned`
+  - pulled her hand down, she saw the viper had overturned their wagon. Among the spilled contents, she spotted
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `234` activation `4.097` class `word` token ` aside`
+  - on the ground. As the stallion staggered aside and the dust cleared, Maera caught a glimpse
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `481` activation `4.093` class `word` token ` wagon`
+  - hand down, she saw the viper had overturned their wagon. Among the spilled contents, she spotted her father
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `485` activation `3.937` class `word` token ` spilled`
+  - saw the viper had overturned their wagon. Among the spilled contents, she spotted her father crawling through the sand
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `477` activation `3.893` class `word` token ` viper`
+  - When she pulled her hand down, she saw the viper had overturned their wagon. Among the spilled contents,
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `517` activation `3.819` class `word` token ` serpent`
+  - over and over, kicking his front legs at the serpent’s body in a vain attempt to free Clover’s
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `599` activation `3.725` class `word` token ` defiant`
+  - the effort, “Stay back!” With a defiant spark in her eyes, Maera untangled her
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `207` activation `3.714` class `word` token ` onto`
+  - head of the pack. He was struggling to hold onto his saddle as Dash reared and whinnied
+- `L24:585` `f1c772697dfaaeac06b48f38adb234478015161fa3ff747863ab1a4fa52546c5@turn_01@human` token `440` activation `3.618` class `word` token ` momentarily`
+  - thrashed through the sand. The flash of light momentarily blinded her. Maera clapped a palm over
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `535` activation `6.618` class `word` token ` numeral`
+  - string except the last character. Check if the current numeral’s value is lower than the next one. If
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `490` activation `6.340` class `word` token ` numeral`
+  - , and CM, without requiring explicit validation of the numeral’s structural correctness. Here is the implementation. First
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `577` activation `5.780` class `word` token ` numeral`
+  - unconditionally, as it never precedes a larger numeral in valid standard forms. This logic is efficient,
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `638` activation `4.708` class `word` token ` overhead`
+  - focus solely on the arithmetic conversion process without defensive programming overhead.
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `603` activation `4.393` class `word` token ` concise`
+  - to the length of the input string. It is concise, readable, and perfectly suited for applications where the
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `285` activation `4.283` class `word` token ` numeral`
+  - To convert a Roman numeral into an integer in Python, you must account for
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `632` activation `3.689` class `word` token ` arithmetic`
+  - ically acceptable, allowing you to focus solely on the arithmetic conversion process without defensive programming overhead.
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `629` activation `3.666` class `word` token ` solely`
+  - be syntactically acceptable, allowing you to focus solely on the arithmetic conversion process without defensive programming overhead.
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `302` activation `3.556` class `word` token ` notation`
+  - you must account for the specific rules governing subtractive notation. Unlike standard addition, where every symbol contributes positively
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `584` activation `3.472` class `word` token ` logic`
+  - es a larger numeral in valid standard forms. This logic is efficient, running in linear time relative to the
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `493` activation `3.377` class `word` token ` correctness`
+  - , without requiring explicit validation of the numeral’s structural correctness. Here is the implementation. First, define a
+- `L24:585` `caffe325bdd7c6031e05074dd0a0966cd2be8dd85d1bde96b1e77f731b0d8735@turn_01@qwen3.6-35b` token `320` activation `3.348` class `word` token ` occasionally`
+  - symbol contributes positively to the total, Roman numerals occasionally place a smaller value before a larger one to indicate
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `625` activation `6.628` class `word` token ` humanoid`
+  - minuscule or man-sized, they're typically humanoid creatures with wings. No real humans of any size
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `556` activation `3.771` class `word` token ` mammals`
+  - in the sunlight, which isn't a trait real mammals have. Minotaurs. A minotaur
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `548` activation `3.632` class `word` token ` sunlight`
+  - Some trolls are said to turn to stone in the sunlight, which isn't a trait real mammals have.
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `539` activation `3.287` class `word` token ` trolls`
+  - creatures from children's stories: Trolls. Some trolls are said to turn to stone in the sunlight,
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `589` activation `3.133` class `word` token `orns`
+  - animal hybrids exist. Unicorns. Most unicorns in children's books are represented as horses with horns
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `613` activation `3.027` class `word` token `aires`
+  - don't have horns. Fairies. Whether faires are minuscule or man-sized, they're
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `552` activation `2.998` class `word` token `'t`
+  - to turn to stone in the sunlight, which isn't a trait real mammals have. Minotaurs.
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `585` activation `2.974` class `word` token `orns`
+  - . No human/animal hybrids exist. Unicorns. Most unicorns in children's books are represented
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `528` activation `2.550` class `word` token ` furry`
+  - Okay, here's a list of some furry creatures from children's stories: Trolls. Some
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `580` activation `2.485` class `word` token ` hybrids`
+  - with a bull's head. No human/animal hybrids exist. Unicorns. Most unicorns in
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `624` activation `2.485` class `word` token ` typically`
+  - are minuscule or man-sized, they're typically humanoid creatures with wings. No real humans of any
+- `L24:585` `b8e47d971e7d2d80fd120414075df11896d2a8607e8409e52b83c68d4d34bec8@turn_01@human` token `529` activation `2.267` class `word` token ` creatures`
+  - Okay, here's a list of some furry creatures from children's stories: Trolls. Some trolls
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `283` activation `7.354` class `word` token ` booklet`
+  - easily digestible format as well as a small campaign booklet, premade character sheets, and even a set
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `261` activation `5.005` class `word` token ` rundown`
+  - Dungeons & Dragons Starter Set. This contains a quick rundown of the rules for both players and the DM in
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `597` activation `4.817` class `word` token ` battlefield`
+  - Adding character-specific or monster-specific miniatures to the battlefield really helps players get into the game. If you
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `626` activation `4.550` class `word` token ` terrain`
+  - for your games, you can get into crafting the terrain yourself much like a war-gaming or diorama
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `580` activation `4.487` class `word` token ` outline`
+  - can draw on them with dry-erase markers to outline a battle for your players. Adding character-specific or
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `555` activation `4.386` class `word` token ` terrain`
+  - (These have different images on them to match the terrain of the story like grass, dungeon tile, or
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `615` activation `4.315` class `word` token ` terrain`
+  - . If you find yourself particularly enjoying setting up the terrain for your games, you can get into crafting the
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `624` activation `3.994` class `word` token ` crafting`
+  - the terrain for your games, you can get into crafting the terrain yourself much like a war-gaming or
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `594` activation `3.970` class `word` token `atures`
+  - your players. Adding character-specific or monster-specific miniatures to the battlefield really helps players get into the game
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `458` activation `3.844` class `word` token ` loot`
+  - addies, and -- the best part -- magical loot! The Monster Manual is a compendium of
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `368` activation `3.831` class `word` token ` Handbook`
+  - what they say on the cover. The Player's Handbook. details the rules for the player, how to
+- `L24:585` `8e8db1fbe80393110e9e6a4a4799e65c07c831a52098c430defb6c7c4172116b@turn_01@human` token `341` activation `3.577` class `word` token ` Handbook`
+  - 5th Edition. These are The Player's Handbook, The Dungeon Master's Guide, and The Monster
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `457` activation `7.158` class `word` token ` folklore`
+  - ’s a lot to learn from locals. There’s folklore galore and shows that involve live entertainment and traditional
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `381` activation `5.390` class `word` token ` predominantly`
+  - experiences its weather patterns. However, the weather is predominantly sunny and beautiful on every island. Hawaiian winters rarely
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `624` activation `4.747` class `word` token ` shortage`
+  - Hawaii is an ideal vacation destination. There’s no shortage of things to do, people to meet, and
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `602` activation `4.631` class `word` token ` lore`
+  - the Hawaiian Islands to sampling the foods and learning Hawaiian lore and culture, there are an abundant amount of reasons
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `582` activation `4.279` class `word` token ` fares`
+  - combine authentic Hawaiian, Filipino, Japanese, and Chinese fares. From exploring the volcanoes and beaches of the
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `491` activation `4.176` class `word` token ` cuisine`
+  - ’s true that spam is a huge part of Hawaiian cuisine in many diners and breakfast cafes, there are
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `609` activation `4.150` class `word` token ` abundant`
+  - and learning Hawaiian lore and culture, there are an abundant amount of reasons why Hawaii is an ideal vacation destination
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `418` activation `3.935` class `word` token ` Fahrenheit`
+  - Summer temperatures average between 85 to 90 degrees Fahrenheit. • There’s a focus on the history and
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `459` activation `3.877` class `word` token `ore`
+  - lot to learn from locals. There’s folklore galore and shows that involve live entertainment and traditional Hawaiian meals
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `325` activation `3.781` class `word` token `aways`
+  - are repeat visitors for anniversaries, romantic getaways, or family vacations. Hawaii is one of the
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `477` activation `3.773` class `word` token ` abundant`
+  - traditional Hawaiian meals. • The food is delicious and abundant. While it’s true that spam is a huge
+- `L24:585` `5bfcc81a848c10461bb8eeb0cf4e4c9dab50d758d7e4fe927e9f0b94bd388331@turn_01@human` token `636` activation `3.520` class `word` token ` sights`
+  - things to do, people to meet, and amazing sights to see.
